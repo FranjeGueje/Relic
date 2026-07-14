@@ -332,17 +332,6 @@
       "part2": "その他の場所については、これらのフォルダのいずれかへのシンボリックリンクを使用してください"
     },
     "disable_logs": "このチェックボックスをオンに切り替えると、ログ ファイルへのほとんどの書き込みが無効になります (重要な情報は常にログに記録されます)。問題を報告する前に、必ずこの設定をオフにしてください。",
-    "gamescope": {
-      "fpsLimiterNoFocus": "ゲームが非アクティブの場合、Gamescopeが制限すべき1秒あたりのフレームレート。",
-      "upscaleMethod": "Gamescopeが使用すべきアップスケーリング方法。",
-      "gameWidth": "ゲームで使用される横解像度。Gamescopeでは16:9のアスペクト比を想定しています。",
-      "upscaleWidth": "Gamescopeで使用される横解像度。16:9のアスペクト比を想定しています。",
-      "gameHeight": "ゲームで使用される縦解像度。Gamescopeでは16:9のアスペクト比を想定しています。",
-      "upscaleHeight": "Gamescopeで使用される縦解像度。16:9のアスペクト比を想定しています。",
-      "fpsLimiter": "Gamescopeが制限するフレーム数（例:60）",
-      "additionalOptions": "gamescopeに渡す追加のコマンドラインフラグ。",
-      "forceGrabCursor": "カーソルの可視性に応じて切り替えるのではなく、常に相対マウスモードを使用します。（アプリケーションがフォーカスを失い続ける場合に便利です）"
-    },
     "dxvknvapi": "DXVK-NVAPIは、DXVKとLinuxネイティブNVAPIの上に構築されたNVAPIの実装で、Nvidia GPU上でDLSSを使用することができます。",
     "disablePlaytimeSync": "指定したストアのサーバーとのプレイタイムの同期を無効にする（現時点ではGOGのみ対応）",
     "title": {
@@ -535,21 +524,6 @@
       "placeHolderKey": "新しいラッパー",
       "placeHolderValue": "ラッパー引数",
       "title": "ラッパーコマンド:"
-    },
-    "gamescope": {
-      "nis": "NVIDIA Image Scaling (NIS)",
-      "borderless": "ボーダーレス",
-      "fpsLimiter": "FPSリミッター",
-      "gameHeight": "縦解像度",
-      "upscaleWidth": "横解像度のアップスケール",
-      "fullscreen": "フルスクリーン",
-      "gameWidth": "横解像度",
-      "interger": "整数アップスケール",
-      "upscaleHeight": "縦解像度のアップスケール",
-      "fpsLimiterNoFocus": "FPSリミッター（非アクティブ）",
-      "stretch": "引き伸ばし",
-      "windowed": "ウィンドウ",
-      "additionalOptions": "追加オプション"
     }
   },
   "other": {
@@ -742,14 +716,6 @@
       },
       "description": "フレームレスウィンドウを使用（再起動後に適用）"
     },
-    "gamescope": {
-      "enableLimiter": "FPSリミッターを有効",
-      "enableUpscaling": "アップスケーリングを有効",
-      "missingMsg": "PATHにGamescopeが見つかりません。インストールするか、PATHに追加してください。",
-      "enableForceGrabCursor": "強制的にグラブカーソルを有効にする",
-      "missingMsgFlatpak": "互換性のあるバージョンのGamescopeが見つかりませんでした。Gamescopeのflatpakパッケージとランタイム25.08をインストールし、Heroicを再起動してください。",
-      "warningFlatpak": "互換性のあるバージョンのGamescopeが見つかりませんでした。Gamescopeのflatpakパッケージとランタイム25.08をインストールし、Heroicを再起動してください。"
-    },
     "disablePlaytimeSync": "プレイ時間の同期を無効",
     "experimental_features": {
       "enableNewDesign": "新デザイン",
@@ -840,7 +806,6 @@
       "other": "その他",
       "sync": "クラウドセーブ同期",
       "wineExt": "Wine Extensions",
-      "gamescope": "Gamescope",
       "systemInformation": "システム情報",
       "legacy": "レガシー設定"
     },
@@ -877,9 +842,6 @@
     },
     "experimental_features": {
       "title": "実験的機能"
-    },
-    "gamescope": {
-      "searchMsg": "Gamescope実行ファイルを検索しています。"
     },
     "offline": {
       "warning": "このゲームは明確にオフラインモードを許可していません。ゲームが動作しない場合があります。"

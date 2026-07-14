@@ -492,17 +492,6 @@
       "valid_codes": "Valid language codes are game-dependant."
     },
     "gamemode": "Feral GameMode applies automatic and temporary tweaks to the system when running games. Enabling may improve performance.",
-    "gamescope": {
-      "additionalOptions": "Additional commandline flags to pass into gamescope.",
-      "forceGrabCursor": "Always use relative mouse mode instead of flipping dependent on cursor visibility. (Useful for when applications keep losing focus)",
-      "fpsLimiter": "The amount of frames gamescope should limit to. E.g. 60",
-      "fpsLimiterNoFocus": "The frame rate limit gamescope should limit per second if the game is not focused.",
-      "gameHeight": "The height resolution used by the game. A 16:9 aspect ratio is assumed by gamescope.",
-      "gameWidth": "The width resolution used by the game. A 16:9 aspect ratio is assumed by gamescope.",
-      "upscaleHeight": "The height resolution used by gamescope. A 16:9 aspect ratio is assumed.",
-      "upscaleMethod": "The upscaling method gamescope should use.",
-      "upscaleWidth": "The width resolution used by gamescope. A 16:9 aspect ratio is assumed."
-    },
     "general": "Sync with EGL if you have a working installation of the Epic Games Launcher elsewhere and want to import your games to avoid downloading them again.",
     "hide-window-on-protocol-launch": "Keeps the Heroic window hidden when a game is launched from an external shortcut, like the 'Add to Steam' feature.",
     "msync": "Msync aims to reduce wineserver overhead in CPU-intensive games. Enabling may improve performance on supported Linux kernels.",
@@ -690,21 +679,6 @@
       "placeholder": "Put here the Launcher Arguments",
       "title": "Game Arguments (To run after the command):"
     },
-    "gamescope": {
-      "additionalOptions": "Additional Options",
-      "borderless": "Borderless",
-      "fpsLimiter": "FPS Limiter",
-      "fpsLimiterNoFocus": "FPS Limiter (No Focus)",
-      "fullscreen": "Fullscreen",
-      "gameHeight": "Game Height",
-      "gameWidth": "Game Width",
-      "interger": "Integer Upscale",
-      "nis": "NVIDIA Image Scale (NIS)",
-      "stretch": "Stretch Image",
-      "upscaleHeight": "Upscale Height",
-      "upscaleWidth": "Upscale Width",
-      "windowed": "Windowed"
-    },
     "quote-args-with-spaces": "Warning: Make sure to quote args with spaces! E.g.: \"path/with spaces/\"",
     "wrapper": {
       "args": "Arguments",
@@ -837,13 +811,6 @@
     "FsrSharpnessStrenght": "FSR Sharpness Strength",
     "fsync": "Enable Fsync",
     "gamemode": "Use GameMode (Feral Game Mode needs to be installed)",
-    "gamescope": {
-      "enableForceGrabCursor": "Enable Force Grab Cursor",
-      "enableLimiter": "Enable FPS Limiter",
-      "enableUpscaling": "Enables Upscaling",
-      "missingMsg": "We could not find gamescope on the PATH. Install it or add it to the PATH.",
-      "warningFlatpak": "We could not find a compatible version of Gamescope. Install Gamescope's flatpak package with runtime {{runtimeVersion}} and restart Heroic."
-    },
     "hdr": "Enable HDR",
     "hide-window-on-protocol-launch": "Hide Heroic window when launching games from heroic:// links",
     "hideChangelogsOnStartup": "Don't show changelogs on Startup",
@@ -1007,9 +974,6 @@
         "title": "EAC runtime enabled"
       }
     },
-    "gamescope": {
-      "searchMsg": "Searching for gamescope executable."
-    },
     "launchOptions": "Launch Options",
     "legacy_warning": "Warning: The settings on this tab are mostly deprecated and might not work at all.",
     "log": {
@@ -1018,7 +982,6 @@
     "navbar": {
       "advanced": "Advanced",
       "games_settings_defaults": "Game Defaults",
-      "gamescope": "Gamescope",
       "general": "General",
       "legacy": "Legacy",
       "log": "Log",

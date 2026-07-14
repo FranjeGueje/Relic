@@ -890,7 +890,6 @@ export default class LegendaryGame implements Game {
       failureReason: launchPrepFailReason,
       rpcClient,
       gameModeBin,
-      gameScopeCommand,
       steamRuntime,
       offlineMode
     } = await prepareLaunch(gameSettings, logWriter, gameInfo, this.isNative())
@@ -941,7 +940,6 @@ export default class LegendaryGame implements Game {
     const wrappers = setupWrappers(
       gameSettings,
       gameModeBin,
-      gameScopeCommand,
       steamRuntime?.length ? [...steamRuntime] : undefined
     )
 

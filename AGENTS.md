@@ -278,6 +278,12 @@ Más estabilidad.
 
 ---
 
+# Historial
+
+Quiero que en fichero HISTORY_REMOVE.md se vaya guardando todas las tareas que se han ido haciendo y lo más importante: quitando.
+
+Que sea breve, no extenso.
+
 # Objetivo final
 
 Relic debe sentirse como un instalador de juegos para Steam.

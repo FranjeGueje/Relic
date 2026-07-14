@@ -354,17 +354,6 @@
       "wineManager": "Installeer verschillende versies van Wine, Proton, Crossover, etc."
     },
     "dxvknvapi": "DXVK-NVAPI is een implementatie van NVAPI gebouwd bovenop DXVK en het linux native NVAPI, het staat toe dat DLSS werkt met Nvidia GPUs.",
-    "gamescope": {
-      "fpsLimiter": "Het aantal frames gamescope moet naar limiteren. Bijvb. 60",
-      "fpsLimiterNoFocus": "De framelimiet gamescope moet aanhouden als de game niet is gefocused.",
-      "additionalOptions": "Extra commandlijn-flags om toe te passen in gamescope.",
-      "forceGrabCursor": "Gebruik altijd de relatieve muismodus in plaats van de focus te laten wisselen afhankelijk van de zichtbaarheid van de cursor. (Handig voor wanneer applicaties steeds focus verliezen)",
-      "gameHeight": "De hoogteresolutie die het spel gebruikt. Een beeldverhouding van 16:9 wordt door gamescope aangenomen.",
-      "gameWidth": "De breedte-resolutie die het spel gebruikt. Een beeldverhouding van 16:9 wordt door gamescope aangenomen.",
-      "upscaleHeight": "De hoogteresolutie die door gamescope gebruikt wordt. Een beeldverhouding van 16:9 wordt aangenomen.",
-      "upscaleMethod": "De opschalingsmethode die gamescope moet gebruiken.",
-      "upscaleWidth": "De breedte-resolutie die gamescope gebruikt. Een beeldverhouding van 16:9 wordt aangenomen."
-    },
     "dxfpslimit": "Sets a frame rate cap for DXVK games",
     "analytics": "Staat toe dat Heroic 100% anonieme gebruiksdata mag verzamelen die helpen om de applicatie te verbeteren. Vereist herstart om toe te passen.",
     "download_proton_steam": "Wanneer ingeschakeld, GE-Proton zal direct naar de Steam compatibilieitshulpmiddelenmap worden gedownload i.p.v. Heroic's standaard pad. Het zal Steam's pad gebruiken die vaststaat in de'Standaard Steam pad' instelling hierboven.",
@@ -531,21 +520,6 @@
       "placeHolderKey": "New Wrapper",
       "placeHolderValue": "Wrapper Arguments",
       "title": "Wrapper command:"
-    },
-    "gamescope": {
-      "nis": "Nvidia beeldschaling (NIS)",
-      "gameWidth": "Game breedte",
-      "fpsLimiterNoFocus": "FPS Limiet (geen focus)",
-      "fullscreen": "Volledig scherm",
-      "gameHeight": "Game Hoogte",
-      "windowed": "In venster",
-      "additionalOptions": "Additionele opties",
-      "fpsLimiter": "FPS limiet",
-      "borderless": "Grensloos",
-      "stretch": "Afbeelding Uitrekken",
-      "upscaleWidth": "",
-      "upscaleHeight": "",
-      "interger": ""
     }
   },
   "other": {
@@ -732,13 +706,6 @@
     "alt-nile-bin": "Kies een alternatief Nijlbinair getal",
     "autodxvknvapi": "Automatisch installeren/updated van DXVK-NVAPI op Prefix",
     "msync": "Msync inschakelen",
-    "gamescope": {
-      "enableUpscaling": "Zet Upscaling aan",
-      "enableLimiter": "Zet FPS limiteerder aan",
-      "enableForceGrabCursor": "Schakel Force Grab Cursor in",
-      "missingMsg": "We konden gamescope niet vinden op het PAD. Installeer het of voeg het toe aan het PAD.",
-      "warningFlatpak": "We konden geen compatibele versie vinden van Gamescope. Installeer Gamescope's flatpak-pakketje met runtime  {{runtimeVersion}} en herstart Heroic."
-    },
     "before-launch-script-path": "Selecteer een script om uit te voeren voordat een game is opgestart",
     "frameless-window": {
       "description": "Gebruik kaderloos venster (herstart nodig)",
@@ -834,7 +801,6 @@
       "sync": "Cloud Opslag Synchronisatie",
       "wineExt": "Wine Extensions",
       "systemInformation": "Systeeminformatie",
-      "gamescope": "Gamescope",
       "legacy": ""
     },
     "open-config-file": "Open Config Bestand",
@@ -898,9 +864,6 @@
     },
     "custom_css": {
       "title": "Aangepaste CSS Stijl"
-    },
-    "gamescope": {
-      "searchMsg": "Zoeken naar uitvoerbaar gamescope bestand."
     },
     "launchOptions": "Opstartopties",
     "legacy_warning": "",

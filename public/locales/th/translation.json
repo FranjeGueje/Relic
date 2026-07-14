@@ -289,17 +289,6 @@
       "part5": "",
       "part7": ""
     },
-    "gamescope": {
-      "fpsLimiterNoFocus": "",
-      "upscaleMethod": "",
-      "gameWidth": "",
-      "upscaleWidth": "",
-      "gameHeight": "",
-      "additionalOptions": "",
-      "forceGrabCursor": "",
-      "upscaleHeight": "",
-      "fpsLimiter": ""
-    },
     "amdfsr": "",
     "button": {
       "open": "",
@@ -556,13 +545,6 @@
     "download-no-https": "",
     "customWineProton": "",
     "exit-to-tray": "",
-    "gamescope": {
-      "enableLimiter": "",
-      "enableUpscaling": "",
-      "missingMsg": "",
-      "enableForceGrabCursor": "",
-      "warningFlatpak": ""
-    },
     "enable-quick-sync-menu": "",
     "runexe": {
       "title": ""
@@ -642,7 +624,6 @@
     },
     "navbar": {
       "log": "",
-      "gamescope": "",
       "general": "",
       "advanced": "",
       "games_settings_defaults": "",
@@ -704,9 +685,6 @@
     },
     "offline": {
       "warning": ""
-    },
-    "gamescope": {
-      "searchMsg": ""
     },
     "battlEyeRuntime": {
       "installing": "",
@@ -852,21 +830,6 @@
       "value": "",
       "placeHolderKey": "",
       "placeHolderValue": ""
-    },
-    "gamescope": {
-      "nis": "",
-      "additionalOptions": "",
-      "borderless": "",
-      "windowed": "",
-      "fpsLimiter": "",
-      "gameHeight": "",
-      "upscaleWidth": "",
-      "fullscreen": "",
-      "gameWidth": "",
-      "interger": "",
-      "upscaleHeight": "",
-      "fpsLimiterNoFocus": "",
-      "stretch": ""
     },
     "wrapper": {
       "args": "",

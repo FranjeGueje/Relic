@@ -349,17 +349,6 @@
       "accessibility": "",
       "login": ""
     },
-    "gamescope": {
-      "fpsLimiterNoFocus": "",
-      "upscaleMethod": "",
-      "gameWidth": "",
-      "upscaleWidth": "",
-      "gameHeight": "",
-      "additionalOptions": "",
-      "forceGrabCursor": "",
-      "upscaleHeight": "",
-      "fpsLimiter": ""
-    },
     "button": {
       "open": "",
       "close": ""
@@ -531,21 +520,6 @@
       "placeHolderKey": "New Wrapper",
       "placeHolderValue": "Wrapper Arguments",
       "title": "Wrapper command:"
-    },
-    "gamescope": {
-      "nis": "",
-      "additionalOptions": "",
-      "borderless": "",
-      "windowed": "",
-      "fpsLimiter": "",
-      "gameHeight": "",
-      "upscaleWidth": "",
-      "fullscreen": "",
-      "gameWidth": "",
-      "upscaleHeight": "",
-      "fpsLimiterNoFocus": "",
-      "stretch": "",
-      "interger": ""
     }
   },
   "other": {
@@ -771,13 +745,6 @@
       },
       "label": ""
     },
-    "gamescope": {
-      "enableLimiter": "",
-      "enableUpscaling": "",
-      "enableForceGrabCursor": "",
-      "warningFlatpak": "",
-      "missingMsg": ""
-    },
     "enable-quick-sync-menu": "",
     "no-tray-icon": "",
     "analyticsOptIn": "",
@@ -828,7 +795,6 @@
       "other": "Ostalo",
       "sync": "Sinkronizacija spremljenih podataka u oblaku",
       "wineExt": "Wine Extensions",
-      "gamescope": "",
       "systemInformation": "",
       "legacy": ""
     },
@@ -892,9 +858,6 @@
     },
     "offline": {
       "warning": ""
-    },
-    "gamescope": {
-      "searchMsg": ""
     },
     "custom_css": {
       "title": ""

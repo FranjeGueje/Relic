@@ -514,13 +514,6 @@
       },
       "label": ""
     },
-    "gamescope": {
-      "enableLimiter": "",
-      "enableUpscaling": "",
-      "enableForceGrabCursor": "",
-      "warningFlatpak": "",
-      "missingMsg": ""
-    },
     "enable-quick-sync-menu": "",
     "no-tray-icon": "",
     "analyticsOptIn": "",
@@ -668,17 +661,6 @@
       "accessibility": "",
       "login": ""
     },
-    "gamescope": {
-      "fpsLimiterNoFocus": "",
-      "upscaleMethod": "",
-      "gameWidth": "",
-      "upscaleWidth": "",
-      "gameHeight": "",
-      "additionalOptions": "",
-      "forceGrabCursor": "",
-      "upscaleHeight": "",
-      "fpsLimiter": ""
-    },
     "button": {
       "open": "",
       "close": ""
@@ -733,21 +715,6 @@
       "placeHolderValue": "ארגומנטים לעטיפה/ממסגר",
       "title": "פקודת הממסגר/עטיפה:",
       "arguments_example": "דוגמה לארגומנטים: --arg; --extra-file=\"file-path/ with/spaces\""
-    },
-    "gamescope": {
-      "nis": "",
-      "additionalOptions": "",
-      "borderless": "",
-      "windowed": "",
-      "fpsLimiter": "",
-      "gameHeight": "",
-      "upscaleWidth": "",
-      "fullscreen": "",
-      "gameWidth": "",
-      "upscaleHeight": "",
-      "fpsLimiterNoFocus": "",
-      "stretch": "",
-      "interger": ""
     }
   },
   "other": {
@@ -796,7 +763,6 @@
       "other": "אחר",
       "sync": "סנכרן שמירות בענן",
       "systemInformation": "מידע מערכת",
-      "gamescope": "",
       "legacy": ""
     },
     "open-config-file": "פתח את קובץ התצורה",
@@ -863,9 +829,6 @@
     "legacy_warning": "",
     "offline": {
       "warning": ""
-    },
-    "gamescope": {
-      "searchMsg": ""
     },
     "custom_css": {
       "title": ""

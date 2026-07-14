@@ -601,7 +601,6 @@ export default class ZoomGame implements Game {
     const {
       success: launchPrepSuccess,
       failureReason: launchPrepFailReason,
-      gameScopeCommand,
       gameModeBin,
       steamRuntime
     } = await prepareLaunch(gameSettings, logWriter, gameInfo, this.isNative())
@@ -627,7 +626,6 @@ export default class ZoomGame implements Game {
     const wrappers = setupWrappers(
       gameSettings,
       gameModeBin,
-      gameScopeCommand,
       steamRuntime?.length ? [...steamRuntime] : undefined
     )
 

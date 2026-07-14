@@ -237,7 +237,6 @@ class GameConfigV0 extends GameConfig {
       battlEyeRuntime,
       beforeLaunchScriptPath,
       afterLaunchScriptPath,
-      gamescope,
       verboseLogs,
       advertiseAvxForRosetta
     } = GlobalConfig.get().getSettings()
@@ -275,7 +274,6 @@ class GameConfigV0 extends GameConfig {
       language: '', // we want to fallback to '' always here, fallback lang for games should be ''
       beforeLaunchScriptPath,
       afterLaunchScriptPath,
-      gamescope,
       verboseLogs,
       advertiseAvxForRosetta,
       enableQuickSavesMenu: false

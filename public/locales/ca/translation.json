@@ -339,17 +339,6 @@
     "disable_logs": "Activa aquesta opció per a desactivar la majoria de les escriptures als fitxers de registre (la informació crítica sempre es registra). Assegura't de desactivar-la abans d'informar de qualsevol problema.",
     "dxvknvapi": "DXVK-NVAPI és una implementació de NVAPI construïda sobre DXVK i Linux natiu NVAPI. Permet l'ús de DLSS en les GPU de Nvidia.",
     "disablePlaytimeSync": "Desactiva la sincronització del temps de joc amb els servidors d'una botiga determinada. Actualment, només ho suporta el GOG.",
-    "gamescope": {
-      "fpsLimiter": "El nombre de FPS límit del gamescope, com ara 60",
-      "fpsLimiterNoFocus": "El límit de FPS que ha d'aplicar gamescope si el joc no està en primer pla.",
-      "upscaleMethod": "El mètode d'escalatge que hauria de fer servir el gamescope.",
-      "gameWidth": "La resolució horitzontal del joc. El gamescope assumeix una relació 16:9.",
-      "upscaleWidth": "La resolució horitzontal que farà servir el gamescope. S'assumeix una relació d'aspecte 16:9.",
-      "gameHeight": "La resolució vertical del joc. El gamescope assumeix una relació 16:9.",
-      "upscaleHeight": "La resolució vertical que farà servir el gamescope. S'assumeix una relació d'aspecte 16:9.",
-      "additionalOptions": "Opcions d'ordre de comandes addicionals per al gamescope",
-      "forceGrabCursor": "Fes servir sempre el mode de ratolí relatiu en lloc del gir dependent de la visibilitat del cursor. (Útil quan les aplicacions perden el focus)"
-    },
     "title": {
       "accessibility": "Accessibilitat",
       "login": "Inici de sessió",
@@ -542,21 +531,6 @@
       "placeHolderKey": "Embolcall nou",
       "placeHolderValue": "Paràmetres de l'embolcall",
       "title": "Ordre de l'embolcall:"
-    },
-    "gamescope": {
-      "nis": "Escalatge d'Imatges de NVIDIA (NIS)",
-      "borderless": "Sense vores",
-      "fpsLimiter": "Limitador de FPS",
-      "gameHeight": "Mida vertical del joc",
-      "upscaleWidth": "Mida horitzontal de l'escalatge",
-      "fullscreen": "Pantalla completa",
-      "gameWidth": "Mida horitzontal del joc",
-      "upscaleHeight": "Mida vertical de l'escalatge",
-      "fpsLimiterNoFocus": "Limitador de FPS (sense el focus)",
-      "stretch": "Estira la imatge",
-      "interger": "Escalatge enter",
-      "additionalOptions": "Opcions addicionals",
-      "windowed": "En finestra"
     }
   },
   "other": {
@@ -758,14 +732,6 @@
       },
       "description": "Mostra la finestra sense marc (requereix reiniciar)"
     },
-    "gamescope": {
-      "enableLimiter": "Activa el limitador de FPS",
-      "enableUpscaling": "Activa l'escalatge",
-      "missingMsg": "No s'ha trobat el gamescope a PATH. Instal·la'l o afegeix-lo a PATH.",
-      "enableForceGrabCursor": "Activa la captura forçada de cursor",
-      "missingMsgFlatpak": "No hem pogut trobar una versió compatible del Gamescope. Instal·la el paquet flatpak del Gamescope amb Runtime 25.08 i reinicia l'Heroic.",
-      "warningFlatpak": "No hem pogut trobar una versió compatible del Gamescope. Instal·la el paquet flatpak del Gamescope amb l'entorn d'execució {{runtimeVersion}} i reinicia l'Heroic."
-    },
     "after-launch-script-path": "Selecciona un script que s'executarà després de sortir del joc",
     "msync": "Activa l'Msync",
     "before-launch-script-path": "Selecciona un script que s'executarà abans que s'iniciï el joc",
@@ -852,7 +818,6 @@
       "sync": "Sincronització de desades al núvol",
       "wineExt": "Extensions del Wine",
       "systemInformation": "Informació del sistema",
-      "gamescope": "Gamescope",
       "legacy": "Obsolets"
     },
     "open-config-file": "Obre el fitxer de configuració",
@@ -888,9 +853,6 @@
     },
     "experimental_features": {
       "title": "Funcions experimentals"
-    },
-    "gamescope": {
-      "searchMsg": "Es cerca l'executable del gamescope."
     },
     "offline": {
       "warning": "Aquest joc no permet de manera explícita el mode fora de línia, activa-ho sota risc propi. El joc podria no funcionar."

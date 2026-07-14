@@ -156,7 +156,6 @@ export async function launchGame(
       success: launchPrepSuccess,
       failureReason: launchPrepFailReason,
       rpcClient,
-      gameScopeCommand,
       gameModeBin,
       steamRuntime
     } = await prepareLaunch(gameSettings, logWriter, gameInfo, isNative)
@@ -168,7 +167,6 @@ export async function launchGame(
     const wrappers = setupWrappers(
       gameSettings,
       gameModeBin,
-      gameScopeCommand,
       steamRuntime?.length ? [...steamRuntime] : undefined
     )
 

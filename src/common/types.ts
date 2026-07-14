@@ -238,7 +238,6 @@ export interface GameSettings {
   enableWineWayland: boolean
   enableHDR: boolean
   enableWoW64: boolean
-  gamescope: GameScopeSettings
   enviromentOptions: EnviromentVariable[]
   ignoreGameUpdates: boolean
   language: string
@@ -437,7 +436,6 @@ export interface LaunchPreperationResult {
   failureReason?: string
   rpcClient?: RpcClient
   gameModeBin?: string
-  gameScopeCommand?: string[]
   steamRuntime?: string[]
   offlineMode?: boolean
 }
@@ -808,21 +806,6 @@ export interface WindowProps extends Electron.Rectangle {
   frame?: boolean
   titleBarStyle?: 'default' | 'hidden' | 'hiddenInset'
   titleBarOverlay?: TitleBarOverlay | boolean
-}
-
-interface GameScopeSettings {
-  enableUpscaling: boolean
-  enableLimiter: boolean
-  enableForceGrabCursor: boolean
-  windowType: string
-  gameWidth: string
-  gameHeight: string
-  upscaleWidth: string
-  upscaleHeight: string
-  upscaleMethod: string
-  fpsLimiter: string
-  fpsLimiterNoFocus: string
-  additionalOptions: string
 }
 
 export type InstallInfo =

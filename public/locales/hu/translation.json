@@ -336,17 +336,6 @@
       "part2": "Más hely esetén használj egy szimbolikus linket az egyik mappához"
     },
     "disable_logs": "Jelöld be ezt a négyzetet, hogy letiltsd a legtöbb írást a naplófájlokba (a kritikus információk mindig naplózásra kerülnek). Mielőtt bármilyen problémát jelentenél, feltétlenül kapcsold KI ezt a beállítást.",
-    "gamescope": {
-      "fpsLimiterNoFocus": "A másodpercenkénti képfrissítési sebesség, amelyre a gamescope korlátozva van, amikor a játék nincs fókuszban.",
-      "upscaleMethod": "A felskálázási mód, melyet a gamescope használ.",
-      "gameWidth": "A játék által használt szélességi felbontás. A gamescope 16:9-es képarányt feltételez.",
-      "upscaleWidth": "A gamescope által használt szélességi felbontás. 16:9-es képarányt feltételez.",
-      "gameHeight": "A játék által használt magassági felbontás. A gamescope 16:9-es képarányt feltételez.",
-      "fpsLimiter": "A gamescope képkockaszámkorlátja. Például 60.",
-      "upscaleHeight": "A gamescope által használt magassági felbontás. 16:9-es képarányt feltételez.",
-      "additionalOptions": "További átadandó parancssori kapcsolók a gamescope-hoz.",
-      "forceGrabCursor": "Mindig relatív egérmód használata a kurzor láthatóságától függő váltás helyett. (Hasznos, ha az alkalmazások elveszítik a fókuszt)"
-    },
     "dxvknvapi": "DXVK-NVAPI a NVAPI egy megvalósítása, amely a DXVK-ra és a Linux eredeti NVAPI-jára épül, és lehetővé teszi a DLSS használatát az Nvidia videókártyákon.",
     "disablePlaytimeSync": "Letiltja a játék közbeni szinkronizációt az adott áruház kiszolgálóival (jelenleg csak a GOG támogatott)",
     "title": {
@@ -541,21 +530,6 @@
       "placeHolderKey": "Új csomagoló",
       "placeHolderValue": "Csomagoló argumentumai",
       "title": "Csomagoló parancsa:"
-    },
-    "gamescope": {
-      "nis": "NVIDIA képskálázás (NIS)",
-      "borderless": "Keret nélküli",
-      "fpsLimiter": "FPS korlátozó",
-      "gameHeight": "Játék magassága",
-      "upscaleWidth": "Szélesség felskálázása",
-      "fullscreen": "Teljes képernyős",
-      "gameWidth": "Játék szélessége",
-      "upscaleHeight": "Magasság felskálázása",
-      "fpsLimiterNoFocus": "FPS korlátozó (fókuszon kívül)",
-      "interger": "Egészértékű felskálázás",
-      "stretch": "Kép nyújtása",
-      "windowed": "Ablakos mód",
-      "additionalOptions": "További kapcsolók"
     }
   },
   "other": {
@@ -748,14 +722,6 @@
       },
       "description": "Keret nélküli ablak használata (újraindítás szükséges)"
     },
-    "gamescope": {
-      "enableUpscaling": "Engedélyezi a felskálázást",
-      "missingMsg": "A gamescope nem található a PATH-on. Telepítsd, vagy add hozzá a PATH-hoz.",
-      "enableLimiter": "FPS korlátozó engedélyezése",
-      "enableForceGrabCursor": "Kurzor erőltetett megragadásának engedélyezése",
-      "missingMsgFlatpak": "Nem található a Gamescope kompatibilis verziója. Telepítse a Gamescope flatpak csomagját a 25.08-as futtatókörnyezettel, és indítsa újra a Heroicot.",
-      "warningFlatpak": "Nem található a Gamescope kompatibilis verziója. Telepítsd a Gamescope flatpak csomagját a 25.08-as futtatókörnyezettel és indítsd újra a Heroicot."
-    },
     "disablePlaytimeSync": "Játék közbeni szinkronizáció letiltása",
     "experimental_features": {
       "enableNewDesign": "Új dizájn",
@@ -857,7 +823,6 @@
       "sync": "Felhőmentések szinkronizálása",
       "wineExt": "Wine Extensions",
       "systemInformation": "Rendszer-információk",
-      "gamescope": "Gamescope",
       "legacy": "Örökölt"
     },
     "open-config-file": "Beállítófájl megnyitása",
@@ -893,9 +858,6 @@
     },
     "experimental_features": {
       "title": "Kísérleti funkciók"
-    },
-    "gamescope": {
-      "searchMsg": "A gamescope indítófájljának keresése."
     },
     "advanced": {
       "clearCache": {

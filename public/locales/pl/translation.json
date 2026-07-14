@@ -338,17 +338,6 @@
     "disable_logs": "Zaznacz to pole, aby wyłączyć większość zapisów w logach (krytyczne informacje są zawsze rejestrowane). Pamiętaj, aby ODZNACZYĆ to ustawienie przed zgłoszeniem jakiegokolwiek problemu.",
     "dxvknvapi": "DXVK-NVAPI jest implementacją NVAPI zbudowaną na postawie DXVK i natywnego NVAPI Linuksa, pozwala na używanie DLSS na GPU Nvidii.",
     "disablePlaytimeSync": "Wyłącza synchronizację czasu gry z serwerem danego sklepu (obecnie jedynie GOG jest wspierany)",
-    "gamescope": {
-      "fpsLimiterNoFocus": "Limit klatek na sekundę, który gamescope powinien zastosować, jeżeli kursor nie jest skupiony na grze.",
-      "upscaleMethod": "Metoda skalowania, która powinna być stosowana przez gamescope.",
-      "gameWidth": "Szerokość (rozdzielczość) stosowana przez grę. Gamescope zakłada proporcje ekranu w postaci 16:9.",
-      "upscaleWidth": "Szerokość (rozdzielczość) używana przez gamescope. Przyjmuje się proporcje 16:9.",
-      "gameHeight": "Wysokość (rozdzielczość) stosowana przez grę. Gamescope zakłada proporcje ekranu w postaci 16:9.",
-      "upscaleHeight": "Wysokość (rozdzielczość) używana przez gamescope. Przyjmuje się proporcje 16:9.",
-      "fpsLimiter": "Limit klatek na sekundę, który powinien zastosować gamescope; np. 60",
-      "additionalOptions": "Dodatkowe argumenty linii poleceń dla gamescope.",
-      "forceGrabCursor": "Zawsze używaj trybu relatywnego myszy zamiast odwracania w zależności od widoczności kursora (przydatne, gdy aplikacje tracą skupienie)"
-    },
     "title": {
       "accessibility": "Ułatwienia dostępu",
       "login": "Logowanie",
@@ -541,21 +530,6 @@
       "placeHolderKey": "Nowy Wrapper",
       "placeHolderValue": "Argumenty Wrappera",
       "title": "Polecenie Wrappera:"
-    },
-    "gamescope": {
-      "nis": "Skalowanie NVIDIA NIS",
-      "borderless": "Bez ramki",
-      "fpsLimiter": "Ogranicznik FPS",
-      "gameHeight": "Wysokość gry",
-      "upscaleWidth": "Szerokość skalowania",
-      "fullscreen": "Pełny ekran",
-      "gameWidth": "Szerokość gry",
-      "interger": "Skalowanie całkowite",
-      "upscaleHeight": "Wysokość skalowania",
-      "fpsLimiterNoFocus": "Ograniczenie FPS (w tle)",
-      "stretch": "Rozciągnij obraz",
-      "additionalOptions": "Opcje dodatkowe",
-      "windowed": "W oknie"
     }
   },
   "other": {
@@ -757,14 +731,6 @@
       },
       "description": "Użyj okna bez ramki (wymaga restartu)"
     },
-    "gamescope": {
-      "enableLimiter": "Włącz ograniczenie klatek na sekundę",
-      "enableUpscaling": "Włącz skalowanie",
-      "missingMsg": "Nie mogliśmy znaleźć gamescope w ścieżce PATH. Zainstaluj go lub dodaj do ścieżki PATH.",
-      "enableForceGrabCursor": "Włącz wymuszanie łapania kursora",
-      "missingMsgFlatpak": "Nie mogliśmy znaleźć zgodnej wersji Gamescope. Zainstaluj pakiet flatpak Gamescope ze środowiskiem wykonawczym 25.08 i uruchom ponownie program Heroic.",
-      "warningFlatpak": "Nie mogliśmy znaleźć kompatybilnej wersji Gamescope. Zainstaluj pakiet flatpak Gamescope ze środowiskiem wykonawczym {{runtimeVersion}} i uruchom ponownie program Heroic."
-    },
     "after-launch-script-path": "Wybierz skrypt do uruchomienia po zakończeniu gry",
     "before-launch-script-path": "Wybierz skrypt do uruchomienia przed rozpoczęciem gry",
     "msync": "Włącz Msync",
@@ -857,7 +823,6 @@
       "sync": "Synchronizuj zapisy w chmurze",
       "wineExt": "Rozszerzenia Wine",
       "systemInformation": "Informacje o systemie",
-      "gamescope": "Gamescope",
       "legacy": "Przestarzałe"
     },
     "open-config-file": "Otwórz plik konfiguracyjny",
@@ -893,9 +858,6 @@
     },
     "experimental_features": {
       "title": "Funkcje eksperymentalne"
-    },
-    "gamescope": {
-      "searchMsg": "Wyszukiwanie pliku wykonywalnego gamescope."
     },
     "offline": {
       "warning": "Ta gra nie wspiera domyślnie trybu bez internetu, włącz to na własną odpowiedzialność. Gra może nie działać."

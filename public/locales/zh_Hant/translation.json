@@ -353,17 +353,6 @@
       "close": "關閉幫助"
     },
     "dxfpslimit": "Sets a frame rate cap for DXVK games",
-    "gamescope": {
-      "fpsLimiterNoFocus": "",
-      "upscaleMethod": "",
-      "gameWidth": "",
-      "upscaleWidth": "",
-      "gameHeight": "",
-      "additionalOptions": "",
-      "forceGrabCursor": "",
-      "upscaleHeight": "",
-      "fpsLimiter": ""
-    },
     "download_proton_steam": "",
     "wine-hdr": "",
     "dxvknvapi": "",
@@ -531,21 +520,6 @@
       "placeHolderKey": "新的包裝容器",
       "placeHolderValue": "包裝容器參數",
       "title": "包裝容器命令："
-    },
-    "gamescope": {
-      "borderless": "無邊框",
-      "fullscreen": "全螢幕",
-      "fpsLimiter": "FPS 限制器",
-      "gameHeight": "遊戲高度",
-      "windowed": "視窗化",
-      "gameWidth": "遊戲寬度",
-      "additionalOptions": "額外選項",
-      "nis": "",
-      "upscaleWidth": "",
-      "upscaleHeight": "",
-      "fpsLimiterNoFocus": "",
-      "stretch": "",
-      "interger": ""
     }
   },
   "other": {
@@ -734,13 +708,6 @@
     "msync": "啟用 Esync",
     "before-launch-script-path": "選擇遊戲啟動前要執行的指令碼",
     "disablePlaytimeSync": "停用遊戲時數同步",
-    "gamescope": {
-      "enableLimiter": "啟用 FPS 限制器",
-      "enableUpscaling": "",
-      "enableForceGrabCursor": "",
-      "warningFlatpak": "",
-      "missingMsg": ""
-    },
     "experimental_features": {
       "enableHelp": "幫助元件",
       "enableNewDesign": "新設計",
@@ -829,7 +796,6 @@
       "sync": "同步雲端存檔",
       "wineExt": "Wine 擴充元件",
       "systemInformation": "系統資訊",
-      "gamescope": "",
       "legacy": ""
     },
     "open-config-file": "開啟配置檔案",
@@ -892,9 +858,6 @@
     "legacy_warning": "",
     "offline": {
       "warning": ""
-    },
-    "gamescope": {
-      "searchMsg": ""
     },
     "custom_css": {
       "title": ""

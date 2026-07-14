@@ -338,17 +338,6 @@
     "disable_logs": "ATIVE esta caixa de seleção para desativar a maior parte da escrita nos ficheiros de registo de eventos (as informações críticas são sempre registadas). Certifique-se de que DESATIVA esta definição antes de reportar um problema qualquer.",
     "dxvknvapi": "O DXVK-NVAPI é uma implementação da NVAPI construída em cima do DXVK e da NVAPI nativa do Linux, permitindo a utilização do DLSS em GPUs da Nvidia.",
     "disablePlaytimeSync": "Desativa a sincronização do tempo de jogo com os servidores da loja indicada (atualmente apenas a GOG é suportada)",
-    "gamescope": {
-      "fpsLimiterNoFocus": "Os 'FPS' que o 'gamescope' deve limitar se o jogo não estiver focado.",
-      "upscaleMethod": "O método de Aumento da Escala de Resoluções mais Baixas (upscaling) que o gamescope deve usar.",
-      "gameWidth": "A resolução de largura usada pelo jogo. É assumida uma relação de aspeto 16:9 pelo gamescope.",
-      "upscaleWidth": "A resolução de largura usada pelo gamescope. É assumida uma relação de aspeto 16:9 pelo mesmo.",
-      "gameHeight": "A resolução de altura usada pelo jogo. É assumida uma relação de aspeto 16:9 pelo gamescope.",
-      "upscaleHeight": "A resolução de altura usada pelo gamescope. É assumida uma relação de aspeto 16:9 pelo mesmo.",
-      "fpsLimiter": "A quantidade de 'FPS' que o 'gamescope' deve limitar. Exemplo: 60",
-      "additionalOptions": "Configurações adicionais da linha de comandos a passar ao gamescope.",
-      "forceGrabCursor": "Use sempre o modo de movimento relativo do rato em vez de inverter, dependendo da visibilidade do cursor. (Torna-se útil em situações em que as aplicações perdem o foco)"
-    },
     "title": {
       "accessibility": "Acessibilidade",
       "login": "Iniciar Sessão",
@@ -541,21 +530,6 @@
       "placeHolderKey": "Novo Invólucro",
       "placeHolderValue": "Argumentos do Invólucro",
       "title": "Comando do Invólucro:"
-    },
-    "gamescope": {
-      "borderless": "Sem Borda",
-      "fpsLimiter": "Limitador de Fotogramas por Segundo (FPS)",
-      "gameHeight": "Altura do Jogo",
-      "upscaleWidth": "Largura do Aumento de Escala",
-      "fullscreen": "Ecrã Inteiro",
-      "gameWidth": "Largura do Jogo",
-      "upscaleHeight": "Altura do Aumento de Escala",
-      "fpsLimiterNoFocus": "Limitador de Fotogramas por Segundo (FPS) (Sem Foco)",
-      "stretch": "Esticar Imagem",
-      "windowed": "Modo de Janela",
-      "additionalOptions": "Opções Adicionais",
-      "interger": "Escala de Número Inteiro",
-      "nis": "Escala de Imagem NVIDIA (NIS)"
     }
   },
   "other": {
@@ -757,13 +731,6 @@
       },
       "description": "Usar janela sem moldura (é necessário reiniciar a aplicação)"
     },
-    "gamescope": {
-      "enableLimiter": "Ativar Limitador de Fotogramas por Segundo (FPS)",
-      "enableUpscaling": "Ativar o Aumento de Escala de Resoluções mais Baixas (upscaling)",
-      "missingMsg": "Não foi possível encontrar o gamescope no PATH. Instale-o ou adicione-o ao PATH.",
-      "enableForceGrabCursor": "Ativar Forçar Captura do Cursor",
-      "warningFlatpak": "Não foi possível encontrar uma versão compatível do Gamescope. Instale o pacote flatpak do Gamescope com o tempo de execução {{runtimeVersion}} e reinicie o Heroic."
-    },
     "after-launch-script-path": "Selecione um script para executar após fechar o jogo",
     "before-launch-script-path": "Selecione um script para executar antes do jogo ser iniciado",
     "msync": "Ativar o Msync",
@@ -853,7 +820,6 @@
       "sync": "Sincronização de Jogos Guardados (Saves) na Nuvem",
       "wineExt": "Wine Extensions",
       "systemInformation": "Informações do Sistema",
-      "gamescope": "Gamescope",
       "legacy": "Antigo"
     },
     "open-config-file": "Abrir Ficheiro de Configuração",
@@ -889,9 +855,6 @@
     },
     "experimental_features": {
       "title": "Funcionalidades Experimentais"
-    },
-    "gamescope": {
-      "searchMsg": "À procura do executável do gamescope."
     },
     "advanced": {
       "clearCache": {

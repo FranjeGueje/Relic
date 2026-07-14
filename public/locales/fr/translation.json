@@ -339,17 +339,6 @@
     "disable_logs": "COCHEZ cette case pour désactiver la consignation de la plupart des opérations dans les rapports d'événements (les informations critiques sont toujours enregistrées). Assurez-vous de DÉSACTIVER ce paramètre avant de signaler un problème.",
     "dxvknvapi": "DXVK-NVAPI est une implémentation de NVAPI construite par dessus DXVK et la version native de NVAPI. Elle permet d'utiliser le DLSS sur les cartes graphiques Nvidia.",
     "disablePlaytimeSync": "Désactive la synchronisation du temps de jeu avec les serveurs d'une boutique donnée (seuls les services proposés par GOG sont actuellement pris en charge)",
-    "gamescope": {
-      "upscaleMethod": "La méthode de mise à l'échelle que Gamescope devrait utiliser.",
-      "gameWidth": "La largeur de la résolution utilisée par le jeu. Gamescope présuppose un format d'affichage 16/9.",
-      "upscaleWidth": "La largeur de la résolution utilisée par Gamescope. Un format d'affichage 16/9 est présupposé.",
-      "gameHeight": "La hauteur de la résolution utilisée par le jeu. Gamescope présuppose un format d'affichage 16/9.",
-      "upscaleHeight": "La hauteur de la résolution utilisée par Gamescope. Un format d'affichage 16/9 est présupposé.",
-      "fpsLimiterNoFocus": "Le nombre d'images par seconde auquel gamescope doit se limiter si le jeu est en arrière-plan.",
-      "fpsLimiter": "Le nombre d'images par seconde auquel gamescope devrait se limiter. Par ex : 60",
-      "additionalOptions": "Spécificateurs en ligne de commande supplémentaires à transmettre à gamescope.",
-      "forceGrabCursor": "Toujours utiliser le mode souris relatif au lieu de basculer en fonction de la visibilité du curseur. (Utile quand les applications ne cessent de perdre la focalisation)"
-    },
     "title": {
       "accessibility": "Accessibilité",
       "login": "Connexion",
@@ -540,21 +529,6 @@
       "placeHolderKey": "Nouveau Wrapper",
       "placeHolderValue": "Arguments du Wrapper",
       "title": "Commande du Wrapper :"
-    },
-    "gamescope": {
-      "nis": "NVIDIA Image Scale (NIS)",
-      "borderless": "Sans bordure",
-      "fpsLimiter": "Limiteur de FPS",
-      "gameHeight": "Hauteur du jeu",
-      "upscaleWidth": "Largeur de mise à l'échelle",
-      "fullscreen": "Plein écran",
-      "gameWidth": "Largeur du jeu",
-      "upscaleHeight": "Hauteur de mise à l'échelle",
-      "fpsLimiterNoFocus": "Limiteur de FPS (sans focus)",
-      "stretch": "Étirer l'image",
-      "interger": "Mise à l'échelle vers une résolution plus grande (avec un ratio entier)",
-      "windowed": "Fenêtré",
-      "additionalOptions": "Options supplémentaires"
     }
   },
   "other": {
@@ -763,14 +737,6 @@
       },
       "description": "Ouvrir Heroic dans une fenêtre sans bordures (requiert un redémarrage)"
     },
-    "gamescope": {
-      "enableLimiter": "Activer le limiteur de FPS",
-      "enableUpscaling": "Activer la mise à l'échelle",
-      "missingMsg": "Gamescope n'a pas pu être trouvé en suivant la variable PATH définie. Installez-le ou ajoutez-le manuellement à ladite variable.",
-      "enableForceGrabCursor": "Activer « Force Grab Cursor »",
-      "missingMsgFlatpak": "Impossible de trouver une version de Gamescope compatible. Installez le package flatpak Gamescope avec la runtime 25.08 et redémarrez Heroic.",
-      "warningFlatpak": "Nous n'avons pas pu trouver une version de Gamescope compatible. Installez le paquet flatpak Gamescope avec l'environnement d'exécution {{runtimeVersion}} et redémarrez Heroic."
-    },
     "msync": "Activer Msync",
     "before-launch-script-path": "Sélectionnez un script à exécuter avant le lancement du jeu",
     "after-launch-script-path": "Sélectionnez un script à exécuter après l'arrêt du jeu",
@@ -859,7 +825,6 @@
       "sync": "Synchronisation des sauvegardes",
       "wineExt": "Extensions de Wine",
       "systemInformation": "Caractéristiques du système",
-      "gamescope": "Gamescope",
       "legacy": "Obsolète"
     },
     "open-config-file": "Ouvrir le fichier de configuration",
@@ -895,9 +860,6 @@
     },
     "experimental_features": {
       "title": "Fonctionnalités expérimentales"
-    },
-    "gamescope": {
-      "searchMsg": "Recherche de l'exécutable Gamescope."
     },
     "offline": {
       "warning": "Ce jeu ne permet pas explicitement d'utiliser le mode hors-ligne, activez cette option à vos risques et périls. Le jeu pourrait ne pas fonctionner."

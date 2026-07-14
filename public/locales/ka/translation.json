@@ -314,13 +314,6 @@
     "download-no-https": "",
     "customWineProton": "",
     "exit-to-tray": "",
-    "gamescope": {
-      "enableLimiter": "",
-      "enableUpscaling": "",
-      "missingMsg": "",
-      "enableForceGrabCursor": "",
-      "warningFlatpak": ""
-    },
     "enable-quick-sync-menu": "",
     "runexe": {
       "title": ""
@@ -465,17 +458,6 @@
       "part5": "",
       "part7": ""
     },
-    "gamescope": {
-      "fpsLimiterNoFocus": "",
-      "upscaleMethod": "",
-      "gameWidth": "",
-      "upscaleWidth": "",
-      "gameHeight": "",
-      "additionalOptions": "",
-      "forceGrabCursor": "",
-      "upscaleHeight": "",
-      "fpsLimiter": ""
-    },
     "amdfsr": "",
     "button": {
       "open": "",
@@ -595,7 +577,6 @@
     "navbar": {
       "log": "ჟურნალი",
       "advanced": "დამატებით",
-      "gamescope": "Gamescope",
       "general": "ზოგადი",
       "other": "სხვა",
       "games_settings_defaults": "",
@@ -656,9 +637,6 @@
     },
     "offline": {
       "warning": ""
-    },
-    "gamescope": {
-      "searchMsg": ""
     },
     "battlEyeRuntime": {
       "installing": "",
@@ -824,21 +802,6 @@
       "title": "",
       "key": "",
       "placeHolderValue": ""
-    },
-    "gamescope": {
-      "borderless": "უსაზღვრო",
-      "fullscreen": "სრულ ეკრანზე",
-      "windowed": "ფანჯარაში",
-      "nis": "",
-      "additionalOptions": "",
-      "fpsLimiter": "",
-      "gameHeight": "",
-      "upscaleWidth": "",
-      "gameWidth": "",
-      "interger": "",
-      "upscaleHeight": "",
-      "fpsLimiterNoFocus": "",
-      "stretch": ""
     },
     "wrapper": {
       "args": "არგუმენტები",

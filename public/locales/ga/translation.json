@@ -241,17 +241,6 @@
       "valid_codes": "Braitheann cóid theanga bailí ar an gcluiche."
     },
     "gamemode": "Cuireann Feral GameMode coigeartuithe uathoibríocha agus sealadacha i bhfeidhm ar an gcóras agus cluichí á reáchtáil. D’fhéadfadh feabhas a chur ar fheidhmíocht má chuirtear ar chumas é.",
-    "gamescope": {
-      "additionalOptions": "Bratacha breise líne ordaithe le cur isteach i Gamescope.",
-      "forceGrabCursor": "Bain úsáid as modh coibhneasta na luiche i gcónaí in ionad smeach ag brath ar infheictheacht an chúrsóra. (Úsáideach nuair a bhíonn feidhmchláir ag cailleadh fócas i gcónaí)",
-      "fpsLimiter": "Ba chóir líon na bhfrámaí sa Gamescope a theorannú go. M.sh. 60",
-      "fpsLimiterNoFocus": "Ba cheart go mbeadh teorainn in aghaidh an tsoicind leis an ráta fráma ar an gamescope mura bhfuil an cluiche dírithe.",
-      "gameHeight": "An taifeach airde a úsáideann an cluiche. Glacann Gamescope le cóimheas gné 16:9.",
-      "gameWidth": "An taifeach leithead a úsáideann an cluiche. Glacann Gamescope le cóimheas gné 16:9.",
-      "upscaleHeight": "An taifeach airde a úsáideann Gamescope. Glactar leis go bhfuil cóimheas gné 16:9 ann.",
-      "upscaleMethod": "An modh uasghrádaithe ba chóir do Gamescope a úsáid.",
-      "upscaleWidth": "An taifeach leithead a úsáideann Gamescope. Glactar leis go bhfuil cóimheas gné 16:9 ann."
-    },
     "general": "Sioncrónaigh le EGL má tá suiteáil oibre den Epic Games Launcher agat in áit eile agus más mian leat do chluichí a allmhairiú chun nach mbeidh ort iad a íoslódáil arís.",
     "msync": "Tá sé mar aidhm ag Msync forchostais fíona a laghdú i gcluichí a bhfuil go leor LAP iontu. D’fhéadfadh feabhas a chur ar fheidhmíocht ar chroíthe Linux a dtacaítear leo má chuirtear ar chumas é.",
     "other": {
@@ -387,13 +376,6 @@
     "FsrSharpnessStrenght": "Neart Géire FSR",
     "fsync": "Cumasaigh Fsync",
     "gamemode": "Bain úsáid as GameMode (ní mór Feral Game Mode a shuiteáil)",
-    "gamescope": {
-      "enableForceGrabCursor": "Cumasaigh Cúrsóir Greamaithe Fórsa",
-      "enableLimiter": "Cumasaigh Teorannóir FPS",
-      "enableUpscaling": "Cumasaíonn sé Uasghrádú",
-      "missingMsg": "Ní raibh muid in ann Gamescope a aimsiú ar an PATH. Suiteáil é nó cuir leis an PATH é.",
-      "warningFlatpak": "Ní bhfuaireamar leagan comhoiriúnach de Gamescope. Suiteáil pacáiste flatpak Gamescope le ham-rith {{runtimeVersion}} agus atosú Heroic."
-    },
     "hdr": "Cumasaigh HDR",
     "hideChangelogsOnStartup": "Ná taispeáin logaí athraithe ar an Tosaithe",
     "ignoreGameUpdates": "Déan neamhaird de nuashonruithe cluiche",
@@ -780,21 +762,6 @@
       "placeholder": "Cuir na hargóintí tosaitheora anseo",
       "title": "Argóintí Cluiche (Le rith i ndiaidh an ordaithe):"
     },
-    "gamescope": {
-      "additionalOptions": "Roghanna Breise",
-      "borderless": "Gan teorainn",
-      "fpsLimiter": "Teorannóir FPS",
-      "fpsLimiterNoFocus": "Teorannóir FPS (Gan Fócas)",
-      "fullscreen": "Lánscáileán",
-      "gameHeight": "Airde Cluiche",
-      "gameWidth": "Leithead an Chluiche",
-      "interger": "Uasghrádú Slánuimhir",
-      "nis": "Scála Íomhá NVIDIA (NIS)",
-      "stretch": "Íomhá Sínte",
-      "upscaleHeight": "Airde Uasghrádaithe",
-      "upscaleWidth": "Leithead Uasghrádaithe",
-      "windowed": "Fuinneogach"
-    },
     "quote-args-with-spaces": "Rabhadh: Bí cinnte spásanna a úsáid sna hargóintí! M.sh.: \"cosán/le spásanna/\"",
     "wrapper": {
       "args": "Argóintí",
@@ -883,16 +850,12 @@
         "title": "Am rith EAC cumasaithe"
       }
     },
-    "gamescope": {
-      "searchMsg": "Ag cuardach comhad inrite gamescope."
-    },
     "log": {
       "long-log-hint": "Log gearrtha, taispeántar na 1000 líne dheireanacha!"
     },
     "navbar": {
       "advanced": "Ardleibhéil",
       "games_settings_defaults": "Réamhshocruithe Cluiche",
-      "gamescope": "Gamescope",
       "general": "Ginearálta",
       "log": "Logáil",
       "other": "Eile",

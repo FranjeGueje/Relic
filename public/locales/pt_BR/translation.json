@@ -339,17 +339,6 @@
     "disable_logs": "Ative esta caixa de seleção para desativar a maioria das gravações em arquivos de log (informações críticas sempre são registradas). Certifique-se de desativar essa configuração antes de relatar qualquer problema.",
     "dxvknvapi": "DXVK-NVAPI é uma implementação de NVAPI construído sobre DXVK e o NVAPI nativo linux, ele permite o uso de DLSS em GPUs Nvidia.",
     "disablePlaytimeSync": "Desativa a sincronização do tempo de jogo com determinados servidores da loja (atualmente somente GOG é suportada)",
-    "gamescope": {
-      "fpsLimiterNoFocus": "O limite de frame rate que o gamescope deve aplicar por segundo se o jogo não estiver em foco.",
-      "upscaleMethod": "O método de upscaling que o gamescope deve usar.",
-      "gameWidth": "A resolução de largura usada pelo jogo. Uma proporção de tela 16:9 é assumida pelo gamescope.",
-      "upscaleWidth": "A resolução de largura usada pelo gamescope. Uma proporção de tela 16:9 é assumida.",
-      "gameHeight": "A resolução de altura usada pelo jogo. Uma proporção de tela 16:9 é assumida pelo gamescope.",
-      "upscaleHeight": "A resolução de altura usada pelo gamescope. Uma proporção de tela 16:9 é assumida.",
-      "fpsLimiter": "A quantidade de frames que o gamescope deve limitar. Ex: 60",
-      "additionalOptions": "Flags adicionais de linha de comando para passar ao gamescope.",
-      "forceGrabCursor": "Sempre usar o modo relativo do mouse em vez de inverter dependendo da visibilidade do cursor. (Útil para quando os aplicativos continuam perdendo o foco)"
-    },
     "title": {
       "accessibility": "Acessibilidade",
       "login": "Login",
@@ -542,21 +531,6 @@
       "placeHolderKey": "Novo Wrapper",
       "placeHolderValue": "Argumentos do Wrapper",
       "title": "Comando do Wrapper:"
-    },
-    "gamescope": {
-      "nis": "NVIDIA Image Scale (NIS)",
-      "borderless": "Sem borda",
-      "fpsLimiter": "Limitador de FPS",
-      "gameHeight": "Altura do jogo",
-      "upscaleWidth": "Aprimoramento (Upscale Width)",
-      "fullscreen": "Tela cheia",
-      "gameWidth": "Largura do jogo",
-      "upscaleHeight": "Aprimoramento (Upscale Height)",
-      "fpsLimiterNoFocus": "Limitador de FPS (Sem foco)",
-      "stretch": "Esticar imagem",
-      "windowed": "Janela",
-      "additionalOptions": "Opções adicionais",
-      "interger": "Aprimoramento (Integer Upscale)"
     }
   },
   "other": {
@@ -759,14 +733,6 @@
       },
       "description": "Usar janela sem moldura (requer reinicialização)"
     },
-    "gamescope": {
-      "enableLimiter": "Habilitar limitador de FPS",
-      "enableUpscaling": "Permite aprimoramento de escala (Upscaling)",
-      "missingMsg": "Não foi possível encontrar o gamescope no PATH. Instale-o ou adicione-o no PATH.",
-      "enableForceGrabCursor": "Habilitar a captura forçada do cursor",
-      "missingMsgFlatpak": "Não conseguimos encontrar uma versão compatível do Gamescope. Instale o Gamescope pelo Flatpak com o runtime 25.08 e reinicie o Heroic.",
-      "warningFlatpak": "Não conseguimos encontrar uma versão compatível do Gamescope. Instale o Gamescope pelo Flatpak com o runtime {{runtimeVersion}} e reinicie o Heroic."
-    },
     "msync": "Habilitar Msync",
     "allow_installation_broken_anticheat": {
       "confirmation": {
@@ -859,7 +825,6 @@
       "sync": "Sincronização de saves na Nuvem",
       "wineExt": "Extensões do Wine",
       "systemInformation": "Informações do sistema",
-      "gamescope": "Gamescope",
       "legacy": "Legado"
     },
     "open-config-file": "Abrir arquivo de configuração",
@@ -895,9 +860,6 @@
     },
     "experimental_features": {
       "title": "Recursos experimentais"
-    },
-    "gamescope": {
-      "searchMsg": "Procurando pelo executável do gamescope."
     },
     "offline": {
       "warning": "Este jogo não permite explicitamente o modo offline, ative-o por sua conta e risco. O jogo pode não funcionar."

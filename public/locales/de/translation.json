@@ -338,17 +338,6 @@
     "disable_logs": "Aktiviere dieses Kontrollkästchen, um die meisten Schreibvorgänge in Logs zu deaktivieren (kritische Informationen werden immer protokolliert). Vergewissere dich, dass diese Einstellung deaktiviert ist, bevor du ein Problem meldest.",
     "dxvknvapi": "DXVK-NVAPI ist eine Implementierung von NVAPI, welche auf DXVK und der Linux-nativen NVAPI basiert, sie ermöglicht die Verwendung von DLSS auf Nvidia-Grafikkarten.",
     "disablePlaytimeSync": "Deaktiviert Spielzeit-Synchronisation mit entsprechendem Store-Server (Aktuell wird nur GOG unterstützt)",
-    "gamescope": {
-      "fpsLimiterNoFocus": "Die Bildrate auf welche gamescope limitieren soll, wenn das Spiel den Fokus verliert.",
-      "upscaleMethod": "Die Upscaling-Methode, die gamescope verwenden soll.",
-      "gameWidth": "Die vom Spiel verwendete Auflösung in der Breite. Ein Seitenverhältnis von 16:9 wird von gamescope angenommen.",
-      "upscaleWidth": "Die von gamescope verwendete Auflösung in der Breite. Es wird ein Seitenverhältnis von 16:9 angenommen.",
-      "gameHeight": "Die vom Spiel verwendete Auflösung in der Höhe. Ein Seitenverhältnis von 16:9 wird von gamescope angenommen.",
-      "upscaleHeight": "Die von gamescope verwendete Auflösung in der Höhe. Es wird ein Seitenverhältnis von 16:9 angenommen.",
-      "fpsLimiter": "Die Anzahl der Bilder pro Sekunde, auf die Gamescope begrenzt werden soll. z. B. 60",
-      "additionalOptions": "Weitere Befehlszeilenflags zur Weiterleitung an Gamescope.",
-      "forceGrabCursor": "Immer den relativen Mausmodus verwenden, anstatt je nach Sichtbarkeit des Cursors umzuschalten. (Nützlich, wenn Anwendungen ständig den Fokus verlieren)"
-    },
     "title": {
       "accessibility": "Barrierefreiheit",
       "login": "Login",
@@ -541,21 +530,6 @@
       "placeHolderKey": "Neuer Wrapper",
       "placeHolderValue": "Wrapper-Argumente",
       "title": "Wrapper-Befehl:"
-    },
-    "gamescope": {
-      "nis": "NVIDIA Bildskalierung (NIS)",
-      "borderless": "Randlos",
-      "fpsLimiter": "FPS-Begrenzer",
-      "gameHeight": "Spielhöhe",
-      "upscaleWidth": "Upscale Breite",
-      "fullscreen": "Vollbild",
-      "gameWidth": "Spielbreite",
-      "upscaleHeight": "Upscale Höhe",
-      "fpsLimiterNoFocus": "FPS-Begrenzer (kein Fokus)",
-      "stretch": "Bild strecken",
-      "interger": "Integer Hochskalierung",
-      "additionalOptions": "Weitere Optionen",
-      "windowed": "Fenstermodus"
     }
   },
   "other": {
@@ -757,14 +731,6 @@
       },
       "description": "Rahmenloses Fenster verwenden (Neustart erforderlich)"
     },
-    "gamescope": {
-      "enableLimiter": "FPS-Begrenzer einschalten",
-      "enableUpscaling": "Ermöglicht Hochskalierung",
-      "missingMsg": "Gamescope wurde nicht in der PATH-Variable gefunden. Installiere es oder füge es der PATH-Variable hinzu.",
-      "enableForceGrabCursor": "Aktiviere \"Erzwinge Ergreifen des Cursor\"",
-      "missingMsgFlatpak": "Wir konnten keine kompatible Version von Gamescope finden. Bitte Installiere das Gamescope Paket via Flatpak mit der Runtimeversion 25.08 und starte Heroic neu.",
-      "warningFlatpak": "Es konnte keine kompatible Version von Gamescope gefunden werden. Installiere das Flatpak-Paket von Gamescope mit der Runtime {{runtimeVersion}} und starte Heroic neu."
-    },
     "after-launch-script-path": "Wähle ein Skript aus, das nach dem Beenden des Spiels ausgeführt werden soll",
     "before-launch-script-path": "Wähle ein Skript aus, das vor dem Start des Spiels ausgeführt werden soll",
     "msync": "Msync Aktivieren",
@@ -851,7 +817,6 @@
       "sync": "Cloud-Speichersynchronisation",
       "wineExt": "Wine-Erweiterungen",
       "systemInformation": "Systeminformationen",
-      "gamescope": "Gamescope",
       "legacy": "Veraltet"
     },
     "open-config-file": "Konfigurationsdatei öffnen",
@@ -887,9 +852,6 @@
     },
     "experimental_features": {
       "title": "Experimentelle Funktionen"
-    },
-    "gamescope": {
-      "searchMsg": "Suche nach der ausführbaren Datei für gamescope."
     },
     "offline": {
       "warning": "Dieses Spiel erlaubt nicht explizit eine deaktivierte Internetverbindung. Aktiviere dies auf eigene Gefahr! Das Spiel könnte nicht ordnungsgemäß funktionieren."

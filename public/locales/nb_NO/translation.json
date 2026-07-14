@@ -361,17 +361,6 @@
       "open": "Åpne hjelp"
     },
     "dxvknvapi": "DXVK-NVAPI er en implementering av NVAPI bygget på toppen av DXVK og den Linux-native NVAPI. Den muliggjør bruk av DLSS på Nvidia GPU-er.",
-    "gamescope": {
-      "fpsLimiter": "Antall bilder per sekund gamescope skal begrense til. F.eks. 60",
-      "additionalOptions": "Ekstra kommandolinjeflagg som skal sendes til gamescope.",
-      "fpsLimiterNoFocus": "Bildefrekvensgrensen som gamescope skal begrense per sekund hvis spillet ikke er i fokus.",
-      "gameHeight": "Høydeoppløsningen er brukt av spillet. Sideforholdet 16:9 er antatt av gamescope.",
-      "gameWidth": "Høydeoppløsningen er brukt av spillet. Sideforholdet 16:9 er antatt av gamescope.",
-      "upscaleHeight": "Høydeoppløsningen brukt av gamescope. Sideforholdet 16:9 er antatt.",
-      "upscaleWidth": "Breddeoppløsningen er brukt av gamescrope. Sideforholdet 16:9 er antatt.",
-      "upscaleMethod": "Oppskaleringsmetoden gamescope burde bruke.",
-      "forceGrabCursor": "Bruk alltid relativ musemodus i stedet for å veksle avhengig av markørens synlighet. (Nyttig når applikasjoner stadig mister fokus)"
-    },
     "msync": "Msync har som mål å reduserer wineserver-overhead i CPU-intensive spill. Ved å skru på dette kan ytelse på støttede Linux-kjerner forbedres.",
     "dxfpslimit": "Setter en maksgrense for bildehastighet for DirectX-spill (9-12)",
     "advertiseAvxForRosetta": "Skrur på AVX-instruksjoner når Windows-spill kjøres gjennom Rosetta på Apple Silicon Mac-er. Dette kan være nødvendig for enkelte spill som Death Stranding som trenger AVX for å fungere.",
@@ -541,21 +530,6 @@
       "placeHolderKey": "Ny wrapper",
       "placeHolderValue": "Innpakningsargumenter",
       "title": "Wrapper kommando:"
-    },
-    "gamescope": {
-      "additionalOptions": "Ytterlige alternativer",
-      "fpsLimiterNoFocus": "FPS begrenser (Ingen fokus)",
-      "nis": "NVIDIA-bildeskala (NIS)",
-      "fpsLimiter": "FPS begrenser",
-      "fullscreen": "Fullskjerm",
-      "gameHeight": "Spillhøyde",
-      "gameWidth": "Spillbredde",
-      "upscaleHeight": "Oppskaler høyde",
-      "upscaleWidth": "Oppskaler bredde",
-      "windowed": "Vindu",
-      "borderless": "Grenseløs",
-      "interger": "Heltallsoppskalering",
-      "stretch": "Strekk bildet"
     }
   },
   "other": {
@@ -742,14 +716,6 @@
     "alt-nile-bin": "Velg en alternativ Nile Binær",
     "autodxvknvapi": "Installer/Oppdater DXVK-NVAPI automatisk på Prefix-en",
     "disablePlaytimeSync": "Skru av spilletidssynkronisering",
-    "gamescope": {
-      "enableLimiter": "Skru på FPS begrenser",
-      "missingMsg": "Vi kunne ikke finne gamescope på STIEN. Installer den eller legg den til STIEN.",
-      "enableUpscaling": "Skru på oppskalering",
-      "enableForceGrabCursor": "Aktiver Tvungen Griping Av Musepeker",
-      "missingMsgFlatpak": "Vi kunne ikke finne en kompatibel versjon av Gamescope. Installer Gamescopes flatpak-pakke med runtime 25.08 og start Heroic på nytt.",
-      "warningFlatpak": "Vi kunne ikke finne en kompatibel versjon av Gamescope. Installer Gamescopes flatpak-pakke med runtime {{runtimeVersion}} og start Heroic på nytt."
-    },
     "msync": "Skru på Msync",
     "allow_installation_broken_anticheat": {
       "confirmation": {
@@ -849,7 +815,6 @@
       "sync": "Skylagring-synkronisering",
       "wineExt": "Wine Extensions",
       "systemInformation": "Systeminformasjon",
-      "gamescope": "Gamescope",
       "legacy": "Foreldret"
     },
     "open-config-file": "Åpne konfigurasjonsfil",
@@ -907,9 +872,6 @@
       "gpu": "GPU:",
       "gpuDriver": "Driver: {{driverVersion}}",
       "gogdlVersion": "Gogdl: {{gogdlVersion}}"
-    },
-    "gamescope": {
-      "searchMsg": "Søker etter gamescope-kjørbar fil."
     },
     "offline": {
       "warning": "Dette spillet tillater ikke eksplisitt offline-modus, slå dette på ved egen risiko. Spillet fungerer kanskje ikke."

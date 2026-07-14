@@ -349,17 +349,6 @@
       "login": ""
     },
     "msync": "",
-    "gamescope": {
-      "fpsLimiterNoFocus": "",
-      "upscaleMethod": "",
-      "gameWidth": "",
-      "upscaleWidth": "",
-      "gameHeight": "",
-      "additionalOptions": "",
-      "forceGrabCursor": "",
-      "upscaleHeight": "",
-      "fpsLimiter": ""
-    },
     "button": {
       "open": "",
       "close": ""
@@ -531,21 +520,6 @@
       "placeHolderKey": "Yeni Qapaq",
       "placeHolderValue": "Sarmalayıcı Arqumentlər",
       "title": "Sarma əmri:"
-    },
-    "gamescope": {
-      "nis": "",
-      "additionalOptions": "",
-      "borderless": "",
-      "windowed": "",
-      "fpsLimiter": "",
-      "gameHeight": "",
-      "upscaleWidth": "",
-      "fullscreen": "",
-      "gameWidth": "",
-      "upscaleHeight": "",
-      "fpsLimiterNoFocus": "",
-      "stretch": "",
-      "interger": ""
     }
   },
   "other": {
@@ -770,13 +744,6 @@
       },
       "label": ""
     },
-    "gamescope": {
-      "enableLimiter": "",
-      "enableUpscaling": "",
-      "enableForceGrabCursor": "",
-      "warningFlatpak": "",
-      "missingMsg": ""
-    },
     "enable-quick-sync-menu": "",
     "no-tray-icon": "",
     "analyticsOptIn": "",
@@ -828,7 +795,6 @@
       "other": "Digər",
       "sync": "Saxla-Sinxronizasiya",
       "wineExt": "Şərab uzantıları",
-      "gamescope": "",
       "systemInformation": "",
       "legacy": ""
     },
@@ -892,9 +858,6 @@
     },
     "offline": {
       "warning": ""
-    },
-    "gamescope": {
-      "searchMsg": ""
     },
     "custom_css": {
       "title": ""

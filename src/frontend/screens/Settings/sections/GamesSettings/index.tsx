@@ -32,7 +32,6 @@ import {
   WrappersTable,
   EnableDXVKFpsLimit,
   IgnoreGameUpdates,
-  Gamescope,
   BeforeLaunchScriptPath,
   AfterLaunchScriptPath,
   NvidiaPrime
@@ -166,12 +165,6 @@ export default function GamesSettings() {
             value="saves"
           />
         )}
-        {isLinux && (
-          <Tab
-            label={t('settings.navbar.gamescope', 'Gamescope')}
-            value="gamescope"
-          />
-        )}
         {isLinux && !isNative && (
           <Tab label={t('settings.navbar.legacy', 'Legacy')} value="legacy" />
         )}
@@ -240,10 +233,6 @@ export default function GamesSettings() {
 
       <TabPanel value={value} index={'saves'}>
         <SyncSaves />
-      </TabPanel>
-
-      <TabPanel value={value} index={'gamescope'}>
-        <Gamescope />
       </TabPanel>
 
       {isLinux && (

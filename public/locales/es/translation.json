@@ -339,17 +339,6 @@
     "disable_logs": "Active esta casilla de verificación para desactivar la mayoría de las escrituras en los archivos de registro (la información crítica siempre se registra). Asegúrese de DESACTIVAR esta configuración antes de informar cualquier problema.",
     "dxvknvapi": "DXVK-NVAPI es una implementación de NVAPI construida sobre DXVK y la NVAPI nativa de Linux, que permite el uso de DLSS en GPUs Nvidia.",
     "disablePlaytimeSync": "Desactiva la sincronización del tiempo de juego con el servidor de la tienda correspondiente (actualmente solo se admite GOG)",
-    "gamescope": {
-      "fpsLimiterNoFocus": "El límite de velocidad de fotogramas (fps) que debe aplicar gamescope si el juego no está en primer plano.",
-      "fpsLimiter": "El número máximo de fotogramas (fps) de gamescope, por ejemplo, es 60",
-      "upscaleMethod": "El método de escalado que gamescope debe usar.",
-      "gameWidth": "La resolución para el ancho del juego. Gamescope asume una relación de aspecto de 16:9.",
-      "upscaleWidth": "La resolución utilizada para el ancho por gamescope. Se asume una relación del aspecto de 16:9.",
-      "gameHeight": "La resolución para la altura del juego. Gamescope asume una relación de aspecto de 16:9.",
-      "upscaleHeight": "La resolución para la altura utilizada por gamescope. Se asume una relación del aspecto de 16:9.",
-      "additionalOptions": "Variables de línea de comandos adicionales para gamescope.",
-      "forceGrabCursor": "Usar modo de mouse relativo en lugar de cambiar dependiendo de la visibilidad del cursor. (Sirve para cuando las aplicaciones pierden foco)"
-    },
     "title": {
       "accessibility": "Accesibilidad",
       "login": "Iniciar Sesión",
@@ -541,21 +530,6 @@
       "placeHolderKey": "Nuevo Wrapper",
       "placeHolderValue": "Argumentos del Wrapper",
       "title": "Comando Wrapper:"
-    },
-    "gamescope": {
-      "upscaleHeight": "Altura de reescalado",
-      "nis": "NVIDIA Image Scale (NIS)",
-      "borderless": "Sin bordes",
-      "fpsLimiter": "Limitador de FPS",
-      "gameHeight": "Altura del juego",
-      "upscaleWidth": "Ancho exclusivo",
-      "fullscreen": "Pantalla completa",
-      "gameWidth": "Anchura del juego",
-      "interger": "Escalado de enteros",
-      "fpsLimiterNoFocus": "Limitador de FPS (Sin enfoque)",
-      "stretch": "Estirar la imagen",
-      "additionalOptions": "Opciones Adicionales",
-      "windowed": "Ventana"
     }
   },
   "other": {
@@ -758,14 +732,6 @@
       },
       "description": "Utilizar una ventana sin marco (requiere reinicio)"
     },
-    "gamescope": {
-      "enableLimiter": "Activar el limitador de FPS",
-      "enableUpscaling": "Permite la ampliación",
-      "missingMsg": "No podemos encontrar Gamescope en PATH. Instálelo primero o agréguelo a PATH.",
-      "missingMsgFlatpak": "No se encontró una versión compatible de Gamescope. Instalar el paquete de Flatpak de Gamescope con runtime 25.08 y reiniciar Heroic.",
-      "enableForceGrabCursor": "Activar Forzar Agarrar Cursor",
-      "warningFlatpak": "No se encontró una versión compatible de Gamescope. Instale el paquete de Flatpak de Gamescope con runtime {{runtimeVersion}} y reinicie Heroic."
-    },
     "msync": "Habilitar Esync",
     "allow_installation_broken_anticheat": {
       "confirmation": {
@@ -854,7 +820,6 @@
       "sync": "Sincronización de los juegos guardados en la nube",
       "wineExt": "Extensiones de Wine",
       "systemInformation": "Información del sistema",
-      "gamescope": "Gamescope",
       "legacy": "Obsoleto"
     },
     "open-config-file": "Abrir archivo de configuración",
@@ -890,9 +855,6 @@
       "heroicVersion": "Heroic: {{heroicVersion}}",
       "nileVersion": "Nile: {{nileVersion}}",
       "cometVersion": "Comet: {{cometVersion}}"
-    },
-    "gamescope": {
-      "searchMsg": "Buscando el ejecutable de gamescope."
     },
     "offline": {
       "warning": "Este juego no permite explícitamente el modo offline, actívalo bajo tu propia responsabilidad. Es posible que el juego no funcione."

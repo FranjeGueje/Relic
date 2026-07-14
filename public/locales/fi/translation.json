@@ -354,17 +354,6 @@
       "close": "Sulje apu",
       "open": "Avaa apu"
     },
-    "gamescope": {
-      "fpsLimiter": "Ruuturajoitus Gamescopelle. Esim. 60",
-      "additionalOptions": "Lisää komentorivin lippuja jotka toimitetaan Gamescopeen.",
-      "fpsLimiterNoFocus": "Rajoitettu ruutuvaste Gamescopelle jokaista sekuntia kohti mikäli pelinäkymä ei kohdistettu.",
-      "gameHeight": "Korkein ruuduntarkkuus pelille. 16:9 -kuvasuhde on Gamescope-oletus.",
-      "gameWidth": "Korkein ruuduntarkkuus pelille. 16:9 -kuvasuhde on Gamescope-oletus.",
-      "upscaleHeight": "Korkeussuuntainen ruuduntarkkuus jota Gamescope käyttää. 16:9 -kuvasuhde on oletus.",
-      "upscaleWidth": "Korkeussuuntainen ruuduntarkkuus jota Gamescope käyttää. 16:9 -kuvasuhde on oletus.",
-      "forceGrabCursor": "Käytä aina suhteellista hiiritilaa kursorin näkyvyydestä riippuvan vaihtelutilan sijaan. (Hyödyllinen kun ohjelmisto menettää jatkuvasti kohdistuksensa)",
-      "upscaleMethod": "Ylösskaalauksen menetelmä jota Gamescope asetetaan toteuttamaan."
-    },
     "dxfpslimit": "Asettaa ruudunpäivitykselle katon DXVK-peleissä",
     "advertiseAvxForRosetta": "Ottaa käyttöön AVX-käskykannan tuen ajettaessa Windows-pelejä Rosettan kautta Apple Silicon -Maceilla. Tämä saattaa olla välttämätöntä peleissä, kuten Death Stranding, jotka vaativat AVX-tukea.",
     "analytics": "Sallii Heroicin kerätä 100% anonyymejä käyttötietoja sovelluksen parantamiseksi. Muutos vaatii ohjelman uudelleenkäynnistämisen.",
@@ -532,21 +521,6 @@
       "placeHolderKey": "Uusi käärin",
       "placeHolderValue": "Käärinkäskyt",
       "title": "Käärimen käsky:"
-    },
-    "gamescope": {
-      "upscaleWidth": "Leveyden ylösskaalaus",
-      "fullscreen": "Koko näyttö",
-      "windowed": "Ikkunoitu",
-      "nis": "NVIDIA kuvaskaalaus (NIS)",
-      "additionalOptions": "Lisämuuttujat",
-      "borderless": "Reunaton",
-      "fpsLimiter": "FPS-rajoitin",
-      "gameHeight": "Pelin korkeus",
-      "gameWidth": "Pelin leveys",
-      "interger": "Kokonaisluvullinen ylösskaalaus",
-      "upscaleHeight": "Korkeuden ylösskaalaus",
-      "fpsLimiterNoFocus": "FPS-rajoitin (Ei aktiivisena)",
-      "stretch": "Venytä kuva"
     }
   },
   "other": {
@@ -783,13 +757,6 @@
     "after-launch-script-path": "Valitse skripti, joka ajetaan kun peli sulkeutuu",
     "hdr": "Ota käyttöön HDR",
     "dxfpslimit": "Rajoita DirectX pelien FPS:ää",
-    "gamescope": {
-      "enableLimiter": "Ota käyttöön FPS-rajoitin",
-      "enableUpscaling": "Ota käyttöön ylösskaalaus",
-      "missingMsg": "Emme löytäneet Gamescopea PATH-ympäristömuuttujassa. Asenna Gamescope, tai lisää se PATH-ympäristömuuttujaan.",
-      "enableForceGrabCursor": "Ota käyttöön kursorin pakotettu kaappaus",
-      "warningFlatpak": "Emme löytäneet yhteensopivaa versiota Gamescopesta. Asenna Gamescopen flatpak-paketti ajoympäristöllä {{runtimeVersion}} ja uudelleenkäynnistä Heroic."
-    },
     "enable-quick-sync-menu": "Ota käyttöön pikatallennuksen synkronointivalikko pelisivulla",
     "no-tray-icon": "Piiloita ilmoitusalueen kuvake (vaatii uudelleenkäynnistyksen)",
     "analyticsOptIn": "Lähetä anonyymiä tietoa auttaaksesi Heroicin kehittämisessä",
@@ -839,7 +806,6 @@
       "sync": "Pilven tallennusten yhdennys",
       "wineExt": "Wine Extensions",
       "systemInformation": "Järjestelmätiedot",
-      "gamescope": "Gamescope",
       "legacy": "Vanhentuneet"
     },
     "open-config-file": "Avaa asetustiedosto",
@@ -905,9 +871,6 @@
     "legacy_warning": "Varoitus: tämän välilehden asetukset ovat enimmäkseen vanhentuneet eivätkä välttämättä toimi lainkaan.",
     "offline": {
       "warning": "Peli ei erikseen salli offline-tilaa, käytä tätä omalla vastuullasi. Peli ei välttämättä toimi."
-    },
-    "gamescope": {
-      "searchMsg": "Etsitään Gamescopen käynnistystiedostoa."
     },
     "steamgriddb": {
       "apikey": {

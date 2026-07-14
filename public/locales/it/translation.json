@@ -361,17 +361,6 @@
       "wineManager": "Installa diverse versioni di Wine, Proton, Crossover, ecc.",
       "defaultInstallPath": "Questo è il percorso predefinito preselezionato durante l'installazione dei giochi."
     },
-    "gamescope": {
-      "fpsLimiter": "La quantità di fotogrammi a cui gamescope dovrebbe limitarsi. Per esempio. 60",
-      "gameHeight": "L'altezza della risoluzione usata dal gioco. L'aspetto 16:9 è predefinito da Gamescope.",
-      "gameWidth": "La larghezza della risoluzione usata dal gioco. L'aspetto 16:9 è predefinito da Gamescope.",
-      "additionalOptions": "Flag addizionali a riga di comando da specificare.",
-      "fpsLimiterNoFocus": "Il limite di frame rate Gamescope dovrebbe limitare al secondo se il gioco non è in primo piano.",
-      "upscaleHeight": "L'altezza della risoluzione usata dal gioco. 16:9 è l'aspetto predefinito.",
-      "upscaleMethod": "Il metodo di upscaling che Gamescope dovrebbe utilizzare.",
-      "upscaleWidth": "La larghezza della risoluzione usata dal gioco. 16:9 è l'aspetto predefinito.",
-      "forceGrabCursor": "Utilizzare sempre la modalità relativa del mouse invece di ribaltare a seconda della visibilità del cursore. (Utili per quando le applicazioni continuano a perdere fuoco)"
-    },
     "msync": "Msync mira a ridurre l'overhead del wineserver nei giochi ad alta intensità di CPU. L'abilitazione può migliorare le prestazioni sui kernel Linux supportati.",
     "dxfpslimit": "Imposta un limite di frame rate per i giochi DirectX (9-12)",
     "advertiseAvxForRosetta": "Abilita il supporto del set di istruzioni AVX durante l'esecuzione di giochi Windows tramite Rosetta su Mac con Apple Silicon. Potrebbe essere necessario per alcuni giochi, come Death Stranding, che richiedono il supporto AVX.",
@@ -541,21 +530,6 @@
       "placeHolderKey": "Nuovo Wrapper",
       "placeHolderValue": "Parametri del Wrapper",
       "title": "Comando del Wrapper:"
-    },
-    "gamescope": {
-      "borderless": "Senza bordi",
-      "gameWidth": "Larghezza del gioco",
-      "fpsLimiter": "Limitatore FPS",
-      "nis": "NVIDIA Image Scale (NIS)",
-      "fpsLimiterNoFocus": "Limitatore FPS (Senza focus)",
-      "stretch": "Allunga immagine",
-      "fullscreen": "Schermo intero",
-      "gameHeight": "Altezza del gioco",
-      "additionalOptions": "Opzioni aggiuntive",
-      "windowed": "Finestra",
-      "upscaleHeight": "Altezza Upscale",
-      "upscaleWidth": "Larghezza Upscale",
-      "interger": "Upscale Intero"
     }
   },
   "other": {
@@ -765,14 +739,6 @@
         "title": "Funzionalità sperimentale di seguito"
       }
     },
-    "gamescope": {
-      "enableLimiter": "Abilita Limitatore FPS",
-      "enableUpscaling": "Abilita Upscaling",
-      "missingMsg": "Non troviamo il gamescope nel PATH. Installalo o aggiungilo al PATH.",
-      "enableForceGrabCursor": "Blocca il cursore alla finestra",
-      "missingMsgFlatpak": "Non siamo riusciti a trovare una versione compatibile di Gamescope. Installa il pacchetto flatpak di Gamescope con runtime 25.08 e riavvia Heroic.",
-      "warningFlatpak": "Non siamo riusciti a trovare una versione compatibile di Gamescope. Installa il pacchetto flatpak di Gamescope con runtime {{runtimeVersion}} e riavvia Heroic."
-    },
     "before-launch-script-path": "Seleziona uno script da eseguire prima che il gioco venga avviato",
     "disablePlaytimeSync": "Disabilita la sincronizzazione del tempo di gioco",
     "after-launch-script-path": "Seleziona uno script da eseguire all'uscita del gioco",
@@ -855,7 +821,6 @@
       "sync": "Sincronizzazione salvataggi in cloud",
       "wineExt": "Estensioni di Wine",
       "systemInformation": "Informazioni di Sistema",
-      "gamescope": "Gamescope",
       "legacy": "Legacy"
     },
     "open-config-file": "Apri File di Configurazione",
@@ -913,9 +878,6 @@
       "resetHeroic": {
         "help": "Sei sicuro di voler resettare Heroic? Saranno rimosse tutte le Impostazioni e la Cache ma non saranno rimossi i giochi installati e le credenziali di Epic. Le versioni portatili (AppImage, WinPortable, ...) di Heroic devono essere riavviate manualmente in seguito."
       }
-    },
-    "gamescope": {
-      "searchMsg": "Ricerca dell'eseguibile di gamescope."
     },
     "offline": {
       "warning": "Questo gioco non consente esplicitamente la modalità offline, attivala a tuo rischio e pericolo. Il gioco potrebbe non funzionare."

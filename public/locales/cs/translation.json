@@ -339,17 +339,6 @@
     "disable_logs": "Zapnutím tohoto políčka zakážete většinu zápisů do souborů protokolu (kritické informace jsou vždy protokolovány). Před nahlášením jakéhokoli problému nezapomeňte toto nastavení vypnout.",
     "dxvknvapi": "DXVK-NVAPI je implementace NVAPI postavená na DXVK a nativním NVAPI Linuxu, umožňuje použití DLSS na grafických kartách Nvidia.",
     "disablePlaytimeSync": "Zakáže synchronizaci času hraní se servery obchodu (aktualně je podporován jen GOG)",
-    "gamescope": {
-      "fpsLimiterNoFocus": "Počet snímků, na které by měl být omezen gamescope když není hra na popředí (zaměřená).",
-      "upscaleMethod": "Způsob upscalingu, který by měl gamescope využít.",
-      "gameWidth": "Rozlišení šířky používané hrou. Gamescope předpokládá poměr stran 16:9.",
-      "upscaleWidth": "Rozlišení šířky používané službou gamescope. Je předpokládán rozměr 16:9.",
-      "gameHeight": "Rozlišení výšky používané hrou. Gamescope předpokládá poměr stran 16:9.",
-      "upscaleHeight": "Rozlišení výšky používané službou gamescope. Je předpokládán rozměr 16:9.",
-      "fpsLimiter": "Počet snímků, na který by měl být omezen gamescope. Např. 60",
-      "additionalOptions": "Další vlajky příkazového řádku k použití v gamescope.",
-      "forceGrabCursor": "Vždy používejte relativní režim myši namísto převracení v závislosti na viditelnosti kurzoru. (Užitečné v případě, že aplikace stále ztrácejí fokus)"
-    },
     "title": {
       "accessibility": "Přístupnost",
       "login": "Přihlásit se",
@@ -542,21 +531,6 @@
       "placeHolderKey": "Nový Wrapper",
       "placeHolderValue": "Argumenty Wrapperu",
       "title": "Příkaz Wrapper:"
-    },
-    "gamescope": {
-      "fpsLimiter": "Omezení FPS",
-      "gameHeight": "Výška hry",
-      "upscaleWidth": "Šířka upscalingu",
-      "gameWidth": "Šířka hry",
-      "upscaleHeight": "Výška upscalingu",
-      "fpsLimiterNoFocus": "Omezení FPS (v pozadí)",
-      "nis": "Škálování obrazu NVIDIA (NIS)",
-      "borderless": "Bez okrajů",
-      "fullscreen": "Celá obrazovka",
-      "interger": "Celočíselný upscaling",
-      "stretch": "Roztáhnout obraz",
-      "windowed": "V okně",
-      "additionalOptions": "Další možnosti"
     }
   },
   "other": {
@@ -752,14 +726,6 @@
       "zoomPlatform": "Podpora platformy Zoom (pouze Linux)"
     },
     "disablePlaytimeSync": "Zakázat synchronizaci času hraní",
-    "gamescope": {
-      "enableLimiter": "Zapnout omezení FPS",
-      "enableUpscaling": "Povolí upscaling",
-      "missingMsg": "Na PATHu jsme gamescope nenašli. Nainstalujte jej nebo jej přidejte do PATH.",
-      "enableForceGrabCursor": "Povolit vynucení uchopení kurzoru",
-      "missingMsgFlatpak": "Nenašli jsme kompatibilní verzi Gamescope. Nainstalujte balíček flatpak Gamescope s runtime 25.08 a restartujte Heroic.",
-      "warningFlatpak": "Nenašli jsme kompatibilní verzi Gamescope. Nainstalujte balíček flatpak Gamescope s runtime {{runtimeVersion}} a restartujte Heroic."
-    },
     "frameless-window": {
       "confirmation": {
         "message": "Tato funkce je stále experimentální. Prosím nahlaste jakékoli problémy, na které narazíte, na GitHub.",
@@ -859,7 +825,6 @@
       "sync": "Synchronizace uložených souborů",
       "wineExt": "Wine rozšíření",
       "systemInformation": "Systémové informace",
-      "gamescope": "Gamescope",
       "legacy": "Zastaralé"
     },
     "open-config-file": "Otevřít soubor konfigurace",
@@ -895,9 +860,6 @@
       "heroicVersion": "Heroic: {{heroicVersion}}",
       "nileVersion": "Nile: {{nileVersion}}",
       "cometVersion": "Comet: {{cometVersion}}"
-    },
-    "gamescope": {
-      "searchMsg": "Hledání spustitelného souboru gamescope."
     },
     "offline": {
       "warning": "Tato hra explicitně nepovoluje režim offline, tuto možnost zapněte na vlastní nebezpečí. Hra nemusí fungovat."

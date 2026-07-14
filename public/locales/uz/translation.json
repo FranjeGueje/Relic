@@ -394,17 +394,6 @@
       "login": ""
     },
     "msync": "",
-    "gamescope": {
-      "fpsLimiterNoFocus": "",
-      "upscaleMethod": "",
-      "gameWidth": "",
-      "upscaleWidth": "",
-      "gameHeight": "",
-      "additionalOptions": "",
-      "forceGrabCursor": "",
-      "upscaleHeight": "",
-      "fpsLimiter": ""
-    },
     "title": {
       "accessibility": "",
       "login": "",
@@ -580,21 +569,6 @@
       "placeHolderKey": "Yangi o'ram",
       "placeHolderValue": "O'rash argumentlari",
       "title": "O'rash buyrug'i:"
-    },
-    "gamescope": {
-      "nis": "",
-      "additionalOptions": "",
-      "borderless": "",
-      "windowed": "",
-      "fpsLimiter": "",
-      "gameHeight": "",
-      "upscaleWidth": "",
-      "fullscreen": "",
-      "gameWidth": "",
-      "upscaleHeight": "",
-      "fpsLimiterNoFocus": "",
-      "stretch": "",
-      "interger": ""
     }
   },
   "other": {
@@ -813,13 +787,6 @@
       },
       "label": ""
     },
-    "gamescope": {
-      "enableLimiter": "",
-      "enableUpscaling": "",
-      "enableForceGrabCursor": "",
-      "warningFlatpak": "",
-      "missingMsg": ""
-    },
     "enable-quick-sync-menu": "",
     "no-tray-icon": "",
     "analyticsOptIn": "",
@@ -870,7 +837,6 @@
       "log": "Jurnal",
       "other": "Boshqa",
       "sync": "Cloud Saves Sync",
-      "gamescope": "",
       "systemInformation": "",
       "legacy": ""
     },
@@ -933,9 +899,6 @@
     },
     "offline": {
       "warning": ""
-    },
-    "gamescope": {
-      "searchMsg": ""
     },
     "custom_css": {
       "title": ""

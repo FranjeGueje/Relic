@@ -339,17 +339,6 @@
     "disable_logs": "将此复选框切换为“开”可禁用对日志文件的大部分写入（始终记录关键信息）。请确保在报告任何问题之前关闭此设置。",
     "dxvknvapi": "DXVK-NVAPI 是基于 DXVK 和 linux 原生 NVAPI 构建的 NVAPI 的实现，它允许在 Nvidia GPU 上使用 DLSS。",
     "disablePlaytimeSync": "停用与给定游戏商店服务器的游戏时间同步（当前只支持 GOG）",
-    "gamescope": {
-      "fpsLimiterNoFocus": "如未聚焦游戏，Gamescope 每秒应限制的帧率。",
-      "upscaleMethod": "Gamescope 应使用的分辨率提升方法。",
-      "gameWidth": "游戏所用的宽度分辨率。Gamescope 假定 16:9 长宽比。",
-      "upscaleWidth": "Gamescope 所用的宽度分辨率。假定 16:9 的长宽比。",
-      "gameHeight": "游戏所用的高度分辨率。Gamescope 假定 16:9 的长宽比。",
-      "upscaleHeight": "Gamescope 所用的高度分辨率。假定 16:9 长宽比。",
-      "fpsLimiter": "Gamescope 帧数限制，比如 60",
-      "additionalOptions": "要传递给 gamescope 的额外命令行标记。",
-      "forceGrabCursor": "总是使用相对鼠标模式而不是取决于指针可见性的翻转。（当程序一直失去焦点时有用）"
-    },
     "content": {
       "defaultInstallPath": "这是安装游戏时预先选择的默认路径。",
       "settingsDefault": "显示 Heroic 的所有设置及游戏的默认值。",
@@ -541,21 +530,6 @@
       "placeHolderKey": "新封装器",
       "placeHolderValue": "封装器参数",
       "title": "封装器命令："
-    },
-    "gamescope": {
-      "fpsLimiter": "FPS 限制程序",
-      "gameHeight": "游戏高度",
-      "upscaleWidth": "Upscale 宽度",
-      "gameWidth": "游戏宽度",
-      "upscaleHeight": "Upscale 高度",
-      "fpsLimiterNoFocus": "FPS 限制程序（无焦点）",
-      "nis": "NVIDIA 图像缩放（NIS）",
-      "borderless": "无边框",
-      "fullscreen": "全屏",
-      "interger": "整数型 Upscale",
-      "stretch": "拉伸图像",
-      "windowed": "已窗口化",
-      "additionalOptions": "额外选项"
     }
   },
   "other": {
@@ -751,14 +725,6 @@
       "zoomPlatform": "Zoom 平台支持（仅 Linux）"
     },
     "disablePlaytimeSync": "停用游戏时间同步",
-    "gamescope": {
-      "enableLimiter": "启用 FPS 限制程序",
-      "enableUpscaling": "启用分辨率提升",
-      "missingMsg": "我们在 PATH 上找不到 Gamescope。请先安装它或将其添加到 PATH。",
-      "enableForceGrabCursor": "启用强制抓取指针",
-      "missingMsgFlatpak": "我们找不到兼容的 Gamescope 版本。安装带 25.08 版 runtime 的 Gamescope flatpak 包 ，然后重启 Heroic.",
-      "warningFlatpak": "我们找不到兼容的 Gamescope 版本。安装带 {{runtimeVersion}} 版 runtime 的 Gamescope flatpak 包 ，然后重启 Heroic。"
-    },
     "frameless-window": {
       "confirmation": {
         "message": "此功能仍是实验性的。请在 GitHub 上报告任何你在使用该功能时遇到的问题。",
@@ -858,7 +824,6 @@
       "sync": "存档-同步",
       "wineExt": "Wine 扩展",
       "systemInformation": "系统信息",
-      "gamescope": "Gamescope",
       "legacy": "老古董"
     },
     "open-config-file": "打开配置文件",
@@ -894,9 +859,6 @@
       "heroicVersion": "Heroic: {{heroicVersion}}",
       "nileVersion": "Nile: {{nileVersion}}",
       "cometVersion": "Comet：{{cometVersion}}"
-    },
-    "gamescope": {
-      "searchMsg": "搜索 Gamescope 可执行文件。"
     },
     "offline": {
       "warning": "此游戏未明确允许离线模式，你可以开启本选项，但后果自负。开启后，游戏可能无法正常运作。"

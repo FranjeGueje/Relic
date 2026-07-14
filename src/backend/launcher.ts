@@ -344,22 +344,6 @@ function filterGameSettingsForLog(
   // if this is visible, it means verboseLogs is true, no need to print it
   delete gameSettings.verboseLogs
 
-  // remove gamescope settings if it's disabled
-  if (gameSettings.gamescope) {
-    if (!gameSettings.gamescope.enableLimiter) {
-      delete gameSettings.gamescope.fpsLimiter
-      delete gameSettings.gamescope.fpsLimiterNoFocus
-    }
-    if (!gameSettings.gamescope.enableUpscaling) {
-      delete gameSettings.gamescope.upscaleMethod
-      delete gameSettings.gamescope.upscaleHeight
-      delete gameSettings.gamescope.upscaleWidth
-      delete gameSettings.gamescope.gameHeight
-      delete gameSettings.gamescope.gameWidth
-      delete gameSettings.gamescope.windowType
-    }
-  }
-
   // remove settings that are not used on Linux
   if (isLinux) {
     delete gameSettings.enableMsync
@@ -404,7 +388,6 @@ function filterGameSettingsForLog(
   // remove settings that are not used on Mac
   if (isMac) {
     delete gameSettings.useGameMode
-    delete gameSettings.gamescope
     delete gameSettings.nvidiaPrime
     delete gameSettings.battlEyeRuntime
     delete gameSettings.eacRuntime
@@ -467,7 +450,6 @@ function filterGameSettingsForLog(
     delete gameSettings.autoInstallDxvk
     delete gameSettings.autoInstallDxvkNvapi
     delete gameSettings.autoInstallVkd3d
-    delete gameSettings.gamescope
     delete gameSettings.useGameMode
     delete gameSettings.showFps
     delete gameSettings.preferSystemLibs
@@ -579,9 +561,8 @@ async function prepareLaunch(
     return { success: true, rpcClient, offlineMode }
   }
 
-  // Figure out where GameMode/Gamescope are located, if they're enabled
+  // Figure out where GameMode is located, if it's enabled
   let gameModeBin: string | null = null
-  const gameScopeCommand: string[] = []
   if (gameSettings.useGameMode) {
     gameModeBin = await searchForExecutableOnPath('gamemoderun')
     if (!gameModeBin) {
@@ -590,99 +571,6 @@ async function prepareLaunch(
         failureReason:
           'GameMode is enabled, but `gamemoderun` executable could not be found on $PATH'
       }
-    }
-  }
-
-  if (
-    (gameSettings.gamescope?.enableLimiter ||
-      gameSettings.gamescope?.enableUpscaling) &&
-    !isSteamDeckGameMode
-  ) {
-    const gameScopeBin = await searchForExecutableOnPath('gamescope')
-    if (!gameScopeBin) {
-      let warningMessage =
-        'Gamescope is enabled, but `gamescope` executable could not be found on $PATH'
-      if (isFlatpak) {
-        warningMessage = `${warningMessage}. Make sure to install Gamescope's flatpak package with runtime ${flatpakRuntimeVersion}`
-      }
-
-      logWarning(warningMessage)
-    } else {
-      // Gamescope does not provide a version option and they changed
-      // cli options on version 3.12. So we do what lutris does.
-      let oldVersion = true // < 3.12
-      const { stderr } = spawnSync(gameScopeBin, ['--help'], {
-        encoding: 'utf-8'
-      })
-      if (stderr && stderr.includes('-F, --filter')) {
-        oldVersion = false
-      }
-
-      gameScopeCommand.push(gameScopeBin)
-
-      if (gameSettings.gamescope.enableUpscaling) {
-        // game res
-        if (gameSettings.gamescope.gameWidth) {
-          gameScopeCommand.push('-w', gameSettings.gamescope.gameWidth)
-        }
-        if (gameSettings.gamescope.gameHeight) {
-          gameScopeCommand.push('-h', gameSettings.gamescope.gameHeight)
-        }
-
-        // gamescope res
-        if (gameSettings.gamescope.upscaleWidth) {
-          gameScopeCommand.push('-W', gameSettings.gamescope.upscaleWidth)
-        }
-        if (gameSettings.gamescope.upscaleHeight) {
-          gameScopeCommand.push('-H', gameSettings.gamescope.upscaleHeight)
-        }
-
-        // upscale method
-        if (gameSettings.gamescope.upscaleMethod === 'fsr') {
-          if (oldVersion) gameScopeCommand.push('-U')
-          else gameScopeCommand.push('-F', 'fsr')
-        }
-        if (gameSettings.gamescope.upscaleMethod === 'nis') {
-          if (oldVersion) gameScopeCommand.push('-Y')
-          else gameScopeCommand.push('-F', 'nis')
-        }
-        if (gameSettings.gamescope.upscaleMethod === 'integer') {
-          if (oldVersion) gameScopeCommand.push('-i')
-          else gameScopeCommand.push('-S', 'integer')
-        }
-        // didn't find stretch in old version
-        if (gameSettings.gamescope.upscaleMethod === 'stretch' && !oldVersion) {
-          gameScopeCommand.push('-S', 'stretch')
-        }
-
-        // window type
-        if (gameSettings.gamescope.windowType === 'fullscreen') {
-          gameScopeCommand.push('-f')
-        }
-        if (gameSettings.gamescope.windowType === 'borderless') {
-          gameScopeCommand.push('-b')
-        }
-      }
-
-      if (gameSettings.gamescope.enableLimiter) {
-        if (gameSettings.gamescope.fpsLimiter) {
-          gameScopeCommand.push('-r', gameSettings.gamescope.fpsLimiter)
-        }
-        if (gameSettings.gamescope.fpsLimiterNoFocus) {
-          gameScopeCommand.push('-o', gameSettings.gamescope.fpsLimiterNoFocus)
-        }
-      }
-
-      if (gameSettings.gamescope.enableForceGrabCursor) {
-        gameScopeCommand.push('--force-grab-cursor')
-      }
-
-      gameScopeCommand.push(
-        ...shlex.split(gameSettings.gamescope.additionalOptions ?? '')
-      )
-
-      // Note: needs to be the last option
-      gameScopeCommand.push('--')
     }
   }
 
@@ -747,7 +635,6 @@ async function prepareLaunch(
     success: true,
     rpcClient,
     gameModeBin: gameModeBin ?? undefined,
-    gameScopeCommand,
     steamRuntime,
     offlineMode
   }
@@ -1337,15 +1224,9 @@ function setupWineEnvVars(gameSettings: GameSettings, gameId = '0') {
 function setupWrappers(
   gameSettings: GameSettings,
   gameModeBin?: string,
-  gameScopeCommand?: string[],
   steamRuntime?: string[]
 ): Array<string> {
   const wrappers: string[] = []
-
-  // let gamescope be first wrapper always
-  if (gameScopeCommand) {
-    wrappers.push(...gameScopeCommand)
-  }
 
   if (gameSettings.wrapperOptions) {
     gameSettings.wrapperOptions.forEach((wrapperEntry: WrapperVariable) => {

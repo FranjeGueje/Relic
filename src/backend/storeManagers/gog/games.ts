@@ -537,7 +537,6 @@ export default class GOGGame implements Game {
       success: launchPrepSuccess,
       failureReason: launchPrepFailReason,
       rpcClient,
-      gameScopeCommand,
       gameModeBin,
       steamRuntime
     } = await prepareLaunch(gameSettings, logWriter, gameInfo, this.isNative())
@@ -571,7 +570,6 @@ export default class GOGGame implements Game {
     const wrappers = setupWrappers(
       gameSettings,
       gameModeBin,
-      gameScopeCommand,
       steamRuntime?.length ? [...steamRuntime] : undefined
     )
 

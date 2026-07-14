@@ -354,17 +354,6 @@
       "library": "",
       "accessibility": ""
     },
-    "gamescope": {
-      "fpsLimiterNoFocus": "",
-      "upscaleMethod": "",
-      "gameWidth": "",
-      "upscaleWidth": "",
-      "gameHeight": "",
-      "additionalOptions": "",
-      "forceGrabCursor": "",
-      "upscaleHeight": "",
-      "fpsLimiter": ""
-    },
     "download_proton_steam": "",
     "wine-hdr": "",
     "dxvknvapi": "",
@@ -495,22 +484,7 @@
         "env": ""
       }
     },
-    "quote-args-with-spaces": "Упозорење: Обавезно цитирајте аргументе са размацима! Нпр.: „пут/са размацима/“",
-    "gamescope": {
-      "nis": "",
-      "additionalOptions": "",
-      "borderless": "",
-      "windowed": "",
-      "fpsLimiter": "",
-      "gameHeight": "",
-      "upscaleWidth": "",
-      "fullscreen": "",
-      "gameWidth": "",
-      "upscaleHeight": "",
-      "fpsLimiterNoFocus": "",
-      "stretch": "",
-      "interger": ""
-    }
+    "quote-args-with-spaces": "Упозорење: Обавезно цитирајте аргументе са размацима! Нпр.: „пут/са размацима/“"
   },
   "Other": "Остало",
   "platforms": {
@@ -702,13 +676,6 @@
       },
       "label": ""
     },
-    "gamescope": {
-      "enableLimiter": "",
-      "enableUpscaling": "",
-      "enableForceGrabCursor": "",
-      "warningFlatpak": "",
-      "missingMsg": ""
-    },
     "enable-quick-sync-menu": "",
     "no-tray-icon": "",
     "analyticsOptIn": "",
@@ -749,7 +716,6 @@
       "other": "Остало",
       "sync": "Синһронизација Чувања у Облаку",
       "wineExt": "Вине Ектенсионс",
-      "gamescope": "",
       "systemInformation": "",
       "legacy": ""
     },
@@ -825,9 +791,6 @@
     },
     "offline": {
       "warning": ""
-    },
-    "gamescope": {
-      "searchMsg": ""
     },
     "custom_css": {
       "title": ""

@@ -337,17 +337,6 @@
       "library": "라이브러리"
     },
     "msync": "Fsync는 CPU 집약적 게임에서 와인서버 오버헤드를 줄이는 것을 목표로 합니다. 활성화하면 지원되는 리눅스 커널에서 성능이 향상될 수 있습니다.",
-    "gamescope": {
-      "upscaleHeight": "gamescope에서 사용하는 높이 해상도입니다. 16:9 화면비가 가정됩니다.",
-      "additionalOptions": "gamescope에 전달할 추가 명령줄 플래그입니다.",
-      "fpsLimiter": "gamescope가 제한해야 하는 프레임 수. 예: 60",
-      "fpsLimiterNoFocus": "게임에 집중하지 못하면 gamescope가 초당 제한해야 하는 프레임 속도입니다.",
-      "gameWidth": "게임에서 사용하는 너비 해상도입니다. gamescope는 16:9 화면비를 가정합니다.",
-      "gameHeight": "게임에서 사용하는 높이 해상도입니다. gamescope는 16:9 화면비를 가정합니다.",
-      "upscaleMethod": "gamescope가 사용해야 하는 업스케일링 방법입니다.",
-      "upscaleWidth": "gamescope에서 사용하는 폭 해상도입니다. 16:9 화면비가 가정됩니다.",
-      "forceGrabCursor": ""
-    },
     "content": {
       "accessibility": "접근성 설정을 표시합니다.",
       "customThemesPath": "위키를 확인해 보세요.",
@@ -531,21 +520,6 @@
       "placeHolderKey": "새 래퍼",
       "placeHolderValue": "래퍼 인자",
       "title": "래퍼 명령어:"
-    },
-    "gamescope": {
-      "fullscreen": "전체화면",
-      "gameHeight": "게임 높이",
-      "gameWidth": "게임 너비",
-      "upscaleHeight": "업스케일 높이",
-      "additionalOptions": "추가 옵션",
-      "borderless": "테두리 없음",
-      "interger": "정수 업스케일",
-      "nis": "엔비디아 이미지 스케일 (NIS)",
-      "stretch": "이미지 늘리기",
-      "upscaleWidth": "업스케일 너비",
-      "windowed": "창",
-      "fpsLimiterNoFocus": "FPS 제한기 (초점 없음)",
-      "fpsLimiter": "FPS 제한기"
     }
   },
   "other": {
@@ -757,13 +731,6 @@
       "umuSupport": "umu를 프로톤 런타임으로 사용",
       "zoomPlatform": ""
     },
-    "gamescope": {
-      "enableUpscaling": "업스케일링 가능",
-      "enableLimiter": "FPS 제한기 활성화",
-      "missingMsg": "PATH에서 gamescope를 찾을 수 없습니다. 설치하거나 PATH에 추가하세요.",
-      "enableForceGrabCursor": "",
-      "warningFlatpak": ""
-    },
     "after-launch-script-path": "게임을 나간 후 실행할 스크립트를 선택",
     "allow_non_ge_proton": {
       "confirmation": {
@@ -836,7 +803,6 @@
       "sync": "클라우드 저장 동기화",
       "wineExt": "Wine Extensions",
       "systemInformation": "시스템 정보",
-      "gamescope": "Gamescope",
       "legacy": ""
     },
     "open-config-file": "구성 파일 열기",
@@ -894,9 +860,6 @@
     },
     "offline": {
       "warning": "이 게임은 명시적으로 오프라인 모드를 허용하지 않으므로, 본인의 책임 하에 켜세요. 게임이 작동하지 않을 수 있습니다."
-    },
-    "gamescope": {
-      "searchMsg": "gamescope 실행 파일을 검색하고 있습니다."
     },
     "experimental_features": {
       "title": "실험적 기능"

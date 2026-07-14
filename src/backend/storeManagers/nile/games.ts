@@ -308,7 +308,6 @@ export default class NileGameManager implements Game {
       failureReason: launchPrepFailReason,
       rpcClient,
       gameModeBin,
-      gameScopeCommand,
       steamRuntime
     } = await prepareLaunch(gameSettings, logWriter, gameInfo, this.isNative())
 
@@ -342,7 +341,6 @@ export default class NileGameManager implements Game {
     const wrappers = setupWrappers(
       gameSettings,
       gameModeBin,
-      gameScopeCommand,
       steamRuntime?.length ? [...steamRuntime] : undefined
     )
 

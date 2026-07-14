@@ -359,17 +359,6 @@
     "disablePlaytimeSync": "Menonaktifkan sinkronisasi waktu bermain dengan server toko yang bersangkutan (saat ini hanya GOG yang didukung).",
     "download_proton_steam": "Jika diaktifkan, GE-Proton akan diunduh langsung ke direktori alat kompatibilitas Steam, bukan ke jalur default Heroic. Akan menggunakan jalur Steam yang diatur dalam pengaturan 'Jalur Steam Default' di atas.",
     "dxvknvapi": "DXVK-NVAPI adalah implementasi NVAPI yang dibangun di atas DXVK dan NVAPI native Linux, yang memungkinkan penggunaan DLSS pada GPU Nvidia.",
-    "gamescope": {
-      "additionalOptions": "Tambahan flag baris perintah untuk diteruskan ke gamescope.",
-      "forceGrabCursor": "Selalu gunakan mode mouse relatif alih-alih bergantung pada visibilitas kursor. (Berguna ketika aplikasi sering kehilangan fokus.)",
-      "fpsLimiter": "Jumlah frame yang harus dibatasi oleh gamescope. Misalnya: 60.",
-      "fpsLimiterNoFocus": "Batas frame per detik yang diterapkan oleh gamescope jika game tidak difokuskan.",
-      "gameHeight": "Resolusi tinggi yang digunakan oleh game. Rasio aspek 16:9 diasumsikan oleh gamescope.",
-      "gameWidth": "Resolusi lebar yang digunakan oleh game. Rasio aspek 16:9 diasumsikan oleh gamescope.",
-      "upscaleHeight": "Resolusi tinggi yang digunakan oleh gamescope. Rasio aspek 16:9 diasumsikan.",
-      "upscaleMethod": "Metode peningkatan skala yang harus digunakan oleh gamescope.",
-      "upscaleWidth": "Resolusi lebar yang digunakan oleh gamescope. Rasio aspek 16:9 diasumsikan."
-    },
     "wine-hdr": "HDR meningkatkan warna dengan memberikan sorotan yang lebih terang dan kontras yang lebih dalam. Agar HDR berfungsi, baik tampilan maupun game harus mendukungnya.",
     "wine-wayland": "Driver eksperimental Wine-Wayland memungkinkan game dijalankan secara native di bawah protokol tampilan Wayland. Mengaktifkannya dapat menyebabkan beberapa game tidak berfungsi.",
     "WoW64": "Mode Wine WoW64 memungkinkan game Windows 32-bit dijalankan pada Wine 64-bit. Mengaktifkannya dapat meningkatkan performa, tetapi juga bisa menyebabkan gangguan pada game 32-bit lama.",
@@ -534,21 +523,6 @@
       "placeHolderKey": "Wrapper baru",
       "placeHolderValue": "Argumen Wrapper",
       "title": "Perintah Wrapper:"
-    },
-    "gamescope": {
-      "fpsLimiter": "Pembatas FPS",
-      "fullscreen": "Layar Penuh",
-      "fpsLimiterNoFocus": "Pembatas FPS (Tidak Fokus)",
-      "stretch": "Lebarkan Gambar",
-      "additionalOptions": "Opsi Tambahan",
-      "borderless": "Tanpa Batas Bingkai (Borderless)",
-      "gameHeight": "Tinggi Game",
-      "gameWidth": "Lebar Game",
-      "interger": "Peningkatan Skala Bilangan Bulat",
-      "nis": "Skala Gambar NVIDIA (NIS)",
-      "upscaleHeight": "Tinggi Peningkatan Skala",
-      "upscaleWidth": "Lebar Peningkatan Skala",
-      "windowed": "Jendela (Windowed)"
     }
   },
   "other": {
@@ -734,13 +708,6 @@
     "showMetalOverlay": "Tampilkan Overlay Statistik",
     "alt-nile-bin": "Pilih Nile Binary Alternatif",
     "autodxvknvapi": "Instal/ Perbarui Otomatis DXVK-NVAPI sesuai Prefiks",
-    "gamescope": {
-      "enableLimiter": "Hidupkan Pembatas FPS",
-      "enableForceGrabCursor": "Aktifkan Paksa Pengambilan Kursor",
-      "enableUpscaling": "Mengaktifkan Peningkatan Skala",
-      "missingMsg": "Kami tidak dapat menemukan gamescope di PATH. Instal atau tambahkan ke PATH.",
-      "warningFlatpak": "Kami tidak dapat menemukan versi Gamescope yang kompatibel. Instal paket flatpak Gamescope dengan runtime {{runtimeVersion}} dan mulai ulang Heroic."
-    },
     "experimental_features": {
       "enableNewDesign": "Desain baru",
       "cometSupport": "Dukungan Comet",
@@ -835,7 +802,6 @@
       "other": "Lainnya",
       "sync": "Sinkronisasi Penyimpanan",
       "wineExt": "Ekstensi Wine",
-      "gamescope": "Gamescope",
       "systemInformation": "Informasi Sistem",
       "legacy": "Warisan"
     },
@@ -897,9 +863,6 @@
     },
     "custom_css": {
       "title": "Gaya CSS Kustom"
-    },
-    "gamescope": {
-      "searchMsg": "Mencari file eksekusi gamescope."
     },
     "offline": {
       "warning": "Game ini tidak secara eksplisit mengizinkan mode offline, aktifkan dengan risiko Anda sendiri. Game mungkin tidak berfungsi."

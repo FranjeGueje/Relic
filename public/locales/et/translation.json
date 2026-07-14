@@ -345,17 +345,6 @@
       "library": "Varamu"
     },
     "dxvknvapi": "DXVK-NVAPI on NVAPI implementatsioon, mis on ehitatud DXVK põhjal ning Linuxi oma NVAPI põhjal, lubades DLSS-i kasutamist Nvidia graafikaprotsessoritel.",
-    "gamescope": {
-      "fpsLimiterNoFocus": "Kaadrisageduse limiit sekundi kohta, milleni gamescope peaks piirama, kui mäng ei ole fookuses.",
-      "additionalOptions": "Lisatud käsuliini lipud, mida edasi anda gamescope'ile.",
-      "upscaleHeight": "Kuvasuhe kõrgus, mida gamescope kasutab. Eeldatakse 16:9 kuvasuhet.",
-      "upscaleMethod": "Ülesskaleerimise meetod, mida gamescope peaks kasutama.",
-      "upscaleWidth": "Kuvasuhe laius, mida gamescope kasutab. Eeldatakse 16:9 kuvasuhet.",
-      "fpsLimiter": "Gamescope'i kaadrisageduse limiit, nt. 60",
-      "gameHeight": "Kuvasuhe kõrgus, mida mäng kasutab. Gamescope eeldab 16:9 kuvasuhet.",
-      "gameWidth": "Kuvasuhe laius, mida mäng kasutab. Gamescope eeldab 16:9 kuvasuhet.",
-      "forceGrabCursor": "Alati kasuta suhtelist hiirerežiimi selle asemel, et vahetada kursori nähtavuse põhjal. (Kasulik, kui rakendused kaotavad sageli fookust)"
-    },
     "content": {
       "customThemesPath": "Vaadake meie vikit.",
       "settingsGame": "Näitab kõiki mängu seadeid.",
@@ -540,21 +529,6 @@
       "placeHolderKey": "Uus ümbris",
       "placeHolderValue": "Ümbrise argumendid",
       "title": "Ümbrise käsklus:"
-    },
-    "gamescope": {
-      "additionalOptions": "Muud seaded",
-      "borderless": "Ilma ääreta",
-      "fpsLimiter": "Kaadrisageduse limiit",
-      "fpsLimiterNoFocus": "Kaadrisageduse limiit (ilma fookuseta)",
-      "gameWidth": "Mängu laius",
-      "gameHeight": "Mängu kõrgus",
-      "fullscreen": "Täisekraan",
-      "interger": "Täisarvuline ülesskaleerimine",
-      "nis": "NVIDIA Image Scale (NIS)",
-      "stretch": "Pikenda pilti",
-      "upscaleHeight": "Ülesskaleerimise kõrgus",
-      "upscaleWidth": "Ülesskaleerimise laius",
-      "windowed": "Aknas"
     }
   },
   "other": {
@@ -740,14 +714,6 @@
     "showMetalOverlay": "Kuva statistika ülekate",
     "alt-nile-bin": "Valige mõni muu Nile programm",
     "autodxvknvapi": "DXVK-NVAPI automaatne paigaldamine/uuendamine prefiksile",
-    "gamescope": {
-      "missingMsg": "Me ei leidnud gamescope'i PATH-il. Installeerige see või lisage see PATH-ile.",
-      "enableUpscaling": "Lubab ülesskaleerimist",
-      "enableLimiter": "Luba FPS limiit",
-      "enableForceGrabCursor": "Luba sunnitud kursori haaramine",
-      "missingMsgFlatpak": "Me ei suutnud leida ühilduvat Gamescope'i versiooni. Paigaldage Gamescope'i flatpak käitusaja versiooniga 25.08 ja taaskäivitage Heroic.",
-      "warningFlatpak": "Me ei suutnud leida ühilduvat Gamescope'i versiooni. Paigaldage Gamescope'i flatpak käitusaja versiooniga {{runtimeVersion}} ja taaskäivitage Heroic."
-    },
     "after-launch-script-path": "Vali skript, mida käitada pärast mängu sulgemist",
     "msync": "Luba Msync",
     "disablePlaytimeSync": "Keela mänguajaline sünkroniseerimine",
@@ -855,7 +821,6 @@
       "sync": "Pilvesalvestuste sünkroniseerimine",
       "wineExt": "Wine'i laiendused",
       "systemInformation": "Süsteemi teave",
-      "gamescope": "Gamescope",
       "legacy": "Igand"
     },
     "open-config-file": "Ava konfiguratsioonifail",
@@ -916,9 +881,6 @@
     },
     "experimental_features": {
       "title": "Eksperimentaalsed funktsioonid"
-    },
-    "gamescope": {
-      "searchMsg": "Otsin gamescope programmi."
     },
     "custom_css": {
       "title": "Kasutajaliidese CSS stiil"
