@@ -259,7 +259,6 @@
   },
   "globalSettings": "Globaalsed seaded",
   "GOG": "GOG",
-  "gog-store": "GOG Pood",
   "header": {
     "hide_non_available_games": "Hide non-available games",
     "ignore_hidden": "Ignoreeri peidetud",
@@ -888,8 +887,6 @@
     "preparing_login": "Sisselogimise ettevalmistamine... ",
     "installed": "Paigaldatud"
   },
-  "store": "Epic Pood",
-  "stores": "Poed",
   "title": {
     "allGames": "Kõik mängud"
   },
@@ -1002,11 +999,6 @@
     "wine-crossover": "Wine-Crossover põhineb Crossover OpenSource Wine'i projektil ja on soovitatav Inteli Macidele ja DX11 või vanemate mängude puhul.",
     "wine-staging-macos": "Wine-Staging-macOS põhineb peavoolu Wine'i projektil ja on soovitatav Inteli Macidele ja DX11 või vanemate mängude puhul, eriti koos DXMT tööriistaga."
   },
-  "adtraction-locked": {
-    "description": "Näib, et track.adtraction.com domeeni ei olnud võimalik laadida või on keelatud. Tänu adtractionile, iga ost, mida GOG poes teete, toetab rahaliselt Heroicut. Kui soovite aidata, palun eemaldage keeld.",
-    "dont-show-again": "Ära enam näita seda hoiatust",
-    "title": "Adtraction on keelatud"
-  },
   "window": {
     "maximize": "Maksimeeri aken",
     "minimize": "Minimeeri aken",
@@ -1037,92 +1029,8 @@
     },
     "title": "Saada anonüümset analüütikat"
   },
-  "amazon-luna": "Amazon Luna",
-  "zoom-store": "Zoomi pood",
   "launch": {
     "options": "Käivitusvalikud..."
-  },
-  "discounts": {
-    "region": {
-      "countries": {
-        "IT": "Itaalia",
-        "ES": "Hispaania",
-        "FI": "Soome",
-        "GR": "Kreeka",
-        "RO": "Rumeenia",
-        "NO": "Norra",
-        "KR": "Lõuna-Korea",
-        "US": "Ameerika Ühendriigid",
-        "HU": "Ungari",
-        "PT": "Portugal",
-        "NL": "Holland",
-        "AU": "Austraalia",
-        "TW": "Taiwan",
-        "IL": "Iisrael",
-        "JP": "Jaapan",
-        "DK": "Taani",
-        "DE": "Saksamaa",
-        "CZ": "Tšehhi",
-        "FR": "Prantsusmaa",
-        "UA": "Ukraina",
-        "GB": "Ühendkuningriik",
-        "SE": "Rootsi",
-        "CN": "Hiina",
-        "RU": "Venemaa",
-        "CA": "Kanada",
-        "PL": "Poola",
-        "BR": "Brasiilia",
-        "CH": "Šveits",
-        "TR": "Türgi"
-      },
-      "auto": "Automaatne ({{code}})",
-      "label": "Poe regioon"
-    },
-    "filters": {
-      "moreFilters": "Rohkem filtreid",
-      "ageRating": "Sobilik vanusele",
-      "os": "Operatsioonisüsteem:",
-      "price": "Hind",
-      "activeCount_other": "{{count}} aktiivsed",
-      "hideDlcs": "Peida DLC-d",
-      "ageRatingOption": "Näita mänge PEGI reitinguga {{age}} või noorem",
-      "genres": "Žanrid",
-      "activeCount_one": "{{count}} aktiivsed",
-      "lessFilters": "Vähem filtreid",
-      "rating": "Reiting",
-      "sort": "Sorteerimisalus",
-      "genresPlaceholder": "Mis tahes žanr",
-      "features": "Omadused",
-      "featuresPlaceholder": "Mis tahes omadus",
-      "ageRatingAll": "Kõik",
-      "pageSize": "Igal leheküljel",
-      "releaseYear": "Väljalaske aasta",
-      "hideOwned": "Peida kuuluvad",
-      "wishlistOnly": "Ainult soovinimekirjas"
-    },
-    "sidebar": "Allahindlused",
-    "sort": {
-      "priceDesc": "Hind: kallist odavaks",
-      "trending": "Trendiv",
-      "priceAsc": "Hind: odavast kalliks",
-      "releaseDesc": "Väljalaskekuupäev: uuest vanaks",
-      "ratingAsc": "Reiting: madalast kõrgeks",
-      "releaseAsc": "Väljalaskekuupäev: vanast uueks",
-      "ratingDesc": "Reiting: kõrgest madalaks",
-      "discount": "Suurim allahindlus"
-    },
-    "noMatches": "Ükski mäng ei vasta praegustele filtritele.",
-    "aria": {
-      "pagination": "Leheküljed",
-      "rating": "Reiting {{rating}} 10-st"
-    },
-    "error": "Allahindlusi polnud võimalik laadida. Palun proovige hiljem uuesti.",
-    "empty": "Ühtegi allahinnatud mängu pole hetkel saadaval.",
-    "loading": "Laen allahinnatud mänge...",
-    "title": "GOG allahindlused",
-    "pagination": {
-      "prev": "Eelmine"
-    }
   },
   "steamgriddb": {
     "error": {

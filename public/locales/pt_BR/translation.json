@@ -259,7 +259,6 @@
   },
   "globalSettings": "Configurações globais",
   "GOG": "GOG",
-  "gog-store": "Loja GOG",
   "header": {
     "hide_non_available_games": "Esconder jogos indisponíveis",
     "ignore_hidden": "Ignorar escondidos",
@@ -893,8 +892,6 @@
     "preparing_login": "Preparando login... ",
     "installed": "Instalado"
   },
-  "store": "Loja Epic",
-  "stores": "Lojas",
   "title": {
     "allGames": "Todos os Jogos"
   },
@@ -1017,11 +1014,6 @@
     "add": "Adicionar",
     "cancel-remove": "Cancelar remoção de \"{{name}}\""
   },
-  "adtraction-locked": {
-    "dont-show-again": "Não exibir este aviso novamente",
-    "description": "Parece Que o domínio track.adtraction.com foi incapaz de carregar ou está bloqueado. Com Adtraction, qualquer compra feita na loja GOG irá apoiar Heroic financialmente. Considere remover o bloqueio se deseja contribuir.",
-    "title": "Adtraction está bloqueado"
-  },
   "notification": {
     "steam": {
       "error": "Instalação do Steam falhou. Por favor, leia as instruções cuidadosamente e tente novamente!",
@@ -1042,92 +1034,8 @@
     },
     "title": "Enviar dados anônimos"
   },
-  "amazon-luna": "Amazon Luna",
-  "zoom-store": "Loja Zoom",
   "launch": {
     "options": "Opções de inicialização..."
-  },
-  "discounts": {
-    "region": {
-      "countries": {
-        "IT": "Itália",
-        "ES": "Espanha",
-        "FI": "Finlândia",
-        "GR": "Grécia",
-        "RO": "Romenia",
-        "NO": "Noruega",
-        "KR": "Coreia do Sul",
-        "US": "Estados Unidos",
-        "HU": "Hungria",
-        "PT": "Portugal",
-        "NL": "Holanda",
-        "AU": "Australia",
-        "TW": "Taiwan",
-        "IL": "Israel",
-        "JP": "Japão",
-        "DK": "Dinamarca",
-        "DE": "Alemanha",
-        "CZ": "Rep. Tcheca",
-        "FR": "França",
-        "UA": "Ucrânia",
-        "GB": "Reino Unido",
-        "SE": "Suécia",
-        "CN": "China",
-        "RU": "Russia",
-        "CA": "Canadá",
-        "PL": "Polônia",
-        "BR": "Brasil",
-        "CH": "Suíça",
-        "TR": "Turquia"
-      },
-      "auto": "Auto ({{code}})",
-      "label": "Região da Loja"
-    },
-    "filters": {
-      "moreFilters": "Mais filtros",
-      "ageRating": "Idade recomendada",
-      "os": "Sistema operacional",
-      "price": "Preço",
-      "activeCount_other": "{{count}} ativos",
-      "hideDlcs": "Esconder DLCs",
-      "ageRatingOption": "Mostrar jogos com classificação {{age}} ou menor",
-      "genres": "Gêneros",
-      "activeCount_one": "{{count}} ativos",
-      "lessFilters": "Menos filtros",
-      "rating": "Nota",
-      "sort": "Ordernar por",
-      "genresPlaceholder": "Qualquer gênero",
-      "features": "Recursos",
-      "featuresPlaceholder": "Qualquer recurso",
-      "ageRatingAll": "Todos",
-      "pageSize": "Por página",
-      "releaseYear": "Ano de lançamento",
-      "hideOwned": "Ocultar possuídos",
-      "wishlistOnly": "Apenas lista de desejos"
-    },
-    "sidebar": "Descontos",
-    "sort": {
-      "priceDesc": "Preço: descrescente",
-      "trending": "Populares",
-      "priceAsc": "Preço: crescente",
-      "releaseDesc": "Lançamento: decrescente",
-      "ratingAsc": "Nota: crescente",
-      "releaseAsc": "Lançamento: crescente",
-      "ratingDesc": "Nota: decrescente",
-      "discount": "Maiores descontos"
-    },
-    "noMatches": "Nenhum jogo encontrado com os filtros atuais.",
-    "aria": {
-      "pagination": "Paginação",
-      "rating": "Nota {{rating}} de 10"
-    },
-    "error": "Não foi possível carregar os descontos. Tente novamente mais tarde.",
-    "empty": "Sem descontos disponíveis agora.",
-    "loading": "Carregando descontos...",
-    "title": "Descontos GOG",
-    "pagination": {
-      "prev": "Anterior"
-    }
   },
   "steamgriddb": {
     "error": {

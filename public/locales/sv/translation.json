@@ -251,7 +251,6 @@
   },
   "globalSettings": "Globala inställningar",
   "GOG": "GOG",
-  "gog-store": "GOG Butik",
   "header": {
     "hide_non_available_games": "Dölj icke-tillgängliga spel",
     "ignore_hidden": "Ignorera dolda",
@@ -871,8 +870,6 @@
     "preparing_login": "Förbereder inloggning... ",
     "installed": "Installerad"
   },
-  "store": "Epic Butik",
-  "stores": "Butiker",
   "title": {
     "allGames": "Alla spel"
   },
@@ -983,11 +980,6 @@
     "noResults": "De nuvarande filtren gav inga resultat.",
     "noGames": "Ditt bibliotek är tomt.<br /><br />Klicka <4>här</4> för att logga in med ditt Epic, GOG.com, eller Amazon konto. Efter det kommer dina spel synas här i biblioteket.<br /><br />För att använda spel eller appar från andra källor, klicka <br /> för att lägga till dem manuellt."
   },
-  "adtraction-locked": {
-    "description": "Det verkar som om domänen track.adtraction.com inte kunde laddas eller är blockerad. Med adtraction stöder alla köp du gör via Heroic på GOGs butik ekonomiskt. Överväg att ta bort spärren om du vill bidra.",
-    "dont-show-again": "Visa inte denna varning igen",
-    "title": "Adtraction är blockerat"
-  },
   "categories-manager": {
     "add-placeholder": "Lägg till ny kategori",
     "cancel-remove": "Avbryt borttagning av \"{{name}}\"",
@@ -1014,90 +1006,8 @@
     },
     "title": "Skicka anonym analysdata"
   },
-  "amazon-luna": "Amazon Luna",
-  "zoom-store": "Zoom butik",
   "launch": {
     "options": "Startalternativ..."
-  },
-  "discounts": {
-    "region": {
-      "countries": {
-        "IT": "",
-        "ES": "",
-        "FI": "",
-        "GR": "",
-        "RO": "",
-        "NO": "",
-        "KR": "",
-        "US": "",
-        "HU": "",
-        "PT": "",
-        "NL": "",
-        "AU": "",
-        "TW": "",
-        "IL": "",
-        "JP": "",
-        "DK": "",
-        "DE": "",
-        "CZ": "",
-        "FR": "",
-        "UA": "",
-        "GB": "",
-        "SE": "",
-        "CN": "",
-        "RU": "",
-        "CA": "",
-        "PL": "",
-        "BR": "",
-        "CH": "",
-        "TR": ""
-      },
-      "auto": "",
-      "label": ""
-    },
-    "filters": {
-      "moreFilters": "",
-      "ageRating": "",
-      "os": "Oprativsystem:",
-      "price": "",
-      "activeCount_other": "",
-      "hideDlcs": "",
-      "ageRatingOption": "",
-      "genres": "",
-      "activeCount_one": "",
-      "lessFilters": "",
-      "rating": "",
-      "sort": "",
-      "genresPlaceholder": "",
-      "features": "",
-      "featuresPlaceholder": "",
-      "ageRatingAll": "Alla",
-      "pageSize": "",
-      "releaseYear": ""
-    },
-    "sidebar": "",
-    "sort": {
-      "priceDesc": "",
-      "trending": "",
-      "priceAsc": "",
-      "releaseDesc": "",
-      "ratingAsc": "",
-      "releaseAsc": "",
-      "ratingDesc": "",
-      "discount": ""
-    },
-    "noMatches": "",
-    "aria": {
-      "pagination": "",
-      "rating": ""
-    },
-    "error": "",
-    "empty": "",
-    "loading": "",
-    "title": "",
-    "pagination": {
-      "prev": ""
-    }
   },
   "steamgriddb": {
     "error": {

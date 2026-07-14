@@ -804,7 +804,6 @@
     }
   },
   "GameSettings": "Spilindstillinger",
-  "gog-store": "GOG butik",
   "header": {
     "ignore_hidden": "Ignorer skjult",
     "platform": "Platform",
@@ -887,8 +886,6 @@
     "alt-nile-bin": "Brug af indbygget Nile binær..."
   },
   "search": "Søg efter spil",
-  "store": "Episk butik",
-  "stores": "Butikker",
   "tray": {
     "show": "At vise",
     "about": "Om",
@@ -998,11 +995,6 @@
     "openGUI": "Åbn Winetricks GUI",
     "search": "Søg efter skrifttyper eller komponenter"
   },
-  "adtraction-locked": {
-    "description": "Domænet track.adtraction.com syntes at være ulæseligt eller blokeret. Med adtraction støtter ethvert køb, du foretager i GOG-butikken, Heroic økonomisk. Overvej at fjerne blokeringen, hvis du ønsker at bidrage.",
-    "dont-show-again": "Vis ikke denne advarsel igen",
-    "title": "Adtraction er blokeret"
-  },
   "categories-manager": {
     "add-placeholder": "Tilføj ny kategori",
     "no-categories": "Ingen kategorier endnu.",
@@ -1047,96 +1039,14 @@
     },
     "title": "Send Anonyme Analysedata"
   },
-  "amazon-luna": "Amazon Luna",
   "wineExplanation": {
     "proton-ge": "GE-Proton er en Proton-variant skabt af Glorious Eggroll. Den er ment til brug sammen med umu-launcheren (standard i Heroic).",
     "gpt": "",
     "wine-crossover": "",
     "wine-staging-macos": ""
   },
-  "zoom-store": "Zoom-butik",
   "launch": {
     "options": "Opstartsinstillinger..."
-  },
-  "discounts": {
-    "region": {
-      "countries": {
-        "IT": "",
-        "ES": "",
-        "FI": "",
-        "GR": "",
-        "RO": "",
-        "NO": "",
-        "KR": "",
-        "US": "",
-        "HU": "",
-        "PT": "",
-        "NL": "",
-        "AU": "",
-        "TW": "",
-        "IL": "",
-        "JP": "",
-        "DK": "",
-        "DE": "",
-        "CZ": "",
-        "FR": "",
-        "UA": "",
-        "GB": "",
-        "SE": "",
-        "CN": "",
-        "RU": "",
-        "CA": "",
-        "PL": "",
-        "BR": "",
-        "CH": "",
-        "TR": ""
-      },
-      "auto": "",
-      "label": ""
-    },
-    "filters": {
-      "moreFilters": "",
-      "ageRating": "",
-      "os": "Operativsystem:",
-      "price": "",
-      "activeCount_other": "",
-      "hideDlcs": "",
-      "ageRatingOption": "",
-      "genres": "",
-      "activeCount_one": "",
-      "lessFilters": "",
-      "rating": "",
-      "sort": "",
-      "genresPlaceholder": "",
-      "features": "",
-      "featuresPlaceholder": "",
-      "ageRatingAll": "Alle",
-      "pageSize": "",
-      "releaseYear": ""
-    },
-    "sidebar": "",
-    "sort": {
-      "priceDesc": "",
-      "trending": "",
-      "priceAsc": "",
-      "releaseDesc": "",
-      "ratingAsc": "",
-      "releaseAsc": "",
-      "ratingDesc": "",
-      "discount": ""
-    },
-    "noMatches": "",
-    "aria": {
-      "pagination": "",
-      "rating": ""
-    },
-    "error": "",
-    "empty": "",
-    "loading": "",
-    "title": "",
-    "pagination": {
-      "prev": ""
-    }
   },
   "steamgriddb": {
     "error": {

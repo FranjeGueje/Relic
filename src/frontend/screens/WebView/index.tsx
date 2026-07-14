@@ -2,7 +2,7 @@ import { useContext, useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate, useLocation, useParams } from 'react-router-dom'
 
-import { ToggleSwitch, UpdateComponent } from 'frontend/components/UI'
+import { UpdateComponent } from 'frontend/components/UI'
 import WebviewControls from 'frontend/components/UI/WebviewControls'
 import ContextProvider from 'frontend/state/ContextProvider'
 import './index.css'
@@ -13,21 +13,6 @@ import {
   DialogContent,
   DialogHeader
 } from 'frontend/components/UI/Dialog'
-
-const validStoredUrl = (url: string, store: string) => {
-  switch (store) {
-    case 'epic':
-      return url.includes('epicgames.com')
-    case 'gog':
-      return url.includes('gog.com')
-    case 'amazon':
-      return url.includes('gaming.amazon.com')
-    case 'zoom':
-      return url.includes('zoom-platform.com')
-    default:
-      return false
-  }
-}
 
 export default function WebView() {
   const { i18n } = useTranslation()
@@ -47,10 +32,8 @@ export default function WebView() {
   const navigate = useNavigate()
   const webviewRef = useRef<Electron.WebviewTag>(null)
 
-  // `store` is set to epic/gog/amazon depending on which storefront we're
-  // supposed to show, `runner` is set to a runner if we're supposed to show its
-  // login prompt
-  const { store, runner } = useParams()
+  // `runner` is set to a runner if we're supposed to show its login prompt
+  const { runner } = useParams()
 
   let lang = i18n.language
   if (i18n.language === 'pt') {
@@ -59,10 +42,6 @@ export default function WebView() {
 
   const epicLoginUrl = 'https://www.epicgames.com/id/login?responseType=code'
 
-  const epicStore = `https://www.epicgames.com/store/${lang}/`
-  const gogStore = `https://af.gog.com?as=1838482841`
-  const amazonStore = `https://gaming.amazon.com`
-  const zoomStore = `https://www.zoom-platform.com`
   const wikiURL =
     'https://github.com/Relic-Games-Launcher/RelicGamesLauncher/wiki'
   const gogEmbedRegExp = new RegExp('https://embed.gog.com/on_login_success?')
@@ -74,10 +53,6 @@ export default function WebView() {
   const trueAsStr = 'true' as unknown as boolean | undefined
 
   const urls: { [pathname: string]: string } = {
-    '/store/epic': epicStore,
-    '/store/gog': gogStore,
-    '/store/amazon': amazonStore,
-    '/store/zoom': zoomStore,
     '/wiki': wikiURL,
     '/loginEpic': epicLoginUrl,
     '/loginGOG': gogLoginUrl,
@@ -87,22 +62,6 @@ export default function WebView() {
     '/loginweb/zoom': zoomLoginUrl
   }
   let startUrl = urls[pathname]
-
-  if (store) {
-    sessionStorage.setItem('last-store', store)
-    const lastUrl = sessionStorage.getItem(`last-url-${store}`)
-    if (lastUrl && validStoredUrl(lastUrl, store)) {
-      startUrl = lastUrl
-    }
-  }
-
-  if (pathname.match(/store-page/)) {
-    const searchParams = new URLSearchParams(search)
-    const queryParam = searchParams.get('store-url')
-    if (queryParam) {
-      startUrl = queryParam
-    }
-  }
 
   useEffect(() => {
     if (pathname !== '/loginweb/nile') return
@@ -211,25 +170,7 @@ export default function WebView() {
       }
 
       const onerror = ({ validatedURL }: Electron.DidFailLoadEvent) => {
-        if (validatedURL && validatedURL.match(/track\.adtraction\.com/)) {
-          const parsedUrl = new URL(validatedURL)
-          const redirectUrl = parsedUrl.searchParams.get('url')
-          const url = new URL(redirectUrl || 'https://gog.com')
-          // Remove any port definitions
-          // Recently GOG made a change where they started to provide a port
-          // in a URL that adtraction is supposed to redirect to.
-          // This leads to urls like https://gog.com:80
-          // That address is unreachable
-          //
-          // Add a entry below if you notice this line of code and cringe
-          // - username - DD/MM/YY
-          // - imLinguin - 01/07/24
-          url.port = ''
-          webview.loadURL(url.toString())
-          if (!localStorage.getItem('adtraction-warning')) {
-            setShowAdtractionWarning(true)
-          }
-        }
+        // ignore errors for now
       }
 
       webview.addEventListener('dom-ready', loadstop)
@@ -255,15 +196,6 @@ export default function WebView() {
   useEffect(() => {
     const webview = webviewRef.current
     if (webview) {
-      const onNavigate = () => {
-        if (store) {
-          const url = webview.getURL()
-          if (validStoredUrl(url, store)) {
-            sessionStorage.setItem(`last-url-${store}`, webview.getURL())
-          }
-        }
-      }
-
       const onLoginNavigate = () => {
         if (runner === 'zoom') {
           const pageURL = webview.getURL()
@@ -279,31 +211,19 @@ export default function WebView() {
         }
       }
 
-      // this one is needed for gog/amazon
-      webview.addEventListener('did-navigate', onNavigate)
-      // this one is needed for epic
-      webview.addEventListener('did-navigate-in-page', onNavigate)
       webview.addEventListener('did-navigate', onLoginNavigate)
 
       return () => {
-        webview.removeEventListener('did-navigate', onNavigate)
-        webview.removeEventListener('did-navigate-in-page', onNavigate)
         webview.removeEventListener('did-navigate', onLoginNavigate)
       }
     }
 
     return
-  }, [webviewRef.current, store, runner])
+  }, [webviewRef.current, runner])
 
   const [showLoginWarningFor, setShowLoginWarningFor] = useState<
     null | 'epic' | 'gog' | 'amazon' | 'zoom'
   >(null)
-
-  const [showAdtractionWarning, setShowAdtractionWarning] =
-    useState<boolean>(false)
-
-  const [dontShowAdtractionWarning, setDontShowAdtractionWarning] =
-    useState<boolean>(false)
 
   useEffect(() => {
     if (
@@ -377,10 +297,10 @@ export default function WebView() {
       )}
       {loading.refresh && <UpdateComponent message={loading.message} />}
       <webview
-        key={store}
+        key={runner}
         ref={webviewRef}
         className="WebView__webview"
-        partition={`persist:${startUrl === epicLoginUrl ? 'epicstore' : store}`}
+        partition={`persist:${runner || 'default'}`}
         src={startUrl}
         allowpopups={trueAsStr}
         preload={webviewPreloadPath}
@@ -390,45 +310,6 @@ export default function WebView() {
           warnLoginForStore={showLoginWarningFor}
           onClose={onLoginWarningClosed}
         />
-      )}
-      {showAdtractionWarning && (
-        <Dialog
-          showCloseButton={true}
-          onClose={() => {
-            setShowAdtractionWarning(false)
-            if (dontShowAdtractionWarning)
-              localStorage.setItem('adtraction-warning', 'true')
-          }}
-        >
-          <DialogHeader
-            onClose={() => {
-              setShowAdtractionWarning(false)
-              if (dontShowAdtractionWarning)
-                localStorage.setItem('adtraction-warning', 'true')
-            }}
-          >
-            {t('adtraction-locked.title', 'Adtraction is blocked')}
-          </DialogHeader>
-          <DialogContent>
-            <p>
-              {t(
-                'adtraction-locked.description',
-                'It seems the track.adtraction.com domain was unable to load or is blocked. With adtraction, any purchase you make in the GOG store supports Relic financially. Consider removing the block if you wish to contribute.'
-              )}
-            </p>
-            <ToggleSwitch
-              htmlId="dont-show-adtraction-warning-checkbox"
-              value={dontShowAdtractionWarning}
-              handleChange={(e) =>
-                setDontShowAdtractionWarning(e.target.checked)
-              }
-              title={t(
-                'adtraction-locked.dont-show-again',
-                "Don't show this warning again"
-              )}
-            />
-          </DialogContent>
-        </Dialog>
       )}
     </div>
   )

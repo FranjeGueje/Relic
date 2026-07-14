@@ -259,7 +259,6 @@
   },
   "globalSettings": "Impostazioni globali",
   "GOG": "GOG",
-  "gog-store": "Negozio GOG",
   "header": {
     "hide_non_available_games": "Nascondi giochi non disponibili",
     "ignore_hidden": "Ignora nascosti",
@@ -888,8 +887,6 @@
     "preparing_login": "Preparazione dell'accesso... ",
     "installed": "Installata"
   },
-  "store": "Epic Store",
-  "stores": "Negozi",
   "title": {
     "allGames": "Tutti i giochi"
   },
@@ -1008,11 +1005,6 @@
     "wine-crossover": "Wine-Crossover si basa sul progetto open source Crossover Wine ed è consigliato per Mac con processore Intel e per giochi con DirectX 11 o versioni precedenti.",
     "wine-staging-macos": "Wine-Staging-macOS si basa sul progetto Wine principale ed è consigliato per Mac con processore Intel e per giochi compatibili con DirectX 11 o versioni precedenti, soprattutto se utilizzato in combinazione con lo strumento DXMT."
   },
-  "adtraction-locked": {
-    "description": "Sembra che il dominio track.adtraction.com non si sia caricato o sia bloccato. Con adtraction, ogni acquisto che fai nel GOG store supporta finanziariamente Heroic. Valuta di rimuovere il blocco se hai voglia di contribuire.",
-    "dont-show-again": "Non mostrare nuovamente questo avviso",
-    "title": "Adtraction è bloccato"
-  },
   "emptyLibrary": {
     "noResults": "I filtri attuali non hanno prodotto risultati.",
     "noGames": "La tua libreria è vuota.<br /><br />Clicca <4>qui</4> per accedere con i tuoi account Epic, GOG.com e Amazon. I tuoi giochi appariranno qui nella Libreria.<br /><br />Per usare giochi o app da altre sorgenti, clicca <br /> per aggiungerli manualmente."
@@ -1037,92 +1029,8 @@
     },
     "title": "Invia Dati Analitici Anonimi"
   },
-  "amazon-luna": "Amazon Luna",
-  "zoom-store": "Negozio Zoom",
   "launch": {
     "options": "Opzioni di avvio..."
-  },
-  "discounts": {
-    "region": {
-      "countries": {
-        "IT": "Italia",
-        "ES": "Spagna",
-        "FI": "Finlandia",
-        "GR": "Grecia",
-        "RO": "Romania",
-        "NO": "Norvegia",
-        "KR": "Corea Del Sud",
-        "US": "Stati Uniti",
-        "HU": "Ungheria",
-        "PT": "Portogallo",
-        "NL": "Olanda",
-        "AU": "Australia",
-        "TW": "Taiwan",
-        "IL": "Israele",
-        "JP": "Giappone",
-        "DK": "Danimarca",
-        "DE": "Germania",
-        "CZ": "Repubblica Ceca",
-        "FR": "Francia",
-        "UA": "Ucraina",
-        "GB": "Regno Unito",
-        "SE": "Svezia",
-        "CN": "Cina",
-        "RU": "Russia",
-        "CA": "Canada",
-        "PL": "Polonia",
-        "BR": "Brasile",
-        "CH": "Svizzera",
-        "TR": "Turchia"
-      },
-      "auto": "Auto ({{code}})",
-      "label": "Regione Negozio"
-    },
-    "filters": {
-      "moreFilters": "Più filtri",
-      "ageRating": "Adatto per età",
-      "os": "Sistema operativo",
-      "price": "Prezzo",
-      "activeCount_other": "{{count}} Attivi",
-      "hideDlcs": "Nascondi DLC",
-      "ageRatingOption": "Mostra giochi classifificati PEGI {{age}} o inferiore",
-      "genres": "Generi",
-      "activeCount_one": "{{count}} attivi",
-      "lessFilters": "Meno filtri",
-      "rating": "Voto",
-      "sort": "Ordina per",
-      "genresPlaceholder": "Tutti i generi",
-      "features": "Caratteristiche",
-      "featuresPlaceholder": "Tutte le caratteristiche",
-      "ageRatingAll": "Tutto",
-      "pageSize": "Per pagina",
-      "releaseYear": "Anno di rilascio",
-      "hideOwned": "Nascondi posseduti",
-      "wishlistOnly": "Solo lista dei desideri"
-    },
-    "sidebar": "Affari",
-    "sort": {
-      "priceDesc": "Prezzo: Maggiore verso il minore",
-      "trending": "Di tendenza",
-      "priceAsc": "Prezzo: minore al maggiore",
-      "releaseDesc": "Data d'uscita: recente a meno recente",
-      "ratingAsc": "Votazione: minore verso maggiore",
-      "releaseAsc": "Data d'uscita: meno recente a recente",
-      "ratingDesc": "Votazione: maggiore verso minore",
-      "discount": "Grandi sconti"
-    },
-    "noMatches": "Nessun gioco corrisponde ai filtri correnti.",
-    "aria": {
-      "pagination": "Paginazione",
-      "rating": "Votazione {{rating}} su 10"
-    },
-    "error": "Impossibile caricare gli sconti. Per favore riprova più tardi.",
-    "empty": "Nessun gioco scontato per il momento.",
-    "loading": "Caricamento giochi scontati...",
-    "title": "Affari GOG",
-    "pagination": {
-      "prev": "Precedente"
-    }
   },
   "steamgriddb": {
     "error": {

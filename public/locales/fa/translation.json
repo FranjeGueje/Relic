@@ -252,7 +252,6 @@
   },
   "globalSettings": "تنظیمات عمومی",
   "GOG": "GOG",
-  "gog-store": "فروشگاه GOG",
   "header": {
     "hide_non_available_games": "پنهان کردن بازی های در عدم دسترس",
     "ignore_hidden": "نادیده گرفتن موارد پنهان",
@@ -868,8 +867,6 @@
     "preparing_login": "در حال آماده سازی ورود... ",
     "installed": "نصب شده"
   },
-  "store": "فروشگاه اپیک",
-  "stores": "فروشگاهها",
   "title": {
     "allGames": "همه بازیها"
   },
@@ -987,11 +984,6 @@
   "launch": {
     "options": "گزینه های اجرا..."
   },
-  "adtraction-locked": {
-    "description": "",
-    "dont-show-again": "",
-    "title": ""
-  },
   "categories-manager": {
     "confirm-rename": "",
     "cancel-remove": "",
@@ -1004,97 +996,15 @@
     "add": "",
     "rename": ""
   },
-  "amazon-luna": "",
   "emptyLibrary": {
     "noGames": "",
     "noResults": ""
   },
-  "zoom-store": "",
   "wineExplanation": {
     "proton-ge": "",
     "gpt": "",
     "wine-crossover": "",
     "wine-staging-macos": ""
-  },
-  "discounts": {
-    "region": {
-      "countries": {
-        "IT": "",
-        "ES": "",
-        "FI": "",
-        "GR": "",
-        "RO": "",
-        "NO": "",
-        "KR": "",
-        "US": "",
-        "HU": "",
-        "PT": "",
-        "NL": "",
-        "AU": "",
-        "TW": "",
-        "IL": "",
-        "JP": "",
-        "DK": "",
-        "DE": "",
-        "CZ": "",
-        "FR": "",
-        "UA": "",
-        "GB": "",
-        "SE": "",
-        "CN": "",
-        "RU": "",
-        "CA": "",
-        "PL": "",
-        "BR": "",
-        "CH": "",
-        "TR": ""
-      },
-      "auto": "",
-      "label": ""
-    },
-    "filters": {
-      "moreFilters": "",
-      "ageRating": "",
-      "os": "",
-      "price": "",
-      "activeCount_other": "",
-      "hideDlcs": "",
-      "ageRatingOption": "",
-      "genres": "",
-      "activeCount_one": "",
-      "lessFilters": "",
-      "rating": "",
-      "sort": "",
-      "genresPlaceholder": "",
-      "features": "",
-      "featuresPlaceholder": "",
-      "ageRatingAll": "همه",
-      "pageSize": "",
-      "releaseYear": ""
-    },
-    "sidebar": "",
-    "sort": {
-      "priceDesc": "",
-      "trending": "",
-      "priceAsc": "",
-      "releaseDesc": "",
-      "ratingAsc": "",
-      "releaseAsc": "",
-      "ratingDesc": "",
-      "discount": ""
-    },
-    "noMatches": "",
-    "aria": {
-      "pagination": "",
-      "rating": ""
-    },
-    "error": "",
-    "empty": "",
-    "loading": "",
-    "title": "",
-    "pagination": {
-      "prev": ""
-    }
   },
   "steamgriddb": {
     "error": {

@@ -252,7 +252,6 @@
   },
   "globalSettings": "Ezarpen globalak",
   "GOG": "GOG",
-  "gog-store": "GOG denda",
   "header": {
     "hide_non_available_games": "Hide non-available games",
     "ignore_hidden": "Ezikusi ezkutatutakoak",
@@ -864,8 +863,6 @@
     "processing": "Fitxategiak prozesatzen, itxaron mesedez",
     "preparing_login": "Saioa hasteko prestatzen... "
   },
-  "store": "Denda epikoa",
-  "stores": "Dendak",
   "title": {
     "allGames": "Joko guztiak"
   },
@@ -983,11 +980,6 @@
   "launch": {
     "options": "Jaurtiketa-aukerak..."
   },
-  "adtraction-locked": {
-    "description": "",
-    "dont-show-again": "",
-    "title": ""
-  },
   "categories-manager": {
     "confirm-rename": "",
     "cancel-remove": "",
@@ -1000,97 +992,15 @@
     "add": "",
     "rename": ""
   },
-  "amazon-luna": "",
   "emptyLibrary": {
     "noGames": "",
     "noResults": ""
   },
-  "zoom-store": "",
   "wineExplanation": {
     "proton-ge": "",
     "gpt": "",
     "wine-crossover": "",
     "wine-staging-macos": ""
-  },
-  "discounts": {
-    "region": {
-      "countries": {
-        "IT": "",
-        "ES": "",
-        "FI": "",
-        "GR": "",
-        "RO": "",
-        "NO": "",
-        "KR": "",
-        "US": "",
-        "HU": "",
-        "PT": "",
-        "NL": "",
-        "AU": "",
-        "TW": "",
-        "IL": "",
-        "JP": "",
-        "DK": "",
-        "DE": "",
-        "CZ": "",
-        "FR": "",
-        "UA": "",
-        "GB": "",
-        "SE": "",
-        "CN": "",
-        "RU": "",
-        "CA": "",
-        "PL": "",
-        "BR": "",
-        "CH": "",
-        "TR": ""
-      },
-      "auto": "",
-      "label": ""
-    },
-    "filters": {
-      "moreFilters": "",
-      "ageRating": "",
-      "os": "",
-      "price": "",
-      "activeCount_other": "",
-      "hideDlcs": "",
-      "ageRatingOption": "",
-      "genres": "",
-      "activeCount_one": "",
-      "lessFilters": "",
-      "rating": "",
-      "sort": "",
-      "genresPlaceholder": "",
-      "features": "",
-      "featuresPlaceholder": "",
-      "ageRatingAll": "Dena",
-      "pageSize": "",
-      "releaseYear": ""
-    },
-    "sidebar": "",
-    "sort": {
-      "priceDesc": "",
-      "trending": "",
-      "priceAsc": "",
-      "releaseDesc": "",
-      "ratingAsc": "",
-      "releaseAsc": "",
-      "ratingDesc": "",
-      "discount": ""
-    },
-    "noMatches": "",
-    "aria": {
-      "pagination": "",
-      "rating": ""
-    },
-    "error": "",
-    "empty": "",
-    "loading": "",
-    "title": "",
-    "pagination": {
-      "prev": ""
-    }
   },
   "steamgriddb": {
     "error": {

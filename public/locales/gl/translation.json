@@ -259,7 +259,6 @@
   },
   "globalSettings": "Preferencias globais",
   "GOG": "GOG",
-  "gog-store": "Tenda de GOG",
   "header": {
     "hide_non_available_games": "Hide non-available games",
     "ignore_hidden": "Ignore Hidden",
@@ -882,8 +881,6 @@
     "preparing_login": "Preparando o inicio de sesión... ",
     "installed": "Instalado"
   },
-  "store": "Tenda de Epic",
-  "stores": "Tendas",
   "title": {
     "allGames": "Todos os xogos"
   },
@@ -984,11 +981,6 @@
     "minimize": "Minimizar a ventá",
     "restore": "Restablecer a ventá"
   },
-  "adtraction-locked": {
-    "dont-show-again": "Non volver a amosar esta advertencia",
-    "description": "Semella que o dominio track.adtraction.com non se puido cargar ou está bloqueado. Con adtraction calquera compra que fagas na tenda de GOG apoia a Heroic economicamente. Considera eliminar o bloqueo se queres contribuír.",
-    "title": "Adtraction está bloqueado"
-  },
   "categories-manager": {
     "no-categories": "Aínda non hai ningunha categoría.",
     "remove": "Eliminar \"{{name}}\"",
@@ -1031,8 +1023,6 @@
     "wine-crossover": "",
     "wine-staging-macos": ""
   },
-  "amazon-luna": "Amazon Luna",
-  "zoom-store": "Tenda de Zoom",
   "launch": {
     "options": "Opcións de arranque..."
   },
@@ -1047,86 +1037,6 @@
       "search": "",
       "title": "",
       "select-game": ""
-    }
-  },
-  "discounts": {
-    "filters": {
-      "ageRatingAll": "Todos",
-      "os": "Sistema operativo:",
-      "moreFilters": "",
-      "ageRating": "",
-      "price": "",
-      "activeCount_other": "",
-      "hideDlcs": "",
-      "ageRatingOption": "",
-      "genres": "",
-      "activeCount_one": "",
-      "lessFilters": "",
-      "rating": "",
-      "sort": "",
-      "genresPlaceholder": "",
-      "features": "",
-      "featuresPlaceholder": "",
-      "pageSize": "",
-      "releaseYear": ""
-    },
-    "region": {
-      "countries": {
-        "IT": "",
-        "ES": "",
-        "FI": "",
-        "GR": "",
-        "RO": "",
-        "NO": "",
-        "KR": "",
-        "US": "",
-        "HU": "",
-        "PT": "",
-        "NL": "",
-        "AU": "",
-        "TW": "",
-        "IL": "",
-        "JP": "",
-        "DK": "",
-        "DE": "",
-        "CZ": "",
-        "FR": "",
-        "UA": "",
-        "GB": "",
-        "SE": "",
-        "CN": "",
-        "RU": "",
-        "CA": "",
-        "PL": "",
-        "BR": "",
-        "CH": "",
-        "TR": ""
-      },
-      "auto": "",
-      "label": ""
-    },
-    "sidebar": "",
-    "sort": {
-      "priceDesc": "",
-      "trending": "",
-      "priceAsc": "",
-      "releaseDesc": "",
-      "ratingAsc": "",
-      "releaseAsc": "",
-      "ratingDesc": "",
-      "discount": ""
-    },
-    "noMatches": "",
-    "aria": {
-      "pagination": "",
-      "rating": ""
-    },
-    "error": "",
-    "empty": "",
-    "loading": "",
-    "title": "",
-    "pagination": {
-      "prev": ""
     }
   },
   "next": "Seguinte",

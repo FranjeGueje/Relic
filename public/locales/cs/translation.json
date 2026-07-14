@@ -259,7 +259,6 @@
   },
   "globalSettings": "Globální nastavení",
   "GOG": "GOG",
-  "gog-store": "GOG Store",
   "header": {
     "hide_non_available_games": "Skrýt nedostupné hry",
     "ignore_hidden": "Ignorovat skryté",
@@ -892,8 +891,6 @@
     "preparing_login": "Příprava přihlášení... ",
     "installed": "Nainstalováno"
   },
-  "store": "Epic Store",
-  "stores": "Obchody",
   "title": {
     "allGames": "Všechny hry"
   },
@@ -1004,11 +1001,6 @@
     "noGames": "Vaše knihovna je prázdná.<br /><br />Klikněte <4>zde</4> a přihlaste se pomocí účtu Epic, GOG.com nebo Amazon. Poté se vaše hry zobrazí zde v knihovně.<br /><br />Chcete-li používat hry nebo aplikace z jiných zdrojů, klikněte na <br /> a přidejte je ručně.",
     "noResults": "Aktuálním filtrům nic neodpovídá."
   },
-  "adtraction-locked": {
-    "title": "Služba adtraction je blokována",
-    "description": "Vypadá to, že doména track.adtraction.com je blokovaná. Se službou adtraction finančně podpoříte Heroic každým nákupem provedeným v obchodě GOG. Zvažte prosím odstranění blokování, pokud si přejete přispět projektu.",
-    "dont-show-again": "Toto varování již nezobrazovat"
-  },
   "categories-manager": {
     "add": "Přidat",
     "cancel-remove": "Zrušit odebrání „{{name}}“",
@@ -1041,92 +1033,8 @@
     },
     "title": "Odeslat anonymní statistiky"
   },
-  "amazon-luna": "Amazon Luna",
-  "zoom-store": "Obchod Zoom",
   "launch": {
     "options": "Možnosti spuštění..."
-  },
-  "discounts": {
-    "region": {
-      "countries": {
-        "IT": "Itálie",
-        "ES": "Španělsko",
-        "FI": "Finsko",
-        "GR": "Řecko",
-        "RO": "Rumunsko",
-        "NO": "Norsko",
-        "KR": "Jižní Korea",
-        "US": "Spojené Státy Americké",
-        "HU": "Maďarsko",
-        "PT": "Portugalsko",
-        "NL": "Nizozemsko",
-        "AU": "Austrálie",
-        "TW": "Taiwan",
-        "IL": "Izrael",
-        "JP": "Japonsko",
-        "DK": "Dánsko",
-        "DE": "Německo",
-        "CZ": "Česko",
-        "FR": "Francie",
-        "UA": "Ukrajina",
-        "GB": "Velká Británie",
-        "SE": "Švédsko",
-        "CN": "Čína",
-        "RU": "Rusko",
-        "CA": "Kanada",
-        "PL": "Polsko",
-        "BR": "Brazílie",
-        "CH": "Švýcarsko",
-        "TR": "Turecko"
-      },
-      "auto": "Automaticky {{code}}",
-      "label": "Obchodní region"
-    },
-    "filters": {
-      "moreFilters": "Více filtrů",
-      "ageRating": "Vhodné pro věk",
-      "os": "Operační systém",
-      "price": "Cena",
-      "activeCount_other": "{{count}} aktivních",
-      "hideDlcs": "Schovat DLC",
-      "ageRatingOption": "Zobrazit hry s hodnocením PEGI {{age}} nebo nižším",
-      "genres": "Žánry",
-      "activeCount_one": "{{count}} aktivních",
-      "lessFilters": "Méně filtrů",
-      "rating": "Hodnocení",
-      "sort": "Seřadit podle",
-      "genresPlaceholder": "Jakýkoliv žánr",
-      "features": "Vlastnosti",
-      "featuresPlaceholder": "Jakákoliv vlastnost",
-      "ageRatingAll": "Vše",
-      "pageSize": "Na stránku",
-      "releaseYear": "Rok vydání",
-      "hideOwned": "Schovat Vlastněné",
-      "wishlistOnly": "Pouze seznam přání"
-    },
-    "sidebar": "Nabídky",
-    "sort": {
-      "priceDesc": "Cena: od největší",
-      "trending": "Trendy",
-      "priceAsc": "Cena: od nejmenší",
-      "releaseDesc": "Rok vydání: od nejnovějšího",
-      "ratingAsc": "Hodnocení: od nejmenšího",
-      "releaseAsc": "Rok vydání: od nejstaršího",
-      "ratingDesc": "Hodnocení: od největšího",
-      "discount": "Největší sleva"
-    },
-    "noMatches": "Žádné hry neodpovídají aktuálním filtrům.",
-    "aria": {
-      "pagination": "Stránkování",
-      "rating": "Hodnoceno {{rating}} z 10"
-    },
-    "error": "Nemohu načíst slevu. Zkuste to později.",
-    "empty": "Žádné zlevněné hry momentálně nejsou dostupné.",
-    "loading": "Načítám zlevněné hry...",
-    "title": "Nabídky GOGu",
-    "pagination": {
-      "prev": "Předcházející"
-    }
   },
   "steamgriddb": {
     "error": {

@@ -259,7 +259,6 @@
   },
   "globalSettings": "Configuració global",
   "GOG": "GOG",
-  "gog-store": "Botiga del GOG",
   "header": {
     "hide_non_available_games": "Amaga els jocs no disponibles",
     "ignore_hidden": "Ignora els amagats",
@@ -885,8 +884,6 @@
     "preparing_login": "S'està preparant l'inici de sessió... ",
     "installed": "Instal·lat"
   },
-  "store": "Botiga de l'Epic",
-  "stores": "Botigues",
   "title": {
     "allGames": "Tots els jocs"
   },
@@ -1009,11 +1006,6 @@
     "title": "Administra les categories",
     "add-placeholder": "Afegeix una categoria"
   },
-  "adtraction-locked": {
-    "dont-show-again": "No mostris més aquest avís",
-    "description": "El domini track.adtraction.com no es pot carregar o està blocat. Amb adtraction, qualsevol compra que realitzis a la botiga GOG ajuda econòmicament l'Heroic. Considera si vols treure el bloqueig per a col·laborar-hi.",
-    "title": "Adtraction està blocat"
-  },
   "notification": {
     "steam": {
       "error": "La instal·lació del Steam ha fallat. Llegeix amb compte les instruccions i tornar a provar-ho.",
@@ -1034,92 +1026,8 @@
     },
     "title": "Envia analítiques anònimes"
   },
-  "amazon-luna": "Amazon Luna",
-  "zoom-store": "Botiga del Zoom",
   "launch": {
     "options": "Opcions d'execució..."
-  },
-  "discounts": {
-    "region": {
-      "countries": {
-        "IT": "Itàlia",
-        "ES": "Espanya",
-        "FI": "Finlàndia",
-        "GR": "Grècia",
-        "RO": "Romania",
-        "NO": "Noruega",
-        "KR": "Corea del Sud",
-        "US": "Estats Units d'Amèrica",
-        "HU": "Hongria",
-        "PT": "Portugal",
-        "NL": "Països Baixos",
-        "AU": "Austràlia",
-        "TW": "Taiwan",
-        "IL": "Israel",
-        "JP": "Japó",
-        "DK": "Dinamarca",
-        "DE": "Alemanya",
-        "CZ": "Txèquia",
-        "FR": "França",
-        "UA": "Ucraïna",
-        "GB": "Regne Unit",
-        "SE": "Suècia",
-        "CN": "Xina",
-        "RU": "Rússia",
-        "CA": "Canadà",
-        "PL": "Polònia",
-        "BR": "Brasil",
-        "CH": "Suïssa",
-        "TR": "Turquia"
-      },
-      "auto": "Auto ({{code}})",
-      "label": "Regió de la botiga"
-    },
-    "filters": {
-      "moreFilters": "Més filtres",
-      "ageRating": "Apropiat per edat",
-      "os": "Sistema operatiu",
-      "price": "Preu",
-      "activeCount_other": "{{count}} actius",
-      "hideDlcs": "Amaga els DLC",
-      "ageRatingOption": "Mostra els jocs classificats com a PEGI {{age}} o inferior",
-      "genres": "Gèneres",
-      "activeCount_one": "{{count}} actiu",
-      "lessFilters": "Menys filtres",
-      "rating": "Classificació",
-      "sort": "Ordena per",
-      "genresPlaceholder": "Qualsevol",
-      "features": "Característiques",
-      "featuresPlaceholder": "Qualsevol",
-      "ageRatingAll": "Tots",
-      "pageSize": "Per pàgina",
-      "releaseYear": "Any de publicació",
-      "hideOwned": "Amaga els que tens",
-      "wishlistOnly": "Només en la llista de desitjats"
-    },
-    "sidebar": "Ofertes",
-    "sort": {
-      "priceDesc": "Preu: de major a menor",
-      "trending": "Tendència",
-      "priceAsc": "Preu: de menor a major",
-      "releaseDesc": "Data de publicació: de més recent a més antiga",
-      "ratingAsc": "Classificació: de menor a major",
-      "releaseAsc": "Data de publicació: de més antiga a més recent",
-      "ratingDesc": "Classificació: de major a menor",
-      "discount": "El descompte més gran"
-    },
-    "noMatches": "No hi ha cap joc que coincideixi amb els filtres triats.",
-    "aria": {
-      "pagination": "Paginació",
-      "rating": "Classificació {{rating}} de 10"
-    },
-    "error": "No s'han pogut carregar els descomptes. Torna a provar-ho més tard.",
-    "empty": "No hi ha cap joc rebaixat ara mateix.",
-    "loading": "S'estan carregant els jocs rebaixats…",
-    "title": "Ofertes de GOG",
-    "pagination": {
-      "prev": "Previs"
-    }
   },
   "steamgriddb": {
     "error": {

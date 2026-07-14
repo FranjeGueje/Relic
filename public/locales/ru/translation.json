@@ -256,7 +256,6 @@
   },
   "globalSettings": "Глобальные настройки",
   "GOG": "GOG",
-  "gog-store": "Магазин GOG",
   "header": {
     "hide_non_available_games": "Скрыть недоступные игры",
     "ignore_hidden": "Игнорировать скрытые",
@@ -877,8 +876,6 @@
     "preparing_login": "Подготовка входа... ",
     "installed": "Установлено"
   },
-  "store": "Магазин Epic",
-  "stores": "Магазины",
   "title": {
     "allGames": "Все игры"
   },
@@ -983,11 +980,6 @@
     "noResults": "Текущие фильтры не дали результатов.",
     "noGames": "Ваша библиотека пуста.<br /><br />Нажмите <4>здесь</4> чтобы войти в ваши аккаунты Epic, GOG.com, или Amazon. После этого ваши игры будут показаны в Библиотеке.<br /><br />Чтобы использовать игры или приложения из других источников, нажмите <br /> чтобы добавить их вручную."
   },
-  "adtraction-locked": {
-    "dont-show-again": "Не показывать это предупреждение снова",
-    "title": "Adtraction заблокирован",
-    "description": "Похоже, домен track.adtraction.com не смог загрузиться или заблокирован. С помощью adtraction любая ваша покупка в магазине GOG оказывает финансовую поддержку Heroic. Подумайте о снятии блокировки, если вы хотите внести свой вклад."
-  },
   "categories-manager": {
     "add-placeholder": "Добавить новую категорию",
     "add": "Добавить",
@@ -1025,90 +1017,8 @@
       "error": "Установка Steam провалилась! Пожалуйста внимательно прочитайте инструкции по установке и попробуйте еще раз! {{paragraph}} {{error}}"
     }
   },
-  "amazon-luna": "Amazon Luna",
-  "zoom-store": "Магазин Zoom",
   "launch": {
     "options": "Параметры запуска..."
-  },
-  "discounts": {
-    "region": {
-      "countries": {
-        "IT": "",
-        "ES": "",
-        "FI": "",
-        "GR": "",
-        "RO": "",
-        "NO": "",
-        "KR": "",
-        "US": "",
-        "HU": "",
-        "PT": "",
-        "NL": "",
-        "AU": "",
-        "TW": "",
-        "IL": "",
-        "JP": "",
-        "DK": "",
-        "DE": "",
-        "CZ": "",
-        "FR": "",
-        "UA": "",
-        "GB": "",
-        "SE": "",
-        "CN": "",
-        "RU": "",
-        "CA": "",
-        "PL": "",
-        "BR": "",
-        "CH": "",
-        "TR": ""
-      },
-      "auto": "",
-      "label": ""
-    },
-    "filters": {
-      "moreFilters": "",
-      "ageRating": "",
-      "os": "Операционная система:",
-      "price": "",
-      "activeCount_other": "",
-      "hideDlcs": "",
-      "ageRatingOption": "",
-      "genres": "",
-      "activeCount_one": "",
-      "lessFilters": "",
-      "rating": "",
-      "sort": "",
-      "genresPlaceholder": "",
-      "features": "",
-      "featuresPlaceholder": "",
-      "ageRatingAll": "Все",
-      "pageSize": "",
-      "releaseYear": ""
-    },
-    "sidebar": "",
-    "sort": {
-      "priceDesc": "",
-      "trending": "",
-      "priceAsc": "",
-      "releaseDesc": "",
-      "ratingAsc": "",
-      "releaseAsc": "",
-      "ratingDesc": "",
-      "discount": ""
-    },
-    "noMatches": "",
-    "aria": {
-      "pagination": "",
-      "rating": "Рейтинг {{rating}} из 10"
-    },
-    "error": "",
-    "empty": "",
-    "loading": "",
-    "title": "",
-    "pagination": {
-      "prev": ""
-    }
   },
   "steamgriddb": {
     "error": {

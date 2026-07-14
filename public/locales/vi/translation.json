@@ -251,7 +251,6 @@
   },
   "globalSettings": "Cài Đặt Chung",
   "GOG": "GOG",
-  "gog-store": "Cửa hàng GOG",
   "header": {
     "hide_non_available_games": "Hide non-available games",
     "ignore_hidden": "Bỏ qua mục bị ẩn",
@@ -864,8 +863,6 @@
     "preparing_login": "Đang Chuẩn Bị Đăng Nhập... ",
     "installed": "Đã Cài Đặt"
   },
-  "store": "Cửa hàng Epic",
-  "stores": "Cửa Hàng",
   "title": {
     "allGames": "Tất Cả game"
   },
@@ -980,12 +977,6 @@
     },
     "title": "Gửi Phân Tích Ẩn Danh"
   },
-  "adtraction-locked": {
-    "description": "Có vẻ như miền track.adtraction.com không tải được hoặc đang bị chặn. Với Adtraction, mọi giao dịch mua hàng bạn thực hiện trên cửa hàng GOG sẽ hỗ trợ tài chính cho Heroic. Hãy cân nhắc gỡ chặn nếu bạn muốn đóng góp.",
-    "dont-show-again": "Đừng hiển thị cảnh báo này nữa",
-    "title": "Adtraction bị chặn"
-  },
-  "amazon-luna": "Amazon Luna",
   "categories-manager": {
     "rename": "Đổi tên \"{{name}}\"",
     "title": "Quản Lý Danh Mục",
@@ -1008,89 +999,8 @@
     "wine-crossover": "",
     "wine-staging-macos": ""
   },
-  "zoom-store": "Cửa hàng Zoom",
   "launch": {
     "options": "Khởi Chạy Tuỳ Chọn ..."
-  },
-  "discounts": {
-    "region": {
-      "countries": {
-        "IT": "",
-        "ES": "",
-        "FI": "",
-        "GR": "",
-        "RO": "",
-        "NO": "",
-        "KR": "",
-        "US": "",
-        "HU": "",
-        "PT": "",
-        "NL": "",
-        "AU": "",
-        "TW": "",
-        "IL": "",
-        "JP": "",
-        "DK": "",
-        "DE": "",
-        "CZ": "",
-        "FR": "",
-        "UA": "",
-        "GB": "",
-        "SE": "",
-        "CN": "",
-        "RU": "",
-        "CA": "",
-        "PL": "",
-        "BR": "",
-        "CH": "",
-        "TR": ""
-      },
-      "auto": "",
-      "label": ""
-    },
-    "filters": {
-      "moreFilters": "",
-      "ageRating": "",
-      "os": "Hệ Điều Hành:",
-      "price": "",
-      "activeCount_other": "",
-      "hideDlcs": "",
-      "ageRatingOption": "",
-      "genres": "",
-      "activeCount_one": "",
-      "lessFilters": "",
-      "rating": "",
-      "sort": "",
-      "genresPlaceholder": "",
-      "features": "",
-      "featuresPlaceholder": "",
-      "ageRatingAll": "Tất cả",
-      "pageSize": "",
-      "releaseYear": ""
-    },
-    "sidebar": "",
-    "sort": {
-      "priceDesc": "",
-      "trending": "",
-      "priceAsc": "",
-      "releaseDesc": "",
-      "ratingAsc": "",
-      "releaseAsc": "",
-      "ratingDesc": "",
-      "discount": ""
-    },
-    "noMatches": "",
-    "aria": {
-      "pagination": "",
-      "rating": ""
-    },
-    "error": "",
-    "empty": "",
-    "loading": "",
-    "title": "",
-    "pagination": {
-      "prev": ""
-    }
   },
   "steamgriddb": {
     "error": {

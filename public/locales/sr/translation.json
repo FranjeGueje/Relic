@@ -274,7 +274,6 @@
     "only": ""
   },
   "favourites": "Омиљено",
-  "gog-store": "Продавница GOG",
   "help": {
     "amdfsr": "AMD-ов FSR помаже у повећању сличица по секунди повећањем нижих резолуција у режиму целог екрана. Квалитет слике се повећава са 5 на 1 по цени благог смањења перформанси. Укључивањем се може побољшати перформансе.",
     "custom_themes_path": "Немојте користити ЦСС датотеке из непоузданих извора. Када сте у недоумици, затражите рецензију на нашем Дисцорд каналу.",
@@ -920,8 +919,6 @@
   "Recent": "Играно недавно",
   "search": "Потражите игре",
   "Settings": "Подешавања",
-  "store": "Епиц Сторе",
-  "stores": "Продавнице",
   "title": {
     "allGames": "Све игре"
   },
@@ -963,11 +960,6 @@
     "new-category": "",
     "add-new-category": ""
   },
-  "adtraction-locked": {
-    "dont-show-again": "Не приказуј ово упозорење опет",
-    "title": "Adtraction је блокиран",
-    "description": "Изгледа да домен track.adtraction.com није могао да се учита или је блокиран. Са adtraction-ом, свака куповина коју обавите у GOG продавници финансијски подржава Heroic. Размислите о уклањању блокаде ако желите да допринесете."
-  },
   "analyticsModal": {
     "title": "Слање анонимне аналитике",
     "disable": "Онемогући",
@@ -982,7 +974,6 @@
       "pt5": "Plausible Analytics је у потпуности у складу са GDPR-ом, CCPA-ом и PECR-ом."
     }
   },
-  "amazon-luna": "Амазон Луна",
   "emptyLibrary": {
     "noResults": "Тренутни филтери нису дали резултате.",
     "noGames": "Ваша библиотека је празна.<br /><br />Кликните <4>овде</4> да бисте се пријавили са својим Epic, GOG.com или Amazon налозима. Затим ће се ваше игре појавити овде у библиотеци.<br /><br />Да бисте користили игре или апликације из других извора, кликните на <br /> да бисте их ручно додали."
@@ -1008,92 +999,11 @@
     "close": "",
     "restore": ""
   },
-  "zoom-store": "",
   "wineExplanation": {
     "proton-ge": "",
     "gpt": "",
     "wine-crossover": "",
     "wine-staging-macos": ""
-  },
-  "discounts": {
-    "region": {
-      "countries": {
-        "IT": "",
-        "ES": "",
-        "FI": "",
-        "GR": "",
-        "RO": "",
-        "NO": "",
-        "KR": "",
-        "US": "",
-        "HU": "",
-        "PT": "",
-        "NL": "",
-        "AU": "",
-        "TW": "",
-        "IL": "",
-        "JP": "",
-        "DK": "",
-        "DE": "",
-        "CZ": "",
-        "FR": "",
-        "UA": "",
-        "GB": "",
-        "SE": "",
-        "CN": "",
-        "RU": "",
-        "CA": "",
-        "PL": "",
-        "BR": "",
-        "CH": "",
-        "TR": ""
-      },
-      "auto": "",
-      "label": ""
-    },
-    "filters": {
-      "moreFilters": "",
-      "ageRating": "",
-      "os": "",
-      "price": "",
-      "activeCount_other": "",
-      "hideDlcs": "",
-      "ageRatingOption": "",
-      "genres": "",
-      "activeCount_one": "",
-      "lessFilters": "",
-      "rating": "",
-      "sort": "",
-      "genresPlaceholder": "",
-      "features": "",
-      "featuresPlaceholder": "",
-      "ageRatingAll": "Све",
-      "pageSize": "",
-      "releaseYear": ""
-    },
-    "sidebar": "",
-    "sort": {
-      "priceDesc": "",
-      "trending": "",
-      "priceAsc": "",
-      "releaseDesc": "",
-      "ratingAsc": "",
-      "releaseAsc": "",
-      "ratingDesc": "",
-      "discount": ""
-    },
-    "noMatches": "",
-    "aria": {
-      "pagination": "",
-      "rating": ""
-    },
-    "error": "",
-    "empty": "",
-    "loading": "",
-    "title": "",
-    "pagination": {
-      "prev": ""
-    }
   },
   "steamgriddb": {
     "error": {

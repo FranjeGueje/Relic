@@ -252,7 +252,6 @@
   },
   "globalSettings": "الإعدادات العامة",
   "GOG": "جي.أو.جي",
-  "gog-store": "متجر جي.أو.جي",
   "header": {
     "hide_non_available_games": "أخفِ الألعاب الغير متوفِّرة",
     "ignore_hidden": "تجاهل المخفي",
@@ -877,8 +876,6 @@
     "preparing_login": "يحضِّر الولوج ",
     "installed": "مثبت"
   },
-  "store": "متجر أََبِك",
-  "stores": "المتاجر",
   "title": {
     "allGames": "جميع الألعاب"
   },
@@ -1001,11 +998,6 @@
     "title": "أدير الفئات",
     "rename": "أعيد تسمية \"{{name}}\""
   },
-  "adtraction-locked": {
-    "dont-show-again": "لا تظهر هذا التحذير مجدداً",
-    "title": "Adtraction محظور",
-    "description": "يبدو أن عنوان track.adtraction.com لم يتمكن من التحميل أو تم حظره. مع هذا العنوان, أي شراء تقوم به على متجر GOG يدعم هيرويك مادياً. فكر بازالة الحظر اذا كنت تريد المساهمة."
-  },
   "analyticsModal": {
     "disable": "عطل",
     "enable": "فعّل",
@@ -1020,90 +1012,8 @@
     },
     "title": "أرسل التحليلات مجهولة الهوية"
   },
-  "amazon-luna": "أمازون لونا",
   "launch": {
     "options": "خيارات التشغيل..."
-  },
-  "zoom-store": "",
-  "discounts": {
-    "region": {
-      "countries": {
-        "IT": "",
-        "ES": "",
-        "FI": "",
-        "GR": "",
-        "RO": "",
-        "NO": "",
-        "KR": "",
-        "US": "",
-        "HU": "",
-        "PT": "",
-        "NL": "",
-        "AU": "",
-        "TW": "",
-        "IL": "",
-        "JP": "",
-        "DK": "",
-        "DE": "",
-        "CZ": "",
-        "FR": "",
-        "UA": "",
-        "GB": "",
-        "SE": "",
-        "CN": "",
-        "RU": "",
-        "CA": "",
-        "PL": "",
-        "BR": "",
-        "CH": "",
-        "TR": ""
-      },
-      "auto": "",
-      "label": ""
-    },
-    "filters": {
-      "moreFilters": "",
-      "ageRating": "",
-      "os": "نظام التشغيل:",
-      "price": "",
-      "activeCount_other": "",
-      "hideDlcs": "",
-      "ageRatingOption": "",
-      "genres": "",
-      "activeCount_one": "",
-      "lessFilters": "",
-      "rating": "",
-      "sort": "",
-      "genresPlaceholder": "",
-      "features": "",
-      "featuresPlaceholder": "",
-      "ageRatingAll": "الكل",
-      "pageSize": "",
-      "releaseYear": ""
-    },
-    "sidebar": "",
-    "sort": {
-      "priceDesc": "",
-      "trending": "",
-      "priceAsc": "",
-      "releaseDesc": "",
-      "ratingAsc": "",
-      "releaseAsc": "",
-      "ratingDesc": "",
-      "discount": ""
-    },
-    "noMatches": "",
-    "aria": {
-      "pagination": "",
-      "rating": ""
-    },
-    "error": "",
-    "empty": "",
-    "loading": "",
-    "title": "",
-    "pagination": {
-      "prev": ""
-    }
   },
   "steamgriddb": {
     "error": {

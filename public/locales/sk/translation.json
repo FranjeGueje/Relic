@@ -251,7 +251,6 @@
   },
   "globalSettings": "Global Settings",
   "GOG": "GOG",
-  "gog-store": "GOG Store",
   "header": {
     "hide_non_available_games": "Hide non-available games",
     "ignore_hidden": "Ignore Hidden",
@@ -871,8 +870,6 @@
     "preparing_login": "Pripravuje sa prihlásenie... ",
     "installed": "Nainštalované"
   },
-  "store": "Epic Store",
-  "stores": "Stores",
   "title": {
     "allGames": "All Games"
   },
@@ -991,11 +988,6 @@
     "remove": "Vymazať \"{{name}}\"",
     "title": "Spravovať Kategórie"
   },
-  "adtraction-locked": {
-    "dont-show-again": "Toto upozornenie už nikdy nezobrazovať",
-    "description": "Zdá sa, že doménu track.adtraction.com sa nepodarilo načítať alebo je zablokovaná. Každý nákup, ktorý uskutočníte v obchode GOG, finančne podporuje Heroic. Ak chcete prispieť, zvážte odstránenie blokovania.",
-    "title": "Adtraction je blokovaný"
-  },
   "emptyLibrary": {
     "noResults": "Tieto filtre nemajú žiadne výsledky.",
     "noGames": ""
@@ -1016,88 +1008,6 @@
   },
   "launch": {
     "options": "Možnosti spustenia..."
-  },
-  "amazon-luna": "",
-  "zoom-store": "",
-  "discounts": {
-    "region": {
-      "countries": {
-        "IT": "",
-        "ES": "",
-        "FI": "",
-        "GR": "",
-        "RO": "",
-        "NO": "",
-        "KR": "",
-        "US": "",
-        "HU": "",
-        "PT": "",
-        "NL": "",
-        "AU": "",
-        "TW": "",
-        "IL": "",
-        "JP": "",
-        "DK": "",
-        "DE": "",
-        "CZ": "",
-        "FR": "",
-        "UA": "",
-        "GB": "",
-        "SE": "",
-        "CN": "",
-        "RU": "",
-        "CA": "",
-        "PL": "",
-        "BR": "",
-        "CH": "",
-        "TR": ""
-      },
-      "auto": "",
-      "label": ""
-    },
-    "filters": {
-      "moreFilters": "",
-      "ageRating": "",
-      "os": "Operačný Systém:",
-      "price": "",
-      "activeCount_other": "",
-      "hideDlcs": "",
-      "ageRatingOption": "",
-      "genres": "",
-      "activeCount_one": "",
-      "lessFilters": "",
-      "rating": "",
-      "sort": "",
-      "genresPlaceholder": "",
-      "features": "",
-      "featuresPlaceholder": "",
-      "ageRatingAll": "Všetky",
-      "pageSize": "",
-      "releaseYear": ""
-    },
-    "sidebar": "",
-    "sort": {
-      "priceDesc": "",
-      "trending": "",
-      "priceAsc": "",
-      "releaseDesc": "",
-      "ratingAsc": "",
-      "releaseAsc": "",
-      "ratingDesc": "",
-      "discount": ""
-    },
-    "noMatches": "",
-    "aria": {
-      "pagination": "",
-      "rating": ""
-    },
-    "error": "",
-    "empty": "",
-    "loading": "",
-    "title": "",
-    "pagination": {
-      "prev": ""
-    }
   },
   "steamgriddb": {
     "error": {

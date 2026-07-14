@@ -259,7 +259,6 @@
   },
   "globalSettings": "Globale innstillinger",
   "GOG": "GOG",
-  "gog-store": "GOG Butikken",
   "header": {
     "hide_non_available_games": "Hide non-available games",
     "ignore_hidden": "Ignorer skjult",
@@ -882,8 +881,6 @@
     "preparing_login": "Forbereder pålogging... ",
     "installed": "Installert"
   },
-  "store": "Epic butikken",
-  "stores": "Butikker",
   "title": {
     "allGames": "Alle spill"
   },
@@ -994,11 +991,6 @@
     "wine-crossover": "Wine-Crossover er basert på Crossover OpenSource Wine-prosjektet og anbefales for Intel Mac-er og for DX11 eller eldre spill.",
     "wine-staging-macos": "Wine-Staging-macOS er basert på det vanlige Wine-prosjektet og anbefales for Intel Mac-er og for DX11 eller eldre spill, spesielt i samarbeid med DXMT-verktøyet."
   },
-  "adtraction-locked": {
-    "dont-show-again": "Ikke vis denne advarselen igjen",
-    "description": "Det ser ut til at domenet track.adtraction.com ikke kunne lastes eller er blokkert. Med Adtraction støtter ethvert kjøp du gjør i GOG-butikken Heroic økonomisk. Vurder å fjerne blokkeringen hvis du ønsker å bidra.",
-    "title": "Adtraction er blokkert"
-  },
   "categories-manager": {
     "add": "Legg til",
     "add-placeholder": "Legg til ny kategori",
@@ -1031,92 +1023,8 @@
     },
     "title": "Send anynom statistikk"
   },
-  "amazon-luna": "Amazon Luna",
-  "zoom-store": "Zoom-butikk",
   "launch": {
     "options": "Startalternativer..."
-  },
-  "discounts": {
-    "region": {
-      "countries": {
-        "IT": "Italia",
-        "ES": "Spania",
-        "FI": "Finland",
-        "GR": "Hellas",
-        "RO": "Romania",
-        "NO": "Norge",
-        "KR": "Sør-Korea",
-        "US": "USA",
-        "HU": "Ungarn",
-        "PT": "Portugal",
-        "NL": "Nederland",
-        "AU": "Australia",
-        "TW": "Taiwan",
-        "IL": "Israel",
-        "JP": "Japan",
-        "DK": "Danmark",
-        "DE": "Tyskland",
-        "CZ": "Tsjekkia",
-        "FR": "Frankrike",
-        "UA": "Ukraina",
-        "GB": "Storbritannia",
-        "SE": "Sverige",
-        "CN": "Kina",
-        "RU": "Russland",
-        "CA": "Canada",
-        "PL": "Polen",
-        "BR": "Brasil",
-        "CH": "Sveits",
-        "TR": "Tyrkia"
-      },
-      "auto": "Auto ({{code}})",
-      "label": "Butikkregion"
-    },
-    "filters": {
-      "moreFilters": "Flere filtre",
-      "ageRating": "Passer for aldersgruppe",
-      "os": "Operativsystem:",
-      "price": "Pris",
-      "activeCount_other": "{{count}} aktive",
-      "hideDlcs": "Skjul DLC-er",
-      "ageRatingOption": "Vis spill rangert PEGI {{age}} eller lavere",
-      "genres": "Sjangere",
-      "activeCount_one": "{{count}} aktiv",
-      "lessFilters": "Færre filtre",
-      "rating": "Vurderingsgrad",
-      "sort": "Sorter etter",
-      "genresPlaceholder": "Enhver sjanger",
-      "features": "Funksjoner",
-      "featuresPlaceholder": "Enhver funksjon",
-      "ageRatingAll": "Alle",
-      "pageSize": "Per side",
-      "releaseYear": "Utgivelsesår",
-      "hideOwned": "Skjul eide spill",
-      "wishlistOnly": "Bare ønskeliste"
-    },
-    "sidebar": "Tilbud",
-    "sort": {
-      "priceDesc": "Pris: høy til lav",
-      "trending": "Populært",
-      "priceAsc": "Pris: lav til høy",
-      "releaseDesc": "Utgivelsesdato: nyeste til eldste",
-      "ratingAsc": "Vurderingsgrad: lav til høy",
-      "releaseAsc": "Utgivelsesdato: eldste til nyeste",
-      "ratingDesc": "Vurderingsgrad: høy til lav",
-      "discount": "Største avslag"
-    },
-    "noMatches": "Ingen spill samsvarer med de gjeldende filtrene.",
-    "aria": {
-      "pagination": "Sidetall",
-      "rating": "Vurderingsgrad {{rating}} av 10"
-    },
-    "error": "Kunne ikke laste inn tilbud. Vennligst prøv igjen senere.",
-    "empty": "Ingen spilltilbud tilgjengelig akkurat nå.",
-    "loading": "Laster inn spill på salg...",
-    "title": "GOG tilbud",
-    "pagination": {
-      "prev": "Forrige"
-    }
   },
   "steamgriddb": {
     "error": {

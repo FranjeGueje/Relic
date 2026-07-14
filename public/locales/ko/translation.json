@@ -251,7 +251,6 @@
   },
   "globalSettings": "글로벌 설정",
   "GOG": "GOG",
-  "gog-store": "GOG 스토어",
   "header": {
     "hide_non_available_games": "Hide non-available games",
     "ignore_hidden": "숨김 무시",
@@ -873,8 +872,6 @@
     "preparing_login": "로그인 준비 중... ",
     "installed": "설치됨"
   },
-  "store": "에픽 스토어",
-  "stores": "스토어",
   "title": {
     "allGames": "모든 게임"
   },
@@ -987,11 +984,6 @@
     "confirm-rename": "\"{{oldName}}\"를 \"{{newName}}\"로 이름 바꿈",
     "title": "범주 관리"
   },
-  "adtraction-locked": {
-    "dont-show-again": "이 경고 다시 표시 안 함",
-    "title": "Adtraction 차단됨",
-    "description": "track.adtraction.com 도메인이 로드되지 않았거나 차단된 것 같습니다. Adtraction을 사용하면 GOG 스토어에서 구매하는 모든 상품이 Heroic을 재정적으로 지원합니다. 기여하고 싶다면 차단을 해제하는 것을 고려하세요."
-  },
   "wineExplanation": {
     "proton-ge": "GE-Proton은 Glorious Eggroll이 만든 프로톤 변형입니다. 스팀에서 사용하도록 만들어졌지만 스팀 외부의 일부 게임은 이 변형에서 더 잘 작동할 수 있습니다. 문제 해결을 위해 대부분 쓸모없는 로그를 제공합니다.",
     "gpt": "",
@@ -1018,88 +1010,6 @@
   },
   "launch": {
     "options": "실행 옵션..."
-  },
-  "amazon-luna": "",
-  "zoom-store": "",
-  "discounts": {
-    "region": {
-      "countries": {
-        "IT": "",
-        "ES": "",
-        "FI": "",
-        "GR": "",
-        "RO": "",
-        "NO": "",
-        "KR": "",
-        "US": "",
-        "HU": "",
-        "PT": "",
-        "NL": "",
-        "AU": "",
-        "TW": "",
-        "IL": "",
-        "JP": "",
-        "DK": "",
-        "DE": "",
-        "CZ": "",
-        "FR": "",
-        "UA": "",
-        "GB": "",
-        "SE": "",
-        "CN": "",
-        "RU": "",
-        "CA": "",
-        "PL": "",
-        "BR": "",
-        "CH": "",
-        "TR": ""
-      },
-      "auto": "",
-      "label": ""
-    },
-    "filters": {
-      "moreFilters": "",
-      "ageRating": "",
-      "os": "운영체제:",
-      "price": "",
-      "activeCount_other": "",
-      "hideDlcs": "",
-      "ageRatingOption": "",
-      "genres": "",
-      "activeCount_one": "",
-      "lessFilters": "",
-      "rating": "",
-      "sort": "",
-      "genresPlaceholder": "",
-      "features": "",
-      "featuresPlaceholder": "",
-      "ageRatingAll": "모두",
-      "pageSize": "",
-      "releaseYear": ""
-    },
-    "sidebar": "",
-    "sort": {
-      "priceDesc": "",
-      "trending": "",
-      "priceAsc": "",
-      "releaseDesc": "",
-      "ratingAsc": "",
-      "releaseAsc": "",
-      "ratingDesc": "",
-      "discount": ""
-    },
-    "noMatches": "",
-    "aria": {
-      "pagination": "",
-      "rating": ""
-    },
-    "error": "",
-    "empty": "",
-    "loading": "",
-    "title": "",
-    "pagination": {
-      "prev": ""
-    }
   },
   "steamgriddb": {
     "error": {

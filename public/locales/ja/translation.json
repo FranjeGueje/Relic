@@ -255,7 +255,6 @@
   },
   "globalSettings": "グローバル設定",
   "GOG": "GOG",
-  "gog-store": "GOG Store",
   "header": {
     "hide_non_available_games": "利用できないゲームを非表示",
     "ignore_hidden": "非表示を無視",
@@ -875,8 +874,6 @@
     "preparing_login": "ログインを準備しています... ",
     "installed": "インストールされています"
   },
-  "store": "Epic Store",
-  "stores": "ストア",
   "title": {
     "allGames": "すべてのゲーム"
   },
@@ -995,11 +992,6 @@
     "remove": "\"{{name}}\"を削除",
     "rename": "\"{{name}}\"を名前変更"
   },
-  "adtraction-locked": {
-    "description": "track.adtraction.comドメインが読み込みできないか、ブロックされているようです。 adtractionでは、GOG ストアで購入するとHeroicに資金援助が行われます。寄付を希望される場合は、ブロックを解除することを検討してください。",
-    "dont-show-again": "この警告を二度と表示しない",
-    "title": "Adtractionがブロックされています"
-  },
   "emptyLibrary": {
     "noResults": "現在のフィルターでは検索結果がありません。",
     "noGames": "ライブラリが空です。<br /><br /><4>こちら</4>をクリックして、Epic、GOG.com、またはAmazonアカウントでログインしてください。<br /><br />その他のゲームやアプリを登録するには、「ゲームの追加」をクリックして手動で追加してください。"
@@ -1024,11 +1016,9 @@
     },
     "title": "匿名アナリティクスを送信"
   },
-  "amazon-luna": "Amazon Luna",
   "launch": {
     "options": "Launch Options..."
   },
-  "zoom-store": "Zoom ストア",
   "console": {
     "cancel": {
       "hintSuffix": "3秒間長押しでキャンセル",
@@ -1065,88 +1055,6 @@
       "platform": "Platform",
       "title": "Install game",
       "wineLoading": "Loading"
-    }
-  },
-  "discounts": {
-    "region": {
-      "countries": {
-        "IT": "",
-        "ES": "",
-        "FI": "",
-        "GR": "",
-        "RO": "",
-        "NO": "",
-        "KR": "韓国",
-        "US": "",
-        "HU": "",
-        "PT": "",
-        "NL": "",
-        "AU": "",
-        "TW": "",
-        "IL": "",
-        "JP": "日本",
-        "DK": "",
-        "DE": "",
-        "CZ": "",
-        "FR": "",
-        "UA": "",
-        "GB": "",
-        "SE": "",
-        "CN": "中国",
-        "RU": "",
-        "CA": "",
-        "PL": "",
-        "BR": "",
-        "CH": "",
-        "TR": ""
-      },
-      "auto": "自動 ({{code}})",
-      "label": "販売地域"
-    },
-    "filters": {
-      "moreFilters": "その他のフィルター",
-      "ageRating": "対象年齢",
-      "os": "オペレーティングシステム:",
-      "price": "価格",
-      "activeCount_other": "{{count}}件を表示",
-      "hideDlcs": "DLCを非表示",
-      "ageRatingOption": "PEGI {{age}} またはそれ以下の年齢指定のゲームを表示",
-      "genres": "ジャンル",
-      "activeCount_one": "{{count}}件を表示",
-      "lessFilters": "フィルターを隠す",
-      "rating": "評価",
-      "sort": "並べ替え",
-      "genresPlaceholder": "すべてのジャンル",
-      "features": "機能",
-      "featuresPlaceholder": "すべての機能",
-      "ageRatingAll": "すべて",
-      "pageSize": "1ページの表示件数",
-      "releaseYear": "発売年",
-      "hideOwned": "所有済みゲームを非表示",
-      "wishlistOnly": "ウィッシュリストのみ"
-    },
-    "sidebar": "セール情報",
-    "sort": {
-      "priceDesc": "価格：高い順",
-      "trending": "トレンド",
-      "priceAsc": "価格：安い順",
-      "releaseDesc": "発売日：新しい順",
-      "ratingAsc": "評価：低い順",
-      "releaseAsc": "発売日：古い順",
-      "ratingDesc": "評価：高い順",
-      "discount": "最大割引"
-    },
-    "noMatches": "現在の条件に一致するゲームはありません。",
-    "aria": {
-      "pagination": "",
-      "rating": "評価：{{rating}}点（10点満点中）"
-    },
-    "error": "セール情報を読み込めませんでした。後ほどもう一度お試しください。",
-    "empty": "現在、セール対象のゲームはありません。",
-    "loading": "セール中のゲームを読み込んでいます...",
-    "title": "GOG セール",
-    "pagination": {
-      "prev": "前へ"
     }
   },
   "steamgriddb": {

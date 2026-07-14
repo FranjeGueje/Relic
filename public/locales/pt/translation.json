@@ -260,7 +260,6 @@
   },
   "globalSettings": "Definições Globais",
   "GOG": "GOG",
-  "gog-store": "Loja GOG",
   "header": {
     "hide_non_available_games": "Hide non-available games",
     "ignore_hidden": "Ignore Hidden",
@@ -888,8 +887,6 @@
     "preparing_login": "A Preparar o Inicio de Sessão... ",
     "installed": "Instalado"
   },
-  "store": "Loja Epic",
-  "stores": "Lojas",
   "title": {
     "allGames": "Todos os Jogos"
   },
@@ -1002,11 +999,6 @@
     "title": "Gerir Categorias",
     "add": "Adicionar"
   },
-  "adtraction-locked": {
-    "description": "Parece que o domínio track.adtraction.com foi incapaz de iniciar ou está bloqueado. Com o adtraction, pode ajudar financeiramente o Projeto Heroic ao fazer compras na loja GOG. Se deseja contribuir, considere remover o bloqueio do adtraction.",
-    "dont-show-again": "Não mostrar novamente este aviso",
-    "title": "O Adtraction está bloqueado"
-  },
   "emptyLibrary": {
     "noResults": "Não foram obtidos resultados com os filtros atuais.",
     "noGames": "A sua biblioteca está vazia. <br /><br />Clique <4>aqui</4> para iniciar sessão nas suas contas Epic, GOG.com ou Amazon. Depois os seus jogos irão aparecer aqui, na Biblioteca. <br /><br /> Para adicionar jogos ou aplicações a partir de outras fontes, clique <br /> para adicionar manualmente."
@@ -1037,92 +1029,8 @@
     },
     "title": "Enviar Dados Analíticos de forma Anónima"
   },
-  "amazon-luna": "Amazon Luna",
-  "zoom-store": "Loja do Zoom",
   "launch": {
     "options": "Opções de Arranque..."
-  },
-  "discounts": {
-    "region": {
-      "countries": {
-        "IT": "Itália",
-        "ES": "Espanha",
-        "FI": "Finlândia",
-        "GR": "Grécia",
-        "RO": "Roménia",
-        "NO": "Noruega",
-        "KR": "Coreia do Sul",
-        "US": "Estados Unidos",
-        "HU": "Hungria",
-        "PT": "Portugal",
-        "NL": "Paises Baixos",
-        "AU": "Austrália",
-        "TW": "Taiwan",
-        "IL": "Israel",
-        "JP": "Japão",
-        "DK": "Dinamarca",
-        "DE": "Alemanha",
-        "CZ": "Chéquia",
-        "FR": "França",
-        "UA": "Ucrânia",
-        "GB": "Reino Unido",
-        "SE": "Suécia",
-        "CN": "China",
-        "RU": "Rússia",
-        "CA": "Canadá",
-        "PL": "Polónia",
-        "BR": "Brasil",
-        "CH": "Suíça",
-        "TR": "Turquia"
-      },
-      "auto": "Automático ({{code}})",
-      "label": "Região da Loja"
-    },
-    "filters": {
-      "moreFilters": "Mais filtros",
-      "ageRating": "Idade recomendada",
-      "os": "Sistema Operativo",
-      "price": "Preço",
-      "activeCount_other": "{{count}} activos",
-      "hideDlcs": "Esconder DLCs",
-      "ageRatingOption": "Mostrar jogos classificados PEGI {{age}} ou inferior",
-      "genres": "Géneros",
-      "activeCount_one": "{{count}} activos",
-      "lessFilters": "Menos filtros",
-      "rating": "Classificação",
-      "sort": "Ordenar por",
-      "genresPlaceholder": "Qualquer género",
-      "features": "Funcionalidades",
-      "featuresPlaceholder": "Qualquer funcionalidade",
-      "ageRatingAll": "Tudo",
-      "pageSize": "Por página",
-      "releaseYear": "Ano de lançamento",
-      "hideOwned": "Ocultar possuídos",
-      "wishlistOnly": "Apenas lista de desejos"
-    },
-    "sidebar": "Promoções",
-    "sort": {
-      "priceDesc": "Preço: maior para o menor",
-      "trending": "Populares",
-      "priceAsc": "Preço: menor para o maior",
-      "releaseDesc": "Data de lançamento: mais novo primeiro",
-      "ratingAsc": "Classificação: menor para a maior",
-      "releaseAsc": "Data de lançamento: mais antigo primeiro",
-      "ratingDesc": "Classificação: maior para a menor",
-      "discount": "Maior desconto"
-    },
-    "noMatches": "Nenhum jogo corresponde aos filtros atuais.",
-    "aria": {
-      "pagination": "Paginação",
-      "rating": "Classificação {{rating}} de 10"
-    },
-    "error": "Não foi possível carregar descontos. Por favor, volte a tentar mais tarde.",
-    "empty": "Não há jogos com desconto disponíveis neste momento.",
-    "loading": "A carregar jogos com disconto...",
-    "title": "Promoções GOG",
-    "pagination": {
-      "prev": "Anterior"
-    }
   },
   "steamgriddb": {
     "error": {

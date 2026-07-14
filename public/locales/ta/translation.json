@@ -259,7 +259,6 @@
   },
   "globalSettings": "உலகளாவிய விருப்பத்தேர்வுகள்",
   "GOG": "GOG",
-  "gog-store": "GOG கடை",
   "header": {
     "hide_non_available_games": "கிடைக்காத விளையாட்டுகளை மறை",
     "ignore_hidden": "மறைக்கப்பட்டதை புறக்கணிக்கவும்",
@@ -878,8 +877,6 @@
     "preparing_login": "உள்நுழைவு தயாராகிறது... ",
     "installed": "நிறுவப்பட்டது"
   },
-  "store": "Epic விற்பனைக்கூடம்",
-  "stores": "கடைகள்",
   "title": {
     "allGames": "அனைத்து விளையாட்டுகள்"
   },
@@ -998,11 +995,6 @@
     "wine-crossover": "",
     "wine-staging-macos": ""
   },
-  "adtraction-locked": {
-    "description": "டிராக்.அட்ராக்சன்.காம் டொமைன் ஏற்ற முடியவில்லை அல்லது தடுக்கப்பட்டதாகத் தெரிகிறது. சுருக்கத்துடன், GOG கடையில் நீங்கள் செய்யும் எந்தவொரு கொள்முதலும் வீர பொருள் ரீதியாக ஆதரிக்கிறது. நீங்கள் பங்களிக்க விரும்பினால் தொகுதியை அகற்றுவதைக் கவனியுங்கள்.",
-    "dont-show-again": "இந்த எச்சரிக்கையை மீண்டும் காட்ட வேண்டாம்",
-    "title": "சுருக்கம் தடுக்கப்பட்டுள்ளது"
-  },
   "emptyLibrary": {
     "noResults": "தற்போதைய வடிப்பான்கள் எந்த முடிவுகளையும் உருவாக்கவில்லை.",
     "noGames": "உங்கள் நூலகம் காலியாகிவிட்டது. பின்னர், உங்கள் விளையாட்டுகள் இங்கே நூலகத்தில் காண்பிக்கப்படும். <Br /> <br /> பிற மூலங்களிலிருந்து விளையாட்டுகள் அல்லது பயன்பாடுகளைப் பயன்படுத்த, அவற்றை கைமுறையாகச் சேர்க்க <br /> என்பதைக் சொடுக்கு செய்க."
@@ -1029,88 +1021,6 @@
   },
   "launch": {
     "options": "துவக்க விருப்பங்கள்..."
-  },
-  "amazon-luna": "அமேசான் லூனா",
-  "zoom-store": "சூம் கடை",
-  "discounts": {
-    "region": {
-      "countries": {
-        "IT": "",
-        "ES": "",
-        "FI": "",
-        "GR": "",
-        "RO": "",
-        "NO": "",
-        "KR": "",
-        "US": "",
-        "HU": "",
-        "PT": "",
-        "NL": "",
-        "AU": "",
-        "TW": "",
-        "IL": "",
-        "JP": "",
-        "DK": "",
-        "DE": "",
-        "CZ": "",
-        "FR": "",
-        "UA": "",
-        "GB": "",
-        "SE": "",
-        "CN": "",
-        "RU": "",
-        "CA": "",
-        "PL": "",
-        "BR": "",
-        "CH": "",
-        "TR": ""
-      },
-      "auto": "",
-      "label": ""
-    },
-    "filters": {
-      "moreFilters": "",
-      "ageRating": "",
-      "os": "இயக்க முறைமை",
-      "price": "",
-      "activeCount_other": "",
-      "hideDlcs": "",
-      "ageRatingOption": "",
-      "genres": "",
-      "activeCount_one": "",
-      "lessFilters": "",
-      "rating": "",
-      "sort": "",
-      "genresPlaceholder": "",
-      "features": "",
-      "featuresPlaceholder": "",
-      "ageRatingAll": "அனைத்தும்",
-      "pageSize": "",
-      "releaseYear": ""
-    },
-    "sidebar": "",
-    "sort": {
-      "priceDesc": "",
-      "trending": "",
-      "priceAsc": "",
-      "releaseDesc": "",
-      "ratingAsc": "",
-      "releaseAsc": "",
-      "ratingDesc": "",
-      "discount": ""
-    },
-    "noMatches": "",
-    "aria": {
-      "pagination": "",
-      "rating": ""
-    },
-    "error": "",
-    "empty": "",
-    "loading": "",
-    "title": "",
-    "pagination": {
-      "prev": ""
-    }
   },
   "steamgriddb": {
     "error": {

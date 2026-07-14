@@ -259,7 +259,6 @@
   },
   "globalSettings": "Globális beállítások",
   "GOG": "GOG",
-  "gog-store": "GOG Store",
   "header": {
     "hide_non_available_games": "Nem elérhető játékok elrejtése",
     "ignore_hidden": "Rejtettek figyelmen kívül hagyása",
@@ -890,8 +889,6 @@
     "preparing_login": "Bejelentkezés előkészítése… ",
     "installed": "Telepítve"
   },
-  "store": "Epic Store",
-  "stores": "Áruházak",
   "title": {
     "allGames": "Összes játék"
   },
@@ -1002,11 +999,6 @@
     "wine-crossover": "A Wine-Crossover a Crossover nyílt forráskódú Wine-projektjén alapul, és Intel Maceken, valamint DX11 vagy régebbi játékokhoz ajánlott.",
     "wine-staging-macos": "A Wine-Staging-macOS a fő Wine-projekten alapul, és Intel Maceken, valamint DX11 vagy régebbi játékokhoz ajánlott, különösen a DXMT eszközzel együtt használva."
   },
-  "adtraction-locked": {
-    "dont-show-again": "Ne jelenjen meg újra ez a figyelmeztetés",
-    "title": "A reklámkövetés le van tiltva",
-    "description": "Úgy néz ki, hogy a track.adtraction.com domaint nem lehetett betölteni, vagy le van tiltva. A reklámkövetéssel az összes, a GOG áruházban történő vásárlás pénzügyileg támogatja a Heroicot. Fontold meg a tiltás eltávolítását, ha szeretnél támogatni."
-  },
   "categories-manager": {
     "add-placeholder": "Új kategória hozzáadása",
     "add": "Hozzáadás",
@@ -1039,92 +1031,8 @@
     },
     "title": "Anonim analitika küldése"
   },
-  "amazon-luna": "Amazon Luna",
-  "zoom-store": "Zoom Store",
   "launch": {
     "options": "Indítási kapcsolók…"
-  },
-  "discounts": {
-    "region": {
-      "countries": {
-        "IT": "Olaszország",
-        "ES": "Spanyolország",
-        "FI": "Finnország",
-        "GR": "Görögország",
-        "RO": "Románia",
-        "NO": "Norvégia",
-        "KR": "Dél-Korea",
-        "US": "Egyesült Államok",
-        "HU": "Magyarország",
-        "PT": "Portugália",
-        "NL": "Hollandia",
-        "AU": "Ausztrália",
-        "TW": "Tajvan",
-        "IL": "Izrael",
-        "JP": "Japán",
-        "DK": "Dánia",
-        "DE": "Németország",
-        "CZ": "Csehország",
-        "FR": "Franciaország",
-        "UA": "Ukrajna",
-        "GB": "Egyesült Királyság",
-        "SE": "Svédország",
-        "CN": "Kína",
-        "RU": "Oroszország",
-        "CA": "Kanada",
-        "PL": "Lengyelország",
-        "BR": "Brazília",
-        "CH": "Svájc",
-        "TR": "Törökország"
-      },
-      "auto": "Automatikus ({{code}})",
-      "label": "Áruház régiója"
-    },
-    "filters": {
-      "moreFilters": "Több szűrő",
-      "ageRating": "Életkornak megfelelő",
-      "os": "Operációs rendszer:",
-      "price": "Ár",
-      "activeCount_other": "{{count}} aktív",
-      "hideDlcs": "DLC-k elrejtése",
-      "ageRatingOption": "PEGI {{age}} vagy alacsonyabb besorolású játékok megjelenítése",
-      "genres": "Műfajok",
-      "activeCount_one": "{{count}} aktív",
-      "lessFilters": "Kevesebb szűrő",
-      "rating": "Értékelés",
-      "sort": "Rendezés",
-      "genresPlaceholder": "Bármely műfaj",
-      "features": "Jellemzők",
-      "featuresPlaceholder": "Bármely jellemző",
-      "ageRatingAll": "Összes",
-      "pageSize": "Oldalanként",
-      "releaseYear": "Megjelenési év",
-      "hideOwned": "Meglévők elrejtése",
-      "wishlistOnly": "Csak kívánságlistás"
-    },
-    "sidebar": "Kedvezmények",
-    "sort": {
-      "priceDesc": "Ár: csökkenő",
-      "trending": "Felkapott",
-      "priceAsc": "Ár: növekvő",
-      "releaseDesc": "Megjelenési dátum: újtól a régiig",
-      "ratingAsc": "Értékelés: növekvő",
-      "releaseAsc": "Megjelenési dátum: régitől az újig",
-      "ratingDesc": "Értékelés: csökkenő",
-      "discount": "Legnagyobb kedvezmény"
-    },
-    "noMatches": "Nincs a jelenlegi szűrőknek megfelelő játék.",
-    "aria": {
-      "pagination": "Oldalszámozás",
-      "rating": "Értékelés: {{rating}} / 10"
-    },
-    "error": "Nem sikerült betölteni a kedvezményeket. Próbáld újra később.",
-    "empty": "Jelenleg nincsenek kedvezményes játékok.",
-    "loading": "Kedvezményes játékok betöltése…",
-    "title": "GOG kedvezmények",
-    "pagination": {
-      "prev": "Előző"
-    }
   },
   "steamgriddb": {
     "error": {

@@ -29,8 +29,7 @@ import {
   Info as InfoIcon,
   PictureInPicture as PictureInPictureIcon,
   Repartition as RepartitionIcon,
-  Shortcut as ShortcutIcon,
-  ShoppingCart as ShoppingCartIcon
+  Shortcut as ShortcutIcon
 } from '@mui/icons-material'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLinux, faSteam } from '@fortawesome/free-brands-svg-icons'
@@ -401,15 +400,6 @@ export default function GamesSubmenu({
             <FormatListBulletedIcon />
             {t('submenu.categories', 'Categories')}
           </button>
-          {!isSideloaded && storeUrl && (
-            <NavLink
-              className="link button is-text is-link buttonWithIcon"
-              to={`/store-page?store-url=${storeUrl}`}
-            >
-              <ShoppingCartIcon />
-              {t('submenu.store')}
-            </NavLink>
-          )}
           {!isSideloaded && !!changelog?.length && (
             <button
               onClick={() => handleChangeLog()}

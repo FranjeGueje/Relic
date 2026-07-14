@@ -260,7 +260,6 @@
   },
   "globalSettings": "全局设置",
   "GOG": "GOG",
-  "gog-store": "GOG 商店",
   "header": {
     "hide_non_available_games": "隐藏不可用的游戏",
     "ignore_hidden": "忽略隐藏项",
@@ -892,8 +891,6 @@
     "preparing_login": "正在准备登录... ",
     "installed": "已安装"
   },
-  "store": "Epic 商店",
-  "stores": "商店",
   "title": {
     "allGames": "所有游戏"
   },
@@ -1004,11 +1001,6 @@
     "noResults": "使用当前筛选器找不到结果。",
     "noGames": "你的仓库是空的。<br /><br />单击<4>此处</4>登录你的 Epic、GOG.com 或 Amazon 账号。登录后，你的游戏会出现在库中。<br /><br />要使用其它来源的应用或游戏，请单击手动添加。"
   },
-  "adtraction-locked": {
-    "dont-show-again": "不再显示此警告",
-    "title": "Adtraction 被封禁",
-    "description": "track.adtraction.com 域名似乎无法加载或者被封禁。通过 adtraction，你在 GOG 商店的任意购买都会在经济上支持 Heroic。如果希望作贡献，请考虑解除对此站点的封禁。"
-  },
   "categories-manager": {
     "confirm-rename": "确认将“{{oldName}}“重命名为“{{newName}}”",
     "add": "添加",
@@ -1041,92 +1033,8 @@
     },
     "title": "发送匿名分析信息"
   },
-  "amazon-luna": "Amazon Luna",
-  "zoom-store": "Zoom 商店",
   "launch": {
     "options": "启动选项..."
-  },
-  "discounts": {
-    "region": {
-      "countries": {
-        "IT": "",
-        "ES": "",
-        "FI": "",
-        "GR": "",
-        "RO": "",
-        "NO": "",
-        "KR": "",
-        "US": "",
-        "HU": "",
-        "PT": "",
-        "NL": "",
-        "AU": "",
-        "TW": "",
-        "IL": "",
-        "JP": "",
-        "DK": "",
-        "DE": "",
-        "CZ": "",
-        "FR": "",
-        "UA": "",
-        "GB": "",
-        "SE": "",
-        "CN": "",
-        "RU": "",
-        "CA": "",
-        "PL": "",
-        "BR": "",
-        "CH": "",
-        "TR": ""
-      },
-      "auto": "",
-      "label": ""
-    },
-    "filters": {
-      "moreFilters": "更多筛选项",
-      "ageRating": "",
-      "os": "操作系统：",
-      "price": "价格",
-      "activeCount_other": "",
-      "hideDlcs": "隐藏 DLC",
-      "ageRatingOption": "",
-      "genres": "",
-      "activeCount_one": "",
-      "lessFilters": "更少筛选项",
-      "rating": "评分",
-      "sort": "排序依据",
-      "genresPlaceholder": "",
-      "features": "",
-      "featuresPlaceholder": "",
-      "ageRatingAll": "全部",
-      "pageSize": "",
-      "releaseYear": "发布年份",
-      "wishlistOnly": "仅显示愿望单",
-      "hideOwned": "隐藏已拥有"
-    },
-    "sidebar": "优惠",
-    "sort": {
-      "priceDesc": "价格：从高到低",
-      "trending": "",
-      "priceAsc": "价格：从低到高",
-      "releaseDesc": "发布日期：从新到旧",
-      "ratingAsc": "评分：从低到高",
-      "releaseAsc": "发布日期：从旧到新",
-      "ratingDesc": "评分：从高到低",
-      "discount": "最大折扣"
-    },
-    "noMatches": "",
-    "aria": {
-      "pagination": "",
-      "rating": ""
-    },
-    "error": "",
-    "empty": "",
-    "loading": "",
-    "title": "GOG 优惠",
-    "pagination": {
-      "prev": ""
-    }
   },
   "steamgriddb": {
     "error": {

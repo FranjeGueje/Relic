@@ -251,7 +251,6 @@
   },
   "globalSettings": "Algemene instellingen",
   "GOG": "GOG",
-  "gog-store": "GOG Store",
   "header": {
     "hide_non_available_games": "Hide non-available games",
     "ignore_hidden": "Ignore Hidden",
@@ -869,8 +868,6 @@
     "preparing_login": "Inloggen Voorbereiden... ",
     "installed": "Geïnstalleerd"
   },
-  "store": "Epic Winkel",
-  "stores": "Winkels",
   "title": {
     "allGames": "Alle Spellen"
   },
@@ -975,11 +972,6 @@
     "noResults": "De huidige filters produceerden geen resultaten.",
     "noGames": "Jouw bibliotheek is leeg.<br /><br />Klik <4>hier</4> om in te loggen met je Epic, GOG.com of Amazon accounts. Dan zullen je spellen hier in de biblotheek zichtbaar worden.<br /><br />Om spelletjes of apps vanuit andere bronnen te gebruiken, klik <br /> om ze handmatig toe te voegen."
   },
-  "adtraction-locked": {
-    "title": "Adtraction is geblokkeerd",
-    "description": "Het lijkt erop dat u het domeinnaam \"track.adtraction.com\" heeft geblokkeerd, of dat deze niet kon laden. Met adtraction, kunt u met elke aankoop binnen de GOG winkel, Heroic financieel steunen. Als u wilt steunen, gelieve deze blokkade te verwijderen.",
-    "dont-show-again": "Toon deze waarschuwing niet opnieuw"
-  },
   "categories-manager": {
     "add-placeholder": "Voeg nieuwe categorie toe",
     "cancel-remove": "Annuleer verwijdering van \"{{name}}\"",
@@ -1012,90 +1004,8 @@
     "wine-crossover": "",
     "wine-staging-macos": ""
   },
-  "zoom-store": "Zoom Winkel",
-  "amazon-luna": "Amazon Luna",
   "launch": {
     "options": "Opstartopties..."
-  },
-  "discounts": {
-    "region": {
-      "countries": {
-        "IT": "",
-        "ES": "",
-        "FI": "",
-        "GR": "",
-        "RO": "",
-        "NO": "",
-        "KR": "",
-        "US": "",
-        "HU": "",
-        "PT": "",
-        "NL": "",
-        "AU": "",
-        "TW": "",
-        "IL": "",
-        "JP": "",
-        "DK": "",
-        "DE": "",
-        "CZ": "",
-        "FR": "",
-        "UA": "",
-        "GB": "",
-        "SE": "",
-        "CN": "",
-        "RU": "",
-        "CA": "",
-        "PL": "",
-        "BR": "",
-        "CH": "",
-        "TR": ""
-      },
-      "auto": "",
-      "label": ""
-    },
-    "filters": {
-      "moreFilters": "",
-      "ageRating": "",
-      "os": "Besturingssysteem:",
-      "price": "",
-      "activeCount_other": "",
-      "hideDlcs": "",
-      "ageRatingOption": "",
-      "genres": "",
-      "activeCount_one": "",
-      "lessFilters": "",
-      "rating": "",
-      "sort": "",
-      "genresPlaceholder": "",
-      "features": "",
-      "featuresPlaceholder": "",
-      "ageRatingAll": "Allemaal",
-      "pageSize": "",
-      "releaseYear": ""
-    },
-    "sidebar": "",
-    "sort": {
-      "priceDesc": "",
-      "trending": "",
-      "priceAsc": "",
-      "releaseDesc": "",
-      "ratingAsc": "",
-      "releaseAsc": "",
-      "ratingDesc": "",
-      "discount": ""
-    },
-    "noMatches": "",
-    "aria": {
-      "pagination": "",
-      "rating": ""
-    },
-    "error": "",
-    "empty": "",
-    "loading": "",
-    "title": "",
-    "pagination": {
-      "prev": ""
-    }
   },
   "steamgriddb": {
     "error": {

@@ -251,7 +251,6 @@
   },
   "globalSettings": "Setări Globale",
   "GOG": "GOG",
-  "gog-store": "Magazinul GOG",
   "header": {
     "hide_non_available_games": "Hide non-available games",
     "ignore_hidden": "Ignorați Ascuns",
@@ -864,8 +863,6 @@
     "preparing_login": "Se pregătește autentificare... ",
     "installed": "Instalat"
   },
-  "store": "Magazin",
-  "stores": "Magazine",
   "title": {
     "allGames": "Toate jocurile"
   },
@@ -980,12 +977,6 @@
     },
     "title": "Trimite analize anonime"
   },
-  "adtraction-locked": {
-    "description": "Se pare că domeniul track.adtraction.com nu a putut încărca sau este blocat. În plus, orice achiziție faci în magazinul GOG susține financiar Heroic. Ia în considerare eliminarea blocajului dacă dorești să contribui.",
-    "dont-show-again": "Nu mai afișa acest avertisment",
-    "title": "Adtraction e blocat"
-  },
-  "amazon-luna": "Amazon Luna",
   "categories-manager": {
     "add": "Adaugă",
     "add-placeholder": "Adaugă o categorie nouă",
@@ -1005,92 +996,11 @@
     "noGames": "",
     "noResults": ""
   },
-  "zoom-store": "",
   "wineExplanation": {
     "proton-ge": "",
     "gpt": "",
     "wine-crossover": "",
     "wine-staging-macos": ""
-  },
-  "discounts": {
-    "region": {
-      "countries": {
-        "IT": "",
-        "ES": "",
-        "FI": "",
-        "GR": "",
-        "RO": "",
-        "NO": "",
-        "KR": "",
-        "US": "",
-        "HU": "",
-        "PT": "",
-        "NL": "",
-        "AU": "",
-        "TW": "",
-        "IL": "",
-        "JP": "",
-        "DK": "",
-        "DE": "",
-        "CZ": "",
-        "FR": "",
-        "UA": "",
-        "GB": "",
-        "SE": "",
-        "CN": "",
-        "RU": "",
-        "CA": "",
-        "PL": "",
-        "BR": "",
-        "CH": "",
-        "TR": ""
-      },
-      "auto": "",
-      "label": ""
-    },
-    "filters": {
-      "moreFilters": "",
-      "ageRating": "",
-      "os": "",
-      "price": "",
-      "activeCount_other": "",
-      "hideDlcs": "",
-      "ageRatingOption": "",
-      "genres": "",
-      "activeCount_one": "",
-      "lessFilters": "",
-      "rating": "",
-      "sort": "",
-      "genresPlaceholder": "",
-      "features": "",
-      "featuresPlaceholder": "",
-      "ageRatingAll": "Toate",
-      "pageSize": "",
-      "releaseYear": ""
-    },
-    "sidebar": "",
-    "sort": {
-      "priceDesc": "",
-      "trending": "",
-      "priceAsc": "",
-      "releaseDesc": "",
-      "ratingAsc": "",
-      "releaseAsc": "",
-      "ratingDesc": "",
-      "discount": ""
-    },
-    "noMatches": "",
-    "aria": {
-      "pagination": "",
-      "rating": ""
-    },
-    "error": "",
-    "empty": "",
-    "loading": "",
-    "title": "",
-    "pagination": {
-      "prev": ""
-    }
   },
   "steamgriddb": {
     "error": {

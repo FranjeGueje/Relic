@@ -742,7 +742,6 @@
     "nothingYet": "",
     "installed": ""
   },
-  "store": "ร้านค้า Epic ที่นี่",
   "placeholder": {
     "alt-nile-bin": "",
     "prefered_language": "",
@@ -790,11 +789,6 @@
   "tooltip": {
     "removepath": "",
     "addpath": ""
-  },
-  "adtraction-locked": {
-    "description": "",
-    "dont-show-again": "",
-    "title": ""
   },
   "title": {
     "allGames": ""
@@ -909,9 +903,7 @@
     "unsync": "",
     "sync": ""
   },
-  "amazon-luna": "",
   "Other": "",
-  "gog-store": "",
   "two_col_table": {
     "save_hint": ""
   },
@@ -924,7 +916,6 @@
     "old-mac": "",
     "zoom": ""
   },
-  "stores": "",
   "GOG": "",
   "toolbox": {
     "settings": {
@@ -951,7 +942,6 @@
   },
   "search": "",
   "error": "",
-  "zoom-store": "",
   "wineExplanation": {
     "proton-ge": "",
     "gpt": "",
@@ -959,86 +949,6 @@
     "wine-staging-macos": ""
   },
   "Amazon Games": "",
-  "discounts": {
-    "region": {
-      "countries": {
-        "IT": "",
-        "ES": "",
-        "FI": "",
-        "GR": "",
-        "RO": "",
-        "NO": "",
-        "KR": "",
-        "US": "",
-        "HU": "",
-        "PT": "",
-        "NL": "",
-        "AU": "",
-        "TW": "",
-        "IL": "",
-        "JP": "",
-        "DK": "",
-        "DE": "",
-        "CZ": "",
-        "FR": "",
-        "UA": "",
-        "GB": "",
-        "SE": "",
-        "CN": "",
-        "RU": "",
-        "CA": "",
-        "PL": "",
-        "BR": "",
-        "CH": "",
-        "TR": ""
-      },
-      "auto": "",
-      "label": ""
-    },
-    "filters": {
-      "moreFilters": "",
-      "ageRating": "",
-      "os": "",
-      "price": "",
-      "activeCount_other": "",
-      "hideDlcs": "",
-      "ageRatingOption": "",
-      "genres": "",
-      "activeCount_one": "",
-      "lessFilters": "",
-      "rating": "",
-      "sort": "",
-      "genresPlaceholder": "",
-      "features": "",
-      "featuresPlaceholder": "",
-      "ageRatingAll": "",
-      "pageSize": "",
-      "releaseYear": ""
-    },
-    "sidebar": "",
-    "sort": {
-      "priceDesc": "",
-      "trending": "",
-      "priceAsc": "",
-      "releaseDesc": "",
-      "ratingAsc": "",
-      "releaseAsc": "",
-      "ratingDesc": "",
-      "discount": ""
-    },
-    "noMatches": "",
-    "aria": {
-      "pagination": "",
-      "rating": ""
-    },
-    "error": "",
-    "empty": "",
-    "loading": "",
-    "title": "",
-    "pagination": {
-      "prev": ""
-    }
-  },
   "steamgriddb": {
     "error": {
       "no-games": "",

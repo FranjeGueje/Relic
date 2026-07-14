@@ -795,7 +795,6 @@
     "offline-notification-body": "Internetinės paslaugos gali neveikti, nes „Epic Games“ serveriai yra atsijungę!"
   },
   "Epic Games": "„Epic Games“",
-  "gog-store": "„GOG“ parduotuvė",
   "Library": "Biblioteka",
   "login": {
     "amazon": "„Amazon“ prisijungimas",
@@ -862,7 +861,6 @@
   },
   "please-wait": "Prašome palaukti...",
   "prime-gaming": "„Prime Gaming“",
-  "store": "„Epic“ parduotuvė",
   "title": {
     "allGames": "Visi žaidimai"
   },
@@ -886,12 +884,6 @@
   "GOG": "„GOG“",
   "Other": "Kita/-s/-i",
   "Open": "Atidaryti",
-  "stores": "Parduotuvės",
-  "adtraction-locked": {
-    "dont-show-again": "Neberodinėti šio įspėjimo",
-    "title": "„Adtraction“ yra užblokuotas",
-    "description": "Atrodo, kad „track.adtraction.com“ domenas-sritis negalėjo būti pakrautas arba buvo/yra užblokuotas. Su „adtraction“, bet kokie pirkimai „GOG“ parduotuvėje padeda „Heroic“ finansiškai. Apmąstykite pašalinti šį blokavimą, jeigu norite mums padėti."
-  },
   "externalLink": {
     "dontAskAgain": "Daugiau nebeklausti",
     "warning": "Jūs atidarysite išorinį saitą."
@@ -983,90 +975,6 @@
   },
   "launch": {
     "options": "Paleidimo parinktys..."
-  },
-  "amazon-luna": "„Amazon Luna“",
-  "zoom-store": "„Zoom“ parduotuvė",
-  "discounts": {
-    "filters": {
-      "os": "Operacinė sistema",
-      "moreFilters": "Daugiau filtrų",
-      "ageRating": "Amžiaus cenzas",
-      "price": "Kaina",
-      "activeCount_other": "{{count}} aktyvi/-us/-ios/-ūs",
-      "hideDlcs": "Slėpti plėtotes",
-      "ageRatingOption": "Rodyti visus žaidimus įvertintus „PEGI“ {{age}} ar žemiau",
-      "genres": "Žanrai",
-      "activeCount_one": "{{count}} aktyvi/-us/-ios/-ūs",
-      "lessFilters": "Mažiau filtrų",
-      "rating": "Įvertinimas",
-      "sort": "Rikiuoti/Rūšiuoti pagal",
-      "genresPlaceholder": "Bet koks žanras",
-      "features": "Funkcijos",
-      "featuresPlaceholder": "Bet kokia funkcija",
-      "ageRatingAll": "Visi/-as/-os/-us",
-      "pageSize": "",
-      "releaseYear": "Išleidimo metai",
-      "hideOwned": "Slėpti turimus",
-      "wishlistOnly": "Tik norimus"
-    },
-    "region": {
-      "countries": {
-        "IT": "Italija",
-        "ES": "Ispanija",
-        "FI": "Suomija",
-        "GR": "Graikija",
-        "RO": "Rumunija",
-        "NO": "Norvegija",
-        "KR": "P. Korėja",
-        "US": "JAV",
-        "HU": "Vengrija",
-        "PT": "Portugalija",
-        "NL": "Nyderlandai",
-        "AU": "Australija",
-        "TW": "Taivanas",
-        "IL": "Izraelis",
-        "JP": "Japonija",
-        "DK": "Danija",
-        "DE": "Vokietija",
-        "CZ": "Čekija",
-        "FR": "Prancūzija",
-        "UA": "Ukraina",
-        "GB": "Jungtinė karalystė",
-        "SE": "Švedija",
-        "CN": "K. Kinija",
-        "RU": "Rusija",
-        "CA": "Kanada",
-        "PL": "Lenkija",
-        "BR": "Brazilija",
-        "CH": "Šveicarija",
-        "TR": "Turkija"
-      },
-      "auto": "Automatinis/-ė/-iškai ({{code}})",
-      "label": "Parduotuvės regionas"
-    },
-    "sidebar": "",
-    "sort": {
-      "priceDesc": "Kaina: nuo aukščiausios iki žemiausios",
-      "trending": "",
-      "priceAsc": "Kaina: nuo žemiausios iki aukščiausios",
-      "releaseDesc": "Išleidimo data: nuo naujausios iki seniausios",
-      "ratingAsc": "Įvertinimas: nuo žemiausios iki aukščiausios",
-      "releaseAsc": "Išleidimo data: nuo seniausios iki naujausios",
-      "ratingDesc": "Įvertinimas: nuo aukščiausios iki žemiausios",
-      "discount": "Didžiausia nuolaida"
-    },
-    "noMatches": "Nėra žaidimų, atitinkančių dabartinius filtrus.",
-    "aria": {
-      "pagination": "Puslapiãvimas",
-      "rating": "Įvertinimas – {{rating}} iš 10-imt"
-    },
-    "error": "Nepavyko įkelti nuolaidas. Prašome pabandyti dar kartą vėliau.",
-    "empty": "Nėra nukainuotų žaidimų šiuo momentu.",
-    "loading": "Kraunami nukainuoti žaidimai...",
-    "title": "",
-    "pagination": {
-      "prev": "Praeita/-s"
-    }
   },
   "console": {
     "filter": {

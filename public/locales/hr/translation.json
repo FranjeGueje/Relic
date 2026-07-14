@@ -252,7 +252,6 @@
   },
   "globalSettings": "Global Settings",
   "GOG": "GOG",
-  "gog-store": "GOG trgovina",
   "header": {
     "hide_non_available_games": "Sakrij nedostupne igre",
     "ignore_hidden": "Ignore Hidden",
@@ -865,8 +864,6 @@
     "preparing_login": "Priprema prijave... ",
     "installed": "Instalirano"
   },
-  "store": "Epic Store",
-  "stores": "Stores",
   "title": {
     "allGames": "All Games"
   },
@@ -961,11 +958,6 @@
     "new-category": "",
     "add-new-category": ""
   },
-  "adtraction-locked": {
-    "dont-show-again": "Ne prikazuj ovo upozorenje opet",
-    "title": "Adtraction je blokiran",
-    "description": "Čini se da se track.adtraction.com domena nije mogla učitati ili je blokirana. S adtraction-om bilo koja kupnja koju obavite u GOG trgovini financijski podupire Heroic. Razmotrite uklanjanje blokade ako želite doprinijeti."
-  },
   "window": {
     "close": "Zatvori",
     "maximize": "Maksimiziraj prozor",
@@ -1001,97 +993,15 @@
   "launch": {
     "options": "Opcije za pokretanje..."
   },
-  "amazon-luna": "",
   "emptyLibrary": {
     "noGames": "",
     "noResults": ""
   },
-  "zoom-store": "",
   "wineExplanation": {
     "proton-ge": "",
     "gpt": "",
     "wine-crossover": "",
     "wine-staging-macos": ""
-  },
-  "discounts": {
-    "region": {
-      "countries": {
-        "IT": "",
-        "ES": "",
-        "FI": "",
-        "GR": "",
-        "RO": "",
-        "NO": "",
-        "KR": "",
-        "US": "",
-        "HU": "",
-        "PT": "",
-        "NL": "",
-        "AU": "",
-        "TW": "",
-        "IL": "",
-        "JP": "",
-        "DK": "",
-        "DE": "",
-        "CZ": "",
-        "FR": "",
-        "UA": "",
-        "GB": "",
-        "SE": "",
-        "CN": "",
-        "RU": "",
-        "CA": "",
-        "PL": "",
-        "BR": "",
-        "CH": "",
-        "TR": ""
-      },
-      "auto": "",
-      "label": ""
-    },
-    "filters": {
-      "moreFilters": "",
-      "ageRating": "",
-      "os": "",
-      "price": "",
-      "activeCount_other": "",
-      "hideDlcs": "",
-      "ageRatingOption": "",
-      "genres": "",
-      "activeCount_one": "",
-      "lessFilters": "",
-      "rating": "",
-      "sort": "",
-      "genresPlaceholder": "",
-      "features": "",
-      "featuresPlaceholder": "",
-      "ageRatingAll": "Sve",
-      "pageSize": "",
-      "releaseYear": ""
-    },
-    "sidebar": "",
-    "sort": {
-      "priceDesc": "",
-      "trending": "",
-      "priceAsc": "",
-      "releaseDesc": "",
-      "ratingAsc": "",
-      "releaseAsc": "",
-      "ratingDesc": "",
-      "discount": ""
-    },
-    "noMatches": "",
-    "aria": {
-      "pagination": "",
-      "rating": ""
-    },
-    "error": "",
-    "empty": "",
-    "loading": "",
-    "title": "",
-    "pagination": {
-      "prev": ""
-    }
   },
   "steamgriddb": {
     "error": {

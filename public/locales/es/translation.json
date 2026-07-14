@@ -259,7 +259,6 @@
   },
   "globalSettings": "Ajustes globales",
   "GOG": "GOG",
-  "gog-store": "Tienda de GOG",
   "header": {
     "hide_non_available_games": "Ocultar juegos no disponibles",
     "ignore_hidden": "Ignorar Ocultos",
@@ -887,8 +886,6 @@
     "preparing_login": "Preparando inicio de sesión... ",
     "installed": "Instalado"
   },
-  "store": "Tienda de Epic",
-  "stores": "Tiendas",
   "title": {
     "allGames": "Todos los juegos"
   },
@@ -989,11 +986,6 @@
     "cancel": "Cancelar",
     "warning": "Advertencia"
   },
-  "adtraction-locked": {
-    "dont-show-again": "No volver a mostrar este aviso",
-    "title": "Adtraction está bloqueado",
-    "description": "Parece que el dominio track.adtraction.com no pudo cargar o está bloqueado. Con adtraction, cualquier compra que haga en la tienda GOG apoya Heroic financieramente. Considere eliminar el bloqueo si desea contribuir."
-  },
   "emptyLibrary": {
     "noResults": "Los filtros actuales no produjeron resultados.",
     "noGames": "La biblioteca está vacía.<br /><br />Hacer click <4>acá</4> para iniciar sesión con Epic, GOG.com, o Amazon. Luego, los juegos aparecerán en la Biblioteca.<br /><br />Para usar juegos o aplicaciones de otras fuentes, hacer click <br /> para agegarlos maualmente."
@@ -1036,92 +1028,8 @@
     },
     "title": "Enviar analíticas anónimas"
   },
-  "amazon-luna": "Amazon Luna",
-  "zoom-store": "Tienda de Zoom",
   "launch": {
     "options": "Opciones de arranque..."
-  },
-  "discounts": {
-    "region": {
-      "countries": {
-        "IT": "Italia",
-        "ES": "España",
-        "FI": "Finlandia",
-        "GR": "Grecia",
-        "RO": "Rumania",
-        "NO": "Noruega",
-        "KR": "Corea del Sur",
-        "US": "Estados Unidos",
-        "HU": "Hungría",
-        "PT": "Portugal",
-        "NL": "Países Bajos",
-        "AU": "Australia",
-        "TW": "Taiwán",
-        "IL": "Israél",
-        "JP": "Japón",
-        "DK": "Dinamarca",
-        "DE": "Alemania",
-        "CZ": "República Checa",
-        "FR": "Francia",
-        "UA": "Ucrania",
-        "GB": "Reino Unido",
-        "SE": "Suecia",
-        "CN": "China",
-        "RU": "Rusia",
-        "CA": "Canadá",
-        "PL": "Polonia",
-        "BR": "Brasil",
-        "CH": "Suiza",
-        "TR": "Turquía"
-      },
-      "auto": "Auto ({{code}})",
-      "label": "Región de la tienda"
-    },
-    "filters": {
-      "moreFilters": "Más filtros",
-      "ageRating": "Adecuado para la edad",
-      "os": "Sistema operativo",
-      "price": "Precio",
-      "activeCount_other": "{{count}} activa",
-      "hideDlcs": "Ocultar DLCs",
-      "ageRatingOption": "Juegos clasificados por PEGI {{age}} o inferior",
-      "genres": "Géneros",
-      "activeCount_one": "{{count}} activo",
-      "lessFilters": "Menos filtros",
-      "rating": "Clasificación",
-      "sort": "Ordenar por",
-      "genresPlaceholder": "Cualquier género",
-      "features": "Características",
-      "featuresPlaceholder": "Cualquier característica",
-      "ageRatingAll": "Todos",
-      "pageSize": "Por página",
-      "releaseYear": "Año de lanzamiento",
-      "hideOwned": "Ocultar adquiridos",
-      "wishlistOnly": "Solo lista de deseos"
-    },
-    "sidebar": "Ofertas",
-    "sort": {
-      "priceDesc": "Precio: de mayor a menor",
-      "trending": "Tendencias",
-      "priceAsc": "Precio: de bajo a alto",
-      "releaseDesc": "Fecha de lanzamiento: de nuevo a antiguo",
-      "ratingAsc": "Calificación: de baja a alta",
-      "releaseAsc": "Fecha de lanzamiento: de antiguo a nuevo",
-      "ratingDesc": "Calificación: de alta a baja",
-      "discount": "El mayor descuento"
-    },
-    "noMatches": "No hay juegos que coincidan con los filtros actuales.",
-    "aria": {
-      "pagination": "Paginación",
-      "rating": "Calificación {{rating}} sobre 10"
-    },
-    "error": "No se pudieron cargar los descuentos. Inténtalo de nuevo más tarde.",
-    "empty": "Actualmente no hay juegos con descuento disponibles.",
-    "loading": "Cargando juegos con descuento...",
-    "title": "Ofertas de GOG",
-    "pagination": {
-      "prev": "Previo"
-    }
   },
   "steamgriddb": {
     "error": {

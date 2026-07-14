@@ -259,7 +259,6 @@
   },
   "globalSettings": "Ustawienia globalne",
   "GOG": "GOG",
-  "gog-store": "Sklep GOG",
   "header": {
     "hide_non_available_games": "Ukryj niedostępne gry",
     "ignore_hidden": "Ignoruj ukryte",
@@ -890,8 +889,6 @@
     "preparing_login": "Przygotowanie logowania... ",
     "installed": "Zainstalowano"
   },
-  "store": "Sklep Epic",
-  "stores": "Sklepy",
   "title": {
     "allGames": "Wszystkie gry"
   },
@@ -1014,11 +1011,6 @@
     "rename": "Zmień nazwę \"{{name}}\"",
     "title": "Zarządzaj kategoriami"
   },
-  "adtraction-locked": {
-    "description": "Wygląda na to, że nie udało się załadować domeny track.adtraction.com lub jest ona zablokowana. Z adtraction, każdy zakup, który wykonujesz za pomocą sklepu GOG wspiera Heroic finansowo. Rozważ odblokowanie, jeżeli chcesz wesprzeć Heroic.",
-    "dont-show-again": "Nie pokazuj więcej tego ostrzeżenia",
-    "title": "Adtraction jest zablokowane"
-  },
   "notification": {
     "steam": {
       "error": "Pamiętaj, że nie wszystkie gry będą działać, a nawet jeśli tak, to mogą nie działać zgodnie z oczekiwaniami!",
@@ -1039,92 +1031,8 @@
     },
     "title": "Wysyłaj anonimowe dane analityczne"
   },
-  "amazon-luna": "Amazon Luna",
-  "zoom-store": "Sklep Zoom",
   "launch": {
     "options": "Opcje uruchamiania..."
-  },
-  "discounts": {
-    "region": {
-      "countries": {
-        "IT": "Włochy",
-        "ES": "Hiszpania",
-        "FI": "Finlandia",
-        "GR": "Grecja",
-        "RO": "Rumunia",
-        "NO": "Norwegia",
-        "KR": "Korea Południowa",
-        "US": "Stany Zjednoczone",
-        "HU": "Węgry",
-        "PT": "Portugalia",
-        "NL": "Holandia",
-        "AU": "Australia",
-        "TW": "Tajwan",
-        "IL": "Izrael",
-        "JP": "Japonia",
-        "DK": "Dania",
-        "DE": "Niemcy",
-        "CZ": "Czechy",
-        "FR": "Francja",
-        "UA": "Ukraina",
-        "GB": "Wielka Brytania",
-        "SE": "Szwecja",
-        "CN": "Chiny",
-        "RU": "Rosja",
-        "CA": "Kanada",
-        "PL": "Polska",
-        "BR": "Brazylia",
-        "CH": "Szwajcaria",
-        "TR": "Turcja"
-      },
-      "auto": "Automatyczny ({{code}})",
-      "label": "Region sklepu"
-    },
-    "filters": {
-      "moreFilters": "Więcej filtrów",
-      "ageRating": "odpowiednie dla wieku",
-      "os": "System operacyjny",
-      "price": "Cena",
-      "activeCount_other": "{{count}} aktywnych",
-      "hideDlcs": "Ukryj DLC",
-      "ageRatingOption": "Pokaż gry klasyfikowane PEGI {{age}}, lub niżej",
-      "genres": "Gatunki",
-      "activeCount_one": "{{count}} aktywny",
-      "lessFilters": "Mniej filtrów",
-      "rating": "Ocena",
-      "sort": "Sortuj",
-      "genresPlaceholder": "Jakikolwiek gatunek",
-      "features": "Cechy",
-      "featuresPlaceholder": "Jakiekolwiek cechy",
-      "ageRatingAll": "Każdy",
-      "pageSize": "Na stronie",
-      "releaseYear": "Rok wydania",
-      "hideOwned": "Ukryj posiadane",
-      "wishlistOnly": "Tylko lista życzeń"
-    },
-    "sidebar": "Promocje",
-    "sort": {
-      "priceDesc": "Cena: od największej",
-      "trending": "Popularne",
-      "priceAsc": "Cena: od najmniejszej",
-      "releaseDesc": "Data wydania: od najnowszej",
-      "ratingAsc": "Ocena: od najniższej",
-      "releaseAsc": "Data wydania: od najstarszej",
-      "ratingDesc": "Ocena: od najwyższej",
-      "discount": "Największa przecena"
-    },
-    "noMatches": "Żadna gra nie pasuje do obecnych filtrów.",
-    "aria": {
-      "pagination": "Paginacja",
-      "rating": "Ocena {{rating}} na 10"
-    },
-    "error": "Nie udało się wczytać przecen. Spróbuj ponownie później.",
-    "empty": "Brak przecenionych gier.",
-    "loading": "Wczytywanie przecenionych gier...",
-    "title": "Promocje GOG",
-    "pagination": {
-      "prev": "Poprzednia"
-    }
   },
   "steamgriddb": {
     "error": {

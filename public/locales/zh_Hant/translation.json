@@ -252,7 +252,6 @@
   },
   "globalSettings": "全域設定",
   "GOG": "GOG",
-  "gog-store": "GOG 商店",
   "header": {
     "hide_non_available_games": "Hide non-available games",
     "ignore_hidden": "忽略隱藏項",
@@ -864,8 +863,6 @@
     "processing": "檔案處理中，請等待",
     "preparing_login": "正在準備登入... "
   },
-  "store": "Epic 商店",
-  "stores": "商店",
   "title": {
     "allGames": "所有遊戲"
   },
@@ -978,11 +975,6 @@
     "no-categories": "尚未分類。",
     "remove": "移除\"{{name}}\""
   },
-  "adtraction-locked": {
-    "dont-show-again": "不再顯示警告",
-    "description": "",
-    "title": ""
-  },
   "analyticsModal": {
     "disable": "停用",
     "enable": "啟用",
@@ -1000,97 +992,15 @@
   "launch": {
     "options": "啟動選項…"
   },
-  "amazon-luna": "",
   "emptyLibrary": {
     "noGames": "",
     "noResults": ""
   },
-  "zoom-store": "",
   "wineExplanation": {
     "proton-ge": "",
     "gpt": "",
     "wine-crossover": "",
     "wine-staging-macos": ""
-  },
-  "discounts": {
-    "region": {
-      "countries": {
-        "IT": "",
-        "ES": "",
-        "FI": "",
-        "GR": "",
-        "RO": "",
-        "NO": "",
-        "KR": "",
-        "US": "",
-        "HU": "",
-        "PT": "",
-        "NL": "",
-        "AU": "",
-        "TW": "",
-        "IL": "",
-        "JP": "",
-        "DK": "",
-        "DE": "",
-        "CZ": "",
-        "FR": "",
-        "UA": "",
-        "GB": "",
-        "SE": "",
-        "CN": "",
-        "RU": "",
-        "CA": "",
-        "PL": "",
-        "BR": "",
-        "CH": "",
-        "TR": ""
-      },
-      "auto": "",
-      "label": ""
-    },
-    "filters": {
-      "moreFilters": "",
-      "ageRating": "",
-      "os": "作業系統：",
-      "price": "",
-      "activeCount_other": "",
-      "hideDlcs": "",
-      "ageRatingOption": "",
-      "genres": "",
-      "activeCount_one": "",
-      "lessFilters": "",
-      "rating": "",
-      "sort": "",
-      "genresPlaceholder": "",
-      "features": "",
-      "featuresPlaceholder": "",
-      "ageRatingAll": "",
-      "pageSize": "",
-      "releaseYear": ""
-    },
-    "sidebar": "",
-    "sort": {
-      "priceDesc": "",
-      "trending": "",
-      "priceAsc": "",
-      "releaseDesc": "",
-      "ratingAsc": "",
-      "releaseAsc": "",
-      "ratingDesc": "",
-      "discount": ""
-    },
-    "noMatches": "",
-    "aria": {
-      "pagination": "",
-      "rating": ""
-    },
-    "error": "",
-    "empty": "",
-    "loading": "",
-    "title": "",
-    "pagination": {
-      "prev": ""
-    }
   },
   "steamgriddb": {
     "error": {

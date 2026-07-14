@@ -252,7 +252,6 @@
   },
   "globalSettings": "Globalne postavke",
   "GOG": "GOG",
-  "gog-store": "GOG Trgovina",
   "header": {
     "hide_non_available_games": "Hide non-available games",
     "ignore_hidden": "Ignoriši skriveno",
@@ -865,8 +864,6 @@
     "preparing_login": "Priprema za prijavu... ",
     "installed": "Instalirano"
   },
-  "store": "Epic Store",
-  "stores": "Trgovine",
   "title": {
     "allGames": "Sve igre"
   },
@@ -978,11 +975,6 @@
   "launch": {
     "options": "Opcije za pokretanje..."
   },
-  "adtraction-locked": {
-    "description": "",
-    "dont-show-again": "",
-    "title": ""
-  },
   "categories-manager": {
     "confirm-rename": "",
     "cancel-remove": "",
@@ -1001,97 +993,15 @@
     "close": "",
     "restore": ""
   },
-  "amazon-luna": "",
   "emptyLibrary": {
     "noGames": "",
     "noResults": ""
   },
-  "zoom-store": "",
   "wineExplanation": {
     "proton-ge": "",
     "gpt": "",
     "wine-crossover": "",
     "wine-staging-macos": ""
-  },
-  "discounts": {
-    "region": {
-      "countries": {
-        "IT": "",
-        "ES": "",
-        "FI": "",
-        "GR": "",
-        "RO": "",
-        "NO": "",
-        "KR": "",
-        "US": "",
-        "HU": "",
-        "PT": "",
-        "NL": "",
-        "AU": "",
-        "TW": "",
-        "IL": "",
-        "JP": "",
-        "DK": "",
-        "DE": "",
-        "CZ": "",
-        "FR": "",
-        "UA": "",
-        "GB": "",
-        "SE": "",
-        "CN": "",
-        "RU": "",
-        "CA": "",
-        "PL": "",
-        "BR": "",
-        "CH": "",
-        "TR": ""
-      },
-      "auto": "",
-      "label": ""
-    },
-    "filters": {
-      "moreFilters": "",
-      "ageRating": "",
-      "os": "",
-      "price": "",
-      "activeCount_other": "",
-      "hideDlcs": "",
-      "ageRatingOption": "",
-      "genres": "",
-      "activeCount_one": "",
-      "lessFilters": "",
-      "rating": "",
-      "sort": "",
-      "genresPlaceholder": "",
-      "features": "",
-      "featuresPlaceholder": "",
-      "ageRatingAll": "Sve",
-      "pageSize": "",
-      "releaseYear": ""
-    },
-    "sidebar": "",
-    "sort": {
-      "priceDesc": "",
-      "trending": "",
-      "priceAsc": "",
-      "releaseDesc": "",
-      "ratingAsc": "",
-      "releaseAsc": "",
-      "ratingDesc": "",
-      "discount": ""
-    },
-    "noMatches": "",
-    "aria": {
-      "pagination": "",
-      "rating": ""
-    },
-    "error": "",
-    "empty": "",
-    "loading": "",
-    "title": "",
-    "pagination": {
-      "prev": ""
-    }
   },
   "steamgriddb": {
     "error": {

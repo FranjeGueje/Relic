@@ -1,10 +1,5 @@
 {
   "add_game": "Cuir Cluiche Leis",
-  "adtraction-locked": {
-    "description": "Is cosúil nárbh fhéidir an fearann track.adtraction.com a luchtú nó go bhfuil sé blocáilte. Le adtraction, tacaíonn aon cheannachán a dhéanann tú i siopa GOG le Heroic ó thaobh airgeadais de. Smaoinigh ar an mbac a bhaint más mian leat ranníocaíocht a dhéanamh.",
-    "dont-show-again": "Ná taispeáin an rabhadh seo arís",
-    "title": "Tá bac ar Attraction"
-  },
   "Amazon Games": "Cluichí Amazon",
   "analyticsModal": {
     "disable": "Díchumasaigh",
@@ -571,7 +566,6 @@
   },
   "globalSettings": "Socruithe Domhanda",
   "GOG": "GOG",
-  "gog-store": "Siopa GOG",
   "header": {
     "categories": "Catagóirí",
     "filters": "Scagairí",
@@ -889,8 +883,6 @@
     }
   },
   "Settings": "Socruithe",
-  "store": "Epic Store",
-  "stores": "Siopaí",
   "title": {
     "allGames": "Gach Cluiche"
   },
@@ -971,92 +963,8 @@
     "openGUI": "Oscail Comhéadan Úsáideora Winetricks",
     "search": "Cuardaigh clónna nó comhpháirteanna"
   },
-  "amazon-luna": "Amazon Luna",
-  "zoom-store": "Siopa Zoom",
   "launch": {
     "options": "Roghanna Seolta..."
-  },
-  "discounts": {
-    "filters": {
-      "os": "Córas oibriúcháin",
-      "moreFilters": "Tuilleadh scagairí",
-      "ageRating": "Oiriúnach d'aois",
-      "price": "Praghas",
-      "activeCount_other": "{{count}} gníomhach",
-      "hideDlcs": "Folaigh DLCanna",
-      "ageRatingOption": "Taispeáin cluichí a bhfuil rátáil PEGI {{age}} nó níos ísle acu",
-      "genres": "Seánraí",
-      "activeCount_one": "{{count}} gníomhach",
-      "lessFilters": "Níos lú scagairí",
-      "rating": "Rátáil",
-      "sort": "Sórtáil de réir",
-      "genresPlaceholder": "Aon seánra",
-      "features": "Gnéithe",
-      "featuresPlaceholder": "Aon ghné",
-      "ageRatingAll": "Gach",
-      "pageSize": "In aghaidh an leathanaigh",
-      "releaseYear": "Bliain scaoilte",
-      "hideOwned": "Folaigh Úinéireacht",
-      "wishlistOnly": "Liosta Mianta Amháin"
-    },
-    "region": {
-      "countries": {
-        "IT": "An Iodáil",
-        "ES": "An Spáinn",
-        "FI": "An Fhionlainn",
-        "GR": "An Ghréig",
-        "RO": "An Rómáin",
-        "NO": "An Iorua",
-        "KR": "An Chóiré Theas",
-        "US": "Stáit Aontaithe Mheiriceá",
-        "HU": "An Ungáir",
-        "PT": "An Phortaingéil",
-        "NL": "An Ísiltír",
-        "AU": "An Astráil",
-        "TW": "An Téaváin",
-        "IL": "Iosrael",
-        "JP": "An tSeapáin",
-        "DK": "An Danmhairg",
-        "DE": "An Ghearmáin",
-        "CZ": "an tSeicia",
-        "FR": "An Fhrainc",
-        "UA": "An Úcráin",
-        "GB": "Ríocht Aontaithe",
-        "SE": "An tSualainn",
-        "CN": "An tSín",
-        "RU": "An Rúis",
-        "CA": "Ceanada",
-        "PL": "An Pholainn",
-        "BR": "An Bhrasaíl",
-        "CH": "An Eilvéis",
-        "TR": "An Tuirc"
-      },
-      "auto": "Uathoibríoch ({{code}})",
-      "label": "Réigiún an tsiopa"
-    },
-    "sidebar": "Margaí",
-    "sort": {
-      "priceDesc": "Praghas: ard go híseal",
-      "trending": "Ag treochtáil",
-      "priceAsc": "Praghas: íseal go hard",
-      "releaseDesc": "Dáta eisiúna: nua go sean",
-      "ratingAsc": "Rátáil: íseal go hard",
-      "releaseAsc": "Dáta eisiúna: sean go nua",
-      "ratingDesc": "Rátáil: ard go híseal",
-      "discount": "Lascaine is mó"
-    },
-    "noMatches": "Níl aon chluiche ag teacht leis na scagairí reatha.",
-    "aria": {
-      "pagination": "Leathanachú",
-      "rating": "Rátáil {{rating}} as 10"
-    },
-    "error": "Níorbh fhéidir lascainí a luchtú. Déan iarracht arís ar ball.",
-    "empty": "Níl aon chluichí lascainithe ar fáil faoi láthair.",
-    "loading": "Ag lódáil cluichí lascainithe...",
-    "title": "Margaí GOG",
-    "pagination": {
-      "prev": "Roimhe Seo"
-    }
   },
   "next": "Ar Aghaidh",
   "console": {

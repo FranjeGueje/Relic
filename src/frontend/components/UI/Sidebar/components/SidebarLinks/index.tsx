@@ -1,23 +1,18 @@
 import {
   faGamepad,
   faSlidersH,
-  faStore,
   faUser,
   faUserAlt,
   faWineGlass,
   faBarsProgress,
-  faTv,
-  faTags
+  faTv
 } from '@fortawesome/free-solid-svg-icons'
 import { useLocation } from 'react-router-dom'
 import { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
-import {
-} from '@fortawesome/free-brands-svg-icons'
 
 import ContextProvider from 'frontend/state/ContextProvider'
 import QuitButton from '../QuitButton'
-import { SHOW_EXTERNAL_LINK_DIALOG_STORAGE_KEY } from 'frontend/components/UI/ExternalLinkDialog'
 import SidebarItem from '../SidebarItem'
 
 type PathSplit = [a: undefined, b: undefined, type: string]
@@ -33,13 +28,9 @@ export default function SidebarLinks() {
     gog,
     zoom,
     platform,
-    refreshLibrary,
-    handleExternalLinkDialog
+    refreshLibrary
   } = useContext(ContextProvider)
 
-  const inWebviewScreen =
-    location.pathname.includes('store') ||
-    location.pathname.includes('last-url')
   const isSettings = location.pathname.includes('settings')
   const isWin = platform === 'win32'
 
@@ -58,46 +49,6 @@ export default function SidebarLinks() {
       return refreshLibrary({ runInBackground: true })
     }
     return
-  }
-
-  function handleExternalLink(linkCallback: () => void) {
-    const showDialogSetting = localStorage.getItem(
-      SHOW_EXTERNAL_LINK_DIALOG_STORAGE_KEY
-    )
-    const showExternalLinkDialog = showDialogSetting
-      ? (JSON.parse(showDialogSetting) as boolean)
-      : true
-
-    if (showExternalLinkDialog) {
-      handleExternalLinkDialog({ showDialog: true, linkCallback })
-    } else {
-      linkCallback()
-    }
-  }
-
-  // By default, open Epic Store
-  let defaultStore = 'epic'
-  if (
-    zoom.enabled &&
-    !epic.username &&
-    !gog.username &&
-    !amazon.user_id &&
-    zoom.username
-  ) {
-    // Prioritize Zoom if only Zoom is logged in
-    defaultStore = 'zoom'
-  } else if (!epic.username && !gog.username && amazon.user_id) {
-    // If only logged in to Amazon Games, open Amazon Gaming
-    defaultStore = 'amazon'
-  } else if (!epic.username && gog.username) {
-    // Otherwise, if not logged in to Epic Games, open GOG Store
-    defaultStore = 'gog'
-  }
-
-  // if we have a stored last-url, default to the `/last-url` route
-  const lastStore = sessionStorage.getItem('last-store')
-  if (lastStore) {
-    defaultStore = lastStore
   }
 
   return (
@@ -119,47 +70,6 @@ export default function SidebarLinks() {
         dataTour="sidebar-library"
       />
 
-      <div className="SidebarItemWithSubmenu">
-        <SidebarItem
-          isActiveFallback={location.pathname.includes('store')}
-          url={`/store/${defaultStore}`}
-          icon={faStore}
-          label={t('stores', 'Stores')}
-          dataTour="sidebar-stores"
-        />
-        {inWebviewScreen && (
-          <div className="SidebarSubmenu">
-            <SidebarItem
-              className="SidebarLinks__subItem"
-              url="/store/epic"
-              label={t('store', 'Epic Store')}
-            />
-            <SidebarItem
-              className="SidebarLinks__subItem"
-              url="/store/gog"
-              label={t('gog-store', 'GOG Store')}
-            />
-            <SidebarItem
-              className="SidebarLinks__subItem"
-              url="/store/amazon"
-              label={t('amazon-luna', 'Amazon Luna')}
-            />
-            {zoom.enabled && (
-              <SidebarItem
-                className="SidebarLinks__subItem"
-                url="/store/zoom"
-                label={t('zoom-store', 'Zoom Store')}
-              />
-            )}
-          </div>
-        )}
-      </div>
-      <SidebarItem
-        url="/discounts"
-        icon={faTags}
-        label={t('discounts.sidebar', 'Deals')}
-        dataTour="sidebar-discounts"
-      />
       <div className="divider" />
       <div className="SidebarItemWithSubmenu">
         <SidebarItem

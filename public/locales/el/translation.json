@@ -251,7 +251,6 @@
   },
   "globalSettings": "Καθολικές Ρυθμίσεις",
   "GOG": "GOG",
-  "gog-store": "Κατάστημα GOG",
   "header": {
     "hide_non_available_games": "Hide non-available games",
     "ignore_hidden": "Παράλειψη κρυφών στοιχείων",
@@ -867,8 +866,6 @@
     "processing": "Επεξεργασία αρχείων, παρακαλώ περιμένετε",
     "preparing_login": "Προετοιμασία σύνδεσης... "
   },
-  "store": "Κατάστημα Epic",
-  "stores": "Καταστήματα",
   "title": {
     "allGames": "Όλα τα παιχνίδια"
   },
@@ -963,11 +960,6 @@
     "delete-question": "Η διαδικασία θα αφαιρέσει μόνιμα αυτή την κατηγορία και θα την αποβάλει από όλα τα παιχνίδια. Συνεχίστε;",
     "new-category": "Νέα κατηγορία"
   },
-  "adtraction-locked": {
-    "description": "Φαίνεται οτί το track.adtrastion.com domain δεν μπορούσε να φορτώσει ή είναι μπλοκαρισμένο. Με το adtraction, ότι αγορές κανετε στο GOG Store υποστειρίζεται το Heroic οικονομικά. Σκεφτείτε να αφερέσετε το block εάν θέλετε να υποστειρίξεται.",
-    "dont-show-again": "Μην δείξετε την προειδοποίηση ξανά",
-    "title": "Adtraction είναι μπλοκαρισμένο"
-  },
   "categories-manager": {
     "add": "Προσθήκη",
     "add-placeholder": "Προσθήκη νέας κατηγορίας",
@@ -1004,96 +996,14 @@
     },
     "title": "Αποστολή Ανώνυμων Αναλυτικών Στοιχείων"
   },
-  "amazon-luna": "Amazon Luna",
   "wineExplanation": {
     "proton-ge": "Το GE-Proton είναι μια παραλλαγή του Proton που δημιουργήθηκε από το Glorious Eggroll. Προορίζεται για χρήση μαζί με τον umu launcher (προεπιλογή στο Heroic).",
     "gpt": "",
     "wine-crossover": "",
     "wine-staging-macos": ""
   },
-  "zoom-store": "Κατάστημα Zoom",
   "launch": {
     "options": "Ρυθμίσεις εκκίνησης..."
-  },
-  "discounts": {
-    "region": {
-      "countries": {
-        "IT": "",
-        "ES": "",
-        "FI": "",
-        "GR": "",
-        "RO": "",
-        "NO": "",
-        "KR": "",
-        "US": "",
-        "HU": "",
-        "PT": "",
-        "NL": "",
-        "AU": "",
-        "TW": "",
-        "IL": "",
-        "JP": "",
-        "DK": "",
-        "DE": "",
-        "CZ": "",
-        "FR": "",
-        "UA": "",
-        "GB": "",
-        "SE": "",
-        "CN": "",
-        "RU": "",
-        "CA": "",
-        "PL": "",
-        "BR": "",
-        "CH": "",
-        "TR": ""
-      },
-      "auto": "",
-      "label": ""
-    },
-    "filters": {
-      "moreFilters": "",
-      "ageRating": "",
-      "os": "Λειτουργικό σύστημα:",
-      "price": "",
-      "activeCount_other": "",
-      "hideDlcs": "",
-      "ageRatingOption": "",
-      "genres": "",
-      "activeCount_one": "",
-      "lessFilters": "",
-      "rating": "",
-      "sort": "",
-      "genresPlaceholder": "",
-      "features": "",
-      "featuresPlaceholder": "",
-      "ageRatingAll": "",
-      "pageSize": "",
-      "releaseYear": ""
-    },
-    "sidebar": "Προσφορές",
-    "sort": {
-      "priceDesc": "",
-      "trending": "",
-      "priceAsc": "",
-      "releaseDesc": "",
-      "ratingAsc": "",
-      "releaseAsc": "",
-      "ratingDesc": "",
-      "discount": ""
-    },
-    "noMatches": "",
-    "aria": {
-      "pagination": "",
-      "rating": ""
-    },
-    "error": "Δεν ήταν δυνατή η φόρτωση των προσφορών. Παρακαλώ δοκιμάστε αργότερα.",
-    "empty": "",
-    "loading": "",
-    "title": "Προσφορές GOG",
-    "pagination": {
-      "prev": ""
-    }
   },
   "steamgriddb": {
     "error": {

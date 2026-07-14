@@ -251,7 +251,6 @@
   },
   "globalSettings": "Yleisvaikutteiset asetukset",
   "GOG": "GOG",
-  "gog-store": "GOG-kauppa",
   "header": {
     "hide_non_available_games": "Piilota pelit jotka eivät ole saatavilla",
     "ignore_hidden": "Ohita piilotetut",
@@ -873,8 +872,6 @@
     "preparing_login": "Valmistellaan kirjautumista... ",
     "installed": "Asennettu"
   },
-  "store": "Epic-kauppa",
-  "stores": "Kaupat",
   "title": {
     "allGames": "Kaikki pelit"
   },
@@ -975,11 +972,6 @@
     "new-category": "Uusi luokka",
     "remove-category": "Poista luokka"
   },
-  "adtraction-locked": {
-    "description": "Osoite track.adtraction.com ei ladannut tai se on estetty. Ostaessasi adtraction kautta, jokainen tekemäsi ostos GOG-kaupasta tukee Heroic:ia taloudellisesti. Harkitse eston poistamista mikäli haluat antaa tukesi.",
-    "dont-show-again": "Älä näytä tätä varoitusta enää",
-    "title": "Adtraction on estetty"
-  },
   "categories-manager": {
     "add": "Lisää",
     "cancel-remove": "Peru \"{{name}}\" poistaminen",
@@ -1010,98 +1002,14 @@
     },
     "title": "Lähetä anonyymia analytiikkaa"
   },
-  "amazon-luna": "Amazon Luna",
   "launch": {
     "options": "Käynnistysasetukset..."
   },
-  "zoom-store": "",
   "wineExplanation": {
     "proton-ge": "",
     "gpt": "",
     "wine-crossover": "",
     "wine-staging-macos": ""
-  },
-  "discounts": {
-    "region": {
-      "countries": {
-        "IT": "Italia",
-        "ES": "Espanja",
-        "FI": "Suomi",
-        "GR": "Kreikka",
-        "RO": "Romania",
-        "NO": "Norja",
-        "KR": "Etelä-Korea",
-        "US": "Yhdysvallat",
-        "HU": "Unkari",
-        "PT": "Portugali",
-        "NL": "Alankomaat",
-        "AU": "Australia",
-        "TW": "Taiwan",
-        "IL": "Israel",
-        "JP": "Japani",
-        "DK": "Tanska",
-        "DE": "Saksa",
-        "CZ": "Tsekki",
-        "FR": "Ranska",
-        "UA": "Ukraina",
-        "GB": "Yhdistyneet kuningaskunnat",
-        "SE": "Ruotsi",
-        "CN": "Kiina",
-        "RU": "Venäjä",
-        "CA": "Kanada",
-        "PL": "Puola",
-        "BR": "Brasilia",
-        "CH": "Sveitsi",
-        "TR": "Turkki"
-      },
-      "auto": "Auto {{code}}",
-      "label": "Kaupan alue"
-    },
-    "filters": {
-      "moreFilters": "Enemmän suodattimia",
-      "ageRating": "Sopii ikäryhmälle",
-      "os": "Käyttöjärjestelmä:",
-      "price": "Hinta",
-      "activeCount_other": "{{count}} aktiivisena",
-      "hideDlcs": "Piilota DLC:t",
-      "ageRatingOption": "Näytä pelit joissa PEGI {{age}} tai alle",
-      "genres": "Genret",
-      "activeCount_one": "{{count}} aktiivisena",
-      "lessFilters": "Vähemmän suodattimia",
-      "rating": "Arvosana",
-      "sort": "Lajittele",
-      "genresPlaceholder": "Kaikki genret",
-      "features": "Ominaisuudet",
-      "featuresPlaceholder": "Kaikki ominaisuudet",
-      "ageRatingAll": "Kaikki",
-      "pageSize": "Per sivu",
-      "releaseYear": "Julkaisuvuosi",
-      "hideOwned": "Piilota omistetut",
-      "wishlistOnly": "Vain toivelistalla olevat"
-    },
-    "sidebar": "Tarjoukset",
-    "sort": {
-      "priceDesc": "Hinta: suurimmasta pienimpään",
-      "trending": "Suosituimmat",
-      "priceAsc": "Hinta: pienimmästä suurimpaan",
-      "releaseDesc": "Julkaisupäivä: uusimmasta vanhimpaan",
-      "ratingAsc": "Arvosana: pienimmästä suurimpaan",
-      "releaseAsc": "Julkaisupäivä: vanhimmasta uusimpaan",
-      "ratingDesc": "Arvosana: suurimmasta pienimpään",
-      "discount": "Suurin alennus"
-    },
-    "noMatches": "Ei pelejä valituilla suodattimilla.",
-    "aria": {
-      "pagination": "Sivutus",
-      "rating": "Arvosana {{rating}} / 10:stä"
-    },
-    "error": "Alennuksia ei voitu ladata. Yritä myöhemmin uudelleen.",
-    "empty": "Ei alennettuja pelejä saatavilla.",
-    "loading": "Ladataan alennettuja pelejä...",
-    "title": "GOG tarjoukset",
-    "pagination": {
-      "prev": "Edellinen"
-    }
   },
   "steamgriddb": {
     "error": {

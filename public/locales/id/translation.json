@@ -251,7 +251,6 @@
   },
   "globalSettings": "Pengaturan Global",
   "GOG": "GOG",
-  "gog-store": "GOG Store",
   "header": {
     "hide_non_available_games": "Sembunyikan gim yang tidak tersedia",
     "ignore_hidden": "Abaikan yang Disembunyikan",
@@ -870,8 +869,6 @@
     "preparing_login": "Persiapan Masuk Akun... ",
     "installed": "Terpasang"
   },
-  "store": "Epic Store",
-  "stores": "Toko",
   "title": {
     "allGames": "Semua Gim"
   },
@@ -984,11 +981,6 @@
     "rename": "Ubah \"{{name}}\"",
     "title": "Kelola Kategori"
   },
-  "adtraction-locked": {
-    "dont-show-again": "Jangan tampilkan peringatan ini lagi",
-    "title": "Adtraction diblokir",
-    "description": "Sepertinya domain track.adtraction.com gagal dimuat atau diblokir. Dengan adtraction, pembelian apa pun yang Anda lakukan di toko GOG akan mendukung Heroic secara finansial. Pertimbangkanlah untuk menghapus blokiran jika Anda ingin berkontribusi."
-  },
   "analyticsModal": {
     "disable": "Nonaktif",
     "enable": "Aktif",
@@ -1003,7 +995,6 @@
     },
     "title": "Kirim Analitik Anonim"
   },
-  "amazon-luna": "Amazon Luna",
   "emptyLibrary": {
     "noGames": "Pustaka Anda kosong.<br /><br />Klik <4>di sini</4> untuk masuk dengan akun Epic, GOG.com, atau Amazon Anda. Setelah itu, game Anda akan muncul di Pustaka.<br /><br />Untuk menggunakan game atau aplikasi dari sumber lain, klik <br /> untuk menambahkannya secara manual.",
     "noResults": "Filter saat ini tidak menghasilkan hasil apa pun."
@@ -1014,91 +1005,8 @@
     "wine-crossover": "Wine-Crossover didasarkan pada proyek Wine OpenSource Crossover dan direkomendasikan untuk Mac Intel serta untuk game DX11 atau yang lebih lama.",
     "wine-staging-macos": "Wine-Staging-macOS didasarkan pada proyek Wine utama dan direkomendasikan untuk Mac Intel serta untuk game DX11 atau yang lebih lama, terutama bila dipasangkan dengan alat DXMT."
   },
-  "zoom-store": "Toko Zoom",
   "launch": {
     "options": "Opsi Peluncuran…"
-  },
-  "discounts": {
-    "region": {
-      "countries": {
-        "IT": "Italia",
-        "ES": "Spanyol",
-        "FI": "Finlandia",
-        "GR": "Yunani",
-        "RO": "Rumania",
-        "NO": "Norwegia",
-        "KR": "Korea Selatan",
-        "US": "Amerika Serikat",
-        "HU": "Hungaria",
-        "PT": "Portugal",
-        "NL": "Belanda",
-        "AU": "Australia",
-        "TW": "Taiwan",
-        "IL": "Israel",
-        "JP": "Jepang",
-        "DK": "Denmark",
-        "DE": "Jerman",
-        "CZ": "Ceko",
-        "FR": "Prancis",
-        "UA": "Ukraina",
-        "GB": "Britania Raya",
-        "SE": "Swedia",
-        "CN": "Tiongkok",
-        "RU": "Rusia",
-        "CA": "Kanada",
-        "PL": "Polandia",
-        "BR": "Brasil",
-        "CH": "Swiss",
-        "TR": "Turki"
-      },
-      "auto": "Otomatis ({{code}})",
-      "label": "Wilayah toko"
-    },
-    "filters": {
-      "moreFilters": "Filter lebih banyak",
-      "ageRating": "Cocok untuk usia",
-      "os": "Sistem Operasi:",
-      "price": "Harga",
-      "activeCount_other": "{{count}} aktif",
-      "hideDlcs": "Sembunyikan DLC",
-      "ageRatingOption": "Tampilkan game berperingkat PEGI {{age}} atau lebih rendah",
-      "genres": "Genre",
-      "activeCount_one": "{{count}} aktif",
-      "lessFilters": "Filter lebih sedikit",
-      "rating": "Rating",
-      "sort": "Urutkan berdasarkan",
-      "genresPlaceholder": "Genre apa saja",
-      "features": "Fitur",
-      "featuresPlaceholder": "Fitur apa saja",
-      "ageRatingAll": "Semua",
-      "pageSize": "Per halaman",
-      "releaseYear": "Tahun rilis",
-      "hideOwned": "Sembunyikan yang Dimiliki",
-      "wishlistOnly": "Daftar Keinginan Saja"
-    },
-    "sidebar": "Penawaran",
-    "sort": {
-      "priceDesc": "Harga: tinggi ke rendah",
-      "trending": "Sedang tren",
-      "priceAsc": "Harga: rendah ke tinggi",
-      "releaseDesc": "Tanggal rilis: baru ke lama",
-      "ratingAsc": "Rating: rendah ke tinggi",
-      "releaseAsc": "Tanggal rilis: lama ke baru",
-      "ratingDesc": "Rating: tinggi ke rendah",
-      "discount": "Diskon terbesar"
-    },
-    "noMatches": "Tidak ada game yang cocok dengan filter saat ini.",
-    "aria": {
-      "pagination": "Paginasi",
-      "rating": "Rating {{rating}} dari 10"
-    },
-    "error": "Tidak dapat memuat diskon. Silakan coba lagi nanti.",
-    "empty": "Tidak ada game dengan diskon yang tersedia saat ini.",
-    "loading": "Memuat game dengan diskon...",
-    "title": "Penawaran GOG",
-    "pagination": {
-      "prev": "Sebelumnya"
-    }
   },
   "steamgriddb": {
     "error": {
