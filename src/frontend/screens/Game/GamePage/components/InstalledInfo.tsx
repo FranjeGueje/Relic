@@ -52,7 +52,7 @@ const InstalledInfo = ({ gameInfo }: Props) => {
 
   const appLocation = install_path || folder_name
 
-  const { wineVersion, winePrefix, wineCrossoverBottle } = gameSettings
+  const { wineVersion, winePrefix } = gameSettings
 
   let wineName = ''
   let wineType = ''
@@ -108,24 +108,17 @@ const InstalledInfo = ({ gameInfo }: Props) => {
           <div>
             <b>Wine:</b> {wineName}
           </div>
-          {wineType === 'crossover' ? (
-            <div>
-              <b>{t2('setting.winecrossoverbottle', 'Bottle')}:</b>{' '}
-              <div>{wineCrossoverBottle}</div>
-            </div>
-          ) : (
-            <div
+          <div
               className="clickable"
               onClick={() => window.api.openFolder(winePrefix)}
             >
               <b>{t2('setting.wineprefix', 'WinePrefix')}:</b>{' '}
               <div className="truncatedPath">{winePrefix}</div>
             </div>
-          )}
-        </>
-      )}
-    </>
-  )
+          </>
+        )}
+      </>
+    )
 
   return info
 

@@ -4,15 +4,12 @@ import React, { useContext, useEffect, useState } from 'react'
 
 import { useTranslation } from 'react-i18next'
 import {
-  AdvertiseAvxForRosetta,
   AlternativeExe,
   BattlEyeRuntime,
-  CrossoverBottle,
   EacRuntime,
   EnableEsync,
   EnableFSR,
   EnableFsync,
-  EnableMsync,
   EnableWineWayland,
   EnableWoW64,
   EnvVariablesTable,
@@ -169,15 +166,12 @@ export default function GamesSettings() {
       <TabPanel value={value} index={'wine'}>
         <WineVersionSelector />
         <WinePrefix />
-        <CrossoverBottle />
         {!isCrossover && (
           <>
             <EnableEsync />
             <EnableFsync />
             <EnableWineWayland />
             <EnableWoW64 />
-            <EnableMsync />
-            <AdvertiseAvxForRosetta />
             <EnableFSR />
             {isMac && <EnableDXVKFpsLimit />}
             <Tools />

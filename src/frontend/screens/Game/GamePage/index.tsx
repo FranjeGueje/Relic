@@ -48,7 +48,6 @@ import { hasStatus } from 'frontend/hooks/hasStatus'
 import GameContext from '../GameContext'
 import { GameContextType } from 'frontend/types'
 import {
-  AppleWikiInfo,
   CloudSavesSync,
   CompatibilityInfo,
   Description,
@@ -556,7 +555,6 @@ export default React.memo(function GamePage(): JSX.Element | null {
                           <Scores gameInfo={gameInfo} />
                           <HLTB />
                           <CompatibilityInfo gameInfo={gameInfo} />
-                          <AppleWikiInfo gameInfo={gameInfo} />
                         </TabPanel>
 
                         <TabPanel

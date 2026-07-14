@@ -231,3 +231,12 @@
 - `WineVersionSelector.tsx`: logos GE y CachyOS eliminados, `handleWineVersionsUpdated` eliminado
 - `common/types/ipc.ts`: tipos Winetricks, WineManager, DXVK/VKD3D eliminados
 - `common/types.ts`: `downloadProtonToSteam` eliminado
+
+## Dependencias no usadas eliminadas
+- `react-markdown`, `rehype-raw`, `intro.js`, `intro.js-react` eliminados de `package.json` (ningún import en `src/`)
+
+## Componentes frontend macOS-only
+- `AdvertiseAvxForRosetta.tsx`, `CrossoverBottle.tsx`, `EnableMsync.tsx` eliminados
+- `AppleWikiInfo.tsx` y `MacOSCompatibility/index.scss` eliminados
+- Referencia `wineCrossoverBottle` eliminada de `InstalledInfo.tsx`
+- Limpiados imports/exports en `components/index.ts`, `GamesSettings/index.tsx`, `GamePage/index.tsx`
