@@ -1,22 +1,22 @@
 {
-  "name": "heroic",
-  "version": "2.22.0",
+  "name": "relic",
+  "version": "0.1.0",
   "versionNames": {
-    "stable": "Hajrudin",
-    "beta": "Caesar Clown"
+    "stable": "Primera Piedra",
+    "beta": "Fragmento"
   },
-  "private": false,
+  "private": true,
   "main": "build/main/main.js",
   "homepage": "./",
   "license": "GPL-3.0-only",
-  "description": "An Open Source Launcher for GOG, Epic Games and Amazon Games",
+  "description": "A minimalist game installer for GOG, Epic Games and Amazon Games. Fork of Heroic.",
   "repository": {
     "type": "Github",
-    "url": "https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher"
+    "url": "https://github.com/anomalyco/relic"
   },
   "author": {
-    "name": "Heroic Games Launcher",
-    "email": "heroicgameslauncher@protonmail.com"
+    "name": "Relic",
+    "email": ""
   },
   "engines": {
     "node": ">=22"
