@@ -436,34 +436,6 @@ function filterGameSettingsForLog(
     }
   }
 
-  // remove settings that are not used on Windows
-  if (isWindows) {
-    delete gameSettings.enableMsync
-    delete gameSettings.enableFSR
-    delete gameSettings.enableEsync
-    delete gameSettings.enableFsync
-    delete gameSettings.enableWineWayland
-    delete gameSettings.enableHDR
-    delete gameSettings.enableWoW64
-    delete gameSettings.enableDXVKFpsLimit
-    delete gameSettings.DXVKFpsCap
-    delete gameSettings.autoInstallDxvk
-    delete gameSettings.autoInstallDxvkNvapi
-    delete gameSettings.autoInstallVkd3d
-    delete gameSettings.useGameMode
-    delete gameSettings.showFps
-    delete gameSettings.preferSystemLibs
-    delete gameSettings.wineCrossoverBottle
-    delete gameSettings.winePrefix
-    delete gameSettings.wineVersion
-    delete gameSettings.battlEyeRuntime
-    delete gameSettings.eacRuntime
-    delete gameSettings.nvidiaPrime
-    delete gameSettings.disableUMU
-    delete gameSettings.advertiseAvxForRosetta
-    delete gameSettings.useSteamRuntime
-  }
-
   return gameSettings
 }
 
@@ -506,14 +478,12 @@ async function prepareLaunch(
   const isThirdPartyManagedApp = gameInfo && !!gameInfo.thirdPartyManagedApp
 
   if (isThirdPartyManagedApp) {
-    if (!isWindows) {
-      let prefixOrBottleFolder: string | null = gameSettings.winePrefix
-      if (isMac && gameSettings.wineVersion.type === 'crossover') {
-        prefixOrBottleFolder = await getCrossoverBottleFolder(gameSettings)
-      }
-      if (prefixOrBottleFolder)
-        await logWriter.logInfo(['Installed in:', prefixOrBottleFolder])
+    let prefixOrBottleFolder: string | null = gameSettings.winePrefix
+    if (isMac && gameSettings.wineVersion.type === 'crossover') {
+      prefixOrBottleFolder = await getCrossoverBottleFolder(gameSettings)
     }
+    if (prefixOrBottleFolder)
+      await logWriter.logInfo(['Installed in:', prefixOrBottleFolder])
 
     await logWriter.logInfo([
       'Managed by a third-party app:',
@@ -555,11 +525,6 @@ async function prepareLaunch(
       info?.anticheats ? `Anticheats: ${info.anticheats}\n\n` : ''
     )
   ])
-
-  // If we're not on Linux, we can return here
-  if (!isLinux) {
-    return { success: true, rpcClient, offlineMode }
-  }
 
   // Figure out where GameMode is located, if it's enabled
   let gameModeBin: string | null = null
@@ -1503,8 +1468,6 @@ interface RunnerProps {
 
 const commandsRunning: Record<string, Promise<ExecResult>> = {}
 
-let shouldUsePowerShell: boolean | null = null
-
 function appNameFromCommandParts(commandParts: string[], runner: Runner) {
   let appNameIndex = -1
   let idx = -1
@@ -1566,32 +1529,8 @@ async function callRunner(
   let bin = runner.bin
   let fullRunnerPath = runner.dir ? join(runner.dir, bin) : bin
 
-  // macOS/Linux: `spawn`ing an executable in the current working directory
-  // requires a "./"
-  if (!isWindows && !isAbsolute(bin) && runner.dir) bin = './' + bin
-
-  // On Windows: Use PowerShell's `Start-Process` to wait for the process and
-  // its children to exit, provided PowerShell is available
-  if (shouldUsePowerShell === null)
-    shouldUsePowerShell =
-      isWindows && !!(await searchForExecutableOnPath('powershell'))
-
-  if (shouldUsePowerShell) {
-    const argsAsString = commandParts
-      .map((part) => part.replaceAll('\\', '\\\\'))
-      .map((part) => `"\`"${part}\`""`)
-      .join(',')
-    commandParts = [
-      '-NoProfile',
-      'Start-Process',
-      `"\`"${fullRunnerPath}\`""`,
-      '-Wait',
-      '-NoNewWindow'
-    ]
-    if (argsAsString) commandParts.push('-ArgumentList', argsAsString)
-
-    bin = fullRunnerPath = 'powershell'
-  }
+  // `spawn`ing an executable in the current working directory requires a "./"
+  if (!isAbsolute(bin) && runner.dir) bin = './' + bin
 
   const safeCommand = getRunnerCallWithoutCredentials(
     [...commandParts],

@@ -1,29 +1,9 @@
 import { env } from 'process'
-import { cpus } from 'os'
-import { readFileSync } from 'graceful-fs'
 
-interface Manifest {
-  'runtime-version': string
-}
-
-function readFlatpakRuntimeVersion() {
-  try {
-    const manifestContent = readFileSync('/app/manifest.json', 'utf8')
-    const manifest = JSON.parse(manifestContent) as Manifest
-    return manifest['runtime-version']
-  } catch (error) {
-    console.log(
-      `Unable to read runtime version from flatpak manifest file. ${error}`
-    )
-  }
-
-  return 'unknown'
-}
-
-export const isMac = process.platform === 'darwin'
-export const isIntelMac = isMac && cpus()[0].model.includes('Intel') // so we can have different behavior for Intel Mac
-export const isWindows = process.platform === 'win32'
-export const isLinux = process.platform === 'linux'
+export const isLinux = true
+export const isWindows = false
+export const isMac = false
+export const isIntelMac = false
 export const isSteamDeckGameMode =
   process.env.XDG_CURRENT_DESKTOP === 'gamescope'
 const isSteamDeckDesktopMode =
@@ -37,7 +17,5 @@ export const isCLIConsoleMode = process.argv.includes('--console')
 export const isFlatpak = Boolean(env.FLATPAK_ID)
 export const isSnap = Boolean(env.SNAP)
 export const isAppImage = Boolean(env.APPIMAGE)
-export const flatpakRuntimeVersion = isFlatpak
-  ? readFlatpakRuntimeVersion()
-  : ''
-export const autoUpdateSupported = isWindows || isMac || isAppImage
+export const flatpakRuntimeVersion = ''
+export const autoUpdateSupported = isAppImage

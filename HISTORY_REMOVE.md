@@ -27,3 +27,14 @@
 - Estilos `.gamescopeSettings` eliminados
 - Mención eliminada de Snap warning
 - Claves de traducción eliminadas (47 archivos)
+
+## Windows
+- Build config: secciones `win`, `portable`, `nsis` eliminadas de `electron-builder.yml`
+- Scripts `release:win`, `sign:win`, `dist:win` eliminados de `package.json`
+- `isWindows` fijado a `false` en `environment.ts`
+- Bloque `delete gameSettings.*` para Windows (~23 líneas) eliminado de `launcher.ts`
+- Lógica PowerShell/`Start-Process` eliminada de `callRunner` en `launcher.ts`
+- `shouldUsePowerShell` eliminado
+- Archivos systeminfo Windows eliminados: `osInfo/windows.ts`, `memory/windows.ts`, `gpu/windows.ts`, `filesystem/windows.ts`, `filesystem/__tests__/windows.test.ts`
+- Índices simplificados: `osInfo/index.ts`, `memory/index.ts`, `gpu/index.ts`, `filesystem/index.ts`
+- `if (isWindows)` en `main.ts` eliminado

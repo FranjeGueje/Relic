@@ -8,9 +8,6 @@ files:
 
 asarUnpack:
   - build/icon.png
-  - build/icon.icns
-  - build/mac-icon.icns
-  - build/win_icon.ico
   - build/icon-dark.png
   - build/icon-light.png
   - build/bin/**/*
@@ -21,47 +18,6 @@ protocols:
     schemes:
       - relic
 
-win:
-  artifactName: ${productName}-${version}-Setup-${arch}.${ext}
-  icon: build/win_icon.ico
-  target:
-    - nsis
-  files:
-    - build/bin/${arch}/win32/*
-    - build/bin/x64/win32/nile.exe
-    - build/bin/x64/win32/GalaxyCommunication.exe
-    - build/bin/x64/win32/EpicGamesLauncher.exe
-
-portable:
-  artifactName: ${productName}-${version}-Portable-${arch}.${ext}
-
-mac:
-  artifactName: ${productName}-${version}-macOS-${arch}.${ext}
-  category: public.app-category.games
-  icon: build/mac-icon.icns
-  entitlements: build/entitlements.mac.plist
-  entitlementsInherit: build/entitlements.mac.plist
-  extendInfo:
-    com.apple.security.cs.allow-jit: true
-  files:
-    - build/bin/${arch}/darwin/*
-    - build/bin/x64/win32/GalaxyCommunication.exe
-    - build/bin/x64/win32/EpicGamesLauncher.exe
-
-dmg:
-  background: public/dmg.png
-  window:
-    width: 600
-    height: 500
-  contents:
-    - x: 10
-      y: 215
-      type: file
-    - x: 420
-      y: 215
-      type: link
-      path: /Applications
-
 linux:
   artifactName: ${productName}-${version}-linux-${arch}.${ext}
   category: Game
@@ -70,15 +26,9 @@ linux:
     entry:
       Name: Relic
       Comment: A minimalist game installer for GOG, Epic Games and Amazon Games. Fork of Heroic.
+  target:
+    - AppImage
   files:
     - build/bin/${arch}/linux/*
     - build/bin/x64/win32/GalaxyCommunication.exe
     - build/bin/x64/win32/EpicGamesLauncher.exe
-
-rpm:
-  fpm: ['--rpm-rpmbuild-define', '_build_id_links none']
-
-nsis:
-  oneClick: false
-  allowToChangeInstallationDirectory: true
-  perMachine: true

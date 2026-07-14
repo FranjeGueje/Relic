@@ -136,8 +136,7 @@ import {
   isLinux,
   isMac,
   isSnap,
-  isSteamDeckGameMode,
-  isWindows
+  isSteamDeckGameMode
 } from './constants/environment'
 import {
   configPath,
@@ -338,11 +337,6 @@ if (!gotTheLock) {
           callback({ cancel: false, requestHeaders: details.requestHeaders })
         }
       )
-    }
-
-    // try to fix notification app name on windows
-    if (isWindows) {
-      app.setAppUserModelId('Relic')
     }
 
     runOnceWhenOnline(async () => {
