@@ -583,7 +583,6 @@
     "FsrSharpnessStrenght": "FSR-Schärfestärke",
     "fsync": "Fsync aktivieren",
     "gamemode": "GameMode verwenden (Feral GameMode muss installiert sein)",
-    "hideChangelogsOnStartup": "Änderungsprotokolle beim Start nicht anzeigen",
     "language": "Anwendungssprache auswählen",
     "library_top_option": {
       "disabled": "Deaktiviert",

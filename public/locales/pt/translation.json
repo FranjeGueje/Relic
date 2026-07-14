@@ -584,7 +584,6 @@
     "FsrSharpnessStrenght": "Intensidade de Nitidez do FSR",
     "fsync": "Ativar o Fsync",
     "gamemode": "Usar o GameMode (é necessário ter instalado o Feral Game Mode)",
-    "hideChangelogsOnStartup": "Não mostrar os registos de alterações ao Abrir",
     "language": "Escolha o Idioma da Aplicação",
     "library_top_option": {
       "disabled": "Desativado",

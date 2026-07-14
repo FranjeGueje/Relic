@@ -574,7 +574,6 @@
     "FsrSharpnessStrenght": "FSR skärpningsnivå",
     "fsync": "Aktivera Fsync",
     "gamemode": "Använd GameMode (Feral Game Mode måste vara installerat)",
-    "hideChangelogsOnStartup": "Visa inte ändringsloggen vid uppstart",
     "language": "Välj språk",
     "library_top_option": {
       "disabled": "Deaktiverad",

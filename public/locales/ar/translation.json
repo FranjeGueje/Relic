@@ -575,7 +575,6 @@
     "FsrSharpnessStrenght": "مقدار حِدة إف.إس.آر",
     "fsync": "مكِّن إف.سِنك",
     "gamemode": "استخدم جيم.مود (يجب أن يكون فِيرَل جيم مود مثبتًا)",
-    "hideChangelogsOnStartup": "لا تُظهر سجلات التغيير عند بدء التشغيل",
     "language": "اختر لغة التطبيق",
     "library_top_option": {
       "disabled": "متوقف",

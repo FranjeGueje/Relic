@@ -524,7 +524,6 @@
     "ignoreGameUpdates": "Ignoruoti žaidimų atnaujinimus",
     "addgamestosteam": "Automatiškai pridėti žaidimus į „Steam“",
     "dxvkfpslimit": "Riboti kadrus per sekundę („DX9/10/11“)",
-    "hideChangelogsOnStartup": "Nerodyti keitinių žurnalo paleidime",
     "maxRecentGames": "Rodyti neseniai žaistus",
     "maxworkers": "Didžiausias darbuotojų skaičius, kai siunčiamasi",
     "autodxvk": "Automatiškai įdiegti/atnaujinti „DXVK“ ant prielinksnio/priešdėlio",

@@ -325,7 +325,6 @@ class GlobalConfigV0 extends GlobalConfig {
       defaultSteamPath: getSteamCompatFolder(),
       defaultWinePrefix: defaultWinePrefixDir,
       defaultWinePrefixDir: defaultWinePrefixDir,
-      hideChangelogsOnStartup: false,
       language: 'en',
       maxWorkers: 0,
       minimizeOnLaunch: false,

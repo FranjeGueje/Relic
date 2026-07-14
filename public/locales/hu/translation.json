@@ -583,7 +583,6 @@
     "FsrSharpnessStrenght": "FSR élesség erőssége",
     "fsync": "Fsync engedélyezése",
     "gamemode": "GameMode használata (a Feral Game Mode-nak telepítve kell lennie)",
-    "hideChangelogsOnStartup": "Ne jelenítse meg a változásnaplókat indításkor",
     "language": "Alkalmazás nyelvének kiválasztása",
     "library_top_option": {
       "disabled": "Tiltva",

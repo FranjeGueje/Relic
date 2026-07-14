@@ -108,8 +108,6 @@ export interface ContextType {
   externalLinkDialogOptions: ExternalLinkDialogOptions
   handleExternalLinkDialog: (options: ExternalLinkDialogOptions) => void
   sideloadedLibrary: GameInfo[]
-  hideChangelogsOnStartup: boolean
-  setHideChangelogsOnStartup: (value: boolean) => void
   lastChangelogShown: string | null
   setLastChangelogShown: (value: string) => void
   help: {

@@ -99,7 +99,6 @@ interface StateProps {
   dialogModalOptions: DialogModalOptions
   externalLinkDialogOptions: ExternalLinkDialogOptions
   sideloadedLibrary: GameInfo[]
-  hideChangelogsOnStartup: boolean
   lastChangelogShown: string | null
   showInstallModal: {
     show: boolean
@@ -241,7 +240,6 @@ class GlobalState extends PureComponent<Props> {
     sideloadedLibrary: applyGameOverrides(sideloadLibrary.get('games', [])),
     dialogModalOptions: { showDialog: false },
     externalLinkDialogOptions: { showDialog: false },
-    hideChangelogsOnStartup: globalSettings?.hideChangelogsOnStartup || false,
     lastChangelogShown: JSON.parse(storage.getItem('last_changelog') || 'null'),
     helpItems: {},
     experimentalFeatures: {
@@ -298,10 +296,6 @@ class GlobalState extends PureComponent<Props> {
 
   setSideBarCollapsed = (value: boolean) => {
     this.setState({ sidebarCollapsed: value })
-  }
-
-  setHideChangelogsOnStartup = (value: boolean) => {
-    this.setState({ hideChangelogsOnStartup: value })
   }
 
   setLastChangelogShown = (value: string) => {
@@ -998,7 +992,6 @@ class GlobalState extends PureComponent<Props> {
       gameUpdates,
       libraryStatus,
       sidebarCollapsed,
-      hideChangelogsOnStartup,
       lastChangelogShown,
       language
     } = this.state
@@ -1008,7 +1001,6 @@ class GlobalState extends PureComponent<Props> {
 
     storage.setItem('updates', JSON.stringify(gameUpdates))
     storage.setItem('sidebar_collapsed', JSON.stringify(sidebarCollapsed))
-    storage.setItem('hide_changelogs', JSON.stringify(hideChangelogsOnStartup))
     storage.setItem('last_changelog', JSON.stringify(lastChangelogShown))
 
     const allowedPendingOps: Status[] = [
@@ -1063,7 +1055,6 @@ class GlobalState extends PureComponent<Props> {
       favouriteGames,
       customCategories,
       hiddenGames,
-      hideChangelogsOnStartup,
       lastChangelogShown,
       libraryStatus
     } = this.state
@@ -1137,8 +1128,6 @@ class GlobalState extends PureComponent<Props> {
           showDialogModal: this.handleShowDialogModal,
           showResetDialog: this.showResetDialog,
           handleExternalLinkDialog: this.handleExternalLinkDialog,
-          hideChangelogsOnStartup: hideChangelogsOnStartup,
-          setHideChangelogsOnStartup: this.setHideChangelogsOnStartup,
           lastChangelogShown: lastChangelogShown,
           setLastChangelogShown: this.setLastChangelogShown,
           setCurrentCustomCategories: this.setCurrentCustomCategories,

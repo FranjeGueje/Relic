@@ -21,17 +21,16 @@ export default React.memo(function RelicVersion() {
   const { t } = useTranslation()
   const [relicVersion, setRelicVersion] = useState('')
   const [newReleases, setNewReleases] = useState<Release[]>()
-  const [showChangelogModal, setShowChangelogModal] = useState(true)
   const [showChangelogModalOnClick, setShowChangelogModalOnClick] =
     useState(false)
 
-  const { hideChangelogsOnStartup, lastChangelogShown, setLastChangelogShown } =
+  const { lastChangelogShown, setLastChangelogShown } =
     useContext(ContextProvider)
 
   useEffect(() => {
     void window.api.getRelicVersion().then((version) => {
       if (version !== lastVersion) {
-        window.api.logInfo('Updated to a new version, cleaaning up the cache.')
+        window.api.logInfo('Updated to a new version, cleaning up the cache.')
         window.api.clearCache(false, true)
       }
       storage.setItem('last_version', JSON.stringify(version))
@@ -60,14 +59,10 @@ export default React.memo(function RelicVersion() {
 
   return (
     <div className="relicVersionContainer" data-tour="sidebar-version">
-      {((showChangelogModal &&
-        !hideChangelogsOnStartup &&
-        relicVersion !== lastChangelogShown) ||
-        showChangelogModalOnClick) && (
+      {(relicVersion !== lastChangelogShown || showChangelogModalOnClick) && (
         <ChangelogModal
           dimissVersionCheck
           onClose={() => {
-            setShowChangelogModal(false)
             setShowChangelogModalOnClick(false)
             setLastChangelogShown(relicVersion)
           }}

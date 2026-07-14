@@ -581,7 +581,6 @@
     "FsrSharpnessStrenght": "FSR Keskinlik Gücü",
     "fsync": "Fsync'i Etkinleştir",
     "gamemode": "GameMode Kullan (Feral Game Mode kurulu olmalıdır)",
-    "hideChangelogsOnStartup": "Başlangıçta değişiklik günlüklerini gösterme",
     "language": "Uygulama Dilini Seç",
     "library_top_option": {
       "disabled": "Devre dışı",

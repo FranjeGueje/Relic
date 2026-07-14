@@ -573,7 +573,6 @@
     "FsrSharpnessStrenght": "Độ Sắc Nét Của FSR",
     "fsync": "Bật Fsync",
     "gamemode": "Sử Dụng GameMode (Cần cài đặt Feral Game Mode)",
-    "hideChangelogsOnStartup": "Không hiển thị nhật ký thay đổi khi Khởi Động",
     "language": "Chọn ngôn ngữ ứng dụng",
     "library_top_option": {
       "disabled": "Tắt",

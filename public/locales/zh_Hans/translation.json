@@ -584,7 +584,6 @@
     "FsrSharpnessStrenght": "FSR 锐化强度",
     "fsync": "启用 Fsync",
     "gamemode": "使用 GameMode（需要已安装 Feral Game Mode）",
-    "hideChangelogsOnStartup": "启动程序时不显示变更日志",
     "language": "选择应用语言",
     "library_top_option": {
       "disabled": "已禁用",

@@ -6,7 +6,6 @@ import {
   DefaultInstallPath,
   DefaultSteamPath,
   DisableController,
-  HideChangelogOnStartup,
   LibraryTopSection,
   MaxRecentGames,
   MaxWorkers,
@@ -31,8 +30,6 @@ export default function GeneralSettings() {
       <DefaultSteamPath />
 
       <AutoUpdateGames />
-
-      <HideChangelogOnStartup />
 
       <StartInConsoleMode />
 

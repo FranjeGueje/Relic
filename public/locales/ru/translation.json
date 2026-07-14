@@ -579,7 +579,6 @@
     "FsrSharpnessStrenght": "Усиление резкости FSR",
     "fsync": "Включить Fsync",
     "gamemode": "Использовать GameMode (Нужен Feral GameMode)",
-    "hideChangelogsOnStartup": "Не показывать список изменений при запуске",
     "language": "Выберите язык приложения",
     "library_top_option": {
       "disabled": "Отключить",

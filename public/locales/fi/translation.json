@@ -574,7 +574,6 @@
     "FsrSharpnessStrenght": "FSR-terävyyden voimakkuus",
     "fsync": "Ota Fsync käyttöön",
     "gamemode": "Käytä GameModea (Feral Game Mode tulee olla asennettu)",
-    "hideChangelogsOnStartup": "Älä näytä muutoskirjauksia käynnistyksen yhteydessä",
     "language": "Valitse sovelluksen kieli",
     "library_top_option": {
       "disabled": "Kytketty pois",

@@ -573,7 +573,6 @@
     "FsrSharpnessStrenght": "Βαθμός οξύτητας FSR",
     "fsync": "Ενεργοποίηση Fsync",
     "gamemode": "Χρήση του GameMode (πρέπει να έχει εγκατασταθεί το Feral Game Mode)",
-    "hideChangelogsOnStartup": "Να μην γίνεται εμφάνιση των αρχείων καταγραφής αλλαγών κατά την Εκκίνηση",
     "language": "Διαλέξτε γλώσσα εφαρμογής",
     "library_top_option": {
       "disabled": "Απενεργοποιημένο",
