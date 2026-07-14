@@ -97,23 +97,6 @@ export default function SidebarLinks() {
             />
 
             <SidebarItem
-              url="/settings/advanced"
-              isActiveFallback={type === 'advanced'}
-              className="SidebarLinks__subItem"
-              label={t('settings.navbar.advanced', 'Advanced')}
-            />
-
-            <SidebarItem
-              url="/settings/systeminfo"
-              isActiveFallback={type === 'systeminfo'}
-              className="SidebarLinks__subItem"
-              label={t(
-                'settings.navbar.systemInformation',
-                'System Information'
-              )}
-            />
-
-            <SidebarItem
               url="/settings/log"
               isActiveFallback={type === 'log'}
               className="SidebarLinks__subItem"

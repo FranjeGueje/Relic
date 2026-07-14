@@ -257,3 +257,20 @@
 - Directorio `sections/GamesSettings/` eliminado
 - Sidebar link a `/settings/games_settings` eliminado
 - Import y renderizado eliminados de `Settings/index.tsx`, `SettingsModal/index.tsx`, `sections/index.tsx`
+
+## Advanced Settings
+- Directorio `sections/AdvancedSettings/` eliminado
+- Sidebar link a `/settings/advanced` eliminado
+- Botones "Settings → Advanced" en `EditGameDialog` y `SideloadDialog` eliminados (cambiados a "Settings → General")
+- Imports y renders eliminados de `Settings/index.tsx`, `sections/index.tsx`
+
+## Add Game (botón + diálogo)
+- `AddGameButton.tsx` y `SideloadDialog/` eliminados
+- `EmptyLibraryMessage.tsx` eliminado
+- `handleAddGameButtonClick` eliminado de `LibraryContext`, `types.ts`, `Library/index.tsx`
+- `AddGameButton` eliminado de `LibraryHeader`
+- `InstallModal`: lógica `isSideload`, `sideloadTitle`, Browser platform, y renderizado de SideloadDialog eliminados
+
+## System Information (Settings)
+- Directorio `sections/SystemInfo/` eliminado
+- Sidebar link, imports, y renderizados eliminados de `Settings/index.tsx`, `sections/index.tsx`, `SidebarLinks`

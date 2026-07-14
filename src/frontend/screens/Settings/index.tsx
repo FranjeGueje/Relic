@@ -12,9 +12,7 @@ import LogSettings from './sections/LogSettings'
 import FooterInfo from './sections/FooterInfo'
 import {
   GeneralSettings,
-  SyncSaves,
-  AdvancedSettings,
-  SystemInfo
+  SyncSaves
 } from './sections'
 import { AppSettings, WineInstallation } from 'common/types'
 import { UpdateComponent } from 'frontend/components/UI'
@@ -40,8 +38,6 @@ function Settings() {
   const isGeneralSettings = type === 'general'
   const isSyncSettings = type === 'sync'
   const isLogSettings = type === 'log'
-  const isAdvancedSetting = type === 'advanced'
-  const isSystemInfo = type === 'systeminfo'
 
   // TODO: Adding this comment translation here for now to not lose the
   // translation. This should be removed from here when the help is added
@@ -115,9 +111,7 @@ function Settings() {
 
             {isGeneralSettings && <GeneralSettings />}
             {isSyncSettings && <SyncSaves />}
-            {isAdvancedSetting && <AdvancedSettings />}
             {isLogSettings && <LogSettings />}
-            {isSystemInfo && <SystemInfo />}
             <FooterInfo />
           </div>
         </div>

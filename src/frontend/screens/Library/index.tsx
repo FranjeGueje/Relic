@@ -31,7 +31,6 @@ import {
 import LibraryContext from './LibraryContext'
 import { Category, PlatformsFilters, StoresFilters } from 'frontend/types'
 import { hasHelp } from 'frontend/hooks/hasHelp'
-import EmptyLibraryMessage from './components/EmptyLibrary'
 import CategoriesManager from './components/CategoriesManager'
 import AlphabetFilter from './components/AlphabetFilter'
 import { openInstallGameModal } from 'frontend/state/InstallGameModal'
@@ -702,7 +701,6 @@ export default React.memo(function Library(): JSX.Element {
         setShowUpdatesOnly: handleShowUpdatesOnly,
         sortDescending,
         sortInstalled,
-        handleAddGameButtonClick: () => handleModal('', 'sideload', null),
         setShowCategories,
         showAlphabetFilter: showAlphabetFilter,
         onToggleAlphabetFilter: handleToggleAlphabetFilter,
@@ -721,8 +719,6 @@ export default React.memo(function Library(): JSX.Element {
         {showAlphabetFilter && <AlphabetFilter />}
 
         {refreshing && !refreshingInTheBackground && <UpdateComponent />}
-
-        {libraryToShow.length === 0 && <EmptyLibraryMessage />}
 
         {libraryToShow.length > 0 &&
           (!refreshing || refreshingInTheBackground) && (

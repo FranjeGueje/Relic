@@ -1,5 +1,5 @@
 import { faApple, faLinux, faWindows } from '@fortawesome/free-brands-svg-icons'
-import { IconDefinition, faGlobe } from '@fortawesome/free-solid-svg-icons'
+import { IconDefinition } from '@fortawesome/free-solid-svg-icons'
 
 import { useContext, useEffect, useState } from 'react'
 
@@ -16,7 +16,6 @@ import './index.scss'
 
 import DownloadDialog from './DownloadDialog'
 import ImportDialog from './ImportDialog'
-import SideloadDialog from './SideloadDialog'
 import WineSelector from './WineSelector'
 import { SelectField } from 'frontend/components/UI'
 import { useTranslation } from 'react-i18next'
@@ -50,9 +49,6 @@ function InstallModal({ appName, runner, gameInfo = null }: Props) {
   const [wineVersion, setWineVersion] = useState<WineInstallation>()
   const [wineVersionList, setWineVersionList] = useState<WineInstallation[]>([])
   const [crossoverBottle, setCrossoverBottle] = useState('')
-  const [sideloadTitle, setSideloadTitle] = useState(
-    t('sideload.field.title', 'Title')
-  )
 
   const isLinuxNative = Boolean(gameInfo?.is_linux_native)
   const isMacNative = Boolean(gameInfo?.is_mac_native)
@@ -60,18 +56,17 @@ function InstallModal({ appName, runner, gameInfo = null }: Props) {
   const isMac = platform === 'darwin'
   const isWin = platform === 'win32'
   const isLinux = platform === 'linux'
-  const isSideload = runner === 'sideload'
 
   const platforms: AvailablePlatforms = [
     {
       name: 'Linux',
-      available: isLinux && (isSideload || isLinuxNative),
+      available: isLinux && isLinuxNative,
       value: 'linux',
       icon: faLinux
     },
     {
       name: 'macOS',
-      available: isMac && (isSideload || isMacNative),
+      available: isMac && isMacNative,
       value: 'Mac',
       icon: faApple
     },
@@ -80,12 +75,6 @@ function InstallModal({ appName, runner, gameInfo = null }: Props) {
       available: true,
       value: 'Windows',
       icon: faWindows
-    },
-    {
-      name: 'Browser',
-      available: isSideload,
-      value: 'Browser',
-      icon: faGlobe
     }
   ]
 
@@ -132,7 +121,7 @@ function InstallModal({ appName, runner, gameInfo = null }: Props) {
     if (!showPlatformSelection) {
       return null
     }
-    const disabledPlatformSelection = Boolean(runner === 'sideload' && appName)
+    const disabledPlatformSelection = false
     return (
       <SelectField
         label={`${t('game.platform', 'Select Platform Version to Install')}:`}
@@ -157,7 +146,7 @@ function InstallModal({ appName, runner, gameInfo = null }: Props) {
     )
   }
 
-  const showDownloadDialog = !isSideload && gameInfo
+  const showDownloadDialog = gameInfo
   const isThirdPartyManagedApp = gameInfo && !!gameInfo.thirdPartyManagedApp
   const isImportMode = action === 'import'
 
@@ -252,33 +241,7 @@ function InstallModal({ appName, runner, gameInfo = null }: Props) {
               />
             ) : null}
           </DownloadDialog>
-        ) : (
-          <SideloadDialog
-            title={sideloadTitle}
-            setTitle={setSideloadTitle}
-            winePrefix={winePrefix}
-            wineVersion={wineVersion}
-            availablePlatforms={availablePlatforms}
-            backdropClick={closeModal}
-            platformToInstall={platformToInstall}
-            appName={appName}
-          >
-            {platformSelection()}
-            {hasWine ? (
-              <WineSelector
-                appName={appName}
-                winePrefix={winePrefix}
-                wineVersion={wineVersion}
-                wineVersionList={wineVersionList}
-                setWinePrefix={setWinePrefix}
-                setWineVersion={setWineVersion}
-                crossoverBottle={crossoverBottle}
-                setCrossoverBottle={setCrossoverBottle}
-                title={sideloadTitle}
-              />
-            ) : null}
-          </SideloadDialog>
-        )}
+        ) : null}
       </Dialog>
     </div>
   )
