@@ -1,7 +1,6 @@
 import { create } from 'zustand'
 import { useShallow } from 'zustand/react/shallow'
 
-import type { GetLogFileArgs } from 'backend/logger/paths'
 import type { GameInfo } from 'common/types'
 import type { GameSettingsModalType } from '../screens/Settings/components/SettingsModal'
 import { gameOverridesStore } from 'frontend/helpers/electronStores'
@@ -9,14 +8,6 @@ import { gameOverridesStore } from 'frontend/helpers/electronStores'
 type GameOverride = NonNullable<GameInfo['overrides']>
 
 interface GlobalStateV2 {
-  uploadLogFileProps:
-    | false
-    | {
-        logFileArgs: GetLogFileArgs
-        name: string
-      }
-  setUploadLogFileProps: (props: GlobalStateV2['uploadLogFileProps']) => void
-
   settingsModalProps:
     | { isOpen: false }
     | {
@@ -29,18 +20,11 @@ interface GlobalStateV2 {
   openGameCategoriesModal: (gameInfo: GameInfo) => void
   closeSettingsModal: () => void
 
-  showUploadedLogFileList: boolean
-
   gameOverrides: Record<string, GameOverride>
   setGameOverrides: (overrides: Record<string, GameOverride>) => void
 }
 
 const useGlobalStateRaw = create<GlobalStateV2>()((set) => ({
-  uploadLogFileProps: false,
-  setUploadLogFileProps: (uploadLogFileProps) => {
-    set({ uploadLogFileProps })
-  },
-
   settingsModalProps: { isOpen: false },
   openGameSettingsModal: (gameInfo) => {
     set({
@@ -72,8 +56,6 @@ const useGlobalStateRaw = create<GlobalStateV2>()((set) => ({
   closeSettingsModal: () => {
     set({ settingsModalProps: { isOpen: false } })
   },
-
-  showUploadedLogFileList: false,
 
   gameOverrides: gameOverridesStore.get('overrides', {}),
   setGameOverrides: (gameOverrides) => set({ gameOverrides }),

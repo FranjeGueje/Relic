@@ -274,3 +274,23 @@
 ## System Information (Settings)
 - Directorio `sections/SystemInfo/` eliminado
 - Sidebar link, imports, y renderizados eliminados de `Settings/index.tsx`, `sections/index.tsx`, `SidebarLinks`
+
+## Sync Saves
+- Directorio `sections/SyncSaves/` eliminado (gog.tsx, legendary.tsx, index.tsx)
+- `CloudSavesSync.tsx` eliminado (GamePage)
+- `backend/save_sync.ts` eliminado
+- Handlers `syncSaves`, `syncGOGSaves`, `getDefaultSavePath` eliminados de `backend/main.ts`
+- `syncSaves`, `getDefaultSavePath` eliminados de preload e IPC types
+- `autoSyncSaves` eliminado de `common/types.ts`, `game_config.ts`, `launcher.ts`
+- `syncSaves` eliminado de `frontend/helpers/index.ts` (función y export)
+- `isSyncSettings` y sidebar link eliminados
+
+## Log Settings (botones de log)
+- Botones "Show log file in folder", "Upload log file", "Show uploaded log files" eliminados de `LogSettings/index.tsx`
+- `LogFileUploadDialog/` y `UploadedLogFilesList/` directorios eliminados
+- `backend/logger/uploader.ts` eliminado
+- Handlers IPC `showLogFileInFolder`, `uploadLogFile`, `deleteUploadedLogFile`, `getUploadedLogFiles` eliminados
+- Tipos IPC `logFileUploaded`, `logFileUploadDeleted`, `UploadedLogData` eliminados de `ipc.ts`
+- `frontend/state/UploadedLogFiles.ts` eliminado
+- `uploadLogFileProps`, `setUploadLogFileProps`, `showUploadedLogFileList` eliminados de `GlobalStateV2.ts`
+- Imports y renders eliminados de `App.tsx`

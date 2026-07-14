@@ -77,7 +77,6 @@ interface SyncIPCFunctions {
   clipboardWriteText: (text: string) => void
   processShortcut: (combination: string) => void
   addNewApp: (args: GameInfo) => void
-  showLogFileInFolder: (args: GetLogFileArgs) => void
   addShortcut: (appName: string, runner: Runner, fromMenu: boolean) => void
   removeShortcut: (appName: string, runner: Runner) => void
   removeFromDMQueue: (appName: string) => void
@@ -305,12 +304,6 @@ interface AsyncIPCFunctions {
     modsToLoad: string[]
   }) => Promise<void>
 
-  uploadLogFile: (
-    name: string,
-    args: GetLogFileArgs
-  ) => Promise<false | [string, UploadedLogData]>
-  deleteUploadedLogFile: (url: string) => Promise<boolean>
-  getUploadedLogFiles: () => Promise<Record<string, UploadedLogData>>
   isIntelMac: () => boolean
   'steamgriddb.hasApiKey': () => Promise<boolean>
   'steamgriddb.setApiKey': (key: string) => Promise<void>
@@ -355,8 +348,6 @@ interface FrontendMessages {
   installGame: (appName: string, runner: Runner) => void
   recentGamesChanged: (newRecentGames: RecentGame[]) => void
   pushGameToLibrary: (info: GameInfo) => void
-  logFileUploaded: (url: string, data: UploadedLogData) => void
-  logFileUploadDeleted: (url: string) => void
   progressUpdate: (progress: GameStatus) => void
   metadataChanged: (
     overrides: Record<

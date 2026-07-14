@@ -1,16 +1,11 @@
 import React, { useContext, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { faFolderOpen } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { UpdateComponent } from 'frontend/components/UI'
 import SettingsContext from '../../SettingsContext'
 import './index.css'
 import ContextProvider from 'frontend/state/ContextProvider'
 import { GameInfo } from 'common/types'
 
-import useGlobalState from 'frontend/state/GlobalStateV2'
-import Upload from '@mui/icons-material/Upload'
-import Cloud from '@mui/icons-material/Cloud'
 import classNames from 'classnames'
 
 import type { GetLogFileArgs } from 'backend/logger/paths'
@@ -69,7 +64,6 @@ const LogBox: React.FC<LogBoxProps> = ({ logFileContent }) => {
 export default function LogSettings() {
   const { t } = useTranslation()
   const { appName, runner } = useContext(SettingsContext)
-  const { setUploadLogFileProps } = useGlobalState.keys('setUploadLogFileProps')
   const isInSettingsMenu = appName === 'default'
 
   const [logFileContent, setLogFileContent] = useState<string>('')
@@ -121,37 +115,6 @@ export default function LogSettings() {
     }, 1000)
     return () => clearInterval(interval)
   }, [showLogOf])
-
-  function showLogFileInFolder() {
-    window.api.showLogFileInFolder(showLogOf)
-  }
-
-  const descriptiveLogFileName = useMemo(() => {
-    if (!showLogOf.runner)
-      return t('setting.log.descriptiveNames.relic', 'General Relic log')
-    if (showLogOf.appName) {
-      const gameTitle = installedGames.find(
-        ({ app_name }) => app_name === showLogOf.appName
-      )?.title
-      return t(
-        'setting.log.descriptiveNames.game-log',
-        'Game log of {{gameTitle}}',
-        { gameTitle }
-      )
-    }
-    if (showLogOf.runner === 'legendary')
-      return t(
-        'setting.log.descriptiveNames.legendary',
-        'Epic Games / Legendary log'
-      )
-    if (showLogOf.runner === 'gog')
-      return t('setting.log.descriptiveNames.gog', 'GOG log')
-    if (showLogOf.runner === 'nile')
-      return t('setting.log.descriptiveNames.nile', 'Amazon / Nile log')
-    if (showLogOf.runner === 'zoom')
-      return t('setting.log.descriptiveNames.zoom', 'Zoom log')
-    return ''
-  }, [showLogOf, installedGames, t])
 
   const logFilesToShow = useMemo(() => {
     const baseFiles: { title: string; args: GetLogFileArgs }[] = [
@@ -218,65 +181,6 @@ export default function LogSettings() {
           <LogBox logFileContent={logFileContent} />
         )}
       </div>
-      <span className="footerFlex">
-        {logFileExist && (
-          <>
-            <a
-              onClick={showLogFileInFolder}
-              title={t('setting.log.show-in-folder', 'Show log file in folder')}
-              className="button is-footer"
-            >
-              <div className="button-icontext-flex">
-                <div className="button-icon-flex">
-                  <FontAwesomeIcon icon={faFolderOpen} />
-                </div>
-                <span className="button-icon-text">
-                  {t('setting.log.show-in-folder', 'Show log file in folder')}
-                </span>
-              </div>
-            </a>
-            <a
-              onClick={() => {
-                setUploadLogFileProps({
-                  logFileArgs: showLogOf,
-                  name: descriptiveLogFileName
-                })
-              }}
-              title={t('setting.log.upload.button', 'Upload log file')}
-              className="button is-footer"
-            >
-              <div className="button-icontext-flex">
-                <div className="button-icon-flex">
-                  <Upload />
-                </div>
-                <span className="button-icon-text">
-                  {t('setting.log.upload.button', 'Upload log file')}
-                </span>
-              </div>
-            </a>
-          </>
-        )}
-        {isInSettingsMenu && (
-          <>
-            <a
-              onClick={() =>
-                useGlobalState.setState({ showUploadedLogFileList: true })
-              }
-              title={t('setting.log.show-uploads', 'Show uploaded log files')}
-              className="button is-footer"
-            >
-              <div className="button-icontext-flex">
-                <div className="button-icon-flex">
-                  <Cloud />
-                </div>
-                <span className="button-icon-text">
-                  {t('setting.log.show-uploads', 'Show uploaded log files')}
-                </span>
-              </div>
-            </a>
-          </>
-        )}
-      </span>
     </>
   )
 }

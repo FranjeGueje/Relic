@@ -94,11 +94,6 @@ export const storeDelete = (storeName: string, key: string) => stores[storeName]
 
 export const getWikiGameInfo = makeHandlerInvoker('getWikiGameInfo')
 export const fetchPlaytimeFromServer = makeHandlerInvoker('getPlaytimeFromRunner')
-export const getUploadedLogFiles = makeHandlerInvoker('getUploadedLogFiles')
-export const uploadLogFile = makeHandlerInvoker('uploadLogFile')
-export const deleteUploadedLogFile = makeHandlerInvoker('deleteUploadedLogFile')
-export const logFileUploadedSlot = frontendListenerSlot('logFileUploaded')
-export const logFileUploadDeletedSlot = frontendListenerSlot('logFileUploadDeleted')
 export const isIntelMac = makeHandlerInvoker('isIntelMac')
 export const steamgriddb = {
   hasApiKey: makeHandlerInvoker('steamgriddb.hasApiKey'),

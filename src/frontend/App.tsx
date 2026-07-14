@@ -16,8 +16,6 @@ import ExternalLinkDialog from './components/UI/ExternalLinkDialog'
 import WindowControls from './components/UI/WindowControls'
 import classNames from 'classnames'
 import { ThemeProvider, createTheme } from '@mui/material/styles'
-import LogFileUploadDialog from './components/UI/LogFileUploadDialog'
-import UploadedLogFilesList from './screens/Settings/sections/LogSettings/components/UploadedLogFilesList'
 import { InstallGameWrapper } from './screens/Library/components/InstallModal'
 import { SettingsModalWrapper } from './screens/Settings/components/SettingsModal'
 
@@ -92,8 +90,6 @@ function Root() {
               <InstallGameWrapper />
               <SettingsModalWrapper />
               <ExternalLinkDialog />
-              <LogFileUploadDialog />
-              <UploadedLogFilesList />
               <Outlet />
             </main>
             <div className="controller">
