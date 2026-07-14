@@ -146,7 +146,7 @@ async function getWineFromProton(
 
   winePrefix = join(winePrefix, 'pfx')
 
-  // GE-Proton & Proton Experimental use 'files', Proton 7 and below use 'dist'
+  // Some Proton versions use 'files', some use 'dist'
   for (const distPath of ['dist', 'files']) {
     const protonBaseDir = dirname(wineVersion.bin)
     const wineBin = join(protonBaseDir, distPath, 'bin', 'wine')

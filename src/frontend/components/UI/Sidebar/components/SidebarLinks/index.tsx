@@ -140,14 +140,15 @@ export default function SidebarLinks() {
         label={t('download-manager.link', 'Downloads')}
         dataTour="sidebar-downloads"
       />
+
+      <div className="divider" />
+
       <SidebarItem
         url="/console"
         icon={faTv}
         label={t('sidebar.console', 'Console Mode')}
         dataTour="sidebar-console"
       />
-
-      <div className="divider" />
 
       <div data-tour="sidebar-community">
       </div>

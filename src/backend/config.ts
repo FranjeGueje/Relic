@@ -341,7 +341,6 @@ class GlobalConfigV0 extends GlobalConfig {
       afterLaunchScriptPath: '',
       disableUMU: false,
       verboseLogs: true,
-      downloadProtonToSteam: false,
       advertiseAvxForRosetta: isMac && defaultWine.type === 'toolkit',
       showValveProton: false,
       steamGridDbApiKey: '',

@@ -14,8 +14,6 @@ import CodeweaversLogo from 'frontend/assets/codeweavers_icon.svg?react'
 import { faApple } from '@fortawesome/free-brands-svg-icons'
 import Badge from '@mui/material/Badge'
 import { Autorenew as AutorenewIcon } from '@mui/icons-material'
-import GELogo from 'frontend/assets/ge-logo.svg?react'
-import CachyOSLogo from 'frontend/assets/cachyos-logo.svg?react'
 
 interface ListItemProps {
   version: WineInstallation
@@ -26,18 +24,11 @@ export const WineVersionListItem = React.memo(function WineVersionListItem({
 }: ListItemProps) {
   const { name, type } = version
 
-  const substitutedName = useMemo(
-    () => name.replace(/(Proton-GE-Proton|Proton-GE)/, 'GE-Proton'),
-    [name]
-  )
-
   const primaryIcon = useMemo(() => {
     switch (type) {
       case 'wine':
         return <FontAwesomeIcon icon={faWineGlass} />
       case 'proton':
-        if (name.includes('GE')) return <GELogo />
-        if (name.includes('CachyOS')) return <CachyOSLogo />
         return <ProtonLogo />
       case 'crossover':
         return <CodeweaversLogo />
@@ -62,7 +53,7 @@ export const WineVersionListItem = React.memo(function WineVersionListItem({
   return (
     <Box sx={{ display: 'flex', placeItems: 'center' }}>
       {icon}
-      {substitutedName}
+      {name}
     </Box>
   )
 })
@@ -109,7 +100,6 @@ export default function WineVersionSelector() {
       setRefreshing(false)
     }
     void getAltWine()
-    return window.api.handleWineVersionsUpdated(getAltWine)
   }, [])
 
   useEffect(() => {

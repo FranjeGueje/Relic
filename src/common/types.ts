@@ -112,7 +112,6 @@ export interface AppSettings extends GameSettings {
   disableAnimations: boolean
   disableGOGPresence: boolean
   downloadNoHttps: boolean
-  downloadProtonToSteam: boolean
   enableUpdates: boolean
   experimentalFeatures?: ExperimentalFeatures
   framelessWindow: boolean
@@ -726,14 +725,12 @@ export interface WikiInfo {
  */
 export type Type =
   | 'Wine-GE'
-  | 'GE-Proton'
   | 'Proton'
   | 'Wine-Lutris'
   | 'Wine-Kron4ek'
   | 'Wine-Crossover'
   | 'Wine-Staging-macOS'
   | 'Game-Porting-Toolkit'
-  | 'Proton-CachyOS'
 
 /**
  * Interface contains information about a version
@@ -758,24 +755,6 @@ export interface VersionInfo {
 /**
  * Enum for the supported repositorys
  */
-export enum Repositorys {
-  PROTONGE,
-  PROTON,
-  WINELUTRIS,
-  WINECROSSOVER,
-  WINESTAGINGMACOS,
-  GPTK,
-  PROTONCACHYOS
-}
-
-export type WineManagerStatus =
-  | { status: 'idle' | 'unzipping' }
-  | { status: 'downloading'; percentage: number; avgSpeed: number; eta: string }
-
-export interface WineManagerUISettings {
-  value: string
-  type: Type
-}
 
 export type DownloadManagerState = 'idle' | 'running' | 'paused' | 'stopped'
 
@@ -830,10 +809,8 @@ export interface SGDBGame {
 }
 
 export type ReleasesInfo = Record<
-  | 'ge-proton'
   | 'wine-ge'
   | 'game-porting-toolkit'
-  | 'proton-cachyos'
   | 'wine-staging'
   | 'wine-crossover'
   | 'dxvk'

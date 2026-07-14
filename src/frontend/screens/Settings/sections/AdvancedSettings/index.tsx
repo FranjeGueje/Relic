@@ -16,7 +16,6 @@ import ContextProvider from 'frontend/state/ContextProvider'
 import { GameStatus } from 'common/types'
 import {
   AllowInstallationBrokenAnticheat,
-  ShowValveProton,
   AltGOGdlBin,
   AltLegendaryBin,
   AltNileBin,
@@ -183,8 +182,6 @@ export default function AdvancedSetting() {
       <AllowInstallationBrokenAnticheat />
 
       <HideWindowOnProtocolLaunch />
-
-      {isLinux && <ShowValveProton />}
 
       <hr />
 

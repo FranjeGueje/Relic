@@ -6,9 +6,6 @@ import { useTranslation } from 'react-i18next'
 import {
   AdvertiseAvxForRosetta,
   AlternativeExe,
-  AutoDXVK,
-  AutoDXVKNVAPI,
-  AutoVKD3D,
   BattlEyeRuntime,
   CrossoverBottle,
   EacRuntime,
@@ -175,13 +172,6 @@ export default function GamesSettings() {
         <CrossoverBottle />
         {!isCrossover && (
           <>
-            <AutoDXVK />
-            {isLinux && (
-              <>
-                {!window.isSteamDeck && <AutoDXVKNVAPI />}
-                <AutoVKD3D />
-              </>
-            )}
             <EnableEsync />
             <EnableFsync />
             <EnableWineWayland />

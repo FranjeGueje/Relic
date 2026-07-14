@@ -44,7 +44,7 @@ import {
   logWarning
 } from './logger'
 import { GlobalConfig } from './config'
-import { DXVK, runWineCommandOnGame, Winetricks } from './tools'
+import { runWineCommandOnGame } from './tools'
 import gogSetup from './storeManagers/gog/setup'
 import nileSetup from './storeManagers/nile/setup'
 import { spawn, spawnSync } from 'child_process'
@@ -669,13 +669,6 @@ async function prepareWineLaunch(
     }
   }
 
-  logWriter.logInfo(
-    Winetricks.listInstalled(game).then((installedPackages) => {
-      const packagesString = installedPackages.join(', ')
-      return `Winetricks packages: ${packagesString}\n\n`
-    })
-  )
-
   // We only want to log this for legendary on Linux
   // On windows, the overlay is installed globally
   // On mac, the overlay doesn't work
@@ -785,19 +778,6 @@ async function prepareWineLaunch(
     ])
   }
 
-  // If DXVK/VKD3D installation is enabled, install it
-  if (gameSettings.wineVersion.type === 'wine') {
-    if (gameSettings.autoInstallDxvk) {
-      await DXVK.installRemove(gameSettings, 'dxvk', 'backup')
-    }
-    if (isLinux && gameSettings.autoInstallDxvkNvapi) {
-      await DXVK.installRemove(gameSettings, 'dxvk-nvapi', 'backup')
-    }
-    if (isLinux && gameSettings.autoInstallVkd3d) {
-      await DXVK.installRemove(gameSettings, 'vkd3d', 'backup')
-    }
-  }
-
   if (
     gameSettings.eacRuntime &&
     isOnline() &&
@@ -842,18 +822,6 @@ async function installFixes(appName: string, runner: Runner) {
   const knownFixes = readKnownFixes(appName, runner)
 
   if (!knownFixes) return
-
-  if (knownFixes.winetricks) {
-    sendGameStatusUpdate({
-      appName,
-      runner: runner,
-      status: 'winetricks'
-    })
-
-    for (const winetricksPackage of knownFixes.winetricks) {
-      await Winetricks.install(runner, appName, winetricksPackage)
-    }
-  }
 
   if (knownFixes.runInPrefix) {
     const gameInfo = getGame(appName, runner).getGameInfo()
@@ -1084,7 +1052,7 @@ function setupWineEnvVars(gameSettings: GameSettings, gameId = '0') {
     ret.PROTON_BATTLEYE_RUNTIME = join(runtimePath, 'battleye_runtime')
   }
   if (wineVersion.type === 'proton') {
-    // If we don't set this, GE-Proton tries to guess the AppID from the prefix path, which doesn't work in our case
+    // If Proton, set the Steam AppID to enable Steam support
     ret.STEAM_COMPAT_APP_ID = process.env.STEAM_COMPAT_APP_ID || '0'
     ret.SteamAppId = process.env.SteamAppId || ret.STEAM_COMPAT_APP_ID
     // This sets the name of the log file given when setting PROTON_LOG=1

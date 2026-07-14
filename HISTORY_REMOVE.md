@@ -216,4 +216,18 @@
 - `backend/tools/dxmt.ts`: import `wineDownloaderInfoStore` eliminado
 - `frontend/screens/Settings/components/Tools/index.tsx`: Winetricks eliminado
 - `frontend/components/UI/index.tsx`: export `Winetricks` eliminado
-- `backend/tools/ipc_handler.ts`: handlers `winetricksInstall`, `winetricksAvailable`, `winetricksInstalled` mantenidos (código muerto)
+- `backend/tools/ipc_handler.ts`: handlers `winetricksInstall`, `winetricksAvailable`, `winetricksInstalled` eliminados
+
+## GE-Proton y Proton-CachyOS (referencias eliminadas)
+- `common/types.ts`: `'GE-Proton'` y `'Proton-CachyOS'` eliminados del type `Type`; `Repositorys` enum, `WineManagerStatus`, `WineManagerUISettings` eliminados; `'ge-proton'` y `'proton-cachyos'` eliminados de `ReleasesInfo`
+- `DownloadProtonToSteam.tsx` y `ShowValveProton.tsx` eliminados
+- `AutoDXVK.tsx`, `AutoDXVKNVAPI.tsx`, `AutoVKD3D.tsx` eliminados
+- `backend/launcher.ts`: `DXVK`, `Winetricks` imports y usos eliminados; comentarios actualizados
+- `backend/tools/index.ts`: módulo `Winetricks` completo eliminado
+- `backend/tools/ipc_handler.ts`: `Winetricks` import y handlers eliminados
+- `backend/utils.ts`: comentario GE-Proton actualizado
+- `preload/api/wine.ts`: exports de Winetricks, WineManager, DXVK/VKD3D eliminados
+- `frontend/state/GlobalStateV2.ts`: `refreshingWineVersions` y `refreshWineVersions` eliminados
+- `WineVersionSelector.tsx`: logos GE y CachyOS eliminados, `handleWineVersionsUpdated` eliminado
+- `common/types/ipc.ts`: tipos Winetricks, WineManager, DXVK/VKD3D eliminados
+- `common/types.ts`: `downloadProtonToSteam` eliminado

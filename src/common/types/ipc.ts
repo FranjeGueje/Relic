@@ -42,7 +42,6 @@ import type {
   WikiInfo,
   WineCommandArgs,
   WineInstallation,
-  WineManagerStatus,
   WineVersionInfo
 } from '../types'
 import type { GOGCloudSavesLocation, UserData } from './gog'
@@ -102,11 +101,6 @@ interface SyncIPCFunctions {
   closeWindow: () => void
   setFullscreen: (enabled: boolean) => void
   setTitleBarOverlay: (options: TitleBarOverlay) => void
-  winetricksInstall: (
-    runner: Runner,
-    appName: string,
-    component: string
-  ) => void
   changeGameVersionPinnedStatus: (
     appName: string,
     runner: Runner,
@@ -144,8 +138,6 @@ interface AsyncIPCFunctions {
   runWineCommand: (
     args: WineCommandArgs
   ) => Promise<{ stdout: string; stderr: string }>
-  winetricksInstalled: (runner: Runner, appName: string) => Promise<string[]>
-  winetricksAvailable: (runner: Runner, appName: string) => Promise<string[]>
   checkGameUpdates: () => Promise<string[]>
   getEpicGamesStatus: () => Promise<boolean>
   updateAll: () => Promise<({ status: 'done' | 'error' | 'abort' } | null)[]>
@@ -370,12 +362,6 @@ interface FrontendMessages {
   installGame: (appName: string, runner: Runner) => void
   recentGamesChanged: (newRecentGames: RecentGame[]) => void
   pushGameToLibrary: (info: GameInfo) => void
-  progressOfWinetricks: (payload: {
-    messages: string[]
-    installingComponent: string
-  }) => void
-  progressOfWineManager: (version: string, progress: WineManagerStatus) => void
-  'installing-winetricks-component': (component: string) => void
   logFileUploaded: (url: string, data: UploadedLogData) => void
   logFileUploadDeleted: (url: string) => void
   progressUpdate: (progress: GameStatus) => void

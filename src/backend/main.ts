@@ -1328,7 +1328,6 @@ addHandler('wine.isValidVersion', async (e, wineVersion: WineInstallation) =>
  * INSERT OTHER IPC HANDLERS HERE
  */
 import './logger/ipc_handler'
-import './wine/manager/ipc_handler'
 import './shortcuts/ipc_handler'
 import './anticheat/ipc_handler'
 import './storeManagers/legendary/eos_overlay/ipc_handler'
