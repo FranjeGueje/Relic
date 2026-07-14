@@ -1006,50 +1006,6 @@
     "title": "Beheer categorieën",
     "add": "Voeg toe"
   },
-  "tour": {
-    "back": "Terug",
-    "done": "Klaar",
-    "library": {
-      "addGame": "Voeg je eigen spellen of apps toe aan de bibliotheek door hier te klikken. Ze kunnen in principe alles zijn, zelfs Browser URLs.",
-      "categories": "Organiseer jouw spellen in categoriën om dingen netjes te houden.",
-      "end": {
-        "intro": "Dat was 't! Geniet van je spellen en veel plezier!",
-        "title": "Geniet van je spelletjes!"
-      },
-      "filters": "Filter tussen jouw spelletjes op winkel, platform, favorieten en meer door middel van deze opties.",
-      "gameCard": "Linker-Klik op het spel om te navigeren naar de game-pagina om details weer te geven en instellingen te wijzigen of Rechter-Klik om het context-menu te openen.",
-      "refresh": "Ververs jouw bibliotheek om te zoeken naar nieuwe spellen of updates.",
-      "search": "Gebruik de Zoekbalk om te zoeken naar jouw spelletjes.",
-      "sortInstalled": "Sorteer spellen op instalatiestatus",
-      "sortOptions": "Klik hier om spellen te sorteren op alfabetische volgorde.",
-      "viewToggle": "Wissen tussen rooster- en lijstweergave voor jouw spelletjes.",
-      "welcome": {
-        "intro": "Welkom bij de Heroic Bibliotheek! Dit is waar je al je spelletjes van verschillende winkels kan zien.",
-        "intro2": "Als de bibliotheek leeg is, kun je inloggen bij je accounts door op Accounts Beheren te klikken in de zijbalk of door je eigen spellen toe te voegen met de Voeg Spel toe knop aan de bovenkant.",
-        "title": "Welkom bij Heroic!",
-        "title2": "De bibliotheek beheren!"
-      }
-    },
-    "next": "Volgende",
-    "sidebar": {
-      "accessibility": "Benader toegankelijkheidsfuncties om je ervaring te personaliseren.",
-      "accounts": "Beheer je verbonden winkel accounts (Epic, GOG, Amazon), log bij ze in of uit.",
-      "downloads": "Monitor en beheer jouw spel-downloads en -installaties.",
-      "library": "Benader jouw spelletjesbibliotheek van verschillende winkels op één plek.",
-      "login": "Log in bij jouw spelletjeswinkel accounts om je bibliotheek te benaderen.",
-      "quit": "Sluit de applicatie veilig.",
-      "settings": "Configureer Heroic's instellingen, spelstandaarden, bekijk logboeken en meer.",
-      "stores": "Zoek en winkel spelletjes in verschillende winkels waaronder Epic, GOG, en Amazon.",
-      "version": "Bekijk hier je huidige Heroic versie, klik erop om de laatste changelog te zien en benader deze tour vanuit het hulp-icoontje.",
-      "welcome": {
-        "intro": "Welkom bij Heroic! Deze zijbalk bevat alle navigatie-opties om de app te verkennen.",
-        "title": "Zijbalk Navigatie"
-      },
-      "wine": "Beheer of download nieuwe versies van Wine/Proton/GPTK om Windows spellen te spelen op Linux of macOS."
-    },
-    "skip": "Overslaan",
-    "startTour": "Begin de Tour"
-  },
   "analyticsModal": {
     "disable": "Disable",
     "enable": "Enable",

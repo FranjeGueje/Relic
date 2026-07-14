@@ -1031,51 +1031,6 @@
     "wine-crossover": "O Wine-Crossover baseia-se no projeto Crossover OpenSource Wine e é recomendado para Macs Intel e para jogos DX11 ou mais antigos.",
     "wine-staging-macos": "Wine-Staging-macOS baseia-se no projeto principal Wine e é recomendado para Macs Intel e para jogos DX11 ou mais antigos, especialmente quando combinado com a ferramenta DXMT."
   },
-  "tour": {
-    "back": "Atrás",
-    "library": {
-      "end": {
-        "intro": "É isso! Desfrute dos seus jogos e divirta-se!",
-        "title": "Desfrute dos seus jogos!"
-      },
-      "gameCard": "Clique com o botão esquerdo do rato na capa do jogo para aceder a página do mesmo, assim pode ver detalhes e ajustar definições. Por outro lado, pode usar o botão direito do rato na capa do jogo para abrir o menu contextual.",
-      "sortOptions": "Clique aqui para ordenar os jogos alfabeticamente.",
-      "welcome": {
-        "intro2": "Se a biblioteca estiver vazia, certifique-se de que inicia a sessão das suas contas utilizando o 'Gerir Contas' na barra lateral, ou adicione seus próprios jogos com o botão 'Adicionar Jogo' em cima.",
-        "intro": "Bem-vindo à Biblioteca do Heroic! Aqui pode ver todos os seus jogos a partir de lojas diferentes.",
-        "title": "Bem-vindo ao Heroic!",
-        "title2": "Gerir a biblioteca!"
-      },
-      "addGame": "Adicione os seus jogos ou aplicações à biblioteca ao clicar aqui. Basicamente estes podem ser qualquer coisa, mesmo URLs do Browser.",
-      "categories": "Organize os seus jogos por categorias para deixar tudo de forma organizada.",
-      "filters": "Filtre os seus jogos por loja, plataforma, favoritos, entre outros ao usar estas opções.",
-      "refresh": "Recarregue a sua biblioteca para verificar jogos novos ou atualizações.",
-      "search": "Use a barra de pesquisa para procurar os seus jogos.",
-      "sortInstalled": "Ordenar jogos por estado de instalação.",
-      "viewToggle": "Alternar entre o modo de vista em grelha e vista em lista dos seus jogos.",
-      "steamInstall": "Usa este butão para instalar a versão Windows da Steam e joga os teus jogos Windows com Crossover, Wine ou GPTK."
-    },
-    "sidebar": {
-      "accounts": "Faça a gestão das suas contas nas lojas (Epic, GOG ou Amazon), termine ou inicie a sessão.",
-      "accessibility": "Aceda ás funcionalidades de acessibilidade para personalizar a sua experiência.",
-      "login": "Inicie a sessão das suas contas nas lojas de jogos para aceder à sua biblioteca.",
-      "version": "Verifique a sua versão atual do Heroic, clique para ver os últimos registos de alterações e aceda à visita guiada a partir do ícone de ajuda.",
-      "wine": "Faça a gestão ou transferências de novas versões do Wine/Proton/GPTK para executar jogos do Windows no Linux ou macOS.",
-      "downloads": "Acompanhe e faça a gestão das transferências e instalações dos seus jogos.",
-      "library": "Aceda à sua biblioteca de jogos num único local, a partir de lojas diferentes.",
-      "quit": "Sair da aplicação em segurança.",
-      "settings": "Configure as definições do Heroic, predefinições de jogos, consulte os registos de eventos e muito mais.",
-      "stores": "Pesquise e compre jogos em lojas diferentes, incluindo Epic, GOG e Amazon.",
-      "welcome": {
-        "intro": "Bem-vindo ao Heroic! Esta barra lateral contém todas as opções de navegação para explorar a aplicação.",
-        "title": "Navegação pela Barra Lateral"
-      }
-    },
-    "done": "Concluído",
-    "next": "Seguinte",
-    "skip": "Saltar",
-    "startTour": "Iniciar Visita Guiada"
-  },
   "notification": {
     "steam": {
       "error": "Instalação da Steam falhou! Por favor leia as instruções cuidadosamente e tente de novo!",

@@ -1003,50 +1003,6 @@
     "title": "Adtraction diblokir",
     "description": "Sepertinya domain track.adtraction.com gagal dimuat atau diblokir. Dengan adtraction, pembelian apa pun yang Anda lakukan di toko GOG akan mendukung Heroic secara finansial. Pertimbangkanlah untuk menghapus blokiran jika Anda ingin berkontribusi."
   },
-  "tour": {
-    "back": "Kembali",
-    "done": "Selesai",
-    "library": {
-      "addGame": "Tambahkan game atau aplikasi Anda sendiri ke pustaka dengan mengklik di sini. Mereka bisa berupa apa saja, bahkan URL browser.",
-      "categories": "Atur game Anda ke dalam kategori untuk menjaga kerapian.",
-      "end": {
-        "intro": "Selesai! Nikmati game Anda dan bersenang-senanglah!",
-        "title": "Nikmati game Anda!"
-      },
-      "filters": "Filter game Anda berdasarkan toko, platform, favorit, dan lainnya menggunakan opsi ini.",
-      "gameCard": "Klik kiri pada kartu game untuk membuka halaman game dan melihat detailnya atau menyesuaikan pengaturan, atau klik kanan untuk membuka menu konteks.",
-      "refresh": "Segarkan pustaka Anda untuk memeriksa game baru atau pembaruan.",
-      "search": "Gunakan bilah Pencarian untuk mencari game Anda.",
-      "sortInstalled": "Urutkan game berdasarkan status instalasi.",
-      "sortOptions": "Klik di sini untuk mengurutkan game secara alfabetis.",
-      "viewToggle": "Beralih antara tampilan grid dan daftar untuk game Anda.",
-      "welcome": {
-        "intro": "Selamat datang di Pustaka Heroic! Di sinilah Anda dapat melihat semua game Anda dari berbagai toko.",
-        "intro2": "Jika pustaka kosong, pastikan Anda masuk dengan akun Anda menggunakan Kelola akun di bilah sisi atau tambahkan game Anda sendiri menggunakan tombol Tambah Game di atas.",
-        "title": "Selamat datang di Heroic!",
-        "title2": "Mengelola pustaka!"
-      }
-    },
-    "next": "Berikutnya",
-    "sidebar": {
-      "accessibility": "Akses fitur aksesibilitas untuk menyesuaikan pengalaman Anda.",
-      "accounts": "Kelola akun toko Anda yang terhubung (Epic, GOG, Amazon), keluar atau masuk ke akun tersebut.",
-      "downloads": "Lacak dan kelola unduhan serta instalasi game Anda.",
-      "library": "Akses pustaka game Anda dari berbagai toko di satu tempat.",
-      "login": "Masuk ke akun toko game Anda untuk mengakses pustaka Anda.",
-      "quit": "Keluar dari aplikasi dengan aman.",
-      "settings": "Konfigurasikan pengaturan Heroic, pengaturan default game, periksa log, dan lainnya.",
-      "stores": "Jelajahi dan beli game di berbagai toko termasuk Epic, GOG, dan Amazon.",
-      "version": "Periksa versi Heroic Anda saat ini, klik untuk melihat catatan perubahan terbaru, dan akses tur ini dari ikon bantuan.",
-      "welcome": {
-        "intro": "Selamat datang di Heroic! Bilah sisi ini berisi semua opsi navigasi untuk menjelajahi aplikasi.",
-        "title": "Navigasi Bilah Sisi"
-      },
-      "wine": "Kelola atau unduh versi baru Wine/Proton/GPTK untuk menjalankan game Windows di Linux atau macOS."
-    },
-    "skip": "Lewati",
-    "startTour": "Mulai Tur"
-  },
   "analyticsModal": {
     "disable": "Nonaktif",
     "enable": "Aktif",

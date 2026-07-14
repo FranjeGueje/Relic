@@ -1027,51 +1027,6 @@
     "dont-show-again": "Diese Warnung nicht mehr anzeigen",
     "title": "Adtraction ist blockiert"
   },
-  "tour": {
-    "back": "Zurück",
-    "library": {
-      "categories": "Ordne deine Spiele Kategorien zu, um den Überblick zu behalten.",
-      "end": {
-        "title": "Viel Spaß beim Spielen!",
-        "intro": "Das war's! Viel Spaß beim Spielen!"
-      },
-      "search": "Nutze die Suchleiste, um nach deinen Spielen zu suchen.",
-      "sortOptions": "Klicke hier, um Spiele alphabetisch zu sortieren.",
-      "viewToggle": "Wechsle zwischen Raster- und Listenansicht für deine Spiele.",
-      "welcome": {
-        "title": "Willkommen bei Heroic!",
-        "title2": "Die Bibliothek verwalten!",
-        "intro": "Willkommen zur Heroic-Bibliothek! Hier kannst du alle deine Spiele aus verschiedenen Stores sehen.",
-        "intro2": "Falls die Bibliothek leer ist, melde dich bitte mit deinen Konten über „Konten verwalten“ in der Seitenleiste an oder füge deine eigenen Spiele mit „Spiel hinzufügen“ oben hinzu."
-      },
-      "addGame": "Klicke hier, um deine eigenen Spiele oder Apps zur Bibliothek hinzuzufügen. Diese können alles Mögliche sein, sogar Browser-URLs.",
-      "filters": "Filtere mit diesen Optionen deine Spiele nach Store, Plattform, Favoriten und mehr.",
-      "steamInstall": "Benutze diesen Button, um die Windows-Version von Steam zu installieren und spiele deine Windows-Spiele mit Crossover, Wine oder GPTK.",
-      "refresh": "Aktualisiere deine Bibliothek, um nach neuen Spielen oder Updates zu suchen.",
-      "gameCard": "Klicke auf die Spielekarte, um zur Spieleseite zu kommen und um Details und Einstellungen anzupassen, oder Rechtsklick, um das Kontextmenü zu öffnen.",
-      "sortInstalled": "Sortiere Spiele nach Installationsstatus."
-    },
-    "done": "Fertig",
-    "sidebar": {
-      "accessibility": "Auf Einstellungen zur Barrierefreiheit zugreifen, um deine Erfahrung anzupassen.",
-      "library": "Greife von einem Ort auf deine Spielbibliothek aus verschiedenen Stores zu.",
-      "downloads": "Verfolge und verwalte deine Spielinstallationen.",
-      "wine": "Verwalte oder lade neue Version von Wine/Proton/GPTK herunter, um Windowsspiele auf Linux oder macOS spielen zu können.",
-      "version": "Überprüfe deine aktuelle Heroic-Version, um die neuesten Änderungen einzusehen und starte diese Tour über das Hilfesymbol.",
-      "welcome": {
-        "title": "Seitenleiste",
-        "intro": "Willkommen in Heroic! Diese Seitenleiste beinhaltet alle wichtigen Navigationspunkte, um die App zu erkunden."
-      },
-      "quit": "Verlasse die Applikation sicher.",
-      "accounts": "Verwalte deine verbundenen Konten (Epic, GOG, Amazon), melde dich bei ihnen an oder ab.",
-      "stores": "Durchsuche und kaufe unterschiedliche Spiele in unterschiedlichen Shops unter anderem Epic,GOG und Amazon.",
-      "login": "Log dich in deine Spielevertriebsplattformkonten ein um Zugriff auf deine Bibliothek zu bekommen.",
-      "settings": "Konfiguriere die Einstellungen von Heroic, setze Standardeinstellungen für Spiele, prüfe Logdaten und mehr."
-    },
-    "next": "Weiter",
-    "startTour": "Tour starten",
-    "skip": "Überspringen"
-  },
   "notification": {
     "steam": {
       "error": "Steam-Installation fehlgeschlagen! Bitte lesen Sie die Anleitung aufmerksam und versuchen Sie es erneut!",

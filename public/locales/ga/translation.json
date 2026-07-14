@@ -915,51 +915,6 @@
     "addpath": "Cuir Cosán Nua leis",
     "removepath": "Bain an Cosán"
   },
-  "tour": {
-    "back": "Ar ais",
-    "done": "Déanta",
-    "library": {
-      "addGame": "Cuir do chluichí nó d’aipeanna féin leis an leabharlann trí chliceáil anseo. Is féidir leo a bheith rud ar bith, fiú URLanna Brabhsálaí.",
-      "categories": "Eagraigh do chluichí i gcatagóirí chun rudaí a choinneáil slachtmhar.",
-      "end": {
-        "intro": "Sin é! Bain sult as do chluichí agus bíodh spraoi agat!",
-        "title": "Bain sult as do chluichí!"
-      },
-      "filters": "Scag do chluichí de réir siopa, ardáin, rogha agus tuilleadh ag baint úsáide as na roghanna seo.",
-      "gameCard": "Cliceáil ar chlé ar chárta an chluiche chun nascleanúint a dhéanamh chuig leathanach an chluiche agus chun sonraí a fheiceáil agus socruithe a choigeartú nó cliceáil ar dheis chun an roghchlár comhthéacs a oscailt.",
-      "refresh": "Athnuaigh do leabharlann chun cluichí nó nuashonruithe nua a sheiceáil.",
-      "search": "Bain úsáid as an mbarra cuardaigh chun do chluichí a chuardach.",
-      "sortInstalled": "Sórtáil cluichí de réir stádais suiteáilte.",
-      "sortOptions": "Cliceáil anseo chun cluichí a shórtáil in ord aibítre.",
-      "steamInstall": "Úsáid an cnaipe seo chun leagan Windows de Steam a shuiteáil agus do chluichí Windows a imirt ag baint úsáide as Crossover, Wine nó GPTK.",
-      "viewToggle": "Athraigh idir radharc eangaí agus liosta le do chluichí.",
-      "welcome": {
-        "intro": "Fáilte go dtí Leabharlann Laochra! Seo an áit ar féidir leat do chluichí go léir a fheiceáil i siopaí éagsúla.",
-        "intro2": "Mura bhfuil an leabharlann folamh, déan cinnte logáil isteach le do chuntais ag baint úsáide as Bainistigh cuntais ar an mbarra taoibh nó cuir do chluichí féin leis ag baint úsáide as an gcnaipe Cuir Cluiche Leis thuas.",
-        "title": "Fáilte go dtí Heroic!",
-        "title2": "Ag bainistiú na leabharlainne!"
-      }
-    },
-    "next": "Ar Aghaidh",
-    "sidebar": {
-      "accessibility": "Rochtain a fháil ar ghnéithe inrochtaineachta chun do thaithí a shaincheapadh.",
-      "accounts": "Bainistigh do chuntais siopa nasctha (Epic, GOG, Amazon), logáil amach nó logáil isteach iontu.",
-      "downloads": "Rianaigh agus bainistigh d’íoslódálacha agus do shuiteálacha cluichí.",
-      "library": "Rochtain a fháil ar do leabharlann cluichí ó shiopaí éagsúla in aon áit amháin.",
-      "login": "Logáil isteach i do chuntais siopa cluichí chun rochtain a fháil ar do leabharlann.",
-      "quit": "Scoir an feidhmchlár go sábháilte.",
-      "settings": "Cumraigh socruithe Heroic, réamhshocruithe cluiche, seiceáil logaí agus tuilleadh.",
-      "stores": "Brabhsáil agus siopaigh cluichí i siopaí éagsúla lena n-áirítear Epic, GOG, agus Amazon.",
-      "version": "Seiceáil do leagan reatha de Heroic, cliceáil air chun an loga athruithe is déanaí a fheiceáil, agus rochtain a fháil ar an turas seo ón deilbhín cabhrach.",
-      "welcome": {
-        "intro": "Fáilte go Heroic! Tá na roghanna nascleanúna go léir chun an aip a iniúchadh sa bharra taoibh seo.",
-        "title": "Nascleanúint Barra Taobh"
-      },
-      "wine": "Bainistigh nó íoslódáil leagan nua de Wine/Proton/GPTK le haghaidh cluichí Windows a rith ar Linux nó macOS."
-    },
-    "skip": "Scipeáil",
-    "startTour": "Tosaigh an Turas"
-  },
   "tray": {
     "about": "Maidir",
     "quit": "Scoir",

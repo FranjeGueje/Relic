@@ -1010,50 +1010,6 @@
     "noResults": "Nämä suodattimet eivät tuottaneet tuloksia.",
     "noGames": "Kirjastosi on tyhjä.<br /><br />Napsauta <4>tässä</4> kirjautuaksesi sisään Epic, GOG.com, tai Amazon -tilillesi. Tämän jälkeen pelisi ilmestyvät tähän kirjastonäkymään.<br /><br />Käyttääksesi pelejä- tai sovelluksia muista lähteistä, napsauta <br /> lisätäksesi ne manuaalisesti."
   },
-  "tour": {
-    "back": "Takaisin",
-    "done": "Valmis",
-    "library": {
-      "end": {
-        "title": "Nauti peleistäsi!",
-        "intro": ""
-      },
-      "welcome": {
-        "intro": "Tervetuloa Heroic-kirjastoon! Täältä näet kaikki pelisi riippumatta mistä kaupasta ne ovat peräisin.",
-        "title": "Tervetuloa Heroiciin!",
-        "title2": "Kirjaston hallinta!",
-        "intro2": ""
-      },
-      "gameCard": "",
-      "filters": "",
-      "search": "",
-      "refresh": "",
-      "viewToggle": "",
-      "categories": "",
-      "sortInstalled": "",
-      "sortOptions": "",
-      "addGame": ""
-    },
-    "next": "Seuraava",
-    "startTour": "Käynnistä tutustumiskierros",
-    "skip": "Ohita",
-    "sidebar": {
-      "welcome": {
-        "title": "",
-        "intro": ""
-      },
-      "quit": "",
-      "library": "",
-      "accessibility": "",
-      "wine": "",
-      "login": "",
-      "settings": "",
-      "downloads": "",
-      "accounts": "",
-      "stores": "",
-      "version": ""
-    }
-  },
   "analyticsModal": {
     "disable": "Pois päältä",
     "enable": "Päällä",

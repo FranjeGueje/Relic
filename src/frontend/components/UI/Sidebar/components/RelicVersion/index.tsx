@@ -2,8 +2,6 @@ import React, { useContext, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import ContextProvider from 'frontend/state/ContextProvider'
 import { ChangelogModal } from '../../../ChangelogModal'
-import TourButton from 'frontend/components/Tour/TourButton'
-import { SIDEBAR_TOUR_ID } from '../SidebarTour'
 import './index.scss'
 
 type Release = {
@@ -90,7 +88,6 @@ export default React.memo(function RelicVersion() {
           </span>
           <strong>{version}</strong>
         </span>
-        <TourButton tourId={SIDEBAR_TOUR_ID} className="sidebar-tour-button" />
       </div>
       {shouldShowUpdates && (
         <div className="relicNewReleases">

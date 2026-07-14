@@ -1033,51 +1033,6 @@
     "dont-show-again": "Nie pokazuj więcej tego ostrzeżenia",
     "title": "Adtraction jest zablokowane"
   },
-  "tour": {
-    "library": {
-      "welcome": {
-        "title": "Witaj w Heroic!",
-        "title2": "Zarządzanie biblioteką!",
-        "intro2": "Jeśli biblioteka jest pusta, upewnij się, że zalogowałeś się na swoje konta za pomocą 'Zarządzaj kontami' na pasku bocznym lub dodaj własne gry, używając przycisku 'Dodaj grę' powyżej.",
-        "intro": "Witaj w bibliotece Heroic! Znajdziesz tu wszystkie swoje gry z różnych sklepów."
-      },
-      "gameCard": "Naciśnij lewym przyciskiem myszy na kartę gry, aby przejść do jej strony i wyświetlić informacje oraz dostosować ustawienia, lub prawym przyciskiem, by otworzyć menu kontekstowe.",
-      "addGame": "Dodaj własne gry lub aplikacje, klikając tutaj. Może to być cokolwiek, nawet URL do przeglądarki.",
-      "categories": "Organizuj swoje gry kategoriami, aby zachować porządek.",
-      "end": {
-        "intro": "To wszystko! Miłej zabawy podczas grania!",
-        "title": "Miłej zabawy!"
-      },
-      "filters": "Filtruj swoje gry według sklepu, platformy, ulubionych i innych za pomocą tych opcji.",
-      "refresh": "Odśwież swoją bibliotekę, aby poszukać nowych gier lub aktualizacji.",
-      "search": "Użyj paska wyszukiwania, aby znaleźć swoje gry.",
-      "sortInstalled": "Sortuj gry według ich statusu instalacji.",
-      "sortOptions": "Kliknij tutaj, aby posortować gry alfabetycznie.",
-      "viewToggle": "Przełączaj pomiędzy widokami siatki i listy dla swoich gier.",
-      "steamInstall": "Użyj tego przycisku, aby zainstalować wersję Steam dla systemu Windows i grać w swoje gry z systemu Windows, używając programów Crossover, Wine lub GPTK."
-    },
-    "sidebar": {
-      "stores": "Przeglądaj i kupuj gry w różnych sklepach, m.in. Epic, GOG i Amazon.",
-      "accessibility": "Skorzystaj z ułatwień dostępu, aby dostosować swoje ustawienia.",
-      "accounts": "Zarządzaj swoimi połączonymi kontami sklepowymi (Epic, GOG, Amazon), zaloguj się do nich bądź wyloguj.",
-      "downloads": "Śledź i zarządzaj swoimi pobraniami i instalacjami gier.",
-      "library": "Uzyskaj dostęp do swojej biblioteki gier z różnych sklepów w jednym miejscu.",
-      "login": "Zaloguj się do swoich kont do sklepów z grami, aby uzyskać dostęp do swojej biblioteki.",
-      "quit": "Wyjdź z aplikacji w bezpieczny sposób.",
-      "settings": "Dostosuj ustawienia Heroica, domyślne dla gier, sprawdź logi i inne.",
-      "version": "Sprawdź aktualną wersję Heroic, kliknij na nią, by zobaczyć listę zmian, oraz uzyskaj dostęp do tego przewodnika poprzez ikonę pomocy.",
-      "welcome": {
-        "intro": "Witamy w Heroic! Ten pasek boczny zawiera wszystkie opcje nawigacji do odkrywania aplikacji.",
-        "title": "Nawigacja na pasku bocznym"
-      },
-      "wine": "Zarządzaj lub pobierz nowe wersje Wine/Proton/GPTK, aby uruchamiać gry z Windowsa na Linuksie lub macOS."
-    },
-    "back": "Wróć",
-    "done": "Gotowe",
-    "next": "Dalej",
-    "skip": "Pomiń",
-    "startTour": "Rozpocznij przewodnik"
-  },
   "notification": {
     "steam": {
       "error": "Pamiętaj, że nie wszystkie gry będą działać, a nawet jeśli tak, to mogą nie działać zgodnie z oczekiwaniami!",

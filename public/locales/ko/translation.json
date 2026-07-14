@@ -1016,50 +1016,6 @@
     "noResults": "현재 필터로는 결과가 생성되지 않았습니다.",
     "noGames": ""
   },
-  "tour": {
-    "back": "뒤로",
-    "sidebar": {
-      "welcome": {
-        "title": "",
-        "intro": ""
-      },
-      "quit": "",
-      "library": "",
-      "accessibility": "",
-      "wine": "",
-      "login": "",
-      "settings": "",
-      "downloads": "",
-      "accounts": "",
-      "stores": "",
-      "version": ""
-    },
-    "library": {
-      "gameCard": "",
-      "welcome": {
-        "title": "",
-        "intro2": "",
-        "intro": "",
-        "title2": ""
-      },
-      "filters": "",
-      "search": "",
-      "refresh": "",
-      "end": {
-        "intro": "",
-        "title": ""
-      },
-      "viewToggle": "",
-      "categories": "",
-      "sortInstalled": "",
-      "sortOptions": "",
-      "addGame": ""
-    },
-    "next": "",
-    "startTour": "",
-    "skip": "",
-    "done": ""
-  },
   "analyticsModal": {
     "disable": "비활성화",
     "enable": "활성화",

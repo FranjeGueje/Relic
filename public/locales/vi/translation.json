@@ -980,50 +980,6 @@
     "minimize": "Thu nhỏ cửa sổ",
     "restore": "Khôi phục cửa sổ"
   },
-  "tour": {
-    "back": "Lui",
-    "done": "Xong",
-    "library": {
-      "addGame": "Thêm trò chơi hoặc ứng dụng của riêng bạn vào thư viện bằng cách nhấp vào đây. Về cơ bản chúng có thể là bất cứ thứ gì, thậm chí là URL trình duyệt.",
-      "categories": "Sắp xếp trò chơi của bạn thành các danh mục để giữ mọi thứ ngăn nắp.",
-      "end": {
-        "intro": "Thế thôi! Thưởng thức trò chơi của bạn và vui vẻ nha!",
-        "title": "Thưởng thức trò chơi của bạn!"
-      },
-      "filters": "Lọc trò chơi của bạn theo cửa hàng, nền tảng, mục yêu thích và hơn thế nữa bằng cách sử dụng các tùy chọn này.",
-      "gameCard": "Nhấp chuột trái vào thẻ trò chơi để điều hướng đến trang trò chơi và xem chi tiết và điều chỉnh cài đặt hoặc Nhấp chuột phải để mở menu ngữ cảnh.",
-      "refresh": "Làm mới thư viện của bạn để kiểm tra các trò chơi hoặc bản cập nhật mới.",
-      "search": "Sử dụng thanh Tìm Kiếm để tìm kiếm trò chơi của bạn.",
-      "sortInstalled": "Sắp xếp trò chơi theo trạng thái cài đặt.",
-      "sortOptions": "Bấm vào đây để sắp xếp các trò chơi theo thứ tự bảng chữ cái.",
-      "viewToggle": "Chuyển đổi giữa chế độ xem dạng lưới và danh sách cho trò chơi của bạn.",
-      "welcome": {
-        "intro": "Chào mừng đến với Thư viện anh hùng! Đây là nơi bạn có thể xem tất cả các trò chơi của mình trên các cửa hàng khác nhau.",
-        "intro2": "Nếu thư viện trống, hãy đảm bảo đăng nhập bằng tài khoản của bạn bằng cách sử dụng Quản lý tài khoản trên thanh bên hoặc thêm trò chơi của riêng bạn bằng nút Thêm Trò Chơi ở trên.",
-        "title": "Chào mừng đến Heroic!",
-        "title2": "Quản lý thư viện!"
-      }
-    },
-    "next": "Tiếp",
-    "sidebar": {
-      "accessibility": "Truy cập các tính năng trợ năng để tùy chỉnh trải nghiệm của bạn.",
-      "accounts": "Quản lý các tài khoản cửa hàng được kết nối của bạn (Epic, GOG, Amazon), đăng xuất hoặc đăng nhập vào chúng.",
-      "downloads": "Theo dõi và quản lý việc tải xuống và cài đặt trò chơi của bạn.",
-      "library": "Truy cập thư viện trò chơi của bạn từ các cửa hàng khác nhau ở cùng một nơi.",
-      "login": "Đăng nhập vào tài khoản cửa hàng trò chơi của bạn để truy cập thư viện của bạn.",
-      "quit": "Thoát khỏi ứng dụng một cách an toàn.",
-      "settings": "Định cấu hình cài đặt của Heroic, mặc định của trò chơi, nhật ký kiểm tra và hơn thế nữa.",
-      "stores": "Duyệt và mua trò chơi trong các cửa hàng khác nhau bao gồm Epic, GOG và Amazon.",
-      "version": "Kiểm tra phiên bản Heroic hiện tại của bạn, nhấp vào phiên bản đó để xem nhật ký thay đổi mới nhất và truy cập chuyến tham quan này từ biểu tượng trợ giúp.",
-      "welcome": {
-        "intro": "Chào mừng đến với Heroic! Thanh bên này chứa tất cả các tùy chọn điều hướng để khám phá ứng dụng.",
-        "title": "Điều Hướng Thanh Bên"
-      },
-      "wine": "Quản lý hoặc tải xuống phiên bản Wine/Proton/GPTK mới để chạy trò chơi Windows trên Linux hoặc macOS."
-    },
-    "skip": "Bỏ Qua",
-    "startTour": "Bắt Đầu Chuyến Tham Quan"
-  },
   "analyticsModal": {
     "disable": "Tắt",
     "enable": "Bật",

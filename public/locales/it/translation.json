@@ -1031,51 +1031,6 @@
     "noResults": "I filtri attuali non hanno prodotto risultati.",
     "noGames": "La tua libreria è vuota.<br /><br />Clicca <4>qui</4> per accedere con i tuoi account Epic, GOG.com e Amazon. I tuoi giochi appariranno qui nella Libreria.<br /><br />Per usare giochi o app da altre sorgenti, clicca <br /> per aggiungerli manualmente."
   },
-  "tour": {
-    "back": "Indietro",
-    "library": {
-      "gameCard": "Clicca con il tasto sinistro sul gioco per navigare alla sua pagina, vedere i dettagli e modificare le impostazioni o con quello destro per aprire il menu contestuale.",
-      "welcome": {
-        "title2": "Gestendo la libreria!",
-        "title": "Benvenuto su Heroic!",
-        "intro": "Benvenuto nella Libreria Heroic! Qui è dove puoi vedere tutti i tuoi giochi dei diversi negozi.",
-        "intro2": "Se la libreria è vuota, assicurati di effettuare il login con i tuoi account usando la voce Gestisci Account sulla barra laterale e di aggiungere i tuoi giochi utilizzando il pulsante Aggiungi Gioco qui sopra."
-      },
-      "addGame": "Aggiungi i tuoi giochi o le tue app alla libreria cliccando qui. Possono essere qualsiasi cosa, anche URL.",
-      "search": "Usa la barra di ricerca per cercare i tuoi giochi.",
-      "sortInstalled": "Ordina i giochi in base allo stato di installazione.",
-      "viewToggle": "Scegli se visualizzare i tuoi giochi in griglia o in una lista.",
-      "end": {
-        "title": "Goditi i tuoi giochi!",
-        "intro": "Ecco fatto! Goditi i tuoi giochi e divertiti!"
-      },
-      "sortOptions": "Clicca qui per ordinare i giochi in ordine alfabetico.",
-      "categories": "Organizza i tuoi giochi in categorie per mantenere l'ordine.",
-      "refresh": "Ricarica la tua libreria per mostrare i nuovi giochi o trovare aggiornamenti.",
-      "filters": "Filtra i tuoi giochi in base al negozio, la piattaforma, i tuoi preferiti ed altro utilizzando queste opzioni.",
-      "steamInstall": "Utilizza questo pulsante per installare la versione Windows di Steam e giocare ai tuoi giochi Windows tramite Crossover, Wine o GPTK."
-    },
-    "sidebar": {
-      "downloads": "Monitora e gestisci i download e le installazioni dei tuoi giochi.",
-      "library": "Accedi alle librerie dei tuoi giochi da diversi negozi in un solo posto.",
-      "accessibility": "Modifica le impostazioni di accessibilità per personalizzare la tua esperienza.",
-      "settings": "Configura le impostazioni di Heroic, le impostazioni predefinite dei giochi, vedi i log e molto altro.",
-      "version": "Verifica la versione corrente di Heroic, clicca qui per vedere le ultime note di rilascio e accedi a questa guida dall'icona di aiuto.",
-      "welcome": {
-        "title": "Navigazione della barra laterale",
-        "intro": "Benvenuto su Heroic! Questa barra laterale contiene tutte le opzioni di navigazione per esplorare l'app."
-      },
-      "quit": "Esci dall'applicazione in modo sicuro.",
-      "stores": "Sfoglia e acquista i giochi da negozi differenti, inclusi Epic, GOG e Amazon.",
-      "login": "Accedi al tuo account del negozio per accedere alla tua libreria.",
-      "wine": "Gestisci o scarica nuove versioni di Wine/Proton/GPTK per eseguire i giochi di Windows su Linux e macOS.",
-      "accounts": "Gestisci gli account dei negozi connessi (Epic, GOG, Amazon), effettua l'accesso o esci."
-    },
-    "next": "Prossimo",
-    "done": "Fatto",
-    "startTour": "Inizia il tutorial",
-    "skip": "Salta"
-  },
   "notification": {
     "steam": {
       "error": "Installazione di Steam non riuscita! Leggi attentamente le istruzioni e riprova!",

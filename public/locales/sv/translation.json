@@ -1014,50 +1014,6 @@
     "rename": "Byt namn \"{{name}}\"",
     "title": "Hantera kategorier"
   },
-  "tour": {
-    "back": "Bakåt",
-    "library": {
-      "end": {
-        "title": "Njut av dina spel!",
-        "intro": "Det var allt! Njut av dina spel och ha kul!"
-      },
-      "filters": "Filtrera dina spel efter butik, plattform, favoriter och mer via dessa alternativ.",
-      "gameCard": "Vänster-klicka på spelkortet för att navigera till spelsidan och för att se detaljer och justera inställningar, eller höger-klicka för att öppna kontext-menyn.",
-      "refresh": "Uppdatera ditt bibliotek för att kolla efter nya spel eller uppdateringar.",
-      "sortOptions": "Klicka här för att sortera i bokstavsordning.",
-      "addGame": "Lägg till dina egna spel eller program i biblioteket genom att klicka här. De kan vara i princip vad som helst, till och med webbläsaradresser.",
-      "categories": "Organisera dina spel i kategorier för att hålla ordning och reda.",
-      "search": "Använd sökfältet för att söka efter dina spel.",
-      "sortInstalled": "Sortera spel efter installerad status.",
-      "viewToggle": "Växla mellan rutnät och listvy för dina spel.",
-      "welcome": {
-        "intro": "Välkommen till Heroic bibliotek! Här kan du se alla dina spel i olika butiker.",
-        "intro2": "Om biblioteket är tomt, se till att logga in med dina konton med hjälp av Hantera konton i sidofältet eller lägg till dina egna spel med hjälp av knappen Lägg till spel ovan.",
-        "title": "Välkommen till Heroic!",
-        "title2": "Hantera ditt bibliotek!"
-      }
-    },
-    "done": "Klart",
-    "next": "Nästa",
-    "sidebar": {
-      "accessibility": "Få tillgång till tillgänglighetsfunktioner för att anpassa din upplevelse.",
-      "accounts": "Hantera dina anslutna butikskonton (Epic, GOG, Amazon), logga ut eller logga in från dem.",
-      "downloads": "Spåra och hantera dina spelnedladdningar och installationer.",
-      "library": "Få tillgång till ditt spelbibliotek från olika butiker på ett och samma ställe.",
-      "login": "Logga in på dina konton för olika spelbutiker för att komma åt ditt bibliotek.",
-      "quit": "Avsluta programmet på ett säkert sätt.",
-      "settings": "Konfigurera Heroics inställningar, spelens standardinställningar, kontrollera loggar och mer.",
-      "stores": "Bläddra och handla spel från olika butiker inklusive Epic, GOG och Amazon.",
-      "version": "Kontrollera din nuvarande Heroic-version, klicka på den för att se den senaste ändringsloggen och få tillgång till den här rundturen från hjälpikonen.",
-      "welcome": {
-        "intro": "Välkommen till Heroic! Det här sidofältet innehåller alla navigeringsalternativ för att utforska programmet.",
-        "title": "Sidofältsnavigering"
-      },
-      "wine": "Hantera eller ladda ner en ny version av Wine/Proton/GPTK för att köra Windows-spel på Linux eller macOS."
-    },
-    "skip": "Hoppa över",
-    "startTour": "Starta rundtur"
-  },
   "analyticsModal": {
     "disable": "Inaktivera",
     "enable": "Aktivera",

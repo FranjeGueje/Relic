@@ -1033,51 +1033,6 @@
     "title": "Kategóriák kezelése",
     "no-categories": "Még nincsenek kategóriák."
   },
-  "tour": {
-    "library": {
-      "addGame": "Idekattintással adhatod hozzá saját játékaidat vagy alkalmazásaidat a könyvtárhoz. Ez gyakorlatilag bármi lehet, még webcím is.",
-      "filters": "Szűrd a játékokat áruház, platform, kedvencek és továbbiak szerint, az alábbi lehetőségek használatával.",
-      "gameCard": "Kattints bal egérgombbal a játékkártyára, hogy a játék oldalára navigálj, lásd a részleteit és módosítsd annak beállításait, vagy kattints jobb egérgombbal a helyi menü megnyitásához.",
-      "welcome": {
-        "intro": "Üdvözöl a Heroic könyvtára! Itt láthatod a különböző áruházakból származó összes játékodat.",
-        "intro2": "Ha a könyvtár üres, akkor győződj meg arról, hogy bejelentkeztél-e a fiókjaidba a Fiókok kezelése oldalsáv-menüpont használatával, vagy add hozzá kézileg a saját játékait a fenti Játék hozzáadása gombbal.",
-        "title": "Üdvözöl a Heroic!",
-        "title2": "A könyvtár kezelése!"
-      },
-      "categories": "Szervezd kategóriákba a játékokat, hogy rendezett legyen.",
-      "end": {
-        "intro": "Ennyi! Élvezd a játékokat és érezd jól magadat!",
-        "title": "Élvezd a játékokat!"
-      },
-      "refresh": "Töltsd újra a könyvtárat az új játékok és frissítések kereséséhez.",
-      "search": "Használd a keresősávot a játékok kereséséhez.",
-      "sortInstalled": "Rendezd a játékokat telepítési állapot alapján.",
-      "sortOptions": "Kattints ide a játékok betűrend szerinti rendezéséhez.",
-      "viewToggle": "Válts a játékok rács- és listanézete között.",
-      "steamInstall": "Használja ezt a gombot a Steam windowsos verziójának telepítéséhez, és játsszon a windowsos játékaival Crossover, Wine vagy GPTK segítségével."
-    },
-    "next": "Következő",
-    "sidebar": {
-      "accessibility": "Érd el az akadálymentességi funkciókat az élményed testreszabásához.",
-      "accounts": "Kezeld az összekapcsolt áruházi fiókokat (Epic, GOG, Amazon), jelentkezz be vagy ki belőlük.",
-      "login": "Jelentkezz be a játékáruház-fiókodba, hogy hozzáférj a könyvtáradhoz.",
-      "quit": "Biztonságos kilépés az alkalmazásból.",
-      "settings": "Állítsd be a Heroic beállításait, a játékok alapértelmezéseit, tekintsd meg a naplókat, stb.",
-      "welcome": {
-        "title": "Oldalsáv-navigáció",
-        "intro": "Üdvözöl a Heroic! Az oldalsáv tartalmazza az összes navigációs lehetőséget a Heroic felfedezéséhez."
-      },
-      "wine": "Kezeld vagy töltsd le a Wine/Proton/GPTK új verzióját a Windowsos játékok Linuxon vagy macOS-en való futtatásához.",
-      "downloads": "Kövesd és kezeld a játékletöltéseket és -telepítéseket.",
-      "library": "Érd el egy helyen a különböző áruházakból származó játékkönyvtárát.",
-      "stores": "Böngéssz és vásárolj játékokat különböző áruházakban, köztük az Epicen, GOG-on vagy Amazonon.",
-      "version": "Nézd meg a Heroic jelenlegi verzióját, kattints rá a legutóbbi változásnapló megtekintéséhez és érd el ezt az útmutatót a súgó ikonra kattintva."
-    },
-    "skip": "Kihagyás",
-    "startTour": "Bemutató indítása",
-    "back": "Vissza",
-    "done": "Kész"
-  },
   "notification": {
     "steam": {
       "error": "A Steam telepítése sikertelen! Olvassa el figyelmesen az utasításokat, és próbálja újra!",

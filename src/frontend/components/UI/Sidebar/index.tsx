@@ -4,7 +4,6 @@ import CurrentDownload from './components/CurrentDownload'
 import SidebarLinks from './components/SidebarLinks'
 import './index.scss'
 import RelicVersion from './components/RelicVersion'
-import SidebarTour from './components/SidebarTour'
 import { DMQueueElement } from 'common/types'
 
 import RelicIcon from 'frontend/assets/relic-icon.svg?react'
@@ -150,7 +149,6 @@ export default React.memo(function Sidebar() {
       </div>
       <RelicVersion />
       <div className="resizer" onMouseDown={handleDragStart} />
-      <SidebarTour />
     </aside>
   )
 })

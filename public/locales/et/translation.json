@@ -1031,51 +1031,6 @@
     "noResults": "Praegused filtrid ei toonud tulemusi.",
     "noGames": "Teie varamu on tühi.<br /><br />Klikkige <4>siia,</4> et sisse logida oma Epicu, GOG.com või Amazoni kontodega. Siis ilmuvad teie mängud siia varamusse.<br /><br />Et kasutada mänge või rakendusi teistest allikatest, klikkige <br /> et need käsitsi lisada."
   },
-  "tour": {
-    "back": "Tagasi",
-    "done": "Valmis",
-    "library": {
-      "categories": "Organiseerige oma mängud kategooriatesse, et hoida asjad puhtana.",
-      "end": {
-        "intro": "Ongi kõik! Nautige oma mänge ja lõbutsege!",
-        "title": "Nautige oma mänge!"
-      },
-      "filters": "Filtreerige oma mänge poe, platvormi, lemmikute ja muu põhjal nende valikute abil.",
-      "refresh": "Värskendage oma varamut, et järele vaadata uute mängude või uuenduste saadavust.",
-      "search": "Kasutage otsingut, et otsida oma mänge.",
-      "sortInstalled": "Sorteeri mänge paigaldatuse põhjal.",
-      "sortOptions": "Klikkige siia, et sorteerida mänge tähestikulises järjekorras.",
-      "viewToggle": "Vali mängude jaoks ruudustiku või nimekirja vaade.",
-      "welcome": {
-        "intro": "Tere tulemast Heroicu varamusse! Siin võite näha kõiki oma mänge üle mitme erineva poe.",
-        "intro2": "Kui varamu on tühi, siis logige kindlasti oma kontodesse sisse vajutades \"kontode haldamise\" valikut küljeribal või lisage omaenda mänge vajutades \"lisa mäng\" nuppu üleval.",
-        "title": "Tere tulemast Heroicusse!",
-        "title2": "Varamu haldamine!"
-      },
-      "gameCard": "Tehke vasakklõps mängu kaardil, et minna mängu lehele, näha üksikasju ja muuta seadeid, või paremklõps, et avada menüü.",
-      "addGame": "Klikkige siia, et lisada oma mänge või rakendusi varamusse. Need võivad olla peaaegu mis iganes, isegi brauseri URLid.",
-      "steamInstall": "Kasutage seda nuppu, et paigaldada Steami Windowsi versioon ja mängida oma Windowsi mänge kasutades Crossoverit, Wine'i või GPTK-d."
-    },
-    "next": "Järgmine",
-    "sidebar": {
-      "accessibility": "Vaadake ligipääsetavuse seadeid, et oma kogemust kohendada.",
-      "version": "Kontrollige oma praegust Heroicu versiooni. Klikkige siia, et näha uusimaid muudatusi ja külastage seda tuuri läbi abiikooni.",
-      "stores": "Sirvige ja ostelge mängusid erinevates poodides, sealhulgas Epicus, GOG-is ja Amazonis.",
-      "quit": "Väljuge ohutult rakendusest.",
-      "login": "Logige sisse oma mängupoodide kontodele, et oma varamule ligi pääseda.",
-      "library": "Pääsege oma eri poodides olevatele mängude varamutele ligi ühest kohast.",
-      "downloads": "Jälgige ja hallake oma mängude allalaadimisi ja paigaldamisi.",
-      "welcome": {
-        "title": "Küljeribal navigeerimine",
-        "intro": "Tere tulemast Heroicusse! Sellelt küljeribalt leiate kõik valikud, et rakenduses ringi liikuda."
-      },
-      "settings": "Vaadake üle Heroicu ja mängude vaikimisi seaded, kontrollige logisid ja muud.",
-      "wine": "Hallake või laadige alla uus Wine/Proton/GPTK versioon, et käivitada Windowsi mänge Linuxil või macOS-il.",
-      "accounts": "Hallake oma ühendatud poekontosid (Epic, GOG, Amazon), logige nendega välja või sisse."
-    },
-    "skip": "Jäta vahele",
-    "startTour": "Alusta tuur"
-  },
   "notification": {
     "steam": {
       "error": "Steami paigaldamine ebaõnnestus! Palun lugege hoolikalt juhiseid ja proovige uuesti!",

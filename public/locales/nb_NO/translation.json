@@ -1025,51 +1025,6 @@
     "rename": "Omdøp \"{{name}}\"",
     "title": "Behandle kategorier"
   },
-  "tour": {
-    "back": "Tilbake",
-    "done": "Ferdig",
-    "library": {
-      "addGame": "Legg til dine egne spill eller apper til biblioteket ved å klikke her. De kan være hva som helst, til og med internett-lenker.",
-      "end": {
-        "title": "Nyt spillene dine!",
-        "intro": "Det var alt! Nyt spillene dine og ha det gøy!"
-      },
-      "filters": "Filtre spillene dine etter butikk, platform, favoritter og mere ved å bruke disse innstillingene.",
-      "categories": "Organiser spillene dine i kategorier for å holde ting ryddig.",
-      "refresh": "Oppdater biblioteket ditt for å se etter nye spill eller oppdateringer.",
-      "search": "Bruk søkefeltet til å søke etter spillene dine.",
-      "sortInstalled": "Sorter spill etter installasjons-status.",
-      "sortOptions": "Klikk her for å sortere spillene alfabetisk.",
-      "viewToggle": "Bytt mellom rutenett- og listevisning for spillene dine.",
-      "welcome": {
-        "intro": "Velkommen til Heroic biblioteket! Det er her du kan se alle spillene dine på tvers av forskjellige butikker.",
-        "intro2": "Hvis biblioteket er tomt, sørg for å logge på med kontoene dine ved å bruke «Administrer kontoer» i sidefeltet eller legg til dine egne spill ved å bruke «Legg til spill-knappen» ovenfor.",
-        "title": "Vekommen til Heroic!",
-        "title2": "Administrering av biblioteket!"
-      },
-      "gameCard": "Venstreklikk på spillkortet for å navigere til spillsiden og for å se detaljer og justere innstillinger eller Høyreklikk for å åpne kontekstmenyen.",
-      "steamInstall": "Bruk denne knappen for å installere Windows-versjonen av Steam og spill Windows-spillene dine gjennom Crossover, Wine eller GPTK."
-    },
-    "next": "Neste",
-    "sidebar": {
-      "accessibility": "Få tilgang til tilgjengelighetsfunksjoner for å tilpasse opplevelsen din.",
-      "accounts": "Administrer de tilkoblede butikk-kontoene dine (Epic, GOG, Amazon), logg ut eller logg på dem.",
-      "library": "Få tilgang til spillbiblioteket ditt fra ulike butikker på ett sted.",
-      "downloads": "Spor og administrer spillnedlastinger og installasjoner.",
-      "login": "Logg på spillbutikk-kontoene dine for å få tilgang til biblioteket ditt.",
-      "quit": "Avslutt applikasjonen trygt.",
-      "settings": "Konfigurer Heroics innstillinger, spillstandarder, sjekk logger og mer.",
-      "stores": "Bla gjennom og kjøp spill i flere butikker, inkludert Epic, GOG og Amazon.",
-      "version": "Sjekk din nåværende Heroic-versjon, klikk på den for å se siste endringslogg, og få tilgang til denne omvisningen fra hjelpeikonet.",
-      "welcome": {
-        "intro": "Velkommen til Heroic! Dette sidefeltet inneholder alle navigasjonsalternativene for å utforske appen.",
-        "title": "Sidefeltsnavigering"
-      },
-      "wine": "Administrer eller last ned ny versjon av Wine/Proton/GPTK for å kjøre Windows-spill på Linux eller macOS."
-    },
-    "startTour": "Start omvisning",
-    "skip": "Hopp over"
-  },
   "notification": {
     "steam": {
       "error": "Steam kunne ikke installeres! Les instruksjonene en gang til og prøv igjen!",

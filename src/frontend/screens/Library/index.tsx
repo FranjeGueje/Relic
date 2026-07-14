@@ -34,7 +34,6 @@ import { Category, PlatformsFilters, StoresFilters } from 'frontend/types'
 import { hasHelp } from 'frontend/hooks/hasHelp'
 import EmptyLibraryMessage from './components/EmptyLibrary'
 import CategoriesManager from './components/CategoriesManager'
-import LibraryTour from './components/LibraryTour'
 import AlphabetFilter from './components/AlphabetFilter'
 import { openInstallGameModal } from 'frontend/state/InstallGameModal'
 
@@ -722,7 +721,6 @@ export default React.memo(function Library(): JSX.Element {
       }}
     >
       <Header />
-      <LibraryTour />
 
       <div className="listing">
         <span id="top" />

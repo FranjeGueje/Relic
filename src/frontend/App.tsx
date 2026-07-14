@@ -18,7 +18,6 @@ import classNames from 'classnames'
 import { ThemeProvider, createTheme } from '@mui/material/styles'
 import LogFileUploadDialog from './components/UI/LogFileUploadDialog'
 import UploadedLogFilesList from './screens/Settings/sections/LogSettings/components/UploadedLogFilesList'
-import { TourProvider } from './state/TourContext'
 import { InstallGameWrapper } from './screens/Library/components/InstallModal'
 import { SettingsModalWrapper } from './screens/Settings/components/SettingsModal'
 import AnalyticsDialog from './screens/Settings/components/AnalyticsDialog'
@@ -86,7 +85,7 @@ function Root() {
             <Outlet />
           </main>
         ) : (
-          <TourProvider>
+          <>
             <OfflineMessage />
             <Sidebar />
             <main className="content">
@@ -107,7 +106,7 @@ function Root() {
             </div>
             {showOverlayControls && <WindowControls />}
             {experimentalFeatures.enableHelp && <Help items={help.items} />}
-          </TourProvider>
+          </>
         )}
       </ThemeProvider>
     </div>

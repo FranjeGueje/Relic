@@ -961,50 +961,6 @@
     "maximize": "",
     "restore": ""
   },
-  "tour": {
-    "back": "חזור",
-    "skip": "דלג",
-    "sidebar": {
-      "welcome": {
-        "title": "",
-        "intro": ""
-      },
-      "quit": "",
-      "library": "",
-      "accessibility": "",
-      "wine": "",
-      "login": "",
-      "settings": "",
-      "downloads": "",
-      "accounts": "",
-      "stores": "",
-      "version": ""
-    },
-    "library": {
-      "gameCard": "",
-      "welcome": {
-        "title": "",
-        "intro2": "",
-        "intro": "",
-        "title2": ""
-      },
-      "filters": "",
-      "search": "",
-      "refresh": "",
-      "end": {
-        "intro": "",
-        "title": ""
-      },
-      "viewToggle": "",
-      "categories": "",
-      "sortInstalled": "",
-      "sortOptions": "",
-      "addGame": ""
-    },
-    "next": "",
-    "startTour": "",
-    "done": ""
-  },
   "analyticsModal": {
     "disable": "בטל",
     "enable": "הפעל",

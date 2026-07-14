@@ -1064,50 +1064,6 @@
     "title": "Send Anonyme Analysedata"
   },
   "amazon-luna": "Amazon Luna",
-  "tour": {
-    "back": "Tilbage",
-    "done": "Færdig",
-    "library": {
-      "addGame": "Føj dine egne spil eller apps til biblioteket ved at klikke her. Det kan være stort set alt, selv browser-URL'er.",
-      "categories": "Organisér dine spil i kategorier for at holde orden.",
-      "end": {
-        "intro": "Det var det! Nyd dine spil og hav det sjovt!",
-        "title": "Nyd dine spil!"
-      },
-      "filters": "Filtrér dine spil efter butik, platform, favoritter med mere ved hjælp af disse indstillinger.",
-      "gameCard": "Venstreklik på spillet for at navigere til spilsiden for at se detaljer og justere indstillinger, eller højreklik for at åbne kontekstmenuen.",
-      "refresh": "Opdatér dit bibliotek for at tjekke, om der er nye spil eller opdateringer.",
-      "search": "Brug søgefeltet til at søge efter dine spil.",
-      "sortInstalled": "Sortér spil efter installationsstatus.",
-      "sortOptions": "Klik her for at sortere spil alfabetisk.",
-      "viewToggle": "Skift mellem gitter- og listevisning for dine spil.",
-      "welcome": {
-        "intro": "Velkommen til Heroic-biblioteket! Her kan du se alle dine spil fra de forskellige butikker.",
-        "intro2": "Hvis biblioteket er tomt, skal du sørge for at logge ind med dine konti ved hjælp af \"Administrér konti\" i sidepanelet eller tilføje dine egne spil ved hjælp af knappen \"Tilføj spil\" ovenfor.",
-        "title": "Velkommen til Heroic!",
-        "title2": "Administration af biblioteket!"
-      }
-    },
-    "next": "Næste",
-    "sidebar": {
-      "accessibility": "Gå til tilgængelighedsfunktioner for at tilpasse din oplevelse.",
-      "accounts": "Administrér dine tilknyttede butikskonti (Epic, GOG, Amazon), log ud eller log ind på dem.",
-      "downloads": "Spor og administrér dine spil-downloads og installationer.",
-      "library": "Få adgang til dit spilbibliotek fra forskellige butikker på ét sted.",
-      "login": "Log ind på dine spilbutikskonti for at få adgang til dit bibliotek.",
-      "quit": "Forlad applikationen sikkert.",
-      "settings": "Konfigurér Heroics indstillinger, standardindstillinger for spil, tjek logfiler med mere.",
-      "stores": "Gennemse og køb spil i forskellige butikker, herunder Epic, GOG og Amazon.",
-      "version": "Tjek din nuværende Heroic-version, klik på den for at se den seneste changelog, og få adgang til denne rundvisning fra hjælp-ikonet.",
-      "welcome": {
-        "intro": "Velkommen til Heroic! Dette sidepanel indeholder alle navigationsmulighederne til at udforske appen.",
-        "title": "Navigationssidepanel"
-      },
-      "wine": "Administrér eller download en ny version af Wine/Proton/GPTK for at køre Windows-spil på Linux eller macOS."
-    },
-    "skip": "Spring over",
-    "startTour": "Start rundvisning"
-  },
   "wineExplanation": {
     "proton-ge": "GE-Proton er en Proton-variant skabt af Glorious Eggroll. Den er ment til brug sammen med umu-launcheren (standard i Heroic).",
     "gpt": "",

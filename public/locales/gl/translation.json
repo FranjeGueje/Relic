@@ -992,51 +992,6 @@
     "add-new-category": "Engadir unha Nova Categoría",
     "delete-question": "Ao continuar eliminarase permanentemente esta categoría e desasignarase de todos os xogos. Queres continuar?"
   },
-  "tour": {
-    "back": "Volver",
-    "library": {
-      "search": "Usa a barra de buscas para atopar os teus xogos.",
-      "addGame": "Engade os teus propios xogos ou aplicacións á biblioteca facendo clic aquí. Poden ser basicamente calquera cousa, incluso URLs web.",
-      "categories": "Organiza os teus xogos en categorías para manter as cousas ordenadas.",
-      "end": {
-        "intro": "Iso é todo! Desfruta dos teus xogos e divírtete!",
-        "title": "Desfruta dos teus xogos!"
-      },
-      "filters": "Filtra os xogos pola tenda, plataforma, favoritos e máis usando estas opcións.",
-      "gameCard": "Fai click esquerdo na tarxeta do xogo para navegar á páxina do xogo e ver detalles e axustar a configuración ou fai click dereito para abrir o menú contextual.",
-      "refresh": "Refresca a biblioteca para revisar novos xogos ou actualizacións.",
-      "sortInstalled": "Lista os xogos polo seu status de instalación.",
-      "sortOptions": "Fai clic aquí para ordenar os xogos alfabeticamente.",
-      "steamInstall": "Usa este botón para instalar a versión de Windows de Steam e xogar aos teus xogos de Windows usando Crossover, Wine ou GPTK.",
-      "viewToggle": "Cambia entre as vistas de cuadrícula e de vista para os xogos.",
-      "welcome": {
-        "intro": "Benvido/a á biblioteca de Heroic! Aquí é onde podes ver todos os teus xogos das diferentes tendas.",
-        "intro2": "Se a biblioteca está baleira, asegúrate de iniciar sesión coas túas contas usando o botón \"Xestionar contas\" na barra lateral ou engade os teus propios xogos usando o botón de Engadir Xogo enriba.",
-        "title": "Benvido/a a Heroic!",
-        "title2": "Xestionando a biblioteca!"
-      }
-    },
-    "done": "Feito",
-    "next": "Seguinte",
-    "sidebar": {
-      "accessibility": "Accede a funcións de accesibilidade para personalizar a túa experiencia.",
-      "accounts": "Manexa as túas contas conectadas das tendas (Epic, GOG, Amazon), sae da sesión ou inicia sesión en elas.",
-      "downloads": "Segue e manexa as descargas e instalacións dos teus xogos.",
-      "library": "Accede á túa biblioteca de xogos de diferentes tendas nun mesmo lugar.",
-      "login": "Inicia sesión nas túas contas das tendas para acceder á túa biblioteca.",
-      "quit": "Pecha a aplicación de forma segura.",
-      "settings": "Configura os axustes de Heroic, os axustes predeterminados dos xogos, comproba rexistros, e máis.",
-      "stores": "Navega e compra xogos en diferentes tendas incluíndo Epic, GOG e Amazon.",
-      "version": "Comproba a túa versión actual de Heroic, fai clic para ver o último rexistro de cambios, e accede a este tour desde o botón de axuda.",
-      "welcome": {
-        "intro": "Benvido/a a Heroic! Esta barra lateral contén todas as opcións de navegación para explorar a app.",
-        "title": "Navegación da barra lateral"
-      },
-      "wine": "Manexa ou descarga novas versións de Wine/Proton/GPTK para executar xogos de Windows en Linux ou macOS."
-    },
-    "skip": "Saltar",
-    "startTour": "Comezar tour"
-  },
   "window": {
     "close": "Pechar",
     "maximize": "Maximizar a ventá",

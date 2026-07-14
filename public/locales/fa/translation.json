@@ -984,50 +984,6 @@
     "new-category": "",
     "add-new-category": ""
   },
-  "tour": {
-    "back": "بازگشت",
-    "sidebar": {
-      "welcome": {
-        "title": "",
-        "intro": ""
-      },
-      "quit": "",
-      "library": "",
-      "accessibility": "",
-      "wine": "",
-      "login": "",
-      "settings": "",
-      "downloads": "",
-      "accounts": "",
-      "stores": "",
-      "version": ""
-    },
-    "library": {
-      "gameCard": "",
-      "welcome": {
-        "title": "",
-        "intro2": "",
-        "intro": "",
-        "title2": ""
-      },
-      "filters": "",
-      "search": "",
-      "refresh": "",
-      "end": {
-        "intro": "",
-        "title": ""
-      },
-      "viewToggle": "",
-      "categories": "",
-      "sortInstalled": "",
-      "sortOptions": "",
-      "addGame": ""
-    },
-    "next": "",
-    "startTour": "",
-    "skip": "",
-    "done": ""
-  },
   "analyticsModal": {
     "disable": "غیرفعال سازی",
     "enable": "فعال سازی",

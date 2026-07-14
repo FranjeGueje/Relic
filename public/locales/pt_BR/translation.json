@@ -1036,51 +1036,6 @@
     "description": "Parece Que o domínio track.adtraction.com foi incapaz de carregar ou está bloqueado. Com Adtraction, qualquer compra feita na loja GOG irá apoiar Heroic financialmente. Considere remover o bloqueio se deseja contribuir.",
     "title": "Adtraction está bloqueado"
   },
-  "tour": {
-    "back": "Voltar",
-    "library": {
-      "welcome": {
-        "title": "Bem-vindo ao Heroic!",
-        "title2": "Gerenciando a biblioteca!",
-        "intro2": "Se a biblioteca estiver vazia, tenha certeza de fazer o login com as suas contas usando a função de gerenciar contas na barra lateral ou adicione os seus próprios jogos usando o botão \"adicionar jogo\" acima.",
-        "intro": "Bem-vindo a biblioteca do Heroic! Aqui você verá todos os seus jogos em diferentes lojas."
-      },
-      "addGame": "Adicione os seus próprios jogos ou aplicativos à biblioteca ao clicar aqui. Eles podem ser qualquer coisa, inclusive URLS de navegador.",
-      "categories": "Organize os seus jogos em categorias para manter as coisas organizadas.",
-      "end": {
-        "intro": "É isso! Aproveite os seus jogos e se divirta!",
-        "title": "Aproveite os seus jogos!"
-      },
-      "filters": "Filtre os seus jogos por loja, plataforma, favoritos e mais usando estas opções.",
-      "gameCard": "Clique com o botão esquerdo do mouse no cartão do jogo para navegar até a página do jogo para ver detalhes e ajustar configurações, ou clique com o botão direito do mouse para abrir o menu de contexto.",
-      "refresh": "Atualize sua biblioteca para verificar se há novos jogos ou atualizações.",
-      "search": "Use a barra de pesquisa para procurar seus jogos.",
-      "sortInstalled": "Classificar jogos por status de instalação.",
-      "sortOptions": "Clique aqui para classificar os jogos de maneira alfabética.",
-      "viewToggle": "Alternar entre a visualização em grade e em lista para seus jogos.",
-      "steamInstall": "Use esse botão para instalar a versão de Windows com a Steam e jogue os seus jogos de Windows usando o Crossover, Wine ou GPTK."
-    },
-    "sidebar": {
-      "stores": "Navegue e faça a compra de jogos em diferentes lojas incluindo Epic, GOG, e Amazon.",
-      "quit": "Sair do aplicativo de maneira segura.",
-      "accessibility": "Acesse os recursos de acessibilidade para customizar a sua experiência.",
-      "downloads": "Rastreie e gerencie os downloads e as instalações de seus jogos.",
-      "accounts": "Gerencie as suas contas conectadas de lojas (Epic, GOG, Amazon), fazer o login ou sair de uma das contas.",
-      "library": "Acesse a sua biblioteca de jogos de diferentes lojas em um único lugar.",
-      "login": "Faça o login em suas contas de lojas de jogos para acessar a sua biblioteca.",
-      "settings": "Ajuste as configurações do Heroic, padrões dos jogos, verifique logs e mais.",
-      "version": "Verifique a sua versão atual do Heroic, clique nela para ver o último registro de alterações, e acesse este tour através do ícone de ajuda.",
-      "welcome": {
-        "intro": "Bem-vindo ao Heroic! Esta barra lateral contém todas as opções de navegação para explorar o aplicativo.",
-        "title": "Navegação da barra lateral"
-      },
-      "wine": "Gerencie ou baixe novas versões do Wine/Proton/GPTK para rodar jogos do Windows no Linux ou macOS."
-    },
-    "next": "Próximo",
-    "done": "Pronto",
-    "skip": "Pular",
-    "startTour": "Iniciar o tour"
-  },
   "notification": {
     "steam": {
       "error": "Instalação do Steam falhou. Por favor, leia as instruções cuidadosamente e tente novamente!",

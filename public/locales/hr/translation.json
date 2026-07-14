@@ -975,50 +975,6 @@
     "new-category": "",
     "add-new-category": ""
   },
-  "tour": {
-    "back": "Back",
-    "skip": "Preskoči",
-    "sidebar": {
-      "welcome": {
-        "title": "",
-        "intro": ""
-      },
-      "quit": "",
-      "library": "",
-      "accessibility": "",
-      "wine": "",
-      "login": "",
-      "settings": "",
-      "downloads": "",
-      "accounts": "",
-      "stores": "",
-      "version": ""
-    },
-    "library": {
-      "gameCard": "",
-      "welcome": {
-        "title": "",
-        "intro2": "",
-        "intro": "",
-        "title2": ""
-      },
-      "filters": "",
-      "search": "",
-      "refresh": "",
-      "end": {
-        "intro": "",
-        "title": ""
-      },
-      "viewToggle": "",
-      "categories": "",
-      "sortInstalled": "",
-      "sortOptions": "",
-      "addGame": ""
-    },
-    "next": "",
-    "startTour": "",
-    "done": ""
-  },
   "adtraction-locked": {
     "dont-show-again": "Ne prikazuj ovo upozorenje opet",
     "title": "Adtraction je blokiran",

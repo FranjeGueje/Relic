@@ -1028,51 +1028,6 @@
     "description": "El domini track.adtraction.com no es pot carregar o està blocat. Amb adtraction, qualsevol compra que realitzis a la botiga GOG ajuda econòmicament l'Heroic. Considera si vols treure el bloqueig per a col·laborar-hi.",
     "title": "Adtraction està blocat"
   },
-  "tour": {
-    "back": "Enrere",
-    "done": "Fet",
-    "library": {
-      "end": {
-        "intro": "Ja està! Gaudiu dels jocs i divertiu-vos!",
-        "title": "Divertiu-vos amb els jocs!"
-      },
-      "filters": "Filtra els jocs per botiga, plataforma, preferits i altres opcions.",
-      "refresh": "Actualitza la biblioteca per a afegir jocs nous i les seves actualitzacions.",
-      "search": "Fes servir la barra de cerca per a cercar jocs.",
-      "sortOptions": "Fes clic aquí per a ordenar els jocs alfabèticament.",
-      "welcome": {
-        "intro": "Et donem la benvinguda a la biblioteca de l'Heroic! Aquí és on pots veure tots els teus jocs de les diferents botigues.",
-        "title": "Us donem la benvinguda a l'Heroic!",
-        "title2": "Gestionant la biblioteca!",
-        "intro2": "Si la biblioteca està buida, inicia la sessió als teus comptes amb el Gestor de comptes de la barra lateral, o afegeix els teus jocs amb el botó «Afegeix un joc» de més amunt."
-      },
-      "sortInstalled": "Ordena els jocs per l'estat d'instal·lació.",
-      "viewToggle": "Commuta entre la vista de llista o graella.",
-      "addGame": "Pots afegir els teus jocs o aplicacions propis a la biblioteca si fas clic aquí. Poden ser de qualsevol classe, fins i tot adreces URL.",
-      "categories": "Organitza els teus jocs en categories per a mantenir-ho tot ben ordenat.",
-      "gameCard": "Fes clic amb el botó esquerre a la carta del joc per a anar a la seva pàgina, veure'n els detalls i ajustar-ne la configuració. Si hi fas clic amb el botó dret, s'obrirà el menú contextual.",
-      "steamInstall": "Utilitza aquest botó per a instal·lar la versió del Steam per al Windows i jugar als teus jocs de Windows fent servir el Crossover, Wine o GPTK."
-    },
-    "next": "Següent",
-    "sidebar": {
-      "accessibility": "Accediu a funcions d'accessibilitat per a personalitzar l'experiència.",
-      "accounts": "Gestiona els diversos comptes de botigues (Epic, GOG, Amazon) i inicia o tanca'n la sessió.",
-      "library": "Accediu a la vostra biblioteca de jocs de botigues diferents des d'un sol lloc.",
-      "login": "Inicia la sessió als comptes de les teves botigues de jocs per a accedir a la biblioteca de jocs.",
-      "downloads": "Gestiona i comprova les baixades i instal·lacions de jocs.",
-      "quit": "Sortiu de l'aplicació de manera segura.",
-      "settings": "Configura les opcions de l'Heroic, les preferències dels jocs i comprova els registres, entre d'altres.",
-      "version": "Comprova la versió actual de l'Heroic, fes-hi clic per a veure'n el registre de canvis i accedeix a aquesta visita des del botó d'ajuda.",
-      "welcome": {
-        "title": "Barra lateral de navegació",
-        "intro": "Us donem la benvinguda a l'Heroic! Aquesta barra lateral conté totes les opcions de navegació per a explorar l'aplicació."
-      },
-      "wine": "Gestiona o baixa les versions noves del Wine/Proton/GPTK per a executar jocs de Windows en màquines Linux o macOS.",
-      "stores": "Cerca i compra jocs de diferents botigues com ara Epic, GOG o Amazon."
-    },
-    "skip": "Salta",
-    "startTour": "Inicia la guia"
-  },
   "notification": {
     "steam": {
       "error": "La instal·lació del Steam ha fallat. Llegeix amb compte les instruccions i tornar a provar-ho.",

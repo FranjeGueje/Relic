@@ -997,50 +997,6 @@
     "description": "",
     "title": ""
   },
-  "tour": {
-    "back": "返回",
-    "sidebar": {
-      "welcome": {
-        "title": "",
-        "intro": ""
-      },
-      "quit": "",
-      "library": "",
-      "accessibility": "",
-      "wine": "",
-      "login": "",
-      "settings": "",
-      "downloads": "",
-      "accounts": "",
-      "stores": "",
-      "version": ""
-    },
-    "library": {
-      "gameCard": "",
-      "welcome": {
-        "title": "",
-        "intro2": "",
-        "intro": "",
-        "title2": ""
-      },
-      "filters": "",
-      "search": "",
-      "refresh": "",
-      "end": {
-        "intro": "",
-        "title": ""
-      },
-      "viewToggle": "",
-      "categories": "",
-      "sortInstalled": "",
-      "sortOptions": "",
-      "addGame": ""
-    },
-    "next": "",
-    "startTour": "",
-    "skip": "",
-    "done": ""
-  },
   "analyticsModal": {
     "disable": "停用",
     "enable": "啟用",

@@ -835,50 +835,6 @@
   },
   "progress": "მიმდინარეობა",
   "stores": "მაღაზიები",
-  "tour": {
-    "back": "უკან",
-    "done": "მზადაა",
-    "next": "შემდეგი",
-    "skip": "გამოტოვება",
-    "sidebar": {
-      "welcome": {
-        "title": "",
-        "intro": ""
-      },
-      "quit": "",
-      "library": "",
-      "accessibility": "",
-      "wine": "",
-      "login": "",
-      "settings": "",
-      "downloads": "",
-      "accounts": "",
-      "stores": "",
-      "version": ""
-    },
-    "library": {
-      "gameCard": "",
-      "welcome": {
-        "title": "",
-        "intro2": "",
-        "intro": "",
-        "title2": ""
-      },
-      "filters": "",
-      "search": "",
-      "refresh": "",
-      "end": {
-        "intro": "",
-        "title": ""
-      },
-      "viewToggle": "",
-      "categories": "",
-      "sortInstalled": "",
-      "sortOptions": "",
-      "addGame": ""
-    },
-    "startTour": ""
-  },
   "tray": {
     "about": "შესახებ",
     "quit": "გასვლა",
