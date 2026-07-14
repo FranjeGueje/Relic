@@ -537,7 +537,6 @@ export default class GOGGame implements Game {
       success: launchPrepSuccess,
       failureReason: launchPrepFailReason,
       rpcClient,
-      mangoHudCommand,
       gameScopeCommand,
       gameModeBin,
       steamRuntime
@@ -571,7 +570,6 @@ export default class GOGGame implements Game {
 
     const wrappers = setupWrappers(
       gameSettings,
-      mangoHudCommand,
       gameModeBin,
       gameScopeCommand,
       steamRuntime?.length ? [...steamRuntime] : undefined

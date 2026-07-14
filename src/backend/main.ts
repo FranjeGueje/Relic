@@ -475,7 +475,7 @@ addOneTimeListener('frontendReady', () => {
       title: i18next.t('box.warning.snap.title', 'Relic is running as a Snap'),
       message: i18next.t('box.warning.snap.message', {
         defaultValue:
-          'Some features are not available in the Snap version of the app for now and we are trying to fix it.{{newLine}}Current limitations are: {{newLine}}Relic will not be able to find Proton from Steam or Wine from Lutris.{{newLine}}{{newLine}}Gamescope, GameMode and MangoHud will also not work since Relic cannot have access to them.{{newLine}}{{newLine}}To have access to this feature please install Relic as a Flatpak, DEB or from the AppImage.',
+          'Some features are not available in the Snap version of the app for now and we are trying to fix it.{{newLine}}Current limitations are: {{newLine}}Relic will not be able to find Proton from Steam or Wine from Lutris.{{newLine}}{{newLine}}Gamescope and GameMode will also not work since Relic cannot have access to them.{{newLine}}{{newLine}}To have access to this feature please install Relic as a Flatpak, DEB or from the AppImage.',
         newLine: '\n'
       }),
       checkboxLabel: i18next.t('box.warning.snap.checkbox', {

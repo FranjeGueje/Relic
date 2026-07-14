@@ -889,7 +889,6 @@ export default class LegendaryGame implements Game {
       success: launchPrepSuccess,
       failureReason: launchPrepFailReason,
       rpcClient,
-      mangoHudCommand,
       gameModeBin,
       gameScopeCommand,
       steamRuntime,
@@ -941,7 +940,6 @@ export default class LegendaryGame implements Game {
 
     const wrappers = setupWrappers(
       gameSettings,
-      mangoHudCommand,
       gameModeBin,
       gameScopeCommand,
       steamRuntime?.length ? [...steamRuntime] : undefined

@@ -601,7 +601,6 @@ export default class ZoomGame implements Game {
     const {
       success: launchPrepSuccess,
       failureReason: launchPrepFailReason,
-      mangoHudCommand,
       gameScopeCommand,
       gameModeBin,
       steamRuntime
@@ -627,7 +626,6 @@ export default class ZoomGame implements Game {
 
     const wrappers = setupWrappers(
       gameSettings,
-      mangoHudCommand,
       gameModeBin,
       gameScopeCommand,
       steamRuntime?.length ? [...steamRuntime] : undefined

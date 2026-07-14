@@ -156,7 +156,6 @@ export async function launchGame(
       success: launchPrepSuccess,
       failureReason: launchPrepFailReason,
       rpcClient,
-      mangoHudCommand,
       gameScopeCommand,
       gameModeBin,
       steamRuntime
@@ -168,7 +167,6 @@ export async function launchGame(
 
     const wrappers = setupWrappers(
       gameSettings,
-      mangoHudCommand,
       gameModeBin,
       gameScopeCommand,
       steamRuntime?.length ? [...steamRuntime] : undefined

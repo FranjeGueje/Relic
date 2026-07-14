@@ -307,7 +307,6 @@ export default class NileGameManager implements Game {
       success: launchPrepSuccess,
       failureReason: launchPrepFailReason,
       rpcClient,
-      mangoHudCommand,
       gameModeBin,
       gameScopeCommand,
       steamRuntime
@@ -342,7 +341,6 @@ export default class NileGameManager implements Game {
 
     const wrappers = setupWrappers(
       gameSettings,
-      mangoHudCommand,
       gameModeBin,
       gameScopeCommand,
       steamRuntime?.length ? [...steamRuntime] : undefined

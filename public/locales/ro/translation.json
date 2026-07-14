@@ -1,1254 +1,1252 @@
 {
-    "accessibility": {
-        "actions_font_family_no_default": "Actions Font Family (Default: ",
-        "all_tiles_in_color": "Afișați toate titlurile de joc în culori",
-        "content_font_family_no_default": "Content Font Family (Default: ",
-        "fonts": "Fonturi",
-        "title": "Accesibilitate",
-        "zoom": "Zoom",
-        "actions_font_family_default": "Actions Font Family (Default:{{fontFamily}})",
-        "content_font_family_default": "Familia fontului de conținut (Implicit:{{fontFamily}})",
-        "disable_animations": "Dezactivează animațiile UI",
-        "disable_dialog_backdrop_close": "Dezactivează închiderea dialogurilor făcând clic în exterior",
-        "disable_smooth_scrolling": "Dezactivează derulare lină",
-        "titles_always_visible": "Afișează întotdeauna titlurile în bibliotecă"
+  "accessibility": {
+    "actions_font_family_no_default": "Actions Font Family (Default: ",
+    "all_tiles_in_color": "Afișați toate titlurile de joc în culori",
+    "content_font_family_no_default": "Content Font Family (Default: ",
+    "fonts": "Fonturi",
+    "title": "Accesibilitate",
+    "zoom": "Zoom",
+    "actions_font_family_default": "Actions Font Family (Default:{{fontFamily}})",
+    "content_font_family_default": "Familia fontului de conținut (Implicit:{{fontFamily}})",
+    "disable_animations": "Dezactivează animațiile UI",
+    "disable_dialog_backdrop_close": "Dezactivează închiderea dialogurilor făcând clic în exterior",
+    "disable_smooth_scrolling": "Dezactivează derulare lină",
+    "titles_always_visible": "Afișează întotdeauna titlurile în bibliotecă"
+  },
+  "add_game": "Adaugă joc",
+  "All": "Toate",
+  "anticheat": {
+    "anticheats": "Anti-trișare",
+    "may_not_work": "Este posibil să nu funcționeze din cauza suportului anticheat refuzat sau rupt.",
+    "reference": "Referinţă",
+    "source": "Sursă",
+    "status": "Stare",
+    "title": "Acest joc include software anti-trișare",
+    "multiplayer_may_not_work": "Funcțiile multiplayer s-ar putea să nu funcționeze din cauza suportului anti-trișare refuzat sau defect."
+  },
+  "box": {
+    "cache-cleared": {
+      "message": "Cache Heroic golit.",
+      "title": "Cache golit"
     },
-    "add_game": "Adaugă joc",
-    "All": "Toate",
-    "anticheat": {
-        "anticheats": "Anti-trișare",
-        "may_not_work": "Este posibil să nu funcționeze din cauza suportului anticheat refuzat sau rupt.",
-        "reference": "Referinţă",
-        "source": "Sursă",
-        "status": "Stare",
-        "title": "Acest joc include software anti-trișare",
-        "multiplayer_may_not_work": "Funcțiile multiplayer s-ar putea să nu funcționeze din cauza suportului anti-trișare refuzat sau defect."
-    },
-    "box": {
-        "cache-cleared": {
-            "message": "Cache Heroic golit.",
-            "title": "Cache golit"
-        },
-        "choose": "Alege",
-        "choose-egs-prefix": "Alegeți Prefix unde este instalat EGS",
-        "choose-gogdl-binary": "Selectați GOGDL Binary (trebuie repornit)",
-        "choose-legendary-binary": "Selectați Legendary Binary",
-        "customWine": "Selectați binarul Wine sau Proton",
-        "default-install-path": "Alegeți Calea de instalare implicită",
-        "default-steam-path": "Calea aburului.",
-        "downloadNow": "Descarcă acum",
-        "error": {
-            "add": {
-                "steam": {
-                    "body": "Adăugarea {{game}} la Steam a eșuat cu:{{newLine}} {{error}}",
-                    "title": "Eroare de adăugare"
-                }
-            },
-            "credentials": {
-                "message": "Acreditările dvs. au expirat, vă rugăm să vă deconectați și să vă conectați din nou."
-            },
-            "cx-bottle-not-found": {
-                "message": "Sticla CrossOver „{{bottle_name}}” nu există, nu se poate lansa!",
-                "title": "Sticla CrossOver nu a fost găsită"
-            },
-            "diskspace": {
-                "message": "Nu este suficient spațiu disponibil pe disc",
-                "title": "Fără Spațiu"
-            },
-            "dxvk": {
-                "message": "Eroare la instalarea DXVK/VKD3D! Vă rugăm să vă verificați conexiunea!",
-                "title": "Eroare DXVK/VKD3D"
-            },
-            "folder-not-found": {
-                "title": "Dosarul jocului pare să fie șters, doriți să eliminați jocul din lista instalată?"
-            },
-            "generic": {
-                "message": "Mesaj de eroare generic",
-                "title": "Eroare Necunoscută"
-            },
-            "launchAborted": "Launch aborted",
-            "title": "Eroare",
-            "uncaught-exception": {
-                "message": "A uncaught exception occured:{{newLine}}{{error}}{{newLine}}{{newLine}} Report the exception on our Github repository.",
-                "title": "A avut loc o excepție neprinsă!"
-            },
-            "update": {
-                "message": "A apărut o eroare la actualizare, vă rugăm să verificați jurnalele sau încercați din nou mai târziu!",
-                "title": "Eroare de actualizare"
-            },
-            "wine-not-found": {
-                "invalid": "The selected wine version was not found. Install it or select a different version in the game's settings{{newline}}Version: {{version}}{{newline}}Path: {{path}}",
-                "message": "Nicio versiune Wine selectată. Verificați setările jocului!",
-                "title": "Wine nu a fost găsit"
-            },
-            "winetricks": {
-                "message": "Winetricks a returnat următoarea eroare în timpul execuției:{{newLine}}{{error}}",
-                "title": "Eroare Winetricks"
-            },
-            "moving": "Eroare la mutarea jocului {{error}}",
-            "ubisoft-connect": {
-                "title": "Ubisoft Connect",
-                "message": "Instalarea Ubisoft Connect în prefixul jocului a eșuat. Verificați pagina noastră wiki la https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher/wiki/How-to-install-Ubisoft-Connect-on-Linux-and-Mac pentru a o instala manual."
-            },
-            "legendary": {
-                "generic": "A avut loc o eroare! Încercați să vă deconectați și să vă autentificați pe contul dvs. Epic. {{newline}} {{error}}"
-            },
-            "executableNotFound": "Executabilul nu a fost găsit",
-            "executableNotFoundMessage": "Heroic nu a putut găsi un executabil pentru acest joc. Te rugăm să îl setezi manual în setările jocului.",
-            "dxmt": {
-                "message": "Eroare la descărcarea DXMT! Verificați conexiunea!",
-                "title": "Eroare de descărcare DXMT"
-            }
-        },
-        "info": {
-            "update": {
-                "changelog": "Deschideți jurnalul de modificări",
-                "detail": "Doriți să descărcați actualizarea în fundal?",
-                "message": "Există o nouă versiune disponibilă!",
-                "message-finished": "Doriți să reporniți Heroic acum?",
-                "title": "Lansatorul de jocuri eroice",
-                "title-finished": "Actualizare Finalizată",
-                "detailNoAutoupdate": "Update-urile automate nu sunt suportate pentru acest format de pachet. Te rugăm să folosesti managerul tău de pachete pentru acest update."
-            }
-        },
-        "no": "NU",
-        "ok": "O.K",
-        "protocol": {
-            "install": {
-                "not_installed": "Nu este instalat, doriți să îl instalați?"
-            }
-        },
-        "quit": {
-            "message": "Sunt operațiuni în așteptare, ești sigur?",
-            "title": "Ieșire"
-        },
-        "reset-heroic": {
-            "question": {
-                "message": "Sigur doriți să resetați Heroic? Acest lucru va elimina toate setările și stocarea în cache, dar nu va elimina jocurile dvs. instalate sau acreditările Epic. Versiunile portabile (AppImage, WinPortable, ...) ale Heroic trebuiesc restartate manual după aceea.",
-                "title": "Resetează eroic"
-            }
-        },
-        "runexe": {
-            "title": "Selectează EXE-ul pentru rulare"
-        },
-        "select": {
-            "button": "Selectare",
-            "exe": "Selectați EXE",
-            "script": "Alege script ..."
-        },
-        "shortcuts": {
-            "message": "Scurtăturile au fost create pe Desktop și pe meniul Start",
-            "message-mac": "Shortcuts were created on the Applications folder",
-            "message-remove": "Comenzile rapide au fost eliminate din Desktop și din meniul Start",
-            "message-remove-mac": "Shortcuts were removed from the Applications folder",
-            "title": "Scurtături"
-        },
-        "sync": {
-            "button": "Alege",
-            "error": "Cale Nevalidă",
-            "title": "Alegeți directorul de salvare"
-        },
-        "vcruntime": {
-            "install": {
-                "message": "Au fost deschise legăturile de descărcare pentru Visual C++ Runtimes. Vă rugăm să instalați ambele versiuni x86 și x64."
-            },
-            "notfound": {
-                "message": "Runtimele Microsoft Visual C++ nu sunt instalate, care sunt cerute de unele jocuri",
-                "title": "VCRuntime nu este instalat"
-            }
-        },
-        "warning": {
-            "epic": {
-                "import": "Serverele Epic au o întrerupere majoră în acest moment, jocul nu poate fi importat!",
-                "install": "Serverele Epic au o întrerupere majoră în acest moment, jocul nu poate fi instalat!",
-                "update": "Serverele Epic au o întrerupere majoră în acest moment, jocul nu poate fi actualizat!"
-            },
-            "title": "Avertizare",
-            "wine-change": {
-                "message": "Nu am putut găsi versiunea de vin selectată pentru a lansa acest titlu ({{selectedWine}}). {{newline}} Am găsit altul, doriți să continuați lansarea folosind {{foundWine}}?",
-                "title": "Vinul nu a fost găsit!"
-            },
-            "sideload": {
-                "confirmExit": {
-                    "title": "Sigur doriți să vă deconectați?",
-                    "message": "Orice progres nesalvat ar putea fi pierdut"
-                }
-            },
-            "rosetta": {
-                "message": "Heroic are nevoie de Rosetta pentru a rula corect pe macOS cu chip-urile Apple Silicon. Te rugăm să-l reinstalezi din terminalul macOS folosing următoarea comandă : \"softwareupdate --install-rosetta\"  și repornește Heroic. ",
-                "title": "Rosetta nu a fost găsit"
-            },
-            "snap": {
-                "checkbox": "Nu mai arăta acest mesaj",
-                "message": "Unele funcții nu sunt disponibile deocamdată în versiunea Snap a aplicației și încercăm sa o remediem.{{newLine}}Limitările curente sunt:{{newLine}}Heroic nu va putea localiza Proton de la Steam sau Wine de la Lutris.{{newLine}}{{newLine}}Gamescope, Gamemode și MangoHud, de asemenea, nu vor funcționa din moment ce Heroic nu are acces la acestea.{{newLine}}{{newLine}}Pentru a obține acces la această funcție vă rugăm instalați Heroic sub forma Flatpak, DEB sau din AppImage.",
-                "title": "Heroic rulează ca și Snap"
-            }
-        },
-        "wineprefix": "Selectați folderul WinePrefix",
-        "yes": "DA",
-        "dontShowAgain": "Nu mai arăta",
-        "choose-nile-binary": "Selectați binarul Nil",
-        "update": "Update",
-        "changelog": "Jurnalul modificărilor",
-        "postpone": "Amânare"
-    },
-    "button": {
-        "cancel": "Cancel",
-        "go_to_library": "Accesați Bibliotecă",
-        "login": "Autentificare",
-        "sync": "Sincronizează",
-        "syncing": "Sincronizare",
-        "unsync": "Desincronizare",
-        "continue": "Continua"
-    },
-    "controller": {
-        "hints": {
-            "back": "Negru",
-            "backspace": "Backspace",
-            "close_dialog": "Închide caseta de dialog",
-            "close_keyboard": "Închideți tastatura",
-            "close_options": "Close Options",
-            "game_details": "Detalii joc",
-            "game_settings": "Setările jocului",
-            "install_game": "Instalează jocul",
-            "move_cursor": "Mutați cursorul",
-            "open_virtual_keyboard": "Deschideți tastatura virtuală",
-            "options": "Options",
-            "play_game": "Joaca jocul",
-            "scroll": "Sul",
-            "select": "Select",
-            "space": "Spaţiu",
-            "update_game": "Actualizați jocul"
+    "choose": "Alege",
+    "choose-egs-prefix": "Alegeți Prefix unde este instalat EGS",
+    "choose-gogdl-binary": "Selectați GOGDL Binary (trebuie repornit)",
+    "choose-legendary-binary": "Selectați Legendary Binary",
+    "customWine": "Selectați binarul Wine sau Proton",
+    "default-install-path": "Alegeți Calea de instalare implicită",
+    "default-steam-path": "Calea aburului.",
+    "downloadNow": "Descarcă acum",
+    "error": {
+      "add": {
+        "steam": {
+          "body": "Adăugarea {{game}} la Steam a eșuat cu:{{newLine}} {{error}}",
+          "title": "Eroare de adăugare"
         }
-    },
-    "docs": "Documentație",
-    "download-manager": {
-        "install-type": {
-            "install": "Install",
-            "update": "Update"
-        },
-        "label": {
-            "disk": "Disk",
-            "speed": "Download"
-        },
-        "link": "Downloads",
-        "queue": {
-            "end-time": "Finished at",
-            "queue-time": "Added at",
-            "start-time": "Started at",
-            "type": "Type"
-        },
-        "title": "Downloads",
-        "ETA": "Timpul estimat"
-    },
-    "epic": {
-        "offline-notification-body": "Este posibil ca serviciile online să nu funcționeze complet, deoarece serverele Epic Games sunt offline!",
-        "offline-notification-title": "deconectat"
-    },
-    "Epic Games": "Epic Games",
-    "error": "Error",
-    "favourites": "Favorite",
-    "game": {
-        "status": "stare",
-        "store": "Magazin",
-        "title": "Titlul jocului",
-        "modify": "Modifică Instalarea"
-    },
-    "generic": {
-        "error": {
-            "component": "Nu s-au găsit jocuri - Încercați să vă deconectați și să vă conectați din nou sau una dintre opțiunile de mai jos"
-        },
-        "library": {
-            "refresh": "Actualizează biblioteca"
-        },
-        "abort": "",
-        "install": "Install",
-        "uninstall": "Dezinstalează"
-    },
-    "globalSettings": "Setări Globale",
-    "GOG": "GOG",
-    "gog-store": "Magazinul GOG",
-    "header": {
-        "hide_non_available_games": "Hide non-available games",
-        "ignore_hidden": "Ignorați Ascuns",
-        "platform": "Platformă",
-        "show_all_games": "Arată toate jocurile",
-        "show_available_games": "Show non-Available games",
-        "show_favourites_only": "Afișați numai Favoritele",
-        "show_hidden": "Arata ascuns",
-        "store": "Magazin de filtre",
-        "filters": "Filtru",
-        "show_support_offline_only": "",
-        "select_all": "",
-        "categories": "",
-        "show_third_party_managed_only": "",
-        "only": "",
-        "show_updates_only": "",
-        "reset": "",
-        "show_installed_only": "",
-        "no_categories": "",
-        "uncategorized": ""
-    },
-    "help": {
-        "amdfsr": "FSR de la AMD ajută la creșterea ratei de cadre prin creșterea rezoluțiilor mai mici în modul Ecran complet. Calitatea imaginii crește de la 5 la 1 cu prețul unei ușoare atingeri de performanță. Activarea poate îmbunătăți performanța.",
-        "custom_themes_path": "Do not use CSS files from untrusted sources. When in doubt, ask for a review in our Discord channel.",
-        "custom_themes_wiki": "Check the Wiki for more details on adding custom themes. Click here.",
-        "dxvk": "DXVK este un strat translațional bazat pe Vulkan pentru jocurile DirectX 9, 10 și 11. Activarea poate îmbunătăți compatibilitatea. Poate cauza probleme în special pentru jocurile DirectX mai vechi.",
-        "dxvkfpslimit": "Sets a frame rate cap for DXVK games",
-        "esync": "Esync își propune să reducă supraîncărcarea serverului de vin în jocurile care necesită un proces intensiv. Activarea poate îmbunătăți performanța.",
-        "fsync": "Fsync își propune să reducă supraîncărcarea serverului de vin în jocurile care necesită un proces intensiv. Activarea poate îmbunătăți performanța pe nucleele Linux acceptate.",
-        "game_language": {
-            "fallback": "Lăsați necompletat pentru a folosi limbajul lui Heroic.",
-            "in_game_config": "Nu toate jocurile acceptă această configurație, unele au setări de limbă în joc.",
-            "valid_codes": "Codurile de limbă valide depind de joc."
-        },
-        "gamemode": "Feral GameMode aplică ajustări automate și temporare sistemului atunci când rulează jocuri. Activarea poate îmbunătăți performanța.",
-        "general": "Sincronizați cu EGS în cazul în care aveți o instalare funcțională a Epic Games Store în altă parte și doriți să vă importați jocurile pentru a evita descărcarea din nou.",
-        "mangohud": "MangoHUD este o suprapunere care afișează și monitorizează FPS, temperaturile, încărcarea CPU/GPU și alte resurse de sistem.",
-        "other": {
-            "part4": "Folosește ",
-            "part5": "Argumente Joc",
-            "part6": " pentru a fi apelat după comanda de lansare, de exemplu: ",
-            "part7": " pentru a sări peste lansatorul în unele jocuri, etc."
-        },
-        "preferSystemLibs": "Versiunile personalizate de vin (Wine-GE, Wine-Lutris) sunt livrate cu dependențele lor de bibliotecă. Prin activarea acestei opțiuni, aceste biblioteci livrate vor fi ignorate și Wine va încărca biblioteci de sistem. Avertizare! Pot apărea probleme dacă dependențele nu sunt îndeplinite.",
-        "primerun": "Utilizați placa grafică dedicată pentru a reda jocul pe sisteme multi-GPU. Este necesar doar pe laptop-uri sau desktop-uri de jocuri care utilizează un GPU fără cap pentru randare (NVIDIA Optimus, AMD CrossFire)",
-        "steam_path": {
-            "info": "This path lets Heroic determine what version of Proton Steam uses, for adding non-Steam games to Steam."
-        },
-        "steamruntime": "Biblioteci personalizate furnizate de Steam pentru a ajuta la rularea jocurilor Linux și Windows (Proton). Activarea ar putea îmbunătăți compatibilitatea.",
-        "sync": {
-            "part1": "Heroic încearcă să ghicească folderul de salvare corect și acest lucru va funcționa în majoritatea cazurilor. În cazul în care folderul este greșit, utilizați caseta de înlocuire pentru a-l schimba.",
-            "part2": "In case you change the prefix folder for Wine or Proton, you will need to check the path again since Proton uses a different prefix (/pfx) and username (steamuser). Deci, puteți șterge simplu calea curentă, ieșiți din pagina de setări de sincronizare și reveniți din nou pentru ca Heroic să ghicească folderul încă o dată cu prefixul corect.",
-            "part3": "Sincronizare manuală: alegeți Descărcare pentru a descărca salvările de jocuri stocate pe Cloud. Încărcați pentru a încărca cele locale în cloud. Descărcarea forțată și încărcarea forțată vor ignora versiunea locală sau în cloud.",
-            "part4": "Sincronizarea salvărilor automat va sincroniza salvările de fiecare dată când începeți un joc și după ce terminați jocul."
-        },
-        "vkd3d": "VKD3D este un strat translațional bazat pe Vulkan pentru jocurile DirectX 12. Activarea poate îmbunătăți semnificativ compatibilitatea. Nu are niciun efect asupra jocurilor DirectX mai vechi.",
-        "wine": {
-            "part1": "Heroic caută pentru versiuni de Wine, Proton și CrossOver în următoarele foldere:",
-            "part2": "Pentru alte locuri, utilizați un link simbolic către unul dintre aceste dosare"
-        },
-        "disable_logs": "Activați această casetă de selectare pentru a dezactiva majoritatea scrierilor în fișierele jurnal (informațiile critice sunt întotdeauna înregistrate). Asigurați-vă că dezactivați această setare înainte de a raporta orice problemă.",
-        "title": {
-            "login": "Autentificare",
-            "settings": "Setări",
-            "downloadManager": "Download Manager",
-            "library": "Bibliotecă",
-            "accessibility": "",
-            "wineManager": ""
-        },
-        "dxfpslimit": "Sets a frame rate cap for DXVK games",
-        "advertiseAvxForRosetta": "Activează suportul de instrucțiuni AVX când rulezi jocuri Windows prin Rosetta pe chip-uri Apple Silicon. Acestea ar putea fi necesare pentru unele jocuri precum Death Stranding care necesită suport AVX.",
-        "analytics": "Acceptă ca Heroic sa colecteze date 100% anonime pentru a putea îmbunătăți calitatea aplicației. Este nevoie de o repornire pentru a intra în efect.",
-        "button": {
-            "close": "Închide Help",
-            "open": "Deschide Help"
-        },
-        "content": {
-            "accessibility": "Arată setările de accesibilitate.",
-            "customThemesPath": "Verifică wiki-ul nostru.",
-            "defaultInstallPath": "Aceasta este calea implicita selectată pentru instalat jocuri.",
-            "downloadManager": "Arată descărcările actuale și din trecut",
-            "library": "Arată toate jocurile deținute.",
-            "login": "Conectați-vă la diferitele magazine.",
-            "settingsDefault": "Arată toate setările Heroic și cele implicite pentru jocuri.",
-            "settingsGame": "Arată toate setările pentru un joc.",
-            "wineManager": "Instalează diferite versiuni pentru Wine, Proton, Crossover, etc."
-        },
-        "disablePlaytimeSync": "Dezactivează sincronizarea timpului de joc cu serverele magazinului implicit (deocamdată doar GOG este suportat)",
-        "download_proton_steam": "Atunci când este activat, GE-Proton va fi descărcat direct in directorul uneltelor de compatibilitate Steam in locul căii implicite a Heroic. Va utiliza calea Steam setată în 'Cale Steam implicită' mai sus.",
-        "dxvknvapi": "DXVK-NVAPI este o implementare a NVAPI construită peste DXVK și nativul linux NVAPI, el permite utilizarea DLSS pe plăcile video Nvidia.",
-        "gamescope": {
-            "additionalOptions": "Flag-uri din linia de comandă adiționale de pasat în gamescope.",
-            "forceGrabCursor": "Folosiți întotdeauna modul de mouse relativ în locul întoarcerii dependente de vizibilitatea cursorului. (Util atunci când aplicațiile își pierd focalizarea)",
-            "fpsLimiter": "Totalul de frame-uri la care gamescope ar trebui limitat. E.g 60",
-            "fpsLimiterNoFocus": "Limita de cadre pe secundă la care gamescope ar trebui să se limiteze dacă jocul nu este focalizat.",
-            "upscaleMethod": "",
-            "gameWidth": "",
-            "upscaleWidth": "",
-            "gameHeight": "",
-            "upscaleHeight": ""
-        },
-        "msync": "",
-        "wine-hdr": "",
-        "WoW64": "",
-        "wine-wayland": "",
-        "nvidiaprime": {
-            "details": "Utilizați placa grafică dedicată pentru a reda jocul pe sisteme multi-GPU. Este necesar doar pe laptop-uri sau desktop-uri de jocuri care utilizează un GPU fără cap pentru randare (NVIDIA Optimus, AMD CrossFire)"
-        }
+      },
+      "credentials": {
+        "message": "Acreditările dvs. au expirat, vă rugăm să vă deconectați și să vă conectați din nou."
+      },
+      "cx-bottle-not-found": {
+        "message": "Sticla CrossOver „{{bottle_name}}” nu există, nu se poate lansa!",
+        "title": "Sticla CrossOver nu a fost găsită"
+      },
+      "diskspace": {
+        "message": "Nu este suficient spațiu disponibil pe disc",
+        "title": "Fără Spațiu"
+      },
+      "dxvk": {
+        "message": "Eroare la instalarea DXVK/VKD3D! Vă rugăm să vă verificați conexiunea!",
+        "title": "Eroare DXVK/VKD3D"
+      },
+      "folder-not-found": {
+        "title": "Dosarul jocului pare să fie șters, doriți să eliminați jocul din lista instalată?"
+      },
+      "generic": {
+        "message": "Mesaj de eroare generic",
+        "title": "Eroare Necunoscută"
+      },
+      "launchAborted": "Launch aborted",
+      "title": "Eroare",
+      "uncaught-exception": {
+        "message": "A uncaught exception occured:{{newLine}}{{error}}{{newLine}}{{newLine}} Report the exception on our Github repository.",
+        "title": "A avut loc o excepție neprinsă!"
+      },
+      "update": {
+        "message": "A apărut o eroare la actualizare, vă rugăm să verificați jurnalele sau încercați din nou mai târziu!",
+        "title": "Eroare de actualizare"
+      },
+      "wine-not-found": {
+        "invalid": "The selected wine version was not found. Install it or select a different version in the game's settings{{newline}}Version: {{version}}{{newline}}Path: {{path}}",
+        "message": "Nicio versiune Wine selectată. Verificați setările jocului!",
+        "title": "Wine nu a fost găsit"
+      },
+      "winetricks": {
+        "message": "Winetricks a returnat următoarea eroare în timpul execuției:{{newLine}}{{error}}",
+        "title": "Eroare Winetricks"
+      },
+      "moving": "Eroare la mutarea jocului {{error}}",
+      "ubisoft-connect": {
+        "title": "Ubisoft Connect",
+        "message": "Instalarea Ubisoft Connect în prefixul jocului a eșuat. Verificați pagina noastră wiki la https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher/wiki/How-to-install-Ubisoft-Connect-on-Linux-and-Mac pentru a o instala manual."
+      },
+      "legendary": {
+        "generic": "A avut loc o eroare! Încercați să vă deconectați și să vă autentificați pe contul dvs. Epic. {{newline}} {{error}}"
+      },
+      "executableNotFound": "Executabilul nu a fost găsit",
+      "executableNotFoundMessage": "Heroic nu a putut găsi un executabil pentru acest joc. Te rugăm să îl setezi manual în setările jocului.",
+      "dxmt": {
+        "message": "Eroare la descărcarea DXMT! Verificați conexiunea!",
+        "title": "Eroare de descărcare DXMT"
+      }
     },
     "info": {
-        "heroic": {
-            "beta": "Beta",
-            "click-to-see-changelog": "Click to see changelog",
-            "newReleases": "Actualizare disponibila",
-            "stable": "Grajd",
-            "version": "Versiune eroică"
-        },
-        "save-sync": {
-            "searching": "Trying to detect the correct save folder (click to cancel)"
-        },
-        "settings": "Setările sunt salvate automat",
-        "version": "Versiune Wine"
+      "update": {
+        "changelog": "Deschideți jurnalul de modificări",
+        "detail": "Doriți să descărcați actualizarea în fundal?",
+        "message": "Există o nouă versiune disponibilă!",
+        "message-finished": "Doriți să reporniți Heroic acum?",
+        "title": "Lansatorul de jocuri eroice",
+        "title-finished": "Actualizare Finalizată",
+        "detailNoAutoupdate": "Update-urile automate nu sunt suportate pentru acest format de pachet. Te rugăm să folosesti managerul tău de pachete pentru acest update."
+      }
     },
-    "infobox": {
-        "help": "Ajutor",
-        "requirements": "Cerințe de sistem",
-        "warning": "Warning",
-        "wine-path": "Calea Vinului",
-        "wine-prefix": {
-            "title": "Prefix de vin"
-        },
-        "wine-repfix": {
-            "message": "Wine folosește ceea ce se numește WINEPREFIX pentru a încapsula aplicațiile Windows. Acest prefix conține fișierele de configurare Wine și o reproducere a ierarhiei fișierelor C: (discul principal pe un sistem de operare Windows). În această reproducere a unității C:, sunt stocate fișierele de salvare a jocului și dependențele instalate prin winetricks."
-        },
-        "wine-path-invalid": "Calea vinului este nevalidă, vă rugăm să selectați alta.",
-        "wine-path-none-found": "Nu a fost găsită nicio versiune Wine, descărcați una din Wine Manager"
+    "no": "NU",
+    "ok": "O.K",
+    "protocol": {
+      "install": {
+        "not_installed": "Nu este instalat, doriți să îl instalați?"
+      }
     },
-    "install": {
-        "path": "Selectați Calea de instalare"
+    "quit": {
+      "message": "Sunt operațiuni în așteptare, ești sigur?",
+      "title": "Ieșire"
+    },
+    "reset-heroic": {
+      "question": {
+        "message": "Sigur doriți să resetați Heroic? Acest lucru va elimina toate setările și stocarea în cache, dar nu va elimina jocurile dvs. instalate sau acreditările Epic. Versiunile portabile (AppImage, WinPortable, ...) ale Heroic trebuiesc restartate manual după aceea.",
+        "title": "Resetează eroic"
+      }
+    },
+    "runexe": {
+      "title": "Selectează EXE-ul pentru rulare"
+    },
+    "select": {
+      "button": "Selectare",
+      "exe": "Selectați EXE",
+      "script": "Alege script ..."
+    },
+    "shortcuts": {
+      "message": "Scurtăturile au fost create pe Desktop și pe meniul Start",
+      "message-mac": "Shortcuts were created on the Applications folder",
+      "message-remove": "Comenzile rapide au fost eliminate din Desktop și din meniul Start",
+      "message-remove-mac": "Shortcuts were removed from the Applications folder",
+      "title": "Scurtături"
+    },
+    "sync": {
+      "button": "Alege",
+      "error": "Cale Nevalidă",
+      "title": "Alegeți directorul de salvare"
+    },
+    "vcruntime": {
+      "install": {
+        "message": "Au fost deschise legăturile de descărcare pentru Visual C++ Runtimes. Vă rugăm să instalați ambele versiuni x86 și x64."
+      },
+      "notfound": {
+        "message": "Runtimele Microsoft Visual C++ nu sunt instalate, care sunt cerute de unele jocuri",
+        "title": "VCRuntime nu este instalat"
+      }
+    },
+    "warning": {
+      "epic": {
+        "import": "Serverele Epic au o întrerupere majoră în acest moment, jocul nu poate fi importat!",
+        "install": "Serverele Epic au o întrerupere majoră în acest moment, jocul nu poate fi instalat!",
+        "update": "Serverele Epic au o întrerupere majoră în acest moment, jocul nu poate fi actualizat!"
+      },
+      "title": "Avertizare",
+      "wine-change": {
+        "message": "Nu am putut găsi versiunea de vin selectată pentru a lansa acest titlu ({{selectedWine}}). {{newline}} Am găsit altul, doriți să continuați lansarea folosind {{foundWine}}?",
+        "title": "Vinul nu a fost găsit!"
+      },
+      "sideload": {
+        "confirmExit": {
+          "title": "Sigur doriți să vă deconectați?",
+          "message": "Orice progres nesalvat ar putea fi pierdut"
+        }
+      },
+      "rosetta": {
+        "message": "Heroic are nevoie de Rosetta pentru a rula corect pe macOS cu chip-urile Apple Silicon. Te rugăm să-l reinstalezi din terminalul macOS folosing următoarea comandă : \"softwareupdate --install-rosetta\"  și repornește Heroic. ",
+        "title": "Rosetta nu a fost găsit"
+      },
+      "snap": {
+        "checkbox": "Nu mai arăta acest mesaj",
+        "message": "Unele funcții nu sunt disponibile deocamdată în versiunea Snap a aplicației și încercăm sa o remediem.{{newLine}}Limitările curente sunt:{{newLine}}Heroic nu va putea localiza Proton de la Steam sau Wine de la Lutris.{{newLine}}{{newLine}}Gamescope, Gamemode și MangoHud, de asemenea, nu vor funcționa din moment ce Heroic nu are acces la acestea.{{newLine}}{{newLine}}Pentru a obține acces la această funcție vă rugăm instalați Heroic sub forma Flatpak, DEB sau din AppImage.",
+        "title": "Heroic rulează ca și Snap"
+      }
+    },
+    "wineprefix": "Selectați folderul WinePrefix",
+    "yes": "DA",
+    "dontShowAgain": "Nu mai arăta",
+    "choose-nile-binary": "Selectați binarul Nil",
+    "update": "Update",
+    "changelog": "Jurnalul modificărilor",
+    "postpone": "Amânare"
+  },
+  "button": {
+    "cancel": "Cancel",
+    "go_to_library": "Accesați Bibliotecă",
+    "login": "Autentificare",
+    "sync": "Sincronizează",
+    "syncing": "Sincronizare",
+    "unsync": "Desincronizare",
+    "continue": "Continua"
+  },
+  "controller": {
+    "hints": {
+      "back": "Negru",
+      "backspace": "Backspace",
+      "close_dialog": "Închide caseta de dialog",
+      "close_keyboard": "Închideți tastatura",
+      "close_options": "Close Options",
+      "game_details": "Detalii joc",
+      "game_settings": "Setările jocului",
+      "install_game": "Instalează jocul",
+      "move_cursor": "Mutați cursorul",
+      "open_virtual_keyboard": "Deschideți tastatura virtuală",
+      "options": "Options",
+      "play_game": "Joaca jocul",
+      "scroll": "Sul",
+      "select": "Select",
+      "space": "Spaţiu",
+      "update_game": "Actualizați jocul"
+    }
+  },
+  "docs": "Documentație",
+  "download-manager": {
+    "install-type": {
+      "install": "Install",
+      "update": "Update"
     },
     "label": {
-        "loading": "Loading",
-        "releaseDate": ""
+      "disk": "Disk",
+      "speed": "Download"
+    },
+    "link": "Downloads",
+    "queue": {
+      "end-time": "Finished at",
+      "queue-time": "Added at",
+      "start-time": "Started at",
+      "type": "Type"
+    },
+    "title": "Downloads",
+    "ETA": "Timpul estimat"
+  },
+  "epic": {
+    "offline-notification-body": "Este posibil ca serviciile online să nu funcționeze complet, deoarece serverele Epic Games sunt offline!",
+    "offline-notification-title": "deconectat"
+  },
+  "Epic Games": "Epic Games",
+  "error": "Error",
+  "favourites": "Favorite",
+  "game": {
+    "status": "stare",
+    "store": "Magazin",
+    "title": "Titlul jocului",
+    "modify": "Modifică Instalarea"
+  },
+  "generic": {
+    "error": {
+      "component": "Nu s-au găsit jocuri - Încercați să vă deconectați și să vă conectați din nou sau una dintre opțiunile de mai jos"
     },
     "library": {
-        "refresh": "Reîmprospăta",
-        "sortAscending": "Sortare ascendentă",
-        "sortByStatus": "Sortați după Stare",
-        "sortDescending": "Sortează descrescător",
-        "toggleLayout": {
-            "grid": "Comutați la un aspect al grilei",
-            "list": "Comutați la un aspect de listă"
-        },
-        "hideAlphabetFilter": "",
-        "showAlphabetFilter": ""
+      "refresh": "Actualizează biblioteca"
     },
-    "Library": "Bibliotecă",
-    "loading": {
-        "default": "Se încarcă",
-        "website": "Se încarcă site-ul web"
+    "abort": "",
+    "install": "Install",
+    "uninstall": "Dezinstalează"
+  },
+  "globalSettings": "Setări Globale",
+  "GOG": "GOG",
+  "gog-store": "Magazinul GOG",
+  "header": {
+    "hide_non_available_games": "Hide non-available games",
+    "ignore_hidden": "Ignorați Ascuns",
+    "platform": "Platformă",
+    "show_all_games": "Arată toate jocurile",
+    "show_available_games": "Show non-Available games",
+    "show_favourites_only": "Afișați numai Favoritele",
+    "show_hidden": "Arata ascuns",
+    "store": "Magazin de filtre",
+    "filters": "Filtru",
+    "show_support_offline_only": "",
+    "select_all": "",
+    "categories": "",
+    "show_third_party_managed_only": "",
+    "only": "",
+    "show_updates_only": "",
+    "reset": "",
+    "show_installed_only": "",
+    "no_categories": "",
+    "uncategorized": ""
+  },
+  "help": {
+    "amdfsr": "FSR de la AMD ajută la creșterea ratei de cadre prin creșterea rezoluțiilor mai mici în modul Ecran complet. Calitatea imaginii crește de la 5 la 1 cu prețul unei ușoare atingeri de performanță. Activarea poate îmbunătăți performanța.",
+    "custom_themes_path": "Do not use CSS files from untrusted sources. When in doubt, ask for a review in our Discord channel.",
+    "custom_themes_wiki": "Check the Wiki for more details on adding custom themes. Click here.",
+    "dxvk": "DXVK este un strat translațional bazat pe Vulkan pentru jocurile DirectX 9, 10 și 11. Activarea poate îmbunătăți compatibilitatea. Poate cauza probleme în special pentru jocurile DirectX mai vechi.",
+    "dxvkfpslimit": "Sets a frame rate cap for DXVK games",
+    "esync": "Esync își propune să reducă supraîncărcarea serverului de vin în jocurile care necesită un proces intensiv. Activarea poate îmbunătăți performanța.",
+    "fsync": "Fsync își propune să reducă supraîncărcarea serverului de vin în jocurile care necesită un proces intensiv. Activarea poate îmbunătăți performanța pe nucleele Linux acceptate.",
+    "game_language": {
+      "fallback": "Lăsați necompletat pentru a folosi limbajul lui Heroic.",
+      "in_game_config": "Nu toate jocurile acceptă această configurație, unele au setări de limbă în joc.",
+      "valid_codes": "Codurile de limbă valide depind de joc."
     },
-    "login": {
-        "alternative_method": "Alternative Login Method",
-        "epic": "Epic Games Login",
-        "gog": "GOG Login",
-        "message": "Login with your platform. You can login to more than one platform at the same time.",
-        "amazon": "Conectare Amazon",
-        "old-mac": "",
-        "zoom": ""
-    },
-    "message": {
-        "sync": "Sincronizare Completă",
-        "unsync": "Desincronizare Completă"
-    },
-    "notify": {
-        "error": {
-            "move": "Eroare la mutarea jocului",
-            "reparing": "Eroare la reparare"
-        },
-        "finished": {
-            "add": {
-                "steam": {
-                    "corrupt": "{{game}} nu a putut fi adăugat la toți utilizatorii Steam găsiți. Consultați jurnalele pentru mai multe informații. Este necesară repornirea Steam, modificările vor intra în vigoare.",
-                    "success": "{{game}} a fost adăugat cu succes la Steam. Este necesară repornirea Steam, modificările vor intra în vigoare.",
-                    "title": "Adăugat la Steam"
-                }
-            },
-            "remove": {
-                "steam": {
-                    "corrupt": "{{game}} nu a putut fi eliminat de la toți utilizatorii Steam găsiți. Consultați jurnalele pentru mai multe informații. Este necesară repornirea Steam, modificările vor intra în vigoare.",
-                    "success": "{{game}} a fost eliminat cu succes pe Steam. Este necesară repornirea Steam, modificările vor intra în vigoare.",
-                    "title": "Eliminat din Steam"
-                }
-            },
-            "reparing": "Reparație Terminată"
-        },
-        "install": {
-            "canceled": "Instalare Anulată",
-            "error": "Instalarea a eșuat",
-            "finished": "Instalare Finalizată",
-            "imported": "Joc importat",
-            "startInstall": "Instalarea a început",
-            "failed": "Instalarea a eșuat",
-            "paused": "Instalare întreruptă"
-        },
-        "moved": "Mutare Finalizată",
-        "moving": "Joc de Mișcare",
-        "new-heroic-version": "A fost lansată o nouă versiune heroică!",
-        "refresh": {
-            "error": "Nu s-au putut prelua versiunile din amonte, poate din cauza restricțiilor API-ului Github! Încercați mai târziu."
-        },
-        "uninstalled": "Dezinstalat",
-        "update": {
-            "canceled": "Actualizare Anulată",
-            "finished": "Actualizare Finalizată",
-            "started": "Actualizarea a început",
-            "failed": "Actualizare esuata",
-            "paused": "Actualizare întreruptă"
-        },
-        "import": {
-            "failed": ""
-        }
-    },
-    "offline-message": {
-        "hint": "We are checking the connectivity against:{{newline}}github.com,{{newline}}gog.com and{{newline}}store.epicgames.com",
-        "ignore": "Ignore",
-        "offline": "Offline",
-        "offline-retry-in": "Offline. Retrying in {{seconds}} seconds.",
-        "retrying": "Retrying"
-    },
-    "Open": "Deschis",
-    "options": {
-        "advanced": {
-            "key": "Nume variabilă",
-            "placeHolderKey": "NUME",
-            "placeHolderValue": "De exemplu: Path/To/ExtraFiles",
-            "title": "Opțiuni avansate (variabile de mediu):",
-            "value": "Valoare"
-        },
-        "env_variables": {
-            "error": {
-                "empty_key": "Numele variabilelor nu pot fi goale",
-                "equal_sign_in_key": "Numele variabilelor nu pot conține semnul „=\"",
-                "space_in_key": "Numele variabilelor nu pot conține spații"
-            },
-            "example": "NU includeți semnul „=\", de exemplu: pentru o setare precum „MY_FLAG=123”, setați MY_FLAG în NAME și 123 în VALUE.",
-            "info": "Setați variabilele de mediu pentru a le adăuga la comandă."
-        },
-        "gameargs": {
-            "placeholder": "Pune aici Argumentele Lansatorului",
-            "title": "Argumente de joc (Pentru a rula după comandă):",
-            "error": {
-                "command": "",
-                "env": ""
-            }
-        },
-        "quote-args-with-spaces": "Avertisment: asigurați-vă că citați argumentele cu spații! De exemplu: „cale/cu spații/”",
-        "wrapper": {
-            "args": "Argumente",
-            "arguments_example": "Exemplu de argumente: --arg; --extra-file=\"cale-fișier/ cu/spații\"",
-            "exe": "Înveliș",
-            "placeHolderKey": "Noul Wrapper",
-            "placeHolderValue": "Argumentele Wrapper",
-            "title": "Comanda Wrapper:"
-        },
-        "gamescope": {
-            "nis": "",
-            "additionalOptions": "",
-            "borderless": "",
-            "windowed": "",
-            "fpsLimiter": "",
-            "gameHeight": "",
-            "upscaleWidth": "",
-            "fullscreen": "",
-            "gameWidth": "",
-            "upscaleHeight": "",
-            "fpsLimiterNoFocus": "",
-            "stretch": "",
-            "interger": ""
-        }
-    },
+    "gamemode": "Feral GameMode aplică ajustări automate și temporare sistemului atunci când rulează jocuri. Activarea poate îmbunătăți performanța.",
+    "general": "Sincronizați cu EGS în cazul în care aveți o instalare funcțională a Epic Games Store în altă parte și doriți să vă importați jocurile pentru a evita descărcarea din nou.",
     "other": {
-        "gogdl-version": "Versiunea GOGDL: ",
-        "legendary-version": "Versiune Legendary: ",
-        "weblate": "Ajută la traducerea Heroic.",
-        "nile-version": "Versiunea Nile: "
+      "part4": "Folosește ",
+      "part5": "Argumente Joc",
+      "part6": " pentru a fi apelat după comanda de lansare, de exemplu: ",
+      "part7": " pentru a sări peste lansatorul în unele jocuri, etc."
     },
-    "Other": "Other",
-    "placeholder": {
-        "alt-gogdl-bin": "Se utilizează binarul GOGDL încorporat...",
-        "alt-legendary-bin": "Folosind binarul Legendary încorporat...",
-        "custom_themes_path": "Select the path to look for custom CSS files",
-        "dxvkfpsvalue": "Positive integer value (e.g. 30, 60, ...)",
-        "egs-prefix": "Prefixul unde este instalat EGS",
-        "prefered_language": "Cod de 2 caractere (adică: „en” sau „fr”)",
-        "alt-nile-bin": "Folosind binarul Nile încorporat..."
+    "preferSystemLibs": "Versiunile personalizate de vin (Wine-GE, Wine-Lutris) sunt livrate cu dependențele lor de bibliotecă. Prin activarea acestei opțiuni, aceste biblioteci livrate vor fi ignorate și Wine va încărca biblioteci de sistem. Avertizare! Pot apărea probleme dacă dependențele nu sunt îndeplinite.",
+    "primerun": "Utilizați placa grafică dedicată pentru a reda jocul pe sisteme multi-GPU. Este necesar doar pe laptop-uri sau desktop-uri de jocuri care utilizează un GPU fără cap pentru randare (NVIDIA Optimus, AMD CrossFire)",
+    "steam_path": {
+      "info": "This path lets Heroic determine what version of Proton Steam uses, for adding non-Steam games to Steam."
     },
-    "platforms": {
-        "linux": "Linux",
-        "mac": "Mac",
-        "win": "Windows",
-        "browser": "Browser"
+    "steamruntime": "Biblioteci personalizate furnizate de Steam pentru a ajuta la rularea jocurilor Linux și Windows (Proton). Activarea ar putea îmbunătăți compatibilitatea.",
+    "sync": {
+      "part1": "Heroic încearcă să ghicească folderul de salvare corect și acest lucru va funcționa în majoritatea cazurilor. În cazul în care folderul este greșit, utilizați caseta de înlocuire pentru a-l schimba.",
+      "part2": "In case you change the prefix folder for Wine or Proton, you will need to check the path again since Proton uses a different prefix (/pfx) and username (steamuser). Deci, puteți șterge simplu calea curentă, ieșiți din pagina de setări de sincronizare și reveniți din nou pentru ca Heroic să ghicească folderul încă o dată cu prefixul corect.",
+      "part3": "Sincronizare manuală: alegeți Descărcare pentru a descărca salvările de jocuri stocate pe Cloud. Încărcați pentru a încărca cele locale în cloud. Descărcarea forțată și încărcarea forțată vor ignora versiunea locală sau în cloud.",
+      "part4": "Sincronizarea salvărilor automat va sincroniza salvările de fiecare dată când începeți un joc și după ce terminați jocul."
     },
-    "please-wait": "Please wait...",
-    "progress": "Progres",
-    "queue": {
-        "label": {
-            "canceled": "Canceled",
-            "clear": "Clear List",
-            "downloading": "Downloading",
-            "empty": "Nothing to download",
-            "finished": "Completed",
-            "queued": "Queued",
-            "remove": "Remove from Downloads",
-            "pause": "Întrerupeți descărcarea",
-            "resume": "Reia descărcarea"
-        }
-    },
-    "Recent": "Jocuri Recente",
-    "search": "Introdu numele jocului aici...",
-    "setting": {
-        "adddesktopshortcuts": "Adăugați automat comenzi rapide pe desktop",
-        "addgamestostartmenu": "Adăugați jocuri în meniul Start automat",
-        "addgamestosteam": "Add games to Steam automatically",
-        "alt-gogdl-bin": "Alegeți un binar GOGDL alternativ pe care să îl utilizați",
-        "alt-legendary-bin": "Alegeți un Legendary Binary alternativ pe care să îl utilizați",
-        "autodxvk": "Instalare/Actualizare automată DXVK în Prefix",
-        "autosync": "Salvări de sincronizare automată",
-        "autovkd3d": "Instalare/Actualizare automată VKD3D pe Prefix",
-        "change-target-exe": "Selectați un EXE alternativ pentru a rula",
-        "checkForUpdatesOnStartup": "Verificare pentru actualizări la pornire",
-        "crossover-version": "Versiune crossover",
-        "custom_themes_path": "Custom Themes Path",
-        "customWineProton": "Căi personalizate pentru Wine/Proton",
-        "darktray": "Utilizați Tray Icon întunecat",
-        "default-install-path": "Calea de instalare implicită",
-        "default-steam-path": "Calea Steam implicită",
-        "defaultWinePrefix": "Setați folderul pentru noile prefixe de vin",
-        "disable_controller": "Dezactivați navigarea eroică folosind controlerul",
-        "discordRPC": "Activați Discord Rich Presence",
-        "download-no-https": "Descărcați jocuri fără HTTPS (util pentru CDN-uri, de exemplu, LanCache)",
-        "dxvkfpslimit": "Limit FPS (DX9, 10 and 11)",
-        "egs-sync": "Sincronizare cu Epic Games instalat",
-        "enableFSRHack": "Activați FSR Hack (versiunea Wine trebuie să o accepte)",
-        "eosOverlay": {
-            "cancelInstall": "Anulare",
-            "checkForUpdates": "Verifică pentru actualizări",
-            "checkingForUpdates": "Se verifică actualizările...",
-            "currentVersion": "Versiunea curentă: {{version}}",
-            "disable": "Dezactivați",
-            "enable": "Permite",
-            "install": "Instalează",
-            "installed": "EOS Overlay este instalat",
-            "installing": "EOS Overlay este instalat...",
-            "latestVersion": "Ultima versiune: {{version}}",
-            "notInstalled": "EOS Overlay nu este instalat",
-            "notInstalledMsg": "EOS Overlay nu este instalat. Vrei să-l instalezi acum?",
-            "notInstalledTitle": "Suprapunerea nu este instalată",
-            "remove": "Dezinstalează",
-            "removeConfirm": "Sigur doriți să dezinstalați EOS Overlay?",
-            "removeConfirmTitle": "Confirmați eliminarea suprapunerii",
-            "updateNow": "Actualizează",
-            "updating": "Se actualizează..."
-        },
-        "esync": "Activați Esync",
-        "exit-to-tray": "Ieșiți în System Tray",
-        "FsrSharpnessStrenght": "Forța de claritate FSR",
-        "fsync": "Activați Fsync",
-        "gamemode": "Utilizați GameMode (Feral GameMode trebuie instalat)",
-        "hideChangelogsOnStartup": "Don't show changelogs on Startup",
-        "language": "Alegeți Limba aplicației",
-        "library_top_option": {
-            "disabled": "Dezactivat",
-            "favourites": "Jocuri preferate",
-            "recently_played": "Jocuri jucate recent",
-            "recently_played_installed": "Jocuri jucate recent (numai instalate)"
-        },
-        "library_top_section": "Secțiunea de sus a bibliotecii",
-        "log": {
-            "copy-to-clipboard": "Copiați conținutul jurnalului în clipboard",
-            "current-log": "Jurnal curent",
-            "instructions": "Alăturați-vă Discordului nostru și căutați canalul care se potrivește cu sistemul dvs. de operare. Distribuiți conținutul jurnalelor afișate aici și includeți o descriere clară a problemei cu orice informații și detalii relevante.",
-            "instructions_title": "Cum se raportează o problemă?",
-            "last-log": "Ultimul jurnal",
-            "no-file": "Nu a fost găsit niciun fișier jurnal",
-            "show-in-folder": "Afișați fișierul jurnal în dosar",
-            "upload": {
-                "actions": "Action",
-                "delete": "",
-                "hours-ago": "",
-                "title": "",
-                "upload-date": "",
-                "error": {
-                    "title": "",
-                    "manual_upload": "",
-                    "content": ""
-                },
-                "uploading": {
-                    "title": "",
-                    "content": ""
-                },
-                "open": "",
-                "header": "",
-                "no-files": "",
-                "confirm": {
-                    "content": "",
-                    "title": ""
-                },
-                "minutes-ago": "",
-                "done": {
-                    "content": "",
-                    "title": ""
-                },
-                "button": ""
-            },
-            "join-heroic-discord": "",
-            "descriptiveNames": {
-                "legendary": "",
-                "nile": "",
-                "gog": "",
-                "zoom": "",
-                "game-log": "",
-                "heroic": ""
-            },
-            "show-uploads": ""
-        },
-        "mangohud": "Activați Mangohud (Mangohud trebuie instalat)",
-        "manualsync": {
-            "download": "Descarcă",
-            "forcedownload": "Forțează descărcarea",
-            "forceupload": "Forțează Încărcarea",
-            "sync": "Sincronizare",
-            "syncing": "Sincronizare în curs",
-            "title": "Salvări cu sincronizare manuală",
-            "upload": "Încărcați"
-        },
-        "maxRecentGames": "Jocuri recente de afișat",
-        "maxworkers": "Numărul maxim de lucrători la descărcare",
-        "minimize-on-launch": "Minimizați eroicul după lansarea jocului",
-        "offlinemode": "Rulați jocul offline",
-        "prefered_language": "Limba preferată (Codul de limbă)",
-        "preferSystemLibs": "Preferați bibliotecile de sistem",
-        "runexe": {
-            "message": "Trageți și plasați fișiere aici",
-            "title": "Rulați EXE pe Prefix"
-        },
-        "savefolder": {
-            "not-found": "Save folder not found, please select it manually (click to retry)",
-            "placeholder": "Selectați folderul exact de salvare a jocurilor",
-            "warning": "Please check twice if the path is correct (click to retry)"
-        },
-        "select_theme": "Selectează tema",
-        "showfps": "Afișați FPS (DX9, 10 și 11)",
-        "start-in-tray": "Pornește minimizat",
-        "steamruntime": "Utilizați Steam Runtime",
-        "winecrossoverbottle": "CrossOver Bottle",
-        "wineprefix": "dosar WinePrefix",
-        "wineversion": "Versiune Wine",
-        "autoUpdateGames": "Actualizați automat jocurile",
-        "ignoreGameUpdates": "Ignora actualizările jocului",
-        "disable_logs": "Dezactivați jurnalele",
-        "addgamestoapplications": "Adăugați automat jocuri la Aplicații",
-        "showMetalOverlay": "Afișați statistici suprapuse",
-        "alt-nile-bin": "Alegeți un binar alternativ pentru Nil",
-        "autodxvknvapi": "Instalare/Actualizare automată DXVK-NVAPI în Prefix",
-        "msync": "Activați Esync",
-        "WoW64": "",
-        "frameless-window": {
-            "confirmation": {
-                "message": "",
-                "title": ""
-            },
-            "description": ""
-        },
-        "download-proton-steam": "",
-        "scripts": "",
-        "wineWayland": "",
-        "after-launch-script-path": "",
-        "experimental_features": {
-            "cometSupport": "",
-            "enableNewDesign": "",
-            "enableHelp": "",
-            "zoomPlatform": ""
-        },
-        "hdr": "",
-        "show_valve_proton": {
-            "wine_selector_warning": "",
-            "confirmation": {
-                "show": "",
-                "title": "",
-                "dont_show": "",
-                "message": ""
-            },
-            "label": "",
-            "info_label": ""
-        },
-        "dxfpslimit": "",
-        "allow_installation_broken_anticheat": {
-            "confirmation": {
-                "understand": "",
-                "title": "",
-                "message": ""
-            },
-            "label": ""
-        },
-        "gamescope": {
-            "enableLimiter": "",
-            "enableUpscaling": "",
-            "enableForceGrabCursor": "",
-            "warningFlatpak": "",
-            "missingMsg": ""
-        },
-        "enable-quick-sync-menu": "",
-        "no-tray-icon": "",
-        "analyticsOptIn": "",
-        "disablePlaytimeSync": "",
-        "verboseLogs": {
-            "description": ""
-        },
-        "before-launch-script-path": "",
-        "disableUMU": "",
-        "advertiseAvxForRosetta": "",
-        "custom_css": {
-            "warning": ""
-        },
-        "start-in-console-mode": "",
-        "disable_gog_presence": ""
-    },
-    "settings": {
-        "battlEyeRuntime": {
-            "installing": "Se instalează BattlEye Runtime...",
-            "name": "BattlEye AntiCheat Runtime"
-        },
-        "clear-cache": "Goliți memoria cache eroică",
-        "copiedToClipboard": "Copiat în Clipboard!",
-        "copyToClipboard": "Copiați toate setările în Clipboard",
-        "default_hint": "Changes in this section only apply as default values when installing games. If you want to change the settings of an already installed game, use the Settings button in the game page.",
-        "eacRuntime": {
-            "gameModeRequired": {
-                "message": "GameMode este necesar pentru ca EAC runtime să funcționeze pe Flatpak. Doriți să-l activați acum?",
-                "title": "GameMode necesar"
-            },
-            "installing": "Se instalează EAC Runtime...",
-            "name": "EasyAntiCheat Runtime"
-        },
-        "gameMode": {
-            "eacRuntimeEnabled": {
-                "message": "Timpul de rulare EAC este activat, care nu va funcționa corect fără GameMode. Doriți să dezactivați EAC Runtime și GameMode?",
-                "title": "EAC runtime activat"
-            }
-        },
-        "log": {
-            "long-log-hint": "Jurnalul trunchiat, sunt afișate ultimele 1000 de linii!"
-        },
-        "navbar": {
-            "advanced": "Avansat",
-            "games_settings_defaults": "Game Defaults",
-            "general": "General",
-            "log": "Buturuga",
-            "other": "Altele",
-            "sync": "Salvare-Sincronizare",
-            "wineExt": "Extensii de vin",
-            "gamescope": "",
-            "systemInformation": "",
-            "legacy": ""
-        },
-        "open-config-file": "Deschideți fișierul de configurare",
-        "reset-heroic": "Resetează eroic",
-        "saves": {
-            "label": "Salveaza locatia:",
-            "warning": "Funcția Cloud Saves este în versiune beta, vă rugăm să faceți backup înainte de sincronizare (în cazul în care ceva nu merge bine)",
-            "not_supported": "",
-            "gog_linux_native_warning": ""
-        },
-        "advanced": {
-            "clearCache": {
-                "help8": "Jocuri instalate",
-                "help9": "Game Settings",
-                "help1": "",
-                "help3": "",
-                "help10": "",
-                "help7": "",
-                "help5": "",
-                "help6": "",
-                "help2": "",
-                "help4": ""
-            },
-            "details": "Detalii",
-            "resetHeroic": {
-                "help": "Sigur doriți să resetați Heroic? Acest lucru va elimina toate setările și stocarea în cache, dar nu va elimina jocurile dvs. instalate sau acreditările Epic. Versiunile portabile (AppImage, WinPortable, ...) ale Heroic trebuiesc restartate manual după aceea."
-            },
-            "title": {
-                "resetHeroic": "",
-                "clearCache": ""
-            }
-        },
-        "launchOptions": "Opțiuni de Lansare...",
-        "legacy_warning": "",
-        "systemInformation": {
-            "cpu": "",
-            "gpuWithNumber": "",
-            "cpuDescription": "",
-            "legendaryVersion": "",
-            "systemSpecifications": "",
-            "steamDeck": "",
-            "gpuDriver": "",
-            "os": "",
-            "gpu": "",
-            "gogdlVersion": "",
-            "osVersion": "",
-            "osNameFlatpak": "",
-            "software": "",
-            "cometVersion": "",
-            "memoryStats": "",
-            "systemModel": "",
-            "showDetailed": "",
-            "memory": "",
-            "copyToClipboard": "",
-            "heroicVersion": "",
-            "nileVersion": ""
-        },
-        "experimental_features": {
-            "title": ""
-        },
-        "offline": {
-            "warning": ""
-        },
-        "gamescope": {
-            "searchMsg": ""
-        },
-        "custom_css": {
-            "title": ""
-        },
-        "steamgriddb": {
-            "apikey": {
-                "title": "",
-                "placeholder": "",
-                "placeholder_saved": ""
-            },
-            "help": {
-                "description": ""
-            }
-        }
-    },
-    "Settings": "Setări",
-    "sidebar": {
-        "collapse": "Restrângeți bara laterală",
-        "uncollapse": "Desfaceți bara laterală",
-        "console": ""
-    },
-    "status": {
-        "installing": "Se Instalează",
-        "logging": "Autentificare...",
-        "processing": "Se procesează fișierele, așteptați",
-        "preparing_login": "Se pregătește autentificare... ",
-        "installed": "Instalat"
-    },
-    "store": "Magazin",
-    "stores": "Magazine",
-    "title": {
-        "allGames": "Toate jocurile"
-    },
-    "toolbox": {
-        "settings": {
-            "default-wineprefix": "Selectați folderul de prefix implicit pentru noile configurații",
-            "wineprefix": "Selectați un folder pentru noile prefixe de vin"
-        }
-    },
-    "tooltip": {
-        "addpath": "Adăugați o cale nouă",
-        "removepath": "Eliminați Calea"
-    },
-    "tray": {
-        "about": "Despre",
-        "quit": "Părăsește",
-        "reload": "Reîncărcați",
-        "show": "Arată"
-    },
-    "two_col_table": {
-        "save_hint": "Modificările din acest tabel nu sunt salvate automat. Faceți clic pe butonul +"
-    },
-    "Update Available!": "Actualizare disponibila",
-    "userselector": {
-        "discord": "Discord",
-        "logging_out": "Logging out",
-        "logout": "Deconectare",
-        "logout_confirmation": "Sigur doriți să vă deconectați?",
-        "manageaccounts": "Gestionați Conturile",
-        "quit": "Părăsește",
-        "cancel": "Cancel",
-        "quitMessage": "Esti sigur ca vrei sa renunti?"
-    },
-    "webview": {
-        "controls": {
-            "back": "Întoarce-te",
-            "forward": "Mergi inainte",
-            "openInBrowser": "Deschis în browser",
-            "reload": "Reîncarcă pagina"
-        }
-    },
+    "vkd3d": "VKD3D este un strat translațional bazat pe Vulkan pentru jocurile DirectX 12. Activarea poate îmbunătăți semnificativ compatibilitatea. Nu are niciun efect asupra jocurilor DirectX mai vechi.",
     "wine": {
-        "actions": "Acțiune",
-        "manager": {
-            "link": "Manager de vinuri",
-            "not-found": "No Wine versions found. Please click the refresh icon to try again.",
-            "title": "Manager de vinuri",
-            "unzipping": "Dezarhivare",
-            "search": "",
-            "loading": "",
-            "open_folder": "",
-            "update": "Update",
-            "settings": "Setări",
-            "no-results": ""
-        },
-        "release": "Data de lansare",
-        "size": "Mărime",
-        "notes": ""
+      "part1": "Heroic caută pentru versiuni de Wine, Proton și CrossOver în următoarele foldere:",
+      "part2": "Pentru alte locuri, utilizați un link simbolic către unul dintre aceste dosare"
     },
-    "externalLink": {
-        "dontAskAgain": "Nu mai întreba",
-        "warning": "Sunteți pe cale să deschideți un link extern."
+    "disable_logs": "Activați această casetă de selectare pentru a dezactiva majoritatea scrierilor în fișierele jurnal (informațiile critice sunt întotdeauna înregistrate). Asigurați-vă că dezactivați această setare înainte de a raporta orice problemă.",
+    "title": {
+      "login": "Autentificare",
+      "settings": "Setări",
+      "downloadManager": "Download Manager",
+      "library": "Bibliotecă",
+      "accessibility": "",
+      "wineManager": ""
     },
-    "wiki_info": {
-        "not_found": "Nu am putut găsi informații suplimentare."
+    "dxfpslimit": "Sets a frame rate cap for DXVK games",
+    "advertiseAvxForRosetta": "Activează suportul de instrucțiuni AVX când rulezi jocuri Windows prin Rosetta pe chip-uri Apple Silicon. Acestea ar putea fi necesare pentru unele jocuri precum Death Stranding care necesită suport AVX.",
+    "analytics": "Acceptă ca Heroic sa colecteze date 100% anonime pentru a putea îmbunătăți calitatea aplicației. Este nevoie de o repornire pentru a intra în efect.",
+    "button": {
+      "close": "Închide Help",
+      "open": "Deschide Help"
     },
-    "dlc": {
-        "actions": "Acțiuni",
-        "installDlcs": "Instalați toate DLC-urile",
-        "noDlcFound": "Nu s-au găsit DLC",
-        "size": "Mărime",
-        "title": "Title"
+    "content": {
+      "accessibility": "Arată setările de accesibilitate.",
+      "customThemesPath": "Verifică wiki-ul nostru.",
+      "defaultInstallPath": "Aceasta este calea implicita selectată pentru instalat jocuri.",
+      "downloadManager": "Arată descărcările actuale și din trecut",
+      "library": "Arată toate jocurile deținute.",
+      "login": "Conectați-vă la diferitele magazine.",
+      "settingsDefault": "Arată toate setările Heroic și cele implicite pentru jocuri.",
+      "settingsGame": "Arată toate setările pentru un joc.",
+      "wineManager": "Instalează diferite versiuni pentru Wine, Proton, Crossover, etc."
     },
-    "amazon": "Amazon",
-    "prime-gaming": "Prime Gaming",
-    "Amazon Games": "Amazon Games",
-    "winetricks": {
-        "install": "Install",
-        "loading": "Loading",
-        "no-components": "",
-        "installing": "",
-        "openGUI": "",
-        "search": "",
-        "loading-available": "",
-        "nothingYet": "",
-        "installed": ""
+    "disablePlaytimeSync": "Dezactivează sincronizarea timpului de joc cu serverele magazinului implicit (deocamdată doar GOG este suportat)",
+    "download_proton_steam": "Atunci când este activat, GE-Proton va fi descărcat direct in directorul uneltelor de compatibilitate Steam in locul căii implicite a Heroic. Va utiliza calea Steam setată în 'Cale Steam implicită' mai sus.",
+    "dxvknvapi": "DXVK-NVAPI este o implementare a NVAPI construită peste DXVK și nativul linux NVAPI, el permite utilizarea DLSS pe plăcile video Nvidia.",
+    "gamescope": {
+      "additionalOptions": "Flag-uri din linia de comandă adiționale de pasat în gamescope.",
+      "forceGrabCursor": "Folosiți întotdeauna modul de mouse relativ în locul întoarcerii dependente de vizibilitatea cursorului. (Util atunci când aplicațiile își pierd focalizarea)",
+      "fpsLimiter": "Totalul de frame-uri la care gamescope ar trebui limitat. E.g 60",
+      "fpsLimiterNoFocus": "Limita de cadre pe secundă la care gamescope ar trebui să se limiteze dacă jocul nu este focalizat.",
+      "upscaleMethod": "",
+      "gameWidth": "",
+      "upscaleWidth": "",
+      "gameHeight": "",
+      "upscaleHeight": ""
     },
-    "category-settings": {
-        "cancel": "Cancel",
-        "warning": "Warning",
-        "add-new-category": "Adaugă o categorie nouă",
-        "remove-category": "Șterge categoria",
-        "delete-question": "Continuarea va șterge permanent această categorie și o va elimina de la toate jocurile. Doriți să continuați?",
-        "new-category": "Categorie nouă"
+    "msync": "",
+    "wine-hdr": "",
+    "WoW64": "",
+    "wine-wayland": "",
+    "nvidiaprime": {
+      "details": "Utilizați placa grafică dedicată pentru a reda jocul pe sisteme multi-GPU. Este necesar doar pe laptop-uri sau desktop-uri de jocuri care utilizează un GPU fără cap pentru randare (NVIDIA Optimus, AMD CrossFire)"
+    }
+  },
+  "info": {
+    "heroic": {
+      "beta": "Beta",
+      "click-to-see-changelog": "Click to see changelog",
+      "newReleases": "Actualizare disponibila",
+      "stable": "Grajd",
+      "version": "Versiune eroică"
     },
-    "window": {
-        "close": "Închide",
-        "minimize": "",
-        "maximize": "",
-        "restore": ""
+    "save-sync": {
+      "searching": "Trying to detect the correct save folder (click to cancel)"
     },
-    "tour": {
-        "back": "Negru",
-        "sidebar": {
-            "welcome": {
-                "title": "",
-                "intro": ""
-            },
-            "quit": "",
-            "docs": "",
-            "library": "",
-            "community": "",
-            "accessibility": "",
-            "wine": "",
-            "login": "",
-            "settings": "",
-            "downloads": "",
-            "accounts": "",
-            "stores": "",
-            "version": ""
-        },
-        "library": {
-            "gameCard": "",
-            "welcome": {
-                "title": "",
-                "intro2": "",
-                "intro": "",
-                "title2": ""
-            },
-            "filters": "",
-            "search": "",
-            "refresh": "",
-            "end": {
-                "intro": "",
-                "title": ""
-            },
-            "viewToggle": "",
-            "categories": "",
-            "sortInstalled": "",
-            "sortOptions": "",
-            "addGame": ""
-        },
-        "next": "",
-        "startTour": "",
-        "skip": "",
-        "done": ""
+    "settings": "Setările sunt salvate automat",
+    "version": "Versiune Wine"
+  },
+  "infobox": {
+    "help": "Ajutor",
+    "requirements": "Cerințe de sistem",
+    "warning": "Warning",
+    "wine-path": "Calea Vinului",
+    "wine-prefix": {
+      "title": "Prefix de vin"
     },
-    "analyticsModal": {
-        "disable": "Dezactivare",
-        "enable": "Activare",
-        "info": {
-            "pt1": "Pentru a îmbunătăți aplicația, Heroic colectează date 100% anonime.",
-            "pt2": "Heroic folosește platforma open-source Plausible Analytics pentru a colecta date de bază: Versiunea aplicației, sistemul de operare, Magazinele conectate și Țara.",
-            "pt3": "Nu va colecta niciodată informații personale, inclusiv numele tău de utilizator, adresa IP sau emailul.",
-            "pt4": "Aceste date sunt folosite pentru a ne oferi perspective despre ce să ne concentrăm în continuare, datorită resurselor noastre limitate și feedback-ului utilizatorilor.",
-            "pt5": "Plausible Analytics este complet conform cu GDPR, CCPA și PECR.",
-            "pt6": "Pentru transparență, puteți vizualiza datele pe care le colectăm în jurnalele Heroic.",
-            "pt7": "Poți schimba această setare oricând în Setările aplicației."
-        },
-        "title": "Trimite analize anonime"
+    "wine-repfix": {
+      "message": "Wine folosește ceea ce se numește WINEPREFIX pentru a încapsula aplicațiile Windows. Acest prefix conține fișierele de configurare Wine și o reproducere a ierarhiei fișierelor C: (discul principal pe un sistem de operare Windows). În această reproducere a unității C:, sunt stocate fișierele de salvare a jocului și dependențele instalate prin winetricks."
     },
-    "adtraction-locked": {
-        "description": "Se pare că domeniul track.adtraction.com nu a putut încărca sau este blocat. În plus, orice achiziție faci în magazinul GOG susține financiar Heroic. Ia în considerare eliminarea blocajului dacă dorești să contribui.",
-        "dont-show-again": "Nu mai afișa acest avertisment",
-        "title": "Adtraction e blocat"
+    "wine-path-invalid": "Calea vinului este nevalidă, vă rugăm să selectați alta.",
+    "wine-path-none-found": "Nu a fost găsită nicio versiune Wine, descărcați una din Wine Manager"
+  },
+  "install": {
+    "path": "Selectați Calea de instalare"
+  },
+  "label": {
+    "loading": "Loading",
+    "releaseDate": ""
+  },
+  "library": {
+    "refresh": "Reîmprospăta",
+    "sortAscending": "Sortare ascendentă",
+    "sortByStatus": "Sortați după Stare",
+    "sortDescending": "Sortează descrescător",
+    "toggleLayout": {
+      "grid": "Comutați la un aspect al grilei",
+      "list": "Comutați la un aspect de listă"
     },
-    "amazon-luna": "Amazon Luna",
-    "categories-manager": {
-        "add": "Adaugă",
-        "add-placeholder": "Adaugă o categorie nouă",
-        "cancel-remove": "Anulează ștergerea lui \"{{name}}\"",
-        "cancel-rename": "Anulează redenumirea lui \"{{name}}\"",
-        "confirm-remove": "Confirmă ștergerea lui \"{{name}}\"",
-        "confirm-rename": "Confirmă redenumirea lui {{oldName}} ca {{newName}}",
-        "no-categories": "Nicio categorie.",
-        "remove": "Elimină \"{{name}}\"",
-        "title": "Gestionează categoriile",
-        "rename": "Redenumește \"{{name}}\""
+    "hideAlphabetFilter": "",
+    "showAlphabetFilter": ""
+  },
+  "Library": "Bibliotecă",
+  "loading": {
+    "default": "Se încarcă",
+    "website": "Se încarcă site-ul web"
+  },
+  "login": {
+    "alternative_method": "Alternative Login Method",
+    "epic": "Epic Games Login",
+    "gog": "GOG Login",
+    "message": "Login with your platform. You can login to more than one platform at the same time.",
+    "amazon": "Conectare Amazon",
+    "old-mac": "",
+    "zoom": ""
+  },
+  "message": {
+    "sync": "Sincronizare Completă",
+    "unsync": "Desincronizare Completă"
+  },
+  "notify": {
+    "error": {
+      "move": "Eroare la mutarea jocului",
+      "reparing": "Eroare la reparare"
     },
-    "launch": {
-        "options": "Opțiuni de Lansare..."
-    },
-    "emptyLibrary": {
-        "noGames": "",
-        "noResults": ""
-    },
-    "zoom-store": "",
-    "wineExplanation": {
-        "proton-ge": "",
-        "gpt": "",
-        "wine-crossover": "",
-        "wine-staging-macos": ""
-    },
-    "discounts": {
-        "region": {
-            "countries": {
-                "IT": "",
-                "ES": "",
-                "FI": "",
-                "GR": "",
-                "RO": "",
-                "NO": "",
-                "KR": "",
-                "US": "",
-                "HU": "",
-                "PT": "",
-                "NL": "",
-                "AU": "",
-                "TW": "",
-                "IL": "",
-                "JP": "",
-                "DK": "",
-                "DE": "",
-                "CZ": "",
-                "FR": "",
-                "UA": "",
-                "GB": "",
-                "SE": "",
-                "CN": "",
-                "RU": "",
-                "CA": "",
-                "PL": "",
-                "BR": "",
-                "CH": "",
-                "TR": ""
-            },
-            "auto": "",
-            "label": ""
-        },
-        "filters": {
-            "moreFilters": "",
-            "ageRating": "",
-            "os": "",
-            "price": "",
-            "activeCount_other": "",
-            "hideDlcs": "",
-            "ageRatingOption": "",
-            "genres": "",
-            "activeCount_one": "",
-            "lessFilters": "",
-            "rating": "",
-            "sort": "",
-            "genresPlaceholder": "",
-            "features": "",
-            "featuresPlaceholder": "",
-            "ageRatingAll": "Toate",
-            "pageSize": "",
-            "releaseYear": ""
-        },
-        "sidebar": "",
-        "sort": {
-            "priceDesc": "",
-            "trending": "",
-            "priceAsc": "",
-            "releaseDesc": "",
-            "ratingAsc": "",
-            "releaseAsc": "",
-            "ratingDesc": "",
-            "discount": ""
-        },
-        "noMatches": "",
-        "aria": {
-            "pagination": "",
-            "rating": ""
-        },
-        "error": "",
-        "empty": "",
-        "loading": "",
-        "title": "",
-        "pagination": {
-            "prev": ""
+    "finished": {
+      "add": {
+        "steam": {
+          "corrupt": "{{game}} nu a putut fi adăugat la toți utilizatorii Steam găsiți. Consultați jurnalele pentru mai multe informații. Este necesară repornirea Steam, modificările vor intra în vigoare.",
+          "success": "{{game}} a fost adăugat cu succes la Steam. Este necesară repornirea Steam, modificările vor intra în vigoare.",
+          "title": "Adăugat la Steam"
         }
+      },
+      "remove": {
+        "steam": {
+          "corrupt": "{{game}} nu a putut fi eliminat de la toți utilizatorii Steam găsiți. Consultați jurnalele pentru mai multe informații. Este necesară repornirea Steam, modificările vor intra în vigoare.",
+          "success": "{{game}} a fost eliminat cu succes pe Steam. Este necesară repornirea Steam, modificările vor intra în vigoare.",
+          "title": "Eliminat din Steam"
+        }
+      },
+      "reparing": "Reparație Terminată"
+    },
+    "install": {
+      "canceled": "Instalare Anulată",
+      "error": "Instalarea a eșuat",
+      "finished": "Instalare Finalizată",
+      "imported": "Joc importat",
+      "startInstall": "Instalarea a început",
+      "failed": "Instalarea a eșuat",
+      "paused": "Instalare întreruptă"
+    },
+    "moved": "Mutare Finalizată",
+    "moving": "Joc de Mișcare",
+    "new-heroic-version": "A fost lansată o nouă versiune heroică!",
+    "refresh": {
+      "error": "Nu s-au putut prelua versiunile din amonte, poate din cauza restricțiilor API-ului Github! Încercați mai târziu."
+    },
+    "uninstalled": "Dezinstalat",
+    "update": {
+      "canceled": "Actualizare Anulată",
+      "finished": "Actualizare Finalizată",
+      "started": "Actualizarea a început",
+      "failed": "Actualizare esuata",
+      "paused": "Actualizare întreruptă"
+    },
+    "import": {
+      "failed": ""
+    }
+  },
+  "offline-message": {
+    "hint": "We are checking the connectivity against:{{newline}}github.com,{{newline}}gog.com and{{newline}}store.epicgames.com",
+    "ignore": "Ignore",
+    "offline": "Offline",
+    "offline-retry-in": "Offline. Retrying in {{seconds}} seconds.",
+    "retrying": "Retrying"
+  },
+  "Open": "Deschis",
+  "options": {
+    "advanced": {
+      "key": "Nume variabilă",
+      "placeHolderKey": "NUME",
+      "placeHolderValue": "De exemplu: Path/To/ExtraFiles",
+      "title": "Opțiuni avansate (variabile de mediu):",
+      "value": "Valoare"
+    },
+    "env_variables": {
+      "error": {
+        "empty_key": "Numele variabilelor nu pot fi goale",
+        "equal_sign_in_key": "Numele variabilelor nu pot conține semnul „=\"",
+        "space_in_key": "Numele variabilelor nu pot conține spații"
+      },
+      "example": "NU includeți semnul „=\", de exemplu: pentru o setare precum „MY_FLAG=123”, setați MY_FLAG în NAME și 123 în VALUE.",
+      "info": "Setați variabilele de mediu pentru a le adăuga la comandă."
+    },
+    "gameargs": {
+      "placeholder": "Pune aici Argumentele Lansatorului",
+      "title": "Argumente de joc (Pentru a rula după comandă):",
+      "error": {
+        "command": "",
+        "env": ""
+      }
+    },
+    "quote-args-with-spaces": "Avertisment: asigurați-vă că citați argumentele cu spații! De exemplu: „cale/cu spații/”",
+    "wrapper": {
+      "args": "Argumente",
+      "arguments_example": "Exemplu de argumente: --arg; --extra-file=\"cale-fișier/ cu/spații\"",
+      "exe": "Înveliș",
+      "placeHolderKey": "Noul Wrapper",
+      "placeHolderValue": "Argumentele Wrapper",
+      "title": "Comanda Wrapper:"
+    },
+    "gamescope": {
+      "nis": "",
+      "additionalOptions": "",
+      "borderless": "",
+      "windowed": "",
+      "fpsLimiter": "",
+      "gameHeight": "",
+      "upscaleWidth": "",
+      "fullscreen": "",
+      "gameWidth": "",
+      "upscaleHeight": "",
+      "fpsLimiterNoFocus": "",
+      "stretch": "",
+      "interger": ""
+    }
+  },
+  "other": {
+    "gogdl-version": "Versiunea GOGDL: ",
+    "legendary-version": "Versiune Legendary: ",
+    "weblate": "Ajută la traducerea Heroic.",
+    "nile-version": "Versiunea Nile: "
+  },
+  "Other": "Other",
+  "placeholder": {
+    "alt-gogdl-bin": "Se utilizează binarul GOGDL încorporat...",
+    "alt-legendary-bin": "Folosind binarul Legendary încorporat...",
+    "custom_themes_path": "Select the path to look for custom CSS files",
+    "dxvkfpsvalue": "Positive integer value (e.g. 30, 60, ...)",
+    "egs-prefix": "Prefixul unde este instalat EGS",
+    "prefered_language": "Cod de 2 caractere (adică: „en” sau „fr”)",
+    "alt-nile-bin": "Folosind binarul Nile încorporat..."
+  },
+  "platforms": {
+    "linux": "Linux",
+    "mac": "Mac",
+    "win": "Windows",
+    "browser": "Browser"
+  },
+  "please-wait": "Please wait...",
+  "progress": "Progres",
+  "queue": {
+    "label": {
+      "canceled": "Canceled",
+      "clear": "Clear List",
+      "downloading": "Downloading",
+      "empty": "Nothing to download",
+      "finished": "Completed",
+      "queued": "Queued",
+      "remove": "Remove from Downloads",
+      "pause": "Întrerupeți descărcarea",
+      "resume": "Reia descărcarea"
+    }
+  },
+  "Recent": "Jocuri Recente",
+  "search": "Introdu numele jocului aici...",
+  "setting": {
+    "adddesktopshortcuts": "Adăugați automat comenzi rapide pe desktop",
+    "addgamestostartmenu": "Adăugați jocuri în meniul Start automat",
+    "addgamestosteam": "Add games to Steam automatically",
+    "alt-gogdl-bin": "Alegeți un binar GOGDL alternativ pe care să îl utilizați",
+    "alt-legendary-bin": "Alegeți un Legendary Binary alternativ pe care să îl utilizați",
+    "autodxvk": "Instalare/Actualizare automată DXVK în Prefix",
+    "autosync": "Salvări de sincronizare automată",
+    "autovkd3d": "Instalare/Actualizare automată VKD3D pe Prefix",
+    "change-target-exe": "Selectați un EXE alternativ pentru a rula",
+    "checkForUpdatesOnStartup": "Verificare pentru actualizări la pornire",
+    "crossover-version": "Versiune crossover",
+    "custom_themes_path": "Custom Themes Path",
+    "customWineProton": "Căi personalizate pentru Wine/Proton",
+    "darktray": "Utilizați Tray Icon întunecat",
+    "default-install-path": "Calea de instalare implicită",
+    "default-steam-path": "Calea Steam implicită",
+    "defaultWinePrefix": "Setați folderul pentru noile prefixe de vin",
+    "disable_controller": "Dezactivați navigarea eroică folosind controlerul",
+    "discordRPC": "Activați Discord Rich Presence",
+    "download-no-https": "Descărcați jocuri fără HTTPS (util pentru CDN-uri, de exemplu, LanCache)",
+    "dxvkfpslimit": "Limit FPS (DX9, 10 and 11)",
+    "egs-sync": "Sincronizare cu Epic Games instalat",
+    "enableFSRHack": "Activați FSR Hack (versiunea Wine trebuie să o accepte)",
+    "eosOverlay": {
+      "cancelInstall": "Anulare",
+      "checkForUpdates": "Verifică pentru actualizări",
+      "checkingForUpdates": "Se verifică actualizările...",
+      "currentVersion": "Versiunea curentă: {{version}}",
+      "disable": "Dezactivați",
+      "enable": "Permite",
+      "install": "Instalează",
+      "installed": "EOS Overlay este instalat",
+      "installing": "EOS Overlay este instalat...",
+      "latestVersion": "Ultima versiune: {{version}}",
+      "notInstalled": "EOS Overlay nu este instalat",
+      "notInstalledMsg": "EOS Overlay nu este instalat. Vrei să-l instalezi acum?",
+      "notInstalledTitle": "Suprapunerea nu este instalată",
+      "remove": "Dezinstalează",
+      "removeConfirm": "Sigur doriți să dezinstalați EOS Overlay?",
+      "removeConfirmTitle": "Confirmați eliminarea suprapunerii",
+      "updateNow": "Actualizează",
+      "updating": "Se actualizează..."
+    },
+    "esync": "Activați Esync",
+    "exit-to-tray": "Ieșiți în System Tray",
+    "FsrSharpnessStrenght": "Forța de claritate FSR",
+    "fsync": "Activați Fsync",
+    "gamemode": "Utilizați GameMode (Feral GameMode trebuie instalat)",
+    "hideChangelogsOnStartup": "Don't show changelogs on Startup",
+    "language": "Alegeți Limba aplicației",
+    "library_top_option": {
+      "disabled": "Dezactivat",
+      "favourites": "Jocuri preferate",
+      "recently_played": "Jocuri jucate recent",
+      "recently_played_installed": "Jocuri jucate recent (numai instalate)"
+    },
+    "library_top_section": "Secțiunea de sus a bibliotecii",
+    "log": {
+      "copy-to-clipboard": "Copiați conținutul jurnalului în clipboard",
+      "current-log": "Jurnal curent",
+      "instructions": "Alăturați-vă Discordului nostru și căutați canalul care se potrivește cu sistemul dvs. de operare. Distribuiți conținutul jurnalelor afișate aici și includeți o descriere clară a problemei cu orice informații și detalii relevante.",
+      "instructions_title": "Cum se raportează o problemă?",
+      "last-log": "Ultimul jurnal",
+      "no-file": "Nu a fost găsit niciun fișier jurnal",
+      "show-in-folder": "Afișați fișierul jurnal în dosar",
+      "upload": {
+        "actions": "Action",
+        "delete": "",
+        "hours-ago": "",
+        "title": "",
+        "upload-date": "",
+        "error": {
+          "title": "",
+          "manual_upload": "",
+          "content": ""
+        },
+        "uploading": {
+          "title": "",
+          "content": ""
+        },
+        "open": "",
+        "header": "",
+        "no-files": "",
+        "confirm": {
+          "content": "",
+          "title": ""
+        },
+        "minutes-ago": "",
+        "done": {
+          "content": "",
+          "title": ""
+        },
+        "button": ""
+      },
+      "join-heroic-discord": "",
+      "descriptiveNames": {
+        "legendary": "",
+        "nile": "",
+        "gog": "",
+        "zoom": "",
+        "game-log": "",
+        "heroic": ""
+      },
+      "show-uploads": ""
+    },
+    "manualsync": {
+      "download": "Descarcă",
+      "forcedownload": "Forțează descărcarea",
+      "forceupload": "Forțează Încărcarea",
+      "sync": "Sincronizare",
+      "syncing": "Sincronizare în curs",
+      "title": "Salvări cu sincronizare manuală",
+      "upload": "Încărcați"
+    },
+    "maxRecentGames": "Jocuri recente de afișat",
+    "maxworkers": "Numărul maxim de lucrători la descărcare",
+    "minimize-on-launch": "Minimizați eroicul după lansarea jocului",
+    "offlinemode": "Rulați jocul offline",
+    "prefered_language": "Limba preferată (Codul de limbă)",
+    "preferSystemLibs": "Preferați bibliotecile de sistem",
+    "runexe": {
+      "message": "Trageți și plasați fișiere aici",
+      "title": "Rulați EXE pe Prefix"
+    },
+    "savefolder": {
+      "not-found": "Save folder not found, please select it manually (click to retry)",
+      "placeholder": "Selectați folderul exact de salvare a jocurilor",
+      "warning": "Please check twice if the path is correct (click to retry)"
+    },
+    "select_theme": "Selectează tema",
+    "showfps": "Afișați FPS (DX9, 10 și 11)",
+    "start-in-tray": "Pornește minimizat",
+    "steamruntime": "Utilizați Steam Runtime",
+    "winecrossoverbottle": "CrossOver Bottle",
+    "wineprefix": "dosar WinePrefix",
+    "wineversion": "Versiune Wine",
+    "autoUpdateGames": "Actualizați automat jocurile",
+    "ignoreGameUpdates": "Ignora actualizările jocului",
+    "disable_logs": "Dezactivați jurnalele",
+    "addgamestoapplications": "Adăugați automat jocuri la Aplicații",
+    "showMetalOverlay": "Afișați statistici suprapuse",
+    "alt-nile-bin": "Alegeți un binar alternativ pentru Nil",
+    "autodxvknvapi": "Instalare/Actualizare automată DXVK-NVAPI în Prefix",
+    "msync": "Activați Esync",
+    "WoW64": "",
+    "frameless-window": {
+      "confirmation": {
+        "message": "",
+        "title": ""
+      },
+      "description": ""
+    },
+    "download-proton-steam": "",
+    "scripts": "",
+    "wineWayland": "",
+    "after-launch-script-path": "",
+    "experimental_features": {
+      "cometSupport": "",
+      "enableNewDesign": "",
+      "enableHelp": "",
+      "zoomPlatform": ""
+    },
+    "hdr": "",
+    "show_valve_proton": {
+      "wine_selector_warning": "",
+      "confirmation": {
+        "show": "",
+        "title": "",
+        "dont_show": "",
+        "message": ""
+      },
+      "label": "",
+      "info_label": ""
+    },
+    "dxfpslimit": "",
+    "allow_installation_broken_anticheat": {
+      "confirmation": {
+        "understand": "",
+        "title": "",
+        "message": ""
+      },
+      "label": ""
+    },
+    "gamescope": {
+      "enableLimiter": "",
+      "enableUpscaling": "",
+      "enableForceGrabCursor": "",
+      "warningFlatpak": "",
+      "missingMsg": ""
+    },
+    "enable-quick-sync-menu": "",
+    "no-tray-icon": "",
+    "analyticsOptIn": "",
+    "disablePlaytimeSync": "",
+    "verboseLogs": {
+      "description": ""
+    },
+    "before-launch-script-path": "",
+    "disableUMU": "",
+    "advertiseAvxForRosetta": "",
+    "custom_css": {
+      "warning": ""
+    },
+    "start-in-console-mode": "",
+    "disable_gog_presence": ""
+  },
+  "settings": {
+    "battlEyeRuntime": {
+      "installing": "Se instalează BattlEye Runtime...",
+      "name": "BattlEye AntiCheat Runtime"
+    },
+    "clear-cache": "Goliți memoria cache eroică",
+    "copiedToClipboard": "Copiat în Clipboard!",
+    "copyToClipboard": "Copiați toate setările în Clipboard",
+    "default_hint": "Changes in this section only apply as default values when installing games. If you want to change the settings of an already installed game, use the Settings button in the game page.",
+    "eacRuntime": {
+      "gameModeRequired": {
+        "message": "GameMode este necesar pentru ca EAC runtime să funcționeze pe Flatpak. Doriți să-l activați acum?",
+        "title": "GameMode necesar"
+      },
+      "installing": "Se instalează EAC Runtime...",
+      "name": "EasyAntiCheat Runtime"
+    },
+    "gameMode": {
+      "eacRuntimeEnabled": {
+        "message": "Timpul de rulare EAC este activat, care nu va funcționa corect fără GameMode. Doriți să dezactivați EAC Runtime și GameMode?",
+        "title": "EAC runtime activat"
+      }
+    },
+    "log": {
+      "long-log-hint": "Jurnalul trunchiat, sunt afișate ultimele 1000 de linii!"
+    },
+    "navbar": {
+      "advanced": "Avansat",
+      "games_settings_defaults": "Game Defaults",
+      "general": "General",
+      "log": "Buturuga",
+      "other": "Altele",
+      "sync": "Salvare-Sincronizare",
+      "wineExt": "Extensii de vin",
+      "gamescope": "",
+      "systemInformation": "",
+      "legacy": ""
+    },
+    "open-config-file": "Deschideți fișierul de configurare",
+    "reset-heroic": "Resetează eroic",
+    "saves": {
+      "label": "Salveaza locatia:",
+      "warning": "Funcția Cloud Saves este în versiune beta, vă rugăm să faceți backup înainte de sincronizare (în cazul în care ceva nu merge bine)",
+      "not_supported": "",
+      "gog_linux_native_warning": ""
+    },
+    "advanced": {
+      "clearCache": {
+        "help8": "Jocuri instalate",
+        "help9": "Game Settings",
+        "help1": "",
+        "help3": "",
+        "help10": "",
+        "help7": "",
+        "help5": "",
+        "help6": "",
+        "help2": "",
+        "help4": ""
+      },
+      "details": "Detalii",
+      "resetHeroic": {
+        "help": "Sigur doriți să resetați Heroic? Acest lucru va elimina toate setările și stocarea în cache, dar nu va elimina jocurile dvs. instalate sau acreditările Epic. Versiunile portabile (AppImage, WinPortable, ...) ale Heroic trebuiesc restartate manual după aceea."
+      },
+      "title": {
+        "resetHeroic": "",
+        "clearCache": ""
+      }
+    },
+    "launchOptions": "Opțiuni de Lansare...",
+    "legacy_warning": "",
+    "systemInformation": {
+      "cpu": "",
+      "gpuWithNumber": "",
+      "cpuDescription": "",
+      "legendaryVersion": "",
+      "systemSpecifications": "",
+      "steamDeck": "",
+      "gpuDriver": "",
+      "os": "",
+      "gpu": "",
+      "gogdlVersion": "",
+      "osVersion": "",
+      "osNameFlatpak": "",
+      "software": "",
+      "cometVersion": "",
+      "memoryStats": "",
+      "systemModel": "",
+      "showDetailed": "",
+      "memory": "",
+      "copyToClipboard": "",
+      "heroicVersion": "",
+      "nileVersion": ""
+    },
+    "experimental_features": {
+      "title": ""
+    },
+    "offline": {
+      "warning": ""
+    },
+    "gamescope": {
+      "searchMsg": ""
+    },
+    "custom_css": {
+      "title": ""
     },
     "steamgriddb": {
-        "error": {
-            "no-games": "Nu s-au găsit jocuri",
-            "no-grids": "",
-            "search": "",
-            "grids": ""
-        },
-        "picker": {
-            "search": "",
-            "title": "",
-            "select-game": ""
-        }
+      "apikey": {
+        "title": "",
+        "placeholder": "",
+        "placeholder_saved": ""
+      },
+      "help": {
+        "description": ""
+      }
+    }
+  },
+  "Settings": "Setări",
+  "sidebar": {
+    "collapse": "Restrângeți bara laterală",
+    "uncollapse": "Desfaceți bara laterală",
+    "console": ""
+  },
+  "status": {
+    "installing": "Se Instalează",
+    "logging": "Autentificare...",
+    "processing": "Se procesează fișierele, așteptați",
+    "preparing_login": "Se pregătește autentificare... ",
+    "installed": "Instalat"
+  },
+  "store": "Magazin",
+  "stores": "Magazine",
+  "title": {
+    "allGames": "Toate jocurile"
+  },
+  "toolbox": {
+    "settings": {
+      "default-wineprefix": "Selectați folderul de prefix implicit pentru noile configurații",
+      "wineprefix": "Selectați un folder pentru noile prefixe de vin"
+    }
+  },
+  "tooltip": {
+    "addpath": "Adăugați o cale nouă",
+    "removepath": "Eliminați Calea"
+  },
+  "tray": {
+    "about": "Despre",
+    "quit": "Părăsește",
+    "reload": "Reîncărcați",
+    "show": "Arată"
+  },
+  "two_col_table": {
+    "save_hint": "Modificările din acest tabel nu sunt salvate automat. Faceți clic pe butonul +"
+  },
+  "Update Available!": "Actualizare disponibila",
+  "userselector": {
+    "discord": "Discord",
+    "logging_out": "Logging out",
+    "logout": "Deconectare",
+    "logout_confirmation": "Sigur doriți să vă deconectați?",
+    "manageaccounts": "Gestionați Conturile",
+    "quit": "Părăsește",
+    "cancel": "Cancel",
+    "quitMessage": "Esti sigur ca vrei sa renunti?"
+  },
+  "webview": {
+    "controls": {
+      "back": "Întoarce-te",
+      "forward": "Mergi inainte",
+      "openInBrowser": "Deschis în browser",
+      "reload": "Reîncarcă pagina"
+    }
+  },
+  "wine": {
+    "actions": "Acțiune",
+    "manager": {
+      "link": "Manager de vinuri",
+      "not-found": "No Wine versions found. Please click the refresh icon to try again.",
+      "title": "Manager de vinuri",
+      "unzipping": "Dezarhivare",
+      "search": "",
+      "loading": "",
+      "open_folder": "",
+      "update": "Update",
+      "settings": "Setări",
+      "no-results": ""
     },
-    "console": {
-        "update": {
-            "hintPrefix": "",
-            "body": "",
-            "title": "",
-            "hintSuffix": ""
-        },
-        "sort": "",
-        "cancel": {
-            "hintSuffix": "",
-            "hintPrefix": ""
-        },
-        "quit": "",
-        "hints": {
-            "launch": "",
-            "sort": "",
-            "navigate": "",
-            "quit": "Părăsește",
-            "change_store": ""
-        },
-        "launching": "",
-        "card": {
-            "needsUpdate": ""
-        },
-        "filter": {
-            "sideload": "Other",
-            "all": "Toate"
-        },
-        "empty": "",
-        "games": "Jocuri instalate",
-        "quitApp": "",
-        "loading": "",
-        "install": {
-            "platform": "Platform",
-            "wineLoading": "Loading"
-        }
+    "release": "Data de lansare",
+    "size": "Mărime",
+    "notes": ""
+  },
+  "externalLink": {
+    "dontAskAgain": "Nu mai întreba",
+    "warning": "Sunteți pe cale să deschideți un link extern."
+  },
+  "wiki_info": {
+    "not_found": "Nu am putut găsi informații suplimentare."
+  },
+  "dlc": {
+    "actions": "Acțiuni",
+    "installDlcs": "Instalați toate DLC-urile",
+    "noDlcFound": "Nu s-au găsit DLC",
+    "size": "Mărime",
+    "title": "Title"
+  },
+  "amazon": "Amazon",
+  "prime-gaming": "Prime Gaming",
+  "Amazon Games": "Amazon Games",
+  "winetricks": {
+    "install": "Install",
+    "loading": "Loading",
+    "no-components": "",
+    "installing": "",
+    "openGUI": "",
+    "search": "",
+    "loading-available": "",
+    "nothingYet": "",
+    "installed": ""
+  },
+  "category-settings": {
+    "cancel": "Cancel",
+    "warning": "Warning",
+    "add-new-category": "Adaugă o categorie nouă",
+    "remove-category": "Șterge categoria",
+    "delete-question": "Continuarea va șterge permanent această categorie și o va elimina de la toate jocurile. Doriți să continuați?",
+    "new-category": "Categorie nouă"
+  },
+  "window": {
+    "close": "Închide",
+    "minimize": "",
+    "maximize": "",
+    "restore": ""
+  },
+  "tour": {
+    "back": "Negru",
+    "sidebar": {
+      "welcome": {
+        "title": "",
+        "intro": ""
+      },
+      "quit": "",
+      "docs": "",
+      "library": "",
+      "community": "",
+      "accessibility": "",
+      "wine": "",
+      "login": "",
+      "settings": "",
+      "downloads": "",
+      "accounts": "",
+      "stores": "",
+      "version": ""
     },
-    "next": ""
+    "library": {
+      "gameCard": "",
+      "welcome": {
+        "title": "",
+        "intro2": "",
+        "intro": "",
+        "title2": ""
+      },
+      "filters": "",
+      "search": "",
+      "refresh": "",
+      "end": {
+        "intro": "",
+        "title": ""
+      },
+      "viewToggle": "",
+      "categories": "",
+      "sortInstalled": "",
+      "sortOptions": "",
+      "addGame": ""
+    },
+    "next": "",
+    "startTour": "",
+    "skip": "",
+    "done": ""
+  },
+  "analyticsModal": {
+    "disable": "Dezactivare",
+    "enable": "Activare",
+    "info": {
+      "pt1": "Pentru a îmbunătăți aplicația, Heroic colectează date 100% anonime.",
+      "pt2": "Heroic folosește platforma open-source Plausible Analytics pentru a colecta date de bază: Versiunea aplicației, sistemul de operare, Magazinele conectate și Țara.",
+      "pt3": "Nu va colecta niciodată informații personale, inclusiv numele tău de utilizator, adresa IP sau emailul.",
+      "pt4": "Aceste date sunt folosite pentru a ne oferi perspective despre ce să ne concentrăm în continuare, datorită resurselor noastre limitate și feedback-ului utilizatorilor.",
+      "pt5": "Plausible Analytics este complet conform cu GDPR, CCPA și PECR.",
+      "pt6": "Pentru transparență, puteți vizualiza datele pe care le colectăm în jurnalele Heroic.",
+      "pt7": "Poți schimba această setare oricând în Setările aplicației."
+    },
+    "title": "Trimite analize anonime"
+  },
+  "adtraction-locked": {
+    "description": "Se pare că domeniul track.adtraction.com nu a putut încărca sau este blocat. În plus, orice achiziție faci în magazinul GOG susține financiar Heroic. Ia în considerare eliminarea blocajului dacă dorești să contribui.",
+    "dont-show-again": "Nu mai afișa acest avertisment",
+    "title": "Adtraction e blocat"
+  },
+  "amazon-luna": "Amazon Luna",
+  "categories-manager": {
+    "add": "Adaugă",
+    "add-placeholder": "Adaugă o categorie nouă",
+    "cancel-remove": "Anulează ștergerea lui \"{{name}}\"",
+    "cancel-rename": "Anulează redenumirea lui \"{{name}}\"",
+    "confirm-remove": "Confirmă ștergerea lui \"{{name}}\"",
+    "confirm-rename": "Confirmă redenumirea lui {{oldName}} ca {{newName}}",
+    "no-categories": "Nicio categorie.",
+    "remove": "Elimină \"{{name}}\"",
+    "title": "Gestionează categoriile",
+    "rename": "Redenumește \"{{name}}\""
+  },
+  "launch": {
+    "options": "Opțiuni de Lansare..."
+  },
+  "emptyLibrary": {
+    "noGames": "",
+    "noResults": ""
+  },
+  "zoom-store": "",
+  "wineExplanation": {
+    "proton-ge": "",
+    "gpt": "",
+    "wine-crossover": "",
+    "wine-staging-macos": ""
+  },
+  "discounts": {
+    "region": {
+      "countries": {
+        "IT": "",
+        "ES": "",
+        "FI": "",
+        "GR": "",
+        "RO": "",
+        "NO": "",
+        "KR": "",
+        "US": "",
+        "HU": "",
+        "PT": "",
+        "NL": "",
+        "AU": "",
+        "TW": "",
+        "IL": "",
+        "JP": "",
+        "DK": "",
+        "DE": "",
+        "CZ": "",
+        "FR": "",
+        "UA": "",
+        "GB": "",
+        "SE": "",
+        "CN": "",
+        "RU": "",
+        "CA": "",
+        "PL": "",
+        "BR": "",
+        "CH": "",
+        "TR": ""
+      },
+      "auto": "",
+      "label": ""
+    },
+    "filters": {
+      "moreFilters": "",
+      "ageRating": "",
+      "os": "",
+      "price": "",
+      "activeCount_other": "",
+      "hideDlcs": "",
+      "ageRatingOption": "",
+      "genres": "",
+      "activeCount_one": "",
+      "lessFilters": "",
+      "rating": "",
+      "sort": "",
+      "genresPlaceholder": "",
+      "features": "",
+      "featuresPlaceholder": "",
+      "ageRatingAll": "Toate",
+      "pageSize": "",
+      "releaseYear": ""
+    },
+    "sidebar": "",
+    "sort": {
+      "priceDesc": "",
+      "trending": "",
+      "priceAsc": "",
+      "releaseDesc": "",
+      "ratingAsc": "",
+      "releaseAsc": "",
+      "ratingDesc": "",
+      "discount": ""
+    },
+    "noMatches": "",
+    "aria": {
+      "pagination": "",
+      "rating": ""
+    },
+    "error": "",
+    "empty": "",
+    "loading": "",
+    "title": "",
+    "pagination": {
+      "prev": ""
+    }
+  },
+  "steamgriddb": {
+    "error": {
+      "no-games": "Nu s-au găsit jocuri",
+      "no-grids": "",
+      "search": "",
+      "grids": ""
+    },
+    "picker": {
+      "search": "",
+      "title": "",
+      "select-game": ""
+    }
+  },
+  "console": {
+    "update": {
+      "hintPrefix": "",
+      "body": "",
+      "title": "",
+      "hintSuffix": ""
+    },
+    "sort": "",
+    "cancel": {
+      "hintSuffix": "",
+      "hintPrefix": ""
+    },
+    "quit": "",
+    "hints": {
+      "launch": "",
+      "sort": "",
+      "navigate": "",
+      "quit": "Părăsește",
+      "change_store": ""
+    },
+    "launching": "",
+    "card": {
+      "needsUpdate": ""
+    },
+    "filter": {
+      "sideload": "Other",
+      "all": "Toate"
+    },
+    "empty": "",
+    "games": "Jocuri instalate",
+    "quitApp": "",
+    "loading": "",
+    "install": {
+      "platform": "Platform",
+      "wineLoading": "Loading"
+    }
+  },
+  "next": ""
 }

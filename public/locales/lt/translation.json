@@ -1,1248 +1,1246 @@
 {
-    "box": {
-        "choose": "Pasirinkti",
-        "update": "Atnaujinti",
-        "error": {
-            "generic": {
-                "title": "Pažymėti „.*EXE“, kurį vykdyti",
-                "message": "tipinė klaidos žinutė"
-            },
-            "title": "Klaida",
-            "dxvk": {
-                "title": "„DXVK/VKD3D“ klaida",
-                "message": "Klaida įdiegiant „DXVK“/„VKD3D“! Prašome patikrinti savo interneto prieigą!"
-            },
-            "update": {
-                "title": "Atnaujinimo klaida",
-                "message": "Kažkas įvyko negerai su atnaujinimu, prašome patikrinti žurnalus ir/arba bandykite dar kartą vėliau!"
-            },
-            "winetricks": {
-                "title": "„Winetricks“ klaida",
-                "message": "„Winetricks“ sugrąžino šią esančią klaidą per paleidimą/vykdymą:{{newLine}}{{error}}"
-            },
-            "add": {
-                "steam": {
-                    "title": "Pridedama klaida",
-                    "body": "Pridedant „{{game}}“ į/prie „Steam“ nepavyko su: {{newLine}} {{error}}"
-                }
-            },
-            "credentials": {
-                "message": "Jūsų kredencialai yra pasibaigę galioti, prašome atsijungti ir vėl prisijungti."
-            },
-            "diskspace": {
-                "message": "Nepakankamai vietos diske",
-                "title": "Nėra vietos"
-            },
-            "folder-not-found": {
-                "title": "Žaidimų aplankas/-las atrodo, kad buvo ištrintas, ar Jūs norite pašalinti žaidimą iš įdiegtų sąrašo?"
-            },
-            "launchAborted": "Paleidimas atšauktas",
-            "legendary": {
-                "generic": "Įvyko klaida! Pamėginkite atsijungti ir vėl prisijungti prie savo „Epic“ paskyros. {{newline}}  {{error}}"
-            },
-            "moving": "Klaida perkeliant žaidimą – „{{error}}“",
-            "cx-bottle-not-found": {
-                "message": "„CrossOver bottle“ – „{{bottle_name}}“ neegzistuoja, negalima paleisti!",
-                "title": "„CrossOver bottle“ nerasta/-s"
-            },
-            "uncaught-exception": {
-                "message": "Įvyko nepagauta išimtis:{{newLine}}{{error}}{{newLine}}{{newLine}} Pranešti apie šią išimtį mūsų „Github“ saugykloje.",
-                "title": "Įvyko nepagauta išimtis!"
-            },
-            "executableNotFound": "Vykdomasis nerastas",
-            "dxmt": {
-                "message": "Klaida atsisiunčiant „DXMT“! Patikrinkite savo ryšį!",
-                "title": "„DXMT“ atsisiuntimo klaida"
-            },
-            "executableNotFoundMessage": "„Heroic“ nepavyko rasti šio žaidimo vykdomąjį. Prašome jį nustatyti rankiniu būdu žaidimo nustatymuose."
-        },
-        "no": "NE",
-        "runexe": {
-            "title": "Pažymėti „.*EXE“, kurį vykdyti"
-        },
-        "select": {
-            "button": "Pažymėti",
-            "exe": "Pasirinkti „.*EXE“",
-            "script": "Pasirinkti skriptą..."
-        },
-        "yes": "TAIP",
-        "wineprefix": "Pasirinkti „Wine“ prielinksnio/priešdėlio aplanką",
-        "default-steam-path": "„Steam“ kelias.",
-        "ok": "GERAI",
-        "postpone": "Atidėti",
-        "quit": {
-            "title": "Išeiti",
-            "message": "Yra laukiamos operacijos, ar Jūs tikra/-s?"
-        },
-        "shortcuts": {
-            "title": "Nuorodos",
-            "message": "Nuorodos buvo sukurtos darbalaukyje ir pradžios meniu",
-            "message-mac": "Nuorodos buvo sukurtos programų aplanke/-ale",
-            "message-remove": "Nuorodos buvo pašalintos iš darbalaukio ir pradžios meniu",
-            "message-remove-mac": "Nuorodos buvo pašalintos iš programų aplanko/-alo"
-        },
-        "sync": {
-            "error": "Negalimas kelias",
-            "title": "Pasirinkite išsaugojimų katalogą"
-        },
-        "warning": {
-            "title": "Įspėjimas",
-            "snap": {
-                "checkbox": "Daugiau neberodyti šios žinutes",
-                "title": "„Heroic“ veikia kaip – „Snap“",
-                "message": "Kai kurios funkcijos nėra pasiekiamos „Snap“ versijoje (kol kas) ir stengiamės ta sutvarkyti.{{newLine}}Dabartiniai ribojimai yra:{{newLine}}„Heroic“ negalės surasti „Proton“ iš „Steam“ ar „Wine“ iš „Lutris“.{{newLine}}{{newLine}}„Gamescope“, žaidimų veiksena ir „MangoHud“ tai pat neveiks, nes „Heroic“ neturi prieigos prie jų.{{newLine}}{{newLine}}Norint gauti prieigą prie šių funkcijų, prašome įdiegti „Heroic“ kaip „Flatpack“, „DEB“ ar „AppImage“."
-            },
-            "wine-change": {
-                "title": "„Wine“ nebuvo rastas!",
-                "message": "Mes negalėjome surasti pasirinktos „Wine“ versijos, kad paleistumėme šį titulą („{{selectedWine}}“). {{newline}} Užtat mes radome kitą, ar norite tęsti paleidimą naudojant – „{{foundWine}}“?"
-            },
-            "sideload": {
-                "confirmExit": {
-                    "message": "Bet kokia neišsaugota pažanga, gali būti prarasta",
-                    "title": "Ar Jūs tikrai norite išeiti?"
-                }
-            },
-            "epic": {
-                "import": "„Epic“ serveriai šiuo metu turi įtakingą prastovą, žaidimas negali būti importuotas!",
-                "install": "„Epic“ serveriai šiuo metu turi įtakingą prastovą, žaidimas negali būti įdiegtas!",
-                "update": "„Epic“ serveriai šiuo metu turi įtakingą prastovą, žaidimas negali būti atnaujintas!"
-            },
-            "rosetta": {
-                "title": "„Rotsetta“ nerasta",
-                "message": "„Heroic“ reikalauja „Rosetta“, kad veiktų teisingai ant „macOS“ su „Apple Silicon“ lustais. Prašome jį įdiegti iš „macOS“ terminalo su šia komanda: „softwareupdate --install-rosetta“ ir paleiskite iš naujo „Heroic“. "
-            }
-        },
-        "downloadNow": "Atsisiųsti dabar",
-        "info": {
-            "update": {
-                "title-finished": "Atnaujinimas baigtas",
-                "detail": "Ar Jūs norite atsisiųsti atnaujinimą fone?",
-                "message": "Yra nauja pasiekiama versija!",
-                "message-finished": "Ar norite perleisti „Heroic“ dabar?",
-                "title": "„Heroic“ žaidimų paleidiklis/-ė",
-                "detailNoAutoupdate": "Automatiniai atnaujinimai nėra palaikomi Jūsų pakavimo formatui. Prašome naudoti paketų tvarkytuvą, kad atnaujintumėte."
-            }
-        },
-        "dontShowAgain": "Neberodyti daugiau",
-        "default-install-path": "Pasirinkti numatytąjį įdiegimo kelią",
-        "vcruntime": {
-            "notfound": {
-                "title": "„VCRuntime“ nėra įdiegtas",
-                "message": "„Microsoft Visual C++“ vykdantieji nėra įdiegti, kurie yra reikalingi kai kuriems žaidimams"
-            },
-            "install": {
-                "message": "Atsisiuntimo nuorodos „Visual C++“ vykdantiesiems buvo atidarytas. Prašome įdiegti abi – „x86“ ir „x64“ versijas."
-            }
-        },
-        "protocol": {
-            "install": {
-                "not_installed": "Dabar nėra įdiegtas. Įdiegti jį?"
-            }
-        },
-        "cache-cleared": {
-            "message": "„Heroic“ talpykla/podėlis išvalyta/-s.",
-            "title": "Talpykla/Podėlis išvalyta/-s"
-        },
-        "changelog": "Keitinių žurnãlas",
-        "choose-egs-prefix": "Pasirinkti prielinksnį/priešdėlį, kuriame „EGS“ yra įdiegtas",
-        "choose-gogdl-binary": "Pasirinkti „GOGDL“ dvejetainę (reikalauja paleidimo iš naujo)",
-        "choose-legendary-binary": "Pasirinkti „Legendary“ dvejetainę",
-        "choose-nile-binary": "Pasirinkti „Nile“ dvejetainę",
-        "customWine": "Pasirinkti „Wine“ ar „Proton“ dvejetainę",
-        "reset-heroic": {
-            "question": {
-                "title": "Atstatyti „Heroic“",
-                "message": "Ar Jūs tikrai norite atstatyti „Heroic“? Šis pašalins visus/-as nustatymus ir talpyklas/podėlius, bet nepašalins Jūsų įdiegtų žaidimų ar Jūsų „Epic“ kredencialų. Perkeliamos „Heroic“ versijos („AppImage“, „WinPortable“ ir t.t.) turi būti paleidžiamos iš naujo rankiniu būdu po vėliau."
-            }
+  "box": {
+    "choose": "Pasirinkti",
+    "update": "Atnaujinti",
+    "error": {
+      "generic": {
+        "title": "Pažymėti „.*EXE“, kurį vykdyti",
+        "message": "tipinė klaidos žinutė"
+      },
+      "title": "Klaida",
+      "dxvk": {
+        "title": "„DXVK/VKD3D“ klaida",
+        "message": "Klaida įdiegiant „DXVK“/„VKD3D“! Prašome patikrinti savo interneto prieigą!"
+      },
+      "update": {
+        "title": "Atnaujinimo klaida",
+        "message": "Kažkas įvyko negerai su atnaujinimu, prašome patikrinti žurnalus ir/arba bandykite dar kartą vėliau!"
+      },
+      "winetricks": {
+        "title": "„Winetricks“ klaida",
+        "message": "„Winetricks“ sugrąžino šią esančią klaidą per paleidimą/vykdymą:{{newLine}}{{error}}"
+      },
+      "add": {
+        "steam": {
+          "title": "Pridedama klaida",
+          "body": "Pridedant „{{game}}“ į/prie „Steam“ nepavyko su: {{newLine}} {{error}}"
         }
+      },
+      "credentials": {
+        "message": "Jūsų kredencialai yra pasibaigę galioti, prašome atsijungti ir vėl prisijungti."
+      },
+      "diskspace": {
+        "message": "Nepakankamai vietos diske",
+        "title": "Nėra vietos"
+      },
+      "folder-not-found": {
+        "title": "Žaidimų aplankas/-las atrodo, kad buvo ištrintas, ar Jūs norite pašalinti žaidimą iš įdiegtų sąrašo?"
+      },
+      "launchAborted": "Paleidimas atšauktas",
+      "legendary": {
+        "generic": "Įvyko klaida! Pamėginkite atsijungti ir vėl prisijungti prie savo „Epic“ paskyros. {{newline}}  {{error}}"
+      },
+      "moving": "Klaida perkeliant žaidimą – „{{error}}“",
+      "cx-bottle-not-found": {
+        "message": "„CrossOver bottle“ – „{{bottle_name}}“ neegzistuoja, negalima paleisti!",
+        "title": "„CrossOver bottle“ nerasta/-s"
+      },
+      "uncaught-exception": {
+        "message": "Įvyko nepagauta išimtis:{{newLine}}{{error}}{{newLine}}{{newLine}} Pranešti apie šią išimtį mūsų „Github“ saugykloje.",
+        "title": "Įvyko nepagauta išimtis!"
+      },
+      "executableNotFound": "Vykdomasis nerastas",
+      "dxmt": {
+        "message": "Klaida atsisiunčiant „DXMT“! Patikrinkite savo ryšį!",
+        "title": "„DXMT“ atsisiuntimo klaida"
+      },
+      "executableNotFoundMessage": "„Heroic“ nepavyko rasti šio žaidimo vykdomąjį. Prašome jį nustatyti rankiniu būdu žaidimo nustatymuose."
     },
-    "notify": {
-        "uninstalled": "Išdiegti",
-        "finished": {
-            "add": {
-                "steam": {
-                    "title": "Pridėti prie „Steam“",
-                    "success": "„{{game}}“ buvo sėkmingai pridėtas prie „Steam“. „Steam“ paleidimas iš naujo yra reikalingas, norint, kad pokyčiai būtų įtvirtinti.",
-                    "corrupt": "„{{game}}“ negalėjo būt pridėtas prie visų rastų „Steam“ vartotojų/naudotojų. Peržiūrėkite žurnalą, norint sužinoti daugiau. „Steam“ paleidimas iš naujo yra reikalingas, norint, kad pokyčiai būtų įtvirtinti."
-                }
-            },
-            "remove": {
-                "steam": {
-                    "title": "Pašalinti iš „Steam“",
-                    "corrupt": "„{{game}}“ negalėjo būt pašalintas iš visų rastų „Steam“ vartotojų/naudotojų. Peržiūrėkite žurnalą, norint sužinoti daugiau. „Steam“ paleidimas iš naujo yra reikalingas, norint, kad pokyčiai būtų įtvirtinti.",
-                    "success": "„{{game}}“ buvo sėkmingai pašalintas iš „Steam“. „Steam“ paleidimas iš naujo yra reikalingas, norint, kad pokyčiai būtų įtvirtinti."
-                }
-            },
-            "reparing": "Baigta taisyti"
-        },
-        "install": {
-            "canceled": "Įdiegimas atšauktas",
-            "error": "Įdiegimas nepavyko",
-            "failed": "Įdiegimas nepavyko",
-            "finished": "Įdiegimas baigtas",
-            "imported": "Žaidimas importuotas",
-            "startInstall": "Įdiegimas pradėtas",
-            "paused": "Įdiegimas sustabdytas"
-        },
-        "moved": "Perkėlimas baigtas",
-        "update": {
-            "failed": "Atnaujinimas nepavyko",
-            "canceled": "Atnaujinimas atšauktas",
-            "started": "Atnaujinimas pradėtas",
-            "finished": "Atnaujinimas baigtas",
-            "paused": "Atnaujinimas sustabdytas"
-        },
-        "moving": "Perkeliamas žaidimas",
-        "error": {
-            "move": "Klaida perkeliant žaidimą",
-            "reparing": "Klaida taisant"
-        },
-        "new-heroic-version": "Nauja „Heroic“ versija buvo išleista!",
-        "refresh": {
-            "error": "Nepavyko gauti leidinių iš išsiunčiamo srauto, galbūt dėl „Github API“ ribojimų! Pabandykite dar kartą vėlesniu laiku."
-        },
-        "import": {
-            "failed": "Importavimas nepavyko"
+    "no": "NE",
+    "runexe": {
+      "title": "Pažymėti „.*EXE“, kurį vykdyti"
+    },
+    "select": {
+      "button": "Pažymėti",
+      "exe": "Pasirinkti „.*EXE“",
+      "script": "Pasirinkti skriptą..."
+    },
+    "yes": "TAIP",
+    "wineprefix": "Pasirinkti „Wine“ prielinksnio/priešdėlio aplanką",
+    "default-steam-path": "„Steam“ kelias.",
+    "ok": "GERAI",
+    "postpone": "Atidėti",
+    "quit": {
+      "title": "Išeiti",
+      "message": "Yra laukiamos operacijos, ar Jūs tikra/-s?"
+    },
+    "shortcuts": {
+      "title": "Nuorodos",
+      "message": "Nuorodos buvo sukurtos darbalaukyje ir pradžios meniu",
+      "message-mac": "Nuorodos buvo sukurtos programų aplanke/-ale",
+      "message-remove": "Nuorodos buvo pašalintos iš darbalaukio ir pradžios meniu",
+      "message-remove-mac": "Nuorodos buvo pašalintos iš programų aplanko/-alo"
+    },
+    "sync": {
+      "error": "Negalimas kelias",
+      "title": "Pasirinkite išsaugojimų katalogą"
+    },
+    "warning": {
+      "title": "Įspėjimas",
+      "snap": {
+        "checkbox": "Daugiau neberodyti šios žinutes",
+        "title": "„Heroic“ veikia kaip – „Snap“",
+        "message": "Kai kurios funkcijos nėra pasiekiamos „Snap“ versijoje (kol kas) ir stengiamės ta sutvarkyti.{{newLine}}Dabartiniai ribojimai yra:{{newLine}}„Heroic“ negalės surasti „Proton“ iš „Steam“ ar „Wine“ iš „Lutris“.{{newLine}}{{newLine}}„Gamescope“, žaidimų veiksena ir „MangoHud“ tai pat neveiks, nes „Heroic“ neturi prieigos prie jų.{{newLine}}{{newLine}}Norint gauti prieigą prie šių funkcijų, prašome įdiegti „Heroic“ kaip „Flatpack“, „DEB“ ar „AppImage“."
+      },
+      "wine-change": {
+        "title": "„Wine“ nebuvo rastas!",
+        "message": "Mes negalėjome surasti pasirinktos „Wine“ versijos, kad paleistumėme šį titulą („{{selectedWine}}“). {{newline}} Užtat mes radome kitą, ar norite tęsti paleidimą naudojant – „{{foundWine}}“?"
+      },
+      "sideload": {
+        "confirmExit": {
+          "message": "Bet kokia neišsaugota pažanga, gali būti prarasta",
+          "title": "Ar Jūs tikrai norite išeiti?"
         }
+      },
+      "epic": {
+        "import": "„Epic“ serveriai šiuo metu turi įtakingą prastovą, žaidimas negali būti importuotas!",
+        "install": "„Epic“ serveriai šiuo metu turi įtakingą prastovą, žaidimas negali būti įdiegtas!",
+        "update": "„Epic“ serveriai šiuo metu turi įtakingą prastovą, žaidimas negali būti atnaujintas!"
+      },
+      "rosetta": {
+        "title": "„Rotsetta“ nerasta",
+        "message": "„Heroic“ reikalauja „Rosetta“, kad veiktų teisingai ant „macOS“ su „Apple Silicon“ lustais. Prašome jį įdiegti iš „macOS“ terminalo su šia komanda: „softwareupdate --install-rosetta“ ir paleiskite iš naujo „Heroic“. "
+      }
     },
-    "button": {
-        "login": "Prisijungti",
-        "continue": "Tęsti",
-        "cancel": "Atšaukti",
-        "go_to_library": "Eiti į biblioteką"
-    },
-    "controller": {
-        "hints": {
-            "select": "Pažymėti",
-            "game_settings": "Žaidimo nustatymai",
-            "install_game": "Įdiegti žaidimą",
-            "play_game": "Žaisti žaidimą",
-            "update_game": "Atnaujinti žaidimą",
-            "back": "Atgal",
-            "options": "Parinktys",
-            "scroll": "Slinkti",
-            "game_details": "Žaidimo išsamumas",
-            "move_cursor": "Judinti pelės žymeklį",
-            "open_virtual_keyboard": "Atidaryti virtualią klaviatūrą",
-            "space": "Tarpas",
-            "close_keyboard": "Uždaryti klaviatūrą",
-            "close_options": "Uždaryti parinktis",
-            "close_dialog": "Uždaryti dialogo langą",
-            "backspace": "Grįžties klavišas"
-        }
-    },
-    "dlc": {
-        "size": "Dydis",
-        "title": "Antraštė/Pavadinimas",
-        "actions": "Veiksmai",
-        "noDlcFound": "Jokie „DLC“ nebuvo rasti",
-        "installDlcs": "Įdiegti visus „DLC“ (dgs.)"
-    },
-    "download-manager": {
-        "install-type": {
-            "install": "Įdiegti",
-            "update": "Atnaujinti"
-        },
-        "label": {
-            "disk": "Diskas",
-            "speed": "Atsisiųsti"
-        },
-        "link": "Atsisiuntimai",
-        "queue": {
-            "type": "Tipas",
-            "end-time": "Baigta –",
-            "queue-time": "Pridėta –",
-            "start-time": "Pradėta –"
-        },
-        "ETA": "Numatytas laikas",
-        "title": "Atsisiuntimai"
-    },
-    "game": {
-        "modify": "Redaguoti įdiegimą",
-        "store": "Parduotuvė",
-        "status": "Būsena/Būklė",
-        "title": "Žaidimo titulas/pavadinimas"
-    },
-    "header": {
-        "categories": "Kategorijos",
-        "show_hidden": "Rodyti paslėptus",
-        "filters": "Filtrai",
-        "only": "tik",
-        "reset": "Atstatyti",
-        "uncategorized": "Be kategorijos",
-        "no_categories": "Nėra pasirinktinių kategorijų. Pridėkite kategorijas naudojant kiekvieno žaidimo meniu.",
-        "show_available_games": "Rodyti nepasiekiamus žaidimus",
-        "show_installed_only": "Rodyti tik įdiegtus",
-        "show_support_offline_only": "Rodyti tik palaikančius veikti neprisijungus",
-        "show_favourites_only": "Rodyti tik mėgstamiausius",
-        "show_third_party_managed_only": "Rodyti tik valdomus trečios partijos",
-        "select_all": "Pažymėti visus",
-        "show_updates_only": "Rodyti tik žaidimus su atnaujinimais"
-    },
-    "help": {
-        "title": {
-            "settings": "Nustatymai",
-            "accessibility": "Prieinamumas",
-            "downloadManager": "Atsisiuntimo tvarkytuvas/-ė",
-            "login": "Prisijungti",
-            "library": "Biblioteka",
-            "wineManager": "„Wine“ tvarkytuvė/-as"
-        },
-        "button": {
-            "close": "Uždaryti pagalbą",
-            "open": "Atidaryti pagalbą"
-        },
-        "other": {
-            "part4": "Naudokite – ",
-            "part5": "Žaidimo argumentai",
-            "part7": " –, kad praleistu paleidiklį kai kuriuose žaidimuose ir pan.",
-            "part6": " , kad būtų pakviestas po komandos paleidimo, pavyzdžiui: "
-        },
-        "content": {
-            "accessibility": "Rodo prieinamumo nustatymus.",
-            "downloadManager": "Rodo dabartinius ir buvusius atsisiuntimus.",
-            "login": "Prisijungti prie kitų parduotuvių.",
-            "settingsDefault": "Rodo visus „Heroic“ nustatymus ir numatytąsias parinktis žaidimams.",
-            "wineManager": "Įdiegia skirtingas „Wine“, „Proton“, „Crossover“ ir pan. versijas.",
-            "customThemesPath": "Peržiūrėkite mūsų žinių aiškinamąjį puslapį.",
-            "defaultInstallPath": "Šis yra numatytasis kelias, jau parinktas, kai įdiegiami žaidimai.",
-            "library": "Rodo visus turimus žaidimus.",
-            "settingsGame": "Rodo visus nustatymus žaidimui."
-        },
-        "custom_themes_wiki": "Peržiūrėkite žinių aiškinamąjį puslapį išsamumui kaip pridėti pasirinktinius apvalkalus. Spauskite čia.",
-        "dxvkfpslimit": "Nustato kadrų dažnio ribą „DXVK“ žaidimams",
-        "game_language": {
-            "in_game_config": "Nevisi žaidimai palaiko šią konfigūraciją, kai kurie žaidimai turi nuosava kalbos nustatymą.",
-            "valid_codes": "Tinkami kalbos kodai yra priklausomi nuo žaidimo.",
-            "fallback": "Palikti tuščią, norint naudoti „Heroic“ kalbą."
-        },
-        "wine": {
-            "part1": "„Heroic“ ieško „Wine“, „Proton“ ir „CrossOver“ versijų, šiuose aplankuose:",
-            "part2": "Kitoks vietoms, naudokite virtualųjį katalogą į vieną iš šių aplankų/-alų"
-        },
-        "custom_themes_path": "Nenaudoti „CSS“ failų iš nepatikimų šaltinių. Kai esate abejonėje, klauskite apžiūros mūsų „Discord“ kanale.",
-        "mangohud": "„MangoHUD“ yra perdanga, kuri rodo ir stebi kdr./sek., temperatūrą, „CPU“/„GPU“ apkrovą ir kitus sisteminius išteklius.",
-        "steam_path": {
-            "info": "Šis kelias leidžia „Heroic“ numatyti kokią „Proton“ versiją „Steam“ naudos, skirta pridedant ne „Steam“ žaidimus į „Steam“."
-        },
-        "gamescope": {
-            "fpsLimiter": "Kiekis kadrų, kurias „gamescope“ ribos. Pvz.: 60",
-            "fpsLimiterNoFocus": "Kiekis kadrų, kurias „gamescope“ ribos per sekundę, jei žaidimas nėra fokusuotas.",
-            "gameHeight": "Aukščio skiriamoji geba, kuri yra naudojama žaidimo. „Gamescope“ numato 16:9 proporciją.",
-            "gameWidth": "Pločio skiriamoji geba, kuri yra naudojama žaidimo. „Gamescope“ numato 16:9 proporciją.",
-            "upscaleHeight": "Aukščio skiriamoji geba, kuri yra naudojama „Gamescope“. Numatoma 16:9 proporcija.",
-            "upscaleWidth": "Pločio skiriamoji geba, kuri yra naudojama „Gamescope“. Numatoma 16:9 proporcija.",
-            "upscaleMethod": "Išplėstai padidintos gebos būdas, kurį „gamescope“ turėtų naudoti.",
-            "additionalOptions": "Papildomos komandinės eilutės „vėliavos“, kurias pravesti į „gamescope“.",
-            "forceGrabCursor": "Visada naudoti santykinį pelės veikseną, vietoj jį išversti priklausomai nuo žymeklio matomumo. (Naudinga, kai programos/programėlės prarandą pirmenybę)"
-        },
-        "dxvk": "„DXVK“ yra „Vulkan“ pagrindo vertimo sluoksnis „DirectX 9/10/11“ žaidimams. Įjungus/Įgalinant gali pagerinti palaikomumą. Gali sukelti problemų, ypatingai senesniems „DirectX“ žaidimams.",
-        "sync": {
-            "part1": "„Heroic“ bandys atspėti teisinga išsaugojimų aplanką/-alą ir jis dažniausiai atspėja. Atvejais kai jis yra neteisingas, naudokite perkeičiamąjį parinkimą, norint pakeisti jį.",
-            "part2": "Tuo atveju, kai Jūs pakeičiate prielinksnio/priešdėlio aplanką/-alą, skirtus „Wine“ ar „Proton“, reikės dar kart patikrinti šį kelią, kadangi „Proton“ naudoja kitokį prielinksnį/priešdėlį („/pfx“) or vartotojo/naudotojo vardą („steamuser“). Taigi, Jūs galite paprastai pašalinti dabartinį kelią ir išeiti iš sinchronizavimų nustatymo puslapio ir vėl sugrįžti, norint, kad „Heroic“ dar kartą atspėtų teisingąjį prielinksnį/priešdėlį.",
-            "part3": "Rankinis sinchronizavimas: Pasirinkite atsisiuntimą, norint atsisiųsti žaidimo išsaugojimus, kurie laikomi debesijoje. Pasirinkite įkėlimą, norint įkelti vietinius išsaugojimus į debesiją. Priverstinai atsisiųsti ir įkelti nepaisys jos parinkties versiją.",
-            "part4": "Automatinis išsaugojimų sinchronizavimas, sinchronizuos išsaugojimus kiekvieną kartą, kada Jūs pradėsite žaidimą ir kai jį baigsite žaisti."
-        },
-        "disablePlaytimeSync": "Išjungia/Išgalina žaidimo laikotarpio sinchronizavimą su duotos parduotuvės serveriais (kol kas tik „GOG“ yra palaikomas)",
-        "general": "Sinchronizuoti su „EGL“, jei Jūs turite veikiantį „Epic Games“ paleidiklio įdiegimą kitur ir norite importuoti savo žaidimus, siekiant išvengti jų atsisiuntimą dar kartą.",
-        "preferSystemLibs": "Pasirinktinės „Wine“ versijos („Wine-GE“, „Wine-Lutris“) yra įtraukiamos su jų bibliotekų priklausomybėm. Įjungiant/Įgalinant šią parinktį, šios įtraukiamos bibliotekos bus ignoruojamos ir „Wine“ įkraus sistemines bibliotekas vietoj to. Įspėjimas! Problemos gali kilti, jeigu priklausomybės nebus pasiekiamos.",
-        "disable_logs": "Perjungiant šį pažymėjimo lauką į – „ON“, išjungia didžiąsias žurnalų failų įrašymus (kritinė informacija visada yra įrašoma). Įsitikinkite, kad išjungėte šį nustatymą prieš pranešant apie bet kokią problemą.",
-        "dxvknvapi": "„DXVK-NVAPI“ yra „NVAPI“ realizacija, kuri sukurta ant „DXVK“ ir jo „Linux NVAPI“, jis leidžia „DLSS“ naudojimą, skirtiems „Nvidia GPU“ (dgs.).",
-        "esync": "„Esync“ siekia sumažinti „wineserver“ pridėtinių išlaidų procesoriaus apkraunančių žaidimų. Įjungiant/Įgalinant gali pagerinti našumą.",
-        "fsync": "„Fsync“ siekia sumažinti „wineserver“ pridėtinių išlaidų procesoriaus apkraunančių žaidimų. Įjungiant/Įgalinant gali pagerinti našumą ant palaikančių „Linux“ branduolių.",
-        "msync": "„Msync“ siekia sumažinti „wineserver“ pridėtinių išlaidų procesoriaus apkraunančių žaidimų. Įjungiant/Įgalinant gali pagerinti našumą ant palaikomų „Linux“ branduolių.",
-        "steamruntime": "Pasirinktinės bibliotekos, kurios yra telkiamos „Steam“, siekant paleisti „Linux“ ir „Windows“ („Proton“) žaidimus. Įjungiant/Įgalinant gali pagerinti palaikomumą.",
-        "vkd3d": "„VKD3D“ yra „Vulkas“ paremtas vertimo sluoksnis, skirtas „DirectX 12“ žaidimams. Įjungiant/Įgalinant gali žymiai pagerinti palaikomumą. Neturi jokio poveikio ant senesnių „DirectX“ žaidimų, jie reikalauja „DXVK“.",
-        "gamemode": "„Feral“ žaidimo veiksena pritaiko automatinius ir laikinus pakoregavimus sistemai, kai veikia žaidimai. Įjungiant/Įgalinant gali pagerinti našumą.",
-        "primerun": "Naudoti paskirtąją vaizdo plokštę, kad apdorotų žaidimus daugia-„GPU“ sistemose. Reikalinga žaidimų nešiojamiesiems kompiuteriams arba stacionariems, kurie naudoja be išvestinį „GPU“, skirtus apdorojimui („NVIDIA Optimus“, „AMD CrossFire“)",
-        "amdfsr": "„AMD FSR“ padeda pagerinti kadrų dažnį išplečiant mažesnes skiriamąsias gebas, pilno ekrano veiksenoje. Vaizdo kokybė pasitobulina nuo 5-ių iki 1-erių, tačiau našumas sumažėja. Įjungiant/Įgalinant gali pagerinti našumą.",
-        "dxfpslimit": "Nustato kadrų dažnio ribą „DirectX“ (9-12) žaidimams",
-        "download_proton_steam": "Kai įjungta/įgalinta (-as/-i), „GE-Proton“ bus atsisiųstas tiesiai į „Steam“ palaikymo įrankių katalogą, vietoj numatytojo „Heroic“ kelio. Jis naudos „Steam“ nustatytą kelią – „numatytame „Steam“ kelyje“ nustatyme, randančio viršuje.",
-        "wine-hdr": "„HDR“ išryškina spalvas, pateikiant skaistesnį išryškimą ir gilesnį kontrastą. Kad „HDR“ veiktų, ir ekranas, ir žaidimas, turi jį palaikyti.",
-        "WoW64": "„Wine WoW64“ veiksena leidžia 32-bitų „Windows“ žaidimams veikti 64-bitų „Wine“. Įjungiant šią veikseną, gali padėti patobulinti našumą, tačiau gali veikti nesandariai su senesniais 32-bitų žaidimais.",
-        "wine-wayland": "„Wine-Wayland“ eksperimentinė tvarkyklė leidžia žaidimams veikti sustatytai po „Wayland“ rodymo protokolo. Įgalinant jį, gali sukelti tam tikrų problemų kai kuriuose žaidimuose.",
-        "advertiseAvxForRosetta": "Įgalina „AVX“ instrukcijų palaikymą, kai paleidžiami „Windows“ žaidimas per „Rosetta“ „Apple Silicon Mac (dgs.) kompiuteriuose“. Šis gali būti reikalingas kai kuriems žaidimams kaip – „Death Stranding“, kurie reikalauja „AVX“ palaikymo.",
-        "analytics": "Įgalina „Heroic“, kad rinktų 100% proc. ananomiška naudojimo duomenis, siekiant patobulinti programą. Reikalauja paleidimo iš naujo, kad įsigalintų.",
-        "nvidiaprime": {
-            "details": "Naudoti paskirtąją vaizdo plokštę, kad apdorotų žaidimus daugia-„GPU“ sistemose. Reikalinga žaidimų nešiojamiesiems kompiuteriams arba stacionariems, kurie naudoja be išvestinį „GPU“, skirtus apdorojimui („NVIDIA Optimus“, „AMD CrossFire“)",
-            "link": "Peržiūrėkite daugiau išsamumo mūsų aiškinamajame puslapyje"
-        },
-        "hide-window-on-protocol-launch": "Laiko „Heroic“ langą paslėpta, kai žaidimas yra paleistas iš kitos išorinės nuorodos, tokios kaip – „pridėti prie „Steam““ funkcijos."
-    },
+    "downloadNow": "Atsisiųsti dabar",
     "info": {
-        "version": "„Wine“ versija",
-        "heroic": {
-            "stable": "Stabilus",
-            "version": "„Heroic“ versija",
-            "beta": "„Beta“",
-            "newReleases": "Pasiekiamas atnaujinimas!",
-            "click-to-see-changelog": "Spauskite, norint peržiūrėti keitinių žurnalą"
-        },
-        "settings": "Nustatymai yra išsaugoti automatiškai",
-        "save-sync": {
-            "searching": "Bandoma aptikti teisingą išsaugojimų aplanką/-lą (spauskite, norint atšaukti)"
-        }
+      "update": {
+        "title-finished": "Atnaujinimas baigtas",
+        "detail": "Ar Jūs norite atsisiųsti atnaujinimą fone?",
+        "message": "Yra nauja pasiekiama versija!",
+        "message-finished": "Ar norite perleisti „Heroic“ dabar?",
+        "title": "„Heroic“ žaidimų paleidiklis/-ė",
+        "detailNoAutoupdate": "Automatiniai atnaujinimai nėra palaikomi Jūsų pakavimo formatui. Prašome naudoti paketų tvarkytuvą, kad atnaujintumėte."
+      }
     },
-    "infobox": {
-        "requirements": "Sistemos reikalavimai",
-        "help": "Pagalba",
-        "warning": "Įspėjimas",
-        "wine-path": "„Wine“ kelias",
-        "wine-prefix": {
-            "title": "„Wine“ prielinksnis/priešdėlis"
-        },
-        "wine-path-invalid": "Negalimas „Wine“ kelias, prašome pasirinkti kitokį.",
-        "wine-path-none-found": "Jokia „Wine“ versija nebuvo rasta, atsisiųskite ją iš „Wine“ tvarkytuves/-o",
-        "wine-repfix": {
-            "message": "„Wine“ naudoja tą ką jis vadina – „WINEPREFIX“, kad apkauptų (t.y. virtualizuotų) „Windows“ programas. Šis prielinksnis/priešdėlis sudaro „Wine“ konfigūracijos failai ir C: veikimo atkūrimą (pagrindinį „Windows“ OS diską). Šiame atkūrime, C: disko; Jūsų žaidimo išsaugojimai ir nepriklausomybės yra įdiegiamos per „winetricks“, kuriame yra laikomi."
+    "dontShowAgain": "Neberodyti daugiau",
+    "default-install-path": "Pasirinkti numatytąjį įdiegimo kelią",
+    "vcruntime": {
+      "notfound": {
+        "title": "„VCRuntime“ nėra įdiegtas",
+        "message": "„Microsoft Visual C++“ vykdantieji nėra įdiegti, kurie yra reikalingi kai kuriems žaidimams"
+      },
+      "install": {
+        "message": "Atsisiuntimo nuorodos „Visual C++“ vykdantiesiems buvo atidarytas. Prašome įdiegti abi – „x86“ ir „x64“ versijas."
+      }
+    },
+    "protocol": {
+      "install": {
+        "not_installed": "Dabar nėra įdiegtas. Įdiegti jį?"
+      }
+    },
+    "cache-cleared": {
+      "message": "„Heroic“ talpykla/podėlis išvalyta/-s.",
+      "title": "Talpykla/Podėlis išvalyta/-s"
+    },
+    "changelog": "Keitinių žurnãlas",
+    "choose-egs-prefix": "Pasirinkti prielinksnį/priešdėlį, kuriame „EGS“ yra įdiegtas",
+    "choose-gogdl-binary": "Pasirinkti „GOGDL“ dvejetainę (reikalauja paleidimo iš naujo)",
+    "choose-legendary-binary": "Pasirinkti „Legendary“ dvejetainę",
+    "choose-nile-binary": "Pasirinkti „Nile“ dvejetainę",
+    "customWine": "Pasirinkti „Wine“ ar „Proton“ dvejetainę",
+    "reset-heroic": {
+      "question": {
+        "title": "Atstatyti „Heroic“",
+        "message": "Ar Jūs tikrai norite atstatyti „Heroic“? Šis pašalins visus/-as nustatymus ir talpyklas/podėlius, bet nepašalins Jūsų įdiegtų žaidimų ar Jūsų „Epic“ kredencialų. Perkeliamos „Heroic“ versijos („AppImage“, „WinPortable“ ir t.t.) turi būti paleidžiamos iš naujo rankiniu būdu po vėliau."
+      }
+    }
+  },
+  "notify": {
+    "uninstalled": "Išdiegti",
+    "finished": {
+      "add": {
+        "steam": {
+          "title": "Pridėti prie „Steam“",
+          "success": "„{{game}}“ buvo sėkmingai pridėtas prie „Steam“. „Steam“ paleidimas iš naujo yra reikalingas, norint, kad pokyčiai būtų įtvirtinti.",
+          "corrupt": "„{{game}}“ negalėjo būt pridėtas prie visų rastų „Steam“ vartotojų/naudotojų. Peržiūrėkite žurnalą, norint sužinoti daugiau. „Steam“ paleidimas iš naujo yra reikalingas, norint, kad pokyčiai būtų įtvirtinti."
         }
+      },
+      "remove": {
+        "steam": {
+          "title": "Pašalinti iš „Steam“",
+          "corrupt": "„{{game}}“ negalėjo būt pašalintas iš visų rastų „Steam“ vartotojų/naudotojų. Peržiūrėkite žurnalą, norint sužinoti daugiau. „Steam“ paleidimas iš naujo yra reikalingas, norint, kad pokyčiai būtų įtvirtinti.",
+          "success": "„{{game}}“ buvo sėkmingai pašalintas iš „Steam“. „Steam“ paleidimas iš naujo yra reikalingas, norint, kad pokyčiai būtų įtvirtinti."
+        }
+      },
+      "reparing": "Baigta taisyti"
+    },
+    "install": {
+      "canceled": "Įdiegimas atšauktas",
+      "error": "Įdiegimas nepavyko",
+      "failed": "Įdiegimas nepavyko",
+      "finished": "Įdiegimas baigtas",
+      "imported": "Žaidimas importuotas",
+      "startInstall": "Įdiegimas pradėtas",
+      "paused": "Įdiegimas sustabdytas"
+    },
+    "moved": "Perkėlimas baigtas",
+    "update": {
+      "failed": "Atnaujinimas nepavyko",
+      "canceled": "Atnaujinimas atšauktas",
+      "started": "Atnaujinimas pradėtas",
+      "finished": "Atnaujinimas baigtas",
+      "paused": "Atnaujinimas sustabdytas"
+    },
+    "moving": "Perkeliamas žaidimas",
+    "error": {
+      "move": "Klaida perkeliant žaidimą",
+      "reparing": "Klaida taisant"
+    },
+    "new-heroic-version": "Nauja „Heroic“ versija buvo išleista!",
+    "refresh": {
+      "error": "Nepavyko gauti leidinių iš išsiunčiamo srauto, galbūt dėl „Github API“ ribojimų! Pabandykite dar kartą vėlesniu laiku."
+    },
+    "import": {
+      "failed": "Importavimas nepavyko"
+    }
+  },
+  "button": {
+    "login": "Prisijungti",
+    "continue": "Tęsti",
+    "cancel": "Atšaukti",
+    "go_to_library": "Eiti į biblioteką"
+  },
+  "controller": {
+    "hints": {
+      "select": "Pažymėti",
+      "game_settings": "Žaidimo nustatymai",
+      "install_game": "Įdiegti žaidimą",
+      "play_game": "Žaisti žaidimą",
+      "update_game": "Atnaujinti žaidimą",
+      "back": "Atgal",
+      "options": "Parinktys",
+      "scroll": "Slinkti",
+      "game_details": "Žaidimo išsamumas",
+      "move_cursor": "Judinti pelės žymeklį",
+      "open_virtual_keyboard": "Atidaryti virtualią klaviatūrą",
+      "space": "Tarpas",
+      "close_keyboard": "Uždaryti klaviatūrą",
+      "close_options": "Uždaryti parinktis",
+      "close_dialog": "Uždaryti dialogo langą",
+      "backspace": "Grįžties klavišas"
+    }
+  },
+  "dlc": {
+    "size": "Dydis",
+    "title": "Antraštė/Pavadinimas",
+    "actions": "Veiksmai",
+    "noDlcFound": "Jokie „DLC“ nebuvo rasti",
+    "installDlcs": "Įdiegti visus „DLC“ (dgs.)"
+  },
+  "download-manager": {
+    "install-type": {
+      "install": "Įdiegti",
+      "update": "Atnaujinti"
     },
     "label": {
-        "loading": "Kraunama",
-        "releaseDate": "Išleidimo data"
+      "disk": "Diskas",
+      "speed": "Atsisiųsti"
     },
-    "loading": {
-        "default": "Kraunama",
-        "website": "Kraunamas tinklapis"
-    },
+    "link": "Atsisiuntimai",
     "queue": {
-        "label": {
-            "downloading": "Atsisiunčiama",
-            "queued": "Eilėje",
-            "canceled": "Atšaukta/-s",
-            "clear": "Išvalyti sąrašą",
-            "empty": "Nieko nėra ko atsisiųsti",
-            "finished": "Baigta",
-            "pause": "Sustabdyti atsisiuntimą",
-            "remove": "Pašalinti iš atsisiuntimų",
-            "resume": "Pratęsti atsisiuntimą"
-        }
+      "type": "Tipas",
+      "end-time": "Baigta –",
+      "queue-time": "Pridėta –",
+      "start-time": "Pradėta –"
     },
-    "setting": {
-        "eosOverlay": {
-            "disable": "Išjungta/Neįgalinta (-as/-i)",
-            "enable": "Įjungta/Įgalinta (-as/-i)",
-            "install": "Įdiegti",
-            "remove": "Išdiegti",
-            "updateNow": "Atnaujinti",
-            "cancelInstall": "Atšaukti",
-            "updating": "Atnaujinama...",
-            "currentVersion": "Dabartinė versija: {{version}}",
-            "latestVersion": "Naujausia/Paskiausia versija: {{version}}",
-            "checkForUpdates": "Tikrinti ar yra atnaujinimų",
-            "checkingForUpdates": "Tikrinama ar yra atnaujinimų...",
-            "installed": "„EOS“ perdanga yra įdiegta",
-            "installing": "„EOS“ perdanga yra įdiegiama...",
-            "notInstalledMsg": "„EOS“ perdanga nėra įdiegta. Ar Jūs norite ją įdiegti dabar?",
-            "notInstalledTitle": "Perdanga nėra įdiegta",
-            "removeConfirm": "Ar Jūs tikrai norite išdiegti „EOS“ perdangą?",
-            "removeConfirmTitle": "Patvirtinti perdangos pašalinimą",
-            "notInstalled": "„EOS“ perdanga nėra įdiegta"
-        },
-        "library_top_option": {
-            "disabled": "Išjungta/Neįgalinta (-as/-i)",
-            "favourites": "Mėgstamiausi žaidimai",
-            "recently_played": "Neseniai žaisti žaidimai",
-            "recently_played_installed": "Neseniai žaisti žaidimai (tik įdiegti)"
-        },
-        "winecrossoverbottle": "„CrossOver butelis“",
-        "wineversion": "„Wine“ versija",
-        "allow_installation_broken_anticheat": {
-            "confirmation": {
-                "understand": "Aš supratau",
-                "title": "Ar Jūs esate tikra/-s?",
-                "message": "Žaidimai su sugedusiu ar atmestu anti-sukčiavimu gali veikti, bet daugiažaidėjė̄škos funkcijos neveiks. Neprašykite pagalbos, jeigu įdiegiate žinodami šį."
-            },
-            "label": "Leisti žaidimų įdiegimą su neveikiančiu ar atmestu anti-sukčiavimu"
-        },
-        "manualsync": {
-            "download": "Atsisiųsti",
-            "forceupload": "Priverstinai įkelti",
-            "forcedownload": "Priverstinai atsisiųsti",
-            "upload": "Įkelti",
-            "sync": "Sinchronizuoti",
-            "syncing": "Sinchronizuojama",
-            "title": "Rankinio sinchronizavimo išsaugojimai"
-        },
-        "experimental_features": {
-            "enableNewDesign": "Naujas dizainas",
-            "enableHelp": "Pagalbos komponentas",
-            "automaticWinetricksFixes": "Automatiškai pritaikyti žinomus sutaisymus",
-            "cometSupport": "„Comet“ palaikymas",
-            "umuSupport": "Naudoti „umu“ kaip „Pronton“ vykdantįjį",
-            "zoomPlatform": "„Zoom“ platformos palaikymas (tik „Linux“)"
-        },
-        "crossover-version": "„Crossover“/„Wine“ versija",
-        "default-install-path": "Numatytas įdiegimo kelias",
-        "default-steam-path": "Numatytas „Steam“ kelias",
-        "download-no-https": "Atsisiųsti žaidimus be „HTTPS“ (naudinga naudojant „CDNs“; pvz.: „LanCache“)",
-        "frameless-window": {
-            "confirmation": {
-                "message": "Ši funkcija vis dar eksperimentinė. Prašome pranešti apie problemas, su kuriomis Jūs susiduriate „GitHub“ platformoje.",
-                "title": "Toliau seka eksperimentinė funkcija"
-            },
-            "description": "Naudoti berėmi langą (reikalauja paleidimo iš naujo)"
-        },
-        "autoUpdateGames": "Automatiškai atnaujinti žaidimus",
-        "log": {
-            "upload": {
-                "actions": "Veiksmai",
-                "button": "Įkelti žurnalo failą",
-                "confirm": {
-                    "content": "Ar Jūs tikrai norite įkelti – „{{name}}“?",
-                    "title": "Įkelti žurnalo failą?"
-                },
-                "done": {
-                    "content": "Įkeltas – „{{url}}“ („URL“ – saitas buvo nukopijuotas į Jūsų iškarpinę/mainų sritį)",
-                    "title": "Įkėlimas baigtas"
-                },
-                "error": {
-                    "content": "Nepavyko įkelti žurnalo failo. Patikrinkite bendrąjį „Heroic“ žurnalą dėl išsamumo",
-                    "title": "Įkėlimas nepavyko",
-                    "manual_upload": "Spustelėkite ant – „RODYTI ŽURNALO FAILĄ APLANKALE“ mygtuko ir įkelkite – „launch.log“ failą rankiniu būdu į „Discord“ ar į bet kokį failų bendrinimo puslapį."
-                },
-                "header": "Įkelti žurnalo failai",
-                "hours-ago": "Įkelta {{hoursAgo, relativetime(hours)}}",
-                "minutes-ago": "Įkelta {{minutesAgo, relativetime(minutes)}}",
-                "upload-date": "Įkėlimo data",
-                "uploading": {
-                    "content": "Įkeliamas žurnalo failas...",
-                    "title": "Įkeliama"
-                },
-                "delete": "Prašyti žurnalo failo ištrynimo",
-                "open": "Atidaryti įkelta žurnalo failą",
-                "no-files": "Jokie žurnalo failai nebuvo įkelti",
-                "title": "Žurnalo antraštė"
-            },
-            "descriptiveNames": {
-                "game-log": "„{{gameTitle}}“ žaidimo žurnalas",
-                "gog": "„GOG“ žurnalas",
-                "heroic": "Bendras „Heroic“ žurnalas",
-                "legendary": "„Epic Games“ / „Legendary“ žurnalas",
-                "nile": "„Amazon“ / „Nile“ žurnalas",
-                "zoom": "„Zoom“ žurnalas"
-            },
-            "join-heroic-discord": "Prisijunkite prie mūsų „Discord“",
-            "show-in-folder": "Rodyti žurnalo failą aplanke/-ale",
-            "show-uploads": "Rodyti įkeltus žurnalo failus",
-            "instructions_title": "Kaip pranešti apie problemą?",
-            "no-file": "Joks žurnalo failas nebuvo rastas",
-            "instructions": "Prisijunkite prie mūsų „Discord“ ir paieškokite – „#-support“ skyriaus. Peržiūrėkite prisegta – „Read Me First | Frequently Asked Questions“ giją ir sekite instrukcijas kaip bendrinti šiuos žurnalus ir visą susijusią informaciją apie Jūsų problemą."
-        },
-        "after-launch-script-path": "Pasirinkti skriptą, kurį vykdyti po žaidimo išjungimo",
-        "before-launch-script-path": "Pasirinkti skriptą, kurį vykdyti prieš paleidžiant žaidimą",
-        "checkForUpdatesOnStartup": "Tikrinti ar yra „Heroic“ atnaujinimų, paleidimo metu",
-        "customWineProton": "Pasirinktiniai „Wine“/„Proton“ keliai",
-        "offlinemode": "Paleisti žaidimą kaip neprisijungus",
-        "prefered_language": "Pageidaujama kalba (kalbos kodas)",
-        "savefolder": {
-            "not-found": "Išsaugojimo aplankas/-las nebuvo rastas, prašome jį pasirinkti rankiniu būdu (spauskite, norint bandyti dar kartą)",
-            "warning": "Prašome patikrinti dar kartą ar šis kelias yra teisingas (spausti, norint bandyti iš naujo)",
-            "placeholder": "Pažymėkite tikslų žaidimų išsaugojimų aplanką/-alą"
-        },
-        "showfps": "Rodyti kdr./sek. („DX9/10/11“)",
-        "steamruntime": "Naudoti „Steam“ vykdantįjį",
-        "language": "Pasirinkti programos kalbą",
-        "library_top_section": "Viršutinis bibliotekos skyrius",
-        "ignoreGameUpdates": "Ignoruoti žaidimų atnaujinimus",
-        "adddesktopshortcuts": "Pridėti darbalaukio nuorodas automatiškai",
-        "addgamestoapplications": "Automatiškai pridėti žaidimus prie programų sąrašo",
-        "addgamestosteam": "Automatiškai pridėti žaidimus į „Steam“",
-        "addgamestostartmenu": "Automatiškai pridėti žaidimus prie pradžios meniu",
-        "darktray": "Naudoti tamsią juostos piktogramą",
-        "dxvkfpslimit": "Riboti kadrus per sekundę („DX9/10/11“)",
-        "minimize-on-launch": "Nuleisti „Heroic“ po žaidimo paleidimo",
-        "gamescope": {
-            "missingMsg": "Mes negalėjome surasti „Gamescope“ kelio vietoje. Įdiekite jį arba pridėkite prie kelio.",
-            "enableLimiter": "Įjungti/Įgalinti kadrų per sekundę ribotuvą/-ę",
-            "enableUpscaling": "Įjungia/Įgalina išplečiama gebą",
-            "enableForceGrabCursor": "Įjungti/Įgalinti priverstinį griebimo žymeklį",
-            "warningFlatpak": "Negalėjome rasti palaikomos „Gamescope“ versijos. Įdiekite „Gamescope“ „flatpak“ paketą su vykdomuoju – {{runtimeVersion}} ir perleiskite „Heroic“."
-        },
-        "hideChangelogsOnStartup": "Nerodyti keitinių žurnalo paleidime",
-        "maxRecentGames": "Rodyti neseniai žaistus",
-        "maxworkers": "Didžiausias darbuotojų skaičius, kai siunčiamasi",
-        "autodxvk": "Automatiškai įdiegti/atnaujinti „DXVK“ ant prielinksnio/priešdėlio",
-        "autodxvknvapi": "Automatiškai įdiegti/atnaujinti „DXVK-NVAPI“ ant prielinksnio/priešdėlio",
-        "autosync": "Automatiškai sinchronizuoti išsaugojimus",
-        "autovkd3d": "Automatiškai įdiegti/atnaujinti „VKD3D“ ant prielinksnio/priešdėlio",
-        "defaultWinePrefix": "Nustatyti aplanką/-alą naujiems „Wine“ prielinksniams/priešdėliams",
-        "egs-sync": "Sinchronizuoti su įdiegtu „Epic Games“",
-        "runexe": {
-            "title": "Vykdyti „*.EXE“ ant prielinksnio/priešdėlio",
-            "message": "Vilkti ir nutempti failus čia"
-        },
-        "alt-gogdl-bin": "Pasirinkite kurią pakaitinę „GOGDL“ dvejetainę naudoti",
-        "alt-legendary-bin": "Pasirinkite kurią pakaitinę „Legendary“ dvejetainę naudoti",
-        "alt-nile-bin": "Pasirinkite kurią pakaitinę „Nile“ dvejetainę naudoti",
-        "change-target-exe": "Pasirinkti pakaitinį „EXE“, kurį vykdyti",
-        "custom_themes_path": "Pasirinktinių apipavidalinimų kelias",
-        "disable_logs": "Išjungti žurnalus",
-        "disablePlaytimeSync": "Išjungti/Išgalinti žaidimo laikotarpio sinchronizavimą",
-        "esync": "Įjungti „Esync“",
-        "preferSystemLibs": "Pageidauti sisteminių bibliotekų",
-        "select_theme": "Pasirinkti apipavidalinimą",
-        "wineprefix": "„Wine“ prielinksnio/priešdėlio aplankas/-las",
-        "fsync": "Įjungti „Fsync“",
-        "msync": "Įjungti „Msync“",
-        "disable_controller": "Išjungti/Išgalinti „Heroic“ valdymą naudojant pultelį/valdiklį",
-        "enableFSRHack": "Įjungti/Įgalinti „FSR“ nulaužimą („Wine“ versija turi jį palaikyti)",
-        "exit-to-tray": "Išeiti į sistemos užduočių juostą",
-        "discordRPC": "Įjungti/Įgalinti išplėstinį „Discord“ veikimo palaikymą",
-        "FsrSharpnessStrenght": "„FSR“ ryškumo stiprumas",
-        "mangohud": "Įjungti/Įgalinti „Mangohud“ („Mangohud“ turi būti įdiegtas)",
-        "start-in-tray": "Pradėti minimizuotai",
-        "showMetalOverlay": "Rodyti perdangos statistiką",
-        "gamemode": "Naudoti žaidimo veikseną („Feral“ žaidimo veiksena turi būti įdiegta)",
-        "disableUMU": "Išjungti/Išgalinti „UMU“",
-        "allow_non_ge_proton": {
-            "confirmation": {
-                "title": "Ar Jūs esate tikra/-s?"
-            }
-        },
-        "show_valve_proton": {
-            "confirmation": {
-                "title": "Ar Jūs esate tikra/-s?",
-                "show": "Aš suprantu, rodyti juos",
-                "dont_show": "Nerodyti jiems",
-                "message": "Mes rekomenduojame naudoti bendruomenės „Proton“ atšakas (tokias kaip: „GE-Proton“, „Proton-CachyOS“ ir t.t.) su „Heroic“, nes „Valve Proton“ neturi „winetricks“ ar „protofixes“ paketų. Jūs galite juos naudoti, jeigu norite."
-            },
-            "wine_selector_warning": "Numatytai, „Valve Proton“ versijos yra nepaisomos ir ignoruojamos. Jas galite įgalinti pažangiuose visuotiniuose nustatymuose",
-            "label": "Leisti naudoti „Valve Proton“ leidinius, kad paleistumėte žaidimus",
-            "info_label": "„Valve Proton“ versijos, kurių nepaisyti"
-        },
-        "scripts": "Skriptai:",
-        "WoW64": "Įjungti/Įgalinti „WoW64 (eksperimentinis)“",
-        "download-proton-steam": "Atsisiųsti „GE-Proton“ į „Steam“ katalogą",
-        "wineWayland": "Įjungti/Įgalinti „Wine-Wayland eksperimentinis“ („Wine“ versija turi jį palaikyti)",
-        "hdr": "Įjungti „HDR“",
-        "dxfpslimit": "Riboti „DirectX“ žaidimų kadr./sek.",
-        "enable-quick-sync-menu": "Įjungti/Įgalinti greitąjį sinchronizuojantį išsaugojimą, jo meniu žaidimo puslapyje",
-        "no-tray-icon": "Slėpti sistemos juostelėje randančią piktogramą (reikalauja paleidimo iš naujo)",
-        "analyticsOptIn": "Siųsti ananomiškus duomenis, siekiant padėti „Heroic“ kūrimą",
-        "verboseLogs": {
-            "description": "Įjungti derinimo veikseną"
-        },
-        "advertiseAvxForRosetta": "Pranešti „AVX“ „Rosetta“ palaikymui",
-        "custom_css": {
-            "warning": "Įspėjimas: šis pritaikomas su visa vidine atvirąją sąsają. Tai reiškia, kad netinkamas stilius gali padaryti „Heroic“ neveiksnų. Jeigu reikia, šis nustatymas gali būti pakeistas rankiniu būdu – „`~/.config/heroic/config.json`“. Nekopijuokite stilių iš šaltinių, kurių nepasitikite."
-        },
-        "start-in-console-mode": "Paleisti konsolės veiksenoje",
-        "disable_gog_presence": "Išjungti/Išgalinti „GOG“ matomumo (būsenos) atnaujinimus",
-        "hide-window-on-protocol-launch": "Slėpti „Heroic“ langą, kai paleidžiami žaidimai iš – „heroic://“ nuorodų",
-        "nvidiaprime": {
-            "description": "Priverstinai naudoti „NVIDIA Optimus“ ar „AMD DSG dGPU“. Naudoti šį tik „OpenGL“ ir „Vulkan“ žaidimuose."
-        }
+    "ETA": "Numatytas laikas",
+    "title": "Atsisiuntimai"
+  },
+  "game": {
+    "modify": "Redaguoti įdiegimą",
+    "store": "Parduotuvė",
+    "status": "Būsena/Būklė",
+    "title": "Žaidimo titulas/pavadinimas"
+  },
+  "header": {
+    "categories": "Kategorijos",
+    "show_hidden": "Rodyti paslėptus",
+    "filters": "Filtrai",
+    "only": "tik",
+    "reset": "Atstatyti",
+    "uncategorized": "Be kategorijos",
+    "no_categories": "Nėra pasirinktinių kategorijų. Pridėkite kategorijas naudojant kiekvieno žaidimo meniu.",
+    "show_available_games": "Rodyti nepasiekiamus žaidimus",
+    "show_installed_only": "Rodyti tik įdiegtus",
+    "show_support_offline_only": "Rodyti tik palaikančius veikti neprisijungus",
+    "show_favourites_only": "Rodyti tik mėgstamiausius",
+    "show_third_party_managed_only": "Rodyti tik valdomus trečios partijos",
+    "select_all": "Pažymėti visus",
+    "show_updates_only": "Rodyti tik žaidimus su atnaujinimais"
+  },
+  "help": {
+    "title": {
+      "settings": "Nustatymai",
+      "accessibility": "Prieinamumas",
+      "downloadManager": "Atsisiuntimo tvarkytuvas/-ė",
+      "login": "Prisijungti",
+      "library": "Biblioteka",
+      "wineManager": "„Wine“ tvarkytuvė/-as"
     },
-    "settings": {
-        "advanced": {
-            "details": "Išsamumas",
-            "clearCache": {
-                "help10": "„Heroic“ konfigūracija",
-                "help7": "Parduotuvės prisijungimas",
-                "help8": "Įdiegti žaidimai",
-                "help9": "Žaidimų nustatymai",
-                "help3": "„Legendary“ bibliotekos informacija (žaidimų sąrašas, įdiegimo lentelės, pačio žaidimo ir pan. informacija)",
-                "help4": "„GOG“ bibliotekos informacija (žaidimų sąrašas, įdiegimo lentelės, „API“ (t.y. reikalavimai) ir pan. informacija)",
-                "help5": "„Amazon“ bibliotekos informacija (žaidimų sąrašas, įdiegimo lentelės ir pan. informacija)",
-                "help6": "Šis NEIŠTRINS:",
-                "help1": "Šis veiksmas išvalys šias/-uos talpyklas/podėlius:",
-                "help2": "Trečių šalių informacija apie žaidimus (įvertinimai, „Steam“ palaikymas, laikas įveikti, „pcgamingwiki“, „applegamingwiki“)"
-            },
-            "title": {
-                "clearCache": "Išvalyti talpyklą/podėlį",
-                "resetHeroic": "Atstatyti „Heroic“"
-            },
-            "resetHeroic": {
-                "help": "Šis pašalins visus nustatymus ir talpyklas/podėlius, bet nepašalins Jūsų įdiegtų žaidimų ar „Epic“ kredencialų. Perkeliamos „Heroic“ versijos („AppImage“, „WinPortable“ ir t.t.) reikalauja, kad būtų perleisto rankiniu būdo po šio."
-            }
-        },
-        "navbar": {
-            "gamescope": "„Gamescope“",
-            "log": "Žurnalas",
-            "other": "Kita/-s/-i",
-            "games_settings_defaults": "Žaidimo numatytieji",
-            "systemInformation": "Sistemos informacija",
-            "sync": "Sinchronizavimas debesijos išsaugojimų",
-            "advanced": "Pažangūs",
-            "general": "Bendri",
-            "legacy": "Pasenusio standarto"
-        },
-        "systemInformation": {
-            "cpuDescription": "{{numOfCores}}x {{modelName}}",
-            "gpuDriver": "Tvarkyklė: {{driverVersion}}",
-            "gpuWithNumber": "„GPU“ {{number}}:",
-            "gogdlVersion": "„Gogdl“: {{gogdlVersion}}",
-            "legendaryVersion": "„Legendary“: {{legendaryVersion}}",
-            "nileVersion": "„Nile“: {{nileVersion}}",
-            "os": "Operacinė sistema:",
-            "osVersion": "Versija – {{versionNumber}}",
-            "systemModel": "Sistemos modelis:",
-            "gpu": "„GPU“:",
-            "cpu": "„CPU“:",
-            "memory": "Atmintis:",
-            "software": "Taikomoji programa:",
-            "heroicVersion": "„Heroic“: {{heroicVersion}}",
-            "systemSpecifications": "Sistemos specifikacijos:",
-            "cometVersion": "„Comet“: {{cometVersion}}",
-            "copyToClipboard": "Kopijuoti į iškarpinę/mainų sritį",
-            "memoryStats": "{{percentUsed}}% naudojama ({{usedGib}} / {{totalGib}}",
-            "osNameFlatpak": "{{osName}} („Flatpak“ viduje)",
-            "showDetailed": "Rodyti išsamias sistemos specifikacijas",
-            "steamDeck": "„Steam Deck {{model}}“"
-        },
-        "experimental_features": {
-            "title": "Eksperimentinės funkcijos"
-        },
-        "copiedToClipboard": "Nukopijuota į iškarpinę/mainų sritį!",
-        "copyToClipboard": "Kopijuoti visus nustatymus į iškarpinę/mainų sritį",
-        "default_hint": "Pakeitimai šiame skyriuje tik prisitaiko kaip numatytos reikšmes, kai įdiegiami žaidimai. Jei Jūs norite pakeisti jau įdiegto žaidimo nustatymus, naudokite – „Nustatymai“ mygtuką žaidimo puslapyje.",
-        "eacRuntime": {
-            "name": "„EasyAntiCheat“ vykdantysis",
-            "installing": "Įdiegiamas „EAC“ vykdantysis...",
-            "gameModeRequired": {
-                "title": "Reikalinga žaidimo veiksena",
-                "message": "Žaidimo veiksena reikalauja „EAC“ vykdančiojo, kad veiktų ant „Flatpak“. Ar Jūs norite jį įjungti/įgalinti dabar?"
-            }
-        },
-        "open-config-file": "Atidaryti konfigūracijos failą",
-        "clear-cache": "Išvalyti „Heroic“ talpyklą/podėlį",
-        "gamescope": {
-            "searchMsg": "Ieškoma „gamescope“ vykdomojo."
-        },
-        "log": {
-            "long-log-hint": "Žurnalas nupjautas, tik paskutinės 1000-čio eilučių yra rodomi!"
-        },
-        "battlEyeRuntime": {
-            "installing": "Įdiagiamas „BattlEye“ vykdantysis...",
-            "name": "„BattlEye AntiCheat“ vykdantysis"
-        },
-        "offline": {
-            "warning": "Šis žaidimas nurodomai nepalaiko neprisijungusią veikseną, įjunkite šį savo nuožiūrą. Žaidimas gali neveikti."
-        },
-        "reset-heroic": "Atstatyti „Heroic“",
-        "saves": {
-            "warning": "Debesijos išsaugojimo funkcija yra „Beta“ stadijoje, prašome atlikti atsargines kopijas savo išsaugojimų prieš sinchronizuojant (tuo atveju, jeigu įvyktu kažkas blogai)",
-            "not_supported": "Šis žaidimas nepalaiko debesijos išsaugojimų.",
-            "gog_linux_native_warning": "„Linux“ sistemai sukurti žaidimai nepalaiko „GOG“ debesijos išsaugojimų funkcijos. Naudokite „Windows“ versiją tam."
-        },
-        "gameMode": {
-            "eacRuntimeEnabled": {
-                "message": "„EAC“ vykdantysis yra įjungtas/įgalintas, kuris tinkamai neveiks be žaidimo veiksenos. Ar Jūs norite išjungti/išgalinti „EAC“ vykdantįjį ir žaidimo veikseną?",
-                "title": "Įjungtas/Įgalintas „EAC“ vykdantysis"
-            }
-        },
-        "launchOptions": "Paleidimo parinktys",
-        "legacy_warning": "Įspėjimas: Nustatymai šiame skirtuke yra daugiausiai nebegaliojantys ir gali visiškai neveikti.",
-        "custom_css": {
-            "title": "Pasirinktinis „CSS“ stilius"
-        },
-        "steamgriddb": {
-            "apikey": {
-                "title": "„SteamGridDB“ „API“ raktas",
-                "placeholder": "Įveskite savo „SteamGridDB“ „API“ raktą čia",
-                "placeholder_saved": "Raktas išsaugotas; rašykite, kad pakeistumėte; išvalykite, kad pašalintumėte"
-            },
-            "help": {
-                "description": "Pateikite savo „SteamGridDB“ „API“ raktą, kad gautumėte žaidimų viršelių paiešką. Raktas yra laikomas užšifruotas, jei Jūsų sistema palaiko jį. Jūs galite gauti jį – {{url}}"
-            }
-        }
-    },
-    "Settings": "Nustatymai",
-    "status": {
-        "installing": "Įdiegiama",
-        "processing": "Apdorojami failai, prašome palaukti",
-        "preparing_login": "Paruošiamas prisijungimas... ",
-        "logging": "Prisijungiama...",
-        "installed": "Įdiegta"
-    },
-    "window": {
-        "close": "Uždaryti",
-        "restore": "Atkurti langą",
-        "maximize": "Maksimalizuoti langą",
-        "minimize": "Minimizuoti langą"
-    },
-    "wine": {
-        "size": "Dydis",
-        "actions": "Veiksmas",
-        "manager": {
-            "link": "„Wine“ tvarkytuvė/-as",
-            "title": "„Wine“ tvarkytuvė/-as",
-            "not-found": "Nerasta jokia „Wine“ versija. Prašome paspausti ant atnaujinimo piktogramos, norint bandyti dar kartą.",
-            "unzipping": "Išarchyvuojama/Išskleidžiama",
-            "settings": "Nustatymai",
-            "update": "Atnaujinti",
-            "search": "Ieškoti versijų...",
-            "loading": "",
-            "open_folder": "",
-            "no-results": ""
-        },
-        "release": "Išleidimo data",
-        "notes": "Lapeliai"
-    },
-    "winetricks": {
-        "install": "Įdiegti",
-        "loading": "Kraunama",
-        "search": "Ieškoti šriftų ar komponentų",
-        "installed": "Įdiegti komponentai:",
-        "installing": "Įdiegiamas vykdomas: „{{component}}“",
-        "nothingYet": "Kol kas niekas nebuvo įdiegta „Winetricks“",
-        "openGUI": "Atidaryti „Winetricks“ grafinę sąsają",
-        "loading-available": "Kraunami pasiekiami komponentai...",
-        "no-components": "Nėra pasiekiamų komponentų"
-    },
-    "accessibility": {
-        "fonts": "Šriftai",
-        "title": "Prieinamumas",
-        "all_tiles_in_color": "Rodyti visas žaidimų plyteles spalvotai",
-        "titles_always_visible": "Visada rodyti plyteles bibliotekoje",
-        "actions_font_family_no_default": "Veiksmų šrifto „šeima“ (numatyta/-s):",
-        "content_font_family_no_default": "Turinio šrifto „šeima“ (numatyta/-s): ",
-        "zoom": "Priartinimas ir atitolinimas",
-        "disable_dialog_backdrop_close": "Neleisti dialogų langų uždarymą spaustėlius ne jo lange",
-        "actions_font_family_default": "Veiksmų šrifto „šeima“ (Numatyta: {{fontFamily}})",
-        "content_font_family_default": "Turinio šrifto „šeima“ (Numatyta: {{fontFamily}})",
-        "disable_smooth_scrolling": "Išjungti švelnų slinkimą (reikalauja paleidimo iš naujo)",
-        "disable_animations": "Išjungti grafinės sąsajos animacijas"
-    },
-    "add_game": "Pridėti žaidimą",
-    "anticheat": {
-        "source": "Šaltinis",
-        "anticheats": "Anti-sukčiavimas",
-        "status": "Būsena/Būklė",
-        "title": "Šis žaidimas įtraukia anti-sukčiavimo taikomąją programą",
-        "reference": "Išnaša/Pamatinis",
-        "multiplayer_may_not_work": "Daugiažaidėjė̄škos funkcijos gali neveikti, dėl sugedusio ar atmesto anti-sukčiavimo palaikymo."
-    },
-    "Amazon Games": "„Amazon“ žaidimai",
-    "categories-manager": {
-        "add": "Pridėti",
-        "remove": "Pašalinti – „{{name}}“",
-        "rename": "Pervadinti – „{{name}}“",
-        "title": "Tvarkyti kategorijas",
-        "add-placeholder": "Pridėti naują kategoriją",
-        "cancel-remove": "Atšaukti „{{name}}“ pašalinimą",
-        "confirm-remove": "Patvirtinti „{{name}}“ pašalinimą",
-        "confirm-rename": "Patvirtinti „{{oldName}}“ pervadinimą kaip – „{{newName}}“",
-        "no-categories": "Nėra kategorijų (kol kas).",
-        "cancel-rename": "Atšaukti „{{name}}“ pervadinimą"
-    },
-    "category-settings": {
-        "cancel": "Atšaukti",
-        "warning": "Įspėjimas",
-        "new-category": "Nauja kategorija",
-        "remove-category": "Pašalinti kategoriją",
-        "delete-question": "Tęsiant, visam laikui pašalins šią kategoriją ir atsies ją iš visų žaidimų. Tęsti?",
-        "add-new-category": "Pridėti naują kategoriją"
-    },
-    "docs": "Dokumentacija",
-    "epic": {
-        "offline-notification-title": "atsijungęs/-usi",
-        "offline-notification-body": "Internetinės paslaugos gali neveikti, nes „Epic Games“ serveriai yra atsijungę!"
-    },
-    "Epic Games": "„Epic Games“",
-    "gog-store": "„GOG“ parduotuvė",
-    "Library": "Biblioteka",
-    "login": {
-        "amazon": "„Amazon“ prisijungimas",
-        "gog": "„GOG“ prisijungimas",
-        "alternative_method": "Alternatyvus prisijungimo būdas",
-        "epic": "„Epic Games“ prisijungimas",
-        "message": "Prisijunkite su savo platforma. Jūs galite prisijungti prie daugiau nei vieną platformą vienu metu.",
-        "old-mac": "Jūsų „macOS“ versija yra – {{version}}. „macOS 12“ ar naujesnė yra reikalinga, norint prisijungti.",
-        "zoom": "„Zoom“ prisijungimas"
-    },
-    "offline-message": {
-        "ignore": "Ignoruoti",
-        "offline": "Atsijungęs/-usi",
-        "retrying": "Bandoma dar kartą",
-        "offline-retry-in": "Atsijungęs/-usi. Bandoma po {{seconds}} sek.",
-        "hint": "Mes tikriname prisijungimą priešais:{{newline}}github.com,{{newline}}gog.com,{{newline}}store.epicgames.com ir{{newline}}cloudflare-dns.com"
-    },
-    "options": {
-        "wrapper": {
-            "args": "Argumentai",
-            "arguments_example": "Argumentų pavyzdys: „--arg; --extra-file=\"failo-kelias/ su/tarpais\"“",
-            "exe": "Įvynioklis",
-            "placeHolderKey": "Naujas įvynioklis",
-            "placeHolderValue": "Įvynioklio argumentai",
-            "title": "Įvynioklio komanda:"
-        },
-        "gamescope": {
-            "additionalOptions": "Papildomos parinktys",
-            "gameWidth": "Žaidimo plotis",
-            "gameHeight": "Žaidimo aukštis",
-            "borderless": "Berėmis",
-            "fullscreen": "Pilno ekrano",
-            "stretch": "Ištempti vaizdą",
-            "windowed": "Languotas",
-            "fpsLimiter": "Kadrų per sekundę ribotuvas/-ė",
-            "fpsLimiterNoFocus": "Kadrų per sekundę ribotuvas/-ė (be fokuso)",
-            "nis": "„NVIDIA“ vaizdo skalė („NIS“)",
-            "upscaleHeight": "Išplėsti gebos aukštį",
-            "upscaleWidth": "Išplėsti gebos plotį",
-            "interger": "Sveikaskaitinis išplėstimas gebai"
-        },
-        "advanced": {
-            "value": "Reikšmė",
-            "placeHolderKey": "PAVADINIMAS",
-            "placeHolderValue": "Pvz.: Kelias/Į/Papildomi failai",
-            "key": "Kintamas vardas/pavadinimas",
-            "title": "Aplinkos kintamieji"
-        },
-        "env_variables": {
-            "example": "Neįtraukite „=“ rašmens, pvz.: nustatymui kaip – „MY_FLAG=123“, nustatykite „MY_FLAG“ pavadinime ir „123“ reikšmėje.",
-            "error": {
-                "empty_key": "Kintamieji vardai/pavadinimai negali būt tušti",
-                "equal_sign_in_key": "Kintamieji vardai/pavadinimai negali turėti „=“ rašmens",
-                "space_in_key": "Kintamieji vardai/pavadinimai negali būt su tarpais"
-            },
-            "info": "Nustatyti aplinkos kintamuosius, kad papildytu komandai."
-        },
-        "gameargs": {
-            "placeholder": "Įveskite paleidiklio argumentus čia",
-            "error": {
-                "command": "„%command%“ sintaksė iš „Steam“ nėra galimas kaip žaidimo argumentas.",
-                "env": "Aplinkos kintamieji turi būti sukonfigūruoti lentelėje, randama apačioje."
-            },
-            "title": "Žaidimo argumentai (vykdyti po komandos):"
-        },
-        "quote-args-with-spaces": "Įspėjimas: Atminkite argumentus rašyti angliškomis kabutėmis su tarpais! Pvz.: „\"kelias/su tarpais\"“"
+    "button": {
+      "close": "Uždaryti pagalbą",
+      "open": "Atidaryti pagalbą"
     },
     "other": {
-        "gogdl-version": "„GOGDL“ versija: ",
-        "nile-version": "„Nile“ versija: ",
-        "legendary-version": "„Legendary“ versija: ",
-        "weblate": "Padėkite išversti „Heroic“."
+      "part4": "Naudokite – ",
+      "part5": "Žaidimo argumentai",
+      "part7": " –, kad praleistu paleidiklį kai kuriuose žaidimuose ir pan.",
+      "part6": " , kad būtų pakviestas po komandos paleidimo, pavyzdžiui: "
     },
-    "platforms": {
-        "browser": "Naršyklė",
-        "win": "„Windows“",
-        "linux": "„Linux“",
-        "mac": "„Mac“"
+    "content": {
+      "accessibility": "Rodo prieinamumo nustatymus.",
+      "downloadManager": "Rodo dabartinius ir buvusius atsisiuntimus.",
+      "login": "Prisijungti prie kitų parduotuvių.",
+      "settingsDefault": "Rodo visus „Heroic“ nustatymus ir numatytąsias parinktis žaidimams.",
+      "wineManager": "Įdiegia skirtingas „Wine“, „Proton“, „Crossover“ ir pan. versijas.",
+      "customThemesPath": "Peržiūrėkite mūsų žinių aiškinamąjį puslapį.",
+      "defaultInstallPath": "Šis yra numatytasis kelias, jau parinktas, kai įdiegiami žaidimai.",
+      "library": "Rodo visus turimus žaidimus.",
+      "settingsGame": "Rodo visus nustatymus žaidimui."
     },
-    "please-wait": "Prašome palaukti...",
-    "prime-gaming": "„Prime Gaming“",
-    "store": "„Epic“ parduotuvė",
-    "title": {
-        "allGames": "Visi žaidimai"
+    "custom_themes_wiki": "Peržiūrėkite žinių aiškinamąjį puslapį išsamumui kaip pridėti pasirinktinius apvalkalus. Spauskite čia.",
+    "dxvkfpslimit": "Nustato kadrų dažnio ribą „DXVK“ žaidimams",
+    "game_language": {
+      "in_game_config": "Nevisi žaidimai palaiko šią konfigūraciją, kai kurie žaidimai turi nuosava kalbos nustatymą.",
+      "valid_codes": "Tinkami kalbos kodai yra priklausomi nuo žaidimo.",
+      "fallback": "Palikti tuščią, norint naudoti „Heroic“ kalbą."
     },
-    "tray": {
-        "about": "Apie",
-        "show": "Rodyti",
-        "quit": "Išeiti",
-        "reload": "Perleisti"
+    "wine": {
+      "part1": "„Heroic“ ieško „Wine“, „Proton“ ir „CrossOver“ versijų, šiuose aplankuose:",
+      "part2": "Kitoks vietoms, naudokite virtualųjį katalogą į vieną iš šių aplankų/-alų"
     },
-    "userselector": {
-        "cancel": "Atšaukti",
-        "discord": "„Discord“",
-        "logging_out": "Atsijungiama",
-        "logout": "Atsijungti",
-        "logout_confirmation": "Ar Jūs tikrai norite atsijungti?",
-        "manageaccounts": "Tvarkyti paskyras",
-        "quit": "Išeiti",
-        "quitMessage": "Ar Jūs tikrai norite išeiti?"
+    "custom_themes_path": "Nenaudoti „CSS“ failų iš nepatikimų šaltinių. Kai esate abejonėje, klauskite apžiūros mūsų „Discord“ kanale.",
+    "steam_path": {
+      "info": "Šis kelias leidžia „Heroic“ numatyti kokią „Proton“ versiją „Steam“ naudos, skirta pridedant ne „Steam“ žaidimus į „Steam“."
     },
-    "error": "Klaida",
-    "favourites": "Mėgstamiausi",
-    "GOG": "„GOG“",
-    "Other": "Kita/-s/-i",
-    "Open": "Atidaryti",
-    "stores": "Parduotuvės",
-    "adtraction-locked": {
-        "dont-show-again": "Neberodinėti šio įspėjimo",
-        "title": "„Adtraction“ yra užblokuotas",
-        "description": "Atrodo, kad „track.adtraction.com“ domenas-sritis negalėjo būti pakrautas arba buvo/yra užblokuotas. Su „adtraction“, bet kokie pirkimai „GOG“ parduotuvėje padeda „Heroic“ finansiškai. Apmąstykite pašalinti šį blokavimą, jeigu norite mums padėti."
+    "gamescope": {
+      "fpsLimiter": "Kiekis kadrų, kurias „gamescope“ ribos. Pvz.: 60",
+      "fpsLimiterNoFocus": "Kiekis kadrų, kurias „gamescope“ ribos per sekundę, jei žaidimas nėra fokusuotas.",
+      "gameHeight": "Aukščio skiriamoji geba, kuri yra naudojama žaidimo. „Gamescope“ numato 16:9 proporciją.",
+      "gameWidth": "Pločio skiriamoji geba, kuri yra naudojama žaidimo. „Gamescope“ numato 16:9 proporciją.",
+      "upscaleHeight": "Aukščio skiriamoji geba, kuri yra naudojama „Gamescope“. Numatoma 16:9 proporcija.",
+      "upscaleWidth": "Pločio skiriamoji geba, kuri yra naudojama „Gamescope“. Numatoma 16:9 proporcija.",
+      "upscaleMethod": "Išplėstai padidintos gebos būdas, kurį „gamescope“ turėtų naudoti.",
+      "additionalOptions": "Papildomos komandinės eilutės „vėliavos“, kurias pravesti į „gamescope“.",
+      "forceGrabCursor": "Visada naudoti santykinį pelės veikseną, vietoj jį išversti priklausomai nuo žymeklio matomumo. (Naudinga, kai programos/programėlės prarandą pirmenybę)"
     },
-    "externalLink": {
-        "dontAskAgain": "Daugiau nebeklausti",
-        "warning": "Jūs atidarysite išorinį saitą."
+    "dxvk": "„DXVK“ yra „Vulkan“ pagrindo vertimo sluoksnis „DirectX 9/10/11“ žaidimams. Įjungus/Įgalinant gali pagerinti palaikomumą. Gali sukelti problemų, ypatingai senesniems „DirectX“ žaidimams.",
+    "sync": {
+      "part1": "„Heroic“ bandys atspėti teisinga išsaugojimų aplanką/-alą ir jis dažniausiai atspėja. Atvejais kai jis yra neteisingas, naudokite perkeičiamąjį parinkimą, norint pakeisti jį.",
+      "part2": "Tuo atveju, kai Jūs pakeičiate prielinksnio/priešdėlio aplanką/-alą, skirtus „Wine“ ar „Proton“, reikės dar kart patikrinti šį kelią, kadangi „Proton“ naudoja kitokį prielinksnį/priešdėlį („/pfx“) or vartotojo/naudotojo vardą („steamuser“). Taigi, Jūs galite paprastai pašalinti dabartinį kelią ir išeiti iš sinchronizavimų nustatymo puslapio ir vėl sugrįžti, norint, kad „Heroic“ dar kartą atspėtų teisingąjį prielinksnį/priešdėlį.",
+      "part3": "Rankinis sinchronizavimas: Pasirinkite atsisiuntimą, norint atsisiųsti žaidimo išsaugojimus, kurie laikomi debesijoje. Pasirinkite įkėlimą, norint įkelti vietinius išsaugojimus į debesiją. Priverstinai atsisiųsti ir įkelti nepaisys jos parinkties versiją.",
+      "part4": "Automatinis išsaugojimų sinchronizavimas, sinchronizuos išsaugojimus kiekvieną kartą, kada Jūs pradėsite žaidimą ir kai jį baigsite žaisti."
     },
-    "globalSettings": "Visuotiniai nustatymai",
-    "placeholder": {
-        "custom_themes_path": "Pasirinkite kelią, kuriame ieškoti pasirinktinių „CSS“ failų",
-        "prefered_language": "2-iejų arba 4-ių rašmenų kodas (t.y.: „lt“ ar „pt-BR“)",
-        "alt-gogdl-bin": "Naudojama įterpta „GOGDL“ dvejetaine...",
-        "alt-legendary-bin": "Naudojama įterpta „Legendary“ dvejetaine...",
-        "alt-nile-bin": "Naudojama įterpta „Nile“ dvejetaine...",
-        "dxvkfpsvalue": "Natūralioji (t.y. teigiamieji) sveikoji reikšmė (pvz.: 30, 60, ...)",
-        "egs-prefix": "Prielinksnis/Priešdėlis kuriame „EGS“ yra įdiegtas"
+    "disablePlaytimeSync": "Išjungia/Išgalina žaidimo laikotarpio sinchronizavimą su duotos parduotuvės serveriais (kol kas tik „GOG“ yra palaikomas)",
+    "general": "Sinchronizuoti su „EGL“, jei Jūs turite veikiantį „Epic Games“ paleidiklio įdiegimą kitur ir norite importuoti savo žaidimus, siekiant išvengti jų atsisiuntimą dar kartą.",
+    "preferSystemLibs": "Pasirinktinės „Wine“ versijos („Wine-GE“, „Wine-Lutris“) yra įtraukiamos su jų bibliotekų priklausomybėm. Įjungiant/Įgalinant šią parinktį, šios įtraukiamos bibliotekos bus ignoruojamos ir „Wine“ įkraus sistemines bibliotekas vietoj to. Įspėjimas! Problemos gali kilti, jeigu priklausomybės nebus pasiekiamos.",
+    "disable_logs": "Perjungiant šį pažymėjimo lauką į – „ON“, išjungia didžiąsias žurnalų failų įrašymus (kritinė informacija visada yra įrašoma). Įsitikinkite, kad išjungėte šį nustatymą prieš pranešant apie bet kokią problemą.",
+    "dxvknvapi": "„DXVK-NVAPI“ yra „NVAPI“ realizacija, kuri sukurta ant „DXVK“ ir jo „Linux NVAPI“, jis leidžia „DLSS“ naudojimą, skirtiems „Nvidia GPU“ (dgs.).",
+    "esync": "„Esync“ siekia sumažinti „wineserver“ pridėtinių išlaidų procesoriaus apkraunančių žaidimų. Įjungiant/Įgalinant gali pagerinti našumą.",
+    "fsync": "„Fsync“ siekia sumažinti „wineserver“ pridėtinių išlaidų procesoriaus apkraunančių žaidimų. Įjungiant/Įgalinant gali pagerinti našumą ant palaikančių „Linux“ branduolių.",
+    "msync": "„Msync“ siekia sumažinti „wineserver“ pridėtinių išlaidų procesoriaus apkraunančių žaidimų. Įjungiant/Įgalinant gali pagerinti našumą ant palaikomų „Linux“ branduolių.",
+    "steamruntime": "Pasirinktinės bibliotekos, kurios yra telkiamos „Steam“, siekant paleisti „Linux“ ir „Windows“ („Proton“) žaidimus. Įjungiant/Įgalinant gali pagerinti palaikomumą.",
+    "vkd3d": "„VKD3D“ yra „Vulkas“ paremtas vertimo sluoksnis, skirtas „DirectX 12“ žaidimams. Įjungiant/Įgalinant gali žymiai pagerinti palaikomumą. Neturi jokio poveikio ant senesnių „DirectX“ žaidimų, jie reikalauja „DXVK“.",
+    "gamemode": "„Feral“ žaidimo veiksena pritaiko automatinius ir laikinus pakoregavimus sistemai, kai veikia žaidimai. Įjungiant/Įgalinant gali pagerinti našumą.",
+    "primerun": "Naudoti paskirtąją vaizdo plokštę, kad apdorotų žaidimus daugia-„GPU“ sistemose. Reikalinga žaidimų nešiojamiesiems kompiuteriams arba stacionariems, kurie naudoja be išvestinį „GPU“, skirtus apdorojimui („NVIDIA Optimus“, „AMD CrossFire“)",
+    "amdfsr": "„AMD FSR“ padeda pagerinti kadrų dažnį išplečiant mažesnes skiriamąsias gebas, pilno ekrano veiksenoje. Vaizdo kokybė pasitobulina nuo 5-ių iki 1-erių, tačiau našumas sumažėja. Įjungiant/Įgalinant gali pagerinti našumą.",
+    "dxfpslimit": "Nustato kadrų dažnio ribą „DirectX“ (9-12) žaidimams",
+    "download_proton_steam": "Kai įjungta/įgalinta (-as/-i), „GE-Proton“ bus atsisiųstas tiesiai į „Steam“ palaikymo įrankių katalogą, vietoj numatytojo „Heroic“ kelio. Jis naudos „Steam“ nustatytą kelią – „numatytame „Steam“ kelyje“ nustatyme, randančio viršuje.",
+    "wine-hdr": "„HDR“ išryškina spalvas, pateikiant skaistesnį išryškimą ir gilesnį kontrastą. Kad „HDR“ veiktų, ir ekranas, ir žaidimas, turi jį palaikyti.",
+    "WoW64": "„Wine WoW64“ veiksena leidžia 32-bitų „Windows“ žaidimams veikti 64-bitų „Wine“. Įjungiant šią veikseną, gali padėti patobulinti našumą, tačiau gali veikti nesandariai su senesniais 32-bitų žaidimais.",
+    "wine-wayland": "„Wine-Wayland“ eksperimentinė tvarkyklė leidžia žaidimams veikti sustatytai po „Wayland“ rodymo protokolo. Įgalinant jį, gali sukelti tam tikrų problemų kai kuriuose žaidimuose.",
+    "advertiseAvxForRosetta": "Įgalina „AVX“ instrukcijų palaikymą, kai paleidžiami „Windows“ žaidimas per „Rosetta“ „Apple Silicon Mac (dgs.) kompiuteriuose“. Šis gali būti reikalingas kai kuriems žaidimams kaip – „Death Stranding“, kurie reikalauja „AVX“ palaikymo.",
+    "analytics": "Įgalina „Heroic“, kad rinktų 100% proc. ananomiška naudojimo duomenis, siekiant patobulinti programą. Reikalauja paleidimo iš naujo, kad įsigalintų.",
+    "nvidiaprime": {
+      "details": "Naudoti paskirtąją vaizdo plokštę, kad apdorotų žaidimus daugia-„GPU“ sistemose. Reikalinga žaidimų nešiojamiesiems kompiuteriams arba stacionariems, kurie naudoja be išvestinį „GPU“, skirtus apdorojimui („NVIDIA Optimus“, „AMD CrossFire“)",
+      "link": "Peržiūrėkite daugiau išsamumo mūsų aiškinamajame puslapyje"
     },
-    "progress": "Pažanga",
-    "search": "Ieškoti žaidimų",
-    "tooltip": {
-        "addpath": "Pridėti naują kelią",
-        "removepath": "Pašalinti kelią"
+    "hide-window-on-protocol-launch": "Laiko „Heroic“ langą paslėpta, kai žaidimas yra paleistas iš kitos išorinės nuorodos, tokios kaip – „pridėti prie „Steam““ funkcijos."
+  },
+  "info": {
+    "version": "„Wine“ versija",
+    "heroic": {
+      "stable": "Stabilus",
+      "version": "„Heroic“ versija",
+      "beta": "„Beta“",
+      "newReleases": "Pasiekiamas atnaujinimas!",
+      "click-to-see-changelog": "Spauskite, norint peržiūrėti keitinių žurnalą"
     },
-    "two_col_table": {
-        "save_hint": "Pakeitimai šioje lentelėje nėra automatiškai išsaugomi. Spauskite – „+“ mygtuką"
+    "settings": "Nustatymai yra išsaugoti automatiškai",
+    "save-sync": {
+      "searching": "Bandoma aptikti teisingą išsaugojimų aplanką/-lą (spauskite, norint atšaukti)"
+    }
+  },
+  "infobox": {
+    "requirements": "Sistemos reikalavimai",
+    "help": "Pagalba",
+    "warning": "Įspėjimas",
+    "wine-path": "„Wine“ kelias",
+    "wine-prefix": {
+      "title": "„Wine“ prielinksnis/priešdėlis"
     },
-    "Update Available!": "Pasiekiamas atnaujinimas!",
-    "webview": {
-        "controls": {
-            "back": "Eiti atgal",
-            "openInBrowser": "Atidaryti naršyklėje",
-            "forward": "Eiti tolyn",
-            "reload": "Perkrauti puslapį"
-        }
+    "wine-path-invalid": "Negalimas „Wine“ kelias, prašome pasirinkti kitokį.",
+    "wine-path-none-found": "Jokia „Wine“ versija nebuvo rasta, atsisiųskite ją iš „Wine“ tvarkytuves/-o",
+    "wine-repfix": {
+      "message": "„Wine“ naudoja tą ką jis vadina – „WINEPREFIX“, kad apkauptų (t.y. virtualizuotų) „Windows“ programas. Šis prielinksnis/priešdėlis sudaro „Wine“ konfigūracijos failai ir C: veikimo atkūrimą (pagrindinį „Windows“ OS diską). Šiame atkūrime, C: disko; Jūsų žaidimo išsaugojimai ir nepriklausomybės yra įdiegiamos per „winetricks“, kuriame yra laikomi."
+    }
+  },
+  "label": {
+    "loading": "Kraunama",
+    "releaseDate": "Išleidimo data"
+  },
+  "loading": {
+    "default": "Kraunama",
+    "website": "Kraunamas tinklapis"
+  },
+  "queue": {
+    "label": {
+      "downloading": "Atsisiunčiama",
+      "queued": "Eilėje",
+      "canceled": "Atšaukta/-s",
+      "clear": "Išvalyti sąrašą",
+      "empty": "Nieko nėra ko atsisiųsti",
+      "finished": "Baigta",
+      "pause": "Sustabdyti atsisiuntimą",
+      "remove": "Pašalinti iš atsisiuntimų",
+      "resume": "Pratęsti atsisiuntimą"
+    }
+  },
+  "setting": {
+    "eosOverlay": {
+      "disable": "Išjungta/Neįgalinta (-as/-i)",
+      "enable": "Įjungta/Įgalinta (-as/-i)",
+      "install": "Įdiegti",
+      "remove": "Išdiegti",
+      "updateNow": "Atnaujinti",
+      "cancelInstall": "Atšaukti",
+      "updating": "Atnaujinama...",
+      "currentVersion": "Dabartinė versija: {{version}}",
+      "latestVersion": "Naujausia/Paskiausia versija: {{version}}",
+      "checkForUpdates": "Tikrinti ar yra atnaujinimų",
+      "checkingForUpdates": "Tikrinama ar yra atnaujinimų...",
+      "installed": "„EOS“ perdanga yra įdiegta",
+      "installing": "„EOS“ perdanga yra įdiegiama...",
+      "notInstalledMsg": "„EOS“ perdanga nėra įdiegta. Ar Jūs norite ją įdiegti dabar?",
+      "notInstalledTitle": "Perdanga nėra įdiegta",
+      "removeConfirm": "Ar Jūs tikrai norite išdiegti „EOS“ perdangą?",
+      "removeConfirmTitle": "Patvirtinti perdangos pašalinimą",
+      "notInstalled": "„EOS“ perdanga nėra įdiegta"
     },
-    "Recent": "Neseniai žaista",
-    "emptyLibrary": {
-        "noResults": "Dabartiniai filtrai nedavė jokių rezultatų.",
-        "noGames": "Jūsų biblioteka yra tuščia.<br /><br />Spustelėkite <4>čia</4>, norint prisijungti su savo „Epic“, „GOG.com“ ar „Amazon“ paskyromis. Tada Jūsų žaidimai atras šitoje bibliotekoje.<br /><br />Norint žaisti/naudotis žaidimais ar programėlėmis iš kitų šaltinių, spustelėkite <br />, kad pridėtumėte juos rankiniu būdu."
+    "library_top_option": {
+      "disabled": "Išjungta/Neįgalinta (-as/-i)",
+      "favourites": "Mėgstamiausi žaidimai",
+      "recently_played": "Neseniai žaisti žaidimai",
+      "recently_played_installed": "Neseniai žaisti žaidimai (tik įdiegti)"
     },
-    "generic": {
+    "winecrossoverbottle": "„CrossOver butelis“",
+    "wineversion": "„Wine“ versija",
+    "allow_installation_broken_anticheat": {
+      "confirmation": {
+        "understand": "Aš supratau",
+        "title": "Ar Jūs esate tikra/-s?",
+        "message": "Žaidimai su sugedusiu ar atmestu anti-sukčiavimu gali veikti, bet daugiažaidėjė̄škos funkcijos neveiks. Neprašykite pagalbos, jeigu įdiegiate žinodami šį."
+      },
+      "label": "Leisti žaidimų įdiegimą su neveikiančiu ar atmestu anti-sukčiavimu"
+    },
+    "manualsync": {
+      "download": "Atsisiųsti",
+      "forceupload": "Priverstinai įkelti",
+      "forcedownload": "Priverstinai atsisiųsti",
+      "upload": "Įkelti",
+      "sync": "Sinchronizuoti",
+      "syncing": "Sinchronizuojama",
+      "title": "Rankinio sinchronizavimo išsaugojimai"
+    },
+    "experimental_features": {
+      "enableNewDesign": "Naujas dizainas",
+      "enableHelp": "Pagalbos komponentas",
+      "automaticWinetricksFixes": "Automatiškai pritaikyti žinomus sutaisymus",
+      "cometSupport": "„Comet“ palaikymas",
+      "umuSupport": "Naudoti „umu“ kaip „Pronton“ vykdantįjį",
+      "zoomPlatform": "„Zoom“ platformos palaikymas (tik „Linux“)"
+    },
+    "crossover-version": "„Crossover“/„Wine“ versija",
+    "default-install-path": "Numatytas įdiegimo kelias",
+    "default-steam-path": "Numatytas „Steam“ kelias",
+    "download-no-https": "Atsisiųsti žaidimus be „HTTPS“ (naudinga naudojant „CDNs“; pvz.: „LanCache“)",
+    "frameless-window": {
+      "confirmation": {
+        "message": "Ši funkcija vis dar eksperimentinė. Prašome pranešti apie problemas, su kuriomis Jūs susiduriate „GitHub“ platformoje.",
+        "title": "Toliau seka eksperimentinė funkcija"
+      },
+      "description": "Naudoti berėmi langą (reikalauja paleidimo iš naujo)"
+    },
+    "autoUpdateGames": "Automatiškai atnaujinti žaidimus",
+    "log": {
+      "upload": {
+        "actions": "Veiksmai",
+        "button": "Įkelti žurnalo failą",
+        "confirm": {
+          "content": "Ar Jūs tikrai norite įkelti – „{{name}}“?",
+          "title": "Įkelti žurnalo failą?"
+        },
+        "done": {
+          "content": "Įkeltas – „{{url}}“ („URL“ – saitas buvo nukopijuotas į Jūsų iškarpinę/mainų sritį)",
+          "title": "Įkėlimas baigtas"
+        },
         "error": {
-            "component": "Žaidimų nerasta. Bandykite atsijungti ir vėl prisijungti arba vieną iš pateiktų parinkčių apačioje"
+          "content": "Nepavyko įkelti žurnalo failo. Patikrinkite bendrąjį „Heroic“ žurnalą dėl išsamumo",
+          "title": "Įkėlimas nepavyko",
+          "manual_upload": "Spustelėkite ant – „RODYTI ŽURNALO FAILĄ APLANKALE“ mygtuko ir įkelkite – „launch.log“ failą rankiniu būdu į „Discord“ ar į bet kokį failų bendrinimo puslapį."
         },
-        "library": {
-            "refresh": "Atnaujinti biblioteką"
+        "header": "Įkelti žurnalo failai",
+        "hours-ago": "Įkelta {{hoursAgo, relativetime(hours)}}",
+        "minutes-ago": "Įkelta {{minutesAgo, relativetime(minutes)}}",
+        "upload-date": "Įkėlimo data",
+        "uploading": {
+          "content": "Įkeliamas žurnalo failas...",
+          "title": "Įkeliama"
         },
-        "install": "Įdiegti",
-        "uninstall": "Išdiegti",
-        "abort": "Nutraukti"
+        "delete": "Prašyti žurnalo failo ištrynimo",
+        "open": "Atidaryti įkelta žurnalo failą",
+        "no-files": "Jokie žurnalo failai nebuvo įkelti",
+        "title": "Žurnalo antraštė"
+      },
+      "descriptiveNames": {
+        "game-log": "„{{gameTitle}}“ žaidimo žurnalas",
+        "gog": "„GOG“ žurnalas",
+        "heroic": "Bendras „Heroic“ žurnalas",
+        "legendary": "„Epic Games“ / „Legendary“ žurnalas",
+        "nile": "„Amazon“ / „Nile“ žurnalas",
+        "zoom": "„Zoom“ žurnalas"
+      },
+      "join-heroic-discord": "Prisijunkite prie mūsų „Discord“",
+      "show-in-folder": "Rodyti žurnalo failą aplanke/-ale",
+      "show-uploads": "Rodyti įkeltus žurnalo failus",
+      "instructions_title": "Kaip pranešti apie problemą?",
+      "no-file": "Joks žurnalo failas nebuvo rastas",
+      "instructions": "Prisijunkite prie mūsų „Discord“ ir paieškokite – „#-support“ skyriaus. Peržiūrėkite prisegta – „Read Me First | Frequently Asked Questions“ giją ir sekite instrukcijas kaip bendrinti šiuos žurnalus ir visą susijusią informaciją apie Jūsų problemą."
     },
-    "library": {
-        "sortAscending": "Rikiuoti didėjančia tvarka",
-        "sortByStatus": "Rikiuoti pagal statusą",
-        "sortDescending": "Rikiuoti mažėjančia tvarka",
-        "toggleLayout": {
-            "grid": "Perjungti į tinklelinį išdėstymą",
-            "list": "Perjungti į sąrašo išdėstymą"
-        },
-        "refresh": "Įkelti iš naujo",
-        "hideAlphabetFilter": "Slėpti abėcėlės filtrą",
-        "showAlphabetFilter": "Rodyti abėcėlės filtrą"
+    "after-launch-script-path": "Pasirinkti skriptą, kurį vykdyti po žaidimo išjungimo",
+    "before-launch-script-path": "Pasirinkti skriptą, kurį vykdyti prieš paleidžiant žaidimą",
+    "checkForUpdatesOnStartup": "Tikrinti ar yra „Heroic“ atnaujinimų, paleidimo metu",
+    "customWineProton": "Pasirinktiniai „Wine“/„Proton“ keliai",
+    "offlinemode": "Paleisti žaidimą kaip neprisijungus",
+    "prefered_language": "Pageidaujama kalba (kalbos kodas)",
+    "savefolder": {
+      "not-found": "Išsaugojimo aplankas/-las nebuvo rastas, prašome jį pasirinkti rankiniu būdu (spauskite, norint bandyti dar kartą)",
+      "warning": "Prašome patikrinti dar kartą ar šis kelias yra teisingas (spausti, norint bandyti iš naujo)",
+      "placeholder": "Pažymėkite tikslų žaidimų išsaugojimų aplanką/-alą"
     },
-    "wineExplanation": {
-        "proton-ge": "„GE-Proton“ yra „Proton“ variantas sukurtas „Glorious Eggroll“. Jis yra skirtas, naudojant „Steam“, bet kai kurie žaidimai, neveikiantys „Steam“ gali veikti geriau su šiuo variantu. Jis pateikia daugmaž nereikšmingus žurnalus derinimui.",
-        "gpt": "Žaidimų perkėlimo įrankių dėžė yra sukurtas „Apple“ ir yra rekomenduojamas „Apple Silicon Mac (dgs.)“ su „M1+“ lustais ir veikia geriausiai su naujausiais žaidimais, kurie naudoja „DX12“.",
-        "wine-crossover": "„Wine-Crossover“ yra paremtas ant „Crossover OpenSource Wine projektas“ ir yra rekomenduojamas su „Intel Mac“, bei „DX11“ ir senesniems žaidimams.",
-        "wine-staging-macos": ""
+    "showfps": "Rodyti kdr./sek. („DX9/10/11“)",
+    "steamruntime": "Naudoti „Steam“ vykdantįjį",
+    "language": "Pasirinkti programos kalbą",
+    "library_top_section": "Viršutinis bibliotekos skyrius",
+    "ignoreGameUpdates": "Ignoruoti žaidimų atnaujinimus",
+    "adddesktopshortcuts": "Pridėti darbalaukio nuorodas automatiškai",
+    "addgamestoapplications": "Automatiškai pridėti žaidimus prie programų sąrašo",
+    "addgamestosteam": "Automatiškai pridėti žaidimus į „Steam“",
+    "addgamestostartmenu": "Automatiškai pridėti žaidimus prie pradžios meniu",
+    "darktray": "Naudoti tamsią juostos piktogramą",
+    "dxvkfpslimit": "Riboti kadrus per sekundę („DX9/10/11“)",
+    "minimize-on-launch": "Nuleisti „Heroic“ po žaidimo paleidimo",
+    "gamescope": {
+      "missingMsg": "Mes negalėjome surasti „Gamescope“ kelio vietoje. Įdiekite jį arba pridėkite prie kelio.",
+      "enableLimiter": "Įjungti/Įgalinti kadrų per sekundę ribotuvą/-ę",
+      "enableUpscaling": "Įjungia/Įgalina išplečiama gebą",
+      "enableForceGrabCursor": "Įjungti/Įgalinti priverstinį griebimo žymeklį",
+      "warningFlatpak": "Negalėjome rasti palaikomos „Gamescope“ versijos. Įdiekite „Gamescope“ „flatpak“ paketą su vykdomuoju – {{runtimeVersion}} ir perleiskite „Heroic“."
     },
-    "message": {
-        "sync": "Sinchronizavimas baigtas",
-        "unsync": "Išsinchronizavimas baigtas"
+    "hideChangelogsOnStartup": "Nerodyti keitinių žurnalo paleidime",
+    "maxRecentGames": "Rodyti neseniai žaistus",
+    "maxworkers": "Didžiausias darbuotojų skaičius, kai siunčiamasi",
+    "autodxvk": "Automatiškai įdiegti/atnaujinti „DXVK“ ant prielinksnio/priešdėlio",
+    "autodxvknvapi": "Automatiškai įdiegti/atnaujinti „DXVK-NVAPI“ ant prielinksnio/priešdėlio",
+    "autosync": "Automatiškai sinchronizuoti išsaugojimus",
+    "autovkd3d": "Automatiškai įdiegti/atnaujinti „VKD3D“ ant prielinksnio/priešdėlio",
+    "defaultWinePrefix": "Nustatyti aplanką/-alą naujiems „Wine“ prielinksniams/priešdėliams",
+    "egs-sync": "Sinchronizuoti su įdiegtu „Epic Games“",
+    "runexe": {
+      "title": "Vykdyti „*.EXE“ ant prielinksnio/priešdėlio",
+      "message": "Vilkti ir nutempti failus čia"
     },
-    "toolbox": {
-        "settings": {
-            "wineprefix": "Pažymėkite aplanką/-alą naujiems „Wine“ prielinksniams/priešdėliams"
-        }
+    "alt-gogdl-bin": "Pasirinkite kurią pakaitinę „GOGDL“ dvejetainę naudoti",
+    "alt-legendary-bin": "Pasirinkite kurią pakaitinę „Legendary“ dvejetainę naudoti",
+    "alt-nile-bin": "Pasirinkite kurią pakaitinę „Nile“ dvejetainę naudoti",
+    "change-target-exe": "Pasirinkti pakaitinį „EXE“, kurį vykdyti",
+    "custom_themes_path": "Pasirinktinių apipavidalinimų kelias",
+    "disable_logs": "Išjungti žurnalus",
+    "disablePlaytimeSync": "Išjungti/Išgalinti žaidimo laikotarpio sinchronizavimą",
+    "esync": "Įjungti „Esync“",
+    "preferSystemLibs": "Pageidauti sisteminių bibliotekų",
+    "select_theme": "Pasirinkti apipavidalinimą",
+    "wineprefix": "„Wine“ prielinksnio/priešdėlio aplankas/-las",
+    "fsync": "Įjungti „Fsync“",
+    "msync": "Įjungti „Msync“",
+    "disable_controller": "Išjungti/Išgalinti „Heroic“ valdymą naudojant pultelį/valdiklį",
+    "enableFSRHack": "Įjungti/Įgalinti „FSR“ nulaužimą („Wine“ versija turi jį palaikyti)",
+    "exit-to-tray": "Išeiti į sistemos užduočių juostą",
+    "discordRPC": "Įjungti/Įgalinti išplėstinį „Discord“ veikimo palaikymą",
+    "FsrSharpnessStrenght": "„FSR“ ryškumo stiprumas",
+    "start-in-tray": "Pradėti minimizuotai",
+    "showMetalOverlay": "Rodyti perdangos statistiką",
+    "gamemode": "Naudoti žaidimo veikseną („Feral“ žaidimo veiksena turi būti įdiegta)",
+    "disableUMU": "Išjungti/Išgalinti „UMU“",
+    "allow_non_ge_proton": {
+      "confirmation": {
+        "title": "Ar Jūs esate tikra/-s?"
+      }
     },
-    "tour": {
-        "back": "Atgal",
-        "next": "S_ekantis",
-        "sidebar": {
-            "welcome": {
-                "title": "",
-                "intro": "Sveiki į – „Heroic“! Ši šoninė juosta sudaro visas naršymo parinktis, siekiant naršyti programą."
-            },
-            "quit": "Išeikite iš programos saugiai.",
-            "docs": "Persiskaitykite dokumentaciją dėl „Heroic“ naudojimo.",
-            "library": "Pasiekite savo žaidimų biblioteką iš skirtingų parduotuvių vienoje vietoje.",
-            "community": "Prisijunkite prie mūsų bendruomenės „Discord“ ir palaikykite „Heroic“ kūrimą.",
-            "accessibility": "Pasiekite pasiekiamumo funkcijas, siekiant tinkinti savo patirtį.",
-            "wine": "",
-            "login": "Prisijunkite prie savo žaidimų parduotuvės/-ių paskyros/-ų, kad pasiektumėte savo biblioteką.",
-            "settings": "Sukonfigūruokite „Heroic“ nustatymus, žaidimo numatytuosius parametrus, tikrinkite žurnalus ir t.t.",
-            "downloads": "Sekite ir valdykite savo žaidimų atnaujinimus ir įdiegimus.",
-            "accounts": "Valdykite savo sujungtų parduotuvių paskyras („Epic“, „GOG“, „Amazon“); jų atsijungimą ir prisijungimą.",
-            "stores": "Naršykite ir pirkite žaidimus skirtinguose parduotuvėse, įskaitant – „Epic“, „GOG“ ir „Amazon“.",
-            "version": "Patikrinkite savo dabartinę „Heroic“ versiją, spustelėkite čia, norint peržiūrėti naujausią keitinių žurnalą ir pasiekite šį gidą iš pagalbos piktogramos."
-        },
-        "library": {
-            "gameCard": "Spustelėkite kairiuoju pelės mygtuku ant žaidimo kortelės, kad pereitumėte į žaidimo puslapį ir pamatytumėte jo išsamumą bei pakeistumėte nustatymus. Tai pat, galite spustelėti dešiniuoju pelės mygtuku, norint atidaryti parankinį meniu.",
-            "welcome": {
-                "title": "Sveiki atvykę į „Heroic“!",
-                "intro2": "Jei biblioteka yra tuščia, įsitikinkite, kad esate prisijungę su paskyromis, kuriose turite žaidimus. Šoninėje juostoje rasite šią parinktį. Tai pat, galite pridėti savo žaidimus spustelėjus – „Pridėti žaidimą“ mygtuką viršuje.",
-                "intro": "Sveiki atvykę į „Heroic“ biblioteką! Štai čia galite matyti visus savo žaidimus iš įvairių parduotuvių.",
-                "title2": "Bibliotekos tvarkymas!"
-            },
-            "filters": "Filtruoti žaidimus pagal parduotuvę, platformą, mėgstamumą ir daugiau, naudojant šias parinktis.",
-            "search": "Naudokite paieškos juosta, norint ieškoti savo žaidimų.",
-            "refresh": "Iš naujo įkelkite savo biblioteką, norint patikrinti ar atsirado nauji žaidimai ar jų atnaujinimai.",
-            "end": {
-                "intro": "Visks! Mėgaukitės žaisdami!",
-                "title": "Mėgaukitės žaisdami!"
-            },
-            "viewToggle": "Pasikeiskite žiūrėsena tarp tinklelio ir sąrašo peržiūros žaidimų.",
-            "categories": "Surikiuokite/Surūšiuokite savo žaidimus į kategorijas, siekiant viską laikyti tvarkingai.",
-            "sortInstalled": "Rikiuoti/Rūšiuoti žaidimus pagal įdiegsenos būseną.",
-            "sortOptions": "Spustelėkite čia, norint surikiuoti žaidimus pagal abėcėlę.",
-            "addGame": "Pridėkite savo žaidimus ar programas/programėles į biblioteką spustelėjus čia. Jie gali būti bet kas, net naršyklės „URL“ – saitai."
-        },
-        "startTour": "",
-        "skip": "",
-        "done": "Atlikta"
+    "show_valve_proton": {
+      "confirmation": {
+        "title": "Ar Jūs esate tikra/-s?",
+        "show": "Aš suprantu, rodyti juos",
+        "dont_show": "Nerodyti jiems",
+        "message": "Mes rekomenduojame naudoti bendruomenės „Proton“ atšakas (tokias kaip: „GE-Proton“, „Proton-CachyOS“ ir t.t.) su „Heroic“, nes „Valve Proton“ neturi „winetricks“ ar „protofixes“ paketų. Jūs galite juos naudoti, jeigu norite."
+      },
+      "wine_selector_warning": "Numatytai, „Valve Proton“ versijos yra nepaisomos ir ignoruojamos. Jas galite įgalinti pažangiuose visuotiniuose nustatymuose",
+      "label": "Leisti naudoti „Valve Proton“ leidinius, kad paleistumėte žaidimus",
+      "info_label": "„Valve Proton“ versijos, kurių nepaisyti"
     },
-    "analyticsModal": {
-        "disable": "Išjungta/Neįgalinta (-as/-i)",
-        "enable": "Įjungta/Įgalinta (-as/-i)",
-        "info": {
-            "pt1": "Siekiant patobulinti šią programą, „Heroic“ renką 100% proc. anonimiškus duomenis.",
-            "pt2": "„Heroic“ naudoja atviro kodo „Plausible Analytics“ platformą, kad surinktų šiuos duomenis: programos versiją, operacinę sistemą, prijungtas parduotuves/platformas ir šalį.",
-            "pt3": "Jis niekada nerinks jokių asmeninių duomenų, įskaitant Jūsų naudotojo/vartotojo vardą (t.y. slapyvardį), IP adresą ar el. paštą.",
-            "pt5": "„Plausible Analytics“ yra pilnai paklusnus su BDAR, „CCPA“ ir PERR.",
-            "pt4": "Šie duomenys yra naudojami suteiktiant įžvalgas į tolimesnius dėmesio sutelkimus dėl mūsų ribotų resursų ir vartotojų atsiliepimų.",
-            "pt7": "Šį nustatymą galite pakeisti bet kada Programos Nustatymuose.",
-            "pt6": "Skaidrumo sumetimais, Jūs galite peržvelgti visus duomenis kuriuos renkame „Heroic“ programos žurnale."
-        },
-        "title": "Siūsti Anoniminę Analitiką"
+    "scripts": "Skriptai:",
+    "WoW64": "Įjungti/Įgalinti „WoW64 (eksperimentinis)“",
+    "download-proton-steam": "Atsisiųsti „GE-Proton“ į „Steam“ katalogą",
+    "wineWayland": "Įjungti/Įgalinti „Wine-Wayland eksperimentinis“ („Wine“ versija turi jį palaikyti)",
+    "hdr": "Įjungti „HDR“",
+    "dxfpslimit": "Riboti „DirectX“ žaidimų kadr./sek.",
+    "enable-quick-sync-menu": "Įjungti/Įgalinti greitąjį sinchronizuojantį išsaugojimą, jo meniu žaidimo puslapyje",
+    "no-tray-icon": "Slėpti sistemos juostelėje randančią piktogramą (reikalauja paleidimo iš naujo)",
+    "analyticsOptIn": "Siųsti ananomiškus duomenis, siekiant padėti „Heroic“ kūrimą",
+    "verboseLogs": {
+      "description": "Įjungti derinimo veikseną"
     },
-    "launch": {
-        "options": "Paleidimo parinktys..."
+    "advertiseAvxForRosetta": "Pranešti „AVX“ „Rosetta“ palaikymui",
+    "custom_css": {
+      "warning": "Įspėjimas: šis pritaikomas su visa vidine atvirąją sąsają. Tai reiškia, kad netinkamas stilius gali padaryti „Heroic“ neveiksnų. Jeigu reikia, šis nustatymas gali būti pakeistas rankiniu būdu – „`~/.config/heroic/config.json`“. Nekopijuokite stilių iš šaltinių, kurių nepasitikite."
     },
-    "amazon-luna": "„Amazon Luna“",
-    "zoom-store": "„Zoom“ parduotuvė",
-    "discounts": {
-        "filters": {
-            "os": "Operacinė sistema",
-            "moreFilters": "Daugiau filtrų",
-            "ageRating": "Amžiaus cenzas",
-            "price": "Kaina",
-            "activeCount_other": "{{count}} aktyvi/-us/-ios/-ūs",
-            "hideDlcs": "Slėpti plėtotes",
-            "ageRatingOption": "Rodyti visus žaidimus įvertintus „PEGI“ {{age}} ar žemiau",
-            "genres": "Žanrai",
-            "activeCount_one": "{{count}} aktyvi/-us/-ios/-ūs",
-            "lessFilters": "Mažiau filtrų",
-            "rating": "Įvertinimas",
-            "sort": "Rikiuoti/Rūšiuoti pagal",
-            "genresPlaceholder": "Bet koks žanras",
-            "features": "Funkcijos",
-            "featuresPlaceholder": "Bet kokia funkcija",
-            "ageRatingAll": "Visi/-as/-os/-us",
-            "pageSize": "",
-            "releaseYear": "Išleidimo metai",
-            "hideOwned": "Slėpti turimus",
-            "wishlistOnly": "Tik norimus"
-        },
-        "region": {
-            "countries": {
-                "IT": "Italija",
-                "ES": "Ispanija",
-                "FI": "Suomija",
-                "GR": "Graikija",
-                "RO": "Rumunija",
-                "NO": "Norvegija",
-                "KR": "P. Korėja",
-                "US": "JAV",
-                "HU": "Vengrija",
-                "PT": "Portugalija",
-                "NL": "Nyderlandai",
-                "AU": "Australija",
-                "TW": "Taivanas",
-                "IL": "Izraelis",
-                "JP": "Japonija",
-                "DK": "Danija",
-                "DE": "Vokietija",
-                "CZ": "Čekija",
-                "FR": "Prancūzija",
-                "UA": "Ukraina",
-                "GB": "Jungtinė karalystė",
-                "SE": "Švedija",
-                "CN": "K. Kinija",
-                "RU": "Rusija",
-                "CA": "Kanada",
-                "PL": "Lenkija",
-                "BR": "Brazilija",
-                "CH": "Šveicarija",
-                "TR": "Turkija"
-            },
-            "auto": "Automatinis/-ė/-iškai ({{code}})",
-            "label": "Parduotuvės regionas"
-        },
-        "sidebar": "",
-        "sort": {
-            "priceDesc": "Kaina: nuo aukščiausios iki žemiausios",
-            "trending": "",
-            "priceAsc": "Kaina: nuo žemiausios iki aukščiausios",
-            "releaseDesc": "Išleidimo data: nuo naujausios iki seniausios",
-            "ratingAsc": "Įvertinimas: nuo žemiausios iki aukščiausios",
-            "releaseAsc": "Išleidimo data: nuo seniausios iki naujausios",
-            "ratingDesc": "Įvertinimas: nuo aukščiausios iki žemiausios",
-            "discount": "Didžiausia nuolaida"
-        },
-        "noMatches": "Nėra žaidimų, atitinkančių dabartinius filtrus.",
-        "aria": {
-            "pagination": "Puslapiãvimas",
-            "rating": "Įvertinimas – {{rating}} iš 10-imt"
-        },
-        "error": "Nepavyko įkelti nuolaidas. Prašome pabandyti dar kartą vėliau.",
-        "empty": "Nėra nukainuotų žaidimų šiuo momentu.",
-        "loading": "Kraunami nukainuoti žaidimai...",
-        "title": "",
-        "pagination": {
-            "prev": "Praeita/-s"
-        }
+    "start-in-console-mode": "Paleisti konsolės veiksenoje",
+    "disable_gog_presence": "Išjungti/Išgalinti „GOG“ matomumo (būsenos) atnaujinimus",
+    "hide-window-on-protocol-launch": "Slėpti „Heroic“ langą, kai paleidžiami žaidimai iš – „heroic://“ nuorodų",
+    "nvidiaprime": {
+      "description": "Priverstinai naudoti „NVIDIA Optimus“ ar „AMD DSG dGPU“. Naudoti šį tik „OpenGL“ ir „Vulkan“ žaidimuose."
+    }
+  },
+  "settings": {
+    "advanced": {
+      "details": "Išsamumas",
+      "clearCache": {
+        "help10": "„Heroic“ konfigūracija",
+        "help7": "Parduotuvės prisijungimas",
+        "help8": "Įdiegti žaidimai",
+        "help9": "Žaidimų nustatymai",
+        "help3": "„Legendary“ bibliotekos informacija (žaidimų sąrašas, įdiegimo lentelės, pačio žaidimo ir pan. informacija)",
+        "help4": "„GOG“ bibliotekos informacija (žaidimų sąrašas, įdiegimo lentelės, „API“ (t.y. reikalavimai) ir pan. informacija)",
+        "help5": "„Amazon“ bibliotekos informacija (žaidimų sąrašas, įdiegimo lentelės ir pan. informacija)",
+        "help6": "Šis NEIŠTRINS:",
+        "help1": "Šis veiksmas išvalys šias/-uos talpyklas/podėlius:",
+        "help2": "Trečių šalių informacija apie žaidimus (įvertinimai, „Steam“ palaikymas, laikas įveikti, „pcgamingwiki“, „applegamingwiki“)"
+      },
+      "title": {
+        "clearCache": "Išvalyti talpyklą/podėlį",
+        "resetHeroic": "Atstatyti „Heroic“"
+      },
+      "resetHeroic": {
+        "help": "Šis pašalins visus nustatymus ir talpyklas/podėlius, bet nepašalins Jūsų įdiegtų žaidimų ar „Epic“ kredencialų. Perkeliamos „Heroic“ versijos („AppImage“, „WinPortable“ ir t.t.) reikalauja, kad būtų perleisto rankiniu būdo po šio."
+      }
     },
-    "console": {
-        "filter": {
-            "sideload": "Kita/-s/-i",
-            "all": "Visi/-as/-os/-us"
-        },
-        "games": "Įdiegti žaidimai",
-        "hints": {
-            "quit": "Išeiti",
-            "launch": "Paleisti",
-            "sort": "Rikiuoti/Rūšiuoti",
-            "navigate": "Vèsti",
-            "change_store": "Pakeisti parduotuvę"
-        },
-        "launching": "Paleidžiama",
-        "update": {
-            "hintPrefix": "",
-            "body": "",
-            "title": "",
-            "hintSuffix": ""
-        },
-        "sort": "Rikiuoti/Rūšiuoti",
-        "cancel": {
-            "hintSuffix": "3sek., kad atšauktumėte",
-            "hintPrefix": "Laikyti"
-        },
-        "quit": "Išeiti iš konsolės",
-        "card": {
-            "needsUpdate": "Reikalauja atnaujinimo"
-        },
-        "empty": "Nėra įdiegtų žaidimų. Įdiekite kažką pirmiausiai.",
-        "quitApp": "Išeiti iš programos",
-        "loading": "Kraunama Jūsų biblioteka…",
-        "install": {
-            "title": "Įdiegti žaidimą",
-            "wineLoading": "Kraunama…",
-            "path": "Įdiegti į",
-            "platform": "Platforma",
-            "wine": "„Wine“",
-            "wineMissing": "Nepasirinkta"
-        },
-        "cancelInstall": {
-            "message": "Šis žaidimas yra įdiegiamas. Atšaukti įdiegimą?",
-            "title": "Atšaukti įdiegimą?"
-        },
-        "cancelUpdate": {
-            "message": "Šis žaidimas siunčiamas. Atšaukti tebesitęsiantį naujinimą?",
-            "title": "Atšaukti naujinimą?"
-        },
-        "removeFromQueue": {
-            "message": "Šis žaidimas yra eilėje, kad būtų atsisiųstas. Pašalinti jį iš eilės?"
-        }
+    "navbar": {
+      "gamescope": "„Gamescope“",
+      "log": "Žurnalas",
+      "other": "Kita/-s/-i",
+      "games_settings_defaults": "Žaidimo numatytieji",
+      "systemInformation": "Sistemos informacija",
+      "sync": "Sinchronizavimas debesijos išsaugojimų",
+      "advanced": "Pažangūs",
+      "general": "Bendri",
+      "legacy": "Pasenusio standarto"
+    },
+    "systemInformation": {
+      "cpuDescription": "{{numOfCores}}x {{modelName}}",
+      "gpuDriver": "Tvarkyklė: {{driverVersion}}",
+      "gpuWithNumber": "„GPU“ {{number}}:",
+      "gogdlVersion": "„Gogdl“: {{gogdlVersion}}",
+      "legendaryVersion": "„Legendary“: {{legendaryVersion}}",
+      "nileVersion": "„Nile“: {{nileVersion}}",
+      "os": "Operacinė sistema:",
+      "osVersion": "Versija – {{versionNumber}}",
+      "systemModel": "Sistemos modelis:",
+      "gpu": "„GPU“:",
+      "cpu": "„CPU“:",
+      "memory": "Atmintis:",
+      "software": "Taikomoji programa:",
+      "heroicVersion": "„Heroic“: {{heroicVersion}}",
+      "systemSpecifications": "Sistemos specifikacijos:",
+      "cometVersion": "„Comet“: {{cometVersion}}",
+      "copyToClipboard": "Kopijuoti į iškarpinę/mainų sritį",
+      "memoryStats": "{{percentUsed}}% naudojama ({{usedGib}} / {{totalGib}}",
+      "osNameFlatpak": "{{osName}} („Flatpak“ viduje)",
+      "showDetailed": "Rodyti išsamias sistemos specifikacijas",
+      "steamDeck": "„Steam Deck {{model}}“"
+    },
+    "experimental_features": {
+      "title": "Eksperimentinės funkcijos"
+    },
+    "copiedToClipboard": "Nukopijuota į iškarpinę/mainų sritį!",
+    "copyToClipboard": "Kopijuoti visus nustatymus į iškarpinę/mainų sritį",
+    "default_hint": "Pakeitimai šiame skyriuje tik prisitaiko kaip numatytos reikšmes, kai įdiegiami žaidimai. Jei Jūs norite pakeisti jau įdiegto žaidimo nustatymus, naudokite – „Nustatymai“ mygtuką žaidimo puslapyje.",
+    "eacRuntime": {
+      "name": "„EasyAntiCheat“ vykdantysis",
+      "installing": "Įdiegiamas „EAC“ vykdantysis...",
+      "gameModeRequired": {
+        "title": "Reikalinga žaidimo veiksena",
+        "message": "Žaidimo veiksena reikalauja „EAC“ vykdančiojo, kad veiktų ant „Flatpak“. Ar Jūs norite jį įjungti/įgalinti dabar?"
+      }
+    },
+    "open-config-file": "Atidaryti konfigūracijos failą",
+    "clear-cache": "Išvalyti „Heroic“ talpyklą/podėlį",
+    "gamescope": {
+      "searchMsg": "Ieškoma „gamescope“ vykdomojo."
+    },
+    "log": {
+      "long-log-hint": "Žurnalas nupjautas, tik paskutinės 1000-čio eilučių yra rodomi!"
+    },
+    "battlEyeRuntime": {
+      "installing": "Įdiagiamas „BattlEye“ vykdantysis...",
+      "name": "„BattlEye AntiCheat“ vykdantysis"
+    },
+    "offline": {
+      "warning": "Šis žaidimas nurodomai nepalaiko neprisijungusią veikseną, įjunkite šį savo nuožiūrą. Žaidimas gali neveikti."
+    },
+    "reset-heroic": "Atstatyti „Heroic“",
+    "saves": {
+      "warning": "Debesijos išsaugojimo funkcija yra „Beta“ stadijoje, prašome atlikti atsargines kopijas savo išsaugojimų prieš sinchronizuojant (tuo atveju, jeigu įvyktu kažkas blogai)",
+      "not_supported": "Šis žaidimas nepalaiko debesijos išsaugojimų.",
+      "gog_linux_native_warning": "„Linux“ sistemai sukurti žaidimai nepalaiko „GOG“ debesijos išsaugojimų funkcijos. Naudokite „Windows“ versiją tam."
+    },
+    "gameMode": {
+      "eacRuntimeEnabled": {
+        "message": "„EAC“ vykdantysis yra įjungtas/įgalintas, kuris tinkamai neveiks be žaidimo veiksenos. Ar Jūs norite išjungti/išgalinti „EAC“ vykdantįjį ir žaidimo veikseną?",
+        "title": "Įjungtas/Įgalintas „EAC“ vykdantysis"
+      }
+    },
+    "launchOptions": "Paleidimo parinktys",
+    "legacy_warning": "Įspėjimas: Nustatymai šiame skirtuke yra daugiausiai nebegaliojantys ir gali visiškai neveikti.",
+    "custom_css": {
+      "title": "Pasirinktinis „CSS“ stilius"
     },
     "steamgriddb": {
-        "error": {
-            "no-games": "Nerasta žaidimų.",
-            "no-grids": "Nerasta viršelių šiam žaidimui.",
-            "search": "Nepavyko ieškoti žaidimų, prašome patikrinti savo „SteamGridDB“ „API“ raktą ir pabandykite dar kartą",
-            "grids": "Nepavyko ištraukti „grids“"
-        },
-        "picker": {
-            "search": "Ieškoti žaidimo",
-            "title": "„SteamGridDB“ viršeliai",
-            "select-game": "Pasirinkti žaidimą:"
-        }
-    },
-    "next": "Sekantis",
-    "sidebar": {
-        "console": "Konsolės veiksena"
+      "apikey": {
+        "title": "„SteamGridDB“ „API“ raktas",
+        "placeholder": "Įveskite savo „SteamGridDB“ „API“ raktą čia",
+        "placeholder_saved": "Raktas išsaugotas; rašykite, kad pakeistumėte; išvalykite, kad pašalintumėte"
+      },
+      "help": {
+        "description": "Pateikite savo „SteamGridDB“ „API“ raktą, kad gautumėte žaidimų viršelių paiešką. Raktas yra laikomas užšifruotas, jei Jūsų sistema palaiko jį. Jūs galite gauti jį – {{url}}"
+      }
     }
+  },
+  "Settings": "Nustatymai",
+  "status": {
+    "installing": "Įdiegiama",
+    "processing": "Apdorojami failai, prašome palaukti",
+    "preparing_login": "Paruošiamas prisijungimas... ",
+    "logging": "Prisijungiama...",
+    "installed": "Įdiegta"
+  },
+  "window": {
+    "close": "Uždaryti",
+    "restore": "Atkurti langą",
+    "maximize": "Maksimalizuoti langą",
+    "minimize": "Minimizuoti langą"
+  },
+  "wine": {
+    "size": "Dydis",
+    "actions": "Veiksmas",
+    "manager": {
+      "link": "„Wine“ tvarkytuvė/-as",
+      "title": "„Wine“ tvarkytuvė/-as",
+      "not-found": "Nerasta jokia „Wine“ versija. Prašome paspausti ant atnaujinimo piktogramos, norint bandyti dar kartą.",
+      "unzipping": "Išarchyvuojama/Išskleidžiama",
+      "settings": "Nustatymai",
+      "update": "Atnaujinti",
+      "search": "Ieškoti versijų...",
+      "loading": "",
+      "open_folder": "",
+      "no-results": ""
+    },
+    "release": "Išleidimo data",
+    "notes": "Lapeliai"
+  },
+  "winetricks": {
+    "install": "Įdiegti",
+    "loading": "Kraunama",
+    "search": "Ieškoti šriftų ar komponentų",
+    "installed": "Įdiegti komponentai:",
+    "installing": "Įdiegiamas vykdomas: „{{component}}“",
+    "nothingYet": "Kol kas niekas nebuvo įdiegta „Winetricks“",
+    "openGUI": "Atidaryti „Winetricks“ grafinę sąsają",
+    "loading-available": "Kraunami pasiekiami komponentai...",
+    "no-components": "Nėra pasiekiamų komponentų"
+  },
+  "accessibility": {
+    "fonts": "Šriftai",
+    "title": "Prieinamumas",
+    "all_tiles_in_color": "Rodyti visas žaidimų plyteles spalvotai",
+    "titles_always_visible": "Visada rodyti plyteles bibliotekoje",
+    "actions_font_family_no_default": "Veiksmų šrifto „šeima“ (numatyta/-s):",
+    "content_font_family_no_default": "Turinio šrifto „šeima“ (numatyta/-s): ",
+    "zoom": "Priartinimas ir atitolinimas",
+    "disable_dialog_backdrop_close": "Neleisti dialogų langų uždarymą spaustėlius ne jo lange",
+    "actions_font_family_default": "Veiksmų šrifto „šeima“ (Numatyta: {{fontFamily}})",
+    "content_font_family_default": "Turinio šrifto „šeima“ (Numatyta: {{fontFamily}})",
+    "disable_smooth_scrolling": "Išjungti švelnų slinkimą (reikalauja paleidimo iš naujo)",
+    "disable_animations": "Išjungti grafinės sąsajos animacijas"
+  },
+  "add_game": "Pridėti žaidimą",
+  "anticheat": {
+    "source": "Šaltinis",
+    "anticheats": "Anti-sukčiavimas",
+    "status": "Būsena/Būklė",
+    "title": "Šis žaidimas įtraukia anti-sukčiavimo taikomąją programą",
+    "reference": "Išnaša/Pamatinis",
+    "multiplayer_may_not_work": "Daugiažaidėjė̄škos funkcijos gali neveikti, dėl sugedusio ar atmesto anti-sukčiavimo palaikymo."
+  },
+  "Amazon Games": "„Amazon“ žaidimai",
+  "categories-manager": {
+    "add": "Pridėti",
+    "remove": "Pašalinti – „{{name}}“",
+    "rename": "Pervadinti – „{{name}}“",
+    "title": "Tvarkyti kategorijas",
+    "add-placeholder": "Pridėti naują kategoriją",
+    "cancel-remove": "Atšaukti „{{name}}“ pašalinimą",
+    "confirm-remove": "Patvirtinti „{{name}}“ pašalinimą",
+    "confirm-rename": "Patvirtinti „{{oldName}}“ pervadinimą kaip – „{{newName}}“",
+    "no-categories": "Nėra kategorijų (kol kas).",
+    "cancel-rename": "Atšaukti „{{name}}“ pervadinimą"
+  },
+  "category-settings": {
+    "cancel": "Atšaukti",
+    "warning": "Įspėjimas",
+    "new-category": "Nauja kategorija",
+    "remove-category": "Pašalinti kategoriją",
+    "delete-question": "Tęsiant, visam laikui pašalins šią kategoriją ir atsies ją iš visų žaidimų. Tęsti?",
+    "add-new-category": "Pridėti naują kategoriją"
+  },
+  "docs": "Dokumentacija",
+  "epic": {
+    "offline-notification-title": "atsijungęs/-usi",
+    "offline-notification-body": "Internetinės paslaugos gali neveikti, nes „Epic Games“ serveriai yra atsijungę!"
+  },
+  "Epic Games": "„Epic Games“",
+  "gog-store": "„GOG“ parduotuvė",
+  "Library": "Biblioteka",
+  "login": {
+    "amazon": "„Amazon“ prisijungimas",
+    "gog": "„GOG“ prisijungimas",
+    "alternative_method": "Alternatyvus prisijungimo būdas",
+    "epic": "„Epic Games“ prisijungimas",
+    "message": "Prisijunkite su savo platforma. Jūs galite prisijungti prie daugiau nei vieną platformą vienu metu.",
+    "old-mac": "Jūsų „macOS“ versija yra – {{version}}. „macOS 12“ ar naujesnė yra reikalinga, norint prisijungti.",
+    "zoom": "„Zoom“ prisijungimas"
+  },
+  "offline-message": {
+    "ignore": "Ignoruoti",
+    "offline": "Atsijungęs/-usi",
+    "retrying": "Bandoma dar kartą",
+    "offline-retry-in": "Atsijungęs/-usi. Bandoma po {{seconds}} sek.",
+    "hint": "Mes tikriname prisijungimą priešais:{{newline}}github.com,{{newline}}gog.com,{{newline}}store.epicgames.com ir{{newline}}cloudflare-dns.com"
+  },
+  "options": {
+    "wrapper": {
+      "args": "Argumentai",
+      "arguments_example": "Argumentų pavyzdys: „--arg; --extra-file=\"failo-kelias/ su/tarpais\"“",
+      "exe": "Įvynioklis",
+      "placeHolderKey": "Naujas įvynioklis",
+      "placeHolderValue": "Įvynioklio argumentai",
+      "title": "Įvynioklio komanda:"
+    },
+    "gamescope": {
+      "additionalOptions": "Papildomos parinktys",
+      "gameWidth": "Žaidimo plotis",
+      "gameHeight": "Žaidimo aukštis",
+      "borderless": "Berėmis",
+      "fullscreen": "Pilno ekrano",
+      "stretch": "Ištempti vaizdą",
+      "windowed": "Languotas",
+      "fpsLimiter": "Kadrų per sekundę ribotuvas/-ė",
+      "fpsLimiterNoFocus": "Kadrų per sekundę ribotuvas/-ė (be fokuso)",
+      "nis": "„NVIDIA“ vaizdo skalė („NIS“)",
+      "upscaleHeight": "Išplėsti gebos aukštį",
+      "upscaleWidth": "Išplėsti gebos plotį",
+      "interger": "Sveikaskaitinis išplėstimas gebai"
+    },
+    "advanced": {
+      "value": "Reikšmė",
+      "placeHolderKey": "PAVADINIMAS",
+      "placeHolderValue": "Pvz.: Kelias/Į/Papildomi failai",
+      "key": "Kintamas vardas/pavadinimas",
+      "title": "Aplinkos kintamieji"
+    },
+    "env_variables": {
+      "example": "Neįtraukite „=“ rašmens, pvz.: nustatymui kaip – „MY_FLAG=123“, nustatykite „MY_FLAG“ pavadinime ir „123“ reikšmėje.",
+      "error": {
+        "empty_key": "Kintamieji vardai/pavadinimai negali būt tušti",
+        "equal_sign_in_key": "Kintamieji vardai/pavadinimai negali turėti „=“ rašmens",
+        "space_in_key": "Kintamieji vardai/pavadinimai negali būt su tarpais"
+      },
+      "info": "Nustatyti aplinkos kintamuosius, kad papildytu komandai."
+    },
+    "gameargs": {
+      "placeholder": "Įveskite paleidiklio argumentus čia",
+      "error": {
+        "command": "„%command%“ sintaksė iš „Steam“ nėra galimas kaip žaidimo argumentas.",
+        "env": "Aplinkos kintamieji turi būti sukonfigūruoti lentelėje, randama apačioje."
+      },
+      "title": "Žaidimo argumentai (vykdyti po komandos):"
+    },
+    "quote-args-with-spaces": "Įspėjimas: Atminkite argumentus rašyti angliškomis kabutėmis su tarpais! Pvz.: „\"kelias/su tarpais\"“"
+  },
+  "other": {
+    "gogdl-version": "„GOGDL“ versija: ",
+    "nile-version": "„Nile“ versija: ",
+    "legendary-version": "„Legendary“ versija: ",
+    "weblate": "Padėkite išversti „Heroic“."
+  },
+  "platforms": {
+    "browser": "Naršyklė",
+    "win": "„Windows“",
+    "linux": "„Linux“",
+    "mac": "„Mac“"
+  },
+  "please-wait": "Prašome palaukti...",
+  "prime-gaming": "„Prime Gaming“",
+  "store": "„Epic“ parduotuvė",
+  "title": {
+    "allGames": "Visi žaidimai"
+  },
+  "tray": {
+    "about": "Apie",
+    "show": "Rodyti",
+    "quit": "Išeiti",
+    "reload": "Perleisti"
+  },
+  "userselector": {
+    "cancel": "Atšaukti",
+    "discord": "„Discord“",
+    "logging_out": "Atsijungiama",
+    "logout": "Atsijungti",
+    "logout_confirmation": "Ar Jūs tikrai norite atsijungti?",
+    "manageaccounts": "Tvarkyti paskyras",
+    "quit": "Išeiti",
+    "quitMessage": "Ar Jūs tikrai norite išeiti?"
+  },
+  "error": "Klaida",
+  "favourites": "Mėgstamiausi",
+  "GOG": "„GOG“",
+  "Other": "Kita/-s/-i",
+  "Open": "Atidaryti",
+  "stores": "Parduotuvės",
+  "adtraction-locked": {
+    "dont-show-again": "Neberodinėti šio įspėjimo",
+    "title": "„Adtraction“ yra užblokuotas",
+    "description": "Atrodo, kad „track.adtraction.com“ domenas-sritis negalėjo būti pakrautas arba buvo/yra užblokuotas. Su „adtraction“, bet kokie pirkimai „GOG“ parduotuvėje padeda „Heroic“ finansiškai. Apmąstykite pašalinti šį blokavimą, jeigu norite mums padėti."
+  },
+  "externalLink": {
+    "dontAskAgain": "Daugiau nebeklausti",
+    "warning": "Jūs atidarysite išorinį saitą."
+  },
+  "globalSettings": "Visuotiniai nustatymai",
+  "placeholder": {
+    "custom_themes_path": "Pasirinkite kelią, kuriame ieškoti pasirinktinių „CSS“ failų",
+    "prefered_language": "2-iejų arba 4-ių rašmenų kodas (t.y.: „lt“ ar „pt-BR“)",
+    "alt-gogdl-bin": "Naudojama įterpta „GOGDL“ dvejetaine...",
+    "alt-legendary-bin": "Naudojama įterpta „Legendary“ dvejetaine...",
+    "alt-nile-bin": "Naudojama įterpta „Nile“ dvejetaine...",
+    "dxvkfpsvalue": "Natūralioji (t.y. teigiamieji) sveikoji reikšmė (pvz.: 30, 60, ...)",
+    "egs-prefix": "Prielinksnis/Priešdėlis kuriame „EGS“ yra įdiegtas"
+  },
+  "progress": "Pažanga",
+  "search": "Ieškoti žaidimų",
+  "tooltip": {
+    "addpath": "Pridėti naują kelią",
+    "removepath": "Pašalinti kelią"
+  },
+  "two_col_table": {
+    "save_hint": "Pakeitimai šioje lentelėje nėra automatiškai išsaugomi. Spauskite – „+“ mygtuką"
+  },
+  "Update Available!": "Pasiekiamas atnaujinimas!",
+  "webview": {
+    "controls": {
+      "back": "Eiti atgal",
+      "openInBrowser": "Atidaryti naršyklėje",
+      "forward": "Eiti tolyn",
+      "reload": "Perkrauti puslapį"
+    }
+  },
+  "Recent": "Neseniai žaista",
+  "emptyLibrary": {
+    "noResults": "Dabartiniai filtrai nedavė jokių rezultatų.",
+    "noGames": "Jūsų biblioteka yra tuščia.<br /><br />Spustelėkite <4>čia</4>, norint prisijungti su savo „Epic“, „GOG.com“ ar „Amazon“ paskyromis. Tada Jūsų žaidimai atras šitoje bibliotekoje.<br /><br />Norint žaisti/naudotis žaidimais ar programėlėmis iš kitų šaltinių, spustelėkite <br />, kad pridėtumėte juos rankiniu būdu."
+  },
+  "generic": {
+    "error": {
+      "component": "Žaidimų nerasta. Bandykite atsijungti ir vėl prisijungti arba vieną iš pateiktų parinkčių apačioje"
+    },
+    "library": {
+      "refresh": "Atnaujinti biblioteką"
+    },
+    "install": "Įdiegti",
+    "uninstall": "Išdiegti",
+    "abort": "Nutraukti"
+  },
+  "library": {
+    "sortAscending": "Rikiuoti didėjančia tvarka",
+    "sortByStatus": "Rikiuoti pagal statusą",
+    "sortDescending": "Rikiuoti mažėjančia tvarka",
+    "toggleLayout": {
+      "grid": "Perjungti į tinklelinį išdėstymą",
+      "list": "Perjungti į sąrašo išdėstymą"
+    },
+    "refresh": "Įkelti iš naujo",
+    "hideAlphabetFilter": "Slėpti abėcėlės filtrą",
+    "showAlphabetFilter": "Rodyti abėcėlės filtrą"
+  },
+  "wineExplanation": {
+    "proton-ge": "„GE-Proton“ yra „Proton“ variantas sukurtas „Glorious Eggroll“. Jis yra skirtas, naudojant „Steam“, bet kai kurie žaidimai, neveikiantys „Steam“ gali veikti geriau su šiuo variantu. Jis pateikia daugmaž nereikšmingus žurnalus derinimui.",
+    "gpt": "Žaidimų perkėlimo įrankių dėžė yra sukurtas „Apple“ ir yra rekomenduojamas „Apple Silicon Mac (dgs.)“ su „M1+“ lustais ir veikia geriausiai su naujausiais žaidimais, kurie naudoja „DX12“.",
+    "wine-crossover": "„Wine-Crossover“ yra paremtas ant „Crossover OpenSource Wine projektas“ ir yra rekomenduojamas su „Intel Mac“, bei „DX11“ ir senesniems žaidimams.",
+    "wine-staging-macos": ""
+  },
+  "message": {
+    "sync": "Sinchronizavimas baigtas",
+    "unsync": "Išsinchronizavimas baigtas"
+  },
+  "toolbox": {
+    "settings": {
+      "wineprefix": "Pažymėkite aplanką/-alą naujiems „Wine“ prielinksniams/priešdėliams"
+    }
+  },
+  "tour": {
+    "back": "Atgal",
+    "next": "S_ekantis",
+    "sidebar": {
+      "welcome": {
+        "title": "",
+        "intro": "Sveiki į – „Heroic“! Ši šoninė juosta sudaro visas naršymo parinktis, siekiant naršyti programą."
+      },
+      "quit": "Išeikite iš programos saugiai.",
+      "docs": "Persiskaitykite dokumentaciją dėl „Heroic“ naudojimo.",
+      "library": "Pasiekite savo žaidimų biblioteką iš skirtingų parduotuvių vienoje vietoje.",
+      "community": "Prisijunkite prie mūsų bendruomenės „Discord“ ir palaikykite „Heroic“ kūrimą.",
+      "accessibility": "Pasiekite pasiekiamumo funkcijas, siekiant tinkinti savo patirtį.",
+      "wine": "",
+      "login": "Prisijunkite prie savo žaidimų parduotuvės/-ių paskyros/-ų, kad pasiektumėte savo biblioteką.",
+      "settings": "Sukonfigūruokite „Heroic“ nustatymus, žaidimo numatytuosius parametrus, tikrinkite žurnalus ir t.t.",
+      "downloads": "Sekite ir valdykite savo žaidimų atnaujinimus ir įdiegimus.",
+      "accounts": "Valdykite savo sujungtų parduotuvių paskyras („Epic“, „GOG“, „Amazon“); jų atsijungimą ir prisijungimą.",
+      "stores": "Naršykite ir pirkite žaidimus skirtinguose parduotuvėse, įskaitant – „Epic“, „GOG“ ir „Amazon“.",
+      "version": "Patikrinkite savo dabartinę „Heroic“ versiją, spustelėkite čia, norint peržiūrėti naujausią keitinių žurnalą ir pasiekite šį gidą iš pagalbos piktogramos."
+    },
+    "library": {
+      "gameCard": "Spustelėkite kairiuoju pelės mygtuku ant žaidimo kortelės, kad pereitumėte į žaidimo puslapį ir pamatytumėte jo išsamumą bei pakeistumėte nustatymus. Tai pat, galite spustelėti dešiniuoju pelės mygtuku, norint atidaryti parankinį meniu.",
+      "welcome": {
+        "title": "Sveiki atvykę į „Heroic“!",
+        "intro2": "Jei biblioteka yra tuščia, įsitikinkite, kad esate prisijungę su paskyromis, kuriose turite žaidimus. Šoninėje juostoje rasite šią parinktį. Tai pat, galite pridėti savo žaidimus spustelėjus – „Pridėti žaidimą“ mygtuką viršuje.",
+        "intro": "Sveiki atvykę į „Heroic“ biblioteką! Štai čia galite matyti visus savo žaidimus iš įvairių parduotuvių.",
+        "title2": "Bibliotekos tvarkymas!"
+      },
+      "filters": "Filtruoti žaidimus pagal parduotuvę, platformą, mėgstamumą ir daugiau, naudojant šias parinktis.",
+      "search": "Naudokite paieškos juosta, norint ieškoti savo žaidimų.",
+      "refresh": "Iš naujo įkelkite savo biblioteką, norint patikrinti ar atsirado nauji žaidimai ar jų atnaujinimai.",
+      "end": {
+        "intro": "Visks! Mėgaukitės žaisdami!",
+        "title": "Mėgaukitės žaisdami!"
+      },
+      "viewToggle": "Pasikeiskite žiūrėsena tarp tinklelio ir sąrašo peržiūros žaidimų.",
+      "categories": "Surikiuokite/Surūšiuokite savo žaidimus į kategorijas, siekiant viską laikyti tvarkingai.",
+      "sortInstalled": "Rikiuoti/Rūšiuoti žaidimus pagal įdiegsenos būseną.",
+      "sortOptions": "Spustelėkite čia, norint surikiuoti žaidimus pagal abėcėlę.",
+      "addGame": "Pridėkite savo žaidimus ar programas/programėles į biblioteką spustelėjus čia. Jie gali būti bet kas, net naršyklės „URL“ – saitai."
+    },
+    "startTour": "",
+    "skip": "",
+    "done": "Atlikta"
+  },
+  "analyticsModal": {
+    "disable": "Išjungta/Neįgalinta (-as/-i)",
+    "enable": "Įjungta/Įgalinta (-as/-i)",
+    "info": {
+      "pt1": "Siekiant patobulinti šią programą, „Heroic“ renką 100% proc. anonimiškus duomenis.",
+      "pt2": "„Heroic“ naudoja atviro kodo „Plausible Analytics“ platformą, kad surinktų šiuos duomenis: programos versiją, operacinę sistemą, prijungtas parduotuves/platformas ir šalį.",
+      "pt3": "Jis niekada nerinks jokių asmeninių duomenų, įskaitant Jūsų naudotojo/vartotojo vardą (t.y. slapyvardį), IP adresą ar el. paštą.",
+      "pt5": "„Plausible Analytics“ yra pilnai paklusnus su BDAR, „CCPA“ ir PERR.",
+      "pt4": "Šie duomenys yra naudojami suteiktiant įžvalgas į tolimesnius dėmesio sutelkimus dėl mūsų ribotų resursų ir vartotojų atsiliepimų.",
+      "pt7": "Šį nustatymą galite pakeisti bet kada Programos Nustatymuose.",
+      "pt6": "Skaidrumo sumetimais, Jūs galite peržvelgti visus duomenis kuriuos renkame „Heroic“ programos žurnale."
+    },
+    "title": "Siūsti Anoniminę Analitiką"
+  },
+  "launch": {
+    "options": "Paleidimo parinktys..."
+  },
+  "amazon-luna": "„Amazon Luna“",
+  "zoom-store": "„Zoom“ parduotuvė",
+  "discounts": {
+    "filters": {
+      "os": "Operacinė sistema",
+      "moreFilters": "Daugiau filtrų",
+      "ageRating": "Amžiaus cenzas",
+      "price": "Kaina",
+      "activeCount_other": "{{count}} aktyvi/-us/-ios/-ūs",
+      "hideDlcs": "Slėpti plėtotes",
+      "ageRatingOption": "Rodyti visus žaidimus įvertintus „PEGI“ {{age}} ar žemiau",
+      "genres": "Žanrai",
+      "activeCount_one": "{{count}} aktyvi/-us/-ios/-ūs",
+      "lessFilters": "Mažiau filtrų",
+      "rating": "Įvertinimas",
+      "sort": "Rikiuoti/Rūšiuoti pagal",
+      "genresPlaceholder": "Bet koks žanras",
+      "features": "Funkcijos",
+      "featuresPlaceholder": "Bet kokia funkcija",
+      "ageRatingAll": "Visi/-as/-os/-us",
+      "pageSize": "",
+      "releaseYear": "Išleidimo metai",
+      "hideOwned": "Slėpti turimus",
+      "wishlistOnly": "Tik norimus"
+    },
+    "region": {
+      "countries": {
+        "IT": "Italija",
+        "ES": "Ispanija",
+        "FI": "Suomija",
+        "GR": "Graikija",
+        "RO": "Rumunija",
+        "NO": "Norvegija",
+        "KR": "P. Korėja",
+        "US": "JAV",
+        "HU": "Vengrija",
+        "PT": "Portugalija",
+        "NL": "Nyderlandai",
+        "AU": "Australija",
+        "TW": "Taivanas",
+        "IL": "Izraelis",
+        "JP": "Japonija",
+        "DK": "Danija",
+        "DE": "Vokietija",
+        "CZ": "Čekija",
+        "FR": "Prancūzija",
+        "UA": "Ukraina",
+        "GB": "Jungtinė karalystė",
+        "SE": "Švedija",
+        "CN": "K. Kinija",
+        "RU": "Rusija",
+        "CA": "Kanada",
+        "PL": "Lenkija",
+        "BR": "Brazilija",
+        "CH": "Šveicarija",
+        "TR": "Turkija"
+      },
+      "auto": "Automatinis/-ė/-iškai ({{code}})",
+      "label": "Parduotuvės regionas"
+    },
+    "sidebar": "",
+    "sort": {
+      "priceDesc": "Kaina: nuo aukščiausios iki žemiausios",
+      "trending": "",
+      "priceAsc": "Kaina: nuo žemiausios iki aukščiausios",
+      "releaseDesc": "Išleidimo data: nuo naujausios iki seniausios",
+      "ratingAsc": "Įvertinimas: nuo žemiausios iki aukščiausios",
+      "releaseAsc": "Išleidimo data: nuo seniausios iki naujausios",
+      "ratingDesc": "Įvertinimas: nuo aukščiausios iki žemiausios",
+      "discount": "Didžiausia nuolaida"
+    },
+    "noMatches": "Nėra žaidimų, atitinkančių dabartinius filtrus.",
+    "aria": {
+      "pagination": "Puslapiãvimas",
+      "rating": "Įvertinimas – {{rating}} iš 10-imt"
+    },
+    "error": "Nepavyko įkelti nuolaidas. Prašome pabandyti dar kartą vėliau.",
+    "empty": "Nėra nukainuotų žaidimų šiuo momentu.",
+    "loading": "Kraunami nukainuoti žaidimai...",
+    "title": "",
+    "pagination": {
+      "prev": "Praeita/-s"
+    }
+  },
+  "console": {
+    "filter": {
+      "sideload": "Kita/-s/-i",
+      "all": "Visi/-as/-os/-us"
+    },
+    "games": "Įdiegti žaidimai",
+    "hints": {
+      "quit": "Išeiti",
+      "launch": "Paleisti",
+      "sort": "Rikiuoti/Rūšiuoti",
+      "navigate": "Vèsti",
+      "change_store": "Pakeisti parduotuvę"
+    },
+    "launching": "Paleidžiama",
+    "update": {
+      "hintPrefix": "",
+      "body": "",
+      "title": "",
+      "hintSuffix": ""
+    },
+    "sort": "Rikiuoti/Rūšiuoti",
+    "cancel": {
+      "hintSuffix": "3sek., kad atšauktumėte",
+      "hintPrefix": "Laikyti"
+    },
+    "quit": "Išeiti iš konsolės",
+    "card": {
+      "needsUpdate": "Reikalauja atnaujinimo"
+    },
+    "empty": "Nėra įdiegtų žaidimų. Įdiekite kažką pirmiausiai.",
+    "quitApp": "Išeiti iš programos",
+    "loading": "Kraunama Jūsų biblioteka…",
+    "install": {
+      "title": "Įdiegti žaidimą",
+      "wineLoading": "Kraunama…",
+      "path": "Įdiegti į",
+      "platform": "Platforma",
+      "wine": "„Wine“",
+      "wineMissing": "Nepasirinkta"
+    },
+    "cancelInstall": {
+      "message": "Šis žaidimas yra įdiegiamas. Atšaukti įdiegimą?",
+      "title": "Atšaukti įdiegimą?"
+    },
+    "cancelUpdate": {
+      "message": "Šis žaidimas siunčiamas. Atšaukti tebesitęsiantį naujinimą?",
+      "title": "Atšaukti naujinimą?"
+    },
+    "removeFromQueue": {
+      "message": "Šis žaidimas yra eilėje, kad būtų atsisiųstas. Pašalinti jį iš eilės?"
+    }
+  },
+  "steamgriddb": {
+    "error": {
+      "no-games": "Nerasta žaidimų.",
+      "no-grids": "Nerasta viršelių šiam žaidimui.",
+      "search": "Nepavyko ieškoti žaidimų, prašome patikrinti savo „SteamGridDB“ „API“ raktą ir pabandykite dar kartą",
+      "grids": "Nepavyko ištraukti „grids“"
+    },
+    "picker": {
+      "search": "Ieškoti žaidimo",
+      "title": "„SteamGridDB“ viršeliai",
+      "select-game": "Pasirinkti žaidimą:"
+    }
+  },
+  "next": "Sekantis",
+  "sidebar": {
+    "console": "Konsolės veiksena"
+  }
 }

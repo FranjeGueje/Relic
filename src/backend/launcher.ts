@@ -412,7 +412,6 @@ function filterGameSettingsForLog(
     delete gameSettings.enableWineWayland
     delete gameSettings.enableHDR
     delete gameSettings.enableWoW64
-    delete gameSettings.showMangohud
     delete gameSettings.disableUMU
     delete gameSettings.useSteamRuntime
     delete gameSettings.enableFsync
@@ -470,7 +469,6 @@ function filterGameSettingsForLog(
     delete gameSettings.autoInstallVkd3d
     delete gameSettings.gamescope
     delete gameSettings.useGameMode
-    delete gameSettings.showMangohud
     delete gameSettings.showFps
     delete gameSettings.preferSystemLibs
     delete gameSettings.wineCrossoverBottle
@@ -581,27 +579,9 @@ async function prepareLaunch(
     return { success: true, rpcClient, offlineMode }
   }
 
-  // Figure out where MangoHud/GameMode/Gamescope are located, if they're enabled
-  let mangoHudCommand: string[] = []
+  // Figure out where GameMode/Gamescope are located, if they're enabled
   let gameModeBin: string | null = null
   const gameScopeCommand: string[] = []
-  if (gameSettings.showMangohud && !isSteamDeckGameMode) {
-    const mangoHudBin = await searchForExecutableOnPath('mangohud')
-    if (!mangoHudBin) {
-      let reason =
-        'Mangohud is enabled, but `mangohud` executable could not be found on $PATH'
-      if (isFlatpak) {
-        reason = `${reason}. Make sure to install Mangohud's flatpak package with runtime ${flatpakRuntimeVersion} and restart Relic.`
-      }
-      return {
-        success: false,
-        failureReason: reason
-      }
-    }
-
-    mangoHudCommand = [mangoHudBin, '--dlsym']
-  }
-
   if (gameSettings.useGameMode) {
     gameModeBin = await searchForExecutableOnPath('gamemoderun')
     if (!gameModeBin) {
@@ -697,10 +677,6 @@ async function prepareLaunch(
         gameScopeCommand.push('--force-grab-cursor')
       }
 
-      if (gameSettings.showMangohud) {
-        gameScopeCommand.push('--mangoapp')
-      }
-
       gameScopeCommand.push(
         ...shlex.split(gameSettings.gamescope.additionalOptions ?? '')
       )
@@ -770,7 +746,6 @@ async function prepareLaunch(
   return {
     success: true,
     rpcClient,
-    mangoHudCommand,
     gameModeBin: gameModeBin ?? undefined,
     gameScopeCommand,
     steamRuntime,
@@ -1361,7 +1336,6 @@ function setupWineEnvVars(gameSettings: GameSettings, gameId = '0') {
 
 function setupWrappers(
   gameSettings: GameSettings,
-  mangoHudCommand?: string[],
   gameModeBin?: string,
   gameScopeCommand?: string[],
   steamRuntime?: string[]
@@ -1378,9 +1352,6 @@ function setupWrappers(
       wrappers.push(wrapperEntry.exe)
       wrappers.push(...shlex.split(wrapperEntry.args ?? ''))
     })
-  }
-  if (mangoHudCommand && gameScopeCommand?.length === 0) {
-    wrappers.push(...mangoHudCommand)
   }
   if (gameModeBin) {
     wrappers.push(gameModeBin)

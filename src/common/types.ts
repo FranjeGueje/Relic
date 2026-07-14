@@ -250,7 +250,6 @@ export interface GameSettings {
   otherOptions?: string //deprecated
   preferSystemLibs: boolean
   showFps: boolean
-  showMangohud: boolean
   targetExe: string
   useGameMode: boolean
   useSteamRuntime: boolean
@@ -437,7 +436,6 @@ export interface LaunchPreperationResult {
   success: boolean
   failureReason?: string
   rpcClient?: RpcClient
-  mangoHudCommand?: string[]
   gameModeBin?: string
   gameScopeCommand?: string[]
   steamRuntime?: string[]

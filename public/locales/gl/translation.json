@@ -1,1284 +1,1282 @@
 {
-    "accessibility": {
-        "actions_font_family_no_default": "Actions Font Family (Default: ",
-        "all_tiles_in_color": "Amosar todos os xogos a cor na biblioteca",
-        "content_font_family_no_default": "Content Font Family (Default: ",
-        "fonts": "Tipografías",
-        "title": "Accesibilidade",
-        "zoom": "Zoom",
-        "actions_font_family_default": "Tipografía das accións (Por defecto: {{fontFamily}})",
-        "content_font_family_default": "Tipografía dos contidos (Por defecto: {{fontFamily}})",
-        "titles_always_visible": "Mostrar sempre os títulos na biblioteca",
-        "disable_dialog_backdrop_close": "Desactivar o peche das caixas de diálogo ao premer fóra delas",
-        "disable_smooth_scrolling": "Desactivar o suavizado de scroll (precisa reiniciar)",
-        "disable_animations": "Desactivar animacións da interfaz de usuario (UI)"
+  "accessibility": {
+    "actions_font_family_no_default": "Actions Font Family (Default: ",
+    "all_tiles_in_color": "Amosar todos os xogos a cor na biblioteca",
+    "content_font_family_no_default": "Content Font Family (Default: ",
+    "fonts": "Tipografías",
+    "title": "Accesibilidade",
+    "zoom": "Zoom",
+    "actions_font_family_default": "Tipografía das accións (Por defecto: {{fontFamily}})",
+    "content_font_family_default": "Tipografía dos contidos (Por defecto: {{fontFamily}})",
+    "titles_always_visible": "Mostrar sempre os títulos na biblioteca",
+    "disable_dialog_backdrop_close": "Desactivar o peche das caixas de diálogo ao premer fóra delas",
+    "disable_smooth_scrolling": "Desactivar o suavizado de scroll (precisa reiniciar)",
+    "disable_animations": "Desactivar animacións da interfaz de usuario (UI)"
+  },
+  "add_game": "Engadir xogo",
+  "All": "Todos",
+  "anticheat": {
+    "anticheats": "Antitrampas",
+    "may_not_work": "It may not work due to denied or broken anticheat support.",
+    "reference": "Referencia",
+    "source": "Fonte",
+    "status": "Estado",
+    "title": "Este xogo inclúe software antitrampas",
+    "multiplayer_may_not_work": "As funcións multixogador poden non funcionar porque o soporte de antitrampas está roto ou foi rexeitado."
+  },
+  "box": {
+    "cache-cleared": {
+      "message": "Limpouse a caché de Heroic.",
+      "title": "Caché borrada"
     },
-    "add_game": "Engadir xogo",
-    "All": "Todos",
-    "anticheat": {
-        "anticheats": "Antitrampas",
-        "may_not_work": "It may not work due to denied or broken anticheat support.",
-        "reference": "Referencia",
-        "source": "Fonte",
-        "status": "Estado",
-        "title": "Este xogo inclúe software antitrampas",
-        "multiplayer_may_not_work": "As funcións multixogador poden non funcionar porque o soporte de antitrampas está roto ou foi rexeitado."
-    },
-    "box": {
-        "cache-cleared": {
-            "message": "Limpouse a caché de Heroic.",
-            "title": "Caché borrada"
-        },
-        "choose": "Escoller",
-        "choose-egs-prefix": "Seleccionar o prefixo onde se instalará EGS",
-        "choose-gogdl-binary": "Seleccionar binario GOGDL (precisa reinicio)",
-        "choose-legendary-binary": "Seleccionar o binario Legendary",
-        "customWine": "Selecciona o binario de Wine ou Proton",
-        "default-install-path": "Seleccionar a ruta de instalación predeterminada",
-        "default-steam-path": "Ruta de Steam.",
-        "downloadNow": "Descargar agora",
-        "error": {
-            "add": {
-                "steam": {
-                    "body": "Engadir {{game}} a Steam fallou con:{{newLine}} {{error}}",
-                    "title": "Erro ao engadir"
-                }
-            },
-            "credentials": {
-                "message": "As túas credenciais caducaron, por favor pecha e inicia de novo a túa sesión."
-            },
-            "cx-bottle-not-found": {
-                "message": "A botella de CrossOver \"{{bottle_name}}\" non existe, non se pode executar!",
-                "title": "Non se atopou a botella de CrossOver"
-            },
-            "diskspace": {
-                "message": "Non hai suficiente espacio dispoñíbel no disco",
-                "title": "Sen espacio"
-            },
-            "dxvk": {
-                "message": "Produciuse un erro ao instalar DXVK/VKD3D! Comproba a túa conexión!",
-                "title": "Erro de DXVK/VKD3D"
-            },
-            "folder-not-found": {
-                "title": "Parece que o cartafol do xogo foi eliminado. Quere eliminar o xogo da lista de instalados?"
-            },
-            "generic": {
-                "message": "mensaxe de erro xenérico",
-                "title": "Selecciona o EXE a executar"
-            },
-            "launchAborted": "Lanzamento cancelado",
-            "title": "Erro",
-            "uncaught-exception": {
-                "message": "Ocorreu un erro inesperado:{{newLine}}{{error}}{{newLine}}{{newLine}} Reporta o erro no noso repositorio de GitHub.",
-                "title": "Ocorreu un erro inesperado!"
-            },
-            "update": {
-                "message": "Ocorreu un problema coa actualización. Por favor, revisa os rexistros ou proba de novo máis tarde!",
-                "title": "Update Error"
-            },
-            "wine-not-found": {
-                "invalid": "The selected wine version was not found. Install it or select a different version in the game's settings{{newline}}Version: {{version}}{{newline}}Path: {{path}}",
-                "message": "No se seleccionou a versión de Wine. ¡Comprueba a configuración do xogo!",
-                "title": "No se atopou Wine"
-            },
-            "winetricks": {
-                "message": "Winetricks devolveu o seguinte erro durante a execución:{{newLine}}{{error}}",
-                "title": "Erro de Winetricks"
-            },
-            "moving": "Erro ao mover o xogo {{error}}",
-            "ubisoft-connect": {
-                "message": "Produciuse un erro na instalación de Ubisoft Connect no prefixo do xogo. Consulte a nosa páxina wiki en https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher/wiki/How-to-install-Ubisoft-Connect-on-Linux-and-Mac para instalalo manualmente.",
-                "title": "Ubisoft Connect"
-            },
-            "legendary": {
-                "generic": "Produciuse un erro! Proba a pechar e iniciar sesión de novo na túa conta de Epic. {{newline}}  {{error}}"
-            },
-            "steam": {
-                "title": "Erro de Steam",
-                "message": "A installación de Steam fallou! Por favor, lea atentamente as instruccións e inténteo de novo! {{paragraph}} {{error}}",
-                "error": "Non se atopou o executábel de Steam. Probablemente a instalación foi cancelada polo usuario ou fallou no lado de Steam."
-            },
-            "executableNotFound": "Non se atopou o executable",
-            "executableNotFoundMessage": "Heroic non puido atopar o executable deste xogo. Por favor, configúreo manualmente na configuración do xogo.",
-            "dxmt": {
-                "title": "Erro ao descargar DXMT",
-                "message": "Erro ao descargar DXMT! Comprobe a súa conexión!"
-            }
-        },
-        "info": {
-            "update": {
-                "changelog": "Open changelog",
-                "detail": "Queres descargar a actualización en segundo plano?",
-                "message": "Hai unha nova versión dispoñible!",
-                "message-finished": "Queres reiniciar Heroic agora?",
-                "title": "Heroic Games Launcher",
-                "title-finished": "Actualización completada",
-                "detailNoAutoupdate": "As actualizacións automáticas non están dispoñibles para o teu formato de paquete. Por favor, empregue o seu xestor de paquetes para actualizalo."
-            }
-        },
-        "no": "NON",
-        "ok": "De acordo",
-        "protocol": {
-            "install": {
-                "not_installed": "Non está instalado, desexas instalalo?"
-            }
-        },
-        "quit": {
-            "message": "Hai operacións pendentes, ¿estás seguro?",
-            "title": "Saír"
-        },
-        "reset-heroic": {
-            "question": {
-                "message": "Seguro que queres reiniciar Heroic? Isto eliminará todos os axustes e a caché pero non borrará os teus xogos instalados ou as túas credenciais de Epic. As versións portables (AppImage, WinPortable, ...) de Heroic deberán ser reiniciadas despois manualmente.",
-                "title": "Restabelecer Heroic"
-            }
-        },
-        "runexe": {
-            "title": "Seleccionar o EXE a executar"
-        },
-        "select": {
-            "button": "Seleccionar",
-            "exe": "Seleccionar EXE",
-            "script": "Selecciona unha secuencia de comandos..."
-        },
-        "shortcuts": {
-            "message": "Creáronse atallos no escritorio e no menú principal",
-            "message-mac": "Creáronse accesos directos no cartafol de Aplicacións",
-            "message-remove": "Elimináronse os accesos directos do Escritorio e do Menú de Inicio",
-            "message-remove-mac": "Elimináronse os accesos directos do cartafol de Aplicacións",
-            "title": "Atallos"
-        },
-        "sync": {
-            "button": "Seleccionar",
-            "error": "Ruta non válida",
-            "title": "Seleccionar o cartafol de partidas gardadas"
-        },
-        "vcruntime": {
-            "install": {
-                "message": "Abríronse os enlaces de descarga para os \"Visual C++ Runtimes\". Por favor, instala as versións de x86 e x64."
-            },
-            "notfound": {
-                "message": "As bibliotecas de execución de Visual C++ de Microsoft non están instaladas, e algúns xogos as requiren.",
-                "title": "VCRuntime non está instalado"
-            }
-        },
-        "warning": {
-            "epic": {
-                "import": "Os servidores de Epic están tendo unha grande interrupción neste momento. ¡O xogo non pode importarse!",
-                "install": "Os servidores de Epic están sufrindo unha caída masiva nestes momentos, o xogo non se puido instalar!",
-                "update": "Os servidores de Epic están sufrindo unha caída masiva nestes momentos, o xogo non se puido actualizar!"
-            },
-            "title": "Advertencia",
-            "wine-change": {
-                "message": "Non puidemos atopar a versión de Wine seleccionada para lanzar este título ({{selectedWine}}). {{newline}} Atopamos outra, queres seguir lanzando usando {{foundWine}}?",
-                "title": "Non se atopou ningunha versión de Wine!"
-            },
-            "sideload": {
-                "confirmExit": {
-                    "title": "Seguro que queres saír?",
-                    "message": "Calquera progreso non gardado podería perderse"
-                }
-            },
-            "snap": {
-                "checkbox": "Non volver a amosar esta mensaxe",
-                "title": "Heroic está a funcionar coma un Snap",
-                "message": "Algunhas funcións aínda non se encontran dispoñíbeis na versión de Snap da aplicación e seguimos a traballar para reparalas.{{newLine}}As limitacións actuais son:{{newLine}}Heroic non poderá atopar Proton dende Steam ou Wine dende Lutris.{{newLine}}{{newLine}}Gamescope, GameMode e MangoHud tampouco han funcionar, xa que Heroic non pode acceder a eles.{{newLine}}{{newLine}}Para acceder a esta funcionalidade instala Heroic coma un Flatpak, DEB ou dende a AppImage."
-            },
-            "rosetta": {
-                "title": "Non se puido atopar Rosetta",
-                "message": "Heroic necesita Rosetta para poder funcionar correctamente en macOS con chips de Apple Silicon. Por favor, instáleo dende a terminal empregando o seguinte comando: \"softwareupdate --install-rosetta\" e reinicia Heroic. "
-            }
-        },
-        "wineprefix": "Seleccione o cartafol co Prefixo de Wine",
-        "yes": "Sí",
-        "dontShowAgain": "Non volver a amosar",
-        "choose-nile-binary": "Seleccione o binario de Nile",
-        "update": "Actualizar",
-        "changelog": "Rexistro de cambios",
-        "postpone": "Adiar",
-        "launchAnyway": "Arrincar o Xogo De Todos Modos",
-        "shaderPreCachingDisabledMessage": "O caché de shaders de Steam está desactivado. Por favor actívao nas opcións de Steam no Modo de Escritorio para garantir que o xogo funcione correctamente con UMU.",
-        "shaderPreCachingDisabledTitle": "Caché de Shaders Desactivado"
-    },
-    "button": {
-        "cancel": "Cancelar",
-        "go_to_library": "Ir á biblioteca",
-        "login": "Iniciar sesión",
-        "sync": "Sincronizar",
-        "syncing": "Sincronizando",
-        "unsync": "Desincronizar",
-        "continue": "Continuar"
-    },
-    "controller": {
-        "hints": {
-            "back": "Volver",
-            "backspace": "Backspace",
-            "close_dialog": "Pechar diálogo",
-            "close_keyboard": "Ocultar o teclado",
-            "close_options": "Pechar opcións",
-            "game_details": "Detalles do xogo",
-            "game_settings": "Configuración do xogo",
-            "install_game": "Instalar xogo",
-            "move_cursor": "Mover o cursor",
-            "open_virtual_keyboard": "Abrir o teclado virtual",
-            "options": "Options",
-            "play_game": "Lanzar xogo",
-            "scroll": "Scroll",
-            "select": "Seleccionar",
-            "space": "Espazo",
-            "update_game": "Actualizar o xogo"
+    "choose": "Escoller",
+    "choose-egs-prefix": "Seleccionar o prefixo onde se instalará EGS",
+    "choose-gogdl-binary": "Seleccionar binario GOGDL (precisa reinicio)",
+    "choose-legendary-binary": "Seleccionar o binario Legendary",
+    "customWine": "Selecciona o binario de Wine ou Proton",
+    "default-install-path": "Seleccionar a ruta de instalación predeterminada",
+    "default-steam-path": "Ruta de Steam.",
+    "downloadNow": "Descargar agora",
+    "error": {
+      "add": {
+        "steam": {
+          "body": "Engadir {{game}} a Steam fallou con:{{newLine}} {{error}}",
+          "title": "Erro ao engadir"
         }
-    },
-    "docs": "Documentación",
-    "download-manager": {
-        "install-type": {
-            "install": "Instalar",
-            "update": "Actualizar"
-        },
-        "label": {
-            "disk": "Disco",
-            "speed": "Download"
-        },
-        "link": "Downloads",
-        "queue": {
-            "end-time": "Rematado en",
-            "queue-time": "Engadido en",
-            "start-time": "Iniciado en",
-            "type": "Type"
-        },
-        "title": "Downloads",
-        "ETA": "Tempo estimado"
-    },
-    "epic": {
-        "offline-notification-body": "Os servizos en liña podería non funcionar correctamente xa que os servidores de Epic Games están sen conexión!",
-        "offline-notification-title": "offline"
-    },
-    "Epic Games": "Epic Games",
-    "error": "Error",
-    "favourites": "Favoritos",
-    "game": {
-        "status": "Status",
-        "store": "Tenda",
-        "title": "Título do xogo",
-        "modify": "Modificar instalación"
-    },
-    "generic": {
-        "error": {
-            "component": "Non se atopou ningún xogo - Proba a pechar sesión e iniciar sesión de novo, ou unha das seguintes opcións"
-        },
-        "library": {
-            "refresh": "Actualizar a biblioteca"
-        },
-        "install": "Instalar",
-        "uninstall": "Desinstalar",
-        "abort": ""
-    },
-    "globalSettings": "Preferencias globais",
-    "GOG": "GOG",
-    "gog-store": "Tenda de GOG",
-    "header": {
-        "hide_non_available_games": "Hide non-available games",
-        "ignore_hidden": "Ignore Hidden",
-        "platform": "Plataforma",
-        "show_all_games": "Show all games",
-        "show_available_games": "Amosar xogos non dispoñibles",
-        "show_favourites_only": "Amosar só os favoritos",
-        "show_hidden": "Amosar ocultos",
-        "store": "Filter Store",
-        "filters": "Filtros",
-        "reset": "Restablecer",
-        "show_installed_only": "Amosar só os xogos instalados",
-        "uncategorized": "Sen categoría",
-        "show_support_offline_only": "Amosar só os xogos compatibles sen conexión",
-        "categories": "Categorías",
-        "select_all": "Seleccionar todo",
-        "show_third_party_managed_only": "Amosar só os xogos xestionados por terceiros",
-        "no_categories": "Non hai categorías personalizadas. Engade categorías empregando o menú de cada xogo.",
-        "show_updates_only": "Amosar só os xogos con actualizacións",
-        "only": "soamente"
-    },
-    "help": {
-        "amdfsr": "O FSR de AMD axuda a mellorar os fotogramas por segundo mediante o reescalado desde resolucións máis baixas no modo de pantalla completa. A calidade da imaxe aumenta desde 5 ata 1 a consta dun lixeiro impacto no rendemento. Activalo pode aumentar o rendemento.",
-        "custom_themes_path": "Non uses arquivos CSS de fontes non fiables. Se tes algunha dúbida, pide unha revisión na nosa canle de Discord.",
-        "custom_themes_wiki": "Revisa a Wiki para máis información sobre como engadir temas personalizados. Fai clic aquí.",
-        "dxvk": "DXVK é unha capa de tradución baseada en Vulkan para xogos de DirectX 9, 10 e 11. Habilitalo pode mellorar a compatibilidade. Pode causar problemas, especialmente en xogos DirectX máis antigos.",
-        "dxvkfpslimit": "Sets a frame rate cap for DXVK games",
-        "esync": "Esync ten como obxectivo reducir a sobrecarga de wineserver en xogos intensivos na CPU. Activalo pode mellorar o rendemento.",
-        "fsync": "Fsync ten como obxectivo reducir a sobrecarga de wineserver en xogos intensivos na CPU. Activalo pode mellorar o rendemento en versións de Linux compatibles.",
-        "game_language": {
-            "fallback": "Déixao baleiro para usar a lingua de Heroic.",
-            "in_game_config": "Non todos os xogos son compatibles con esta configuración, algúns teñen a configuración dentro do xogo.",
-            "valid_codes": "Os códigos de lingua válidos dependen do xogo."
-        },
-        "gamemode": "Feral GameMode aplica cambios automáticos e temporais ao sistema mentres se executan os xogos. Activalo pode mellorar o rendemento.",
-        "general": "Sincronizar con EGS no caso de ter unha instalación funcional de Epic Games Launcher noutro lugar e desexe importar os seus xogos para evitar descargalos novamente.",
-        "mangohud": "MangoHUD é unha capa que mostra e monitoriza os FPS, a temperatura, a carga da CPU/GPU e outros recursos do sistema.",
-        "other": {
-            "part4": "Usar os ",
-            "part5": "Argumentos do xogo",
-            "part6": " para ser chamados despois da orde de lanzamento, por exemplo: ",
-            "part7": " omitir o lanzador dalgúns xogos, etc."
-        },
-        "preferSystemLibs": "As versións personalizadas de Wine (Wine-GE, Wine-Lutris) inclúen as súas propias librarías para as dependencias. Ao activar esta opción, ignoraranse esas librarías e Wine cargará as librarías do sistema no seu lugar. Advertencia! Poden ocorrer problemas se as dependencias non se cumpren.",
-        "primerun": "Usa a tarxeta gráfica dedicada para renderizar o xogo en sistemas con múltiples GPU. Só é necesario en porátiles para xogos ou de sobremesa que teñen unha GPU \"headless\" para renderizar (NVIDIA Optimus, AMD CrossFire)",
-        "steam_path": {
-            "info": "Esta ruta permítelle a Heroic atopar versións de Proton instaladas en Steam, e engadir xogos de Heroic a Steam."
-        },
-        "steamruntime": "As librerías personalizadas proporcionadas por Steam axudan a executar xogos de Linux e de Windows (Proton). Activalas pode mellorar a compatibilidade.",
-        "sync": {
-            "part1": "Heroic intenta adiviñar o cartafol de gardado correcto e isto funcionará na maioría dos casos. No caso de que o cartafol sexa incorrecto, use a caixa de sobrescritura para cambialo.",
-            "part2": "En caso de que cambie o cartafol de Prefix para Wine ou Proton, deberá verificar a ruta novamente, xa que Proton usa un Prefix (/pfx) e un nome de usuario (steamuser) diferentes. Polo tanto, pode borrar a ruta actual, saír da páxina de configuración de sincronización e volver para que Heroic adiviñe o cartafol unha vez máis co Prefix correcto.",
-            "part3": "Sincronización manual: elixa Descargar para descargar os xogos gardados na nube. Subir para subir os locais á nube. Forzar descarga e Carga forzada ignorarán a versión local ou na nube.",
-            "part4": "Sincronizar gardados automáticamente sincronizará os gardados cada vez que inicie un xogo e despois terminar de xogar."
-        },
-        "vkd3d": "VKD3D é unha capa de traducción baseada en Vulkan para xogos de DirectX 12. Habilitalo pode mellorar a compatibilidade significativamente. Non fai efecto en xogos DirectX máis antigos, require DXVK.",
-        "wine": {
-            "part1": "Búsquedas de versións de Wine, Proton e CrossOver nos seguintes cartafoles:",
-            "part2": "Para outros lugares, use unha ligazón simbólica a un destos cartafoles"
-        },
-        "disable_logs": "Activa esta opción para desactivar a maioría das escrituras nos ficheiros de rexistros (a información crítica sempre se rexistra). Asegúrate de desactivar esta configuración antes de informar de calquera problema.",
-        "title": {
-            "accessibility": "Accesibilidade",
-            "login": "Iniciar Sesión",
-            "settings": "Preferencias",
-            "downloadManager": "Xestor de Descargas",
-            "wineManager": "Xestor de Wine",
-            "library": "Biblioteca"
-        },
-        "msync": "Msync ten como obxectivo reducir a sobrecarga de wineserver en xogos intensivos na CPU. Activalo pode mellorar o rendemento en versións de Linux compatibles.",
-        "dxfpslimit": "Establece un límite de fotogramas por segundo (fps) para xogos de DirectX (9-12)",
-        "button": {
-            "open": "Abrir Axuda",
-            "close": "Pechar Axuda"
-        },
-        "content": {
-            "accessibility": "Amosar os axustes de accesibilidade.",
-            "customThemesPath": "Bótalle un vistazo á nosa wiki.",
-            "defaultInstallPath": "Esta é a localización por defecto para instalar xogos.",
-            "downloadManager": "Amosa as descargas actuais e as pasadas.",
-            "library": "Amosa todos os xogos.",
-            "login": "Inicia sesión nas diferentes tendas.",
-            "settingsDefault": "Amosa todos os axustes de Heroic e os predeterminados para os xogos.",
-            "settingsGame": "Amosa todos os axustes dun xogo.",
-            "wineManager": "Instala diferentes versións de Wine, Protonm Crossover, etc."
-        },
-        "advertiseAvxForRosetta": "Activa o soporte do set de instrucións AVX cando se executan xogos de Windows a través de Rosetta en Macs de Apple Silicon. Isto pode ser necesario en algúns xogos como Death Stranding que necesitan soporte de AVX.",
-        "disablePlaytimeSync": "Desactiva a sincronización do tempo de xogo co servidor da tenda correspondente (actualmente só GOG está soportado)",
-        "download_proton_steam": "Se se activa, GE-Proton descargarase directamente no cartafol das ferramentas de compatibilidade de Steam en lugar do directorio por defecto de Heroic. Usará a ruta de Steam da configuración ''Ruta de Steam por defecto\" enriba.",
-        "dxvknvapi": "DXVK-NVAPI é unha implementación de NVAPI construída sobre DXVK e a NVAPI nativa de Linux, permitindo o uso de DLSS en GPUs de Nvidia.",
-        "gamescope": {
-            "additionalOptions": "Variables de liña de comandos adicionais para gamescope.",
-            "forceGrabCursor": "Usa o modo do rato relativo en lugar de cambiar dependendo da visibilidade do cursor. (É útil cando as aplicacións perden o foco)",
-            "fpsLimiter": "O número máximo de fotogramas por segundo (fps) de gamescope. Por exemplo, 60",
-            "fpsLimiterNoFocus": "O número máximo de fotogramas por segundo (fps) de gamescope cando o xogo non está en primeiro plano.",
-            "gameHeight": "A resolución da altura do xogo. Gamescope asume unha relación de aspecto 16:9.",
-            "gameWidth": "A resolución do ancho do xogo. Gamescope asume unha relación de aspecto 16:9.",
-            "upscaleHeight": "A resolución da altura de gamescope. Asúmese unha relación de aspecto 16:9.",
-            "upscaleWidth": "A resolución do ancho de gamescope. Asúmese unha relación de aspecto 16:9.",
-            "upscaleMethod": "O método de escalado que gamescope debería usar."
-        },
-        "wine-hdr": "HDR mellora as cores proporcionando resaltes máis brillantes e contrastes máis profundos. Para que HDR funcione, tanto a pantalla como o xogo deben ser compatibles.",
-        "wine-wayland": "O driver experimental Wine-Wayland permite aos xogos executarse nativamente usando o protocolo de Wayland. Activalo pode causar problemas en algúns xogos.",
-        "analytics": "Permite a Heroic recoller información de uso 100% anónima para axudar a mellorar a aplicación. É necesario reiniciar para que faga efecto.",
-        "WoW64": "O modo WoW64 de Wine permite executar xogos de Windows de 32-bits no Wine de 64-bits. Habilitalo pode mellorar o rendemento, mais podería corromper xogos de 32-bits máis vellos.",
-        "nvidiaprime": {
-            "details": "Usa a tarxeta gráfica dedicada para renderizar o xogo en sistemas con múltiples GPU. Só é necesario en porátiles para xogos ou de sobremesa que teñen unha GPU \"headless\" para renderizar (NVIDIA Optimus, AMD CrossFire)"
-        }
+      },
+      "credentials": {
+        "message": "As túas credenciais caducaron, por favor pecha e inicia de novo a túa sesión."
+      },
+      "cx-bottle-not-found": {
+        "message": "A botella de CrossOver \"{{bottle_name}}\" non existe, non se pode executar!",
+        "title": "Non se atopou a botella de CrossOver"
+      },
+      "diskspace": {
+        "message": "Non hai suficiente espacio dispoñíbel no disco",
+        "title": "Sen espacio"
+      },
+      "dxvk": {
+        "message": "Produciuse un erro ao instalar DXVK/VKD3D! Comproba a túa conexión!",
+        "title": "Erro de DXVK/VKD3D"
+      },
+      "folder-not-found": {
+        "title": "Parece que o cartafol do xogo foi eliminado. Quere eliminar o xogo da lista de instalados?"
+      },
+      "generic": {
+        "message": "mensaxe de erro xenérico",
+        "title": "Selecciona o EXE a executar"
+      },
+      "launchAborted": "Lanzamento cancelado",
+      "title": "Erro",
+      "uncaught-exception": {
+        "message": "Ocorreu un erro inesperado:{{newLine}}{{error}}{{newLine}}{{newLine}} Reporta o erro no noso repositorio de GitHub.",
+        "title": "Ocorreu un erro inesperado!"
+      },
+      "update": {
+        "message": "Ocorreu un problema coa actualización. Por favor, revisa os rexistros ou proba de novo máis tarde!",
+        "title": "Update Error"
+      },
+      "wine-not-found": {
+        "invalid": "The selected wine version was not found. Install it or select a different version in the game's settings{{newline}}Version: {{version}}{{newline}}Path: {{path}}",
+        "message": "No se seleccionou a versión de Wine. ¡Comprueba a configuración do xogo!",
+        "title": "No se atopou Wine"
+      },
+      "winetricks": {
+        "message": "Winetricks devolveu o seguinte erro durante a execución:{{newLine}}{{error}}",
+        "title": "Erro de Winetricks"
+      },
+      "moving": "Erro ao mover o xogo {{error}}",
+      "ubisoft-connect": {
+        "message": "Produciuse un erro na instalación de Ubisoft Connect no prefixo do xogo. Consulte a nosa páxina wiki en https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher/wiki/How-to-install-Ubisoft-Connect-on-Linux-and-Mac para instalalo manualmente.",
+        "title": "Ubisoft Connect"
+      },
+      "legendary": {
+        "generic": "Produciuse un erro! Proba a pechar e iniciar sesión de novo na túa conta de Epic. {{newline}}  {{error}}"
+      },
+      "steam": {
+        "title": "Erro de Steam",
+        "message": "A installación de Steam fallou! Por favor, lea atentamente as instruccións e inténteo de novo! {{paragraph}} {{error}}",
+        "error": "Non se atopou o executábel de Steam. Probablemente a instalación foi cancelada polo usuario ou fallou no lado de Steam."
+      },
+      "executableNotFound": "Non se atopou o executable",
+      "executableNotFoundMessage": "Heroic non puido atopar o executable deste xogo. Por favor, configúreo manualmente na configuración do xogo.",
+      "dxmt": {
+        "title": "Erro ao descargar DXMT",
+        "message": "Erro ao descargar DXMT! Comprobe a súa conexión!"
+      }
     },
     "info": {
-        "heroic": {
-            "beta": "Beta",
-            "click-to-see-changelog": "Fai clic para ver o rexistro de cambios",
-            "newReleases": "Actualización dispoñible!",
-            "stable": "Estable",
-            "version": "Versión de Heroic"
-        },
-        "save-sync": {
-            "searching": "Intentando detectar o cartafol de gardado correcto (fai clic para cancelar)"
-        },
-        "settings": "Preferencias gardadas automaticamente",
-        "version": "Versión de Wine"
+      "update": {
+        "changelog": "Open changelog",
+        "detail": "Queres descargar a actualización en segundo plano?",
+        "message": "Hai unha nova versión dispoñible!",
+        "message-finished": "Queres reiniciar Heroic agora?",
+        "title": "Heroic Games Launcher",
+        "title-finished": "Actualización completada",
+        "detailNoAutoupdate": "As actualizacións automáticas non están dispoñibles para o teu formato de paquete. Por favor, empregue o seu xestor de paquetes para actualizalo."
+      }
     },
-    "infobox": {
-        "help": "Axuda",
-        "requirements": "Requisitos do sistema",
-        "warning": "Advertencia",
-        "wine-path": "Ruta de Wine",
-        "wine-prefix": {
-            "title": "Prefixo de Wine"
-        },
-        "wine-repfix": {
-            "message": "Wine usa o que se coñece como un WINEPREFIX (Prefixo de Wine) para encapsular as aplicacións de Windows. Este prefixo contén os arquivos de configuración de Wine e unha reprodución da xerarquía de arquivos da unidade C: (o disco principal do sistema operativo Windows). Nesta reprodución do disco C: é onde se almacenan os arquivos de gardado dos xogos e as dependencias instaladas vía Winetricks."
-        },
-        "wine-path-invalid": "A ruta de Wine non é válida, selecciona outra.",
-        "wine-path-none-found": "Non se atopou ningunha versión de Wine, descarga unha desde o Xestor de Wine"
+    "no": "NON",
+    "ok": "De acordo",
+    "protocol": {
+      "install": {
+        "not_installed": "Non está instalado, desexas instalalo?"
+      }
     },
-    "install": {
-        "path": "Seleccionar a ruta de instalación"
+    "quit": {
+      "message": "Hai operacións pendentes, ¿estás seguro?",
+      "title": "Saír"
+    },
+    "reset-heroic": {
+      "question": {
+        "message": "Seguro que queres reiniciar Heroic? Isto eliminará todos os axustes e a caché pero non borrará os teus xogos instalados ou as túas credenciais de Epic. As versións portables (AppImage, WinPortable, ...) de Heroic deberán ser reiniciadas despois manualmente.",
+        "title": "Restabelecer Heroic"
+      }
+    },
+    "runexe": {
+      "title": "Seleccionar o EXE a executar"
+    },
+    "select": {
+      "button": "Seleccionar",
+      "exe": "Seleccionar EXE",
+      "script": "Selecciona unha secuencia de comandos..."
+    },
+    "shortcuts": {
+      "message": "Creáronse atallos no escritorio e no menú principal",
+      "message-mac": "Creáronse accesos directos no cartafol de Aplicacións",
+      "message-remove": "Elimináronse os accesos directos do Escritorio e do Menú de Inicio",
+      "message-remove-mac": "Elimináronse os accesos directos do cartafol de Aplicacións",
+      "title": "Atallos"
+    },
+    "sync": {
+      "button": "Seleccionar",
+      "error": "Ruta non válida",
+      "title": "Seleccionar o cartafol de partidas gardadas"
+    },
+    "vcruntime": {
+      "install": {
+        "message": "Abríronse os enlaces de descarga para os \"Visual C++ Runtimes\". Por favor, instala as versións de x86 e x64."
+      },
+      "notfound": {
+        "message": "As bibliotecas de execución de Visual C++ de Microsoft non están instaladas, e algúns xogos as requiren.",
+        "title": "VCRuntime non está instalado"
+      }
+    },
+    "warning": {
+      "epic": {
+        "import": "Os servidores de Epic están tendo unha grande interrupción neste momento. ¡O xogo non pode importarse!",
+        "install": "Os servidores de Epic están sufrindo unha caída masiva nestes momentos, o xogo non se puido instalar!",
+        "update": "Os servidores de Epic están sufrindo unha caída masiva nestes momentos, o xogo non se puido actualizar!"
+      },
+      "title": "Advertencia",
+      "wine-change": {
+        "message": "Non puidemos atopar a versión de Wine seleccionada para lanzar este título ({{selectedWine}}). {{newline}} Atopamos outra, queres seguir lanzando usando {{foundWine}}?",
+        "title": "Non se atopou ningunha versión de Wine!"
+      },
+      "sideload": {
+        "confirmExit": {
+          "title": "Seguro que queres saír?",
+          "message": "Calquera progreso non gardado podería perderse"
+        }
+      },
+      "snap": {
+        "checkbox": "Non volver a amosar esta mensaxe",
+        "title": "Heroic está a funcionar coma un Snap",
+        "message": "Algunhas funcións aínda non se encontran dispoñíbeis na versión de Snap da aplicación e seguimos a traballar para reparalas.{{newLine}}As limitacións actuais son:{{newLine}}Heroic non poderá atopar Proton dende Steam ou Wine dende Lutris.{{newLine}}{{newLine}}Gamescope, GameMode e MangoHud tampouco han funcionar, xa que Heroic non pode acceder a eles.{{newLine}}{{newLine}}Para acceder a esta funcionalidade instala Heroic coma un Flatpak, DEB ou dende a AppImage."
+      },
+      "rosetta": {
+        "title": "Non se puido atopar Rosetta",
+        "message": "Heroic necesita Rosetta para poder funcionar correctamente en macOS con chips de Apple Silicon. Por favor, instáleo dende a terminal empregando o seguinte comando: \"softwareupdate --install-rosetta\" e reinicia Heroic. "
+      }
+    },
+    "wineprefix": "Seleccione o cartafol co Prefixo de Wine",
+    "yes": "Sí",
+    "dontShowAgain": "Non volver a amosar",
+    "choose-nile-binary": "Seleccione o binario de Nile",
+    "update": "Actualizar",
+    "changelog": "Rexistro de cambios",
+    "postpone": "Adiar",
+    "launchAnyway": "Arrincar o Xogo De Todos Modos",
+    "shaderPreCachingDisabledMessage": "O caché de shaders de Steam está desactivado. Por favor actívao nas opcións de Steam no Modo de Escritorio para garantir que o xogo funcione correctamente con UMU.",
+    "shaderPreCachingDisabledTitle": "Caché de Shaders Desactivado"
+  },
+  "button": {
+    "cancel": "Cancelar",
+    "go_to_library": "Ir á biblioteca",
+    "login": "Iniciar sesión",
+    "sync": "Sincronizar",
+    "syncing": "Sincronizando",
+    "unsync": "Desincronizar",
+    "continue": "Continuar"
+  },
+  "controller": {
+    "hints": {
+      "back": "Volver",
+      "backspace": "Backspace",
+      "close_dialog": "Pechar diálogo",
+      "close_keyboard": "Ocultar o teclado",
+      "close_options": "Pechar opcións",
+      "game_details": "Detalles do xogo",
+      "game_settings": "Configuración do xogo",
+      "install_game": "Instalar xogo",
+      "move_cursor": "Mover o cursor",
+      "open_virtual_keyboard": "Abrir o teclado virtual",
+      "options": "Options",
+      "play_game": "Lanzar xogo",
+      "scroll": "Scroll",
+      "select": "Seleccionar",
+      "space": "Espazo",
+      "update_game": "Actualizar o xogo"
+    }
+  },
+  "docs": "Documentación",
+  "download-manager": {
+    "install-type": {
+      "install": "Instalar",
+      "update": "Actualizar"
     },
     "label": {
-        "loading": "Cargando",
-        "releaseDate": "Data de publicación"
+      "disk": "Disco",
+      "speed": "Download"
+    },
+    "link": "Downloads",
+    "queue": {
+      "end-time": "Rematado en",
+      "queue-time": "Engadido en",
+      "start-time": "Iniciado en",
+      "type": "Type"
+    },
+    "title": "Downloads",
+    "ETA": "Tempo estimado"
+  },
+  "epic": {
+    "offline-notification-body": "Os servizos en liña podería non funcionar correctamente xa que os servidores de Epic Games están sen conexión!",
+    "offline-notification-title": "offline"
+  },
+  "Epic Games": "Epic Games",
+  "error": "Error",
+  "favourites": "Favoritos",
+  "game": {
+    "status": "Status",
+    "store": "Tenda",
+    "title": "Título do xogo",
+    "modify": "Modificar instalación"
+  },
+  "generic": {
+    "error": {
+      "component": "Non se atopou ningún xogo - Proba a pechar sesión e iniciar sesión de novo, ou unha das seguintes opcións"
     },
     "library": {
-        "refresh": "Actualizar",
-        "sortAscending": "Ordenar de forma ascendente",
-        "sortByStatus": "Ordenar por Estado",
-        "sortDescending": "Ordenar de forma descendente",
-        "toggleLayout": {
-            "grid": "Cambiar a vista de cuadrícula",
-            "list": "Cambiar a vista de lista"
-        },
-        "hideAlphabetFilter": "Ocultar o filtro do alfabeto",
-        "showAlphabetFilter": "Amosar o filtro do alfabeto"
+      "refresh": "Actualizar a biblioteca"
     },
-    "Library": "Biblioteca",
-    "loading": {
-        "default": "Cargando",
-        "website": "Cargando sitio web"
+    "install": "Instalar",
+    "uninstall": "Desinstalar",
+    "abort": ""
+  },
+  "globalSettings": "Preferencias globais",
+  "GOG": "GOG",
+  "gog-store": "Tenda de GOG",
+  "header": {
+    "hide_non_available_games": "Hide non-available games",
+    "ignore_hidden": "Ignore Hidden",
+    "platform": "Plataforma",
+    "show_all_games": "Show all games",
+    "show_available_games": "Amosar xogos non dispoñibles",
+    "show_favourites_only": "Amosar só os favoritos",
+    "show_hidden": "Amosar ocultos",
+    "store": "Filter Store",
+    "filters": "Filtros",
+    "reset": "Restablecer",
+    "show_installed_only": "Amosar só os xogos instalados",
+    "uncategorized": "Sen categoría",
+    "show_support_offline_only": "Amosar só os xogos compatibles sen conexión",
+    "categories": "Categorías",
+    "select_all": "Seleccionar todo",
+    "show_third_party_managed_only": "Amosar só os xogos xestionados por terceiros",
+    "no_categories": "Non hai categorías personalizadas. Engade categorías empregando o menú de cada xogo.",
+    "show_updates_only": "Amosar só os xogos con actualizacións",
+    "only": "soamente"
+  },
+  "help": {
+    "amdfsr": "O FSR de AMD axuda a mellorar os fotogramas por segundo mediante o reescalado desde resolucións máis baixas no modo de pantalla completa. A calidade da imaxe aumenta desde 5 ata 1 a consta dun lixeiro impacto no rendemento. Activalo pode aumentar o rendemento.",
+    "custom_themes_path": "Non uses arquivos CSS de fontes non fiables. Se tes algunha dúbida, pide unha revisión na nosa canle de Discord.",
+    "custom_themes_wiki": "Revisa a Wiki para máis información sobre como engadir temas personalizados. Fai clic aquí.",
+    "dxvk": "DXVK é unha capa de tradución baseada en Vulkan para xogos de DirectX 9, 10 e 11. Habilitalo pode mellorar a compatibilidade. Pode causar problemas, especialmente en xogos DirectX máis antigos.",
+    "dxvkfpslimit": "Sets a frame rate cap for DXVK games",
+    "esync": "Esync ten como obxectivo reducir a sobrecarga de wineserver en xogos intensivos na CPU. Activalo pode mellorar o rendemento.",
+    "fsync": "Fsync ten como obxectivo reducir a sobrecarga de wineserver en xogos intensivos na CPU. Activalo pode mellorar o rendemento en versións de Linux compatibles.",
+    "game_language": {
+      "fallback": "Déixao baleiro para usar a lingua de Heroic.",
+      "in_game_config": "Non todos os xogos son compatibles con esta configuración, algúns teñen a configuración dentro do xogo.",
+      "valid_codes": "Os códigos de lingua válidos dependen do xogo."
     },
-    "login": {
-        "alternative_method": "Método Alternativo de Inicio de Sesión",
-        "epic": "Iniciar sesión en Epic Games",
-        "gog": "Iniciar sesión en GOG",
-        "message": "Inicia sesión. Podes ter a sesión iniciada en máis de unha plataforma ao mesmo tempo.",
-        "amazon": "Inicio de sesión en Amazon",
-        "old-mac": "A túa versión de macOS é {{version}}. Requírese macOS 12 ou máis novo para iniciar sesión.",
-        "zoom": "Inicio de sesión en Zoom"
-    },
-    "message": {
-        "sync": "Sincronización completa",
-        "unsync": "Desincronización completa"
-    },
-    "notify": {
-        "error": {
-            "move": "Erro ao mover o xogo",
-            "reparing": "Erro ao reparar"
-        },
-        "finished": {
-            "add": {
-                "steam": {
-                    "corrupt": "{{game}} non se puido engadir a todos os usuarios de Steam atopados. Revisa os rexistros para máis información. É necesario reiniciar Steam para que os cambios teñan efecto.",
-                    "success": "{{game}} engadiuse correctamente a Steam. É necesario reiniciar Steam para que os cambios teñan efecto.",
-                    "title": "Engadido a Steam"
-                }
-            },
-            "remove": {
-                "steam": {
-                    "corrupt": "{{game}} non se puido eliminar de todos os usuarios de Steam. Revisa os rexistros para máis información. É necesario reiniciar Steam para que os cambios teñan efecto.",
-                    "success": "{{game}} eliminouse correctamente de Steam. É necesario reiniciar Steam para que os cambios teñan efecto.",
-                    "title": "Eliminado de Steam"
-                }
-            },
-            "reparing": "Reparación rematada"
-        },
-        "install": {
-            "canceled": "Instalación cancelada",
-            "error": "A instalación fallou",
-            "finished": "Instalación rematada",
-            "imported": "Xogo importado",
-            "startInstall": "Instalación iniciada",
-            "failed": "A instalación fallou",
-            "paused": "Instalación en pausa"
-        },
-        "moved": "Movemento rematado",
-        "moving": "Movendo xogo",
-        "new-heroic-version": "Hai unha nova versión de Heroic!",
-        "refresh": {
-            "error": "Non se puido conseguir o listado de versións, pode ser polas restricións da API de GitHub! Inténtao de novo máis tarde."
-        },
-        "uninstalled": "Desintalado",
-        "update": {
-            "canceled": "Actualización cancelada",
-            "finished": "Actualización rematada",
-            "started": "Actualización iniciada",
-            "failed": "Fallou a actualización",
-            "paused": "Actualización en pausa"
-        },
-        "import": {
-            "failed": "Fallou a importación"
-        }
-    },
-    "offline-message": {
-        "hint": "Estamos comprobando a conectividade en:{{newline}}github.com,{{newline}}gog.com,{{newline}}store.epicgames.com e{{newline}}cloudflare-dns.com",
-        "ignore": "Ignore",
-        "offline": "Offline",
-        "offline-retry-in": "Sen conexión. Intentando de novo en {{seconds}} segundos.",
-        "retrying": "Intentando de novo"
-    },
-    "Open": "Aberto",
-    "options": {
-        "advanced": {
-            "key": "Variable Name",
-            "placeHolderKey": "NAME",
-            "placeHolderValue": "ex.: Ruta/A/Arquivo",
-            "title": "Variables de entorno",
-            "value": "Valor"
-        },
-        "env_variables": {
-            "error": {
-                "empty_key": "Os nomes das variables non poden estar baleiros",
-                "equal_sign_in_key": "Os nomes das variables non poden conter o símbolo \"=\"",
-                "space_in_key": "Os nomes das variables non poden conter espazos"
-            },
-            "example": "Non uses o símbolo \"=\", ex.: para unha configuración como \"A_MIÑA_VARIABLE=123\", pon A_MIÑA_VARIABLE en NOME e 123 en VALOR.",
-            "info": "Establece variables de entorno para engadir ao comando."
-        },
-        "gameargs": {
-            "placeholder": "Escribe aquí os argumentos de lanzamento",
-            "title": "Argumentos do xgo (para executar despois da orde):",
-            "error": {
-                "command": "A sintaxe %command% de Steam non é válida como argumento para o xogo.",
-                "env": "As variables do entorno deber configurarse na táboa de abaixo."
-            }
-        },
-        "quote-args-with-spaces": "Advertencia: Asegúrate de poñer os parámetros que conteñan espazos entre comiñas! ex.: \"ruta/con espazos/\"",
-        "wrapper": {
-            "args": "Argumentos",
-            "arguments_example": "Exemplo de argumentos: --arg; --extra-file=\"ruta/con espazos/\"",
-            "exe": "Envoltura",
-            "placeHolderKey": "Nova envoltura",
-            "placeHolderValue": "Argumentos da envoltura",
-            "title": "Comando de envoltura:"
-        },
-        "gamescope": {
-            "additionalOptions": "Opcións Adicionais",
-            "borderless": "Sen bordos",
-            "fpsLimiter": "Limitador de FPS",
-            "fpsLimiterNoFocus": "Limitador de FPS (Sen enfoque)",
-            "fullscreen": "Pantalla completa",
-            "gameHeight": "Altura do xogo",
-            "gameWidth": "Ancho do xogo",
-            "interger": "Escalado de enteiros",
-            "nis": "NVIDIA Image Scale (NIS)",
-            "stretch": "Estirar a imaxe",
-            "upscaleHeight": "Altura do reescalado",
-            "upscaleWidth": "Ancho do reescalado",
-            "windowed": "En ventá"
-        }
-    },
+    "gamemode": "Feral GameMode aplica cambios automáticos e temporais ao sistema mentres se executan os xogos. Activalo pode mellorar o rendemento.",
+    "general": "Sincronizar con EGS no caso de ter unha instalación funcional de Epic Games Launcher noutro lugar e desexe importar os seus xogos para evitar descargalos novamente.",
     "other": {
-        "gogdl-version": "Versión de GOGDL: ",
-        "legendary-version": "Versión de Legendary: ",
-        "weblate": "Axuda a traducir Heroic.",
-        "nile-version": "Versión de Nile: "
+      "part4": "Usar os ",
+      "part5": "Argumentos do xogo",
+      "part6": " para ser chamados despois da orde de lanzamento, por exemplo: ",
+      "part7": " omitir o lanzador dalgúns xogos, etc."
     },
-    "Other": "Outros",
-    "placeholder": {
-        "alt-gogdl-bin": "Utilizando o binario integrado de GOGDL...",
-        "alt-legendary-bin": "Usando o binario de Legendary embebeido...",
-        "custom_themes_path": "Selecciona a ruta para buscar arquivos CSS personalizados",
-        "dxvkfpsvalue": "Valor enteiro positivo (ex. 30, 60, ...)",
-        "egs-prefix": "Prefixo onde está instalado EGS",
-        "prefered_language": "Código de dous caracteres (ex.: \"en\", \"fr\" ou \"gl\")",
-        "alt-nile-bin": "Usando o binario incorporado de Nile..."
+    "preferSystemLibs": "As versións personalizadas de Wine (Wine-GE, Wine-Lutris) inclúen as súas propias librarías para as dependencias. Ao activar esta opción, ignoraranse esas librarías e Wine cargará as librarías do sistema no seu lugar. Advertencia! Poden ocorrer problemas se as dependencias non se cumpren.",
+    "primerun": "Usa a tarxeta gráfica dedicada para renderizar o xogo en sistemas con múltiples GPU. Só é necesario en porátiles para xogos ou de sobremesa que teñen unha GPU \"headless\" para renderizar (NVIDIA Optimus, AMD CrossFire)",
+    "steam_path": {
+      "info": "Esta ruta permítelle a Heroic atopar versións de Proton instaladas en Steam, e engadir xogos de Heroic a Steam."
     },
-    "platforms": {
-        "linux": "Linux",
-        "mac": "macOS",
-        "win": "Windows",
-        "browser": "Navegador"
+    "steamruntime": "As librerías personalizadas proporcionadas por Steam axudan a executar xogos de Linux e de Windows (Proton). Activalas pode mellorar a compatibilidade.",
+    "sync": {
+      "part1": "Heroic intenta adiviñar o cartafol de gardado correcto e isto funcionará na maioría dos casos. No caso de que o cartafol sexa incorrecto, use a caixa de sobrescritura para cambialo.",
+      "part2": "En caso de que cambie o cartafol de Prefix para Wine ou Proton, deberá verificar a ruta novamente, xa que Proton usa un Prefix (/pfx) e un nome de usuario (steamuser) diferentes. Polo tanto, pode borrar a ruta actual, saír da páxina de configuración de sincronización e volver para que Heroic adiviñe o cartafol unha vez máis co Prefix correcto.",
+      "part3": "Sincronización manual: elixa Descargar para descargar os xogos gardados na nube. Subir para subir os locais á nube. Forzar descarga e Carga forzada ignorarán a versión local ou na nube.",
+      "part4": "Sincronizar gardados automáticamente sincronizará os gardados cada vez que inicie un xogo e despois terminar de xogar."
     },
-    "please-wait": "Por favor, espera...",
-    "progress": "Progress",
-    "queue": {
-        "label": {
-            "canceled": "Canceled",
-            "clear": "Limpar lista",
-            "downloading": "Descargando",
-            "empty": "Non hai nada que descargar",
-            "finished": "Completado",
-            "queued": "En cola",
-            "remove": "Remove from Downloads",
-            "resume": "Reanudar a descarga",
-            "pause": "Pausa a descarga"
-        }
-    },
-    "Recent": "Xogado recentemente",
-    "search": "Buscar xogos",
-    "setting": {
-        "adddesktopshortcuts": "Engadir atallos de escritorio automaticamente",
-        "addgamestostartmenu": "Engadir xogos ao menú de inicio automaticamente",
-        "addgamestosteam": "Engadir os xogos a Steam automaticamente",
-        "alt-gogdl-bin": "Selecciona un binario de GOGDL alternativo a usar",
-        "alt-legendary-bin": "Seleccione o binario de Legendary alternativo",
-        "autodxvk": "Autoinstalar/actualizar DXVK no prefixo",
-        "autosync": "Autosincronizar partidas gardadas",
-        "autovkd3d": "Autoinstalar/actualizar VKD3D no prefixo",
-        "change-target-exe": "Seleccionar un EXE alternativo a executar",
-        "checkForUpdatesOnStartup": "Comproba se hai actualizacións de Heroic ao inicio",
-        "crossover-version": "Versión de Crossover/Wine",
-        "custom_themes_path": "Ruta dos temas personalizados",
-        "customWineProton": "Rutas personalizadas de Wine e Proton",
-        "darktray": "Usar icona escura na bandexa do sistema",
-        "default-install-path": "Ruta de instalación predeterminada",
-        "default-steam-path": "Ruta de Steam por defecto",
-        "defaultWinePrefix": "Estabelecer cartafol para os prefixos de Wine",
-        "disable_controller": "Desactivar a navegación de Heroic co controlador",
-        "discordRPC": "Activar a presencia enriquecida de Discord",
-        "download-no-https": "Descargar xogos sen HTTPS (útil para CDNs, ex. LanCache)",
-        "dxvkfpslimit": "Limit FPS (DX9, 10 and 11)",
-        "egs-sync": "Sincronizar cos xogos instalados de Epic",
-        "enableFSRHack": "Activar o hack de FSR (A versión de Wine debe soportalo)",
-        "eosOverlay": {
-            "cancelInstall": "Cancelar",
-            "checkForUpdates": "Buscar actualizacións",
-            "checkingForUpdates": "Buscando actualizacións...",
-            "currentVersion": "Versión actual: {{version}}",
-            "disable": "Desactivar",
-            "enable": "Activar",
-            "install": "Instalar",
-            "installed": "A superposición de Epic (EOS Overlay) está instalada",
-            "installing": "Estase instalando a superposición de Epic (EOS Overlay)...",
-            "latestVersion": "Última versión: {{version}}",
-            "notInstalled": "A superposición de Epic (EOS Overlay) non está instalada",
-            "notInstalledMsg": "A superposición de Epic (EOS Overlay) non está instalada. Queres instalala agora?",
-            "notInstalledTitle": "A superposición non está instalada",
-            "remove": "Desinstalar",
-            "removeConfirm": "Estás seguro de que queres desinstalar a superposición de Epic (EOS Overlay)?",
-            "removeConfirmTitle": "Confirmar desinstalación da superposición",
-            "updateNow": "Update",
-            "updating": "Actualizando..."
-        },
-        "esync": "Activar Esync",
-        "exit-to-tray": "Saír á bandexa do sistema",
-        "FsrSharpnessStrenght": "Forza da nitidez de FSR",
-        "fsync": "Activar Fsync",
-        "gamemode": "Usar GameMode (Feral Game Mode debe estar instalado)",
-        "hideChangelogsOnStartup": "Non amosar os rexistros de cambios ao inicio",
-        "language": "Seleccionar o idioma da aplicación",
-        "library_top_option": {
-            "disabled": "Desactivado",
-            "favourites": "Xogos favoritos",
-            "recently_played": "Xogos xogados recentemente",
-            "recently_played_installed": "Xogos xogados recentemente (só instalados)"
-        },
-        "library_top_section": "Sección superior da biblioteca",
-        "log": {
-            "copy-to-clipboard": "Copy log content to clipboard",
-            "current-log": "Current Log",
-            "instructions": "Únete ao noso Discord e busca a sección \"#-support\". Lee o fío fixado \"Read Me First | Frequently Asked Questions\" e sigue as instrucións para compartir estes rexistros e calquera información relevante sobre o teu problema.",
-            "instructions_title": "Como reportar un problema?",
-            "last-log": "Last Log",
-            "no-file": "Non se atopou ningún arquivo de rexistros",
-            "show-in-folder": "Amosar arquivo de rexistros no cartafol",
-            "upload": {
-                "actions": "Accións",
-                "button": "Subir arquivo de rexistros",
-                "confirm": {
-                    "content": "Estás seguro de que queres subir \"{{name}}\"?",
-                    "title": "Subir arquivo de rexistros?"
-                },
-                "delete": "Pedir borrado do arquivo de rexistros",
-                "done": {
-                    "content": "Subido a {{url}} (URL copiada ao portapapeis)",
-                    "title": "Subida completada"
-                },
-                "error": {
-                    "content": "Fallou a subida do arquivo de rexistros. Comproba o rexistro xeral de Heroic para os detalles",
-                    "title": "Fallou a subida",
-                    "manual_upload": "Clicar no botón «MOSTRAR FICHEIRO DE REXISTROS NO CARTAFOL» e subir manualmente o ficheiro «launch.log» no Discord ou noutro servizo online para compartir ficheiros."
-                },
-                "header": "Subiuse o arquivo de rexistros",
-                "hours-ago": "Subido {{hoursAgo, relativetime(hours)}}",
-                "minutes-ago": "Subido {{minutesAgo, relativetime(minutes)}}",
-                "no-files": "Non se subiron arquivos de rexistros",
-                "open": "Abrir subida de arquivos de rexistros",
-                "title": "Título do rexistro",
-                "upload-date": "Data de subida",
-                "uploading": {
-                    "content": "Subindo arquivo de rexistros...",
-                    "title": "Subindo"
-                }
-            },
-            "descriptiveNames": {
-                "game-log": "Rexistros de {{gameTitle}}",
-                "gog": "Rexistros de GOG",
-                "heroic": "Rexistros xerais de Heroic",
-                "legendary": "Rexistros de Epic Games / Legendary",
-                "nile": "Rexistros de Amazon / Nile",
-                "zoom": "Rexistro de Zoom"
-            },
-            "join-heroic-discord": "Únete ao noso Discord",
-            "show-uploads": "Amosar os rexistros subidos"
-        },
-        "mangohud": "Habilitar Mangohud (precísase instalar Mangohud)",
-        "manualsync": {
-            "download": "Descargar",
-            "forcedownload": "Forzar descarga",
-            "forceupload": "Forzar subida",
-            "sync": "Sincronizar",
-            "syncing": "Sincronizando",
-            "title": "Sincronización manual de partidas gardadas",
-            "upload": "Subir"
-        },
-        "maxRecentGames": "Xogados recentemente para mostrar",
-        "maxworkers": "Número máximo de descargas",
-        "minimize-on-launch": "Minimizar Heroic ao lanzar un xogo",
-        "offlinemode": "Executar xogo sen conexión",
-        "prefered_language": "Lingua preferida (código de idioma)",
-        "preferSystemLibs": "Preferir librerías do sistema",
-        "runexe": {
-            "message": "Arrastrar e soltar aqúi",
-            "title": "Executar EXE en Prefix"
-        },
-        "savefolder": {
-            "not-found": "Non se atopou o cartafol de gardados. Por favor, selecciónao manualmente (fai clic para volvelo a intentar)",
-            "placeholder": "Seleccionar o cartafol exacto para gardar xogos",
-            "warning": "Por favor, verifica se a ruta é correcta (fai clic para volvelo a intentar)"
-        },
-        "select_theme": "Seleccionar Tema",
-        "showfps": "Amosar os FPS (DX9, 10 e 11)",
-        "start-in-tray": "Iniciar minimizado",
-        "steamruntime": "Usar o Runtime de Steam",
-        "winecrossoverbottle": "Botella de CrossOver",
-        "wineprefix": "Cartafol WinePrefix",
-        "wineversion": "Versión de Wine",
-        "ignoreGameUpdates": "Ignorar as actualizacións do xogo",
-        "autoUpdateGames": "Actualiza os xogos automaticamente",
-        "disable_logs": "Desactivar rexistros",
-        "showMetalOverlay": "Amosar a superposición de estatísticas",
-        "addgamestoapplications": "Engade os xogos a Aplicacións automaticamente",
-        "alt-nile-bin": "Escolle un binario alternativo de Nile",
-        "autodxvknvapi": "Autoinstalar/actualizar DXVK-NVAPI no prefixo",
-        "msync": "Activar Msync",
-        "advertiseAvxForRosetta": "Amosar AVX a Rosetta",
-        "after-launch-script-path": "Selecciona unha secuencia de comandos para executar despois de que se peche o xogo",
-        "allow_installation_broken_anticheat": {
-            "confirmation": {
-                "message": "Os xogos con antitrampas roto ou rexeitado poderían funcionar, pero as funcións de multixogador non van funcionar. Non pidas asistencia se os instalas sabendo isto.",
-                "title": "Estás seguro/a?",
-                "understand": "Entendo"
-            },
-            "label": "Permitir a instalación de xogos con antitrampas roto ou rexeitado"
-        },
-        "allow_non_ge_proton": {
-            "confirmation": {
-                "dont_show": "Non amosalos",
-                "message": "Recomendamos usar GE-Proton con Heroic porque as outras versións carecen de wiretricks e protonfixes. Aínda así, podes usalas se queres.",
-                "show": "Entendo, ensínaos",
-                "title": "Estás seguro/a?"
-            },
-            "info_label": "Ignóranse as versións de Proton que non sexan de GE",
-            "label": "Permitir usar versións de Proton que non sexan de GE para executar xogos",
-            "wine_selector_warning": "As versións de Proton que non sexan de GE son ignoradas por defecto, podes activalas na configuración avanzada global"
-        },
-        "before-launch-script-path": "Selecciona unha secuencia de comandos para executar antes de lanzar o xogo",
-        "custom_css": {
-            "warning": "Advertencia: isto aplícase a todo o frontend. Isto significa que un estilo incorrecto podería facer Heroic inusable. En caso de ser necesario, a configuración pódese cambiar manualmente en `~/.config/heroic/config.json`. NON copies estilos de fontes non confiables."
-        },
-        "disablePlaytimeSync": "Desactivar a sincronización do tempo de xogo",
-        "disableUMU": "Desactivar umu",
-        "download-proton-steam": "Descargar GE-Proton no cartafol de Steam",
-        "dxfpslimit": "Limitar FPS en xogos de DirectX",
-        "experimental_features": {
-            "cometSupport": "Soporte para Comet",
-            "enableHelp": "Compoñente de axuda",
-            "enableNewDesign": "Novo deseño",
-            "zoomPlatform": "Compatibilidade con Zoom Platform (só Linux)"
-        },
-        "frameless-window": {
-            "confirmation": {
-                "message": "Esta función aínda é experimental. Por favor, reporta calquera problema que atopes en GitHub.",
-                "title": "Función experimental"
-            },
-            "description": "Usar unha ventá sen bordos (require reinicio)"
-        },
-        "gamescope": {
-            "enableForceGrabCursor": "Activar forzar agarrar o cursor",
-            "enableLimiter": "Activar o limitador de FPS",
-            "enableUpscaling": "Activar o escalado",
-            "missingMsg": "Non se puido atopar gamescope no PATH. Instálao ou engádeo ao PATH.",
-            "warningFlatpak": "Non se puido atopar unha versión compatible de Gamescope. Instala o paquete de Flatpak de Gamescope con runtime {{runtimeVersion}} e reinicia Heroic."
-        },
-        "hdr": "Activar HDR",
-        "no-tray-icon": "Ocultar a icona da bandexa do sistema (require reinicio)",
-        "verboseLogs": {
-            "description": "Activar rexistros detallados"
-        },
-        "wineWayland": "Activar Wine-Wayland (Experimental) (A versión de Wine debe ser compatible)",
-        "analyticsOptIn": "Enviar información anónima para axudar o desenvolvemento de Heroic",
-        "show_valve_proton": {
-            "confirmation": {
-                "dont_show": "Non amosalos",
-                "show": "Entendo, ensínaos",
-                "title": "Estás seguro/a?",
-                "message": "Recomendamos o uso de Heroic con forks de Proton personalizados (GE-Proton, Proton-CachyOS, etc.) dado que as builds de Proton de Valve carecen de winetricks e protofixes. Aínda así, podes empregalas se o desexas."
-            },
-            "label": "Permitir usar versións de Proton que non sexan de GE para executar xogos",
-            "wine_selector_warning": "As versións de Proton que non sexan de GE son ignoradas por defecto, podes activalas na configuración avanzada global",
-            "info_label": "Ignoráronse as versións de Valve Proton"
-        },
-        "WoW64": "Activar WoW64 (Experimental)",
-        "enable-quick-sync-menu": "Habilitar o menú de gardar e sincronizar rapidamente na páxina do xogo",
-        "scripts": "Secuencia de comandos (Scripts):",
-        "start-in-console-mode": "",
-        "disable_gog_presence": ""
-    },
-    "settings": {
-        "battlEyeRuntime": {
-            "installing": "Instalando o Runtime de BattlEye...",
-            "name": "Runtime do antitrampas BattlEye"
-        },
-        "clear-cache": "Limpar caché de Heroic",
-        "copiedToClipboard": "Copiado ao portapapeis!",
-        "copyToClipboard": "Copiar todas as configuracións ao portapapeis",
-        "default_hint": "Os cambios nesta sección só se aplican aos valores predefinidos cando se instala un xogo. Se queres cambiar a configuración de un xogo xa instalado, usa o botón de Configuración na páxina do xogo.",
-        "eacRuntime": {
-            "gameModeRequired": {
-                "message": "Necesítase GameMode para que o runtime de EAC funcione en Flatpak. Queres activalo agora?",
-                "title": "Necesítase GameMode"
-            },
-            "installing": "Instalando o Runtime de EAC...",
-            "name": "Runtime de EasyAntiCheat"
-        },
-        "gameMode": {
-            "eacRuntimeEnabled": {
-                "message": "O runtime de EAC está activado, pero non funcionará correctamente sen GameMode. Queres desactivar o runtime de EAC e GameMode?",
-                "title": "Runtime de EAC activado"
-            }
-        },
-        "log": {
-            "long-log-hint": "Truncáronse os rexistros, amósanse as últimas 1000 liñas!"
-        },
-        "navbar": {
-            "advanced": "Avanzado",
-            "games_settings_defaults": "Valores predeterminados dos xogos",
-            "general": "Xeral",
-            "log": "Rexistro",
-            "other": "Outro",
-            "sync": "Sincronización dos xogos gardados na nube",
-            "wineExt": "Wine Extensions",
-            "gamescope": "Gamescope",
-            "systemInformation": "Información do sistema",
-            "legacy": "Obsoleto"
-        },
-        "open-config-file": "Abrir arquivo de configuración",
-        "reset-heroic": "Restabelecer Heroic",
-        "saves": {
-            "label": "Save Location:",
-            "warning": "A función de gardado na nube está en Beta. Por favor, fai unha copia de seguridade dos gardados antes de sincronizalos (no caso de que algo vaia mal)",
-            "gog_linux_native_warning": "Os xogos nativos de Linux non soportan a funcionalidade de gardado na nube de GOG. Usa a versión de Windows no seu lugar.",
-            "not_supported": "Este xogo non soporta gardado na nube."
-        },
-        "advanced": {
-            "clearCache": {
-                "help8": "Xogos instalados",
-                "help9": "Configuración dos xogos",
-                "help1": "Esta acción borrará as seguintes cachés:",
-                "help10": "Configuración de Heroic",
-                "help2": "Información dos xogos de terceiros (puntuacións, compatibilidade con steam, howlongtobeat, pcgamingwiki, applegamingwiki)",
-                "help3": "Información da biblioteca de Legendary (lista de xogos, información do diálogo de instalación, información do xogo)",
-                "help4": "Información da biblioteca de GOG (lista de xogos, información do diálogo de instalación, información da api -ex.: requisitos-)",
-                "help5": "Información da biblioteca de Amazon (lista de xogos, información do diálogo de instalación)",
-                "help6": "Isto NON borrará:",
-                "help7": "Inicio de sesión da tenda"
-            },
-            "title": {
-                "resetHeroic": "Restablecer Heroic",
-                "clearCache": "Limpar caché"
-            },
-            "resetHeroic": {
-                "help": "Isto vai eliminar todas as configuracións e a caché pero non eliminará os xogos instalados nin as credenciais de Epic. As versión portables (AppImage, WinPortable, ...) de Heroic necesitarán ser reiniciadas manualmente."
-            },
-            "details": "Detalles"
-        },
-        "systemInformation": {
-            "copyToClipboard": "Copiar ao portapapeis",
-            "cometVersion": "Comet: {{cometVersion}}",
-            "cpu": "CPU:",
-            "cpuDescription": "{{numOfCores}}x {{modelName}}",
-            "gogdlVersion": "Gogdl: {{gogdlVersion}}",
-            "gpu": "GPU:",
-            "gpuDriver": "Cotrolador: {{driverVersion}}",
-            "gpuWithNumber": "GPU {{number}}:",
-            "heroicVersion": "Heroic: {{heroicVersion}}",
-            "legendaryVersion": "Legendary: {{legendaryVersion}}",
-            "memory": "Memoria:",
-            "memoryStats": "{{percentUsed}}% usado ({{usedGib}} / {{totalGib}}",
-            "nileVersion": "Nile: {{nileVersion}}",
-            "os": "Sistema operativo:",
-            "osNameFlatpak": "{{osName}} (dentro de Flatpak)",
-            "osVersion": "Versión {{versionNumber}}",
-            "showDetailed": "Amosar as especificacións detalladas do sistema",
-            "software": "Software:",
-            "steamDeck": "Steam Deck {{model}}",
-            "systemModel": "Modelo do sistema:",
-            "systemSpecifications": "Especificacións do sistema:"
-        },
-        "gamescope": {
-            "searchMsg": "Buscando o executable de gamescope."
-        },
-        "experimental_features": {
-            "title": "Funcións experimentais"
-        },
-        "custom_css": {
-            "title": "Estilo de CSS personalizado"
-        },
-        "offline": {
-            "warning": "Este xogo non permite explicitamente o modo offline, activa esta opción baixo a túa propia responsabilidade. É posible que o xogo non funcione."
-        },
-        "launchOptions": "Opcións de arranque",
-        "legacy_warning": "Advertencia: A maior parte dos axustes nesta lapela están obsoletos e é posible que non funcionen.",
-        "steamgriddb": {
-            "apikey": {
-                "title": "",
-                "placeholder": "",
-                "placeholder_saved": ""
-            },
-            "help": {
-                "description": ""
-            }
-        }
-    },
-    "Settings": "Preferencias",
-    "sidebar": {
-        "collapse": "Collapse sidebar",
-        "uncollapse": "Uncollapse sidebar",
-        "console": ""
-    },
-    "status": {
-        "installing": "Instalando",
-        "logging": "Inciando sesión…",
-        "processing": "Procesando os arquivos, por favor, espera",
-        "preparing_login": "Preparando o inicio de sesión... ",
-        "installed": "Instalado"
-    },
-    "store": "Tenda de Epic",
-    "stores": "Tendas",
-    "title": {
-        "allGames": "Todos os xogos"
-    },
-    "toolbox": {
-        "settings": {
-            "default-wineprefix": "Select the default prefix folder for new configs",
-            "wineprefix": "Selecciona un cartafol para os novos Prefixos de Wine"
-        }
-    },
-    "tooltip": {
-        "addpath": "Agregar unha nova ruta",
-        "removepath": "Eliminar ruta"
-    },
-    "tray": {
-        "about": "Sobre",
-        "quit": "Saír",
-        "reload": "Recargar",
-        "show": "Mostrar"
-    },
-    "two_col_table": {
-        "save_hint": "Os cambios nesta táboa non se gardan automaticamente. Fai clic no botón +"
-    },
-    "Update Available!": "Actualización dispoñible!",
-    "userselector": {
-        "discord": "Discord",
-        "logging_out": "Pechando sesión",
-        "logout": "Pechar sesión",
-        "logout_confirmation": "Tes certeza que queres pechar a sesión?",
-        "manageaccounts": "Xestionar Contas",
-        "quit": "Saír",
-        "cancel": "Cancelar",
-        "quitMessage": "Seguro de que queres saír?"
-    },
-    "webview": {
-        "controls": {
-            "back": "Regresar",
-            "forward": "Avanzar",
-            "openInBrowser": "Abrir no navegador",
-            "reload": "Recargar páxina"
-        }
-    },
+    "vkd3d": "VKD3D é unha capa de traducción baseada en Vulkan para xogos de DirectX 12. Habilitalo pode mellorar a compatibilidade significativamente. Non fai efecto en xogos DirectX máis antigos, require DXVK.",
     "wine": {
-        "actions": "Acción",
-        "manager": {
-            "link": "Xestor de Wine",
-            "not-found": "Non se atopou ningunha versión de Wine. Fai clic na icona de refrescar para volvelo a intentar.",
-            "title": "Xestor de Wine",
-            "unzipping": "Descomprimindo",
-            "settings": "Preferencias",
-            "update": "Actualizar",
-            "search": "",
-            "loading": "",
-            "open_folder": "",
-            "no-results": ""
-        },
-        "release": "Data de publicación",
-        "size": "Tamaño",
-        "notes": "Notas"
+      "part1": "Búsquedas de versións de Wine, Proton e CrossOver nos seguintes cartafoles:",
+      "part2": "Para outros lugares, use unha ligazón simbólica a un destos cartafoles"
     },
-    "externalLink": {
-        "dontAskAgain": "Non volver preguntar",
-        "warning": "Estás a piques de abrir unha ligazón externa."
+    "disable_logs": "Activa esta opción para desactivar a maioría das escrituras nos ficheiros de rexistros (a información crítica sempre se rexistra). Asegúrate de desactivar esta configuración antes de informar de calquera problema.",
+    "title": {
+      "accessibility": "Accesibilidade",
+      "login": "Iniciar Sesión",
+      "settings": "Preferencias",
+      "downloadManager": "Xestor de Descargas",
+      "wineManager": "Xestor de Wine",
+      "library": "Biblioteca"
     },
-    "wiki_info": {
-        "not_found": "Non puidemos atopar información adicional."
+    "msync": "Msync ten como obxectivo reducir a sobrecarga de wineserver en xogos intensivos na CPU. Activalo pode mellorar o rendemento en versións de Linux compatibles.",
+    "dxfpslimit": "Establece un límite de fotogramas por segundo (fps) para xogos de DirectX (9-12)",
+    "button": {
+      "open": "Abrir Axuda",
+      "close": "Pechar Axuda"
     },
-    "dlc": {
-        "size": "Tamaño",
-        "title": "Título",
-        "actions": "Accións",
-        "installDlcs": "Instalar todos os DLC",
-        "noDlcFound": "Non se atopou ningún DLC"
+    "content": {
+      "accessibility": "Amosar os axustes de accesibilidade.",
+      "customThemesPath": "Bótalle un vistazo á nosa wiki.",
+      "defaultInstallPath": "Esta é a localización por defecto para instalar xogos.",
+      "downloadManager": "Amosa as descargas actuais e as pasadas.",
+      "library": "Amosa todos os xogos.",
+      "login": "Inicia sesión nas diferentes tendas.",
+      "settingsDefault": "Amosa todos os axustes de Heroic e os predeterminados para os xogos.",
+      "settingsGame": "Amosa todos os axustes dun xogo.",
+      "wineManager": "Instala diferentes versións de Wine, Protonm Crossover, etc."
     },
-    "amazon": "Amazon",
-    "Amazon Games": "Amazon Games",
-    "prime-gaming": "Prime Gaming",
-    "winetricks": {
-        "install": "Instalar",
-        "loading": "Cargando",
-        "installed": "Compoñentes instalados:",
-        "installing": "Instalación en progreso: {{component}}",
-        "loading-available": "Cargando compoñentes dispoñibles ...",
-        "no-components": "Non hai compoñentes dispoñibles",
-        "nothingYet": "Winetricks aínda non instalou nada",
-        "openGUI": "Abrir GUI de Winetricks",
-        "search": "Buscar fontes ou compoñentes"
+    "advertiseAvxForRosetta": "Activa o soporte do set de instrucións AVX cando se executan xogos de Windows a través de Rosetta en Macs de Apple Silicon. Isto pode ser necesario en algúns xogos como Death Stranding que necesitan soporte de AVX.",
+    "disablePlaytimeSync": "Desactiva a sincronización do tempo de xogo co servidor da tenda correspondente (actualmente só GOG está soportado)",
+    "download_proton_steam": "Se se activa, GE-Proton descargarase directamente no cartafol das ferramentas de compatibilidade de Steam en lugar do directorio por defecto de Heroic. Usará a ruta de Steam da configuración ''Ruta de Steam por defecto\" enriba.",
+    "dxvknvapi": "DXVK-NVAPI é unha implementación de NVAPI construída sobre DXVK e a NVAPI nativa de Linux, permitindo o uso de DLSS en GPUs de Nvidia.",
+    "gamescope": {
+      "additionalOptions": "Variables de liña de comandos adicionais para gamescope.",
+      "forceGrabCursor": "Usa o modo do rato relativo en lugar de cambiar dependendo da visibilidade do cursor. (É útil cando as aplicacións perden o foco)",
+      "fpsLimiter": "O número máximo de fotogramas por segundo (fps) de gamescope. Por exemplo, 60",
+      "fpsLimiterNoFocus": "O número máximo de fotogramas por segundo (fps) de gamescope cando o xogo non está en primeiro plano.",
+      "gameHeight": "A resolución da altura do xogo. Gamescope asume unha relación de aspecto 16:9.",
+      "gameWidth": "A resolución do ancho do xogo. Gamescope asume unha relación de aspecto 16:9.",
+      "upscaleHeight": "A resolución da altura de gamescope. Asúmese unha relación de aspecto 16:9.",
+      "upscaleWidth": "A resolución do ancho de gamescope. Asúmese unha relación de aspecto 16:9.",
+      "upscaleMethod": "O método de escalado que gamescope debería usar."
     },
-    "category-settings": {
-        "cancel": "Cancelar",
-        "warning": "Advertencia",
-        "remove-category": "Eliminar categoría",
-        "new-category": "Nova categoría",
-        "add-new-category": "Engadir unha Nova Categoría",
-        "delete-question": "Ao continuar eliminarase permanentemente esta categoría e desasignarase de todos os xogos. Queres continuar?"
-    },
-    "tour": {
-        "back": "Volver",
-        "library": {
-            "search": "Usa a barra de buscas para atopar os teus xogos.",
-            "addGame": "Engade os teus propios xogos ou aplicacións á biblioteca facendo clic aquí. Poden ser basicamente calquera cousa, incluso URLs web.",
-            "categories": "Organiza os teus xogos en categorías para manter as cousas ordenadas.",
-            "end": {
-                "intro": "Iso é todo! Desfruta dos teus xogos e divírtete!",
-                "title": "Desfruta dos teus xogos!"
-            },
-            "filters": "Filtra os xogos pola tenda, plataforma, favoritos e máis usando estas opcións.",
-            "gameCard": "Fai click esquerdo na tarxeta do xogo para navegar á páxina do xogo e ver detalles e axustar a configuración ou fai click dereito para abrir o menú contextual.",
-            "refresh": "Refresca a biblioteca para revisar novos xogos ou actualizacións.",
-            "sortInstalled": "Lista os xogos polo seu status de instalación.",
-            "sortOptions": "Fai clic aquí para ordenar os xogos alfabeticamente.",
-            "steamInstall": "Usa este botón para instalar a versión de Windows de Steam e xogar aos teus xogos de Windows usando Crossover, Wine ou GPTK.",
-            "viewToggle": "Cambia entre as vistas de cuadrícula e de vista para os xogos.",
-            "welcome": {
-                "intro": "Benvido/a á biblioteca de Heroic! Aquí é onde podes ver todos os teus xogos das diferentes tendas.",
-                "intro2": "Se a biblioteca está baleira, asegúrate de iniciar sesión coas túas contas usando o botón \"Xestionar contas\" na barra lateral ou engade os teus propios xogos usando o botón de Engadir Xogo enriba.",
-                "title": "Benvido/a a Heroic!",
-                "title2": "Xestionando a biblioteca!"
-            }
-        },
-        "done": "Feito",
-        "next": "Seguinte",
-        "sidebar": {
-            "accessibility": "Accede a funcións de accesibilidade para personalizar a túa experiencia.",
-            "accounts": "Manexa as túas contas conectadas das tendas (Epic, GOG, Amazon), sae da sesión ou inicia sesión en elas.",
-            "community": "Únete á nosa comunidade en Discord e axuda ao desenvolvemento de Heroic.",
-            "docs": "Lee a documentación para axuda usando Heroic.",
-            "downloads": "Segue e manexa as descargas e instalacións dos teus xogos.",
-            "library": "Accede á túa biblioteca de xogos de diferentes tendas nun mesmo lugar.",
-            "login": "Inicia sesión nas túas contas das tendas para acceder á túa biblioteca.",
-            "quit": "Pecha a aplicación de forma segura.",
-            "settings": "Configura os axustes de Heroic, os axustes predeterminados dos xogos, comproba rexistros, e máis.",
-            "stores": "Navega e compra xogos en diferentes tendas incluíndo Epic, GOG e Amazon.",
-            "version": "Comproba a túa versión actual de Heroic, fai clic para ver o último rexistro de cambios, e accede a este tour desde o botón de axuda.",
-            "welcome": {
-                "intro": "Benvido/a a Heroic! Esta barra lateral contén todas as opcións de navegación para explorar a app.",
-                "title": "Navegación da barra lateral"
-            },
-            "wine": "Manexa ou descarga novas versións de Wine/Proton/GPTK para executar xogos de Windows en Linux ou macOS."
-        },
-        "skip": "Saltar",
-        "startTour": "Comezar tour"
-    },
-    "window": {
-        "close": "Pechar",
-        "maximize": "Maximizar a ventá",
-        "minimize": "Minimizar a ventá",
-        "restore": "Restablecer a ventá"
-    },
-    "adtraction-locked": {
-        "dont-show-again": "Non volver a amosar esta advertencia",
-        "description": "Semella que o dominio track.adtraction.com non se puido cargar ou está bloqueado. Con adtraction calquera compra que fagas na tenda de GOG apoia a Heroic economicamente. Considera eliminar o bloqueo se queres contribuír.",
-        "title": "Adtraction está bloqueado"
-    },
-    "categories-manager": {
-        "no-categories": "Aínda non hai ningunha categoría.",
-        "remove": "Eliminar \"{{name}}\"",
-        "rename": "Renomear \"{{name}}\"",
-        "add": "Engadir",
-        "add-placeholder": "Engadir unha nova categoría",
-        "title": "Xestionar categorías",
-        "cancel-remove": "Cancelar a eliminación de \"{{name}}\"",
-        "cancel-rename": "Cancelar o cambio de nome de \"{{name}}\"",
-        "confirm-remove": "Confirmar eliminación de \"{{name}}\"",
-        "confirm-rename": "Confirmar cambio de nome de \"{{oldName}}\" coma \"{{newName}}\""
-    },
-    "emptyLibrary": {
-        "noResults": "Non se atopou ningún resultado cos filtros actuais.",
-        "noGames": "A biblioteca está baleira.<br /><br />Fai clic <4>aquí</4> para iniciar sesión coa túa conta de Epic, GOG.com ou Amazon. Despois, os teus xogos aparecerán aquí na Biblioteca.<br /><br />Para usar xogos ou aplicacións de outras fontes, fai clic <br /> para engadilos manualmente."
-    },
-    "notification": {
-        "steam": {
-            "error": "A instalación de Steam fallou! Por favor, lea atentamente as instrucións e inténteo de novo!",
-            "success": "Steam para Windows instalouse correctamente!"
-        }
-    },
-    "analyticsModal": {
-        "disable": "Desactivar",
-        "enable": "Activar",
-        "info": {
-            "pt1": "Para mellorar a app, Heroic recolle información 100% anónima.",
-            "pt2": "Heroic usa a plataforma de código aberto Plausible Analytics para recoller información básica: Versión da App, Sistema Operativo, Tendas Conectadas e País.",
-            "pt3": "Nunca recollerá ningunha información persoal, incluído o seu nome de usuario, dirección IP ou email.",
-            "pt4": "Esta información sírvenos para saber en que centrarnos, debido aos nosos limitados recursos e comentarios dos usuarios.",
-            "pt5": "Plausible Analytics cumpre completamente cos GDPR, CCPA e PECR.",
-            "pt6": "Por transparencia, podes ver a información que recollemos nos rexistros de Heroic.",
-            "pt7": "Podes cambiar este axuste en calquera momento nas Preferencias."
-        },
-        "title": "Enviar Analíticas Anónimas"
-    },
-    "wineExplanation": {
-        "proton-ge": "GE-Proton é unha variante de Proton creada por Glorious Eggroll. Está deseñada para usarse xunto co lanzador umu (predeterminado en Heroic).",
-        "gpt": "",
-        "wine-crossover": "",
-        "wine-staging-macos": ""
-    },
-    "amazon-luna": "Amazon Luna",
-    "zoom-store": "Tenda de Zoom",
-    "launch": {
-        "options": "Opcións de arranque..."
-    },
-    "steamgriddb": {
-        "error": {
-            "no-games": "Non se atoparon xogos",
-            "no-grids": "",
-            "search": "",
-            "grids": ""
-        },
-        "picker": {
-            "search": "",
-            "title": "",
-            "select-game": ""
-        }
-    },
-    "discounts": {
-        "filters": {
-            "ageRatingAll": "Todos",
-            "os": "Sistema operativo:",
-            "moreFilters": "",
-            "ageRating": "",
-            "price": "",
-            "activeCount_other": "",
-            "hideDlcs": "",
-            "ageRatingOption": "",
-            "genres": "",
-            "activeCount_one": "",
-            "lessFilters": "",
-            "rating": "",
-            "sort": "",
-            "genresPlaceholder": "",
-            "features": "",
-            "featuresPlaceholder": "",
-            "pageSize": "",
-            "releaseYear": ""
-        },
-        "region": {
-            "countries": {
-                "IT": "",
-                "ES": "",
-                "FI": "",
-                "GR": "",
-                "RO": "",
-                "NO": "",
-                "KR": "",
-                "US": "",
-                "HU": "",
-                "PT": "",
-                "NL": "",
-                "AU": "",
-                "TW": "",
-                "IL": "",
-                "JP": "",
-                "DK": "",
-                "DE": "",
-                "CZ": "",
-                "FR": "",
-                "UA": "",
-                "GB": "",
-                "SE": "",
-                "CN": "",
-                "RU": "",
-                "CA": "",
-                "PL": "",
-                "BR": "",
-                "CH": "",
-                "TR": ""
-            },
-            "auto": "",
-            "label": ""
-        },
-        "sidebar": "",
-        "sort": {
-            "priceDesc": "",
-            "trending": "",
-            "priceAsc": "",
-            "releaseDesc": "",
-            "ratingAsc": "",
-            "releaseAsc": "",
-            "ratingDesc": "",
-            "discount": ""
-        },
-        "noMatches": "",
-        "aria": {
-            "pagination": "",
-            "rating": ""
-        },
-        "error": "",
-        "empty": "",
-        "loading": "",
-        "title": "",
-        "pagination": {
-            "prev": ""
-        }
-    },
-    "next": "Seguinte",
-    "console": {
-        "filter": {
-            "all": "Todos",
-            "sideload": "Outros"
-        },
-        "games": "Xogos instalados",
-        "hints": {
-            "quit": "Saír",
-            "launch": "",
-            "sort": "",
-            "navigate": "",
-            "change_store": ""
-        },
-        "launching": "Lanzando",
-        "update": {
-            "hintPrefix": "",
-            "body": "",
-            "title": "",
-            "hintSuffix": ""
-        },
-        "sort": "",
-        "cancel": {
-            "hintSuffix": "",
-            "hintPrefix": ""
-        },
-        "quit": "",
-        "card": {
-            "needsUpdate": ""
-        },
-        "empty": "",
-        "quitApp": "",
-        "loading": "",
-        "cancelInstall": {
-            "title": "Cancelar Instalación"
-        },
-        "install": {
-            "platform": "Platform",
-            "title": "Instalar xogo",
-            "wineLoading": "Cargando"
-        }
+    "wine-hdr": "HDR mellora as cores proporcionando resaltes máis brillantes e contrastes máis profundos. Para que HDR funcione, tanto a pantalla como o xogo deben ser compatibles.",
+    "wine-wayland": "O driver experimental Wine-Wayland permite aos xogos executarse nativamente usando o protocolo de Wayland. Activalo pode causar problemas en algúns xogos.",
+    "analytics": "Permite a Heroic recoller información de uso 100% anónima para axudar a mellorar a aplicación. É necesario reiniciar para que faga efecto.",
+    "WoW64": "O modo WoW64 de Wine permite executar xogos de Windows de 32-bits no Wine de 64-bits. Habilitalo pode mellorar o rendemento, mais podería corromper xogos de 32-bits máis vellos.",
+    "nvidiaprime": {
+      "details": "Usa a tarxeta gráfica dedicada para renderizar o xogo en sistemas con múltiples GPU. Só é necesario en porátiles para xogos ou de sobremesa que teñen unha GPU \"headless\" para renderizar (NVIDIA Optimus, AMD CrossFire)"
     }
+  },
+  "info": {
+    "heroic": {
+      "beta": "Beta",
+      "click-to-see-changelog": "Fai clic para ver o rexistro de cambios",
+      "newReleases": "Actualización dispoñible!",
+      "stable": "Estable",
+      "version": "Versión de Heroic"
+    },
+    "save-sync": {
+      "searching": "Intentando detectar o cartafol de gardado correcto (fai clic para cancelar)"
+    },
+    "settings": "Preferencias gardadas automaticamente",
+    "version": "Versión de Wine"
+  },
+  "infobox": {
+    "help": "Axuda",
+    "requirements": "Requisitos do sistema",
+    "warning": "Advertencia",
+    "wine-path": "Ruta de Wine",
+    "wine-prefix": {
+      "title": "Prefixo de Wine"
+    },
+    "wine-repfix": {
+      "message": "Wine usa o que se coñece como un WINEPREFIX (Prefixo de Wine) para encapsular as aplicacións de Windows. Este prefixo contén os arquivos de configuración de Wine e unha reprodución da xerarquía de arquivos da unidade C: (o disco principal do sistema operativo Windows). Nesta reprodución do disco C: é onde se almacenan os arquivos de gardado dos xogos e as dependencias instaladas vía Winetricks."
+    },
+    "wine-path-invalid": "A ruta de Wine non é válida, selecciona outra.",
+    "wine-path-none-found": "Non se atopou ningunha versión de Wine, descarga unha desde o Xestor de Wine"
+  },
+  "install": {
+    "path": "Seleccionar a ruta de instalación"
+  },
+  "label": {
+    "loading": "Cargando",
+    "releaseDate": "Data de publicación"
+  },
+  "library": {
+    "refresh": "Actualizar",
+    "sortAscending": "Ordenar de forma ascendente",
+    "sortByStatus": "Ordenar por Estado",
+    "sortDescending": "Ordenar de forma descendente",
+    "toggleLayout": {
+      "grid": "Cambiar a vista de cuadrícula",
+      "list": "Cambiar a vista de lista"
+    },
+    "hideAlphabetFilter": "Ocultar o filtro do alfabeto",
+    "showAlphabetFilter": "Amosar o filtro do alfabeto"
+  },
+  "Library": "Biblioteca",
+  "loading": {
+    "default": "Cargando",
+    "website": "Cargando sitio web"
+  },
+  "login": {
+    "alternative_method": "Método Alternativo de Inicio de Sesión",
+    "epic": "Iniciar sesión en Epic Games",
+    "gog": "Iniciar sesión en GOG",
+    "message": "Inicia sesión. Podes ter a sesión iniciada en máis de unha plataforma ao mesmo tempo.",
+    "amazon": "Inicio de sesión en Amazon",
+    "old-mac": "A túa versión de macOS é {{version}}. Requírese macOS 12 ou máis novo para iniciar sesión.",
+    "zoom": "Inicio de sesión en Zoom"
+  },
+  "message": {
+    "sync": "Sincronización completa",
+    "unsync": "Desincronización completa"
+  },
+  "notify": {
+    "error": {
+      "move": "Erro ao mover o xogo",
+      "reparing": "Erro ao reparar"
+    },
+    "finished": {
+      "add": {
+        "steam": {
+          "corrupt": "{{game}} non se puido engadir a todos os usuarios de Steam atopados. Revisa os rexistros para máis información. É necesario reiniciar Steam para que os cambios teñan efecto.",
+          "success": "{{game}} engadiuse correctamente a Steam. É necesario reiniciar Steam para que os cambios teñan efecto.",
+          "title": "Engadido a Steam"
+        }
+      },
+      "remove": {
+        "steam": {
+          "corrupt": "{{game}} non se puido eliminar de todos os usuarios de Steam. Revisa os rexistros para máis información. É necesario reiniciar Steam para que os cambios teñan efecto.",
+          "success": "{{game}} eliminouse correctamente de Steam. É necesario reiniciar Steam para que os cambios teñan efecto.",
+          "title": "Eliminado de Steam"
+        }
+      },
+      "reparing": "Reparación rematada"
+    },
+    "install": {
+      "canceled": "Instalación cancelada",
+      "error": "A instalación fallou",
+      "finished": "Instalación rematada",
+      "imported": "Xogo importado",
+      "startInstall": "Instalación iniciada",
+      "failed": "A instalación fallou",
+      "paused": "Instalación en pausa"
+    },
+    "moved": "Movemento rematado",
+    "moving": "Movendo xogo",
+    "new-heroic-version": "Hai unha nova versión de Heroic!",
+    "refresh": {
+      "error": "Non se puido conseguir o listado de versións, pode ser polas restricións da API de GitHub! Inténtao de novo máis tarde."
+    },
+    "uninstalled": "Desintalado",
+    "update": {
+      "canceled": "Actualización cancelada",
+      "finished": "Actualización rematada",
+      "started": "Actualización iniciada",
+      "failed": "Fallou a actualización",
+      "paused": "Actualización en pausa"
+    },
+    "import": {
+      "failed": "Fallou a importación"
+    }
+  },
+  "offline-message": {
+    "hint": "Estamos comprobando a conectividade en:{{newline}}github.com,{{newline}}gog.com,{{newline}}store.epicgames.com e{{newline}}cloudflare-dns.com",
+    "ignore": "Ignore",
+    "offline": "Offline",
+    "offline-retry-in": "Sen conexión. Intentando de novo en {{seconds}} segundos.",
+    "retrying": "Intentando de novo"
+  },
+  "Open": "Aberto",
+  "options": {
+    "advanced": {
+      "key": "Variable Name",
+      "placeHolderKey": "NAME",
+      "placeHolderValue": "ex.: Ruta/A/Arquivo",
+      "title": "Variables de entorno",
+      "value": "Valor"
+    },
+    "env_variables": {
+      "error": {
+        "empty_key": "Os nomes das variables non poden estar baleiros",
+        "equal_sign_in_key": "Os nomes das variables non poden conter o símbolo \"=\"",
+        "space_in_key": "Os nomes das variables non poden conter espazos"
+      },
+      "example": "Non uses o símbolo \"=\", ex.: para unha configuración como \"A_MIÑA_VARIABLE=123\", pon A_MIÑA_VARIABLE en NOME e 123 en VALOR.",
+      "info": "Establece variables de entorno para engadir ao comando."
+    },
+    "gameargs": {
+      "placeholder": "Escribe aquí os argumentos de lanzamento",
+      "title": "Argumentos do xgo (para executar despois da orde):",
+      "error": {
+        "command": "A sintaxe %command% de Steam non é válida como argumento para o xogo.",
+        "env": "As variables do entorno deber configurarse na táboa de abaixo."
+      }
+    },
+    "quote-args-with-spaces": "Advertencia: Asegúrate de poñer os parámetros que conteñan espazos entre comiñas! ex.: \"ruta/con espazos/\"",
+    "wrapper": {
+      "args": "Argumentos",
+      "arguments_example": "Exemplo de argumentos: --arg; --extra-file=\"ruta/con espazos/\"",
+      "exe": "Envoltura",
+      "placeHolderKey": "Nova envoltura",
+      "placeHolderValue": "Argumentos da envoltura",
+      "title": "Comando de envoltura:"
+    },
+    "gamescope": {
+      "additionalOptions": "Opcións Adicionais",
+      "borderless": "Sen bordos",
+      "fpsLimiter": "Limitador de FPS",
+      "fpsLimiterNoFocus": "Limitador de FPS (Sen enfoque)",
+      "fullscreen": "Pantalla completa",
+      "gameHeight": "Altura do xogo",
+      "gameWidth": "Ancho do xogo",
+      "interger": "Escalado de enteiros",
+      "nis": "NVIDIA Image Scale (NIS)",
+      "stretch": "Estirar a imaxe",
+      "upscaleHeight": "Altura do reescalado",
+      "upscaleWidth": "Ancho do reescalado",
+      "windowed": "En ventá"
+    }
+  },
+  "other": {
+    "gogdl-version": "Versión de GOGDL: ",
+    "legendary-version": "Versión de Legendary: ",
+    "weblate": "Axuda a traducir Heroic.",
+    "nile-version": "Versión de Nile: "
+  },
+  "Other": "Outros",
+  "placeholder": {
+    "alt-gogdl-bin": "Utilizando o binario integrado de GOGDL...",
+    "alt-legendary-bin": "Usando o binario de Legendary embebeido...",
+    "custom_themes_path": "Selecciona a ruta para buscar arquivos CSS personalizados",
+    "dxvkfpsvalue": "Valor enteiro positivo (ex. 30, 60, ...)",
+    "egs-prefix": "Prefixo onde está instalado EGS",
+    "prefered_language": "Código de dous caracteres (ex.: \"en\", \"fr\" ou \"gl\")",
+    "alt-nile-bin": "Usando o binario incorporado de Nile..."
+  },
+  "platforms": {
+    "linux": "Linux",
+    "mac": "macOS",
+    "win": "Windows",
+    "browser": "Navegador"
+  },
+  "please-wait": "Por favor, espera...",
+  "progress": "Progress",
+  "queue": {
+    "label": {
+      "canceled": "Canceled",
+      "clear": "Limpar lista",
+      "downloading": "Descargando",
+      "empty": "Non hai nada que descargar",
+      "finished": "Completado",
+      "queued": "En cola",
+      "remove": "Remove from Downloads",
+      "resume": "Reanudar a descarga",
+      "pause": "Pausa a descarga"
+    }
+  },
+  "Recent": "Xogado recentemente",
+  "search": "Buscar xogos",
+  "setting": {
+    "adddesktopshortcuts": "Engadir atallos de escritorio automaticamente",
+    "addgamestostartmenu": "Engadir xogos ao menú de inicio automaticamente",
+    "addgamestosteam": "Engadir os xogos a Steam automaticamente",
+    "alt-gogdl-bin": "Selecciona un binario de GOGDL alternativo a usar",
+    "alt-legendary-bin": "Seleccione o binario de Legendary alternativo",
+    "autodxvk": "Autoinstalar/actualizar DXVK no prefixo",
+    "autosync": "Autosincronizar partidas gardadas",
+    "autovkd3d": "Autoinstalar/actualizar VKD3D no prefixo",
+    "change-target-exe": "Seleccionar un EXE alternativo a executar",
+    "checkForUpdatesOnStartup": "Comproba se hai actualizacións de Heroic ao inicio",
+    "crossover-version": "Versión de Crossover/Wine",
+    "custom_themes_path": "Ruta dos temas personalizados",
+    "customWineProton": "Rutas personalizadas de Wine e Proton",
+    "darktray": "Usar icona escura na bandexa do sistema",
+    "default-install-path": "Ruta de instalación predeterminada",
+    "default-steam-path": "Ruta de Steam por defecto",
+    "defaultWinePrefix": "Estabelecer cartafol para os prefixos de Wine",
+    "disable_controller": "Desactivar a navegación de Heroic co controlador",
+    "discordRPC": "Activar a presencia enriquecida de Discord",
+    "download-no-https": "Descargar xogos sen HTTPS (útil para CDNs, ex. LanCache)",
+    "dxvkfpslimit": "Limit FPS (DX9, 10 and 11)",
+    "egs-sync": "Sincronizar cos xogos instalados de Epic",
+    "enableFSRHack": "Activar o hack de FSR (A versión de Wine debe soportalo)",
+    "eosOverlay": {
+      "cancelInstall": "Cancelar",
+      "checkForUpdates": "Buscar actualizacións",
+      "checkingForUpdates": "Buscando actualizacións...",
+      "currentVersion": "Versión actual: {{version}}",
+      "disable": "Desactivar",
+      "enable": "Activar",
+      "install": "Instalar",
+      "installed": "A superposición de Epic (EOS Overlay) está instalada",
+      "installing": "Estase instalando a superposición de Epic (EOS Overlay)...",
+      "latestVersion": "Última versión: {{version}}",
+      "notInstalled": "A superposición de Epic (EOS Overlay) non está instalada",
+      "notInstalledMsg": "A superposición de Epic (EOS Overlay) non está instalada. Queres instalala agora?",
+      "notInstalledTitle": "A superposición non está instalada",
+      "remove": "Desinstalar",
+      "removeConfirm": "Estás seguro de que queres desinstalar a superposición de Epic (EOS Overlay)?",
+      "removeConfirmTitle": "Confirmar desinstalación da superposición",
+      "updateNow": "Update",
+      "updating": "Actualizando..."
+    },
+    "esync": "Activar Esync",
+    "exit-to-tray": "Saír á bandexa do sistema",
+    "FsrSharpnessStrenght": "Forza da nitidez de FSR",
+    "fsync": "Activar Fsync",
+    "gamemode": "Usar GameMode (Feral Game Mode debe estar instalado)",
+    "hideChangelogsOnStartup": "Non amosar os rexistros de cambios ao inicio",
+    "language": "Seleccionar o idioma da aplicación",
+    "library_top_option": {
+      "disabled": "Desactivado",
+      "favourites": "Xogos favoritos",
+      "recently_played": "Xogos xogados recentemente",
+      "recently_played_installed": "Xogos xogados recentemente (só instalados)"
+    },
+    "library_top_section": "Sección superior da biblioteca",
+    "log": {
+      "copy-to-clipboard": "Copy log content to clipboard",
+      "current-log": "Current Log",
+      "instructions": "Únete ao noso Discord e busca a sección \"#-support\". Lee o fío fixado \"Read Me First | Frequently Asked Questions\" e sigue as instrucións para compartir estes rexistros e calquera información relevante sobre o teu problema.",
+      "instructions_title": "Como reportar un problema?",
+      "last-log": "Last Log",
+      "no-file": "Non se atopou ningún arquivo de rexistros",
+      "show-in-folder": "Amosar arquivo de rexistros no cartafol",
+      "upload": {
+        "actions": "Accións",
+        "button": "Subir arquivo de rexistros",
+        "confirm": {
+          "content": "Estás seguro de que queres subir \"{{name}}\"?",
+          "title": "Subir arquivo de rexistros?"
+        },
+        "delete": "Pedir borrado do arquivo de rexistros",
+        "done": {
+          "content": "Subido a {{url}} (URL copiada ao portapapeis)",
+          "title": "Subida completada"
+        },
+        "error": {
+          "content": "Fallou a subida do arquivo de rexistros. Comproba o rexistro xeral de Heroic para os detalles",
+          "title": "Fallou a subida",
+          "manual_upload": "Clicar no botón «MOSTRAR FICHEIRO DE REXISTROS NO CARTAFOL» e subir manualmente o ficheiro «launch.log» no Discord ou noutro servizo online para compartir ficheiros."
+        },
+        "header": "Subiuse o arquivo de rexistros",
+        "hours-ago": "Subido {{hoursAgo, relativetime(hours)}}",
+        "minutes-ago": "Subido {{minutesAgo, relativetime(minutes)}}",
+        "no-files": "Non se subiron arquivos de rexistros",
+        "open": "Abrir subida de arquivos de rexistros",
+        "title": "Título do rexistro",
+        "upload-date": "Data de subida",
+        "uploading": {
+          "content": "Subindo arquivo de rexistros...",
+          "title": "Subindo"
+        }
+      },
+      "descriptiveNames": {
+        "game-log": "Rexistros de {{gameTitle}}",
+        "gog": "Rexistros de GOG",
+        "heroic": "Rexistros xerais de Heroic",
+        "legendary": "Rexistros de Epic Games / Legendary",
+        "nile": "Rexistros de Amazon / Nile",
+        "zoom": "Rexistro de Zoom"
+      },
+      "join-heroic-discord": "Únete ao noso Discord",
+      "show-uploads": "Amosar os rexistros subidos"
+    },
+    "manualsync": {
+      "download": "Descargar",
+      "forcedownload": "Forzar descarga",
+      "forceupload": "Forzar subida",
+      "sync": "Sincronizar",
+      "syncing": "Sincronizando",
+      "title": "Sincronización manual de partidas gardadas",
+      "upload": "Subir"
+    },
+    "maxRecentGames": "Xogados recentemente para mostrar",
+    "maxworkers": "Número máximo de descargas",
+    "minimize-on-launch": "Minimizar Heroic ao lanzar un xogo",
+    "offlinemode": "Executar xogo sen conexión",
+    "prefered_language": "Lingua preferida (código de idioma)",
+    "preferSystemLibs": "Preferir librerías do sistema",
+    "runexe": {
+      "message": "Arrastrar e soltar aqúi",
+      "title": "Executar EXE en Prefix"
+    },
+    "savefolder": {
+      "not-found": "Non se atopou o cartafol de gardados. Por favor, selecciónao manualmente (fai clic para volvelo a intentar)",
+      "placeholder": "Seleccionar o cartafol exacto para gardar xogos",
+      "warning": "Por favor, verifica se a ruta é correcta (fai clic para volvelo a intentar)"
+    },
+    "select_theme": "Seleccionar Tema",
+    "showfps": "Amosar os FPS (DX9, 10 e 11)",
+    "start-in-tray": "Iniciar minimizado",
+    "steamruntime": "Usar o Runtime de Steam",
+    "winecrossoverbottle": "Botella de CrossOver",
+    "wineprefix": "Cartafol WinePrefix",
+    "wineversion": "Versión de Wine",
+    "ignoreGameUpdates": "Ignorar as actualizacións do xogo",
+    "autoUpdateGames": "Actualiza os xogos automaticamente",
+    "disable_logs": "Desactivar rexistros",
+    "showMetalOverlay": "Amosar a superposición de estatísticas",
+    "addgamestoapplications": "Engade os xogos a Aplicacións automaticamente",
+    "alt-nile-bin": "Escolle un binario alternativo de Nile",
+    "autodxvknvapi": "Autoinstalar/actualizar DXVK-NVAPI no prefixo",
+    "msync": "Activar Msync",
+    "advertiseAvxForRosetta": "Amosar AVX a Rosetta",
+    "after-launch-script-path": "Selecciona unha secuencia de comandos para executar despois de que se peche o xogo",
+    "allow_installation_broken_anticheat": {
+      "confirmation": {
+        "message": "Os xogos con antitrampas roto ou rexeitado poderían funcionar, pero as funcións de multixogador non van funcionar. Non pidas asistencia se os instalas sabendo isto.",
+        "title": "Estás seguro/a?",
+        "understand": "Entendo"
+      },
+      "label": "Permitir a instalación de xogos con antitrampas roto ou rexeitado"
+    },
+    "allow_non_ge_proton": {
+      "confirmation": {
+        "dont_show": "Non amosalos",
+        "message": "Recomendamos usar GE-Proton con Heroic porque as outras versións carecen de wiretricks e protonfixes. Aínda así, podes usalas se queres.",
+        "show": "Entendo, ensínaos",
+        "title": "Estás seguro/a?"
+      },
+      "info_label": "Ignóranse as versións de Proton que non sexan de GE",
+      "label": "Permitir usar versións de Proton que non sexan de GE para executar xogos",
+      "wine_selector_warning": "As versións de Proton que non sexan de GE son ignoradas por defecto, podes activalas na configuración avanzada global"
+    },
+    "before-launch-script-path": "Selecciona unha secuencia de comandos para executar antes de lanzar o xogo",
+    "custom_css": {
+      "warning": "Advertencia: isto aplícase a todo o frontend. Isto significa que un estilo incorrecto podería facer Heroic inusable. En caso de ser necesario, a configuración pódese cambiar manualmente en `~/.config/heroic/config.json`. NON copies estilos de fontes non confiables."
+    },
+    "disablePlaytimeSync": "Desactivar a sincronización do tempo de xogo",
+    "disableUMU": "Desactivar umu",
+    "download-proton-steam": "Descargar GE-Proton no cartafol de Steam",
+    "dxfpslimit": "Limitar FPS en xogos de DirectX",
+    "experimental_features": {
+      "cometSupport": "Soporte para Comet",
+      "enableHelp": "Compoñente de axuda",
+      "enableNewDesign": "Novo deseño",
+      "zoomPlatform": "Compatibilidade con Zoom Platform (só Linux)"
+    },
+    "frameless-window": {
+      "confirmation": {
+        "message": "Esta función aínda é experimental. Por favor, reporta calquera problema que atopes en GitHub.",
+        "title": "Función experimental"
+      },
+      "description": "Usar unha ventá sen bordos (require reinicio)"
+    },
+    "gamescope": {
+      "enableForceGrabCursor": "Activar forzar agarrar o cursor",
+      "enableLimiter": "Activar o limitador de FPS",
+      "enableUpscaling": "Activar o escalado",
+      "missingMsg": "Non se puido atopar gamescope no PATH. Instálao ou engádeo ao PATH.",
+      "warningFlatpak": "Non se puido atopar unha versión compatible de Gamescope. Instala o paquete de Flatpak de Gamescope con runtime {{runtimeVersion}} e reinicia Heroic."
+    },
+    "hdr": "Activar HDR",
+    "no-tray-icon": "Ocultar a icona da bandexa do sistema (require reinicio)",
+    "verboseLogs": {
+      "description": "Activar rexistros detallados"
+    },
+    "wineWayland": "Activar Wine-Wayland (Experimental) (A versión de Wine debe ser compatible)",
+    "analyticsOptIn": "Enviar información anónima para axudar o desenvolvemento de Heroic",
+    "show_valve_proton": {
+      "confirmation": {
+        "dont_show": "Non amosalos",
+        "show": "Entendo, ensínaos",
+        "title": "Estás seguro/a?",
+        "message": "Recomendamos o uso de Heroic con forks de Proton personalizados (GE-Proton, Proton-CachyOS, etc.) dado que as builds de Proton de Valve carecen de winetricks e protofixes. Aínda así, podes empregalas se o desexas."
+      },
+      "label": "Permitir usar versións de Proton que non sexan de GE para executar xogos",
+      "wine_selector_warning": "As versións de Proton que non sexan de GE son ignoradas por defecto, podes activalas na configuración avanzada global",
+      "info_label": "Ignoráronse as versións de Valve Proton"
+    },
+    "WoW64": "Activar WoW64 (Experimental)",
+    "enable-quick-sync-menu": "Habilitar o menú de gardar e sincronizar rapidamente na páxina do xogo",
+    "scripts": "Secuencia de comandos (Scripts):",
+    "start-in-console-mode": "",
+    "disable_gog_presence": ""
+  },
+  "settings": {
+    "battlEyeRuntime": {
+      "installing": "Instalando o Runtime de BattlEye...",
+      "name": "Runtime do antitrampas BattlEye"
+    },
+    "clear-cache": "Limpar caché de Heroic",
+    "copiedToClipboard": "Copiado ao portapapeis!",
+    "copyToClipboard": "Copiar todas as configuracións ao portapapeis",
+    "default_hint": "Os cambios nesta sección só se aplican aos valores predefinidos cando se instala un xogo. Se queres cambiar a configuración de un xogo xa instalado, usa o botón de Configuración na páxina do xogo.",
+    "eacRuntime": {
+      "gameModeRequired": {
+        "message": "Necesítase GameMode para que o runtime de EAC funcione en Flatpak. Queres activalo agora?",
+        "title": "Necesítase GameMode"
+      },
+      "installing": "Instalando o Runtime de EAC...",
+      "name": "Runtime de EasyAntiCheat"
+    },
+    "gameMode": {
+      "eacRuntimeEnabled": {
+        "message": "O runtime de EAC está activado, pero non funcionará correctamente sen GameMode. Queres desactivar o runtime de EAC e GameMode?",
+        "title": "Runtime de EAC activado"
+      }
+    },
+    "log": {
+      "long-log-hint": "Truncáronse os rexistros, amósanse as últimas 1000 liñas!"
+    },
+    "navbar": {
+      "advanced": "Avanzado",
+      "games_settings_defaults": "Valores predeterminados dos xogos",
+      "general": "Xeral",
+      "log": "Rexistro",
+      "other": "Outro",
+      "sync": "Sincronización dos xogos gardados na nube",
+      "wineExt": "Wine Extensions",
+      "gamescope": "Gamescope",
+      "systemInformation": "Información do sistema",
+      "legacy": "Obsoleto"
+    },
+    "open-config-file": "Abrir arquivo de configuración",
+    "reset-heroic": "Restabelecer Heroic",
+    "saves": {
+      "label": "Save Location:",
+      "warning": "A función de gardado na nube está en Beta. Por favor, fai unha copia de seguridade dos gardados antes de sincronizalos (no caso de que algo vaia mal)",
+      "gog_linux_native_warning": "Os xogos nativos de Linux non soportan a funcionalidade de gardado na nube de GOG. Usa a versión de Windows no seu lugar.",
+      "not_supported": "Este xogo non soporta gardado na nube."
+    },
+    "advanced": {
+      "clearCache": {
+        "help8": "Xogos instalados",
+        "help9": "Configuración dos xogos",
+        "help1": "Esta acción borrará as seguintes cachés:",
+        "help10": "Configuración de Heroic",
+        "help2": "Información dos xogos de terceiros (puntuacións, compatibilidade con steam, howlongtobeat, pcgamingwiki, applegamingwiki)",
+        "help3": "Información da biblioteca de Legendary (lista de xogos, información do diálogo de instalación, información do xogo)",
+        "help4": "Información da biblioteca de GOG (lista de xogos, información do diálogo de instalación, información da api -ex.: requisitos-)",
+        "help5": "Información da biblioteca de Amazon (lista de xogos, información do diálogo de instalación)",
+        "help6": "Isto NON borrará:",
+        "help7": "Inicio de sesión da tenda"
+      },
+      "title": {
+        "resetHeroic": "Restablecer Heroic",
+        "clearCache": "Limpar caché"
+      },
+      "resetHeroic": {
+        "help": "Isto vai eliminar todas as configuracións e a caché pero non eliminará os xogos instalados nin as credenciais de Epic. As versión portables (AppImage, WinPortable, ...) de Heroic necesitarán ser reiniciadas manualmente."
+      },
+      "details": "Detalles"
+    },
+    "systemInformation": {
+      "copyToClipboard": "Copiar ao portapapeis",
+      "cometVersion": "Comet: {{cometVersion}}",
+      "cpu": "CPU:",
+      "cpuDescription": "{{numOfCores}}x {{modelName}}",
+      "gogdlVersion": "Gogdl: {{gogdlVersion}}",
+      "gpu": "GPU:",
+      "gpuDriver": "Cotrolador: {{driverVersion}}",
+      "gpuWithNumber": "GPU {{number}}:",
+      "heroicVersion": "Heroic: {{heroicVersion}}",
+      "legendaryVersion": "Legendary: {{legendaryVersion}}",
+      "memory": "Memoria:",
+      "memoryStats": "{{percentUsed}}% usado ({{usedGib}} / {{totalGib}}",
+      "nileVersion": "Nile: {{nileVersion}}",
+      "os": "Sistema operativo:",
+      "osNameFlatpak": "{{osName}} (dentro de Flatpak)",
+      "osVersion": "Versión {{versionNumber}}",
+      "showDetailed": "Amosar as especificacións detalladas do sistema",
+      "software": "Software:",
+      "steamDeck": "Steam Deck {{model}}",
+      "systemModel": "Modelo do sistema:",
+      "systemSpecifications": "Especificacións do sistema:"
+    },
+    "gamescope": {
+      "searchMsg": "Buscando o executable de gamescope."
+    },
+    "experimental_features": {
+      "title": "Funcións experimentais"
+    },
+    "custom_css": {
+      "title": "Estilo de CSS personalizado"
+    },
+    "offline": {
+      "warning": "Este xogo non permite explicitamente o modo offline, activa esta opción baixo a túa propia responsabilidade. É posible que o xogo non funcione."
+    },
+    "launchOptions": "Opcións de arranque",
+    "legacy_warning": "Advertencia: A maior parte dos axustes nesta lapela están obsoletos e é posible que non funcionen.",
+    "steamgriddb": {
+      "apikey": {
+        "title": "",
+        "placeholder": "",
+        "placeholder_saved": ""
+      },
+      "help": {
+        "description": ""
+      }
+    }
+  },
+  "Settings": "Preferencias",
+  "sidebar": {
+    "collapse": "Collapse sidebar",
+    "uncollapse": "Uncollapse sidebar",
+    "console": ""
+  },
+  "status": {
+    "installing": "Instalando",
+    "logging": "Inciando sesión…",
+    "processing": "Procesando os arquivos, por favor, espera",
+    "preparing_login": "Preparando o inicio de sesión... ",
+    "installed": "Instalado"
+  },
+  "store": "Tenda de Epic",
+  "stores": "Tendas",
+  "title": {
+    "allGames": "Todos os xogos"
+  },
+  "toolbox": {
+    "settings": {
+      "default-wineprefix": "Select the default prefix folder for new configs",
+      "wineprefix": "Selecciona un cartafol para os novos Prefixos de Wine"
+    }
+  },
+  "tooltip": {
+    "addpath": "Agregar unha nova ruta",
+    "removepath": "Eliminar ruta"
+  },
+  "tray": {
+    "about": "Sobre",
+    "quit": "Saír",
+    "reload": "Recargar",
+    "show": "Mostrar"
+  },
+  "two_col_table": {
+    "save_hint": "Os cambios nesta táboa non se gardan automaticamente. Fai clic no botón +"
+  },
+  "Update Available!": "Actualización dispoñible!",
+  "userselector": {
+    "discord": "Discord",
+    "logging_out": "Pechando sesión",
+    "logout": "Pechar sesión",
+    "logout_confirmation": "Tes certeza que queres pechar a sesión?",
+    "manageaccounts": "Xestionar Contas",
+    "quit": "Saír",
+    "cancel": "Cancelar",
+    "quitMessage": "Seguro de que queres saír?"
+  },
+  "webview": {
+    "controls": {
+      "back": "Regresar",
+      "forward": "Avanzar",
+      "openInBrowser": "Abrir no navegador",
+      "reload": "Recargar páxina"
+    }
+  },
+  "wine": {
+    "actions": "Acción",
+    "manager": {
+      "link": "Xestor de Wine",
+      "not-found": "Non se atopou ningunha versión de Wine. Fai clic na icona de refrescar para volvelo a intentar.",
+      "title": "Xestor de Wine",
+      "unzipping": "Descomprimindo",
+      "settings": "Preferencias",
+      "update": "Actualizar",
+      "search": "",
+      "loading": "",
+      "open_folder": "",
+      "no-results": ""
+    },
+    "release": "Data de publicación",
+    "size": "Tamaño",
+    "notes": "Notas"
+  },
+  "externalLink": {
+    "dontAskAgain": "Non volver preguntar",
+    "warning": "Estás a piques de abrir unha ligazón externa."
+  },
+  "wiki_info": {
+    "not_found": "Non puidemos atopar información adicional."
+  },
+  "dlc": {
+    "size": "Tamaño",
+    "title": "Título",
+    "actions": "Accións",
+    "installDlcs": "Instalar todos os DLC",
+    "noDlcFound": "Non se atopou ningún DLC"
+  },
+  "amazon": "Amazon",
+  "Amazon Games": "Amazon Games",
+  "prime-gaming": "Prime Gaming",
+  "winetricks": {
+    "install": "Instalar",
+    "loading": "Cargando",
+    "installed": "Compoñentes instalados:",
+    "installing": "Instalación en progreso: {{component}}",
+    "loading-available": "Cargando compoñentes dispoñibles ...",
+    "no-components": "Non hai compoñentes dispoñibles",
+    "nothingYet": "Winetricks aínda non instalou nada",
+    "openGUI": "Abrir GUI de Winetricks",
+    "search": "Buscar fontes ou compoñentes"
+  },
+  "category-settings": {
+    "cancel": "Cancelar",
+    "warning": "Advertencia",
+    "remove-category": "Eliminar categoría",
+    "new-category": "Nova categoría",
+    "add-new-category": "Engadir unha Nova Categoría",
+    "delete-question": "Ao continuar eliminarase permanentemente esta categoría e desasignarase de todos os xogos. Queres continuar?"
+  },
+  "tour": {
+    "back": "Volver",
+    "library": {
+      "search": "Usa a barra de buscas para atopar os teus xogos.",
+      "addGame": "Engade os teus propios xogos ou aplicacións á biblioteca facendo clic aquí. Poden ser basicamente calquera cousa, incluso URLs web.",
+      "categories": "Organiza os teus xogos en categorías para manter as cousas ordenadas.",
+      "end": {
+        "intro": "Iso é todo! Desfruta dos teus xogos e divírtete!",
+        "title": "Desfruta dos teus xogos!"
+      },
+      "filters": "Filtra os xogos pola tenda, plataforma, favoritos e máis usando estas opcións.",
+      "gameCard": "Fai click esquerdo na tarxeta do xogo para navegar á páxina do xogo e ver detalles e axustar a configuración ou fai click dereito para abrir o menú contextual.",
+      "refresh": "Refresca a biblioteca para revisar novos xogos ou actualizacións.",
+      "sortInstalled": "Lista os xogos polo seu status de instalación.",
+      "sortOptions": "Fai clic aquí para ordenar os xogos alfabeticamente.",
+      "steamInstall": "Usa este botón para instalar a versión de Windows de Steam e xogar aos teus xogos de Windows usando Crossover, Wine ou GPTK.",
+      "viewToggle": "Cambia entre as vistas de cuadrícula e de vista para os xogos.",
+      "welcome": {
+        "intro": "Benvido/a á biblioteca de Heroic! Aquí é onde podes ver todos os teus xogos das diferentes tendas.",
+        "intro2": "Se a biblioteca está baleira, asegúrate de iniciar sesión coas túas contas usando o botón \"Xestionar contas\" na barra lateral ou engade os teus propios xogos usando o botón de Engadir Xogo enriba.",
+        "title": "Benvido/a a Heroic!",
+        "title2": "Xestionando a biblioteca!"
+      }
+    },
+    "done": "Feito",
+    "next": "Seguinte",
+    "sidebar": {
+      "accessibility": "Accede a funcións de accesibilidade para personalizar a túa experiencia.",
+      "accounts": "Manexa as túas contas conectadas das tendas (Epic, GOG, Amazon), sae da sesión ou inicia sesión en elas.",
+      "community": "Únete á nosa comunidade en Discord e axuda ao desenvolvemento de Heroic.",
+      "docs": "Lee a documentación para axuda usando Heroic.",
+      "downloads": "Segue e manexa as descargas e instalacións dos teus xogos.",
+      "library": "Accede á túa biblioteca de xogos de diferentes tendas nun mesmo lugar.",
+      "login": "Inicia sesión nas túas contas das tendas para acceder á túa biblioteca.",
+      "quit": "Pecha a aplicación de forma segura.",
+      "settings": "Configura os axustes de Heroic, os axustes predeterminados dos xogos, comproba rexistros, e máis.",
+      "stores": "Navega e compra xogos en diferentes tendas incluíndo Epic, GOG e Amazon.",
+      "version": "Comproba a túa versión actual de Heroic, fai clic para ver o último rexistro de cambios, e accede a este tour desde o botón de axuda.",
+      "welcome": {
+        "intro": "Benvido/a a Heroic! Esta barra lateral contén todas as opcións de navegación para explorar a app.",
+        "title": "Navegación da barra lateral"
+      },
+      "wine": "Manexa ou descarga novas versións de Wine/Proton/GPTK para executar xogos de Windows en Linux ou macOS."
+    },
+    "skip": "Saltar",
+    "startTour": "Comezar tour"
+  },
+  "window": {
+    "close": "Pechar",
+    "maximize": "Maximizar a ventá",
+    "minimize": "Minimizar a ventá",
+    "restore": "Restablecer a ventá"
+  },
+  "adtraction-locked": {
+    "dont-show-again": "Non volver a amosar esta advertencia",
+    "description": "Semella que o dominio track.adtraction.com non se puido cargar ou está bloqueado. Con adtraction calquera compra que fagas na tenda de GOG apoia a Heroic economicamente. Considera eliminar o bloqueo se queres contribuír.",
+    "title": "Adtraction está bloqueado"
+  },
+  "categories-manager": {
+    "no-categories": "Aínda non hai ningunha categoría.",
+    "remove": "Eliminar \"{{name}}\"",
+    "rename": "Renomear \"{{name}}\"",
+    "add": "Engadir",
+    "add-placeholder": "Engadir unha nova categoría",
+    "title": "Xestionar categorías",
+    "cancel-remove": "Cancelar a eliminación de \"{{name}}\"",
+    "cancel-rename": "Cancelar o cambio de nome de \"{{name}}\"",
+    "confirm-remove": "Confirmar eliminación de \"{{name}}\"",
+    "confirm-rename": "Confirmar cambio de nome de \"{{oldName}}\" coma \"{{newName}}\""
+  },
+  "emptyLibrary": {
+    "noResults": "Non se atopou ningún resultado cos filtros actuais.",
+    "noGames": "A biblioteca está baleira.<br /><br />Fai clic <4>aquí</4> para iniciar sesión coa túa conta de Epic, GOG.com ou Amazon. Despois, os teus xogos aparecerán aquí na Biblioteca.<br /><br />Para usar xogos ou aplicacións de outras fontes, fai clic <br /> para engadilos manualmente."
+  },
+  "notification": {
+    "steam": {
+      "error": "A instalación de Steam fallou! Por favor, lea atentamente as instrucións e inténteo de novo!",
+      "success": "Steam para Windows instalouse correctamente!"
+    }
+  },
+  "analyticsModal": {
+    "disable": "Desactivar",
+    "enable": "Activar",
+    "info": {
+      "pt1": "Para mellorar a app, Heroic recolle información 100% anónima.",
+      "pt2": "Heroic usa a plataforma de código aberto Plausible Analytics para recoller información básica: Versión da App, Sistema Operativo, Tendas Conectadas e País.",
+      "pt3": "Nunca recollerá ningunha información persoal, incluído o seu nome de usuario, dirección IP ou email.",
+      "pt4": "Esta información sírvenos para saber en que centrarnos, debido aos nosos limitados recursos e comentarios dos usuarios.",
+      "pt5": "Plausible Analytics cumpre completamente cos GDPR, CCPA e PECR.",
+      "pt6": "Por transparencia, podes ver a información que recollemos nos rexistros de Heroic.",
+      "pt7": "Podes cambiar este axuste en calquera momento nas Preferencias."
+    },
+    "title": "Enviar Analíticas Anónimas"
+  },
+  "wineExplanation": {
+    "proton-ge": "GE-Proton é unha variante de Proton creada por Glorious Eggroll. Está deseñada para usarse xunto co lanzador umu (predeterminado en Heroic).",
+    "gpt": "",
+    "wine-crossover": "",
+    "wine-staging-macos": ""
+  },
+  "amazon-luna": "Amazon Luna",
+  "zoom-store": "Tenda de Zoom",
+  "launch": {
+    "options": "Opcións de arranque..."
+  },
+  "steamgriddb": {
+    "error": {
+      "no-games": "Non se atoparon xogos",
+      "no-grids": "",
+      "search": "",
+      "grids": ""
+    },
+    "picker": {
+      "search": "",
+      "title": "",
+      "select-game": ""
+    }
+  },
+  "discounts": {
+    "filters": {
+      "ageRatingAll": "Todos",
+      "os": "Sistema operativo:",
+      "moreFilters": "",
+      "ageRating": "",
+      "price": "",
+      "activeCount_other": "",
+      "hideDlcs": "",
+      "ageRatingOption": "",
+      "genres": "",
+      "activeCount_one": "",
+      "lessFilters": "",
+      "rating": "",
+      "sort": "",
+      "genresPlaceholder": "",
+      "features": "",
+      "featuresPlaceholder": "",
+      "pageSize": "",
+      "releaseYear": ""
+    },
+    "region": {
+      "countries": {
+        "IT": "",
+        "ES": "",
+        "FI": "",
+        "GR": "",
+        "RO": "",
+        "NO": "",
+        "KR": "",
+        "US": "",
+        "HU": "",
+        "PT": "",
+        "NL": "",
+        "AU": "",
+        "TW": "",
+        "IL": "",
+        "JP": "",
+        "DK": "",
+        "DE": "",
+        "CZ": "",
+        "FR": "",
+        "UA": "",
+        "GB": "",
+        "SE": "",
+        "CN": "",
+        "RU": "",
+        "CA": "",
+        "PL": "",
+        "BR": "",
+        "CH": "",
+        "TR": ""
+      },
+      "auto": "",
+      "label": ""
+    },
+    "sidebar": "",
+    "sort": {
+      "priceDesc": "",
+      "trending": "",
+      "priceAsc": "",
+      "releaseDesc": "",
+      "ratingAsc": "",
+      "releaseAsc": "",
+      "ratingDesc": "",
+      "discount": ""
+    },
+    "noMatches": "",
+    "aria": {
+      "pagination": "",
+      "rating": ""
+    },
+    "error": "",
+    "empty": "",
+    "loading": "",
+    "title": "",
+    "pagination": {
+      "prev": ""
+    }
+  },
+  "next": "Seguinte",
+  "console": {
+    "filter": {
+      "all": "Todos",
+      "sideload": "Outros"
+    },
+    "games": "Xogos instalados",
+    "hints": {
+      "quit": "Saír",
+      "launch": "",
+      "sort": "",
+      "navigate": "",
+      "change_store": ""
+    },
+    "launching": "Lanzando",
+    "update": {
+      "hintPrefix": "",
+      "body": "",
+      "title": "",
+      "hintSuffix": ""
+    },
+    "sort": "",
+    "cancel": {
+      "hintSuffix": "",
+      "hintPrefix": ""
+    },
+    "quit": "",
+    "card": {
+      "needsUpdate": ""
+    },
+    "empty": "",
+    "quitApp": "",
+    "loading": "",
+    "cancelInstall": {
+      "title": "Cancelar Instalación"
+    },
+    "install": {
+      "platform": "Platform",
+      "title": "Instalar xogo",
+      "wineLoading": "Cargando"
+    }
+  }
 }
