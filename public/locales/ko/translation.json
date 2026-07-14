@@ -343,7 +343,6 @@
     "WoW64": "",
     "wine-wayland": "",
     "advertiseAvxForRosetta": "",
-    "analytics": "",
     "nvidiaprime": {
       "details": "전용 그래픽 카드를 사용하여 다중 GPU 시스템에서 게임을 렌더링합니다. 렌더링에 헤드리스 GPU를 사용하는 게임용 노트북이나 데스크탑에서만 필요(엔비디아 옵티머스, AMD 크로스파이어)"
     }
@@ -993,20 +992,6 @@
   "emptyLibrary": {
     "noResults": "현재 필터로는 결과가 생성되지 않았습니다.",
     "noGames": ""
-  },
-  "analyticsModal": {
-    "disable": "비활성화",
-    "enable": "활성화",
-    "info": {
-      "pt3": "",
-      "pt5": "",
-      "pt1": "",
-      "pt7": "",
-      "pt6": "",
-      "pt4": "",
-      "pt2": ""
-    },
-    "title": ""
   },
   "launch": {
     "options": "실행 옵션..."

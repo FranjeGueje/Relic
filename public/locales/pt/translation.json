@@ -347,7 +347,6 @@
     },
     "dxfpslimit": "Define um limite de 'FPS' para jogos DirectX (9-12)",
     "advertiseAvxForRosetta": "Ativa o conjunto de instruções AVX ao executar jogos do Windows através da camada de compatibilidade Rosetta, em Macs com o processador da Apple Silicon. Isto pode ser necessário para jogos como o Death Stranding, que necessitam do suporte AVX.",
-    "analytics": "Permite que o Heroic recolha os dados de utilização de forma 100% anónima, para ajudar a melhorar a aplicação. É necessário reiniciar a aplicação para surtir efeito.",
     "download_proton_steam": "Quando ativado, o GE-Proton vai ser transferido diretamente para o diretório de ferramentas de compatibilidade do Steam, em vez do caminho pré-definido pelo Heroic. Este vai usar o caminho do Steam que foi definido na definição em cima \"Caminho Padrão do Steam\".",
     "wine-hdr": "O HDR melhora as cores ao proporcionar realces mais brilhantes e contrastes mais profundos. Para que o HDR funcione, tanto o ecrã como o jogo devem suportá-lo.",
     "wine-wayland": "O controlador experimental Wine-Wayland permite que os jogos executem de forma nativa sob o protocolo de janelas de ecrã Wayland. Poderão ocorrer problemas em alguns jogos se ativar esta opção.",
@@ -1014,20 +1013,6 @@
       "error": "Instalação da Steam falhou! Por favor leia as instruções cuidadosamente e tente de novo!",
       "success": "Steam para Windows foi instalado com sucesso!"
     }
-  },
-  "analyticsModal": {
-    "disable": "Desativar",
-    "enable": "Ativar",
-    "info": {
-      "pt1": "Para conseguirmos melhorar a aplicação, o Heroic recolhe dados de uma forma 100% anónima.",
-      "pt2": "O Heroic utiliza a plataforma de código aberto Plausible Analytics para recolher dados básicos: Versão da Aplicação, Sistema Operativo, Lojas a que está Conectado e o País.",
-      "pt3": "Nunca irá recolher qualquer informação pessoal, incluindo o seu nome de utilizador, endereço de IP ou e-mail.",
-      "pt4": "Estes dados são utilizados para nos dar conhecimentos e ideias sobre o que nos devemos focar a seguir, devido aos nossos recursos limitados e aos comentários e opiniões dos utilizadores.",
-      "pt5": "O Plausible Analytics está em total conformidade com o GDPR, CCPA e PECR.",
-      "pt6": "Por razões de transparência, pode visualizar os dados que recolhemos nos registos de eventos do Heroic.",
-      "pt7": "Pode alterar esta definição a qualquer momento nas Definições da Aplicação."
-    },
-    "title": "Enviar Dados Analíticos de forma Anónima"
   },
   "launch": {
     "options": "Opções de Arranque..."

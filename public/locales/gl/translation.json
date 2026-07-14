@@ -349,7 +349,6 @@
     "dxvknvapi": "DXVK-NVAPI é unha implementación de NVAPI construída sobre DXVK e a NVAPI nativa de Linux, permitindo o uso de DLSS en GPUs de Nvidia.",
     "wine-hdr": "HDR mellora as cores proporcionando resaltes máis brillantes e contrastes máis profundos. Para que HDR funcione, tanto a pantalla como o xogo deben ser compatibles.",
     "wine-wayland": "O driver experimental Wine-Wayland permite aos xogos executarse nativamente usando o protocolo de Wayland. Activalo pode causar problemas en algúns xogos.",
-    "analytics": "Permite a Heroic recoller información de uso 100% anónima para axudar a mellorar a aplicación. É necesario reiniciar para que faga efecto.",
     "WoW64": "O modo WoW64 de Wine permite executar xogos de Windows de 32-bits no Wine de 64-bits. Habilitalo pode mellorar o rendemento, mais podería corromper xogos de 32-bits máis vellos.",
     "nvidiaprime": {
       "details": "Usa a tarxeta gráfica dedicada para renderizar o xogo en sistemas con múltiples GPU. Só é necesario en porátiles para xogos ou de sobremesa que teñen unha GPU \"headless\" para renderizar (NVIDIA Optimus, AMD CrossFire)"
@@ -1002,20 +1001,6 @@
       "error": "A instalación de Steam fallou! Por favor, lea atentamente as instrucións e inténteo de novo!",
       "success": "Steam para Windows instalouse correctamente!"
     }
-  },
-  "analyticsModal": {
-    "disable": "Desactivar",
-    "enable": "Activar",
-    "info": {
-      "pt1": "Para mellorar a app, Heroic recolle información 100% anónima.",
-      "pt2": "Heroic usa a plataforma de código aberto Plausible Analytics para recoller información básica: Versión da App, Sistema Operativo, Tendas Conectadas e País.",
-      "pt3": "Nunca recollerá ningunha información persoal, incluído o seu nome de usuario, dirección IP ou email.",
-      "pt4": "Esta información sírvenos para saber en que centrarnos, debido aos nosos limitados recursos e comentarios dos usuarios.",
-      "pt5": "Plausible Analytics cumpre completamente cos GDPR, CCPA e PECR.",
-      "pt6": "Por transparencia, podes ver a información que recollemos nos rexistros de Heroic.",
-      "pt7": "Podes cambiar este axuste en calquera momento nas Preferencias."
-    },
-    "title": "Enviar Analíticas Anónimas"
   },
   "wineExplanation": {
     "proton-ge": "GE-Proton é unha variante de Proton creada por Glorious Eggroll. Está deseñada para usarse xunto co lanzador umu (predeterminado en Heroic).",

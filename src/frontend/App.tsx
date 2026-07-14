@@ -20,7 +20,6 @@ import LogFileUploadDialog from './components/UI/LogFileUploadDialog'
 import UploadedLogFilesList from './screens/Settings/sections/LogSettings/components/UploadedLogFilesList'
 import { InstallGameWrapper } from './screens/Library/components/InstallModal'
 import { SettingsModalWrapper } from './screens/Settings/components/SettingsModal'
-import AnalyticsDialog from './screens/Settings/components/AnalyticsDialog'
 
 function Root() {
   const {
@@ -96,7 +95,6 @@ function Root() {
               <LogFileUploadDialog />
               <UploadedLogFilesList />
               <Outlet />
-              <AnalyticsDialog />
             </main>
             <div className="controller">
               <ControllerHints />

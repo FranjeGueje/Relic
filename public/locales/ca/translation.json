@@ -348,7 +348,6 @@
     "dxfpslimit": "Estableix un límit als FPS per als jocs que utilitzin DirectX (9-12)",
     "download_proton_steam": "En activar-ho, el GE-Proton es baixarà directament a la carpeta d'eines de compatibilitat del Steam en compte de la ruta predefinida de l'Heroic. S'utilitzarà la ruta del Steam definida al paràmetre «Ruta predefinida del Steam» de sobre.",
     "advertiseAvxForRosetta": "Activa la compatibilitat amb el conjunt d'instruccions AVX en executar jocs de Windows mitjançant Rosetta als Mac amb Apple Silicon. Això podria ser un requisit per a alguns jocs, com ara el Death Stranding, que necessita compatibilitat amb AVX.",
-    "analytics": "Permet a l'Heroic recopilar dades d'ús 100% anònimes per a ajudar-nos a millorar l'aplicació. Cal que reiniciïs per a aplicar-ho.",
     "wine-hdr": "L'HDR millora els colors proporcionant punts de llum més brillants i contrastos més profunds. Perquè l'HDR funcioni, cal que tant el joc com la pantalla hi siguin compatibles.",
     "wine-wayland": "El controlador experimental Wine-Wayland permet als jocs executar-se de manera nativa sota el protocol de visualització Wayland. Activar-ho podria trencar alguns jocs.",
     "WoW64": "El mode Wine WoW64 permet que els jocs de Windows a 32 bits s'executin amb el Wine de 64 bits. Activar-ho podria millorar el rendiment, però també podria trencar alguns jocs de 32 bits més antics.",
@@ -1011,20 +1010,6 @@
       "error": "La instal·lació del Steam ha fallat. Llegeix amb compte les instruccions i tornar a provar-ho.",
       "success": "El Steam per a Windows s'ha instal·lat correctament."
     }
-  },
-  "analyticsModal": {
-    "disable": "Desactiva",
-    "enable": "Activa",
-    "info": {
-      "pt1": "Per tal de millorar l'aplicació, l'Heroic recopila dades anonimitzades al 100 %.",
-      "pt2": "L'Heroic fa servir la plataforma de codi lliure Plausible Analytics per a obtenir informació bàsica: versió de l'aplicació, sistema operatiu, botigues connectades, i país.",
-      "pt3": "No recollirà mai cap informació personal, incloent-hi el nom d'usuari, adreça IP ni adreça electrònica.",
-      "pt4": "Aquestes dades s'utilitzen per a donar-nos informació sobre en què centrar-nos a continuació, a causa dels nostres limitats recursos i comentaris d'usuaris.",
-      "pt5": "Plausible Analytics compleix totalment amb RGPD, CCPA i PECR.",
-      "pt6": "Per transparència, pots veure les dades que recollim als registres de l'Heroic.",
-      "pt7": "Pots canviar aquest paràmetre en qualsevol moment a la Configuració de l'aplicació."
-    },
-    "title": "Envia analítiques anònimes"
   },
   "launch": {
     "options": "Opcions d'execució..."

@@ -343,7 +343,6 @@
     "WoW64": "",
     "wine-wayland": "",
     "advertiseAvxForRosetta": "",
-    "analytics": "",
     "nvidiaprime": {
       "details": "Use dedicated graphics card to render game on multi-GPU systems. Only needed on gaming laptops or desktops that use a headless GPU for rendering (NVIDIA Optimus, AMD CrossFire)"
     }
@@ -975,20 +974,6 @@
     "title": "",
     "cancel-rename": "",
     "rename": ""
-  },
-  "analyticsModal": {
-    "disable": "Disable",
-    "enable": "Enable",
-    "info": {
-      "pt3": "",
-      "pt5": "",
-      "pt1": "",
-      "pt7": "",
-      "pt6": "",
-      "pt4": "",
-      "pt2": ""
-    },
-    "title": ""
   },
   "launch": {
     "options": "Opcije za pokretanje..."

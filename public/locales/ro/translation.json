@@ -320,7 +320,6 @@
     },
     "dxfpslimit": "Sets a frame rate cap for DXVK games",
     "advertiseAvxForRosetta": "Activează suportul de instrucțiuni AVX când rulezi jocuri Windows prin Rosetta pe chip-uri Apple Silicon. Acestea ar putea fi necesare pentru unele jocuri precum Death Stranding care necesită suport AVX.",
-    "analytics": "Acceptă ca Heroic sa colecteze date 100% anonime pentru a putea îmbunătăți calitatea aplicației. Este nevoie de o repornire pentru a intra în efect.",
     "button": {
       "close": "Închide Help",
       "open": "Deschide Help"
@@ -962,20 +961,6 @@
     "minimize": "",
     "maximize": "",
     "restore": ""
-  },
-  "analyticsModal": {
-    "disable": "Dezactivare",
-    "enable": "Activare",
-    "info": {
-      "pt1": "Pentru a îmbunătăți aplicația, Heroic colectează date 100% anonime.",
-      "pt2": "Heroic folosește platforma open-source Plausible Analytics pentru a colecta date de bază: Versiunea aplicației, sistemul de operare, Magazinele conectate și Țara.",
-      "pt3": "Nu va colecta niciodată informații personale, inclusiv numele tău de utilizator, adresa IP sau emailul.",
-      "pt4": "Aceste date sunt folosite pentru a ne oferi perspective despre ce să ne concentrăm în continuare, datorită resurselor noastre limitate și feedback-ului utilizatorilor.",
-      "pt5": "Plausible Analytics este complet conform cu GDPR, CCPA și PECR.",
-      "pt6": "Pentru transparență, puteți vizualiza datele pe care le colectăm în jurnalele Heroic.",
-      "pt7": "Poți schimba această setare oricând în Setările aplicației."
-    },
-    "title": "Trimite analize anonime"
   },
   "categories-manager": {
     "add": "Adaugă",

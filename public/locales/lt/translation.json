@@ -349,7 +349,6 @@
     "WoW64": "„Wine WoW64“ veiksena leidžia 32-bitų „Windows“ žaidimams veikti 64-bitų „Wine“. Įjungiant šią veikseną, gali padėti patobulinti našumą, tačiau gali veikti nesandariai su senesniais 32-bitų žaidimais.",
     "wine-wayland": "„Wine-Wayland“ eksperimentinė tvarkyklė leidžia žaidimams veikti sustatytai po „Wayland“ rodymo protokolo. Įgalinant jį, gali sukelti tam tikrų problemų kai kuriuose žaidimuose.",
     "advertiseAvxForRosetta": "Įgalina „AVX“ instrukcijų palaikymą, kai paleidžiami „Windows“ žaidimas per „Rosetta“ „Apple Silicon Mac (dgs.) kompiuteriuose“. Šis gali būti reikalingas kai kuriems žaidimams kaip – „Death Stranding“, kurie reikalauja „AVX“ palaikymo.",
-    "analytics": "Įgalina „Heroic“, kad rinktų 100% proc. ananomiška naudojimo duomenis, siekiant patobulinti programą. Reikalauja paleidimo iš naujo, kad įsigalintų.",
     "nvidiaprime": {
       "details": "Naudoti paskirtąją vaizdo plokštę, kad apdorotų žaidimus daugia-„GPU“ sistemose. Reikalinga žaidimų nešiojamiesiems kompiuteriams arba stacionariems, kurie naudoja be išvestinį „GPU“, skirtus apdorojimui („NVIDIA Optimus“, „AMD CrossFire“)",
       "link": "Peržiūrėkite daugiau išsamumo mūsų aiškinamajame puslapyje"
@@ -958,20 +957,6 @@
     "settings": {
       "wineprefix": "Pažymėkite aplanką/-alą naujiems „Wine“ prielinksniams/priešdėliams"
     }
-  },
-  "analyticsModal": {
-    "disable": "Išjungta/Neįgalinta (-as/-i)",
-    "enable": "Įjungta/Įgalinta (-as/-i)",
-    "info": {
-      "pt1": "Siekiant patobulinti šią programą, „Heroic“ renką 100% proc. anonimiškus duomenis.",
-      "pt2": "„Heroic“ naudoja atviro kodo „Plausible Analytics“ platformą, kad surinktų šiuos duomenis: programos versiją, operacinę sistemą, prijungtas parduotuves/platformas ir šalį.",
-      "pt3": "Jis niekada nerinks jokių asmeninių duomenų, įskaitant Jūsų naudotojo/vartotojo vardą (t.y. slapyvardį), IP adresą ar el. paštą.",
-      "pt5": "„Plausible Analytics“ yra pilnai paklusnus su BDAR, „CCPA“ ir PERR.",
-      "pt4": "Šie duomenys yra naudojami suteiktiant įžvalgas į tolimesnius dėmesio sutelkimus dėl mūsų ribotų resursų ir vartotojų atsiliepimų.",
-      "pt7": "Šį nustatymą galite pakeisti bet kada Programos Nustatymuose.",
-      "pt6": "Skaidrumo sumetimais, Jūs galite peržvelgti visus duomenis kuriuos renkame „Heroic“ programos žurnale."
-    },
-    "title": "Siūsti Anoniminę Analitiką"
   },
   "launch": {
     "options": "Paleidimo parinktys..."

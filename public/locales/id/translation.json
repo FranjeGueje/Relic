@@ -322,7 +322,6 @@
     "msync": "Fsync bertujuan untuk mengurangi overhead server Wine di gim dengan CPU intensif. Mengaktifkannya dapat meningkatkan kinerja pada kernel Linux yang didukung.",
     "dxfpslimit": "Atur batas maksimal frame untuk gim DXVK",
     "advertiseAvxForRosetta": "Mengaktifkan dukungan set instruksi AVX saat menjalankan game Windows melalui Rosetta di Mac dengan Apple Silicon. Ini mungkin diperlukan untuk beberapa game seperti Death Stranding yang membutuhkan dukungan AVX.",
-    "analytics": "Mengizinkan Heroic mengumpulkan data penggunaan anonim 100% untuk membantu meningkatkan aplikasi. Perlu dimulai ulang agar berpengaruh.",
     "button": {
       "close": "Tutup Bantuan",
       "open": "Buka Bantuan"
@@ -980,20 +979,6 @@
     "remove": "Hapus \"{{name}}\"",
     "rename": "Ubah \"{{name}}\"",
     "title": "Kelola Kategori"
-  },
-  "analyticsModal": {
-    "disable": "Nonaktif",
-    "enable": "Aktif",
-    "info": {
-      "pt1": "Untuk meningkatkan aplikasi, Heroic mengumpulkan data anonim 100%.",
-      "pt2": "Heroic menggunakan platform sumber terbuka Plausible Analytics untuk mengumpulkan data dasar: Versi Aplikasi, Sistem Operasi, Toko yang Terhubung, dan Negara.",
-      "pt3": "Data pribadi apa pun tidak akan pernah dikumpulkan, termasuk nama pengguna, alamat IP, atau email Anda.",
-      "pt4": "Data ini digunakan untuk memberi kami wawasan tentang hal-hal yang perlu difokuskan selanjutnya, karena sumber daya kami terbatas dan berdasarkan masukan pengguna.",
-      "pt5": "Plausible Analytics sepenuhnya mematuhi GDPR, CCPA, dan PECR.",
-      "pt6": "Untuk transparansi, Anda dapat melihat data yang kami kumpulkan di log Heroic.",
-      "pt7": "Anda dapat mengubah pengaturan ini kapan saja di Pengaturan Aplikasi."
-    },
-    "title": "Kirim Analitik Anonim"
   },
   "emptyLibrary": {
     "noGames": "Pustaka Anda kosong.<br /><br />Klik <4>di sini</4> untuk masuk dengan akun Epic, GOG.com, atau Amazon Anda. Setelah itu, game Anda akan muncul di Pustaka.<br /><br />Untuk menggunakan game atau aplikasi dari sumber lain, klik <br /> untuk menambahkannya secara manual.",

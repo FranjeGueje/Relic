@@ -321,7 +321,6 @@
     "msync": "Msync nhằm mục đích giảm chi phí sử dụng wineserver trong các trò chơi sử dụng nhiều CPU. Việc kích hoạt có thể cải thiện hiệu suất trên các nhân Linux được hỗ trợ.",
     "dxfpslimit": "Đặt giới hạn tốc độ khung hình cho Trò chơi DirectX (12-9)",
     "advertiseAvxForRosetta": "Bật hỗ trợ tập lệnh AVX khi chạy trò chơi Windows thông qua Rosetta trên máy Mac Apple Silicon. Điều này có thể được yêu cầu đối với một số trò chơi như Death Stranding cần hỗ trợ AVX.",
-    "analytics": "Cho phép Heroic thu thập dữ liệu sử dụng ẩn danh 100% để giúp cải thiện ứng dụng. Cần khởi động lại để có hiệu lực.",
     "button": {
       "close": "Đóng Trợ Giúp",
       "open": "Mở Trợ Giúp"
@@ -962,20 +961,6 @@
     "maximize": "Phóng to cửa sổ",
     "minimize": "Thu nhỏ cửa sổ",
     "restore": "Khôi phục cửa sổ"
-  },
-  "analyticsModal": {
-    "disable": "Tắt",
-    "enable": "Bật",
-    "info": {
-      "pt1": "Để cải thiện ứng dụng, Heroic thu thập 100% dữ liệu ẩn danh.",
-      "pt2": "Heroic sử dụng nền tảng Plausible Analytics mã nguồn mở để thu thập dữ liệu cơ bản: Phiên Bản Ứng Dụng, Hệ Điều Hành, Cửa Hàng Được Kết Nối và Quốc Gia.",
-      "pt3": "Nó sẽ không bao giờ thu thập bất kỳ thông tin cá nhân nào, bao gồm tên người dùng, địa chỉ IP hoặc email của bạn.",
-      "pt4": "Dữ liệu này được sử dụng để cung cấp cho chúng tôi thông tin chi tiết về những gì cần tập trung vào tiếp theo do nguồn lực và phản hồi của người dùng có hạn.",
-      "pt5": "Plausible Analytics hoàn toàn tuân thủ GDPR, CCPA và PECR.",
-      "pt6": "Để minh bạch, bạn có thể xem dữ liệu chúng tôi thu thập trên nhật ký Heroic.",
-      "pt7": "Bạn có thể thay đổi cài đặt này bất kỳ lúc nào trong Cài Đặt Ứng Dụng."
-    },
-    "title": "Gửi Phân Tích Ẩn Danh"
   },
   "categories-manager": {
     "rename": "Đổi tên \"{{name}}\"",

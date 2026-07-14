@@ -344,7 +344,6 @@
     "WoW64": "",
     "wine-wayland": "",
     "advertiseAvxForRosetta": "",
-    "analytics": "",
     "nvidiaprime": {
       "details": "استفاده از کارت گرافیک اختصاصی برای رندر بازی در سیستم های حاوی چندین کارت گرافیک. فقط برای سیستم ها و لب تاپ هایی که از headless GPU برای رندر کردن استفاده می کنند (NVIDIA Optimus, AMD CrossFire)"
     }
@@ -966,20 +965,6 @@
     "delete-question": "",
     "new-category": "",
     "add-new-category": ""
-  },
-  "analyticsModal": {
-    "disable": "غیرفعال سازی",
-    "enable": "فعال سازی",
-    "info": {
-      "pt3": "",
-      "pt5": "",
-      "pt1": "",
-      "pt7": "",
-      "pt6": "",
-      "pt4": "",
-      "pt2": ""
-    },
-    "title": ""
   },
   "launch": {
     "options": "گزینه های اجرا..."

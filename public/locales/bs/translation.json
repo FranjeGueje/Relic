@@ -343,7 +343,6 @@
     "WoW64": "",
     "wine-wayland": "",
     "advertiseAvxForRosetta": "",
-    "analytics": "",
     "nvidiaprime": {
       "details": "Koristite namjensku grafičku karticu za renderiranje igre na multi-GPU sistemima. Potrebno samo na laptop računarima ili desktop računarima koji koriste GPU bez glave za renderovanje (NVIDIA Optimus, AMD CrossFire)"
     }
@@ -957,20 +956,6 @@
     "delete-question": "",
     "new-category": "",
     "add-new-category": ""
-  },
-  "analyticsModal": {
-    "disable": "Onemogućeno",
-    "enable": "Omogućeno",
-    "info": {
-      "pt3": "",
-      "pt5": "",
-      "pt1": "",
-      "pt7": "",
-      "pt6": "",
-      "pt4": "",
-      "pt2": ""
-    },
-    "title": ""
   },
   "launch": {
     "options": "Opcije za pokretanje..."

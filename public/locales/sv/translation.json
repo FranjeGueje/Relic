@@ -339,7 +339,6 @@
     "msync": "Msync syftar till att minska wineserver overhead i CPU-intensiva spel. Aktivering kan förbättra prestandan med Linux-kärnor som stöds.",
     "dxfpslimit": "Ställer in ett bildhastighetstak för DirectX spel (9-12)",
     "advertiseAvxForRosetta": "Aktiverar stöd för AVX-instruktionsuppsättningar när Windows-spel körs via Rosetta på Apple Silicon Macar. Detta kan krävas för vissa spel som Death Stranding som behöver AVX-stöd.",
-    "analytics": "Gör det möjligt för Heroic att samla in 100 % anonym användningsdata för att förbättra programmet. Kräver omstart för att det ska träda i kraft.",
     "download_proton_steam": "När det är aktiverat kommer GE-Proton att laddas ner direkt till Steams kompatibilitetsverktygskatalog istället för standardsökvägen för Heroic. Det kommer att använda Steam-sökvägen som angetts i inställningen \"Standardsökväg för Steam\" ovan.",
     "wine-hdr": "HDR förstärker färgerna genom att ge ljusare höjdpunkter och djupare kontraster. För att HDR ska fungera måste både skärmen och spelet stödja det.",
     "wine-wayland": "Den experimentella drivrutinen Wine-Wayland tillåter spel att köras direkt under Wayland visningsprotokoll. Aktivering kan orsaka problem i vissa spel.",
@@ -991,20 +990,6 @@
     "remove": "Ta bort \"{{name}}\"",
     "rename": "Byt namn \"{{name}}\"",
     "title": "Hantera kategorier"
-  },
-  "analyticsModal": {
-    "disable": "Inaktivera",
-    "enable": "Aktivera",
-    "info": {
-      "pt1": "För att förbättra programmet samlar Heroic in 100% anonym data.",
-      "pt2": "Heroic använder Plausible Analytics-plattform med öppen källkod för att samla in grundläggande data: programversion, operativsystem, anslutna butiker och land.",
-      "pt3": "Det kommer aldrig att samla in någon personlig information, inklusive ditt användarnamn, IP-adress eller e-postadress.",
-      "pt4": "Denna data används för att ge oss insikter om vad vi ska fokusera på härnäst på grund av våra begränsade resurser och användarfeedback.",
-      "pt5": "Plausible Analytics är helt kompatibelt med GDPR, CCPA och PECR.",
-      "pt6": "För transparensens skull kan du se de data vilken data som samlas in i Heroic-loggarna.",
-      "pt7": "Du kan ändra den här inställningen när som helst i program inställningarna."
-    },
-    "title": "Skicka anonym analysdata"
   },
   "launch": {
     "options": "Startalternativ..."

@@ -350,7 +350,6 @@
     "advertiseAvxForRosetta": "Active la compatibilité avec l'ensemble d'instructions AVX lors de l'exécution de jeux Windows via Rosetta sur les Macs Apple Silicon. Cela peut être nécessaire pour certains jeux comme Death Stranding, qui requièrent une compatibilité avec AVX.",
     "wine-hdr": "Le HDR améliore la colorimétrie en proposant des contours plus clairs et des contrastes plus profonds. Afin que le HDR fonctionne, l'écran et le jeu doivent être tous deux compatibles.",
     "wine-wayland": "Le pilote expérimental Wine-Wayland permet aux jeux de s'exécuter nativement par l'entremise du protocole d'affichage Wayland. L'activer peut faire dysfonctionner certains jeux.",
-    "analytics": "Autorise Heroic à collecter des données d'usage 100 % anonymes afin de contribuer à l'amélioration de l'application. Requiert un redémarrage.",
     "WoW64": "Le mode Wine WoW64 permet aux jeux Windows 32 bits d'être exécutés depuis la version 64 bits de Wine. L'activer peut améliorer les performances, mais pourrait aussi faire dysfonctionner des jeux 32 bits très anciens.",
     "nvidiaprime": {
       "details": "Utiliser la carte graphique dédiée pour le rendu sur les systèmes à multiples processeurs graphiques. Utile seulement sur les ordinateurs ayant un processeur graphique intégré et une carte graphique dédiée (NVIDIA Optimus, AMD CrossFire)"
@@ -1018,20 +1017,6 @@
       "error": "L'installation de Steam a échoué ! Veuillez lire les instructions attentivement et réessayer !",
       "success": "Steam pour Windows a été installé avec succès !"
     }
-  },
-  "analyticsModal": {
-    "disable": "Désactiver",
-    "enable": "Activer",
-    "info": {
-      "pt1": "Heroic collecte des données de façon 100% anonyme dans un but d'amélioration.",
-      "pt3": "Celui-ci ne collectera jamais d'informations personnelles telles que votre nom d'utilisateur, votre addresse IP ou votre adresse électronique.",
-      "pt6": "Pour des raisons de transparence, vous pouvez consulter les données collectées depuis les journaux d'Heroic.",
-      "pt7": "Vous pouvez modifier ce paramètre à tout moment depuis les options de l'application.",
-      "pt2": "Heroic utilise la plateforme open-source Plausible Analytics pour collecter des données de base : version de l'application, système d'exploitation, boutiques connectées et pays détecté.",
-      "pt4": "Nos ressources étant limitées et les retours des utilisateurs plutôt rares, ces données nous permettent de savoir sur quoi nos efforts devront être concentrés en priorité.",
-      "pt5": "Plausible Analytics respecte pleinement le RGPD, le CCPA et la PECR."
-    },
-    "title": "Envoyer des statistiques anonymes"
   },
   "launch": {
     "options": "Paramètres de lancement..."

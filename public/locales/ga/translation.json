@@ -1,20 +1,6 @@
 {
   "add_game": "Cuir Cluiche Leis",
   "Amazon Games": "Cluichí Amazon",
-  "analyticsModal": {
-    "disable": "Díchumasaigh",
-    "enable": "Cumasaigh",
-    "info": {
-      "pt1": "Chun an aip a fheabhsú, bailíonn Heroic sonraí 100% gan ainm.",
-      "pt2": "Úsáideann Heroic an t-ardán foinse oscailte Plausible Analytics chun sonraí bunúsacha a bhailiú: Leagan na hAipe, Córas Oibriúcháin, Siopaí Ceangailte agus Tír.",
-      "pt3": "Ní bhaileoidh sé aon fhaisnéis phearsanta choíche, lena n-áirítear d’ainm úsáideora, do sheoladh IP ná do r-phost.",
-      "pt4": "Úsáidtear an fhaisnéis seo chun léargas a thabhairt dúinn ar a bhfuil le díriú air ina dhiaidh seo mar gheall ar ár n-acmhainní teoranta agus aiseolas ó úsáideoirí.",
-      "pt5": "Tá Plausible Analytics go hiomlán i gcomhréir le GDPR, CCPA agus PECR.",
-      "pt6": "Ar mhaithe le trédhearcacht, is féidir leat na sonraí a bhailímid a fheiceáil ar logaí Heroic.",
-      "pt7": "Is féidir leat an socrú seo a athrú am ar bith i Socruithe an Aipe."
-    },
-    "title": "Seol Anailísíocht Gan Ainm"
-  },
   "anticheat": {
     "anticheats": "Frith-Aicearra",
     "multiplayer_may_not_work": "B’fhéidir nach n-oibreoidh gnéithe il-imreora mar gheall ar thacaíocht frith-chealaithe atá diúltaithe nó briste.",
@@ -191,7 +177,6 @@
     },
     "advertiseAvxForRosetta": "Cumasaíonn sé seo tacaíocht do shraith treoracha AVX agus cluichí Windows á reáchtáil trí Rosetta ar ríomhairí Mac Apple Silicon. D’fhéadfadh sé seo a bheith riachtanach do roinnt cluichí cosúil le Death Stranding a bhfuil tacaíocht AVX ag teastáil uathu.",
     "amdfsr": "Cuidíonn FSR AMD le ráta fráma a threisiú trí réiteach níos ísle a uasghrádú i Mód Lánscáileáin. Méadaíonn cáilíocht íomhá ó 5 go 1 ar chostas beagán feidhmíochta. D’fhéadfadh feabhas a chur ar fheidhmíocht trí chumasú.",
-    "analytics": "Cumasaíonn sé Heroic chun sonraí úsáide 100% gan ainm a bhailiú chun cabhrú leis an bhfeidhmchlár a fheabhsú. Ní mór atosú a dhéanamh chun go dtiocfaidh sé i bhfeidhm.",
     "button": {
       "close": "Dún Cabhair",
       "open": "Oscail Cabhair"

@@ -347,7 +347,6 @@
     "dxfpslimit": "Ustala limit klatek na sekundę dla gier z DXVK (9-12)",
     "advertiseAvxForRosetta": "Umożliwia obsługę zestawu instrukcji AVX podczas uruchamiania gier z systemu Windows za pomocą programu Rosetta na Macach z procesorami Apple Silicon. Może być to wymagane w przypadku niektórych gier, takich jak Death Stranding, które potrzebują obsługi AVX.",
     "download_proton_steam": "Po włączeniu, GE-Proton zostanie pobrany bezpośrednio do katalogu narzędzi zgodności Steam, zamiast do domyślnej ścieżki programu Heroic. Będzie używana ścieżka Steam ustawiona w opcji 'Domyślna ścieżka Steam' powyżej.",
-    "analytics": "Umożliwia Heroic zbieranie w 100% anonimowych danych o użytkowaniu w celu ulepszenia aplikacji. Wymaga ponownego uruchomienia.",
     "wine-hdr": "HDR poprawia kolory, zapewniając jaśniejsze światła i głębsze kontrasty. Aby HDR działał, zarówno wyświetlacz, jak i gra muszą go obsługiwać.",
     "wine-wayland": "Eksperymentalny sterownik Wine-Wayland umożliwia natywne uruchamianie gier w protokole graficznym Wayland. Włączenie może spowodować uszkodzenie niektórych gier.",
     "WoW64": "Tryb Wine WoW64 pozwala 32-bitowym grom używać 64-bitowego Wine'a. Włączenie może poprawić wydajność, ale może również zepsuć niektóre starsze 32-bitowe gry.",
@@ -1016,20 +1015,6 @@
       "error": "Pamiętaj, że nie wszystkie gry będą działać, a nawet jeśli tak, to mogą nie działać zgodnie z oczekiwaniami!",
       "success": "Steam dla Windows został pomyślnie zainstalowany!"
     }
-  },
-  "analyticsModal": {
-    "disable": "Wyłącz",
-    "enable": "Włącz",
-    "info": {
-      "pt1": "Aby ulepszyć aplikację, Heroic zbiera w 100% anonimowe dane.",
-      "pt3": "Nigdy nie gromadzi żadnych danych osobowych, w tym nazwy użytkownika, adresu IP lub adresu e-mail.",
-      "pt4": "Dane te są wykorzystywane, aby dać nam wgląd w to, na czym powinniśmy się skupić w następnej kolejności ze względu na nasze ograniczone zasoby i opinie użytkowników.",
-      "pt5": "Plausible Analytics jest w pełni zgodny z RODO, CCPA i PECR.",
-      "pt6": "Aby zapewnić przejrzystość, dane które zbieramy możesz zobaczyć w logu Heroic.",
-      "pt7": "Ustawienia te można zmienić w dowolnym momencie w Ustawieniach aplikacji.",
-      "pt2": "Heroic wykorzystuje platformę open-source Plausible Analytics do gromadzenia podstawowych danych: Wersja aplikacji, system operacyjny, połączone sklepy i kraj."
-    },
-    "title": "Wysyłaj anonimowe dane analityczne"
   },
   "launch": {
     "options": "Opcje uruchamiania..."

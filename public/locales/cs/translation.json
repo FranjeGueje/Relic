@@ -350,7 +350,6 @@
     "advertiseAvxForRosetta": "Povoluje podporu instrukční sady AVX při spouštění her pro Windows prostřednictvím Rosetty na počítačích Apple Silicon Mac. To může být nutné u některých her, jako je Death Stranding, které podporu AVX vyžadují.",
     "wine-hdr": "HDR vylepšuje barvy tím, že poskytuje jasnější světla a hlubší kontrasty. Aby HDR fungovalo, musí jej podporovat jak displej, tak hra.",
     "wine-wayland": "Experimentální ovladač Wine-Wayland umožňuje spouštět hry nativně pod zobrazovacím protokolem Wayland. Jeho zapnutí může způsobit nefunkčnost některých her.",
-    "analytics": "Umožňuje Heroic shromažďovat 100% anonymní údaje o používání, které poskytují pomoc při vylepšování aplikace. Aby se změna projevila, je nutné restartovat zařízení.",
     "WoW64": "Režim Wine WoW64 umožňuje spouštět 32bitové hry pro Windows na 64bitovém Wine. Jeho zapnutí může zlepšit výkon, ale také může způsobit nefunkčnost starších 32bitových her.",
     "nvidiaprime": {
       "details": "K vykreslování hry na systémech s více grafickými procesory používejte dedikovanou grafickou kartu. Potřebné pouze u herních notebooků nebo stolních počítačů, které pro vykreslování používají headless GPU (NVIDIA Optimus, AMD CrossFire)",
@@ -1018,20 +1017,6 @@
       "success": "Steam pro Windows byl úspěšně nainstalován!",
       "error": "Instalace Steamu se nezdařila! Přečtěte si prosím pozorně pokyny a zkuste to znovu!"
     }
-  },
-  "analyticsModal": {
-    "disable": "Zakázat",
-    "enable": "Povolit",
-    "info": {
-      "pt1": "Za účelem vylepšení aplikace Heroic shromažďuje 100% anonymní data.",
-      "pt2": "Heroic využívá open-source platformu Plausible Analytics ke shromažďování základních údajů: verze aplikace, operační systém, připojené obchody a země.",
-      "pt3": "Nikdy nebude shromažďovat žádné osobní údaje, včetně vašeho uživatelského jména, IP adresy nebo e-mailu.",
-      "pt4": "Tyto údaje nám pomáhají určit, na co se máme vzhledem k omezeným zdrojům a zpětné vazbě od uživatelů dále zaměřit.",
-      "pt5": "Plausible Analytics je plně v souladu s GDPR, CCPA a PECR.",
-      "pt6": "Z důvodu transparentnosti si můžete prohlédnout data, která shromažďujeme, v protokolech Heroic.",
-      "pt7": "Toto nastavení můžete kdykoli změnit v nastavení aplikace."
-    },
-    "title": "Odeslat anonymní statistiky"
   },
   "launch": {
     "options": "Možnosti spuštění..."

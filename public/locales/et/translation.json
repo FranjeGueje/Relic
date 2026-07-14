@@ -349,7 +349,6 @@
     "advertiseAvxForRosetta": "Lubab toe AVX käsustiku jaoks, kui mängite Windowsi mänge Apple Siliconi Mac-idel läbi Rosetta. See võib olla vajalik teatud mängude jaoks, mis vajavad AVX-i tuge, näiteks \"Death Stranding\".",
     "wine-hdr": "HDR täiustab värve võimendades eredaid kohti ja pakkudes sügavamat kontrasti. HDR-i toimimiseks peavad nii ekraan kui ka mäng seda toetama.",
     "wine-wayland": "Wine-Waylandi eksperimentaalne draiver lubab mängudel otse käivituda läbi Waylandi kuvaprotokolli. Selle lubamine võib mõned mängud katki teha.",
-    "analytics": "Lubab Heroicul koguda 100% anonüümseid kasutusandmeid, et rakendust paremaks teha. Nõuab restarti.",
     "WoW64": "Wine'i WoW64 režiim lubab 32-bitistel Windowsi mängudel toimida 64-bitisel Wine'il. Selle lubamine võib muuta kogemuse sujuvamaks, aga võib ka vanemaid 32-bitiseid mänge katki teha.",
     "nvidiaprime": {
       "details": "Mitme GPU-süsteemides mängu renderdamiseks kasutage spetsiaalset graafikakaarti. Vajalik ainult mängusülearvutites või lauaarvutites, mis kasutavad renderdamiseks peata GPU-d (NVIDIA Optimus, AMD CrossFire)",
@@ -1014,20 +1013,6 @@
       "error": "Steami paigaldamine ebaõnnestus! Palun lugege hoolikalt juhiseid ja proovige uuesti!",
       "success": "Steam Windowsi jaoks on edukalt paigaldatud!"
     }
-  },
-  "analyticsModal": {
-    "disable": "Lülita välja",
-    "enable": "Luba",
-    "info": {
-      "pt1": "Et äppi paremaks teha, kogub Heroic 100% anonüümseid andmeid.",
-      "pt2": "Heroic kasutab avatud allikaga Plausible Analyticsi platvormi, et koguda kõige põhilisemaid andmeid: äpi versioon, OS, ühendatud poed ja riik.",
-      "pt3": "See ei kogu kunagi isiklikku teavet, näiteks kasutajanime, IP-aadressi või e-maili.",
-      "pt4": "Need andmed annavad meile teavet sellest, millele järgmisena keskenduda, kuna meie ressursid ja kasutaja tagasiside on piiratud.",
-      "pt5": "Plausible Analytics on täielikult vastavuses GDPR-i, CCPA ja PECR-iga.",
-      "pt6": "Läbipaistvuse nimel võite meie poolt kogutud andmeid vaadata Heroicu logifailides.",
-      "pt7": "Võite seda sätet muuta iga kell äpi seadetes."
-    },
-    "title": "Saada anonüümset analüütikat"
   },
   "launch": {
     "options": "Käivitusvalikud..."

@@ -337,7 +337,6 @@
     },
     "dxvknvapi": "DXVK-NVAPI is een implementatie van NVAPI gebouwd bovenop DXVK en het linux native NVAPI, het staat toe dat DLSS werkt met Nvidia GPUs.",
     "dxfpslimit": "Sets a frame rate cap for DXVK games",
-    "analytics": "Staat toe dat Heroic 100% anonieme gebruiksdata mag verzamelen die helpen om de applicatie te verbeteren. Vereist herstart om toe te passen.",
     "download_proton_steam": "Wanneer ingeschakeld, GE-Proton zal direct naar de Steam compatibilieitshulpmiddelenmap worden gedownload i.p.v. Heroic's standaard pad. Het zal Steam's pad gebruiken die vaststaat in de'Standaard Steam pad' instelling hierboven.",
     "wine-hdr": "HDR verbetert de kleuren door helderdere hoogtepunten en diepere contrasten te leveren. Om HDR te laten werken, moeten zowel het beeldscherm als het spel dit ondersteunen.",
     "wine-wayland": "Het experimentele stuurprogramma van Wine-Wayland staat toe dat spelletjes van nature werken onder het Wayland weergave protocol. Het inschakelen hiervan kan kritieke fouten veroorzaken in sommige spelletjes.",
@@ -983,20 +982,6 @@
     "rename": "Wijzig naam van \"{{name}}\"",
     "title": "Beheer categorieën",
     "add": "Voeg toe"
-  },
-  "analyticsModal": {
-    "disable": "Disable",
-    "enable": "Enable",
-    "info": {
-      "pt1": "Om de app te verbeteren, verzamelt Heroic 100% anonieme data.",
-      "pt2": "Heroic gebruikt het open-source Plausible Analytics platform om basis data te verzamelen: App Versie, Besturingssysteem, Verbonden Winkels en Land.",
-      "pt3": "Het zal nooit persoonlijke informatie, zoals je gebruikersnaam, IP-adres of e-mail verzamelen.",
-      "pt4": "Deze data wordt gebruikt om ons in te lichten waar we ons als volgende op moeten focussen vanwege onze gelimiteerde bronnen en gebruikersfeedback.",
-      "pt5": "Plausible Analytics is volledig meegand met GDPR, CCPA en PECR.",
-      "pt6": "Voor transparantie kun je de data die we verzamelen bekijken bij de Heroic logboeken.",
-      "pt7": "Je kan deze instelling altijd aanpassen in de App Instellingen."
-    },
-    "title": "Verstuur Anonieme Analyses"
   },
   "wineExplanation": {
     "proton-ge": "GE-Proton is een Proton variant gemaakt door Glorious Eggrol. Het is bedoelt in gebruikt te worden met de umu launcher (standaard in Heroic).",

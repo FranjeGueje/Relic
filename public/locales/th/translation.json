@@ -1,18 +1,4 @@
 {
-  "analyticsModal": {
-    "disable": "ปิดใช้งานแล้ว",
-    "enable": "เปิดใช้งาน",
-    "info": {
-      "pt3": "",
-      "pt5": "",
-      "pt1": "",
-      "pt7": "",
-      "pt6": "",
-      "pt4": "",
-      "pt2": ""
-    },
-    "title": ""
-  },
   "box": {
     "choose": "เลือก",
     "error": {
@@ -306,7 +292,6 @@
     "custom_themes_wiki": "",
     "wine-wayland": "",
     "advertiseAvxForRosetta": "",
-    "analytics": "",
     "fsync": "",
     "gamemode": "",
     "esync": ""

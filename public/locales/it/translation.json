@@ -349,7 +349,6 @@
     "download_proton_steam": "Se abilitato, GE-Proton verrà scaricato direttamente nella directory degli strumenti di compatibilità di Steam invece che nel percorso Heroic predefinito. Utilizzerà il percorso di Steam impostato nell'impostazione 'Percorso Steam predefinito' qui sopra.",
     "wine-hdr": "L'HDR migliora i colori offrendo alte luci più brillanti e contrasti più profondi. Affinché funzioni, sia il display che il gioco devono supportarlo.",
     "wine-wayland": "Il driver sperimentale Wine-Wayland consente ai giochi di funzionare in modo nativo con il protocollo di visualizzazione Wayland. L'abilitazione potrebbe causare problemi ad alcuni giochi.",
-    "analytics": "Permette a Heroic di raccogliere dati utenti anonimi al 100% per aiutare a migliorare l'applicazione. È necessario un riavvio per applicare l'impostazione.",
     "WoW64": "La modalità Wine WoW64 consente di eseguire giochi Windows a 32 bit su Wine a 64 bit. L'attivazione può migliorare le prestazioni, ma potrebbe anche causare problemi con i giochi a 32 bit più vecchi.",
     "nvidiaprime": {
       "details": "Usa la scheda video dedicata per renderizzare il gioco su un sistema munito di multiple GPU (schede video). Necessario solo su Computer portatili o desktop da Gaming che utilizzano headless GPU rendering (NVIDIA Optimus, AMD CrossFire)",
@@ -1014,20 +1013,6 @@
       "error": "Installazione di Steam non riuscita! Leggi attentamente le istruzioni e riprova!",
       "success": "Steam per Windows è stato installato correttamente!"
     }
-  },
-  "analyticsModal": {
-    "disable": "Disabilita",
-    "enable": "Abilita",
-    "info": {
-      "pt6": "Per trasparenza, puoi vedere i dati che raccogliamo nei log di Heroic.",
-      "pt1": "Per migliorare l'applicazione, Heroic raccoglie dati totalmente anonimi.",
-      "pt7": "Puoi modificare questa impostazione in qualsiasi momento nelle Impostazioni dell'app.",
-      "pt2": "Heroic utilizza la piattaforma open-source Plausible Analytics per raccogliere dati di base: versione dell’app, sistema operativo, store collegati e Paese.",
-      "pt3": "Non raccoglierà mai alcuna informazione personale, inclusi il tuo nome utente, indirizzo IP o email.",
-      "pt4": "Questi dati vengono utilizzati per fornirci indicazioni su cosa concentrarci in seguito, dato alle nostre risorse limitate e al feedback degli utenti.",
-      "pt5": "Plausible Analytics è pienamente conforme al GDPR, al CCPA e al PECR."
-    },
-    "title": "Invia Dati Analitici Anonimi"
   },
   "launch": {
     "options": "Opzioni di avvio..."

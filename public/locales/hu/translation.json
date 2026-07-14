@@ -349,7 +349,6 @@
     "download_proton_steam": "Ha engedélyezve van, a GE-Proton közvetlenül a Steam kompatibilitási eszközök könyvtárába lesz letöltve, és nem a Heroic alapértelmezett elérési útjára. A fenti „Alapértelmezett Steam útvonal” beállításban megadott Steam elérési utat fogja használni.",
     "wine-hdr": "A HDR javítja a színeket azáltal, hogy világosabb fényeket és mélyebb kontrasztokat biztosít. A HDR működéséhez mind a kijelzőnek, mind a játéknak támogatnia kell azt.",
     "wine-wayland": "A kísérleti Wine-Wayland illesztőprogram lehetővé teszi a játékok natív futtatását a Wayland megjelenítési protokoll alatt. Engedélyezése néhány játéknál problémákat okozhat.",
-    "analytics": "Lehetővé teszi a Heroic számára, hogy 100%-ban anonim használati adatokat gyűjtsön az alkalmazás fejlesztésének érdekében. Újraindítás után lép életbe.",
     "WoW64": "A Wine WoW64 mód lehetővé teszi a 32 bites Windows játékok futtatását 64 bites Wine-on. Engedélyezése javíthatja a teljesítményt, de problémákat okozhat régebbi 32 bites játékoknál.",
     "nvidiaprime": {
       "details": "Dedikált grafikus kártya használata a játék megjelenítéséhez a több GPU-s rendszereken. Csak olyan játékra szánt laptopokon és asztali számítógépeken van rá szükség, amelyek kimenet nélküli GPU-t használnak a megjelenítéshez (NVIDIA Optimus, AMD CrossFire)",
@@ -1016,20 +1015,6 @@
       "error": "A Steam telepítése sikertelen! Olvassa el figyelmesen az utasításokat, és próbálja újra!",
       "success": "A windowsos Steam sikeresen telepítve!"
     }
-  },
-  "analyticsModal": {
-    "disable": "Letiltás",
-    "enable": "Engedélyezés",
-    "info": {
-      "pt1": "A Heroic az alkalmazás fejlesztése érdekében 100%-ban anonim adatokat gyűjt.",
-      "pt2": "A Heroic a nyílt forráskódú Plausible Analytics platformot használja alapvető adatok gyűjtésére: alkalmazásverzió, operációs rendszer, csatlakoztatott áruházak és ország.",
-      "pt3": "Soha nem gyűjt semmilyen személyes adatot, beleértve a felhasználónevet, IP-címet vagy e-mail-címet.",
-      "pt4": "Ezeket az adatokat arra használjuk, hogy betekintést nyerjünk, mire érdemes fókuszálnunk a korlátozott erőforrásaink és a felhasználói visszajelzések alapján.",
-      "pt5": "A Plausible Analytics teljes mértékben megfelel a GDPR, CCPA és PECR előírásainak.",
-      "pt6": "Átláthatóság céljából megtekintheted az általunk gyűjtött adatokat a Heroic naplóiban.",
-      "pt7": "Ezt a beállítást bármikor módosíthatod az Alkalmazásbeállításokban."
-    },
-    "title": "Anonim analitika küldése"
   },
   "launch": {
     "options": "Indítási kapcsolók…"

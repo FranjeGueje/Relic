@@ -343,7 +343,6 @@
     "WoW64": "",
     "wine-wayland": "",
     "advertiseAvxForRosetta": "",
-    "analytics": "",
     "nvidiaprime": {
       "details": "Multi-GPU sistemlərində oyunu göstərmək üçün xüsusi qrafik kartdan istifadə edin. Yalnız göstərmə üçün başsız GPU istifadə edən oyun noutbukları və ya stolüstü kompüterlərdə lazımdır (NVIDIA Optimus, AMD CrossFire)"
     }
@@ -962,20 +961,6 @@
     "minimize": "",
     "maximize": "",
     "restore": ""
-  },
-  "analyticsModal": {
-    "disable": "Qeyri-aktiv",
-    "info": {
-      "pt3": "",
-      "pt5": "",
-      "pt1": "",
-      "pt7": "",
-      "pt6": "",
-      "pt4": "",
-      "pt2": ""
-    },
-    "enable": "",
-    "title": ""
   },
   "launch": {
     "options": "Başlama Seçimləri..."

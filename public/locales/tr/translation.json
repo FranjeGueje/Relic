@@ -345,7 +345,6 @@
     "dxfpslimit": "DirectX Oyunları için bir kare hızı sınırı belirler (9-12)",
     "advertiseAvxForRosetta": "Rosetta üzerinden Apple Silicon Mac'lerde Windows oyunları çalıştırırken AVX komut seti desteğini etkinleştirir. Bu, AVX desteğine ihtiyaç duyan Death Stranding gibi bazı oyunlar için gerekli olabilir.",
     "download_proton_steam": "Etkinleştirildiğinde, GE-Proton varsayılan Heroic yolu yerine doğrudan Steam uyumluluk araçları dizinine indirilecektir. Yukarıdaki 'Varsayılan Steam yolu' ayarında ayarlanan Steam yolunu kullanacaktır.",
-    "analytics": "Uygulamayı geliştirmeye yardımcı olacak %100 anonim kullanım verilerinin toplanmasını etkinleştirir. Değişikliğin etkinleşmesi için yeniden başlatma gerekir.",
     "wine-hdr": "HDR; daha aydınlık sahneler ve daha belirgin kontrastlar sağlayarak renkleri daha canlı ve gerçekçi hale getirir. Bu özelliğin çalışabilmesi için hem ekranınızın hem de oyunun HDR'ı desteklemesi şarttır.",
     "wine-wayland": "Wine-Wayland deneysel sürücüsü, oyunların Wayland görüntüleme protokolüyle yerel olarak çalışmasını sağlar. Bu özelliği etkinleştirmek bazı oyunlarda sorunlara yol açabilir.",
     "WoW64": "Wine WoW64 modu, 32-bit Windows oyunlarının 64-bit Wine'da çalıştırılmasını sağlar. Açmak performansı iyileştirebilir ama aynı zamanda daha eski 32-bit oyunlarda sorun çıkarabilir.",
@@ -1014,20 +1013,6 @@
       "success": "Windows için Steam başarıyla kuruldu!",
       "error": "Steam kurulumu başarısız oldu! Lütfen talimatları dikkatlice okuyun ve tekrar deneyin!"
     }
-  },
-  "analyticsModal": {
-    "disable": "Devre Dışı Bırak",
-    "enable": "Etkinleştir",
-    "info": {
-      "pt1": "Heroic uygulamayı geliştirmek için %100 anonim veri toplar.",
-      "pt3": "Heroic; kullanıcı adınız, IP adresiniz ya da e-postanız gibi kişisel bilgilerinizi asla toplamaz.",
-      "pt6": "Şeffaf olmak açısından, toplanılan verileri Heroic kayıtlarında görebilirsiniz.",
-      "pt7": "Bu ayarı dilediğiniz zaman uygulama ayarlarından değiştirebilirsiniz.",
-      "pt2": "Heroic, açık kaynaklı Plausible Analytics platformunu kullanarak şu temel verileri toplar: Uygulama Sürümü, İşletim Sistemi, Bağlı Mağazalar ve Ülke.",
-      "pt4": "Bu veriler, kısıtlı kaynaklarımız ve kullanıcı geri bildirimleri doğrultusunda, bir sonraki adımda neye odaklanmamız gerektiği konusunda bize yol göstermek için kullanılır.",
-      "pt5": "Plausible Analytics; GDPR, CCPA ve PECR ile tamamen uyumludur."
-    },
-    "title": "Anonim Kullanım Verilerini Gönder"
   },
   "launch": {
     "options": "Başlatma Seçenekleri..."

@@ -291,7 +291,6 @@
       "close": "Luk Hjælp"
     },
     "advertiseAvxForRosetta": "Aktiverer understøttelse af AVX-instruktionssæt, når Windows-spil køres via Rosetta på Apple Silicon Mac-computere. Dette kan være nødvendigt for nogle spil såsom Death Stranding, der kræver AVX-understøttelse.",
-    "analytics": "Gør det muligt for Heroic at indsamle 100% anonyme brugerdata for at forbedre applikationen. Kræver genstart, før det træder i kraft.",
     "disablePlaytimeSync": "Deaktiverer synkronisering af spilletid med den pågældende butiks servere (i øjeblikket understøttes kun GOG)",
     "download_proton_steam": "Når denne funktion er aktiveret, downloades GE-Proton direkte til Steam-kompatibilitetsværktøjernes mappe i stedet for den standard Heroic-sti. Den bruger den Steam-sti, der er angivet i indstillingen 'Standard Steam-sti' ovenfor.",
     "dxfpslimit": "Indstiller en begrænsning for billedfrekvensen for DirectX-spil (9-12)",
@@ -1024,20 +1023,6 @@
   "emptyLibrary": {
     "noResults": "De valgte filter produceret ingen resultater.",
     "noGames": "Dit Bibliotek er tomt. .<br /><br />Klik <4>her</4> for at logge ind med din Epic, GOG.com eller Amazon konto. Efter, vil dine spil blive vist her på biblioteket. <br /><br />for at bruge spil fra andre kilder, klik <br />for at tilføje dem manuelt."
-  },
-  "analyticsModal": {
-    "disable": "Deaktivér",
-    "enable": "Aktivér",
-    "info": {
-      "pt1": "For at forbedre appen indsamler Heroic 100% anonyme data.",
-      "pt2": "Heroic bruger den åbne platform Plausible Analytics til, at indsamle grundlæggende data: Appversion, operativsystem, tilknyttede butikker og land.",
-      "pt3": "Det vil aldrig indsamle nogen personlige oplysninger, inklusive dit brugernavn, IP-adresse eller e-mail.",
-      "pt4": "Disse data bruges til at give os indsigt i, hvor fokus skal være næste gang, pga. vores begrænsede ressourcer og tilbagemeldinger.",
-      "pt6": "For gennemsigtighed, kan du få vist de data, vi indsamler i Heroic-logfilerne.",
-      "pt7": "Du kan ændre denne indstilling når som helst, i App-Indstillinger.",
-      "pt5": "Plausible Analytics overholder fuldt ud GDPR, CCPA og PECR."
-    },
-    "title": "Send Anonyme Analysedata"
   },
   "wineExplanation": {
     "proton-ge": "GE-Proton er en Proton-variant skabt af Glorious Eggroll. Den er ment til brug sammen med umu-launcheren (standard i Heroic).",

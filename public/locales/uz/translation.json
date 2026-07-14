@@ -394,8 +394,7 @@
     "disablePlaytimeSync": "",
     "WoW64": "",
     "wine-wayland": "",
-    "advertiseAvxForRosetta": "",
-    "analytics": ""
+    "advertiseAvxForRosetta": ""
   },
   "info": {
     "heroic": {
@@ -925,20 +924,6 @@
   "prime-gaming": "Prime Gaming",
   "launch": {
     "options": "Ishga tushirish parametrlari..."
-  },
-  "analyticsModal": {
-    "info": {
-      "pt3": "",
-      "pt5": "",
-      "pt1": "",
-      "pt7": "",
-      "pt6": "",
-      "pt4": "",
-      "pt2": ""
-    },
-    "disable": "",
-    "enable": "",
-    "title": ""
   },
   "winetricks": {
     "no-components": "",

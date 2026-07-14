@@ -349,7 +349,6 @@
     "download_proton_steam": "Med dette skrudd på vil GE-Proton bli lastet ned direkte til mappen med Steam-kompatibilitetsverktøy fremfor den vanlige for Heroic. GE-Proton vil bruke mappen angitt i «Standard Steam-bane»-innstillingen.",
     "wine-hdr": "HDR forbedrer fargene ved å kunne vise lysere lyspunkter og mørkere kontraster. For at HDR skal fungere, må både skjermen og spillet støtte det.",
     "wine-wayland": "Den eksperimentelle Wine-Wayland-driveren lar spill kjøre uten mellomlag med Wayland-visningsprotokollen. Noen spill fungerer ikke med denne driveren.",
-    "analytics": "Lar Heroic samle inn 100% anonyme brukerdata for å hjelpe oss forbedre appen. Appen må startes på nytt før innstillingen gjelder.",
     "WoW64": "Wine WoW64-modusen lar 32-bit Windows-spill kjøre under 64-bit Wine. Å skru det på kan forbedre ytelse, men det kan også forhindre eldre 32-bit-spill i å fungere riktig.",
     "nvidiaprime": {
       "details": "Bruk dedikert grafikkort til å gjengi spill på multi-GPU-systemer. Bare nødvendig på bærbare eller stasjonære gaming-maskiner som bruker en hodeløs GPU for gjengivelse (NVIDIA Optimus, AMD CrossFire)",
@@ -1008,20 +1007,6 @@
       "error": "Steam kunne ikke installeres! Les instruksjonene en gang til og prøv igjen!",
       "success": "Steam for Windows har blitt installert!"
     }
-  },
-  "analyticsModal": {
-    "disable": "Deaktivert",
-    "enable": "Aktiver",
-    "info": {
-      "pt1": "For å forbedre appen samler Heroic inn 100% anonym data.",
-      "pt2": "Heroic bruker Plausible Analytics-plattformen, en plattform med åpen kildekode, for å samle inn grunnleggende data: appversjon, OS, tilkoblede markedsplasser og land.",
-      "pt3": "Det kommer aldri til å samle inn noen private data, herunder brukernavnet ditt, IP-adressen og e-posten din.",
-      "pt4": "Disse dataene brukes for å for å hjelpe oss finne ut av hvor vi skal rette fokuset og ressursene våre og til tilbakemeldinger.",
-      "pt5": "Plausible Analytics er fullstendig kompatibel med Personvernsforordningen (GDPR), CCPA og PECR.",
-      "pt6": "For åpenhets skyld, kan du se dataene vi samler inn i Heroic-loggene.",
-      "pt7": "Du kan endre denne innstillingen når som helst i appinnstillingene."
-    },
-    "title": "Send anynom statistikk"
   },
   "launch": {
     "options": "Startalternativer..."

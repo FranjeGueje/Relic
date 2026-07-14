@@ -654,7 +654,6 @@
     "WoW64": "",
     "wine-wayland": "",
     "advertiseAvxForRosetta": "",
-    "analytics": "",
     "nvidiaprime": {
       "details": "השתמשו בכרטיס גרפי (מאיץ גרפי) ייעודי כדי לרנדר את המשחק במערכות עם כמה כרטיסים גרפיים. נחוץ רק במחשבים ניידים למשחקים או במחשבים שולחניים המשתמשים ב-GPU ללא ראש לעיבוד (NVIDIA Optimus, AMD CrossFire)"
     }
@@ -943,20 +942,6 @@
     "minimize": "",
     "maximize": "",
     "restore": ""
-  },
-  "analyticsModal": {
-    "disable": "בטל",
-    "enable": "הפעל",
-    "info": {
-      "pt3": "",
-      "pt5": "",
-      "pt1": "",
-      "pt7": "",
-      "pt6": "",
-      "pt4": "",
-      "pt2": ""
-    },
-    "title": ""
   },
   "categories-manager": {
     "add": "&הוסף",

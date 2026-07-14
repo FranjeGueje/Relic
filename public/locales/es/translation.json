@@ -350,7 +350,6 @@
     "download_proton_steam": "Si se activa, GE-Proton se descargará directamente en el directorio de herramientas de compatibilidad de Steam en lugar de la ruta por defecto de Heroic. Se usará la ruta de Steam de la configuración 'Ruta por defecto de Steam' más arriba.",
     "wine-hdr": "El HDR mejora los colores proporcionando resaltes más brillantes y contrastes más profundos. Para que el HDR funcione, tanto la pantalla como el juego deben ser compatibles.",
     "wine-wayland": "El driver experimental Wine-Wayland permite a los juegos ejecutarse nativamente usando el protocolo de Wayland. Activarlo puede causar problemas en algunos juegos.",
-    "analytics": "Permite que Heroic recopile datos de uso 100 % anónimos para mejorar la aplicación. Es necesario reiniciar para que surta efecto.",
     "WoW64": "El modo de Wine WoW64 permite que juegos 32-bits de Windows corran en el Wine de 64-bits. Activándolo puede mejorar el rendimiento, pero puede romper juegos 32-bits antiguos.",
     "nvidiaprime": {
       "details": "Utiliza una tarjeta gráfica dedicada para renderizar el juego en sistemas multi-GPU. Sólo es necesario en los portátiles para juegos o en los ordenadores de sobremesa que utilizan una GPU sin cabeza para el renderizado (NVIDIA Optimus, AMD CrossFire)",
@@ -1013,20 +1012,6 @@
       "success": "Steam para Windows de instaló correctamente!",
       "error": "La instalación de Steam falló! Por favor, leer las instrucciones detenidamente y volver a intentar!"
     }
-  },
-  "analyticsModal": {
-    "disable": "Desactivar",
-    "enable": "Activar",
-    "info": {
-      "pt1": "Para mejorar la aplicación, Heroic recopila datos 100% anónimos.",
-      "pt2": "Heroic utiliza la plataforma de código abierto Plausible Analytics para recopilar datos básicos: versión de la aplicación, sistema operativo, tiendas conectadas y país.",
-      "pt3": "Nunca recopilará ninguna información personal, incluido su nombre de usuario, dirección IP o correo electrónico.",
-      "pt4": "Estos datos se utilizan para brindarnos información sobre qué debemos abordar a continuación debido a nuestros recursos limitados y los comentarios de los usuarios.",
-      "pt5": "Plausible Analytics cumple totalmente con GDPR, CCPA y PECR.",
-      "pt6": "Para mayor transparencia, puede ver los datos que recopilamos en los registros de Heroic.",
-      "pt7": "Puede cambiar esta configuración en cualquier momento en la Configuración de la aplicación."
-    },
-    "title": "Enviar analíticas anónimas"
   },
   "launch": {
     "options": "Opciones de arranque..."
