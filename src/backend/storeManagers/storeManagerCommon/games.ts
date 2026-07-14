@@ -7,7 +7,6 @@ import i18next from 'i18next'
 import {
   callRunner,
   getKnownFixesEnvVariables,
-  launchCleanup,
   prepareLaunch,
   prepareWineLaunch,
   runWineCommand,
@@ -155,7 +154,6 @@ export async function launchGame(
     const {
       success: launchPrepSuccess,
       failureReason: launchPrepFailReason,
-      rpcClient,
       gameModeBin,
       steamRuntime
     } = await prepareLaunch(gameSettings, logWriter, gameInfo, isNative)
@@ -172,7 +170,6 @@ export async function launchGame(
 
     if (!launchPrepSuccess) {
       logWriter.logError(['Launch aborted:', launchPrepFailReason])
-      launchCleanup()
       showDialogBoxModalAuto({
         title: i18next.t('box.error.launchAborted', 'Launch aborted'),
         message: launchPrepFailReason!,
@@ -234,7 +231,6 @@ export async function launchGame(
         }
       )
 
-      launchCleanup(rpcClient)
       // TODO: check and revert to previous permissions
       if (isLinux || (isMac && !executable.endsWith('.app'))) {
         await chmod(executable, 0o775)
@@ -259,8 +255,6 @@ export async function launchGame(
         logMessagePrefix: LogPrefix.Backend
       }
     })
-
-    launchCleanup(rpcClient)
 
     return true
   }

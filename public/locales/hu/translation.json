@@ -229,7 +229,6 @@
       "update_game": "Játék frissítése"
     }
   },
-  "docs": "Dokumentáció",
   "download-manager": {
     "install-type": {
       "install": "Telepítés",
@@ -299,7 +298,6 @@
   },
   "help": {
     "amdfsr": "Az AMD FSR segít a képkockasebesség növelésében az alacsonyabb felbontások felskálázásával teljes képernyős módban. A képminőség 5-ről 1-re növekszik, némi teljesítménycsökkenés mellett. Engedélyezése javíthat a teljesítményen.",
-    "custom_themes_path": "Ne használj nem megbízható forrásokból származó CSS-fájlokat. Kétség esetén kérj felülvizsgálatot a Discord csatornánkon.",
     "custom_themes_wiki": "Nézd meg a Wikit az egyéni témák hozzáadásával kapcsolatos további részletekért. Kattints ide.",
     "dxvk": "A DXVK egy Vulkanon alapuló fordítási szoftverréteg a DirectX 9, 10 és 11 játékoknak. Engedélyezése növelheti a kompatibilitást. Okozhat problémákat, különösen a régebbi DirectX játékok esetén.",
     "dxvkfpslimit": "Képkockaszámkorlátot állít be a DXVK-s játékokhoz",
@@ -590,7 +588,6 @@
     "default-steam-path": "A Steam alapértelmezett elérési útja",
     "defaultWinePrefix": "Mappa beállítása az új Wine-környezeteknek",
     "disable_controller": "Játékvezérlős navigáció letiltása a Heroicban",
-    "discordRPC": "Discord Rich Presence engedélyezése",
     "download-no-https": "Játékok letöltése HTTPS nélkül (CDN-ek esetén hasznos, például LanCache esetén)",
     "dxvkfpslimit": "FPS korlátozása (DX9, 10 and 11)",
     "egs-sync": "Szinkronizálás a telepített Epic Gamesszel",
@@ -632,12 +629,10 @@
     "log": {
       "copy-to-clipboard": "Napló tartalmának vágólapra másolása",
       "current-log": "Jelenlegi napló",
-      "instructions": "Csatlakozz a Discordunkhoz és keresd a „#-support” szakaszt. Olvasd el a „Read Me First | Frequently Asked Questions” szálat és kövesd az utasításokat a naplók és a releváns információk megosztásával kapcsolatban.",
       "instructions_title": "Hogyan jelents egy problémát?",
       "last-log": "Utolsó napló",
       "no-file": "Nem található naplófájl",
       "show-in-folder": "Naplófájl megjelenítése mappában",
-      "join-heroic-discord": "Csatlakozz a Discordunkhoz",
       "upload": {
         "actions": "Műveletek",
         "confirm": {
@@ -659,8 +654,7 @@
         "button": "Naplófájl feltöltése",
         "error": {
           "content": "A naplófájl feltöltése sikertelen. Ellenőrizd a Heroic általános naplóit a részletekért.",
-          "title": "A feltöltés sikertelen",
-          "manual_upload": "Kattints a „NAPLÓFÁJL MEGJELENÍTÉSE MAPPÁBAN” gombra, majd töltsd fel a „launch.log” fájlt Discordra vagy bármely online fájlmegosztó szolgáltatásba."
+          "title": "A feltöltés sikertelen"
         },
         "header": "Feltöltött naplófájlok",
         "hours-ago": "Feltöltve: {{hoursAgo, relativetime(hours)}}",
@@ -939,7 +933,6 @@
   },
   "Update Available!": "Frissítés érhető el.",
   "userselector": {
-    "discord": "Discord",
     "logging_out": "Kijelentkezés…",
     "logout": "Kijelentkezés",
     "logout_confirmation": "Biztosan kijelentkezel?",
@@ -1070,8 +1063,6 @@
     "sidebar": {
       "accessibility": "Érd el az akadálymentességi funkciókat az élményed testreszabásához.",
       "accounts": "Kezeld az összekapcsolt áruházi fiókokat (Epic, GOG, Amazon), jelentkezz be vagy ki belőlük.",
-      "community": "Csatlakozz a közösségünkhöz Discordon és támogasd a Heroic fejlesztését.",
-      "docs": "Olvasd el a dokumentációt, hogy segítséget kapj a Heroic használatához.",
       "login": "Jelentkezz be a játékáruház-fiókodba, hogy hozzáférj a könyvtáradhoz.",
       "quit": "Biztonságos kilépés az alkalmazásból.",
       "settings": "Állítsd be a Heroic beállításait, a játékok alapértelmezéseit, tekintsd meg a naplókat, stb.",

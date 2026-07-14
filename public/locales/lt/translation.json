@@ -320,7 +320,6 @@
       "part1": "„Heroic“ ieško „Wine“, „Proton“ ir „CrossOver“ versijų, šiuose aplankuose:",
       "part2": "Kitoks vietoms, naudokite virtualųjį katalogą į vieną iš šių aplankų/-alų"
     },
-    "custom_themes_path": "Nenaudoti „CSS“ failų iš nepatikimų šaltinių. Kai esate abejonėje, klauskite apžiūros mūsų „Discord“ kanale.",
     "steam_path": {
       "info": "Šis kelias leidžia „Heroic“ numatyti kokią „Proton“ versiją „Steam“ naudos, skirta pridedant ne „Steam“ žaidimus į „Steam“."
     },
@@ -486,8 +485,7 @@
         },
         "error": {
           "content": "Nepavyko įkelti žurnalo failo. Patikrinkite bendrąjį „Heroic“ žurnalą dėl išsamumo",
-          "title": "Įkėlimas nepavyko",
-          "manual_upload": "Spustelėkite ant – „RODYTI ŽURNALO FAILĄ APLANKALE“ mygtuko ir įkelkite – „launch.log“ failą rankiniu būdu į „Discord“ ar į bet kokį failų bendrinimo puslapį."
+          "title": "Įkėlimas nepavyko"
         },
         "header": "Įkelti žurnalo failai",
         "hours-ago": "Įkelta {{hoursAgo, relativetime(hours)}}",
@@ -510,12 +508,10 @@
         "nile": "„Amazon“ / „Nile“ žurnalas",
         "zoom": "„Zoom“ žurnalas"
       },
-      "join-heroic-discord": "Prisijunkite prie mūsų „Discord“",
       "show-in-folder": "Rodyti žurnalo failą aplanke/-ale",
       "show-uploads": "Rodyti įkeltus žurnalo failus",
       "instructions_title": "Kaip pranešti apie problemą?",
-      "no-file": "Joks žurnalo failas nebuvo rastas",
-      "instructions": "Prisijunkite prie mūsų „Discord“ ir paieškokite – „#-support“ skyriaus. Peržiūrėkite prisegta – „Read Me First | Frequently Asked Questions“ giją ir sekite instrukcijas kaip bendrinti šiuos žurnalus ir visą susijusią informaciją apie Jūsų problemą."
+      "no-file": "Joks žurnalo failas nebuvo rastas"
     },
     "after-launch-script-path": "Pasirinkti skriptą, kurį vykdyti po žaidimo išjungimo",
     "before-launch-script-path": "Pasirinkti skriptą, kurį vykdyti prieš paleidžiant žaidimą",
@@ -569,7 +565,6 @@
     "disable_controller": "Išjungti/Išgalinti „Heroic“ valdymą naudojant pultelį/valdiklį",
     "enableFSRHack": "Įjungti/Įgalinti „FSR“ nulaužimą („Wine“ versija turi jį palaikyti)",
     "exit-to-tray": "Išeiti į sistemos užduočių juostą",
-    "discordRPC": "Įjungti/Įgalinti išplėstinį „Discord“ veikimo palaikymą",
     "FsrSharpnessStrenght": "„FSR“ ryškumo stiprumas",
     "start-in-tray": "Pradėti minimizuotai",
     "showMetalOverlay": "Rodyti perdangos statistiką",
@@ -811,7 +806,6 @@
     "delete-question": "Tęsiant, visam laikui pašalins šią kategoriją ir atsies ją iš visų žaidimų. Tęsti?",
     "add-new-category": "Pridėti naują kategoriją"
   },
-  "docs": "Dokumentacija",
   "epic": {
     "offline-notification-title": "atsijungęs/-usi",
     "offline-notification-body": "Internetinės paslaugos gali neveikti, nes „Epic Games“ serveriai yra atsijungę!"
@@ -896,7 +890,6 @@
   },
   "userselector": {
     "cancel": "Atšaukti",
-    "discord": "„Discord“",
     "logging_out": "Atsijungiama",
     "logout": "Atsijungti",
     "logout_confirmation": "Ar Jūs tikrai norite atsijungti?",
@@ -999,9 +992,7 @@
         "intro": "Sveiki į – „Heroic“! Ši šoninė juosta sudaro visas naršymo parinktis, siekiant naršyti programą."
       },
       "quit": "Išeikite iš programos saugiai.",
-      "docs": "Persiskaitykite dokumentaciją dėl „Heroic“ naudojimo.",
       "library": "Pasiekite savo žaidimų biblioteką iš skirtingų parduotuvių vienoje vietoje.",
-      "community": "Prisijunkite prie mūsų bendruomenės „Discord“ ir palaikykite „Heroic“ kūrimą.",
       "accessibility": "Pasiekite pasiekiamumo funkcijas, siekiant tinkinti savo patirtį.",
       "wine": "",
       "login": "Prisijunkite prie savo žaidimų parduotuvės/-ių paskyros/-ų, kad pasiektumėte savo biblioteką.",

@@ -112,18 +112,10 @@ const SidebarTour: React.FC = () => {
       position
     },
     {
-      element: '[data-tour="sidebar-docs"]',
-      intro: t(
-        'tour.sidebar.docs',
-        'Read documentation for help with using Relic.'
-      ),
-      position
-    },
-    {
       element: '[data-tour="sidebar-community"]',
       intro: t(
         'tour.sidebar.community',
-        "Join our community on Discord and support Relic's development."
+        "Join our community and support Relic's development."
       ),
       position
     },

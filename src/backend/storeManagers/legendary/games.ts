@@ -35,7 +35,6 @@ import {
   setupEnvVars,
   setupWrapperEnvVars,
   setupWrappers,
-  launchCleanup,
   getKnownFixesEnvVariables,
   getWinePath
 } from '../../launcher'
@@ -888,14 +887,12 @@ export default class LegendaryGame implements Game {
     const {
       success: launchPrepSuccess,
       failureReason: launchPrepFailReason,
-      rpcClient,
       gameModeBin,
       steamRuntime,
       offlineMode
     } = await prepareLaunch(gameSettings, logWriter, gameInfo, this.isNative())
     if (!launchPrepSuccess) {
       logWriter.logError(['Launch aborted:', launchPrepFailReason])
-      launchCleanup()
       showDialogBoxModalAuto({
         title: t('box.error.launchAborted', 'Launch aborted'),
         message: launchPrepFailReason!,
@@ -1027,8 +1024,6 @@ export default class LegendaryGame implements Game {
         logWriters: gameSettings.verboseLogs ? [logWriter] : []
       }
     )
-
-    launchCleanup(rpcClient)
 
     return !error
   }

@@ -211,7 +211,6 @@
     "title": "",
     "noDlcFound": ""
   },
-  "docs": "การบันทึกข้อมูล",
   "download-manager": {
     "install-type": {
       "install": "ติดตั้ง",
@@ -469,7 +468,6 @@
         },
         "button": ""
       },
-      "join-heroic-discord": "",
       "descriptiveNames": {
         "legendary": "",
         "nile": "",
@@ -578,7 +576,6 @@
     "steamruntime": "",
     "disableUMU": "",
     "defaultWinePrefix": "",
-    "discordRPC": "",
     "gamemode": "",
     "custom_css": {
       "warning": ""
@@ -766,9 +763,7 @@
         "intro": ""
       },
       "quit": "",
-      "docs": "",
       "library": "",
-      "community": "",
       "accessibility": "",
       "wine": "",
       "login": "",
@@ -886,7 +881,6 @@
     "manageaccounts": "",
     "logout_confirmation": "",
     "quitMessage": "",
-    "discord": "",
     "logging_out": "",
     "quit": ""
   },

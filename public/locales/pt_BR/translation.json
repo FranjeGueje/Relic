@@ -229,7 +229,6 @@
       "update_game": "Atualizar jogo"
     }
   },
-  "docs": "Documentação",
   "download-manager": {
     "install-type": {
       "install": "Instalação",
@@ -591,7 +590,6 @@
     "default-steam-path": "Caminho padrão do Steam",
     "defaultWinePrefix": "Pasta padrão para novos prefixos Wine",
     "disable_controller": "Desabilitar navegação por controle no Heroic",
-    "discordRPC": "Habilitar o Discord Rich Presence",
     "download-no-https": "Baixar jogos sem HTTPS (útil para CDNs, por exemplo, LanCache)",
     "dxvkfpslimit": "Limitar FPS (DX9, 10 e 11)",
     "egs-sync": "Sincronizar com a Epic Games",
@@ -633,12 +631,10 @@
     "log": {
       "copy-to-clipboard": "Copiar log para a área de transferência",
       "current-log": "Log atual",
-      "instructions": "Acesse o nosso Discord e procure pela seção \"#-support\". Leia a thread fixada \"Read Me First | Frequently Asked Questions\" e siga as instruções (Em Inglês) para compartilhar o conteúdo do Log e qualquer informação relevante sobre seu problema.",
       "instructions_title": "Como reportar um problema?",
       "last-log": "Último log",
       "no-file": "Arquivo de log não encontrado",
       "show-in-folder": "Mostrar arquivo de log na pasta",
-      "join-heroic-discord": "Junte-se ao nosso Discord",
       "upload": {
         "actions": "Ações",
         "button": "Enviar arquivo de registro",
@@ -653,8 +649,7 @@
         },
         "error": {
           "title": "Falha ao enviar",
-          "content": "Falha ao enviar arquivo de registro. Verifique o registro geral Heroic para obter detalhes",
-          "manual_upload": "Clique no botão \"Mostrar arquivo de log na pasta\" e envie manualmente o arquivo \"launch.log\" para o Discord ou qualquer serviço online de compartilhamento de arquivos."
+          "content": "Falha ao enviar arquivo de registro. Verifique o registro geral Heroic para obter detalhes"
         },
         "header": "Arquivos de registro enviados",
         "no-files": "Nenhum arquivo de registro foi carregado",
@@ -941,7 +936,6 @@
   },
   "Update Available!": "Atualização disponível!",
   "userselector": {
-    "discord": "Discord",
     "logging_out": "Desconectando",
     "logout": "Desconectar",
     "logout_confirmation": "Tem certeza que deseja desconectar da sua conta?",
@@ -1071,12 +1065,10 @@
     },
     "sidebar": {
       "stores": "Navegue e faça a compra de jogos em diferentes lojas incluindo Epic, GOG, e Amazon.",
-      "docs": "Leia a documentação para obter ajuda sobre como usar o Heroic.",
       "quit": "Sair do aplicativo de maneira segura.",
       "accessibility": "Acesse os recursos de acessibilidade para customizar a sua experiência.",
       "downloads": "Rastreie e gerencie os downloads e as instalações de seus jogos.",
       "accounts": "Gerencie as suas contas conectadas de lojas (Epic, GOG, Amazon), fazer o login ou sair de uma das contas.",
-      "community": "Junte-se à nossa comunidade no Discord e apoie o desenvolvimento do Heroic.",
       "library": "Acesse a sua biblioteca de jogos de diferentes lojas em um único lugar.",
       "login": "Faça o login em suas contas de lojas de jogos para acessar a sua biblioteca.",
       "settings": "Ajuste as configurações do Heroic, padrões dos jogos, verifique logs e mais.",

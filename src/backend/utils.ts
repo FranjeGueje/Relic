@@ -2,7 +2,6 @@ import { callAllAbortControllers } from './utils/aborthandler/aborthandler'
 import {
   Runner,
   WineInstallation,
-  RpcClient,
   SteamRuntime,
   Release,
   GameInfo,
@@ -42,7 +41,6 @@ import {
   libraryStore as nileLibraryStore
 } from './storeManagers/nile/electronStores'
 import * as fileSize from 'filesize'
-import { Client as discordClient } from '@xhayper/discord-rpc'
 import { notify, showDialogBoxModalAuto } from './dialog/dialog'
 import { getMainWindow } from './main_window'
 import { sendFrontendMessage } from './ipc'
@@ -602,44 +600,6 @@ async function getSteamRuntime(
     LogPrefix.Backend
   )
   return allAvailableRuntimes.pop()!
-}
-
-function constructAndUpdateRPC(gameInfo: GameInfo): RpcClient {
-  const client = new discordClient({
-    clientId: '852942976564723722'
-  })
-
-  const versionText = `Relic ${app.getVersion()}`
-
-  const image = gameInfo.art_icon || gameInfo.art_square
-  const title = gameInfo.title
-
-  const overrides = image.startsWith('http')
-    ? {
-        largeImageKey: image,
-        smallImageKey: 'icon_new',
-        largeImageText: title,
-        smallImageText: versionText
-      }
-    : {
-        largeImageKey: 'icon_new',
-        largeImageText: versionText
-      }
-
-  client.on('ready', async () => {
-    await client.user?.setActivity({
-      name: title,
-      type: 0,
-      startTimestamp: Date.now(),
-      state: 'via Relic on ' + getFormattedOsName(),
-      statusDisplayType: 0, // Use game title for name plate
-      ...overrides
-    })
-  })
-
-  client.login()
-  logInfo('Started Discord Rich Presence', LogPrefix.Backend)
-  return client
 }
 
 const specialCharactersRegex =
@@ -1686,7 +1646,6 @@ export {
   getNileBin,
   formatEpicStoreUrl,
   getSteamRuntime,
-  constructAndUpdateRPC,
   quoteIfNecessary,
   removeQuoteIfNecessary,
   detectVCRedist,

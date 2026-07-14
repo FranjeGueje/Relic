@@ -221,7 +221,6 @@
       "space": "Размак"
     }
   },
-  "docs": "Документација",
   "download-manager": {
     "install-type": {
       "update": "Ажурирај",
@@ -560,7 +559,6 @@
         "minutes-ago": "",
         "button": ""
       },
-      "join-heroic-discord": "",
       "descriptiveNames": {
         "legendary": "",
         "nile": "",
@@ -593,7 +591,6 @@
     "checkForUpdatesOnStartup": "Проверите херојска ажурирања при покретању",
     "custom_themes_path": "Путања прилагођених тема",
     "customWineProton": "Цустом Вине/Протон Патхс",
-    "discordRPC": "Омогући Дисцорд Рицх Пресенце",
     "enableFSRHack": "Омогућите ФСР Хацк (Вине верзија треба да га подржава)",
     "esync": "Омогућите Есинц",
     "exit-to-tray": "Изађите у системску палету",
@@ -873,7 +870,6 @@
     "console": ""
   },
   "userselector": {
-    "discord": "Дисцорд",
     "logging_out": "Одјављивања",
     "logout": "Одјавити се",
     "logout_confirmation": "Да ли сте сигурни да желите да се одјавите?",
@@ -990,9 +986,7 @@
         "intro": ""
       },
       "quit": "",
-      "docs": "",
       "library": "",
-      "community": "",
       "accessibility": "",
       "wine": "",
       "login": "",

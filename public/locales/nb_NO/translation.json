@@ -229,7 +229,6 @@
       "update_game": "Oppdater spillet"
     }
   },
-  "docs": "Dokumentasjon",
   "download-manager": {
     "install-type": {
       "install": "Install",
@@ -299,7 +298,6 @@
   },
   "help": {
     "amdfsr": "AMDs FSR bidrar til å øke bildefrekvensen ved å oppskalere lavere oppløsninger i fullskjermmodus. Bildekvaliteten øker fra 5 til 1 på bekostning av et lite ytelsestreff. Aktivering kan forbedre ytelsen.",
-    "custom_themes_path": "Ikke bruk CSS-filer fra kilder du ikke stoler på- Hvis du er i tvil, spør om hjelp i en av Discord-kanalene våre.",
     "custom_themes_wiki": "Sjekk wikien vår for mer info om hvordan man legger til egendefinerte tema. Klikk her.",
     "dxvk": "DXVK er et Vulkan-basert translasjonslag for DirectX 9, 10 og 11-spill. Aktivering kan forbedre kompatibiliteten. Kan forårsake problemer spesielt for eldre DirectX-spill.",
     "dxvkfpslimit": "Setter en maksgrense for bildehastighet i DXVK-spill",
@@ -590,7 +588,6 @@
     "default-steam-path": "Standard Steam-bane",
     "defaultWinePrefix": "Angi mappe for nye Wine-prefikser",
     "disable_controller": "Deaktiver kontrollernavigasjon av Heroic",
-    "discordRPC": "Aktiver Discord Rich Presence",
     "download-no-https": "Last ned spill uten HTTPS (nyttig for CDN-er, f.eks. LanCache)",
     "dxvkfpslimit": "Begrens bildehastighet (DX9, 10 og 11)",
     "egs-sync": "Synkroniser med installerte episke spill",
@@ -632,7 +629,6 @@
     "log": {
       "copy-to-clipboard": "Kopier logginnhold til utklippstavlen",
       "current-log": "Gjeldende logg",
-      "instructions": "Bli med i vår Discord og se etter kanalen som matcher operativsystemet ditt. Del innholdet i loggene som vises her, og inkluder en tydelig beskrivelse av problemet med relevant informasjon og detaljer.",
       "instructions_title": "Hvordan rapportere et problem?",
       "last-log": "Siste logg",
       "no-file": "Ingen loggfil funnet",
@@ -641,8 +637,7 @@
         "actions": "Action",
         "error": {
           "content": "Klarte ikke å laste opp loggfilen. Sjekk Heroic sin generelle logg for detaljer",
-          "title": "Opplasting feilet",
-          "manual_upload": "Klikk «VIS LOGGFIL I MAPPE»-knappen og last opp «launch.log»-filen manuelt til Discord eller en annen fildelingstjeneste."
+          "title": "Opplasting feilet"
         },
         "header": "Lastet opp loggfiler",
         "uploading": {
@@ -674,8 +669,7 @@
         "gog": "GOG-logg",
         "zoom": "Zoom-logg"
       },
-      "show-uploads": "Vis opplastede loggfiler",
-      "join-heroic-discord": "Bli med i vår discord"
+      "show-uploads": "Vis opplastede loggfiler"
     },
     "manualsync": {
       "download": "Last ned",
@@ -931,7 +925,6 @@
   },
   "Update Available!": "Ny versjon tilgjengelig!",
   "userselector": {
-    "discord": "Discord",
     "logging_out": "Logger ut",
     "logout": "Logg ut",
     "logout_confirmation": "Er du sikker på at du vil logge ut?",
@@ -1064,9 +1057,7 @@
     "sidebar": {
       "accessibility": "Få tilgang til tilgjengelighetsfunksjoner for å tilpasse opplevelsen din.",
       "accounts": "Administrer de tilkoblede butikk-kontoene dine (Epic, GOG, Amazon), logg ut eller logg på dem.",
-      "community": "Bli med i fellesskapet vårt på Discord og støtt Heroic sin utvikling.",
       "library": "Få tilgang til spillbiblioteket ditt fra ulike butikker på ett sted.",
-      "docs": "Les dokumentasjonen for å få hjelp til å bruke Heroic.",
       "downloads": "Spor og administrer spillnedlastinger og installasjoner.",
       "login": "Logg på spillbutikk-kontoene dine for å få tilgang til biblioteket ditt.",
       "quit": "Avslutt applikasjonen trygt.",

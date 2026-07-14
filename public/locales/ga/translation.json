@@ -225,7 +225,6 @@
       "settingsGame": "Taispeáin gach socrú le haghaidh cluiche.",
       "wineManager": "Suiteáil leaganacha éagsúla de Wine, Proton, Crossover, etc."
     },
-    "custom_themes_path": "Ná húsáid comhaid CSS ó fhoinsí neamhiontaofa. Má tá amhras ort, iarr athbhreithniú ar ár gcainéal Discord.",
     "custom_themes_wiki": "Seiceáil an Vicí le haghaidh tuilleadh sonraí maidir le téamaí saincheaptha a chur leis. Cliceáil anseo.",
     "disable_logs": "Cuir an bosca seiceála seo AR SIÚL chun an chuid is mó de na scríobh chuig comhaid loga a dhíchumasú (logáiltear faisnéis ríthábhachtach i gcónaí). Déan cinnte an socrú seo a mhúchadh sula dtuairiscíonn tú aon fhadhb.",
     "disablePlaytimeSync": "Díchumasaíonn sé sioncrónú ama súgartha le freastalaithe an tsiopa áirithe (ní thacaítear ach le GOG faoi láthair)",
@@ -352,7 +351,6 @@
     "disable_logs": "Díchumasaigh Logaí",
     "disablePlaytimeSync": "Díchumasaigh sioncrónú ama súgartha",
     "disableUMU": "Díchumasaigh umu",
-    "discordRPC": "Cumasaigh Láithreacht Shaibhir Discord",
     "download-no-https": "Íoslódáil cluichí gan HTTPS (úsáideach do CDNanna m.sh. LanCache)",
     "download-proton-steam": "Íoslódáil GE-Proton chuig eolaire Steam",
     "dxfpslimit": "Teorainn a chur le FPS Cluichí DirectX",
@@ -390,9 +388,7 @@
         "nile": "Log Amazon / Níle",
         "zoom": "Log súmáil"
       },
-      "instructions": "Bí linn inár Discord agus féach ar an rannóg \"#-support\". Léigh an snáithe bioráilte \"Léigh Mé Ar dtús | Ceisteanna Coitianta\" agus lean na treoracha chun na logaí seo agus aon fhaisnéis ábhartha faoi do fhadhb a roinnt.",
       "instructions_title": "Conas fadhb a thuairisciú?",
-      "join-heroic-discord": "Bí linn inár Discord",
       "no-file": "Níor aimsíodh aon chomhad loga",
       "show-in-folder": "Taispeáin comhad loga sa fhillteán",
       "show-uploads": "Taispeáin comhaid loga uaslódáilte",
@@ -410,8 +406,7 @@
         },
         "error": {
           "content": "Theip ar an gcomhad loga a uaslódáil. Seiceáil log ginearálta Heroic le haghaidh sonraí",
-          "title": "Theip ar an uaslódáil",
-          "manual_upload": "Cliceáil an cnaipe \"TAISPEÁIN AN COMHAD LOGÁLA SA FHILLTEÁN\" agus uaslódáil an comhad \"launch.log\" de láimh chuig Discord nó aon sheirbhís comhroinnte comhad ar líne."
+          "title": "Theip ar an uaslódáil"
         },
         "header": "Comhaid loga uaslódáilte",
         "hours-ago": "Uaslódáilte {{hoursAgo, relativetime(hours)}}",
@@ -536,7 +531,6 @@
     "size": "Méid",
     "title": "Teideal"
   },
-  "docs": "Doiciméadú",
   "download-manager": {
     "ETA": "Am measta",
     "install-type": {
@@ -953,8 +947,6 @@
     "sidebar": {
       "accessibility": "Rochtain a fháil ar ghnéithe inrochtaineachta chun do thaithí a shaincheapadh.",
       "accounts": "Bainistigh do chuntais siopa nasctha (Epic, GOG, Amazon), logáil amach nó logáil isteach iontu.",
-      "community": "Bí linn inár bpobal ar Discord agus tabhair tacaíocht do fhorbairt Heroic.",
-      "docs": "Léigh an doiciméadú le haghaidh cabhrach maidir le Heroic a úsáid.",
       "downloads": "Rianaigh agus bainistigh d’íoslódálacha agus do shuiteálacha cluichí.",
       "library": "Rochtain a fháil ar do leabharlann cluichí ó shiopaí éagsúla in aon áit amháin.",
       "login": "Logáil isteach i do chuntais siopa cluichí chun rochtain a fháil ar do leabharlann.",
@@ -983,7 +975,6 @@
   "Update Available!": "Nuashonrú ar Fáil!",
   "userselector": {
     "cancel": "Cealaigh",
-    "discord": "Discord",
     "logging_out": "Ag logáil amach",
     "logout": "Logáil amach",
     "logout_confirmation": "An bhfuil tú cinnte gur mian leat logáil amach?",

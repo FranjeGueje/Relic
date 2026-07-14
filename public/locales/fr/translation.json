@@ -229,7 +229,6 @@
       "update_game": "Mettre à jour le jeu"
     }
   },
-  "docs": "Documentation",
   "download-manager": {
     "install-type": {
       "install": "Installation",
@@ -300,7 +299,6 @@
   },
   "help": {
     "amdfsr": "Le FSR d'AMD aide à améliorer le taux de rafraîchissement en agrandissant les résolutions basses en mode plein écran. La qualité d'image augmente de 5 à 1 au prix d'une légère baisse de performance. L'activer peut améliorer les performances.",
-    "custom_themes_path": "N'utilisez pas de fichiers CSS provenant de sources inconnues. En cas de doute, demandez un avis sur notre canal Discord.",
     "custom_themes_wiki": "Consultez le Wiki pour accéder à plus d'informations concernant les thèmes personnalisés. Cliquez ici.",
     "dxvk": "DXVK est une interface de compatibilité basée sur Vulkan pour les jeux nécessitant DirectX 9, 10 et 11. L'activer pourrait améliorer la compatibilité. Peut causer des problèmes, en particulier pour des jeux utilisant des versions de DirectX plus anciennes.",
     "dxvkfpslimit": "Définir un plafond de fréquences d'images pour les jeux DXVK",
@@ -589,7 +587,6 @@
     "default-steam-path": "Répertoire de Steam par défaut",
     "defaultWinePrefix": "Répertoire des nouveaux préfixes Wine",
     "disable_controller": "Désactiver la navigation à la manette",
-    "discordRPC": "Activer le mode « Présence Enrichie » pour Discord",
     "download-no-https": "Télécharger les jeux sans utiliser HTTPS (utile pour CDNs e.g. LanCache)",
     "dxvkfpslimit": "Limiter le nombre d'images par secondes (DX9, 10 et 11)",
     "egs-sync": "Synchroniser avec l'installation d'Epic Games",
@@ -631,12 +628,10 @@
     "log": {
       "copy-to-clipboard": "Copier le contenu du rapport dans le presse-papier",
       "current-log": "Log actuel",
-      "instructions": "Rejoignez notre Discord et recherchez la section \"#-support\". Lisez le fil épinglé \"Read Me First | Frequently Asked Questions\" et suivez les instructions pour partager ces rapports d'événements et toute information pertinente concernant votre problème.",
       "instructions_title": "Comment signaler un problème ?",
       "last-log": "Dernier log",
       "no-file": "Aucun rapport de fonctionnement n'a été trouvé",
       "show-in-folder": "Montrer le rapport de fonctionnement dans le dossier",
-      "join-heroic-discord": "Rejoignez notre serveur Discord",
       "upload": {
         "actions": "Actions",
         "button": "Envoyer le rapport",
@@ -651,8 +646,7 @@
         },
         "error": {
           "content": "L'envoi du rapport a échoué. Consultez le rapport d'événements général pour plus de détails",
-          "title": "Envoi échoué",
-          "manual_upload": "Cliquez sur le bouton « AFFICHER LE RAPPORT DANS LE DOSSIER » et téléversez le fichier « launch.log » manuellement sur Discord ou n'importe quel autre service de partage de fichiers."
+          "title": "Envoi échoué"
         },
         "header": "Rapports envoyés",
         "no-files": "Aucun rapport n'a été envoyé",
@@ -941,7 +935,6 @@
   },
   "Update Available!": "Mise à jour disponible !",
   "userselector": {
-    "discord": "Discord",
     "logging_out": "Déconnexion en cours",
     "logout": "Se déconnecter",
     "logout_confirmation": "Êtes-vous certain(e) de vouloir vous déconnecter ?",
@@ -1074,7 +1067,6 @@
     "sidebar": {
       "accessibility": "Accédez aux fonctions d'accessibilité pour personnaliser votre expérience.",
       "accounts": "Supervisez vos comptes connectés (GOG, Epic, Amazon), déconnectez-vous ou connectez-vous y.",
-      "community": "Rejoignez notre communauté sur Discord et soutenez le développement d'Heroic.",
       "downloads": "Suivez et gérez le téléchargement et l'installation de vos jeux.",
       "library": "Accédez à votre ludothèque éparse depuis un seul endroit.",
       "login": "Connectez-vous au compte de votre boutique pour accéder à votre ludothèque.",
@@ -1086,8 +1078,7 @@
       "stores": "Parcourez les différentes boutiques et achetez des jeux chez GOG, Epic ou Amazon.",
       "version": "Vérifiez la version actuelle d'Heroic, cliquez dessus pour consulter les dernier changements et accédez à cette visite guidée depuis le bouton d'aide.",
       "wine": "Supervisez ou téléchargez de nouvelles versions de Wine/Proton/GPTK pour exécuter des jeux Windows sur Linux ou macOS.",
-      "quit": "Quittez l'application de manière sûre.",
-      "docs": "Lisez la documentation pour en apprendre plus sur l'utilisation d'Heroic."
+      "quit": "Quittez l'application de manière sûre."
     },
     "skip": "Passer",
     "startTour": "Débuter la visite guidée"

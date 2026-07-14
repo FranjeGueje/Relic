@@ -47,7 +47,6 @@ import { GOGUser } from './user'
 import {
   getKnownFixesEnvVariables,
   getWinePath,
-  launchCleanup,
   prepareLaunch,
   prepareWineLaunch,
   runWineCommand,
@@ -536,13 +535,11 @@ export default class GOGGame implements Game {
     const {
       success: launchPrepSuccess,
       failureReason: launchPrepFailReason,
-      rpcClient,
       gameModeBin,
       steamRuntime
     } = await prepareLaunch(gameSettings, logWriter, gameInfo, this.isNative())
     if (!launchPrepSuccess) {
       logWriter.logError(['Launch aborted:', launchPrepFailReason])
-      launchCleanup()
       showDialogBoxModalAuto({
         title: t('box.error.launchAborted', 'Launch aborted'),
         message: launchPrepFailReason!,
@@ -756,8 +753,6 @@ export default class GOGGame implements Game {
       logInfo(`Killing Comet!`, LogPrefix.Gog)
       child.kill()
     }
-    launchCleanup(rpcClient)
-
     if (abort) {
       return true
     }

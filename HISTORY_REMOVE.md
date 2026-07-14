@@ -38,3 +38,22 @@
 - Archivos systeminfo Windows eliminados: `osInfo/windows.ts`, `memory/windows.ts`, `gpu/windows.ts`, `filesystem/windows.ts`, `filesystem/__tests__/windows.test.ts`
 - Índices simplificados: `osInfo/index.ts`, `memory/index.ts`, `gpu/index.ts`, `filesystem/index.ts`
 - `if (isWindows)` en `main.ts` eliminado
+
+## Kofi
+- URL `kofiPage` eliminada de `urls.ts`
+- `openKofiPage` eliminado de IPC, preload, backend, y sidebar
+- Botón Ko-fi eliminado de la sidebar (`faCoffee` import removido)
+- Badge Ko-fi eliminado de `README.md`
+- Enlaces Ko-fi eliminados de `Support.md`, flatpak template, y `snap/snapcraft.yaml`
+
+## Discord
+- Dependencia `@xhayper/discord-rpc` eliminada de `package.json`
+- Función `constructAndUpdateRPC` eliminada de `backend/utils.ts`
+- Componente `DiscordRPC.tsx` eliminado
+- `rpcClient`/`launchCleanup` eliminados de `launcher.ts` y todos los storeManagers
+- Interfaz `RpcClient` eliminada de `common/types.ts`
+- `discordRPC` eliminado de settings
+- URL `discordLink` y función `openDiscordLink` eliminados de IPC/preload/backend/sidebar/LogSettings
+- Badges Discord eliminados de `README.md`, flatpak template, `snap/snapcraft.yaml`
+- `Discord` mock renombrado en `nonesteamgame.test.ts`
+- Menciones a Discord eliminadas de traducciones (40 archivos), SidebarTour, Nile setup, LogFileUploadDialog, LogSettings, electron_store.ts

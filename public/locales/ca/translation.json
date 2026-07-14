@@ -229,7 +229,6 @@
       "update_game": "Actualitza el joc"
     }
   },
-  "docs": "Documentació",
   "download-manager": {
     "install-type": {
       "install": "Instal·la",
@@ -300,7 +299,6 @@
   },
   "help": {
     "amdfsr": "L'FSR d'AMD ajuda a augmentar els fotogrames per segon emprant resolucions més baixes en el mode de pantalla completa i després escalant-les. La qualitat d'imatge augmenta de 5 a 1 a costa d'un petit increment de rendiment. Si s'activa, podria millorar el rendiment.",
-    "custom_themes_path": "No facis servir fitxers CSS de fonts poc fiables. Si tens cap dubte, demana en el nostre canal de Discord que el revisin.",
     "custom_themes_wiki": "Llegeix la Wiki per a més detalls sobre com afegir temes personalitzats. Fes clic aquí.",
     "dxvk": "DXVK és una capa de traducció basada en Vulkan per a jocs que emprin DirectX 9, 10 i 11. Si s'activa, podria millorar la compatibilitat. Pot causar problemes, especialment per als jocs que facin servir versions del DirectX més antigues.",
     "dxvkfpslimit": "Estableix un límit als FPS per als jocs DXVK",
@@ -591,7 +589,6 @@
     "default-steam-path": "Ruta predefinida del Steam",
     "defaultWinePrefix": "Directori de prefixos Wine nous",
     "disable_controller": "Desactiva la navegació de l'Heroic amb el controlador",
-    "discordRPC": "Activa la Discord Rich Presence",
     "download-no-https": "Baixa jocs sense HTTPS (útil per a CDNs com ara LanCache)",
     "dxvkfpslimit": "Límit de FPS (DX9, 10 i 11)",
     "egs-sync": "Sincronitza amb l'Epic Games instal·lat",
@@ -633,12 +630,10 @@
     "log": {
       "copy-to-clipboard": "Copia el registre al porta-retalls",
       "current-log": "Registre actual",
-      "instructions": "Uneix-te al nostre canal de Discord i cerca la secció «#-support». Llegeix el fil fixat «Read Me First | Frequently Asked Questions» i segueix les instruccions per a compartir els registres i qualsevol informació rellevant sobre el teu problema.",
       "instructions_title": "Com informar d'un problema",
       "last-log": "Últim registre",
       "no-file": "No s'ha trobat cap registre",
       "show-in-folder": "Obre la carpeta del registre",
-      "join-heroic-discord": "Uneix-te al nostre Discord",
       "upload": {
         "actions": "Accions",
         "button": "Puja el fitxer de registre",
@@ -653,8 +648,7 @@
         },
         "error": {
           "content": "No s'ha pogut pujar el fitxer de registre. Comprova el registre general de l'Heroic per a obtenir més detalls.",
-          "title": "La pujada ha fallat",
-          "manual_upload": "Fes clic al botó «OBRE LA CARPETA DEL REGISTRE» i puja el fitxer «launch.log» de manera manual a Discord o a altre servei de compartició de fitxers."
+          "title": "La pujada ha fallat"
         },
         "header": "S'han pujat els fitxers de registre",
         "hours-ago": "S'ha pujat fa {{hoursAgo, relativetime(hours)}}",
@@ -934,7 +928,6 @@
   },
   "Update Available!": "Hi ha una actualització disponible",
   "userselector": {
-    "discord": "Discord",
     "logging_out": "Es tanca la connexió",
     "logout": "Tanca la sessió",
     "logout_confirmation": "Segur que vols tancar la sessió?",
@@ -1067,10 +1060,8 @@
     "sidebar": {
       "accessibility": "Accediu a funcions d'accessibilitat per a personalitzar l'experiència.",
       "accounts": "Gestiona els diversos comptes de botigues (Epic, GOG, Amazon) i inicia o tanca'n la sessió.",
-      "community": "Uneix-te a la nostra comunitat de Discord i ajuda amb el desenvolupament de l'Heroic.",
       "library": "Accediu a la vostra biblioteca de jocs de botigues diferents des d'un sol lloc.",
       "login": "Inicia la sessió als comptes de les teves botigues de jocs per a accedir a la biblioteca de jocs.",
-      "docs": "Llegiu la documentació d'ajuda de l'ús de l'Heroic.",
       "downloads": "Gestiona i comprova les baixades i instal·lacions de jocs.",
       "quit": "Sortiu de l'aplicació de manera segura.",
       "settings": "Configura les opcions de l'Heroic, les preferències dels jocs i comprova els registres, entre d'altres.",

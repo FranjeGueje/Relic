@@ -221,7 +221,6 @@
       "update_game": "게임 업데이트"
     }
   },
-  "docs": "문서",
   "download-manager": {
     "install-type": {
       "install": "설치",
@@ -580,7 +579,6 @@
     "default-steam-path": "기본 스팀 경로",
     "defaultWinePrefix": "새 와인 설치 경로 폴더 설정",
     "disable_controller": "컨트롤러를 이용한 Heroic 탐색 비활성화",
-    "discordRPC": "디스코드 Rich Presence 활성화",
     "download-no-https": "HTTPS를 사용하지 않고 게임 다운로드 (예를 들어 LanCache와 같은 CDN에 유용)",
     "dxvkfpslimit": "FPS 제한 (DX9, 10, 11)",
     "egs-sync": "설치된 에픽 게임즈와 동기화",
@@ -664,8 +662,7 @@
         "nile": "아마존 / 나일 로그",
         "zoom": ""
       },
-      "show-uploads": "업로드된 로그 파일 표시",
-      "join-heroic-discord": "우리 디스코드 참가"
+      "show-uploads": "업로드된 로그 파일 표시"
     },
     "manualsync": {
       "download": "다운로드",
@@ -919,7 +916,6 @@
   },
   "Update Available!": "사용 가능한 업데이트가 있습니다!",
   "userselector": {
-    "discord": "디스코드",
     "logging_out": "로그아웃 중",
     "logout": "로그아웃",
     "logout_confirmation": "정말 로그아웃 하겠습니까?",
@@ -1031,9 +1027,7 @@
         "intro": ""
       },
       "quit": "",
-      "docs": "",
       "library": "",
-      "community": "",
       "accessibility": "",
       "wine": "",
       "login": "",

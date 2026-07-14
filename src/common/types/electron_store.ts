@@ -128,7 +128,7 @@ export type StoreOptions<T extends Record<string, unknown>> = Store.Options<T>
 export type ValidStoreName = keyof StoreStructure
 
 // This is `T`, *except* for when `T` is `unknown`; it then is `never`
-// Credits for this goes to michael#7468 on the TS Community Discord server
+// Credits for this goes to michael#7468 on the TS Community server
 export type UnknownGuard<T> = unknown extends T
   ? [T] extends [null]
     ? T

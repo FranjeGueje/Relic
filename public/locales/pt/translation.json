@@ -229,7 +229,6 @@
       "update_game": "Atualizar o jogo"
     }
   },
-  "docs": "Documentação",
   "download-manager": {
     "install-type": {
       "install": "Instalar",
@@ -299,7 +298,6 @@
   },
   "help": {
     "amdfsr": "O FSR da AMD ajuda a impulsionar os fotogramas por segundo (FPS) ao aumentar a escala de resoluções mais baixas (upscaling) no modo de Ecrã Inteiro. A qualidade da imagem aumenta de 5 a 1 com um pequeno custo a nível do desempenho. O desempenho pode aumentar se ativar esta opção.",
-    "custom_themes_path": "Não use ficheiros CSS de fontes não confiáveis. Em caso de dúvida, peça uma revisão no nosso canal no Discord.",
     "custom_themes_wiki": "Consulte a Wiki para obter mais informações sobre como adicionar temas personalizados. Clique aqui.",
     "dxvk": "O DXVK é uma camada de tradução baseada no Vulkan para jogos DirectX 9, 10 e 11. A compatibilidade pode aumentar se ativar esta opção. Pode causar problemas especialmente em jogos DirectX mais antigos.",
     "dxvkfpslimit": "Define um limite de fotogramas por segundo (FPS) para jogos DXVK",
@@ -590,7 +588,6 @@
     "default-steam-path": "Caminho do Steam Padrão",
     "defaultWinePrefix": "Selecionar a Pasta para Prefixos do Wine novos",
     "disable_controller": "Desativar a navegação do Heroic ao usar um comando",
-    "discordRPC": "Ativar o Discord Rich Presence",
     "download-no-https": "Transferir jogos sem HTTPS (útil para CDNs, exemplo: LanCache)",
     "dxvkfpslimit": "Limit FPS (DX9, 10 and 11)",
     "egs-sync": "Sincronizar com a Loja Instalada Epic Games",
@@ -632,12 +629,10 @@
     "log": {
       "copy-to-clipboard": "Copy log content to clipboard",
       "current-log": "Current Log",
-      "instructions": "Junte-se ao nosso Discord e procure pela secção \"#-support\". Consulte o tópico afixado \"Read Me First | Frequently Asked Questions\" e siga as instruções para partilhar estes registos de eventos e qualquer outra informação de relevância, acerca do seu problema.",
       "instructions_title": "Como reportar um problema?",
       "last-log": "Last Log",
       "no-file": "Não foi encontrado nenhum ficheiro de registo de eventos",
       "show-in-folder": "Mostrar o ficheiro de registo de eventos na pasta",
-      "join-heroic-discord": "Junte-se ao nosso Discord",
       "upload": {
         "actions": "Ações",
         "minutes-ago": "Enviado há {{minutesAgo, relativetime(minutes)}}",
@@ -649,8 +644,7 @@
         },
         "error": {
           "title": "O envio falhou",
-          "content": "Falha ao enviar o ficheiro de registo de eventos. Consulte o registo de eventos geral do Heroic para obter mais detalhes",
-          "manual_upload": "Clicar no botão \"MOSTRAR FICHEIRO DE REGISTOS NA PASTA\" e fazer upload manualmente do ficheiro \"launch.log\" para o Discord ou outro serviço online de partilha de ficheiros."
+          "content": "Falha ao enviar o ficheiro de registo de eventos. Consulte o registo de eventos geral do Heroic para obter mais detalhes"
         },
         "header": "Ficheiros de registo de eventos enviados",
         "hours-ago": "Enviado há {{hoursAgo, relativetime(hours)}}",
@@ -936,7 +930,6 @@
   },
   "Update Available!": "Atualização Disponível!",
   "userselector": {
-    "discord": "Discord",
     "logging_out": "A sair",
     "logout": "Sair",
     "logout_confirmation": "Tem a certeza de que pretende sair?",
@@ -1070,8 +1063,6 @@
       "login": "Inicie a sessão das suas contas nas lojas de jogos para aceder à sua biblioteca.",
       "version": "Verifique a sua versão atual do Heroic, clique para ver os últimos registos de alterações e aceda à visita guiada a partir do ícone de ajuda.",
       "wine": "Faça a gestão ou transferências de novas versões do Wine/Proton/GPTK para executar jogos do Windows no Linux ou macOS.",
-      "community": "Junte-se à nossa comunidade no Discord e suporte o desenvolvimento do Heroic.",
-      "docs": "Consulte a documentação para obter ajuda em como usar o Heroic.",
       "downloads": "Acompanhe e faça a gestão das transferências e instalações dos seus jogos.",
       "library": "Aceda à sua biblioteca de jogos num único local, a partir de lojas diferentes.",
       "quit": "Sair da aplicação em segurança.",

@@ -114,12 +114,8 @@ import { backendEvents } from './backend_events'
 import { configStore } from './constants/key_value_stores'
 import {
   customThemesWikiLink,
-  discordLink,
   epicLoginUrl,
-  githubSponsorsPage,
   relicGithubURL,
-  kofiPage,
-  patreonPage,
   sidInfoUrl,
   supportURL,
   weblateUrl,
@@ -616,12 +612,6 @@ addListener('openReleases', async () => openUrlOrFile(relicGithubURL))
 addListener('openWeblate', async () => openUrlOrFile(weblateUrl))
 addListener('showAboutWindow', () => showAboutWindow())
 addListener('openLoginPage', async () => openUrlOrFile(epicLoginUrl))
-addListener('openDiscordLink', async () => openUrlOrFile(discordLink))
-addListener('openPatreonPage', async () => openUrlOrFile(patreonPage))
-addListener('openKofiPage', async () => openUrlOrFile(kofiPage))
-addListener('openGithubSponsorsPage', async () =>
-  openUrlOrFile(githubSponsorsPage)
-)
 addListener('openWinePrefixFAQ', async () => openUrlOrFile(wineprefixFAQ))
 addListener('openWebviewPage', async (event, url) => openUrlOrFile(url))
 addListener('openWikiLink', async () => openUrlOrFile(wikiLink))

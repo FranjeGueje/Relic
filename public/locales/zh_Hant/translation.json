@@ -221,7 +221,6 @@
       "update_game": "更新遊戲"
     }
   },
-  "docs": "文件",
   "download-manager": {
     "install-type": {
       "install": "安裝",
@@ -291,7 +290,6 @@
   },
   "help": {
     "amdfsr": "AMD FSR 通過在全螢幕模式下提高較低解析度來提高畫面幀率。影像品質從 5 提高到 1，但代價是效能稍有下降。啟用可能會提高效能。",
-    "custom_themes_path": "Do not use CSS files from untrusted sources. When in doubt, ask for a review in our Discord channel.",
     "custom_themes_wiki": "Check the Wiki for more details on adding custom themes. Click here.",
     "dxvk": "DXVK 是一個基於 Vulkan 的轉譯層，用於 DirectX 9、10 和 11 遊戲。啟用也許會提高相容性。但可能會導致問題，特別是對老舊的 DirectX 遊戲。",
     "dxvkfpslimit": "Sets a frame rate cap for DXVK games",
@@ -580,7 +578,6 @@
     "default-steam-path": "預設 Steam 路徑",
     "defaultWinePrefix": "為新的 Wine Prefix 設定資料夾",
     "disable_controller": "停用控制器操作 Heroic",
-    "discordRPC": "啟用 Discord 的 Rich Presence（活動狀態）",
     "download-no-https": "不使用 HTTPS 下載遊戲 （對 LanCache 等 CDN 有用）",
     "dxvkfpslimit": "Limit FPS (DX9, 10 and 11)",
     "egs-sync": "與已安裝的 Epic Games 同步",
@@ -622,12 +619,10 @@
     "log": {
       "copy-to-clipboard": "複製日誌內容至剪貼簿",
       "current-log": "目前日誌",
-      "instructions": "加入我們的 Discord，尋找與您的操作系統相符的頻道。分享此處顯示的日誌內容，並包含對問題的清晰描述以及任何相關訊息和細節。",
       "instructions_title": "如何回報問題？",
       "last-log": "上一個日誌",
       "no-file": "未找到日誌檔案",
       "show-in-folder": "顯示日誌所在資料夾",
-      "join-heroic-discord": "加入我們的 Discord",
       "upload": {
         "actions": "操作",
         "done": {
@@ -911,7 +906,6 @@
   },
   "Update Available!": "Update Available!",
   "userselector": {
-    "discord": "Discord",
     "logging_out": "Logging out",
     "logout": "登出",
     "logout_confirmation": "您確定要登出嗎？",
@@ -1013,9 +1007,7 @@
         "intro": ""
       },
       "quit": "",
-      "docs": "",
       "library": "",
-      "community": "",
       "accessibility": "",
       "wine": "",
       "login": "",

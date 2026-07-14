@@ -221,7 +221,6 @@
       "update_game": "Päivitä peli"
     }
   },
-  "docs": "Dokumentaatio",
   "download-manager": {
     "install-type": {
       "install": "Asenna",
@@ -291,7 +290,6 @@
   },
   "help": {
     "amdfsr": "AMD FSR auttaa parantamaan ruudunpäivitysnopeutta ylösskaalaamalla alemman resoluution kuvaa koko näytön tilassa. Kuvanlaatu paranee asteikolla 5–1 pienen suorituskykyvaikutuksen kustannuksella. Käyttöönotto saattaa parantaa suorituskykyä.",
-    "custom_themes_path": "Älä käytä CSS-tiedostoja luottamattomista lähteistä. Jos epäröit, kysy tarkistusta Discord-kanavallamme.",
     "custom_themes_wiki": "Lue Wiki-tietokantaa saadaksesi lisätietoja räätälöityjen teemojen lisäämiseksi. Napsauta tässä.",
     "dxvk": "DXVK on Vulkan-pohjainen tulkki DirectX 9-, 10- ja 11-peleille. Päällekytkentä voi parantaa yhteensopivuutta. Tämä voi aiheuttaa ongelmia erityisesti vanhemmissa DirectX-peleissä.",
     "dxvkfpslimit": "Asettaa ruudunpäivitykselle katon DXVK-peleissä",
@@ -581,7 +579,6 @@
     "default-steam-path": "Vakio Steam-polku",
     "defaultWinePrefix": "Aseta kansio uusille Wine-etuasteille",
     "disable_controller": "Poiskytke Heroic-navigaatio käyttäen peliohjainta",
-    "discordRPC": "Ota käyttöön Discord Rich Presence",
     "download-no-https": "Lataa pelit ilman HTTPS:ää (hyödyllinen CDN:ille kuten LanCache)",
     "dxvkfpslimit": "Aseta ruudunpäivityskatto (DX9, 10 ja 11)",
     "egs-sync": "Synkronoi asennettujen Epic Games -pelien kanssa",
@@ -623,7 +620,6 @@
     "log": {
       "copy-to-clipboard": "Kopioi lokin sisältö leikepöydälle",
       "current-log": "Nykyinen loki",
-      "instructions": "Liity Discordiimme ja katso siellä \"#-support\" -tukiosasto. Lue kiinnitetty \"Read Me First | Frequently Asked Questions\" -ketju ja seuraa ohjeita jakaaksesi nämä lokit sekä mikä tahansa ongelmaasi liittyvä tieto.",
       "instructions_title": "Miten raportoin ongelman?",
       "last-log": "Viimeisin loki",
       "no-file": "Lokitiedostoja ei löytynyt",
@@ -636,7 +632,6 @@
         "upload-date": "Lähetyspäivämäärä",
         "error": {
           "title": "Lähetys epäonnistui",
-          "manual_upload": "Klikkaa \"SHOW LOG FILE IN FOLDER\" -painiketta ja lähetä \"launch.log\" -tiedosto manuaalisesti Discordiin tai mihin tahansa tiedostojen jakamispalveluun.",
           "content": "Lokitiedon lähettäminen epäonnistui. Tarkista Heroicin yleislokitiedot tarkempaa kuvausta varten"
         },
         "uploading": {
@@ -657,7 +652,6 @@
         },
         "button": "Lähetä lokitiedosto"
       },
-      "join-heroic-discord": "Liity Discordiimme",
       "descriptiveNames": {
         "legendary": "Epic Games / Legendary lokitiedot",
         "nile": "Amazon / Nile lokitiedot",
@@ -922,7 +916,6 @@
   },
   "Update Available!": "Päivitys saatavilla!",
   "userselector": {
-    "discord": "Discord",
     "logging_out": "Kirjaudutaan ulos",
     "logout": "Kirjaudu ulos",
     "logout_confirmation": "Haluatko varmasti kirjautua ulos?",
@@ -1053,9 +1046,7 @@
         "intro": ""
       },
       "quit": "",
-      "docs": "",
       "library": "",
-      "community": "",
       "accessibility": "",
       "wine": "",
       "login": "",

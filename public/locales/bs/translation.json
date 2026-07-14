@@ -221,7 +221,6 @@
       "update_game": "Ažurirajte igru"
     }
   },
-  "docs": "Dokumentacija",
   "download-manager": {
     "install-type": {
       "install": "Install",
@@ -291,7 +290,6 @@
   },
   "help": {
     "amdfsr": "AMD-ov FSR pomaže u povećanju frekvencije kadrova povećavajući niže rezolucije u načinu rada preko cijelog ekrana. Kvalitet slike se povećava sa 5 na 1 po cenu blagog smanjenja performansi. Omogućavanje može poboljšati performanse.",
-    "custom_themes_path": "Do not use CSS files from untrusted sources. When in doubt, ask for a review in our Discord channel.",
     "custom_themes_wiki": "Check the Wiki for more details on adding custom themes. Click here.",
     "dxvk": "DXVK je translacijski sloj baziran na Vulkanu za DirectX 9, 10 i 11 igre. Omogućavanje može poboljšati kompatibilnost. Može uzrokovati probleme posebno za starije DirectX igre.",
     "dxvkfpslimit": "Sets a frame rate cap for DXVK games",
@@ -580,7 +578,6 @@
     "default-steam-path": "Zadana staza Steam-a",
     "defaultWinePrefix": "Postavite mapu za nove Wine prefikse",
     "disable_controller": "Onemogućite navigaciju pomoću kontrolera u Heroicu",
-    "discordRPC": "Omogućite Discord bogatu prisutnost",
     "download-no-https": "Preuzmite igre bez HTTPS-a (korisno za CDN-ove, npr. LanCache)",
     "dxvkfpslimit": "Limit FPS (DX9, 10 and 11)",
     "egs-sync": "Sinkronizacija s instaliranim Epic igrama",
@@ -622,7 +619,6 @@
     "log": {
       "copy-to-clipboard": "Kopirajte sadržaj zapisnika u međuspremnik",
       "current-log": "Trenutni dnevnik",
-      "instructions": "Pridružite se našem Discordu i potražite odjeljak \"#-podrška\". Pročitajte zakačenu nit \"Prvo me pročitajte | Često postavljana pitanja\" i slijedite upute da podijelite ove zapise i sve relevantne informacije o svom problemu.",
       "instructions_title": "Kako prijaviti problem?",
       "last-log": "Zadnji dnevnik",
       "no-file": "Nije pronađena datoteka zapisnika",
@@ -656,7 +652,6 @@
         },
         "button": ""
       },
-      "join-heroic-discord": "",
       "descriptiveNames": {
         "legendary": "",
         "nile": "",
@@ -912,7 +907,6 @@
   },
   "Update Available!": "Dostupno ažuriranje!",
   "userselector": {
-    "discord": "Discord",
     "logging_out": "Logging out",
     "logout": "Odjavite se",
     "logout_confirmation": "Jeste li sigurni da se želite odjaviti?",
@@ -1007,9 +1001,7 @@
         "intro": ""
       },
       "quit": "",
-      "docs": "",
       "library": "",
-      "community": "",
       "accessibility": "",
       "wine": "",
       "login": "",

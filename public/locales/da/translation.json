@@ -278,7 +278,6 @@
     },
     "general": "Synkroniser med EGL, hvis du har en fungerende installation af Epic Games Launcher et andet sted og vil importere dine spil for at undgå at downloade dem igen.",
     "primerun": "Brug dedikeret grafikkort til at gengive spil på multi-GPU-systemer. Kun nødvendig på bærbare gaming-computere eller stationære computere, der bruger en hovedløs GPU til gengivelse (NVIDIA Optimus, AMD CrossFire)",
-    "custom_themes_path": "Brug ikke CSS-filer fra upålidelige kilder. Når du er i tvivl, så bed om en anmeldelse i vores Discord-kanal.",
     "custom_themes_wiki": "Tjek Wiki for flere detaljer om tilføjelse af brugerdefinerede temaer. Klik her.",
     "steam_path": {
       "info": "Denne sti lader Heroic bestemme, hvilken version af Proton Steam bruger, til at tilføje ikke-Steam-spil til Steam."
@@ -391,7 +390,6 @@
       "no-file": "Ingen logfil fundet",
       "copy-to-clipboard": "Kopier logindhold til udklipsholder",
       "current-log": "Aktuel log",
-      "instructions": "Tilslut dig vores Discord og find kanalen \"#-support\". Læs den fastgjorte tråd \"Read Me First | Frequently Asked Questions\" og følg instruktionerne for at dele disse logfiler og alle relevante oplysninger om dit problem.",
       "descriptiveNames": {
         "game-log": "Spillog for {{gameTitle}}",
         "gog": "GOG-log",
@@ -400,7 +398,6 @@
         "nile": "Amazon / Nile log",
         "zoom": "Zoom log"
       },
-      "join-heroic-discord": "Deltag på vores Discord",
       "show-uploads": "Vis uploadede logfiler",
       "upload": {
         "actions": "Handlinger",
@@ -458,7 +455,6 @@
     "winecrossoverbottle": "CrossOver flaske",
     "defaultWinePrefix": "Indstil mappe til nye Wine Præfikser",
     "disable_controller": "Deaktiver heroisk navigation ved hjælp af controller",
-    "discordRPC": "Aktiver Discord Rich Presence",
     "download-no-https": "Hent spil uden HTTPS (nyttigt til CDN'er, f.eks. LanCache)",
     "egs-sync": "Synkroniser med installerede episke spil",
     "enableFSRHack": "Aktiver FSR Hack (vinversion skal understøtte det)",
@@ -856,7 +852,6 @@
     "console": ""
   },
   "userselector": {
-    "discord": "Uenighed",
     "logout": "Log ud",
     "logout_confirmation": "Er du sikker på, at du vil logge ud?",
     "manageaccounts": "Administrer konti",
@@ -874,7 +869,6 @@
     "title": "Dette spil inkluderer et antisnyd-program",
     "multiplayer_may_not_work": "Multiplayer-funktioner fungerer måske ikke, på grund af nægtet eller ødelagt antisnyd-understøttelse."
   },
-  "docs": "Dokumentation",
   "epic": {
     "offline-notification-body": "Onlinetjenester fungerer muligvis ikke fuldt ud, da Epic Games-servere er offline!",
     "offline-notification-title": "offline"
@@ -1101,8 +1095,6 @@
     "sidebar": {
       "accessibility": "Gå til tilgængelighedsfunktioner for at tilpasse din oplevelse.",
       "accounts": "Administrér dine tilknyttede butikskonti (Epic, GOG, Amazon), log ud eller log ind på dem.",
-      "community": "Bliv en del af vores fællesskab på Discord og støt udviklingen af Heroic.",
-      "docs": "Læs dokumentationen for at få hjælp til at bruge Heroic.",
       "downloads": "Spor og administrér dine spil-downloads og installationer.",
       "library": "Få adgang til dit spilbibliotek fra forskellige butikker på ét sted.",
       "login": "Log ind på dine spilbutikskonti for at få adgang til dit bibliotek.",

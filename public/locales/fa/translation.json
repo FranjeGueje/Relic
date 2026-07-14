@@ -221,7 +221,6 @@
       "update_game": "به روزرسانی بازی"
     }
   },
-  "docs": "Documentation",
   "download-manager": {
     "install-type": {
       "install": "Install",
@@ -580,7 +579,6 @@
     "default-steam-path": "مسیر پیش فرض استیم",
     "defaultWinePrefix": "تنظیم پوشه برای Wine Prefix جدید",
     "disable_controller": "غیر فعال کردن کنترل Heroic با استفاده از دسته",
-    "discordRPC": "فعالسازی Discord Rich Presence",
     "download-no-https": "دانلود بازی ها بدون HTTPS (مفید برای CDNs مانند LanCache)",
     "dxvkfpslimit": "محدودیت فریم ریت (DX9, 10 & 11)",
     "egs-sync": "همگامسازی با بازیهای اپیک نصب شده",
@@ -656,7 +654,6 @@
         },
         "button": ""
       },
-      "join-heroic-discord": "",
       "descriptiveNames": {
         "legendary": "",
         "nile": "",
@@ -912,7 +909,6 @@
   },
   "Update Available!": "به روزرسانی موجود است!",
   "userselector": {
-    "discord": "Discord",
     "logging_out": "در حال خارج شدن",
     "logout": "خروج از حساب",
     "logout_confirmation": "آیا میخواهید از حساب خود خارج شوید؟",
@@ -997,9 +993,7 @@
         "intro": ""
       },
       "quit": "",
-      "docs": "",
       "library": "",
-      "community": "",
       "accessibility": "",
       "wine": "",
       "login": "",

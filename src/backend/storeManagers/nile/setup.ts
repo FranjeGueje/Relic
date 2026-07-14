@@ -61,7 +61,7 @@ export default async function setup(
   }
 
   logWarning(
-    'Running setup instructions, if you notice issues with launching a game, please report it on our Discord server',
+    'Running setup instructions, if you notice issues with launching a game, please report it',
     LogPrefix.Nile
   )
 

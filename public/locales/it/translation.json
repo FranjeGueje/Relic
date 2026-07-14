@@ -229,7 +229,6 @@
       "update_game": "Aggiorna il gioco"
     }
   },
-  "docs": "Documentazione",
   "download-manager": {
     "install-type": {
       "install": "Install",
@@ -299,7 +298,6 @@
   },
   "help": {
     "amdfsr": "FSR di AMD aiuta a incrementare il framerate grazie all'upscaling delle risoluzioni più basse in modalità schermo intero. La qualità dell'immagine aumenta da 5 a 1 al costo di un leggero calo delle prestazioni. L'attivazione può migliorare le prestazioni.",
-    "custom_themes_path": "Non usare CSS file provenienti da fonti sconosciute. Se in dubbio chiedi una recensione nel nostro Canale Discord.",
     "custom_themes_wiki": "Controlla la Wiki per ulteriori dettagli su come aggiungere temi personalizzati. Clicca qui.",
     "dxvk": "DXVK è uno strato di traduzione basato su Vulkan per giochi DirectX 9, 10 e 11. L'attivazione può migliorare la compatibilità. Potrebbe causare problemi soprattutto per i vecchi giochi DirectX.",
     "dxvkfpslimit": "Imposta un limite per gli la frequenza di aggiornamento (FPS) per i giochi che supportano DXVK",
@@ -590,7 +588,6 @@
     "default-steam-path": "Percorso Predefinito di Steam",
     "defaultWinePrefix": "Imposta cartella per i nuovi prefissi Wine",
     "disable_controller": "Disabilita la navigazione con il controller in Heroic",
-    "discordRPC": "Attiva \"Discord Rich Presence\"",
     "download-no-https": "Scarica i giochi senza HTTPS (utile per CDN come LanCache)",
     "dxvkfpslimit": "Limita FPS (DX9, 10 e 11)",
     "egs-sync": "Sincronizza con l'Epic Games già installato",
@@ -632,12 +629,10 @@
     "log": {
       "copy-to-clipboard": "Copia il contenuto dei log negli appunti",
       "current-log": "Accesso corrente",
-      "instructions": "Unisciti al nostro Discord e cerca la sezione \"#-support\". Leggi il messaggio fissato \"Read Me First | Frequently Asked Questions\" e segui le istruzioni per condividere il contenuto dei log e una chiara descrizione dei problemi che stai riscontrando.",
       "instructions_title": "Come segnalare un problema?",
       "last-log": "Ultimo accesso",
       "no-file": "Nessun file di log trovato",
       "show-in-folder": "Mostra il file di log nella cartella",
-      "join-heroic-discord": "Unisciti al nostro Discord",
       "upload": {
         "actions": "Action",
         "button": "Carica file log",
@@ -652,8 +647,7 @@
         },
         "error": {
           "content": "Caricamento log fallito. Controlla il log generale di Heroic per dettagli",
-          "title": "Caricamento fallito",
-          "manual_upload": "Fai clic sul pulsante \"MOSTRA IL FILE DI LOG NELLA CARTELLA\" e carica manualmente il file \"launch.log\" su Discord o su un servizio di condivisione file online."
+          "title": "Caricamento fallito"
         },
         "header": "File di log caricati",
         "hours-ago": "Caricato {{hoursAgo, relativetime(hours)}}",
@@ -937,7 +931,6 @@
   },
   "Update Available!": "Aggiornamento Disponibile!",
   "userselector": {
-    "discord": "Discord",
     "logging_out": "Disconnessione in corso",
     "logout": "Disconnetti",
     "logout_confirmation": "Sei sicuro di voler uscire dall'account?",
@@ -1077,8 +1070,6 @@
       },
       "quit": "Esci dall'applicazione in modo sicuro.",
       "stores": "Sfoglia e acquista i giochi da negozi differenti, inclusi Epic, GOG e Amazon.",
-      "community": "Entra nel nostro server Discord e supporta lo sviluppo di Heroic.",
-      "docs": "Leggi la documentazione per imparare ad usare Heroic.",
       "login": "Accedi al tuo account del negozio per accedere alla tua libreria.",
       "wine": "Gestisci o scarica nuove versioni di Wine/Proton/GPTK per eseguire i giochi di Windows su Linux e macOS.",
       "accounts": "Gestisci gli account dei negozi connessi (Epic, GOG, Amazon), effettua l'accesso o esci."

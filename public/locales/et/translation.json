@@ -229,7 +229,6 @@
       "update_game": "Uuenda mängu"
     }
   },
-  "docs": "Dokumentatsioon",
   "download-manager": {
     "install-type": {
       "install": "Paigaldus",
@@ -299,7 +298,6 @@
   },
   "help": {
     "amdfsr": "AMD FSR aitab suurendada kaadrisagedust, suurendades madalamaid resolutsioone täisekraani režiimis. Pildikvaliteet suureneb 5-st 1-le, mis toob aga kaasa kerge jõudluse vähenemise. Lubamine võib parandada jõudlust.",
-    "custom_themes_path": "Ärge kasutage CSS faile allikatest, mida te ei usalda. Kui kahtlete, küsige meie arvustust Discordi kanalis.",
     "custom_themes_wiki": "Leiate meie vikist rohkem infot teemade lisamise kohta. Kliki siia.",
     "dxvk": "DXVK on Vulkanil põhinev tõlkekiht DirectX 9, 10 ja 11 mängude jaoks. Lubamine võib parandada ühilduvust. Võib põhjustada probleeme, eriti vanemate DirectX-mängude puhul.",
     "dxvkfpslimit": "Kehtestab kaadrisageduse piirangu DXVK mängude jaoks",
@@ -589,7 +587,6 @@
     "default-steam-path": "Steami vaiketee",
     "defaultWinePrefix": "Määrake uute Wine'i prefikside jaoks kaust",
     "disable_controller": "Keela Heroicu mängupuldiga navigeerimine",
-    "discordRPC": "Luba Discord Rich Presence",
     "download-no-https": "Mängude allalaadimine ilma HTTPS-ita (kasulik CDNide jaoks, nt LanCache)",
     "dxvkfpslimit": "Piira kaadrisagedust (DX9, 10 ja 11)",
     "egs-sync": "Sünkroonimine paigaldatud Epic Games'iga",
@@ -631,12 +628,10 @@
     "log": {
       "copy-to-clipboard": "Kopeeri logi sisu lõikelauale",
       "current-log": "Praegune logi",
-      "instructions": "Liitu meie Discordiga ja otsige üles \"#-support\" kanal. Lugege kleebitud \"Read Me First | Frequently Asked Questions\" teemat ja järgige juhendit, et neid jagada neid logisid ja kõike võimalikku probleemiga seotud teavet.",
       "instructions_title": "Kuidas teatada probleemist?",
       "last-log": "Viimane logi",
       "no-file": "Logifaili ei leitud",
       "show-in-folder": "Kuva logifail kaustas",
-      "join-heroic-discord": "Liituge meie Discordiga",
       "upload": {
         "actions": "Toimingud",
         "delete": "Taotle logifaili kustutamist",
@@ -651,8 +646,7 @@
         },
         "error": {
           "content": "Ei suutnud logifaili üles laadida. Üksikasjade jaoks kontrollige Heroicu üldist logi",
-          "title": "Üleslaadimine ebaõnnestus",
-          "manual_upload": "Kliki \"Kuva logifail kaustas\" nuppu ja lae \"launch.log\" fail käsitsi Discordi või mis tahes failijagamise teenusesse."
+          "title": "Üleslaadimine ebaõnnestus"
         },
         "header": "Üles laetud logifailid",
         "hours-ago": "Üles laetud {{hoursAgo, relativetime(hours)}}",
@@ -937,7 +931,6 @@
   },
   "Update Available!": "Uuendus saadaval!",
   "userselector": {
-    "discord": "Discord",
     "logging_out": "Välja logimine",
     "logout": "Logi välja",
     "logout_confirmation": "Kas olete kindel, et soovite välja logida?",
@@ -1068,7 +1061,6 @@
     },
     "next": "Järgmine",
     "sidebar": {
-      "community": "Liituge meie Discordi kogukonnaga ja toetage Heroicu arendamist.",
       "accessibility": "Vaadake ligipääsetavuse seadeid, et oma kogemust kohendada.",
       "version": "Kontrollige oma praegust Heroicu versiooni. Klikkige siia, et näha uusimaid muudatusi ja külastage seda tuuri läbi abiikooni.",
       "stores": "Sirvige ja ostelge mängusid erinevates poodides, sealhulgas Epicus, GOG-is ja Amazonis.",
@@ -1076,7 +1068,6 @@
       "login": "Logige sisse oma mängupoodide kontodele, et oma varamule ligi pääseda.",
       "library": "Pääsege oma eri poodides olevatele mängude varamutele ligi ühest kohast.",
       "downloads": "Jälgige ja hallake oma mängude allalaadimisi ja paigaldamisi.",
-      "docs": "Lugege dokumentatsiooni, et leida abi Heroicu kasutamisel.",
       "welcome": {
         "title": "Küljeribal navigeerimine",
         "intro": "Tere tulemast Heroicusse! Sellelt küljeribalt leiate kõik valikud, et rakenduses ringi liikuda."

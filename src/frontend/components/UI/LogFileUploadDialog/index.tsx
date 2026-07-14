@@ -85,7 +85,7 @@ export default function LogUploadDialog() {
           <br />
           {t(
             'setting.log.upload.error.manual_upload',
-            'Click the "SHOW LOG FILE IN FOLDER" button and upload the "launch.log" file manually to Discord or any online file sharing service.'
+            'Click the "SHOW LOG FILE IN FOLDER" button and upload the "launch.log" file manually to any online file sharing service.'
           )}
         </>,
         <>

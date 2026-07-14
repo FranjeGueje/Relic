@@ -221,7 +221,6 @@
       "update_game": "Update game"
     }
   },
-  "docs": "Documentation",
   "download-manager": {
     "install-type": {
       "install": "Install",
@@ -291,7 +290,6 @@
   },
   "help": {
     "amdfsr": "AMD's FSR helps boost framerate by upscaling lower resolutions in Fullscreen Mode. Image quality increases from 5 to 1 at the cost of a slight performance hit. Enabling may improve performance.",
-    "custom_themes_path": "Do not use CSS files from untrusted sources. When in doubt, ask for a review in our Discord channel.",
     "custom_themes_wiki": "Check the Wiki for more details on adding custom themes. Click here.",
     "dxvk": "DXVK is a Vulkan-based translational layer for DirectX 9, 10 and 11 games. Enabling may improve compatibility. Might cause issues especially for older DirectX games.",
     "dxvkfpslimit": "Sets a frame rate cap for DXVK games",
@@ -580,7 +578,6 @@
     "default-steam-path": "Default Steam path",
     "defaultWinePrefix": "Set Folder for new Wine Prefixes",
     "disable_controller": "Disable Heroic navigation using controller",
-    "discordRPC": "Enable Discord Rich Presence",
     "download-no-https": "Download games without HTTPS (useful for CDNs e.g. LanCache)",
     "dxvkfpslimit": "Limit FPS (DX9, 10 and 11)",
     "egs-sync": "Synchronizácia s nainštalovanými epickými hrami",
@@ -622,12 +619,10 @@
     "log": {
       "copy-to-clipboard": "Copy log content to clipboard.",
       "current-log": "Current log",
-      "instructions": "Join our Discord and look for the \"#-support\" section. Read the pinned \"Read Me First | Frequently Asked Questions\" thread and follow the instructions to share these logs and any relevant information about your problem.",
       "instructions_title": "How to report a problem?",
       "last-log": "Last Log",
       "no-file": "Nebol nájdený žiadny súbor denníka",
       "show-in-folder": "Show log file in folder",
-      "join-heroic-discord": "Pripoj sa na náš Discord",
       "upload": {
         "actions": "Akcie",
         "button": "Nahrať súbor denníka",
@@ -919,7 +914,6 @@
   },
   "Update Available!": "Update Available!",
   "userselector": {
-    "discord": "Discord",
     "logging_out": "Logging out",
     "logout": "Logout",
     "logout_confirmation": "Naozaj sa chcete odhlásiť?",
@@ -1031,9 +1025,7 @@
         "intro": ""
       },
       "quit": "",
-      "docs": "",
       "library": "",
-      "community": "",
       "accessibility": "",
       "wine": "",
       "login": "",

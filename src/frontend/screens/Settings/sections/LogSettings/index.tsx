@@ -7,8 +7,7 @@ import SettingsContext from '../../SettingsContext'
 import './index.css'
 import ContextProvider from 'frontend/state/ContextProvider'
 import { GameInfo } from 'common/types'
-import { openDiscordLink } from 'frontend/helpers'
-import { faDiscord } from '@fortawesome/free-brands-svg-icons'
+
 import useGlobalState from 'frontend/state/GlobalStateV2'
 import Upload from '@mui/icons-material/Upload'
 import Cloud from '@mui/icons-material/Cloud'
@@ -180,7 +179,7 @@ export default function LogSettings() {
       <p className="report-problem-instructions">
         {t(
           'setting.log.instructions',
-          'Join our Discord and look for the "#-support" section. Read the pinned "Read Me First | Frequently Asked Questions" thread and follow the instructions to share these logs and any relevant information about your problem.'
+          'Share these logs and any relevant information about your problem.'
         )}
       </p>
       <div
@@ -252,20 +251,6 @@ export default function LogSettings() {
                 </div>
                 <span className="button-icon-text">
                   {t('setting.log.upload.button', 'Upload log file')}
-                </span>
-              </div>
-            </a>
-            <a
-              onClick={openDiscordLink}
-              title={t('setting.log.join-relic-discord', 'Join our Discord')}
-              className="button is-footer"
-            >
-              <div className="button-icontext-flex">
-                <div className="button-icon-flex">
-                  <FontAwesomeIcon icon={faDiscord} />
-                </div>
-                <span className="button-icon-text">
-                  {t('setting.log.join-relic-discord', 'Join our Discord')}
                 </span>
               </div>
             </a>

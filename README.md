@@ -4,10 +4,6 @@
 [![GitHub all releases](https://img.shields.io/github/downloads/Heroic-Games-Launcher/HeroicGamesLauncher/total?style=for-the-badge&color=00B000)](https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher/releases/)
 [![Flathub](https://img.shields.io/flathub/downloads/com.heroicgameslauncher.hgl?label=flathub&logo=flathub&logoColor=white&style=for-the-badge&color=00B000)](https://flathub.org/apps/details/com.heroicgameslauncher.hgl)
 [![GPLv3 license](https://img.shields.io/github/license/Heroic-Games-Launcher/HeroicGamesLauncher?style=for-the-badge&color=blue)](https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher/blob/main/COPYING)  
-[![Discord](https://img.shields.io/discord/812703221789097985?label=Discord%20Server&logo=discord&color=5865F2&style=for-the-badge)](https://discord.gg/rHJ2uqdquK)
-[![Patreon](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fshieldsio-patreon.vercel.app%2Fapi%3Fusername%3Dheroicgameslauncher%26type%3Dpatrons&style=for-the-badge)](https://patreon.com/heroicgameslauncher)
-[![PayPal](https://img.shields.io/badge/PayPal-Donate-blue?style=for-the-badge&logo=paypal)](https://www.paypal.me/heroiclauncher)
-[![kofi](https://img.shields.io/badge/Ko--Fi-Donate-orange?style=for-the-badge&logo=ko-fi)](https://ko-fi.com/heroicgames)
 
 Heroic is an Open Source Game Launcher for Linux, Windows and macOS.  
 Right now it supports launching games from the Epic Games Store using [Legendary](https://github.com/derrod/legendary), GOG Games using our custom implementation with [gogdl](https://github.com/Heroic-Games-Launcher/heroic-gogdl) and Amazon Games using [Nile](https://github.com/imLinguin/nile).
@@ -81,7 +77,7 @@ Heroic is built with Web Technologies:
   - Fedora (latest 2 versions)
   - Arch Linux & derivatives (Manjaro, Garuda, EndeavourOS)
   - Heroic will still _work_ on most distros, but it is up to you to _get_ it to work
-    Chances are though that someone on our [Discord](https://discord.gg/rHJ2uqdquK) can help you
+    Chances are though that someone can help you
 - SteamOS (downloading using Discover only)
 - Windows 10 & 11
 - macOS 14 or newer
@@ -158,7 +154,7 @@ Double-click it to open it up in your Software Manager, or run `sudo dpkg -i Her
 
 #### Arch (AUR)
 
-We currently only support one AUR package: `heroic-games-launcher-bin`. Although you might find other packages there, do not ask support for them on this GitHub or on our Discord, ask their maintainers directly.
+We currently only support one AUR package: `heroic-games-launcher-bin`. Although you might find other packages there, do not ask support for them on this GitHub, ask their maintainers directly.
 
 - [![Stable version badge](https://img.shields.io/aur/version/heroic-games-launcher-bin?style=flat&label=heroic-games-launcher-bin)](https://aur.archlinux.org/packages/heroic-games-launcher-bin)  
   (stable release, recommended)

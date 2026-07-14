@@ -229,7 +229,6 @@
       "update_game": "更新游戏"
     }
   },
-  "docs": "文档",
   "download-manager": {
     "install-type": {
       "install": "安装",
@@ -300,7 +299,6 @@
   },
   "help": {
     "amdfsr": "AMD 的 FSR 通过在全屏模式下提高较低分辨率来提高帧率。图像质量从 5 提高到 1，但代价是性能稍有下降。启用可能会提高性能。",
-    "custom_themes_path": "不要使用来自不受信任来源的 CSS 文件。有疑问时，请在我们的 Discord 频道请求审核。",
     "custom_themes_wiki": "查看 Wiki 了解添加定制主题的更多详情。单击此处。",
     "dxvk": "DXVK 是一个基于 Vulkan 的转译层，用于 DirectX 9、10和11游戏。启用也许会提高兼容性。但可能会导致问题，特别是对老的 DirectX 游戏。",
     "dxvkfpslimit": "设置 DXVK 游戏帧率上限",
@@ -590,7 +588,6 @@
     "default-steam-path": "默认 Steam 路径",
     "defaultWinePrefix": "为新的 WinePrefix设置文件夹",
     "disable_controller": "使用控制器禁止 Heroic 导航",
-    "discordRPC": "启用 Discord 的 Rich Presence（活动状态）",
     "download-no-https": "不使用 HTTPS 下载游戏 (对 LanCache 等 CDN 有用)",
     "dxvkfpslimit": "限制 FPS (DX9、10 和 11)",
     "egs-sync": "与已安装的 Epic 游戏同步",
@@ -632,12 +629,10 @@
     "log": {
       "copy-to-clipboard": "复制日志内容到剪贴板",
       "current-log": "当前日志",
-      "instructions": "加入我们的 Discord，并搜索 \"#-support\" 部分。阅读置顶的 \"Read Me First | Frequently Asked Questions\" 帖子并遵照指示分享这些日志文件及任何与你的问题相关的信息。",
       "instructions_title": "如何报告问题？",
       "last-log": "上一日志",
       "no-file": "未找到日志文件",
       "show-in-folder": "显示文件夹中的日志文件",
-      "join-heroic-discord": "加入我们的 Discord",
       "upload": {
         "button": "上传日志文件",
         "done": {
@@ -658,8 +653,7 @@
         },
         "error": {
           "content": "上传日志文件失败。详情请查看 Heroic 的常规日志",
-          "title": "上传失败了",
-          "manual_upload": "单击 “在文件夹中显示日志文件”按钮并手动上传“launch.log”文件到 Discord 或任何在线文件分享服务。"
+          "title": "上传失败了"
         },
         "header": "已上传的日志文件",
         "minutes-ago": "上传于 {{minutesAgo, relativetime(minutes)}} 分钟前",
@@ -940,7 +934,6 @@
   },
   "Update Available!": "有更新可用！",
   "userselector": {
-    "discord": "Discord",
     "logging_out": "退出登录",
     "logout": "退出登录",
     "logout_confirmation": "你确定要退出登录吗？",
@@ -1069,8 +1062,6 @@
       "steamInstall": "使用此按钮安装 Windows 版 Steam，并通过 Crossover、Wine 或 GPTK 玩你的 Windows 游戏。"
     },
     "sidebar": {
-      "community": "加入我们的 Discord 社区并支持 Heroic 的开发。",
-      "docs": "阅读文档获得使用 Heroic 的帮助。",
       "downloads": "追踪并管理你的游戏下载和安装。",
       "library": "在一个地方访问不同商店中你的游戏库。",
       "login": "登录游戏商店账号来访问游戏库。",

@@ -221,7 +221,6 @@
       "update_game": "Update game"
     }
   },
-  "docs": "Documentation",
   "download-manager": {
     "install-type": {
       "install": "Install",
@@ -291,7 +290,6 @@
   },
   "help": {
     "amdfsr": "AMD's FSR helps boost framerate by upscaling lower resolutions in Fullscreen Mode. Image quality increases from 5 to 1 at the cost of a slight performance hit. Enabling may improve performance.",
-    "custom_themes_path": "Do not use CSS files from untrusted sources. When in doubt, ask for a review in our Discord channel.",
     "custom_themes_wiki": "Check the Wiki for more details on adding custom themes. Click here.",
     "dxvk": "DXVK is a Vulkan-based translational layer for DirectX 9, 10 and 11 games. Enabling may improve compatibility. Might cause issues especially for older DirectX games.",
     "dxvkfpslimit": "Sets a frame rate cap for DXVK games",
@@ -580,7 +578,6 @@
     "default-steam-path": "Default Steam path",
     "defaultWinePrefix": "Set Folder for new Wine Prefixes",
     "disable_controller": "Disable Heroic navigation using controller",
-    "discordRPC": "\"Discord Rich Presence\" inschakelen",
     "download-no-https": "Download spelletjes zonder HTTPS (handig voor CDNs bijv. LanCache)",
     "dxvkfpslimit": "Limit FPS (DX9, 10 and 11)",
     "egs-sync": "Synchronisatie met geïnstalleerde Epic Games",
@@ -622,12 +619,10 @@
     "log": {
       "copy-to-clipboard": "Copy log content to clipboard",
       "current-log": "Current Log",
-      "instructions": "Neem deel aan onze Discord en zoek naar het \"#-support\" kanaal. Lees de vastgemaakte \"Read Me First | Frequently Asked Questions\" thread en volg de instructies om deze logboeken en andere relevante informatie over jouw probleem te delen.",
       "instructions_title": "Hoe rapporteer je een probleem?",
       "last-log": "Last Log",
       "no-file": "Geen logboek-bestand gevonden",
       "show-in-folder": "Laat logboek-bestand zien in map",
-      "join-heroic-discord": "Neem deel aan onze Discord",
       "upload": {
         "actions": "Acties",
         "button": "Upload logboek-bestand",
@@ -917,7 +912,6 @@
   },
   "Update Available!": "Update Beschikbaar!",
   "userselector": {
-    "discord": "Discord",
     "logging_out": "Uit aan het loggen",
     "logout": "Uitloggen",
     "logout_confirmation": "Weet je zeker dat je wil uitloggen?",
@@ -1043,8 +1037,6 @@
     "sidebar": {
       "accessibility": "Benader toegankelijkheidsfuncties om je ervaring te personaliseren.",
       "accounts": "Beheer je verbonden winkel accounts (Epic, GOG, Amazon), log bij ze in of uit.",
-      "community": "Neem deel aan onze gemeenschap op Discord en steun Heroic's ontwikkeling.",
-      "docs": "Lees de documentatie voor hulp bij het gebruik van Heroic.",
       "downloads": "Monitor en beheer jouw spel-downloads en -installaties.",
       "library": "Benader jouw spelletjesbibliotheek van verschillende winkels op één plek.",
       "login": "Log in bij jouw spelletjeswinkel accounts om je bibliotheek te benaderen.",

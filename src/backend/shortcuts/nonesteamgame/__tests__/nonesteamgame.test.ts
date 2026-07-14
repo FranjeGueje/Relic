@@ -52,7 +52,7 @@ describe('NonSteamGame', () => {
     const shortcutFilePath = join(tmpSteamUserConfigDir, 'shortcuts.vdf')
 
     const contentBefore = readFileSync(shortcutFilePath).toString()
-    const game = makeGameMock('Discord', 'Discord')
+    const game = makeGameMock('App', 'App')
 
     await addNonSteamGame(game)
 

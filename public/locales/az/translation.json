@@ -221,7 +221,6 @@
       "update_game": "Oyunu yeniləyin"
     }
   },
-  "docs": "Sənədlər",
   "download-manager": {
     "install-type": {
       "install": "Install",
@@ -291,7 +290,6 @@
   },
   "help": {
     "amdfsr": "AMD-nin FSR tam ekran rejimində daha aşağı təsvir ölçüsünü artırmaqla kadr sürətini artırmağa kömək edir. Şəkil keyfiyyəti cüzi performans zərbəsi hesabına 5-dən 1-ə yüksəlir. Aktivləşdirmək performansı yaxşılaşdıra bilər.",
-    "custom_themes_path": "Do not use CSS files from untrusted sources. When in doubt, ask for a review in our Discord channel.",
     "custom_themes_wiki": "Check the Wiki for more details on adding custom themes. Click here.",
     "dxvk": "DXVK DirectX 9, 10 və 11 oyunları üçün Vulkan əsaslı tərcümə qatıdır. Aktivləşdirmə uyğunluğu yaxşılaşdıra bilər. Xüsusilə köhnə DirectX oyunları üçün problemlər yarada bilər.",
     "dxvkfpslimit": "Sets a frame rate cap for DXVK games",
@@ -580,7 +578,6 @@
     "default-steam-path": "Defolt Buxar yolu",
     "defaultWinePrefix": "Yeni Şərab Prefiksləri üçün Qovluq qurun",
     "disable_controller": "Nəzarətçidən istifadə edərək Qəhrəman naviqasiyasını söndürün",
-    "discordRPC": "Discord Rich Presence-i aktivləşdirin",
     "download-no-https": "HTTPS olmadan oyunları endirin (CDN-lər üçün faydalıdır, məsələn, LanCache)",
     "dxvkfpslimit": "Limit FPS (DX9, 10 and 11)",
     "egs-sync": "Quraşdırılmış Epic Games ilə sinxronizasiya edin",
@@ -622,7 +619,6 @@
     "log": {
       "copy-to-clipboard": "Giriş məzmununu panoya kopyalayın",
       "current-log": "Cari Qeyd",
-      "instructions": "Discordumuza qoşulun və əməliyyat sisteminizə uyğun kanalı axtarın. Burada göstərilən qeydlərin məzmununu paylaşın və hər hansı müvafiq məlumat və detallarla problemin aydın təsvirini daxil edin.",
       "instructions_title": "Problemi necə bildirmək olar?",
       "last-log": "Son Giriş",
       "no-file": "Heç bir jurnal faylı tapılmadı",
@@ -656,7 +652,6 @@
         },
         "button": ""
       },
-      "join-heroic-discord": "",
       "descriptiveNames": {
         "legendary": "",
         "nile": "",
@@ -911,7 +906,6 @@
   },
   "Update Available!": "Yeniləmə Mövcuddur!",
   "userselector": {
-    "discord": "Mübahisə",
     "logging_out": "Logging out",
     "logout": "Çıxış",
     "logout_confirmation": "Çıxmaq istədiyinizə əminsiniz?",
@@ -1012,9 +1006,7 @@
         "intro": ""
       },
       "quit": "",
-      "docs": "",
       "library": "",
-      "community": "",
       "accessibility": "",
       "wine": "",
       "login": "",

@@ -366,7 +366,6 @@
     "darktray": "השתמש בtray icon כהה",
     "defaultWinePrefix": "הגדירו תיקיה עבור prefixים של Wine חדשים",
     "disable_controller": "בטל ניווט של Heroic באמצעות קונטרולר",
-    "discordRPC": "הפעל Discord Rich Presence",
     "download-no-https": "הורד משחקים ללא HTTPS (שימושי עבור CDNים למשל LanCache)",
     "dxvkfpslimit": "הגבל קצב פריימים (FPS) (DX9, 10, ו-11)",
     "egs-sync": "סנכרן עם הEpic Games המותקן",
@@ -416,7 +415,6 @@
         },
         "button": ""
       },
-      "join-heroic-discord": "",
       "descriptiveNames": {
         "legendary": "",
         "nile": "",
@@ -551,7 +549,6 @@
     "disable_animations": "",
     "disable_dialog_backdrop_close": ""
   },
-  "docs": "תיעוד",
   "epic": {
     "offline-notification-title": "לא מחובר לרשת",
     "offline-notification-body": "שירותים מקוונים עשויים לא לעבוד באופן מלא כי שרתי Epic Games אינם פעילים!"
@@ -871,7 +868,6 @@
   "Update Available!": "עדכון זמין!",
   "userselector": {
     "cancel": "בטל",
-    "discord": "דיסקורד",
     "logging_out": "מתנתק",
     "logout": "התנתק",
     "logout_confirmation": "אתם בטוחים שאתם רוצים להתנתק?",
@@ -976,9 +972,7 @@
         "intro": ""
       },
       "quit": "",
-      "docs": "",
       "library": "",
-      "community": "",
       "accessibility": "",
       "wine": "",
       "login": "",

@@ -7,7 +7,6 @@ import {
   DefaultInstallPath,
   DefaultSteamPath,
   DisableController,
-  DiscordRPC,
   EgsSettings,
   HideChangelogOnStartup,
   LibraryTopSection,
@@ -62,8 +61,6 @@ export default function GeneralSettings() {
       <Shortcuts />
 
       <PlaytimeSync />
-
-      <DiscordRPC />
 
       <DisableController />
 

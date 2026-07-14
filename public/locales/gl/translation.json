@@ -229,7 +229,6 @@
       "update_game": "Actualizar o xogo"
     }
   },
-  "docs": "Documentación",
   "download-manager": {
     "install-type": {
       "install": "Instalar",
@@ -299,7 +298,6 @@
   },
   "help": {
     "amdfsr": "O FSR de AMD axuda a mellorar os fotogramas por segundo mediante o reescalado desde resolucións máis baixas no modo de pantalla completa. A calidade da imaxe aumenta desde 5 ata 1 a consta dun lixeiro impacto no rendemento. Activalo pode aumentar o rendemento.",
-    "custom_themes_path": "Non uses arquivos CSS de fontes non fiables. Se tes algunha dúbida, pide unha revisión na nosa canle de Discord.",
     "custom_themes_wiki": "Revisa a Wiki para máis información sobre como engadir temas personalizados. Fai clic aquí.",
     "dxvk": "DXVK é unha capa de tradución baseada en Vulkan para xogos de DirectX 9, 10 e 11. Habilitalo pode mellorar a compatibilidade. Pode causar problemas, especialmente en xogos DirectX máis antigos.",
     "dxvkfpslimit": "Sets a frame rate cap for DXVK games",
@@ -588,7 +586,6 @@
     "default-steam-path": "Ruta de Steam por defecto",
     "defaultWinePrefix": "Estabelecer cartafol para os prefixos de Wine",
     "disable_controller": "Desactivar a navegación de Heroic co controlador",
-    "discordRPC": "Activar a presencia enriquecida de Discord",
     "download-no-https": "Descargar xogos sen HTTPS (útil para CDNs, ex. LanCache)",
     "dxvkfpslimit": "Limit FPS (DX9, 10 and 11)",
     "egs-sync": "Sincronizar cos xogos instalados de Epic",
@@ -630,7 +627,6 @@
     "log": {
       "copy-to-clipboard": "Copy log content to clipboard",
       "current-log": "Current Log",
-      "instructions": "Únete ao noso Discord e busca a sección \"#-support\". Lee o fío fixado \"Read Me First | Frequently Asked Questions\" e sigue as instrucións para compartir estes rexistros e calquera información relevante sobre o teu problema.",
       "instructions_title": "Como reportar un problema?",
       "last-log": "Last Log",
       "no-file": "Non se atopou ningún arquivo de rexistros",
@@ -649,8 +645,7 @@
         },
         "error": {
           "content": "Fallou a subida do arquivo de rexistros. Comproba o rexistro xeral de Heroic para os detalles",
-          "title": "Fallou a subida",
-          "manual_upload": "Clicar no botón «MOSTRAR FICHEIRO DE REXISTROS NO CARTAFOL» e subir manualmente o ficheiro «launch.log» no Discord ou noutro servizo online para compartir ficheiros."
+          "title": "Fallou a subida"
         },
         "header": "Subiuse o arquivo de rexistros",
         "hours-ago": "Subido {{hoursAgo, relativetime(hours)}}",
@@ -672,7 +667,6 @@
         "nile": "Rexistros de Amazon / Nile",
         "zoom": "Rexistro de Zoom"
       },
-      "join-heroic-discord": "Únete ao noso Discord",
       "show-uploads": "Amosar os rexistros subidos"
     },
     "manualsync": {
@@ -931,7 +925,6 @@
   },
   "Update Available!": "Actualización dispoñible!",
   "userselector": {
-    "discord": "Discord",
     "logging_out": "Pechando sesión",
     "logout": "Pechar sesión",
     "logout_confirmation": "Tes certeza que queres pechar a sesión?",
@@ -1031,8 +1024,6 @@
     "sidebar": {
       "accessibility": "Accede a funcións de accesibilidade para personalizar a túa experiencia.",
       "accounts": "Manexa as túas contas conectadas das tendas (Epic, GOG, Amazon), sae da sesión ou inicia sesión en elas.",
-      "community": "Únete á nosa comunidade en Discord e axuda ao desenvolvemento de Heroic.",
-      "docs": "Lee a documentación para axuda usando Heroic.",
       "downloads": "Segue e manexa as descargas e instalacións dos teus xogos.",
       "library": "Accede á túa biblioteca de xogos de diferentes tendas nun mesmo lugar.",
       "login": "Inicia sesión nas túas contas das tendas para acceder á túa biblioteca.",

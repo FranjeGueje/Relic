@@ -229,7 +229,6 @@
       "update_game": "Zaktualizuj grę"
     }
   },
-  "docs": "Dokumentacja",
   "download-manager": {
     "install-type": {
       "install": "Instalacja",
@@ -299,7 +298,6 @@
   },
   "help": {
     "amdfsr": "AMD FSR pomaga podnieść liczbę klatek na sekundę poprzez skalowanie niższej rozdzielczości do rozdzielczości monitora. Jakość obrazu można dostosować od 5 do 1, z drobnym spadkiem wydajności. Włączenie może poprawić wydajność.",
-    "custom_themes_path": "Nie używaj plików CSS z nieznanych źródeł. Jeśli masz wątpliwości, spytaj nas na naszym Discordzie.",
     "custom_themes_wiki": "Sprawdź Wiki by dowiedzieć się więcej o dodawaniu niestandardowych motywów. Kliknij tutaj.",
     "dxvk": "DXVK to oparta o Vulkana warstwa tłumacząca dla gier opartych o DirectX 9, 10 i 11. Włączenie DXVK może poprawić kompatybilność, lecz także powodować problemy, szczególnie w starszych grach opartych na DirectX.",
     "dxvkfpslimit": "Ustala limit klatek na sekundę dla gier z DXVK",
@@ -590,7 +588,6 @@
     "default-steam-path": "Domyślna ścieżka Steam",
     "defaultWinePrefix": "Wybierz folder dla nowych prefiksów Wine",
     "disable_controller": "Wyłącz nawigację kontrolerem",
-    "discordRPC": "Włącz Discord Rich Presence",
     "download-no-https": "Pobieraj gry bez użycia szyfrowania HTTPS (przydatne przy CDN-ach, np. LanCache)",
     "dxvkfpslimit": "Limit klatek na sekundę (DX9, 10 i 11)",
     "egs-sync": "Synchronizuj z zainstalowanym Epic Games",
@@ -632,12 +629,10 @@
     "log": {
       "copy-to-clipboard": "Skopiuj log do schowka",
       "current-log": "Ostatni Log",
-      "instructions": "Dołącz do naszego Discorda i poszukaj sekcji „#-support”. Przeczytaj przypięty wątek „Read Me First | Frequently Asked Questions” i postępuj zgodnie z instrukcjami, aby udostępnić logi i wszelkie istotne informacje dotyczące problemu.",
       "instructions_title": "Jak zgłosić problem?",
       "last-log": "Poprzedni Log",
       "no-file": "Nie znaleziono pliku logu",
       "show-in-folder": "Pokaż plik logu w folderze",
-      "join-heroic-discord": "Dołącz do naszego Discorda",
       "upload": {
         "actions": "Działania",
         "button": "Prześlij plik logu",
@@ -652,8 +647,7 @@
         },
         "error": {
           "title": "Przesyłanie nie powiodło się",
-          "content": "Nie udało się przesłać pliku logu. Sprawdź ogólny log Heroic, aby uzyskać szczegółowe informacje",
-          "manual_upload": "Kliknij \"POKAŻ PLIK LOGU W FOLDERZE\" i manualnie prześlij plik \"launch.log\" na Discorda, albo inny serwis do udostępniania plików przez internet."
+          "content": "Nie udało się przesłać pliku logu. Sprawdź ogólny log Heroic, aby uzyskać szczegółowe informacje"
         },
         "header": "Przesłane pliki logu",
         "no-files": "Nie przesłano żadnych plików logu",
@@ -939,7 +933,6 @@
   },
   "Update Available!": "Dostępna aktualizacja!",
   "userselector": {
-    "discord": "Discord",
     "logging_out": "Wylogowywanie",
     "logout": "Wyloguj",
     "logout_confirmation": "Czy na pewno chcesz się wylogować?",
@@ -1068,10 +1061,8 @@
     },
     "sidebar": {
       "stores": "Przeglądaj i kupuj gry w różnych sklepach, m.in. Epic, GOG i Amazon.",
-      "community": "Dołącz do naszej społeczności na Discordzie i wesprzyj rozwój Heroica.",
       "accessibility": "Skorzystaj z ułatwień dostępu, aby dostosować swoje ustawienia.",
       "accounts": "Zarządzaj swoimi połączonymi kontami sklepowymi (Epic, GOG, Amazon), zaloguj się do nich bądź wyloguj.",
-      "docs": "Przeczytaj dokumentację, by uzyskać pomoc w używaniu Heroica.",
       "downloads": "Śledź i zarządzaj swoimi pobraniami i instalacjami gier.",
       "library": "Uzyskaj dostęp do swojej biblioteki gier z różnych sklepów w jednym miejscu.",
       "login": "Zaloguj się do swoich kont do sklepów z grami, aby uzyskać dostęp do swojej biblioteki.",

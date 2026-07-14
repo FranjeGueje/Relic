@@ -19,7 +19,6 @@ import {
 import { GameConfig } from 'backend/game_config'
 import {
   getKnownFixesEnvVariables,
-  launchCleanup,
   prepareLaunch,
   prepareWineLaunch,
   setupEnvVars,
@@ -306,14 +305,12 @@ export default class NileGameManager implements Game {
     const {
       success: launchPrepSuccess,
       failureReason: launchPrepFailReason,
-      rpcClient,
       gameModeBin,
       steamRuntime
     } = await prepareLaunch(gameSettings, logWriter, gameInfo, this.isNative())
 
     if (!launchPrepSuccess) {
       logWriter.logError(['Launch aborted:', launchPrepFailReason])
-      launchCleanup()
       showDialogBoxModalAuto({
         title: t('box.error.launchAborted', 'Launch aborted'),
         message: launchPrepFailReason!,
@@ -422,8 +419,6 @@ export default class NileGameManager implements Game {
     if (error) {
       logError(['Error launching game:', error], LogPrefix.Nile)
     }
-
-    launchCleanup(rpcClient)
 
     return !error
   }

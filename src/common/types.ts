@@ -113,7 +113,6 @@ export interface AppSettings extends GameSettings {
   disableSmoothScrolling: boolean
   disableLogs: boolean
   disableAnimations: boolean
-  discordRPC: boolean
   disableGOGPresence: boolean
   downloadNoHttps: boolean
   downloadProtonToSteam: boolean
@@ -434,14 +433,9 @@ export interface SteamRuntime {
 export interface LaunchPreperationResult {
   success: boolean
   failureReason?: string
-  rpcClient?: RpcClient
   gameModeBin?: string
   steamRuntime?: string[]
   offlineMode?: boolean
-}
-
-export interface RpcClient {
-  destroy(): void
 }
 
 export interface CallRunnerOptions {

@@ -221,7 +221,6 @@
       "update_game": "Update game"
     }
   },
-  "docs": "Documentation",
   "download-manager": {
     "install-type": {
       "install": "Install",
@@ -291,7 +290,6 @@
   },
   "help": {
     "amdfsr": "AMD's FSR helps boost framerate by upscaling lower resolutions in Fullscreen Mode. Image quality increases from 5 to 1 at the cost of a slight performance hit. Enabling may improve performance.",
-    "custom_themes_path": "Do not use CSS files from untrusted sources. When in doubt, ask for a review in our Discord channel.",
     "custom_themes_wiki": "Check the Wiki for more details on adding custom themes. Click here.",
     "dxvk": "DXVK is a Vulkan-based translational layer for DirectX 9, 10 and 11 games. Enabling may improve compatibility. Might cause issues especially for older DirectX games.",
     "dxvkfpslimit": "Sets a frame rate cap for DXVK games",
@@ -580,7 +578,6 @@
     "default-steam-path": "Default Steam path",
     "defaultWinePrefix": "Set Folder for new Wine Prefixes",
     "disable_controller": "Disable Heroic navigation using controller",
-    "discordRPC": "ഡിസ്കോര്ഡ് റിച്ച് പ്രെസന്സ് വക്കൂ",
     "download-no-https": "Download games without HTTPS (useful for CDNs e.g. LanCache)",
     "dxvkfpslimit": "Limit FPS (DX9, 10 and 11)",
     "egs-sync": "സ്ഥാപിച്ച എപിക് ഗെയിംസുമായി ഒന്നിപ്പിക്കുക",
@@ -622,7 +619,6 @@
     "log": {
       "copy-to-clipboard": "Copy log content to clipboard",
       "current-log": "Current Log",
-      "instructions": "Join our Discord and look for the \"#-support\" section. Read the pinned \"Read Me First | Frequently Asked Questions\" thread and follow the instructions to share these logs and any relevant information about your problem.",
       "instructions_title": "How to report a problem?",
       "last-log": "Last Log",
       "no-file": "No log file found",
@@ -656,7 +652,6 @@
         },
         "button": ""
       },
-      "join-heroic-discord": "",
       "descriptiveNames": {
         "legendary": "",
         "nile": "",
@@ -912,7 +907,6 @@
   },
   "Update Available!": "Update Available!",
   "userselector": {
-    "discord": "ഡിസ്കോഡ഻്",
     "logging_out": "Logging out",
     "logout": "ഇറങ്ങൂ(ലോഗൌട്ട്)",
     "logout_confirmation": "Logout?",
@@ -1009,9 +1003,7 @@
         "intro": ""
       },
       "quit": "",
-      "docs": "",
       "library": "",
-      "community": "",
       "accessibility": "",
       "wine": "",
       "login": "",

@@ -386,7 +386,6 @@
     "size": "Size",
     "title": "Title"
   },
-  "docs": "Documentation",
   "download-manager": {
     "ETA": "Estimated time",
     "install-type": {
@@ -476,7 +475,6 @@
       "settingsGame": "Show all settings for a game.",
       "wineManager": "Install different versions of Wine, Proton, Crossover, etc."
     },
-    "custom_themes_path": "Do not use CSS files from untrusted sources. When in doubt, ask for a review in our Discord channel.",
     "custom_themes_wiki": "Check the Wiki for more details on adding custom themes. Click here.",
     "disable_logs": "Toggle this checkbox ON to disable most of the writes to log files (critical information is always logged). Make sure to turn OFF this setting before reporting any issue.",
     "disablePlaytimeSync": "Disables playtime synchronization with given store's servers (currently only GOG is supported)",
@@ -766,7 +764,6 @@
     "disable_logs": "Disable Logs",
     "disablePlaytimeSync": "Disable playtime synchronization",
     "disableUMU": "Disable umu",
-    "discordRPC": "Enable Discord Rich Presence",
     "download-no-https": "Download games without HTTPS (useful for CDNs e.g. LanCache)",
     "download-proton-steam": "Download GE-Proton to Steam directory",
     "dxfpslimit": "Limit DirectX Games FPS",
@@ -832,9 +829,7 @@
         "nile": "Amazon / Nile log",
         "zoom": "Zoom log"
       },
-      "instructions": "Join our Discord and look for the \"#-support\" section. Read the pinned \"Read Me First | Frequently Asked Questions\" thread and follow the instructions to share these logs and any relevant information about your problem.",
       "instructions_title": "How to report a problem?",
-      "join-heroic-discord": "Join our Discord",
       "no-file": "No log file found",
       "show-in-folder": "Show log file in folder",
       "show-uploads": "Show uploaded log files",
@@ -852,7 +847,6 @@
         },
         "error": {
           "content": "Failed to upload log file. Check Heroic's general log for details",
-          "manual_upload": "Click the \"SHOW LOG FILE IN FOLDER\" button and upload the \"launch.log\" file manually to Discord or any online file sharing service.",
           "title": "Upload failed"
         },
         "header": "Uploaded log files",
@@ -1099,8 +1093,6 @@
     "sidebar": {
       "accessibility": "Access accessibility features to customize your experience.",
       "accounts": "Manage your connected store accounts (Epic, GOG, Amazon), logout or login on them.",
-      "community": "Join our community on Discord and support Heroic's development.",
-      "docs": "Read documentation for help with using Heroic.",
       "downloads": "Track and manage your game downloads and installations.",
       "library": "Access your game library from different stores in one place.",
       "login": "Log in to your game store accounts to access your library.",
@@ -1129,7 +1121,6 @@
   "Update Available!": "Update Available!",
   "userselector": {
     "cancel": "Cancel",
-    "discord": "Discord",
     "logging_out": "Logging out",
     "logout": "Log out",
     "logout_confirmation": "Are you sure you want to log out?",

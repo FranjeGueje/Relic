@@ -7,7 +7,6 @@ import {
   WrapperVariable,
   ExecResult,
   LaunchPreperationResult,
-  RpcClient,
   WineInstallation,
   WineCommandArgs,
   SteamRuntime,
@@ -23,7 +22,6 @@ import { existsSync, mkdirSync } from 'graceful-fs'
 import { join, dirname, isAbsolute } from 'path'
 
 import {
-  constructAndUpdateRPC,
   getSteamRuntime,
   isEpicServiceOffline,
   quoteIfNecessary,
@@ -460,12 +458,6 @@ async function prepareLaunch(
     )
   }
 
-  // Update Discord RPC if enabled
-  let rpcClient = undefined
-  if (globalSettings.discordRPC) {
-    rpcClient = constructAndUpdateRPC(gameInfo)
-  }
-
   await logWriter.logInfo([
     'Launching',
     `"${gameInfo.title}" (${gameInfo.runner})`
@@ -598,7 +590,6 @@ async function prepareLaunch(
 
   return {
     success: true,
-    rpcClient,
     gameModeBin: gameModeBin ?? undefined,
     steamRuntime,
     offlineMode
@@ -1297,13 +1288,6 @@ export async function verifyWinePrefix(
     })
 }
 
-function launchCleanup(rpcClient?: RpcClient) {
-  if (rpcClient) {
-    rpcClient.destroy()
-    logInfo('Stopped Discord Rich Presence', LogPrefix.Backend)
-  }
-}
-
 async function runWineCommand({
   gameSettings,
   commandParts,
@@ -1869,7 +1853,7 @@ async function runScriptForGame(
 
 export {
   prepareLaunch,
-  launchCleanup,
+
   prepareWineLaunch,
   setupEnvVars,
   setupWrapperEnvVars,

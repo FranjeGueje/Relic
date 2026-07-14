@@ -221,7 +221,6 @@
       "update_game": "Actualizați jocul"
     }
   },
-  "docs": "Documentație",
   "download-manager": {
     "install-type": {
       "install": "Install",
@@ -291,7 +290,6 @@
   },
   "help": {
     "amdfsr": "FSR de la AMD ajută la creșterea ratei de cadre prin creșterea rezoluțiilor mai mici în modul Ecran complet. Calitatea imaginii crește de la 5 la 1 cu prețul unei ușoare atingeri de performanță. Activarea poate îmbunătăți performanța.",
-    "custom_themes_path": "Do not use CSS files from untrusted sources. When in doubt, ask for a review in our Discord channel.",
     "custom_themes_wiki": "Check the Wiki for more details on adding custom themes. Click here.",
     "dxvk": "DXVK este un strat translațional bazat pe Vulkan pentru jocurile DirectX 9, 10 și 11. Activarea poate îmbunătăți compatibilitatea. Poate cauza probleme în special pentru jocurile DirectX mai vechi.",
     "dxvkfpslimit": "Sets a frame rate cap for DXVK games",
@@ -580,7 +578,6 @@
     "default-steam-path": "Calea Steam implicită",
     "defaultWinePrefix": "Setați folderul pentru noile prefixe de vin",
     "disable_controller": "Dezactivați navigarea eroică folosind controlerul",
-    "discordRPC": "Activați Discord Rich Presence",
     "download-no-https": "Descărcați jocuri fără HTTPS (util pentru CDN-uri, de exemplu, LanCache)",
     "dxvkfpslimit": "Limit FPS (DX9, 10 and 11)",
     "egs-sync": "Sincronizare cu Epic Games instalat",
@@ -622,7 +619,6 @@
     "log": {
       "copy-to-clipboard": "Copiați conținutul jurnalului în clipboard",
       "current-log": "Jurnal curent",
-      "instructions": "Alăturați-vă Discordului nostru și căutați canalul care se potrivește cu sistemul dvs. de operare. Distribuiți conținutul jurnalelor afișate aici și includeți o descriere clară a problemei cu orice informații și detalii relevante.",
       "instructions_title": "Cum se raportează o problemă?",
       "last-log": "Ultimul jurnal",
       "no-file": "Nu a fost găsit niciun fișier jurnal",
@@ -656,7 +652,6 @@
         },
         "button": ""
       },
-      "join-heroic-discord": "",
       "descriptiveNames": {
         "legendary": "",
         "nile": "",
@@ -912,7 +907,6 @@
   },
   "Update Available!": "Actualizare disponibila",
   "userselector": {
-    "discord": "Discord",
     "logging_out": "Logging out",
     "logout": "Deconectare",
     "logout_confirmation": "Sigur doriți să vă deconectați?",
@@ -997,9 +991,7 @@
         "intro": ""
       },
       "quit": "",
-      "docs": "",
       "library": "",
-      "community": "",
       "accessibility": "",
       "wine": "",
       "login": "",

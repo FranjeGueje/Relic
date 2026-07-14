@@ -221,7 +221,6 @@
       "update_game": "Eguneratu jokoa"
     }
   },
-  "docs": "Dokumentazioa",
   "download-manager": {
     "install-type": {
       "install": "Install",
@@ -291,7 +290,6 @@
   },
   "help": {
     "amdfsr": "AMD-ren FSR-k fotograma-tasa areagotzen laguntzen du pantaila osoko moduan bereizmen baxuagoak igoz. Irudiaren kalitatea 5etik 1era igotzen da errendimendu txiki baten truke. Gaitzeak errendimendua hobetu dezake.",
-    "custom_themes_path": "Ez erabili iturri ez-fidagarrien CSS fitxategiak. Zalantza izanez gero, eskatu azterketa bat gure Discord zerbitzarian.",
     "custom_themes_wiki": "Check the Wiki for more details on adding custom themes. Click here.",
     "dxvk": "DXVK DirectX 9, 10 eta 11 jokoetarako Vulkan-en oinarritutako translazio-geruza da. Gaitzeak bateragarritasuna hobetu dezake. Arazoak sor ditzake bereziki DirectX joko zaharretan.",
     "dxvkfpslimit": "Sets a frame rate cap for DXVK games",
@@ -580,7 +578,6 @@
     "default-steam-path": "Steam bide lehenetsia",
     "defaultWinePrefix": "Ezarri Karpeta Ardo-aurrizki berrietarako",
     "disable_controller": "Desgaitu nabigazio heroikoa kontrolagailua erabiliz",
-    "discordRPC": "Gaitu Discord presentzia aberatsa",
     "download-no-https": "Deskargatu jokoak HTTPS gabe (CDNetarako erabilgarria, adibidez, LanCache)",
     "dxvkfpslimit": "Limit FPS (DX9, 10 and 11)",
     "egs-sync": "Sinkronizatu instalatutako Epic Games-ekin",
@@ -622,7 +619,6 @@
     "log": {
       "copy-to-clipboard": "Kopiatu erregistroko edukia arbelean",
       "current-log": "Uneko erregistroa",
-      "instructions": "Sartu gure Discord eta bilatu zure sistema eragilearekin bat datorren kanala. Partekatu hemen bistaratzen diren erregistroen edukia eta sartu arazoaren deskribapen argia informazio eta xehetasun garrantzitsuekin.",
       "instructions_title": "Nola salatu arazo bat?",
       "last-log": "Azken erregistroa",
       "no-file": "Ez da aurkitu erregistro-fitxategirik",
@@ -656,7 +652,6 @@
         },
         "button": ""
       },
-      "join-heroic-discord": "",
       "descriptiveNames": {
         "legendary": "",
         "nile": "",
@@ -911,7 +906,6 @@
   },
   "Update Available!": "Eguneraketa eskuragarri!",
   "userselector": {
-    "discord": "Discordia",
     "logging_out": "Logging out",
     "logout": "Saioa amaitu",
     "logout_confirmation": "Ziur saioa amaitu nahi duzula?",
@@ -1012,9 +1006,7 @@
         "intro": ""
       },
       "quit": "",
-      "docs": "",
       "library": "",
-      "community": "",
       "accessibility": "",
       "wine": "",
       "login": "",

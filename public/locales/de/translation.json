@@ -228,7 +228,6 @@
       "update_game": "Spiel aktualisieren"
     }
   },
-  "docs": "Dokumentation",
   "download-manager": {
     "install-type": {
       "install": "Installieren",
@@ -299,7 +298,6 @@
   },
   "help": {
     "amdfsr": "AMDs FSR hilft bei der Verbesserung der Bildrate durch Hochskalieren niedrigerer Auflösungen im Vollbildmodus. Die Bildqualität wird von 5 auf 1 erhöht, allerdings auf Kosten einer leichten Leistungseinbuße. Das Aktivieren kann die Leistung verbessern.",
-    "custom_themes_path": "Verwende keine CSS-Dateien aus nicht vertrauenswürdigen Quellen. Im Zweifelsfall bitte um eine Überprüfung in unserem Discord-Kanal.",
     "custom_themes_wiki": "Weitere Informationen zum Hinzufügen von benutzerdefinierten Designs findest du im Wiki. Hier klicken.",
     "dxvk": "DXVK ist eine Vulkan-basierte Übersetzungsschicht für DirectX 9, 10 und 11 Spiele. Durch Aktivieren kann die Kompatibilität verbessert werden. Allerdings können insbesondere bei älteren DirectX-Spielen Probleme auftreten.",
     "dxvkfpslimit": "Setzt eine Framerate-Grenze für DXVK-Spiele",
@@ -590,7 +588,6 @@
     "default-steam-path": "Standard-Steam-Pfad",
     "defaultWinePrefix": "Ordner für neue Wine-Präfixe festlegen",
     "disable_controller": "Heroic-Navigation mit Gamepad deaktivieren",
-    "discordRPC": "Discord Rich Presence aktivieren",
     "download-no-https": "Spiele ohne HTTPS herunterladen (nützlich für CDNs z. B. LanCache)",
     "dxvkfpslimit": "FPS begrenzen (DX9, 10 und 11)",
     "egs-sync": "Mit installiertem Epic Games synchronisieren",
@@ -632,12 +629,10 @@
     "log": {
       "copy-to-clipboard": "Log-Inhalt in Zwischenablage kopieren",
       "current-log": "Aktueller Log",
-      "instructions": "Tritt unserem Discord bei und suche den „#-support“-Kanal. Lies den angehefteten Thread „Read Me First | Frequently Asked Questions“ und folge den Anweisungen, um diese Logs und alle relevanten Informationen zu deinem Problem zu teilen.",
       "instructions_title": "Wie melde ich ein Problem?",
       "last-log": "Letztes Log",
       "no-file": "Keine Log-Datei gefunden",
       "show-in-folder": "Log-Datei im Ordner anzeigen",
-      "join-heroic-discord": "Komm auf unseren Discord-Server",
       "upload": {
         "actions": "Aktionen",
         "confirm": {
@@ -652,8 +647,7 @@
         },
         "error": {
           "content": "Hochladen der Log-Datei fehlgeschlagen. Sieh dir Heroic's allgemeine Log-Datei an für mehr Infos",
-          "title": "Hochladen fehlgeschlagen",
-          "manual_upload": "Klicken Sie auf die Schaltfläche „LOGDATEI IM ORDNER ANZEIGEN“ und laden Sie die Datei „launch.log“ manuell auf Discord oder einen anderen Online-Dateiaustauschdienst hoch."
+          "title": "Hochladen fehlgeschlagen"
         },
         "header": "Log-Datein hochgeladen",
         "hours-ago": "Hochgeladen vor {{hoursAgo, relativetime(hours)}} Stunden",
@@ -933,7 +927,6 @@
   },
   "Update Available!": "Aktualisierung verfügbar!",
   "userselector": {
-    "discord": "Discord",
     "logging_out": "Abmelden …",
     "logout": "Abmelden",
     "logout_confirmation": "Möchtest du dich wirklich abmelden?",
@@ -1072,10 +1065,8 @@
         "title": "Seitenleiste",
         "intro": "Willkommen in Heroic! Diese Seitenleiste beinhaltet alle wichtigen Navigationspunkte, um die App zu erkunden."
       },
-      "docs": "Lese die Dokumentation für Hilfe, bei der Verwendung von Heroic.",
       "quit": "Verlasse die Applikation sicher.",
       "accounts": "Verwalte deine verbundenen Konten (Epic, GOG, Amazon), melde dich bei ihnen an oder ab.",
-      "community": "Betrete unserer Community auf Discord und unterstütze Heroics Weiterentwicklung.",
       "stores": "Durchsuche und kaufe unterschiedliche Spiele in unterschiedlichen Shops unter anderem Epic,GOG und Amazon.",
       "login": "Log dich in deine Spielevertriebsplattformkonten ein um Zugriff auf deine Bibliothek zu bekommen.",
       "settings": "Konfiguriere die Einstellungen von Heroic, setze Standardeinstellungen für Spiele, prüfe Logdaten und mehr."

@@ -202,7 +202,6 @@
   },
   "userselector": {
     "cancel": "Bekor qilish",
-    "discord": "Ixtilof",
     "logging_out": "Chiqish",
     "logout": "Chiqish",
     "logout_confirmation": "Haqiqatan ham tizimdan chiqmoqchimisiz?",
@@ -274,7 +273,6 @@
       "update_game": "O'yinni yangilash"
     }
   },
-  "docs": "Hujjatlar",
   "download-manager": {
     "install-type": {
       "install": "O'rnatish",
@@ -344,7 +342,6 @@
   },
   "help": {
     "amdfsr": "AMD ning FSR to'liq ekran rejimida pastroq piksellar sonini oshirish orqali kadrlar tezligini oshirishga yordam beradi. Tasvir sifati unchalik katta bo'lmagan samaradorlik evaziga 5 dan 1 gacha oshadi. Yoqish unumdorlikni oshirishi mumkin.",
-    "custom_themes_path": "Ishonchsiz manbalardan CSS fayllaridan foydalanmang. Agar shubhangiz bo'lsa, Discord kanalimizda ko'rib chiqishni so'rang.",
     "custom_themes_wiki": "Shaxsiy mavzularni qo'shish haqida batafsil ma'lumot olish uchun Wiki-ni tekshiring. Bu yerni bosing.",
     "dxvk": "DXVK - DirectX 9, 10 va 11 o'yinlari uchun Vulkanga asoslangan tarjima qatlami. Yoqish moslikni yaxshilashi mumkin. Ayniqsa eski DirectX o'yinlarida muammolarga olib kelishi mumkin.",
     "dxvkfpslimit": "DXVK o'yinlari uchun kadr tezligi chegarasini o'rnatadi",
@@ -624,7 +621,6 @@
     "default-steam-path": "Standart Steam yo'li",
     "defaultWinePrefix": "Yangi sharob prefikslari uchun papkani o'rnating",
     "disable_controller": "Kontroller yordamida qahramonlik navigatsiyasini o'chiring",
-    "discordRPC": "Discord Rich Presence-ni yoqing",
     "download-no-https": "HTTPSsiz o'yinlarni yuklab oling (CDN uchun foydali, masalan, LanCache)",
     "dxvkfpslimit": "FPSni cheklash (DX9, 10 va 11)",
     "egs-sync": "O'rnatilgan Epic Games bilan sinxronlash",
@@ -668,7 +664,6 @@
     "log": {
       "copy-to-clipboard": "Jurnal tarkibini vaqtinchalik xotiraga nusxalash",
       "current-log": "Joriy jurnal",
-      "instructions": "Discordimizga qo'shiling va operatsion tizimingizga mos keladigan kanalni qidiring. Bu yerda ko'rsatilgan jurnallar mazmunini baham ko'ring va muammoning aniq tavsifini har qanday tegishli ma'lumot va tafsilotlar bilan kiriting.",
       "instructions_title": "Muammo haqida qanday xabar berish kerak?",
       "last-log": "Oxirgi jurnal",
       "no-file": "Hech qanday jurnal fayli topilmadi",
@@ -702,7 +697,6 @@
         },
         "button": ""
       },
-      "join-heroic-discord": "",
       "descriptiveNames": {
         "legendary": "",
         "nile": "",
@@ -958,9 +952,7 @@
         "intro": ""
       },
       "quit": "",
-      "docs": "",
       "library": "",
-      "community": "",
       "accessibility": "",
       "wine": "",
       "login": "",

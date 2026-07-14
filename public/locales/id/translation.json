@@ -221,7 +221,6 @@
       "update_game": "Perbarui gim"
     }
   },
-  "docs": "Dokumentasi",
   "download-manager": {
     "install-type": {
       "install": "Instal",
@@ -292,7 +291,6 @@
   },
   "help": {
     "amdfsr": "FSR AMD membantu untuk meningkatkan framerate dengan meningkatkan resolusi yang lebih rendah dalam Mode Layar Penuh. Kualitas gambar meningkat dari 5 menjadi 1 dengan mengorbankan sedikit kinerja. Mengaktifkannya dapat meningkatkan kinerja.",
-    "custom_themes_path": "Jangan gunakan file CSS dari sumber yang tidak tepercaya. Jika ragu, mintalah ulasan di saluran Discord kami.",
     "custom_themes_wiki": "Cek Wiki untuk detail lebih lanjut tentang kustomisasi tema. Klik disini.",
     "dxvk": "DXVK adalah lapisan translasi berbasis Vulkan untuk gim yang memakai DirectX 9, 10, dan 11. Mengaktifkannya dapat meningkatkan kompatibilitas. Mungkin dapat menyebabkan masalah terutama untuk gim dengan versi DirectX yang lebih lama.",
     "dxvkfpslimit": "Atur batas maksimal frame untuk gim DXVK",
@@ -583,7 +581,6 @@
     "default-steam-path": "Lokasi Steam bawaan",
     "defaultWinePrefix": "Atur Folder untuk Prefiks Wine baru",
     "disable_controller": "Nonaktifkan navigasi Heroic menggunakan pengontrol",
-    "discordRPC": "Aktifkan Discord Rich Presence",
     "download-no-https": "Unduh gim tanpa HTTPS (berguna untuk CDN misalnya LanCache)",
     "dxvkfpslimit": "Batasi FPS (DX9, 10 dan 11)",
     "egs-sync": "Sinkronkan dengan Epic Games yang Terinstal",
@@ -625,7 +622,6 @@
     "log": {
       "copy-to-clipboard": "Salin konten log ke papan klip",
       "current-log": "Log Saat Ini",
-      "instructions": "Bergabunglah dengan Discord kami dan carilah bagian \"#-support\". Bacalah utas \"Read Me First | Frequently Asked Questions\" dan ikuti instruksinya untuk membagikan log ini dan informasi lain yang relevan mengenai masalahmu.",
       "instructions_title": "Bagaimana cara melaporkan masalah?",
       "last-log": "Log Terakhir",
       "no-file": "Tidak ditemukan berkas log",
@@ -644,8 +640,7 @@
         },
         "error": {
           "content": "Gagal mengunggah file log. Periksa log umum Heroic untuk detailnya.",
-          "title": "Unggahan gagal",
-          "manual_upload": "Klik tombol \"TAMPILKAN FILE LOG DI FOLDER\" dan unggah file \"launch.log\" secara manual ke Discord atau layanan berbagi file online mana pun."
+          "title": "Unggahan gagal"
         },
         "header": "File log yang diunggah",
         "hours-ago": "Diunggah {{hoursAgo, relativetime(hours)}} yang lalu",
@@ -667,7 +662,6 @@
         "nile": "Log Amazon / Nile",
         "zoom": "Log Zoom"
       },
-      "join-heroic-discord": "Bergabunglah dengan Discord kami",
       "show-uploads": "Tampilkan file log yang diunggah"
     },
     "manualsync": {
@@ -919,7 +913,6 @@
   },
   "Update Available!": "Pembaruan Tersedia!",
   "userselector": {
-    "discord": "Discord",
     "logging_out": "Keluar",
     "logout": "Keluar",
     "logout_confirmation": "Apakah Anda yakin ingin keluar?",
@@ -1041,8 +1034,6 @@
     "sidebar": {
       "accessibility": "Akses fitur aksesibilitas untuk menyesuaikan pengalaman Anda.",
       "accounts": "Kelola akun toko Anda yang terhubung (Epic, GOG, Amazon), keluar atau masuk ke akun tersebut.",
-      "community": "Bergabunglah dengan komunitas kami di Discord dan dukung pengembangan Heroic.",
-      "docs": "Baca dokumentasi untuk mendapatkan bantuan dalam menggunakan Heroic.",
       "downloads": "Lacak dan kelola unduhan serta instalasi game Anda.",
       "library": "Akses pustaka game Anda dari berbagai toko di satu tempat.",
       "login": "Masuk ke akun toko game Anda untuk mengakses pustaka Anda.",

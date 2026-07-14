@@ -229,7 +229,6 @@
         },
         "button": ""
       },
-      "join-heroic-discord": "",
       "descriptiveNames": {
         "legendary": "",
         "nile": "",
@@ -346,7 +345,6 @@
     "steamruntime": "",
     "disableUMU": "",
     "defaultWinePrefix": "",
-    "discordRPC": "",
     "gamemode": "",
     "select_theme": "",
     "maxRecentGames": "",
@@ -751,7 +749,6 @@
     "new-category": "",
     "add-new-category": ""
   },
-  "docs": "დოკუმენტაცია",
   "epic": {
     "offline-notification-title": "ხაზგარეშე",
     "offline-notification-body": ""
@@ -850,9 +847,7 @@
         "intro": ""
       },
       "quit": "",
-      "docs": "",
       "library": "",
-      "community": "",
       "accessibility": "",
       "wine": "",
       "login": "",
@@ -893,7 +888,6 @@
   },
   "userselector": {
     "cancel": "გაუქმება",
-    "discord": "Discord",
     "quit": "გასვლა",
     "logout": "",
     "manageaccounts": "",
