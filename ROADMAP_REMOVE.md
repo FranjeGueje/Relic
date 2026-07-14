@@ -9,40 +9,46 @@ Relic NO debe gestionar Wine, Proton, Winetricks, MangoHud, Gamescope, DXVK, VKD
 ## 1. Wine
 
 ### Backend: `src/backend/wine/`
+
 Directorio completo dedicado a la gestión de versiones de Wine/Proton.
 
-| Archivo | Líneas | Propósito |
-|---|---|---|
-| `src/backend/wine/manager/downloader/main.ts` | — | Descargador de versiones de Wine/Proton |
-| `src/backend/wine/manager/downloader/constants.ts` | — | Constantes (URLs de releases) |
-| `src/backend/wine/manager/downloader/utilities.ts` | — | Utilidades de descarga |
-| `src/backend/wine/manager/downloader/__tests__/main/getter.test.ts` | — | Tests del descargador |
-| `src/backend/wine/manager/downloader/__tests__/utilities/rest.test.ts` | — | Tests REST |
-| `src/backend/wine/manager/downloader/__tests__/utilities/unzip.test.ts` | — | Tests de descompresión |
-| `src/backend/wine/manager/downloader/__tests__/test_data/test.tar.gz` | 6.4 MB | Test fixture enorme |
-| `src/backend/wine/manager/downloader/__tests__/test_data/test.tar.xz` | 3.2 MB | Test fixture enorme |
-| `src/backend/wine/manager/downloader/__tests__/test_data/github-api-test-data.json` | — | Mock de API |
-| `src/backend/wine/manager/ipc_handler.ts` | — | IPC del Wine Manager |
-| `src/backend/wine/manager/utils.ts` | — | Utilidades del Wine Manager |
-| `src/backend/wine/runtimes/runtimes.ts` | — | Gestión de runtimes (DXVK, VKD3D) |
-| `src/backend/wine/runtimes/ipc_handler.ts` | — | IPC de runtimes |
-| `src/backend/wine/runtimes/util.ts` | — | Utilidades de runtimes |
-| `src/backend/wine/runtimes/__tests__/runtimes/utils.test.ts` | — | Tests de runtimes |
-| `src/backend/wine/runtimes/__tests__/runtimes/test_data/*.tar.xz` | — | Test fixtures |
+| Archivo                                                                             | Líneas | Propósito                               |
+| ----------------------------------------------------------------------------------- | ------ | --------------------------------------- |
+| `src/backend/wine/manager/downloader/main.ts`                                       | —      | Descargador de versiones de Wine/Proton |
+| `src/backend/wine/manager/downloader/constants.ts`                                  | —      | Constantes (URLs de releases)           |
+| `src/backend/wine/manager/downloader/utilities.ts`                                  | —      | Utilidades de descarga                  |
+| `src/backend/wine/manager/downloader/__tests__/main/getter.test.ts`                 | —      | Tests del descargador                   |
+| `src/backend/wine/manager/downloader/__tests__/utilities/rest.test.ts`              | —      | Tests REST                              |
+| `src/backend/wine/manager/downloader/__tests__/utilities/unzip.test.ts`             | —      | Tests de descompresión                  |
+| `src/backend/wine/manager/downloader/__tests__/test_data/test.tar.gz`               | 6.4 MB | Test fixture enorme                     |
+| `src/backend/wine/manager/downloader/__tests__/test_data/test.tar.xz`               | 3.2 MB | Test fixture enorme                     |
+| `src/backend/wine/manager/downloader/__tests__/test_data/github-api-test-data.json` | —      | Mock de API                             |
+| `src/backend/wine/manager/ipc_handler.ts`                                           | —      | IPC del Wine Manager                    |
+| `src/backend/wine/manager/utils.ts`                                                 | —      | Utilidades del Wine Manager             |
+| `src/backend/wine/runtimes/runtimes.ts`                                             | —      | Gestión de runtimes (DXVK, VKD3D)       |
+| `src/backend/wine/runtimes/ipc_handler.ts`                                          | —      | IPC de runtimes                         |
+| `src/backend/wine/runtimes/util.ts`                                                 | —      | Utilidades de runtimes                  |
+| `src/backend/wine/runtimes/__tests__/runtimes/utils.test.ts`                        | —      | Tests de runtimes                       |
+| `src/backend/wine/runtimes/__tests__/runtimes/test_data/*.tar.xz`                   | —      | Test fixtures                           |
 
 ### Backend: `src/backend/utils/compatibility_layers.ts`
+
 581 líneas dedicadas a detectar y gestionar capas de compatibilidad (Wine, Proton, Crossover, Game Porting Toolkit, Whisky, Wineskin).
 
 ### Backend: `src/backend/tools/index.ts`
+
 893 líneas. Herramientas como DXVK, VKD3D, Winetricks, descarga de Wine/Proton.
 
 ### Backend: `src/backend/tools/dxmt.ts`
+
 DXMT (DirectX Metal Translation) para macOS.
 
 ### Backend: `src/backend/tools/ipc_handler.ts`
+
 IPC para las herramientas (wine, dxvk, vkd3d, winetricks).
 
 ### Backend: `src/backend/launcher.ts` — secciones wine
+
 - Llamadas a `checkWineBeforeLaunch`
 - Variables de entorno `HEROIC_*` para el script
 - Gestión de prefijos (`winePrefix`)
@@ -50,71 +56,87 @@ IPC para las herramientas (wine, dxvk, vkd3d, winetricks).
 - Llamadas a `WineCommandArgs`
 
 ### Backend: `src/backend/config.ts` — config de wine
+
 - `wineCrossoverBottle: 'Relic'` (línea 355)
 - `defaultWinePrefix`
 - Configuración global de Wine/Proton
 
 ### Backend: `src/backend/game_config.ts`
+
 393 líneas. Configuración por juego que incluye `wineVersion`, `winePrefix`, `wineCrossoverBottle`.
 
 ### Backend: `src/backend/save_sync.ts`
+
 216 líneas. Sincronización de partidas que depende de `winePrefix` para localizar los archivos de guardado.
 
 ### Backend: `src/backend/storeManagers/*/games.ts` — wine en cada tienda
+
 - `gog/games.ts`
 - `legendary/games.ts`
 - `nile/games.ts`
 - `sideload/games.ts`
 - `zoom/games.ts`
 - `storeManagerCommon/games.ts`
-Todos tienen lógica de lanzamiento que usa Wine/Proton.
+  Todos tienen lógica de lanzamiento que usa Wine/Proton.
 
 ### Backend: `src/backend/storeManagers/gog/setup.ts`
+
 Instalación offline de GOG que ejecuta Wine para el setup.
 
 ### Backend: `src/backend/storeManagers/legendary/setup.ts`
+
 Setup de Legendary que usa Wine.
 
 ### Backend: `src/backend/storeManagers/legendary/commands/launch.ts`
+
 Comando de lanzamiento para Legendary.
 
 ### Backend: `src/backend/storeManagers/legendary/eos_overlay/eos_overlay.ts`
+
 Overlay de EOS que se instala con Wine.
 
 ### Backend: `src/backend/main.ts` — secciones wine
+
 - Importación de `DXVK`, `Winetricks`
 - Llamadas a herramientas wine
 - Configuración de wine tools
 - Gestión de `winePrefix` en el inicio
 
 ### Backend: `src/backend/utils.ts` — secciones wine
+
 - `compatibility_layers`
 - `heroicInstallPath` relacionado con prefijos
 - Funciones de wine
 
 ### Backend: `src/backend/storeManagers/storeManagerCommon/games.ts` — launchGame
+
 272 líneas. Función `launchGame` compartida por todas las tiendas que ejecuta juegos con Wine/Proton.
 
 ### Backend: `src/backend/shortcuts/nonesteamgame/nonesteamgame.ts`
+
 Añadir juegos a Steam con `relic://launch` y referencias a Wine/Proton.
 
 ### Backend: `src/backend/shortcuts/shortcuts/shortcuts.ts`
+
 Atajos con `relic://launch` y argumentos de Wine/Proton.
 
 ### Backend: public/bin/
+
 - `public/bin/x64/linux/vulkan-helper` (715 KB)
 - `public/bin/arm64/linux/vulkan-helper` (707 KB)
-Binarios ELF para helpers de Vulkan, usados en el lanzamiento de juegos.
+  Binarios ELF para helpers de Vulkan, usados en el lanzamiento de juegos.
 
 ### IPC (`src/common/types/ipc.ts`)
+
 - `winetricksInstall`
-- `winetricksInstalled`  
+- `winetricksInstalled`
 - `winetricksAvailable`
 - `wine.isValidVersion`
 - `wineVersionsUpdated`
 - `'installing-winetricks-component'`
 
 ### Types (`src/common/types.ts`)
+
 - `WineInstallation` (interface)
 - `WineCommandArgs` (interface)
 - `ProtonVerb` (type)
@@ -122,12 +144,15 @@ Binarios ELF para helpers de Vulkan, usados en el lanzamiento de juegos.
 - Winetricks en `path` enum
 
 ### Preload (`src/preload/api/wine.ts`)
+
 API de preload dedicada a wine/winetricks/dxvk/vkd3d.
 
 ### Preload (`src/preload/api/helpers.ts`)
+
 `runWineCommand`, `runWineCommandForGame`.
 
 ### Preload (`src/preload/api/misc.ts`)
+
 Referencias a wine.
 
 ---
@@ -135,37 +160,41 @@ Referencias a wine.
 ## Frontend Wine Manager
 
 ### `src/frontend/screens/WineManager/`
-| Archivo | Propósito |
-|---|---|
-| `index.tsx` | Pantalla completa de gestión de Wine/Proton |
-| `state.ts` | Estado del Wine Manager |
-| `components/WineItem/index.tsx` | Item individual de Wine |
-| `components/WineManagerSettingsModal.tsx` | Modal de configuración |
+
+| Archivo                                   | Propósito                                   |
+| ----------------------------------------- | ------------------------------------------- |
+| `index.tsx`                               | Pantalla completa de gestión de Wine/Proton |
+| `state.ts`                                | Estado del Wine Manager                     |
+| `components/WineItem/index.tsx`           | Item individual de Wine                     |
+| `components/WineManagerSettingsModal.tsx` | Modal de configuración                      |
 
 ### `src/frontend/components/UI/Winetricks/`
-| Archivo | Propósito |
-|---|---|
-| `index.tsx` | Componente Winetricks |
+
+| Archivo                      | Propósito                          |
+| ---------------------------- | ---------------------------------- |
+| `index.tsx`                  | Componente Winetricks              |
 | `WinetricksSearch/index.tsx` | Búsqueda de componentes Winetricks |
-| `index.scss` | Estilos |
+| `index.scss`                 | Estilos                            |
 
 ### Frontend Settings Components
-| Archivo | Propósito |
-|---|---|
-| `WineVersionSelector.tsx` | Selector de versión de Wine/Proton |
-| `WinePrefix.tsx` | Configuración de prefijo de Wine |
-| `WinePrefixesBasePath.tsx` | Ruta base de prefijos |
-| `CrossoverBottle.tsx` | Botella de Crossover |
-| `CustomWineProton.tsx` | Rutas personalizadas de Wine/Proton |
-| `ShowValveProton.tsx` | Mostrar Proton de Valve |
-| `DownloadProtonToSteam.tsx` | Descargar Proton a Steam |
-| `DisableUMU.tsx` | Deshabilitar UMU |
-| `PreferSystemLibs.tsx` | Preferir librerías del sistema (relacionado con Wine) |
-| `SteamRuntime.tsx` | Steam Runtime para lanzamiento |
-| `Tools/index.tsx` | Herramientas (DXVK, VKD3D, Winetricks) |
-| `WineVersionSelector.tsx` | Versiones de Wine |
+
+| Archivo                     | Propósito                                             |
+| --------------------------- | ----------------------------------------------------- |
+| `WineVersionSelector.tsx`   | Selector de versión de Wine/Proton                    |
+| `WinePrefix.tsx`            | Configuración de prefijo de Wine                      |
+| `WinePrefixesBasePath.tsx`  | Ruta base de prefijos                                 |
+| `CrossoverBottle.tsx`       | Botella de Crossover                                  |
+| `CustomWineProton.tsx`      | Rutas personalizadas de Wine/Proton                   |
+| `ShowValveProton.tsx`       | Mostrar Proton de Valve                               |
+| `DownloadProtonToSteam.tsx` | Descargar Proton a Steam                              |
+| `DisableUMU.tsx`            | Deshabilitar UMU                                      |
+| `PreferSystemLibs.tsx`      | Preferir librerías del sistema (relacionado con Wine) |
+| `SteamRuntime.tsx`          | Steam Runtime para lanzamiento                        |
+| `Tools/index.tsx`           | Herramientas (DXVK, VKD3D, Winetricks)                |
+| `WineVersionSelector.tsx`   | Versiones de Wine                                     |
 
 ### Otros frontend con referencias a Wine/Proton
+
 - `src/frontend/App.tsx` — imports de WineManager
 - `src/frontend/components/UI/index.tsx` — imports de Winetricks, WineManager
 - `src/frontend/components/UI/Sidebar/components/SidebarLinks/index.tsx` — enlace a Wine Manager
@@ -232,6 +261,7 @@ Archivos dedicados:
 - `src/preload/api/wine.ts` — funciones winetricks
 
 Referencias en:
+
 - `src/backend/launcher.ts`
 - `src/backend/logger/constants.ts`
 - `src/backend/main.ts`
@@ -305,6 +335,7 @@ Referencias en:
 Relic NO debe lanzar juegos. El archivo central es `src/backend/launcher.ts` (2092 líneas).
 
 ### Archivos de lanzamiento:
+
 - `src/backend/launcher.ts` — **núcleo del lanzador**
 - `src/backend/protocol.ts` — manejador del protocolo `relic://launch`
 - `src/backend/tray_icon/tray_icon.ts` — lanzamiento desde bandeja
@@ -314,9 +345,11 @@ Relic NO debe lanzar juegos. El archivo central es `src/backend/launcher.ts` (20
 - `src/backend/shortcuts/shortcuts/shortcuts.ts` — atajos Steam
 
 ### IPC de lanzamiento:
+
 - `src/common/types/ipc.ts` — `launch`, `launchGame`
 
 ### Frontend de lanzamiento:
+
 - `src/frontend/hooks/useLaunchOptions.ts`
 - `src/frontend/screens/Settings/components/LaunchOptionSelector.tsx`
 - `src/frontend/screens/Settings/components/AfterLaunchScriptPath.tsx`
@@ -348,21 +381,21 @@ Relic NO debe lanzar juegos. El archivo central es `src/backend/launcher.ts` (20
 
 ## Resumen de archivos dedicados 100% a funcionalidades a eliminar
 
-| Ruta | Líneas / Tamaño |
-|---|---|
-| `src/backend/launcher.ts` | ~2092 |
-| `src/backend/wine/` (directorio completo) | ~20+ archivos |
-| `src/backend/tools/` | ~3 archivos, ~900+ líneas |
-| `src/backend/utils/compatibility_layers.ts` | ~581 |
-| `src/backend/protocol.ts` | ~198 |
-| `src/backend/storeManagers/storeManagerCommon/games.ts` | ~272 |
-| `src/backend/storeManagers/legendary/commands/launch.ts` | ~28 |
-| `src/backend/save_sync.ts` | ~216 |
-| `src/backend/shortcuts/nonesteamgame/nonesteamgame.ts` | — |
-| `src/backend/shortcuts/shortcuts/shortcuts.ts` | — |
-| `src/frontend/screens/WineManager/` | ~7 archivos |
-| `src/frontend/components/UI/Winetricks/` | ~3 archivos |
-| `public/bin/` | ~1.4 MB en binarios ELF |
-| `public/bin/legendary.LICENSE` | — |
+| Ruta                                                     | Líneas / Tamaño           |
+| -------------------------------------------------------- | ------------------------- |
+| `src/backend/launcher.ts`                                | ~2092                     |
+| `src/backend/wine/` (directorio completo)                | ~20+ archivos             |
+| `src/backend/tools/`                                     | ~3 archivos, ~900+ líneas |
+| `src/backend/utils/compatibility_layers.ts`              | ~581                      |
+| `src/backend/protocol.ts`                                | ~198                      |
+| `src/backend/storeManagers/storeManagerCommon/games.ts`  | ~272                      |
+| `src/backend/storeManagers/legendary/commands/launch.ts` | ~28                       |
+| `src/backend/save_sync.ts`                               | ~216                      |
+| `src/backend/shortcuts/nonesteamgame/nonesteamgame.ts`   | —                         |
+| `src/backend/shortcuts/shortcuts/shortcuts.ts`           | —                         |
+| `src/frontend/screens/WineManager/`                      | ~7 archivos               |
+| `src/frontend/components/UI/Winetricks/`                 | ~3 archivos               |
+| `public/bin/`                                            | ~1.4 MB en binarios ELF   |
+| `public/bin/legendary.LICENSE`                           | —                         |
 
 **Total estimado: ~5000+ líneas de código y ~1.4 MB en binarios a eliminar**, sin contar las modificaciones necesarias en archivos compartidos (types, config, stores) que referencian estas funcionalidades.
