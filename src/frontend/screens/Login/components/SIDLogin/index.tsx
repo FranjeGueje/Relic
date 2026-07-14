@@ -4,7 +4,7 @@ import LinkIcon from '@mui/icons-material/Link'
 import PublicIcon from '@mui/icons-material/Public'
 import { Button, Paper, Stack, Typography } from '@mui/material'
 import { useTranslation } from 'react-i18next'
-import { loginPage, sidInfoPage } from 'frontend/helpers'
+import { loginPage } from 'frontend/helpers'
 import './index.css'
 import { Autorenew } from '@mui/icons-material'
 import ContextProvider from 'frontend/state/ContextProvider'
@@ -85,13 +85,6 @@ export default function SIDLogin({ backdropClick }: Props) {
                 {t('message.part3')}
               </span>
               {`${t('message.part4')} `}
-              <span onClick={() => sidInfoPage()} className="sid">
-                {`${t('message.part5')}`}
-                <Info
-                  style={{ marginLeft: '4px' }}
-                  className="material-icons"
-                />
-              </span>
               <Paper variant="outlined" className="login-link">
                 <Typography variant="subtitle1" paddingLeft={2}>
                   {epicLoginUrl}
@@ -121,11 +114,7 @@ export default function SIDLogin({ backdropClick }: Props) {
               </Paper>
             </li>
             <li>
-              {`${t('message.part6')} `}
-              <span onClick={() => sidInfoPage()} className="sid">
-                {`${t('message.part7')}`}
-              </span>
-              {` ${t('message.part8')}`}
+              {`${t('message.part6')} ${t('message.part8')}`}
             </li>
           </ol>
         </div>

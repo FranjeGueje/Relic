@@ -81,8 +81,7 @@ export async function installOrUpdateTool(tool: Tool) {
   if (tool.name === 'dxvk-macOS' && asset.name.includes('-builtin')) {
     // Do not use -builtin asset for dxvk macos
     // TODO: implement proper use of the -builtin using the WINEDLLPATH_PREPEND
-    // env variable, check https://github.com/anomalyco/relic/pull/5342#issuecomment-3936553327
-    // for more details
+    // env variable, check the associated PR for more details
     asset = assets.find((asset) => asset.name.endsWith('repack.tar.gz'))!
   }
   const { name, browser_download_url: downloadUrl } = asset
@@ -789,7 +788,7 @@ export const Winetricks = {
     }
 
     if (missingDeps.length > 0 && isMac) {
-      const message = `Check https://github.com/anomalyco/relic/wiki/Using-Relic-on-a-Mac-computer#winetricks-setup to install the missing dependencies.`
+      const message = `Check the wiki to install the missing dependencies.`
       appendMessage(message)
       logWarning([message], LogPrefix.WineTricks)
     }

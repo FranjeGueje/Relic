@@ -1,5 +1,4 @@
 import { initImagesCache } from './images_cache'
-import { fetchLastestReleases } from './utils/releases'
 import { DiskSpaceData, StatusPromise, WineInstallation } from 'common/types'
 import * as path from 'path'
 import {
@@ -19,8 +18,6 @@ import {
   addOneTimeListener,
   sendFrontendMessage
 } from 'backend/ipc'
-import 'backend/updater'
-import { autoUpdater } from 'electron-updater'
 import { cpus } from 'os'
 import { existsSync, watch, readdirSync, readFileSync } from 'graceful-fs'
 import 'source-map-support/register'
@@ -46,9 +43,7 @@ import {
   showItemInFolder,
   getFileSize,
   detectVCRedist,
-  getLatestReleases,
   getShellPath,
-  getCurrentChangelog,
   removeFolder,
   downloadDefaultWine,
   sendGameStatusUpdate,
@@ -111,11 +106,7 @@ import { backendEvents } from './backend_events'
 import { configStore } from './constants/key_value_stores'
 import {
   epicLoginUrl,
-  relicGithubURL,
-  sidInfoUrl,
-  supportURL,
   weblateUrl,
-  wikiLink,
   wineprefixFAQ
 } from './constants/urls'
 import { legendaryInstalled } from './storeManagers/legendary/constants'
@@ -232,9 +223,6 @@ async function initializeWindow(): Promise<BrowserWindow> {
       join(publicDir, 'index.html'),
       startHash ? { hash: startHash } : undefined
     )
-    if (globalConf.checkForUpdatesOnStartup) {
-      autoUpdater.checkForUpdates()
-    }
   }
 
   // Changelog links workaround
@@ -430,8 +418,6 @@ if (!gotTheLock) {
       backendEvents.emit('languageChanged')
     })
 
-    fetchLastestReleases()
-
     initTrayIcon(mainWindow)
 
     return
@@ -589,15 +575,11 @@ app.on('open-url', (event, url) => {
 
 addListener('openExternalUrl', async (event, url) => openUrlOrFile(url))
 addListener('openFolder', async (event, folder) => openUrlOrFile(folder))
-addListener('openSupportPage', async () => openUrlOrFile(supportURL))
-addListener('openReleases', async () => openUrlOrFile(relicGithubURL))
 addListener('openWeblate', async () => openUrlOrFile(weblateUrl))
 addListener('showAboutWindow', () => showAboutWindow())
 addListener('openLoginPage', async () => openUrlOrFile(epicLoginUrl))
 addListener('openWinePrefixFAQ', async () => openUrlOrFile(wineprefixFAQ))
 addListener('openWebviewPage', async (event, url) => openUrlOrFile(url))
-addListener('openWikiLink', async () => openUrlOrFile(wikiLink))
-addListener('openSidInfoPage', async () => openUrlOrFile(sidInfoUrl))
 addListener('showConfigFileInFolder', async (event, appName) => {
   if (appName === 'default') {
     return openUrlOrFile(configPath)
@@ -643,19 +625,6 @@ addHandler('getGameSdl', async (event, appName) =>
 )
 
 addHandler('showUpdateSetting', () => true)
-
-addHandler('getLatestReleases', async () => {
-  const { checkForUpdatesOnStartup } = GlobalConfig.get().getSettings()
-  if (checkForUpdatesOnStartup) {
-    return getLatestReleases()
-  } else {
-    return []
-  }
-})
-
-addHandler('getCurrentChangelog', async () => {
-  return getCurrentChangelog()
-})
 
 addListener('clearCache', (event, showDialog, fromVersionChange = false) => {
   clearCache(undefined, fromVersionChange)

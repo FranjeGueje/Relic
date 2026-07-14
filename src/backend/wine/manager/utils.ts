@@ -8,8 +8,7 @@ import { logError, logInfo, LogPrefix, logWarning } from 'backend/logger'
 import {
   WineVersionInfo,
   Repositorys,
-  WineManagerStatus,
-  ReleasesInfo
+  WineManagerStatus
 } from 'common/types'
 
 import { getAvailableVersions, installVersion } from './downloader/main'
@@ -75,67 +74,6 @@ function localVersionIsOlder(
     Date.parse(localDate) <
     Date.parse(latestRelease.published_at.replace(/T.*/, ''))
   )
-}
-
-// Fetch the latest releases of the different translation layers but only
-// if we don't already have the latest version locally
-//
-// Note that this updates the list of releases of a given repo if and only if
-// we already have a list for that given repo
-export function updateWineListsIfOutdated(releasesData: ReleasesInfo) {
-  if (isWindows) return
-
-  const latestLocalVersions = getLatestLocalVersions()
-  const repositoriesToFetch = []
-
-  // compare dates to know which repositories to fetch
-  if (isLinux) {
-    if (
-      localVersionIsOlder(
-        latestLocalVersions.latestGEProton,
-        releasesData['ge-proton']
-      )
-    )
-      repositoriesToFetch.push(Repositorys.PROTONGE)
-
-    if (
-      localVersionIsOlder(
-        latestLocalVersions.latestProtonCachyos,
-        releasesData['proton-cachyos']
-      )
-    )
-      repositoriesToFetch.push(Repositorys.PROTONCACHYOS)
-  }
-
-  if (isMac) {
-    if (
-      localVersionIsOlder(
-        latestLocalVersions.latestWineCrossover,
-        releasesData['wine-crossover']
-      )
-    )
-      repositoriesToFetch.push(Repositorys.WINECROSSOVER)
-
-    if (
-      localVersionIsOlder(
-        latestLocalVersions.latestWineStaging,
-        releasesData['wine-staging']
-      )
-    )
-      repositoriesToFetch.push(Repositorys.WINESTAGINGMACOS)
-
-    if (
-      localVersionIsOlder(
-        latestLocalVersions.latestGPTK,
-        releasesData['game-porting-toolkit']
-      )
-    )
-      repositoriesToFetch.push(Repositorys.GPTK)
-  }
-
-  if (repositoriesToFetch.length > 0) {
-    void updateWineVersionInfos(true, repositoriesToFetch)
-  }
 }
 
 async function updateWineVersionInfos(

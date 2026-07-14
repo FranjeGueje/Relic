@@ -67,7 +67,6 @@ import type { AppSettings, WineManagerStatus } from 'common/types'
 import { isUmuSupported } from './utils/compatibility_layers'
 import { getSystemInfo } from './utils/systeminfo'
 import { configStore } from './constants/key_value_stores'
-import { GITHUB_API } from './constants/urls'
 import { isLinux, isMac, isIntelMac, isWindows } from './constants/environment'
 import {
   configPath,
@@ -231,8 +230,7 @@ const showAboutWindow = () => {
     applicationName: 'Relic',
     applicationVersion: getRelicVersion(),
     copyright: 'GPL V3',
-    iconPath: windowIcon,
-    website: 'https://github.com/anomalyco/relic'
+    iconPath: windowIcon
   })
   return app.showAboutPanel()
 }
@@ -741,70 +739,7 @@ function detectVCRedist(mainWindow: BrowserWindow) {
   })
 }
 
-const getLatestReleases = async (): Promise<Release[]> => {
-  if (process.env.CI === 'e2e') return []
 
-  const newReleases: Release[] = []
-  logInfo('Checking for new Relic Updates', LogPrefix.Backend)
-
-  try {
-    const { data: releases } = await axiosClient.get<Release[]>(GITHUB_API)
-    const latestStable = releases
-      .filter((rel) => rel.prerelease === false)
-      .at(0)
-    const latestBeta = releases.filter((rel) => rel.prerelease === true).at(0)
-
-    const current = app.getVersion()
-
-    const thereIsNewStable =
-      latestStable && semverGt(latestStable.tag_name, current)
-    const thereIsNewBeta = latestBeta && semverGt(latestBeta.tag_name, current)
-
-    if (thereIsNewStable) {
-      newReleases.push({ ...latestStable, type: 'stable' })
-    }
-    if (thereIsNewBeta) {
-      newReleases.push({ ...latestBeta, type: 'beta' })
-    }
-
-    if (newReleases.length) {
-      notify({
-        title: t('Update Available!'),
-        body: t('notify.new-relic-version', 'A new Relic version was released!')
-      })
-    }
-
-    return newReleases
-  } catch (error) {
-    logError(
-      ['Error when checking for Relic updates', error],
-      LogPrefix.Backend
-    )
-    return []
-  }
-}
-
-const getCurrentChangelog = async (): Promise<Release | null> => {
-  if (process.env.CI === 'e2e') return null
-
-  logInfo('Checking for current version changelog', LogPrefix.Backend)
-
-  try {
-    const current = app.getVersion()
-
-    const { data: release } = await axiosClient.get(
-      `${GITHUB_API}/tags/v${current}`
-    )
-
-    return release as Release
-  } catch (error) {
-    logError(
-      ['Error when checking for current Relic changelog:', error],
-      LogPrefix.Backend
-    )
-    return null
-  }
-}
 
 // can be removed if legendary and gogdl handle SIGTERM and SIGKILL
 // for us
@@ -1630,7 +1565,6 @@ export const writeConfig = (appName: string, config: Partial<AppSettings>) => {
 export {
   errorHandler,
   execAsync,
-  getCurrentChangelog,
   handleExit,
   isEpicServiceOffline,
   openUrlOrFile,
@@ -1652,7 +1586,6 @@ export {
   killPattern,
   shutdownWine,
   getShellPath,
-  getLatestReleases,
   getWineFromProton,
   getFileSize,
   memoryLog,

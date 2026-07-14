@@ -178,3 +178,29 @@
 ## Reordenamiento Sidebar
 - "Gestionar cuentas" movido debajo de "Biblioteca"
 - "Descargas" movido debajo de "Ajustes"
+
+## URLs rotas de github.com/anomalyco/relic
+- `urls.ts`: eliminados `sidInfoUrl`, `relicGithubURL`, `GITHUB_API`, `supportURL`, `wikiLink`
+- `updater.ts` (auto-updater de electron) eliminado
+- `utils/releases.ts` (fetch de releases info) eliminado
+- `backend/main.ts`: listeners `openSupportPage`, `openReleases`, `openWikiLink`, `openSidInfoPage` eliminados
+- `main.ts`: import y llamada `fetchLastestReleases` eliminados; handler `getLatestReleases` y `getCurrentChangelog` eliminados; import `autoUpdater` eliminado
+- `common/types/ipc.ts`: tipos `openSupportPage`, `openReleases`, `openWikiLink`, `openSidInfoPage`, `getLatestReleases`, `getCurrentChangelog` eliminados
+- `preload/api/helpers.ts`: `openSidInfoPage`, `openSupportPage` eliminados
+- `preload/api/misc.ts`: `getLatestReleases`, `getCurrentChangelog` eliminados
+- `frontend/helpers/index.ts`: `sidInfoPage` eliminado
+- `SIDLogin/index.tsx`: spans con `sidInfoPage` eliminados
+- `RelicVersion`: simplificado (sin changelog modal, sin check de nuevas releases)
+- `ChangelogModal/` directorio eliminado
+- `backend_events.ts`: evento `releasesInfoReady` y tipo `ReleasesInfo` eliminados
+- `anticheat/ipc_handler.ts`: listener `releasesInfoReady` eliminado
+- `tools/dxmt.ts`: listener `releasesInfoReady` eliminado
+- `wine/manager/ipc_handler.ts`: listener `releasesInfoReady` e import eliminados
+- `wine/manager/utils.ts`: función `updateWineListsIfOutdated` e import `ReleasesInfo` eliminados
+- `downloadmanager/utils.ts`: `downloadFixesFor` (known-fixes URL) eliminado
+- `anticheat/utils.ts`: URL MacAnticheatData eliminada (usaba `isMac`)
+- `utils.ts`: `getLatestReleases`, `getCurrentChangelog`, `GITHUB_API`, website about eliminados
+- `tools/index.ts`: URLs en comentarios y mensajes eliminadas
+- `launcher.ts`: comentario issue #4708 eliminado
+- `package.json`: repository URL actualizada a FranjeGueje/Relic
+- Test data de tests de `getLatestReleases` eliminados

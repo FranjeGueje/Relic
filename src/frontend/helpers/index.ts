@@ -18,8 +18,6 @@ const notify = (args: { title: string; body: string }) =>
 
 const loginPage = window.api.openLoginPage
 
-const sidInfoPage = window.api.openSidInfoPage
-
 const handleQuit = window.api.quit
 
 export const size = fileSize.partial({ base: 2 }) as (arg: unknown) => string
@@ -164,7 +162,6 @@ export {
   notify,
   repair,
   sendKill,
-  sidInfoPage,
   syncSaves,
   updateGame,
   writeConfig,

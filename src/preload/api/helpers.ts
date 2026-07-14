@@ -2,8 +2,6 @@ import { frontendListenerSlot, makeHandlerInvoker, makeListenerCaller } from '..
 
 export const notify = makeListenerCaller('notify')
 export const openLoginPage = makeListenerCaller('openLoginPage')
-export const openSidInfoPage = makeListenerCaller('openSidInfoPage')
-export const openSupportPage = makeListenerCaller('openSupportPage')
 export const quit = makeListenerCaller('quit')
 export const showAboutWindow = makeListenerCaller('showAboutWindow')
 export const openWinePrefixFAQ = makeListenerCaller('openWinePrefixFAQ')

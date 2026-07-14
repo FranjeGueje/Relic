@@ -61,15 +61,11 @@ interface SyncIPCFunctions {
   quit: () => void
   openExternalUrl: (url: string) => void
   openFolder: (folder: string) => void
-  openSupportPage: () => void
-  openReleases: () => void
   openWeblate: () => void
   showAboutWindow: () => void
   openLoginPage: () => void
   openWinePrefixFAQ: () => void
   openWebviewPage: (url: string) => void
-  openWikiLink: () => void
-  openSidInfoPage: () => void
   showConfigFileInFolder: (appName: string) => void
   removeFolder: ([path, folderName]: [string, string]) => void
   clearCache: (showDialog?: boolean, fromVersionChange?: boolean) => void
@@ -164,8 +160,6 @@ interface AsyncIPCFunctions {
   isMaximized: () => boolean
   isMinimized: () => boolean
   showUpdateSetting: () => boolean
-  getLatestReleases: () => Promise<Release[]>
-  getCurrentChangelog: () => Promise<Release | null>
   getGameInfo: (appName: string, runner: Runner) => Promise<GameInfo | null>
   getAchievements: (
     appName: string,

@@ -12,7 +12,7 @@
   "description": "A minimalist game installer for GOG, Epic Games and Amazon Games. Fork of Heroic.",
   "repository": {
     "type": "Github",
-    "url": "https://github.com/anomalyco/relic"
+    "url": "https://github.com/FranjeGueje/Relic"
   },
   "author": {
     "name": "Relic",

@@ -143,29 +143,3 @@ backendEvents.on('wineVersionUninstalled', async (versionInfo) => {
     await DXMT.deleteWineCopy(versionInfo)
   }
 })
-
-// Update DXMT version in `*-DXMT` wines if new version available
-backendEvents.on('releasesInfoReady', async (releasesInfo) => {
-  if (!isMac || isIntelMac) return
-
-  // TODO: should we store just the version instead of the file name?
-  const currentDXMTVersion = DXMT.getCurrentDXMTVersion()
-    .replace(/.*dxmt-/, '')
-    .replace(/-builtin.*/, '')
-
-  if (releasesInfo['dxmt'].tag === currentDXMTVersion) return
-
-  await DXMT.getLatest()
-
-  const availableWines = wineDownloaderInfoStore.get('wine-releases', [])
-  const installedWineStagingVersions = availableWines.filter(
-    (wine) => wine.type === 'Wine-Staging-macOS' && wine.isInstalled
-  )
-
-  installedWineStagingVersions.forEach((wine) => {
-    const wineWithDXMTFilePath = `${wine.installDir}-DXMT`
-
-    if (existsSync(wineWithDXMTFilePath))
-      DXMT.copyLatestDXMTFiles(wineWithDXMTFilePath)
-  })
-})
