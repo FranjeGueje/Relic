@@ -1,18 +1,4 @@
 {
-  "accessibility": {
-    "actions_font_family_no_default": "操作菜单字族 （默认)：",
-    "all_tiles_in_color": "对所有游戏磁贴着色",
-    "content_font_family_no_default": "内容字族 （默认： ",
-    "fonts": "字体",
-    "title": "辅助功能",
-    "zoom": "缩放",
-    "disable_dialog_backdrop_close": "在对话框外单击禁用关闭对话框",
-    "titles_always_visible": "始终在游戏库中显示标题",
-    "actions_font_family_default": "操作字族（默认：{{fontFamily}}）",
-    "content_font_family_default": "内容字族（默认：{{fontFamily}}）",
-    "disable_smooth_scrolling": "禁用平滑滚动（需要重启）",
-    "disable_animations": "禁用界面动画"
-  },
   "add_game": "添加游戏",
   "All": "全部",
   "anticheat": {

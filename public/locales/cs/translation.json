@@ -1,18 +1,4 @@
 {
-  "accessibility": {
-    "actions_font_family_no_default": "Rodina písem akcí (výchozí):",
-    "all_tiles_in_color": "Zobrazit všechny dlaždice her barevně",
-    "content_font_family_no_default": "Rodina písem obsahu (výchozí: ",
-    "fonts": "Písma",
-    "title": "Přístupnost",
-    "zoom": "Přiblížení",
-    "disable_dialog_backdrop_close": "Zakázat zavření dialogů kliknutím pryč",
-    "titles_always_visible": "Vždy zobrazovat názvy v knihovně",
-    "actions_font_family_default": "Rodina písem akcí (výchozí: {{fontFamily}})",
-    "content_font_family_default": "Rodina písem obsahu (výchozí: {{fontFamily}})",
-    "disable_smooth_scrolling": "Zakázat plynulé posouvání (vyžaduje restart)",
-    "disable_animations": "Zakázat animace uživatelského rozhraní"
-  },
   "add_game": "Přidat hru",
   "All": "Vše",
   "anticheat": {

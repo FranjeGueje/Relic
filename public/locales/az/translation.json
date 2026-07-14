@@ -1,18 +1,4 @@
 {
-  "accessibility": {
-    "actions_font_family_no_default": "Hərəkət Yazıtipi Ailəsi (Default):",
-    "all_tiles_in_color": "Bütün oyun plitələrini rəngli göstərin",
-    "content_font_family_no_default": "Content Font Family (Default: ",
-    "fonts": "Şriftlər",
-    "title": "Əlçatanlıq",
-    "zoom": "Zoom",
-    "actions_font_family_default": "Actions Font Family (Default:",
-    "content_font_family_default": "Content Font Family (Default:",
-    "disable_smooth_scrolling": "",
-    "titles_always_visible": "",
-    "disable_animations": "",
-    "disable_dialog_backdrop_close": ""
-  },
   "add_game": "Add Game",
   "All": "Hamısı",
   "anticheat": {

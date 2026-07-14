@@ -1,18 +1,4 @@
 {
-  "accessibility": {
-    "actions_font_family_no_default": "Família de Fontes (Padrão):",
-    "all_tiles_in_color": "Exibir todas as capas de jogos como coloridas",
-    "content_font_family_no_default": "Família de Fontes Content (Padrão: ",
-    "fonts": "Fontes",
-    "title": "Acessibilidade",
-    "zoom": "Zoom",
-    "disable_dialog_backdrop_close": "Desative o fechamento de caixas de diálogo ao clicar fora",
-    "titles_always_visible": "Sempre exibir títulos dos jogos na biblioteca",
-    "actions_font_family_default": "Ações de família de fontes (padrão: {{fontFamily}})",
-    "content_font_family_default": "Conteúdo de família de fontes (padrão: {{fontFamily}})",
-    "disable_smooth_scrolling": "Desativar rolagem suave (O Heroic precisará ser reiniciado)",
-    "disable_animations": "Desativar animações da interface de usuário"
-  },
   "add_game": "Adicionar jogo",
   "All": "Todos",
   "anticheat": {

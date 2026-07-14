@@ -1,18 +1,4 @@
 {
-  "accessibility": {
-    "actions_font_family_no_default": "Actions Font Family (Default: ",
-    "all_tiles_in_color": "Show all game tiles in color",
-    "content_font_family_no_default": "Content Font Family (Default: ",
-    "fonts": "Fonts",
-    "title": "Accessibility",
-    "zoom": "Zoom",
-    "content_font_family_default": "Content Font Family (Default:",
-    "actions_font_family_default": "Actions Font Family (Default:",
-    "disable_smooth_scrolling": "",
-    "titles_always_visible": "",
-    "disable_animations": "",
-    "disable_dialog_backdrop_close": ""
-  },
   "add_game": "Add Game",
   "All": "എല്ലാം",
   "anticheat": {

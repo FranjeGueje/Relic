@@ -176,20 +176,6 @@
     "title": "Ова игра садржи античит систем",
     "multiplayer_may_not_work": "Можда неће радити због одбијене или покварене античит подршке."
   },
-  "accessibility": {
-    "content_font_family_no_default": "Породица фонтова садржаја (Подразумевано: ",
-    "zoom": "Увеличавање",
-    "title": "Приступачност",
-    "actions_font_family_no_default": "Породица фонтова радње (Подразумевано: ",
-    "all_tiles_in_color": "Прикажи све плочице игара у боји",
-    "fonts": "Фонтови",
-    "actions_font_family_default": "Породица фонтова радње (Подразумевано:{{fontFamily}})",
-    "content_font_family_default": "Породица фонтова садржаја (Подразумевано:{{fontFamily}}",
-    "disable_animations": "Онемогући анимације интерфејса",
-    "titles_always_visible": "Увек приказуј наслове у библиотеци игара",
-    "disable_smooth_scrolling": "Онемогући глатко скроловање (потребно је поновно покретање)",
-    "disable_dialog_backdrop_close": "Онемогућите затварање дијалога кликом ван"
-  },
   "add_game": "Додај игру",
   "All": "Све",
   "button": {

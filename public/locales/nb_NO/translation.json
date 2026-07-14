@@ -1,18 +1,4 @@
 {
-  "accessibility": {
-    "actions_font_family_no_default": "Actions Font Family (Default: ",
-    "all_tiles_in_color": "Vis alle spillfliser i farger",
-    "content_font_family_no_default": "Content Font Family (Default: ",
-    "fonts": "Skrifttyper",
-    "title": "Tilgjengelighet",
-    "zoom": "Zoom",
-    "disable_dialog_backdrop_close": "Deaktiver lukking av dialogbokser ved å klikke utenfor",
-    "titles_always_visible": "Vis alltid titler i biblioteket",
-    "content_font_family_default": "Content Font Family (Standard: {{fontFamily}})",
-    "actions_font_family_default": "Actions Font Family (Standard: {{fontFamily}}",
-    "disable_smooth_scrolling": "Skru av jevn rulling (krever omstart)",
-    "disable_animations": "Skru av animasjoner i brukergrensesnittet"
-  },
   "add_game": "Legg til spill",
   "All": "Alle",
   "anticheat": {

@@ -1,18 +1,4 @@
 {
-  "accessibility": {
-    "actions_font_family_no_default": "アクションに使用するフォントファミリー (デフォルト:",
-    "all_tiles_in_color": "すべてのゲームタイルをカラーで表示",
-    "content_font_family_no_default": "コンテンツに使用するフォントファミリー (デフォルト: ",
-    "fonts": "フォント",
-    "title": "アクセシビリティ",
-    "zoom": "拡大/縮小",
-    "disable_dialog_backdrop_close": "枠外をクリックしてもダイアログを閉じないようにする",
-    "titles_always_visible": "ライブラリのタイトルを常に表示",
-    "actions_font_family_default": "アクション用フォント （既定: {{fontFamily}}）",
-    "content_font_family_default": "コンテンツ用フォント （既定: {{fontFamily}}）",
-    "disable_smooth_scrolling": "スムーズスクロールを無効化（要再起動）",
-    "disable_animations": "UIアニメーションを無効化"
-  },
   "add_game": "ゲームを追加",
   "All": "すべて",
   "anticheat": {

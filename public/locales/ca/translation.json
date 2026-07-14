@@ -1,18 +1,4 @@
 {
-  "accessibility": {
-    "actions_font_family_no_default": "Lletra tipogràfica per a accions (per defecte):",
-    "all_tiles_in_color": "Mostra els títols de tots els jocs en color",
-    "content_font_family_no_default": "Lletra tipogràfica per a continguts (per defecte: ",
-    "fonts": "Lletra tipogràfica",
-    "title": "Accessibilitat",
-    "zoom": "Escala",
-    "disable_dialog_backdrop_close": "Desactiva que les finestres es tanquin en fer-hi clic fora",
-    "titles_always_visible": "Mostra sempre els títols a la biblioteca",
-    "actions_font_family_default": "Tipus de lletra de les accions (per defecte, {{fontFamily}})",
-    "content_font_family_default": "Tipus de lletra dels continguts (per defecte, {{fontFamily}})",
-    "disable_smooth_scrolling": "Desactiva el desplaçament suau (cal reiniciar)",
-    "disable_animations": "Desactiva les animacions de la interfície"
-  },
   "add_game": "Afegeix un joc",
   "All": "Tot",
   "anticheat": {

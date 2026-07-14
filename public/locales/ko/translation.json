@@ -1,18 +1,4 @@
 {
-  "accessibility": {
-    "actions_font_family_no_default": "작업 글꼴 패밀리 (기본값):",
-    "all_tiles_in_color": "모든 게임 타일을 컬러로 표시",
-    "content_font_family_no_default": "콘텐츠 글꼴 패밀리 (기본값: ",
-    "fonts": "글꼴",
-    "title": "접근성",
-    "zoom": "확대/축소",
-    "disable_dialog_backdrop_close": "안내창 바깥을 클릭하여 종료하지 않기",
-    "titles_always_visible": "라이브러리에 항상 제목 표시",
-    "content_font_family_default": "콘텐츠 글꼴 패밀리 (기본값:",
-    "actions_font_family_default": "Actions Font Family (Default:",
-    "disable_smooth_scrolling": "",
-    "disable_animations": ""
-  },
   "add_game": "게임 추가",
   "All": "모두",
   "anticheat": {

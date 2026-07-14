@@ -1,18 +1,4 @@
 {
-  "accessibility": {
-    "actions_font_family_no_default": "مجموعة خطوط الإجراءات (الافتراضية):",
-    "all_tiles_in_color": "اظهر جميع عناوين الألعاب ملونة",
-    "content_font_family_no_default": "مجموعة خطوط المحتوى (الافتراضي: ",
-    "fonts": "الخطوط",
-    "title": "إمكانية الوصول",
-    "zoom": "تكبير",
-    "disable_dialog_backdrop_close": "قم بتعطيل مربعات الحوار الختامية من خلال النقر بالخارج",
-    "titles_always_visible": "أظهر العنواين في المكتبة دائماً",
-    "disable_animations": "عطّل تأثيرات الواجهة",
-    "disable_smooth_scrolling": "عطّل السحب السلس(يتطلب اعادة التشغيل)",
-    "actions_font_family_default": "",
-    "content_font_family_default": ""
-  },
   "add_game": "أضف لعبة",
   "All": "الكل",
   "anticheat": {

@@ -172,10 +172,6 @@ const router = createHashRouter([
         lazy: makeLazyFunc(import('./screens/DownloadManager'))
       },
       {
-        path: 'accessibility',
-        lazy: makeLazyFunc(import('./screens/Accessibility'))
-      },
-      {
         path: 'console',
         lazy: makeLazyFunc(import('./screens/ConsoleMode'))
       },

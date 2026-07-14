@@ -1,16 +1,4 @@
 {
-  "accessibility": {
-    "actions_font_family_default": "Teaghlach Cló Gníomhartha (Réamhshocrú: {{fontFamily}})",
-    "all_tiles_in_color": "Taispeáin gach tíl cluiche i ndath",
-    "content_font_family_default": "Teaghlach Clónna Ábhair (Réamhshocrú: {{fontFamily}})",
-    "disable_dialog_backdrop_close": "Díchumasaigh dialóga dúnta trí chliceáil lasmuigh",
-    "disable_smooth_scrolling": "Díchumasaigh scrollú réidh (tá atosú ag teastáil)",
-    "fonts": "Clónna",
-    "title": "Inrochtaineacht",
-    "titles_always_visible": "Taispeáin teidil i gcónaí sa leabharlann",
-    "zoom": "Zúmáil",
-    "disable_animations": "Díchumasaigh beochana an chomhéadain úsáideora"
-  },
   "add_game": "Cuir Cluiche Leis",
   "adtraction-locked": {
     "description": "Is cosúil nárbh fhéidir an fearann track.adtraction.com a luchtú nó go bhfuil sé blocáilte. Le adtraction, tacaíonn aon cheannachán a dhéanann tú i siopa GOG le Heroic ó thaobh airgeadais de. Smaoinigh ar an mbac a bhaint más mian leat ranníocaíocht a dhéanamh.",

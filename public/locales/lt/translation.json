@@ -760,20 +760,6 @@
     "loading-available": "Kraunami pasiekiami komponentai...",
     "no-components": "Nėra pasiekiamų komponentų"
   },
-  "accessibility": {
-    "fonts": "Šriftai",
-    "title": "Prieinamumas",
-    "all_tiles_in_color": "Rodyti visas žaidimų plyteles spalvotai",
-    "titles_always_visible": "Visada rodyti plyteles bibliotekoje",
-    "actions_font_family_no_default": "Veiksmų šrifto „šeima“ (numatyta/-s):",
-    "content_font_family_no_default": "Turinio šrifto „šeima“ (numatyta/-s): ",
-    "zoom": "Priartinimas ir atitolinimas",
-    "disable_dialog_backdrop_close": "Neleisti dialogų langų uždarymą spaustėlius ne jo lange",
-    "actions_font_family_default": "Veiksmų šrifto „šeima“ (Numatyta: {{fontFamily}})",
-    "content_font_family_default": "Turinio šrifto „šeima“ (Numatyta: {{fontFamily}})",
-    "disable_smooth_scrolling": "Išjungti švelnų slinkimą (reikalauja paleidimo iš naujo)",
-    "disable_animations": "Išjungti grafinės sąsajos animacijas"
-  },
   "add_game": "Pridėti žaidimą",
   "anticheat": {
     "source": "Šaltinis",

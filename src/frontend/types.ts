@@ -66,8 +66,6 @@ export interface ContextType {
   setCurrentCustomCategories: (newCustomCategories: string[]) => void
   theme: string
   setTheme: (themeName: string) => void
-  zoomPercent: number
-  setZoomPercent: (newZoomPercent: number) => void
   epic: {
     library: GameInfo[]
     username?: string
@@ -104,8 +102,6 @@ export interface ContextType {
   sidebarCollapsed: boolean
   activeController: string
   connectivity: { status: ConnectivityStatus; retryIn: number }
-  setSecondaryFontFamily: (newFontFamily: string, saveToFile?: boolean) => void
-  setPrimaryFontFamily: (newFontFamily: string, saveToFile?: boolean) => void
   dialogModalOptions: DialogModalOptions
   showDialogModal: (options: DialogModalOptions) => void
   showResetDialog: () => void

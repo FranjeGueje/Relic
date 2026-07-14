@@ -1,18 +1,4 @@
 {
-  "accessibility": {
-    "actions_font_family_no_default": "Шрыфт для дзеянняў (Па змаўчанні):",
-    "all_tiles_in_color": "Паказваць усе пліткі гульняў у колеры",
-    "content_font_family_no_default": "Шрыфт для змесціва (Па змаўчанні: ",
-    "fonts": "Шрыфты",
-    "title": "Даступнасць",
-    "zoom": "Маштаб",
-    "disable_dialog_backdrop_close": "Адключыць закрыццё дыялогавых вокнаў пры націсканні па-за іх межамі",
-    "titles_always_visible": "Заўсёды паказваць загалоўкі ў бібліятэцы",
-    "actions_font_family_default": "Шрыфт для дзеянняў (Прадвызначаны: {{fontFamily}})",
-    "content_font_family_default": "Шрыфт для змесціва (Прадвызначаны: {{fontFamily}})",
-    "disable_smooth_scrolling": "Адключыць плаўную пракрутку (патрабуецца перазапуск)",
-    "disable_animations": "Адключыць анімацыі інтэрфейсу"
-  },
   "add_game": "Дадаць гульню",
   "All": "Усе",
   "anticheat": {

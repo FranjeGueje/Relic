@@ -91,9 +91,6 @@ interface StateProps {
   theme: string
   isFullscreen: boolean
   isFrameless: boolean
-  zoomPercent: number
-  primaryFontFamily: string
-  secondaryFontFamily: string
   allTilesInColor: boolean
   titlesAlwaysVisible: boolean
   sidebarCollapsed: boolean
@@ -231,17 +228,6 @@ class GlobalState extends PureComponent<Props> {
     theme: configStore.get('theme', 'midnightMirage'),
     isFullscreen: false,
     isFrameless: false,
-    zoomPercent: configStore.get('zoomPercent', 100),
-    secondaryFontFamily:
-      configStore.get_nodefault('contentFontFamily') ||
-      getComputedStyle(document.documentElement).getPropertyValue(
-        '--default-secondary-font-family'
-      ),
-    primaryFontFamily:
-      configStore.get_nodefault('actionsFontFamily') ||
-      getComputedStyle(document.documentElement).getPropertyValue(
-        '--default-primary-font-family'
-      ),
     allTilesInColor: configStore.get('allTilesInColor', false),
     titlesAlwaysVisible: configStore.get('titlesAlwaysVisible', false),
     activeController: '',
@@ -288,34 +274,6 @@ class GlobalState extends PureComponent<Props> {
     configStore.set('theme', newThemeName)
     this.setState({ theme: newThemeName })
     window.setTheme(newThemeName)
-  }
-
-  zoomTimer: NodeJS.Timeout | undefined = undefined
-  setZoomPercent = (newZoomPercent: number) => {
-    if (this.zoomTimer) clearTimeout(this.zoomTimer)
-
-    configStore.set('zoomPercent', newZoomPercent)
-    this.setState({ zoomPercent: newZoomPercent })
-
-    this.zoomTimer = setTimeout(() => {
-      window.api.setZoomFactor((newZoomPercent / 100).toString())
-    }, 500)
-  }
-
-  setPrimaryFontFamily = (newFontFamily: string, saveToFile = true) => {
-    if (saveToFile) configStore.set('actionsFontFamily', newFontFamily)
-    document.documentElement.style.setProperty(
-      '--primary-font-family',
-      newFontFamily
-    )
-  }
-
-  setSecondaryFontFamily = (newFontFamily: string, saveToFile = true) => {
-    if (saveToFile) configStore.set('contentFontFamily', newFontFamily)
-    document.documentElement.style.setProperty(
-      '--secondary-font-family',
-      newFontFamily
-    )
   }
 
   setAllTilesInColor = (value: boolean) => {
@@ -1032,9 +990,6 @@ class GlobalState extends PureComponent<Props> {
       .getConnectivityStatus()
       .then((connectivity) => this.setState({ connectivity }))
 
-    this.setPrimaryFontFamily(this.state.primaryFontFamily, false)
-    this.setSecondaryFontFamily(this.state.secondaryFontFamily, false)
-
     window.api.frontendReady()
   }
 
@@ -1176,12 +1131,9 @@ class GlobalState extends PureComponent<Props> {
           handleLibraryTopSection: this.handleLibraryTopSection,
           handleExperimentalFeatures: this.handleExperimentalFeatures,
           setTheme: this.setTheme,
-          setZoomPercent: this.setZoomPercent,
           setAllTilesInColor: this.setAllTilesInColor,
           setTitlesAlwaysVisible: this.setTitlesAlwaysVisible,
           setSideBarCollapsed: this.setSideBarCollapsed,
-          setPrimaryFontFamily: this.setPrimaryFontFamily,
-          setSecondaryFontFamily: this.setSecondaryFontFamily,
           showDialogModal: this.handleShowDialogModal,
           showResetDialog: this.showResetDialog,
           handleExternalLinkDialog: this.handleExternalLinkDialog,

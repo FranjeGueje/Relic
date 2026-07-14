@@ -1,18 +1,4 @@
 {
-  "accessibility": {
-    "actions_font_family_no_default": "Ενέργειες Οικογένεια γραμματοσειράς (προεπιλογή):",
-    "all_tiles_in_color": "Εμφάνιση όλων των πλακιδίων παιχνιδιού με χρώμα",
-    "content_font_family_no_default": "Content Font Family (Default: ",
-    "fonts": "Γραμματοσειρές",
-    "title": "Προσβασιμότητα",
-    "zoom": "Μεγέθυνση",
-    "disable_dialog_backdrop_close": "Απενεργοποίηση του κλεισίματος διαλόγων κάνοντας κλικ έξω",
-    "titles_always_visible": "Να εμφανίζονται πάντα οι τίτλοι στη βιβλιοθήκη",
-    "content_font_family_default": "Γραμματοσειρά Περιεχομένου (Προεπιλογή: {{fontFamily}})",
-    "actions_font_family_default": "Γραμματοσειρά Ενεργειών (Προεπιλογή: {{fontFamily}})",
-    "disable_smooth_scrolling": "Απενεργοποίηση ομαλής κύλισης (απαιτείται επανεκκίνηση)",
-    "disable_animations": "Απενεργοποίηση κινούμενων εικόνων UI"
-  },
   "add_game": "Προσθήκη Παιχνιδιού",
   "All": "Όλα",
   "anticheat": {

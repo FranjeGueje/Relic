@@ -1,18 +1,4 @@
 {
-  "accessibility": {
-    "actions_font_family_no_default": "Rodzaj czcionki menu akcji (domyślna):",
-    "all_tiles_in_color": "Pokaż wszystkie tytuły gier w kolorze",
-    "content_font_family_no_default": "Rodzaj czcionki treści (domyślna): ",
-    "fonts": "Czcionki",
-    "title": "Ułatwienia dostępu",
-    "zoom": "Przybliżenie",
-    "disable_dialog_backdrop_close": "Nie zamykaj okien dialogowych, gdy klikniesz poza nimi",
-    "titles_always_visible": "Zawsze pokazuj tytuły w bibliotece",
-    "actions_font_family_default": "Rodzaj czcionki akcji (domyślna: {{fontFamily}})",
-    "content_font_family_default": "Rodzaj czcionki treści (domyślna: {{fontFamily}})",
-    "disable_smooth_scrolling": "Wyłącz płynne przewijanie (wymagany restart)",
-    "disable_animations": "Wyłącz animacje interfejsu"
-  },
   "add_game": "Dodaj grę",
   "All": "Wszystkie",
   "anticheat": {

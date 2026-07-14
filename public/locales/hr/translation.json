@@ -1,18 +1,4 @@
 {
-  "accessibility": {
-    "actions_font_family_no_default": "Obitelj fontova za radnje (Zadano: ",
-    "all_tiles_in_color": "Pokaži sve sličice igara u boji",
-    "content_font_family_no_default": "Obitelj fontova za sadržaj (Zadano: ",
-    "fonts": "Fontovi",
-    "title": "Pristupačnost",
-    "zoom": "Uvečaj",
-    "actions_font_family_default": "Actions Font Family (Default:",
-    "content_font_family_default": "Content Font Family (Default:",
-    "titles_always_visible": "Uvijek prikazuj naslove u knjižnici",
-    "disable_smooth_scrolling": "",
-    "disable_animations": "",
-    "disable_dialog_backdrop_close": ""
-  },
   "add_game": "Dodaj igru",
   "All": "Sve",
   "anticheat": {

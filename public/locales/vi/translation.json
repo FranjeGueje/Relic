@@ -1,18 +1,4 @@
 {
-  "accessibility": {
-    "actions_font_family_no_default": "Actions Font Family (Default: ",
-    "all_tiles_in_color": "Hiển thị tất cả các ô trò chơi có màu",
-    "content_font_family_no_default": "Content Font Family (Default: ",
-    "fonts": "Phông Chữ",
-    "title": "Khả Năng Tiếp Cận",
-    "zoom": "Phóng",
-    "actions_font_family_default": "Họ Phông Chữ Hành Động (Mặc Định: {{fontFamily}})",
-    "content_font_family_default": "Họ Phông Chữ Nội Dung (Mặc Định: {{fontFamily}})",
-    "disable_animations": "Tắt hoạt ảnh UI",
-    "disable_dialog_backdrop_close": "Vô hiệu hóa việc đóng hộp thoại bằng cách nhấp vào bên ngoài",
-    "disable_smooth_scrolling": "Tắt tính năng cuộn mượt mà (yêu cầu khởi động lại)",
-    "titles_always_visible": "Luôn hiển thị tiêu đề trong thư viện"
-  },
   "add_game": "Thêm Trò Chơi",
   "All": "Tất cả",
   "anticheat": {

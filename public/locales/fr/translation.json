@@ -1,18 +1,4 @@
 {
-  "accessibility": {
-    "actions_font_family_no_default": "Police d'écriture pour les actions (par défaut) :",
-    "all_tiles_in_color": "Afficher les vignettes de tous les jeux en couleur",
-    "content_font_family_no_default": "Police d'écriture pour les contenus (Par défaut : ",
-    "fonts": "Polices d'écriture",
-    "title": "Accessibilité",
-    "zoom": "Échelle de l'interface",
-    "disable_dialog_backdrop_close": "Désactiver la fermeture de fenêtres par un clic en dehors",
-    "titles_always_visible": "Toujours afficher les titres dans la bibliothèque",
-    "content_font_family_default": "Famille de polices pour les contenus (par défaut : {{fontFamily}})",
-    "actions_font_family_default": "Famille de polices pour les actions (par défaut : {{fontFamily}})",
-    "disable_smooth_scrolling": "Désactiver le défilement doux (requiert un redémarrage)",
-    "disable_animations": "Désactiver les animations de l'interface"
-  },
   "add_game": "Ajouter un jeu",
   "All": "Tout",
   "anticheat": {

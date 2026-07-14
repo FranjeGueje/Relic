@@ -1,18 +1,4 @@
 {
-  "accessibility": {
-    "actions_font_family_no_default": "Actions Font Family (Default: ",
-    "all_tiles_in_color": "Afișați toate titlurile de joc în culori",
-    "content_font_family_no_default": "Content Font Family (Default: ",
-    "fonts": "Fonturi",
-    "title": "Accesibilitate",
-    "zoom": "Zoom",
-    "actions_font_family_default": "Actions Font Family (Default:{{fontFamily}})",
-    "content_font_family_default": "Familia fontului de conținut (Implicit:{{fontFamily}})",
-    "disable_animations": "Dezactivează animațiile UI",
-    "disable_dialog_backdrop_close": "Dezactivează închiderea dialogurilor făcând clic în exterior",
-    "disable_smooth_scrolling": "Dezactivează derulare lină",
-    "titles_always_visible": "Afișează întotdeauna titlurile în bibliotecă"
-  },
   "add_game": "Adaugă joc",
   "All": "Toate",
   "anticheat": {

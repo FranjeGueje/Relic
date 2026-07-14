@@ -688,18 +688,6 @@
     "nothingYet": "",
     "installed": ""
   },
-  "accessibility": {
-    "fonts": "ფონტები",
-    "title": "წვდომადობა",
-    "zoom": "მასშტაბი",
-    "actions_font_family_default": "",
-    "all_tiles_in_color": "",
-    "content_font_family_default": "",
-    "disable_smooth_scrolling": "",
-    "titles_always_visible": "",
-    "disable_animations": "",
-    "disable_dialog_backdrop_close": ""
-  },
   "anticheat": {
     "anticheats": "ანტიჩიტები",
     "reference": "მიმართვა",

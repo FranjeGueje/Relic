@@ -1,18 +1,4 @@
 {
-  "accessibility": {
-    "actions_font_family_no_default": "Шрифт для действий (По умолчанию):",
-    "all_tiles_in_color": "Показать все плитки игр в цвете",
-    "content_font_family_no_default": "Шрифт для содержимого (По умолчанию: ",
-    "fonts": "Шрифты",
-    "title": "Доступность",
-    "zoom": "Масштаб",
-    "disable_dialog_backdrop_close": "Отключить закрытие диалогов кликом за пределами окна",
-    "titles_always_visible": "Всегда показывать названия в библиотеке",
-    "actions_font_family_default": "Шрифт для действий (По умолчанию: {{fontFamily}})",
-    "content_font_family_default": "Шрифт для содержимого (По умолчанию: {{fontFamily}})",
-    "disable_smooth_scrolling": "Отключить плавную прокрутку (требуется перезапуск)",
-    "disable_animations": "Отключить анимации пользовательского интерфейса"
-  },
   "add_game": "Добавить игру",
   "All": "Все",
   "anticheat": {

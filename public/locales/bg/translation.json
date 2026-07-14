@@ -1,18 +1,4 @@
 {
-  "accessibility": {
-    "actions_font_family_no_default": "Шрифт за действията (по подразбиране):",
-    "all_tiles_in_color": "Показване на всички плочки с игри цветни",
-    "content_font_family_no_default": "Шрифт за съдържанието (по подразбиране: ",
-    "fonts": "Шрифтове",
-    "title": "Достъпност",
-    "zoom": "Увеличаване",
-    "disable_dialog_backdrop_close": "Изключване на затварянето на диалогови прозорци чрез щракване извън тях",
-    "titles_always_visible": "Винаги да се показват заглавията в библиотеката",
-    "actions_font_family_default": "Шрифт за действията (по подразбиране: {{fontFamily}})",
-    "content_font_family_default": "Шрифт за съдържанието (по подразбиране: {{fontFamily}})",
-    "disable_smooth_scrolling": "Изключване на плавното превъртане (изисква рестартиране)",
-    "disable_animations": "Изключване на анимациите в интерфейса"
-  },
   "add_game": "Добавяне на игра",
   "All": "Всички",
   "anticheat": {

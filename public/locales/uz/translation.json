@@ -162,20 +162,6 @@
     "changelog": "",
     "postpone": ""
   },
-  "accessibility": {
-    "actions_font_family_no_default": "Harakatlar shriftlari oilasi (standart: ",
-    "all_tiles_in_color": "Barcha o'yin plitalarini rangli ko'rsating",
-    "content_font_family_no_default": "Kontent shriftlari oilasi (standart: ",
-    "fonts": "Shriftlar",
-    "title": "Foydalanish imkoniyati",
-    "zoom": "Kattalashtirish",
-    "actions_font_family_default": "",
-    "content_font_family_default": "",
-    "disable_smooth_scrolling": "",
-    "titles_always_visible": "",
-    "disable_animations": "",
-    "disable_dialog_backdrop_close": ""
-  },
   "add_game": "O'yin qo'shish",
   "All": "Hammasi",
   "anticheat": {

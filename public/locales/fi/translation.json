@@ -1,18 +1,4 @@
 {
-  "accessibility": {
-    "actions_font_family_no_default": "Actions -kirjasinperhe (vakio):",
-    "all_tiles_in_color": "Näytä kaikki pelilaatat väritettynä",
-    "content_font_family_no_default": "Content -kirjasinperhe (vakio: ",
-    "fonts": "Kirjasimet",
-    "title": "Käytettävyys",
-    "zoom": "Lähennä",
-    "disable_dialog_backdrop_close": "Kytke pois ilmoitteiden sulkeminen ulkopuolella napsauttamisen kautta",
-    "titles_always_visible": "Näytä nimet kirjastossa aina",
-    "actions_font_family_default": "Toimintojen kirjasinperhe (vakio: {{fontFamily}})",
-    "content_font_family_default": "Sisältöjen kirjasinperhe (vakio: {{fontFamily}})",
-    "disable_smooth_scrolling": "Kytke pois sulava vieritys (uudelleenkäynnistys vaaditaan)",
-    "disable_animations": "Poista käyttöliittymän animoinnit käytöstä"
-  },
   "add_game": "Lisää peli",
   "All": "Kaikki",
   "anticheat": {

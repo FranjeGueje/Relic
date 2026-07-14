@@ -1,18 +1,4 @@
 {
-  "accessibility": {
-    "actions_font_family_no_default": "Eylemler Yazı Tipi Ailesi (Öntanımlı:",
-    "all_tiles_in_color": "Tüm oyun kutucuklarını renkli göster",
-    "content_font_family_no_default": "İçerik Yazı Tipi Ailesi (Öntanımlı: ",
-    "fonts": "Yazı Tipleri",
-    "title": "Erişilebilirlik",
-    "zoom": "Yakınlaştır",
-    "disable_dialog_backdrop_close": "Dışarı tıklayarak diyalog penceresini kapatmayı devre dışı bırakın",
-    "titles_always_visible": "Kütüphanede her zaman başlıkları göster",
-    "content_font_family_default": "İçerik Yazı Tipi Ailesi (Varsayılan: {{fontFamily}})",
-    "actions_font_family_default": "Eylemler Yazı Tipi Ailesi (Varsayılan: {{fontFamily}})",
-    "disable_smooth_scrolling": "Yumuşak kaydırmayı devre dışı bırak (yeniden başlatma gerekir)",
-    "disable_animations": "Arayüz animasyonlarını devre dışı bırak"
-  },
   "add_game": "Oyun Ekle",
   "All": "Tümü",
   "anticheat": {

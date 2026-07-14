@@ -1,18 +1,4 @@
 {
-  "accessibility": {
-    "actions_font_family_no_default": "خانواده فونت فعالیت ها (Default: ",
-    "all_tiles_in_color": "نمایش رنگی تمام کاشی های بازی",
-    "content_font_family_no_default": "خانواده فونت محتوا (Default: ",
-    "fonts": "فونت ها",
-    "title": "دسترسی ها",
-    "zoom": "زوم",
-    "actions_font_family_default": "خانواده فونت فعالیت ها (Default:",
-    "content_font_family_default": "خانواده فونت محتوا (Default:",
-    "disable_smooth_scrolling": "",
-    "titles_always_visible": "",
-    "disable_animations": "",
-    "disable_dialog_backdrop_close": ""
-  },
   "add_game": "افزودن بازی",
   "All": "همه",
   "anticheat": {

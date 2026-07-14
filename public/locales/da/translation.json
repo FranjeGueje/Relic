@@ -180,22 +180,6 @@
     "postpone": "Udsæt"
   },
   "All": "Alle",
-  "accessibility": {
-    "zoom": "Forstørrelse",
-    "fonts": "Skrifttyper",
-    "all_tiles_in_color": "Vis alle spilfliser i farver",
-    "title": "Tilgængelighed",
-    "actions_font_family": "Actions Font Family (Standard: \"Rubik\")",
-    "content_font_family": "Indholdsskrifttypefamilie (standard: \"Cabin\")",
-    "actions_font_family_no_default": "Actions Font Family (Standard: ",
-    "content_font_family_no_default": "Indholdsskrifttypefamilie (standard: ",
-    "disable_dialog_backdrop_close": "Deaktivér lukning af dialogbokse ved at klikke udenfor",
-    "titles_always_visible": "Vis altid titler i biblioteket",
-    "actions_font_family_default": "Handlinger Skrifttypefamilie (Standard: {{fontFamily}})",
-    "content_font_family_default": "Indhold skrifttypefamilie (Standard: {{fontFamily}})",
-    "disable_animations": "Deaktivér grænseflade-animationer",
-    "disable_smooth_scrolling": "Deaktivér jævn rulning (kræver genstart)"
-  },
   "info": {
     "version": "Wine-version",
     "heroic": {

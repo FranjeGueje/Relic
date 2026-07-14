@@ -1,18 +1,4 @@
 {
-  "accessibility": {
-    "actions_font_family_no_default": "Toimingute fondiperekond (Vaikimisi):",
-    "all_tiles_in_color": "Näita kõiki mänguplaate värviliselt",
-    "content_font_family_no_default": "Sisu fondiperekond (Vaikimisi: ",
-    "fonts": "Fondid",
-    "title": "Ligipääsetavus",
-    "zoom": "Suum",
-    "disable_dialog_backdrop_close": "Keela väljaspoole klikkides dialoogakende sulgemist",
-    "titles_always_visible": "Alati näita pealkirjasid varamus",
-    "actions_font_family_default": "Toimingute fondiperekond (Vaikimisi: {{fontFamily}})",
-    "content_font_family_default": "Sisu fondiperekond (Vaikimisi: {{fontFamily}})",
-    "disable_smooth_scrolling": "Keela sujuv kerimine (nõuab restarti)",
-    "disable_animations": "Keela kasutajaliidese animatsioonid"
-  },
   "add_game": "Lisa mäng",
   "All": "Kõik",
   "anticheat": {

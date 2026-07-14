@@ -1,18 +1,4 @@
 {
-  "accessibility": {
-    "actions_font_family_no_default": "Actions Font Family (Default: ",
-    "all_tiles_in_color": "Amosar todos os xogos a cor na biblioteca",
-    "content_font_family_no_default": "Content Font Family (Default: ",
-    "fonts": "Tipografías",
-    "title": "Accesibilidade",
-    "zoom": "Zoom",
-    "actions_font_family_default": "Tipografía das accións (Por defecto: {{fontFamily}})",
-    "content_font_family_default": "Tipografía dos contidos (Por defecto: {{fontFamily}})",
-    "titles_always_visible": "Mostrar sempre os títulos na biblioteca",
-    "disable_dialog_backdrop_close": "Desactivar o peche das caixas de diálogo ao premer fóra delas",
-    "disable_smooth_scrolling": "Desactivar o suavizado de scroll (precisa reiniciar)",
-    "disable_animations": "Desactivar animacións da interfaz de usuario (UI)"
-  },
   "add_game": "Engadir xogo",
   "All": "Todos",
   "anticheat": {

@@ -1,18 +1,4 @@
 {
-  "accessibility": {
-    "actions_font_family_no_default": "செயல்கள் எழுத்துரு குடும்பம் (இயல்புநிலை: ",
-    "all_tiles_in_color": "அனைத்து விளையாட்டு ஓடுகளையும் வண்ணத்தில் காட்டு",
-    "content_font_family_no_default": "உள்ளடக்க எழுத்துரு குடும்பம் (இயல்புநிலை: ",
-    "fonts": "எழுத்துருக்கள்",
-    "title": "அணுகல்",
-    "zoom": "பெரிதாக்கு",
-    "actions_font_family_default": "செயல்கள் எழுத்துரு குடும்பம் (இயல்புநிலை: {{fontFamily}})",
-    "titles_always_visible": "எப்போதும் நூலகத்தில் தலைப்புகளைக் காண்பி",
-    "content_font_family_default": "உள்ளடக்க எழுத்துரு குடும்பம் (இயல்புநிலை: {{fontFamily}})",
-    "disable_dialog_backdrop_close": "வெளியே சொடுக்கு செய்வதன் மூலம் நிறைவு உரையாடல்களை முடக்கு",
-    "disable_smooth_scrolling": "மென்மையான ச்க்ரோலிங் முடக்கு (மறுதொடக்கம் தேவை)",
-    "disable_animations": "இடைமுகம் அனிமேசன்களை முடக்கு"
-  },
   "add_game": "விளையாட்டைச் சேர்க்கவும்",
   "All": "அனைத்தும்",
   "anticheat": {

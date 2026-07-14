@@ -1,16 +1,4 @@
 {
-  "accessibility": {
-    "actions_font_family_default": "เลือกชุด Font (Default: {{fontFamily}})",
-    "all_tiles_in_color": "แสดงเกมทั้งหมดในสี",
-    "content_font_family_default": "ชุด Font Content (Default: {{fontFamily}})",
-    "disable_animations": "ปิด UI เคลื่อนไหว",
-    "fonts": "",
-    "title": "",
-    "disable_smooth_scrolling": "",
-    "titles_always_visible": "",
-    "disable_dialog_backdrop_close": "",
-    "zoom": ""
-  },
   "analyticsModal": {
     "disable": "ปิดใช้งานแล้ว",
     "enable": "เปิดใช้งาน",

@@ -1,18 +1,4 @@
 {
-  "accessibility": {
-    "actions_font_family_no_default": "Keluarga Fon Aksi (Bawaan):",
-    "all_tiles_in_color": "Tampilkan semua kolom gim dalam warna",
-    "content_font_family_no_default": "Keluarga Font Konten (Default: ",
-    "fonts": "Fon",
-    "title": "Aksesibilitas",
-    "zoom": "Perbesar",
-    "disable_dialog_backdrop_close": "Nonaktifkan dialog penutup dengan mengeklik bagian luar",
-    "titles_always_visible": "Selalu tampilkan judul di perpustakaan",
-    "actions_font_family_default": "Keluarga Font Aksi (Default: {{fontFamily}})",
-    "content_font_family_default": "Keluarga Font Konten (Default: {{fontFamily}})",
-    "disable_animations": "Nonaktifkan animasi antarmuka",
-    "disable_smooth_scrolling": "Nonaktifkan pengguliran halus (memerlukan restart)"
-  },
   "add_game": "Tambahkan Gim",
   "All": "Semua",
   "anticheat": {

@@ -1,18 +1,4 @@
 {
-  "accessibility": {
-    "actions_font_family_no_default": "Typsnitt för kommandon (Standard):",
-    "all_tiles_in_color": "Visa alla spel rutor i färg",
-    "content_font_family_no_default": "Typsnitt för innehåll (Standard: ",
-    "fonts": "Typsnitt",
-    "title": "Handikappsanpassning",
-    "zoom": "Zooma",
-    "disable_dialog_backdrop_close": "Inaktivera stängning av dialogrutor genom att klicka utanför",
-    "titles_always_visible": "Visa alltid titlar i bibliotek",
-    "actions_font_family_default": "Åtgärd teckensnittsfamilj (Standard: {{fontFamily}})",
-    "content_font_family_default": "Innehåll teckensnittsfamilj (Standard: {{fontFamily}})",
-    "disable_smooth_scrolling": "Avaktivera mjuk skrollning (kräver omstart)",
-    "disable_animations": "Inaktivera UI animationer"
-  },
   "add_game": "Lägg till spel",
   "All": "Alla",
   "anticheat": {

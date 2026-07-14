@@ -1,18 +1,4 @@
 {
-  "accessibility": {
-    "actions_font_family_no_default": "Ações de familia fonte (Default):",
-    "all_tiles_in_color": "Mostrar todas as mosaicos de jogos a cores",
-    "content_font_family_no_default": "Família da Fonte Family (Default): ",
-    "fonts": "Fontes",
-    "title": "Acessibilidade",
-    "zoom": "Zoom",
-    "disable_dialog_backdrop_close": "Desativar o fechar de janelas de diálogos ao clicar fora destas",
-    "titles_always_visible": "Mostrar sempre os títulos na biblioteca",
-    "content_font_family_default": "Família de Fontes para Conteúdos (Predefinição: {{fontFamily}})",
-    "actions_font_family_default": "Família de Fontes para Ações (Predefinição: {{fontFamily}})",
-    "disable_smooth_scrolling": "Desativar o deslocamento suave (é necessário reiniciar a aplicação)",
-    "disable_animations": "Desativar animações da interface do utilizador"
-  },
   "add_game": "Adicionar Jogo",
   "All": "Tudo",
   "anticheat": {

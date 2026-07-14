@@ -1,18 +1,4 @@
 {
-  "accessibility": {
-    "actions_font_family_no_default": "Actions Font Family (Default: ",
-    "all_tiles_in_color": "Erakutsi joko-lauza guztiak koloreekin",
-    "content_font_family_no_default": "Content Font Family (Default: ",
-    "fonts": "Letra-tipoak",
-    "title": "Erabilerraztasuna",
-    "zoom": "Zoom",
-    "content_font_family_default": "Content Font Family (Default:",
-    "actions_font_family_default": "Actions Font Family (Default:",
-    "disable_smooth_scrolling": "",
-    "titles_always_visible": "",
-    "disable_animations": "",
-    "disable_dialog_backdrop_close": ""
-  },
   "add_game": "Gehitu jokoa",
   "All": "Dena",
   "anticheat": {

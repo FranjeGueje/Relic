@@ -3,7 +3,6 @@ import {
   faSlidersH,
   faStore,
   faUser,
-  faUniversalAccess,
   faUserAlt,
   faWineGlass,
   faBarsProgress,
@@ -248,13 +247,6 @@ export default function SidebarLinks() {
           dataTour="sidebar-manage-accounts"
         />
       )}
-
-      <SidebarItem
-        url="/accessibility"
-        icon={faUniversalAccess}
-        label={t('accessibility.title', 'Accessibility')}
-        dataTour="sidebar-accessibility"
-      />
 
       <div className="divider" />
 

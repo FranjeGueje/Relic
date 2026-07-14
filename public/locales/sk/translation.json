@@ -1,18 +1,4 @@
 {
-  "accessibility": {
-    "actions_font_family_no_default": "Actions Font Family (Predvolené):",
-    "all_tiles_in_color": "Zobraziť všetky herné dlaždice farebne",
-    "content_font_family_no_default": "Content Font Family (Predvolené: ",
-    "fonts": "Písma",
-    "title": "Prístupnosť",
-    "zoom": "Zoom",
-    "disable_dialog_backdrop_close": "Zakázať zatváranie dialógových okien kliknutím mimo",
-    "titles_always_visible": "Vždy zobrazovať tituly hier v knižnici",
-    "content_font_family_default": "Obsah Font Family (Default: {{fontFamily}})",
-    "actions_font_family_default": "Akcie Font Family (Default: {{fontFamily}})",
-    "disable_smooth_scrolling": "Vypnúť smooth scrolling (vyžaduje reštart)",
-    "disable_animations": ""
-  },
   "add_game": "Pridať Hru",
   "All": "Všetky",
   "anticheat": {

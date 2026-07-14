@@ -12,7 +12,6 @@
 }
 
 .Settings .Field,
-.Accessibility .Field,
 .InstallModal__dialog .Field,
 .ModifyInstall__dialog .Field {
   padding: var(--space-md) 0px;
@@ -20,7 +19,6 @@
 }
 
 .Settings .Field label,
-.Accessibility .Field label,
 .InstallModal__dialog .Field label,
 .ModifyInstall__dialog .Field label {
   cursor: default;

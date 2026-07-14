@@ -1,16 +1,4 @@
 {
-  "accessibility": {
-    "actions_font_family_default": "Actions Font Family (Default: {{fontFamily}})",
-    "all_tiles_in_color": "Show all game tiles in color",
-    "content_font_family_default": "Content Font Family (Default: {{fontFamily}})",
-    "disable_animations": "Disable UI animations",
-    "disable_dialog_backdrop_close": "Disable closing dialogs by clicking outside",
-    "disable_smooth_scrolling": "Disable smooth scrolling (requires restart)",
-    "fonts": "Fonts",
-    "title": "Accessibility",
-    "titles_always_visible": "Always show titles in library",
-    "zoom": "Zoom"
-  },
   "add_game": "Add Game",
   "adtraction-locked": {
     "description": "It seems the track.adtraction.com domain was unable to load or is blocked. With adtraction, any purchase you make in the GOG store supports Heroic financially. Consider removing the block if you wish to contribute.",

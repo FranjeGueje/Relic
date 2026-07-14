@@ -1,18 +1,4 @@
 {
-  "accessibility": {
-    "actions_font_family_no_default": "Famiglia Font Azioni (Predefinito):",
-    "all_tiles_in_color": "Mostra tutte le tessere dei giochi a colori",
-    "content_font_family_no_default": "Famiglia Font Contenuto(Predefinito: ",
-    "fonts": "Caratteri",
-    "title": "Accessibilità",
-    "zoom": "Zoom",
-    "disable_dialog_backdrop_close": "Disattiva la chiusura delle finestre di dialogo facendo clic all'esterno",
-    "titles_always_visible": "Mostra sempre i titoli in libreria",
-    "actions_font_family_default": "Famiglia Font Azioni (Predefinito: {{fontFamily}})",
-    "content_font_family_default": "Famiglia Font Contenuto (Predefinito: {{fontFamily}})",
-    "disable_smooth_scrolling": "Disabilita lo smooth scrolling (richiede il riavvio)",
-    "disable_animations": "Disattiva le animazioni dell’interfaccia"
-  },
   "add_game": "Aggiungi Gioco",
   "All": "Tutto",
   "anticheat": {
