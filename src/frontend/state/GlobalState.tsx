@@ -9,7 +9,6 @@ import {
   RefreshOptions,
   Runner,
   WineVersionInfo,
-  LibraryTopSectionOptions,
   ExperimentalFeatures,
   Status
 } from 'common/types'
@@ -79,7 +78,6 @@ interface StateProps {
   gameUpdates: string[]
   language: string
   libraryStatus: GameStatus[]
-  libraryTopSection: string
   platform: NodeJS.Platform
   isIntelMac: boolean
   refreshing: boolean
@@ -212,7 +210,6 @@ class GlobalState extends PureComponent<Props> {
     gameUpdates: [],
     language: this.props.i18n.language,
     libraryStatus: [],
-    libraryTopSection: globalSettings?.libraryTopSection || 'disabled',
     platform: window.platform,
     isIntelMac: false,
     refreshing: false,
@@ -296,10 +293,6 @@ class GlobalState extends PureComponent<Props> {
 
   setSideBarCollapsed = (value: boolean) => {
     this.setState({ sidebarCollapsed: value })
-  }
-
-  setLastChangelogShown = (value: string) => {
-    this.setState({ lastChangelogShown: value })
   }
 
   hideGame = (appNameToHide: string, appTitle: string) => {
@@ -467,15 +460,15 @@ class GlobalState extends PureComponent<Props> {
     this.setState({ externalLinkDialogOptions: value })
   }
 
-  handleLibraryTopSection = (value: LibraryTopSectionOptions) => {
-    this.setState({ libraryTopSection: value })
-  }
-
   handleExperimentalFeatures = (value: ExperimentalFeatures) => {
     this.setState({
       experimentalFeatures: value,
       zoom: { ...this.state.zoom, enabled: value }
     })
+  }
+
+  setLastChangelogShown = (value: string) => {
+    this.setState({ lastChangelogShown: value })
   }
 
   handleSuccessfulLogin = (runner: Runner) => {
@@ -1119,7 +1112,6 @@ class GlobalState extends PureComponent<Props> {
             removeCategory: this.removeCustomCategory,
             renameCategory: this.renameCustomCategory
           },
-          handleLibraryTopSection: this.handleLibraryTopSection,
           handleExperimentalFeatures: this.handleExperimentalFeatures,
           setTheme: this.setTheme,
           setAllTilesInColor: this.setAllTilesInColor,

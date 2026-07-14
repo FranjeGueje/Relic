@@ -6,8 +6,6 @@ import {
   ClearCache,
   DefaultInstallPath,
   DefaultSteamPath,
-  LibraryTopSection,
-  MaxRecentGames,
   MaxWorkers,
   ResetRelic,
   Shortcuts,
@@ -37,10 +35,6 @@ export default function GeneralSettings() {
       <Shortcuts />
 
       <SteamGridDbApiKey />
-
-      <LibraryTopSection />
-
-      <MaxRecentGames />
 
       <MaxWorkers />
 

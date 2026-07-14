@@ -117,8 +117,6 @@ export interface AppSettings extends GameSettings {
   experimentalFeatures?: ExperimentalFeatures
   framelessWindow: boolean
   hideWindowOnProtocolLaunch: boolean
-  libraryTopSection: LibraryTopSectionOptions
-  maxRecentGames: number
   maxWorkers: number
   minimizeOnLaunch: boolean
   startInTray: boolean
@@ -128,12 +126,6 @@ export interface AppSettings extends GameSettings {
   showValveProton: boolean
   steamGridDbApiKey: string
 }
-
-export type LibraryTopSectionOptions =
-  | 'disabled'
-  | 'recently_played'
-  | 'recently_played_installed'
-  | 'favourites'
 
 export type ExecResult = {
   stderr: string

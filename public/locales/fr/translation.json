@@ -642,7 +642,6 @@
       "title": "Synchronisation manuelle des sauvegardes",
       "upload": "Téléverser"
     },
-    "maxRecentGames": "Nombre de jeux lancés récemment à afficher",
     "maxworkers": "Nombre maximum de processus pendant le téléchargement",
     "offlinemode": "Lancer le jeu hors ligne",
     "prefered_language": "Langue préférée (fr, en...)",

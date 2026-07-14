@@ -47,7 +47,6 @@ export default React.memo(function RecentlyPlayed({
 
   const loadRecentGames = async () => {
     const hiddenAppNames = hiddenGames.list.map((game) => game.appName)
-    const { maxRecentGames } = await window.api.requestAppSettings()
     let newRecentGames = getRecentGames(
       [
         ...epic.library,
@@ -56,7 +55,7 @@ export default React.memo(function RecentlyPlayed({
         ...amazon.library,
         ...zoom.library
       ],
-      maxRecentGames,
+      5,
       onlyInstalled
     )
     if (!showHidden) {

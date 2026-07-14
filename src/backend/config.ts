@@ -321,7 +321,6 @@ class GlobalConfigV0 extends GlobalConfig {
       autoUpdateGames: false,
       customWinePaths: [],
       defaultInstallPath: relicInstallPath,
-      libraryTopSection: 'disabled',
       defaultSteamPath: getSteamCompatFolder(),
       defaultWinePrefix: defaultWinePrefixDir,
       defaultWinePrefixDir: defaultWinePrefixDir,

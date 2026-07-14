@@ -6,7 +6,6 @@ import {
   ConnectivityStatus,
   DialogType,
   ButtonOptions,
-  LibraryTopSectionOptions,
   DMQueueElement,
   DownloadManagerState,
   ExperimentalFeatures,
@@ -35,8 +34,6 @@ export interface ContextType {
   language: string
   setLanguage: (newLanguage: string) => void
   libraryStatus: GameStatus[]
-  libraryTopSection: string
-  handleLibraryTopSection: (value: LibraryTopSectionOptions) => void
   platform: NodeJS.Platform | 'unknown'
   isIntelMac: boolean
   refresh: (library: Runner, checkUpdates?: boolean) => Promise<void>

@@ -36,8 +36,6 @@ const initialContext: ContextType = {
   error: false,
   gameUpdates: [],
   libraryStatus: [],
-  libraryTopSection: 'disabled',
-  handleLibraryTopSection: () => null,
   platform: 'unknown',
   isIntelMac: false,
   refresh: async () => Promise.resolve(),

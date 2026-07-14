@@ -28,7 +28,6 @@ import {
   zoomCategories,
   normalizeTitle
 } from 'frontend/helpers/library'
-import RecentlyPlayed from './components/RecentlyPlayed'
 import LibraryContext from './LibraryContext'
 import { Category, PlatformsFilters, StoresFilters } from 'frontend/types'
 import { hasHelp } from 'frontend/hooks/hasHelp'
@@ -58,7 +57,6 @@ export default React.memo(function Library(): JSX.Element {
     zoom,
     sideloadedLibrary,
     favouriteGames,
-    libraryTopSection,
     platform,
     currentCustomCategories,
     customCategories,
@@ -332,9 +330,6 @@ export default React.memo(function Library(): JSX.Element {
     })
   }
 
-  // top section
-  const showRecentGames = libraryTopSection.startsWith('recently_played')
-
   const favouriteGamesList = useMemo(() => {
     if (showHidden) {
       return favouriteGames.list
@@ -349,12 +344,9 @@ export default React.memo(function Library(): JSX.Element {
     )
   }, [favouriteGames, showHidden, hiddenGames])
 
-  const showFavourites =
-    libraryTopSection === 'favourites' && !!favouriteGamesList.length
-
   const favourites = useMemo(() => {
     const tempArray: GameInfo[] = []
-    if (showFavourites || showFavouritesLibrary) {
+    if (showFavouritesLibrary) {
       const favouriteAppNames = favouriteGamesList.map(
         (favourite: FavouriteGame) => favourite.appName
       )
@@ -380,7 +372,6 @@ export default React.memo(function Library(): JSX.Element {
       return gameA.localeCompare(gameB)
     })
   }, [
-    showFavourites,
     showFavouritesLibrary,
     favouriteGamesList,
     epic,
@@ -724,27 +715,6 @@ export default React.memo(function Library(): JSX.Element {
 
       <div className="listing">
         <span id="top" />
-        {showRecentGames && (
-          <RecentlyPlayed
-            handleModal={handleModal}
-            onlyInstalled={libraryTopSection.endsWith('installed')}
-            showHidden={showHidden}
-          />
-        )}
-
-        {showFavourites && !showFavouritesLibrary && (
-          <>
-            <div className="library-section-header" data-tour="library-header">
-              <h3 className="libraryHeader">{t('favourites', 'Favourites')}</h3>
-            </div>
-            <GamesList
-              library={favourites}
-              handleGameCardClick={handleModal}
-              isFavourite
-              isFirstLane
-            />
-          </>
-        )}
 
         <LibraryHeader list={libraryToShow} />
 

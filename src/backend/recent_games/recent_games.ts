@@ -1,12 +1,12 @@
 import { GameInfo, RecentGame } from 'common/types'
 import { backendEvents } from '../backend_events'
 import { sendFrontendMessage } from '../ipc'
-import { GlobalConfig } from '../config'
 import { configStore } from 'backend/constants/key_value_stores'
 
+const DEFAULT_MAX_RECENT_GAMES = 5
+
 const maxRecentGames = async () => {
-  const { maxRecentGames } = GlobalConfig.get().getSettings()
-  return maxRecentGames || 5
+  return DEFAULT_MAX_RECENT_GAMES
 }
 
 const getRecentGames = async (options?: { limited: boolean }) => {

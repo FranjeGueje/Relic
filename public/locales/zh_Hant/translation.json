@@ -635,7 +635,6 @@
       "title": "手動同步存檔",
       "upload": "上傳"
     },
-    "maxRecentGames": "要顯示最近遊玩的遊戲",
     "maxworkers": "下載時的最大 Worker 數量",
     "offlinemode": "離線執行遊戲",
     "prefered_language": "偏好語言（語言代碼）",

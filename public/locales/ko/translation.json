@@ -635,7 +635,6 @@
       "title": "수동 저장 동기화",
       "upload": "업로드"
     },
-    "maxRecentGames": "표시할 최근 플레이한 게임",
     "maxworkers": "다운로드할 때 최대 워커 수",
     "offlinemode": "게임 오프라인으로 실행",
     "prefered_language": "선호 언어 (언어 코드)",

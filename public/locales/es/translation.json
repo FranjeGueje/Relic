@@ -643,7 +643,6 @@
       "title": "Sincronización manual de guardados",
       "upload": "Subida"
     },
-    "maxRecentGames": "Cantidad de jugados recientemente a mostrar",
     "maxworkers": "Número máximo de procesos al descargar",
     "offlinemode": "Ejecutar juego sin conexión",
     "prefered_language": "Lenguaje preferido (Código de Lenguaje)",

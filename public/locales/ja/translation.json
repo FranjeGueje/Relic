@@ -638,7 +638,6 @@
       "title": "セーブデータを手動同期",
       "upload": "アップロード"
     },
-    "maxRecentGames": "表示する最近のゲーム",
     "maxworkers": "最大同時ダウンロード数",
     "offlinemode": "ゲームをオフラインで実行",
     "prefered_language": "優先言語（言語コード）",

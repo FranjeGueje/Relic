@@ -160,3 +160,21 @@
 - `gamepad.ts`: variable `controllerIsDisabled`, check, y `toggleControllerIsDisabled` eliminados
 - Campo `disableController` eliminado de types
 - Clave `setting.disable_controller` eliminada de 47 traducciones
+
+## Library Top Section y Max Recent Games
+- `LibraryTopSection.tsx` y `MaxRecentGames.tsx` eliminados
+- Campos `libraryTopSection`, `maxRecentGames`, tipo `LibraryTopSectionOptions` eliminados de `common/types.ts`
+- `libraryTopSection`, `handleLibraryTopSection` eliminados de `frontend/types.ts`, `GlobalState.tsx`, `ContextProvider.tsx`
+- `libraryTopSection` eliminado de `backend/config.ts`
+- `backend/recent_games/recent_games.ts`: límite hardcodeado a 5 (ya no lee de settings)
+- `Library/index.tsx`: sección RecentlyPlayed y sección automática Favourites eliminadas
+- `RecentlyPlayed/index.tsx`: límite hardcodeado a 5
+- Claves `setting.libraryTopSection`, `setting.maxRecentGames` eliminadas de 47 traducciones
+
+## Movimientos en Settings
+- `VerboseLogs` movido de GamesSettings a GeneralSettings
+- `SteamGridDbApiKey`, `ClearCache`, `ResetRelic` movidos de AdvancedSettings a GeneralSettings
+
+## Reordenamiento Sidebar
+- "Gestionar cuentas" movido debajo de "Biblioteca"
+- "Descargas" movido debajo de "Ajustes"
