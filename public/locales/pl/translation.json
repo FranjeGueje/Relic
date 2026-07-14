@@ -16,7 +16,6 @@
       "title": "Wyczyszczono pamięć podręczną"
     },
     "choose": "Wybierz",
-    "choose-egs-prefix": "Wybierz prefiks, w którym jest zainstalowany EGS",
     "choose-gogdl-binary": "Wybierz plik wykonywalny GOGDL (wymagane ponowne uruchomienie)",
     "choose-legendary-binary": "Wybierz plik wykonywalny Legendary",
     "customWine": "Wybierz plik wykonywalny Wine lub Proton",
@@ -282,7 +281,6 @@
   },
   "help": {
     "amdfsr": "AMD FSR pomaga podnieść liczbę klatek na sekundę poprzez skalowanie niższej rozdzielczości do rozdzielczości monitora. Jakość obrazu można dostosować od 5 do 1, z drobnym spadkiem wydajności. Włączenie może poprawić wydajność.",
-    "custom_themes_wiki": "Sprawdź Wiki by dowiedzieć się więcej o dodawaniu niestandardowych motywów. Kliknij tutaj.",
     "dxvk": "DXVK to oparta o Vulkana warstwa tłumacząca dla gier opartych o DirectX 9, 10 i 11. Włączenie DXVK może poprawić kompatybilność, lecz także powodować problemy, szczególnie w starszych grach opartych na DirectX.",
     "dxvkfpslimit": "Ustala limit klatek na sekundę dla gier z DXVK",
     "esync": "Zadaniem Esync jest zmniejszenie narzutu wydajności spowodowanego przez wineserver w grach intensywnie wykorzystujących CPU. Włączenie może podnieść wydajność.",
@@ -293,7 +291,6 @@
       "valid_codes": "Kody językowe są zależne od gry."
     },
     "gamemode": "Feral GameMode włącza automatyczne i tymczasowe optymalizacje systemu pod kątem wydajności, gdy zostaje uruchomiona gra. Włączenie może podnieść wydajność.",
-    "general": "Jeśli masz już zainstalowany Epic Games Store w innej lokalizacji, możesz zsynchronizować z nim Heroic Games Launcher, aby uniknąć ponownego pobierania zainstalowanych już gier.",
     "other": {
       "part4": "Użyj ",
       "part5": "Argumenty gry",
@@ -319,7 +316,6 @@
     },
     "disable_logs": "Zaznacz to pole, aby wyłączyć większość zapisów w logach (krytyczne informacje są zawsze rejestrowane). Pamiętaj, aby ODZNACZYĆ to ustawienie przed zgłoszeniem jakiegokolwiek problemu.",
     "dxvknvapi": "DXVK-NVAPI jest implementacją NVAPI zbudowaną na postawie DXVK i natywnego NVAPI Linuksa, pozwala na używanie DLSS na GPU Nvidii.",
-    "disablePlaytimeSync": "Wyłącza synchronizację czasu gry z serwerem danego sklepu (obecnie jedynie GOG jest wspierany)",
     "title": {
       "accessibility": "Ułatwienia dostępu",
       "login": "Logowanie",
@@ -337,7 +333,6 @@
       "login": "Zaloguj się do innych sklepów.",
       "settingsGame": "Pokaż wszystkie ustawienia dla gry.",
       "accessibility": "Wyświetla ustawienia dostępności.",
-      "customThemesPath": "Sprawdź naszą wiki.",
       "defaultInstallPath": "To jest domyślna ścieżka wybrana podczas instalowania gier.",
       "downloadManager": "Pokazuje obecne i przeszłe pobrania.",
       "settingsDefault": "Pokazuje wszystkie opcje Heroic i domyślne opcje gier.",
@@ -417,10 +412,7 @@
     "old-mac": "Twoja wersja macOS to {{version}}. macOS 12 lub nowszy jest wymagany, aby móc się zalogować.",
     "zoom": "Zaloguj do Zoom"
   },
-  "message": {
-    "sync": "Synchronizacja zakończona",
-    "unsync": "Desynchronizacja zakończona"
-  },
+  "message": {},
   "notify": {
     "error": {
       "move": "Błąd przenoszenia gry",
@@ -523,9 +515,7 @@
   "placeholder": {
     "alt-gogdl-bin": "Używanie wbudowanego pliku binarnego GOGDL...",
     "alt-legendary-bin": "Używanie pliku wykonywalnego Legendary...",
-    "custom_themes_path": "Wybierz ścieżkę do niestandardowych plików CSS",
     "dxvkfpsvalue": "Dodatnia liczba całkowita (np. 30, 60, ...)",
-    "egs-prefix": "Prefiks, w którym zainstalowany jest EGS",
     "prefered_language": "dwu lub czteroznakowy kod (np. : \"pl\" lub \"pt-BR\")",
     "alt-nile-bin": "Korzystanie z wbudowanego pliku wykonywalnego Nile..."
   },
@@ -553,8 +543,6 @@
   "Recent": "Ostatnio uruchamiane",
   "search": "Wyszukaj gry",
   "setting": {
-    "adddesktopshortcuts": "Automatycznie dodawaj skróty na pulpicie",
-    "addgamestostartmenu": "Automatycznie dodawaj gry do menu Start",
     "addgamestosteam": "Automatycznie dodawaj gry do Steam",
     "alt-gogdl-bin": "Wybierz alternatywny plik wykonywalny GOGDL",
     "alt-legendary-bin": "Wybierz alternatywny plik wykonywalny Legendary",
@@ -562,18 +550,13 @@
     "autosync": "Automatyczna synchronizacja zapisów",
     "autovkd3d": "Automatycznie instaluj/aktualizuj VKD3D w prefiksie",
     "change-target-exe": "Wybierz alternatywny plik EXE do uruchomienia",
-    "checkForUpdatesOnStartup": "Sprawdzaj aktualizację Heroic podczas uruchomienia",
     "crossover-version": "Wersja Crossover/Wine",
-    "custom_themes_path": "Ścieżka motywów niestandardowych",
     "customWineProton": "Niestandardowe ścieżki Wine/Proton",
-    "darktray": "Użyj ciemnej ikony w zasobniku systemowym",
     "default-install-path": "Domyślna ścieżka instalacji",
     "default-steam-path": "Domyślna ścieżka Steam",
-    "defaultWinePrefix": "Wybierz folder dla nowych prefiksów Wine",
     "disable_controller": "Wyłącz nawigację kontrolerem",
     "download-no-https": "Pobieraj gry bez użycia szyfrowania HTTPS (przydatne przy CDN-ach, np. LanCache)",
     "dxvkfpslimit": "Limit klatek na sekundę (DX9, 10 i 11)",
-    "egs-sync": "Synchronizuj z zainstalowanym Epic Games",
     "enableFSRHack": "Włącz FSR Hack (wymagana odpowiednia wersja Wine)",
     "eosOverlay": {
       "cancelInstall": "Anuluj",
@@ -665,7 +648,6 @@
     },
     "maxRecentGames": "Pokaż ostatnio uruchamiane",
     "maxworkers": "Maksymalna liczba wątków przy pobieraniu",
-    "minimize-on-launch": "Minimalizuj Heroic po uruchomieniu gry",
     "offlinemode": "Uruchom grę w trybie bez dostępu do internetu",
     "prefered_language": "Preferowany język (kod języka)",
     "preferSystemLibs": "Preferuj biblioteki systemowe",
@@ -689,10 +671,8 @@
     "ignoreGameUpdates": "Ignoruj aktualizacje gier",
     "disable_logs": "Wyłącz logi",
     "showMetalOverlay": "Pokaż nakładkę statystyk",
-    "addgamestoapplications": "Automatycznie dodawaj gry do aplikacji",
     "alt-nile-bin": "Wybierz alternatywny plik wykonywalny Nile",
     "autodxvknvapi": "Automatycznie instaluj/aktualizuj DXVK-NVAPI w prefiksie",
-    "disablePlaytimeSync": "Wyłącz synchronizację czasu gry",
     "experimental_features": {
       "enableNewDesign": "Nowy design",
       "automaticWinetricksFixes": "Zastosuj znane poprawki automatycznie",
@@ -858,9 +838,6 @@
       "resetHeroic": {
         "help": "Ta akcja usunie wszystkie Ustawienia i wyczyści pamięć podręczną, ale nie usunie twoich zainstalowanych gier czy informacji logowania do Epic. Wersje przenośne (AppImage, WinPortable, ...) Heroic będą musiały zostać uruchomione ponownie ręcznie."
       }
-    },
-    "custom_css": {
-      "title": "Własny styl CSS"
     },
     "launchOptions": "Opcje startowe",
     "legacy_warning": "Uwaga: Ustawienia w tej zakładce są w większości przestarzałe i mogą w ogóle nie działać.",

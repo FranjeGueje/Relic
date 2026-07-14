@@ -38,17 +38,6 @@ const languageCode: string =
 configStore.set('language', languageCode)
 document.querySelector('html')?.setAttribute('lang', languageCode)
 
-window.setCustomCSS = (cssString: string) => {
-  const style = document.createElement('style')
-  style.innerHTML = cssString
-  document.getElementById('customCSS')!.innerText = style.innerText
-}
-
-window.api
-  .getCustomCSS()
-  .then(window.setCustomCSS)
-  .catch(() => {})
-
 i18next
   // load translation using http -> see /public/locales
   // learn more: https://github.com/i18next/i18next-http-backend
@@ -130,24 +119,8 @@ root.render(
   // </React.StrictMode>
 )
 
-// helper function to set the theme class and load custom css if needed
+// helper function to set the theme class
 window.setTheme = async (themeClass: string) => {
-  document.querySelector('style.customTheme')?.remove()
-
-  if (
-    themeClass !== DEFAULT_THEME &&
-    !Object.keys(defaultThemes).includes(themeClass)
-  ) {
-    const cssContent = await window.api.getThemeCSS(themeClass)
-    themeClass = themeClass
-      .replace('.css', '') // remove extension
-      .replace(/[\s.]/, '_') // remove dots and empty spaces
-    const style = document.createElement('style')
-    style.classList.add('customTheme')
-    style.innerHTML = cssContent
-    document.body.insertAdjacentElement('afterbegin', style)
-  }
-
   document.body.className = themeClass
 
   if (navigator.windowControlsOverlay.visible) {

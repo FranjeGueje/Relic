@@ -16,7 +16,6 @@
       "title": "Tembolok telah dibersihkan"
     },
     "choose": "Pilih",
-    "choose-egs-prefix": "Pilih Prefiks di mana EGS diinstal",
     "choose-gogdl-binary": "Pilih GOGDL Binary (perlu memulai ulang)",
     "choose-legendary-binary": "Pilih Legendary binary",
     "customWine": "Pilih Wine atau Proton Binary",
@@ -275,7 +274,6 @@
   },
   "help": {
     "amdfsr": "FSR AMD membantu untuk meningkatkan framerate dengan meningkatkan resolusi yang lebih rendah dalam Mode Layar Penuh. Kualitas gambar meningkat dari 5 menjadi 1 dengan mengorbankan sedikit kinerja. Mengaktifkannya dapat meningkatkan kinerja.",
-    "custom_themes_wiki": "Cek Wiki untuk detail lebih lanjut tentang kustomisasi tema. Klik disini.",
     "dxvk": "DXVK adalah lapisan translasi berbasis Vulkan untuk gim yang memakai DirectX 9, 10, dan 11. Mengaktifkannya dapat meningkatkan kompatibilitas. Mungkin dapat menyebabkan masalah terutama untuk gim dengan versi DirectX yang lebih lama.",
     "dxvkfpslimit": "Atur batas maksimal frame untuk gim DXVK",
     "esync": "Esync bertujuan untuk mengurangi overhead server Wine di gim dengan CPU yang intensif. Mengaktifkannya dapat meningkatkan kinerja.",
@@ -286,7 +284,6 @@
       "valid_codes": "Kode bahasa yang valid bergantung pada gim."
     },
     "gamemode": "Feral GameMode menerapkan penyesuaian otomatis dan penyesuaian sementara ke sistem saat menjalankan gim. Mengaktifkannya dapat meningkatkan kinerja.",
-    "general": "Sinkronkan dengan EGL jika Anda memiliki instalasi Epic Games Launcher yang berjalan di tempat lain dan ingin mengimpor gim Anda untuk menghindari pengunduhan ulang.",
     "other": {
       "part4": "Gunakan ",
       "part5": "Argumen Gim",
@@ -328,7 +325,6 @@
     },
     "content": {
       "accessibility": "Menampilkan pengaturan aksesibilitas.",
-      "customThemesPath": "Periksa wiki kami.",
       "defaultInstallPath": "Ini adalah jalur default yang dipilih sebelumnya saat menginstal game.",
       "downloadManager": "Menampilkan unduhan saat ini dan sebelumnya.",
       "library": "Menampilkan semua game yang dimiliki.",
@@ -337,7 +333,6 @@
       "settingsGame": "Tampilkan semua pengaturan untuk sebuah game.",
       "wineManager": "Instal berbagai versi Wine, Proton, Crossover, dan lainnya."
     },
-    "disablePlaytimeSync": "Menonaktifkan sinkronisasi waktu bermain dengan server toko yang bersangkutan (saat ini hanya GOG yang didukung).",
     "download_proton_steam": "Jika diaktifkan, GE-Proton akan diunduh langsung ke direktori alat kompatibilitas Steam, bukan ke jalur default Heroic. Akan menggunakan jalur Steam yang diatur dalam pengaturan 'Jalur Steam Default' di atas.",
     "dxvknvapi": "DXVK-NVAPI adalah implementasi NVAPI yang dibangun di atas DXVK dan NVAPI native Linux, yang memungkinkan penggunaan DLSS pada GPU Nvidia.",
     "wine-hdr": "HDR meningkatkan warna dengan memberikan sorotan yang lebih terang dan kontras yang lebih dalam. Agar HDR berfungsi, baik tampilan maupun game harus mendukungnya.",
@@ -410,10 +405,7 @@
     "old-mac": "Versi macOS anda adalah {{version}}. macOS 12 atau lebih diperlukan untuk masuk.",
     "zoom": "Login Zoom"
   },
-  "message": {
-    "sync": "Sinkronisasi Selesai",
-    "unsync": "Pembatalan Sinkronisasi Selesai"
-  },
+  "message": {},
   "notify": {
     "error": {
       "move": "Galat dalam Memindahkan Gim",
@@ -516,9 +508,7 @@
   "placeholder": {
     "alt-gogdl-bin": "Menggunakan GOGDL binary bawaan…",
     "alt-legendary-bin": "Menggunakan Legendary binary bawaan...",
-    "custom_themes_path": "Pilih jalur untuk mencari file CSS khusus",
     "dxvkfpsvalue": "Nilai bilangan bulat positif (contohnya 30, 60, ...)",
-    "egs-prefix": "Prefiks di mana EGS diinstal",
     "prefered_language": "Kode 2 karakter atau 4 karakter (mis.: \"fr\" atau \"pt-BR\")",
     "alt-nile-bin": "Menggunakan Nile binary bawaan ..."
   },
@@ -546,8 +536,6 @@
   "Recent": "Dimainkan Baru-Baru Ini",
   "search": "Cari Gim",
   "setting": {
-    "adddesktopshortcuts": "Tambahkan pintasan desktop secara otomatis",
-    "addgamestostartmenu": "Tambahkan gim untuk memulai menu secara otomatis",
     "addgamestosteam": "Tambahkan game ke Steam secara otomatis",
     "alt-gogdl-bin": "Pilih GOGDL Binary alternatif untuk digunakan",
     "alt-legendary-bin": "Pilih Legendary Binary Alternatif",
@@ -555,18 +543,13 @@
     "autosync": "Sinkronisasi Penyimpanan Otomatis",
     "autovkd3d": "Pemasangan/Pembaruan VKD3D Otomatis di Prefiks",
     "change-target-exe": "Pilih EXE alternatif untuk dijalankan",
-    "checkForUpdatesOnStartup": "Periksa Pembaruan Heroik saat Memulai",
     "crossover-version": "Versi Crossover/Wine",
-    "custom_themes_path": "Lokasi Tema Kustom",
     "customWineProton": "Lokasi Wine/Proton Khusus",
-    "darktray": "Gunakan Ikon Baki Gelap",
     "default-install-path": "Lokasi Pemasangan Bawaan",
     "default-steam-path": "Lokasi Steam bawaan",
-    "defaultWinePrefix": "Atur Folder untuk Prefiks Wine baru",
     "disable_controller": "Nonaktifkan navigasi Heroic menggunakan pengontrol",
     "download-no-https": "Unduh gim tanpa HTTPS (berguna untuk CDN misalnya LanCache)",
     "dxvkfpslimit": "Batasi FPS (DX9, 10 dan 11)",
-    "egs-sync": "Sinkronkan dengan Epic Games yang Terinstal",
     "enableFSRHack": "Aktifkan Peretasan FSR (perlu versi Wine yang mendukung)",
     "eosOverlay": {
       "cancelInstall": "Batalkan",
@@ -658,7 +641,6 @@
     },
     "maxRecentGames": "Gim yang Dimainkan Baru-Baru Ini",
     "maxworkers": "Jumlah Maksimum Worker saat mengunduh",
-    "minimize-on-launch": "Minimalkan Jendela Heroic Setelah Gim Diluncurkan",
     "offlinemode": "Jalankan Game Secara Luring",
     "prefered_language": "Bahasa Pilihan (Kode Bahasa)",
     "preferSystemLibs": "Lebih memilih pustaka sistem",
@@ -681,7 +663,6 @@
     "autoUpdateGames": "Perbarui gim secara otomatis",
     "ignoreGameUpdates": "Abaikan pembaruan gim",
     "disable_logs": "Nonaktifkan Log",
-    "addgamestoapplications": "Tambahkan gim ke Aplikasi secara otomatis",
     "showMetalOverlay": "Tampilkan Overlay Statistik",
     "alt-nile-bin": "Pilih Nile Binary Alternatif",
     "autodxvknvapi": "Instal/ Perbarui Otomatis DXVK-NVAPI sesuai Prefiks",
@@ -714,7 +695,6 @@
     "custom_css": {
       "warning": "Peringatan: ini berlaku untuk seluruh antarmuka. Artinya, gaya yang salah dapat membuat Heroic tidak dapat digunakan. Jika diperlukan, pengaturan dapat diubah secara manual di `~/.config/heroic/config.json`. Jangan menyalin gaya dari sumber yang tidak tepercaya."
     },
-    "disablePlaytimeSync": "Nonaktifkan sinkronisasi waktu bermain",
     "disableUMU": "Nonaktifkan umu",
     "download-proton-steam": "Unduh GE-Proton ke direktori Steam",
     "dxfpslimit": "Batasi FPS Game DirectX",
@@ -835,9 +815,6 @@
       "steamDeck": "Steam Deck {{model}}",
       "systemModel": "Model Sistem:",
       "systemSpecifications": "Spesifikasi Sistem:"
-    },
-    "custom_css": {
-      "title": "Gaya CSS Kustom"
     },
     "offline": {
       "warning": "Game ini tidak secara eksplisit mengizinkan mode offline, aktifkan dengan risiko Anda sendiri. Game mungkin tidak berfungsi."

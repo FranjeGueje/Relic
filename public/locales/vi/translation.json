@@ -16,7 +16,6 @@
       "title": "Đã xoá bộ nhớ đệm"
     },
     "choose": "Chọn",
-    "choose-egs-prefix": "Chọn Prefix nơi EGS được cài đặt",
     "choose-gogdl-binary": "Chọn GOGDL Binary (cần khởi động lại)",
     "choose-legendary-binary": "Chọn Legendary binary",
     "customWine": "Chọn Wine hoặc Proton binary",
@@ -274,7 +273,6 @@
   },
   "help": {
     "amdfsr": "FSR của AMD giúp tăng tốc độ khung hình bằng cách nâng cấp độ phân giải thấp hơn ở Chế độ toàn màn hình. Chất lượng hình ảnh tăng từ 5 lên 1 với cái giá phải trả là hiệu suất bị giảm nhẹ. Việc kích hoạt có thể cải thiện hiệu suất.",
-    "custom_themes_wiki": "Kiểm tra Wiki để biết thêm chi tiết về cách thêm chủ đề tùy chỉnh. Bấm vào đây.",
     "dxvk": "DXVK là lớp dịch thuật dựa trên Vulkan dành cho các trò chơi DirectX 9, 10 và 11. Việc kích hoạt có thể cải thiện khả năng tương thích. Có thể gây ra sự cố đặc biệt đối với các trò chơi DirectX cũ hơn.",
     "dxvkfpslimit": "Sets a frame rate cap for DXVK games",
     "esync": "Esync nhằm mục đích giảm chi phí sử dụng wineserver trong các trò chơi sử dụng nhiều CPU. Việc kích hoạt có thể cải thiện hiệu suất.",
@@ -285,7 +283,6 @@
       "valid_codes": "Mã ngôn ngữ hợp lệ phụ thuộc vào trò chơi."
     },
     "gamemode": "Feral GameMode áp dụng các tinh chỉnh tự động và tạm thời cho hệ thống khi chạy game. Việc kích hoạt có thể cải thiện hiệu suất.",
-    "general": "Đồng bộ hóa với EGL nếu bạn có bản cài đặt Epic Games Launcher đang hoạt động ở nơi khác và muốn nhập trò chơi của mình để tránh tải xuống lại.",
     "other": {
       "part4": "Sử dụng ",
       "part5": "Đối Số Trò Chơi",
@@ -327,7 +324,6 @@
     },
     "content": {
       "accessibility": "Hiển thị cài đặt trợ năng.",
-      "customThemesPath": "Kiểm tra wiki của chúng tôi.",
       "defaultInstallPath": "Đây là đường dẫn mặc định được chọn sẵn khi cài đặt game.",
       "downloadManager": "Hiển thị các lượt tải xuống hiện tại và trước đây.",
       "library": "Hiển thị tất cả các trò chơi thuộc sở hữu.",
@@ -336,7 +332,6 @@
       "settingsGame": "Hiển thị tất cả các cài đặt cho một trò chơi.",
       "wineManager": "Cài đặt các phiên bản khác nhau của Wine, Proton, Crossover, v.v."
     },
-    "disablePlaytimeSync": "Tắt đồng bộ hóa thời gian chơi với máy chủ của cửa hàng nhất định (hiện chỉ hỗ trợ GOG)",
     "download_proton_steam": "Khi được bật, GE-Proton sẽ được tải trực tiếp vào thư mục công cụ tương thích Steam thay vì đường dẫn Heroic mặc định. Nó sẽ sử dụng đường dẫn Steam được đặt trong cài đặt 'Đường dẫn Steam mặc định' ở trên.",
     "dxvknvapi": "DXVK-NVAPI là một triển khai NVAPI được xây dựng dựa trên DXVK và NVAPI gốc linux, nó cho phép sử dụng DLSS trên GPU Nvidia.",
     "wine-hdr": "HDR tăng cường màu sắc bằng cách mang lại những highlight sáng hơn và độ tương phản sâu hơn. Để HDR hoạt động, cả màn hình và trò chơi đều phải hỗ trợ nó.",
@@ -407,10 +402,7 @@
     "old-mac": "Phiên bản macOS của bạn là {{version}}. Cần có macOS 12 hoặc mới hơn để đăng nhập.",
     "zoom": "Đăng nhập Zoom"
   },
-  "message": {
-    "sync": "Đồng Bộ Hóa Hoàn Tất",
-    "unsync": "Hoàn Tất Hủy Đồng Bộ Hóa"
-  },
+  "message": {},
   "notify": {
     "error": {
       "move": "Lỗi Di Chuyển Trò Chơi",
@@ -513,9 +505,7 @@
   "placeholder": {
     "alt-gogdl-bin": "Sử dụng GOGDL binary tích hợp sẵn...",
     "alt-legendary-bin": "Sử dụng Legendary binary tích hợp sẵn...",
-    "custom_themes_path": "Chọn đường dẫn tìm file CSS tùy chỉnh",
     "dxvkfpsvalue": "Giá trị nguyên dương (ví dụ: 30, 60, ...)",
-    "egs-prefix": "Tiền tố nơi EGS được cài đặt",
     "prefered_language": "Mã 2 ký tự (tức là: \"en\" hoặc \"fr\")",
     "alt-nile-bin": "Sử dụng Nile binary tích hợp sẵn..."
   },
@@ -543,8 +533,6 @@
   "Recent": "Đã Chơi Gần Đây",
   "search": "Tìm Kiếm Trò Chơi",
   "setting": {
-    "adddesktopshortcuts": "Tự động thêm lối tắt trên màn hình",
-    "addgamestostartmenu": "Thêm trò chơi vào start menu tự động",
     "addgamestosteam": "Thêm trò chơi vào Steam tự động",
     "alt-gogdl-bin": "Chọn một GOGDL Binary thay thế để sử dụng",
     "alt-legendary-bin": "Chọn một Legendary Binary thay thế",
@@ -552,18 +540,13 @@
     "autosync": "Tự Động Lưu",
     "autovkd3d": "Tự Động Cài Đặt/Cập Nhật VKD3D trên Tiền Tố",
     "change-target-exe": "Chọn một EXE thay thế để chạy",
-    "checkForUpdatesOnStartup": "Kiểm tra Heroic Updates khi Khởi Động",
     "crossover-version": "Phiên Bản Crossover/Wine",
-    "custom_themes_path": "Đường Dẫn Chủ Đề Tùy Chỉnh",
     "customWineProton": "Đường Dẫn Wine/Proton Tùy Chọn",
-    "darktray": "Sử Dụng Biểu Tượng Khay Tối",
     "default-install-path": "Đường Dẫn Cài Đặt Mặc Định",
     "default-steam-path": "Đường dẫn Steam mặc định",
-    "defaultWinePrefix": "Đặt Thư Mục cho Tiền Tố Wine mới",
     "disable_controller": "Tắt điều hướng Heroic bằng bộ điều khiển",
     "download-no-https": "Tải xuống trò chơi không có HTTPS (hữu ích cho CDN, ví dụ: LanCache)",
     "dxvkfpslimit": "Limit FPS (DX9, 10 and 11)",
-    "egs-sync": "Đồng bộ hóa với Epic Games đã cài đặt",
     "enableFSRHack": "Bật FSR Hack (Phiên bản Wine cần hỗ trợ)",
     "eosOverlay": {
       "cancelInstall": "Hủy",
@@ -656,7 +639,6 @@
     },
     "maxRecentGames": "Đã Chơi Gần Đây để Hiển Thị",
     "maxworkers": "Số Lượng Công Nhân Tối Đa khi tải xuống",
-    "minimize-on-launch": "Thu Nhỏ Heroic Sau Khi Khởi Chạy Trò Chơi",
     "offlinemode": "Chạy Trò Chơi Ngoại Tuyến",
     "prefered_language": "Ngôn Ngữ Ưa Thích (Mã Ngôn Ngữ)",
     "preferSystemLibs": "Ưu tiên thư viện hệ thống",
@@ -679,7 +661,6 @@
     "autoUpdateGames": "Tự động cập nhật trò chơi",
     "ignoreGameUpdates": "Bỏ qua cập nhật trò chơi",
     "disable_logs": "Tắt Nhật Ký",
-    "addgamestoapplications": "Tự động thêm trò chơi vào Ứng Dụng",
     "showMetalOverlay": "Hiển thị overlay thống kê",
     "alt-nile-bin": "Chọn một Nile Binary Thay Thế",
     "autodxvknvapi": "Tự Động Cài Đặt/Cập Nhật DXVK-NVAPI trên Tiền Tố",
@@ -699,7 +680,6 @@
     "custom_css": {
       "warning": "Cảnh báo: điều này áp dụng cho toàn bộ giao diện người dùng. Điều đó có nghĩa là kiểu dáng sai có thể khiến Heroic không thể sử dụng được. Nếu cần, bạn có thể thay đổi cài đặt theo cách thủ công trong `~/.config/heroic/config.json`. KHÔNG sao chép kiểu từ các nguồn mà bạn không tin tưởng."
     },
-    "disablePlaytimeSync": "Vô hiệu hóa đồng bộ hóa thời gian chơi",
     "disableUMU": "Tắt umu",
     "download-proton-steam": "Tải GE-Proton về thư mục Steam",
     "dxfpslimit": "Giới Hạn FPS Của Trò Chơi DirectX",
@@ -826,9 +806,6 @@
       "systemSpecifications": "Thông Số Hệ Thống:",
       "nileVersion": "Nile: {{nileVersion}}",
       "steamDeck": "Steam Deck {{model}}"
-    },
-    "custom_css": {
-      "title": "Kiểu CSS Tùy Chỉnh"
     },
     "experimental_features": {
       "title": "Tính Năng Thử Nghiệm"

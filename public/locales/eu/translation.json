@@ -16,7 +16,6 @@
       "title": "Cachea ezabatuta"
     },
     "choose": "Aukeratu",
-    "choose-egs-prefix": "Aukeratu EGS instalatuta dagoen Wine-Preferx",
     "choose-gogdl-binary": "Hautatu GOGDL binarioa (berrabiarazi behar da)",
     "choose-legendary-binary": "Aukeratu Legendary-ren binarioa",
     "customWine": "Aukeratu Wine edo Proton binarioa",
@@ -275,7 +274,6 @@
   },
   "help": {
     "amdfsr": "AMD-ren FSR-k fotograma-tasa areagotzen laguntzen du pantaila osoko moduan bereizmen baxuagoak igoz. Irudiaren kalitatea 5etik 1era igotzen da errendimendu txiki baten truke. Gaitzeak errendimendua hobetu dezake.",
-    "custom_themes_wiki": "Check the Wiki for more details on adding custom themes. Click here.",
     "dxvk": "DXVK DirectX 9, 10 eta 11 jokoetarako Vulkan-en oinarritutako translazio-geruza da. Gaitzeak bateragarritasuna hobetu dezake. Arazoak sor ditzake bereziki DirectX joko zaharretan.",
     "dxvkfpslimit": "Sets a frame rate cap for DXVK games",
     "esync": "Esync-ek ardo-zerbitzariaren gainkostua murriztea du helburu PUZa duten jokoetan. Gaitzeak errendimendua hobe dezake.",
@@ -286,7 +284,6 @@
       "valid_codes": "Baliozko hizkuntza-kodeak jokoaren araberakoak dira."
     },
     "gamemode": "Feral GameMode-k sistemari doikuntza automatikoak eta aldi baterakoak aplikatzen dizkio jokoak exekutatzen direnean. Gaitzeak errendimendua hobe dezake.",
-    "general": "Sinkronizatu EGLrekin, Epic Games Launcher-en instalazio funtzional bat beste nonbait baduzu eta bere jokoak inportatu nahi baditu berriro deskargatzea saihesteko.",
     "other": {
       "part4": "Erabili ",
       "part5": "Jokoaren argudioak",
@@ -327,7 +324,6 @@
       "downloadManager": "",
       "wineManager": "",
       "library": "",
-      "customThemesPath": "",
       "accessibility": "",
       "login": ""
     },
@@ -339,7 +335,6 @@
     "download_proton_steam": "",
     "wine-hdr": "",
     "dxvknvapi": "",
-    "disablePlaytimeSync": "",
     "WoW64": "",
     "wine-wayland": "",
     "advertiseAvxForRosetta": "",
@@ -408,10 +403,7 @@
     "old-mac": "",
     "zoom": ""
   },
-  "message": {
-    "sync": "Sinkronizazioa amaituta",
-    "unsync": "Sinkronizazioa amaituta"
-  },
+  "message": {},
   "notify": {
     "error": {
       "move": "Errorea jokoa mugitzean",
@@ -514,9 +506,7 @@
   "placeholder": {
     "alt-gogdl-bin": "GOGDL bitarra integratua erabiltzen...",
     "alt-legendary-bin": "Kondairazko bitar integratua erabiltzen...",
-    "custom_themes_path": "Select the path to look for custom CSS files",
     "dxvkfpsvalue": "Positive integer value (e.g. 30, 60, ...)",
-    "egs-prefix": "EGS instalatuta dagoen aurrizkia",
     "prefered_language": "2 karaktere kodea (hau da: \"en\" edo \"fr\")",
     "alt-nile-bin": "Nile bitarra integratua erabiltzen..."
   },
@@ -544,8 +534,6 @@
   "Recent": "Duela gutxi jokatuta",
   "search": "Bilatu jokoak",
   "setting": {
-    "adddesktopshortcuts": "Gehitu mahaigaineko lasterbideak automatikoki",
-    "addgamestostartmenu": "Gehitu jokoak menua automatikoki hasteko",
     "addgamestosteam": "Add games to Steam automatically",
     "alt-gogdl-bin": "Aukeratu GOGDL Binario alternatibo bat erabiltzeko",
     "alt-legendary-bin": "Aukeratu kondairazko bitar alternatibo bat",
@@ -553,18 +541,13 @@
     "autosync": "Sinkronizazio automatikoa gordetzen du",
     "autovkd3d": "Instalatu/Eguneratu automatikoki VKD3D aurrizkian",
     "change-target-exe": "Hautatu exekutatzeko EXE alternatibo bat",
-    "checkForUpdatesOnStartup": "Hasieran eguneraketak bilatu",
     "crossover-version": "Crossover/Wine bertsioa",
-    "custom_themes_path": "Custom Themes Path",
     "customWineProton": "Ardo/Protoien bideak pertsonalizatuak",
-    "darktray": "Erabili erretilu iluna ikonoa",
     "default-install-path": "Instalazio-bide lehenetsia",
     "default-steam-path": "Steam bide lehenetsia",
-    "defaultWinePrefix": "Ezarri Karpeta Ardo-aurrizki berrietarako",
     "disable_controller": "Desgaitu nabigazio heroikoa kontrolagailua erabiliz",
     "download-no-https": "Deskargatu jokoak HTTPS gabe (CDNetarako erabilgarria, adibidez, LanCache)",
     "dxvkfpslimit": "Limit FPS (DX9, 10 and 11)",
-    "egs-sync": "Sinkronizatu instalatutako Epic Games-ekin",
     "enableFSRHack": "Gaitu FSR Hack (Wine bertsioak onartu behar du)",
     "eosOverlay": {
       "cancelInstall": "Utzi",
@@ -657,7 +640,6 @@
     },
     "maxRecentGames": "Duela gutxi erreproduzitu da erakusteko",
     "maxworkers": "Gehienezko Langile kopurua deskargatzerakoan",
-    "minimize-on-launch": "Minimizatu Heroikoa Jokoa abiarazi ondoren",
     "offlinemode": "Exekutatu jokoa lineaz kanpo",
     "prefered_language": "Lehenetsitako hizkuntza (Hizkuntza-kodea)",
     "preferSystemLibs": "Sistemaren liburutegiak hobetsi",
@@ -680,7 +662,6 @@
     "autoUpdateGames": "Eguneratu jokoak automatikoki",
     "ignoreGameUpdates": "Ez ikusi jokoaren eguneraketak",
     "disable_logs": "Desgaitu erregistroak",
-    "addgamestoapplications": "Gehitu automatikoki jokoak aplikazioetan",
     "showMetalOverlay": "Erakutsi estatistikak gainjartzea",
     "alt-nile-bin": "Aukeratu Nile Binary alternatibo bat",
     "WoW64": "",
@@ -726,7 +707,6 @@
     "enable-quick-sync-menu": "",
     "no-tray-icon": "",
     "analyticsOptIn": "",
-    "disablePlaytimeSync": "",
     "verboseLogs": {
       "description": ""
     },
@@ -835,9 +815,6 @@
     },
     "offline": {
       "warning": ""
-    },
-    "custom_css": {
-      "title": ""
     },
     "steamgriddb": {
       "apikey": {

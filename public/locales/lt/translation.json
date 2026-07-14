@@ -144,7 +144,6 @@
       "title": "Talpykla/Podėlis išvalyta/-s"
     },
     "changelog": "Keitinių žurnãlas",
-    "choose-egs-prefix": "Pasirinkti prielinksnį/priešdėlį, kuriame „EGS“ yra įdiegtas",
     "choose-gogdl-binary": "Pasirinkti „GOGDL“ dvejetainę (reikalauja paleidimo iš naujo)",
     "choose-legendary-binary": "Pasirinkti „Legendary“ dvejetainę",
     "choose-nile-binary": "Pasirinkti „Nile“ dvejetainę",
@@ -304,12 +303,10 @@
       "login": "Prisijungti prie kitų parduotuvių.",
       "settingsDefault": "Rodo visus „Heroic“ nustatymus ir numatytąsias parinktis žaidimams.",
       "wineManager": "Įdiegia skirtingas „Wine“, „Proton“, „Crossover“ ir pan. versijas.",
-      "customThemesPath": "Peržiūrėkite mūsų žinių aiškinamąjį puslapį.",
       "defaultInstallPath": "Šis yra numatytasis kelias, jau parinktas, kai įdiegiami žaidimai.",
       "library": "Rodo visus turimus žaidimus.",
       "settingsGame": "Rodo visus nustatymus žaidimui."
     },
-    "custom_themes_wiki": "Peržiūrėkite žinių aiškinamąjį puslapį išsamumui kaip pridėti pasirinktinius apvalkalus. Spauskite čia.",
     "dxvkfpslimit": "Nustato kadrų dažnio ribą „DXVK“ žaidimams",
     "game_language": {
       "in_game_config": "Nevisi žaidimai palaiko šią konfigūraciją, kai kurie žaidimai turi nuosava kalbos nustatymą.",
@@ -330,8 +327,6 @@
       "part3": "Rankinis sinchronizavimas: Pasirinkite atsisiuntimą, norint atsisiųsti žaidimo išsaugojimus, kurie laikomi debesijoje. Pasirinkite įkėlimą, norint įkelti vietinius išsaugojimus į debesiją. Priverstinai atsisiųsti ir įkelti nepaisys jos parinkties versiją.",
       "part4": "Automatinis išsaugojimų sinchronizavimas, sinchronizuos išsaugojimus kiekvieną kartą, kada Jūs pradėsite žaidimą ir kai jį baigsite žaisti."
     },
-    "disablePlaytimeSync": "Išjungia/Išgalina žaidimo laikotarpio sinchronizavimą su duotos parduotuvės serveriais (kol kas tik „GOG“ yra palaikomas)",
-    "general": "Sinchronizuoti su „EGL“, jei Jūs turite veikiantį „Epic Games“ paleidiklio įdiegimą kitur ir norite importuoti savo žaidimus, siekiant išvengti jų atsisiuntimą dar kartą.",
     "preferSystemLibs": "Pasirinktinės „Wine“ versijos („Wine-GE“, „Wine-Lutris“) yra įtraukiamos su jų bibliotekų priklausomybėm. Įjungiant/Įgalinant šią parinktį, šios įtraukiamos bibliotekos bus ignoruojamos ir „Wine“ įkraus sistemines bibliotekas vietoj to. Įspėjimas! Problemos gali kilti, jeigu priklausomybės nebus pasiekiamos.",
     "disable_logs": "Perjungiant šį pažymėjimo lauką į – „ON“, išjungia didžiąsias žurnalų failų įrašymus (kritinė informacija visada yra įrašoma). Įsitikinkite, kad išjungėte šį nustatymą prieš pranešant apie bet kokią problemą.",
     "dxvknvapi": "„DXVK-NVAPI“ yra „NVAPI“ realizacija, kuri sukurta ant „DXVK“ ir jo „Linux NVAPI“, jis leidžia „DLSS“ naudojimą, skirtiems „Nvidia GPU“ (dgs.).",
@@ -514,7 +509,6 @@
     },
     "after-launch-script-path": "Pasirinkti skriptą, kurį vykdyti po žaidimo išjungimo",
     "before-launch-script-path": "Pasirinkti skriptą, kurį vykdyti prieš paleidžiant žaidimą",
-    "checkForUpdatesOnStartup": "Tikrinti ar yra „Heroic“ atnaujinimų, paleidimo metu",
     "customWineProton": "Pasirinktiniai „Wine“/„Proton“ keliai",
     "offlinemode": "Paleisti žaidimą kaip neprisijungus",
     "prefered_language": "Pageidaujama kalba (kalbos kodas)",
@@ -528,13 +522,8 @@
     "language": "Pasirinkti programos kalbą",
     "library_top_section": "Viršutinis bibliotekos skyrius",
     "ignoreGameUpdates": "Ignoruoti žaidimų atnaujinimus",
-    "adddesktopshortcuts": "Pridėti darbalaukio nuorodas automatiškai",
-    "addgamestoapplications": "Automatiškai pridėti žaidimus prie programų sąrašo",
     "addgamestosteam": "Automatiškai pridėti žaidimus į „Steam“",
-    "addgamestostartmenu": "Automatiškai pridėti žaidimus prie pradžios meniu",
-    "darktray": "Naudoti tamsią juostos piktogramą",
     "dxvkfpslimit": "Riboti kadrus per sekundę („DX9/10/11“)",
-    "minimize-on-launch": "Nuleisti „Heroic“ po žaidimo paleidimo",
     "hideChangelogsOnStartup": "Nerodyti keitinių žurnalo paleidime",
     "maxRecentGames": "Rodyti neseniai žaistus",
     "maxworkers": "Didžiausias darbuotojų skaičius, kai siunčiamasi",
@@ -542,8 +531,6 @@
     "autodxvknvapi": "Automatiškai įdiegti/atnaujinti „DXVK-NVAPI“ ant prielinksnio/priešdėlio",
     "autosync": "Automatiškai sinchronizuoti išsaugojimus",
     "autovkd3d": "Automatiškai įdiegti/atnaujinti „VKD3D“ ant prielinksnio/priešdėlio",
-    "defaultWinePrefix": "Nustatyti aplanką/-alą naujiems „Wine“ prielinksniams/priešdėliams",
-    "egs-sync": "Sinchronizuoti su įdiegtu „Epic Games“",
     "runexe": {
       "title": "Vykdyti „*.EXE“ ant prielinksnio/priešdėlio",
       "message": "Vilkti ir nutempti failus čia"
@@ -552,9 +539,7 @@
     "alt-legendary-bin": "Pasirinkite kurią pakaitinę „Legendary“ dvejetainę naudoti",
     "alt-nile-bin": "Pasirinkite kurią pakaitinę „Nile“ dvejetainę naudoti",
     "change-target-exe": "Pasirinkti pakaitinį „EXE“, kurį vykdyti",
-    "custom_themes_path": "Pasirinktinių apipavidalinimų kelias",
     "disable_logs": "Išjungti žurnalus",
-    "disablePlaytimeSync": "Išjungti/Išgalinti žaidimo laikotarpio sinchronizavimą",
     "esync": "Įjungti „Esync“",
     "preferSystemLibs": "Pageidauti sisteminių bibliotekų",
     "select_theme": "Pasirinkti apipavidalinimą",
@@ -702,9 +687,6 @@
     },
     "launchOptions": "Paleidimo parinktys",
     "legacy_warning": "Įspėjimas: Nustatymai šiame skirtuke yra daugiausiai nebegaliojantys ir gali visiškai neveikti.",
-    "custom_css": {
-      "title": "Pasirinktinis „CSS“ stilius"
-    },
     "steamgriddb": {
       "apikey": {
         "title": "„SteamGridDB“ „API“ raktas",
@@ -889,13 +871,11 @@
   },
   "globalSettings": "Visuotiniai nustatymai",
   "placeholder": {
-    "custom_themes_path": "Pasirinkite kelią, kuriame ieškoti pasirinktinių „CSS“ failų",
     "prefered_language": "2-iejų arba 4-ių rašmenų kodas (t.y.: „lt“ ar „pt-BR“)",
     "alt-gogdl-bin": "Naudojama įterpta „GOGDL“ dvejetaine...",
     "alt-legendary-bin": "Naudojama įterpta „Legendary“ dvejetaine...",
     "alt-nile-bin": "Naudojama įterpta „Nile“ dvejetaine...",
-    "dxvkfpsvalue": "Natūralioji (t.y. teigiamieji) sveikoji reikšmė (pvz.: 30, 60, ...)",
-    "egs-prefix": "Prielinksnis/Priešdėlis kuriame „EGS“ yra įdiegtas"
+    "dxvkfpsvalue": "Natūralioji (t.y. teigiamieji) sveikoji reikšmė (pvz.: 30, 60, ...)"
   },
   "progress": "Pažanga",
   "search": "Ieškoti žaidimų",
@@ -949,10 +929,7 @@
     "wine-crossover": "„Wine-Crossover“ yra paremtas ant „Crossover OpenSource Wine projektas“ ir yra rekomenduojamas su „Intel Mac“, bei „DX11“ ir senesniems žaidimams.",
     "wine-staging-macos": ""
   },
-  "message": {
-    "sync": "Sinchronizavimas baigtas",
-    "unsync": "Išsinchronizavimas baigtas"
-  },
+  "message": {},
   "toolbox": {
     "settings": {
       "wineprefix": "Pažymėkite aplanką/-alą naujiems „Wine“ prielinksniams/priešdėliams"

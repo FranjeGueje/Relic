@@ -16,7 +16,6 @@
       "title": "清理快取"
     },
     "choose": "請選擇",
-    "choose-egs-prefix": "選擇已安裝 EGS 的 Prefix",
     "choose-gogdl-binary": "選擇 GOGDL 二進位檔案（需要重啟）",
     "choose-legendary-binary": "選擇 Legendary 二進位檔案",
     "customWine": "選擇 Wine 或 Proton 二進位檔案",
@@ -275,7 +274,6 @@
   },
   "help": {
     "amdfsr": "AMD FSR 通過在全螢幕模式下提高較低解析度來提高畫面幀率。影像品質從 5 提高到 1，但代價是效能稍有下降。啟用可能會提高效能。",
-    "custom_themes_wiki": "Check the Wiki for more details on adding custom themes. Click here.",
     "dxvk": "DXVK 是一個基於 Vulkan 的轉譯層，用於 DirectX 9、10 和 11 遊戲。啟用也許會提高相容性。但可能會導致問題，特別是對老舊的 DirectX 遊戲。",
     "dxvkfpslimit": "Sets a frame rate cap for DXVK games",
     "esync": "Esync 的目標是在 CPU 消耗很大的遊戲中減少 wineserver 的開銷。啟用可能會提高效能。",
@@ -286,7 +284,6 @@
       "valid_codes": "有效語言代碼取決於遊戲。"
     },
     "gamemode": "執行遊戲時，Feral GameMode 使用自動和臨時的系統調整。啟用可能會提高效能。",
-    "general": "與 Epic Games 啟動器同步，如果您在其它地方安裝了 Epic Games 啟動器，而且想要導入您的遊戲，以免再次下載它們。",
     "other": {
       "part4": "使用 ",
       "part5": "遊戲參數",
@@ -327,7 +324,6 @@
       "downloadManager": "",
       "wineManager": "",
       "library": "",
-      "customThemesPath": "",
       "accessibility": "",
       "login": ""
     },
@@ -339,7 +335,6 @@
     "download_proton_steam": "",
     "wine-hdr": "",
     "dxvknvapi": "",
-    "disablePlaytimeSync": "",
     "WoW64": "",
     "wine-wayland": "",
     "advertiseAvxForRosetta": "",
@@ -408,10 +403,7 @@
     "old-mac": "您的 macOS 版本是 {{version}}。需要 macOS 12 或以上版本才能登入。",
     "zoom": ""
   },
-  "message": {
-    "sync": "同步完成",
-    "unsync": "取消同步完成"
-  },
+  "message": {},
   "notify": {
     "error": {
       "move": "移動遊戲時出現錯誤",
@@ -514,9 +506,7 @@
   "placeholder": {
     "alt-gogdl-bin": "使用內建 GOGDL 二進位檔案…",
     "alt-legendary-bin": "使用內建 Legendary 二進位檔案…",
-    "custom_themes_path": "Select the path to look for custom CSS files",
     "dxvkfpsvalue": "Positive integer value (e.g. 30, 60, ...)",
-    "egs-prefix": "EGS 安裝位置",
     "prefered_language": "雙字元代碼（如：\"en\" 或 \"fr\"）",
     "alt-nile-bin": "使用內建 Nile 二進位檔案…"
   },
@@ -544,8 +534,6 @@
   "Recent": "最近遊玩的遊戲",
   "search": "搜尋遊戲",
   "setting": {
-    "adddesktopshortcuts": "自動新增桌面捷徑",
-    "addgamestostartmenu": "自動新增捷徑到開始功能表",
     "addgamestosteam": "自動新增遊戲到 Steam",
     "alt-gogdl-bin": "選擇要使用的替代 GOGDL 二進位檔案",
     "alt-legendary-bin": "選擇替代的 Legendary 二進位檔案",
@@ -553,18 +541,13 @@
     "autosync": "自動同步存檔",
     "autovkd3d": "自動在 Prefix 中安裝/更新 VKD3D",
     "change-target-exe": "選擇要執行的替代 EXE",
-    "checkForUpdatesOnStartup": "啟動時檢查 Heroic 更新",
     "crossover-version": "Crossover/Wine 版本",
-    "custom_themes_path": "自訂主題路徑",
     "customWineProton": "自訂 Wine/Proton 路徑",
-    "darktray": "使用暗色系統列圖示",
     "default-install-path": "預設安裝路徑",
     "default-steam-path": "預設 Steam 路徑",
-    "defaultWinePrefix": "為新的 Wine Prefix 設定資料夾",
     "disable_controller": "停用控制器操作 Heroic",
     "download-no-https": "不使用 HTTPS 下載遊戲 （對 LanCache 等 CDN 有用）",
     "dxvkfpslimit": "Limit FPS (DX9, 10 and 11)",
-    "egs-sync": "與已安裝的 Epic Games 同步",
     "enableFSRHack": "啟用 FSR（需要支援的 Wine 版本）",
     "eosOverlay": {
       "cancelInstall": "取消",
@@ -657,7 +640,6 @@
     },
     "maxRecentGames": "要顯示最近遊玩的遊戲",
     "maxworkers": "下載時的最大 Worker 數量",
-    "minimize-on-launch": "遊戲啟動後最小化 Heroic",
     "offlinemode": "離線執行遊戲",
     "prefered_language": "偏好語言（語言代碼）",
     "preferSystemLibs": "偏好系統庫",
@@ -680,13 +662,11 @@
     "autoUpdateGames": "自動更新遊戲",
     "ignoreGameUpdates": "忽略遊戲更新",
     "disable_logs": "停用日誌",
-    "addgamestoapplications": "自動將遊戲新增到應用程式",
     "showMetalOverlay": "顯示統計數據疊加",
     "alt-nile-bin": "選擇替代的 Nile 二進位檔案",
     "autodxvknvapi": "自動在 Prefix 中安裝/更新 DXVK-NVAPI",
     "msync": "啟用 Esync",
     "before-launch-script-path": "選擇遊戲啟動前要執行的指令碼",
-    "disablePlaytimeSync": "停用遊戲時數同步",
     "experimental_features": {
       "enableHelp": "幫助元件",
       "enableNewDesign": "新設計",
@@ -835,9 +815,6 @@
     "legacy_warning": "",
     "offline": {
       "warning": ""
-    },
-    "custom_css": {
-      "title": ""
     },
     "steamgriddb": {
       "apikey": {

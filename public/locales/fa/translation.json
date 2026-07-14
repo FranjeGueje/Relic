@@ -16,7 +16,6 @@
       "title": "کش پاک شد"
     },
     "choose": "انتخاب",
-    "choose-egs-prefix": "انتخاب محل نصب شده EGS",
     "choose-gogdl-binary": "انتخاب باینری GOGDL (نیازمند راهاندازی مجدد)",
     "choose-legendary-binary": "انتخاب باینری Legendary",
     "customWine": "انتخاب فایل باینری Wine یا Proton",
@@ -275,8 +274,6 @@
   },
   "help": {
     "amdfsr": "AMD's FSR با ارتقاء مقیاس وضوح پایینتر در حالت تمام صفحه به افزایش فریم ریت کمک می کند. کیفیت تصویر در ازای کاهش جزئی عملکرد از ۵ به ۱ افزایش می یابد. فعال کردن ممکن است باعث بهبود کارایی شود.",
-    "custom_themes_path": "از فایل های CSS منابع نامعتبر استفاده نکنید. در صورت بروز شک، در کانال دیسکورد درخواست بازبینی کنید.",
-    "custom_themes_wiki": "برای اطلاعات بیشتر در مورد افزودن تم های شخصی سازی شده ویکی را برسی نمایید. اینجا کیک کنید.",
     "dxvk": "DXVK لایه ترجمهcای بر پایه Vulkan برای بازی های DirectX 9، 10، 11 می باشد. فعال کردن ممکن است سبب افزایش سازگاری شود. ممکن است باعث ایجاد مشکلات خصوصا برای بازی های DirectX قدیمی شود.",
     "dxvkfpslimit": "انتخاب فریم ریت کپ برای بازی های DXVK",
     "esync": "Esync در بازی های متمرکز بر CPU سبب کاهش سربار wineserver میشود. فعال کردن ممکن است باعث افزایش کارایی شود.",
@@ -287,7 +284,6 @@
       "valid_codes": "کدهای معتبر زبان وابسته به بازی هستند."
     },
     "gamemode": "Feral GameMode هنگام اجرای بازی ها تغییرات خودکار و موقت را در سیستم به وجود می آورد. فعال کردن ممکن است باعث افزایش کارایی شود.",
-    "general": "در صورتی که در جایی لانچر اپیک گیمز را به صورت فعال نصب کردهاید و میخواهید بازیهای خود را وارد کنید با EGL همگامسازی کنید تا از دانلود مجدد آنها جلوگیری کنید.",
     "other": {
       "part4": "استفاده کنید ",
       "part5": "آرگومانهای بازی",
@@ -312,7 +308,6 @@
       "part2": "برای دیگر مکانها،از یک symbolic link به یکی از این پوشهها استفاده کنید"
     },
     "disable_logs": "این چک باکس را روشن کنید تا بسیاری از نوشتن‌ها در فایل‌های گزارش غیرفعال شود (اطلاعات مهم همیشه ثبت می‌شوند). قبل از گزارش هر مشکلی حتماً این تنظیم را خاموش کنید.",
-    "disablePlaytimeSync": "همگام سازی میزان زمان بازی با سروهای استور ارائه شده را غیر فعال می کند(فعلا فقط از GOG پشتیبانی می شود)",
     "title": {
       "accessibility": "دسترسی ها",
       "login": "Login",
@@ -330,7 +325,6 @@
       "downloadManager": "",
       "wineManager": "",
       "library": "",
-      "customThemesPath": "",
       "accessibility": "",
       "login": ""
     },
@@ -409,10 +403,7 @@
     "old-mac": "",
     "zoom": ""
   },
-  "message": {
-    "sync": "همگامسازی کامل شد",
-    "unsync": "عدم همگامسازی کامل شد"
-  },
+  "message": {},
   "notify": {
     "error": {
       "move": "خطا در جابهجا کردن بازی",
@@ -515,9 +506,7 @@
   "placeholder": {
     "alt-gogdl-bin": "استفاده از باینری GOGDL داخلی...",
     "alt-legendary-bin": "استفاده از باینری Legendary داخلی...",
-    "custom_themes_path": "انتخاب مسیر گشتن برای فایل های CSS شخصی سازی شده",
     "dxvkfpsvalue": "مقدار عدد طبیعی (مانند 30،‌60، ...)",
-    "egs-prefix": "محل نصب شده EGS",
     "prefered_language": "کد دو حرفی (مانند \"en\" یا \"fr\")",
     "alt-nile-bin": "استفاده از باینری داخلی نیل..."
   },
@@ -545,8 +534,6 @@
   "Recent": "اخیرا بازی شده",
   "search": "جست و جو برای بازی ها",
   "setting": {
-    "adddesktopshortcuts": "افزودن خودکار میانبرهای دسکتاپ",
-    "addgamestostartmenu": "افزودن خودکار میانبرهای منوی استارت",
     "addgamestosteam": "افزودن خودکار بازی ها به استیم",
     "alt-gogdl-bin": "انتخاب باینری GOGDL جایگزین برای استفاده",
     "alt-legendary-bin": "انتخاب باینری Legendary جایگزین",
@@ -554,18 +541,13 @@
     "autosync": "همگامسازی خودکار ذخیرهها",
     "autovkd3d": "نصب/بهروزرسانی خودکار VKD3D در مسیر",
     "change-target-exe": "انتخاب EXE جایگزین برای اجرا",
-    "checkForUpdatesOnStartup": "بررسی برای به روزرسانی های Heroic در آغاز به کار",
     "crossover-version": "نسخه Crossover/Wine",
-    "custom_themes_path": "مسیر تم های شخصی سازی شده",
     "customWineProton": "مسیرهای سفارشی Wine/Proton",
-    "darktray": "استفاده از آیکون میزکار تاریک",
     "default-install-path": "محل پیشفرض نصب",
     "default-steam-path": "مسیر پیش فرض استیم",
-    "defaultWinePrefix": "تنظیم پوشه برای Wine Prefix جدید",
     "disable_controller": "غیر فعال کردن کنترل Heroic با استفاده از دسته",
     "download-no-https": "دانلود بازی ها بدون HTTPS (مفید برای CDNs مانند LanCache)",
     "dxvkfpslimit": "محدودیت فریم ریت (DX9, 10 & 11)",
-    "egs-sync": "همگامسازی با بازیهای اپیک نصب شده",
     "enableFSRHack": "فعالسازی FSR Hack (نسخه Wine باید از آن پشتیبانی کند)",
     "eosOverlay": {
       "cancelInstall": "لغو",
@@ -659,7 +641,6 @@
     },
     "maxRecentGames": "اخیرا بازی شده برای نمایش",
     "maxworkers": "بیسترین تعداد ورکر هنگام دانلود",
-    "minimize-on-launch": "کوچک کردن Heroic بعد از اجرای بازی",
     "offlinemode": "اجرای آفلاین بازی",
     "prefered_language": "زبان ترجیحی (کد زبان)",
     "preferSystemLibs": "ارجحیت کتابخانه های سیستم",
@@ -682,7 +663,6 @@
     "ignoreGameUpdates": "نادیده گرفتن به‌روزرسانی‌های بازی",
     "autoUpdateGames": "به روز رسانی خودکار بازی ها",
     "disable_logs": "غیرفعال کردن گزارش‌ها",
-    "addgamestoapplications": "بازی ها را به طور خودکار به برنامه ها اضافه کنید",
     "showMetalOverlay": "نمایش همپوشانی آمار",
     "alt-nile-bin": "یک باینری جایگزین نیل را انتخاب کنید",
     "autodxvknvapi": "نصب/بهروزرسانی خودکار DXVK-NVAPI در Prefix",
@@ -729,7 +709,6 @@
     "enable-quick-sync-menu": "",
     "no-tray-icon": "",
     "analyticsOptIn": "",
-    "disablePlaytimeSync": "",
     "verboseLogs": {
       "description": ""
     },
@@ -838,9 +817,6 @@
     },
     "offline": {
       "warning": ""
-    },
-    "custom_css": {
-      "title": ""
     },
     "steamgriddb": {
       "apikey": {

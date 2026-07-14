@@ -110,7 +110,6 @@ import {
 import { backendEvents } from './backend_events'
 import { configStore } from './constants/key_value_stores'
 import {
-  customThemesWikiLink,
   epicLoginUrl,
   relicGithubURL,
   sidInfoUrl,
@@ -606,9 +605,6 @@ addListener('openWinePrefixFAQ', async () => openUrlOrFile(wineprefixFAQ))
 addListener('openWebviewPage', async (event, url) => openUrlOrFile(url))
 addListener('openWikiLink', async () => openUrlOrFile(wikiLink))
 addListener('openSidInfoPage', async () => openUrlOrFile(sidInfoUrl))
-addListener('openCustomThemesWiki', async () =>
-  openUrlOrFile(customThemesWikiLink)
-)
 addListener('showConfigFileInFolder', async (event, appName) => {
   if (appName === 'default') {
     return openUrlOrFile(configPath)
@@ -1096,10 +1092,6 @@ addHandler('changeInstallPath', async (event, { appName, path, runner }) => {
   )
 })
 
-addHandler('egsSync', async (event, args) => {
-  return libraryManagerMap['legendary'].toggleGamesSync(args)
-})
-
 addHandler('syncGOGSaves', async (event, gogSaves, appName, arg) =>
   libraryManagerMap['gog'].getGame(appName).syncSaves(arg, '', gogSaves)
 )
@@ -1295,34 +1287,6 @@ addHandler('getWebviewPreloadPath', () => webviewPreloadPath)
 addHandler('clipboardReadText', () => clipboard.readText())
 
 addListener('clipboardWriteText', (e, text) => clipboard.writeText(text))
-
-addHandler('getCustomThemes', async () => {
-  const { customThemesPath } = GlobalConfig.get().getSettings()
-
-  if (!existsSync(customThemesPath)) {
-    return []
-  }
-
-  return readdirSync(customThemesPath).filter((fileName) =>
-    fileName.endsWith('.css')
-  )
-})
-
-addHandler('getThemeCSS', async (event, theme) => {
-  const { customThemesPath = '' } = GlobalConfig.get().getSettings()
-
-  const cssPath = path.join(customThemesPath, theme)
-
-  if (!existsSync(cssPath)) {
-    return ''
-  }
-
-  return readFileSync(cssPath, 'utf-8')
-})
-
-addHandler('getCustomCSS', async () => {
-  return GlobalConfig.get().getSettings().customCSS
-})
 
 addListener('setTitleBarOverlay', (e, args) => {
   const mainWindow = getMainWindow()

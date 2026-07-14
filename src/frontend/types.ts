@@ -172,7 +172,6 @@ declare global {
     isSteamDeck: boolean
     isSteamDeckGameMode: boolean
     platform: NodeJS.Platform
-    setCustomCSS: (cssString: string) => void
     isE2ETesting: boolean
   }
 

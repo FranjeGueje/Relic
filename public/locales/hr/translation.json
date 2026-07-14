@@ -16,7 +16,6 @@
       "title": "Cache očišćen"
     },
     "choose": "Odaberi",
-    "choose-egs-prefix": "Odaberite Prefix gdje je EGS instaliran",
     "choose-gogdl-binary": "Odaberi GOGDL Binary (treba ponovno pokrenuti)",
     "choose-legendary-binary": "Select Legendary Binary (needs restart)",
     "customWine": "Select the Wine or Proton Binary",
@@ -275,7 +274,6 @@
   },
   "help": {
     "amdfsr": "AMD's FSR helps boost framerate by upscaling lower resolutions in Fullscreen Mode. Image quality increases from 5 to 1 at the cost of a slight performance hit. Enabling may improve performance.",
-    "custom_themes_wiki": "Check the Wiki for more details on adding custom themes. Click here.",
     "dxvk": "DXVK is a Vulkan-based translational layer for DirectX 9, 10 and 11 games. Enabling may improve compatibility. Might cause issues especially for older DirectX games.",
     "dxvkfpslimit": "Sets a frame rate cap for DXVK games",
     "esync": "Esync aims to reduce wineserver overhead in CPU-intensive games. Enabling may improve performance.",
@@ -286,7 +284,6 @@
       "valid_codes": "Važeći kodovi jezika ovise o igri."
     },
     "gamemode": "Feral GameMode applies automatic and temporary tweaks to the system when running games. Enabling may improve performance.",
-    "general": "Sinkroniziraj s EGL-om ako negdje drugdje imaš instalaciju EpicGames Launchera koja radi i želiš uvesti igre bez ponovnog preuzimanja.",
     "other": {
       "part4": "Koristi ",
       "part5": "Argumenti igre",
@@ -328,7 +325,6 @@
       "downloadManager": "",
       "wineManager": "",
       "library": "",
-      "customThemesPath": "",
       "accessibility": "",
       "login": ""
     },
@@ -339,7 +335,6 @@
     "download_proton_steam": "",
     "wine-hdr": "",
     "dxvknvapi": "",
-    "disablePlaytimeSync": "",
     "WoW64": "",
     "wine-wayland": "",
     "advertiseAvxForRosetta": "",
@@ -408,10 +403,7 @@
     "old-mac": "",
     "zoom": ""
   },
-  "message": {
-    "sync": "Sinkroniziranje završeno",
-    "unsync": "Desinkroniziranje završeno"
-  },
+  "message": {},
   "notify": {
     "error": {
       "move": "Error Moving the Game",
@@ -514,9 +506,7 @@
   "placeholder": {
     "alt-gogdl-bin": "Using built-in GOGDL binary...",
     "alt-legendary-bin": "Using built-in Legendary binary...",
-    "custom_themes_path": "Odaberi stazu za traženje prilagođenih CSS datoteka",
     "dxvkfpsvalue": "Positive integer value (e.g. 30, 60, ...)",
-    "egs-prefix": "Put gdje je EGS instaliran",
     "prefered_language": "2-char code (i.e.: \"en\" or \"fr\")",
     "alt-nile-bin": "Korištenje ugrađenog Nile binarnog..."
   },
@@ -544,8 +534,6 @@
   "Recent": "Played Recently",
   "search": "Traži igre",
   "setting": {
-    "adddesktopshortcuts": "Add desktop shortcuts automatically",
-    "addgamestostartmenu": "Add games to start menu automatically",
     "addgamestosteam": "Add games to Steam automatically",
     "alt-gogdl-bin": "Odaberi drugu verziju GOGDL programa za koristiti",
     "alt-legendary-bin": "Odaberi drugu verziju Legendary programa",
@@ -553,18 +541,13 @@
     "autosync": "Automatsko sinkroniziranje podataka",
     "autovkd3d": "Auto Install/Update VKD3D on Prefix",
     "change-target-exe": "Select an alternative EXE to run",
-    "checkForUpdatesOnStartup": "Check for Heroic Updates on Startup",
     "crossover-version": "Crossover/Wine Version",
-    "custom_themes_path": "Staza prilagođenih tema",
     "customWineProton": "Staza za prilagođeni Wine/Proton",
-    "darktray": "Use Dark Tray Icon",
     "default-install-path": "Zadana staza instalacije",
     "default-steam-path": "Zadana staza Steama",
-    "defaultWinePrefix": "Set Folder for new Wine Prefixes",
     "disable_controller": "Disable Heroic navigation using controller",
     "download-no-https": "Download games without HTTPS (useful for CDNs e.g. LanCache)",
     "dxvkfpslimit": "Limit FPS (DX9, 10 and 11)",
-    "egs-sync": "Sinkroniziraj sa instaliranim Epic Games",
     "enableFSRHack": "Enable FSR Hack (Wine version needs to support it)",
     "eosOverlay": {
       "cancelInstall": "Cancel",
@@ -657,7 +640,6 @@
     },
     "maxRecentGames": "Recent Games to Show",
     "maxworkers": "Maksimalan broj radnika za preuzimanje",
-    "minimize-on-launch": "Minimize Heroic After Game Launch",
     "offlinemode": "Pokreni igre bez internetske veze",
     "prefered_language": "Prefered Language (Language Code)",
     "preferSystemLibs": "Prefer system libraries",
@@ -680,7 +662,6 @@
     "ignoreGameUpdates": "Ignorirajte ažuriranja igre",
     "autoUpdateGames": "Automatski ažuriraj igre",
     "disable_logs": "Onemogući zapisnike",
-    "addgamestoapplications": "Automatski dodajte igre u aplikacije",
     "showMetalOverlay": "Prikaži preklapanje statistike",
     "alt-nile-bin": "Odaberite alternativni Nile Binary",
     "autodxvknvapi": "Auto Install/Update DXVK-NVAPI on Prefix",
@@ -727,7 +708,6 @@
     "enable-quick-sync-menu": "",
     "no-tray-icon": "",
     "analyticsOptIn": "",
-    "disablePlaytimeSync": "",
     "verboseLogs": {
       "description": ""
     },
@@ -835,9 +815,6 @@
     },
     "offline": {
       "warning": ""
-    },
-    "custom_css": {
-      "title": ""
     },
     "steamgriddb": {
       "apikey": {

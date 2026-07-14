@@ -16,7 +16,6 @@
     },
     "changelog": "Changelog",
     "choose": "Choose",
-    "choose-egs-prefix": "Choose Prefix where EGS is installed",
     "choose-gogdl-binary": "Select GOGDL Binary (needs restart)",
     "choose-legendary-binary": "Select Legendary binary",
     "choose-nile-binary": "Select Nile binary",
@@ -338,7 +337,6 @@
     },
     "content": {
       "accessibility": "Shows accessibility settings.",
-      "customThemesPath": "Check our wiki.",
       "defaultInstallPath": "This is the default path preselected when installing games.",
       "downloadManager": "Shows current and past downloads.",
       "library": "Shows all owned games.",
@@ -347,9 +345,7 @@
       "settingsGame": "Show all settings for a game.",
       "wineManager": "Install different versions of Wine, Proton, Crossover, etc."
     },
-    "custom_themes_wiki": "Check the Wiki for more details on adding custom themes. Click here.",
     "disable_logs": "Toggle this checkbox ON to disable most of the writes to log files (critical information is always logged). Make sure to turn OFF this setting before reporting any issue.",
-    "disablePlaytimeSync": "Disables playtime synchronization with given store's servers (currently only GOG is supported)",
     "download_proton_steam": "When enabled, GE-Proton will be downloaded directly to the Steam compatibility tools directory instead of the default Heroic path. It will use the Steam path set in the 'Default Steam path' setting above.",
     "dxfpslimit": "Sets a frame rate cap for DirectX Games (9-12)",
     "dxvk": "DXVK is a Vulkan-based translational layer for DirectX 9, 10 and 11 games. Enabling may improve compatibility. Might cause issues especially for older DirectX games.",
@@ -362,7 +358,6 @@
       "valid_codes": "Valid language codes are game-dependant."
     },
     "gamemode": "Feral GameMode applies automatic and temporary tweaks to the system when running games. Enabling may improve performance.",
-    "general": "Sync with EGL if you have a working installation of the Epic Games Launcher elsewhere and want to import your games to avoid downloading them again.",
     "hide-window-on-protocol-launch": "Keeps the Heroic window hidden when a game is launched from an external shortcut, like the 'Add to Steam' feature.",
     "msync": "Msync aims to reduce wineserver overhead in CPU-intensive games. Enabling may improve performance on supported Linux kernels.",
     "nvidiaprime": {
@@ -463,10 +458,7 @@
     "old-mac": "Your macOS version is {{version}}. macOS 12 or newer is required to log in.",
     "zoom": "Zoom Login"
   },
-  "message": {
-    "sync": "Sync Complete",
-    "unsync": "Unsync Complete"
-  },
+  "message": {},
   "next": "Next",
   "notify": {
     "error": {
@@ -570,9 +562,7 @@
     "alt-gogdl-bin": "Using built-in GOGDL binary...",
     "alt-legendary-bin": "Using built-in Legendary binary...",
     "alt-nile-bin": "Using built-in Nile binary...",
-    "custom_themes_path": "Select the path to look for custom CSS files",
     "dxvkfpsvalue": "Positive integer value (e.g. 30, 60, ...)",
-    "egs-prefix": "Prefix where EGS is installed",
     "prefered_language": "2-char or 4-char code (i.e.: \"fr\" or \"pt-BR\")"
   },
   "platforms": {
@@ -595,9 +585,6 @@
   "Recent": "Played Recently",
   "search": "Search for Games",
   "setting": {
-    "adddesktopshortcuts": "Add desktop shortcuts automatically",
-    "addgamestoapplications": "Add games to Applications automatically",
-    "addgamestostartmenu": "Add games to start menu automatically",
     "addgamestosteam": "Add games to Steam automatically",
     "advertiseAvxForRosetta": "Advertise AVX for Rosetta",
     "after-launch-script-path": "Select a script to run after the game exits",
@@ -620,26 +607,20 @@
     "autovkd3d": "Auto Install/Update VKD3D on Prefix",
     "before-launch-script-path": "Select a script to run before the game is launched",
     "change-target-exe": "Select an alternative EXE to run",
-    "checkForUpdatesOnStartup": "Check for Heroic Updates on Startup",
     "crossover-version": "Crossover/Wine Version",
     "custom_css": {
       "warning": "Warning: this applies to the whole frontend. That means the wrong style can render Heroic unusable. If needed, the setting can be changed manually in `~/.config/heroic/config.json`. Do NOT copy styles from sources you don't trust."
     },
-    "custom_themes_path": "Custom Themes Path",
     "customWineProton": "Custom Wine/Proton Paths",
-    "darktray": "Use Dark Tray Icon",
     "default-install-path": "Default Installation Path",
     "default-steam-path": "Default Steam path",
-    "defaultWinePrefix": "Set Folder for new Wine Prefixes",
     "disable_controller": "Disable Heroic navigation using controller",
     "disable_gog_presence": "Disable GOG Presence updates",
     "disable_logs": "Disable Logs",
-    "disablePlaytimeSync": "Disable playtime synchronization",
     "disableUMU": "Disable umu",
     "download-no-https": "Download games without HTTPS (useful for CDNs e.g. LanCache)",
     "download-proton-steam": "Download GE-Proton to Steam directory",
     "dxfpslimit": "Limit DirectX Games FPS",
-    "egs-sync": "Sync with Installed Epic Games",
     "enable-quick-sync-menu": "Enable Quick Save-Sync Menu on game page",
     "enableFSRHack": "Enable FSR Hack (Wine version needs to support it)",
     "eosOverlay": {
@@ -745,7 +726,6 @@
     },
     "maxRecentGames": "Played Recently to Show",
     "maxworkers": "Maximum Number of Workers when downloading",
-    "minimize-on-launch": "Minimize Heroic After Game Launch",
     "msync": "Enable Msync",
     "no-tray-icon": "Hide System Tray Icon (requires restart)",
     "nvidiaprime": {
@@ -819,9 +799,6 @@
     "clear-cache": "Clear Heroic Cache",
     "copiedToClipboard": "Copied to Clipboard!",
     "copyToClipboard": "Copy All Settings to Clipboard",
-    "custom_css": {
-      "title": "Custom CSS Style"
-    },
     "default_hint": "Changes in this section only apply as default values when installing games. If you want to change the settings of an already installed game, use the Settings button in the game page.",
     "eacRuntime": {
       "gameModeRequired": {

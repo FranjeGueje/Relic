@@ -16,7 +16,6 @@
     },
     "changelog": "Log Athruithe",
     "choose": "Roghnaigh",
-    "choose-egs-prefix": "Roghnaigh Réimír ina bhfuil EGS suiteáilte",
     "choose-gogdl-binary": "Roghnaigh GOGDL Dénártha (ní mór atosú a dhéanamh)",
     "choose-legendary-binary": "Roghnaigh dénártha Finscéalach",
     "choose-nile-binary": "Roghnaigh dénártha Níle",
@@ -183,7 +182,6 @@
     },
     "content": {
       "accessibility": "Taispeáin socruithe inrochtaineachta.",
-      "customThemesPath": "Seiceáil ár vicí.",
       "defaultInstallPath": "Seo an cosán réamhshocraithe a roghnaítear agus cluichí á suiteáil.",
       "downloadManager": "Taispeánann sé íoslódálacha reatha agus san am atá thart.",
       "library": "Taispeánann sé na cluichí go léir atá faoi úinéireacht.",
@@ -192,9 +190,7 @@
       "settingsGame": "Taispeáin gach socrú le haghaidh cluiche.",
       "wineManager": "Suiteáil leaganacha éagsúla de Wine, Proton, Crossover, etc."
     },
-    "custom_themes_wiki": "Seiceáil an Vicí le haghaidh tuilleadh sonraí maidir le téamaí saincheaptha a chur leis. Cliceáil anseo.",
     "disable_logs": "Cuir an bosca seiceála seo AR SIÚL chun an chuid is mó de na scríobh chuig comhaid loga a dhíchumasú (logáiltear faisnéis ríthábhachtach i gcónaí). Déan cinnte an socrú seo a mhúchadh sula dtuairiscíonn tú aon fhadhb.",
-    "disablePlaytimeSync": "Díchumasaíonn sé sioncrónú ama súgartha le freastalaithe an tsiopa áirithe (ní thacaítear ach le GOG faoi láthair)",
     "download_proton_steam": "Nuair a bheidh sé cumasaithe, déanfar GE-Proton a íoslódáil go díreach chuig eolaire uirlisí comhoiriúnachta Steam in ionad an chosáin réamhshocraithe Heroic. Úsáidfidh sé an cosán Steam atá socraithe sa socrú 'Cosán réamhshocraithe Steam' thuas.",
     "dxfpslimit": "Socraíonn sé uasteorainn ráta fráma do Chluichí DirectX (9-12)",
     "dxvk": "Is ciseal aistriúcháin bunaithe ar Vulkan é DXVK do chluichí DirectX 9, 10 agus 11. D’fhéadfadh sé go mbeadh feabhas ar chomhoiriúnacht má chuirtear ar chumas é. D’fhéadfadh fadhbanna a bheith mar thoradh air sin go háirithe i gcás cluichí DirectX níos sine.",
@@ -207,7 +203,6 @@
       "valid_codes": "Braitheann cóid theanga bailí ar an gcluiche."
     },
     "gamemode": "Cuireann Feral GameMode coigeartuithe uathoibríocha agus sealadacha i bhfeidhm ar an gcóras agus cluichí á reáchtáil. D’fhéadfadh feabhas a chur ar fheidhmíocht má chuirtear ar chumas é.",
-    "general": "Sioncrónaigh le EGL má tá suiteáil oibre den Epic Games Launcher agat in áit eile agus más mian leat do chluichí a allmhairiú chun nach mbeidh ort iad a íoslódáil arís.",
     "msync": "Tá sé mar aidhm ag Msync forchostais fíona a laghdú i gcluichí a bhfuil go leor LAP iontu. D’fhéadfadh feabhas a chur ar fheidhmíocht ar chroíthe Linux a dtacaítear leo má chuirtear ar chumas é.",
     "other": {
       "part4": "Bain úsáid as an ",
@@ -242,11 +237,9 @@
     "hide-window-on-protocol-launch": "Coinníonn sé an fhuinneog Heroic i bhfolach nuair a sheoltar cluiche ó aicearra seachtrach, cosúil leis an ngné 'Cuir le Steam'."
   },
   "placeholder": {
-    "egs-prefix": "Roghnaigh Réimír ina bhfuil EGS suiteáilte",
     "alt-gogdl-bin": "Ag baint úsáide as dénártha GOGDL ionsuite...",
     "alt-legendary-bin": "Ag baint úsáide as dénártha Legendary ionsuite...",
     "alt-nile-bin": "Ag baint úsáide as dénártha Níle ionsuite...",
-    "custom_themes_path": "Roghnaigh an cosán chun comhaid CSS saincheaptha a lorg",
     "dxvkfpsvalue": "Luach slánuimhir dhearfach (m.sh. 30, 60, ...)",
     "prefered_language": "Cód 2 charachtar nó 4 charachtar (i.e.: \"fr\" nó \"pt-BR\")"
   },
@@ -278,9 +271,6 @@
       "recently_played_installed": "Cluichí a Imríodh Le Déanaí (Suiteáilte Amháin)"
     },
     "winecrossoverbottle": "Buidéal CrossOver",
-    "adddesktopshortcuts": "Cuir aicearraí deisce leis go huathoibríoch",
-    "addgamestoapplications": "Cuir cluichí le Feidhmchláir go huathoibríoch",
-    "addgamestostartmenu": "Cuir cluichí leis an roghchlár tosaigh go huathoibríoch",
     "addgamestosteam": "Cuir cluichí le Steam go huathoibríoch",
     "advertiseAvxForRosetta": "Fógraigh AVX do Rosetta",
     "after-launch-script-path": "Roghnaigh script le rith tar éis don chluiche críochnú",
@@ -303,25 +293,19 @@
     "autovkd3d": "Suiteáil/Nuashonrú Uathoibríoch VKD3D ar Réimír",
     "before-launch-script-path": "Roghnaigh script le rith sula seoltar an cluiche",
     "change-target-exe": "Roghnaigh EXE malartach le rith",
-    "checkForUpdatesOnStartup": "Seiceáil le haghaidh Nuashonruithe Heroic ar an Startup",
     "crossover-version": "Leagan Trasnaithe/Wine",
     "custom_css": {
       "warning": "Rabhadh: baineann sé seo leis an taobh tosaigh ar fad. Ciallaíonn sé sin gur féidir le stíl mhícheart Heroic a dhéanamh neamh-inúsáidte. Más gá, is féidir an socrú a athrú de láimh i `~/.config/heroic/config.json`. NÁ cóipeáil stíleanna ó fhoinsí nach bhfuil muinín agat astu."
     },
-    "custom_themes_path": "Cosán Téamaí Saincheaptha",
     "customWineProton": "Cosáin Saincheaptha Wine/Proton",
-    "darktray": "Úsáid Deilbhín Tráidire Dorcha",
     "default-install-path": "Cosán Suiteála Réamhshocraithe",
     "default-steam-path": "Cosán réamhshocraithe Steam",
-    "defaultWinePrefix": "Socraigh Fillteán le haghaidh Réimíreanna Wine nua",
     "disable_controller": "Díchumasaigh nascleanúint Heroic ag baint úsáide as an rialtán",
     "disable_logs": "Díchumasaigh Logaí",
-    "disablePlaytimeSync": "Díchumasaigh sioncrónú ama súgartha",
     "disableUMU": "Díchumasaigh umu",
     "download-no-https": "Íoslódáil cluichí gan HTTPS (úsáideach do CDNanna m.sh. LanCache)",
     "download-proton-steam": "Íoslódáil GE-Proton chuig eolaire Steam",
     "dxfpslimit": "Teorainn a chur le FPS Cluichí DirectX",
-    "egs-sync": "Sioncrónaigh le Cluichí Epic Suiteáilte",
     "enableFSRHack": "Cumasaigh FSR Hack (ní mór don leagan Wine tacú leis)",
     "esync": "Cumasaigh Esync",
     "exit-to-tray": "Scoir go Tráidire an Chórais",
@@ -399,7 +383,6 @@
     },
     "maxRecentGames": "Imríodh le déanaí le taispeáint",
     "maxworkers": "Uasmhéid na nOibrithe agus iad á n-íoslódáil",
-    "minimize-on-launch": "Íoslaghdaigh Laochra Tar éis Seoladh Cluiche",
     "msync": "Cumasaigh Msync",
     "no-tray-icon": "Folaigh Deilbhín Tráidire an Chórais (tá atosú ag teastáil)",
     "offlinemode": "Rith Cluiche As Líne",
@@ -631,10 +614,7 @@
     "old-mac": "Is é {{version}} do leagan macOS. Tá macOS 12 nó níos nuaí ag teastáil le logáil isteach.",
     "zoom": "Logáil Isteach ar Zoom"
   },
-  "message": {
-    "sync": "Sioncrónú Críochnaithe",
-    "unsync": "Díshioncrónú Críochnaithe"
-  },
+  "message": {},
   "notification": {
     "steam": {
       "error": "Theip ar shuiteáil Steam! Léigh na treoracha go cúramach agus déan iarracht arís!",
@@ -789,9 +769,6 @@
     "clear-cache": "Glan an Taisce Laochra",
     "copiedToClipboard": "Cóipeáilte chuig an nGearrthaisce!",
     "copyToClipboard": "Cóipeáil Gach Socrú chuig an nGearrthaisce",
-    "custom_css": {
-      "title": "Stíl CSS Saincheaptha"
-    },
     "default_hint": "Ní bhaineann athruithe sa chuid seo ach le luachanna réamhshocraithe agus cluichí á suiteáil. Más mian leat socruithe cluiche atá suiteáilte cheana féin a athrú, bain úsáid as an gcnaipe Socruithe ar leathanach an chluiche.",
     "eacRuntime": {
       "gameModeRequired": {

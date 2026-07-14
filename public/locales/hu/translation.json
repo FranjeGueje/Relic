@@ -16,7 +16,6 @@
       "title": "Gyorsítótár törölve"
     },
     "choose": "Kiválasztás",
-    "choose-egs-prefix": "Környezet kiválasztása, ahol az EGS telepítve van",
     "choose-gogdl-binary": "GOGDL bináris kiválasztása (újraindítást igényel)",
     "choose-legendary-binary": "Legendary bináris kiválasztása",
     "customWine": "Wine vagy Proton bináris kiválasztása",
@@ -282,7 +281,6 @@
   },
   "help": {
     "amdfsr": "Az AMD FSR segít a képkockasebesség növelésében az alacsonyabb felbontások felskálázásával teljes képernyős módban. A képminőség 5-ről 1-re növekszik, némi teljesítménycsökkenés mellett. Engedélyezése javíthat a teljesítményen.",
-    "custom_themes_wiki": "Nézd meg a Wikit az egyéni témák hozzáadásával kapcsolatos további részletekért. Kattints ide.",
     "dxvk": "A DXVK egy Vulkanon alapuló fordítási szoftverréteg a DirectX 9, 10 és 11 játékoknak. Engedélyezése növelheti a kompatibilitást. Okozhat problémákat, különösen a régebbi DirectX játékok esetén.",
     "dxvkfpslimit": "Képkockaszámkorlátot állít be a DXVK-s játékokhoz",
     "esync": "Az Esync célja, hogy csökkentse a wineserver többletterhelését a CPU-intenzív játékoknál. Engedélyezése növelheti a teljesítményt.",
@@ -293,7 +291,6 @@
       "valid_codes": "A működő nyelvkódok a játékokon múlnak."
     },
     "gamemode": "A Feral GameMode automatikus és ideiglenes finomhangolásokat végez a rendszeren a játékok futása közben. Engedélyezése javíthatja a teljesítményt.",
-    "general": "Ha van máshol egy működő Epic Games Launcher telepítésed, akkor szinkronizálja az EGL-lel a játékaid importálásához, hogy elkerülje az újbóli letöltésüket.",
     "other": {
       "part4": "Játékargumentumok ",
       "part5": "használata",
@@ -319,7 +316,6 @@
     },
     "disable_logs": "Jelöld be ezt a négyzetet, hogy letiltsd a legtöbb írást a naplófájlokba (a kritikus információk mindig naplózásra kerülnek). Mielőtt bármilyen problémát jelentenél, feltétlenül kapcsold KI ezt a beállítást.",
     "dxvknvapi": "DXVK-NVAPI a NVAPI egy megvalósítása, amely a DXVK-ra és a Linux eredeti NVAPI-jára épül, és lehetővé teszi a DLSS használatát az Nvidia videókártyákon.",
-    "disablePlaytimeSync": "Letiltja a játék közbeni szinkronizációt az adott áruház kiszolgálóival (jelenleg csak a GOG támogatott)",
     "title": {
       "accessibility": "Akadálymentesség",
       "login": "Bejelentkezés",
@@ -338,7 +334,6 @@
       "settingsGame": "A játék összes beállításának megjelenítése.",
       "wineManager": "A Wine, Proton, Crossover stb. különböző verzióinak telepítése",
       "accessibility": "Megjeleníti az akadálymentességi beállításokat.",
-      "customThemesPath": "Nézd meg a wikinket.",
       "downloadManager": "Megjeleníti a jelenlegi és múltbéli letöltéseket.",
       "library": "Megjeleníti az összes birtokolt játékot.",
       "login": "Bejelentkezés a különböző áruházakba."
@@ -417,10 +412,7 @@
     "old-mac": "A macOS verziója: {{version}}. macOS 12 vagy újabb szükséges a belépéshez.",
     "zoom": "Zoom bejelentkezés"
   },
-  "message": {
-    "sync": "Szinkronizálás befejezve",
-    "unsync": "Deszinkronizálás befejezve"
-  },
+  "message": {},
   "notify": {
     "error": {
       "move": "Hiba a játék áthelyezésekor",
@@ -523,9 +515,7 @@
   "placeholder": {
     "alt-gogdl-bin": "Beépített GOGDL bináris használata…",
     "alt-legendary-bin": "Beépített Legendary bináris használata…",
-    "custom_themes_path": "Válaszd ki az egyéni CSS-fájlok keresési útvonalát",
     "dxvkfpsvalue": "Pozitív egész érték (például 30, 60, …)",
-    "egs-prefix": "Környezet, ahol telepítve van az EGS",
     "prefered_language": "2 vagy 4 karakteres kód (tehát „fr” vagy „pt-BR”)",
     "alt-nile-bin": "A beépített Nile bináris használata…"
   },
@@ -553,8 +543,6 @@
   "Recent": "Nemrég játszott",
   "search": "Játékok keresése",
   "setting": {
-    "adddesktopshortcuts": "Parancsikonok automatikus hozzáadása az asztalhoz",
-    "addgamestostartmenu": "Parancsikonok automatikus hozzáadása a Start menühöz",
     "addgamestosteam": "Játékok automatikus hozzáadása a Steamhez",
     "alt-gogdl-bin": "Alternatív GOGDL bináris választása",
     "alt-legendary-bin": "Alternatív Legendary bináris választása",
@@ -562,18 +550,13 @@
     "autosync": "Mentések automatikus szinkronizálása",
     "autovkd3d": "A VKD3D automatikus telepítése/frissítése a környezeten",
     "change-target-exe": "Alternatív EXE-fájl választása a futtatáshoz",
-    "checkForUpdatesOnStartup": "A Heroic frissítéseinek keresése indításkor",
     "crossover-version": "Crossover/Wine verzió",
-    "custom_themes_path": "Egyéni témaútvonalak",
     "customWineProton": "Egyéni Wine/Proton elérési utak",
-    "darktray": "Sötét tálcaikon használata",
     "default-install-path": "Alapértelmezett telepítési útvonal",
     "default-steam-path": "A Steam alapértelmezett elérési útja",
-    "defaultWinePrefix": "Mappa beállítása az új Wine-környezeteknek",
     "disable_controller": "Játékvezérlős navigáció letiltása a Heroicban",
     "download-no-https": "Játékok letöltése HTTPS nélkül (CDN-ek esetén hasznos, például LanCache esetén)",
     "dxvkfpslimit": "FPS korlátozása (DX9, 10 and 11)",
-    "egs-sync": "Szinkronizálás a telepített Epic Gamesszel",
     "enableFSRHack": "FSR hack engedélyezése (a Wine verziónak támogatnia kell)",
     "eosOverlay": {
       "cancelInstall": "Mégse",
@@ -665,7 +648,6 @@
     },
     "maxRecentGames": "Nemrég játszottak megjelenítése",
     "maxworkers": "Feldolgozók legnagyobb száma letöltéskor",
-    "minimize-on-launch": "A Heroic minimalizálása játékindítás után",
     "offlinemode": "Játék futtatása offline",
     "prefered_language": "Előnyben részesített nyelv (nyelvkód)",
     "preferSystemLibs": "Rendszer programkönyvtárainak előnyben részesítése",
@@ -689,7 +671,6 @@
     "autoUpdateGames": "Játékok automatikus frissítése",
     "disable_logs": "Naplók letiltása",
     "showMetalOverlay": "Statisztikai átfedés megjelenítése",
-    "addgamestoapplications": "Játékok automatikus hozzáadása az Alkalmazásokhoz",
     "alt-nile-bin": "Alternatív Nile bináris választása",
     "autodxvknvapi": "A DXVK-NVAPI automatikus telepítése/frissítése a környezeten",
     "frameless-window": {
@@ -699,7 +680,6 @@
       },
       "description": "Keret nélküli ablak használata (újraindítás szükséges)"
     },
-    "disablePlaytimeSync": "Játék közbeni szinkronizáció letiltása",
     "experimental_features": {
       "enableNewDesign": "Új dizájn",
       "automaticWinetricksFixes": "Ismert javítások automatikus alkalmazása",
@@ -858,9 +838,6 @@
     },
     "offline": {
       "warning": "Ez a játék nem engedélyezi külön a kapcsolat nélküli módot, saját felelősségére kapcsold be. Lehet, hogy a játék nem fog működni."
-    },
-    "custom_css": {
-      "title": "Egyéni CSS stílus"
     },
     "launchOptions": "Indítási kapcsolók…",
     "legacy_warning": "Figyelmeztetés: Ezen a lapon található beállítások nagyrészt elavultak, és előfordulhat, hogy egyáltalán nem működnek.",

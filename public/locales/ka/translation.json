@@ -139,7 +139,6 @@
     "default-install-path": "",
     "wineprefix": "",
     "default-steam-path": "",
-    "choose-egs-prefix": "",
     "dontShowAgain": "",
     "cache-cleared": {
       "message": "",
@@ -276,9 +275,7 @@
       "enableHelp": "",
       "zoomPlatform": ""
     },
-    "egs-sync": "",
     "hdr": "",
-    "custom_themes_path": "",
     "autodxvknvapi": "",
     "library_top_section": "",
     "savefolder": {
@@ -309,7 +306,6 @@
       "label": ""
     },
     "autodxvk": "",
-    "addgamestostartmenu": "",
     "download-no-https": "",
     "customWineProton": "",
     "exit-to-tray": "",
@@ -323,17 +319,13 @@
     "offlinemode": "",
     "no-tray-icon": "",
     "analyticsOptIn": "",
-    "addgamestoapplications": "",
     "language": "",
     "FsrSharpnessStrenght": "",
-    "disablePlaytimeSync": "",
     "crossover-version": "",
-    "adddesktopshortcuts": "",
     "esync": "",
     "addgamestosteam": "",
     "winecrossoverbottle": "",
     "alt-legendary-bin": "",
-    "minimize-on-launch": "",
     "autovkd3d": "",
     "ignoreGameUpdates": "",
     "verboseLogs": {
@@ -344,7 +336,6 @@
     "maxworkers": "",
     "steamruntime": "",
     "disableUMU": "",
-    "defaultWinePrefix": "",
     "gamemode": "",
     "select_theme": "",
     "maxRecentGames": "",
@@ -354,8 +345,6 @@
     "msync": "",
     "wineprefix": "",
     "advertiseAvxForRosetta": "",
-    "darktray": "",
-    "checkForUpdatesOnStartup": "",
     "prefered_language": "",
     "hideChangelogsOnStartup": "",
     "showMetalOverlay": "",
@@ -445,7 +434,6 @@
       "downloadManager": "",
       "wineManager": "",
       "library": "",
-      "customThemesPath": "",
       "accessibility": "",
       "login": ""
     },
@@ -474,16 +462,12 @@
       "part2": ""
     },
     "dxvknvapi": "",
-    "disablePlaytimeSync": "",
     "steamruntime": "",
     "steam_path": {
       "info": ""
     },
-    "general": "",
     "vkd3d": "",
     "WoW64": "",
-    "custom_themes_path": "",
-    "custom_themes_wiki": "",
     "wine-wayland": "",
     "advertiseAvxForRosetta": "",
     "fsync": "",
@@ -640,9 +624,6 @@
     },
     "clear-cache": "",
     "copyToClipboard": "",
-    "custom_css": {
-      "title": ""
-    },
     "launchOptions": "",
     "copiedToClipboard": "",
     "open-config-file": "",
@@ -839,11 +820,9 @@
   "placeholder": {
     "alt-nile-bin": "",
     "prefered_language": "",
-    "custom_themes_path": "",
     "dxvkfpsvalue": "",
     "alt-legendary-bin": "",
-    "alt-gogdl-bin": "",
-    "egs-prefix": ""
+    "alt-gogdl-bin": ""
   },
   "tooltip": {
     "removepath": "",
@@ -888,10 +867,7 @@
   "launch": {
     "options": ""
   },
-  "message": {
-    "unsync": "",
-    "sync": ""
-  },
+  "message": {},
   "two_col_table": {
     "save_hint": ""
   },

@@ -16,7 +16,6 @@
       "title": "Cache gewist"
     },
     "choose": "Selecteer",
-    "choose-egs-prefix": "Selecteer een prefix waar EGS is geïnstalleerd",
     "choose-gogdl-binary": "Select GOGDL Binary (needs restart)",
     "choose-legendary-binary": "Selecteer Legendary binary",
     "customWine": "Selecteer de Wine of Proton binary",
@@ -274,7 +273,6 @@
   },
   "help": {
     "amdfsr": "AMD's FSR helps boost framerate by upscaling lower resolutions in Fullscreen Mode. Image quality increases from 5 to 1 at the cost of a slight performance hit. Enabling may improve performance.",
-    "custom_themes_wiki": "Check the Wiki for more details on adding custom themes. Click here.",
     "dxvk": "DXVK is a Vulkan-based translational layer for DirectX 9, 10 and 11 games. Enabling may improve compatibility. Might cause issues especially for older DirectX games.",
     "dxvkfpslimit": "Sets a frame rate cap for DXVK games",
     "esync": "Esync aims to reduce wineserver overhead in CPU-intensive games. Enabling may improve performance.",
@@ -285,7 +283,6 @@
       "valid_codes": "Valid language codes are game-dependant."
     },
     "gamemode": "Feral GameMode applies automatic and temporary tweaks to the system when running games. Enabling may improve performance.",
-    "general": "Synchroniseer met EGL als u ergens anders een werkende installatie van de Epic Games Launcher heeft en u uw games wilt importeren om te vermijden ze opnieuw te downloaden.",
     "other": {
       "part4": "Gebruik de ",
       "part5": "Spel Argumenten",
@@ -323,14 +320,12 @@
       "close": "Sluit Help",
       "open": "Open Help"
     },
-    "disablePlaytimeSync": "Schakel speeltijd synkronisatie uit met de servers van de winkels (momenteel werkt enkel GOG)",
     "content": {
       "accessibility": "Toont Toegankelijkheidsinstellingen.",
       "downloadManager": "Toont huidige en vorige downloads.",
       "library": "Toont alle games in het bezit.",
       "login": "Log in op de verschillende winkels.",
       "settingsDefault": "Toont alle instellingen van Heroic en standaardwaarden voor games.",
-      "customThemesPath": "Lees onze wiki.",
       "defaultInstallPath": "Dit is het standaard pad dat voorgeselecteerd wordt bij het installeren van games.",
       "settingsGame": "Toon alle instellingen voor een game.",
       "wineManager": "Installeer verschillende versies van Wine, Proton, Crossover, etc."
@@ -407,10 +402,7 @@
     "old-mac": "Uw macOS versie is {{version}}. macOS 12 of nieuwer is nodig om in te loggen.",
     "zoom": ""
   },
-  "message": {
-    "sync": "Synchronisatie compleet",
-    "unsync": "De-synchronisatie compleet"
-  },
+  "message": {},
   "notify": {
     "error": {
       "move": "Error Moving the Game",
@@ -513,9 +505,7 @@
   "placeholder": {
     "alt-gogdl-bin": "Using built-in GOGDL binary...",
     "alt-legendary-bin": "Gebruik built-in Legendary binary...",
-    "custom_themes_path": "Select the path to look for custom CSS files",
     "dxvkfpsvalue": "Positive integer value (e.g. 30, 60, ...)",
-    "egs-prefix": "Prefix waar EGS is geïnstalleerd",
     "prefered_language": "2-char of 4-char code (i.e.: \"fr\" of \"pt-BR\")",
     "alt-nile-bin": "Gebruik van ingebouwde Nijl binaire..."
   },
@@ -543,8 +533,6 @@
   "Recent": "Recentelijk Gespeeld",
   "search": "Zoeken naar Spelletjes",
   "setting": {
-    "adddesktopshortcuts": "Bureaublad snelkoppelingen automatish toevoegen",
-    "addgamestostartmenu": "Spellen automatish toevoegen aan startmenu",
     "addgamestosteam": "Automatisch Steam spelletjes toevoegen",
     "alt-gogdl-bin": "Kies een Alternatief GOGDL Binary om te gebruiken",
     "alt-legendary-bin": "Kies een Alternatief Legendary Binary",
@@ -552,18 +540,13 @@
     "autosync": "Automatisch Synchroniseren van saves",
     "autovkd3d": "Automatisch installeren/updated van VKD3D op Prefix",
     "change-target-exe": "Selecteer een alternatieve EXE om uit te voeren",
-    "checkForUpdatesOnStartup": "Check for Heroic Updates on Startup",
     "crossover-version": "Crossover/Wine Version",
-    "custom_themes_path": "Custom Themes Path",
     "customWineProton": "Aangepaste wijn- of protonpaden",
-    "darktray": "Gebruik donker tray icoon",
     "default-install-path": "Standaard installatie pad",
     "default-steam-path": "Default Steam path",
-    "defaultWinePrefix": "Set Folder for new Wine Prefixes",
     "disable_controller": "Disable Heroic navigation using controller",
     "download-no-https": "Download spelletjes zonder HTTPS (handig voor CDNs bijv. LanCache)",
     "dxvkfpslimit": "Limit FPS (DX9, 10 and 11)",
-    "egs-sync": "Synchronisatie met geïnstalleerde Epic Games",
     "enableFSRHack": "FSR Hack inschakelen (Wine versie moet dit ondersteunen)",
     "eosOverlay": {
       "cancelInstall": "Annuleren",
@@ -656,7 +639,6 @@
     },
     "maxRecentGames": "Recente spellen om te tonen",
     "maxworkers": "Maximale Hoeveelheid van Werkers tijdens het downloaden",
-    "minimize-on-launch": "Heroic minimaliseren Na Opstarten Spel",
     "offlinemode": "Spel Offline Draaien",
     "prefered_language": "Prefered Language (Language Code)",
     "preferSystemLibs": "Systeem-bibliotheken verkiezen",
@@ -679,7 +661,6 @@
     "autoUpdateGames": "Games automatisch bijwerken",
     "ignoreGameUpdates": "Negeer game-updates",
     "disable_logs": "Logboeken Uitschakelen",
-    "addgamestoapplications": "Voeg spellen automatisch toe aan applicaties",
     "showMetalOverlay": "Statistieken-overlay Weergeven",
     "alt-nile-bin": "Kies een alternatief Nijlbinair getal",
     "autodxvknvapi": "Automatisch installeren/updated van DXVK-NVAPI op Prefix",
@@ -701,7 +682,6 @@
       },
       "label": "Sta installatie van games toe met niet werkende anticheat"
     },
-    "disablePlaytimeSync": "Schakel speeltijd synchronisatie uit",
     "experimental_features": {
       "enableNewDesign": "Nieuw uiterlijk",
       "cometSupport": "Ondersteunt door Comet",
@@ -837,9 +817,6 @@
     },
     "offline": {
       "warning": "Dit spel staat offline modus niet expiciet toe, zet dit aan op eigen risico. Het spel werkt mogelijk niet."
-    },
-    "custom_css": {
-      "title": "Aangepaste CSS Stijl"
     },
     "launchOptions": "Opstartopties",
     "legacy_warning": "",

@@ -98,8 +98,6 @@ export interface AppSettings extends GameSettings {
   autoUpdateGames: boolean
   checkForUpdatesOnStartup: boolean
   checkUpdatesInterval: number
-  customCSS: string
-  customThemesPath: string
   customWinePaths: string[]
   darkTrayIcon: boolean
   defaultInstallPath: string
@@ -115,7 +113,6 @@ export interface AppSettings extends GameSettings {
   disableGOGPresence: boolean
   downloadNoHttps: boolean
   downloadProtonToSteam: boolean
-  egsLinkedPath: string
   enableUpdates: boolean
   exitToTray: boolean
   noTrayIcon: boolean

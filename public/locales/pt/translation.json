@@ -16,7 +16,6 @@
       "title": "A cache foi limpa"
     },
     "choose": "Escolha",
-    "choose-egs-prefix": "Escolha o Prefixo onde a EGS está instalada",
     "choose-gogdl-binary": "Selecione o binário do GOGDL (é necessário reiniciar a aplicação)",
     "choose-legendary-binary": "Selecione o binário do Legendary",
     "customWine": "Selecione o binário do Wine ou Proton",
@@ -283,7 +282,6 @@
   },
   "help": {
     "amdfsr": "O FSR da AMD ajuda a impulsionar os fotogramas por segundo (FPS) ao aumentar a escala de resoluções mais baixas (upscaling) no modo de Ecrã Inteiro. A qualidade da imagem aumenta de 5 a 1 com um pequeno custo a nível do desempenho. O desempenho pode aumentar se ativar esta opção.",
-    "custom_themes_wiki": "Consulte a Wiki para obter mais informações sobre como adicionar temas personalizados. Clique aqui.",
     "dxvk": "O DXVK é uma camada de tradução baseada no Vulkan para jogos DirectX 9, 10 e 11. A compatibilidade pode aumentar se ativar esta opção. Pode causar problemas especialmente em jogos DirectX mais antigos.",
     "dxvkfpslimit": "Define um limite de fotogramas por segundo (FPS) para jogos DXVK",
     "esync": "O Esync tem como objetivo reduzir a carga no 'wineserver' em jogos que usam o CPU intensivamente. Ativar esta opção pode melhorar o desempenho.",
@@ -294,7 +292,6 @@
       "valid_codes": "Códigos válidos para idiomas são dependentes de cada jogo."
     },
     "gamemode": "O Feral GameMode faz ajustes ao sistema de forma automática e temporária quando está a executar jogos. Ativar esta opção pode aumentar desempenho.",
-    "general": "Sincronize com a EGL se tiver num outro local uma instalação a funcionar do lançador da Epic Games e pretende importar os seus jogos. Assim, evita ter que fazer novamente a transferência destes.",
     "other": {
       "part4": "Use o ",
       "part5": "Argumentos do Jogo",
@@ -320,7 +317,6 @@
     },
     "disable_logs": "ATIVE esta caixa de seleção para desativar a maior parte da escrita nos ficheiros de registo de eventos (as informações críticas são sempre registadas). Certifique-se de que DESATIVA esta definição antes de reportar um problema qualquer.",
     "dxvknvapi": "O DXVK-NVAPI é uma implementação da NVAPI construída em cima do DXVK e da NVAPI nativa do Linux, permitindo a utilização do DLSS em GPUs da Nvidia.",
-    "disablePlaytimeSync": "Desativa a sincronização do tempo de jogo com os servidores da loja indicada (atualmente apenas a GOG é suportada)",
     "title": {
       "accessibility": "Acessibilidade",
       "login": "Iniciar Sessão",
@@ -331,7 +327,6 @@
     },
     "content": {
       "settingsDefault": "Mostra todas as definições do Heroic e as suas predefinições para os jogos.",
-      "customThemesPath": "Consulte a nossa wiki.",
       "defaultInstallPath": "Este é o caminho padrão pré-selecionado ao instalar jogos.",
       "library": "Mostra todos os jogos que tem.",
       "login": "Iniciar sessão em lojas diferentes.",
@@ -418,10 +413,7 @@
     "old-mac": "A sua versão do macOS é {{version}}. É necessária a versão macOS 12 ou mais recente para iniciar sessão.",
     "zoom": "Iniciar sessão no Zoom"
   },
-  "message": {
-    "sync": "Sincronização Concluída",
-    "unsync": "Dessincronização Concluída"
-  },
+  "message": {},
   "notify": {
     "error": {
       "move": "Erro ao Mover o Jogo",
@@ -524,9 +516,7 @@
   "placeholder": {
     "alt-gogdl-bin": "A usar binário GOGDL incorporado...",
     "alt-legendary-bin": "A usar binário Legendary incorporado...",
-    "custom_themes_path": "Selecione o caminho para procurar ficheiros CSS personalizados",
     "dxvkfpsvalue": "Valor de um número inteiro positivo (exemplo: 30, 60, ...)",
-    "egs-prefix": "O prefixo onde a Epic Games está instalada",
     "prefered_language": "Código de 2 ou 4 caracteres (exemplo: \"pt\" ou \"pt-BR\")",
     "alt-nile-bin": "A usar binário Nile incorporado..."
   },
@@ -554,8 +544,6 @@
   "Recent": "Jogado Recentemente",
   "search": "Pesquisar por Jogos",
   "setting": {
-    "adddesktopshortcuts": "Adicionar automaticamente os atalhos no ambiente de trabalho",
-    "addgamestostartmenu": "Adicionar automaticamente os jogos no menu iniciar",
     "addgamestosteam": "Adicionar automaticamente os jogos no Steam",
     "alt-gogdl-bin": "Escolha um Binário Alternativo do GOGDL para usar",
     "alt-legendary-bin": "Escolha um Binário Alternativo do Legendary",
@@ -563,18 +551,13 @@
     "autosync": "Ativar Sincronização Automática de Jogos Gravados (Saves)",
     "autovkd3d": "Instalar/Atualizar Automaticamente o VKD3D no Prefixo",
     "change-target-exe": "Selecione um ficheiro EXE alternativo para executar",
-    "checkForUpdatesOnStartup": "Procurar por Atualizações do Heroic ao Abrir",
     "crossover-version": "Versão do Crossover/Wine",
-    "custom_themes_path": "Caminho para Estilos Personalizados",
     "customWineProton": "Caminhos Personalizados do Wine/Proton",
-    "darktray": "Usar o Ícone Escuro no Tabuleiro do Sistema",
     "default-install-path": "Caminho de Instalação Padrão",
     "default-steam-path": "Caminho do Steam Padrão",
-    "defaultWinePrefix": "Selecionar a Pasta para Prefixos do Wine novos",
     "disable_controller": "Desativar a navegação do Heroic ao usar um comando",
     "download-no-https": "Transferir jogos sem HTTPS (útil para CDNs, exemplo: LanCache)",
     "dxvkfpslimit": "Limit FPS (DX9, 10 and 11)",
-    "egs-sync": "Sincronizar com a Loja Instalada Epic Games",
     "enableFSRHack": "Ativar o Hack do FSR (é necessário que a versão do Wine o suporte)",
     "eosOverlay": {
       "cancelInstall": "Cancelar",
@@ -666,7 +649,6 @@
     },
     "maxRecentGames": "Jogados Recentemente para Mostrar",
     "maxworkers": "Número Máximo de Instancias para transferências",
-    "minimize-on-launch": "Minimizar o Heroic Depois de Iniciar um Jogo",
     "offlinemode": "Executar o Jogo em Modo Offline",
     "prefered_language": "Idioma Preferido (Código de Idioma)",
     "preferSystemLibs": "Preferir as bibliotecas do sistema",
@@ -689,11 +671,9 @@
     "autoUpdateGames": "Atualizar automaticamente os jogos",
     "ignoreGameUpdates": "Ignorar as atualizações do jogo",
     "disable_logs": "Desativar Registos de Eventos",
-    "addgamestoapplications": "Adicionar automaticamente os jogos nas Aplicações",
     "showMetalOverlay": "Mostrar a Janela de Sobreposição de Estatísticas",
     "alt-nile-bin": "Escolha um Binário Alternativo do Nilo",
     "autodxvknvapi": "Instalar/Atualizar Automaticamente o DXVK-NVAPI no Prefixo",
-    "disablePlaytimeSync": "Desativar sincronização do tempo de jogo",
     "experimental_features": {
       "enableNewDesign": "Estilo novo",
       "enableHelp": "Componente de ajuda",
@@ -856,9 +836,6 @@
     },
     "offline": {
       "warning": "Este jogo não permite explicitamente o modo offline, ative-o por sua conta e risco. O jogo pode não funcionar."
-    },
-    "custom_css": {
-      "title": "Estilo de CSS Personalizado"
     },
     "launchOptions": "Opções de execução",
     "legacy_warning": "Aviso: A maior parte das definições neste separador estão obsoletas e podem não funcionar de todo.",

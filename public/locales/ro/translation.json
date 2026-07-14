@@ -16,7 +16,6 @@
       "title": "Cache golit"
     },
     "choose": "Alege",
-    "choose-egs-prefix": "Alegeți Prefix unde este instalat EGS",
     "choose-gogdl-binary": "Selectați GOGDL Binary (trebuie repornit)",
     "choose-legendary-binary": "Selectați Legendary Binary",
     "customWine": "Selectați binarul Wine sau Proton",
@@ -274,7 +273,6 @@
   },
   "help": {
     "amdfsr": "FSR de la AMD ajută la creșterea ratei de cadre prin creșterea rezoluțiilor mai mici în modul Ecran complet. Calitatea imaginii crește de la 5 la 1 cu prețul unei ușoare atingeri de performanță. Activarea poate îmbunătăți performanța.",
-    "custom_themes_wiki": "Check the Wiki for more details on adding custom themes. Click here.",
     "dxvk": "DXVK este un strat translațional bazat pe Vulkan pentru jocurile DirectX 9, 10 și 11. Activarea poate îmbunătăți compatibilitatea. Poate cauza probleme în special pentru jocurile DirectX mai vechi.",
     "dxvkfpslimit": "Sets a frame rate cap for DXVK games",
     "esync": "Esync își propune să reducă supraîncărcarea serverului de vin în jocurile care necesită un proces intensiv. Activarea poate îmbunătăți performanța.",
@@ -285,7 +283,6 @@
       "valid_codes": "Codurile de limbă valide depind de joc."
     },
     "gamemode": "Feral GameMode aplică ajustări automate și temporare sistemului atunci când rulează jocuri. Activarea poate îmbunătăți performanța.",
-    "general": "Sincronizați cu EGS în cazul în care aveți o instalare funcțională a Epic Games Store în altă parte și doriți să vă importați jocurile pentru a evita descărcarea din nou.",
     "other": {
       "part4": "Folosește ",
       "part5": "Argumente Joc",
@@ -326,7 +323,6 @@
     },
     "content": {
       "accessibility": "Arată setările de accesibilitate.",
-      "customThemesPath": "Verifică wiki-ul nostru.",
       "defaultInstallPath": "Aceasta este calea implicita selectată pentru instalat jocuri.",
       "downloadManager": "Arată descărcările actuale și din trecut",
       "library": "Arată toate jocurile deținute.",
@@ -335,7 +331,6 @@
       "settingsGame": "Arată toate setările pentru un joc.",
       "wineManager": "Instalează diferite versiuni pentru Wine, Proton, Crossover, etc."
     },
-    "disablePlaytimeSync": "Dezactivează sincronizarea timpului de joc cu serverele magazinului implicit (deocamdată doar GOG este suportat)",
     "download_proton_steam": "Atunci când este activat, GE-Proton va fi descărcat direct in directorul uneltelor de compatibilitate Steam in locul căii implicite a Heroic. Va utiliza calea Steam setată în 'Cale Steam implicită' mai sus.",
     "dxvknvapi": "DXVK-NVAPI este o implementare a NVAPI construită peste DXVK și nativul linux NVAPI, el permite utilizarea DLSS pe plăcile video Nvidia.",
     "msync": "",
@@ -407,10 +402,7 @@
     "old-mac": "",
     "zoom": ""
   },
-  "message": {
-    "sync": "Sincronizare Completă",
-    "unsync": "Desincronizare Completă"
-  },
+  "message": {},
   "notify": {
     "error": {
       "move": "Eroare la mutarea jocului",
@@ -513,9 +505,7 @@
   "placeholder": {
     "alt-gogdl-bin": "Se utilizează binarul GOGDL încorporat...",
     "alt-legendary-bin": "Folosind binarul Legendary încorporat...",
-    "custom_themes_path": "Select the path to look for custom CSS files",
     "dxvkfpsvalue": "Positive integer value (e.g. 30, 60, ...)",
-    "egs-prefix": "Prefixul unde este instalat EGS",
     "prefered_language": "Cod de 2 caractere (adică: „en” sau „fr”)",
     "alt-nile-bin": "Folosind binarul Nile încorporat..."
   },
@@ -543,8 +533,6 @@
   "Recent": "Jocuri Recente",
   "search": "Introdu numele jocului aici...",
   "setting": {
-    "adddesktopshortcuts": "Adăugați automat comenzi rapide pe desktop",
-    "addgamestostartmenu": "Adăugați jocuri în meniul Start automat",
     "addgamestosteam": "Add games to Steam automatically",
     "alt-gogdl-bin": "Alegeți un binar GOGDL alternativ pe care să îl utilizați",
     "alt-legendary-bin": "Alegeți un Legendary Binary alternativ pe care să îl utilizați",
@@ -552,18 +540,13 @@
     "autosync": "Salvări de sincronizare automată",
     "autovkd3d": "Instalare/Actualizare automată VKD3D pe Prefix",
     "change-target-exe": "Selectați un EXE alternativ pentru a rula",
-    "checkForUpdatesOnStartup": "Verificare pentru actualizări la pornire",
     "crossover-version": "Versiune crossover",
-    "custom_themes_path": "Custom Themes Path",
     "customWineProton": "Căi personalizate pentru Wine/Proton",
-    "darktray": "Utilizați Tray Icon întunecat",
     "default-install-path": "Calea de instalare implicită",
     "default-steam-path": "Calea Steam implicită",
-    "defaultWinePrefix": "Setați folderul pentru noile prefixe de vin",
     "disable_controller": "Dezactivați navigarea eroică folosind controlerul",
     "download-no-https": "Descărcați jocuri fără HTTPS (util pentru CDN-uri, de exemplu, LanCache)",
     "dxvkfpslimit": "Limit FPS (DX9, 10 and 11)",
-    "egs-sync": "Sincronizare cu Epic Games instalat",
     "enableFSRHack": "Activați FSR Hack (versiunea Wine trebuie să o accepte)",
     "eosOverlay": {
       "cancelInstall": "Anulare",
@@ -656,7 +639,6 @@
     },
     "maxRecentGames": "Jocuri recente de afișat",
     "maxworkers": "Numărul maxim de lucrători la descărcare",
-    "minimize-on-launch": "Minimizați eroicul după lansarea jocului",
     "offlinemode": "Rulați jocul offline",
     "prefered_language": "Limba preferată (Codul de limbă)",
     "preferSystemLibs": "Preferați bibliotecile de sistem",
@@ -679,7 +661,6 @@
     "autoUpdateGames": "Actualizați automat jocurile",
     "ignoreGameUpdates": "Ignora actualizările jocului",
     "disable_logs": "Dezactivați jurnalele",
-    "addgamestoapplications": "Adăugați automat jocuri la Aplicații",
     "showMetalOverlay": "Afișați statistici suprapuse",
     "alt-nile-bin": "Alegeți un binar alternativ pentru Nil",
     "autodxvknvapi": "Instalare/Actualizare automată DXVK-NVAPI în Prefix",
@@ -726,7 +707,6 @@
     "enable-quick-sync-menu": "",
     "no-tray-icon": "",
     "analyticsOptIn": "",
-    "disablePlaytimeSync": "",
     "verboseLogs": {
       "description": ""
     },
@@ -834,9 +814,6 @@
     },
     "offline": {
       "warning": ""
-    },
-    "custom_css": {
-      "title": ""
     },
     "steamgriddb": {
       "apikey": {

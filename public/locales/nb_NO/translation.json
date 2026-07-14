@@ -16,7 +16,6 @@
       "title": "Hurtiglager tømt"
     },
     "choose": "Velg",
-    "choose-egs-prefix": "Velg Wine-prefiks der EGS er installert",
     "choose-gogdl-binary": "Velg GOGDL Binary (trenger omstart)",
     "choose-legendary-binary": "Velg kjørbar Legendary-fil",
     "customWine": "Velg kjørbar Wine- eller Proton-fil",
@@ -282,7 +281,6 @@
   },
   "help": {
     "amdfsr": "AMDs FSR bidrar til å øke bildefrekvensen ved å oppskalere lavere oppløsninger i fullskjermmodus. Bildekvaliteten øker fra 5 til 1 på bekostning av et lite ytelsestreff. Aktivering kan forbedre ytelsen.",
-    "custom_themes_wiki": "Sjekk wikien vår for mer info om hvordan man legger til egendefinerte tema. Klikk her.",
     "dxvk": "DXVK er et Vulkan-basert translasjonslag for DirectX 9, 10 og 11-spill. Aktivering kan forbedre kompatibiliteten. Kan forårsake problemer spesielt for eldre DirectX-spill.",
     "dxvkfpslimit": "Setter en maksgrense for bildehastighet i DXVK-spill",
     "esync": "Esync har som mål å redusere wineserver-overhead i CPU-intensive spill. Aktivering kan forbedre ytelsen.",
@@ -293,7 +291,6 @@
       "valid_codes": "Gyldige språkkoder er spillavhengige."
     },
     "gamemode": "Feral GameMode bruker automatiske og midlertidige justeringer på systemet når du kjører spill. Aktivering kan forbedre ytelsen.",
-    "general": "Synkroniser med EGL hvis du har en fungerende installasjon av Epic Games Launcher andre steder og vil importere spillene dine for å unngå å laste dem ned igjen.",
     "other": {
       "part4": "Bruke ",
       "part5": "Spillargumenter",
@@ -329,7 +326,6 @@
     "content": {
       "downloadManager": "Viser nåværende og tidligere nedlastinger.",
       "accessibility": "Viser tilgjengelighetsinnstillinger.",
-      "customThemesPath": "Sjekk wikien vår.",
       "library": "Viser alle eide spill.",
       "login": "Logg inn i de forskjellige butikkene.",
       "settingsDefault": "Viser alle innstillinger for Heroic og standardinnstillinger for spill.",
@@ -337,7 +333,6 @@
       "settingsGame": "Vis alle innstillinger for et spill.",
       "wineManager": "Installer forskjellige versjoner av Wine, Proton, Crossover, osv."
     },
-    "disablePlaytimeSync": "Deaktiverer spilletidsynkronisering med gitte butikkservere (for øyeblikket støttes kun GOG)",
     "button": {
       "close": "Lukk hjelp",
       "open": "Åpne hjelp"
@@ -417,10 +412,7 @@
     "old-mac": "MacOS-versjonen din er {{version}}. macOS 12 eller nyere kreves for å logge på.",
     "zoom": "Logg inn på Zoom"
   },
-  "message": {
-    "sync": "Synkronisering fullført",
-    "unsync": "Avsynkronisering fullført"
-  },
+  "message": {},
   "notify": {
     "error": {
       "move": "Feil ved flytting av spillet",
@@ -523,9 +515,7 @@
   "placeholder": {
     "alt-gogdl-bin": "Bruker innebygd GOGDL binær...",
     "alt-legendary-bin": "Bruker innebygd Legendary binær...",
-    "custom_themes_path": "Velg stien for å søke etter egendefinerte CSS-filer",
     "dxvkfpsvalue": "Positive heltallsverdier (30, 60, ...)",
-    "egs-prefix": "Prefiks der EGS er installert",
     "prefered_language": "2-tegns- eller 4-tegnskode (dvs.: «fr» eller «pt-BR»)",
     "alt-nile-bin": "Bruker innebygd Nile binær..."
   },
@@ -553,8 +543,6 @@
   "Recent": "Nylig spilt",
   "search": "Søk etter spill",
   "setting": {
-    "adddesktopshortcuts": "Legg til skrivebordssnarveier automatisk",
-    "addgamestostartmenu": "Legg til spill på startmenyen automatisk",
     "addgamestosteam": "Legg spill til Steam automatisk",
     "alt-gogdl-bin": "Velg en alternativ GOGDL-binær du vil bruke",
     "alt-legendary-bin": "Velg en alternativ legendarisk binær",
@@ -562,18 +550,13 @@
     "autosync": "Autosynkroniser lagringsfiler",
     "autovkd3d": "Autoinstaller/oppdater VKD3D på prefiks",
     "change-target-exe": "Velg en alternativ EXE å kjøre",
-    "checkForUpdatesOnStartup": "Se etter oppdateringer til Heroic ved oppstart",
     "crossover-version": "Crossover/Wine-versjon",
-    "custom_themes_path": "Stil til egendefinerte temaer",
     "customWineProton": "Egendefinerte Wine-/Proton-stier",
-    "darktray": "Bruk mørkt skuff-ikon",
     "default-install-path": "Standard installasjonsbane",
     "default-steam-path": "Standard Steam-bane",
-    "defaultWinePrefix": "Angi mappe for nye Wine-prefikser",
     "disable_controller": "Deaktiver kontrollernavigasjon av Heroic",
     "download-no-https": "Last ned spill uten HTTPS (nyttig for CDN-er, f.eks. LanCache)",
     "dxvkfpslimit": "Begrens bildehastighet (DX9, 10 og 11)",
-    "egs-sync": "Synkroniser med installerte episke spill",
     "enableFSRHack": "Aktiver FSR Hack (Wine-versjonen må støtte det)",
     "eosOverlay": {
       "cancelInstall": "Avbryt",
@@ -665,7 +648,6 @@
     },
     "maxRecentGames": "Antall \"Nylig spilt\" å vise",
     "maxworkers": "Maksimalt antall arbeidere ved nedlasting",
-    "minimize-on-launch": "Minimer Heroic etter spillstart",
     "offlinemode": "Kjør spillet frakoblet",
     "prefered_language": "Foretrukket språk (språkkode)",
     "preferSystemLibs": "Foretrekker systembiblioteker",
@@ -689,10 +671,8 @@
     "ignoreGameUpdates": "Ignorer spilloppdateringer",
     "disable_logs": "Deaktiver logger",
     "showMetalOverlay": "Vis statistikkoverlegg",
-    "addgamestoapplications": "Legg spill til applikasjoner automatisk",
     "alt-nile-bin": "Velg en alternativ Nile Binær",
     "autodxvknvapi": "Installer/Oppdater DXVK-NVAPI automatisk på Prefix-en",
-    "disablePlaytimeSync": "Skru av spilletidssynkronisering",
     "msync": "Skru på Msync",
     "allow_installation_broken_anticheat": {
       "confirmation": {
@@ -850,9 +830,6 @@
     },
     "offline": {
       "warning": "Dette spillet tillater ikke eksplisitt offline-modus, slå dette på ved egen risiko. Spillet fungerer kanskje ikke."
-    },
-    "custom_css": {
-      "title": "Egendefinert CSS-stil"
     },
     "launchOptions": "Startalternativer",
     "legacy_warning": "Advarsel: Innstilingene på denne siden er stort sett foreldret og fungerer muligens ikke.",

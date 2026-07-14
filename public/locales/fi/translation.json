@@ -16,7 +16,6 @@
       "title": "Välimuisti tyhjennetty"
     },
     "choose": "Valitse",
-    "choose-egs-prefix": "Valitse etuaste johon EGS asennetaan",
     "choose-gogdl-binary": "Valitse GOGDL-binääri (vaatii uudelleenkäynnistyksen)",
     "choose-legendary-binary": "Valitse ajettava Legendary-binääritiedosto",
     "customWine": "Valitse Wine- tai Proton-binääritiedosto",
@@ -274,7 +273,6 @@
   },
   "help": {
     "amdfsr": "AMD FSR auttaa parantamaan ruudunpäivitysnopeutta ylösskaalaamalla alemman resoluution kuvaa koko näytön tilassa. Kuvanlaatu paranee asteikolla 5–1 pienen suorituskykyvaikutuksen kustannuksella. Käyttöönotto saattaa parantaa suorituskykyä.",
-    "custom_themes_wiki": "Lue Wiki-tietokantaa saadaksesi lisätietoja räätälöityjen teemojen lisäämiseksi. Napsauta tässä.",
     "dxvk": "DXVK on Vulkan-pohjainen tulkki DirectX 9-, 10- ja 11-peleille. Päällekytkentä voi parantaa yhteensopivuutta. Tämä voi aiheuttaa ongelmia erityisesti vanhemmissa DirectX-peleissä.",
     "dxvkfpslimit": "Asettaa ruudunpäivitykselle katon DXVK-peleissä",
     "esync": "Esync pyrkii vähentämään Wine-palvelimen taakkaa suoritinta kuormittavissa peleissä. Päällekytkentä voi parantaa suorituskykyä.",
@@ -285,7 +283,6 @@
       "valid_codes": "Kelvolliset kielikoodit riippuvat aina pelistä."
     },
     "gamemode": "Feral GameMode asettaa käyttöön automaattisia ja tilapäisiä säätöjä pelejä ajettaessa. Päällekytkentä voi parantaa suorituskykyä.",
-    "general": "Synkronisoi EGL:n kanssa mikäli sinulla on toimiva Epic Games Launcher:in asennus toisaalla ja haluat tuoda pelisi välttääksesi niiden uudelleenlatauksen.",
     "other": {
       "part4": "Käytä ",
       "part5": "Pelin lisävivut",
@@ -311,7 +308,6 @@
     },
     "disable_logs": "Ota tämä valintaruutu PÄÄLLE, jos haluat poistaa suurimman osan kirjoituksista lokitiedostoihin (kriittiset tiedot kirjataan aina). Muista poistaa tämä asetus käytöstä ennen kuin ilmoitat ongelmasta.",
     "dxvknvapi": "DXVK-NVAPI on NVAPI:n sulautus joka on rakennettu DXVK:n ja kotoperäisen Linux-NVAPI:n päälle, ja se mahdollistaa DLSS:n käytön Nvidian näytönohjaimilla.",
-    "disablePlaytimeSync": "Kytkee pois päältä peliaikojen synkronisoinnin kauppojen palvelimien kanssa (tällä hetkellä vain GOG on tuettu)",
     "title": {
       "accessibility": "Käytettävyys",
       "login": "Kirjaudu",
@@ -324,7 +320,6 @@
     "content": {
       "library": "Näyttää kaikki omistetut pelit.",
       "accessibility": "Näyttää käytettävyysasetukset.",
-      "customThemesPath": "Lue Wiki-tietokantamme.",
       "downloadManager": "Näyttää nykyiset- ja menneet lataukset.",
       "login": "Sisäänkirjaudu eri kauppoihin.",
       "defaultInstallPath": "Tämä on ennalta valittu vakiopolku pelejä asennettaessa.",
@@ -408,10 +403,7 @@
     "old-mac": "macOS versiosi on {{version}}. macOS 12 tai sitä uudempi vaaditaan sisäänkirjautumiseen.",
     "zoom": "Zoom:iin kirjautuminen"
   },
-  "message": {
-    "sync": "Synkronointi valmis",
-    "unsync": "Synkronoinnin poisto valmis"
-  },
+  "message": {},
   "notify": {
     "error": {
       "move": "Virhe pelin siirtämisessä",
@@ -514,9 +506,7 @@
   "placeholder": {
     "alt-gogdl-bin": "Käytetään sisäänrakennettua GOGDL-binääriä...",
     "alt-legendary-bin": "Käytetään sisäänrakennettua Legendary-binääriä...",
-    "custom_themes_path": "Valitse polku jonka kautta etsitään omia räätälöityjä CSS-tiedostoja",
     "dxvkfpsvalue": "Positiivinen kokonaislukuarvo (esim. 30, 60, ...)",
-    "egs-prefix": "Etuaste johon EGS on asennettu",
     "prefered_language": "2- tai 4-merkkinen kielikoodi (kuten: \"fi\" tai \"pt-BR\")",
     "alt-nile-bin": "Käytetään sisäänrakennettua Nile-binääriä..."
   },
@@ -544,8 +534,6 @@
   "Recent": "Viimeksi pelatut",
   "search": "Etsi pelejä",
   "setting": {
-    "adddesktopshortcuts": "Lisää työpöydän pikakuvakkeet automaattisesti",
-    "addgamestostartmenu": "Lisää pelit aloitusvalikkoon automaattisesti",
     "addgamestosteam": "Lisää pelit Steam:iin automaattisesti",
     "alt-gogdl-bin": "Valitse vaihtoehtoinen GOGDL-binääri käytettäväksi (vaatii uudelleenkäynnistyksen)",
     "alt-legendary-bin": "Valitse vaihtoehtoinen Legendary-binääritiedosto (uudelleenkäynnistys vaaditaan)",
@@ -553,18 +541,13 @@
     "autosync": "Synkronoi tallennukset automaattisesti",
     "autovkd3d": "VKD3D:n automaattinen asennus/päivitys etuasteeseen",
     "change-target-exe": "Valitse vaihtoehtoinen EXE-tiedosto joka ajetaan",
-    "checkForUpdatesOnStartup": "Tarkista Heroic:in päivitykset käynnistyksen yhteydessä",
     "crossover-version": "Crossover/Wine-versio",
-    "custom_themes_path": "Omien teemojen polku",
     "customWineProton": "Mukautetut Wine/Proton sijainnit",
-    "darktray": "Käytä tummaa ilmaisinalueen kuvaketta",
     "default-install-path": "Oletus asennussijainti",
     "default-steam-path": "Vakio Steam-polku",
-    "defaultWinePrefix": "Aseta kansio uusille Wine-etuasteille",
     "disable_controller": "Poiskytke Heroic-navigaatio käyttäen peliohjainta",
     "download-no-https": "Lataa pelit ilman HTTPS:ää (hyödyllinen CDN:ille kuten LanCache)",
     "dxvkfpslimit": "Aseta ruudunpäivityskatto (DX9, 10 ja 11)",
-    "egs-sync": "Synkronoi asennettujen Epic Games -pelien kanssa",
     "enableFSRHack": "Ota käyttöön FSR Hack (Wine-version pitää tukea sitä)",
     "eosOverlay": {
       "cancelInstall": "Peruuta",
@@ -656,7 +639,6 @@
     },
     "maxRecentGames": "Viimeksi pelatut näkyvillä",
     "maxworkers": "Työstäjien enimmäismäärä ladattaessa",
-    "minimize-on-launch": "Pienennä Heroic palkkiin pelin käynnistämisen jälkeen",
     "offlinemode": "Käynnistä peli offline-tilassa",
     "prefered_language": "Mitä kieltä suositaan (kielikoodi)",
     "preferSystemLibs": "Suosi järjestelmäkirjastoja",
@@ -679,7 +661,6 @@
     "autoUpdateGames": "Päivitä pelit automaattisesti",
     "ignoreGameUpdates": "Ohita pelipäivitykset",
     "disable_logs": "Poista lokikirjaukset käytöstä",
-    "addgamestoapplications": "Lisää pelejä automaattisesti sovelluksiin",
     "showMetalOverlay": "Näytä tilastopäällinen",
     "alt-nile-bin": "Valitse vaihtoehtoinen Nile-binääri",
     "autodxvknvapi": "Asenna automaattisesti/päivitä DXVK-NVAPI etuasteessa",
@@ -690,7 +671,6 @@
       "enableHelp": "Apukomponentti",
       "zoomPlatform": "Zoom-alustan tuki (ainoastaan Linux)"
     },
-    "disablePlaytimeSync": "Kytke peliaikojen synkronointi pois päältä",
     "msync": "Ota Msync käyttöön",
     "frameless-window": {
       "confirmation": {
@@ -838,9 +818,6 @@
         "help": "Haluatko varmasti nollata Heroic:in? Tämä poistaa kaikki asetukset sekä välimuistin, mutta ei asentamiasi pelejä eikä Epic-tietojasi. Portattavat julkaisut (AppImage, WinPortable, ...) Heroic:istä pitää uudelleenkäynnistää manuaalisesti jälkeenpäin."
       },
       "details": "Yksityiskohdat"
-    },
-    "custom_css": {
-      "title": "Mukautettu CSS-tyyli"
     },
     "launchOptions": "Käynnistysasetukset...",
     "legacy_warning": "Varoitus: tämän välilehden asetukset ovat enimmäkseen vanhentuneet eivätkä välttämättä toimi lainkaan.",

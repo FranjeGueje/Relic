@@ -16,7 +16,6 @@
       "title": "Vahemälu puhastati"
     },
     "choose": "Valige",
-    "choose-egs-prefix": "Valige prefiks, kuhu EGS on paigaldatud",
     "choose-gogdl-binary": "Vali GOGDL binaarfail (vajab taaskäivitust)",
     "choose-legendary-binary": "Valige Legendary binaarfail",
     "customWine": "Valige Wine või Proton-i binaar",
@@ -282,7 +281,6 @@
   },
   "help": {
     "amdfsr": "AMD FSR aitab suurendada kaadrisagedust, suurendades madalamaid resolutsioone täisekraani režiimis. Pildikvaliteet suureneb 5-st 1-le, mis toob aga kaasa kerge jõudluse vähenemise. Lubamine võib parandada jõudlust.",
-    "custom_themes_wiki": "Leiate meie vikist rohkem infot teemade lisamise kohta. Kliki siia.",
     "dxvk": "DXVK on Vulkanil põhinev tõlkekiht DirectX 9, 10 ja 11 mängude jaoks. Lubamine võib parandada ühilduvust. Võib põhjustada probleeme, eriti vanemate DirectX-mängude puhul.",
     "dxvkfpslimit": "Kehtestab kaadrisageduse piirangu DXVK mängude jaoks",
     "esync": "Esynci eesmärk on vähendada wineserveri koormust CPU-mahukates mängudes. Lubamine võib parandada jõudlust.",
@@ -293,7 +291,6 @@
       "valid_codes": "Kehtivad keelekoodid sõltuvad mängust."
     },
     "gamemode": "Feral GameMode rakendab mängude käivitamisel süsteemile automaatseid ja ajutisi kohandusi. Lubamine võib parandada jõudlust.",
-    "general": "Sünkroonige EGS-iga, kui teil on Epic Games Store'i töötav installatsioon mujal ja soovite oma mänge importida, et vältida nende uuesti allalaadimist.",
     "other": {
       "part4": "Kasutage ",
       "part5": "Mängu argumendid",
@@ -328,7 +325,6 @@
     },
     "dxvknvapi": "DXVK-NVAPI on NVAPI implementatsioon, mis on ehitatud DXVK põhjal ning Linuxi oma NVAPI põhjal, lubades DLSS-i kasutamist Nvidia graafikaprotsessoritel.",
     "content": {
-      "customThemesPath": "Vaadake meie vikit.",
       "settingsGame": "Näitab kõiki mängu seadeid.",
       "wineManager": "Paigalda Wine'i, Protoni, Crossoveri jms. erinevaid versioone.",
       "defaultInstallPath": "See on vaikimisi asukoht, mida kasutatakse mängude paigaldamisel.",
@@ -338,7 +334,6 @@
       "login": "Logi sisse erinevatesse poodidesse.",
       "settingsDefault": "Näitab kõiki Heroicu seadeid ja mängude vaikimisi sätteid."
     },
-    "disablePlaytimeSync": "Keelab mänguajalist sünkroniseerimist antud poe serveritega (hetkel toetab ainult GOG poodi)",
     "msync": "Msync üritab vähendada wineserveri töökulu CPU-nõudlikes mängudes. Selle lubamine võib parandada jõudlust toetatud Linuxi kernelite puhul.",
     "button": {
       "close": "Sulge abi",
@@ -416,10 +411,7 @@
     "old-mac": "Teie macOS versioon on {{version}}. Sisselogimiseks on vajalik macOS 12 või uuem.",
     "zoom": "Zoomi sisselogimine"
   },
-  "message": {
-    "sync": "Sünkroonimine lõpetatud",
-    "unsync": "Mittesünkroniseerimine lõpetatud"
-  },
+  "message": {},
   "notify": {
     "error": {
       "move": "Viga mängu liigutamisel",
@@ -522,9 +514,7 @@
   "placeholder": {
     "alt-gogdl-bin": "Kasutusel on sisse-ehitatud GOGDL binaarfail...",
     "alt-legendary-bin": "Kasutusel on sisse-ehitatud Legendary binaarfail...",
-    "custom_themes_path": "Valige asukoht, kust otsida kohandatud CSS faile",
     "dxvkfpsvalue": "Positiivne täisarvuline väärtus (nt. 30, 60, ...)",
-    "egs-prefix": "Prefiks, kuhu EGS on paigaldatud",
     "prefered_language": "2-täheline või 4-täheline kood (nt: \"fr\" või \"pt-BR\")",
     "alt-nile-bin": "Sisseehitatud Nile programmi kasutamine..."
   },
@@ -552,8 +542,6 @@
   "Recent": "Hiljuti mängitud",
   "search": "Otsi mänge",
   "setting": {
-    "adddesktopshortcuts": "Lisa töölaua otseteed automaatselt",
-    "addgamestostartmenu": "Mängude automaatne lisamine stardimenüüsse",
     "addgamestosteam": "Lisa mängud Steami automaatselt",
     "alt-gogdl-bin": "Valige alternatiivne GOGDL binaarfail",
     "alt-legendary-bin": "Valige alternatiivne Legendary binaarfail",
@@ -561,18 +549,13 @@
     "autosync": "Automaatne salvestiste sünkroonimine",
     "autovkd3d": "VKD3D automaatne paigaldamine/uuendamine prefiksile",
     "change-target-exe": "Vali alternatiivne EXE käivitamiseks",
-    "checkForUpdatesOnStartup": "Kontrolli Heroicu uuendusi käivitamisel",
     "crossover-version": "Crossoveri/Wine'i versioon",
-    "custom_themes_path": "Kohandatud teemade asukoht",
     "customWineProton": "Kohandatud Wine/Proton teed",
-    "darktray": "Kasuta tumedat süsteemiriiuli ikooni",
     "default-install-path": "Vaikimisi paigaldustee",
     "default-steam-path": "Steami vaiketee",
-    "defaultWinePrefix": "Määrake uute Wine'i prefikside jaoks kaust",
     "disable_controller": "Keela Heroicu mängupuldiga navigeerimine",
     "download-no-https": "Mängude allalaadimine ilma HTTPS-ita (kasulik CDNide jaoks, nt LanCache)",
     "dxvkfpslimit": "Piira kaadrisagedust (DX9, 10 ja 11)",
-    "egs-sync": "Sünkroonimine paigaldatud Epic Games'iga",
     "enableFSRHack": "Luba FSR häkk (Wine'i versioon peab seda toetama)",
     "eosOverlay": {
       "cancelInstall": "Tühista",
@@ -664,7 +647,6 @@
     },
     "maxRecentGames": "Hiljuti mängitud mängu, mida näidata",
     "maxworkers": "Töötajate maksimaalne arv allalaadimisel",
-    "minimize-on-launch": "Minimeeri Heroic pärast mängu käivitamist",
     "offlinemode": "Käivita mäng võrguühenduseta",
     "prefered_language": "Eelistatud keel (keelekood)",
     "preferSystemLibs": "Eelista süsteemiteeke",
@@ -687,13 +669,11 @@
     "autoUpdateGames": "Mängude automaatne värskendamine",
     "ignoreGameUpdates": "Ignoreeri mängu värskendusi",
     "disable_logs": "Keela logid",
-    "addgamestoapplications": "Lisage mänge rakendustesse automaatselt",
     "showMetalOverlay": "Kuva statistika ülekate",
     "alt-nile-bin": "Valige mõni muu Nile programm",
     "autodxvknvapi": "DXVK-NVAPI automaatne paigaldamine/uuendamine prefiksile",
     "after-launch-script-path": "Vali skript, mida käitada pärast mängu sulgemist",
     "msync": "Luba Msync",
-    "disablePlaytimeSync": "Keela mänguajaline sünkroniseerimine",
     "experimental_features": {
       "enableHelp": "Abi komponent",
       "enableNewDesign": "Uus disain",
@@ -856,9 +836,6 @@
     },
     "experimental_features": {
       "title": "Eksperimentaalsed funktsioonid"
-    },
-    "custom_css": {
-      "title": "Kasutajaliidese CSS stiil"
     },
     "launchOptions": "Käivitusvalikud",
     "legacy_warning": "Hoiatus: Sätted sellel vahelehel on enamasti aegunud ja ei pruugi üldse toimida.",

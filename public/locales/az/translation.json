@@ -16,7 +16,6 @@
       "title": "Keş təmizləndi"
     },
     "choose": "Seçin",
-    "choose-egs-prefix": "EGS-nin quraşdırıldığı Prefiksi seçin",
     "choose-gogdl-binary": "GOGDL Binary seçin (yenidən başlamalıdır)",
     "choose-legendary-binary": "Əfsanəvi binar seçin",
     "customWine": "Şərab və ya Proton binarını seçin",
@@ -275,7 +274,6 @@
   },
   "help": {
     "amdfsr": "AMD-nin FSR tam ekran rejimində daha aşağı təsvir ölçüsünü artırmaqla kadr sürətini artırmağa kömək edir. Şəkil keyfiyyəti cüzi performans zərbəsi hesabına 5-dən 1-ə yüksəlir. Aktivləşdirmək performansı yaxşılaşdıra bilər.",
-    "custom_themes_wiki": "Check the Wiki for more details on adding custom themes. Click here.",
     "dxvk": "DXVK DirectX 9, 10 və 11 oyunları üçün Vulkan əsaslı tərcümə qatıdır. Aktivləşdirmə uyğunluğu yaxşılaşdıra bilər. Xüsusilə köhnə DirectX oyunları üçün problemlər yarada bilər.",
     "dxvkfpslimit": "Sets a frame rate cap for DXVK games",
     "esync": "Esync, intensiv CPU tələb edən oyunlarda şərab serverinin yükünü azaltmağı hədəfləyir. Aktivləşdirmək performansı yaxşılaşdıra bilər.",
@@ -286,7 +284,6 @@
       "valid_codes": "Etibarlı dil kodları oyundan asılıdır."
     },
     "gamemode": "Feral GameMode oyunları oynayarkən sistemə avtomatik və müvəqqəti çimdiklər tətbiq edir. Aktivləşdirmək performansı yaxşılaşdıra bilər.",
-    "general": "Epic Games Launcher-ın başqa yerdə işlək quraşdırması varsa və onları yenidən yükləməmək üçün oyunlarınızı idxal etmək istəyirsinizsə, EGL ilə sinxronlaşdırın.",
     "other": {
       "part4": "istifadə edin ",
       "part5": "Oyun Arqumentlər",
@@ -327,7 +324,6 @@
       "downloadManager": "",
       "wineManager": "",
       "library": "",
-      "customThemesPath": "",
       "accessibility": "",
       "login": ""
     },
@@ -339,7 +335,6 @@
     "download_proton_steam": "",
     "wine-hdr": "",
     "dxvknvapi": "",
-    "disablePlaytimeSync": "",
     "WoW64": "",
     "wine-wayland": "",
     "advertiseAvxForRosetta": "",
@@ -408,10 +403,7 @@
     "old-mac": "",
     "zoom": ""
   },
-  "message": {
-    "sync": "Sinxronizasiya tamamlandı",
-    "unsync": "Sinxronizasiya tamamlandı"
-  },
+  "message": {},
   "notify": {
     "error": {
       "move": "Oyunu köçürərkən xəta",
@@ -514,9 +506,7 @@
   "placeholder": {
     "alt-gogdl-bin": "Daxili GOGDL ikili proqramından istifadə...",
     "alt-legendary-bin": "Daxili əfsanəvi ikili proqramdan istifadə...",
-    "custom_themes_path": "Select the path to look for custom CSS files",
     "dxvkfpsvalue": "Positive integer value (e.g. 30, 60, ...)",
-    "egs-prefix": "EGS-nin quraşdırıldığı prefiks",
     "prefered_language": "2 simvollu kod (yəni: \"en\" və ya \"fr\")",
     "alt-nile-bin": "Daxili Nil binarından istifadə..."
   },
@@ -544,8 +534,6 @@
   "Recent": "Bu yaxınlarda oynanılıb",
   "search": "Oyunlar axtarın",
   "setting": {
-    "adddesktopshortcuts": "İş masası qısayollarını avtomatik əlavə edin",
-    "addgamestostartmenu": "Menyuya avtomatik başlamaq üçün oyunlar əlavə edin",
     "addgamestosteam": "Add games to Steam automatically",
     "alt-gogdl-bin": "İstifadə etmək üçün Alternativ GOGDL Binary seçin",
     "alt-legendary-bin": "Alternativ Əfsanəvi Binary seçin",
@@ -553,18 +541,13 @@
     "autosync": "Avtosinxronizasiya Saxlayır",
     "autovkd3d": "Prefiksdə VKD3D-ni Avtomatik Quraşdırın/Yeniləyin",
     "change-target-exe": "Çalıştırmaq üçün alternativ EXE seçin",
-    "checkForUpdatesOnStartup": "Başlanğıcda qəhrəmanlıq yenilənmələrini yoxlayın",
     "crossover-version": "Krossover versiyası",
-    "custom_themes_path": "Custom Themes Path",
     "customWineProton": "Xüsusi Şərab/Proton Yolları",
-    "darktray": "Qaranlıq Tabla İkonundan istifadə edin",
     "default-install-path": "Defolt Quraşdırma Yolu",
     "default-steam-path": "Defolt Buxar yolu",
-    "defaultWinePrefix": "Yeni Şərab Prefiksləri üçün Qovluq qurun",
     "disable_controller": "Nəzarətçidən istifadə edərək Qəhrəman naviqasiyasını söndürün",
     "download-no-https": "HTTPS olmadan oyunları endirin (CDN-lər üçün faydalıdır, məsələn, LanCache)",
     "dxvkfpslimit": "Limit FPS (DX9, 10 and 11)",
-    "egs-sync": "Quraşdırılmış Epic Games ilə sinxronizasiya edin",
     "enableFSRHack": "FSR Hack'i aktivləşdirin (Şərab versiyası onu dəstəkləməlidir)",
     "eosOverlay": {
       "cancelInstall": "Ləğv et",
@@ -657,7 +640,6 @@
     },
     "maxRecentGames": "Göstərmək üçün bu yaxınlarda oynanılıb",
     "maxworkers": "Yükləyərkən İşçilərin Maksimum Sayı",
-    "minimize-on-launch": "Oyun Başladıqdan Sonra Qəhrəmanlığı minimuma endirin",
     "offlinemode": "Oyunu Oflayn Çalışın",
     "prefered_language": "Üstünlük Verilən Dil (Dil Kodu)",
     "preferSystemLibs": "Sistem kitabxanalarına üstünlük verin",
@@ -680,7 +662,6 @@
     "autoUpdateGames": "Oyunları avtomatik yeniləyin",
     "ignoreGameUpdates": "Oyun yeniləmələrinə məhəl qoymayın",
     "disable_logs": "Qeydləri deaktiv edin",
-    "addgamestoapplications": "Oyunları avtomatik olaraq Proqramlara əlavə edin",
     "showMetalOverlay": "Statistikanı göstərin",
     "alt-nile-bin": "Alternativ Nil Binarını seçin",
     "WoW64": "",
@@ -726,7 +707,6 @@
     "enable-quick-sync-menu": "",
     "no-tray-icon": "",
     "analyticsOptIn": "",
-    "disablePlaytimeSync": "",
     "verboseLogs": {
       "description": ""
     },
@@ -835,9 +815,6 @@
     },
     "offline": {
       "warning": ""
-    },
-    "custom_css": {
-      "title": ""
     },
     "steamgriddb": {
       "apikey": {

@@ -16,7 +16,6 @@
       "title": "Önbellek temizlendi"
     },
     "choose": "Seç",
-    "choose-egs-prefix": "EGS'nin kurulu olduğu Prefix'i seçin",
     "choose-gogdl-binary": "GOGDL İkili Dosyasını Seçin (yeniden başlatma gerektirir)",
     "choose-legendary-binary": "Legendary binary dosyasını seçin",
     "customWine": "Wine veya Proton binary dosyasını seçin",
@@ -280,7 +279,6 @@
   },
   "help": {
     "amdfsr": "AMD'nin FSR özelliği, Tam Ekran Modunda daha düşük çözünürlükleri yükselterek kare hızını artırmaya yardımcı olur. Küçük bir performans artışı pahasına görüntü kalitesi 5'ten 1'e yükselir. Etkinleştirmek performansı artırabilir.",
-    "custom_themes_wiki": "Özel tema ekleme hakkında daha fazla bilgi için Wiki'ye göz atın. Buraya tıklayın.",
     "dxvk": "DXVK, Vulkan tabanlı bir çeviri katmanıdır ve DirectX 9, 10 ve 11 oyunları için kullanılır. Etkinleştirmek uyumluluğu artırabilir. Özellikle daha eski DirectX oyunları için sorunlara neden olabilir.",
     "dxvkfpslimit": "DXVK oyunları için bir kare hızı sınırı belirler",
     "esync": "Esync, CPU ağırlıklı oyunlarda wineserver ek yükünü azaltmayı amaçlamaktadır. Etkinleştirmek performansı artırabilir.",
@@ -291,7 +289,6 @@
       "valid_codes": "Geçerli dil kodları oyuna bağlıdır."
     },
     "gamemode": "Feral GameMode, oyunları çalıştırırken sisteme otomatik ve geçici ince ayarlar uygular. Etkinleştirmek performansı artırabilir.",
-    "general": "Başka bir yerde çalışan bir Epic Games Launcher kurulumunuz varsa ve oyunlarınızı tekrar indirmemek için onları içeri aktarmak istiyorsanız EGL ile eşitleyin.",
     "other": {
       "part4": "Oyunu başlatma komutuna eklenmesi için ",
       "part5": "Oyun Parametleri",
@@ -317,7 +314,6 @@
     },
     "disable_logs": "Günlük dosyalarına yazma işlemlerinin çoğunu devre dışı bırakmak için bu onay kutusunu AÇIK konuma getirin (kritik bilgiler her zaman günlüğe kaydedilir). Herhangi bir sorunu bildirmeden önce bu ayarı KAPALI konuma getirdiğinizden emin olun.",
     "dxvknvapi": "DXVK-NVAPI, DXVK ve Linux yerel NVAPI üzerine kurulu bir NVAPI uygulamasıdır. Nvidia GPU'larda DLSS kullanımına izin verir.",
-    "disablePlaytimeSync": "Belirtilen mağazanın sunucularıyla oynatma süresi senkronizasyonunu devre dışı bırakır (şu anda yalnızca GOG desteklenmektedir)",
     "content": {
       "defaultInstallPath": "Bu, oyunlar kurulurken seçili gelen varsayılan yoldur.",
       "settingsDefault": "Tüm Heroic ayarlarını ve oyunların varsayılanlarını gösterir.",
@@ -325,7 +321,6 @@
       "downloadManager": "Şimdiki ve geçmiş indirmeleri gösterir.",
       "wineManager": "Wine, Proton, Crossover ve benzerlerinin farklı sürümlerini kur.",
       "library": "Sahip olunan tüm oyunları gösterir.",
-      "customThemesPath": "Wiki sayfamıza göz atın.",
       "accessibility": "Erişilebilirlik ayarlarını gösterir.",
       "login": "Farklı mağazalarda oturum aç."
     },
@@ -415,10 +410,7 @@
     "old-mac": "MacOS sürümünüz {{version}}. Oturum açmak için macOS 12 veya daha yeni bir sürüm gereklidir.",
     "zoom": "Zoom Girişi"
   },
-  "message": {
-    "sync": "Eşzamanlama Tamamlandı",
-    "unsync": "Eşzamanlamayı Kaldırma Tamamlandı"
-  },
+  "message": {},
   "notify": {
     "error": {
       "move": "Oyunu Taşıma Hatası",
@@ -521,9 +513,7 @@
   "placeholder": {
     "alt-gogdl-bin": "Yerleşik GOGDL çalıştırılabilir dosyasını kullanılıyor...",
     "alt-legendary-bin": "Yerleşik Legendary çalıştırılabilir dosyası kullanılıyor...",
-    "custom_themes_path": "Özel CSS dosyalarının aranacağı yolu seçin",
     "dxvkfpsvalue": "Pozitif tamsayı değeri (ör. 30, 60, ...)",
-    "egs-prefix": "EGS'nin kurulu olduğu prefix",
     "prefered_language": "2 karakterli veya 4 karakterli kod (örneğin: \"fr\" veya \"pt-BR\")",
     "alt-nile-bin": "Yerleşik Nile binary dosyası kullanılıyor..."
   },
@@ -551,8 +541,6 @@
   "Recent": "Yakın Zamanda Oynanan",
   "search": "Oyun Ara",
   "setting": {
-    "adddesktopshortcuts": "Masaüstü kısayollarını otomatik ekle",
-    "addgamestostartmenu": "Oyunları başlangıç menüsüne otomatik ekle",
     "addgamestosteam": "Oyunları Steam'e otomatik ekle",
     "alt-gogdl-bin": "Alternatif bir GOGDL çalıştırılabilir dosyasını seçin",
     "alt-legendary-bin": "Alternatif bir Legendary dosyası seçin",
@@ -560,18 +548,13 @@
     "autosync": "Kayıtları Otomatik Eşzamanla",
     "autovkd3d": "Prefix'e Otomatik VKD3D Kur/Güncelle",
     "change-target-exe": "Çalıştırmak için alternatif bir EXE seçin",
-    "checkForUpdatesOnStartup": "Başlangıçta Heroic Güncellemelerini kontrol et",
     "crossover-version": "Crossover/Wine Sürümü",
-    "custom_themes_path": "Özel Temaların Yolu",
     "customWineProton": "Özel Wine/Proton Yolları",
-    "darktray": "Koyu tepsi simgesi kullan",
     "default-install-path": "Öntanımlı Kurulum Yolu",
     "default-steam-path": "Öntanımlı Steam Yolu",
-    "defaultWinePrefix": "Yeni Wine Prefix'leri için Klasörü Ayarla",
     "disable_controller": "Denetleyiciyi kullanarak Heroic gezinmesini devre dışı bırak",
     "download-no-https": "Oyunları HTTPS olmadan indirin (LanCache gibi CDN'ler için kullanışlıdır)",
     "dxvkfpslimit": "FPS'i sınırla (DX9, 10 and 11)",
-    "egs-sync": "Kurulu Epic Games ile Eşitle",
     "enableFSRHack": "FSR Hack'i Etkinleştir (Wine sürümünün desteklemesi gerekiyor)",
     "eosOverlay": {
       "cancelInstall": "İptal",
@@ -663,7 +646,6 @@
     },
     "maxRecentGames": "Gösterilecek Son Oynananlar",
     "maxworkers": "İndirme sırasında en yüksek bağlantı noktaları",
-    "minimize-on-launch": "Oyun Başlatıldıktan Sonra Heroic'i Simge Durumuna Küçült",
     "offlinemode": "Oyunu Çevrim Dışı Çalıştır",
     "prefered_language": "Tercih Edilen Dil (Dil Kodu)",
     "preferSystemLibs": "Sistem kitaplıklarını tercih et",
@@ -687,10 +669,8 @@
     "ignoreGameUpdates": "Oyun güncellemelerini yoksay",
     "disable_logs": "Günlükleri Devre Dışı Bırak",
     "showMetalOverlay": "İstatistik Kaplamasını Göster",
-    "addgamestoapplications": "Oyunları Uygulamalara otomatik ekle",
     "alt-nile-bin": "Alternatif bir Nile İkili Dosyası Seçin",
     "autodxvknvapi": "Prefix'e Otomatik DXVK-NVAPI Kur/Güncelle",
-    "disablePlaytimeSync": "Oynama süresi eşzamanlamasını devre dışı bırak",
     "experimental_features": {
       "enableNewDesign": "Yeni tasarım",
       "enableHelp": "Yardım bileşeni",
@@ -856,9 +836,6 @@
       "resetHeroic": {
         "help": "Bu, tüm Ayarları ve Önbelleği kaldıracak ancak Kurulu oyunlarınızı veya Epic kimlik bilgilerinizi kaldırmayacaktır. Heroic taşınabilir sürümlerinin (AppImage, WinPortable, ...) daha sonra el ile yeniden başlatılması gerekir."
       }
-    },
-    "custom_css": {
-      "title": "Özel CSS Stili"
     },
     "launchOptions": "Başlatma Seçenekleri",
     "legacy_warning": "Uyarı: Bu sayfadaki ayarların çoğu kullanımdan kaldırıldı ve hiç çalışmayabilirler.",

@@ -104,7 +104,6 @@
     "default-steam-path": "מיקום Steam.",
     "customWine": "בחרו קובץ הרצה של Wine או Proton",
     "dontShowAgain": "אל תראה שוב",
-    "choose-egs-prefix": "בחרו Prefix שבו EGS מותקן",
     "choose-gogdl-binary": "בחרו קובץ הרצה של GOGDL (דורש הפעלה מחדש של התוכנה)",
     "choose-nile-binary": "בחרו קובץ הרצה של Nile",
     "choose-legendary-binary": "בחרו קובץ הרצה של Legendary",
@@ -357,18 +356,11 @@
       "recently_played_installed": "משחקים שהופעלו לאחרונה (רק כאלה שעוד מותקנים)"
     },
     "wineversion": "גרסת Wine",
-    "adddesktopshortcuts": "הוסף קיצורי דרך בשולחן העבודה באופן אוטומטי",
-    "addgamestoapplications": "הוסף משחקים לאפליקציות באופן אוטומטי",
-    "addgamestostartmenu": "הוסף משחקים לתפריט הראשי באופן אוטומטי",
     "addgamestosteam": "הוסף משחקים לSteam באופן אוטומטי",
-    "custom_themes_path": "מיקום ערכות נושא מותאם אישית",
     "customWineProton": "מיקומי Wine/Proton מותאמים אישית",
-    "darktray": "השתמש בtray icon כהה",
-    "defaultWinePrefix": "הגדירו תיקיה עבור prefixים של Wine חדשים",
     "disable_controller": "בטל ניווט של Heroic באמצעות קונטרולר",
     "download-no-https": "הורד משחקים ללא HTTPS (שימושי עבור CDNים למשל LanCache)",
     "dxvkfpslimit": "הגבל קצב פריימים (FPS) (DX9, 10, ו-11)",
-    "egs-sync": "סנכרן עם הEpic Games המותקן",
     "enableFSRHack": "הפעל FSR hack (גרסת הWine צריכה לתמוך בה)",
     "esync": "הפעל Esync",
     "exit-to-tray": "סגור תוכנה לתוך System tray",
@@ -459,13 +451,11 @@
     "autodxvknvapi": "התקן או עדכן DXVK-NVAPI בprefix אוטומטית",
     "change-target-exe": "בחרו EXE חלופי להרצה",
     "autoUpdateGames": "עדכן משחקים אוטומטית",
-    "checkForUpdatesOnStartup": "בדוק לעדכונים לHeroic בעת פתיחת התוכנה",
     "crossover-version": "גרסת Crossover/Wine",
     "default-install-path": "נתיב התקנה ברירת מחדל",
     "default-steam-path": "נתיב Steam ברירת מחדל",
     "disable_logs": "בטל לוגים",
     "gamemode": "להשתמש בGameMode (צריכה להיות התקנה של Feral Game Mode)",
-    "minimize-on-launch": "צמצם את Heroic לאחר הפעלת המשחק",
     "showfps": "הצג FPS (קצב פריימים) (DX9, 10, ו-11)",
     "start-in-tray": "התחל מצומצם",
     "steamruntime": "השתמש בSteam Runtime",
@@ -515,7 +505,6 @@
     "enable-quick-sync-menu": "",
     "no-tray-icon": "",
     "analyticsOptIn": "",
-    "disablePlaytimeSync": "",
     "verboseLogs": {
       "description": ""
     },
@@ -584,7 +573,6 @@
     "uncategorized": ""
   },
   "help": {
-    "custom_themes_path": "אל תשתמשו בקבצי CSS ממקורות שאינם מהימנים. כאשר יש ספק, בקש סקירה בערוץ הדיסקורד שלנו.",
     "disable_logs": "הדליקו תיבת סימון זו על מנת לבטל את רוב הכתיבה לקבצי לוג (מידע קריטי תמיד נכתב). וודאו לכבות הגדרה הזאת לפני דיווח על בעיה.",
     "dxvkfpslimit": "קובע את גבול קצב הפריימים עבור משחקי DXVK",
     "dxvknvapi": "DXVK-NVAPI הוא יישום של NVAPI שנבנה על גבי DXVK וה-NVAPI של לינוקס, הוא מאפשר שימוש בDLSS על כרטיסים גרפיים מחברת Nvidia.",
@@ -604,7 +592,6 @@
       "part1": "Heroic מחפש גרסאות של Wine, Proton, ו-CrossOver בתיקיות הבאות:",
       "part2": "בשביל מקומות אחרים, השתמשו בsymbolic link לאחד מהתיקיות האלה"
     },
-    "custom_themes_wiki": "בדקו את הויקי לפרטים נוספים על הוספת ערכות נושא מותאמים אישית. לחצו כאן.",
     "dxvk": "DXVK הוא שכבת תרגום מבוססת Vulkan עבור משחקים עם DirectX מגרסה 9, 10 ו-11. הדלקה יכולה לשפר תאימות. עשוי לגרום לבעיות במיוחד עבור משחקי DirectX ישנים יותר.",
     "amdfsr": "ה-FSR של AMD מסייע להגביר את קצב הפריימים (framerate/fps) על ידי הגדלת רזולוציות נמוכות יותר במצב מסך מלא. איכות התמונה היא בין 5 ל1 במחיר של פגיעה קלה בביצועים. הדלקה יכולה לשפר את הביצועים.",
     "esync": "מטרת Esync היא להפחית את השימוש במעבד של winesever במשחקים הקשים על המעבד. הדלקה יכולה לשפר את הביצועים.",
@@ -615,7 +602,6 @@
       "valid_codes": "קודי שפה חוקיים תלויים במשחק."
     },
     "gamemode": "Feral GameMode מחיל שינויים אוטומטיים וזמניים על המערכת בעת הפעלת משחקים. הפעלה עשויה לשפר את הביצועים.",
-    "general": "סנכרנו עם EGL אם יש לכם התקנה תקינה של Epic Games Launcher במקום אחר ואתם רוצים לייבא את המשחקים שלכם כדי להימנע מהורדתם שוב.",
     "preferSystemLibs": "גרסאות Wine מותאמות אישית (Wine-GE, Wine-Lutris) באות עם הספריות שלהן. על ידי הפעלת אפשרות זו, wine יתעלם מהספריות הנשלחות הללו, ויטען ספריות מערכת במקום זאת. אזהרה! בעיות עלולות להתרחש אם הספריות שיש בהן תלות לא קיימות.",
     "primerun": "השתמשו בכרטיס גרפי (מאיץ גרפי) ייעודי כדי לרנדר את המשחק במערכות עם כמה כרטיסים גרפיים. נחוץ רק במחשבים ניידים למשחקים או במחשבים שולחניים המשתמשים ב-GPU ללא ראש לעיבוד (NVIDIA Optimus, AMD CrossFire)",
     "steam_path": {
@@ -640,7 +626,6 @@
       "downloadManager": "",
       "wineManager": "",
       "library": "",
-      "customThemesPath": "",
       "accessibility": "",
       "login": ""
     },
@@ -650,7 +635,6 @@
     },
     "download_proton_steam": "",
     "wine-hdr": "",
-    "disablePlaytimeSync": "",
     "WoW64": "",
     "wine-wayland": "",
     "advertiseAvxForRosetta": "",
@@ -659,10 +643,7 @@
     }
   },
   "Library": "ספריה",
-  "message": {
-    "sync": "סנכרון הסתיים",
-    "unsync": "ביטול סנכרון הסתיים"
-  },
+  "message": {},
   "Open": "פתוח",
   "options": {
     "advanced": {
@@ -709,9 +690,7 @@
     "alt-gogdl-bin": "משתמש בגרסה המובנה של GOGDL...",
     "alt-legendary-bin": "משתמש בגרסה המובנית של Legendary...",
     "alt-nile-bin": "משתמש בגרסה המובנית של Nile...",
-    "custom_themes_path": "בחרו מיקום שבו לחפש את קבצי הCSS המותאמים אישית",
     "dxvkfpsvalue": "ערך שלם חיובי (למשל 30, 60,...)",
-    "egs-prefix": "הPrefix שבו מותקן EGS",
     "prefered_language": "קוד דו-תווי (כגון: \"en\" או \"fr\")"
   },
   "progress": "התקדמות",
@@ -809,9 +788,6 @@
     "legacy_warning": "",
     "offline": {
       "warning": ""
-    },
-    "custom_css": {
-      "title": ""
     },
     "steamgriddb": {
       "apikey": {

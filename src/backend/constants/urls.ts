@@ -10,5 +10,3 @@ export const supportURL =
 export const wikiLink = 'https://github.com/anomalyco/relic/wiki'
 export const weblateUrl = 'https://hosted.weblate.org/projects/relic'
 export const wineprefixFAQ = 'https://wiki.winehq.org/FAQ#Wineprefixes'
-export const customThemesWikiLink =
-  'https://github.com/anomalyco/relic/wiki/Custom-Themes'

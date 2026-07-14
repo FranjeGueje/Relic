@@ -8,7 +8,6 @@
       "message": "Heroic mellemlager ryddet.",
       "title": "Mellemlager ryddet"
     },
-    "choose-egs-prefix": "Vælg Præfiks hvor EGS er installeret",
     "choose-gogdl-binary": "Vælg GOGDL Binær (kræver genstart)",
     "choose-legendary-binary": "Vælg Legendary binær",
     "customWine": "Vælg Wine- eller Proton-binæren",
@@ -259,9 +258,7 @@
       "in_game_config": "Ikke alle spil understøtter denne konfiguration, nogle har sprogindstilling i spillet.",
       "valid_codes": "Gyldige sprogkoder er spilafhængige."
     },
-    "general": "Synkroniser med EGL, hvis du har en fungerende installation af Epic Games Launcher et andet sted og vil importere dine spil for at undgå at downloade dem igen.",
     "primerun": "Brug dedikeret grafikkort til at gengive spil på multi-GPU-systemer. Kun nødvendig på bærbare gaming-computere eller stationære computere, der bruger en hovedløs GPU til gengivelse (NVIDIA Optimus, AMD CrossFire)",
-    "custom_themes_wiki": "Tjek Wiki for flere detaljer om tilføjelse af brugerdefinerede temaer. Klik her.",
     "steam_path": {
       "info": "Denne sti lader Heroic bestemme, hvilken version af Proton Steam bruger, til at tilføje ikke-Steam-spil til Steam."
     },
@@ -276,7 +273,6 @@
       "wineManager": "Wine manager"
     },
     "content": {
-      "customThemesPath": "Tjek vores wiki.",
       "accessibility": "Viser tilgængelighedsindstillinger.",
       "downloadManager": "Viser nuværende og tidligere downloads.",
       "defaultInstallPath": "Dette er den standardsti, der er forudvalgt ved installation af spil.",
@@ -291,7 +287,6 @@
       "close": "Luk Hjælp"
     },
     "advertiseAvxForRosetta": "Aktiverer understøttelse af AVX-instruktionssæt, når Windows-spil køres via Rosetta på Apple Silicon Mac-computere. Dette kan være nødvendigt for nogle spil såsom Death Stranding, der kræver AVX-understøttelse.",
-    "disablePlaytimeSync": "Deaktiverer synkronisering af spilletid med den pågældende butiks servere (i øjeblikket understøttes kun GOG)",
     "download_proton_steam": "Når denne funktion er aktiveret, downloades GE-Proton direkte til Steam-kompatibilitetsværktøjernes mappe i stedet for den standard Heroic-sti. Den bruger den Steam-sti, der er angivet i indstillingen 'Standard Steam-sti' ovenfor.",
     "dxfpslimit": "Indstiller en begrænsning for billedfrekvensen for DirectX-spil (9-12)",
     "dxvknvapi": "DXVK-NVAPI er en implementering af NVAPI, der er bygget oven på DXVK og Linux' lokale NVAPI, og som gør det muligt at bruge DLSS på Nvidia-GPU'er.",
@@ -435,10 +430,8 @@
     "start-in-tray": "Start minimeret",
     "steamruntime": "Brug Steam Runtime",
     "winecrossoverbottle": "CrossOver flaske",
-    "defaultWinePrefix": "Indstil mappe til nye Wine Præfikser",
     "disable_controller": "Deaktiver heroisk navigation ved hjælp af controller",
     "download-no-https": "Hent spil uden HTTPS (nyttigt til CDN'er, f.eks. LanCache)",
-    "egs-sync": "Synkroniser med installerede episke spil",
     "enableFSRHack": "Aktiver FSR Hack (vinversion skal understøtte det)",
     "eosOverlay": {
       "cancelInstall": "Afbestille",
@@ -462,7 +455,6 @@
     },
     "wineprefix": "WinePræfiks-mappe",
     "crossover-version": "Crossover/Wine version",
-    "darktray": "Brug mørkt bakkeikon",
     "default-install-path": "Standard installationssti",
     "default-steam-path": "Standard Steam-sti",
     "esync": "Aktiver Esync",
@@ -472,8 +464,6 @@
     "resizableBar": "Aktiver BAR, der kan ændres størrelse (kun NVIDIA RTX 30xx)",
     "wineversion": "Wine Version",
     "autosync": "Autosync gemmer",
-    "adddesktopshortcuts": "Tilføj skrivebordsgenveje automatisk",
-    "addgamestostartmenu": "Tilføj spil til startmenuen automatisk",
     "alt-gogdl-bin": "Vælg en alternativ GOGDL-binær til brug",
     "alt-legendary-bin": "Vælg en alternativ legendarisk binær",
     "audiofix": "Lydfiks (Pulse Audio Latency)",
@@ -484,18 +474,14 @@
     "library_top_section": "Bibliotekets øverste sektion",
     "maxRecentGames": "Spillede for nylig for at vise",
     "maxworkers": "Maksimalt antal arbejdere ved download",
-    "minimize-on-launch": "Minimer heroisk efter spilstart",
     "offlinemode": "Kør spil offline",
     "prefered_language": "Foretrukken sprog (sprogkode)",
-    "checkForUpdatesOnStartup": "Søg efter heroiske opdateringer ved opstart",
     "addgamestosteam": "Tilføj spil til Steam automatisk",
-    "custom_themes_path": "Sti til brugerdefinerede temaer",
     "hideChangelogsOnStartup": "Vis ikke ændringslogs ved opstart",
     "dxvkfpslimit": "Begræns FPS (DX9, 10 og 11)",
     "autoUpdateGames": "Opdater spil automatisk",
     "ignoreGameUpdates": "Ignorer spilopdateringer",
     "disable_logs": "Deaktiver logfiler",
-    "addgamestoapplications": "Føj spil til applikationer automatisk",
     "showMetalOverlay": "Vis statistikoverlejring",
     "alt-nile-bin": "Vælg en alternativ Nile Binær",
     "advertiseAvxForRosetta": "Annoncér AVX for Rosetta",
@@ -514,7 +500,6 @@
     "custom_css": {
       "warning": "Advarsel: Dette gælder for hele frontend. Det betyder, at den forkerte stil kan gøre Heroic ubrugelig. Hvis det er nødvendigt, kan indstillingen ændres manuelt i `~/.config/heroic/config.json`. Kopier IKKE stilarter fra kilder, du ikke stoler på."
     },
-    "disablePlaytimeSync": "Deaktiver synkronisering af spilletid",
     "disableUMU": "Deaktiver umu",
     "download-proton-steam": "Download GE-Proton til Steam-mappen",
     "dxfpslimit": "Begræns FPS på DirectX-spil",
@@ -653,9 +638,6 @@
         "help": "Dette vil fjerne alle indstillinger og caching, men vil ikke fjerne dine installerede spil eller dine Epic-loginoplysninger. Bærbare versioner (AppImage, WinPortable, ...) af Heroic skal genstartes manuelt bagefter."
       }
     },
-    "custom_css": {
-      "title": "Tilpasset CSS-stil"
-    },
     "experimental_features": {
       "title": "Eksperimentelle funktioner"
     },
@@ -745,10 +727,7 @@
     "default": "Indlæser",
     "website": "Indlæser hjemmeside"
   },
-  "message": {
-    "unsync": "Afsynkronisering fuldført",
-    "sync": "Synkronisering fuldført"
-  },
+  "message": {},
   "options": {
     "advanced": {
       "placeHolderValue": "F.eks.: Sti/Til/Ekstrafiler",
@@ -879,8 +858,6 @@
     "prefered_language": "2-tegn kode (dvs.: \"en\" eller \"fr\")",
     "alt-gogdl-bin": "Brug af indbygget GOGDL binær...",
     "alt-legendary-bin": "Bruger indbygget Legendary binær...",
-    "egs-prefix": "Præfiks hvor EGS er installeret",
-    "custom_themes_path": "Vælg stien for at søge efter tilpassede CSS-filer",
     "dxvkfpsvalue": "Positiv heltalsværdi (f.eks. 30, 60, ...)",
     "alt-nile-bin": "Brug af indbygget Nile binær..."
   },

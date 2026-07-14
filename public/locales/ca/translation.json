@@ -16,7 +16,6 @@
       "title": "S'ha buidat la memòria cau"
     },
     "choose": "Tria",
-    "choose-egs-prefix": "Tria el prefix on l'EGS es troba instal·lat",
     "choose-gogdl-binary": "Selecciona el binari del GOGDL (cal reiniciar)",
     "choose-legendary-binary": "Selecciona el binari del Legendary",
     "customWine": "Selecciona el binari del Wine o del Proton",
@@ -283,7 +282,6 @@
   },
   "help": {
     "amdfsr": "L'FSR d'AMD ajuda a augmentar els fotogrames per segon emprant resolucions més baixes en el mode de pantalla completa i després escalant-les. La qualitat d'imatge augmenta de 5 a 1 a costa d'un petit increment de rendiment. Si s'activa, podria millorar el rendiment.",
-    "custom_themes_wiki": "Llegeix la Wiki per a més detalls sobre com afegir temes personalitzats. Fes clic aquí.",
     "dxvk": "DXVK és una capa de traducció basada en Vulkan per a jocs que emprin DirectX 9, 10 i 11. Si s'activa, podria millorar la compatibilitat. Pot causar problemes, especialment per als jocs que facin servir versions del DirectX més antigues.",
     "dxvkfpslimit": "Estableix un límit als FPS per als jocs DXVK",
     "esync": "Esync té com a objectiu reduir sobrecàrregues del Wineserver en jocs intensius en CPU. Si s'activa, podria millorar el rendiment.",
@@ -294,7 +292,6 @@
       "valid_codes": "Els codis de llengua vàlids depenen del joc."
     },
     "gamemode": "Feral GameMode aplica ajustaments automàtics i temporals al sistema quan s'executen jocs. Si s'activa, podria millorar el rendiment.",
-    "general": "Sincronitza amb l'EGL si ja tens instal·lat el llançador de jocs Heroic en qualsevol altre lloc i vols importar els jocs sense haver de baixar-los de nou.",
     "other": {
       "part4": "Utilitza els ",
       "part5": "arguments del joc",
@@ -320,7 +317,6 @@
     },
     "disable_logs": "Activa aquesta opció per a desactivar la majoria de les escriptures als fitxers de registre (la informació crítica sempre es registra). Assegura't de desactivar-la abans d'informar de qualsevol problema.",
     "dxvknvapi": "DXVK-NVAPI és una implementació de NVAPI construïda sobre DXVK i Linux natiu NVAPI. Permet l'ús de DLSS en les GPU de Nvidia.",
-    "disablePlaytimeSync": "Desactiva la sincronització del temps de joc amb els servidors d'una botiga determinada. Actualment, només ho suporta el GOG.",
     "title": {
       "accessibility": "Accessibilitat",
       "login": "Inici de sessió",
@@ -337,7 +333,6 @@
       "settingsDefault": "Mostra tots els paràmetres de l'Heroic i els predefinits dels jocs.",
       "settingsGame": "Mostra tots els paràmetres d'un joc.",
       "accessibility": "Mostra la configuració d'accessibilitat.",
-      "customThemesPath": "Consulta la nostra wiki.",
       "defaultInstallPath": "Aquesta és la ruta predeterminada per a instal·lar jocs.",
       "downloadManager": "Mostra les baixades actuals i antigues.",
       "wineManager": "Instal·la diverses versions del Wine, Proton, Crossover, etc.",
@@ -418,10 +413,7 @@
     "old-mac": "La vostra versió del macOS és {{version}}. Cal el macOS 12 o posterior per a iniciar la sessió.",
     "zoom": "Inici de sessió al Zoom"
   },
-  "message": {
-    "sync": "S'ha completat la sincronització",
-    "unsync": "S'ha completat la dessincronització"
-  },
+  "message": {},
   "notify": {
     "error": {
       "move": "Error en moure el joc",
@@ -524,9 +516,7 @@
   "placeholder": {
     "alt-gogdl-bin": "S'està utilitzant el binari integrat del GOGDL...",
     "alt-legendary-bin": "S'està utilitzant el binari integrat del Legendary...",
-    "custom_themes_path": "Selecciona la ruta per a cercar fitxers CSS personalitzats",
     "dxvkfpsvalue": "Valor enter positiu (com ara 30, 60, ...)",
-    "egs-prefix": "Prefix on l'EGS està instal·lat",
     "prefered_language": "Codi de dos o quatre caràcters (p. ex. «fr» o «pt-BR»)",
     "alt-nile-bin": "S'utilitza el binari integrat del Nile..."
   },
@@ -554,8 +544,6 @@
   "Recent": "Jugats fa poc",
   "search": "Cerca jocs",
   "setting": {
-    "adddesktopshortcuts": "Afegeix les dreceres a l'escriptori automàticament",
-    "addgamestostartmenu": "Afegeix els jocs al menú d'inici automàticament",
     "addgamestosteam": "Afegeix els jocs al Steam automàticament",
     "alt-gogdl-bin": "Tria un binari alternatiu del GOGDL",
     "alt-legendary-bin": "Tria un binari alternatiu del Legendary",
@@ -563,18 +551,13 @@
     "autosync": "Sincronitza automàticament les partides desades",
     "autovkd3d": "Instal·la/Actualitza el VKD3D al prefix automàticament",
     "change-target-exe": "Selecciona un EXE alternatiu a executar",
-    "checkForUpdatesOnStartup": "Comprova si hi ha actualitzacions de l'Heroic a l'inici",
     "crossover-version": "Versió híbrida/Wine",
-    "custom_themes_path": "Ruta dels temes personalitzats",
     "customWineProton": "Rutes personalitzades del Wine i del Proton",
-    "darktray": "Utilitza la icona fosca a la safata",
     "default-install-path": "Ruta d'instal·lació predefinida",
     "default-steam-path": "Ruta predefinida del Steam",
-    "defaultWinePrefix": "Directori de prefixos Wine nous",
     "disable_controller": "Desactiva la navegació de l'Heroic amb el controlador",
     "download-no-https": "Baixa jocs sense HTTPS (útil per a CDNs com ara LanCache)",
     "dxvkfpslimit": "Límit de FPS (DX9, 10 i 11)",
-    "egs-sync": "Sincronitza amb l'Epic Games instal·lat",
     "enableFSRHack": "Activa el FSR Hack (cal que la versió del Wine en sigui compatible)",
     "eosOverlay": {
       "cancelInstall": "Cancel·la",
@@ -666,7 +649,6 @@
     },
     "maxRecentGames": "Jugats fa poc a mostrar",
     "maxworkers": "Nombre màxim de processos en baixar",
-    "minimize-on-launch": "Minimitza l'Heroic després d'executar un joc",
     "offlinemode": "Executa el joc sense connexió",
     "prefered_language": "Idioma preferit (codi de l'idioma)",
     "preferSystemLibs": "Dóna preferència a les biblioteques del sistema",
@@ -690,10 +672,8 @@
     "ignoreGameUpdates": "Ignora les actualitzacions del joc",
     "disable_logs": "Desactiva els registres",
     "showMetalOverlay": "Mostra la superposició d'estadístiques",
-    "addgamestoapplications": "Afegeix jocs a Aplicacions automàticament",
     "alt-nile-bin": "Tria un binari alternatiu del Nile",
     "autodxvknvapi": "Instal·la/Actualitza el DXVK-NVAPI al prefix automàticament",
-    "disablePlaytimeSync": "Desactiva la sincronització del temps de reproducció",
     "experimental_features": {
       "enableNewDesign": "Disseny nou",
       "automaticWinetricksFixes": "Aplica les correccions conegudes de manera automàtica",
@@ -853,9 +833,6 @@
       "resetHeroic": {
         "help": "Se suprimirà tota la configuració i els continguts de la memòria cau, però no se suprimiran els jocs instal·lats de l'Epic o les seves credencials. Cal reiniciar manualment les versions portables (AppImage, WinPortable...) de l'Heroic."
       }
-    },
-    "custom_css": {
-      "title": "Estil CSS personalitzat"
     },
     "launchOptions": "Opcions d'execució",
     "legacy_warning": "Atenció: La majoria dels paràmetres d'aquesta pestanya estan obsolets i podrien no funcionar.",

@@ -70,7 +70,6 @@ interface SyncIPCFunctions {
   openWebviewPage: (url: string) => void
   openWikiLink: () => void
   openSidInfoPage: () => void
-  openCustomThemesWiki: () => void
   showConfigFileInFolder: (appName: string) => void
   removeFolder: ([path, folderName]: [string, string]) => void
   clearCache: (showDialog?: boolean, fromVersionChange?: boolean) => void
@@ -226,7 +225,6 @@ interface AsyncIPCFunctions {
   importGame: (args: ImportGameArgs) => StatusPromise
   updateGame: (args: UpdateParams) => Promise<void>
   changeInstallPath: (args: MoveGameArgs) => Promise<void>
-  egsSync: (arg: string) => Promise<string>
   syncGOGSaves: (
     gogSaves: GOGCloudSavesLocation[],
     appname: string,
@@ -238,8 +236,6 @@ interface AsyncIPCFunctions {
   getShellPath: (path: string) => Promise<string>
   getWebviewPreloadPath: () => string
   clipboardReadText: () => string
-  getCustomThemes: () => Promise<string[]>
-  getThemeCSS: (theme: string) => Promise<string>
   isNative: (args: { appName: string; runner: Runner }) => boolean
   getLogContent: (args: GetLogFileArgs) => string
   installWineVersion: (release: WineVersionInfo) => Promise<void>
@@ -337,7 +333,6 @@ interface AsyncIPCFunctions {
   ) => Promise<false | [string, UploadedLogData]>
   deleteUploadedLogFile: (url: string) => Promise<boolean>
   getUploadedLogFiles: () => Promise<Record<string, UploadedLogData>>
-  getCustomCSS: () => Promise<string>
   isIntelMac: () => boolean
   'steamgriddb.hasApiKey': () => Promise<boolean>
   'steamgriddb.setApiKey': (key: string) => Promise<void>

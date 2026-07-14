@@ -21,7 +21,6 @@ import {
   AltLegendaryBin,
   AltNileBin,
   ClearCache,
-  CustomCSS,
   DisableLogs,
   DownloadNoHTTPS,
   ExperimentalFeatures,
@@ -313,11 +312,6 @@ export default function AdvancedSetting() {
 
       <div className="advancedSetting">
         <ExperimentalFeatures />
-        <hr />
-      </div>
-
-      <div className="advancedSetting">
-        <CustomCSS />
         <hr />
       </div>
 

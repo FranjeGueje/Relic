@@ -16,7 +16,6 @@
       "title": "Cache rensades"
     },
     "choose": "Välj",
-    "choose-egs-prefix": "Ange prefix med befintlig EGS installation",
     "choose-gogdl-binary": "Ange GOGDL-programfil (omstart krävs)",
     "choose-legendary-binary": "Ange Legendary programfil",
     "customWine": "Ange Wine/Proton version",
@@ -275,7 +274,6 @@
   },
   "help": {
     "amdfsr": "AMD's FSR hjälper till att öka bildhastigheten genom att skala upp lägre upplösningar i helskärmsläge. Bildkvaliteten ökar från 5 mot 1 till priset av en liten påverkan av prestandan. Aktivering kan förbättra prestandan.",
-    "custom_themes_wiki": "Kontrollera Wiki för mer information om att lägga till anpassade teman. Klicka här.",
     "dxvk": "DXVK är ett Vulkan-baserat översättningslager för DirectX 9, 10 och 11 spel. Aktivering kan förbättra kompatibiliteten. Kan orsaka problem särskilt för äldre DirectX-spel.",
     "dxvkfpslimit": "Ställer in ett bildhastighetstak för DXVK spel",
     "esync": "Esync syftar till att minska wineserver overhead i CPU-intensiva spel. Aktivering kan förbättra prestandan.",
@@ -286,7 +284,6 @@
       "valid_codes": "Giltiga språkkoder beror på spelet."
     },
     "gamemode": "Feral GameMode tillämpar automatiska och tillfälliga justeringar av systemet när spel körs. Aktivering kan förbättra prestandan.",
-    "general": "Synkronisera med EGS om du har en fungerande Epic Games Launcher installation och vill importera spel istället för att ladda ner dem igen.",
     "other": {
       "part4": "Använd ",
       "part5": "Spelspecifika argument",
@@ -312,7 +309,6 @@
     },
     "disable_logs": "Slå den här kryssrutan PÅ för att inaktivera de flesta skrivningar till loggfiler (kritisk information loggas alltid). Se till att stänga AV den här inställningen innan du rapporterar något problem.",
     "dxvknvapi": "DXVK-NVAPI är en implementering av NVAPI byggt ovanpå DXVK och Linux-native NVAPI, det tillåter användning av DLSS på Nvidia GPU:er.",
-    "disablePlaytimeSync": "Inaktiverar speltidssynkronisering med givna butiksservrar (för närvarande stöds endast GOG)",
     "title": {
       "accessibility": "Handikappsanpassning",
       "login": "Login",
@@ -328,7 +324,6 @@
       "downloadManager": "Visar nuvarande och tidigare nedladdningar.",
       "wineManager": "Installera olika versioner av Wine, Proton, Crossover, etc.",
       "library": "Visar alla ägda spel.",
-      "customThemesPath": "Kolla vår wiki.",
       "accessibility": "Visar tillgänglighetsinställningar.",
       "login": "Logga in i olika butiker."
     },
@@ -408,10 +403,7 @@
     "old-mac": "Din macOS version är {{version}}. macOS 12 eller senare krävs för att logga in.",
     "zoom": "Zoom inloggning"
   },
-  "message": {
-    "sync": "Synkronisering slutförd",
-    "unsync": "Avbryt synkronisering slutfört"
-  },
+  "message": {},
   "notify": {
     "error": {
       "move": "Problem vid flytt av spel",
@@ -514,9 +506,7 @@
   "placeholder": {
     "alt-gogdl-bin": "Använder inbyggd GOGDL version...",
     "alt-legendary-bin": "Använder inbyggd Legendary version...",
-    "custom_themes_path": "Välj sökvägen för att leta efter anpassade CSS-filer",
     "dxvkfpsvalue": "Positivt heltalsvärde (t.ex. 30, 60, ...)",
-    "egs-prefix": "Prefix för befintlig EGS installation",
     "prefered_language": "Tvåställig eller fyrställig bokstavskod (t.ex: \"fr\" eller \"pt-BR\")",
     "alt-nile-bin": "Använder inbyggd Nile binär..."
   },
@@ -544,8 +534,6 @@
   "Recent": "Nyligen spelat",
   "search": "Sök efter spel",
   "setting": {
-    "adddesktopshortcuts": "Skapa skrivbordsgenvägar automatiskt",
-    "addgamestostartmenu": "Lägg till spel i startmenyn automatiskt",
     "addgamestosteam": "Lägg till spel till Steam automatiskt",
     "alt-gogdl-bin": "Ange alternativ GOGDL version (omstart krävs)",
     "alt-legendary-bin": "Ange alternativ Legendary version",
@@ -553,18 +541,13 @@
     "autosync": "Synkronisera sparfiler automatiskt",
     "autovkd3d": "Installera/uppdatera VKD3D i prefix automatiskt",
     "change-target-exe": "Ange alternativ EXE-fil att köra",
-    "checkForUpdatesOnStartup": "Sök efter Heroic-uppdateringar vid uppstart",
     "crossover-version": "Crossover/Wine version",
-    "custom_themes_path": "Sökväg till anpassade teman",
     "customWineProton": "Anpassad Wine/Proton sökväg",
-    "darktray": "Använd mörk ikon i systemfältet",
     "default-install-path": "Standard installationssökväg",
     "default-steam-path": "Standard Steam sökväg",
-    "defaultWinePrefix": "Ange sökväg för nya Wine-prefix",
     "disable_controller": "Deaktivera navigering via handkontroll",
     "download-no-https": "Ladda ner spel utan HTTPS (användbart till CDNs t.ex. LanCache)",
     "dxvkfpslimit": "Begränsa FPS (DX9, 10 and 11)",
-    "egs-sync": "Synkronisera med installerade Epic spel",
     "enableFSRHack": "Aktivera FSR Hack (Wine-versionen måste stödja det)",
     "eosOverlay": {
       "cancelInstall": "Avbryt",
@@ -656,7 +639,6 @@
     },
     "maxRecentGames": "Visa nyligen spelat",
     "maxworkers": "Maximalt antal samtida nedladdningar",
-    "minimize-on-launch": "Minimera Heroic efter spelstart",
     "offlinemode": "Kör spelet offline",
     "prefered_language": "Föredraget språk (Språkkod)",
     "preferSystemLibs": "Föredra systemets bibliotek",
@@ -679,11 +661,9 @@
     "ignoreGameUpdates": "Ignorera speluppdateringar",
     "autoUpdateGames": "Uppdatera spel automatiskt",
     "disable_logs": "Inaktivera loggar",
-    "addgamestoapplications": "Lägg till spel till applikationer automatiskt",
     "showMetalOverlay": "Visa statistiköverlägg",
     "alt-nile-bin": "Välj en alternativ Nile Binär",
     "autodxvknvapi": "Installera/uppdatera DXVK-NVAPI i prefix automatiskt",
-    "disablePlaytimeSync": "Inaktivera speltidssynkronisering",
     "experimental_features": {
       "enableNewDesign": "Ny design",
       "enableHelp": "Hjälp komponent",
@@ -839,9 +819,6 @@
       "resetHeroic": {
         "help": "Detta tar bort alla inställningar och cachelagring men tar inte bort dina installerade spel eller dina Epic-uppgifter. Portabla versioner (AppImage, WinPortable, ...) av heroic måste startas om manuellt efteråt."
       }
-    },
-    "custom_css": {
-      "title": "Anpassad CSS Stil"
     },
     "launchOptions": "Uppstartsalternativ",
     "legacy_warning": "Varning: Inställningarna på den här fliken är mestadels föråldrade och kanske inte fungerar alls.",

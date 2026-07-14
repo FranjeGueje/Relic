@@ -3,23 +3,16 @@ import LanguageSelector from 'frontend/components/UI/LanguageSelector'
 import { ThemeSelector } from 'frontend/components/UI/ThemeSelector'
 import {
   AutoUpdateGames,
-  CheckUpdatesOnStartup,
   DefaultInstallPath,
   DefaultSteamPath,
   DisableController,
-  EgsSettings,
   HideChangelogOnStartup,
   LibraryTopSection,
   MaxRecentGames,
   MaxWorkers,
-  MinimizeOnGameLaunch,
   Shortcuts,
   StartInConsoleMode,
-  TraySettings,
-  UseDarkTrayIcon,
-  UseFramelessWindow,
-  WinePrefixesBasePath,
-  PlaytimeSync
+  TraySettings
 } from '../../components'
 
 export default function GeneralSettings() {
@@ -35,13 +28,7 @@ export default function GeneralSettings() {
 
       <DefaultInstallPath />
 
-      <WinePrefixesBasePath />
-
       <DefaultSteamPath />
-
-      <EgsSettings />
-
-      <CheckUpdatesOnStartup />
 
       <AutoUpdateGames />
 
@@ -51,15 +38,7 @@ export default function GeneralSettings() {
 
       <TraySettings />
 
-      <MinimizeOnGameLaunch />
-
-      <UseDarkTrayIcon />
-
-      <UseFramelessWindow />
-
       <Shortcuts />
-
-      <PlaytimeSync />
 
       <DisableController />
 

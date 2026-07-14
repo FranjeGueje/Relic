@@ -16,7 +16,6 @@
       "title": "Caché borrada"
     },
     "choose": "Escoller",
-    "choose-egs-prefix": "Seleccionar o prefixo onde se instalará EGS",
     "choose-gogdl-binary": "Seleccionar binario GOGDL (precisa reinicio)",
     "choose-legendary-binary": "Seleccionar o binario Legendary",
     "customWine": "Selecciona o binario de Wine ou Proton",
@@ -282,7 +281,6 @@
   },
   "help": {
     "amdfsr": "O FSR de AMD axuda a mellorar os fotogramas por segundo mediante o reescalado desde resolucións máis baixas no modo de pantalla completa. A calidade da imaxe aumenta desde 5 ata 1 a consta dun lixeiro impacto no rendemento. Activalo pode aumentar o rendemento.",
-    "custom_themes_wiki": "Revisa a Wiki para máis información sobre como engadir temas personalizados. Fai clic aquí.",
     "dxvk": "DXVK é unha capa de tradución baseada en Vulkan para xogos de DirectX 9, 10 e 11. Habilitalo pode mellorar a compatibilidade. Pode causar problemas, especialmente en xogos DirectX máis antigos.",
     "dxvkfpslimit": "Sets a frame rate cap for DXVK games",
     "esync": "Esync ten como obxectivo reducir a sobrecarga de wineserver en xogos intensivos na CPU. Activalo pode mellorar o rendemento.",
@@ -293,7 +291,6 @@
       "valid_codes": "Os códigos de lingua válidos dependen do xogo."
     },
     "gamemode": "Feral GameMode aplica cambios automáticos e temporais ao sistema mentres se executan os xogos. Activalo pode mellorar o rendemento.",
-    "general": "Sincronizar con EGS no caso de ter unha instalación funcional de Epic Games Launcher noutro lugar e desexe importar os seus xogos para evitar descargalos novamente.",
     "other": {
       "part4": "Usar os ",
       "part5": "Argumentos do xogo",
@@ -334,7 +331,6 @@
     },
     "content": {
       "accessibility": "Amosar os axustes de accesibilidade.",
-      "customThemesPath": "Bótalle un vistazo á nosa wiki.",
       "defaultInstallPath": "Esta é a localización por defecto para instalar xogos.",
       "downloadManager": "Amosa as descargas actuais e as pasadas.",
       "library": "Amosa todos os xogos.",
@@ -344,7 +340,6 @@
       "wineManager": "Instala diferentes versións de Wine, Protonm Crossover, etc."
     },
     "advertiseAvxForRosetta": "Activa o soporte do set de instrucións AVX cando se executan xogos de Windows a través de Rosetta en Macs de Apple Silicon. Isto pode ser necesario en algúns xogos como Death Stranding que necesitan soporte de AVX.",
-    "disablePlaytimeSync": "Desactiva a sincronización do tempo de xogo co servidor da tenda correspondente (actualmente só GOG está soportado)",
     "download_proton_steam": "Se se activa, GE-Proton descargarase directamente no cartafol das ferramentas de compatibilidade de Steam en lugar do directorio por defecto de Heroic. Usará a ruta de Steam da configuración ''Ruta de Steam por defecto\" enriba.",
     "dxvknvapi": "DXVK-NVAPI é unha implementación de NVAPI construída sobre DXVK e a NVAPI nativa de Linux, permitindo o uso de DLSS en GPUs de Nvidia.",
     "wine-hdr": "HDR mellora as cores proporcionando resaltes máis brillantes e contrastes máis profundos. Para que HDR funcione, tanto a pantalla como o xogo deben ser compatibles.",
@@ -415,10 +410,7 @@
     "old-mac": "A túa versión de macOS é {{version}}. Requírese macOS 12 ou máis novo para iniciar sesión.",
     "zoom": "Inicio de sesión en Zoom"
   },
-  "message": {
-    "sync": "Sincronización completa",
-    "unsync": "Desincronización completa"
-  },
+  "message": {},
   "notify": {
     "error": {
       "move": "Erro ao mover o xogo",
@@ -521,9 +513,7 @@
   "placeholder": {
     "alt-gogdl-bin": "Utilizando o binario integrado de GOGDL...",
     "alt-legendary-bin": "Usando o binario de Legendary embebeido...",
-    "custom_themes_path": "Selecciona a ruta para buscar arquivos CSS personalizados",
     "dxvkfpsvalue": "Valor enteiro positivo (ex. 30, 60, ...)",
-    "egs-prefix": "Prefixo onde está instalado EGS",
     "prefered_language": "Código de dous caracteres (ex.: \"en\", \"fr\" ou \"gl\")",
     "alt-nile-bin": "Usando o binario incorporado de Nile..."
   },
@@ -551,8 +541,6 @@
   "Recent": "Xogado recentemente",
   "search": "Buscar xogos",
   "setting": {
-    "adddesktopshortcuts": "Engadir atallos de escritorio automaticamente",
-    "addgamestostartmenu": "Engadir xogos ao menú de inicio automaticamente",
     "addgamestosteam": "Engadir os xogos a Steam automaticamente",
     "alt-gogdl-bin": "Selecciona un binario de GOGDL alternativo a usar",
     "alt-legendary-bin": "Seleccione o binario de Legendary alternativo",
@@ -560,18 +548,13 @@
     "autosync": "Autosincronizar partidas gardadas",
     "autovkd3d": "Autoinstalar/actualizar VKD3D no prefixo",
     "change-target-exe": "Seleccionar un EXE alternativo a executar",
-    "checkForUpdatesOnStartup": "Comproba se hai actualizacións de Heroic ao inicio",
     "crossover-version": "Versión de Crossover/Wine",
-    "custom_themes_path": "Ruta dos temas personalizados",
     "customWineProton": "Rutas personalizadas de Wine e Proton",
-    "darktray": "Usar icona escura na bandexa do sistema",
     "default-install-path": "Ruta de instalación predeterminada",
     "default-steam-path": "Ruta de Steam por defecto",
-    "defaultWinePrefix": "Estabelecer cartafol para os prefixos de Wine",
     "disable_controller": "Desactivar a navegación de Heroic co controlador",
     "download-no-https": "Descargar xogos sen HTTPS (útil para CDNs, ex. LanCache)",
     "dxvkfpslimit": "Limit FPS (DX9, 10 and 11)",
-    "egs-sync": "Sincronizar cos xogos instalados de Epic",
     "enableFSRHack": "Activar o hack de FSR (A versión de Wine debe soportalo)",
     "eosOverlay": {
       "cancelInstall": "Cancelar",
@@ -663,7 +646,6 @@
     },
     "maxRecentGames": "Xogados recentemente para mostrar",
     "maxworkers": "Número máximo de descargas",
-    "minimize-on-launch": "Minimizar Heroic ao lanzar un xogo",
     "offlinemode": "Executar xogo sen conexión",
     "prefered_language": "Lingua preferida (código de idioma)",
     "preferSystemLibs": "Preferir librerías do sistema",
@@ -687,7 +669,6 @@
     "autoUpdateGames": "Actualiza os xogos automaticamente",
     "disable_logs": "Desactivar rexistros",
     "showMetalOverlay": "Amosar a superposición de estatísticas",
-    "addgamestoapplications": "Engade os xogos a Aplicacións automaticamente",
     "alt-nile-bin": "Escolle un binario alternativo de Nile",
     "autodxvknvapi": "Autoinstalar/actualizar DXVK-NVAPI no prefixo",
     "msync": "Activar Msync",
@@ -716,7 +697,6 @@
     "custom_css": {
       "warning": "Advertencia: isto aplícase a todo o frontend. Isto significa que un estilo incorrecto podería facer Heroic inusable. En caso de ser necesario, a configuración pódese cambiar manualmente en `~/.config/heroic/config.json`. NON copies estilos de fontes non confiables."
     },
-    "disablePlaytimeSync": "Desactivar a sincronización do tempo de xogo",
     "disableUMU": "Desactivar umu",
     "download-proton-steam": "Descargar GE-Proton no cartafol de Steam",
     "dxfpslimit": "Limitar FPS en xogos de DirectX",
@@ -847,9 +827,6 @@
     },
     "experimental_features": {
       "title": "Funcións experimentais"
-    },
-    "custom_css": {
-      "title": "Estilo de CSS personalizado"
     },
     "offline": {
       "warning": "Este xogo non permite explicitamente o modo offline, activa esta opción baixo a túa propia responsabilidade. É posible que o xogo non funcione."

@@ -16,7 +16,6 @@
       "title": "Cache Cleared"
     },
     "choose": "Vyberte si",
-    "choose-egs-prefix": "Vyberte Prefix, kde je nainštalovaný EGS",
     "choose-gogdl-binary": "Vyberte GOGDL Binary (treba reštartovať)",
     "choose-legendary-binary": "Select Legendary Binary (needs restart)",
     "customWine": "Select the Wine or Proton Binary",
@@ -274,7 +273,6 @@
   },
   "help": {
     "amdfsr": "AMD's FSR helps boost framerate by upscaling lower resolutions in Fullscreen Mode. Image quality increases from 5 to 1 at the cost of a slight performance hit. Enabling may improve performance.",
-    "custom_themes_wiki": "Check the Wiki for more details on adding custom themes. Click here.",
     "dxvk": "DXVK is a Vulkan-based translational layer for DirectX 9, 10 and 11 games. Enabling may improve compatibility. Might cause issues especially for older DirectX games.",
     "dxvkfpslimit": "Sets a frame rate cap for DXVK games",
     "esync": "Esync aims to reduce wineserver overhead in CPU-intensive games. Enabling may improve performance.",
@@ -285,7 +283,6 @@
       "valid_codes": "Valid language codes are game-dependant."
     },
     "gamemode": "Feral GameMode applies automatic and temporary tweaks to the system when running games. Enabling may improve performance.",
-    "general": "Synchronizujte s EGL, ak máte funkčnú inštaláciu Epic Games Launcher inde a chcete importovať svoje hry, aby ste sa vyhli ich opätovnému sťahovaniu.",
     "other": {
       "part4": "Použi ",
       "part5": "Argumenty hry",
@@ -320,7 +317,6 @@
     },
     "msync": "Fsync aims to reduce wineserver overhead in CPU-intensive games. Enabling may improve performance on supported Linux kernels.",
     "content": {
-      "customThemesPath": "Pozrite si našu wiki.",
       "accessibility": "Zobrazuje nastavenia dostupnosti.",
       "defaultInstallPath": "Toto je predvolená cesta predvybraná keď inštalujete hry.",
       "downloadManager": "Zobrazuje aktuálne a minulé stiahnuté súbory.",
@@ -330,7 +326,6 @@
       "library": "Ukáže všetky vlastnené hry.",
       "wineManager": "Nainštalujte rôzne verzie Wine, Proton, Crossover, atď."
     },
-    "disablePlaytimeSync": "Zakáže synchronizáciu času hrania s danými servermi obchodu (momentálne je podporovaný iba s GOG)",
     "dxvknvapi": "DXVK-NVAPI je implementácia NVAPI postavená na DXVK a linuxovom natívnom NVAPI, umožňuje použitie DLSS na GPU Nvidia.",
     "button": {
       "close": "Zatvoriť Pomocník",
@@ -407,10 +402,7 @@
     "old-mac": "Vaša verzia systému macOS je {{version}}. Na prihlásenie je potrebný macOS 12 alebo novší.",
     "zoom": ""
   },
-  "message": {
-    "sync": "Synchronizácia dokončená",
-    "unsync": "Zrušenie synchronizácie dokončené"
-  },
+  "message": {},
   "notify": {
     "error": {
       "move": "Error Moving the Game",
@@ -513,9 +505,7 @@
   "placeholder": {
     "alt-gogdl-bin": "Using built-in GOGDL binary...",
     "alt-legendary-bin": "Using built-in Legendary binary...",
-    "custom_themes_path": "Select the path to look for custom CSS files",
     "dxvkfpsvalue": "Positive integer value (e.g. 30, 60, ...)",
-    "egs-prefix": "Predpona, kde je nainštalovaný EGS",
     "prefered_language": "2-char code (i.e.: \"en\" or \"fr\")",
     "alt-nile-bin": "Pomocou vstavaného binárneho systému Níl..."
   },
@@ -543,8 +533,6 @@
   "Recent": "Played Recently",
   "search": "Vyhľadajte hry",
   "setting": {
-    "adddesktopshortcuts": "Add desktop shortcuts automatically",
-    "addgamestostartmenu": "Add games to start menu automatically",
     "addgamestosteam": "Add games to Steam automatically",
     "alt-gogdl-bin": "Choose an Alternative GOGDL Binary to use (needs restart)",
     "alt-legendary-bin": "Choose an Alternative Legendary Binary (needs restart)to use",
@@ -552,18 +540,13 @@
     "autosync": "Automatická synchronizácia Uloží",
     "autovkd3d": "Auto Install/Update VKD3D on Prefix",
     "change-target-exe": "Select an alternative EXE to run",
-    "checkForUpdatesOnStartup": "Check for Heroic Updates on Startup",
     "crossover-version": "Crossover/Wine Version",
-    "custom_themes_path": "Custom Themes Path",
     "customWineProton": "Custom Wine/Proton Paths",
-    "darktray": "Use Dark Tray Icon (needs restart)",
     "default-install-path": "Predvolená inštalačná cesta",
     "default-steam-path": "Default Steam path",
-    "defaultWinePrefix": "Set Folder for new Wine Prefixes",
     "disable_controller": "Disable Heroic navigation using controller",
     "download-no-https": "Download games without HTTPS (useful for CDNs e.g. LanCache)",
     "dxvkfpslimit": "Limit FPS (DX9, 10 and 11)",
-    "egs-sync": "Synchronizácia s nainštalovanými epickými hrami",
     "enableFSRHack": "Enable FSR Hack (Wine version needs to support it)",
     "eosOverlay": {
       "cancelInstall": "Cancel",
@@ -656,7 +639,6 @@
     },
     "maxRecentGames": "Recent Games to Show",
     "maxworkers": "Maximálny počet pracovníkov pri sťahovaní",
-    "minimize-on-launch": "Minimize Heroic After Game Launch",
     "offlinemode": "Spustite hru offline",
     "prefered_language": "Prefered Language (Language Code)",
     "preferSystemLibs": "Prefer system libraries",
@@ -679,7 +661,6 @@
     "autoUpdateGames": "Automaticky aktualizovať hry",
     "ignoreGameUpdates": "Ignorovať aktualizácie hry",
     "disable_logs": "Zakázať denníky",
-    "addgamestoapplications": "Automaticky pridávajte hry do aplikácií",
     "showMetalOverlay": "Zobraziť prekrytie štatistík",
     "alt-nile-bin": "Vyberte si alternatívny binárny súbor Níl",
     "autodxvknvapi": "Auto Install/Update DXVK-NVAPI on Prefix",
@@ -708,7 +689,6 @@
       "label": "Povoliť inštaláciu hier s nefunkčným alebo odmietnutým anticheatom"
     },
     "before-launch-script-path": "Vyberte skript, ktorý sa má spustiť pred spustením hry",
-    "disablePlaytimeSync": "Vypnúť Synchronizáciu Hrania",
     "after-launch-script-path": "Vyberte skript, ktorý sa má spustiť po ukončení hry",
     "allow_non_ge_proton": {
       "confirmation": {
@@ -842,9 +822,6 @@
     },
     "launchOptions": "Možnosti spustenia...",
     "legacy_warning": "",
-    "custom_css": {
-      "title": ""
-    },
     "steamgriddb": {
       "apikey": {
         "title": "",

@@ -14,7 +14,6 @@ export const updateEosOverlayInfo = makeHandlerInvoker('updateEosOverlayInfo')
 export const changeTrayColor = makeListenerCaller('changeTrayColor')
 export const getMaxCpus = makeHandlerInvoker('getMaxCpus')
 export const showUpdateSetting = makeHandlerInvoker('showUpdateSetting')
-export const egsSync = makeHandlerInvoker('egsSync')
 export const showLogFileInFolder = makeListenerCaller('showLogFileInFolder')
 export const getLogContent = makeHandlerInvoker('getLogContent')
 export const systemInfo = {
