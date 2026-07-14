@@ -737,7 +737,6 @@
     "default_hint": "שינויים בסעיף זה חלים רק כערכי ברירת מחדל בעת התקנת משחקים. אם אתם רוצים לשנות את ההגדרות של משחק שכבר מותקן, השתמשו בלחצן ההגדרות בדף המשחק.",
     "eacRuntime": {
       "gameModeRequired": {
-        "message": "GameMode נדרש בשביל להפעיל את EAC על Flatpak. אתם רוצים להפעיל את זה עכשיו?",
         "title": "GameMode נדרש"
       },
       "name": "EasyAntiCheat Runtime",
@@ -786,7 +785,6 @@
       "gpu": "מעבד גרפי:",
       "gogdlVersion": "Gogdl: {{gogdlVersion}}",
       "osVersion": "גרסה {{versionNumber}}",
-      "osNameFlatpak": "{{osName}} (בתוך Flatpak)",
       "software": "תוכנה:",
       "memoryStats": "{{percentUsed}}% משומשים ({{usedGib}} / {{totalGib}})",
       "systemModel": "מודל מערכת:",

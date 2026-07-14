@@ -1,387 +1,386 @@
 {
-    "box": {
-        "change": {
-            "message": "Això canviarà la ruta d'instal·lació d'aquest joc. Estàs segur?",
-            "path": "Tria una ruta d'instal·lació nova",
-            "title": "Canvia la ruta d'instal·lació dels jocs"
-        },
-        "choose": "Tria",
-        "importpath": "Tria un directori per importar",
-        "move": {
-            "message": "Això pot trigar molt de temps, estàs segur?",
-            "path": "Tria on vols moure el joc",
-            "title": "Mou la ruta d'instal·lació del joc"
-        },
-        "no": "NO",
-        "repair": {
-            "message": "Vols provar de reparar aquest joc? Això pot trigar molt de temps.",
-            "title": "Verifica i repara"
-        },
-        "runexe": {
-            "title": "Tria un EXE per executar"
-        },
-        "select": {
-            "button": "Tria",
-            "image": "Tria una imatge"
-        },
-        "sideload": {
-            "exe": "Selecciona l'executable"
-        },
-        "stopInstall": {
-            "keepInstalling": "Continua amb la instal·lació",
-            "message": "Vols MANTENIR els fitxers baixats?",
-            "title": "Atura la instal·lació"
-        },
-        "uninstall": {
-            "checkbox": "Suprimeix el prefix: {{prefix}}{{newLine}}Avís: No es pot desfer i també suprimirà les partides desades de les quals no s'hagin fet còpies de seguretat.",
-            "message": "Vols desinstal·lar «{{title}}»?",
-            "settingcheckbox": "Esborra la configuració i suprimeix el registre{{newLine}}Avís: aquesta acció no es pot desfer. S'oblidarà qualsevol opció modificada i el registre se suprimirà.",
-            "title": "Desinstal·la",
-            "prefix_warning": "El prefix Wine d'aquest joc és el prefix predefinit. Si realment vols suprimir-lo, has de fer-ho manualment.",
-            "dlc": "Vols desinstal·lar \"{{title}}\" (DLC)?",
-            "cannotUninstallEpic": "No es poden desinstal·lar jocs d'Epic Games mentre s'instal·la un altre joc d'Epic Games.",
-            "gameIsRunning": "{{title}} ja s'executa. Tanca el joc per a desinstal·lar-lo."
-        },
-        "update": {
-            "message": "Hi ha una actualització per a aquest joc, el vols actualitzar ara?",
-            "title": "Cal actualitzar el joc"
-        },
-        "wineprefix": "Tria la carpeta del WinePrefix",
-        "yes": "SÍ",
-        "close": "Tanca",
-        "select-install-path": "Selecciona la ruta d'instal·lació del Steam",
-        "warning": {
-            "title": "Avís"
-        },
-        "ok": "D'acord",
-        "offline_warning": {
-            "message": "Aquest joc podria no funcionar bé fora de línia. Vols jugar-lo igualment?",
-            "playAnyway": "Juga'l igualment",
-            "title": "Avís de fora de línia"
-        },
-        "selectLaunchOption": {
-            "title": "Selecciona una opció d'execució ({{seconds}} s)",
-            "body": "Selecciona una opció d'execució per al joc (es pot canviar més endavant, en la configuració del joc):"
-        },
-        "sync": {
-            "force_download_warning": "S'esborraran les partides desades locals. Vols continuar?",
-            "force_upload_warning": "Se sobreescriuran les partides desades al núvol. Vols continuar?"
-        }
+  "box": {
+    "change": {
+      "message": "Això canviarà la ruta d'instal·lació d'aquest joc. Estàs segur?",
+      "path": "Tria una ruta d'instal·lació nova",
+      "title": "Canvia la ruta d'instal·lació dels jocs"
     },
-    "button": {
-        "add_to_favourites": "Afegeix a preferits",
-        "cancel": "Pausa/Cancel·la",
-        "continue": "Continua la baixada",
-        "finish": "Finalitza",
-        "force_update": "Força l'actualització si n'hi ha cap disponible",
-        "force-innstall": "Força la instal·lació",
-        "hide_game": "Amaga el joc",
-        "import": "Importa el joc",
-        "install": "Instal·la",
-        "no-path-selected": "No s'ha triat cap ruta",
-        "queue": {
-            "remove": "Suprimeix de la cua"
-        },
-        "remove_from_favourites": "Suprimeix dels preferits",
-        "remove_from_recent": "Suprimeix dels recents",
-        "run-exe-first": "Executa primer l'instal·lador",
-        "running-setup": "S'executa la configuració",
-        "sideload": {
-            "edit": "Edita el joc o aplicació"
-        },
-        "unhide_game": "Torna a mostrar el joc",
-        "uninstall": "Desinstal·la",
-        "update": "Actualitza",
-        "details": "Detalls",
-        "changelog": "Mostra el registre",
-        "browse_files": "Explora els fitxers",
-        "browse_wine_prefix": "Explora el prefix Wine",
-        "play": "JUGAR",
-        "edit-game": "Edita el joc"
+    "choose": "Tria",
+    "importpath": "Tria un directori per importar",
+    "move": {
+      "message": "Això pot trigar molt de temps, estàs segur?",
+      "path": "Tria on vols moure el joc",
+      "title": "Mou la ruta d'instal·lació del joc"
     },
-    "cloud_save_unsupported": "No compatible",
-    "disabled": "Desactivat",
-    "dlc": {
-        "installDlcs": "Instal·la tots els DLCs"
+    "no": "NO",
+    "repair": {
+      "message": "Vols provar de reparar aquest joc? Això pot trigar molt de temps.",
+      "title": "Verifica i repara"
     },
-    "enabled": "Activat",
-    "game": {
-        "downloadSize": "Mida de la baixada",
-        "firstPlayed": "Primera partida",
-        "getting-download-size": "S'està obtenint la mida de la baixada",
-        "getting-install-size": "Se cerca la mida de la instal·lació",
-        "installSize": "Mida d'instal·lació",
-        "language": "Llengua",
-        "lastPlayed": "Última partida",
-        "neverPlayed": "Mai",
-        "platform": "Selecciona la versió de la plataforma a instal·lar",
-        "requirements": "Requisits del sistema",
-        "totalPlayed": "Temps jugat",
-        "dlcs": "DLCs",
-        "branch": {
-            "disabled": "Desactivat",
-            "password": "Estableix una contrasenya per al canal privat",
-            "select": "Tria un canal beta",
-            "setPrivateBranchPassword": "Estableix una contrasenya per al canal privat"
-        },
-        "builds": {
-            "toggle": "Mantén el joc a una versió específica",
-            "version": "Versió",
-            "buildsSelector": "Tria la versió del joc"
-        },
-        "changelogFor": "Registre de {{gameTitle}}",
-        "modify": "Modifica la instal·lació",
-        "extra_info": "Informació addicional",
-        "install_info": "Informació de la instal·lació",
-        "achievements": "Assoliments"
+    "runexe": {
+      "title": "Tria un EXE per executar"
     },
-    "gamecard": {
-        "moving": "S'està movent",
-        "repairing": "S'està reparant"
-    },
-    "generic": {
-        "error": "Error desconegut",
-        "noDescription": "No hi ha cap descripció disponible"
-    },
-    "hours": "Hores",
-    "how-long-to-beat": {
-        "completionist": "Perfeccionista",
-        "main-plus-extras": "Principal + Extres",
-        "main-story": "Història principal"
-    },
-    "howLongToBeat": "Quant de temps costa de completar",
-    "info": {
-        "canRunOffline": "Cal connexió a internet",
-        "installedPlatform": "Plataforma instal·lada",
-        "path": "Ruta d'instal·lació",
-        "size": "Mida",
-        "syncsaves": "Sincronitza les partides desades",
-        "version": "Versió",
-        "apple-gaming-wiki": "Classificació AppleGamingWiki",
-        "clickToOpen": "Fes clic per a obrir",
-        "game-scores": "Puntuacions del joc",
-        "installedInfo": "Informació de la instal·lació",
-        "protondb-compatibility-info": "Nivell de compatibilitat amb el Proton",
-        "steamdeck-compatibility-info": "Compatibilitat amb l'SteamDeck",
-        "third-party-app": "Gestor de tercers"
-    },
-    "install": {
-        "disk-space-left": "Espai disponible",
-        "not-enough-disk-space": "No hi ha prou espai al disc",
-        "path": "Selecciona la ruta d'instal·lació",
-        "path-not-writtable": "Avís: potser no es pot escriure a la ruta indicada.",
-        "space-after-install": "Després de la instal·lació",
-        "wineprefix": "WinePrefix",
-        "wineversion": "Versió del Wine",
-        "anticheat-warning": {
-            "cancel": "No",
-            "message": "La compatibilitat amb el sistema antitrampes s'ha trencat o rebutjat. El joc no funcionarà. Segur que el voleu instal·lar de totes maneres?",
-            "install": "Sí (entenc que no funcionarà)",
-            "title": "Antitrampes trencat/rebutjat",
-            "multiplayer_message": "El suport antitrampes està trencat o s'ha blocat. El joc pot executar-se, però les característiques multijugador no funcionaran. Vols instal·lar-lo igualment?",
-            "install_anyway": "Sí (entenc que les funcions multijugador no funcionen)",
-            "ok": "D'acord",
-            "disabled_installation": "Aquest joc fa servir programari antitrampes que no és compatible amb el teu sistema operatiu, o els desenvolupadors del joc no n'han activat la compatibilitat. Això significa que les funcions multijugador no funcionaran i no hi ha res que pugues fer per a resoldre-ho, ni tan sols l'equip de l'Heroic.<br /><br />Per a instal·lar aquest joc i provar-lo de totes maneres, ves a Configuració → Avançat i selecciona l'opció d'instal·lar jocs amb antitrampes trencat o denegat.<br /><br />Tingues en compte que no hi ha manera de resoldre-ho i t'arrisques a què t'expulsin de les partides."
-        },
-        "flatpak-path-not-writtable": "Error: L'accés lliure a aquest camí no està garantit. Potser es perden dades."
-    },
-    "label": {
-        "game": {
-            "third-party-game": "No s'admeten jocs de tercers",
-            "not-installable-game": "El joc NO es pot instal·lar"
-        },
-        "playing": {
-            "start": "Juga",
-            "stop": "En execució (Atura)",
-            "start_with_logs": "Juga (amb registres)"
-        },
-        "saves": {
-            "syncing": "S'estan sincronitzant les partides"
-        },
-        "launching": "S'executa",
-        "ubisoft": "S'instal·la l'Ubisoft Connect",
-        "winetricks": "S'estan instal·lant els paquets del Winetricks",
-        "prerequisites": "S'estan instal·lant els prerequisits",
-        "redist": "Instal·la redistribuïbles",
-        "steam": {
-            "installing": "S'està instal·lant",
-            "pleaseWait": "Un moment",
-            "abort": "Avorta la instal·lació",
-            "cancel": "Cancel·la la instal·lació",
-            "compatibility": "Tingues en compte que no tots els jocs funcionaran, i fins i tot si ho fan, podrien no executar-se com s'espera.",
-            "compatibility-layer-not-available": "La capa de compatibilitat no està disponible. Instal·la'n una des de «Configuració > Gestor del Wine».",
-            "crossover": "Si tens instal·lat el Crossover no et cal això, ja que pot executar perfectament el Steam normal.",
-            "downloading": "S'està baixant {{percent}} %",
-            "install": "Instal·la Steam",
-            "hardware": "Apple Silicon M1+ (per als Intel Mac, Steam funcionarà amb el Crossover)",
-            "install-path": "Ruta d'instal·lació del Steam",
-            "install-tooltip": "Això instal·larà la versió de Windows del Steam i l'executarà utilitzant la capa de compatibilitat de l'Heroic. \n\n    Alguns jocs, especialment els antics, els nous en 3D o els que tinguin programes antitrampes, podrien no funcionar correctament. \n\n    ",
-            "installation": "Instal·lació del Steam",
-            "launch": "Inicia el Steam utilitzant la capa de compatibilitat de l'Heroic",
-            "launching": "S'està iniciant el Steam...",
-            "macOS": "macOS 14.0 o superior",
-            "notification": "L'Heroic et notificarà quan finalitzi la instal·lació.",
-            "patience": "Si vols continuar, tingues paciència, ja que podria trigar uns pocs minuts a finalitzar, depenent de la teva connexió a internet i la configuració del sistema.",
-            "ram": "8 GB de RAM",
-            "recommended": "Especificacions recomanades per a una millor experiència",
-            "select-path": "Selecciona la carpeta d'instal·lació del Steam",
-            "specificVersion-pt1": "Això baixarà una versió específica del Steam des de",
-            "specificVersion-pt2": "archive.org",
-            "specificVersion-pt3": "feta perquè funcioni amb l'Heroic, ja que les versions noves del Steam no funcionen en macOS."
-        }
-    },
-    "launch": {
-        "options": "Opcions d'execució...",
-        "default": "Predefinit"
-    },
-    "not_logged_in": {
-        "epic": "No has iniciat sessió amb un compte d'Epic a l'Heroic. No facis servir la pàgina de la botiga per a iniciar-la. Fes-ho després de prémer el botó següent:",
-        "gog": "No has iniciat sessió amb un compte de GOG a l'Heroic. No facis servir la pàgina de la botiga per a iniciar-la. Fes-ho després de prémer el botó següent:",
-        "login": "Inicia la sessió",
-        "title": "No has iniciat sessió",
-        "amazon": "No has iniciat sessió amb un compte d'Amazon a l'Heroic. No facis servir la pàgina de la botiga per a iniciar-la, fes-ho millor amb aquest botó:",
-        "zoom": "No has iniciat sessió amb un compte Zoom a Heroic. No utilitzes la pàgina de la botiga per iniciar la sessió, en compte d'això fes clic al botó següent:"
-    },
-    "report_problem": "Informa d'un problema quan s'executa el joc",
-    "sdl": {
-        "title": "Selecciona els components a instal·lar"
-    },
-    "setting": {
-        "winecrossoverbottle": "Ampolla CrossOver",
-        "warn-use-shared-wine-config": "Fes servir aquesta opció només si saps què fas.<br/>Si es comparteix el mateix prefix per a diversos jocs, poden produir-se alguns problemes si les seves dependències no són compatibles.",
-        "show-wine-settings": "Mostra la configuració del Wine",
-        "use-shared-wine-config": "Usa el prefix del Wine compartit"
+    "select": {
+      "button": "Tria",
+      "image": "Tria una imatge"
     },
     "sideload": {
-        "field": {
-            "title": "Títol"
-        },
-        "info": {
-            "exe": "Selecciona l'executable",
-            "image": "Imatge de l'aplicació",
-            "title": "Títol del joc o aplicació",
-            "broser": "URL del navegador",
-            "useragent": "Agent d'usuari personalitzat",
-            "fullscreen": "Executa a pantalla completa (F11 per a sortir)",
-            "cover-hint": "Art de la caràtula/principal (fes clic en la imatge per a cercar al SteamGridDB)",
-            "image-hint": "Art quadrada (fes clic en la imatge per a cercar al SteamGridDB)"
-        },
-        "placeholder": {
-            "image": "Enganxa l'URL d'una imatge o selecciona'n una del teu ordinador",
-            "title": "Afegeix un títol al joc o aplicació",
-            "url": "Enganxa l'URL del joc aquí",
-            "useragent": "Escriviu aquí un agent d'usuari personalitzat per a fer-lo servir en aquesta aplicació/joc de navegador."
-        },
-        "import-hint": {
-            "title": "Important! Si vols afegir un joc d'Epic/GOG/Amazon, fes clic aquí.",
-            "content": "No facis servir aquesta funció per a això.<br />En el seu lloc, <3>inicia la sessió</3> a la botiga, cerca el joc a la teva biblioteca, obre el diàleg d'instal·lació i fes clic al botó &quot;Importa un joc&quot;."
-        },
-        "images": {
-            "summary": "Imatges"
-        }
+      "exe": "Selecciona l'executable"
     },
-    "specs": {
-        "minimum": "Mínim",
-        "recommended": "Recomanat"
+    "stopInstall": {
+      "keepInstalling": "Continua amb la instal·lació",
+      "message": "Vols MANTENIR els fitxers baixats?",
+      "title": "Atura la instal·lació"
     },
-    "status": {
-        "clickToUpdate": "Fes clic per a actualitzar",
-        "gameNotAvailable": "Joc no disponible",
-        "hasUpdates": "Hi ha una versió nova disponible!",
-        "installed": "Instal·lat",
-        "installing": "S'està instal·lant",
-        "moving": "S'està movent la instal·lació, espera",
-        "notinstalled": "Aquest joc no està instal·lat",
-        "notSupported": "No compatible",
-        "notSupportedGame": "No compatible",
-        "processing": "S'estan processant els fitxers, espera",
-        "queued": "A la cua",
-        "reparing": "S'està reparant el joc, espera",
-        "this-game-uses-third-party": "Aquest joc fa servir un llançador de tercers que encara no és compatible",
-        "totalDownloaded": "Total baixat",
-        "uninstalling": "Es desinstal·la",
-        "updating": "S'està actualitzant el joc",
-        "playing": "Jugant",
-        "moving-files": "Es mou el fitxer «{{file}}»: {{percent}} %",
-        "syncingSaves": "S'estan sincronitzant les partides",
-        "launching": "S'està executant",
-        "ubisoft": "Instal·lació d'Ubisoft",
-        "downloading": "S'està baixant",
-        "extracting": "S'està extraient",
-        "gog-goodie": "Sembla que aquest joc no es pot instal·lar. Comprova el contingut descarregable a https://gog.com/account",
-        "goodie": "No instal·lable",
-        "prerequisites": "S'estan instal·lant els prerequisits",
-        "winetricks": "S'estan aplicant les correccions del Winetricks",
-        "redist": "S'instal·len els redistribuïbles ({{redist}})",
-        "importing": "S'està important"
+    "uninstall": {
+      "checkbox": "Suprimeix el prefix: {{prefix}}{{newLine}}Avís: No es pot desfer i també suprimirà les partides desades de les quals no s'hagin fet còpies de seguretat.",
+      "message": "Vols desinstal·lar «{{title}}»?",
+      "settingcheckbox": "Esborra la configuració i suprimeix el registre{{newLine}}Avís: aquesta acció no es pot desfer. S'oblidarà qualsevol opció modificada i el registre se suprimirà.",
+      "title": "Desinstal·la",
+      "prefix_warning": "El prefix Wine d'aquest joc és el prefix predefinit. Si realment vols suprimir-lo, has de fer-ho manualment.",
+      "dlc": "Vols desinstal·lar \"{{title}}\" (DLC)?",
+      "cannotUninstallEpic": "No es poden desinstal·lar jocs d'Epic Games mentre s'instal·la un altre joc d'Epic Games.",
+      "gameIsRunning": "{{title}} ja s'executa. Tanca el joc per a desinstal·lar-lo."
     },
-    "submenu": {
-        "addShortcut": "Afegeix una drecera",
-        "addToSteam": "Afegeix a l'Steam",
-        "change": "Canvia la ruta d'instal·lació",
-        "disableEosOverlay": "Desactiva la superposició EOS",
-        "enableEosOverlay": "Activa la superposició EOS",
-        "move": "Mou el joc",
-        "protondb": "Comprova la compatibilitat",
-        "removeFromSteam": "Suprimeix de l'Steam",
-        "removeShortcut": "Suprimeix les dreceres",
-        "settings": "Configuració",
-        "store": "Botiga",
-        "verify": "Verifica i repara",
-        "extraInfo": "Informació extra",
-        "logs": "Registres",
-        "categories": "Categories"
+    "update": {
+      "message": "Hi ha una actualització per a aquest joc, el vols actualitzar ara?",
+      "title": "Cal actualitzar el joc"
     },
-    "help": {
-        "cloud_save_unsupported": "Aquest joc no admet partides desades al núvol. Aquesta informació la proporcionen els desenvolupadors del joc. Alguns jocs implementen el seu propi sistema de desament al núvol.",
-        "content": {
-            "gamePage": "Mostra tots els detalls i accions del joc. Utilitza el menú dels 3 punts per a més opcions."
-        },
-        "title": {
-            "gamePage": "Pàgina del joc"
-        }
+    "wineprefix": "Tria la carpeta del WinePrefix",
+    "yes": "SÍ",
+    "close": "Tanca",
+    "select-install-path": "Selecciona la ruta d'instal·lació del Steam",
+    "warning": {
+      "title": "Avís"
     },
-    "modifyInstall": {
-        "dlcsCollapsible": "DLC",
-        "nodlcs": "No hi ha DLC disponibles",
-        "redMod": {
-            "collapsible": "Integració REDmod",
-            "enable": "Activa mods"
-        },
-        "versionCollapsable": "Versió del joc"
+    "ok": "D'acord",
+    "offline_warning": {
+      "message": "Aquest joc podria no funcionar bé fora de línia. Vols jugar-lo igualment?",
+      "playAnyway": "Juga'l igualment",
+      "title": "Avís de fora de línia"
     },
-    "third-party-managed": {
-        "header": "Aquest joc el gestiona una aplicació de tercers",
-        "notice1": "Aquest joc el gestiona una aplicació de tercers: «{{application_name}}»",
-        "notice2": "Després de fer clic a «Instal·la», el Heroic executarà l'aplicació per tal de completar el procés d'instal·lació."
+    "selectLaunchOption": {
+      "title": "Selecciona una opció d'execució ({{seconds}} s)",
+      "body": "Selecciona una opció d'execució per al joc (es pot canviar més endavant, en la configuració del joc):"
     },
-    "wikiLink": "Informació important d'aquest joc. Llegiu:&nbsp;<1>Obre la pàgina</1>",
-    "Open": "Obre",
-    "queue": {
-        "label": {
-            "canceled": "Cancel·lat",
-            "remove": "Suprimeix de les baixades",
-            "pause": "Posa la baixada en pausa",
-            "resume": "Reprèn la descàrrega"
-        }
-    },
-    "open-saves-folder": "Obre la carpeta de partides",
-    "edit-game": {
-        "advanced": "Avançat",
-        "cover": "Art de la caràtula",
-        "info": {
-            "cover": "Imatge de la caràtula",
-            "square": "Imatge quadrada"
-        },
-        "placeholder": {
-            "image": "Enganxa l'URL d'una imatge"
-        },
-        "reset": "Restableix al predefinit",
-        "sgdb": {
-            "no-key-link": "Configuració → Avançada",
-            "no-key-prefix": "Per a cercar caràtules al SteamGridDB, afegiu-hi una clau de l'API"
-        },
-        "square": "Art quadrada",
-        "title": "Edita el joc"
+    "sync": {
+      "force_download_warning": "S'esborraran les partides desades locals. Vols continuar?",
+      "force_upload_warning": "Se sobreescriuran les partides desades al núvol. Vols continuar?"
     }
+  },
+  "button": {
+    "add_to_favourites": "Afegeix a preferits",
+    "cancel": "Pausa/Cancel·la",
+    "continue": "Continua la baixada",
+    "finish": "Finalitza",
+    "force_update": "Força l'actualització si n'hi ha cap disponible",
+    "force-innstall": "Força la instal·lació",
+    "hide_game": "Amaga el joc",
+    "import": "Importa el joc",
+    "install": "Instal·la",
+    "no-path-selected": "No s'ha triat cap ruta",
+    "queue": {
+      "remove": "Suprimeix de la cua"
+    },
+    "remove_from_favourites": "Suprimeix dels preferits",
+    "remove_from_recent": "Suprimeix dels recents",
+    "run-exe-first": "Executa primer l'instal·lador",
+    "running-setup": "S'executa la configuració",
+    "sideload": {
+      "edit": "Edita el joc o aplicació"
+    },
+    "unhide_game": "Torna a mostrar el joc",
+    "uninstall": "Desinstal·la",
+    "update": "Actualitza",
+    "details": "Detalls",
+    "changelog": "Mostra el registre",
+    "browse_files": "Explora els fitxers",
+    "browse_wine_prefix": "Explora el prefix Wine",
+    "play": "JUGAR",
+    "edit-game": "Edita el joc"
+  },
+  "cloud_save_unsupported": "No compatible",
+  "disabled": "Desactivat",
+  "dlc": {
+    "installDlcs": "Instal·la tots els DLCs"
+  },
+  "enabled": "Activat",
+  "game": {
+    "downloadSize": "Mida de la baixada",
+    "firstPlayed": "Primera partida",
+    "getting-download-size": "S'està obtenint la mida de la baixada",
+    "getting-install-size": "Se cerca la mida de la instal·lació",
+    "installSize": "Mida d'instal·lació",
+    "language": "Llengua",
+    "lastPlayed": "Última partida",
+    "neverPlayed": "Mai",
+    "platform": "Selecciona la versió de la plataforma a instal·lar",
+    "requirements": "Requisits del sistema",
+    "totalPlayed": "Temps jugat",
+    "dlcs": "DLCs",
+    "branch": {
+      "disabled": "Desactivat",
+      "password": "Estableix una contrasenya per al canal privat",
+      "select": "Tria un canal beta",
+      "setPrivateBranchPassword": "Estableix una contrasenya per al canal privat"
+    },
+    "builds": {
+      "toggle": "Mantén el joc a una versió específica",
+      "version": "Versió",
+      "buildsSelector": "Tria la versió del joc"
+    },
+    "changelogFor": "Registre de {{gameTitle}}",
+    "modify": "Modifica la instal·lació",
+    "extra_info": "Informació addicional",
+    "install_info": "Informació de la instal·lació",
+    "achievements": "Assoliments"
+  },
+  "gamecard": {
+    "moving": "S'està movent",
+    "repairing": "S'està reparant"
+  },
+  "generic": {
+    "error": "Error desconegut",
+    "noDescription": "No hi ha cap descripció disponible"
+  },
+  "hours": "Hores",
+  "how-long-to-beat": {
+    "completionist": "Perfeccionista",
+    "main-plus-extras": "Principal + Extres",
+    "main-story": "Història principal"
+  },
+  "howLongToBeat": "Quant de temps costa de completar",
+  "info": {
+    "canRunOffline": "Cal connexió a internet",
+    "installedPlatform": "Plataforma instal·lada",
+    "path": "Ruta d'instal·lació",
+    "size": "Mida",
+    "syncsaves": "Sincronitza les partides desades",
+    "version": "Versió",
+    "apple-gaming-wiki": "Classificació AppleGamingWiki",
+    "clickToOpen": "Fes clic per a obrir",
+    "game-scores": "Puntuacions del joc",
+    "installedInfo": "Informació de la instal·lació",
+    "protondb-compatibility-info": "Nivell de compatibilitat amb el Proton",
+    "steamdeck-compatibility-info": "Compatibilitat amb l'SteamDeck",
+    "third-party-app": "Gestor de tercers"
+  },
+  "install": {
+    "disk-space-left": "Espai disponible",
+    "not-enough-disk-space": "No hi ha prou espai al disc",
+    "path": "Selecciona la ruta d'instal·lació",
+    "path-not-writtable": "Avís: potser no es pot escriure a la ruta indicada.",
+    "space-after-install": "Després de la instal·lació",
+    "wineprefix": "WinePrefix",
+    "wineversion": "Versió del Wine",
+    "anticheat-warning": {
+      "cancel": "No",
+      "message": "La compatibilitat amb el sistema antitrampes s'ha trencat o rebutjat. El joc no funcionarà. Segur que el voleu instal·lar de totes maneres?",
+      "install": "Sí (entenc que no funcionarà)",
+      "title": "Antitrampes trencat/rebutjat",
+      "multiplayer_message": "El suport antitrampes està trencat o s'ha blocat. El joc pot executar-se, però les característiques multijugador no funcionaran. Vols instal·lar-lo igualment?",
+      "install_anyway": "Sí (entenc que les funcions multijugador no funcionen)",
+      "ok": "D'acord",
+      "disabled_installation": "Aquest joc fa servir programari antitrampes que no és compatible amb el teu sistema operatiu, o els desenvolupadors del joc no n'han activat la compatibilitat. Això significa que les funcions multijugador no funcionaran i no hi ha res que pugues fer per a resoldre-ho, ni tan sols l'equip de l'Heroic.<br /><br />Per a instal·lar aquest joc i provar-lo de totes maneres, ves a Configuració → Avançat i selecciona l'opció d'instal·lar jocs amb antitrampes trencat o denegat.<br /><br />Tingues en compte que no hi ha manera de resoldre-ho i t'arrisques a què t'expulsin de les partides."
+    }
+  },
+  "label": {
+    "game": {
+      "third-party-game": "No s'admeten jocs de tercers",
+      "not-installable-game": "El joc NO es pot instal·lar"
+    },
+    "playing": {
+      "start": "Juga",
+      "stop": "En execució (Atura)",
+      "start_with_logs": "Juga (amb registres)"
+    },
+    "saves": {
+      "syncing": "S'estan sincronitzant les partides"
+    },
+    "launching": "S'executa",
+    "ubisoft": "S'instal·la l'Ubisoft Connect",
+    "winetricks": "S'estan instal·lant els paquets del Winetricks",
+    "prerequisites": "S'estan instal·lant els prerequisits",
+    "redist": "Instal·la redistribuïbles",
+    "steam": {
+      "installing": "S'està instal·lant",
+      "pleaseWait": "Un moment",
+      "abort": "Avorta la instal·lació",
+      "cancel": "Cancel·la la instal·lació",
+      "compatibility": "Tingues en compte que no tots els jocs funcionaran, i fins i tot si ho fan, podrien no executar-se com s'espera.",
+      "compatibility-layer-not-available": "La capa de compatibilitat no està disponible. Instal·la'n una des de «Configuració > Gestor del Wine».",
+      "crossover": "Si tens instal·lat el Crossover no et cal això, ja que pot executar perfectament el Steam normal.",
+      "downloading": "S'està baixant {{percent}} %",
+      "install": "Instal·la Steam",
+      "hardware": "Apple Silicon M1+ (per als Intel Mac, Steam funcionarà amb el Crossover)",
+      "install-path": "Ruta d'instal·lació del Steam",
+      "install-tooltip": "Això instal·larà la versió de Windows del Steam i l'executarà utilitzant la capa de compatibilitat de l'Heroic. \n\n    Alguns jocs, especialment els antics, els nous en 3D o els que tinguin programes antitrampes, podrien no funcionar correctament. \n\n    ",
+      "installation": "Instal·lació del Steam",
+      "launch": "Inicia el Steam utilitzant la capa de compatibilitat de l'Heroic",
+      "launching": "S'està iniciant el Steam...",
+      "macOS": "macOS 14.0 o superior",
+      "notification": "L'Heroic et notificarà quan finalitzi la instal·lació.",
+      "patience": "Si vols continuar, tingues paciència, ja que podria trigar uns pocs minuts a finalitzar, depenent de la teva connexió a internet i la configuració del sistema.",
+      "ram": "8 GB de RAM",
+      "recommended": "Especificacions recomanades per a una millor experiència",
+      "select-path": "Selecciona la carpeta d'instal·lació del Steam",
+      "specificVersion-pt1": "Això baixarà una versió específica del Steam des de",
+      "specificVersion-pt2": "archive.org",
+      "specificVersion-pt3": "feta perquè funcioni amb l'Heroic, ja que les versions noves del Steam no funcionen en macOS."
+    }
+  },
+  "launch": {
+    "options": "Opcions d'execució...",
+    "default": "Predefinit"
+  },
+  "not_logged_in": {
+    "epic": "No has iniciat sessió amb un compte d'Epic a l'Heroic. No facis servir la pàgina de la botiga per a iniciar-la. Fes-ho després de prémer el botó següent:",
+    "gog": "No has iniciat sessió amb un compte de GOG a l'Heroic. No facis servir la pàgina de la botiga per a iniciar-la. Fes-ho després de prémer el botó següent:",
+    "login": "Inicia la sessió",
+    "title": "No has iniciat sessió",
+    "amazon": "No has iniciat sessió amb un compte d'Amazon a l'Heroic. No facis servir la pàgina de la botiga per a iniciar-la, fes-ho millor amb aquest botó:",
+    "zoom": "No has iniciat sessió amb un compte Zoom a Heroic. No utilitzes la pàgina de la botiga per iniciar la sessió, en compte d'això fes clic al botó següent:"
+  },
+  "report_problem": "Informa d'un problema quan s'executa el joc",
+  "sdl": {
+    "title": "Selecciona els components a instal·lar"
+  },
+  "setting": {
+    "winecrossoverbottle": "Ampolla CrossOver",
+    "warn-use-shared-wine-config": "Fes servir aquesta opció només si saps què fas.<br/>Si es comparteix el mateix prefix per a diversos jocs, poden produir-se alguns problemes si les seves dependències no són compatibles.",
+    "show-wine-settings": "Mostra la configuració del Wine",
+    "use-shared-wine-config": "Usa el prefix del Wine compartit"
+  },
+  "sideload": {
+    "field": {
+      "title": "Títol"
+    },
+    "info": {
+      "exe": "Selecciona l'executable",
+      "image": "Imatge de l'aplicació",
+      "title": "Títol del joc o aplicació",
+      "broser": "URL del navegador",
+      "useragent": "Agent d'usuari personalitzat",
+      "fullscreen": "Executa a pantalla completa (F11 per a sortir)",
+      "cover-hint": "Art de la caràtula/principal (fes clic en la imatge per a cercar al SteamGridDB)",
+      "image-hint": "Art quadrada (fes clic en la imatge per a cercar al SteamGridDB)"
+    },
+    "placeholder": {
+      "image": "Enganxa l'URL d'una imatge o selecciona'n una del teu ordinador",
+      "title": "Afegeix un títol al joc o aplicació",
+      "url": "Enganxa l'URL del joc aquí",
+      "useragent": "Escriviu aquí un agent d'usuari personalitzat per a fer-lo servir en aquesta aplicació/joc de navegador."
+    },
+    "import-hint": {
+      "title": "Important! Si vols afegir un joc d'Epic/GOG/Amazon, fes clic aquí.",
+      "content": "No facis servir aquesta funció per a això.<br />En el seu lloc, <3>inicia la sessió</3> a la botiga, cerca el joc a la teva biblioteca, obre el diàleg d'instal·lació i fes clic al botó &quot;Importa un joc&quot;."
+    },
+    "images": {
+      "summary": "Imatges"
+    }
+  },
+  "specs": {
+    "minimum": "Mínim",
+    "recommended": "Recomanat"
+  },
+  "status": {
+    "clickToUpdate": "Fes clic per a actualitzar",
+    "gameNotAvailable": "Joc no disponible",
+    "hasUpdates": "Hi ha una versió nova disponible!",
+    "installed": "Instal·lat",
+    "installing": "S'està instal·lant",
+    "moving": "S'està movent la instal·lació, espera",
+    "notinstalled": "Aquest joc no està instal·lat",
+    "notSupported": "No compatible",
+    "notSupportedGame": "No compatible",
+    "processing": "S'estan processant els fitxers, espera",
+    "queued": "A la cua",
+    "reparing": "S'està reparant el joc, espera",
+    "this-game-uses-third-party": "Aquest joc fa servir un llançador de tercers que encara no és compatible",
+    "totalDownloaded": "Total baixat",
+    "uninstalling": "Es desinstal·la",
+    "updating": "S'està actualitzant el joc",
+    "playing": "Jugant",
+    "moving-files": "Es mou el fitxer «{{file}}»: {{percent}} %",
+    "syncingSaves": "S'estan sincronitzant les partides",
+    "launching": "S'està executant",
+    "ubisoft": "Instal·lació d'Ubisoft",
+    "downloading": "S'està baixant",
+    "extracting": "S'està extraient",
+    "gog-goodie": "Sembla que aquest joc no es pot instal·lar. Comprova el contingut descarregable a https://gog.com/account",
+    "goodie": "No instal·lable",
+    "prerequisites": "S'estan instal·lant els prerequisits",
+    "winetricks": "S'estan aplicant les correccions del Winetricks",
+    "redist": "S'instal·len els redistribuïbles ({{redist}})",
+    "importing": "S'està important"
+  },
+  "submenu": {
+    "addShortcut": "Afegeix una drecera",
+    "addToSteam": "Afegeix a l'Steam",
+    "change": "Canvia la ruta d'instal·lació",
+    "disableEosOverlay": "Desactiva la superposició EOS",
+    "enableEosOverlay": "Activa la superposició EOS",
+    "move": "Mou el joc",
+    "protondb": "Comprova la compatibilitat",
+    "removeFromSteam": "Suprimeix de l'Steam",
+    "removeShortcut": "Suprimeix les dreceres",
+    "settings": "Configuració",
+    "store": "Botiga",
+    "verify": "Verifica i repara",
+    "extraInfo": "Informació extra",
+    "logs": "Registres",
+    "categories": "Categories"
+  },
+  "help": {
+    "cloud_save_unsupported": "Aquest joc no admet partides desades al núvol. Aquesta informació la proporcionen els desenvolupadors del joc. Alguns jocs implementen el seu propi sistema de desament al núvol.",
+    "content": {
+      "gamePage": "Mostra tots els detalls i accions del joc. Utilitza el menú dels 3 punts per a més opcions."
+    },
+    "title": {
+      "gamePage": "Pàgina del joc"
+    }
+  },
+  "modifyInstall": {
+    "dlcsCollapsible": "DLC",
+    "nodlcs": "No hi ha DLC disponibles",
+    "redMod": {
+      "collapsible": "Integració REDmod",
+      "enable": "Activa mods"
+    },
+    "versionCollapsable": "Versió del joc"
+  },
+  "third-party-managed": {
+    "header": "Aquest joc el gestiona una aplicació de tercers",
+    "notice1": "Aquest joc el gestiona una aplicació de tercers: «{{application_name}}»",
+    "notice2": "Després de fer clic a «Instal·la», el Heroic executarà l'aplicació per tal de completar el procés d'instal·lació."
+  },
+  "wikiLink": "Informació important d'aquest joc. Llegiu:&nbsp;<1>Obre la pàgina</1>",
+  "Open": "Obre",
+  "queue": {
+    "label": {
+      "canceled": "Cancel·lat",
+      "remove": "Suprimeix de les baixades",
+      "pause": "Posa la baixada en pausa",
+      "resume": "Reprèn la descàrrega"
+    }
+  },
+  "open-saves-folder": "Obre la carpeta de partides",
+  "edit-game": {
+    "advanced": "Avançat",
+    "cover": "Art de la caràtula",
+    "info": {
+      "cover": "Imatge de la caràtula",
+      "square": "Imatge quadrada"
+    },
+    "placeholder": {
+      "image": "Enganxa l'URL d'una imatge"
+    },
+    "reset": "Restableix al predefinit",
+    "sgdb": {
+      "no-key-link": "Configuració → Avançada",
+      "no-key-prefix": "Per a cercar caràtules al SteamGridDB, afegiu-hi una clau de l'API"
+    },
+    "square": "Art quadrada",
+    "title": "Edita el joc"
+  }
 }

@@ -181,8 +181,7 @@
       },
       "snap": {
         "checkbox": "Bu mesajı bir daha gösterme",
-        "title": "Heroic Snap sürümünde çalışıyor",
-        "message": "Bazı özellikler şimdilik uygulamanın Snap sürümünde yok ve bunu düzeltmeye çalışıyoruz.{{newLine}}Mevcut sınırlamalar şunlardır: {{newLine}}Heroic, Steam'den Proton ya da Lutris'ten Wine'ı bulamayacak.{{newLine}}{{newLine}}Gamescope, GameMode ve MangoHud da Heroic'in bunlara erişimi olamayacağı için çalışmayacaktır.{{newLine}}{{newLine}}Bu özelliğe erişmek için lütfen Heroic'i Flatpak, DEB ya da AppImage kullanarak kurun."
+        "title": "Heroic Snap sürümünde çalışıyor"
       },
       "rosetta": {
         "message": "Heroic, Rosetta Apple Silicon yongalarına sahip macOS üstünde düzgün çalışmasını gerektirir. Lütfen aşağıdaki komutu kullanarak macOS terminalinden kurun: \"softwareupdate --install-rosetta\" ve Heroic yeniden başlatılmalı. ",
@@ -791,7 +790,6 @@
     "default_hint": "Bu bölümdeki değişiklikler, yalnızca oyunları yüklerken varsayılan değerler olarak geçerlidir. Zaten yüklü olan bir oyunun ayarlarını değiştirmek isterseniz, oyun sayfasındaki Ayarlar düğmesini kullanın.",
     "eacRuntime": {
       "gameModeRequired": {
-        "message": "EAC runtime'ın Flatpak üzerinde çalışması için GameMode gereklidir. Şimdi etkinleştirmek istiyor musunuz?",
         "title": "GameMode gerekli"
       },
       "installing": "EAC Çalışma Zamanı Kuruluyor...",
@@ -837,7 +835,6 @@
       "gpu": "GPU:",
       "gogdlVersion": "Gogdl: {{gogdlVersion}}",
       "osVersion": "Sürüm {{versionNumber}}",
-      "osNameFlatpak": "{{osName}} (Flatpak'ın içinde)",
       "software": "Yazılım:",
       "memoryStats": "%{{percentUsed}} kullanılmış ({{usedGib}} / {{totalGib}}",
       "systemModel": "Sistem Modeli:",

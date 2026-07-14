@@ -1,370 +1,369 @@
 {
-    "box": {
-        "change": {
-            "message": "这将会更改此游戏的安装位置，你确定吗？",
-            "path": "选择新的安装路径",
-            "title": "更改游戏安装路径"
-        },
-        "choose": "选择",
-        "importpath": "选择要导入的游戏文件夹",
-        "move": {
-            "message": "这可能需要很长的时间，你确定吗？",
-            "path": "选择要移动的位置",
-            "title": "移动游戏安装"
-        },
-        "no": "否",
-        "repair": {
-            "message": "你想尝试修复这个游戏的文件吗？这可能需要很长的时间。",
-            "title": "验证和修复"
-        },
-        "runexe": {
-            "title": "选择要运行的 EXE"
-        },
-        "select": {
-            "button": "选择",
-            "image": "选择图片"
-        },
-        "sideload": {
-            "exe": "选择可执行文件"
-        },
-        "stopInstall": {
-            "keepInstalling": "保留安装",
-            "message": "要保留已下载的文件吗？",
-            "title": "停止安装"
-        },
-        "uninstall": {
-            "checkbox": "移除前缀：{{prefix}}{{newLine}}注：此操作无法撤销，并且会删除没有备份的保存文件。",
-            "message": "你想要卸载 \"{{title}}\"吗？",
-            "settingcheckbox": "擦除设置并删除日志{{newLine}}注意：此操作无法撤消。 任何修改的设置都将被遗忘，日志也将被删除。",
-            "title": "卸载",
-            "prefix_warning": "此游戏的 Wine 前缀是默认前缀。如果你真的想删除它，你必须手动进行。",
-            "dlc": "你要卸载此 \"{{title}}\" (DLC) 吗？",
-            "cannotUninstallEpic": "安装 Epic 游戏时不能卸载其他 Epic 游戏。",
-            "gameIsRunning": "{{title}} 运行中。关闭此游戏来卸载它。"
-        },
-        "update": {
-            "message": "该游戏有更新，你想要现在更新吗？",
-            "title": "游戏需要更新"
-        },
-        "wineprefix": "选择 Wine 前缀文件夹",
-        "yes": "是",
-        "close": "关闭",
-        "select-install-path": "选择 Steam 安装路径",
-        "selectLaunchOption": {
-            "body": "请为该游戏选择一个启动选项（稍候可在游戏设置中更改）：",
-            "title": "选择启动选项（{{seconds}}s）"
-        },
-        "warning": {
-            "title": "警告"
-        },
-        "sync": {
-            "force_download_warning": "本地保存将被擦除。要继续吗？",
-            "force_upload_warning": "云保存将被覆盖。要继续吗？"
-        },
-        "ok": "是",
-        "offline_warning": {
-            "message": "这款游戏可能无法在离线状态下正常运行。还是要玩吗？",
-            "playAnyway": "玩",
-            "title": "离线警告"
-        }
+  "box": {
+    "change": {
+      "message": "这将会更改此游戏的安装位置，你确定吗？",
+      "path": "选择新的安装路径",
+      "title": "更改游戏安装路径"
     },
-    "button": {
-        "add_to_favourites": "添加到收藏",
-        "cancel": "暂停/取消",
-        "continue": "继续下载",
-        "finish": "完成",
-        "force_update": "如可用则强制更新",
-        "force-innstall": "强制安装",
-        "hide_game": "隐藏游戏",
-        "import": "导入游戏",
-        "install": "安装",
-        "no-path-selected": "未选择路径",
-        "queue": {
-            "remove": "从队列中删除"
-        },
-        "remove_from_favourites": "从收藏夹移除",
-        "remove_from_recent": "从最近删除",
-        "run-exe-first": "先运行安装包",
-        "running-setup": "运行安装",
-        "sideload": {
-            "edit": "编辑应用/游戏"
-        },
-        "unhide_game": "取消隐藏游戏",
-        "uninstall": "卸载",
-        "update": "更新",
-        "details": "详细内容",
-        "changelog": "显示更新日志",
-        "browse_files": "浏览文件",
-        "browse_wine_prefix": "浏览 Wine Prefix",
-        "play": "开始游戏"
+    "choose": "选择",
+    "importpath": "选择要导入的游戏文件夹",
+    "move": {
+      "message": "这可能需要很长的时间，你确定吗？",
+      "path": "选择要移动的位置",
+      "title": "移动游戏安装"
     },
-    "cloud_save_unsupported": "不支持",
-    "disabled": "已禁用",
-    "dlc": {
-        "installDlcs": "安装所有 DLC"
+    "no": "否",
+    "repair": {
+      "message": "你想尝试修复这个游戏的文件吗？这可能需要很长的时间。",
+      "title": "验证和修复"
     },
-    "enabled": "已启用",
-    "game": {
-        "downloadSize": "下载大小",
-        "firstPlayed": "首次游玩",
-        "getting-download-size": "获取下载大小",
-        "getting-install-size": "获取安装大小",
-        "installSize": "安装大小",
-        "language": "语言",
-        "lastPlayed": "上次游玩",
-        "neverPlayed": "从未玩过",
-        "platform": "选择要安装的平台版本",
-        "requirements": "系统要求",
-        "totalPlayed": "游玩时间",
-        "dlcs": "DLC",
-        "branch": {
-            "disabled": "已禁用",
-            "select": "选择公测频道",
-            "setPrivateBranchPassword": "设置私密频道的密码",
-            "password": "设置私密频道的密码"
-        },
-        "builds": {
-            "version": "版本",
-            "buildsSelector": "选择游戏版本",
-            "toggle": "将游戏保持在特定的版本"
-        },
-        "changelogFor": "{{gameTitle}} 更新记录",
-        "modify": "修改安装",
-        "extra_info": "附加信息",
-        "install_info": "安装信息",
-        "achievements": "成就"
+    "runexe": {
+      "title": "选择要运行的 EXE"
     },
-    "gamecard": {
-        "moving": "移动中",
-        "repairing": "修复中"
-    },
-    "generic": {
-        "error": "未知错误",
-        "noDescription": "没有可用的描述"
-    },
-    "hours": "小时",
-    "how-long-to-beat": {
-        "completionist": "完美通关",
-        "main-plus-extras": "主线+支线",
-        "main-story": "主线故事"
-    },
-    "howLongToBeat": "通关时长",
-    "info": {
-        "canRunOffline": "需要联网",
-        "installedPlatform": "已安装平台",
-        "path": "安装路径",
-        "size": "大小",
-        "syncsaves": "同步存档",
-        "version": "版本",
-        "apple-gaming-wiki": "AppleGamingWiki 评级",
-        "clickToOpen": "单击打开",
-        "game-scores": "游戏分数",
-        "installedInfo": "已安装信息",
-        "protondb-compatibility-info": "Proton 兼容性级别",
-        "steamdeck-compatibility-info": "SteamDeck 兼容性",
-        "third-party-app": "第三方管理器"
-    },
-    "install": {
-        "disk-space-left": "可用空间",
-        "not-enough-disk-space": "磁盘空间不足",
-        "path": "选择安装路径",
-        "path-not-writtable": "警告：路径可能不可写。",
-        "space-after-install": "安装后",
-        "wineprefix": "WinePrefix",
-        "wineversion": "Wine 版本",
-        "anticheat-warning": {
-            "cancel": "否",
-            "message": "反作弊支持损坏或被拒。游戏不会正常运行。你仍要安装它吗？",
-            "install": "是（我理解它不会正常工作）",
-            "title": "反作弊损坏/被拒",
-            "install_anyway": "是（我了解多玩家功能不会正常工作）",
-            "multiplayer_message": "反作弊支持损坏或被拒绝。可以打开游戏但多玩家功能不会正常工作。你仍要安装它吗？",
-            "ok": "确定",
-            "disabled_installation": "此游戏使用的反作弊软件与你的操作系统不兼容，或者游戏开发者未启用支持。这意味着多人游戏功能将无法使用，你（或 Heroic 团队）对此无能为力。<br /><br />要安装此游戏并尝试运行，请前往设置、高级，并勾选允许安装反作弊损坏或被拒绝的游戏选项。<br /><br />请注意，目前没有解决方案，你可能会在游戏中面临被封禁的风险。"
-        },
-        "flatpak-path-not-writtable": "错误：未授予此路径沙盒访问权限，可能发生数据丢失。"
-    },
-    "label": {
-        "game": {
-            "third-party-game": "不支持第三方游戏",
-            "not-installable-game": "游戏不可安装"
-        },
-        "playing": {
-            "start": "开始游戏",
-            "stop": "游戏中（停止）",
-            "start_with_logs": "开始游戏（带日志）"
-        },
-        "saves": {
-            "syncing": "存档同步中"
-        },
-        "launching": "启动中",
-        "ubisoft": "安装 Ubisoft Connect",
-        "winetricks": "正在安装 Winetricks 包",
-        "prerequisites": "正在安装必需的库等",
-        "redist": "正在安装 Redistributables",
-        "steam": {
-            "abort": "中止安装",
-            "cancel": "取消安装",
-            "compatibility": "请注意，并非所有游戏都能运行，即使能运行，表现也可能不如预期。",
-            "compatibility-layer-not-available": "兼容层不可用。请先从“设置 > Wine 管理器”安装一个兼容层。",
-            "crossover": "如果你已安装 Crossover，则不需要此项，因为它可以很好地运行普通的 Steam。",
-            "downloading": "下载中 {{percent}}%",
-            "hardware": "Apple Silicon M1+（对于 Intel Mac，Steam 可通过 Crossover 运行）",
-            "install": "安装 Steam",
-            "install-path": "Steam 安装路径",
-            "install-tooltip": "这将安装 Windows 版本的 Steam，并通过 Heroic 兼容层运行。\n\n    某些游戏，尤其是较旧的游戏、新的 3D 游戏或带有反作弊软件的游戏，可能无法正常运行。 \n\n    ",
-            "installation": "Steam 安装",
-            "launch": "使用 Heroic 兼容层启动 Steam",
-            "launching": "正在启动 Steam...",
-            "macOS": "macOS 14.0 或更高版本",
-            "notification": "安装完成后，Heroic 会通知你。",
-            "patience": "如果你希望继续，请耐心等待，完成时间取决于你的网络连接和系统配置，可能需要几分钟。",
-            "ram": "8GB 内存",
-            "recommended": "推荐配置以获得更佳体验",
-            "select-path": "选择 Steam 安装文件夹",
-            "specificVersion-pt1": "这将从以下位置下载特定版本的 Steam",
-            "specificVersion-pt2": "archive.org",
-            "specificVersion-pt3": "该版本经过调整以通过 Heroic 运行，因为新版本的 Steam 无法在 macOS 上运行。",
-            "installing": "安装中",
-            "pleaseWait": "请等待"
-        }
-    },
-    "launch": {
-        "options": "启动选项...",
-        "default": "默认"
-    },
-    "not_logged_in": {
-        "epic": "你在 Heroic 中未登录 Epic 账号。不要使用商店页面进行登录，请单击下面的按钮：",
-        "gog": "你在 Heroic 中未登录 GOG 账号。不要使用商店页面进行登录，请单击下面的按钮：",
-        "login": "登录",
-        "title": "你未登录",
-        "amazon": "你在 Heroic 中未登录 Amazon 账号。不要使用商店页面进行登录，请点击下面的按钮：",
-        "zoom": "您在 Heroic 中没有用 Zoom 账户登录。别用商店页面登录，请单击下面的按钮："
-    },
-    "report_problem": "报告运行此游戏时出现的问题",
-    "sdl": {
-        "title": "选择要安装的组件"
-    },
-    "setting": {
-        "winecrossoverbottle": "CrossOver 容器",
-        "show-wine-settings": "显示 Wine 设置",
-        "warn-use-shared-wine-config": "请只在你清楚选项的含义时才使用此选项。<br/>多个游戏共享相同的前缀可能带来问题，如果这些游戏的依赖项彼此不兼容的话。",
-        "use-shared-wine-config": "使用共享 Wine 前置"
+    "select": {
+      "button": "选择",
+      "image": "选择图片"
     },
     "sideload": {
-        "field": {
-            "title": "标题"
-        },
-        "info": {
-            "exe": "选择可执行文件",
-            "image": "App 映像",
-            "title": "游戏/应用标题",
-            "broser": "浏览器网址",
-            "useragent": "自定义 User Agent",
-            "fullscreen": "启动全屏（按 F11 退出）"
-        },
-        "placeholder": {
-            "image": "粘贴图片 URL 计算机中选择一张",
-            "title": "添加标题到你的“游戏/应用”",
-            "url": "在此处粘贴游戏网址",
-            "useragent": "在这里写一个定制的 user agent，将用于此浏览器应用/游戏"
-        },
-        "import-hint": {
-            "title": "重要！你正添加一款来自 Epic/GOG/Amazon 的游戏吗？请点击此处！",
-            "content": "不要用此功能来添加。<br />正确做法是， <3>登录</3> 商店账号，在你的库中寻找该游戏，打开安装对话框,，单击 &quot;导入游戏&quot; 按钮"
-        }
+      "exe": "选择可执行文件"
     },
-    "specs": {
-        "minimum": "最低配置",
-        "recommended": "推荐配置"
+    "stopInstall": {
+      "keepInstalling": "保留安装",
+      "message": "要保留已下载的文件吗？",
+      "title": "停止安装"
     },
-    "status": {
-        "clickToUpdate": "单击更新",
-        "gameNotAvailable": "游戏不可用",
-        "hasUpdates": "新版本可用！",
-        "installed": "已安装",
-        "installing": "安装中",
-        "moving": "正在移动安装，请稍等",
-        "notinstalled": "未安装此游戏",
-        "notSupported": "不支持",
-        "notSupportedGame": "不支持",
-        "processing": "处理文件中，请稍等",
-        "queued": "已加入队列",
-        "reparing": "正在修复游戏，请稍等",
-        "this-game-uses-third-party": "该游戏使用第三方启动器，尚不支持",
-        "totalDownloaded": "下载总计",
-        "uninstalling": "卸载中",
-        "updating": "游戏更新中",
-        "playing": "游戏中",
-        "moving-files": "正在移动文件 '{{file}}': {{percent}}%",
-        "syncingSaves": "存档同步中",
-        "launching": "启动中",
-        "ubisoft": "安装 Ubisoft",
-        "downloading": "下载中",
-        "extracting": "提取中",
-        "gog-goodie": "该游戏似乎无法安装。在 https://gog.com/account 上查看可下载内容",
-        "goodie": "不可安装",
-        "prerequisites": "正在安装必需的库等",
-        "winetricks": "正在应用 Wintricks 修复",
-        "redist": "正在安装 Redistributables 包 ({{redist}})",
-        "importing": "导入中"
+    "uninstall": {
+      "checkbox": "移除前缀：{{prefix}}{{newLine}}注：此操作无法撤销，并且会删除没有备份的保存文件。",
+      "message": "你想要卸载 \"{{title}}\"吗？",
+      "settingcheckbox": "擦除设置并删除日志{{newLine}}注意：此操作无法撤消。 任何修改的设置都将被遗忘，日志也将被删除。",
+      "title": "卸载",
+      "prefix_warning": "此游戏的 Wine 前缀是默认前缀。如果你真的想删除它，你必须手动进行。",
+      "dlc": "你要卸载此 \"{{title}}\" (DLC) 吗？",
+      "cannotUninstallEpic": "安装 Epic 游戏时不能卸载其他 Epic 游戏。",
+      "gameIsRunning": "{{title}} 运行中。关闭此游戏来卸载它。"
     },
-    "submenu": {
-        "addShortcut": "添加快捷方式",
-        "addToSteam": "添加到 Steam",
-        "change": "更改安装路径",
-        "disableEosOverlay": "禁用 EOS 叠加",
-        "enableEosOverlay": "启用 EOS 叠加",
-        "move": "移动游戏",
-        "protondb": "检查兼容性",
-        "removeFromSteam": "从 Steam 删除",
-        "removeShortcut": "删除快捷方式",
-        "settings": "设置",
-        "store": "商店页面",
-        "verify": "验证和修复",
-        "extraInfo": "额外信息",
-        "logs": "日志",
-        "categories": "分类"
+    "update": {
+      "message": "该游戏有更新，你想要现在更新吗？",
+      "title": "游戏需要更新"
     },
-    "help": {
-        "cloud_save_unsupported": "本游戏不支持云存档。此信息由游戏开发商提供。有些游戏部署了自己的云存档系统。",
-        "content": {
-            "gamePage": "显示所有游戏详情和操作。使用三点菜单查看更多选项。"
-        },
-        "title": {
-            "gamePage": "游戏页"
-        }
+    "wineprefix": "选择 Wine 前缀文件夹",
+    "yes": "是",
+    "close": "关闭",
+    "select-install-path": "选择 Steam 安装路径",
+    "selectLaunchOption": {
+      "body": "请为该游戏选择一个启动选项（稍候可在游戏设置中更改）：",
+      "title": "选择启动选项（{{seconds}}s）"
     },
-    "modifyInstall": {
-        "dlcsCollapsible": "DLC",
-        "nodlcs": "无 DLC 可用",
-        "redMod": {
-            "collapsible": "REDmod 集成",
-            "enable": "启用 mods"
-        },
-        "versionCollapsable": "游戏版本"
+    "warning": {
+      "title": "警告"
     },
-    "third-party-managed": {
-        "header": "此游戏由第三方程序管理",
-        "notice2": "单击“安装”后，Heroic 为了完成安装过程将运行程序",
-        "notice1": "此游戏由下列第三方程序程序管理： \"{{application_name}}\""
+    "sync": {
+      "force_download_warning": "本地保存将被擦除。要继续吗？",
+      "force_upload_warning": "云保存将被覆盖。要继续吗？"
     },
-    "wikiLink": "关于此游戏的重要信息，请阅读：&nbsp;<1>打开页面</1>",
-    "Open": "打开",
-    "queue": {
-        "label": {
-            "pause": "暂停下载",
-            "resume": "继续下载",
-            "remove": "从下载中删除",
-            "canceled": "已取消"
-        }
-    },
-    "open-saves-folder": "打开保存文件夹",
-    "edit-game": {
-        "advanced": "高级",
-        "sgdb": {
-            "no-key-link": "设置 → 高级",
-            "no-key-prefix": "要在 SteamGridDB 中搜索封面，请添加 API 密钥"
-        }
+    "ok": "是",
+    "offline_warning": {
+      "message": "这款游戏可能无法在离线状态下正常运行。还是要玩吗？",
+      "playAnyway": "玩",
+      "title": "离线警告"
     }
+  },
+  "button": {
+    "add_to_favourites": "添加到收藏",
+    "cancel": "暂停/取消",
+    "continue": "继续下载",
+    "finish": "完成",
+    "force_update": "如可用则强制更新",
+    "force-innstall": "强制安装",
+    "hide_game": "隐藏游戏",
+    "import": "导入游戏",
+    "install": "安装",
+    "no-path-selected": "未选择路径",
+    "queue": {
+      "remove": "从队列中删除"
+    },
+    "remove_from_favourites": "从收藏夹移除",
+    "remove_from_recent": "从最近删除",
+    "run-exe-first": "先运行安装包",
+    "running-setup": "运行安装",
+    "sideload": {
+      "edit": "编辑应用/游戏"
+    },
+    "unhide_game": "取消隐藏游戏",
+    "uninstall": "卸载",
+    "update": "更新",
+    "details": "详细内容",
+    "changelog": "显示更新日志",
+    "browse_files": "浏览文件",
+    "browse_wine_prefix": "浏览 Wine Prefix",
+    "play": "开始游戏"
+  },
+  "cloud_save_unsupported": "不支持",
+  "disabled": "已禁用",
+  "dlc": {
+    "installDlcs": "安装所有 DLC"
+  },
+  "enabled": "已启用",
+  "game": {
+    "downloadSize": "下载大小",
+    "firstPlayed": "首次游玩",
+    "getting-download-size": "获取下载大小",
+    "getting-install-size": "获取安装大小",
+    "installSize": "安装大小",
+    "language": "语言",
+    "lastPlayed": "上次游玩",
+    "neverPlayed": "从未玩过",
+    "platform": "选择要安装的平台版本",
+    "requirements": "系统要求",
+    "totalPlayed": "游玩时间",
+    "dlcs": "DLC",
+    "branch": {
+      "disabled": "已禁用",
+      "select": "选择公测频道",
+      "setPrivateBranchPassword": "设置私密频道的密码",
+      "password": "设置私密频道的密码"
+    },
+    "builds": {
+      "version": "版本",
+      "buildsSelector": "选择游戏版本",
+      "toggle": "将游戏保持在特定的版本"
+    },
+    "changelogFor": "{{gameTitle}} 更新记录",
+    "modify": "修改安装",
+    "extra_info": "附加信息",
+    "install_info": "安装信息",
+    "achievements": "成就"
+  },
+  "gamecard": {
+    "moving": "移动中",
+    "repairing": "修复中"
+  },
+  "generic": {
+    "error": "未知错误",
+    "noDescription": "没有可用的描述"
+  },
+  "hours": "小时",
+  "how-long-to-beat": {
+    "completionist": "完美通关",
+    "main-plus-extras": "主线+支线",
+    "main-story": "主线故事"
+  },
+  "howLongToBeat": "通关时长",
+  "info": {
+    "canRunOffline": "需要联网",
+    "installedPlatform": "已安装平台",
+    "path": "安装路径",
+    "size": "大小",
+    "syncsaves": "同步存档",
+    "version": "版本",
+    "apple-gaming-wiki": "AppleGamingWiki 评级",
+    "clickToOpen": "单击打开",
+    "game-scores": "游戏分数",
+    "installedInfo": "已安装信息",
+    "protondb-compatibility-info": "Proton 兼容性级别",
+    "steamdeck-compatibility-info": "SteamDeck 兼容性",
+    "third-party-app": "第三方管理器"
+  },
+  "install": {
+    "disk-space-left": "可用空间",
+    "not-enough-disk-space": "磁盘空间不足",
+    "path": "选择安装路径",
+    "path-not-writtable": "警告：路径可能不可写。",
+    "space-after-install": "安装后",
+    "wineprefix": "WinePrefix",
+    "wineversion": "Wine 版本",
+    "anticheat-warning": {
+      "cancel": "否",
+      "message": "反作弊支持损坏或被拒。游戏不会正常运行。你仍要安装它吗？",
+      "install": "是（我理解它不会正常工作）",
+      "title": "反作弊损坏/被拒",
+      "install_anyway": "是（我了解多玩家功能不会正常工作）",
+      "multiplayer_message": "反作弊支持损坏或被拒绝。可以打开游戏但多玩家功能不会正常工作。你仍要安装它吗？",
+      "ok": "确定",
+      "disabled_installation": "此游戏使用的反作弊软件与你的操作系统不兼容，或者游戏开发者未启用支持。这意味着多人游戏功能将无法使用，你（或 Heroic 团队）对此无能为力。<br /><br />要安装此游戏并尝试运行，请前往设置、高级，并勾选允许安装反作弊损坏或被拒绝的游戏选项。<br /><br />请注意，目前没有解决方案，你可能会在游戏中面临被封禁的风险。"
+    }
+  },
+  "label": {
+    "game": {
+      "third-party-game": "不支持第三方游戏",
+      "not-installable-game": "游戏不可安装"
+    },
+    "playing": {
+      "start": "开始游戏",
+      "stop": "游戏中（停止）",
+      "start_with_logs": "开始游戏（带日志）"
+    },
+    "saves": {
+      "syncing": "存档同步中"
+    },
+    "launching": "启动中",
+    "ubisoft": "安装 Ubisoft Connect",
+    "winetricks": "正在安装 Winetricks 包",
+    "prerequisites": "正在安装必需的库等",
+    "redist": "正在安装 Redistributables",
+    "steam": {
+      "abort": "中止安装",
+      "cancel": "取消安装",
+      "compatibility": "请注意，并非所有游戏都能运行，即使能运行，表现也可能不如预期。",
+      "compatibility-layer-not-available": "兼容层不可用。请先从“设置 > Wine 管理器”安装一个兼容层。",
+      "crossover": "如果你已安装 Crossover，则不需要此项，因为它可以很好地运行普通的 Steam。",
+      "downloading": "下载中 {{percent}}%",
+      "hardware": "Apple Silicon M1+（对于 Intel Mac，Steam 可通过 Crossover 运行）",
+      "install": "安装 Steam",
+      "install-path": "Steam 安装路径",
+      "install-tooltip": "这将安装 Windows 版本的 Steam，并通过 Heroic 兼容层运行。\n\n    某些游戏，尤其是较旧的游戏、新的 3D 游戏或带有反作弊软件的游戏，可能无法正常运行。 \n\n    ",
+      "installation": "Steam 安装",
+      "launch": "使用 Heroic 兼容层启动 Steam",
+      "launching": "正在启动 Steam...",
+      "macOS": "macOS 14.0 或更高版本",
+      "notification": "安装完成后，Heroic 会通知你。",
+      "patience": "如果你希望继续，请耐心等待，完成时间取决于你的网络连接和系统配置，可能需要几分钟。",
+      "ram": "8GB 内存",
+      "recommended": "推荐配置以获得更佳体验",
+      "select-path": "选择 Steam 安装文件夹",
+      "specificVersion-pt1": "这将从以下位置下载特定版本的 Steam",
+      "specificVersion-pt2": "archive.org",
+      "specificVersion-pt3": "该版本经过调整以通过 Heroic 运行，因为新版本的 Steam 无法在 macOS 上运行。",
+      "installing": "安装中",
+      "pleaseWait": "请等待"
+    }
+  },
+  "launch": {
+    "options": "启动选项...",
+    "default": "默认"
+  },
+  "not_logged_in": {
+    "epic": "你在 Heroic 中未登录 Epic 账号。不要使用商店页面进行登录，请单击下面的按钮：",
+    "gog": "你在 Heroic 中未登录 GOG 账号。不要使用商店页面进行登录，请单击下面的按钮：",
+    "login": "登录",
+    "title": "你未登录",
+    "amazon": "你在 Heroic 中未登录 Amazon 账号。不要使用商店页面进行登录，请点击下面的按钮：",
+    "zoom": "您在 Heroic 中没有用 Zoom 账户登录。别用商店页面登录，请单击下面的按钮："
+  },
+  "report_problem": "报告运行此游戏时出现的问题",
+  "sdl": {
+    "title": "选择要安装的组件"
+  },
+  "setting": {
+    "winecrossoverbottle": "CrossOver 容器",
+    "show-wine-settings": "显示 Wine 设置",
+    "warn-use-shared-wine-config": "请只在你清楚选项的含义时才使用此选项。<br/>多个游戏共享相同的前缀可能带来问题，如果这些游戏的依赖项彼此不兼容的话。",
+    "use-shared-wine-config": "使用共享 Wine 前置"
+  },
+  "sideload": {
+    "field": {
+      "title": "标题"
+    },
+    "info": {
+      "exe": "选择可执行文件",
+      "image": "App 映像",
+      "title": "游戏/应用标题",
+      "broser": "浏览器网址",
+      "useragent": "自定义 User Agent",
+      "fullscreen": "启动全屏（按 F11 退出）"
+    },
+    "placeholder": {
+      "image": "粘贴图片 URL 计算机中选择一张",
+      "title": "添加标题到你的“游戏/应用”",
+      "url": "在此处粘贴游戏网址",
+      "useragent": "在这里写一个定制的 user agent，将用于此浏览器应用/游戏"
+    },
+    "import-hint": {
+      "title": "重要！你正添加一款来自 Epic/GOG/Amazon 的游戏吗？请点击此处！",
+      "content": "不要用此功能来添加。<br />正确做法是， <3>登录</3> 商店账号，在你的库中寻找该游戏，打开安装对话框,，单击 &quot;导入游戏&quot; 按钮"
+    }
+  },
+  "specs": {
+    "minimum": "最低配置",
+    "recommended": "推荐配置"
+  },
+  "status": {
+    "clickToUpdate": "单击更新",
+    "gameNotAvailable": "游戏不可用",
+    "hasUpdates": "新版本可用！",
+    "installed": "已安装",
+    "installing": "安装中",
+    "moving": "正在移动安装，请稍等",
+    "notinstalled": "未安装此游戏",
+    "notSupported": "不支持",
+    "notSupportedGame": "不支持",
+    "processing": "处理文件中，请稍等",
+    "queued": "已加入队列",
+    "reparing": "正在修复游戏，请稍等",
+    "this-game-uses-third-party": "该游戏使用第三方启动器，尚不支持",
+    "totalDownloaded": "下载总计",
+    "uninstalling": "卸载中",
+    "updating": "游戏更新中",
+    "playing": "游戏中",
+    "moving-files": "正在移动文件 '{{file}}': {{percent}}%",
+    "syncingSaves": "存档同步中",
+    "launching": "启动中",
+    "ubisoft": "安装 Ubisoft",
+    "downloading": "下载中",
+    "extracting": "提取中",
+    "gog-goodie": "该游戏似乎无法安装。在 https://gog.com/account 上查看可下载内容",
+    "goodie": "不可安装",
+    "prerequisites": "正在安装必需的库等",
+    "winetricks": "正在应用 Wintricks 修复",
+    "redist": "正在安装 Redistributables 包 ({{redist}})",
+    "importing": "导入中"
+  },
+  "submenu": {
+    "addShortcut": "添加快捷方式",
+    "addToSteam": "添加到 Steam",
+    "change": "更改安装路径",
+    "disableEosOverlay": "禁用 EOS 叠加",
+    "enableEosOverlay": "启用 EOS 叠加",
+    "move": "移动游戏",
+    "protondb": "检查兼容性",
+    "removeFromSteam": "从 Steam 删除",
+    "removeShortcut": "删除快捷方式",
+    "settings": "设置",
+    "store": "商店页面",
+    "verify": "验证和修复",
+    "extraInfo": "额外信息",
+    "logs": "日志",
+    "categories": "分类"
+  },
+  "help": {
+    "cloud_save_unsupported": "本游戏不支持云存档。此信息由游戏开发商提供。有些游戏部署了自己的云存档系统。",
+    "content": {
+      "gamePage": "显示所有游戏详情和操作。使用三点菜单查看更多选项。"
+    },
+    "title": {
+      "gamePage": "游戏页"
+    }
+  },
+  "modifyInstall": {
+    "dlcsCollapsible": "DLC",
+    "nodlcs": "无 DLC 可用",
+    "redMod": {
+      "collapsible": "REDmod 集成",
+      "enable": "启用 mods"
+    },
+    "versionCollapsable": "游戏版本"
+  },
+  "third-party-managed": {
+    "header": "此游戏由第三方程序管理",
+    "notice2": "单击“安装”后，Heroic 为了完成安装过程将运行程序",
+    "notice1": "此游戏由下列第三方程序程序管理： \"{{application_name}}\""
+  },
+  "wikiLink": "关于此游戏的重要信息，请阅读：&nbsp;<1>打开页面</1>",
+  "Open": "打开",
+  "queue": {
+    "label": {
+      "pause": "暂停下载",
+      "resume": "继续下载",
+      "remove": "从下载中删除",
+      "canceled": "已取消"
+    }
+  },
+  "open-saves-folder": "打开保存文件夹",
+  "edit-game": {
+    "advanced": "高级",
+    "sgdb": {
+      "no-key-link": "设置 → 高级",
+      "no-key-prefix": "要在 SteamGridDB 中搜索封面，请添加 API 密钥"
+    }
+  }
 }

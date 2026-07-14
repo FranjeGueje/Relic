@@ -809,7 +809,6 @@
     "default_hint": "Ushbu bo'limdagi o'zgarishlar faqat o'yinlarni o'rnatishda standart qiymatlar sifatida qo'llaniladi. Agar siz allaqachon o'rnatilgan o'yin sozlamalarini o'zgartirmoqchi bo'lsangiz, o'yin sahifasidagi Sozlamalar tugmasidan foydalaning.",
     "eacRuntime": {
       "gameModeRequired": {
-        "message": "EAC ish vaqti Flatpakda ishlashi uchun GameMode talab qilinadi. Uni hozir yoqmoqchimisiz?",
         "title": "GameMode kerak"
       },
       "installing": "EAC Runtime oʻrnatilmoqda...",
@@ -877,7 +876,6 @@
       "gpu": "",
       "gogdlVersion": "",
       "osVersion": "",
-      "osNameFlatpak": "",
       "software": "",
       "cometVersion": "",
       "memoryStats": "",

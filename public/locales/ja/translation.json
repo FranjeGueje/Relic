@@ -777,7 +777,6 @@
     "default_hint": "このセクションの変更は、ゲームのインストール時のデフォルト値としてのみ適用されます。すでにインストールされているゲームの設定を変更したい場合は、ゲームページの設定ボタンを使用してください。",
     "eacRuntime": {
       "gameModeRequired": {
-        "message": "EACランタイムがFlatpakで動作するには、GameModeが必要です。今すぐ有効にしますか?",
         "title": "GameModeが必要です"
       },
       "installing": "EACランタイムをインストール中…",
@@ -823,7 +822,6 @@
       "gpu": "GPU:",
       "gogdlVersion": "Gogdl: {{gogdlVersion}}",
       "osVersion": "バージョン {{versionNumber}}",
-      "osNameFlatpak": "{{osName}} （Flatpak内）",
       "software": "ソフトウェア:",
       "memoryStats": "{{percentUsed}}% 使用中 ({{usedGib}} / {{totalGib}}",
       "systemModel": "システムモデル:",

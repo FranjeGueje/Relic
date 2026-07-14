@@ -182,7 +182,6 @@
       },
       "snap": {
         "checkbox": "Do not show this message again",
-        "message": "Some features are not available in the Snap version of the app for now and we are trying to fix it.{{newLine}}Current limitations are: {{newLine}}Heroic will not be able to find Proton from Steam or Wine from Lutris.{{newLine}}{{newLine}}Gamescope, GameMode and MangoHud will also not work since Heroic cannot have access to them.{{newLine}}{{newLine}}To have access to this feature please install Heroic as a Flatpak, DEB or from the AppImage.",
         "title": "Heroic is running as a Snap"
       },
       "title": "Warning",
@@ -953,7 +952,6 @@
     "default_hint": "Changes in this section only apply as default values when installing games. If you want to change the settings of an already installed game, use the Settings button in the game page.",
     "eacRuntime": {
       "gameModeRequired": {
-        "message": "GameMode is required for the EAC runtime to work on Flatpak. Do you want to enable it now?",
         "title": "GameMode required"
       },
       "installing": "Installing EAC Runtime...",
@@ -1018,7 +1016,6 @@
       "memoryStats": "{{percentUsed}}% used ({{usedGib}} / {{totalGib}}",
       "nileVersion": "Nile: {{nileVersion}}",
       "os": "Operating System:",
-      "osNameFlatpak": "{{osName}} (inside Flatpak)",
       "osVersion": "Version {{versionNumber}}",
       "showDetailed": "Show detailed system specifications",
       "software": "Software:",

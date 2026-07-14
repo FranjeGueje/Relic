@@ -827,7 +827,6 @@
       "gpu": "معالج الرسوميات:",
       "gogdlVersion": "Gogdl: {{gogdlVersion}}",
       "osVersion": "الإصدار {{versionNumber}}",
-      "osNameFlatpak": "{{osName}} (في فلاتباك)",
       "software": "البرمجية:",
       "memoryStats": "يُستخدَم بنسبة {{percentUsed}}٪ ({{usedGib}} \\ {{totalGib}})",
       "systemModel": "طراز النظام:",

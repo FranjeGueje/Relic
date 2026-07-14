@@ -176,8 +176,7 @@
       },
       "snap": {
         "checkbox": "Už nikdy nezobrazovať túto správu",
-        "title": "Heroic beží ako Snap",
-        "message": "Niektoré funkcie nie sú momentálne dostupné vo verzii aplikácie Snap a snažíme sa to napraviť.{{newLine}}Aktuálne obmedzenia sú: {{newLine}}Heroic nebude môcť nájsť Proton zo Steamu alebo Wine z Lutris .{{newLine}}{{newLine}}Gamescope, GameMode a MangoHud tiež nebudú fungovať, pretože Heroic k nim nemá prístup.{{newLine}}{{newLine}}Ak chcete získať prístup k tejto funkcii, nainštalujte si Heroic ako Flatpak , DEB alebo z AppImage."
+        "title": "Heroic beží ako Snap"
       },
       "rosetta": {
         "title": "",
@@ -774,7 +773,6 @@
     "default_hint": "Changes in this section only apply as default values when installing games. If you want to change the settings of an already installed game, use the Settings button in the game page.",
     "eacRuntime": {
       "gameModeRequired": {
-        "message": "GameMode is required for the EAC runtime to work on Flatpak. Do you want to enable it now?",
         "title": "GameMode required"
       },
       "installing": "Installing EAC Runtime...",
@@ -837,7 +835,6 @@
       "gpuDriver": "Driver: {{driverVersion}}",
       "gpuWithNumber": "GPU {{number}}:",
       "nileVersion": "Verzia Nile: {{nileVersion}}",
-      "osNameFlatpak": "{{osName}} (vo vnútri Flatpaku)",
       "osVersion": "Verzia systému {{versionNumber}}",
       "showDetailed": "Zobraziť podrobné špecifikácie systému",
       "steamDeck": "Steam Deck {{model}}",

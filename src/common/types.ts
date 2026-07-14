@@ -680,7 +680,7 @@ export interface DiskSpaceData {
   diskSize: number
   message: string
   validPath: boolean
-  validFlatpakPath: boolean
+
 }
 
 export interface ToolArgs {

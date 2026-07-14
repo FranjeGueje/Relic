@@ -767,7 +767,6 @@
     "default_hint": "Changes in this section only apply as default values when installing games. If you want to change the settings of an already installed game, use the Settings button in the game page.",
     "eacRuntime": {
       "gameModeRequired": {
-        "message": "需要 GameMode 才能讓 EAC runtime 在 Flatpak 上執行。您想馬上啟用它嗎？",
         "title": "需要啟用 GameMode"
       },
       "installing": "安裝 EAC Runtime 中...",
@@ -840,7 +839,6 @@
       "legendaryVersion": "",
       "steamDeck": "",
       "gogdlVersion": "",
-      "osNameFlatpak": "",
       "cometVersion": "",
       "memoryStats": "",
       "heroicVersion": "",

@@ -181,8 +181,7 @@
       },
       "snap": {
         "checkbox": "Não mostre esta mensagem novamente",
-        "title": "O Heroic está sendo executado como um Snap",
-        "message": "Alguns recursos não estão disponíveis na versão Snap do aplicativo no momento e estamos tentando consertar isso.{{newLine}}As limitações atuais são: {{newLine}}Heroic não conseguirá encontrar o Proton da Steam ou o Wine do Lutris .{{newLine}}{{newLine}}Gamescope, GameMode e MangoHud também não funcionarão, pois o Heroic não pode ter acesso a eles.{{newLine}}{{newLine}}Para ter acesso a estes recursos, use o Heroic no formato Flatpak , DEB ou AppImage."
+        "title": "O Heroic está sendo executado como um Snap"
       },
       "rosetta": {
         "title": "Rosetta não encontrado",
@@ -796,7 +795,6 @@
     "default_hint": "Mudanças nessa sessão só são aplicadas como valores padrão quando novos jogos forem instalados. Para modificar as configurações de um jogo já instalado, use o botão de configurações na página do jogo.",
     "eacRuntime": {
       "gameModeRequired": {
-        "message": "O GameMode é necessário para que o EAC runtime funcione no Flatpak. Habilitá-lo agora?",
         "title": "GameMode necessário"
       },
       "installing": "Instalando o EAC Runtime...",
@@ -842,7 +840,6 @@
       "gpu": "GPU:",
       "gogdlVersion": "Gogdl: {{gogdlVersion}}",
       "osVersion": "Versão {{versionNumber}}",
-      "osNameFlatpak": "{{osName}} (dentro do Flatpak)",
       "software": "Software:",
       "memoryStats": "{{percentUsed}}% usada ({{usedGib}} / {{totalGib}}",
       "systemModel": "Modelo do sistema:",

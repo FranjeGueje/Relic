@@ -37,7 +37,6 @@ declare module 'steam-shortcut-editor' {
     DevkitGameID: string
     DevkitOverrideAppID: boolean
     LastPlayTime: Date
-    FlatpakAppID: string
     tags: string[]
   }
 }

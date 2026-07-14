@@ -661,7 +661,6 @@
       "cometVersion": "„Comet“: {{cometVersion}}",
       "copyToClipboard": "Kopijuoti į iškarpinę/mainų sritį",
       "memoryStats": "{{percentUsed}}% naudojama ({{usedGib}} / {{totalGib}}",
-      "osNameFlatpak": "{{osName}} („Flatpak“ viduje)",
       "showDetailed": "Rodyti išsamias sistemos specifikacijas",
       "steamDeck": "„Steam Deck {{model}}“"
     },
@@ -675,8 +674,7 @@
       "name": "„EasyAntiCheat“ vykdantysis",
       "installing": "Įdiegiamas „EAC“ vykdantysis...",
       "gameModeRequired": {
-        "title": "Reikalinga žaidimo veiksena",
-        "message": "Žaidimo veiksena reikalauja „EAC“ vykdančiojo, kad veiktų ant „Flatpak“. Ar Jūs norite jį įjungti/įgalinti dabar?"
+        "title": "Reikalinga žaidimo veiksena"
       }
     },
     "open-config-file": "Atidaryti konfigūracijos failą",

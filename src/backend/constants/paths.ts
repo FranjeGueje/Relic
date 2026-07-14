@@ -18,7 +18,6 @@ if (process.env.CI === 'e2e') {
   mkdirSync(join(configFolder, 'relic'))
 }
 
-export const flatpakHome = env.XDG_DATA_HOME?.replace('/data', '') || homedir()
 export const userHome = isSnap ? env.SNAP_REAL_HOME! : homedir()
 
 export const appFolder = join(configFolder, 'relic')

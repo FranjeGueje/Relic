@@ -3,8 +3,6 @@ dist
 build
 coverage
 public/locales/
-flatpak
-flatpak-build
 sign/
 .github/workflows/build-base.yml
 signatures/version1/cla.json

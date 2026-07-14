@@ -2,7 +2,6 @@
 
 [![GitHub release](https://img.shields.io/github/v/release/Heroic-Games-Launcher/HeroicGamesLauncher?style=for-the-badge)](https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher/releases/latest)
 [![GitHub all releases](https://img.shields.io/github/downloads/Heroic-Games-Launcher/HeroicGamesLauncher/total?style=for-the-badge&color=00B000)](https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher/releases/)
-[![Flathub](https://img.shields.io/flathub/downloads/com.heroicgameslauncher.hgl?label=flathub&logo=flathub&logoColor=white&style=for-the-badge&color=00B000)](https://flathub.org/apps/details/com.heroicgameslauncher.hgl)
 [![GPLv3 license](https://img.shields.io/github/license/Heroic-Games-Launcher/HeroicGamesLauncher?style=for-the-badge&color=blue)](https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher/blob/main/COPYING)  
 
 Heroic is an Open Source Game Launcher for Linux, Windows and macOS.  
@@ -29,7 +28,6 @@ Heroic is built with Web Technologies:
     - [Help with Translations Here](#help-with-translations-here)
   - [Installation](#installation)
     - [Linux](#linux)
-      - [Flatpak](#flatpak)
       - [Debian, Ubuntu and Derivatives](#debian-ubuntu-and-derivatives)
       - [Arch (AUR)](#arch-aur)
       - [Fedora](#fedora)
@@ -137,15 +135,7 @@ Thanks to the community, Heroic was translated to almost 40 different languages 
 
 ### Linux
 
-#### Flatpak
-
-[<img src="https://flathub.org/assets/badges/flathub-badge-en.png" alt="Flathub Badge" width="10%" />](https://flathub.org/apps/details/com.heroicgameslauncher.hgl)
-
-Heroic is available on Flathub, so you should be able to easily install it on most distros with Software Centers (Pop!\_Shop, Discover, etc.)
-
 #### Distribution-specific instructions
-
-If you're not using the Flatpak version, keep GE-Proton as your Wine runner. With umu enabled by default, no additional Wine dependencies are required.
 
 #### Debian, Ubuntu and Derivatives
 
@@ -165,7 +155,7 @@ Please see [the Arch Wiki](https://wiki.archlinux.org/title/Arch_User_Repository
 
 You can download the file ending in .rpm from the [latest release](https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher/releases/latest) and install it with `sudo dnf install ./heroic-*.x86_64.rpm`.
 
-Alternatively, you can use the Flatpak package.
+
 
 #### Nix(OS)
 

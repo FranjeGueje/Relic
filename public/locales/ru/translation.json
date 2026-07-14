@@ -181,8 +181,7 @@
       },
       "snap": {
         "checkbox": "Больше не показывать это сообщение",
-        "title": "Heroic работает как Snap пакет",
-        "message": "Некоторые функции на данный момент недоступны в версии приложения Snap, и мы пытаемся это исправить.{{newLine}}Текущие ограничения: {{newLine}}Heroic не сможет найти Proton в Steam или Wine в Lutris. .{{newLine}}{{newLine}}Gamescope, GameMode и MangoHud также не будут работать, поскольку у Heroic нет доступа к ним.{{newLine}}{{newLine}}Чтобы получить доступ к этой функции, установите Heroic как Flatpak, DEB или из AppImage."
+        "title": "Heroic работает как Snap пакет"
       },
       "rosetta": {
         "message": "Heroic нужен Rosetta что бы корректно функционировать на macOS с чипами Apple Silicon. Пожалуйста установите Rosetta через терминал macOS используя данную команду: \"softwareupdate --install-rosetta\" и перезапустите Heroic. ",
@@ -780,7 +779,6 @@
     "default_hint": "Изменения в этом разделе применяются в качестве значений по умолчанию только при установке игр. Если вы хотите изменить настройки уже установленной игры, воспользуйтесь кнопкой Настройки на странице этой игры.",
     "eacRuntime": {
       "gameModeRequired": {
-        "message": "GameMode необходим для того, чтобы среда выполнения EAC работала на Flatpak. Включить его сейчас?",
         "title": "Требуется GameMode"
       },
       "installing": "Установка среды выполнения EAC...",
@@ -826,7 +824,6 @@
       "gpu": "ГП:",
       "gogdlVersion": "Gogdl: {{gogdlVersion}}",
       "osVersion": "Версия {{versionNumber}}",
-      "osNameFlatpak": "{{osName}} (внутри Flatpak)",
       "software": "ПО:",
       "memoryStats": "Использовано {{percentUsed}}% ({{usedGib}} / {{totalGib}}",
       "systemModel": "Модель системы:",

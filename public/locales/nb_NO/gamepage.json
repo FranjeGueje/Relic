@@ -1,384 +1,383 @@
 {
-    "box": {
-        "change": {
-            "message": "Dette vil endre hvor spillet er installert, er du sikker?",
-            "path": "Velg nytt installasjonssted",
-            "title": "Endre installasjonssted for spill"
-        },
-        "choose": "Velg",
-        "importpath": "Velg spillmappe å importere",
-        "move": {
-            "message": "Dette kan ta lang tid, er du sikker?",
-            "path": "Velg hvor du ønsker å flytte filene",
-            "title": "Flytt spill-installasjon"
-        },
-        "no": "NEI",
-        "repair": {
-            "message": "Vil du prøve å reparere dette spillet? Dette kan ta lang tid.",
-            "title": "Bekreft og reparer"
-        },
-        "runexe": {
-            "title": "Velg EXE for å kjøre"
-        },
-        "select": {
-            "button": "Velg",
-            "image": "Velg bilde"
-        },
-        "sideload": {
-            "exe": "Velg kjørbar fil"
-        },
-        "stopInstall": {
-            "keepInstalling": "Fortsett å installere",
-            "message": "Behold nedlastede filer?",
-            "title": "Stopp installasjon"
-        },
-        "uninstall": {
-            "checkbox": "Fjern prefix: {{prefix}}{{newLine}}Merk: Dette kan ikke angres og vil også slette ikke-sikkerhetskopierte lagringsfiler.",
-            "checkbox_prefix": "Prefiks",
-            "message": "Vil du avinstallere \"{{title}}\"?",
-            "settingcheckbox": "Slett innstillinger og fjern logg {{newLine}}Merk: Dette kan ikke angres. Endrede innstillinger vil bli glemt, og loggen vil bli slettet.",
-            "title": "Avinstaller",
-            "prefix_warning": "Wineprefikset for dette spillet er standardprefikset. Hvis du virkelig vil slette det, må du gjøre det manuelt.",
-            "dlc": "Vil du avinstallere \"{{title}}\" (DLC)?",
-            "cannotUninstallEpic": "Epic spill kan ikke avinstalleres når et annet Epic spill installeres.",
-            "gameIsRunning": "{{title}} kjører. Lukk spillet for å avinstallere det."
-        },
-        "update": {
-            "message": "Dette spillet har en oppdatering. Vil du installere oppdatering nå?",
-            "title": "Spillet trenger oppdatering"
-        },
-        "wineprefix": "Velg Wine-prefiksmappe",
-        "yes": "Ja",
-        "close": "Lukk",
-        "select-install-path": "Velg installasjonssti for Steam",
-        "warning": {
-            "title": "Advarsel"
-        },
-        "selectLaunchOption": {
-            "body": "Velg et oppstartsalternativ for dette spillet (det kan endres senere i spillinnstillingene):",
-            "title": "Velg oppstartsalternativ ({{seconds}}s)"
-        },
-        "sync": {
-            "force_download_warning": "Lokale lagringsfiler vil slettes. Vil du fortsette?",
-            "force_upload_warning": "Lagrede filer på skyen vil overskrives. Vil du fortsette?"
-        },
-        "offline_warning": {
-            "message": "Det kan hende at dette spillet ikke fungerer uten internett. Vil du spille det allikevel?",
-            "playAnyway": "Spill likevel",
-            "title": "Offline-advarsel"
-        },
-        "ok": "OK"
+  "box": {
+    "change": {
+      "message": "Dette vil endre hvor spillet er installert, er du sikker?",
+      "path": "Velg nytt installasjonssted",
+      "title": "Endre installasjonssted for spill"
     },
-    "button": {
-        "add_to_favourites": "Legg til i favoritter",
-        "cancel": "Pause/avbryt",
-        "continue": "Fortsett nedlasting",
-        "finish": "Fullfør",
-        "force_update": "Tving oppdatering hvis tilgjengelig",
-        "force-innstall": "Tving installasjon",
-        "hide_game": "Skjul spillet",
-        "import": "Importer spill",
-        "install": "Installer",
-        "no-path-selected": "Ingen sti valgt",
-        "queue": {
-            "remove": "Fjern fra køen"
-        },
-        "remove_from_favourites": "Fjern fra favoritter",
-        "remove_from_recent": "Fjern fra nylige",
-        "run-exe-first": "Kjør installasjon først",
-        "running-setup": "Kjører oppsett",
-        "sideload": {
-            "edit": "Rediger app/spill"
-        },
-        "unhide_game": "Synligjør spillet",
-        "uninstall": "Avinstaller",
-        "update": "Oppdater",
-        "details": "Detaljer",
-        "changelog": "Vis endringslogg",
-        "browse_wine_prefix": "Bla gjennom Wine Prefix",
-        "browse_files": "Bla gjennom filer",
-        "play": "SPILL",
-        "edit-game": "Rediger spill"
+    "choose": "Velg",
+    "importpath": "Velg spillmappe å importere",
+    "move": {
+      "message": "Dette kan ta lang tid, er du sikker?",
+      "path": "Velg hvor du ønsker å flytte filene",
+      "title": "Flytt spill-installasjon"
     },
-    "cloud_save_unsupported": "Ustøttet",
-    "disabled": "Deaktivert",
-    "dlc": {
-        "installDlcs": "Installer alle DLC-er"
+    "no": "NEI",
+    "repair": {
+      "message": "Vil du prøve å reparere dette spillet? Dette kan ta lang tid.",
+      "title": "Bekreft og reparer"
     },
-    "enabled": "Aktivert",
-    "game": {
-        "downloadSize": "Nedlastningsstørrelse",
-        "firstPlayed": "Først spilt",
-        "getting-download-size": "Henter nedlastningsstørrelse",
-        "getting-install-size": "Henter installasjonsstørrelse",
-        "installSize": "Installasjonsstørrelse",
-        "language": "Språk",
-        "lastPlayed": "Sist spilt",
-        "neverPlayed": "Aldri",
-        "platform": "Velg plattformversjon som skal installeres",
-        "requirements": "Systemkrav",
-        "totalPlayed": "Spilletid",
-        "dlcs": "DLC-er",
-        "builds": {
-            "version": "Versjon",
-            "buildsSelector": "Velg spillversjon",
-            "toggle": "Hold spillet på en spesifikk versjon"
-        },
-        "branch": {
-            "disabled": "Deaktivert",
-            "select": "Velg betakanal",
-            "password": "Sett passord for privat kanal",
-            "setPrivateBranchPassword": "Sett passord for privat kanal"
-        },
-        "modify": "Endre installasjonen",
-        "changelogFor": "Endringslogg for {{gameTitle}}",
-        "extra_info": "Ekstra info",
-        "install_info": "Installasjonsinfo",
-        "achievements": "Prestasjoner"
+    "runexe": {
+      "title": "Velg EXE for å kjøre"
     },
-    "gamecard": {
-        "moving": "Flytter",
-        "repairing": "Reparerer"
-    },
-    "generic": {
-        "error": "Ukjent feil",
-        "noDescription": "Ingen beskrivelse tilgjengelig"
-    },
-    "hours": "Timer",
-    "how-long-to-beat": {
-        "completionist": "Perfeksjonist",
-        "main-plus-extras": "Hoved + Ekstra",
-        "main-story": "Hovedhistorie"
-    },
-    "howLongToBeat": "Hvor lenge spillet tar å slå",
-    "info": {
-        "canRunOffline": "Krever tilkobling til internett",
-        "installedPlatform": "Installert plattform",
-        "path": "Installasjonssti",
-        "size": "Størrelse",
-        "syncsaves": "Synkroniser lagrer",
-        "version": "Versjon",
-        "apple-gaming-wiki": "AppleGamingWiki-vurdering",
-        "clickToOpen": "Klikk for å åpne",
-        "game-scores": "Spillresultater",
-        "installedInfo": "Installert informasjon",
-        "protondb-compatibility-info": "Proton-kompatibilitetsnivå",
-        "steamdeck-compatibility-info": "SteamDeck-kompatibilitet",
-        "third-party-app": "Tredjepartsbehandler"
-    },
-    "install": {
-        "disk-space-left": "Plass tilgjengelig",
-        "not-enough-disk-space": "Ikke nok lagringsplass",
-        "path": "Velg installasjonssti",
-        "path-not-writtable": "Advarsel: banen er kanskje ikke skrivbar.",
-        "space-after-install": "Etter installasjon",
-        "wineprefix": "WinePrefix",
-        "wineversion": "Wine-versjon",
-        "anticheat-warning": {
-            "ok": "Ok",
-            "install_anyway": "Ja (jeg forstår at flerspillerfunksjonene ikke vil fungere)",
-            "disabled_installation": "Dette spillet bruker anti-jukse-programvare som ikke er kompatibelt med operativsystemet ditt, eller at har ikke utviklerne til dette spillet skrudd det på. Dette betyr at flerspillerdelen av spillet ikke kommer til å fungere, og det er ingenting du (eller Heroic) kan gjøre med det.<br /><br /> Hvis du vil installere det og prøve det allikevel, gå til «Innstillinger», «Avansert», og skru på installering av spill med ødelagt eller ikke-fungerende anti-jukse-programmer.<br /><br />Merk at det ikke finnes noen løsning på dette problemet og du kan risikere å bli bannlyst fra spillet.",
-            "multiplayer_message": "Støtten for anti-juks er ødelagt eller avvist. Spillet vil kanskje starte, men flerspillerfunksjonene vil ikke fungere. Vil du installere det likevel?",
-            "cancel": "Nei",
-            "title": "Anti-juks ødelagt/avvist"
-        },
-        "flatpak-path-not-writtable": "Feil: Sandkassetilgang ikke gitt til denne stien, datatap vil forekomme."
-    },
-    "label": {
-        "game": {
-            "third-party-game": "Tredjepartsspill støttes IKKE",
-            "not-installable-game": "Spillet kan IKKE installeres"
-        },
-        "playing": {
-            "start": "Spill nå",
-            "stop": "Spiller (Stopp)",
-            "start_with_logs": "Spill nå (med logger)"
-        },
-        "saves": {
-            "syncing": "Synkroniserer spill-lagringer"
-        },
-        "launching": "Starter",
-        "ubisoft": "Installerer Ubisoft Connect",
-        "redist": "Installerer redistributables",
-        "winetricks": "Installerer Winetricks-pakker",
-        "steam": {
-            "pleaseWait": "Please wait",
-            "abort": "Avbryt installering",
-            "cancel": "Avbryt installering",
-            "compatibility": "Vær oppmerksom på at ikke alle spill kommer til å fungere, og til og med hvis de gjør det, er det ikke garantert at de fungerer som forventet.",
-            "compatibility-layer-not-available": "Kompatibilitetslag er ikke tilgjengelig. Installer en fra menyen først. «Innstillinger» -> «Wine Manager».",
-            "crossover": "Hvis du har Crossover installert, trenger du ikke dette, siden det kan da kjøre gjennom Steam som vanlig.",
-            "downloading": "Laster ned {{percent}}%",
-            "hardware": "Apple Silicon M1+ (på Intel Mac-er funker Steam med Crossover)",
-            "install": "Installer Steam",
-            "install-path": "Installasjonssti for Steam",
-            "installation": "Steam-installasjon",
-            "installing": "Installerer",
-            "launch": "Start Steam med Heroics kompatibilitetslag",
-            "launching": "Starter Steam...",
-            "macOS": "macOS 14.0 eller nyere",
-            "install-tooltip": "Dette installerer Windows-versjonen av Steam og kjører det gjennom et Heroic-kompatibilitetslag. \n\n    Noen spill, spesielt eldre spill, nyere 3D-spill, eller de med antijukseprogramvare, kan hende at ikke fungerer riktig. \n\n    ",
-            "notification": "Heroic vil si ifra når installasjonen er ferdig.",
-            "patience": "Hvis du ønsker å fortsette, bemerk at det kan ta noen minutter å fullføre, avhengig av internetthastigheten og systemkonfigurasjonen din.",
-            "ram": "8 GB RAM",
-            "recommended": "Anbefalte spesifikasjoner for en bedre opplevelse",
-            "select-path": "Velg innstallasjonsmappe for Steam",
-            "specificVersion-pt1": "Dette vil laste den en spesifikk versjon av Steam fra",
-            "specificVersion-pt2": "archive.org",
-            "specificVersion-pt3": "som har blitt modifisert for å fungere gjennom Heroic, siden nyere versjoner av Steam ikke fungerer på macOS."
-        }
-    },
-    "launch": {
-        "options": "Startalternativer...",
-        "default": "Standard"
-    },
-    "not_logged_in": {
-        "epic": "Du er ikke logget inn med en Epic-konto i Heroic. Ikke bruk butikksiden for å logge inn, klikk i stedet på følgende knapp:",
-        "gog": "Du er ikke logget inn med en GOG-konto i Heroic. Ikke bruk butikksiden for å logge inn, klikk i stedet på følgende knapp:",
-        "login": "Logg inn",
-        "title": "Du er IKKE logget inn",
-        "amazon": "Du er ikke logget inn med en Amazon-konto i Heroic. Ikke bruk butikksiden for å logge inn, klikk i stedet på følgende knapp:",
-        "zoom": "Du har ikke logget inn i Zoom med Heroic. Ikke bruk butikksiden for å logge inn. Bruk heller følgende knapp istedenfor:"
-    },
-    "report_problem": "Rapporter et problem med å kjøre dette spillet",
-    "sdl": {
-        "title": "Velg komponenter som skal installeres"
-    },
-    "setting": {
-        "winecrossoverbottle": "CrossOver Bottle",
-        "show-wine-settings": "Vis Wine-innstillinger",
-        "warn-use-shared-wine-config": "Bruk kun dette alternativet hvis du vet hva du gjør.<br/>Å dele samme prefiks for flere spill kan skape problemer hvis avhengighetene deres er inkompatible.",
-        "use-shared-wine-config": "Bruk delt Wine-prefiks"
+    "select": {
+      "button": "Velg",
+      "image": "Velg bilde"
     },
     "sideload": {
-        "field": {
-            "title": "Tittel"
-        },
-        "info": {
-            "exe": "Velg kjørbar fil",
-            "image": "App Image",
-            "title": "Spill/app tittel",
-            "broser": "NettleserURL",
-            "fullscreen": "Start fullskjerm (F11 for å avslutte)",
-            "useragent": "Egendefinert brukeragent",
-            "cover-hint": "Forside/Heltekunst (klikk på bildet for å søke på SteamGridDB)",
-            "image-hint": "Stående forsidekunst (klikk på bildet for å søke på SteamGridDB)"
-        },
-        "placeholder": {
-            "image": "Lim inn en bilde-URL her eller velg et bilde fra datamaskinen din",
-            "title": "Legg til en tittel til spillet/programmet ditt",
-            "url": "Lim inn spillets URL her",
-            "useragent": "Skriv inn en egendefinert brukeragent her som skal brukes på denne nettleserappen/spillet"
-        },
-        "import-hint": {
-            "content": "IKKE bruk denne egenskapen for det. <br /> Bruk heller, <3>logg inn på</3> butikken, let etter spillet i biblioteket ditt, åpne installasjonsdialogen, og klikk på &quot;Importer Spill&quot; knappen",
-            "title": "Viktig! Legger du til et spill fra Epic/GOG/Amazon? Klikk her!"
-        },
-        "images": {
-            "summary": "Bilder"
-        }
+      "exe": "Velg kjørbar fil"
     },
-    "specs": {
-        "minimum": "Minimum",
-        "recommended": "Anbefalt"
+    "stopInstall": {
+      "keepInstalling": "Fortsett å installere",
+      "message": "Behold nedlastede filer?",
+      "title": "Stopp installasjon"
     },
-    "status": {
-        "clickToUpdate": "Klikk for å oppdatere",
-        "gameNotAvailable": "Spill ikke tilgjengelig",
-        "hasUpdates": "Ny versjon tilgjengelig!",
-        "installed": "Installert",
-        "installing": "Installerer",
-        "moving": "Flytter installasjonen, vennligst vent",
-        "notinstalled": "Dette spillet er ikke installert",
-        "notSupported": "Ikke støttet",
-        "notSupportedGame": "Ikke støttet",
-        "processing": "Behandler filer, vennligst vent",
-        "queued": "I kø",
-        "reparing": "Reparerer spillet, vennligst vent",
-        "this-game-uses-third-party": "Dette spillet bruker en tredjeparts-oppstarter som ennå ikke støttes",
-        "totalDownloaded": "Totalt nedlastede",
-        "uninstalling": "Avinstallerer",
-        "updating": "Oppdaterer spillet",
-        "playing": "Spiller",
-        "moving-files": "Flytter filen «{{file}}»: {{percent}}%",
-        "syncingSaves": "Synkroniserer lagringsfiler",
-        "launching": "Starter",
-        "ubisoft": "Installerer Ubisoft",
-        "downloading": "Laster ned",
-        "extracting": "Pakker ut",
-        "gog-goodie": "Dette spillet ser ikke ut til å være installerbart. Sjekk nedlastbart innhold på https://gog.com/account",
-        "goodie": "Kan ikke installeres",
-        "winetricks": "Aktiverer Winetricks-rettelser",
-        "redist": "Installerer Redistributables ({{redist}})",
-        "importing": "Imporerer"
+    "uninstall": {
+      "checkbox": "Fjern prefix: {{prefix}}{{newLine}}Merk: Dette kan ikke angres og vil også slette ikke-sikkerhetskopierte lagringsfiler.",
+      "checkbox_prefix": "Prefiks",
+      "message": "Vil du avinstallere \"{{title}}\"?",
+      "settingcheckbox": "Slett innstillinger og fjern logg {{newLine}}Merk: Dette kan ikke angres. Endrede innstillinger vil bli glemt, og loggen vil bli slettet.",
+      "title": "Avinstaller",
+      "prefix_warning": "Wineprefikset for dette spillet er standardprefikset. Hvis du virkelig vil slette det, må du gjøre det manuelt.",
+      "dlc": "Vil du avinstallere \"{{title}}\" (DLC)?",
+      "cannotUninstallEpic": "Epic spill kan ikke avinstalleres når et annet Epic spill installeres.",
+      "gameIsRunning": "{{title}} kjører. Lukk spillet for å avinstallere det."
     },
-    "submenu": {
-        "addShortcut": "Legg til snarvei",
-        "addToSteam": "Legg til Steam",
-        "change": "Endre installasjonsbane",
-        "disableEosOverlay": "Deaktiver EOS Overlay",
-        "enableEosOverlay": "Aktiver EOS Overlay",
-        "move": "Flytt spill",
-        "protondb": "Sjekk kompatibilitet",
-        "removeFromSteam": "Fjern fra Steam",
-        "removeShortcut": "Fjern snarveier",
-        "settings": "Innstillinger",
-        "store": "Butikkside",
-        "verify": "Bekreft og reparer",
-        "extraInfo": "Ekstra info",
-        "logs": "Logger",
-        "categories": "Kategorier"
+    "update": {
+      "message": "Dette spillet har en oppdatering. Vil du installere oppdatering nå?",
+      "title": "Spillet trenger oppdatering"
     },
-    "help": {
-        "cloud_save_unsupported": "Dette spillet støtter ikke skylagring. Denne informasjonen er gitt av spillutviklerne. Noen spill implementerer sitt eget skylagringssystem.",
-        "title": {
-            "gamePage": "Spillside"
-        },
-        "content": {
-            "gamePage": "Vis alle spilledetaljer og handlinger. Bruk menyen med de 3 prikkene for flere alternativer."
-        }
+    "wineprefix": "Velg Wine-prefiksmappe",
+    "yes": "Ja",
+    "close": "Lukk",
+    "select-install-path": "Velg installasjonssti for Steam",
+    "warning": {
+      "title": "Advarsel"
     },
-    "modifyInstall": {
-        "dlcsCollapsible": "DLC",
-        "nodlcs": "Ingen DLC tilgjengelig",
-        "redMod": {
-            "collapsible": "REDmod-integrering",
-            "enable": "Aktiver modifikasjoner"
-        },
-        "versionCollapsable": "Spillversjon"
+    "selectLaunchOption": {
+      "body": "Velg et oppstartsalternativ for dette spillet (det kan endres senere i spillinnstillingene):",
+      "title": "Velg oppstartsalternativ ({{seconds}}s)"
     },
-    "third-party-managed": {
-        "header": "Dette spillet administreres av en tredjepartsapplikasjon",
-        "notice2": "Etter å ha klikket på installer, vil Heroic kjøre applikasjonen for å fullføre installasjonsprosessen",
-        "notice1": "Dette spillet administreres av en tredjepartsapplikasjon: \"{{application_name}}\""
+    "sync": {
+      "force_download_warning": "Lokale lagringsfiler vil slettes. Vil du fortsette?",
+      "force_upload_warning": "Lagrede filer på skyen vil overskrives. Vil du fortsette?"
     },
+    "offline_warning": {
+      "message": "Det kan hende at dette spillet ikke fungerer uten internett. Vil du spille det allikevel?",
+      "playAnyway": "Spill likevel",
+      "title": "Offline-advarsel"
+    },
+    "ok": "OK"
+  },
+  "button": {
+    "add_to_favourites": "Legg til i favoritter",
+    "cancel": "Pause/avbryt",
+    "continue": "Fortsett nedlasting",
+    "finish": "Fullfør",
+    "force_update": "Tving oppdatering hvis tilgjengelig",
+    "force-innstall": "Tving installasjon",
+    "hide_game": "Skjul spillet",
+    "import": "Importer spill",
+    "install": "Installer",
+    "no-path-selected": "Ingen sti valgt",
     "queue": {
-        "label": {
-            "canceled": "Avbrutt",
-            "remove": "Fjern fra Nedlastninger",
-            "pause": "Sett nedlasting på pause",
-            "resume": "Fortsett å laste ned"
-        }
+      "remove": "Fjern fra køen"
     },
-    "wikiLink": "Viktig informasjon om dette spillet: les dette:&nbsp;<1>Åpne side</1>",
-    "Open": "Åpne",
-    "open-saves-folder": "Åpne mappen med spilllageringer",
-    "edit-game": {
-        "advanced": "Avansert",
-        "cover": "Omslagskunst",
-        "info": {
-            "cover": "Bred forside",
-            "square": "Stående forside"
-        },
-        "placeholder": {
-            "image": "Lim inn en bildelenke"
-        },
-        "reset": "Tilbakestill til standard",
-        "sgdb": {
-            "no-key-link": "Innstillinger → Avansert",
-            "no-key-prefix": "For å søke etter forsidebilder i SteamGridDB, legg til en API-nøkkel i"
-        },
-        "square": "Stående forsidekunst",
-        "title": "Rediger spill"
+    "remove_from_favourites": "Fjern fra favoritter",
+    "remove_from_recent": "Fjern fra nylige",
+    "run-exe-first": "Kjør installasjon først",
+    "running-setup": "Kjører oppsett",
+    "sideload": {
+      "edit": "Rediger app/spill"
+    },
+    "unhide_game": "Synligjør spillet",
+    "uninstall": "Avinstaller",
+    "update": "Oppdater",
+    "details": "Detaljer",
+    "changelog": "Vis endringslogg",
+    "browse_wine_prefix": "Bla gjennom Wine Prefix",
+    "browse_files": "Bla gjennom filer",
+    "play": "SPILL",
+    "edit-game": "Rediger spill"
+  },
+  "cloud_save_unsupported": "Ustøttet",
+  "disabled": "Deaktivert",
+  "dlc": {
+    "installDlcs": "Installer alle DLC-er"
+  },
+  "enabled": "Aktivert",
+  "game": {
+    "downloadSize": "Nedlastningsstørrelse",
+    "firstPlayed": "Først spilt",
+    "getting-download-size": "Henter nedlastningsstørrelse",
+    "getting-install-size": "Henter installasjonsstørrelse",
+    "installSize": "Installasjonsstørrelse",
+    "language": "Språk",
+    "lastPlayed": "Sist spilt",
+    "neverPlayed": "Aldri",
+    "platform": "Velg plattformversjon som skal installeres",
+    "requirements": "Systemkrav",
+    "totalPlayed": "Spilletid",
+    "dlcs": "DLC-er",
+    "builds": {
+      "version": "Versjon",
+      "buildsSelector": "Velg spillversjon",
+      "toggle": "Hold spillet på en spesifikk versjon"
+    },
+    "branch": {
+      "disabled": "Deaktivert",
+      "select": "Velg betakanal",
+      "password": "Sett passord for privat kanal",
+      "setPrivateBranchPassword": "Sett passord for privat kanal"
+    },
+    "modify": "Endre installasjonen",
+    "changelogFor": "Endringslogg for {{gameTitle}}",
+    "extra_info": "Ekstra info",
+    "install_info": "Installasjonsinfo",
+    "achievements": "Prestasjoner"
+  },
+  "gamecard": {
+    "moving": "Flytter",
+    "repairing": "Reparerer"
+  },
+  "generic": {
+    "error": "Ukjent feil",
+    "noDescription": "Ingen beskrivelse tilgjengelig"
+  },
+  "hours": "Timer",
+  "how-long-to-beat": {
+    "completionist": "Perfeksjonist",
+    "main-plus-extras": "Hoved + Ekstra",
+    "main-story": "Hovedhistorie"
+  },
+  "howLongToBeat": "Hvor lenge spillet tar å slå",
+  "info": {
+    "canRunOffline": "Krever tilkobling til internett",
+    "installedPlatform": "Installert plattform",
+    "path": "Installasjonssti",
+    "size": "Størrelse",
+    "syncsaves": "Synkroniser lagrer",
+    "version": "Versjon",
+    "apple-gaming-wiki": "AppleGamingWiki-vurdering",
+    "clickToOpen": "Klikk for å åpne",
+    "game-scores": "Spillresultater",
+    "installedInfo": "Installert informasjon",
+    "protondb-compatibility-info": "Proton-kompatibilitetsnivå",
+    "steamdeck-compatibility-info": "SteamDeck-kompatibilitet",
+    "third-party-app": "Tredjepartsbehandler"
+  },
+  "install": {
+    "disk-space-left": "Plass tilgjengelig",
+    "not-enough-disk-space": "Ikke nok lagringsplass",
+    "path": "Velg installasjonssti",
+    "path-not-writtable": "Advarsel: banen er kanskje ikke skrivbar.",
+    "space-after-install": "Etter installasjon",
+    "wineprefix": "WinePrefix",
+    "wineversion": "Wine-versjon",
+    "anticheat-warning": {
+      "ok": "Ok",
+      "install_anyway": "Ja (jeg forstår at flerspillerfunksjonene ikke vil fungere)",
+      "disabled_installation": "Dette spillet bruker anti-jukse-programvare som ikke er kompatibelt med operativsystemet ditt, eller at har ikke utviklerne til dette spillet skrudd det på. Dette betyr at flerspillerdelen av spillet ikke kommer til å fungere, og det er ingenting du (eller Heroic) kan gjøre med det.<br /><br /> Hvis du vil installere det og prøve det allikevel, gå til «Innstillinger», «Avansert», og skru på installering av spill med ødelagt eller ikke-fungerende anti-jukse-programmer.<br /><br />Merk at det ikke finnes noen løsning på dette problemet og du kan risikere å bli bannlyst fra spillet.",
+      "multiplayer_message": "Støtten for anti-juks er ødelagt eller avvist. Spillet vil kanskje starte, men flerspillerfunksjonene vil ikke fungere. Vil du installere det likevel?",
+      "cancel": "Nei",
+      "title": "Anti-juks ødelagt/avvist"
     }
+  },
+  "label": {
+    "game": {
+      "third-party-game": "Tredjepartsspill støttes IKKE",
+      "not-installable-game": "Spillet kan IKKE installeres"
+    },
+    "playing": {
+      "start": "Spill nå",
+      "stop": "Spiller (Stopp)",
+      "start_with_logs": "Spill nå (med logger)"
+    },
+    "saves": {
+      "syncing": "Synkroniserer spill-lagringer"
+    },
+    "launching": "Starter",
+    "ubisoft": "Installerer Ubisoft Connect",
+    "redist": "Installerer redistributables",
+    "winetricks": "Installerer Winetricks-pakker",
+    "steam": {
+      "pleaseWait": "Please wait",
+      "abort": "Avbryt installering",
+      "cancel": "Avbryt installering",
+      "compatibility": "Vær oppmerksom på at ikke alle spill kommer til å fungere, og til og med hvis de gjør det, er det ikke garantert at de fungerer som forventet.",
+      "compatibility-layer-not-available": "Kompatibilitetslag er ikke tilgjengelig. Installer en fra menyen først. «Innstillinger» -> «Wine Manager».",
+      "crossover": "Hvis du har Crossover installert, trenger du ikke dette, siden det kan da kjøre gjennom Steam som vanlig.",
+      "downloading": "Laster ned {{percent}}%",
+      "hardware": "Apple Silicon M1+ (på Intel Mac-er funker Steam med Crossover)",
+      "install": "Installer Steam",
+      "install-path": "Installasjonssti for Steam",
+      "installation": "Steam-installasjon",
+      "installing": "Installerer",
+      "launch": "Start Steam med Heroics kompatibilitetslag",
+      "launching": "Starter Steam...",
+      "macOS": "macOS 14.0 eller nyere",
+      "install-tooltip": "Dette installerer Windows-versjonen av Steam og kjører det gjennom et Heroic-kompatibilitetslag. \n\n    Noen spill, spesielt eldre spill, nyere 3D-spill, eller de med antijukseprogramvare, kan hende at ikke fungerer riktig. \n\n    ",
+      "notification": "Heroic vil si ifra når installasjonen er ferdig.",
+      "patience": "Hvis du ønsker å fortsette, bemerk at det kan ta noen minutter å fullføre, avhengig av internetthastigheten og systemkonfigurasjonen din.",
+      "ram": "8 GB RAM",
+      "recommended": "Anbefalte spesifikasjoner for en bedre opplevelse",
+      "select-path": "Velg innstallasjonsmappe for Steam",
+      "specificVersion-pt1": "Dette vil laste den en spesifikk versjon av Steam fra",
+      "specificVersion-pt2": "archive.org",
+      "specificVersion-pt3": "som har blitt modifisert for å fungere gjennom Heroic, siden nyere versjoner av Steam ikke fungerer på macOS."
+    }
+  },
+  "launch": {
+    "options": "Startalternativer...",
+    "default": "Standard"
+  },
+  "not_logged_in": {
+    "epic": "Du er ikke logget inn med en Epic-konto i Heroic. Ikke bruk butikksiden for å logge inn, klikk i stedet på følgende knapp:",
+    "gog": "Du er ikke logget inn med en GOG-konto i Heroic. Ikke bruk butikksiden for å logge inn, klikk i stedet på følgende knapp:",
+    "login": "Logg inn",
+    "title": "Du er IKKE logget inn",
+    "amazon": "Du er ikke logget inn med en Amazon-konto i Heroic. Ikke bruk butikksiden for å logge inn, klikk i stedet på følgende knapp:",
+    "zoom": "Du har ikke logget inn i Zoom med Heroic. Ikke bruk butikksiden for å logge inn. Bruk heller følgende knapp istedenfor:"
+  },
+  "report_problem": "Rapporter et problem med å kjøre dette spillet",
+  "sdl": {
+    "title": "Velg komponenter som skal installeres"
+  },
+  "setting": {
+    "winecrossoverbottle": "CrossOver Bottle",
+    "show-wine-settings": "Vis Wine-innstillinger",
+    "warn-use-shared-wine-config": "Bruk kun dette alternativet hvis du vet hva du gjør.<br/>Å dele samme prefiks for flere spill kan skape problemer hvis avhengighetene deres er inkompatible.",
+    "use-shared-wine-config": "Bruk delt Wine-prefiks"
+  },
+  "sideload": {
+    "field": {
+      "title": "Tittel"
+    },
+    "info": {
+      "exe": "Velg kjørbar fil",
+      "image": "App Image",
+      "title": "Spill/app tittel",
+      "broser": "NettleserURL",
+      "fullscreen": "Start fullskjerm (F11 for å avslutte)",
+      "useragent": "Egendefinert brukeragent",
+      "cover-hint": "Forside/Heltekunst (klikk på bildet for å søke på SteamGridDB)",
+      "image-hint": "Stående forsidekunst (klikk på bildet for å søke på SteamGridDB)"
+    },
+    "placeholder": {
+      "image": "Lim inn en bilde-URL her eller velg et bilde fra datamaskinen din",
+      "title": "Legg til en tittel til spillet/programmet ditt",
+      "url": "Lim inn spillets URL her",
+      "useragent": "Skriv inn en egendefinert brukeragent her som skal brukes på denne nettleserappen/spillet"
+    },
+    "import-hint": {
+      "content": "IKKE bruk denne egenskapen for det. <br /> Bruk heller, <3>logg inn på</3> butikken, let etter spillet i biblioteket ditt, åpne installasjonsdialogen, og klikk på &quot;Importer Spill&quot; knappen",
+      "title": "Viktig! Legger du til et spill fra Epic/GOG/Amazon? Klikk her!"
+    },
+    "images": {
+      "summary": "Bilder"
+    }
+  },
+  "specs": {
+    "minimum": "Minimum",
+    "recommended": "Anbefalt"
+  },
+  "status": {
+    "clickToUpdate": "Klikk for å oppdatere",
+    "gameNotAvailable": "Spill ikke tilgjengelig",
+    "hasUpdates": "Ny versjon tilgjengelig!",
+    "installed": "Installert",
+    "installing": "Installerer",
+    "moving": "Flytter installasjonen, vennligst vent",
+    "notinstalled": "Dette spillet er ikke installert",
+    "notSupported": "Ikke støttet",
+    "notSupportedGame": "Ikke støttet",
+    "processing": "Behandler filer, vennligst vent",
+    "queued": "I kø",
+    "reparing": "Reparerer spillet, vennligst vent",
+    "this-game-uses-third-party": "Dette spillet bruker en tredjeparts-oppstarter som ennå ikke støttes",
+    "totalDownloaded": "Totalt nedlastede",
+    "uninstalling": "Avinstallerer",
+    "updating": "Oppdaterer spillet",
+    "playing": "Spiller",
+    "moving-files": "Flytter filen «{{file}}»: {{percent}}%",
+    "syncingSaves": "Synkroniserer lagringsfiler",
+    "launching": "Starter",
+    "ubisoft": "Installerer Ubisoft",
+    "downloading": "Laster ned",
+    "extracting": "Pakker ut",
+    "gog-goodie": "Dette spillet ser ikke ut til å være installerbart. Sjekk nedlastbart innhold på https://gog.com/account",
+    "goodie": "Kan ikke installeres",
+    "winetricks": "Aktiverer Winetricks-rettelser",
+    "redist": "Installerer Redistributables ({{redist}})",
+    "importing": "Imporerer"
+  },
+  "submenu": {
+    "addShortcut": "Legg til snarvei",
+    "addToSteam": "Legg til Steam",
+    "change": "Endre installasjonsbane",
+    "disableEosOverlay": "Deaktiver EOS Overlay",
+    "enableEosOverlay": "Aktiver EOS Overlay",
+    "move": "Flytt spill",
+    "protondb": "Sjekk kompatibilitet",
+    "removeFromSteam": "Fjern fra Steam",
+    "removeShortcut": "Fjern snarveier",
+    "settings": "Innstillinger",
+    "store": "Butikkside",
+    "verify": "Bekreft og reparer",
+    "extraInfo": "Ekstra info",
+    "logs": "Logger",
+    "categories": "Kategorier"
+  },
+  "help": {
+    "cloud_save_unsupported": "Dette spillet støtter ikke skylagring. Denne informasjonen er gitt av spillutviklerne. Noen spill implementerer sitt eget skylagringssystem.",
+    "title": {
+      "gamePage": "Spillside"
+    },
+    "content": {
+      "gamePage": "Vis alle spilledetaljer og handlinger. Bruk menyen med de 3 prikkene for flere alternativer."
+    }
+  },
+  "modifyInstall": {
+    "dlcsCollapsible": "DLC",
+    "nodlcs": "Ingen DLC tilgjengelig",
+    "redMod": {
+      "collapsible": "REDmod-integrering",
+      "enable": "Aktiver modifikasjoner"
+    },
+    "versionCollapsable": "Spillversjon"
+  },
+  "third-party-managed": {
+    "header": "Dette spillet administreres av en tredjepartsapplikasjon",
+    "notice2": "Etter å ha klikket på installer, vil Heroic kjøre applikasjonen for å fullføre installasjonsprosessen",
+    "notice1": "Dette spillet administreres av en tredjepartsapplikasjon: \"{{application_name}}\""
+  },
+  "queue": {
+    "label": {
+      "canceled": "Avbrutt",
+      "remove": "Fjern fra Nedlastninger",
+      "pause": "Sett nedlasting på pause",
+      "resume": "Fortsett å laste ned"
+    }
+  },
+  "wikiLink": "Viktig informasjon om dette spillet: les dette:&nbsp;<1>Åpne side</1>",
+  "Open": "Åpne",
+  "open-saves-folder": "Åpne mappen med spilllageringer",
+  "edit-game": {
+    "advanced": "Avansert",
+    "cover": "Omslagskunst",
+    "info": {
+      "cover": "Bred forside",
+      "square": "Stående forside"
+    },
+    "placeholder": {
+      "image": "Lim inn en bildelenke"
+    },
+    "reset": "Tilbakestill til standard",
+    "sgdb": {
+      "no-key-link": "Innstillinger → Avansert",
+      "no-key-prefix": "For å søke etter forsidebilder i SteamGridDB, legg til en API-nøkkel i"
+    },
+    "square": "Stående forsidekunst",
+    "title": "Rediger spill"
+  }
 }

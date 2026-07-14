@@ -180,7 +180,6 @@
       },
       "snap": {
         "checkbox": "Không hiển thị lại thông báo này",
-        "message": "Một số tính năng hiện không có trong phiên bản Snap của ứng dụng và chúng tôi đang cố gắng khắc phục.{{newLine}}Hạn chế hiện tại là: {{newLine}}Heroic sẽ không thể tìm thấy Proton từ Steam hoặc Wine từ Lutris.{{newLine}}{{newLine}}Gamescope, GameMode và MangoHud cũng sẽ không hoạt động vì Heroic không thể truy cập vào chúng.{{newLine}}{{newLine}}Để có quyền truy cập vào tính năng này, vui lòng cài đặt Heroic dưới dạng Heroic Flatpak, DEB hoặc từ AppImage.",
         "title": "Heroic đang chạy như Snap"
       }
     },
@@ -767,7 +766,6 @@
     "default_hint": "Những thay đổi trong phần này chỉ áp dụng làm giá trị mặc định khi cài đặt trò chơi. Nếu bạn muốn thay đổi cài đặt của trò chơi đã cài đặt, hãy sử dụng nút Cài đặt trong trang trò chơi.",
     "eacRuntime": {
       "gameModeRequired": {
-        "message": "Cần có GameMode để thời gian chạy EAC hoạt động trên Flatpak. Bạn có muốn kích hoạt nó bây giờ không?",
         "title": "Yêu cầu GameMode"
       },
       "installing": "Đang cài đặt EAC Runtime...",
@@ -837,7 +835,6 @@
       "memory": "Bộ Nhớ:",
       "memoryStats": "Đã sử dụng {{percentUsed}}% ({{usedGib}} / {{totalGib}}",
       "os": "Hệ Điều Hành:",
-      "osNameFlatpak": "{{osName}} (bên trong Flatpak)",
       "osVersion": "Phiên bản {{versionNumber}}",
       "showDetailed": "Hiển thị thông số kỹ thuật chi tiết của hệ thống",
       "software": "Phần mềm:",

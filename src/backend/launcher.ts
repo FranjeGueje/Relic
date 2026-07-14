@@ -75,7 +75,6 @@ import {
   defaultUmuPath,
   sharedWinePrefix,
   fixesPath,
-  flatpakHome,
   galaxyCommunicationExePath,
   gamesConfigPath,
   runtimePath,
@@ -88,9 +87,7 @@ import {
   isSteamDeckGameMode,
   isWindows,
   isIntelMac,
-  isSteamDeck,
-  isFlatpak,
-  flatpakRuntimeVersion
+  isSteamDeck
 } from './constants/environment'
 import { formatSystemInfo, getSystemInfo } from './utils/systeminfo'
 import { gameAnticheatInfo } from './anticheat/utils'
@@ -972,7 +969,7 @@ function setupWineEnvVars(gameSettings: GameSettings, gameId = '0') {
   const ret: Record<string, string> = {}
 
   // Add WINEPREFIX / STEAM_COMPAT_DATA_PATH / CX_BOTTLE
-  const steamInstallPath = join(flatpakHome, '.steam', 'steam')
+  const steamInstallPath = join(userHome, '.steam', 'steam')
   switch (wineVersion.type) {
     case 'wine': {
       ret.WINEPREFIX = winePrefix
@@ -1092,7 +1089,7 @@ function setupWineEnvVars(gameSettings: GameSettings, gameId = '0') {
     ret.SteamAppId = process.env.SteamAppId || ret.STEAM_COMPAT_APP_ID
     // This sets the name of the log file given when setting PROTON_LOG=1
     ret.SteamGameId = process.env.SteamGameId || `relic-${gameId}`
-    ret.PROTON_LOG_DIR = flatpakHome
+    ret.PROTON_LOG_DIR = userHome
     // add back default wine/dxvk debug logging
     if (gameSettings?.verboseLogs) {
       if (
@@ -1159,7 +1156,6 @@ function setupWineEnvVars(gameSettings: GameSettings, gameId = '0') {
   }
   // Workaround for Steam Input virtual gamepad not working for games launched through HGL from Steam
   // using deprecated WineGE/ProtonGE releases (<= 8.x) following SDL behavior change on version >= 2.30
-  // (included with flatpak Freedesktop runtime 24.08 or newer)
   // https://github.com/anomalyco/relic/issues/4708
   // https://github.com/libsdl-org/SDL/issues/14410
   // https://gitlab.com/freedesktop-sdk/freedesktop-sdk/-/issues/1818

@@ -1,387 +1,386 @@
 {
-    "box": {
-        "change": {
-            "message": "Bu, oyunun kurulum konumunu değiştirecek, emin misiniz?",
-            "path": "Yeni kurulum konumu seçin",
-            "title": "Oyunların kurulum konumunu değiştir"
-        },
-        "choose": "Seç",
-        "importpath": "İçe Aktarılacak Oyun Klasörünü Seç",
-        "move": {
-            "message": "Bu biraz uzun sürebilir, emin misin?",
-            "path": "Nereye taşımak istediğinizi seçin",
-            "title": "Oyun Kurulumunu Taşı"
-        },
-        "no": "HAYIR",
-        "repair": {
-            "message": "Oyunu onarmayı denemek ister misiniz? Bu uzun sürebilir.",
-            "title": "Doğrula ve Onar"
-        },
-        "runexe": {
-            "title": "Çalıştırmak için EXE dosyası seçin"
-        },
-        "select": {
-            "button": "Seç",
-            "image": "Resim Seç"
-        },
-        "sideload": {
-            "exe": "Yürütülebilir Dosyayı Seçin"
-        },
-        "stopInstall": {
-            "keepInstalling": "Kuruluma Devam Et",
-            "message": "İndirilen dosyaları SAKLAMAK ister misiniz?",
-            "title": "Kurulumu Durdur"
-        },
-        "uninstall": {
-            "checkbox": "Prefix'i Kaldır: {{prefix}}{{newLine}}Not: Bu işlem geri alınamaz ve yedeklenmemiş kayıt dosyalarını da kaldırır.",
-            "message": "\"{{title}}\" kaldırılsın mı?",
-            "settingcheckbox": "Ayarları sil ve günlüğü kaldır{{newLine}}Not: Bu işlem geri alınamaz. Değiştirilen tüm ayarlar unutulacak ve günlük silinecektir.",
-            "title": "Kaldır",
-            "prefix_warning": "Bu oyunun Wine prefix'i varsayılan prefix'tir. Eğer gerçekten silmek istiyorsanız, bunu el ile yapmanız gerekir.",
-            "dlc": "\"{{title}}\" (DLC) içeriğini kaldırmak istiyor musunuz?",
-            "cannotUninstallEpic": "Başka bir Epic oyunu yüklenirken Epic oyunları kaldırılamaz.",
-            "gameIsRunning": "{{title}} çalışıyor. Oyunu kaldırmak için kapatmanız gerekiyor."
-        },
-        "update": {
-            "message": "Bu oyun için bir güncelleme var, şimdi uygulansın mı?",
-            "title": "Oyunun Güncellenmesi Gerekiyor"
-        },
-        "wineprefix": "WinePrefix Klasörünü Seç",
-        "yes": "EVET",
-        "close": "Kapat",
-        "select-install-path": "Steam Kurulum Yolunu Seç",
-        "warning": {
-            "title": "Uyarı"
-        },
-        "selectLaunchOption": {
-            "body": "Lütfen bu oyun için bir başlangıç seçeneği seçin (bu daha sonra oyun ayarlarında değiştirilebilir):",
-            "title": "Başlatma Seçeneği Seç ({{seconds}})"
-        },
-        "sync": {
-            "force_download_warning": "Yerel kayıtlar silinecek. Devam etmek istiyor musunuz?",
-            "force_upload_warning": "Buluttaki kayıt dosyalarının üstüne yazılacak. Devam etmek istiyor musunuz?"
-        },
-        "ok": "Tamam",
-        "offline_warning": {
-            "message": "Bu oyun çevrimdışı iken düzgün çalışmayabilir. Yine de oynamak ister misin?",
-            "playAnyway": "Yine De Oyna",
-            "title": "İnternet Bağlantısı Yok"
-        }
+  "box": {
+    "change": {
+      "message": "Bu, oyunun kurulum konumunu değiştirecek, emin misiniz?",
+      "path": "Yeni kurulum konumu seçin",
+      "title": "Oyunların kurulum konumunu değiştir"
     },
-    "button": {
-        "add_to_favourites": "Favorilere Ekle",
-        "cancel": "Duraklat/İptal",
-        "continue": "İndirmeye Devam Et",
-        "finish": "Bitir",
-        "force_update": "Varsa Güncellemeyi Zorunlu Kur",
-        "force-innstall": "Kuruluma Zorla",
-        "hide_game": "Oyunu Gizle",
-        "import": "Oyunu İçe Aktar",
-        "install": "Kur",
-        "no-path-selected": "Seçili yol yok",
-        "queue": {
-            "remove": "Kuyruktan Çıkar"
-        },
-        "remove_from_favourites": "Favorilerden Kaldır",
-        "remove_from_recent": "Son Kullanılanlardan Kaldır",
-        "run-exe-first": "Önce Kurucuyu Çalıştırın",
-        "running-setup": "Kurulum Çalıştırılıyor",
-        "sideload": {
-            "edit": "Uygulamayı/Oyunu Düzenle"
-        },
-        "unhide_game": "Oyunu Göster",
-        "uninstall": "Kaldır",
-        "update": "Güncelle",
-        "details": "Detaylar",
-        "changelog": "Değişiklik Günlüğünü Göster",
-        "browse_files": "Dosyalara Göz At",
-        "browse_wine_prefix": "Wine Prefix'e Göz At",
-        "play": "OYNA",
-        "edit-game": "Oyunu Düzenle"
+    "choose": "Seç",
+    "importpath": "İçe Aktarılacak Oyun Klasörünü Seç",
+    "move": {
+      "message": "Bu biraz uzun sürebilir, emin misin?",
+      "path": "Nereye taşımak istediğinizi seçin",
+      "title": "Oyun Kurulumunu Taşı"
     },
-    "cloud_save_unsupported": "Desteklenmiyor",
-    "disabled": "Devre dışı",
-    "dlc": {
-        "installDlcs": "Tüm DLC'leri kur"
+    "no": "HAYIR",
+    "repair": {
+      "message": "Oyunu onarmayı denemek ister misiniz? Bu uzun sürebilir.",
+      "title": "Doğrula ve Onar"
     },
-    "enabled": "Etkin",
-    "game": {
-        "downloadSize": "İndirme Boyutu",
-        "firstPlayed": "İlk Oynanan",
-        "getting-download-size": "İndirme boyutu alınıyor",
-        "getting-install-size": "Kurulum boyutu alınıyor",
-        "installSize": "Kurulum Boyutu",
-        "language": "Dil",
-        "lastPlayed": "Son Oynanan",
-        "neverPlayed": "Hiç Oynanmadı",
-        "platform": "Kurulacak Platform Sürümünü Seç",
-        "requirements": "Sistem Gereksinimleri",
-        "totalPlayed": "Oynanan Zaman",
-        "dlcs": "DLC'ler",
-        "branch": {
-            "disabled": "Devre dışı",
-            "password": "Özel kanal parolası belirle",
-            "setPrivateBranchPassword": "Özel kanal parolası belirle",
-            "select": "Beta kanalını seç"
-        },
-        "builds": {
-            "version": "Sürüm",
-            "buildsSelector": "Oyun sürümünü seç",
-            "toggle": "Oyunu belirli bir sürümde tut"
-        },
-        "changelogFor": "{{gameTitle}} değişiklik günlükleri",
-        "modify": "Kurulumu Düzenle",
-        "install_info": "Kurulum bilgisi",
-        "extra_info": "Ek bilgi",
-        "achievements": "Başarımlar"
+    "runexe": {
+      "title": "Çalıştırmak için EXE dosyası seçin"
     },
-    "gamecard": {
-        "moving": "Taşınıyor",
-        "repairing": "Onarılıyor"
-    },
-    "generic": {
-        "error": "Bilinmeyen hata",
-        "noDescription": "Açıklama yok"
-    },
-    "hours": "Saat",
-    "how-long-to-beat": {
-        "completionist": "Tamamlayıcı",
-        "main-plus-extras": "Ana + Ekstralar",
-        "main-story": "Ana Hikaye"
-    },
-    "howLongToBeat": "How Long To Beat",
-    "info": {
-        "canRunOffline": "Çevrim İçi Gerekli",
-        "installedPlatform": "Kurulu Platform",
-        "path": "Kurulum Yolu",
-        "size": "Boyut",
-        "syncsaves": "Kayıtları Eşzamanla",
-        "version": "Sürüm",
-        "apple-gaming-wiki": "AppleGamingWiki Derecelendirmesi",
-        "clickToOpen": "açmak için tıklayın",
-        "game-scores": "Oyun Skorları",
-        "installedInfo": "Kurulu Bilgiler",
-        "protondb-compatibility-info": "Proton Uyumluluk Katmanı",
-        "steamdeck-compatibility-info": "SteamDeck Uyumluluğu",
-        "third-party-app": "Üçüncü Parti Yönetici"
-    },
-    "install": {
-        "disk-space-left": "Kullanılabilir Alan",
-        "not-enough-disk-space": "Yeterli disk alanı yok",
-        "path": "Kurulum Yolunu Seç",
-        "path-not-writtable": "Uyarı: yol yazılabilir olmayabilir.",
-        "space-after-install": "Kurulumdan Sonra",
-        "wineprefix": "WinePrefix",
-        "wineversion": "Wine sürümü",
-        "anticheat-warning": {
-            "cancel": "Hayır",
-            "message": "Anti hile desteği bozuldu ya da reddedildi. Oyun çalışmayacak. Yine de kurmak istiyor musunuz?",
-            "install": "Evet (Bunun işe yaramayacağının farkındayım)",
-            "title": "Anti Hile Bozuldu/Reddedildi",
-            "install_anyway": "Evet (çoklu oyuncu özelliklerinin çalışmayabileceğini anlıyorum)",
-            "multiplayer_message": "Hile koruması desteği bozuk veya engellenmiş. Oyun açılabilir ancak çok oyunculu özellikler çalışmayacaktır. Yine de yüklemek istiyor musunuz?",
-            "ok": "Tamam",
-            "disabled_installation": "Bu oyun, işletim sisteminizle uyumlu olmayan veya geliştiriciler tarafından desteklenmeyen bir hile karşıtı yazılım kullanıyor. Bu nedenle çok oyunculu özellikler çalışmayacak ve ne siz ne de Heroic ekibi bu durumu değiştiremez.<br /><br />Yine de oyunu kurmayı denemek isterseniz, Ayarlar > Gelişmiş bölümüne giderek “bozuk veya desteklenmeyen anticheat'e sahip oyunların yüklenmesine izin ver” seçeneğini işaretleyin.<br /><br />Bu durumun bir çözümü olmadığını ve oyunda ban yeme riskiniz olduğunu unutmayın."
-        },
-        "flatpak-path-not-writtable": "Hata: Bu yola sandbox erişimi verilmedi, veri kaybı yaşanacak."
-    },
-    "label": {
-        "game": {
-            "third-party-game": "Üçüncü Parti Oyun Desteklenmiyor",
-            "not-installable-game": "Oyun Kurulamıyor"
-        },
-        "playing": {
-            "start": "Şimdi Oyna",
-            "stop": "Oynanıyor (Durdur)",
-            "start_with_logs": "Şimdi Oyna (loglar ile)"
-        },
-        "saves": {
-            "syncing": "Kayıtlar Eşzamanlanıyor"
-        },
-        "launching": "Başlatılıyor",
-        "ubisoft": "Ubisoft Connect Yükleniyor",
-        "winetricks": "Winetricks Paketleri Kuruluyor",
-        "prerequisites": "Gereksinimler Kuruluyor",
-        "redist": "Dağıtılabilirler Kuruluyor",
-        "steam": {
-            "installing": "Kuruluyor",
-            "pleaseWait": "Lütfen Bekleyin",
-            "cancel": "Kurulumu İptal Et",
-            "abort": "Kurulumu Sonlandır",
-            "compatibility": "Her oyunun sorunsuz çalışmayabileceğini ve çalışsa bile beklenen şekilde davranmayabileceğini unutmayın.",
-            "compatibility-layer-not-available": "Uyumluluk katmanı mevcut değil. Lütfen önce “Ayarlar > Wine Yöneticisi” bölümünden bir tane yükleyin.",
-            "crossover": "Crossover yüklüyse buna gerek yok; çünkü normal Steam'i sorunsuz şekilde çalıştırabiliyor.",
-            "specificVersion-pt1": "Bu işlem, Steam’in belirli bir sürümünü şuradan indirecek:",
-            "downloading": "İndiriliyor: {{percent}}%",
-            "hardware": "Apple Silicon M1+ (Intel Mac'lerde Steam, Crossover ile çalışacaktır)",
-            "install": "Steam'i Yükle",
-            "install-path": "Steam Kurulum Yolu",
-            "installation": "Steam Kurulumu",
-            "launch": "Steam’i Heroic Uyumluluk Katmanını kullanarak başlat",
-            "launching": "Steam Başlatılıyor...",
-            "macOS": "macOS 14.0 ve sonrası",
-            "notification": "Kurulum tamamlandığında Heroic sizi bilgilendirecek.",
-            "patience": "Devam etmek istiyorsanız lütfen sabırlı olun, çünkü işlem internet bağlantınıza ve sistem yapılandırmanıza bağlı olarak birkaç dakika sürebilir.",
-            "ram": "8 GB RAM",
-            "recommended": "Daha iyi bir deneyim için önerilen sistem gereksinimleri",
-            "select-path": "Steam için kurulum klasörünü seçin",
-            "install-tooltip": "Bu işlem, Steam'in Windows sürümünü yükleyecek ve uygulama, bir Heroic Uyumluluk Katmanı kullanılarak çalıştırılacaktır. \n\n    Bazı oyunlar, özellikle de eski oyunlar, yeni 3D oyunlar veya hile koruma yazılımına sahip olanlar düzgün çalışmayabilir. \n\n    ",
-            "specificVersion-pt2": "archive.org",
-            "specificVersion-pt3": "Steam'in yeni sürümleri macOS'ta çalışmadığı için, Heroic üzerinden çalışır hale getirdik."
-        }
-    },
-    "launch": {
-        "options": "Başlatma Seçenekleri...",
-        "default": "Varsayılan"
-    },
-    "not_logged_in": {
-        "epic": "Heroic'te Epic hesabıyla giriş yapmadınız. Giriş yapmak için mağaza sayfasını kullanmayın, bunun yerine aşağıdaki düğmeye tıklayın:",
-        "gog": "Heroic'te GOG hesabıyla giriş yapmadınız. Giriş yapmak için mağaza sayfasını kullanmayın, bunun yerine aşağıdaki düğmeye tıklayın:",
-        "login": "Log in",
-        "title": "Giriş yapmadınız",
-        "amazon": "Heroic'te Amazon hesabıyla oturum açmadınız. Giriş yapmak için mağaza sayfasını kullanmayın. Bunun yerine aşağıdaki düğmeye tıklayın:",
-        "zoom": "Heroic'e Zoom hesabıyla giriş yapmadınız. Giriş yapmak için mağaza sayfasını kullanmayın, bunun yerine şu düğmeye tıklayın:"
-    },
-    "report_problem": "Bu oyunun çalışmasıyla ilgili bir sorun bildir",
-    "sdl": {
-        "title": "Kurulacak bileşenleri seç"
-    },
-    "setting": {
-        "winecrossoverbottle": "CrossOver Bottle",
-        "warn-use-shared-wine-config": "Bu seçeneği yalnızca ne yaptığınızı biliyorsanız kullanın.<br />Birden fazla oyun için aynı prefix'i paylaşmak, bağımlılıkları uyumsuzsa sorunlara yol açabilir.",
-        "show-wine-settings": "Wine ayarlarını göster",
-        "use-shared-wine-config": "Paylaşılan Wine prefix kullan"
+    "select": {
+      "button": "Seç",
+      "image": "Resim Seç"
     },
     "sideload": {
-        "field": {
-            "title": "Başlık"
-        },
-        "info": {
-            "exe": "Yürütülebilir Dosyayı Seçin",
-            "image": "App Image",
-            "title": "Oyun/Uygulama Adı",
-            "broser": "Tarayıcı URL'si",
-            "useragent": "Özel Kullanıcı Aracısı",
-            "fullscreen": "Tam Ekran Başlat (Çıkmak için F11)",
-            "cover-hint": "Kapak/Ana Görsel (SteamGridDB'de aramak için resme tıklayın)",
-            "image-hint": "Kare Görsel (SteamGridDB'de aramak için resme tıklayın)"
-        },
-        "placeholder": {
-            "image": "Bir resim URL'si yapıştırın ya da bilgisayarınızdan bir tane seçin",
-            "title": "Oyununuza/Uygulamanıza bir başlık ekleyin",
-            "url": "Oyun URL'sini buraya yapıştırın",
-            "useragent": "Bu tarayıcı uygulamasında veya oyununda kullanılacak özel bir kullanıcı aracısını buraya yazın"
-        },
-        "import-hint": {
-            "title": "Önemli! Epic/GOG/Amazon'dan bir oyun mu ekliyorsunuz? Buraya tıklayın!",
-            "content": "Bu özelliği bu amaç için KULLANMAYIN.<br />Bunun yerine, mağazaya <3>giriş yapın</3>, kütüphanenizde oyunu bulun, yükleme penceresini açın ve &quot;Oyunu İçe Aktar&quot; butonuna tıklayın"
-        },
-        "images": {
-            "summary": "Görseller"
-        }
+      "exe": "Yürütülebilir Dosyayı Seçin"
     },
-    "specs": {
-        "minimum": "Asgari",
-        "recommended": "Tavsiye edilen"
+    "stopInstall": {
+      "keepInstalling": "Kuruluma Devam Et",
+      "message": "İndirilen dosyaları SAKLAMAK ister misiniz?",
+      "title": "Kurulumu Durdur"
     },
-    "status": {
-        "clickToUpdate": "Güncellemek için tıklayın",
-        "gameNotAvailable": "Oyun mevcut değil",
-        "hasUpdates": "Yeni sürüm var!",
-        "installed": "Kuruldu",
-        "installing": "Kuruluyor",
-        "moving": "Kurulum taşınıyor, lütfen bekleyin",
-        "notinstalled": "Bu oyun kurulu değil",
-        "notSupported": "Desteklenmiyor",
-        "notSupportedGame": "Desteklenmiyor",
-        "processing": "Dosyalar işleniyor, lütfen bekleyin",
-        "queued": "Sırada",
-        "reparing": "Oyun onarılıyor, lütfen bekleyin",
-        "this-game-uses-third-party": "Bu oyun üçüncü parti başlatıcı kullanıyor ve henüz desteklenmiyor",
-        "totalDownloaded": "Toplam İndirilen",
-        "uninstalling": "Kaldırılıyor",
-        "updating": "Oyun Güncelleniyor",
-        "playing": "Oynanıyor",
-        "moving-files": "'{{file}}' dosyası taşınıyor: % {{percent}}",
-        "syncingSaves": "Kayıtlar Senkronize Ediliyor",
-        "launching": "Başlatılıyor",
-        "ubisoft": "Ubisoft Kuruluyor",
-        "downloading": "İndiriliyor",
-        "extracting": "Ayıklanıyor",
-        "gog-goodie": "Bu oyun kurulabilir görünmüyor. İndirilebilir içeriği https://gog.com/account adresinden kontrol edin",
-        "goodie": "Kurulamaz",
-        "prerequisites": "Gereklilikler Kuruluyor",
-        "winetricks": "Winetricks düzeltmeleri uygulanıyor",
-        "redist": "Yeniden Dağıtılabilir ({{redist}}) Kuruluyor",
-        "importing": "İçe Aktarılıyor"
+    "uninstall": {
+      "checkbox": "Prefix'i Kaldır: {{prefix}}{{newLine}}Not: Bu işlem geri alınamaz ve yedeklenmemiş kayıt dosyalarını da kaldırır.",
+      "message": "\"{{title}}\" kaldırılsın mı?",
+      "settingcheckbox": "Ayarları sil ve günlüğü kaldır{{newLine}}Not: Bu işlem geri alınamaz. Değiştirilen tüm ayarlar unutulacak ve günlük silinecektir.",
+      "title": "Kaldır",
+      "prefix_warning": "Bu oyunun Wine prefix'i varsayılan prefix'tir. Eğer gerçekten silmek istiyorsanız, bunu el ile yapmanız gerekir.",
+      "dlc": "\"{{title}}\" (DLC) içeriğini kaldırmak istiyor musunuz?",
+      "cannotUninstallEpic": "Başka bir Epic oyunu yüklenirken Epic oyunları kaldırılamaz.",
+      "gameIsRunning": "{{title}} çalışıyor. Oyunu kaldırmak için kapatmanız gerekiyor."
     },
-    "submenu": {
-        "addShortcut": "Kısayol ekle",
-        "addToSteam": "Steam'e Ekle",
-        "change": "Kurulum yolunu değiştir",
-        "disableEosOverlay": "EOS Arayüzünü Devre Dışı Bırak",
-        "enableEosOverlay": "EOS Arayüzünü Etkinleştir",
-        "move": "Oyunu Taşı",
-        "protondb": "Uyumluluğu Denetle",
-        "removeFromSteam": "Steam'den Kaldır",
-        "removeShortcut": "Kısayolları kaldır",
-        "settings": "Ayarlar",
-        "store": "Mağaza Sayfası",
-        "verify": "Doğrula ve Onar",
-        "extraInfo": "Fazladan bilgi",
-        "logs": "Kayıtlar",
-        "categories": "Kategoriler"
+    "update": {
+      "message": "Bu oyun için bir güncelleme var, şimdi uygulansın mı?",
+      "title": "Oyunun Güncellenmesi Gerekiyor"
     },
-    "help": {
-        "cloud_save_unsupported": "Bu oyun bulutta kaydetmeyi desteklemiyor. Bu bilgiler oyun geliştiricileri tarafından sağlanmaktadır. Bazı oyunlar kendine ait buluta kaydetme sistemini uygular.",
-        "content": {
-            "gamePage": "Tüm oyun ayrıntılarını ve eylemleri göster. Daha fazla seçenek için 3 nokta menüsünü kullanın."
-        },
-        "title": {
-            "gamePage": "Oyun Sayfası"
-        }
+    "wineprefix": "WinePrefix Klasörünü Seç",
+    "yes": "EVET",
+    "close": "Kapat",
+    "select-install-path": "Steam Kurulum Yolunu Seç",
+    "warning": {
+      "title": "Uyarı"
     },
-    "modifyInstall": {
-        "dlcsCollapsible": "DLC",
-        "nodlcs": "DLC yok",
-        "redMod": {
-            "collapsible": "REDmod Tümleşimi",
-            "enable": "Modları etkinleştir"
-        },
-        "versionCollapsable": "Oyun Sürümü"
+    "selectLaunchOption": {
+      "body": "Lütfen bu oyun için bir başlangıç seçeneği seçin (bu daha sonra oyun ayarlarında değiştirilebilir):",
+      "title": "Başlatma Seçeneği Seç ({{seconds}})"
     },
-    "third-party-managed": {
-        "header": "Oyun üçüncü parti bir uygulama tarafından yönetiliyor",
-        "notice1": "Bu oyun üçüncü parti {{application_name}} uygulaması tarafından yönetiliyor",
-        "notice2": "Kur'a bastıktan sonra, Heroic kurulum işlemini bitirmek için uygulamayı çalıştıracak"
+    "sync": {
+      "force_download_warning": "Yerel kayıtlar silinecek. Devam etmek istiyor musunuz?",
+      "force_upload_warning": "Buluttaki kayıt dosyalarının üstüne yazılacak. Devam etmek istiyor musunuz?"
     },
-    "Open": "Epic Store'u",
-    "queue": {
-        "label": {
-            "canceled": "İptal Edildi",
-            "remove": "İndirilenler'den Kaldır",
-            "pause": "İndirmeyi durdur",
-            "resume": "İndirmeye devam et"
-        }
-    },
-    "wikiLink": "Bu oyun hakkında önemli bilgiler için bunu okuyun:&nbsp;<1>Sayfayı Aç</1>",
-    "open-saves-folder": "Kayıtlar Klasörünü Aç",
-    "edit-game": {
-        "advanced": "Gelişmiş",
-        "cover": "Kapak Resmi",
-        "info": {
-            "square": "Kare Resim",
-            "cover": "Kapak Resmi"
-        },
-        "placeholder": {
-            "image": "Bir Resim Bağlantısı Yapıştırın"
-        },
-        "reset": "Varsayılana Sıfırla",
-        "sgdb": {
-            "no-key-link": "Ayarlar → Gelişmiş",
-            "no-key-prefix": "SteamGridDB'de kapak resmini aramak için bir API anahtarı ekleyin"
-        },
-        "title": "Oyunu Düzenle",
-        "square": "Kare Görsel"
+    "ok": "Tamam",
+    "offline_warning": {
+      "message": "Bu oyun çevrimdışı iken düzgün çalışmayabilir. Yine de oynamak ister misin?",
+      "playAnyway": "Yine De Oyna",
+      "title": "İnternet Bağlantısı Yok"
     }
+  },
+  "button": {
+    "add_to_favourites": "Favorilere Ekle",
+    "cancel": "Duraklat/İptal",
+    "continue": "İndirmeye Devam Et",
+    "finish": "Bitir",
+    "force_update": "Varsa Güncellemeyi Zorunlu Kur",
+    "force-innstall": "Kuruluma Zorla",
+    "hide_game": "Oyunu Gizle",
+    "import": "Oyunu İçe Aktar",
+    "install": "Kur",
+    "no-path-selected": "Seçili yol yok",
+    "queue": {
+      "remove": "Kuyruktan Çıkar"
+    },
+    "remove_from_favourites": "Favorilerden Kaldır",
+    "remove_from_recent": "Son Kullanılanlardan Kaldır",
+    "run-exe-first": "Önce Kurucuyu Çalıştırın",
+    "running-setup": "Kurulum Çalıştırılıyor",
+    "sideload": {
+      "edit": "Uygulamayı/Oyunu Düzenle"
+    },
+    "unhide_game": "Oyunu Göster",
+    "uninstall": "Kaldır",
+    "update": "Güncelle",
+    "details": "Detaylar",
+    "changelog": "Değişiklik Günlüğünü Göster",
+    "browse_files": "Dosyalara Göz At",
+    "browse_wine_prefix": "Wine Prefix'e Göz At",
+    "play": "OYNA",
+    "edit-game": "Oyunu Düzenle"
+  },
+  "cloud_save_unsupported": "Desteklenmiyor",
+  "disabled": "Devre dışı",
+  "dlc": {
+    "installDlcs": "Tüm DLC'leri kur"
+  },
+  "enabled": "Etkin",
+  "game": {
+    "downloadSize": "İndirme Boyutu",
+    "firstPlayed": "İlk Oynanan",
+    "getting-download-size": "İndirme boyutu alınıyor",
+    "getting-install-size": "Kurulum boyutu alınıyor",
+    "installSize": "Kurulum Boyutu",
+    "language": "Dil",
+    "lastPlayed": "Son Oynanan",
+    "neverPlayed": "Hiç Oynanmadı",
+    "platform": "Kurulacak Platform Sürümünü Seç",
+    "requirements": "Sistem Gereksinimleri",
+    "totalPlayed": "Oynanan Zaman",
+    "dlcs": "DLC'ler",
+    "branch": {
+      "disabled": "Devre dışı",
+      "password": "Özel kanal parolası belirle",
+      "setPrivateBranchPassword": "Özel kanal parolası belirle",
+      "select": "Beta kanalını seç"
+    },
+    "builds": {
+      "version": "Sürüm",
+      "buildsSelector": "Oyun sürümünü seç",
+      "toggle": "Oyunu belirli bir sürümde tut"
+    },
+    "changelogFor": "{{gameTitle}} değişiklik günlükleri",
+    "modify": "Kurulumu Düzenle",
+    "install_info": "Kurulum bilgisi",
+    "extra_info": "Ek bilgi",
+    "achievements": "Başarımlar"
+  },
+  "gamecard": {
+    "moving": "Taşınıyor",
+    "repairing": "Onarılıyor"
+  },
+  "generic": {
+    "error": "Bilinmeyen hata",
+    "noDescription": "Açıklama yok"
+  },
+  "hours": "Saat",
+  "how-long-to-beat": {
+    "completionist": "Tamamlayıcı",
+    "main-plus-extras": "Ana + Ekstralar",
+    "main-story": "Ana Hikaye"
+  },
+  "howLongToBeat": "How Long To Beat",
+  "info": {
+    "canRunOffline": "Çevrim İçi Gerekli",
+    "installedPlatform": "Kurulu Platform",
+    "path": "Kurulum Yolu",
+    "size": "Boyut",
+    "syncsaves": "Kayıtları Eşzamanla",
+    "version": "Sürüm",
+    "apple-gaming-wiki": "AppleGamingWiki Derecelendirmesi",
+    "clickToOpen": "açmak için tıklayın",
+    "game-scores": "Oyun Skorları",
+    "installedInfo": "Kurulu Bilgiler",
+    "protondb-compatibility-info": "Proton Uyumluluk Katmanı",
+    "steamdeck-compatibility-info": "SteamDeck Uyumluluğu",
+    "third-party-app": "Üçüncü Parti Yönetici"
+  },
+  "install": {
+    "disk-space-left": "Kullanılabilir Alan",
+    "not-enough-disk-space": "Yeterli disk alanı yok",
+    "path": "Kurulum Yolunu Seç",
+    "path-not-writtable": "Uyarı: yol yazılabilir olmayabilir.",
+    "space-after-install": "Kurulumdan Sonra",
+    "wineprefix": "WinePrefix",
+    "wineversion": "Wine sürümü",
+    "anticheat-warning": {
+      "cancel": "Hayır",
+      "message": "Anti hile desteği bozuldu ya da reddedildi. Oyun çalışmayacak. Yine de kurmak istiyor musunuz?",
+      "install": "Evet (Bunun işe yaramayacağının farkındayım)",
+      "title": "Anti Hile Bozuldu/Reddedildi",
+      "install_anyway": "Evet (çoklu oyuncu özelliklerinin çalışmayabileceğini anlıyorum)",
+      "multiplayer_message": "Hile koruması desteği bozuk veya engellenmiş. Oyun açılabilir ancak çok oyunculu özellikler çalışmayacaktır. Yine de yüklemek istiyor musunuz?",
+      "ok": "Tamam",
+      "disabled_installation": "Bu oyun, işletim sisteminizle uyumlu olmayan veya geliştiriciler tarafından desteklenmeyen bir hile karşıtı yazılım kullanıyor. Bu nedenle çok oyunculu özellikler çalışmayacak ve ne siz ne de Heroic ekibi bu durumu değiştiremez.<br /><br />Yine de oyunu kurmayı denemek isterseniz, Ayarlar > Gelişmiş bölümüne giderek “bozuk veya desteklenmeyen anticheat'e sahip oyunların yüklenmesine izin ver” seçeneğini işaretleyin.<br /><br />Bu durumun bir çözümü olmadığını ve oyunda ban yeme riskiniz olduğunu unutmayın."
+    }
+  },
+  "label": {
+    "game": {
+      "third-party-game": "Üçüncü Parti Oyun Desteklenmiyor",
+      "not-installable-game": "Oyun Kurulamıyor"
+    },
+    "playing": {
+      "start": "Şimdi Oyna",
+      "stop": "Oynanıyor (Durdur)",
+      "start_with_logs": "Şimdi Oyna (loglar ile)"
+    },
+    "saves": {
+      "syncing": "Kayıtlar Eşzamanlanıyor"
+    },
+    "launching": "Başlatılıyor",
+    "ubisoft": "Ubisoft Connect Yükleniyor",
+    "winetricks": "Winetricks Paketleri Kuruluyor",
+    "prerequisites": "Gereksinimler Kuruluyor",
+    "redist": "Dağıtılabilirler Kuruluyor",
+    "steam": {
+      "installing": "Kuruluyor",
+      "pleaseWait": "Lütfen Bekleyin",
+      "cancel": "Kurulumu İptal Et",
+      "abort": "Kurulumu Sonlandır",
+      "compatibility": "Her oyunun sorunsuz çalışmayabileceğini ve çalışsa bile beklenen şekilde davranmayabileceğini unutmayın.",
+      "compatibility-layer-not-available": "Uyumluluk katmanı mevcut değil. Lütfen önce “Ayarlar > Wine Yöneticisi” bölümünden bir tane yükleyin.",
+      "crossover": "Crossover yüklüyse buna gerek yok; çünkü normal Steam'i sorunsuz şekilde çalıştırabiliyor.",
+      "specificVersion-pt1": "Bu işlem, Steam’in belirli bir sürümünü şuradan indirecek:",
+      "downloading": "İndiriliyor: {{percent}}%",
+      "hardware": "Apple Silicon M1+ (Intel Mac'lerde Steam, Crossover ile çalışacaktır)",
+      "install": "Steam'i Yükle",
+      "install-path": "Steam Kurulum Yolu",
+      "installation": "Steam Kurulumu",
+      "launch": "Steam’i Heroic Uyumluluk Katmanını kullanarak başlat",
+      "launching": "Steam Başlatılıyor...",
+      "macOS": "macOS 14.0 ve sonrası",
+      "notification": "Kurulum tamamlandığında Heroic sizi bilgilendirecek.",
+      "patience": "Devam etmek istiyorsanız lütfen sabırlı olun, çünkü işlem internet bağlantınıza ve sistem yapılandırmanıza bağlı olarak birkaç dakika sürebilir.",
+      "ram": "8 GB RAM",
+      "recommended": "Daha iyi bir deneyim için önerilen sistem gereksinimleri",
+      "select-path": "Steam için kurulum klasörünü seçin",
+      "install-tooltip": "Bu işlem, Steam'in Windows sürümünü yükleyecek ve uygulama, bir Heroic Uyumluluk Katmanı kullanılarak çalıştırılacaktır. \n\n    Bazı oyunlar, özellikle de eski oyunlar, yeni 3D oyunlar veya hile koruma yazılımına sahip olanlar düzgün çalışmayabilir. \n\n    ",
+      "specificVersion-pt2": "archive.org",
+      "specificVersion-pt3": "Steam'in yeni sürümleri macOS'ta çalışmadığı için, Heroic üzerinden çalışır hale getirdik."
+    }
+  },
+  "launch": {
+    "options": "Başlatma Seçenekleri...",
+    "default": "Varsayılan"
+  },
+  "not_logged_in": {
+    "epic": "Heroic'te Epic hesabıyla giriş yapmadınız. Giriş yapmak için mağaza sayfasını kullanmayın, bunun yerine aşağıdaki düğmeye tıklayın:",
+    "gog": "Heroic'te GOG hesabıyla giriş yapmadınız. Giriş yapmak için mağaza sayfasını kullanmayın, bunun yerine aşağıdaki düğmeye tıklayın:",
+    "login": "Log in",
+    "title": "Giriş yapmadınız",
+    "amazon": "Heroic'te Amazon hesabıyla oturum açmadınız. Giriş yapmak için mağaza sayfasını kullanmayın. Bunun yerine aşağıdaki düğmeye tıklayın:",
+    "zoom": "Heroic'e Zoom hesabıyla giriş yapmadınız. Giriş yapmak için mağaza sayfasını kullanmayın, bunun yerine şu düğmeye tıklayın:"
+  },
+  "report_problem": "Bu oyunun çalışmasıyla ilgili bir sorun bildir",
+  "sdl": {
+    "title": "Kurulacak bileşenleri seç"
+  },
+  "setting": {
+    "winecrossoverbottle": "CrossOver Bottle",
+    "warn-use-shared-wine-config": "Bu seçeneği yalnızca ne yaptığınızı biliyorsanız kullanın.<br />Birden fazla oyun için aynı prefix'i paylaşmak, bağımlılıkları uyumsuzsa sorunlara yol açabilir.",
+    "show-wine-settings": "Wine ayarlarını göster",
+    "use-shared-wine-config": "Paylaşılan Wine prefix kullan"
+  },
+  "sideload": {
+    "field": {
+      "title": "Başlık"
+    },
+    "info": {
+      "exe": "Yürütülebilir Dosyayı Seçin",
+      "image": "App Image",
+      "title": "Oyun/Uygulama Adı",
+      "broser": "Tarayıcı URL'si",
+      "useragent": "Özel Kullanıcı Aracısı",
+      "fullscreen": "Tam Ekran Başlat (Çıkmak için F11)",
+      "cover-hint": "Kapak/Ana Görsel (SteamGridDB'de aramak için resme tıklayın)",
+      "image-hint": "Kare Görsel (SteamGridDB'de aramak için resme tıklayın)"
+    },
+    "placeholder": {
+      "image": "Bir resim URL'si yapıştırın ya da bilgisayarınızdan bir tane seçin",
+      "title": "Oyununuza/Uygulamanıza bir başlık ekleyin",
+      "url": "Oyun URL'sini buraya yapıştırın",
+      "useragent": "Bu tarayıcı uygulamasında veya oyununda kullanılacak özel bir kullanıcı aracısını buraya yazın"
+    },
+    "import-hint": {
+      "title": "Önemli! Epic/GOG/Amazon'dan bir oyun mu ekliyorsunuz? Buraya tıklayın!",
+      "content": "Bu özelliği bu amaç için KULLANMAYIN.<br />Bunun yerine, mağazaya <3>giriş yapın</3>, kütüphanenizde oyunu bulun, yükleme penceresini açın ve &quot;Oyunu İçe Aktar&quot; butonuna tıklayın"
+    },
+    "images": {
+      "summary": "Görseller"
+    }
+  },
+  "specs": {
+    "minimum": "Asgari",
+    "recommended": "Tavsiye edilen"
+  },
+  "status": {
+    "clickToUpdate": "Güncellemek için tıklayın",
+    "gameNotAvailable": "Oyun mevcut değil",
+    "hasUpdates": "Yeni sürüm var!",
+    "installed": "Kuruldu",
+    "installing": "Kuruluyor",
+    "moving": "Kurulum taşınıyor, lütfen bekleyin",
+    "notinstalled": "Bu oyun kurulu değil",
+    "notSupported": "Desteklenmiyor",
+    "notSupportedGame": "Desteklenmiyor",
+    "processing": "Dosyalar işleniyor, lütfen bekleyin",
+    "queued": "Sırada",
+    "reparing": "Oyun onarılıyor, lütfen bekleyin",
+    "this-game-uses-third-party": "Bu oyun üçüncü parti başlatıcı kullanıyor ve henüz desteklenmiyor",
+    "totalDownloaded": "Toplam İndirilen",
+    "uninstalling": "Kaldırılıyor",
+    "updating": "Oyun Güncelleniyor",
+    "playing": "Oynanıyor",
+    "moving-files": "'{{file}}' dosyası taşınıyor: % {{percent}}",
+    "syncingSaves": "Kayıtlar Senkronize Ediliyor",
+    "launching": "Başlatılıyor",
+    "ubisoft": "Ubisoft Kuruluyor",
+    "downloading": "İndiriliyor",
+    "extracting": "Ayıklanıyor",
+    "gog-goodie": "Bu oyun kurulabilir görünmüyor. İndirilebilir içeriği https://gog.com/account adresinden kontrol edin",
+    "goodie": "Kurulamaz",
+    "prerequisites": "Gereklilikler Kuruluyor",
+    "winetricks": "Winetricks düzeltmeleri uygulanıyor",
+    "redist": "Yeniden Dağıtılabilir ({{redist}}) Kuruluyor",
+    "importing": "İçe Aktarılıyor"
+  },
+  "submenu": {
+    "addShortcut": "Kısayol ekle",
+    "addToSteam": "Steam'e Ekle",
+    "change": "Kurulum yolunu değiştir",
+    "disableEosOverlay": "EOS Arayüzünü Devre Dışı Bırak",
+    "enableEosOverlay": "EOS Arayüzünü Etkinleştir",
+    "move": "Oyunu Taşı",
+    "protondb": "Uyumluluğu Denetle",
+    "removeFromSteam": "Steam'den Kaldır",
+    "removeShortcut": "Kısayolları kaldır",
+    "settings": "Ayarlar",
+    "store": "Mağaza Sayfası",
+    "verify": "Doğrula ve Onar",
+    "extraInfo": "Fazladan bilgi",
+    "logs": "Kayıtlar",
+    "categories": "Kategoriler"
+  },
+  "help": {
+    "cloud_save_unsupported": "Bu oyun bulutta kaydetmeyi desteklemiyor. Bu bilgiler oyun geliştiricileri tarafından sağlanmaktadır. Bazı oyunlar kendine ait buluta kaydetme sistemini uygular.",
+    "content": {
+      "gamePage": "Tüm oyun ayrıntılarını ve eylemleri göster. Daha fazla seçenek için 3 nokta menüsünü kullanın."
+    },
+    "title": {
+      "gamePage": "Oyun Sayfası"
+    }
+  },
+  "modifyInstall": {
+    "dlcsCollapsible": "DLC",
+    "nodlcs": "DLC yok",
+    "redMod": {
+      "collapsible": "REDmod Tümleşimi",
+      "enable": "Modları etkinleştir"
+    },
+    "versionCollapsable": "Oyun Sürümü"
+  },
+  "third-party-managed": {
+    "header": "Oyun üçüncü parti bir uygulama tarafından yönetiliyor",
+    "notice1": "Bu oyun üçüncü parti {{application_name}} uygulaması tarafından yönetiliyor",
+    "notice2": "Kur'a bastıktan sonra, Heroic kurulum işlemini bitirmek için uygulamayı çalıştıracak"
+  },
+  "Open": "Epic Store'u",
+  "queue": {
+    "label": {
+      "canceled": "İptal Edildi",
+      "remove": "İndirilenler'den Kaldır",
+      "pause": "İndirmeyi durdur",
+      "resume": "İndirmeye devam et"
+    }
+  },
+  "wikiLink": "Bu oyun hakkında önemli bilgiler için bunu okuyun:&nbsp;<1>Sayfayı Aç</1>",
+  "open-saves-folder": "Kayıtlar Klasörünü Aç",
+  "edit-game": {
+    "advanced": "Gelişmiş",
+    "cover": "Kapak Resmi",
+    "info": {
+      "square": "Kare Resim",
+      "cover": "Kapak Resmi"
+    },
+    "placeholder": {
+      "image": "Bir Resim Bağlantısı Yapıştırın"
+    },
+    "reset": "Varsayılana Sıfırla",
+    "sgdb": {
+      "no-key-link": "Ayarlar → Gelişmiş",
+      "no-key-prefix": "SteamGridDB'de kapak resmini aramak için bir API anahtarı ekleyin"
+    },
+    "title": "Oyunu Düzenle",
+    "square": "Kare Görsel"
+  }
 }

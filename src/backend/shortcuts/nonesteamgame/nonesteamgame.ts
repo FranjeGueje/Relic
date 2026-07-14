@@ -23,7 +23,7 @@ import { notify, showDialogBoxModalAuto } from '../../dialog/dialog'
 import { GlobalConfig } from '../../config'
 import { getWikiGameInfo } from 'backend/wiki_game_info/wiki_game_info'
 import { tsStore } from 'backend/constants/key_value_stores'
-import { isAppImage, isFlatpak, isWindows } from 'backend/constants/environment'
+import { isAppImage, isWindows } from 'backend/constants/environment'
 import type { Game } from 'common/types/game_manager'
 
 const getSteamUserdataDir = async () => {
@@ -258,9 +258,7 @@ async function addNonSteamGame(game: Game): Promise<boolean> {
     newEntry.Exe = `"${app.getPath('exe')}"`
     newEntry.StartDir = `"${process.cwd()}"`
 
-    if (isFlatpak) {
-      newEntry.Exe = `"flatpak"`
-    } else if (!isWindows && isAppImage) {
+    if (!isWindows && isAppImage) {
       newEntry.Exe = `"${process.env.APPIMAGE}"`
     } else if (isWindows && process.env.PORTABLE_EXECUTABLE_FILE) {
       newEntry.Exe = `"${process.env.PORTABLE_EXECUTABLE_FILE}"`
@@ -298,9 +296,6 @@ async function addNonSteamGame(game: Game): Promise<boolean> {
 
     args.push(`"relic://launch?appName=${app_name}&runner=${runner}"`)
     newEntry.LaunchOptions = args.join(' ')
-    if (isFlatpak) {
-      newEntry.LaunchOptions = `run io.github.relic ${newEntry.LaunchOptions}`
-    }
     newEntry.IsHidden = false
     newEntry.AllowDesktopConfig = true
     newEntry.AllowOverlay = true

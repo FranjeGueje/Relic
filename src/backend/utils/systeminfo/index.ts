@@ -54,7 +54,6 @@ interface SystemInformation {
     version: string
   }
   steamDeckInfo: SteamDeckInfo
-  isFlatpak: boolean
   isAppImage: boolean
   softwareInUse: {
     relicVersion: string
@@ -107,7 +106,6 @@ async function getSystemInfo(cache = true): Promise<SystemInformation> {
       ...detailedOsInfo
     },
     steamDeckInfo: deckInfo,
-    isFlatpak: !!process.env.FLATPAK_ID,
     isAppImage: !!process.env.APPIMAGE,
     softwareInUse: {
       relicVersion: getRelicVersion(),
@@ -141,8 +139,7 @@ The current system is${info.steamDeckInfo.isDeck ? '' : ' not'} a Steam Deck${
   }
 ${
   isLinux
-    ? `We are${info.isFlatpak ? '' : ' not'} running inside a Flatpak container
-We are${info.isAppImage ? '' : ' not'} running from an AppImage
+    ? `We are${info.isAppImage ? '' : ' not'} running from an AppImage
 `
     : ''
 }

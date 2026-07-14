@@ -70,7 +70,6 @@ type DiskSpaceInfo = {
   notEnoughDiskSpace: boolean
   message: string
   validPath: boolean
-  validFlatpakPath: boolean
   spaceLeftAfter: string
 }
 
@@ -147,7 +146,6 @@ export default function DownloadDialog({
     message: '',
     notEnoughDiskSpace: false,
     validPath: true,
-    validFlatpakPath: true,
     spaceLeftAfter: ''
   })
 
@@ -455,7 +453,7 @@ export default function DownloadDialog({
 
   useEffect(() => {
     const getSpace = async () => {
-      const { message, free, validPath, validFlatpakPath } =
+      const { message, free, validPath } =
         await window.api.checkDiskSpace(installPath)
       if (diskSize) {
         let notEnoughDiskSpace = free < diskSize
@@ -471,7 +469,6 @@ export default function DownloadDialog({
           message,
           notEnoughDiskSpace,
           validPath,
-          validFlatpakPath,
           spaceLeftAfter
         })
       }
@@ -559,7 +556,6 @@ export default function DownloadDialog({
 
   const {
     validPath,
-    validFlatpakPath,
     notEnoughDiskSpace,
     message,
     spaceLeftAfter
@@ -580,7 +576,7 @@ export default function DownloadDialog({
   }
 
   const readyToInstall =
-    installPath && !!diskSize && !gettingInstallInfo && validFlatpakPath
+    installPath && !!diskSize && !gettingInstallInfo
 
   const showDlcSelector =
     ['legendary', 'gog'].includes(runner) && DLCList && DLCList?.length > 0
@@ -673,7 +669,7 @@ export default function DownloadDialog({
           afterInput={
             downloadSize ? (
               <span className="smallInputInfo">
-                {validPath && validFlatpakPath && (
+                {validPath && (
                   <>
                     <span>
                       {`${t('install.disk-space-left', 'Space Available')}: `}
@@ -701,14 +697,6 @@ export default function DownloadDialog({
                     {`${t(
                       'install.path-not-writtable',
                       'Warning: path might not be writable.'
-                    )}`}
-                  </span>
-                )}
-                {validPath && !validFlatpakPath && (
-                  <span className="error">
-                    {`${t(
-                      'install.flatpak-path-not-writtable',
-                      'Error: Sandbox access not granted to this path, data loss will occur.'
                     )}`}
                   </span>
                 )}

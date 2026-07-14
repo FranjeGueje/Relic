@@ -1,6 +1,5 @@
 import { backendEvents } from 'backend/backend_events'
 import {
-  isFlatpak,
   isAppImage,
   isSnap,
   isSteamDeckGameMode,
@@ -133,7 +132,6 @@ export async function startPlausible() {
     arch: process.arch,
     distro,
     distroVersion,
-    isFlatpak: isFlatpak,
     isAppImage: isAppImage,
     isSnap: isSnap,
     isSteamDeckGameMode: isSteamDeckGameMode,

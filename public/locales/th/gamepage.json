@@ -1,324 +1,323 @@
 {
-    "box": {
-        "change": {
-            "message": "คุณกำลังจะเปลี่ยนที่ติดตั้งของเกมนี้, คุณแน่ใจไหม?",
-            "path": "เลือกที่อยู่ใหม่",
-            "title": "เปลี่ยนที่อยู่เกม"
-        },
-        "choose": "เลือก",
-        "close": "ปิด",
-        "importpath": "เลือกโฟลเดอร์เกมที่จะนำเข้า",
-        "move": {
-            "message": "อาจจะใช้เวลานาน, คุณแน่ใจไหม?",
-            "path": "เลือกที่ที่คุณจะย้ายไป",
-            "title": "ย้ายข้อมูลไฟล์เกม"
-        },
-        "repair": {
-            "message": "คุณต้องการที่จะลองซ่อมแซมเกมนี้หรือไม่? นี่อาจจะใช้เวลานาน.",
-            "title": "ตรวจสอบและซ่อมแซม"
-        },
-        "runexe": {
-            "title": "เลือกไฟล์ EXE ที่จะรัน"
-        },
-        "select": {
-            "button": "เลิอก",
-            "image": ""
-        },
-        "sideload": {
-            "exe": "เลือกไฟล์ปฎิบัติการ (EXE)"
-        },
-        "stopInstall": {
-            "keepInstalling": "ติดตั้งต่อไป",
-            "message": "คุณต้องการที่จะเก็บไฟล์ที่ดาวน์โหลดไว้หรือไม่?",
-            "title": "หยุดการติดตั้ง"
-        },
-        "uninstall": {
-            "cannotUninstallEpic": "เกม Epic ไม่สามารถถอนการติดตั้งได้ ในขณะที่กำลังติดตั้งเกม Epic อื่นอยู่.",
-            "checkbox": "ลบ prefix: {{prefix}}{{newLine}}หมายเหตุ: เมื่อลบแล้ว จะไม่สามารถย้อนกลับได้ และจะลบไฟล์บันทึกที่ไม่ได้รับการสำรองข้อมูลไว้ด้วย.",
-            "dlc": "คุณต้องการถอนการติดตั้ง \"{{title}}\" (DLC) หรือไม่?",
-            "gameIsRunning": "{{title}} กำลังทำงานอยู่. ให้ปิดเกมเพื่อถอนการติดตั้ง.",
-            "message": "คุณต้องการถอนการติดตั้ง \"{{title}}\" หรือไม่?",
-            "title": "ถอนการติดตั้ง",
-            "settingcheckbox": "",
-            "prefix_warning": ""
-        },
-        "yes": "ใช่",
-        "offline_warning": {
-            "message": "",
-            "playAnyway": "",
-            "title": ""
-        },
-        "no": "ไม่",
-        "warning": {
-            "title": ""
-        },
-        "wineprefix": "",
-        "update": {
-            "message": "",
-            "title": ""
-        },
-        "selectLaunchOption": {
-            "title": "",
-            "body": ""
-        },
-        "sync": {
-            "force_download_warning": "",
-            "force_upload_warning": ""
-        },
-        "ok": ""
+  "box": {
+    "change": {
+      "message": "คุณกำลังจะเปลี่ยนที่ติดตั้งของเกมนี้, คุณแน่ใจไหม?",
+      "path": "เลือกที่อยู่ใหม่",
+      "title": "เปลี่ยนที่อยู่เกม"
     },
-    "button": {
-        "add_to_favourites": "เพิ่มไปยังรายการโปรด",
-        "cancel": "หยุดชั่วคราว/ยกเลิก",
-        "continue": "ดำเนินการดาวน์โหลดต่อ",
-        "details": "รายละเอียด",
-        "finish": "เสร็จสิ้น",
-        "hide_game": "ซ่อนเกม",
-        "import": "นำเข้าเกม",
-        "install": "ติดตั้ง",
-        "queue": {
-            "remove": "ลบออกจากคิว"
-        },
-        "remove_from_favourites": "ลบออกจากรายการโปรด",
-        "remove_from_recent": "ลบออกจากล่าสุด",
-        "run-exe-first": "เรียกใช้ตัวติดตั้งก่อน",
-        "uninstall": "ถอนการติดตั้ง",
-        "update": "อัปเดต",
-        "unhide_game": "ซ่อนเกม",
-        "sideload": {
-            "edit": ""
-        },
-        "changelog": "",
-        "force_update": "",
-        "browse_wine_prefix": "",
-        "force-innstall": "",
-        "running-setup": "",
-        "play": "",
-        "no-path-selected": "",
-        "browse_files": ""
+    "choose": "เลือก",
+    "close": "ปิด",
+    "importpath": "เลือกโฟลเดอร์เกมที่จะนำเข้า",
+    "move": {
+      "message": "อาจจะใช้เวลานาน, คุณแน่ใจไหม?",
+      "path": "เลือกที่ที่คุณจะย้ายไป",
+      "title": "ย้ายข้อมูลไฟล์เกม"
     },
-    "cloud_save_unsupported": "ไม่ได้สนับสนุน",
-    "disabled": "ปิดใช้งานแล้ว",
-    "enabled": "เปิดใช้งาน",
-    "game": {
-        "branch": {
-            "disabled": "ปิดใช้งานแล้ว",
-            "select": "",
-            "password": "",
-            "setPrivateBranchPassword": ""
-        },
-        "builds": {
-            "buildsSelector": "เลือกเวอร์ชั่นเกม",
-            "version": "เวอร์ชั่น",
-            "toggle": ""
-        },
-        "downloadSize": "ขนาดดาวน์โหลด",
-        "install_info": "รายละเอียดการติดตั้ง",
-        "installSize": "ขนาดการติดตั้ง",
-        "language": "ภาษา",
-        "lastPlayed": "เล่นไปล่าสุดเมื่อ",
-        "modify": "ปรับแต่งการติดตั้ง",
-        "neverPlayed": "ไม่เคยเลย",
-        "requirements": "## ข้อกำหนดของระบบ",
-        "getting-download-size": "",
-        "changelogFor": "",
-        "getting-install-size": "",
-        "extra_info": "",
-        "totalPlayed": "",
-        "firstPlayed": "",
-        "platform": "",
-        "achievements": ""
+    "repair": {
+      "message": "คุณต้องการที่จะลองซ่อมแซมเกมนี้หรือไม่? นี่อาจจะใช้เวลานาน.",
+      "title": "ตรวจสอบและซ่อมแซม"
     },
-    "gamecard": {
-        "moving": "กำลังย้าย",
-        "repairing": "กำลังซ่อมแซม"
+    "runexe": {
+      "title": "เลือกไฟล์ EXE ที่จะรัน"
     },
-    "help": {
-        "title": {
-            "gamePage": "หน้าเว็บเพจเกม"
-        },
-        "content": {
-            "gamePage": ""
-        },
-        "cloud_save_unsupported": ""
-    },
-    "hours": "ชั่วโมง",
-    "how-long-to-beat": {
-        "main-plus-extras": "หลัก + เสริม",
-        "main-story": "เนื้อเรื่องหลัก",
-        "completionist": ""
-    },
-    "info": {
-        "canRunOffline": "จำเป็นต้องออนไลน์",
-        "clickToOpen": "คลิกเพื่อเปิด",
-        "game-scores": "คะแนนเกม",
-        "size": "ขนาด",
-        "steamdeck-compatibility-info": "ความเข้ากันได้กับ SteamDeck",
-        "version": "เวอร์ชั่น",
-        "syncsaves": "",
-        "installedInfo": "",
-        "path": "",
-        "protondb-compatibility-info": "",
-        "apple-gaming-wiki": "",
-        "third-party-app": "",
-        "installedPlatform": ""
-    },
-    "label": {
-        "launching": "กำลังเปิด",
-        "playing": {
-            "start": "เล่นตอนนี้",
-            "stop": "กำลังเล่น (หยุด)",
-            "start_with_logs": ""
-        },
-        "winetricks": "",
-        "redist": "",
-        "game": {
-            "third-party-game": "",
-            "not-installable-game": ""
-        },
-        "saves": {
-            "syncing": ""
-        }
-    },
-    "modifyInstall": {
-        "versionCollapsable": "เวอร์ชั่นเกม",
-        "redMod": {
-            "collapsible": "",
-            "enable": ""
-        },
-        "nodlcs": "",
-        "dlcsCollapsible": ""
-    },
-    "not_logged_in": {
-        "login": "เข้าสู่ระบบ",
-        "gog": "",
-        "amazon": "",
-        "title": "",
-        "zoom": "",
-        "epic": ""
+    "select": {
+      "button": "เลิอก",
+      "image": ""
     },
     "sideload": {
-        "info": {
-            "exe": "เลือกไฟล์ปฎิบัติการ (EXE)",
-            "image": "ภาพของแอป",
-            "broser": "",
-            "title": "",
-            "useragent": "",
-            "fullscreen": ""
-        },
-        "placeholder": {
-            "url": "",
-            "useragent": "",
-            "image": "",
-            "title": ""
-        },
-        "import-hint": {
-            "content": "",
-            "title": ""
-        },
-        "field": {
-            "title": ""
-        }
+      "exe": "เลือกไฟล์ปฎิบัติการ (EXE)"
     },
-    "specs": {
-        "minimum": "ขั้นต่ำ",
-        "recommended": "แนะนำ"
+    "stopInstall": {
+      "keepInstalling": "ติดตั้งต่อไป",
+      "message": "คุณต้องการที่จะเก็บไฟล์ที่ดาวน์โหลดไว้หรือไม่?",
+      "title": "หยุดการติดตั้ง"
     },
-    "status": {
-        "clickToUpdate": "คลิกเพื่ออัปเดต",
-        "downloading": "กำลังดาวน์โหลด",
-        "extracting": "กำลังแยกไฟล์",
-        "gameNotAvailable": "เกมไม่พร้อมใช้งาน",
-        "hasUpdates": "เวอร์ชั่นใหม่พร้อมให้ใช้งานแล้ว!",
-        "installed": "ติดตั้งแล้ว",
-        "installing": "กำลังติดตั้ง",
-        "launching": "กำลังเปิด",
-        "moving": "กำลังย้ายข้อมูลการติดตั้ง, รอสักครู่",
-        "uninstalling": "ยกเลิกการติดตั้ง",
-        "updating": "กำลังอัปเดตเกม",
-        "redist": "",
-        "notSupported": "",
-        "winetricks": "",
-        "syncingSaves": "",
-        "processing": "",
-        "importing": "",
-        "notinstalled": "",
-        "totalDownloaded": "",
-        "this-game-uses-third-party": "",
-        "moving-files": "",
-        "reparing": "",
-        "playing": "",
-        "queued": "",
-        "gog-goodie": "",
-        "goodie": "",
-        "notSupportedGame": ""
+    "uninstall": {
+      "cannotUninstallEpic": "เกม Epic ไม่สามารถถอนการติดตั้งได้ ในขณะที่กำลังติดตั้งเกม Epic อื่นอยู่.",
+      "checkbox": "ลบ prefix: {{prefix}}{{newLine}}หมายเหตุ: เมื่อลบแล้ว จะไม่สามารถย้อนกลับได้ และจะลบไฟล์บันทึกที่ไม่ได้รับการสำรองข้อมูลไว้ด้วย.",
+      "dlc": "คุณต้องการถอนการติดตั้ง \"{{title}}\" (DLC) หรือไม่?",
+      "gameIsRunning": "{{title}} กำลังทำงานอยู่. ให้ปิดเกมเพื่อถอนการติดตั้ง.",
+      "message": "คุณต้องการถอนการติดตั้ง \"{{title}}\" หรือไม่?",
+      "title": "ถอนการติดตั้ง",
+      "settingcheckbox": "",
+      "prefix_warning": ""
     },
-    "submenu": {
-        "addShortcut": "เพิ่มชอร์ตคัท",
-        "addToSteam": "เพิ่มไปยัง Steam",
-        "categories": "หมวดหมู่",
-        "move": "ย้ายเกม",
-        "protondb": "ตรวจสอบความเข้ากันได้",
-        "removeFromSteam": "ลบออกจาก Steam",
-        "removeShortcut": "ลบชอร์ตคัท",
-        "settings": "การตั้งค่า",
-        "store": "หน้าร้านค้า",
-        "verify": "ตรวจสอบและซ่อมแซม",
-        "change": "",
-        "logs": "",
-        "enableEosOverlay": "",
-        "disableEosOverlay": ""
+    "yes": "ใช่",
+    "offline_warning": {
+      "message": "",
+      "playAnyway": "",
+      "title": ""
     },
-    "third-party-managed": {
-        "header": "",
-        "notice2": "",
-        "notice1": ""
+    "no": "ไม่",
+    "warning": {
+      "title": ""
     },
+    "wineprefix": "",
+    "update": {
+      "message": "",
+      "title": ""
+    },
+    "selectLaunchOption": {
+      "title": "",
+      "body": ""
+    },
+    "sync": {
+      "force_download_warning": "",
+      "force_upload_warning": ""
+    },
+    "ok": ""
+  },
+  "button": {
+    "add_to_favourites": "เพิ่มไปยังรายการโปรด",
+    "cancel": "หยุดชั่วคราว/ยกเลิก",
+    "continue": "ดำเนินการดาวน์โหลดต่อ",
+    "details": "รายละเอียด",
+    "finish": "เสร็จสิ้น",
+    "hide_game": "ซ่อนเกม",
+    "import": "นำเข้าเกม",
+    "install": "ติดตั้ง",
     "queue": {
-        "label": {
-            "resume": "",
-            "pause": "",
-            "remove": "",
-            "canceled": ""
-        }
+      "remove": "ลบออกจากคิว"
     },
-    "setting": {
-        "warn-use-shared-wine-config": "",
-        "show-wine-settings": "",
-        "use-shared-wine-config": "",
-        "winecrossoverbottle": ""
+    "remove_from_favourites": "ลบออกจากรายการโปรด",
+    "remove_from_recent": "ลบออกจากล่าสุด",
+    "run-exe-first": "เรียกใช้ตัวติดตั้งก่อน",
+    "uninstall": "ถอนการติดตั้ง",
+    "update": "อัปเดต",
+    "unhide_game": "ซ่อนเกม",
+    "sideload": {
+      "edit": ""
     },
-    "open-saves-folder": "",
-    "install": {
-        "disk-space-left": "",
-        "space-after-install": "",
-        "anticheat-warning": {
-            "cancel": "ไม่",
-            "disabled_installation": "",
-            "install_anyway": "",
-            "ok": "",
-            "multiplayer_message": "",
-            "title": ""
-        },
-        "wineprefix": "",
-        "not-enough-disk-space": "",
-        "path": "",
-        "flatpak-path-not-writtable": "",
-        "path-not-writtable": "",
-        "wineversion": ""
+    "changelog": "",
+    "force_update": "",
+    "browse_wine_prefix": "",
+    "force-innstall": "",
+    "running-setup": "",
+    "play": "",
+    "no-path-selected": "",
+    "browse_files": ""
+  },
+  "cloud_save_unsupported": "ไม่ได้สนับสนุน",
+  "disabled": "ปิดใช้งานแล้ว",
+  "enabled": "เปิดใช้งาน",
+  "game": {
+    "branch": {
+      "disabled": "ปิดใช้งานแล้ว",
+      "select": "",
+      "password": "",
+      "setPrivateBranchPassword": ""
     },
-    "sdl": {
-        "title": ""
+    "builds": {
+      "buildsSelector": "เลือกเวอร์ชั่นเกม",
+      "version": "เวอร์ชั่น",
+      "toggle": ""
     },
-    "launch": {
-        "default": ""
+    "downloadSize": "ขนาดดาวน์โหลด",
+    "install_info": "รายละเอียดการติดตั้ง",
+    "installSize": "ขนาดการติดตั้ง",
+    "language": "ภาษา",
+    "lastPlayed": "เล่นไปล่าสุดเมื่อ",
+    "modify": "ปรับแต่งการติดตั้ง",
+    "neverPlayed": "ไม่เคยเลย",
+    "requirements": "## ข้อกำหนดของระบบ",
+    "getting-download-size": "",
+    "changelogFor": "",
+    "getting-install-size": "",
+    "extra_info": "",
+    "totalPlayed": "",
+    "firstPlayed": "",
+    "platform": "",
+    "achievements": ""
+  },
+  "gamecard": {
+    "moving": "กำลังย้าย",
+    "repairing": "กำลังซ่อมแซม"
+  },
+  "help": {
+    "title": {
+      "gamePage": "หน้าเว็บเพจเกม"
     },
-    "howLongToBeat": "",
-    "Open": "",
-    "generic": {
-        "error": "",
-        "noDescription": ""
+    "content": {
+      "gamePage": ""
     },
-    "report_problem": "",
-    "wikiLink": ""
+    "cloud_save_unsupported": ""
+  },
+  "hours": "ชั่วโมง",
+  "how-long-to-beat": {
+    "main-plus-extras": "หลัก + เสริม",
+    "main-story": "เนื้อเรื่องหลัก",
+    "completionist": ""
+  },
+  "info": {
+    "canRunOffline": "จำเป็นต้องออนไลน์",
+    "clickToOpen": "คลิกเพื่อเปิด",
+    "game-scores": "คะแนนเกม",
+    "size": "ขนาด",
+    "steamdeck-compatibility-info": "ความเข้ากันได้กับ SteamDeck",
+    "version": "เวอร์ชั่น",
+    "syncsaves": "",
+    "installedInfo": "",
+    "path": "",
+    "protondb-compatibility-info": "",
+    "apple-gaming-wiki": "",
+    "third-party-app": "",
+    "installedPlatform": ""
+  },
+  "label": {
+    "launching": "กำลังเปิด",
+    "playing": {
+      "start": "เล่นตอนนี้",
+      "stop": "กำลังเล่น (หยุด)",
+      "start_with_logs": ""
+    },
+    "winetricks": "",
+    "redist": "",
+    "game": {
+      "third-party-game": "",
+      "not-installable-game": ""
+    },
+    "saves": {
+      "syncing": ""
+    }
+  },
+  "modifyInstall": {
+    "versionCollapsable": "เวอร์ชั่นเกม",
+    "redMod": {
+      "collapsible": "",
+      "enable": ""
+    },
+    "nodlcs": "",
+    "dlcsCollapsible": ""
+  },
+  "not_logged_in": {
+    "login": "เข้าสู่ระบบ",
+    "gog": "",
+    "amazon": "",
+    "title": "",
+    "zoom": "",
+    "epic": ""
+  },
+  "sideload": {
+    "info": {
+      "exe": "เลือกไฟล์ปฎิบัติการ (EXE)",
+      "image": "ภาพของแอป",
+      "broser": "",
+      "title": "",
+      "useragent": "",
+      "fullscreen": ""
+    },
+    "placeholder": {
+      "url": "",
+      "useragent": "",
+      "image": "",
+      "title": ""
+    },
+    "import-hint": {
+      "content": "",
+      "title": ""
+    },
+    "field": {
+      "title": ""
+    }
+  },
+  "specs": {
+    "minimum": "ขั้นต่ำ",
+    "recommended": "แนะนำ"
+  },
+  "status": {
+    "clickToUpdate": "คลิกเพื่ออัปเดต",
+    "downloading": "กำลังดาวน์โหลด",
+    "extracting": "กำลังแยกไฟล์",
+    "gameNotAvailable": "เกมไม่พร้อมใช้งาน",
+    "hasUpdates": "เวอร์ชั่นใหม่พร้อมให้ใช้งานแล้ว!",
+    "installed": "ติดตั้งแล้ว",
+    "installing": "กำลังติดตั้ง",
+    "launching": "กำลังเปิด",
+    "moving": "กำลังย้ายข้อมูลการติดตั้ง, รอสักครู่",
+    "uninstalling": "ยกเลิกการติดตั้ง",
+    "updating": "กำลังอัปเดตเกม",
+    "redist": "",
+    "notSupported": "",
+    "winetricks": "",
+    "syncingSaves": "",
+    "processing": "",
+    "importing": "",
+    "notinstalled": "",
+    "totalDownloaded": "",
+    "this-game-uses-third-party": "",
+    "moving-files": "",
+    "reparing": "",
+    "playing": "",
+    "queued": "",
+    "gog-goodie": "",
+    "goodie": "",
+    "notSupportedGame": ""
+  },
+  "submenu": {
+    "addShortcut": "เพิ่มชอร์ตคัท",
+    "addToSteam": "เพิ่มไปยัง Steam",
+    "categories": "หมวดหมู่",
+    "move": "ย้ายเกม",
+    "protondb": "ตรวจสอบความเข้ากันได้",
+    "removeFromSteam": "ลบออกจาก Steam",
+    "removeShortcut": "ลบชอร์ตคัท",
+    "settings": "การตั้งค่า",
+    "store": "หน้าร้านค้า",
+    "verify": "ตรวจสอบและซ่อมแซม",
+    "change": "",
+    "logs": "",
+    "enableEosOverlay": "",
+    "disableEosOverlay": ""
+  },
+  "third-party-managed": {
+    "header": "",
+    "notice2": "",
+    "notice1": ""
+  },
+  "queue": {
+    "label": {
+      "resume": "",
+      "pause": "",
+      "remove": "",
+      "canceled": ""
+    }
+  },
+  "setting": {
+    "warn-use-shared-wine-config": "",
+    "show-wine-settings": "",
+    "use-shared-wine-config": "",
+    "winecrossoverbottle": ""
+  },
+  "open-saves-folder": "",
+  "install": {
+    "disk-space-left": "",
+    "space-after-install": "",
+    "anticheat-warning": {
+      "cancel": "ไม่",
+      "disabled_installation": "",
+      "install_anyway": "",
+      "ok": "",
+      "multiplayer_message": "",
+      "title": ""
+    },
+    "wineprefix": "",
+    "not-enough-disk-space": "",
+    "path": "",
+    "path-not-writtable": "",
+    "wineversion": ""
+  },
+  "sdl": {
+    "title": ""
+  },
+  "launch": {
+    "default": ""
+  },
+  "howLongToBeat": "",
+  "Open": "",
+  "generic": {
+    "error": "",
+    "noDescription": ""
+  },
+  "report_problem": "",
+  "wikiLink": ""
 }

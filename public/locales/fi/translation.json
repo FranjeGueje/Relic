@@ -175,7 +175,6 @@
         }
       },
       "snap": {
-        "message": "Aivan kaikki ominaisuudet eivät vielä ole saavutettavissa sovelluksen Snap-julkaisussa ja työstämme korjauksia.{{newLine}}Rajoituksia joita tällä hetkellä on havaittu: {{newLine}}Heroic ei löydä Protonia Steam:istä tai Wine:stä Lutris-käynnistimen kautta.{{newLine}}{{newLine}}Peliavustajat kuten Gamescope, GameMode ja MangoHud eivät myöskään toimi, koska Heroic:illa ei ole niihin pääsyä.{{newLine}}{{newLine}}Hyödyntääksesi näitä ominaisuuksia, asenna Heroic Games Launcher Flatpak, DEB tai AppImage -paketointien kautta.",
         "title": "Ajossa on Heroic:in Snap-paketointi",
         "checkbox": "Älä näytä tätä viestiä enää"
       },
@@ -776,7 +775,6 @@
     "default_hint": "Tämän osaston muutokset tulevat voimaan vakioarvoissa kun pelejä asennetaan. Mikäli haluat muuttaa jo valmiiksi asennetun pelin asetuksia, käytä Asetukset -painiketta pelisivulla.",
     "eacRuntime": {
       "gameModeRequired": {
-        "message": "GameMode vaaditaan jotta EAC-ajoympäristö toimii Flatpak:illa. Haluatko kytkeä sen päälle nyt?",
         "title": "GameMode vaaditaan"
       },
       "installing": "Asennetaan EAC-ajoympäristö...",
@@ -822,7 +820,6 @@
       "gpu": "Näytönohjain:",
       "gogdlVersion": "Gogdl: {{gogdlVersion}}",
       "osVersion": "Julkaisu {{versionNumber}}",
-      "osNameFlatpak": "{{osName}} (Flatpak:in sisällä)",
       "software": "Ohjelmisto:",
       "memoryStats": "{{percentUsed}}% käytetty ({{usedGib}} / {{totalGib}}",
       "systemModel": "Järjestelmämalli:",

@@ -767,7 +767,6 @@
     "default_hint": "Changes in this section only apply as default values when installing games. If you want to change the settings of an already installed game, use the Settings button in the game page.",
     "eacRuntime": {
       "gameModeRequired": {
-        "message": "GameMode je neophodan da EAC runtime radi na Flatpaku. Želite li ga sada omogućiti?",
         "title": "Potreban je GameMode"
       },
       "installing": "Instaliranje EAC Runtime...",
@@ -836,7 +835,6 @@
       "gpu": "",
       "gogdlVersion": "",
       "osVersion": "",
-      "osNameFlatpak": "",
       "software": "",
       "cometVersion": "",
       "memoryStats": "",

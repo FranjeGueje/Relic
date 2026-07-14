@@ -186,7 +186,6 @@
       },
       "snap": {
         "checkbox": "Ná taispeáin an teachtaireacht seo arís",
-        "message": "Níl roinnt gnéithe ar fáil i leagan Snap den aip faoi láthair agus táimid ag iarraidh iad a shocrú.{{newLine}}Seo a leanas na teorainneacha reatha: {{newLine}}Ní bheidh Heroic in ann Proton a aimsiú ó Steam ná Wine ó Lutris.{{newLine}}{{newLine}}Ní oibreoidh Gamescope, GameMode ná MangoHud ach an oiread ós rud é nach féidir le Heroic rochtain a fháil orthu.{{newLine}}{{newLine}}Chun rochtain a fháil ar an ngné seo, suiteáil Heroic mar Flatpak, DEB nó ón AppImage.",
         "title": "Tá Heroic ag rith mar Snap"
       },
       "title": "Rabhadh",
@@ -829,7 +828,6 @@
     "default_hint": "Ní bhaineann athruithe sa chuid seo ach le luachanna réamhshocraithe agus cluichí á suiteáil. Más mian leat socruithe cluiche atá suiteáilte cheana féin a athrú, bain úsáid as an gcnaipe Socruithe ar leathanach an chluiche.",
     "eacRuntime": {
       "gameModeRequired": {
-        "message": "Tá GameMode riachtanach chun go n-oibreoidh am rith EAC ar Flatpak. Ar mhaith leat é a chumasú anois?",
         "title": "Mód Cluiche ag teastáil"
       },
       "installing": "Ag suiteáil EAC Runtime...",
@@ -882,7 +880,6 @@
       "memoryStats": "{{percentUsed}}% úsáidte ({{usedGib}} / {{totalGib}}",
       "nileVersion": "Níl: {{nileVersion}}",
       "os": "Córas Oibriúcháin:",
-      "osNameFlatpak": "{{osName}} (taobh istigh de Flatpak)",
       "osVersion": "Leagan {{versionNumber}}",
       "showDetailed": "Taispeáin sonraíochtaí mionsonraithe an chórais",
       "software": "Bogearraí:",

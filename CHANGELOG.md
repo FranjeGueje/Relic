@@ -13,15 +13,6 @@
 - [Bugfix] Issues with Epic Login and refresh Library by @flavioislima in #1073
 - [i18n] Translations update from Hosted Weblate by @weblate in #1075
 
-## 2.2.4 Oden - Flatpak and other fixes
-
-### What's Changed
-
-- [General] Fixes Games Logs and Games settings path since they were pointing to the wrong folder on v.2.2.3.
-- [General] Handle 404 errors from GOGDB.
-- [Linux] Disable check for updates by default on Flatpak.
-- [Linux] Fixes Default wine prefix for Flatpak
-
 ## 2.2.3 Oden - Windows and MacOS fixes
 
 ### What's Changed
@@ -38,7 +29,6 @@
 - [General] UI improvements and additions by @8Bitz0 in #1041
 - [Linux] Improve Wine version handling by @CommandMC in #1008
 - [Linux] Wine-GE-Proton Compatibility by @nezd5553 in #1040
-- [Linux] Flatpak preparations by @flavioislima in #515
 - [Bugfix] Fixup protocol handling when Heroic is already running by @CommandMC in #1019
 - [i18n] Translations update from Hosted Weblate by @weblate in #1035
 

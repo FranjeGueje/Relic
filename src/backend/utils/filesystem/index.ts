@@ -1,4 +1,3 @@
-import { isFlatpak } from 'backend/constants/environment'
 import type { Path } from 'backend/schemas'
 
 interface DiskInfo {
@@ -16,8 +15,5 @@ async function isWritable(path: Path): Promise<boolean> {
   return isWritable_unix(path)
 }
 
-const isAccessibleWithinFlatpakSandbox = (path: Path): boolean =>
-  !isFlatpak || !path.startsWith(process.env.XDG_RUNTIME_DIR || '/run/user/')
-
-export { getDiskInfo, isWritable, isAccessibleWithinFlatpakSandbox }
+export { getDiskInfo, isWritable }
 export type { DiskInfo }

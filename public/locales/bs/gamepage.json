@@ -1,341 +1,340 @@
 {
-    "box": {
-        "change": {
-            "message": "Ovo će promijeniti lokaciju instalacije za ovu igru. Jeste li sigurni?",
-            "path": "Odaberite novu lokaciju za instalaciju",
-            "title": "Promijenite lokaciju instalacije video igara"
-        },
-        "choose": "Izaberi",
-        "importpath": "Izaberi mapu igre za uvod",
-        "move": {
-            "message": "Ovo može potrajati, jeste li sigurni?",
-            "path": "Izaberite gdje želite premjestiti",
-            "title": "Premjestite instalaciju video igre"
-        },
-        "no": "NE",
-        "repair": {
-            "message": "Želite li pokušati popraviti ovu video igru? Ovo može potrajati.",
-            "title": "Provjeri i popravi"
-        },
-        "runexe": {
-            "title": "Select EXE to Run"
-        },
-        "select": {
-            "button": "Select",
-            "image": ""
-        },
-        "sideload": {
-            "exe": "Select Executable"
-        },
-        "stopInstall": {
-            "keepInstalling": "Nastavite instalaciju",
-            "message": "Želite li ZADRŽATI preuzete datoteke?",
-            "title": "Zaustavi instalaciju"
-        },
-        "uninstall": {
-            "checkbox": "Želite li obrisati i prefiks? Ovo se ne može poništiti.",
-            "checkbox_prefix": "Prefiks",
-            "message": "Želite li izbrisati video igru?",
-            "settingcheckbox": "Erase settings and remove log{{newLine}}Note: This can't be undone. Any modified settings will be forgotten and log will be deleted.",
-            "title": "Izbriši",
-            "prefix_warning": "Wine prefiks za ovu igru je podrazumevani prefiks. Ako ga zaista želite izbrisati, morate to učiniti ručno.",
-            "dlc": "Želite li deinstalirati ovaj DLC?",
-            "cannotUninstallEpic": "",
-            "gameIsRunning": ""
-        },
-        "update": {
-            "message": "Ova video igra ima ažuriranje. Želite li ažurirati sada?",
-            "title": "Video igri je potrebno ažuriranje"
-        },
-        "wineprefix": "Izaberite WinePrefix mapu",
-        "yes": "DA",
-        "warning": {
-            "title": "Warning"
-        },
-        "ok": "U redu",
-        "offline_warning": {
-            "message": "",
-            "playAnyway": "",
-            "title": ""
-        },
-        "close": "",
-        "selectLaunchOption": {
-            "title": "",
-            "body": ""
-        },
-        "sync": {
-            "force_download_warning": "",
-            "force_upload_warning": ""
-        }
+  "box": {
+    "change": {
+      "message": "Ovo će promijeniti lokaciju instalacije za ovu igru. Jeste li sigurni?",
+      "path": "Odaberite novu lokaciju za instalaciju",
+      "title": "Promijenite lokaciju instalacije video igara"
     },
-    "button": {
-        "add_to_favourites": "Dodaj u favorite",
-        "cancel": "Otkaži/Prekini",
-        "continue": "Nastavi preuzimanje",
-        "finish": "Finish",
-        "force_update": "Prisilno ažuriranje ako je dostupno",
-        "force-innstall": "Force Install",
-        "hide_game": "Sakrij igru",
-        "import": "Uvezi igru",
-        "install": "Instaliraj",
-        "no-path-selected": "No path selected",
-        "queue": {
-            "remove": "Remove from Queue"
-        },
-        "remove_from_favourites": "Otkloni iz favorita",
-        "remove_from_recent": "Remove From Recent",
-        "run-exe-first": "Run Installer First",
-        "running-setup": "Running Setup",
-        "sideload": {
-            "edit": "Edit App/Game"
-        },
-        "unhide_game": "Prikaži igru",
-        "uninstall": "Deinstaliraj",
-        "update": "Ažuriraj",
-        "details": "Detalji",
-        "changelog": "",
-        "browse_wine_prefix": "",
-        "play": "",
-        "browse_files": ""
+    "choose": "Izaberi",
+    "importpath": "Izaberi mapu igre za uvod",
+    "move": {
+      "message": "Ovo može potrajati, jeste li sigurni?",
+      "path": "Izaberite gdje želite premjestiti",
+      "title": "Premjestite instalaciju video igre"
     },
-    "cloud_save_unsupported": "Nepodržano",
-    "disabled": "Onemogućeno",
-    "dlc": {
-        "installDlcs": "Instaliraj sve DLC-ove"
+    "no": "NE",
+    "repair": {
+      "message": "Želite li pokušati popraviti ovu video igru? Ovo može potrajati.",
+      "title": "Provjeri i popravi"
     },
-    "enabled": "Omogućeno",
-    "game": {
-        "downloadSize": "Veličina Preuzimanja",
-        "firstPlayed": "Prvi put odigrano",
-        "getting-download-size": "Geting download size",
-        "getting-install-size": "Geting install size",
-        "installSize": "Veličina Instalacije",
-        "language": "Jezik",
-        "lastPlayed": "Zadnji put odigrano",
-        "neverPlayed": "Nikada",
-        "platform": "Odaberi verziju platforme za instalirati",
-        "requirements": "Zahtjevi sistema",
-        "totalPlayed": "Vrijeme igranja",
-        "dlcs": "DLC",
-        "branch": {
-            "disabled": "Onemogućeno",
-            "select": "",
-            "password": "",
-            "setPrivateBranchPassword": ""
-        },
-        "builds": {
-            "version": "Verzija",
-            "buildsSelector": "",
-            "toggle": ""
-        },
-        "changelogFor": "",
-        "modify": "",
-        "install_info": "",
-        "extra_info": "",
-        "achievements": ""
+    "runexe": {
+      "title": "Select EXE to Run"
     },
-    "gamecard": {
-        "moving": "Premještanje",
-        "repairing": "Popravljanje"
-    },
-    "generic": {
-        "error": "Nepoznata greška",
-        "noDescription": "Nema dostupnog opisa"
-    },
-    "hours": "Hours",
-    "how-long-to-beat": {
-        "completionist": "Completionist",
-        "main-plus-extras": "Main + Extras",
-        "main-story": "Main Story"
-    },
-    "howLongToBeat": "How Long To Beat",
-    "info": {
-        "canRunOffline": "Internet veza potrebna",
-        "installedPlatform": "Instalirane platforme",
-        "path": "Put instalacije",
-        "size": "Veličina",
-        "syncsaves": "Sinhroniziraj podatke",
-        "version": "Verzija",
-        "clickToOpen": "Kliknite da otvorite",
-        "apple-gaming-wiki": "AppleGamingWiki Ocjena",
-        "game-scores": "Rezultati igre",
-        "installedInfo": "Instalirane informacije",
-        "protondb-compatibility-info": "Proton Compatibility Tier",
-        "steamdeck-compatibility-info": "SteamDeck kompatibilnost",
-        "third-party-app": ""
-    },
-    "install": {
-        "disk-space-left": "Prostora dostupno",
-        "not-enough-disk-space": "Nema dovoljno prostora na disku",
-        "path": "Izaberi put instalacije",
-        "path-not-writtable": "Upozorenje: put možda nije upisiv.",
-        "space-after-install": "Nakon instalacije",
-        "wineprefix": "WinePrefix",
-        "wineversion": "Wine verzija",
-        "anticheat-warning": {
-            "cancel": "",
-            "disabled_installation": "",
-            "install_anyway": "",
-            "ok": "",
-            "multiplayer_message": "",
-            "title": ""
-        },
-        "flatpak-path-not-writtable": ""
-    },
-    "label": {
-        "game": {
-            "third-party-game": "Third-Party Game NOT Supported",
-            "not-installable-game": "Igra NIJE instalirana"
-        },
-        "playing": {
-            "start": "Igraj sada",
-            "stop": "Igra se (Prekini)",
-            "start_with_logs": ""
-        },
-        "saves": {
-            "syncing": "Sinhoniziranje podataka"
-        },
-        "launching": "Lansiranje",
-        "ubisoft": "Instalacija Ubisoft Connecta",
-        "steam": {
-            "installing": "Instalira se",
-            "pleaseWait": "Please wait...",
-            "installation": "Zaustavi instalaciju"
-        },
-        "winetricks": "",
-        "redist": ""
-    },
-    "launch": {
-        "options": "Opcije za pokretanje...",
-        "default": ""
-    },
-    "not_logged_in": {
-        "epic": "You are not logged in with an Epic account in Heroic. Don't use the store page to login, click the following button instead:",
-        "gog": "You are not logged in with a GOG account in Heroic. Don't use the store page to login, click the following button instead:",
-        "login": "Log in",
-        "title": "You are NOT logged in",
-        "amazon": "You are not logged in with an Epic account in Heroic. Don't use the store page to login, click the following button instead:",
-        "zoom": "You are not logged in with a GOG account in Heroic. Don't use the store page to login, click the following button instead:"
-    },
-    "report_problem": "Prijavi problem za ovu video igru",
-    "sdl": {
-        "title": "Odaberite komponente za instalaciju"
-    },
-    "setting": {
-        "winecrossoverbottle": "CrossOver Bottle",
-        "warn-use-shared-wine-config": "",
-        "show-wine-settings": "",
-        "use-shared-wine-config": ""
+    "select": {
+      "button": "Select",
+      "image": ""
     },
     "sideload": {
-        "field": {
-            "title": "Title"
-        },
-        "info": {
-            "exe": "Select Executable",
-            "image": "App Image",
-            "title": "Game/App Title",
-            "broser": "BrowserURL",
-            "useragent": "",
-            "fullscreen": ""
-        },
-        "placeholder": {
-            "image": "Paste an Image URL here",
-            "title": "Add a title to your Game/App",
-            "url": "Ovdje zalijepite URL igre",
-            "useragent": ""
-        },
-        "import-hint": {
-            "content": "",
-            "title": ""
-        }
+      "exe": "Select Executable"
     },
-    "specs": {
-        "minimum": "Minimalno",
-        "recommended": "Preporučeno"
+    "stopInstall": {
+      "keepInstalling": "Nastavite instalaciju",
+      "message": "Želite li ZADRŽATI preuzete datoteke?",
+      "title": "Zaustavi instalaciju"
     },
-    "status": {
-        "clickToUpdate": "Klikni za ažuriranje",
-        "gameNotAvailable": "Game not available",
-        "hasUpdates": "Nova verzija dostupna!",
-        "installed": "Instalirano",
-        "installing": "Instalira se",
-        "moving": "Premještanje instalacije, molimo pričekajte",
-        "notinstalled": "Ova video igra nije instalirana",
-        "notSupported": "Not supported",
-        "notSupportedGame": "Not Supported",
-        "processing": "Obrada datoteka, pričekajte",
-        "queued": "Queued",
-        "reparing": "Popravljanje video igre, molimo čekajte",
-        "this-game-uses-third-party": "This game uses third party launcher and it is not supported yet",
-        "totalDownloaded": "Ukupno preuzeto",
-        "uninstalling": "Uninstalling",
-        "updating": "Ažuriranje video igre",
-        "playing": "Igranje",
-        "moving-files": "Premještanje fajla '{{file}}': {{percent}} ",
-        "syncingSaves": "Sinhoniziranje podataka",
-        "launching": "Lansiranje",
-        "ubisoft": "Instaliranje Ubisofta",
-        "downloading": "Downloading",
-        "extracting": "Ekstrakcija",
-        "goodie": "Nije moguće instalirati",
-        "gog-goodie": "Čini se da se ova igra ne može instalirati. Provjerite sadržaj koji se može preuzeti na https://gog.com/account",
-        "redist": "",
-        "winetricks": "",
-        "importing": ""
+    "uninstall": {
+      "checkbox": "Želite li obrisati i prefiks? Ovo se ne može poništiti.",
+      "checkbox_prefix": "Prefiks",
+      "message": "Želite li izbrisati video igru?",
+      "settingcheckbox": "Erase settings and remove log{{newLine}}Note: This can't be undone. Any modified settings will be forgotten and log will be deleted.",
+      "title": "Izbriši",
+      "prefix_warning": "Wine prefiks za ovu igru je podrazumevani prefiks. Ako ga zaista želite izbrisati, morate to učiniti ručno.",
+      "dlc": "Želite li deinstalirati ovaj DLC?",
+      "cannotUninstallEpic": "",
+      "gameIsRunning": ""
     },
-    "submenu": {
-        "addShortcut": "Dodaj prečicu",
-        "addToSteam": "Dodaj u Steam",
-        "change": "Promijeni put instalacije",
-        "disableEosOverlay": "Onemogućite EOS Overlay",
-        "enableEosOverlay": "Omogućite EOS Overlay",
-        "move": "Premjesti video igru",
-        "protondb": "Provjeri kompatibilnost",
-        "removeFromSteam": "Uklonite sa Steam-a",
-        "removeShortcut": "Uklonite prečice",
-        "settings": "Postavke",
-        "store": "Webstranica Trgovine",
-        "verify": "Provjeri i popravi",
-        "extraInfo": "Extra Info",
-        "logs": "Dnevnici",
-        "categories": ""
+    "update": {
+      "message": "Ova video igra ima ažuriranje. Želite li ažurirati sada?",
+      "title": "Video igri je potrebno ažuriranje"
     },
-    "help": {
-        "cloud_save_unsupported": "Ova igra ne podržava spremanje u oblaku. Ove informacije daju programeri igre. Neke igre implementiraju sopstveni sistem čuvanja u oblaku",
-        "content": {
-            "gamePage": ""
-        },
-        "title": {
-            "gamePage": ""
-        }
+    "wineprefix": "Izaberite WinePrefix mapu",
+    "yes": "DA",
+    "warning": {
+      "title": "Warning"
     },
-    "queue": {
-        "label": {
-            "remove": "Remove from Downloads",
-            "canceled": "Canceled",
-            "resume": "",
-            "pause": ""
-        }
+    "ok": "U redu",
+    "offline_warning": {
+      "message": "",
+      "playAnyway": "",
+      "title": ""
     },
-    "third-party-managed": {
-        "header": "",
-        "notice2": "",
-        "notice1": ""
+    "close": "",
+    "selectLaunchOption": {
+      "title": "",
+      "body": ""
     },
-    "modifyInstall": {
-        "redMod": {
-            "collapsible": "",
-            "enable": ""
-        },
-        "nodlcs": "",
-        "dlcsCollapsible": "",
-        "versionCollapsable": ""
-    },
-    "open-saves-folder": "",
-    "Open": "",
-    "wikiLink": "",
-    "edit-game": {
-        "advanced": "Napredno"
+    "sync": {
+      "force_download_warning": "",
+      "force_upload_warning": ""
     }
+  },
+  "button": {
+    "add_to_favourites": "Dodaj u favorite",
+    "cancel": "Otkaži/Prekini",
+    "continue": "Nastavi preuzimanje",
+    "finish": "Finish",
+    "force_update": "Prisilno ažuriranje ako je dostupno",
+    "force-innstall": "Force Install",
+    "hide_game": "Sakrij igru",
+    "import": "Uvezi igru",
+    "install": "Instaliraj",
+    "no-path-selected": "No path selected",
+    "queue": {
+      "remove": "Remove from Queue"
+    },
+    "remove_from_favourites": "Otkloni iz favorita",
+    "remove_from_recent": "Remove From Recent",
+    "run-exe-first": "Run Installer First",
+    "running-setup": "Running Setup",
+    "sideload": {
+      "edit": "Edit App/Game"
+    },
+    "unhide_game": "Prikaži igru",
+    "uninstall": "Deinstaliraj",
+    "update": "Ažuriraj",
+    "details": "Detalji",
+    "changelog": "",
+    "browse_wine_prefix": "",
+    "play": "",
+    "browse_files": ""
+  },
+  "cloud_save_unsupported": "Nepodržano",
+  "disabled": "Onemogućeno",
+  "dlc": {
+    "installDlcs": "Instaliraj sve DLC-ove"
+  },
+  "enabled": "Omogućeno",
+  "game": {
+    "downloadSize": "Veličina Preuzimanja",
+    "firstPlayed": "Prvi put odigrano",
+    "getting-download-size": "Geting download size",
+    "getting-install-size": "Geting install size",
+    "installSize": "Veličina Instalacije",
+    "language": "Jezik",
+    "lastPlayed": "Zadnji put odigrano",
+    "neverPlayed": "Nikada",
+    "platform": "Odaberi verziju platforme za instalirati",
+    "requirements": "Zahtjevi sistema",
+    "totalPlayed": "Vrijeme igranja",
+    "dlcs": "DLC",
+    "branch": {
+      "disabled": "Onemogućeno",
+      "select": "",
+      "password": "",
+      "setPrivateBranchPassword": ""
+    },
+    "builds": {
+      "version": "Verzija",
+      "buildsSelector": "",
+      "toggle": ""
+    },
+    "changelogFor": "",
+    "modify": "",
+    "install_info": "",
+    "extra_info": "",
+    "achievements": ""
+  },
+  "gamecard": {
+    "moving": "Premještanje",
+    "repairing": "Popravljanje"
+  },
+  "generic": {
+    "error": "Nepoznata greška",
+    "noDescription": "Nema dostupnog opisa"
+  },
+  "hours": "Hours",
+  "how-long-to-beat": {
+    "completionist": "Completionist",
+    "main-plus-extras": "Main + Extras",
+    "main-story": "Main Story"
+  },
+  "howLongToBeat": "How Long To Beat",
+  "info": {
+    "canRunOffline": "Internet veza potrebna",
+    "installedPlatform": "Instalirane platforme",
+    "path": "Put instalacije",
+    "size": "Veličina",
+    "syncsaves": "Sinhroniziraj podatke",
+    "version": "Verzija",
+    "clickToOpen": "Kliknite da otvorite",
+    "apple-gaming-wiki": "AppleGamingWiki Ocjena",
+    "game-scores": "Rezultati igre",
+    "installedInfo": "Instalirane informacije",
+    "protondb-compatibility-info": "Proton Compatibility Tier",
+    "steamdeck-compatibility-info": "SteamDeck kompatibilnost",
+    "third-party-app": ""
+  },
+  "install": {
+    "disk-space-left": "Prostora dostupno",
+    "not-enough-disk-space": "Nema dovoljno prostora na disku",
+    "path": "Izaberi put instalacije",
+    "path-not-writtable": "Upozorenje: put možda nije upisiv.",
+    "space-after-install": "Nakon instalacije",
+    "wineprefix": "WinePrefix",
+    "wineversion": "Wine verzija",
+    "anticheat-warning": {
+      "cancel": "",
+      "disabled_installation": "",
+      "install_anyway": "",
+      "ok": "",
+      "multiplayer_message": "",
+      "title": ""
+    }
+  },
+  "label": {
+    "game": {
+      "third-party-game": "Third-Party Game NOT Supported",
+      "not-installable-game": "Igra NIJE instalirana"
+    },
+    "playing": {
+      "start": "Igraj sada",
+      "stop": "Igra se (Prekini)",
+      "start_with_logs": ""
+    },
+    "saves": {
+      "syncing": "Sinhoniziranje podataka"
+    },
+    "launching": "Lansiranje",
+    "ubisoft": "Instalacija Ubisoft Connecta",
+    "steam": {
+      "installing": "Instalira se",
+      "pleaseWait": "Please wait...",
+      "installation": "Zaustavi instalaciju"
+    },
+    "winetricks": "",
+    "redist": ""
+  },
+  "launch": {
+    "options": "Opcije za pokretanje...",
+    "default": ""
+  },
+  "not_logged_in": {
+    "epic": "You are not logged in with an Epic account in Heroic. Don't use the store page to login, click the following button instead:",
+    "gog": "You are not logged in with a GOG account in Heroic. Don't use the store page to login, click the following button instead:",
+    "login": "Log in",
+    "title": "You are NOT logged in",
+    "amazon": "You are not logged in with an Epic account in Heroic. Don't use the store page to login, click the following button instead:",
+    "zoom": "You are not logged in with a GOG account in Heroic. Don't use the store page to login, click the following button instead:"
+  },
+  "report_problem": "Prijavi problem za ovu video igru",
+  "sdl": {
+    "title": "Odaberite komponente za instalaciju"
+  },
+  "setting": {
+    "winecrossoverbottle": "CrossOver Bottle",
+    "warn-use-shared-wine-config": "",
+    "show-wine-settings": "",
+    "use-shared-wine-config": ""
+  },
+  "sideload": {
+    "field": {
+      "title": "Title"
+    },
+    "info": {
+      "exe": "Select Executable",
+      "image": "App Image",
+      "title": "Game/App Title",
+      "broser": "BrowserURL",
+      "useragent": "",
+      "fullscreen": ""
+    },
+    "placeholder": {
+      "image": "Paste an Image URL here",
+      "title": "Add a title to your Game/App",
+      "url": "Ovdje zalijepite URL igre",
+      "useragent": ""
+    },
+    "import-hint": {
+      "content": "",
+      "title": ""
+    }
+  },
+  "specs": {
+    "minimum": "Minimalno",
+    "recommended": "Preporučeno"
+  },
+  "status": {
+    "clickToUpdate": "Klikni za ažuriranje",
+    "gameNotAvailable": "Game not available",
+    "hasUpdates": "Nova verzija dostupna!",
+    "installed": "Instalirano",
+    "installing": "Instalira se",
+    "moving": "Premještanje instalacije, molimo pričekajte",
+    "notinstalled": "Ova video igra nije instalirana",
+    "notSupported": "Not supported",
+    "notSupportedGame": "Not Supported",
+    "processing": "Obrada datoteka, pričekajte",
+    "queued": "Queued",
+    "reparing": "Popravljanje video igre, molimo čekajte",
+    "this-game-uses-third-party": "This game uses third party launcher and it is not supported yet",
+    "totalDownloaded": "Ukupno preuzeto",
+    "uninstalling": "Uninstalling",
+    "updating": "Ažuriranje video igre",
+    "playing": "Igranje",
+    "moving-files": "Premještanje fajla '{{file}}': {{percent}} ",
+    "syncingSaves": "Sinhoniziranje podataka",
+    "launching": "Lansiranje",
+    "ubisoft": "Instaliranje Ubisofta",
+    "downloading": "Downloading",
+    "extracting": "Ekstrakcija",
+    "goodie": "Nije moguće instalirati",
+    "gog-goodie": "Čini se da se ova igra ne može instalirati. Provjerite sadržaj koji se može preuzeti na https://gog.com/account",
+    "redist": "",
+    "winetricks": "",
+    "importing": ""
+  },
+  "submenu": {
+    "addShortcut": "Dodaj prečicu",
+    "addToSteam": "Dodaj u Steam",
+    "change": "Promijeni put instalacije",
+    "disableEosOverlay": "Onemogućite EOS Overlay",
+    "enableEosOverlay": "Omogućite EOS Overlay",
+    "move": "Premjesti video igru",
+    "protondb": "Provjeri kompatibilnost",
+    "removeFromSteam": "Uklonite sa Steam-a",
+    "removeShortcut": "Uklonite prečice",
+    "settings": "Postavke",
+    "store": "Webstranica Trgovine",
+    "verify": "Provjeri i popravi",
+    "extraInfo": "Extra Info",
+    "logs": "Dnevnici",
+    "categories": ""
+  },
+  "help": {
+    "cloud_save_unsupported": "Ova igra ne podržava spremanje u oblaku. Ove informacije daju programeri igre. Neke igre implementiraju sopstveni sistem čuvanja u oblaku",
+    "content": {
+      "gamePage": ""
+    },
+    "title": {
+      "gamePage": ""
+    }
+  },
+  "queue": {
+    "label": {
+      "remove": "Remove from Downloads",
+      "canceled": "Canceled",
+      "resume": "",
+      "pause": ""
+    }
+  },
+  "third-party-managed": {
+    "header": "",
+    "notice2": "",
+    "notice1": ""
+  },
+  "modifyInstall": {
+    "redMod": {
+      "collapsible": "",
+      "enable": ""
+    },
+    "nodlcs": "",
+    "dlcsCollapsible": "",
+    "versionCollapsable": ""
+  },
+  "open-saves-folder": "",
+  "Open": "",
+  "wikiLink": "",
+  "edit-game": {
+    "advanced": "Napredno"
+  }
 }

@@ -176,7 +176,6 @@
       },
       "snap": {
         "checkbox": "Jangan munculkan pesan ini lagi",
-        "message": "Beberapa fitur tidak tersedia di versi Snap aplikasi untuk saat ini dan kami sedang berusaha untuk memperbaikinya.{{newLine}}Keterbatasan saat ini adalah: {{newLine}}Heroic tidak akan dapat menemukan Proton dari Steam atau Wine dari Lutris.{{newLine}}{{newLine}}Gamescope, GameMode, dan MangoHud juga tidak akan berfungsi karena Heroic tidak dapat mengaksesnya.{{newLine}}{{newLine}}Untuk mendapatkan akses ke fitur ini, silakan instal Heroic sebagai Flatpak, DEB, atau dari AppImage.",
         "title": "Heroic berjalan sebagai Snap"
       },
       "rosetta": {
@@ -773,7 +772,6 @@
     "default_hint": "Perubahan di bagian ini hanya berlaku sebagai nilai bawaan saat menginstal gim. Jika Anda ingin mengubah pengaturan gim yang sudah terinstal, gunakan tombol Pengaturan di halaman gim.",
     "eacRuntime": {
       "gameModeRequired": {
-        "message": "GameMode dibutuhkan untuk menjalankan EAC runtime di Flatpak. Apakah anda ingin menghidupkannya sekarang?",
         "title": "GameMode dibutuhkan"
       },
       "installing": "Menginstal EAC Runtime...",
@@ -847,7 +845,6 @@
       "memoryStats": "{{percentUsed}}% digunakan ({{usedGib}} / {{totalGib}})",
       "nileVersion": "Nile: {{nileVersion}}",
       "os": "Sistem Operasi:",
-      "osNameFlatpak": "{{osName}} (di dalam Flatpak)",
       "osVersion": "Versi {{versionNumber}}",
       "showDetailed": "Tampilkan spesifikasi sistem secara mendetail",
       "software": "Perangkat Lunak:",

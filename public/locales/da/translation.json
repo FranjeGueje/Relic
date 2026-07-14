@@ -159,8 +159,7 @@
       },
       "snap": {
         "title": "Heroic kører som Snap",
-        "checkbox": "Vis ikke denne meddelelse igen",
-        "message": "Nogle funktioner er ikke til tilgængelige i Snap-versionen af appen lige nu, og vi prøver at ordne det.{{newLine}}Nuværende begrænsninger er: {{newLine}}Heroic vil ikke være i stand til, at finde Proton fra Steam eller Wine fra Lutris.{{newLine}}{{newLine}}Gamescope, GameMode og MangoHud vil heller ikke virke, da Heroic ikke har adgang til dem.{{newLine}}{{newLine}}For at få adgang til denne funktion installér venligst Heroic som Flatpak, DEB eller fra et AppImage."
+        "checkbox": "Vis ikke denne meddelelse igen"
       },
       "sideload": {
         "confirmExit": {
@@ -612,8 +611,7 @@
       "installing": "Installerer EAC Runtime...",
       "name": "EasyAntiCheat Runtime",
       "gameModeRequired": {
-        "title": "GameMode påkrævet",
-        "message": "GameMode er påkrævet for at EAC runtime kan fungere på Flatpak. Vil du aktivere det nu?"
+        "title": "GameMode påkrævet"
       }
     },
     "gameMode": {
@@ -696,7 +694,6 @@
       "memoryStats": "{{percentUsed}}% brugt ({{usedGib}} / {{totalGib}}",
       "nileVersion": "Nile: {{nileVersion}}",
       "os": "Operativsystem:",
-      "osNameFlatpak": "{{osName}} (i Flatpak)",
       "osVersion": "Version {{versionNumber}}",
       "showDetailed": "Vis detaljerede systemspecifikationer",
       "software": "Software:",

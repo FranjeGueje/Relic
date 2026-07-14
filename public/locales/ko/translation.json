@@ -176,7 +176,6 @@
       },
       "snap": {
         "checkbox": "이 메세지를 다시 표시 안 함",
-        "message": "일부 기능은 현재 앱의 스냅 버전에서 사용할 수 없고 이를 수정하려고 노력하고 있습니다.{{newLine}}현재 제한 사항은 다음과 같습니다:{{newLine}}Heroic은 스팀의 프로톤이나 루트리스의 와인을 찾을 수 없습니다.{{newLine}}{{newLine}}Gamescope, GameMode, MangoHud도 Heroic이 접속할 수 없으므로 작동하지 않습니다.{{newLine}}{{newLine}}이 기능에 접속하려면 Heroic을 Flatpak, DEB 또는 AppImage에서 설치하세요.",
         "title": "Heroic은 스냅으로 실행됨"
       },
       "rosetta": {
@@ -776,7 +775,6 @@
     "default_hint": "이 섹션의 변경 사항은 게임을 설치할 때 기본값으로만 적용됩니다. 이미 설치된 게임의 설정을 변경하려면 게임 페이지에서 설정 버튼을 사용하세요.",
     "eacRuntime": {
       "gameModeRequired": {
-        "message": "EAC 런타임이 Flatpak에서 작동하려면 GameMode가 필요합니다. 지금 활성화하겠습니까?",
         "title": "GameMode 필요함"
       },
       "installing": "EAC 런타임 설치 중...",
@@ -846,7 +844,6 @@
       "heroicVersion": "Heroic: {{heroicVersion}}",
       "legendaryVersion": "레전더리: {{legendaryVersion}}",
       "systemSpecifications": "시스템 사양:",
-      "osNameFlatpak": "{{osName}} (Flatpak 내부)",
       "gpuWithNumber": "GPU {{number}}:",
       "gogdlVersion": "Gogdl: {{gogdlVersion}}",
       "gpu": "GPU:",

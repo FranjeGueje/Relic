@@ -181,8 +181,7 @@
       },
       "snap": {
         "checkbox": "Tuto zprávu již nezobrazovat",
-        "title": "Heroic spuštěn jako Snap",
-        "message": "Některé funkce nejsou ve Snap verzi aplikace prozatím dostupné a snažíme se je opravit.{{newLine}}Aktuální omezení jsou: {{newLine}}Heroic nebude schopen najít Proton ze služby Steam nebo Wine z Lutrisu.{{newLine}}{{newLine}}Gamescope, GameMode a MangoHud také nebudou fungovat, protože k nim Heroic nemá přístup.{{newLine}}{{newLine}}Chcete-li mít přístup k těmto funkcím, nainstalujte si Heroic jako Flatpak, DEB nebo AppImage."
+        "title": "Heroic spuštěn jako Snap"
       },
       "rosetta": {
         "title": "Rosetta nebyla nalezena",
@@ -795,7 +794,6 @@
     "default_hint": "Změny v této části platí pouze jako výchozí hodnoty při instalaci her. Pokud chcete změnit nastavení již nainstalované hry, použijte tlačítko Nastavení na stránce hry.",
     "eacRuntime": {
       "gameModeRequired": {
-        "message": "Ke správné funkci EAC runtime na Flatpaku je vyžadován GameMode. Chcete jej nyní povolit?",
         "title": "Je vyžadován GameMode"
       },
       "installing": "Instaluji EAC Runtime...",
@@ -844,7 +842,6 @@
       "gpu": "GPU:",
       "gogdlVersion": "Gogdl: {{gogdlVersion}}",
       "osVersion": "Verze {{versionNumber}}",
-      "osNameFlatpak": "{{osName}} (uvnitř Flatpaku)",
       "software": "Software:",
       "memoryStats": "Využito {{percentUsed}}% ({{usedGib}} / {{totalGib}}",
       "systemModel": "Model systému:",

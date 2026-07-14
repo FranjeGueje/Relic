@@ -181,8 +181,7 @@
       },
       "snap": {
         "checkbox": "Ne mutassa újra ezt az üzenetet",
-        "title": "A Heroic Snapként fut",
-        "message": "Néhány funkció egyelőre nem érhető el az alkalmazás Snap verziójában, dolgozunk a megoldáson. {{newLine}}Jelenlegi korlátozások: {{newLine}}A Heroic nem találja meg a Protont a Steamből vagy a Wine-t a Lutrisból.{{newLine}}{{newLine}}A Gamescope, a GameMode és a MangoHud szintén nem működik, mivel a Heroicnak nincs jogosultsága az elérésükhöz.{{newLine}}{{newLine}}Hogy hozzáférésed legyen ehhez a funkcióhoz, telepítsd a Heroicot flatpakként, DEB vagy AppImage-csomagként."
+        "title": "A Heroic Snapként fut"
       },
       "rosetta": {
         "title": "A Rosetta nem található",
@@ -793,7 +792,6 @@
     "default_hint": "A szakasz változtatásai csak alapértelmezett értékként lesznek használva a játékok telepítésekor. Ha egy már telepített játék beállításait módosítanád, akkor használd a játéklap Beállítások gombját.",
     "eacRuntime": {
       "gameModeRequired": {
-        "message": "A GameMode szükséges, hogy az EAC futtatókörnyezet működjön Flatpak mellett. Engedélyezed most?",
         "title": "GameMode szükséges"
       },
       "installing": "EAC futtatókörnyezet telepítése…",
@@ -837,7 +835,6 @@
       "os": "Operációs rendszer:",
       "gpu": "GPU:",
       "osVersion": "Verzió: {{versionNumber}}",
-      "osNameFlatpak": "{{osName}} (Flatpaken belül)",
       "software": "Szoftver:",
       "memoryStats": "{{percentUsed}}% használatban ({{usedGib}}/{{totalGib}})",
       "systemModel": "Rendszermodell:",

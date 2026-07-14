@@ -116,7 +116,6 @@ export default function SystemInfo() {
           <Grid item xs={6}>
             <OSInfo
               os={systemInformation.OS}
-              isFlatpak={systemInformation.isFlatpak}
             />
           </Grid>
           <Grid item xs={6}>

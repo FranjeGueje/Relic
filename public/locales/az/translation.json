@@ -767,7 +767,6 @@
     "default_hint": "Changes in this section only apply as default values when installing games. If you want to change the settings of an already installed game, use the Settings button in the game page.",
     "eacRuntime": {
       "gameModeRequired": {
-        "message": "EAC iş vaxtının Flatpak üzərində işləməsi üçün GameMode tələb olunur. Onu indi aktiv etmək istəyirsiniz?",
         "title": "GameMode tələb olunur"
       },
       "installing": "EAC Runtime quraşdırılır...",
@@ -837,7 +836,6 @@
       "gpu": "",
       "gogdlVersion": "",
       "osVersion": "",
-      "osNameFlatpak": "",
       "software": "",
       "cometVersion": "",
       "memoryStats": "",

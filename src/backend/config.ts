@@ -20,7 +20,7 @@ import {
 } from './utils/compatibility_layers'
 import { backendEvents } from './backend_events'
 import { configStore } from './constants/key_value_stores'
-import { isFlatpak, isLinux, isMac, isWindows } from './constants/environment'
+import { isLinux, isMac, isWindows } from './constants/environment'
 import {
   configPath,
   sharedWinePrefix,
@@ -30,7 +30,6 @@ import {
   defaultWinePrefixDir
 } from './constants/paths'
 import { join } from 'path'
-import { spawnSync } from 'child_process'
 import {
   updateWineVersionInfos,
   wineDownloaderInfoStore
@@ -44,22 +43,6 @@ function getSteamCompatFolder() {
   } else if (isMac) {
     return join(userHome, 'Library/Application Support/Steam')
   } else {
-    const flatpakSteamPath = join(
-      userHome,
-      '.var/app/com.valvesoftware.Steam/.steam/steam'
-    )
-
-    if (existsSync(flatpakSteamPath)) {
-      // check if steam is really installed via flatpak
-      const { status } = spawnSync('flatpak', [
-        'info',
-        'com.valvesoftware.Steam'
-      ])
-
-      if (status === 0) {
-        return flatpakSteamPath
-      }
-    }
     return join(userHome, '.steam/steam')
   }
 }
@@ -335,7 +318,7 @@ class GlobalConfigV0 extends GlobalConfig {
       autoInstallDxvkNvapi: isLinux,
       addSteamShortcuts: false,
       preferSystemLibs: false,
-      checkForUpdatesOnStartup: !isFlatpak,
+      checkForUpdatesOnStartup: true,
       autoUpdateGames: false,
       customWinePaths: [],
       defaultInstallPath: relicInstallPath,
@@ -351,7 +334,7 @@ class GlobalConfigV0 extends GlobalConfig {
       enviromentOptions: [],
       wrapperOptions: [],
       showFps: false,
-      useGameMode: isFlatpak,
+      useGameMode: false,
       wineCrossoverBottle: 'Relic',
       winePrefix: isWindows ? '' : sharedWinePrefix,
       wineVersion: defaultWine,

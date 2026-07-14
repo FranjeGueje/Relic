@@ -20,12 +20,12 @@ const EacRuntime = () => {
   const handleEacRuntime = async () => {
     if (!eacRuntime) {
       if (!useGameMode) {
-        if (window.isFlatpak) {
+        if (false) {
           showDialogModal({
             showDialog: true,
             message: t(
               'settings.eacRuntime.gameModeRequired.message',
-              'GameMode is required for the EAC runtime to work on Flatpak. Do you want to enable it now?'
+              'GameMode is required for the EAC runtime to work. Do you want to enable it now?'
             ),
             title: t(
               'settings.eacRuntime.gameModeRequired.title',

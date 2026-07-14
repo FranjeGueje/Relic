@@ -205,9 +205,6 @@ export default function WineVersionSelector() {
                   <i>~/.local/share/lutris/runners/wine</i>
                 </li>
                 <li>
-                  <i>~/.var/app/com.valvesoftware.Steam (Steam Flatpak)</i>
-                </li>
-                <li>
                   <i>/usr/share/steam</i>
                 </li>
               </ul>

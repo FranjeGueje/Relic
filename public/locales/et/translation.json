@@ -181,8 +181,7 @@
       },
       "snap": {
         "checkbox": "Ära enam seda teavitust näita",
-        "title": "Heroic töötab kui Snap",
-        "message": "Mõningaid võimalusi ei ole äpi Snap versioonis saadaval ning me üritame seda parandada.{{newLine}}Praeguste piirangute hulgas on: {{newLine}}Heroic ei leia Protonit üles Steamist või Lutrisest.{{newLine}}{{newLine}}Gamescope, GameMode ja MangoHud ei toimi, sest Heroicul ei ole neile ligipääsu.{{newLine}}{{newLine}}Et sellest mööda pääseda, installeerige Heroic kasutades Flatpaki, DEB-i või AppImage'it."
+        "title": "Heroic töötab kui Snap"
       },
       "rosetta": {
         "title": "Rosettat ei leitud",
@@ -791,7 +790,6 @@
     "default_hint": "Muutused selles sektsioonis rakenduvad vaikimisi ainult mängude paigaldamisel. Kui soovite muuta juba paigaldatud mängu seadeid, kasutage Seadete nuppu mängu leheküljel.",
     "eacRuntime": {
       "gameModeRequired": {
-        "message": "GameMode on vajalik selleks, et EAC runtime töötaks Flatpaki peal. Kas soovite selle nüüd sisse lülitada?",
         "title": "GameMode on vajalik"
       },
       "installing": "EAC Runtime paigaldamine...",
@@ -864,7 +862,6 @@
       "heroicVersion": "Heroic: {{heroicVersion}}",
       "memory": "Mälu:",
       "nileVersion": "Nile: {{nileVersion}}",
-      "osNameFlatpak": "{{osName}} (Flatpakis)",
       "showDetailed": "Näita üksikasjalikke süsteemi omadusi",
       "steamDeck": "Steam Deck {{model}}",
       "systemSpecifications": "Süsteemi üksikasjad:",

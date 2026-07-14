@@ -308,7 +308,7 @@ Referencias en:
 - `src/backend/launcher.ts` — configuración MangoHud en lanzamiento
 - `src/backend/game_config.ts` — `enableMangohud`
 - `src/backend/main.ts` — verificación de MangoHud
-- `src/backend/constants/environment.ts` — detección de flatpak/snap para MangoHud
+- `src/backend/constants/environment.ts` — detección de snap para MangoHud
 - `src/backend/storeManagers/*/games.ts` — propagación de `enableMangohud`
 - `src/frontend/screens/Settings/components/Mangohud.tsx`
 - `src/frontend/screens/Settings/sections/GamesSettings/index.tsx`

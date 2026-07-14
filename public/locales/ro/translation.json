@@ -180,7 +180,6 @@
       },
       "snap": {
         "checkbox": "Nu mai arăta acest mesaj",
-        "message": "Unele funcții nu sunt disponibile deocamdată în versiunea Snap a aplicației și încercăm sa o remediem.{{newLine}}Limitările curente sunt:{{newLine}}Heroic nu va putea localiza Proton de la Steam sau Wine de la Lutris.{{newLine}}{{newLine}}Gamescope, Gamemode și MangoHud, de asemenea, nu vor funcționa din moment ce Heroic nu are acces la acestea.{{newLine}}{{newLine}}Pentru a obține acces la această funcție vă rugăm instalați Heroic sub forma Flatpak, DEB sau din AppImage.",
         "title": "Heroic rulează ca și Snap"
       }
     },
@@ -767,7 +766,6 @@
     "default_hint": "Changes in this section only apply as default values when installing games. If you want to change the settings of an already installed game, use the Settings button in the game page.",
     "eacRuntime": {
       "gameModeRequired": {
-        "message": "GameMode este necesar pentru ca EAC runtime să funcționeze pe Flatpak. Doriți să-l activați acum?",
         "title": "GameMode necesar"
       },
       "installing": "Se instalează EAC Runtime...",
@@ -837,7 +835,6 @@
       "gpu": "",
       "gogdlVersion": "",
       "osVersion": "",
-      "osNameFlatpak": "",
       "software": "",
       "cometVersion": "",
       "memoryStats": "",

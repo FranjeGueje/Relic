@@ -790,7 +790,6 @@
     "default_hint": "As alterações nesta secção só vão ser aplicadas como valores padrão quando fizer um nova instalação de um jogo. Se pretende fazer alterações ás definições de um jogo já instalado, use o botão 'Definições' na página do mesmo.",
     "eacRuntime": {
       "gameModeRequired": {
-        "message": "Para que o tempo de execução do EAC funcione no Flatpak, é necessário o GameMode. Pretende ativa-lo agora?",
         "title": "É necessário o GameMode"
       },
       "installing": "A Instalar o Tempo de Execução EAC...",
@@ -837,7 +836,6 @@
       "steamDeck": "Steam Deck {{model}}",
       "os": "Sistema Operativo:",
       "osVersion": "Versão {{versionNumber}}",
-      "osNameFlatpak": "{{osName}} (dentro do Flatpak)",
       "software": "Software:",
       "memoryStats": "{{percentUsed}}% usada ({{usedGib}} / {{totalGib}}",
       "systemModel": "Modelo do Sistema:",

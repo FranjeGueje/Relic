@@ -1,385 +1,384 @@
 {
-    "box": {
-        "change": {
-            "message": "Isto irá alterar o local de instalação do jogo, tem a certeza?",
-            "path": "Escolher um novo caminho de instalação",
-            "title": "Alterar o Caminho de Instalação dos Jogos"
-        },
-        "choose": "Escolha",
-        "importpath": "Escolha a Pasta do Jogo para importar",
-        "move": {
-            "message": "Isto pode levar bastante tempo, tem a certeza?",
-            "path": "Escolher para onde quer mover",
-            "title": "Mover a Instalação do Jogo"
-        },
-        "no": "NÃO",
-        "repair": {
-            "message": "Tem certeza de que deseja reparar este jogo? Isto pode levar bastante tempo.",
-            "title": "Verificar e Reparar"
-        },
-        "runexe": {
-            "title": "Selecione o EXE para Executar"
-        },
-        "select": {
-            "button": "Selecione",
-            "image": "Selecionar Imagem"
-        },
-        "sideload": {
-            "exe": "Selecionar o Executável"
-        },
-        "stopInstall": {
-            "keepInstalling": "Continuar Instalação",
-            "message": "Pretende MANTER os ficheiros transferidos?",
-            "title": "Cancelar Instalação"
-        },
-        "uninstall": {
-            "checkbox": "Eliminar o prefixo: {{prefix}}{{newLine}}Nota: Isto não pode ser revertido e também vai eliminar os progressos guardados que não estejam armazenados noutro lugar.",
-            "message": "Pretende desinstalar o \"{{title}}\"?",
-            "settingcheckbox": "Apaga as definições e remove o registo de eventos{{newLine}}Nota: Isto não pode ser revertido. Quaisquer definições alteradas vão ser esquecidas e o registo de eventos vai ser eliminado.",
-            "title": "Desinstalar",
-            "prefix_warning": "O prefixo do Wine para este jogo é o prefixo padrão. Se quer realmente eliminá-lo, deverá fazê-lo manualmente.",
-            "dlc": "Pretende desinstalar o (DLC) do \"{{title}}\"?",
-            "cannotUninstallEpic": "A Epic games não pode ser desinstalada enquanto tem um jogo, proveniente da mesma, a ser instalado.",
-            "gameIsRunning": "O {{title}} está em execução. Feche o jogo para o desinstalar."
-        },
-        "update": {
-            "message": "Este jogo tem uma nova atualização, pretende aplicar a atualização agora?",
-            "title": "O Jogo Precisa de Atualizar"
-        },
-        "wineprefix": "Selecione a pasta com o prefixo Wine",
-        "yes": "SIM",
-        "close": "Fechar",
-        "select-install-path": "Selecione o Caminho de Instalação da Steam",
-        "warning": {
-            "title": "Aviso"
-        },
-        "selectLaunchOption": {
-            "body": "Selecione uma opção de execução para este jogo, por favor (pode alterar mais tarde nas definições do jogo):",
-            "title": "Selecione opção de execução ({{seconds}}s)"
-        },
-        "sync": {
-            "force_download_warning": "Os jogos guardados localmente 'saves' vão ser eliminados. Pretende continuar?",
-            "force_upload_warning": "Os jogos guardados na núvem 'saves' vão ser substituídos. Pretende continuar?"
-        },
-        "ok": "Aceitar",
-        "offline_warning": {
-            "message": "Este jogo pode não funcionar corretamente em modo offline. Pretende jogar mesmo assim?",
-            "playAnyway": "Jogar mesmo assim",
-            "title": "Aviso offline"
-        }
+  "box": {
+    "change": {
+      "message": "Isto irá alterar o local de instalação do jogo, tem a certeza?",
+      "path": "Escolher um novo caminho de instalação",
+      "title": "Alterar o Caminho de Instalação dos Jogos"
     },
-    "button": {
-        "add_to_favourites": "Adicionar aos Favoritos",
-        "cancel": "Pausar/Cancelar",
-        "continue": "Continuar a Transferência",
-        "finish": "Terminar",
-        "force_update": "Forçar Atualização se Disponível",
-        "force-innstall": "Forçar Instalação",
-        "hide_game": "Ocultar Jogo",
-        "import": "Importar Jogo",
-        "install": "Instalar",
-        "no-path-selected": "Não foi selecionado nenhum caminho",
-        "queue": {
-            "remove": "Remover da Fila"
-        },
-        "remove_from_favourites": "Remover dos Favoritos",
-        "remove_from_recent": "Remover dos Recentes",
-        "run-exe-first": "Execute Primeiro o Instalador",
-        "running-setup": "A Executar Configuração",
-        "sideload": {
-            "edit": "Editar Aplicação/Jogo"
-        },
-        "unhide_game": "Exibir Jogo",
-        "uninstall": "Desinstalar",
-        "update": "Atualizar",
-        "details": "Detalhes",
-        "changelog": "Mostrar Registo de Alterações",
-        "browse_files": "Pesquisar Ficheiros",
-        "browse_wine_prefix": "Pesquisar o Prefixo Wine",
-        "play": "JOGAR",
-        "edit-game": "Editar Jogo"
+    "choose": "Escolha",
+    "importpath": "Escolha a Pasta do Jogo para importar",
+    "move": {
+      "message": "Isto pode levar bastante tempo, tem a certeza?",
+      "path": "Escolher para onde quer mover",
+      "title": "Mover a Instalação do Jogo"
     },
-    "cloud_save_unsupported": "Não é suportado",
-    "disabled": "Desativado",
-    "dlc": {
-        "installDlcs": "Instalar todas as DLCs"
+    "no": "NÃO",
+    "repair": {
+      "message": "Tem certeza de que deseja reparar este jogo? Isto pode levar bastante tempo.",
+      "title": "Verificar e Reparar"
     },
-    "enabled": "Ativado",
-    "game": {
-        "downloadSize": "Tamanho da Transferência",
-        "firstPlayed": "Jogado pela Primeira Vez",
-        "getting-download-size": "A receber o tamanho da transferência",
-        "getting-install-size": "A receber o tamanho da instalação",
-        "installSize": "Tamanho da Instalação",
-        "language": "Idioma",
-        "lastPlayed": "Jogado pela Última vez",
-        "neverPlayed": "Nunca",
-        "platform": "Selecione a Versão da Plataforma para Instalar",
-        "requirements": "Requisitos do Sistema",
-        "totalPlayed": "Tempo Jogado",
-        "dlcs": "DLCs",
-        "branch": {
-            "disabled": "Desativado",
-            "password": "Defina uma senha para o canal privado",
-            "select": "Selecionar o canal beta",
-            "setPrivateBranchPassword": "Defina uma senha para o canal privado"
-        },
-        "builds": {
-            "version": "Versão",
-            "buildsSelector": "Selecione a versão do jogo",
-            "toggle": "Deixar o jogo numa versão especifica"
-        },
-        "changelogFor": "Registo de Alterações do {{gameTitle}}",
-        "modify": "Modificar a Instalação",
-        "extra_info": "Informação extra",
-        "install_info": "Informação da instalação",
-        "achievements": "Conquistas"
+    "runexe": {
+      "title": "Selecione o EXE para Executar"
     },
-    "gamecard": {
-        "moving": "A mover",
-        "repairing": "A Reparar"
-    },
-    "generic": {
-        "error": "Erro desconhecido",
-        "noDescription": "Descrição não disponível"
-    },
-    "hours": "Horas",
-    "how-long-to-beat": {
-        "completionist": "Colecionista",
-        "main-plus-extras": "Principal + Extras",
-        "main-story": "História Principal"
-    },
-    "howLongToBeat": "Quanto Tempo Demora a Vencer",
-    "info": {
-        "canRunOffline": "On-line Obrigatório",
-        "installedPlatform": "Plataforma Instalada",
-        "path": "Caminho da Instalação",
-        "size": "Tamanho",
-        "syncsaves": "Sincronização de Progressos Guardados na Nuvem",
-        "version": "Versão",
-        "apple-gaming-wiki": "Avaliação da AppleGamingWiki",
-        "clickToOpen": "Clique para abrir",
-        "game-scores": "Pontuações do Jogo",
-        "installedInfo": "Informação Instalada",
-        "protondb-compatibility-info": "Níveis de Compatibilidade com o Proton",
-        "steamdeck-compatibility-info": "Compatibilidade com a SteamDeck",
-        "third-party-app": "Gestor de Terceiros"
-    },
-    "install": {
-        "disk-space-left": "Espaço Disponível",
-        "not-enough-disk-space": "Espaço insuficiente no disco",
-        "path": "Selecionar o Caminho de Instalação",
-        "path-not-writtable": "Aviso: o caminho pode não ter permissões de escrita.",
-        "space-after-install": "Depois da Instalação",
-        "wineprefix": "Prefixo do Wine",
-        "wineversion": "Versão do Wine",
-        "anticheat-warning": {
-            "cancel": "Não",
-            "message": "O suporte anti-batota está danificado ou foi recusado. O jogo não irá funcionar. Deseja instalá-lo mesmo assim?",
-            "install": "Sim (Eu entendo que não irá funcionar)",
-            "title": "Sistema de Anti-Batota Danificado/Recusado",
-            "install_anyway": "Sim (eu entendo que as funcionalidades de multi-jogador não vão funcionar)",
-            "multiplayer_message": "O suporte anti-batota está danificado ou recusado. O jogo poderá abrir mas as funcionalidades de multi-jogador não vão funcionar. Pretende fazer a instalação à mesma?",
-            "ok": "Ok",
-            "disabled_installation": "Este jogo usa um sistema de anti-batota que não é compatível com o seu sistema operativo ou não está ativado para o suportar, pelos criadores do jogo. Isso significa que as funcionalidades de multi-jogador não vão funcionar e não há nada que você (ou a equipa do Heroic) possa fazer em relação a isto. <br /><br />Mesmo assim, se quiser instalar o jogo e verificar se funciona, vá a 'Definições', depois 'Avançado' e selecione a opção para permitir a instalação de jogos com anti-batota danificada ou recusada. <br /><br />Lembre-se que não existe solução para isto, pode correr o risco de ser banido no jogo."
-        },
-        "flatpak-path-not-writtable": "Erro: O acesso ao contentor não foi fornecido a este caminho, irá ocorrer a perda de dados."
-    },
-    "label": {
-        "game": {
-            "third-party-game": "Este Jogo de Terceiros NÃO é Suportado",
-            "not-installable-game": "Este jogo NÃO pode ser Instalado"
-        },
-        "playing": {
-            "start": "Jogar Agora",
-            "stop": "A jogar (Parar)",
-            "start_with_logs": "Jogar Agora (com registo de eventos)"
-        },
-        "saves": {
-            "syncing": "Sincronizar Progressos Guardados"
-        },
-        "launching": "A iniciar",
-        "ubisoft": "A instalar Ubisoft Connect",
-        "winetricks": "A Instalar os Pacotes do Winetricks",
-        "redist": "A Instalar Redistribuíveis",
-        "steam": {
-            "installing": "A instalar",
-            "pleaseWait": "Por favor aguarde",
-            "patience": "Se deseja prosseguir, por favor tenha paciência pois poderá demorar alguns minutos a concluir dependendo da conexão com a internet e configurações de sistema.",
-            "notification": "O Heroic irá notificá-lo aquando da conclusão da instalação.",
-            "select-path": "Seleciona a pasta de instalação da Steam",
-            "specificVersion-pt3": "feito para funcionar através do Heroic visto que novas versões da Steam não funcionam no macOS.",
-            "abort": "Abortar Instalação",
-            "compatibility": "Esteja consciente de que nem todos os jogos irão funcionar e, mesmo que funcionem, podem não funcionar corretamente.",
-            "cancel": "Cancelar Instalação",
-            "downloading": "A transferir {{percent}}%",
-            "install": "Instalar Steam",
-            "install-path": "Caminho de Instalação da Steam",
-            "installation": "Instalação da Steam",
-            "launching": "A Inicializar a Steam...",
-            "macOS": "macOS 14.0 ou superior",
-            "ram": "8GB de RAM",
-            "recommended": "Especificações recomendadas para uma melhor experiência",
-            "compatibility-layer-not-available": "Compatibilidade não disponível. Por favor instala a partir de \"Definições>Wine Manager\"",
-            "crossover": "Caso você tiver o Crossover instalado, você não vai precisar dele, pois ele pode rodar o Steam normalmente.",
-            "hardware": "Apple Silicon M1+ (para Macs com Intel, o Steam rodará com Crossover)",
-            "install-tooltip": "Isso vai instalar a versão do Steam de Windows e isso vai rodar usando uma Camada de Compatibilidade do Heroic.\n\nAlguns jogos, especialmente jogos mais antigos, jogos 3D novos, ou que usam software anti-cheat, podem não funcionar corretamente. \n\n    ",
-            "launch": "Iniciar o Steam usando Camada de Compatibilidade do Heroic",
-            "specificVersion-pt1": "Isso vai fazer o download de uma versão especifica do Steam",
-            "specificVersion-pt2": "archive.org"
-        }
-    },
-    "launch": {
-        "options": "Opções de Arranque...",
-        "default": "Padrão"
-    },
-    "not_logged_in": {
-        "epic": "Não tem a sessão iniciada com uma conta da Epic no Heroic. Não use a página da loja para iniciar a sessão, em vez disso clique no botão seguinte:",
-        "gog": "Não tem a sessão iniciada com uma conta da GOG no Heroic. Não use a página da loja para iniciar a sessão, em vez disso clique no botão seguinte:",
-        "login": "Iniciar sessão",
-        "title": "NÃO tem a sessão iniciada",
-        "amazon": "Não tem a sessão iniciada com uma conta da Amazon no Heroic. Não use a página da loja para iniciar a sessão, em vez disso clique no botão seguinte:",
-        "zoom": "Não tem a sessão iniciada numa conta Zoom no Heroic. Não utilize a página da loja para iniciar a sessão, em vez disso clique no botão seguinte:"
-    },
-    "report_problem": "Reportar algum problema que ocorra ao executar este jogo",
-    "sdl": {
-        "title": "Selecione os componentes a Instalar"
-    },
-    "setting": {
-        "winecrossoverbottle": "Garrafa do CrossOver",
-        "show-wine-settings": "Mostrar as Definições do Wine",
-        "warn-use-shared-wine-config": "Só selecione esta opção se souber o que está a fazer.<br/>Partilhar o mesmo prefixo para vários jogos pode criar problemas se as dependências forem incompatíveis.",
-        "use-shared-wine-config": "Usar o prefixo Wine partilhado"
+    "select": {
+      "button": "Selecione",
+      "image": "Selecionar Imagem"
     },
     "sideload": {
-        "field": {
-            "title": "Título"
-        },
-        "info": {
-            "exe": "Selecionar Executável",
-            "image": "Imagem da Aplicação",
-            "title": "Titulo do Jogo/Aplicação",
-            "broser": "URL do Browser",
-            "useragent": "Agente de Utilizador Personalizado",
-            "fullscreen": "Iniciar em Ecrã Inteiro (F11 para sair)",
-            "cover-hint": "Arte de Capa/Herói (clique na imagem para pesquisar em SteamGridDB)",
-            "image-hint": "Arte quadrada (clique na imagem para pesquisar em SteamGridDB)"
-        },
-        "placeholder": {
-            "image": "Cole um URL de uma Imagem aqui ou selecione a partir do seu computador",
-            "title": "Adicionar um título ao Jogo/Aplicação",
-            "url": "Colar a URL do Jogo aqui",
-            "useragent": "Escreva aqui um agente de utilizador personalizado para ser usado nesta aplicação/jogo do browser"
-        },
-        "import-hint": {
-            "content": "NÃO utilize esta funcionalidade para isso.<br />Em vez disso, <3>inicie sessão</3> na loja, procure o jogo na sua biblioteca, abra a janela de instalação e clique no botão &quot;Importar Jogo&quot;",
-            "title": "Importante! Está a adicionar um jogo da Epic/GOG/Amazon? Clique aqui!"
-        },
-        "images": {
-            "summary": "Imagens"
-        }
+      "exe": "Selecionar o Executável"
     },
-    "specs": {
-        "minimum": "Mínimo",
-        "recommended": "Recomendado"
+    "stopInstall": {
+      "keepInstalling": "Continuar Instalação",
+      "message": "Pretende MANTER os ficheiros transferidos?",
+      "title": "Cancelar Instalação"
     },
-    "status": {
-        "clickToUpdate": "Clique para Atualizar",
-        "gameNotAvailable": "O jogo não está disponível",
-        "hasUpdates": "Nova Versão Disponível!",
-        "installed": "Instalado",
-        "installing": "A Instalar",
-        "moving": "A Mover Instalação, aguarde por favor",
-        "notinstalled": "Este jogo não está instalado",
-        "notSupported": "Não é suportado",
-        "notSupportedGame": "Não é Suportado",
-        "processing": "A processar os ficheiros, aguarde por favor",
-        "queued": "Na Fila",
-        "reparing": "A Reparar o Jogo, aguarde por favor",
-        "this-game-uses-third-party": "Este jogo usa um lançador de terceiros que ainda não é suportado",
-        "totalDownloaded": "Total Transferido",
-        "uninstalling": "A Desinstalar",
-        "updating": "A Atualizar Jogo",
-        "playing": "A Jogar",
-        "moving-files": "A mover o ficheiro '{{file}}': {{percent}} %",
-        "syncingSaves": "A Sincronizar os Progressos Guardados (Saves)",
-        "launching": "A Iniciar",
-        "ubisoft": "A Instalar Ubisoft",
-        "downloading": "A Transferir",
-        "extracting": "A Extrair",
-        "gog-goodie": "Parece que não é possível instalar este jogo. Verifique o conteúdo transferível em https://gog.com/account",
-        "goodie": "Não é instalável",
-        "redist": "A Instalar os Redistribuíveis ({{redist}})",
-        "winetricks": "A aplicar as correções do Winetricks",
-        "importing": "A importar"
+    "uninstall": {
+      "checkbox": "Eliminar o prefixo: {{prefix}}{{newLine}}Nota: Isto não pode ser revertido e também vai eliminar os progressos guardados que não estejam armazenados noutro lugar.",
+      "message": "Pretende desinstalar o \"{{title}}\"?",
+      "settingcheckbox": "Apaga as definições e remove o registo de eventos{{newLine}}Nota: Isto não pode ser revertido. Quaisquer definições alteradas vão ser esquecidas e o registo de eventos vai ser eliminado.",
+      "title": "Desinstalar",
+      "prefix_warning": "O prefixo do Wine para este jogo é o prefixo padrão. Se quer realmente eliminá-lo, deverá fazê-lo manualmente.",
+      "dlc": "Pretende desinstalar o (DLC) do \"{{title}}\"?",
+      "cannotUninstallEpic": "A Epic games não pode ser desinstalada enquanto tem um jogo, proveniente da mesma, a ser instalado.",
+      "gameIsRunning": "O {{title}} está em execução. Feche o jogo para o desinstalar."
     },
-    "submenu": {
-        "addShortcut": "Adicionar atalho",
-        "addToSteam": "Adicionar ao Steam",
-        "change": "Alterar o caminho de instalação",
-        "disableEosOverlay": "Desativar a Janela de Sobreposição EOS",
-        "enableEosOverlay": "Ativar a Janela de Sobreposição EOS",
-        "move": "Mover Jogo",
-        "protondb": "Verificar Compatibilidade",
-        "removeFromSteam": "Remover do Steam",
-        "removeShortcut": "Remover atalhos",
-        "settings": "Definições",
-        "store": "Página da Loja",
-        "verify": "Verificar e Reparar",
-        "extraInfo": "Informação extra",
-        "logs": "Registos de Eventos",
-        "categories": "Categorias"
+    "update": {
+      "message": "Este jogo tem uma nova atualização, pretende aplicar a atualização agora?",
+      "title": "O Jogo Precisa de Atualizar"
     },
-    "help": {
-        "cloud_save_unsupported": "Este jogo não suporta a cópia de progressos guardados na nuvem. Esta informação é fornecida pelos programadores do jogo. Alguns jogos implementam o seu próprio sistema de cópia de progressos guardados na nuvem",
-        "title": {
-            "gamePage": "Página do Jogo"
-        },
-        "content": {
-            "gamePage": "Mostrar todos os detalhes e ações. Utilize o menu com os 3 pontos para obter mais opções."
-        }
+    "wineprefix": "Selecione a pasta com o prefixo Wine",
+    "yes": "SIM",
+    "close": "Fechar",
+    "select-install-path": "Selecione o Caminho de Instalação da Steam",
+    "warning": {
+      "title": "Aviso"
     },
-    "modifyInstall": {
-        "dlcsCollapsible": "DLC",
-        "nodlcs": "Não há DLC disponível",
-        "redMod": {
-            "enable": "Ativar modificações (mods)",
-            "collapsible": "Integração REDmod"
-        },
-        "versionCollapsable": "Versão do Jogo"
+    "selectLaunchOption": {
+      "body": "Selecione uma opção de execução para este jogo, por favor (pode alterar mais tarde nas definições do jogo):",
+      "title": "Selecione opção de execução ({{seconds}}s)"
     },
-    "third-party-managed": {
-        "header": "Este jogo é gerido por uma aplicação de terceiros",
-        "notice2": "Após clicar em Instalar, o Heroic executará a aplicação para concluir o processo de instalação",
-        "notice1": "Este jogo é gerido por uma aplicação de terceiros: \"{{application_name}}\""
+    "sync": {
+      "force_download_warning": "Os jogos guardados localmente 'saves' vão ser eliminados. Pretende continuar?",
+      "force_upload_warning": "Os jogos guardados na núvem 'saves' vão ser substituídos. Pretende continuar?"
     },
-    "Open": "Abrir",
-    "queue": {
-        "label": {
-            "canceled": "Cancelado",
-            "remove": "Remover das Transferências",
-            "resume": "Resumir a transferência",
-            "pause": "Pausar transferência"
-        }
-    },
-    "wikiLink": "Informação importante sobre este jogo, leia isto:&nbsp;<1>Abrir pagina</1>",
-    "open-saves-folder": "Abrir pasta de jogos guardados",
-    "edit-game": {
-        "advanced": "Avançado",
-        "placeholder": {
-            "image": "Colar link para imagem"
-        },
-        "reset": "Restaurar predefinições",
-        "sgdb": {
-            "no-key-link": "Definições → Avançadas",
-            "no-key-prefix": "Para procurar capas em SteamGridDB, adicione uma chave API em"
-        },
-        "title": "Editar Jogo",
-        "cover": "Arte da Capa",
-        "info": {
-            "cover": "Imagen da Capa",
-            "square": "Imagem quadrada"
-        },
-        "square": "Arte quadrada"
+    "ok": "Aceitar",
+    "offline_warning": {
+      "message": "Este jogo pode não funcionar corretamente em modo offline. Pretende jogar mesmo assim?",
+      "playAnyway": "Jogar mesmo assim",
+      "title": "Aviso offline"
     }
+  },
+  "button": {
+    "add_to_favourites": "Adicionar aos Favoritos",
+    "cancel": "Pausar/Cancelar",
+    "continue": "Continuar a Transferência",
+    "finish": "Terminar",
+    "force_update": "Forçar Atualização se Disponível",
+    "force-innstall": "Forçar Instalação",
+    "hide_game": "Ocultar Jogo",
+    "import": "Importar Jogo",
+    "install": "Instalar",
+    "no-path-selected": "Não foi selecionado nenhum caminho",
+    "queue": {
+      "remove": "Remover da Fila"
+    },
+    "remove_from_favourites": "Remover dos Favoritos",
+    "remove_from_recent": "Remover dos Recentes",
+    "run-exe-first": "Execute Primeiro o Instalador",
+    "running-setup": "A Executar Configuração",
+    "sideload": {
+      "edit": "Editar Aplicação/Jogo"
+    },
+    "unhide_game": "Exibir Jogo",
+    "uninstall": "Desinstalar",
+    "update": "Atualizar",
+    "details": "Detalhes",
+    "changelog": "Mostrar Registo de Alterações",
+    "browse_files": "Pesquisar Ficheiros",
+    "browse_wine_prefix": "Pesquisar o Prefixo Wine",
+    "play": "JOGAR",
+    "edit-game": "Editar Jogo"
+  },
+  "cloud_save_unsupported": "Não é suportado",
+  "disabled": "Desativado",
+  "dlc": {
+    "installDlcs": "Instalar todas as DLCs"
+  },
+  "enabled": "Ativado",
+  "game": {
+    "downloadSize": "Tamanho da Transferência",
+    "firstPlayed": "Jogado pela Primeira Vez",
+    "getting-download-size": "A receber o tamanho da transferência",
+    "getting-install-size": "A receber o tamanho da instalação",
+    "installSize": "Tamanho da Instalação",
+    "language": "Idioma",
+    "lastPlayed": "Jogado pela Última vez",
+    "neverPlayed": "Nunca",
+    "platform": "Selecione a Versão da Plataforma para Instalar",
+    "requirements": "Requisitos do Sistema",
+    "totalPlayed": "Tempo Jogado",
+    "dlcs": "DLCs",
+    "branch": {
+      "disabled": "Desativado",
+      "password": "Defina uma senha para o canal privado",
+      "select": "Selecionar o canal beta",
+      "setPrivateBranchPassword": "Defina uma senha para o canal privado"
+    },
+    "builds": {
+      "version": "Versão",
+      "buildsSelector": "Selecione a versão do jogo",
+      "toggle": "Deixar o jogo numa versão especifica"
+    },
+    "changelogFor": "Registo de Alterações do {{gameTitle}}",
+    "modify": "Modificar a Instalação",
+    "extra_info": "Informação extra",
+    "install_info": "Informação da instalação",
+    "achievements": "Conquistas"
+  },
+  "gamecard": {
+    "moving": "A mover",
+    "repairing": "A Reparar"
+  },
+  "generic": {
+    "error": "Erro desconhecido",
+    "noDescription": "Descrição não disponível"
+  },
+  "hours": "Horas",
+  "how-long-to-beat": {
+    "completionist": "Colecionista",
+    "main-plus-extras": "Principal + Extras",
+    "main-story": "História Principal"
+  },
+  "howLongToBeat": "Quanto Tempo Demora a Vencer",
+  "info": {
+    "canRunOffline": "On-line Obrigatório",
+    "installedPlatform": "Plataforma Instalada",
+    "path": "Caminho da Instalação",
+    "size": "Tamanho",
+    "syncsaves": "Sincronização de Progressos Guardados na Nuvem",
+    "version": "Versão",
+    "apple-gaming-wiki": "Avaliação da AppleGamingWiki",
+    "clickToOpen": "Clique para abrir",
+    "game-scores": "Pontuações do Jogo",
+    "installedInfo": "Informação Instalada",
+    "protondb-compatibility-info": "Níveis de Compatibilidade com o Proton",
+    "steamdeck-compatibility-info": "Compatibilidade com a SteamDeck",
+    "third-party-app": "Gestor de Terceiros"
+  },
+  "install": {
+    "disk-space-left": "Espaço Disponível",
+    "not-enough-disk-space": "Espaço insuficiente no disco",
+    "path": "Selecionar o Caminho de Instalação",
+    "path-not-writtable": "Aviso: o caminho pode não ter permissões de escrita.",
+    "space-after-install": "Depois da Instalação",
+    "wineprefix": "Prefixo do Wine",
+    "wineversion": "Versão do Wine",
+    "anticheat-warning": {
+      "cancel": "Não",
+      "message": "O suporte anti-batota está danificado ou foi recusado. O jogo não irá funcionar. Deseja instalá-lo mesmo assim?",
+      "install": "Sim (Eu entendo que não irá funcionar)",
+      "title": "Sistema de Anti-Batota Danificado/Recusado",
+      "install_anyway": "Sim (eu entendo que as funcionalidades de multi-jogador não vão funcionar)",
+      "multiplayer_message": "O suporte anti-batota está danificado ou recusado. O jogo poderá abrir mas as funcionalidades de multi-jogador não vão funcionar. Pretende fazer a instalação à mesma?",
+      "ok": "Ok",
+      "disabled_installation": "Este jogo usa um sistema de anti-batota que não é compatível com o seu sistema operativo ou não está ativado para o suportar, pelos criadores do jogo. Isso significa que as funcionalidades de multi-jogador não vão funcionar e não há nada que você (ou a equipa do Heroic) possa fazer em relação a isto. <br /><br />Mesmo assim, se quiser instalar o jogo e verificar se funciona, vá a 'Definições', depois 'Avançado' e selecione a opção para permitir a instalação de jogos com anti-batota danificada ou recusada. <br /><br />Lembre-se que não existe solução para isto, pode correr o risco de ser banido no jogo."
+    }
+  },
+  "label": {
+    "game": {
+      "third-party-game": "Este Jogo de Terceiros NÃO é Suportado",
+      "not-installable-game": "Este jogo NÃO pode ser Instalado"
+    },
+    "playing": {
+      "start": "Jogar Agora",
+      "stop": "A jogar (Parar)",
+      "start_with_logs": "Jogar Agora (com registo de eventos)"
+    },
+    "saves": {
+      "syncing": "Sincronizar Progressos Guardados"
+    },
+    "launching": "A iniciar",
+    "ubisoft": "A instalar Ubisoft Connect",
+    "winetricks": "A Instalar os Pacotes do Winetricks",
+    "redist": "A Instalar Redistribuíveis",
+    "steam": {
+      "installing": "A instalar",
+      "pleaseWait": "Por favor aguarde",
+      "patience": "Se deseja prosseguir, por favor tenha paciência pois poderá demorar alguns minutos a concluir dependendo da conexão com a internet e configurações de sistema.",
+      "notification": "O Heroic irá notificá-lo aquando da conclusão da instalação.",
+      "select-path": "Seleciona a pasta de instalação da Steam",
+      "specificVersion-pt3": "feito para funcionar através do Heroic visto que novas versões da Steam não funcionam no macOS.",
+      "abort": "Abortar Instalação",
+      "compatibility": "Esteja consciente de que nem todos os jogos irão funcionar e, mesmo que funcionem, podem não funcionar corretamente.",
+      "cancel": "Cancelar Instalação",
+      "downloading": "A transferir {{percent}}%",
+      "install": "Instalar Steam",
+      "install-path": "Caminho de Instalação da Steam",
+      "installation": "Instalação da Steam",
+      "launching": "A Inicializar a Steam...",
+      "macOS": "macOS 14.0 ou superior",
+      "ram": "8GB de RAM",
+      "recommended": "Especificações recomendadas para uma melhor experiência",
+      "compatibility-layer-not-available": "Compatibilidade não disponível. Por favor instala a partir de \"Definições>Wine Manager\"",
+      "crossover": "Caso você tiver o Crossover instalado, você não vai precisar dele, pois ele pode rodar o Steam normalmente.",
+      "hardware": "Apple Silicon M1+ (para Macs com Intel, o Steam rodará com Crossover)",
+      "install-tooltip": "Isso vai instalar a versão do Steam de Windows e isso vai rodar usando uma Camada de Compatibilidade do Heroic.\n\nAlguns jogos, especialmente jogos mais antigos, jogos 3D novos, ou que usam software anti-cheat, podem não funcionar corretamente. \n\n    ",
+      "launch": "Iniciar o Steam usando Camada de Compatibilidade do Heroic",
+      "specificVersion-pt1": "Isso vai fazer o download de uma versão especifica do Steam",
+      "specificVersion-pt2": "archive.org"
+    }
+  },
+  "launch": {
+    "options": "Opções de Arranque...",
+    "default": "Padrão"
+  },
+  "not_logged_in": {
+    "epic": "Não tem a sessão iniciada com uma conta da Epic no Heroic. Não use a página da loja para iniciar a sessão, em vez disso clique no botão seguinte:",
+    "gog": "Não tem a sessão iniciada com uma conta da GOG no Heroic. Não use a página da loja para iniciar a sessão, em vez disso clique no botão seguinte:",
+    "login": "Iniciar sessão",
+    "title": "NÃO tem a sessão iniciada",
+    "amazon": "Não tem a sessão iniciada com uma conta da Amazon no Heroic. Não use a página da loja para iniciar a sessão, em vez disso clique no botão seguinte:",
+    "zoom": "Não tem a sessão iniciada numa conta Zoom no Heroic. Não utilize a página da loja para iniciar a sessão, em vez disso clique no botão seguinte:"
+  },
+  "report_problem": "Reportar algum problema que ocorra ao executar este jogo",
+  "sdl": {
+    "title": "Selecione os componentes a Instalar"
+  },
+  "setting": {
+    "winecrossoverbottle": "Garrafa do CrossOver",
+    "show-wine-settings": "Mostrar as Definições do Wine",
+    "warn-use-shared-wine-config": "Só selecione esta opção se souber o que está a fazer.<br/>Partilhar o mesmo prefixo para vários jogos pode criar problemas se as dependências forem incompatíveis.",
+    "use-shared-wine-config": "Usar o prefixo Wine partilhado"
+  },
+  "sideload": {
+    "field": {
+      "title": "Título"
+    },
+    "info": {
+      "exe": "Selecionar Executável",
+      "image": "Imagem da Aplicação",
+      "title": "Titulo do Jogo/Aplicação",
+      "broser": "URL do Browser",
+      "useragent": "Agente de Utilizador Personalizado",
+      "fullscreen": "Iniciar em Ecrã Inteiro (F11 para sair)",
+      "cover-hint": "Arte de Capa/Herói (clique na imagem para pesquisar em SteamGridDB)",
+      "image-hint": "Arte quadrada (clique na imagem para pesquisar em SteamGridDB)"
+    },
+    "placeholder": {
+      "image": "Cole um URL de uma Imagem aqui ou selecione a partir do seu computador",
+      "title": "Adicionar um título ao Jogo/Aplicação",
+      "url": "Colar a URL do Jogo aqui",
+      "useragent": "Escreva aqui um agente de utilizador personalizado para ser usado nesta aplicação/jogo do browser"
+    },
+    "import-hint": {
+      "content": "NÃO utilize esta funcionalidade para isso.<br />Em vez disso, <3>inicie sessão</3> na loja, procure o jogo na sua biblioteca, abra a janela de instalação e clique no botão &quot;Importar Jogo&quot;",
+      "title": "Importante! Está a adicionar um jogo da Epic/GOG/Amazon? Clique aqui!"
+    },
+    "images": {
+      "summary": "Imagens"
+    }
+  },
+  "specs": {
+    "minimum": "Mínimo",
+    "recommended": "Recomendado"
+  },
+  "status": {
+    "clickToUpdate": "Clique para Atualizar",
+    "gameNotAvailable": "O jogo não está disponível",
+    "hasUpdates": "Nova Versão Disponível!",
+    "installed": "Instalado",
+    "installing": "A Instalar",
+    "moving": "A Mover Instalação, aguarde por favor",
+    "notinstalled": "Este jogo não está instalado",
+    "notSupported": "Não é suportado",
+    "notSupportedGame": "Não é Suportado",
+    "processing": "A processar os ficheiros, aguarde por favor",
+    "queued": "Na Fila",
+    "reparing": "A Reparar o Jogo, aguarde por favor",
+    "this-game-uses-third-party": "Este jogo usa um lançador de terceiros que ainda não é suportado",
+    "totalDownloaded": "Total Transferido",
+    "uninstalling": "A Desinstalar",
+    "updating": "A Atualizar Jogo",
+    "playing": "A Jogar",
+    "moving-files": "A mover o ficheiro '{{file}}': {{percent}} %",
+    "syncingSaves": "A Sincronizar os Progressos Guardados (Saves)",
+    "launching": "A Iniciar",
+    "ubisoft": "A Instalar Ubisoft",
+    "downloading": "A Transferir",
+    "extracting": "A Extrair",
+    "gog-goodie": "Parece que não é possível instalar este jogo. Verifique o conteúdo transferível em https://gog.com/account",
+    "goodie": "Não é instalável",
+    "redist": "A Instalar os Redistribuíveis ({{redist}})",
+    "winetricks": "A aplicar as correções do Winetricks",
+    "importing": "A importar"
+  },
+  "submenu": {
+    "addShortcut": "Adicionar atalho",
+    "addToSteam": "Adicionar ao Steam",
+    "change": "Alterar o caminho de instalação",
+    "disableEosOverlay": "Desativar a Janela de Sobreposição EOS",
+    "enableEosOverlay": "Ativar a Janela de Sobreposição EOS",
+    "move": "Mover Jogo",
+    "protondb": "Verificar Compatibilidade",
+    "removeFromSteam": "Remover do Steam",
+    "removeShortcut": "Remover atalhos",
+    "settings": "Definições",
+    "store": "Página da Loja",
+    "verify": "Verificar e Reparar",
+    "extraInfo": "Informação extra",
+    "logs": "Registos de Eventos",
+    "categories": "Categorias"
+  },
+  "help": {
+    "cloud_save_unsupported": "Este jogo não suporta a cópia de progressos guardados na nuvem. Esta informação é fornecida pelos programadores do jogo. Alguns jogos implementam o seu próprio sistema de cópia de progressos guardados na nuvem",
+    "title": {
+      "gamePage": "Página do Jogo"
+    },
+    "content": {
+      "gamePage": "Mostrar todos os detalhes e ações. Utilize o menu com os 3 pontos para obter mais opções."
+    }
+  },
+  "modifyInstall": {
+    "dlcsCollapsible": "DLC",
+    "nodlcs": "Não há DLC disponível",
+    "redMod": {
+      "enable": "Ativar modificações (mods)",
+      "collapsible": "Integração REDmod"
+    },
+    "versionCollapsable": "Versão do Jogo"
+  },
+  "third-party-managed": {
+    "header": "Este jogo é gerido por uma aplicação de terceiros",
+    "notice2": "Após clicar em Instalar, o Heroic executará a aplicação para concluir o processo de instalação",
+    "notice1": "Este jogo é gerido por uma aplicação de terceiros: \"{{application_name}}\""
+  },
+  "Open": "Abrir",
+  "queue": {
+    "label": {
+      "canceled": "Cancelado",
+      "remove": "Remover das Transferências",
+      "resume": "Resumir a transferência",
+      "pause": "Pausar transferência"
+    }
+  },
+  "wikiLink": "Informação importante sobre este jogo, leia isto:&nbsp;<1>Abrir pagina</1>",
+  "open-saves-folder": "Abrir pasta de jogos guardados",
+  "edit-game": {
+    "advanced": "Avançado",
+    "placeholder": {
+      "image": "Colar link para imagem"
+    },
+    "reset": "Restaurar predefinições",
+    "sgdb": {
+      "no-key-link": "Definições → Avançadas",
+      "no-key-prefix": "Para procurar capas em SteamGridDB, adicione uma chave API em"
+    },
+    "title": "Editar Jogo",
+    "cover": "Arte da Capa",
+    "info": {
+      "cover": "Imagen da Capa",
+      "square": "Imagem quadrada"
+    },
+    "square": "Arte quadrada"
+  }
 }

@@ -26,10 +26,9 @@ function OSLogo({ platform }: OSLogoProps) {
 
 interface OSInfoProps {
   os: SystemInformation['OS']
-  isFlatpak: boolean
 }
 
-function OSInfo({ os, isFlatpak }: OSInfoProps) {
+function OSInfo({ os }: OSInfoProps) {
   const { t } = useTranslation()
   return (
     <Paper sx={{ padding: 1, height: '100%' }} square>
@@ -41,13 +40,7 @@ function OSInfo({ os, isFlatpak }: OSInfoProps) {
           <OSLogo platform={os.platform} />
         </Grid>
         <Grid item xs={10}>
-          {isFlatpak
-            ? t(
-                'settings.systemInformation.osNameFlatpak',
-                '{{osName}} (inside Flatpak)',
-                { osName: os.name }
-              )
-            : os.name}
+          {os.name}
           <br />
           {t(
             'settings.systemInformation.osVersion',

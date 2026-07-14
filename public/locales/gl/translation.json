@@ -181,8 +181,7 @@
       },
       "snap": {
         "checkbox": "Non volver a amosar esta mensaxe",
-        "title": "Heroic está a funcionar coma un Snap",
-        "message": "Algunhas funcións aínda non se encontran dispoñíbeis na versión de Snap da aplicación e seguimos a traballar para reparalas.{{newLine}}As limitacións actuais son:{{newLine}}Heroic non poderá atopar Proton dende Steam ou Wine dende Lutris.{{newLine}}{{newLine}}Gamescope, GameMode e MangoHud tampouco han funcionar, xa que Heroic non pode acceder a eles.{{newLine}}{{newLine}}Para acceder a esta funcionalidade instala Heroic coma un Flatpak, DEB ou dende a AppImage."
+        "title": "Heroic está a funcionar coma un Snap"
       },
       "rosetta": {
         "title": "Non se puido atopar Rosetta",
@@ -785,7 +784,6 @@
     "default_hint": "Os cambios nesta sección só se aplican aos valores predefinidos cando se instala un xogo. Se queres cambiar a configuración de un xogo xa instalado, usa o botón de Configuración na páxina do xogo.",
     "eacRuntime": {
       "gameModeRequired": {
-        "message": "Necesítase GameMode para que o runtime de EAC funcione en Flatpak. Queres activalo agora?",
         "title": "Necesítase GameMode"
       },
       "installing": "Instalando o Runtime de EAC...",
@@ -856,7 +854,6 @@
       "memoryStats": "{{percentUsed}}% usado ({{usedGib}} / {{totalGib}}",
       "nileVersion": "Nile: {{nileVersion}}",
       "os": "Sistema operativo:",
-      "osNameFlatpak": "{{osName}} (dentro de Flatpak)",
       "osVersion": "Versión {{versionNumber}}",
       "showDetailed": "Amosar as especificacións detalladas do sistema",
       "software": "Software:",

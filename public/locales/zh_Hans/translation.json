@@ -794,7 +794,6 @@
     "default_hint": "此部分的更改仅在安装游戏时作为默认值应用。如果你想改变一个已经安装的游戏的设置，使用游戏页面的设置按钮。",
     "eacRuntime": {
       "gameModeRequired": {
-        "message": "需要 GameMode 才能让 EAC runtime 在 Flatpak 上工作。你想马上启用它吗？",
         "title": "必须启用 GameMode"
       },
       "installing": "安装 EAC 运行时中...",
@@ -843,7 +842,6 @@
       "gpu": "GPU：",
       "gogdlVersion": "Gogdl: {{gogdlVersion}}",
       "osVersion": "版本 {{versionNumber}}",
-      "osNameFlatpak": "{{osName}} (inside Flatpak)",
       "software": "软件：",
       "memoryStats": "已用 {{percentUsed}}% {{usedGib}}/{{totalGib}}",
       "systemModel": "系统型号：",

@@ -18,7 +18,7 @@ const GameMode = () => {
 
   function handleGameMode() {
     if (useGameMode && eacRuntime) {
-      if (window.isFlatpak) {
+      if (false) {
         showDialogModal({
           showDialog: true,
           title: t(

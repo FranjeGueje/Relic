@@ -1,363 +1,362 @@
 {
-    "box": {
-        "change": {
-            "message": "Apakah anda yakin ingin mengubah lokasi pemasangan gim ini?",
-            "path": "Pilih lokasi pemasangan baru",
-            "title": "Ubah Lokasi Pemasangan Gim"
-        },
-        "choose": "Pilih",
-        "importpath": "Pilih Folder Gim untuk diimpor",
-        "move": {
-            "message": "Ini bisa memakan waktu yang lama, apakah Anda yakin?",
-            "path": "Pilih di mana Anda ingin pindahkan",
-            "title": "Pindahkan Pemasangan Gim"
-        },
-        "no": "TIDAK",
-        "repair": {
-            "message": "Apakah Anda ingin mencoba untuk memperbaiki gim ini? Ini bisa memakan waktu lama.",
-            "title": "Verifikasi dan Perbaiki"
-        },
-        "runexe": {
-            "title": "Pilih EXE untuk Dijalankan"
-        },
-        "select": {
-            "button": "Pilih",
-            "image": "Pilih Gambar"
-        },
-        "sideload": {
-            "exe": "Pilih Executable"
-        },
-        "stopInstall": {
-            "keepInstalling": "Tetap Menginstal",
-            "message": "Apakah Anda ingin MENYIMPAN berkas yang diunduh?",
-            "title": "Hentikan Pemasangan"
-        },
-        "uninstall": {
-            "checkbox": "Hapus prefiks: {{prefix}}{{newLine}}Catatan: Tindakan ini tidak dapat dibatalkan dan akan menghapus berkas yang belum dicadangkan.",
-            "message": "Apakah Anda ingin mencopot pemasangan \"{{title}}\"?",
-            "settingcheckbox": "Hapus pengaturan dan log{{newLine}}Catatan: Tindakan ini tidak dapat diurungkan. Semua pengaturan lama dan log akan dihapus.",
-            "title": "Copot Pemasangan",
-            "prefix_warning": "Prefiks Wine bawaan digunakan untuk game ini. Jika Anda benar-benar ingin menghapusnya, Anda harus melakukannya secara manual.",
-            "dlc": "Apakah Anda ingin mencopot pemasangan \"{{title}}\" (DLC)?",
-            "cannotUninstallEpic": "Epic Games tidak dapat menghapus pemasangan saat gim lain sedang diinstal.",
-            "gameIsRunning": "{{title}} sedang berjalan. Tutup gim untuk menghapus instalasi."
-        },
-        "update": {
-            "message": "Gim ini memiliki pembaruan, terapkan pembaruan sekarang?",
-            "title": "Gim Perlu Diperbarui"
-        },
-        "wineprefix": "Pilih Folder Prefiks Wine",
-        "yes": "YA",
-        "close": "Tutup",
-        "warning": {
-            "title": "Peringatan"
-        },
-        "selectLaunchOption": {
-            "title": "Pilih Opsi Peluncuran ({{seconds}}d)",
-            "body": "Silakan pilih opsi peluncuran untuk game ini (dapat diubah nanti di pengaturan game):"
-        },
-        "sync": {
-            "force_download_warning": "Penyimpanan lokal akan dihapus. Apakah Anda ingin melanjutkan?",
-            "force_upload_warning": "Penyimpanan cloud akan ditimpa. Apakah Anda ingin melanjutkan?"
-        },
-        "ok": "OK",
-        "offline_warning": {
-            "message": "Game ini mungkin tidak berfungsi dengan baik saat offline. Apakah Anda tetap ingin bermain?",
-            "playAnyway": "Tetap Mainkan",
-            "title": "Peringatan Offline"
-        }
+  "box": {
+    "change": {
+      "message": "Apakah anda yakin ingin mengubah lokasi pemasangan gim ini?",
+      "path": "Pilih lokasi pemasangan baru",
+      "title": "Ubah Lokasi Pemasangan Gim"
     },
-    "button": {
-        "add_to_favourites": "Tambahkan Ke Favorit",
-        "cancel": "Jeda/Batal",
-        "continue": "Lanjutkan Unduhan",
-        "finish": "Selesai",
-        "force_update": "Paksa Pembaruan jika Tersedia",
-        "force-innstall": "Instal Paksa",
-        "hide_game": "Sembunyikan Gim",
-        "import": "Impor Gim",
-        "install": "Instal",
-        "no-path-selected": "Tidak ada lokasi yang dipilih",
-        "queue": {
-            "remove": "Hapus dari Antrian"
-        },
-        "remove_from_favourites": "Hapus Dari Favorit",
-        "remove_from_recent": "Hapus dari Terbaru",
-        "run-exe-first": "Jalankan Penginstalan Terlebih Dahulu",
-        "running-setup": "Menjalankan Pengaturan",
-        "sideload": {
-            "edit": "Edit App/Gim"
-        },
-        "unhide_game": "Tampilkan Gim yang Disembunyikan",
-        "uninstall": "Copot",
-        "update": "Perbarui",
-        "details": "Detail",
-        "changelog": "Tampilkan Log Perubahan",
-        "browse_files": "Jelajahi File",
-        "browse_wine_prefix": "Jelajahi Wine Prefix",
-        "play": "MAIN",
-        "edit-game": "Edit Game"
+    "choose": "Pilih",
+    "importpath": "Pilih Folder Gim untuk diimpor",
+    "move": {
+      "message": "Ini bisa memakan waktu yang lama, apakah Anda yakin?",
+      "path": "Pilih di mana Anda ingin pindahkan",
+      "title": "Pindahkan Pemasangan Gim"
     },
-    "cloud_save_unsupported": "Tak Didukung",
-    "disabled": "Dinonaktifkan",
-    "dlc": {
-        "installDlcs": "Pasang semua DLC"
+    "no": "TIDAK",
+    "repair": {
+      "message": "Apakah Anda ingin mencoba untuk memperbaiki gim ini? Ini bisa memakan waktu lama.",
+      "title": "Verifikasi dan Perbaiki"
     },
-    "enabled": "Diaktifkan",
-    "game": {
-        "downloadSize": "Ukuran Unduhan",
-        "firstPlayed": "Pertama Kali Dimainkan",
-        "getting-download-size": "Mendapatkan ukuran unduhan",
-        "getting-install-size": "Mendapatkan ukuran penginstalan",
-        "installSize": "Ukuran Pemasangan",
-        "language": "Bahasa",
-        "lastPlayed": "Terakhir Dimainkan",
-        "neverPlayed": "Tidak pernah",
-        "platform": "Pilih Versi Platform yang Akan Diinstal",
-        "requirements": "Persyaratan Sistem",
-        "totalPlayed": "Lama Dimainkan",
-        "dlcs": "DLC",
-        "branch": {
-            "disabled": "Disabled",
-            "password": "Atur kata sandi kanal privat",
-            "select": "Pilih kanal beta",
-            "setPrivateBranchPassword": "Atur kata sandi kanal privat"
-        },
-        "builds": {
-            "version": "Versi",
-            "buildsSelector": "Pilih versi gim",
-            "toggle": "Menjaga gim pada versi tertentu"
-        },
-        "changelogFor": "Log perubahan untuk {{gameTitle}}",
-        "modify": "Ubah Pemasangan",
-        "extra_info": "Info tambahan",
-        "install_info": "Info instalasi",
-        "achievements": "Pencapaian"
+    "runexe": {
+      "title": "Pilih EXE untuk Dijalankan"
     },
-    "gamecard": {
-        "moving": "Memindahkan",
-        "repairing": "Memperbaiki"
-    },
-    "generic": {
-        "error": "Kesalahan tidak diketahui",
-        "noDescription": "Deskripsi tidak tersedia"
-    },
-    "hours": "Jam",
-    "how-long-to-beat": {
-        "completionist": "Komplisionis",
-        "main-plus-extras": "Cerita Utama + Tambahan",
-        "main-story": "Cerita Utama"
-    },
-    "howLongToBeat": "Berapa Lama Untuk Menyelesaikan",
-    "info": {
-        "canRunOffline": "Internet Dibutuhkan",
-        "installedPlatform": "Platform yang Terinstal",
-        "path": "Lokasi Pemasangan",
-        "size": "Ukuran",
-        "syncsaves": "Sinkronkan Penyimpanan",
-        "version": "Versi",
-        "apple-gaming-wiki": "Peringkat AppleGamingWiki",
-        "clickToOpen": "Klik untuk membuka",
-        "game-scores": "Skor Game",
-        "installedInfo": "Informasi Instalasi",
-        "protondb-compatibility-info": "Tingkat Kompatibilitas Proton",
-        "steamdeck-compatibility-info": "Kompatibilitas SteamDeck",
-        "third-party-app": "Manajer Pihak Ketiga"
-    },
-    "install": {
-        "disk-space-left": "Ruang Penyimpanan yang Tersedia",
-        "not-enough-disk-space": "Ruang penyimpanan tidak cukup",
-        "path": "Pilih Lokasi Pemasangan",
-        "path-not-writtable": "Peringatan: lokasi mungkin tidak dapat ditulis.",
-        "space-after-install": "Setelah Instalasi",
-        "wineprefix": "PrefiksWine",
-        "wineversion": "Versi Wine",
-        "anticheat-warning": {
-            "cancel": "Tidak",
-            "message": "Anticheat tidak didukung. Gim mungkin tidak akan berfungsi. Apakah anda akan melanjutkan pemasangan?",
-            "install": "Ya (Saya mengerti aksi ini mungkin tidak berhasil)",
-            "title": "Anticheat Rusak/Ditolak",
-            "ok": "Ok",
-            "install_anyway": "Ya (Saya mengerti bahwa fitur multipemain tidak akan bekerja)",
-            "disabled_installation": "Game ini menggunakan perangkat lunak anticheat yang tidak kompatibel dengan sistem operasi Anda atau dukungan untuk perangkat lunak tersebut tidak diaktifkan oleh pengembang game. Hal ini berarti fitur multiplayer tidak akan berfungsi, dan tidak ada yang dapat Anda (atau tim Heroic) lakukan untuk mengatasinya. <br /><br />Untuk menginstal game ini dan mencobanya meskipun demikian, pergi ke Pengaturan, Lanjutan, dan centang opsi untuk mengizinkan instalasi game dengan anticheat yang rusak atau ditolak.<br /><br />Perlu diingat bahwa tidak ada solusi untuk ini dan Anda berisiko diblokir dalam game.",
-            "multiplayer_message": "Dukungan anticheat rusak atau ditolak. Gim mungkin bisa dibuka namun fitur multipemain tidak akan bekerja. Apakah Anda ingin menginstalnya?"
-        },
-        "flatpak-path-not-writtable": "Kesalahan: Akses sandbox tidak diberikan ke lokasi ini, kehilangan data mungkin bisa terjadi."
-    },
-    "label": {
-        "game": {
-            "third-party-game": "Gim pihak ketiga TIDAK didukung",
-            "not-installable-game": "Game TIDAK Dapat Diinstal"
-        },
-        "playing": {
-            "start": "Mainkan sekarang",
-            "stop": "Memainkan (Berhenti)",
-            "start_with_logs": "Main Sekarang (dengan log)"
-        },
-        "saves": {
-            "syncing": "Menyinkronkan Penyimpanan"
-        },
-        "launching": "Meluncurkan",
-        "ubisoft": "Memasang Ubisoft Connect",
-        "winetricks": "Menginstal Paket Winetricks",
-        "redist": "Menginstal Redistributable",
-        "steam": {
-            "installing": "Memasang",
-            "pleaseWait": "Mohon tunggu...",
-            "installation": "Hentikan Pemasangan"
-        }
-    },
-    "launch": {
-        "options": "Opsi Peluncuran…",
-        "default": "Bawaan"
-    },
-    "not_logged_in": {
-        "epic": "Anda tidak masuk dengan akun Epic di Heroic. Jangan gunakan halaman toko untuk masuk, klik tombol berikut sebagai gantinya:",
-        "gog": "Anda tidak masuk dengan akun GOG di Heroic. Jangan gunakan halaman toko untuk masuk, klik tombol berikut sebagai gantinya:",
-        "login": "Masuk",
-        "title": "Anda TIDAK masuk",
-        "amazon": "Anda tidak masuk dengan akun Epic di Heroic. Jangan gunakan halaman toko untuk masuk, klik tombol berikut sebagai gantinya:",
-        "zoom": "Anda tidak masuk dengan akun GOG di Heroic. Jangan gunakan halaman toko untuk masuk, klik tombol berikut sebagai gantinya:"
-    },
-    "report_problem": "Laporkan masalah yang terjadi saat memainkan gim ini",
-    "sdl": {
-        "title": "Pilih komponen untuk diinstal"
-    },
-    "setting": {
-        "winecrossoverbottle": "CrossOver Bottle",
-        "show-wine-settings": "Tampilkan pengaturan Wine",
-        "warn-use-shared-wine-config": "Hanya gunakan opsi ini jika Anda tahu apa yang Anda lakukan. <br/> Berbagi prefiks yang sama untuk beberapa gim dapat menimbulkan masalah jika dependensinya tidak kompatibel.",
-        "use-shared-wine-config": "Gunakan Wine prefix bersama"
+    "select": {
+      "button": "Pilih",
+      "image": "Pilih Gambar"
     },
     "sideload": {
-        "field": {
-            "title": "Judul"
-        },
-        "info": {
-            "exe": "Pilih Executable",
-            "image": "Gambar App",
-            "title": "Gim/Judul App",
-            "broser": "URL browser",
-            "useragent": "Kustomisasi User Agent",
-            "fullscreen": "Luncurkan Layar Penuh (F11 untuk keluar)",
-            "cover-hint": "Gambar Sampul/Hero (klik pada gambar untuk mencari di SteamGridDB)",
-            "image-hint": "Gambar Persegi (klik pada gambar untuk mencari di SteamGridDB)"
-        },
-        "placeholder": {
-            "image": "Tempel URL gambar atau pilih salah satu dari komputer Anda",
-            "title": "Tambahkan judul ke Gim/App Anda",
-            "url": "Rekatkan URL Game di sini",
-            "useragent": "Tulis user agent kustom di sini untuk digunakan pada aplikasi browser/game ini"
-        },
-        "import-hint": {
-            "content": "JANGAN gunakan fitur ini untuk tujuan tersebut.<br />Sebagai gantinya, <3>masuk ke</3> toko, cari game di pustaka Anda, buka dialog instalasi, lalu klik tombol &quot;Impor Game&quot;",
-            "title": "Penting! Apakah Anda menambahkan game dari Epic/GOG/Amazon? Klik di sini!"
-        },
-        "images": {
-            "summary": "Gambar"
-        }
+      "exe": "Pilih Executable"
     },
-    "specs": {
-        "minimum": "Minimum",
-        "recommended": "Direkomendasikan"
+    "stopInstall": {
+      "keepInstalling": "Tetap Menginstal",
+      "message": "Apakah Anda ingin MENYIMPAN berkas yang diunduh?",
+      "title": "Hentikan Pemasangan"
     },
-    "status": {
-        "clickToUpdate": "Klik untuk Memperbarui",
-        "gameNotAvailable": "Gim tidak tersedia",
-        "hasUpdates": "Versi Baru Tersedia!",
-        "installed": "Terinstal",
-        "installing": "Menginstal",
-        "moving": "Memindahkan Pemasangan, harap tunggu",
-        "notinstalled": "Gim ini tidak diinstal",
-        "notSupported": "Tidak didukung",
-        "notSupportedGame": "Tidak didukung",
-        "processing": "Memproses berkas, harap tunggu",
-        "queued": "Dalam Antrian",
-        "reparing": "Memperbaiki Gim, harap tunggu",
-        "this-game-uses-third-party": "Gim ini menggunakan peluncur pihak ketiga dan belum didukung oleh Heroic",
-        "totalDownloaded": "Jumlah yang Diunduh",
-        "uninstalling": "Mencopot",
-        "updating": "Memperbarui Gim",
-        "playing": "Bermain",
-        "moving-files": "Memindahkan berkas '{{file}}': {{percent}}%",
-        "syncingSaves": "Menyinkronkan Penyimpanan Gim",
-        "launching": "Meluncurkan",
-        "ubisoft": "Memasang Ubisoft",
-        "downloading": "Mengunduh",
-        "extracting": "Mengekstrak",
-        "goodie": "Tidak dapat diinstal",
-        "gog-goodie": "Game ini tampaknya tidak dapat diinstal. Periksa konten yang dapat diunduh di https://gog.com/account",
-        "winetricks": "Menerapkan perbaikan Winetricks",
-        "redist": "Menginstal Redistributable ({{redist}})",
-        "importing": "Mengimpor"
+    "uninstall": {
+      "checkbox": "Hapus prefiks: {{prefix}}{{newLine}}Catatan: Tindakan ini tidak dapat dibatalkan dan akan menghapus berkas yang belum dicadangkan.",
+      "message": "Apakah Anda ingin mencopot pemasangan \"{{title}}\"?",
+      "settingcheckbox": "Hapus pengaturan dan log{{newLine}}Catatan: Tindakan ini tidak dapat diurungkan. Semua pengaturan lama dan log akan dihapus.",
+      "title": "Copot Pemasangan",
+      "prefix_warning": "Prefiks Wine bawaan digunakan untuk game ini. Jika Anda benar-benar ingin menghapusnya, Anda harus melakukannya secara manual.",
+      "dlc": "Apakah Anda ingin mencopot pemasangan \"{{title}}\" (DLC)?",
+      "cannotUninstallEpic": "Epic Games tidak dapat menghapus pemasangan saat gim lain sedang diinstal.",
+      "gameIsRunning": "{{title}} sedang berjalan. Tutup gim untuk menghapus instalasi."
     },
-    "submenu": {
-        "addShortcut": "Tambahkan pintasan",
-        "addToSteam": "Tambahkan ke Steam",
-        "change": "Ubah lokasi pemsangan",
-        "disableEosOverlay": "Nonaktifkan EOS Overlay",
-        "enableEosOverlay": "Aktifkan EOS Overlay",
-        "move": "Pindahkan gim",
-        "protondb": "Periksa Kompatibilitas",
-        "removeFromSteam": "Hapus dari Steam",
-        "removeShortcut": "Hapus pintasan",
-        "settings": "Pengaturan",
-        "store": "Halaman Toko",
-        "verify": "Verifikasi dan Perbaiki",
-        "extraInfo": "Informasi tambahan",
-        "logs": "Log",
-        "categories": "Kategori"
+    "update": {
+      "message": "Gim ini memiliki pembaruan, terapkan pembaruan sekarang?",
+      "title": "Gim Perlu Diperbarui"
     },
-    "help": {
-        "cloud_save_unsupported": "Gim ini tidak mendukung penyimpanan cloud. Informasi ini disediakan oleh pengembang gim. Beberapa gim menerapkan sistem penyimpanan cloud mereka sendiri",
-        "content": {
-            "gamePage": "Tampilkan semua detail dan tindakan gim. Gunakan menu 3 titik untuk opsi lainnya."
-        },
-        "title": {
-            "gamePage": "Halaman Gim"
-        }
+    "wineprefix": "Pilih Folder Prefiks Wine",
+    "yes": "YA",
+    "close": "Tutup",
+    "warning": {
+      "title": "Peringatan"
     },
-    "modifyInstall": {
-        "nodlcs": "Tidak ada DLC yang tersedia",
-        "redMod": {
-            "collapsible": "Integrasi REDmod",
-            "enable": "Aktifkan mod"
-        },
-        "versionCollapsable": "Versi Gim",
-        "dlcsCollapsible": "DLC"
+    "selectLaunchOption": {
+      "title": "Pilih Opsi Peluncuran ({{seconds}}d)",
+      "body": "Silakan pilih opsi peluncuran untuk game ini (dapat diubah nanti di pengaturan game):"
     },
-    "third-party-managed": {
-        "notice1": "Gim ini dikelola oleh aplikasi pihak ketiga: \"{{application_name}}\"",
-        "header": "Gim ini dikelola oleh aplikasi pihak ketiga",
-        "notice2": "Setelah mengklik Pasang, Heroic akan menjalankan aplikasi untuk menyelesaikan proses pemasangan"
+    "sync": {
+      "force_download_warning": "Penyimpanan lokal akan dihapus. Apakah Anda ingin melanjutkan?",
+      "force_upload_warning": "Penyimpanan cloud akan ditimpa. Apakah Anda ingin melanjutkan?"
     },
-    "Open": "Buka",
-    "queue": {
-        "label": {
-            "canceled": "Dibatalkan",
-            "remove": "Hapus dari Unduhan",
-            "pause": "Jeda unduhan",
-            "resume": "Lanjutkan unduhan"
-        }
-    },
-    "wikiLink": "Informasi penting tentang game ini, baca di sini:&nbsp;<1>Buka halaman</1>",
-    "open-saves-folder": "Buka Folder Penyimpanan",
-    "edit-game": {
-        "advanced": "Tambahan",
-        "title": "Edit Game",
-        "cover": "Gambar Sampul",
-        "info": {
-            "cover": "Gambar Sampul",
-            "square": "Gambar Persegi"
-        },
-        "placeholder": {
-            "image": "Tempel URL gambar"
-        },
-        "reset": "Atur ulang ke default",
-        "sgdb": {
-            "no-key-link": "Pengaturan → Lanjutan",
-            "no-key-prefix": "Untuk mencari gambar sampul di SteamGridDB, tambahkan API key di"
-        },
-        "square": "Gambar Persegi"
+    "ok": "OK",
+    "offline_warning": {
+      "message": "Game ini mungkin tidak berfungsi dengan baik saat offline. Apakah Anda tetap ingin bermain?",
+      "playAnyway": "Tetap Mainkan",
+      "title": "Peringatan Offline"
     }
+  },
+  "button": {
+    "add_to_favourites": "Tambahkan Ke Favorit",
+    "cancel": "Jeda/Batal",
+    "continue": "Lanjutkan Unduhan",
+    "finish": "Selesai",
+    "force_update": "Paksa Pembaruan jika Tersedia",
+    "force-innstall": "Instal Paksa",
+    "hide_game": "Sembunyikan Gim",
+    "import": "Impor Gim",
+    "install": "Instal",
+    "no-path-selected": "Tidak ada lokasi yang dipilih",
+    "queue": {
+      "remove": "Hapus dari Antrian"
+    },
+    "remove_from_favourites": "Hapus Dari Favorit",
+    "remove_from_recent": "Hapus dari Terbaru",
+    "run-exe-first": "Jalankan Penginstalan Terlebih Dahulu",
+    "running-setup": "Menjalankan Pengaturan",
+    "sideload": {
+      "edit": "Edit App/Gim"
+    },
+    "unhide_game": "Tampilkan Gim yang Disembunyikan",
+    "uninstall": "Copot",
+    "update": "Perbarui",
+    "details": "Detail",
+    "changelog": "Tampilkan Log Perubahan",
+    "browse_files": "Jelajahi File",
+    "browse_wine_prefix": "Jelajahi Wine Prefix",
+    "play": "MAIN",
+    "edit-game": "Edit Game"
+  },
+  "cloud_save_unsupported": "Tak Didukung",
+  "disabled": "Dinonaktifkan",
+  "dlc": {
+    "installDlcs": "Pasang semua DLC"
+  },
+  "enabled": "Diaktifkan",
+  "game": {
+    "downloadSize": "Ukuran Unduhan",
+    "firstPlayed": "Pertama Kali Dimainkan",
+    "getting-download-size": "Mendapatkan ukuran unduhan",
+    "getting-install-size": "Mendapatkan ukuran penginstalan",
+    "installSize": "Ukuran Pemasangan",
+    "language": "Bahasa",
+    "lastPlayed": "Terakhir Dimainkan",
+    "neverPlayed": "Tidak pernah",
+    "platform": "Pilih Versi Platform yang Akan Diinstal",
+    "requirements": "Persyaratan Sistem",
+    "totalPlayed": "Lama Dimainkan",
+    "dlcs": "DLC",
+    "branch": {
+      "disabled": "Disabled",
+      "password": "Atur kata sandi kanal privat",
+      "select": "Pilih kanal beta",
+      "setPrivateBranchPassword": "Atur kata sandi kanal privat"
+    },
+    "builds": {
+      "version": "Versi",
+      "buildsSelector": "Pilih versi gim",
+      "toggle": "Menjaga gim pada versi tertentu"
+    },
+    "changelogFor": "Log perubahan untuk {{gameTitle}}",
+    "modify": "Ubah Pemasangan",
+    "extra_info": "Info tambahan",
+    "install_info": "Info instalasi",
+    "achievements": "Pencapaian"
+  },
+  "gamecard": {
+    "moving": "Memindahkan",
+    "repairing": "Memperbaiki"
+  },
+  "generic": {
+    "error": "Kesalahan tidak diketahui",
+    "noDescription": "Deskripsi tidak tersedia"
+  },
+  "hours": "Jam",
+  "how-long-to-beat": {
+    "completionist": "Komplisionis",
+    "main-plus-extras": "Cerita Utama + Tambahan",
+    "main-story": "Cerita Utama"
+  },
+  "howLongToBeat": "Berapa Lama Untuk Menyelesaikan",
+  "info": {
+    "canRunOffline": "Internet Dibutuhkan",
+    "installedPlatform": "Platform yang Terinstal",
+    "path": "Lokasi Pemasangan",
+    "size": "Ukuran",
+    "syncsaves": "Sinkronkan Penyimpanan",
+    "version": "Versi",
+    "apple-gaming-wiki": "Peringkat AppleGamingWiki",
+    "clickToOpen": "Klik untuk membuka",
+    "game-scores": "Skor Game",
+    "installedInfo": "Informasi Instalasi",
+    "protondb-compatibility-info": "Tingkat Kompatibilitas Proton",
+    "steamdeck-compatibility-info": "Kompatibilitas SteamDeck",
+    "third-party-app": "Manajer Pihak Ketiga"
+  },
+  "install": {
+    "disk-space-left": "Ruang Penyimpanan yang Tersedia",
+    "not-enough-disk-space": "Ruang penyimpanan tidak cukup",
+    "path": "Pilih Lokasi Pemasangan",
+    "path-not-writtable": "Peringatan: lokasi mungkin tidak dapat ditulis.",
+    "space-after-install": "Setelah Instalasi",
+    "wineprefix": "PrefiksWine",
+    "wineversion": "Versi Wine",
+    "anticheat-warning": {
+      "cancel": "Tidak",
+      "message": "Anticheat tidak didukung. Gim mungkin tidak akan berfungsi. Apakah anda akan melanjutkan pemasangan?",
+      "install": "Ya (Saya mengerti aksi ini mungkin tidak berhasil)",
+      "title": "Anticheat Rusak/Ditolak",
+      "ok": "Ok",
+      "install_anyway": "Ya (Saya mengerti bahwa fitur multipemain tidak akan bekerja)",
+      "disabled_installation": "Game ini menggunakan perangkat lunak anticheat yang tidak kompatibel dengan sistem operasi Anda atau dukungan untuk perangkat lunak tersebut tidak diaktifkan oleh pengembang game. Hal ini berarti fitur multiplayer tidak akan berfungsi, dan tidak ada yang dapat Anda (atau tim Heroic) lakukan untuk mengatasinya. <br /><br />Untuk menginstal game ini dan mencobanya meskipun demikian, pergi ke Pengaturan, Lanjutan, dan centang opsi untuk mengizinkan instalasi game dengan anticheat yang rusak atau ditolak.<br /><br />Perlu diingat bahwa tidak ada solusi untuk ini dan Anda berisiko diblokir dalam game.",
+      "multiplayer_message": "Dukungan anticheat rusak atau ditolak. Gim mungkin bisa dibuka namun fitur multipemain tidak akan bekerja. Apakah Anda ingin menginstalnya?"
+    }
+  },
+  "label": {
+    "game": {
+      "third-party-game": "Gim pihak ketiga TIDAK didukung",
+      "not-installable-game": "Game TIDAK Dapat Diinstal"
+    },
+    "playing": {
+      "start": "Mainkan sekarang",
+      "stop": "Memainkan (Berhenti)",
+      "start_with_logs": "Main Sekarang (dengan log)"
+    },
+    "saves": {
+      "syncing": "Menyinkronkan Penyimpanan"
+    },
+    "launching": "Meluncurkan",
+    "ubisoft": "Memasang Ubisoft Connect",
+    "winetricks": "Menginstal Paket Winetricks",
+    "redist": "Menginstal Redistributable",
+    "steam": {
+      "installing": "Memasang",
+      "pleaseWait": "Mohon tunggu...",
+      "installation": "Hentikan Pemasangan"
+    }
+  },
+  "launch": {
+    "options": "Opsi Peluncuran…",
+    "default": "Bawaan"
+  },
+  "not_logged_in": {
+    "epic": "Anda tidak masuk dengan akun Epic di Heroic. Jangan gunakan halaman toko untuk masuk, klik tombol berikut sebagai gantinya:",
+    "gog": "Anda tidak masuk dengan akun GOG di Heroic. Jangan gunakan halaman toko untuk masuk, klik tombol berikut sebagai gantinya:",
+    "login": "Masuk",
+    "title": "Anda TIDAK masuk",
+    "amazon": "Anda tidak masuk dengan akun Epic di Heroic. Jangan gunakan halaman toko untuk masuk, klik tombol berikut sebagai gantinya:",
+    "zoom": "Anda tidak masuk dengan akun GOG di Heroic. Jangan gunakan halaman toko untuk masuk, klik tombol berikut sebagai gantinya:"
+  },
+  "report_problem": "Laporkan masalah yang terjadi saat memainkan gim ini",
+  "sdl": {
+    "title": "Pilih komponen untuk diinstal"
+  },
+  "setting": {
+    "winecrossoverbottle": "CrossOver Bottle",
+    "show-wine-settings": "Tampilkan pengaturan Wine",
+    "warn-use-shared-wine-config": "Hanya gunakan opsi ini jika Anda tahu apa yang Anda lakukan. <br/> Berbagi prefiks yang sama untuk beberapa gim dapat menimbulkan masalah jika dependensinya tidak kompatibel.",
+    "use-shared-wine-config": "Gunakan Wine prefix bersama"
+  },
+  "sideload": {
+    "field": {
+      "title": "Judul"
+    },
+    "info": {
+      "exe": "Pilih Executable",
+      "image": "Gambar App",
+      "title": "Gim/Judul App",
+      "broser": "URL browser",
+      "useragent": "Kustomisasi User Agent",
+      "fullscreen": "Luncurkan Layar Penuh (F11 untuk keluar)",
+      "cover-hint": "Gambar Sampul/Hero (klik pada gambar untuk mencari di SteamGridDB)",
+      "image-hint": "Gambar Persegi (klik pada gambar untuk mencari di SteamGridDB)"
+    },
+    "placeholder": {
+      "image": "Tempel URL gambar atau pilih salah satu dari komputer Anda",
+      "title": "Tambahkan judul ke Gim/App Anda",
+      "url": "Rekatkan URL Game di sini",
+      "useragent": "Tulis user agent kustom di sini untuk digunakan pada aplikasi browser/game ini"
+    },
+    "import-hint": {
+      "content": "JANGAN gunakan fitur ini untuk tujuan tersebut.<br />Sebagai gantinya, <3>masuk ke</3> toko, cari game di pustaka Anda, buka dialog instalasi, lalu klik tombol &quot;Impor Game&quot;",
+      "title": "Penting! Apakah Anda menambahkan game dari Epic/GOG/Amazon? Klik di sini!"
+    },
+    "images": {
+      "summary": "Gambar"
+    }
+  },
+  "specs": {
+    "minimum": "Minimum",
+    "recommended": "Direkomendasikan"
+  },
+  "status": {
+    "clickToUpdate": "Klik untuk Memperbarui",
+    "gameNotAvailable": "Gim tidak tersedia",
+    "hasUpdates": "Versi Baru Tersedia!",
+    "installed": "Terinstal",
+    "installing": "Menginstal",
+    "moving": "Memindahkan Pemasangan, harap tunggu",
+    "notinstalled": "Gim ini tidak diinstal",
+    "notSupported": "Tidak didukung",
+    "notSupportedGame": "Tidak didukung",
+    "processing": "Memproses berkas, harap tunggu",
+    "queued": "Dalam Antrian",
+    "reparing": "Memperbaiki Gim, harap tunggu",
+    "this-game-uses-third-party": "Gim ini menggunakan peluncur pihak ketiga dan belum didukung oleh Heroic",
+    "totalDownloaded": "Jumlah yang Diunduh",
+    "uninstalling": "Mencopot",
+    "updating": "Memperbarui Gim",
+    "playing": "Bermain",
+    "moving-files": "Memindahkan berkas '{{file}}': {{percent}}%",
+    "syncingSaves": "Menyinkronkan Penyimpanan Gim",
+    "launching": "Meluncurkan",
+    "ubisoft": "Memasang Ubisoft",
+    "downloading": "Mengunduh",
+    "extracting": "Mengekstrak",
+    "goodie": "Tidak dapat diinstal",
+    "gog-goodie": "Game ini tampaknya tidak dapat diinstal. Periksa konten yang dapat diunduh di https://gog.com/account",
+    "winetricks": "Menerapkan perbaikan Winetricks",
+    "redist": "Menginstal Redistributable ({{redist}})",
+    "importing": "Mengimpor"
+  },
+  "submenu": {
+    "addShortcut": "Tambahkan pintasan",
+    "addToSteam": "Tambahkan ke Steam",
+    "change": "Ubah lokasi pemsangan",
+    "disableEosOverlay": "Nonaktifkan EOS Overlay",
+    "enableEosOverlay": "Aktifkan EOS Overlay",
+    "move": "Pindahkan gim",
+    "protondb": "Periksa Kompatibilitas",
+    "removeFromSteam": "Hapus dari Steam",
+    "removeShortcut": "Hapus pintasan",
+    "settings": "Pengaturan",
+    "store": "Halaman Toko",
+    "verify": "Verifikasi dan Perbaiki",
+    "extraInfo": "Informasi tambahan",
+    "logs": "Log",
+    "categories": "Kategori"
+  },
+  "help": {
+    "cloud_save_unsupported": "Gim ini tidak mendukung penyimpanan cloud. Informasi ini disediakan oleh pengembang gim. Beberapa gim menerapkan sistem penyimpanan cloud mereka sendiri",
+    "content": {
+      "gamePage": "Tampilkan semua detail dan tindakan gim. Gunakan menu 3 titik untuk opsi lainnya."
+    },
+    "title": {
+      "gamePage": "Halaman Gim"
+    }
+  },
+  "modifyInstall": {
+    "nodlcs": "Tidak ada DLC yang tersedia",
+    "redMod": {
+      "collapsible": "Integrasi REDmod",
+      "enable": "Aktifkan mod"
+    },
+    "versionCollapsable": "Versi Gim",
+    "dlcsCollapsible": "DLC"
+  },
+  "third-party-managed": {
+    "notice1": "Gim ini dikelola oleh aplikasi pihak ketiga: \"{{application_name}}\"",
+    "header": "Gim ini dikelola oleh aplikasi pihak ketiga",
+    "notice2": "Setelah mengklik Pasang, Heroic akan menjalankan aplikasi untuk menyelesaikan proses pemasangan"
+  },
+  "Open": "Buka",
+  "queue": {
+    "label": {
+      "canceled": "Dibatalkan",
+      "remove": "Hapus dari Unduhan",
+      "pause": "Jeda unduhan",
+      "resume": "Lanjutkan unduhan"
+    }
+  },
+  "wikiLink": "Informasi penting tentang game ini, baca di sini:&nbsp;<1>Buka halaman</1>",
+  "open-saves-folder": "Buka Folder Penyimpanan",
+  "edit-game": {
+    "advanced": "Tambahan",
+    "title": "Edit Game",
+    "cover": "Gambar Sampul",
+    "info": {
+      "cover": "Gambar Sampul",
+      "square": "Gambar Persegi"
+    },
+    "placeholder": {
+      "image": "Tempel URL gambar"
+    },
+    "reset": "Atur ulang ke default",
+    "sgdb": {
+      "no-key-link": "Pengaturan → Lanjutan",
+      "no-key-prefix": "Untuk mencari gambar sampul di SteamGridDB, tambahkan API key di"
+    },
+    "square": "Gambar Persegi"
+  }
 }

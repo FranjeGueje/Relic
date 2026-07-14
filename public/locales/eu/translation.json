@@ -767,7 +767,6 @@
     "default_hint": "Changes in this section only apply as default values when installing games. If you want to change the settings of an already installed game, use the Settings button in the game page.",
     "eacRuntime": {
       "gameModeRequired": {
-        "message": "GameMode beharrezkoa da EAC exekuzio denbora Flatpak-en funtziona dezan. Orain gaitu nahi al duzu?",
         "title": "GameMode beharrezkoa da"
       },
       "installing": "EAC Runtime instalatzen...",
@@ -837,7 +836,6 @@
       "gpu": "",
       "gogdlVersion": "",
       "osVersion": "",
-      "osNameFlatpak": "",
       "software": "",
       "cometVersion": "",
       "memoryStats": "",

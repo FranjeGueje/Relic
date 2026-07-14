@@ -63,7 +63,6 @@ import { startPlausible } from './utils/plausible'
 
 import {
   getDiskInfo,
-  isAccessibleWithinFlatpakSandbox,
   isWritable
 } from './utils/filesystem'
 
@@ -127,7 +126,6 @@ import {
   isCLIConsoleMode,
   isCLIFullscreen,
   isCLINoGui,
-  isFlatpak,
   isIntelMac,
   isLinux,
   isMac,
@@ -465,7 +463,7 @@ addOneTimeListener('frontendReady', () => {
       title: i18next.t('box.warning.snap.title', 'Relic is running as a Snap'),
       message: i18next.t('box.warning.snap.message', {
         defaultValue:
-          'Some features are not available in the Snap version of the app for now and we are trying to fix it.{{newLine}}Current limitations are: {{newLine}}Relic will not be able to find Proton from Steam or Wine from Lutris.{{newLine}}{{newLine}}GameMode will also not work since Relic cannot have access to it.{{newLine}}{{newLine}}To have access to this feature please install Relic as a Flatpak, DEB or from the AppImage.',
+          'Some features are not available in the Snap version of the app for now and we are trying to fix it.{{newLine}}Current limitations are: {{newLine}}Relic will not be able to find Proton from Steam or Wine from Lutris.{{newLine}}{{newLine}}GameMode will also not work since Relic cannot have access to it.{{newLine}}{{newLine}}To have access to this feature please install Relic as a DEB or from the AppImage.',
         newLine: '\n'
       }),
       checkboxLabel: i18next.t('box.warning.snap.checkbox', {
@@ -562,13 +560,11 @@ addHandler('checkDiskSpace', async (_e, folder): Promise<DiskSpaceData> => {
 
   const { freeSpace, totalSpace } = await getDiskInfo(parsedPath)
   const pathIsWritable = await isWritable(parsedPath)
-  const pathIsFlatpakAccessible = isAccessibleWithinFlatpakSandbox(parsedPath)
 
   return {
     free: freeSpace,
     diskSize: totalSpace,
     validPath: pathIsWritable,
-    validFlatpakPath: pathIsFlatpakAccessible,
     message: `${getFileSize(freeSpace)} / ${getFileSize(totalSpace)}`
   }
 })
@@ -663,7 +659,7 @@ addHandler('getGameSdl', async (event, appName) =>
   libraryManagerMap['legendary'].getGameSdl(appName)
 )
 
-addHandler('showUpdateSetting', () => !isFlatpak)
+addHandler('showUpdateSetting', () => true)
 
 addHandler('getLatestReleases', async () => {
   const { checkForUpdatesOnStartup } = GlobalConfig.get().getSettings()

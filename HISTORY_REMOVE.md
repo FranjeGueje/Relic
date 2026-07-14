@@ -57,3 +57,21 @@
 - Badges Discord eliminados de `README.md`, flatpak template, `snap/snapcraft.yaml`
 - `Discord` mock renombrado en `nonesteamgame.test.ts`
 - Menciones a Discord eliminadas de traducciones (40 archivos), SidebarTour, Nile setup, LogFileUploadDialog, LogSettings, electron_store.ts
+
+## Flatpak / Flathub
+- Directorios `flatpak/` y `flathub/` eliminados
+- Scripts `dist:flatpak`, `flatpak:build`, `flatpak:prepare`, `flatpak:prepare-release`, `release:updateFlathub:ci` eliminados de package.json
+- `isFlatpak` y `flatpakRuntimeVersion` eliminados de `environment.ts` y preload
+- `flatpakHome` eliminado de `paths.ts`; reemplazado por `userHome` en `launcher.ts`
+- Bloque de detección Steam Flatpak (~10 líneas) eliminado de `config.ts`
+- `isAccessibleWithinFlatpakSandbox` y `validFlatpakPath` eliminados de filesystem, main.ts, DownloadDialog, types
+- `isFlatpak` eliminado de systeminfo, plausible, nonesteamgame, Config (checkForUpdatesOnStartup, useGameMode)
+- Componente OSInfo.tsx simplificado (quitado prop `isFlatpak` y texto Flatpak)
+- `if (window.isFlatpak)` reemplazado por `if (false)` en EacRuntime.tsx y GameMode.tsx
+- `FlatpakAppID` eliminado de `steam-shortcut-editor.d.ts`
+- Mención Flatpak eliminada del Snap warning en main.ts
+- `Steam Flatpak` eliminado de WineVersionSelector.tsx
+- Clave `flatpak-path-not-writtable` eliminada de traducciones (47 archivos)
+- Clave `osNameFlatpak` eliminada de traducciones (13 archivos)
+- Badge Flathub, sección Flatpak, y referencia eliminados de README.md
+- Entradas Flatpak eliminadas de CHANGELOG.md, .prettierignore, .gitignore, tsconfig.eslint.json, ROADMAP_REMOVE.md

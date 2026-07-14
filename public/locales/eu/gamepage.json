@@ -1,338 +1,337 @@
 {
-    "box": {
-        "change": {
-            "message": "Honek jokoaren instalazioaren kokalekua aldatuko du, ziur zaude?",
-            "path": "Aukeratu instalazio bide-izen berri bat",
-            "title": "Aldatu jokoen instalazio bide-izena"
-        },
-        "choose": "Aukeratu",
-        "importpath": "Aukeratu inportatzeko joko karpeta",
-        "move": {
-            "message": "Honek denbora luzea eraman dezake, ziur zaude?",
-            "path": "Aukeratu nora mugitu nahi duzun",
-            "title": "Mugitu jokoaren instalazioa"
-        },
-        "no": "EZ",
-        "repair": {
-            "message": "Joko hau konpontzen saiatu nahi duzu? Denbora asko eraman dezake.",
-            "title": "Egiaztatu eta konpondu"
-        },
-        "runexe": {
-            "title": "Hautatu exekutatzeko EXEa"
-        },
-        "select": {
-            "button": "Select",
-            "image": ""
-        },
-        "sideload": {
-            "exe": "Select Executable"
-        },
-        "stopInstall": {
-            "keepInstalling": "Instalatzen jarraitu",
-            "message": "Fitxategiak deskargatuta MANTENDU nahi dituzu?",
-            "title": "Instalazioa gelditu"
-        },
-        "uninstall": {
-            "checkbox": "Kendu aurrizkia: {{prefix}}{{newLine}}Oharra: Hau ezin da desegin eta babeskopiarik ez duten gordetze fitxategiak kenduko ditu ere.",
-            "checkbox_prefix": "Aurrizkia",
-            "message": "Joko hau desinstatu nahi duzu?",
-            "settingcheckbox": "Erase settings and remove log{{newLine}}Note: This can't be undone. Any modified settings will be forgotten and log will be deleted.",
-            "title": "Desinslalatu",
-            "prefix_warning": "Joko honen Wine aurrizkia lehenetsitako aurrizkia da. Benetan ezabatu nahi baduzu, eskuz egin behar duzu.",
-            "dlc": "DLC hau desinstalatu nahi duzu?",
-            "cannotUninstallEpic": "Epic games ezin da desinstalatu beste Epic joku bat instalatzen ari den bitartean.",
-            "gameIsRunning": ""
-        },
-        "update": {
-            "message": "Joko honek eguneraketa bat du, orain eguneratu?",
-            "title": "Jokoak eguneraketa behar du"
-        },
-        "wineprefix": "Hautatu WinePrefix karpeta",
-        "yes": "BAI",
-        "close": "Itxi",
-        "warning": {
-            "title": "Warning"
-        },
-        "ok": "Adoz",
-        "offline_warning": {
-            "message": "",
-            "playAnyway": "",
-            "title": ""
-        },
-        "selectLaunchOption": {
-            "title": "",
-            "body": ""
-        },
-        "sync": {
-            "force_download_warning": "",
-            "force_upload_warning": ""
-        }
+  "box": {
+    "change": {
+      "message": "Honek jokoaren instalazioaren kokalekua aldatuko du, ziur zaude?",
+      "path": "Aukeratu instalazio bide-izen berri bat",
+      "title": "Aldatu jokoen instalazio bide-izena"
     },
-    "button": {
-        "add_to_favourites": "Gehitu gogokoetara",
-        "cancel": "Gelditu/Utzi",
-        "continue": "Jarraitu deskarga",
-        "finish": "Finish",
-        "force_update": "Eguneratu eguneraketarik badago",
-        "force-innstall": "Force Install",
-        "hide_game": "Ezkutatu jokoa",
-        "import": "Inportatu jokoa",
-        "install": "Instalatu",
-        "no-path-selected": "No path selected",
-        "queue": {
-            "remove": "Remove from Queue"
-        },
-        "remove_from_favourites": "Kendu gogokoenetik",
-        "remove_from_recent": "Remove From Recent",
-        "run-exe-first": "Run Installer First",
-        "running-setup": "Running Setup",
-        "sideload": {
-            "edit": "Edit App/Game"
-        },
-        "unhide_game": "Erakutsi jokoa",
-        "uninstall": "Desinslalatu",
-        "update": "Eguneratu",
-        "details": "Xehetasunak",
-        "changelog": "Aldaketak erakutsi",
-        "browse_wine_prefix": "",
-        "play": "",
-        "browse_files": ""
+    "choose": "Aukeratu",
+    "importpath": "Aukeratu inportatzeko joko karpeta",
+    "move": {
+      "message": "Honek denbora luzea eraman dezake, ziur zaude?",
+      "path": "Aukeratu nora mugitu nahi duzun",
+      "title": "Mugitu jokoaren instalazioa"
     },
-    "cloud_save_unsupported": "Onartu gabe",
-    "disabled": "Desgaituta",
-    "dlc": {
-        "installDlcs": "Instalatu DLC guztiak"
+    "no": "EZ",
+    "repair": {
+      "message": "Joko hau konpontzen saiatu nahi duzu? Denbora asko eraman dezake.",
+      "title": "Egiaztatu eta konpondu"
     },
-    "enabled": "Gaituta",
-    "game": {
-        "downloadSize": "Deskarga-tamaina",
-        "firstPlayed": "Lehen aldiz jokatua",
-        "getting-download-size": "Geting download size",
-        "getting-install-size": "Geting install size",
-        "installSize": "Instalazioaren tamaina",
-        "language": "Hizkuntza",
-        "lastPlayed": "Azken jokaldia",
-        "neverPlayed": "Inoiz ez",
-        "platform": "Instalatzeko plataformaren bertsioa hautatu",
-        "requirements": "Sistemaren betekizunak",
-        "totalPlayed": "Denbora jokatua",
-        "dlcs": "DLCak",
-        "builds": {
-            "version": "Bertsioa",
-            "buildsSelector": "Hautatu jokoaren bertsioa",
-            "toggle": "Mantendu jokoa bertsio zehatz batean"
-        },
-        "branch": {
-            "disabled": "Desgaituta",
-            "select": "Hautatu beta kanala",
-            "setPrivateBranchPassword": "Ezarri kanal pribatuaren pasahitza",
-            "password": "Ezarri kanal pribatuaren pasahitza"
-        },
-        "modify": "Aldatu Instalazioa",
-        "changelogFor": "{{gameTitle}}-(r)en aldaketak",
-        "install_info": "",
-        "extra_info": "",
-        "achievements": ""
+    "runexe": {
+      "title": "Hautatu exekutatzeko EXEa"
     },
-    "gamecard": {
-        "moving": "Mugitzen",
-        "repairing": "Konpontzen"
-    },
-    "generic": {
-        "error": "Errore ezezaguna",
-        "noDescription": "Ez dago deskribapenik eskuragarri"
-    },
-    "hours": "Hours",
-    "how-long-to-beat": {
-        "completionist": "Completionist",
-        "main-plus-extras": "Main + Extras",
-        "main-story": "Main Story"
-    },
-    "howLongToBeat": "How Long To Beat",
-    "info": {
-        "canRunOffline": "Linean egon behar da",
-        "installedPlatform": "Instalatutako plataforma",
-        "path": "Instalazio-ibilbidea",
-        "size": "Tamaina",
-        "syncsaves": "Sinkronizatu gordetakoak",
-        "version": "Bertsioa",
-        "apple-gaming-wiki": "AppleGamingWiki balorazioa",
-        "clickToOpen": "Egin klik irekitzeko",
-        "game-scores": "Joko puntuazioak",
-        "installedInfo": "Instalatutako informazioa",
-        "protondb-compatibility-info": "Protoien bateragarritasun maila",
-        "steamdeck-compatibility-info": "SteamDeck bateragarritasuna",
-        "third-party-app": ""
-    },
-    "install": {
-        "disk-space-left": "Espazio erabilgarria",
-        "not-enough-disk-space": "Ez nahikoa leku diskoan",
-        "path": "Aukeratu instalazio-ibilbidea",
-        "path-not-writtable": "Ohartarazpena: sarbide-ibilbidea ezin da idatzi.",
-        "space-after-install": "Instalazioaren ondoren",
-        "wineprefix": "WinePrefix",
-        "wineversion": "Ardoaren bertsioa",
-        "anticheat-warning": {
-            "message": "Anticheat-a hautsita edo ukatu egiten da. Jokoak ez du funtzionatuko. Instalatu nahi duzu hala ere?",
-            "cancel": "Ez",
-            "install": "Bai (ulertzen dut ez duela funtzionatuko)",
-            "title": "Antiiruzurra hautsita/ukatua",
-            "multiplayer_message": "Anticheat-a hautsita edo ukatu egiten da. Jokoak ez du funtzionatuko. Instalatu nahi duzu hala ere?",
-            "disabled_installation": "",
-            "install_anyway": "",
-            "ok": ""
-        },
-        "flatpak-path-not-writtable": ""
-    },
-    "label": {
-        "game": {
-            "third-party-game": "Third-Party Game NOT Supported",
-            "not-installable-game": "Jokoa EZ DA Instalagarria"
-        },
-        "playing": {
-            "start": "Jokatu orain",
-            "stop": "Ugalketa (Detener)",
-            "start_with_logs": ""
-        },
-        "saves": {
-            "syncing": "Zaintza-zaindegien sinkronizazioa"
-        },
-        "launching": "Abian jartzea",
-        "ubisoft": "Ubisoft Connect instalatzen",
-        "steam": {
-            "pleaseWait": "Please wait..."
-        },
-        "winetricks": "",
-        "redist": ""
-    },
-    "launch": {
-        "options": "Jaurtiketa-aukerak...",
-        "default": ""
-    },
-    "not_logged_in": {
-        "epic": "You are not logged in with an Epic account in Heroic. Don't use the store page to login, click the following button instead:",
-        "gog": "You are not logged in with a GOG account in Heroic. Don't use the store page to login, click the following button instead:",
-        "login": "Log in",
-        "title": "You are NOT logged in",
-        "amazon": "You are not logged in with an Epic account in Heroic. Don't use the store page to login, click the following button instead:",
-        "zoom": "You are not logged in with a GOG account in Heroic. Don't use the store page to login, click the following button instead:"
-    },
-    "report_problem": "Joko hau gauzatzean arazo baten berri ematea",
-    "sdl": {
-        "title": "Instalatzeko osagaiak hautatzea"
-    },
-    "setting": {
-        "winecrossoverbottle": "CrossOver botila",
-        "warn-use-shared-wine-config": "",
-        "show-wine-settings": "",
-        "use-shared-wine-config": ""
+    "select": {
+      "button": "Select",
+      "image": ""
     },
     "sideload": {
-        "field": {
-            "title": "Title"
-        },
-        "info": {
-            "exe": "Select Executable",
-            "image": "App Image",
-            "title": "Game/App Title",
-            "broser": "ArakatzailearenURLa",
-            "useragent": "",
-            "fullscreen": ""
-        },
-        "placeholder": {
-            "image": "Paste an Image URL here",
-            "title": "Add a title to your Game/App",
-            "url": "Itsatsi jokoaren URLa hemen",
-            "useragent": ""
-        },
-        "import-hint": {
-            "content": "",
-            "title": ""
-        }
+      "exe": "Select Executable"
     },
-    "specs": {
-        "minimum": "Gutxienekoa",
-        "recommended": "Gomendatua"
+    "stopInstall": {
+      "keepInstalling": "Instalatzen jarraitu",
+      "message": "Fitxategiak deskargatuta MANTENDU nahi dituzu?",
+      "title": "Instalazioa gelditu"
     },
-    "status": {
-        "clickToUpdate": "Egin klik eguneratu ahal izateko",
-        "gameNotAvailable": "Game not available",
-        "hasUpdates": "Bertsio berria!",
-        "installed": "Instalatuta",
-        "installing": "Instalatu",
-        "moving": "Instalazio mugikorra, itxaron",
-        "notinstalled": "Joko hau ez instalatuta",
-        "notSupported": "Not supported",
-        "notSupportedGame": "Not Supported",
-        "processing": "Artxiboak prozesatzen, mesedez itxaron",
-        "queued": "Queued",
-        "reparing": "Jokoaren konponketa, mesedez",
-        "this-game-uses-third-party": "This game uses third party launcher and it is not supported yet",
-        "totalDownloaded": "Deskargatutakoa, guztira",
-        "uninstalling": "Uninstalling",
-        "updating": "Jokoa eguneratzea",
-        "playing": "Jolasean",
-        "moving-files": "'{{file}}' fitxategia mugitzen: {{percent}} ",
-        "syncingSaves": "Gordeak sinkronizatzea",
-        "launching": "Abian jartzea",
-        "ubisoft": "Ubisoft instalatzen",
-        "downloading": "Downloading",
-        "extracting": "Erauzketa",
-        "gog-goodie": "Joko hau ez dirudi instalagarria denik. Egiaztatu deskarga daitekeen edukia https://gog.com/account helbidean",
-        "goodie": "Ez da instalagarria",
-        "redist": "",
-        "winetricks": "",
-        "importing": ""
+    "uninstall": {
+      "checkbox": "Kendu aurrizkia: {{prefix}}{{newLine}}Oharra: Hau ezin da desegin eta babeskopiarik ez duten gordetze fitxategiak kenduko ditu ere.",
+      "checkbox_prefix": "Aurrizkia",
+      "message": "Joko hau desinstatu nahi duzu?",
+      "settingcheckbox": "Erase settings and remove log{{newLine}}Note: This can't be undone. Any modified settings will be forgotten and log will be deleted.",
+      "title": "Desinslalatu",
+      "prefix_warning": "Joko honen Wine aurrizkia lehenetsitako aurrizkia da. Benetan ezabatu nahi baduzu, eskuz egin behar duzu.",
+      "dlc": "DLC hau desinstalatu nahi duzu?",
+      "cannotUninstallEpic": "Epic games ezin da desinstalatu beste Epic joku bat instalatzen ari den bitartean.",
+      "gameIsRunning": ""
     },
-    "submenu": {
-        "addShortcut": "Sarbide zuzena gehitu",
-        "addToSteam": "Gehitu Steam-i",
-        "change": "Instalazio-ibilbidea aldatu",
-        "disableEosOverlay": "OS-en gainjartzea desgaitzea",
-        "enableEosOverlay": "OS-en gainjartzea gaitzea",
-        "move": "Mugimendu jokoa",
-        "protondb": "Bateragarritasuna egiaztatu",
-        "removeFromSteam": "Steam-en ezabatzea",
-        "removeShortcut": "Sarbide zuzenak kendu",
-        "settings": "Konfigurazioa",
-        "store": "Dendaren orrialdea",
-        "verify": "Egiaztatzea eta konpontzea",
-        "extraInfo": "Informazio gehigarria",
-        "logs": "Erregistroak",
-        "categories": ""
+    "update": {
+      "message": "Joko honek eguneraketa bat du, orain eguneratu?",
+      "title": "Jokoak eguneraketa behar du"
     },
-    "help": {
-        "cloud_save_unsupported": "Joko honek ez du onartzen hodeian gordetzea. Informazio hau jokoen garatzaileek ematen dute. Zenbait jokok hodeian gordetzeko sistema propioa ezartzen dute",
-        "content": {
-            "gamePage": "Erakutsi jokoaren xehetasun eta ekintza guztiak. Erabili 3 puntuko menua aukera gehiago ikusteko."
-        },
-        "title": {
-            "gamePage": "Jokoaren orria"
-        }
+    "wineprefix": "Hautatu WinePrefix karpeta",
+    "yes": "BAI",
+    "close": "Itxi",
+    "warning": {
+      "title": "Warning"
     },
+    "ok": "Adoz",
+    "offline_warning": {
+      "message": "",
+      "playAnyway": "",
+      "title": ""
+    },
+    "selectLaunchOption": {
+      "title": "",
+      "body": ""
+    },
+    "sync": {
+      "force_download_warning": "",
+      "force_upload_warning": ""
+    }
+  },
+  "button": {
+    "add_to_favourites": "Gehitu gogokoetara",
+    "cancel": "Gelditu/Utzi",
+    "continue": "Jarraitu deskarga",
+    "finish": "Finish",
+    "force_update": "Eguneratu eguneraketarik badago",
+    "force-innstall": "Force Install",
+    "hide_game": "Ezkutatu jokoa",
+    "import": "Inportatu jokoa",
+    "install": "Instalatu",
+    "no-path-selected": "No path selected",
     "queue": {
-        "label": {
-            "canceled": "Canceled",
-            "remove": "Remove from Downloads",
-            "resume": "",
-            "pause": ""
-        }
+      "remove": "Remove from Queue"
     },
-    "third-party-managed": {
-        "header": "",
-        "notice2": "",
-        "notice1": ""
+    "remove_from_favourites": "Kendu gogokoenetik",
+    "remove_from_recent": "Remove From Recent",
+    "run-exe-first": "Run Installer First",
+    "running-setup": "Running Setup",
+    "sideload": {
+      "edit": "Edit App/Game"
     },
-    "modifyInstall": {
-        "redMod": {
-            "collapsible": "",
-            "enable": ""
-        },
-        "nodlcs": "",
-        "dlcsCollapsible": "",
-        "versionCollapsable": ""
+    "unhide_game": "Erakutsi jokoa",
+    "uninstall": "Desinslalatu",
+    "update": "Eguneratu",
+    "details": "Xehetasunak",
+    "changelog": "Aldaketak erakutsi",
+    "browse_wine_prefix": "",
+    "play": "",
+    "browse_files": ""
+  },
+  "cloud_save_unsupported": "Onartu gabe",
+  "disabled": "Desgaituta",
+  "dlc": {
+    "installDlcs": "Instalatu DLC guztiak"
+  },
+  "enabled": "Gaituta",
+  "game": {
+    "downloadSize": "Deskarga-tamaina",
+    "firstPlayed": "Lehen aldiz jokatua",
+    "getting-download-size": "Geting download size",
+    "getting-install-size": "Geting install size",
+    "installSize": "Instalazioaren tamaina",
+    "language": "Hizkuntza",
+    "lastPlayed": "Azken jokaldia",
+    "neverPlayed": "Inoiz ez",
+    "platform": "Instalatzeko plataformaren bertsioa hautatu",
+    "requirements": "Sistemaren betekizunak",
+    "totalPlayed": "Denbora jokatua",
+    "dlcs": "DLCak",
+    "builds": {
+      "version": "Bertsioa",
+      "buildsSelector": "Hautatu jokoaren bertsioa",
+      "toggle": "Mantendu jokoa bertsio zehatz batean"
     },
-    "open-saves-folder": "",
-    "Open": "",
-    "wikiLink": ""
+    "branch": {
+      "disabled": "Desgaituta",
+      "select": "Hautatu beta kanala",
+      "setPrivateBranchPassword": "Ezarri kanal pribatuaren pasahitza",
+      "password": "Ezarri kanal pribatuaren pasahitza"
+    },
+    "modify": "Aldatu Instalazioa",
+    "changelogFor": "{{gameTitle}}-(r)en aldaketak",
+    "install_info": "",
+    "extra_info": "",
+    "achievements": ""
+  },
+  "gamecard": {
+    "moving": "Mugitzen",
+    "repairing": "Konpontzen"
+  },
+  "generic": {
+    "error": "Errore ezezaguna",
+    "noDescription": "Ez dago deskribapenik eskuragarri"
+  },
+  "hours": "Hours",
+  "how-long-to-beat": {
+    "completionist": "Completionist",
+    "main-plus-extras": "Main + Extras",
+    "main-story": "Main Story"
+  },
+  "howLongToBeat": "How Long To Beat",
+  "info": {
+    "canRunOffline": "Linean egon behar da",
+    "installedPlatform": "Instalatutako plataforma",
+    "path": "Instalazio-ibilbidea",
+    "size": "Tamaina",
+    "syncsaves": "Sinkronizatu gordetakoak",
+    "version": "Bertsioa",
+    "apple-gaming-wiki": "AppleGamingWiki balorazioa",
+    "clickToOpen": "Egin klik irekitzeko",
+    "game-scores": "Joko puntuazioak",
+    "installedInfo": "Instalatutako informazioa",
+    "protondb-compatibility-info": "Protoien bateragarritasun maila",
+    "steamdeck-compatibility-info": "SteamDeck bateragarritasuna",
+    "third-party-app": ""
+  },
+  "install": {
+    "disk-space-left": "Espazio erabilgarria",
+    "not-enough-disk-space": "Ez nahikoa leku diskoan",
+    "path": "Aukeratu instalazio-ibilbidea",
+    "path-not-writtable": "Ohartarazpena: sarbide-ibilbidea ezin da idatzi.",
+    "space-after-install": "Instalazioaren ondoren",
+    "wineprefix": "WinePrefix",
+    "wineversion": "Ardoaren bertsioa",
+    "anticheat-warning": {
+      "message": "Anticheat-a hautsita edo ukatu egiten da. Jokoak ez du funtzionatuko. Instalatu nahi duzu hala ere?",
+      "cancel": "Ez",
+      "install": "Bai (ulertzen dut ez duela funtzionatuko)",
+      "title": "Antiiruzurra hautsita/ukatua",
+      "multiplayer_message": "Anticheat-a hautsita edo ukatu egiten da. Jokoak ez du funtzionatuko. Instalatu nahi duzu hala ere?",
+      "disabled_installation": "",
+      "install_anyway": "",
+      "ok": ""
+    }
+  },
+  "label": {
+    "game": {
+      "third-party-game": "Third-Party Game NOT Supported",
+      "not-installable-game": "Jokoa EZ DA Instalagarria"
+    },
+    "playing": {
+      "start": "Jokatu orain",
+      "stop": "Ugalketa (Detener)",
+      "start_with_logs": ""
+    },
+    "saves": {
+      "syncing": "Zaintza-zaindegien sinkronizazioa"
+    },
+    "launching": "Abian jartzea",
+    "ubisoft": "Ubisoft Connect instalatzen",
+    "steam": {
+      "pleaseWait": "Please wait..."
+    },
+    "winetricks": "",
+    "redist": ""
+  },
+  "launch": {
+    "options": "Jaurtiketa-aukerak...",
+    "default": ""
+  },
+  "not_logged_in": {
+    "epic": "You are not logged in with an Epic account in Heroic. Don't use the store page to login, click the following button instead:",
+    "gog": "You are not logged in with a GOG account in Heroic. Don't use the store page to login, click the following button instead:",
+    "login": "Log in",
+    "title": "You are NOT logged in",
+    "amazon": "You are not logged in with an Epic account in Heroic. Don't use the store page to login, click the following button instead:",
+    "zoom": "You are not logged in with a GOG account in Heroic. Don't use the store page to login, click the following button instead:"
+  },
+  "report_problem": "Joko hau gauzatzean arazo baten berri ematea",
+  "sdl": {
+    "title": "Instalatzeko osagaiak hautatzea"
+  },
+  "setting": {
+    "winecrossoverbottle": "CrossOver botila",
+    "warn-use-shared-wine-config": "",
+    "show-wine-settings": "",
+    "use-shared-wine-config": ""
+  },
+  "sideload": {
+    "field": {
+      "title": "Title"
+    },
+    "info": {
+      "exe": "Select Executable",
+      "image": "App Image",
+      "title": "Game/App Title",
+      "broser": "ArakatzailearenURLa",
+      "useragent": "",
+      "fullscreen": ""
+    },
+    "placeholder": {
+      "image": "Paste an Image URL here",
+      "title": "Add a title to your Game/App",
+      "url": "Itsatsi jokoaren URLa hemen",
+      "useragent": ""
+    },
+    "import-hint": {
+      "content": "",
+      "title": ""
+    }
+  },
+  "specs": {
+    "minimum": "Gutxienekoa",
+    "recommended": "Gomendatua"
+  },
+  "status": {
+    "clickToUpdate": "Egin klik eguneratu ahal izateko",
+    "gameNotAvailable": "Game not available",
+    "hasUpdates": "Bertsio berria!",
+    "installed": "Instalatuta",
+    "installing": "Instalatu",
+    "moving": "Instalazio mugikorra, itxaron",
+    "notinstalled": "Joko hau ez instalatuta",
+    "notSupported": "Not supported",
+    "notSupportedGame": "Not Supported",
+    "processing": "Artxiboak prozesatzen, mesedez itxaron",
+    "queued": "Queued",
+    "reparing": "Jokoaren konponketa, mesedez",
+    "this-game-uses-third-party": "This game uses third party launcher and it is not supported yet",
+    "totalDownloaded": "Deskargatutakoa, guztira",
+    "uninstalling": "Uninstalling",
+    "updating": "Jokoa eguneratzea",
+    "playing": "Jolasean",
+    "moving-files": "'{{file}}' fitxategia mugitzen: {{percent}} ",
+    "syncingSaves": "Gordeak sinkronizatzea",
+    "launching": "Abian jartzea",
+    "ubisoft": "Ubisoft instalatzen",
+    "downloading": "Downloading",
+    "extracting": "Erauzketa",
+    "gog-goodie": "Joko hau ez dirudi instalagarria denik. Egiaztatu deskarga daitekeen edukia https://gog.com/account helbidean",
+    "goodie": "Ez da instalagarria",
+    "redist": "",
+    "winetricks": "",
+    "importing": ""
+  },
+  "submenu": {
+    "addShortcut": "Sarbide zuzena gehitu",
+    "addToSteam": "Gehitu Steam-i",
+    "change": "Instalazio-ibilbidea aldatu",
+    "disableEosOverlay": "OS-en gainjartzea desgaitzea",
+    "enableEosOverlay": "OS-en gainjartzea gaitzea",
+    "move": "Mugimendu jokoa",
+    "protondb": "Bateragarritasuna egiaztatu",
+    "removeFromSteam": "Steam-en ezabatzea",
+    "removeShortcut": "Sarbide zuzenak kendu",
+    "settings": "Konfigurazioa",
+    "store": "Dendaren orrialdea",
+    "verify": "Egiaztatzea eta konpontzea",
+    "extraInfo": "Informazio gehigarria",
+    "logs": "Erregistroak",
+    "categories": ""
+  },
+  "help": {
+    "cloud_save_unsupported": "Joko honek ez du onartzen hodeian gordetzea. Informazio hau jokoen garatzaileek ematen dute. Zenbait jokok hodeian gordetzeko sistema propioa ezartzen dute",
+    "content": {
+      "gamePage": "Erakutsi jokoaren xehetasun eta ekintza guztiak. Erabili 3 puntuko menua aukera gehiago ikusteko."
+    },
+    "title": {
+      "gamePage": "Jokoaren orria"
+    }
+  },
+  "queue": {
+    "label": {
+      "canceled": "Canceled",
+      "remove": "Remove from Downloads",
+      "resume": "",
+      "pause": ""
+    }
+  },
+  "third-party-managed": {
+    "header": "",
+    "notice2": "",
+    "notice1": ""
+  },
+  "modifyInstall": {
+    "redMod": {
+      "collapsible": "",
+      "enable": ""
+    },
+    "nodlcs": "",
+    "dlcsCollapsible": "",
+    "versionCollapsable": ""
+  },
+  "open-saves-folder": "",
+  "Open": "",
+  "wikiLink": ""
 }
