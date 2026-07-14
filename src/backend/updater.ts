@@ -49,9 +49,7 @@ async function showAutoupdateDialog() {
     autoUpdater.downloadUpdate()
   }
   if (response === 2) {
-    shell.openExternal(
-      'https://github.com/anomalyco/relic/releases'
-    )
+    shell.openExternal('https://github.com/anomalyco/relic/releases')
     showAutoupdateDialog()
   }
 }

@@ -510,7 +510,9 @@ export function createNecessaryFolders() {
     darwin: [...defaultFolders, toolsPath]
   }
 
-  necessaryFoldersByPlatform[process.platform as keyof typeof necessaryFoldersByPlatform].forEach((folder: string) => {
+  necessaryFoldersByPlatform[
+    process.platform as keyof typeof necessaryFoldersByPlatform
+  ].forEach((folder: string) => {
     if (!existsSync(folder)) {
       mkdirSync(folder)
     }
@@ -808,10 +810,7 @@ const getLatestReleases = async (): Promise<Release[]> => {
     if (newReleases.length) {
       notify({
         title: t('Update Available!'),
-        body: t(
-          'notify.new-relic-version',
-          'A new Relic version was released!'
-        )
+        body: t('notify.new-relic-version', 'A new Relic version was released!')
       })
     }
 

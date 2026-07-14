@@ -229,7 +229,7 @@ export default function DownloadDialog({
             i18n={i18n}
           >
             This game uses anticheat software that is not compatible with your
-            operating system             or the support was not enabled by the game
+            operating system or the support was not enabled by the game
             developers. This means that the multiplayer features will not work,
             and there is nothing you (or the Relic team) can do about it.
             <br />

@@ -30,12 +30,7 @@ export const configPath = join(appFolder, 'config.json')
 export const gamesConfigPath = join(appFolder, 'GamesConfig')
 export const relicIconFolder = join(appFolder, 'icons')
 export const relicInstallPath = join(userHome, 'Games', 'Relic')
-export const defaultWinePrefixDir = join(
-  userHome,
-  'Games',
-  'Relic',
-  'Prefixes'
-)
+export const defaultWinePrefixDir = join(userHome, 'Games', 'Relic', 'Prefixes')
 export const sharedWinePrefix = join(defaultWinePrefixDir, 'shared')
 export const defaultWinePrefix = join(defaultWinePrefixDir, 'default')
 export const fixesPath = join(appFolder, 'fixes')

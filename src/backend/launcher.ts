@@ -1340,9 +1340,9 @@ function setupWineEnvVars(gameSettings: GameSettings, gameId = '0') {
     ret.ROSETTA_ADVERTISE_AVX = '1'
   }
   // Workaround for Steam Input virtual gamepad not working for games launched through HGL from Steam
-// using deprecated WineGE/ProtonGE releases (<= 8.x) following SDL behavior change on version >= 2.30
-// (included with flatpak Freedesktop runtime 24.08 or newer)
-// https://github.com/anomalyco/relic/issues/4708
+  // using deprecated WineGE/ProtonGE releases (<= 8.x) following SDL behavior change on version >= 2.30
+  // (included with flatpak Freedesktop runtime 24.08 or newer)
+  // https://github.com/anomalyco/relic/issues/4708
   // https://github.com/libsdl-org/SDL/issues/14410
   // https://gitlab.com/freedesktop-sdk/freedesktop-sdk/-/issues/1818
   if (

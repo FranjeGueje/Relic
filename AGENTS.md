@@ -14,7 +14,7 @@ Steam es el launcher.
 
 Toda la experiencia de juego ocurre dentro de Steam.
 
-------------------------------------------------------------
+---
 
 # Filosofía
 
@@ -31,7 +31,7 @@ Cualquier funcionalidad que no contribuya directamente a estas tareas debe elimi
 
 Siempre preferir eliminar código antes que añadir complejidad.
 
-------------------------------------------------------------
+---
 
 # Alcance
 
@@ -52,7 +52,7 @@ Relic debe permitir:
 
 Relic NO debe lanzar juegos.
 
-------------------------------------------------------------
+---
 
 # Flujo de instalación
 
@@ -86,7 +86,7 @@ Fin.
 
 Relic nunca ejecuta el juego.
 
-------------------------------------------------------------
+---
 
 # Integración con Steam
 
@@ -104,7 +104,7 @@ Por ejemplo:
 
 Relic nunca modifica directamente la configuración interna de Steam.
 
-------------------------------------------------------------
+---
 
 # Gestión de Proton y prefijos
 
@@ -131,7 +131,7 @@ Toda esa lógica pertenece exclusivamente al script.
 
 Nunca implementar esa lógica dentro de Relic.
 
-------------------------------------------------------------
+---
 
 # Funcionalidades que NO deben existir
 
@@ -159,7 +159,7 @@ No implementar ni mantener soporte para:
 
 Si alguna parte heredada de Heroic depende de estas funciones, debe simplificarse o eliminarse.
 
-------------------------------------------------------------
+---
 
 # Interfaz
 
@@ -187,7 +187,7 @@ Eliminar cualquier opción relacionada con Wine o Proton.
 
 Reducir al mínimo el número de pantallas.
 
-------------------------------------------------------------
+---
 
 # Arquitectura
 
@@ -222,7 +222,7 @@ Steam
 - Compatibilidad
 - Shader Cache
 
-------------------------------------------------------------
+---
 
 # Código
 
@@ -245,7 +245,7 @@ No duplicar lógica.
 
 No implementar funciones "por si acaso".
 
-------------------------------------------------------------
+---
 
 # Fork
 
@@ -259,7 +259,7 @@ Siempre que sea posible:
 - simplificar arquitectura
 - reducir acoplamiento
 
-------------------------------------------------------------
+---
 
 # Principios de desarrollo
 
@@ -276,7 +276,7 @@ Menos opciones.
 Menos mantenimiento.
 Más estabilidad.
 
-------------------------------------------------------------
+---
 
 # Objetivo final
 

@@ -38,10 +38,7 @@ export class ZoomUser {
 
   public static async getUserDetails() {
     if (!isOnline()) {
-      logError(
-        'Unable to get login information, Relic offline',
-        LogPrefix.Zoom
-      )
+      logError('Unable to get login information, Relic offline', LogPrefix.Zoom)
       return
     }
     logInfo('Checking if login is valid', LogPrefix.Zoom)

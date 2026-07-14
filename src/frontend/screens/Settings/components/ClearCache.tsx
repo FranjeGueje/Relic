@@ -57,7 +57,7 @@ const ClearCache = () => {
           <li>{t('settings.advanced.clearCache.help8', 'Installed games')}</li>
           <li>{t('settings.advanced.clearCache.help9', 'Games settings')}</li>
           <li>
-            {t('settings.advanced.clearCache.help10',               'Relic configuration')}
+            {t('settings.advanced.clearCache.help10', 'Relic configuration')}
           </li>
         </ul>
       </InfoBox>

@@ -10,10 +10,7 @@ const PreferedLanguage = () => {
 
   const languageInfo = (
     <InfoBox text="infobox.help">
-      {t(
-        'help.game_language.fallback',
-        "Leave blank to use Relic's language."
-      )}
+      {t('help.game_language.fallback', "Leave blank to use Relic's language.")}
       <br />
       {t(
         'help.game_language.in_game_config',
