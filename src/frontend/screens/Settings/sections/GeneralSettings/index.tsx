@@ -3,12 +3,16 @@ import LanguageSelector from 'frontend/components/UI/LanguageSelector'
 import { ThemeSelector } from 'frontend/components/UI/ThemeSelector'
 import {
   AutoUpdateGames,
+  ClearCache,
   DefaultInstallPath,
   DefaultSteamPath,
   LibraryTopSection,
   MaxRecentGames,
   MaxWorkers,
-  Shortcuts
+  ResetRelic,
+  Shortcuts,
+  SteamGridDbApiKey,
+  VerboseLogs
 } from '../../components'
 
 export default function GeneralSettings() {
@@ -28,13 +32,21 @@ export default function GeneralSettings() {
 
       <AutoUpdateGames />
 
+      <VerboseLogs />
+
       <Shortcuts />
+
+      <SteamGridDbApiKey />
 
       <LibraryTopSection />
 
       <MaxRecentGames />
 
       <MaxWorkers />
+
+      <ClearCache />
+
+      <ResetRelic />
     </div>
   )
 }

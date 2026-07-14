@@ -70,6 +70,15 @@ export default function SidebarLinks() {
         dataTour="sidebar-library"
       />
 
+      {loggedIn && (
+        <SidebarItem
+          url="/login"
+          icon={faUserAlt}
+          label={t('userselector.manageaccounts', 'Manage Accounts')}
+          dataTour="sidebar-manage-accounts"
+        />
+      )}
+
       <div className="divider" />
       <div className="SidebarItemWithSubmenu">
         <SidebarItem
@@ -127,17 +136,16 @@ export default function SidebarLinks() {
         )}
       </div>
       <SidebarItem
-        url="/console"
-        icon={faTv}
-        label={t('sidebar.console', 'Console Mode')}
-        dataTour="sidebar-console"
-      />
-
-      <SidebarItem
         url="/download-manager"
         icon={faBarsProgress}
         label={t('download-manager.link', 'Downloads')}
         dataTour="sidebar-downloads"
+      />
+      <SidebarItem
+        url="/console"
+        icon={faTv}
+        label={t('sidebar.console', 'Console Mode')}
+        dataTour="sidebar-console"
       />
 
       {!isWin && (
@@ -146,15 +154,6 @@ export default function SidebarLinks() {
           icon={faWineGlass}
           label={t('wine.manager.link', 'Wine Manager')}
           dataTour="sidebar-wine"
-        />
-      )}
-
-      {loggedIn && (
-        <SidebarItem
-          url="/login"
-          icon={faUserAlt}
-          label={t('userselector.manageaccounts', 'Manage Accounts')}
-          dataTour="sidebar-manage-accounts"
         />
       )}
 

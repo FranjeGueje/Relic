@@ -75,3 +75,88 @@
 - Clave `osNameFlatpak` eliminada de traducciones (13 archivos)
 - Badge Flathub, sección Flatpak, y referencia eliminados de README.md
 - Entradas Flatpak eliminadas de CHANGELOG.md, .prettierignore, .gitignore, tsconfig.eslint.json, ROADMAP_REMOVE.md
+
+## Start Tour
+- Componentes `Tour.tsx`, `TourButton.tsx`, `Tour.scss`, `TourButton.scss` eliminados
+- `TourContext.tsx` (estado + localStorage) eliminado
+- `LibraryTour.tsx` y `SidebarTour.tsx` eliminados
+- `TourProvider` eliminado de `App.tsx`
+- Botones `TourButton` eliminados de `ActionIcons` y `RelicVersion`
+- Imports `faTags`/`faStore`/`faUniversalAccess` eliminados
+- Claves `tour.*` eliminadas de 47 archivos de traducción
+
+## Accesibilidad
+- Directorio `screens/Accessibility/` eliminado (index.tsx + index.css)
+- Ruta `/accessibility` y sidebar link eliminados
+- Estado `zoomPercent`, `setZoomPercent`, `primaryFontFamily`, `secondaryFontFamily`, `setPrimaryFontFamily`, `setSecondaryFontFamily` eliminados de `GlobalState.tsx`, `ContextProvider.tsx`, `types.ts`
+- Reglas CSS `.Accessibility` eliminadas de `Settings/index.css`
+- Claves `accessibility.*` y `help.analytics` eliminadas de 47 traducciones
+
+## Deals (Discounts) y Stores
+- Directorios `screens/Discounts/` y `backend/discounts/` eliminados
+- Archivo `common/types/discounts.ts` eliminado
+- IPC `getGogDiscounts`, `getGmgDiscounts`, `CatalogLocaleSettings`, `CatalogProduct` eliminados
+- Preload helpers `getGogDiscounts`, `getGmgDiscounts` eliminados
+- Sidebar: sección Stores completa (submenú Epic/GOG/Amazon/Zoom) y link Deals eliminados
+- Iconos `faStore`, `faTags` eliminados
+- Rutas `store/:store`, `store-page`, `discounts` eliminadas de `App.tsx`
+- WebView: URLs de store, `validStoredUrl`, navegación guardada, adtraction eliminados
+- Botón "View in Store" eliminado de `GameSubMenu`
+- Claves `discounts.*`, `stores`, `store`, `gog-store`, `amazon-luna`, `zoom-store`, `adtraction-locked` eliminadas de 47 traducciones
+
+## Analytics (Plausible)
+- `AnalyticsDialog.tsx` (modal de inicio) eliminado
+- `AnalyticsOptIn.tsx` (toggle en settings) eliminado
+- `backend/utils/plausible.ts` (servicio Plausible) eliminado
+- `AnalyticsDialog` eliminado de `App.tsx`
+- `startPlausible` eliminado de `backend/main.ts`
+- Estado `analyticsOptIn` eliminado de `common/types.ts`, `backend/config.ts`
+- Claves `analyticsModal.*`, `help.analytics` eliminadas de 47 traducciones
+
+## Settings > General (varios toggles)
+- `WinePrefixesBasePath.tsx` eliminado (setting `defaultWinePrefixDir` conservada)
+- `EgsSettings.tsx` + `egsSync` IPC + `toggleGamesSync` + `egsLinkedPath` eliminados por completo
+- `CheckUpdatesOnStartup.tsx` eliminado (setting `checkForUpdatesOnStartup` conservada)
+- `MinimizeOnGameLaunch.tsx` eliminado (setting `minimizeOnLaunch` conservada)
+- `UseDarkTrayIcon.tsx` eliminado (setting `darkTrayIcon` conservada)
+- `UseFramelessWindow.tsx` eliminado (setting `framelessWindow` conservada)
+- `PlaytimeSync.tsx` eliminado (setting `disablePlaytimeSync` conservada)
+- `Shortcuts.tsx`: toggles `addDesktopShortcuts` y `addStartMenuShortcuts` eliminados (settings conservadas)
+- Claves de traducción asociadas eliminadas de 47 archivos
+
+## Custom Themes Path y Custom CSS
+- `CustomCSS.tsx` (textarea CSS) eliminado
+- `ThemeSelector`: path picker, wiki link, warning, `hasHelp`, `getCustomThemes`, estado `themesPath` eliminados
+- `index.tsx`: `window.setCustomCSS`, `getCustomCSS`, carga de CSS de temas personalizados en `setTheme` eliminados
+- Handlers `getCustomThemes`, `getThemeCSS`, `getCustomCSS`, `openCustomThemesWiki` eliminados de backend + IPC + preload
+- Tipo `customCSS`, `customThemesPath`, `setCustomCSS` eliminados
+- `<style id="customCSS">` eliminado de `index.html`
+- Estilos `.customCSSArea`, `.customCSSWarning` eliminados
+- `customThemesWikiLink` eliminado de `urls.ts`
+- Claves de traducción eliminadas de 47 archivos
+
+## Hide Changelogs on Startup
+- `HideChangelogOnStartup.tsx` eliminado
+- Estado `hideChangelogsOnStartup`, `setHideChangelogsOnStartup` eliminados de types/state/context/config
+- `RelicVersion` simplificado (siempre muestra changelog si cambió versión)
+- Clave `setting.hideChangelogsOnStartup` eliminada de 47 traducciones
+
+## Start in Console Mode (siempre activo)
+- `StartInConsoleMode.tsx` eliminado
+- Campo `startInConsoleMode` eliminado de types/config
+- `backend/main.ts`: redirección siempre a `/console`
+- Clave `setting.start_in_console_mode` eliminada de 47 traducciones
+
+## Tray Icon (noTrayIcon y exitToTray)
+- `TraySettings.tsx` eliminado (contenía toggles noTrayIcon, exitToTray, startInTray)
+- `tray_icon/tray_icon.ts`: check `noTrayIcon`, lógica `exitToTray`, listener `changeTrayColor` eliminados
+- `backend/main.ts`: bloque `exitToTray && !noTrayIcon` eliminado; `startInTray` simplificado
+- `backend/launcher.ts`: `noTrayIcon` eliminado de condición `minimizeOnLaunch`
+- Tipos `exitToTray`, `noTrayIcon`, `changeTrayColor` eliminados
+- Claves `setting.no-tray-icon`, `setting.exit-to-tray` eliminadas de 47 traducciones
+
+## Disable Controller (siempre activo)
+- `DisableController.tsx` eliminado
+- `gamepad.ts`: variable `controllerIsDisabled`, check, y `toggleControllerIsDisabled` eliminados
+- Campo `disableController` eliminado de types
+- Clave `setting.disable_controller` eliminada de 47 traducciones
