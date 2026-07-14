@@ -570,7 +570,6 @@
       "updating": "Eguneratzen..."
     },
     "esync": "Gaitu Esync",
-    "exit-to-tray": "Irten sistemaren erretilura",
     "FsrSharpnessStrenght": "FSR zorroztasunaren indarra",
     "fsync": "Gaitu Fsync",
     "gamemode": "Erabili GameMode (Feral Game Mode instalatu behar da)",
@@ -704,7 +703,6 @@
       "label": ""
     },
     "enable-quick-sync-menu": "",
-    "no-tray-icon": "",
     "analyticsOptIn": "",
     "verboseLogs": {
       "description": ""

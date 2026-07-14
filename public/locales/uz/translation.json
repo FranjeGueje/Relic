@@ -613,7 +613,6 @@
       "updating": "Yangilanmoqda..."
     },
     "esync": "Esync-ni yoqing",
-    "exit-to-tray": "Tizim tepsisiga chiqing",
     "FsrSharpnessStrenght": "FSR aniqlik kuchi",
     "fsync": "Fsync-ni yoqing",
     "prefered_language": "Afzal til (til kodi)",
@@ -746,7 +745,6 @@
       "label": ""
     },
     "enable-quick-sync-menu": "",
-    "no-tray-icon": "",
     "analyticsOptIn": "",
     "verboseLogs": {
       "description": ""

@@ -580,7 +580,6 @@
       "updating": "更新中..."
     },
     "esync": "启用 Esync",
-    "exit-to-tray": "退出到系统托盘",
     "FsrSharpnessStrenght": "FSR 锐化强度",
     "fsync": "启用 Fsync",
     "gamemode": "使用 GameMode（需要已安装 Feral Game Mode）",
@@ -723,7 +722,6 @@
       "wine_selector_warning": "非 GE 版本的 Proton 默认被忽略，在高级全局设置中启用它们",
       "info_label": "忽略了非 GE Proton 版本"
     },
-    "no-tray-icon": "隐藏系统托盘图标（需要重启）",
     "analyticsOptIn": "发送匿名数据帮助 Heroic 开发",
     "show_valve_proton": {
       "confirmation": {

@@ -644,7 +644,6 @@
       "updating": "Updating..."
     },
     "esync": "Enable Esync",
-    "exit-to-tray": "Exit to System Tray",
     "experimental_features": {
       "cometSupport": "Comet support",
       "enableHelp": "Help component",
@@ -726,7 +725,6 @@
     "maxRecentGames": "Played Recently to Show",
     "maxworkers": "Maximum Number of Workers when downloading",
     "msync": "Enable Msync",
-    "no-tray-icon": "Hide System Tray Icon (requires restart)",
     "nvidiaprime": {
       "description": "Force use of NVIDIA Optimus or AMD Dynamic Switchable Graphics dGPU. ONLY use this for OpenGL and Vulkan games."
     },

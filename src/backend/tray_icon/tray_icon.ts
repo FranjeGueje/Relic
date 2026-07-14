@@ -1,8 +1,6 @@
 import { app, BrowserWindow, Menu, nativeImage, Tray } from 'electron'
 import i18next from 'i18next'
-import { addListener } from 'backend/ipc'
 import { RecentGame } from 'common/types'
-import { logInfo, LogPrefix } from 'backend/logger'
 import { handleProtocol } from '../protocol'
 import { getRecentGames, maxRecentGames } from '../recent_games/recent_games'
 import { handleExit, showAboutWindow } from '../utils'
@@ -16,9 +14,6 @@ const iconDark = fixAsarPath(join(publicDir, 'icon-dark.png'))
 const iconLight = fixAsarPath(join(publicDir, 'icon-light.png'))
 
 export const initTrayIcon = async (mainWindow: BrowserWindow) => {
-  const { noTrayIcon } = GlobalConfig.get().getSettings()
-  if (noTrayIcon) return null
-
   // create icon
   const appIcon = new Tray(getIcon(process.platform))
 
@@ -35,25 +30,11 @@ export const initTrayIcon = async (mainWindow: BrowserWindow) => {
 
   // event listeners
   appIcon.on('click', () => {
-    const { exitToTray } = GlobalConfig.get().getSettings()
-
-    if (exitToTray && mainWindow.isVisible()) {
-      mainWindow.hide()
-    } else {
-      mainWindow.show()
-    }
+    mainWindow.show()
   })
 
   backendEvents.on('languageChanged', async () => {
     await loadContextMenu()
-  })
-
-  addListener('changeTrayColor', () => {
-    logInfo('Changing Tray icon Color...', LogPrefix.Backend)
-    setTimeout(async () => {
-      appIcon.setImage(getIcon(process.platform))
-      await loadContextMenu()
-    }, 500)
   })
 
   backendEvents.on('recentGamesChanged', async (recentGames: RecentGame[]) => {

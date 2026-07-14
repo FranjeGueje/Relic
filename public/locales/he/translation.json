@@ -363,7 +363,6 @@
     "dxvkfpslimit": "הגבל קצב פריימים (FPS) (DX9, 10, ו-11)",
     "enableFSRHack": "הפעל FSR hack (גרסת הWine צריכה לתמוך בה)",
     "esync": "הפעל Esync",
-    "exit-to-tray": "סגור תוכנה לתוך System tray",
     "FsrSharpnessStrenght": "עוצמת חידוד FSR",
     "fsync": "הפעל Fsync",
     "ignoreGameUpdates": "התעלם מעדכוני המשחק",
@@ -502,7 +501,6 @@
       "label": ""
     },
     "enable-quick-sync-menu": "",
-    "no-tray-icon": "",
     "analyticsOptIn": "",
     "verboseLogs": {
       "description": ""

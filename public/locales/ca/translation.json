@@ -580,7 +580,6 @@
       "updating": "S'està actualitzant…"
     },
     "esync": "Activa l'Esync",
-    "exit-to-tray": "Surt a la safata del sistema",
     "FsrSharpnessStrenght": "Força de la nitidesa de l'FSR",
     "fsync": "Activa l'Fsync",
     "gamemode": "Utilitza el GameMode (cal que el Feral Game Mode estigui instal·lat)",
@@ -727,7 +726,6 @@
     },
     "analyticsOptIn": "Envia dades anònimes per a ajudar al desenvolupament de l'Heroic",
     "hdr": "Activa l'HDR",
-    "no-tray-icon": "Amaga la icona de la safata del sistema (cal reiniciar)",
     "wineWayland": "Activa el Wine-Wayland (Experimental) (Cal que la versió del Wine hi sigui compatible)",
     "WoW64": "Activa el WoW64 (Experimental)",
     "scripts": "Scripts:",

@@ -570,7 +570,6 @@
       "updating": "Uppdaterar..."
     },
     "esync": "Aktivera Esync",
-    "exit-to-tray": "Minimera till systemfältet",
     "FsrSharpnessStrenght": "FSR skärpningsnivå",
     "fsync": "Aktivera Fsync",
     "gamemode": "Använd GameMode (Feral Game Mode måste vara installerat)",
@@ -717,7 +716,6 @@
     "download-proton-steam": "Ladda ner GE-Proton till Steam katalog",
     "dxfpslimit": "Begränsa FPS i DirectX-spel",
     "hdr": "Aktivera HDR",
-    "no-tray-icon": "Dölj ikonen i systemfältet (kräver omstart)",
     "wineWayland": "Aktivera Wine-Wayland (Experimentellt) (Wine-versionen behöver stödja det)",
     "WoW64": "Aktivera WoW64 (Experimentellt)",
     "scripts": "Skript:",

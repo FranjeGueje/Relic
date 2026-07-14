@@ -579,7 +579,6 @@
       "updating": "Wird aktualisiert …"
     },
     "esync": "Esync aktivieren",
-    "exit-to-tray": "Beim Beenden in die Taskleiste minimieren",
     "FsrSharpnessStrenght": "FSR-Schärfestärke",
     "fsync": "Fsync aktivieren",
     "gamemode": "GameMode verwenden (Feral GameMode muss installiert sein)",
@@ -728,7 +727,6 @@
     "hdr": "HDR aktivieren",
     "wineWayland": "Aktiviere Wine-Wayland (Experimentell) (Die Wineversion muss es unterstützen)",
     "WoW64": "Aktiviere WoW64 (Experimentell)",
-    "no-tray-icon": "Infobereich Logo ausblenden (benötigt neustart)",
     "scripts": "Skripte:",
     "enable-quick-sync-menu": "Menü für Schnellspeicher-Synchronisierung auf der Spielseite aktivieren",
     "disable_gog_presence": "Deaktiviere GOG Präsenz Aktualisierungen",

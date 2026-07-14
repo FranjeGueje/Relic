@@ -578,7 +578,6 @@
       "updating": "Mise à jour en cours..."
     },
     "esync": "Activer Esync",
-    "exit-to-tray": "Minimiser dans la barre des tâches",
     "FsrSharpnessStrenght": "Niveau de netteté pour FSR",
     "fsync": "Activer Fsync",
     "gamemode": "Utiliser GameMode (Feral GameMode doit être installé)",
@@ -726,7 +725,6 @@
       "wine_selector_warning": "Les versions non-GE de Proton sont ignorées par défaut, activez-les dans les paramètres globaux avancés"
     },
     "hdr": "Activer le HDR",
-    "no-tray-icon": "Ne pas afficher d'icône dans la barre des tâches (requiert un redémarrage)",
     "wineWayland": "Activer Wine-Wayland (Expérimental) (La version de Wine doit être compatible)",
     "analyticsOptIn": "Envoyer des données anonymes afin de contribuer au développement d'Heroic",
     "show_valve_proton": {

@@ -570,7 +570,6 @@
       "updating": "Updating..."
     },
     "esync": "Esync വയ്ക്കൂ",
-    "exit-to-tray": "സംവിധാന താലത്തിലേക്ക്(സിസ്റ്റം ട്രേ) ചുരുക്കുക",
     "FsrSharpnessStrenght": "എഫ്എസ്ആര് ഷാര്പ്പ്നെസ്സ് സ്ട്രെങ്ത്",
     "fsync": "Fsync വയ്ക്കൂ",
     "gamemode": "ഗെയിംമോഡ് ഉപയോഗിക്കൂ (ഫെറലിന്റെ ഗെയിംമോഡ് ഇന്സ്റ്റാള് ചെയ്തിരിക്കണം)",
@@ -705,7 +704,6 @@
       "label": ""
     },
     "enable-quick-sync-menu": "",
-    "no-tray-icon": "",
     "analyticsOptIn": "",
     "verboseLogs": {
       "description": ""

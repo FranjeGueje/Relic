@@ -571,7 +571,6 @@
       "updating": "قيد التحديث..."
     },
     "esync": "مكِّن إي.سِنك",
-    "exit-to-tray": "صغّر للوحة النظام عند الإغلاق",
     "FsrSharpnessStrenght": "مقدار حِدة إف.إس.آر",
     "fsync": "مكِّن إف.سِنك",
     "gamemode": "استخدم جيم.مود (يجب أن يكون فِيرَل جيم مود مثبتًا)",
@@ -716,7 +715,6 @@
     "hdr": "",
     "dxfpslimit": "",
     "enable-quick-sync-menu": "",
-    "no-tray-icon": "",
     "analyticsOptIn": "",
     "verboseLogs": {
       "description": ""

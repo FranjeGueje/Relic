@@ -211,20 +211,13 @@ async function initializeWindow(): Promise<BrowserWindow> {
       })
     }
 
-    const { exitToTray, noTrayIcon } = GlobalConfig.get().getSettings()
-
-    if (exitToTray && !noTrayIcon) {
-      logInfo('Exiting to tray instead of quitting', LogPrefix.Backend)
-      return mainWindow.hide()
-    }
-
     handleExit()
   })
 
   detectVCRedist(mainWindow)
 
   const startHash =
-    isCLIConsoleMode || globalConf.startInConsoleMode ? '/console' : undefined
+    '/console'
 
   if (process.env.ELECTRON_RENDERER_URL) {
     const devUrl = startHash
@@ -400,7 +393,7 @@ if (!gotTheLock) {
     const headless =
       isCLINoGui ||
       hideForProtocol ||
-      (settings.startInTray && !settings.noTrayIcon)
+      (settings.startInTray)
     if (!headless) {
       const isWayland = Boolean(process.env.WAYLAND_DISPLAY)
       const showWindow = () => {

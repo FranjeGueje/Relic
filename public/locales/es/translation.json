@@ -579,7 +579,6 @@
       "updating": "Actualizando..."
     },
     "esync": "Activar Esync",
-    "exit-to-tray": "Salir a la bandeja del sistema",
     "FsrSharpnessStrenght": "FSR Fuerza de Nitidez",
     "fsync": "Habilitar Fsync",
     "gamemode": "Usar GameMode (Feral Game Mode debe estar instalado)",
@@ -722,7 +721,6 @@
       "label": "Permitir usar versiones de Proton que no sean GE para ejecutar juegos",
       "wine_selector_warning": "Las versiones de Proton que no sean GE son ignoradas por defecto, puedes activarlas en la Configuracion Avanzada Global"
     },
-    "no-tray-icon": "Ocultar el icono de la bandeja del sistema (requiere reiniciar)",
     "analyticsOptIn": "Enviar datos anónimos para ayudar al desarrollo de Heroic",
     "WoW64": "Activar WoW64 (Experimental)",
     "show_valve_proton": {

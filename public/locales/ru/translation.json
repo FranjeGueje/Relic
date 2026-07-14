@@ -575,7 +575,6 @@
       "updating": "Обновление..."
     },
     "esync": "Включить Esync",
-    "exit-to-tray": "Сворачивать в системный трей",
     "FsrSharpnessStrenght": "Усиление резкости FSR",
     "fsync": "Включить Fsync",
     "gamemode": "Использовать GameMode (Нужен Feral GameMode)",
@@ -720,7 +719,6 @@
     "download-proton-steam": "Загрузите GE-Proton в каталог Steam",
     "dxfpslimit": "Ограничить FPS в играх DirectX",
     "hdr": "Включить HDR",
-    "no-tray-icon": "Скрыть значок в системном трее (требуется перезагрузка)",
     "verboseLogs": {
       "description": "Включить подробные журналы"
     },

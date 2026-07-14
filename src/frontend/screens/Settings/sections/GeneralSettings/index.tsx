@@ -9,9 +9,7 @@ import {
   LibraryTopSection,
   MaxRecentGames,
   MaxWorkers,
-  Shortcuts,
-  StartInConsoleMode,
-  TraySettings
+  Shortcuts
 } from '../../components'
 
 export default function GeneralSettings() {
@@ -30,10 +28,6 @@ export default function GeneralSettings() {
       <DefaultSteamPath />
 
       <AutoUpdateGames />
-
-      <StartInConsoleMode />
-
-      <TraySettings />
 
       <Shortcuts />
 

@@ -577,7 +577,6 @@
       "updating": "Actualizando..."
     },
     "esync": "Activar Esync",
-    "exit-to-tray": "Saír á bandexa do sistema",
     "FsrSharpnessStrenght": "Forza da nitidez de FSR",
     "fsync": "Activar Fsync",
     "gamemode": "Usar GameMode (Feral Game Mode debe estar instalado)",
@@ -713,7 +712,6 @@
       "description": "Usar unha ventá sen bordos (require reinicio)"
     },
     "hdr": "Activar HDR",
-    "no-tray-icon": "Ocultar a icona da bandexa do sistema (require reinicio)",
     "verboseLogs": {
       "description": "Activar rexistros detallados"
     },

@@ -561,7 +561,6 @@
     "customWineProton": "Цустом Вине/Протон Патхс",
     "enableFSRHack": "Омогућите ФСР Хацк (Вине верзија треба да га подржава)",
     "esync": "Омогућите Есинц",
-    "exit-to-tray": "Изађите у системску палету",
     "FsrSharpnessStrenght": "ФСР Снага оштрине",
     "fsync": "Омогући Фсинц",
     "gamemode": "Користите ГамеМоде (Ферал Гаме Моде мора бити инсталиран)",
@@ -639,7 +638,6 @@
       "label": ""
     },
     "enable-quick-sync-menu": "",
-    "no-tray-icon": "",
     "analyticsOptIn": "",
     "verboseLogs": {
       "description": ""

@@ -579,7 +579,6 @@
       "updating": "Frissítés…"
     },
     "esync": "Esync engedélyezése",
-    "exit-to-tray": "Kilépés a rendszertálcára",
     "FsrSharpnessStrenght": "FSR élesség erőssége",
     "fsync": "Fsync engedélyezése",
     "gamemode": "GameMode használata (a Feral Game Mode-nak telepítve kell lennie)",
@@ -722,7 +721,6 @@
       "wine_selector_warning": "A nem GE-Proton verziók alapértelmezetten figyelmen kívül vannak hagyva, engedélyezd őket a Globális speciális beállításokban"
     },
     "analyticsOptIn": "Anonim adatok küldése a Heroic fejlesztésének támogatására",
-    "no-tray-icon": "Rendszertálcaikon elrejtése (újraindítás szükséges)",
     "show_valve_proton": {
       "confirmation": {
         "dont_show": "Ne jelenjenek meg",

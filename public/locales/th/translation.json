@@ -506,7 +506,6 @@
     "autodxvk": "",
     "download-no-https": "",
     "customWineProton": "",
-    "exit-to-tray": "",
     "enable-quick-sync-menu": "",
     "runexe": {
       "title": ""
@@ -515,7 +514,6 @@
     "start-in-tray": "",
     "change-target-exe": "",
     "offlinemode": "",
-    "no-tray-icon": "",
     "analyticsOptIn": "",
     "language": "",
     "FsrSharpnessStrenght": "",

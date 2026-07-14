@@ -569,7 +569,6 @@
       "updating": "Updating..."
     },
     "esync": "Enable Esync",
-    "exit-to-tray": "Výstup do systémovej lišty",
     "FsrSharpnessStrenght": "FSR Sharpness Strength",
     "fsync": "Enable Fsync",
     "gamemode": "Použite GameMode (je potrebné nainštalovať režim Feral Game)",
@@ -712,7 +711,6 @@
     "hdr": "",
     "dxfpslimit": "",
     "enable-quick-sync-menu": "",
-    "no-tray-icon": "",
     "analyticsOptIn": "",
     "verboseLogs": {
       "description": ""

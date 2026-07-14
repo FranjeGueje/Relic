@@ -569,7 +569,6 @@
       "updating": "Se actualizează..."
     },
     "esync": "Activați Esync",
-    "exit-to-tray": "Ieșiți în System Tray",
     "FsrSharpnessStrenght": "Forța de claritate FSR",
     "fsync": "Activați Fsync",
     "gamemode": "Utilizați GameMode (Feral GameMode trebuie instalat)",
@@ -704,7 +703,6 @@
       "label": ""
     },
     "enable-quick-sync-menu": "",
-    "no-tray-icon": "",
     "analyticsOptIn": "",
     "verboseLogs": {
       "description": ""

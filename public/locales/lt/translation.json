@@ -547,7 +547,6 @@
     "msync": "Įjungti „Msync“",
     "disable_controller": "Išjungti/Išgalinti „Heroic“ valdymą naudojant pultelį/valdiklį",
     "enableFSRHack": "Įjungti/Įgalinti „FSR“ nulaužimą („Wine“ versija turi jį palaikyti)",
-    "exit-to-tray": "Išeiti į sistemos užduočių juostą",
     "FsrSharpnessStrenght": "„FSR“ ryškumo stiprumas",
     "start-in-tray": "Pradėti minimizuotai",
     "showMetalOverlay": "Rodyti perdangos statistiką",
@@ -576,7 +575,6 @@
     "hdr": "Įjungti „HDR“",
     "dxfpslimit": "Riboti „DirectX“ žaidimų kadr./sek.",
     "enable-quick-sync-menu": "Įjungti/Įgalinti greitąjį sinchronizuojantį išsaugojimą, jo meniu žaidimo puslapyje",
-    "no-tray-icon": "Slėpti sistemos juostelėje randančią piktogramą (reikalauja paleidimo iš naujo)",
     "analyticsOptIn": "Siųsti ananomiškus duomenis, siekiant padėti „Heroic“ kūrimą",
     "verboseLogs": {
       "description": "Įjungti derinimo veikseną"

@@ -569,7 +569,6 @@
       "updating": "Đang Cập Nhật..."
     },
     "esync": "Bật Esync",
-    "exit-to-tray": "Thoát vào Khay Hệ Thống",
     "FsrSharpnessStrenght": "Độ Sắc Nét Của FSR",
     "fsync": "Bật Fsync",
     "gamemode": "Sử Dụng GameMode (Cần cài đặt Feral Game Mode)",
@@ -696,7 +695,6 @@
       "description": "Sử dụng cửa sổ không khung (yêu cầu khởi động lại)"
     },
     "hdr": "Bật HDR",
-    "no-tray-icon": "Ẩn Biểu Tượng Khay Hệ Thống (yêu cầu khởi động lại)",
     "show_valve_proton": {
       "confirmation": {
         "dont_show": "Đừng hiện chúng",

@@ -569,7 +569,6 @@
       "updating": "Ενημέρωση..."
     },
     "esync": "Ενεργοποίηση Esync",
-    "exit-to-tray": "Έξοδος σε Μπάρα Εργαλειών",
     "FsrSharpnessStrenght": "Βαθμός οξύτητας FSR",
     "fsync": "Ενεργοποίηση Fsync",
     "gamemode": "Χρήση του GameMode (πρέπει να έχει εγκατασταθεί το Feral Game Mode)",
@@ -711,7 +710,6 @@
     "download-proton-steam": "Κατεβάστε το GE-Proton στον φάκελο του Steam",
     "dxfpslimit": "Περιορισμός FPS παιχνιδιών DirectX",
     "hdr": "Ενεργοποίηση HDR",
-    "no-tray-icon": "Απόκρυψη εικονιδίου γραμμής εργασιών (απαιτείται επανεκκίνηση)",
     "scripts": "Scripts:",
     "verboseLogs": {
       "description": "Ενεργοποίηση λεπτομερών αρχείων καταγραφής"

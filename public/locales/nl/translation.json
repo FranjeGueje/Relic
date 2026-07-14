@@ -569,7 +569,6 @@
       "updating": "Bezig met updaten..."
     },
     "esync": "Esync Inschakelen",
-    "exit-to-tray": "Afsluiten naar Systeemvak",
     "FsrSharpnessStrenght": "FSR Scherpte Sterkte",
     "fsync": "Fsync inschakelen",
     "gamemode": "Gebruik GameMode (Feral Game Mode moet geïnstalleerd zijn)",
@@ -704,7 +703,6 @@
       "wine_selector_warning": "Valve versies van Proton worden standaard genegeerd, schakel ze in onder Geavanceerde globale instellingen"
     },
     "hdr": "HDR inschakelen",
-    "no-tray-icon": "Systeemvak Icoontje verbergen (vereist herstart)",
     "scripts": "Scripts:",
     "verboseLogs": {
       "description": "Breedsprakige logboeken inschakelen"

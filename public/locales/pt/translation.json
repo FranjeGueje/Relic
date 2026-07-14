@@ -580,7 +580,6 @@
       "updating": "A atualizar..."
     },
     "esync": "Ativar o Esync",
-    "exit-to-tray": "Sair para o Tabuleiro do Sistema",
     "FsrSharpnessStrenght": "Intensidade de Nitidez do FSR",
     "fsync": "Ativar o Fsync",
     "gamemode": "Usar o GameMode (é necessário ter instalado o Feral Game Mode)",
@@ -730,7 +729,6 @@
     "advertiseAvxForRosetta": "Anunciar AVX para Rosetta",
     "analyticsOptIn": "Enviar dados anónimos para ajudar o desenvolvimento do Heroic",
     "hdr": "Ativar o HDR",
-    "no-tray-icon": "Ocultar o Ícone do Tabuleiro do Sistema (é necessário reiniciar a aplicação)",
     "wineWayland": "Ativar o Wine-Wayland (Experimental) (a versão do Wine precisa de o suportar)",
     "WoW64": "Ativar o WoW64 (Experimental)",
     "scripts": "Scripts:",

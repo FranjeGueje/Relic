@@ -308,7 +308,6 @@
     "dxfpslimit": "Teorainn a chur le FPS Cluichí DirectX",
     "enableFSRHack": "Cumasaigh FSR Hack (ní mór don leagan Wine tacú leis)",
     "esync": "Cumasaigh Esync",
-    "exit-to-tray": "Scoir go Tráidire an Chórais",
     "experimental_features": {
       "cometSupport": "Tacaíocht Cóiméad",
       "enableHelp": "Comhpháirt chabhrach",
@@ -383,7 +382,6 @@
     "maxRecentGames": "Imríodh le déanaí le taispeáint",
     "maxworkers": "Uasmhéid na nOibrithe agus iad á n-íoslódáil",
     "msync": "Cumasaigh Msync",
-    "no-tray-icon": "Folaigh Deilbhín Tráidire an Chórais (tá atosú ag teastáil)",
     "offlinemode": "Rith Cluiche As Líne",
     "prefered_language": "Teanga is Fearr leat (Cód Teanga)",
     "preferSystemLibs": "Is fearr leabharlanna córais",

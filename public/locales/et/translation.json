@@ -578,7 +578,6 @@
       "updating": "Uuendamine..."
     },
     "esync": "Luba Esync",
-    "exit-to-tray": "Välju süsteemiriiulisse",
     "FsrSharpnessStrenght": "FSR teravuse tugevus",
     "fsync": "Luba Fsync",
     "gamemode": "Kasuta GameMode'i (Feral Game Mode peab olema paigaldatud)",
@@ -721,7 +720,6 @@
       "wine_selector_warning": "Mitte-GE Protoni versioone vaikimisi ignoreeritakse, luba need täpsemates globaalsetes seadetes"
     },
     "analyticsOptIn": "Saada anonüümseid andmeid, et aidata Heroicu arendamist",
-    "no-tray-icon": "Peida süsteemisalve ikoon (nõuab restarti)",
     "show_valve_proton": {
       "confirmation": {
         "dont_show": "Ära näita neid",

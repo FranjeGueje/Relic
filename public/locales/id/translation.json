@@ -572,7 +572,6 @@
       "updating": "Memperbarui..."
     },
     "esync": "Aktifkan Esync",
-    "exit-to-tray": "Keluar ke Baki Sistem",
     "FsrSharpnessStrenght": "Kekuatan Ketajaman FSR",
     "fsync": "Aktifkan Fsync",
     "gamemode": "Gunakan GameMode (Feral Game Mode perlu diinstal)",
@@ -698,7 +697,6 @@
     "download-proton-steam": "Unduh GE-Proton ke direktori Steam",
     "dxfpslimit": "Batasi FPS Game DirectX",
     "hdr": "Aktifkan HDR",
-    "no-tray-icon": "Sembunyikan Ikon Sistem Tray (memerlukan restart)",
     "show_valve_proton": {
       "confirmation": {
         "dont_show": "Jangan tampilkan mereka",

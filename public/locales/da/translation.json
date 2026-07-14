@@ -458,7 +458,6 @@
     "default-install-path": "Standard installationssti",
     "default-steam-path": "Standard Steam-sti",
     "esync": "Aktiver Esync",
-    "exit-to-tray": "Forlad til Systembakken",
     "FsrSharpnessStrenght": "FSR Skarphed Styrke",
     "preferSystemLibs": "Foretrækker systembiblioteker",
     "resizableBar": "Aktiver BAR, der kan ændres størrelse (kun NVIDIA RTX 30xx)",
@@ -517,7 +516,6 @@
     },
     "hdr": "Aktiver HDR",
     "msync": "Aktiver Msync",
-    "no-tray-icon": "Skjul ikon i systembakken (kræver genstart)",
     "show_valve_proton": {
       "confirmation": {
         "dont_show": "Vis dem ikke",

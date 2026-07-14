@@ -570,7 +570,6 @@
       "updating": "Updating..."
     },
     "esync": "Enable Esync",
-    "exit-to-tray": "Izađi u ikonu na sistemsku ladicu",
     "FsrSharpnessStrenght": "FSR Sharpness Strength",
     "fsync": "Enable Fsync",
     "gamemode": "Koristi GameMode(Feral Game Mode mora biti instaliran)",
@@ -705,7 +704,6 @@
       "label": ""
     },
     "enable-quick-sync-menu": "",
-    "no-tray-icon": "",
     "analyticsOptIn": "",
     "verboseLogs": {
       "description": ""

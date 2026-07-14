@@ -580,7 +580,6 @@
       "updating": "Оновлення..."
     },
     "esync": "Ввімкнути Esync",
-    "exit-to-tray": "Вийти до системної панелі",
     "FsrSharpnessStrenght": "Посилення різкості FSR",
     "fsync": "Ввімкнути Fsync",
     "gamemode": "Використовувати GameMode (Feral Game Mode має бути встановлений)",
@@ -722,7 +721,6 @@
       "info_label": "Версії не GE-Proton ігноруються"
     },
     "hdr": "Увімкнути HDR",
-    "no-tray-icon": "Сховати значок системного лотка (потрібен перезапуск)",
     "wineWayland": "Увімкнути Wine-Wayland (експериментально) (версія Wine повинна підтримувати цю функцію)",
     "analyticsOptIn": "Надішліть анонімні дані, щоби допомогти розвитку Heroic",
     "show_valve_proton": {

@@ -579,7 +579,6 @@
       "updating": "Aktualizowanie..."
     },
     "esync": "Włącz Esync",
-    "exit-to-tray": "Minimalizuj do zasobnika systemowego",
     "FsrSharpnessStrenght": "Siła wyostrzania FSR",
     "fsync": "Włącz Fsync",
     "gamemode": "Użyj GameMode (wymagany zainstalowany Feral GameMode)",
@@ -721,7 +720,6 @@
     },
     "analyticsOptIn": "Wysyłaj anonimowe dane, by wspomóc rozwój Heroic",
     "hdr": "Włącz HDR",
-    "no-tray-icon": "Ukryj ikonę zasobnika systemowego (wymaga ponownego uruchomienia)",
     "wineWayland": "Włącz Wine-Wayland (eksperymentalne) (używana wersja Wine musi to wspierać)",
     "show_valve_proton": {
       "confirmation": {

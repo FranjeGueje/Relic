@@ -574,7 +574,6 @@
       "updating": "アップデート中…"
     },
     "esync": "Esyncを有効にする",
-    "exit-to-tray": "システムトレイに常駐",
     "FsrSharpnessStrenght": "FSRシャープネス強度",
     "fsync": "Fsyncを有効にする",
     "gamemode": "GameModeを使用（Feral Game Modeがインストールされている必要があります）",
@@ -723,7 +722,6 @@
     "WoW64": "WoW64 を有効にする（実験的機能）",
     "scripts": "スクリプト:",
     "enable-quick-sync-menu": "ゲームページで「クイックセーブ・同期」メニューを有効にする",
-    "no-tray-icon": "システムトレイのアイコンを非表示にする（再起動が必要）",
     "analyticsOptIn": "Heroicの開発に役立てるために匿名データを送信する",
     "advertiseAvxForRosetta": "",
     "start-in-console-mode": "コンソールモードで起動する",

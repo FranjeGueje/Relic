@@ -570,7 +570,6 @@
       "updating": "Päivitetään..."
     },
     "esync": "Ota Esync käyttöön",
-    "exit-to-tray": "Sulje ilmaisinalueelle",
     "FsrSharpnessStrenght": "FSR-terävyyden voimakkuus",
     "fsync": "Ota Fsync käyttöön",
     "gamemode": "Käytä GameModea (Feral Game Mode tulee olla asennettu)",
@@ -714,7 +713,6 @@
     "hdr": "Ota käyttöön HDR",
     "dxfpslimit": "Rajoita DirectX pelien FPS:ää",
     "enable-quick-sync-menu": "Ota käyttöön pikatallennuksen synkronointivalikko pelisivulla",
-    "no-tray-icon": "Piiloita ilmoitusalueen kuvake (vaatii uudelleenkäynnistyksen)",
     "analyticsOptIn": "Lähetä anonyymiä tietoa auttaaksesi Heroicin kehittämisessä",
     "before-launch-script-path": "Valitse skripti, joka ajetaan ennen kuin peli käynnistyy",
     "disableUMU": "Poista umu käytöstä",

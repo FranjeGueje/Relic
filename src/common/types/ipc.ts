@@ -91,7 +91,6 @@ interface SyncIPCFunctions {
   abort: (id: string) => void
   'connectivity-changed': (newStatus: ConnectivityStatus) => void
   'set-connectivity-online': () => void
-  changeTrayColor: () => void
   setSetting: (args: {
     appName: string
     key: keyof AppSettings

@@ -570,7 +570,6 @@
       "updating": "Yenilənir..."
     },
     "esync": "Esync'i aktivləşdirin",
-    "exit-to-tray": "Sistem Tepsisinə çıxın",
     "FsrSharpnessStrenght": "FSR Kəskinlik Gücü",
     "fsync": "Fsync-i aktivləşdirin",
     "gamemode": "GameMode istifadə edin (Feral Game Mode quraşdırılmalıdır)",
@@ -704,7 +703,6 @@
       "label": ""
     },
     "enable-quick-sync-menu": "",
-    "no-tray-icon": "",
     "analyticsOptIn": "",
     "verboseLogs": {
       "description": ""

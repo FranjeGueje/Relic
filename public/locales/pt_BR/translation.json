@@ -580,7 +580,6 @@
       "updating": "Atualizando..."
     },
     "esync": "Habilitar Esync",
-    "exit-to-tray": "Fechar para o indicador de aplicativo",
     "FsrSharpnessStrenght": "FSR Força de nitidez",
     "fsync": "Habilitar Fsync",
     "gamemode": "Usar o GameMode (precisa estar instalado)",
@@ -723,7 +722,6 @@
       "wine_selector_warning": "Versões não GE do Proton são ignoradas por padrão, ative-as nas configurações globais avançadas",
       "info_label": "Versões não GE do Proton ignoradas"
     },
-    "no-tray-icon": "Esconder ícone do indicador de aplicativo (Reinicialização necessária)",
     "analyticsOptIn": "Enviar dados anônimos para ajudar o desenvolvimento do Heroic",
     "show_valve_proton": {
       "confirmation": {

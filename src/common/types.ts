@@ -114,8 +114,6 @@ export interface AppSettings extends GameSettings {
   downloadNoHttps: boolean
   downloadProtonToSteam: boolean
   enableUpdates: boolean
-  exitToTray: boolean
-  noTrayIcon: boolean
   experimentalFeatures?: ExperimentalFeatures
   framelessWindow: boolean
   hideWindowOnProtocolLaunch: boolean
@@ -123,7 +121,6 @@ export interface AppSettings extends GameSettings {
   maxRecentGames: number
   maxWorkers: number
   minimizeOnLaunch: boolean
-  startInConsoleMode: boolean
   startInTray: boolean
   allowInstallationBrokenAnticheat: boolean
   disableUMU: boolean

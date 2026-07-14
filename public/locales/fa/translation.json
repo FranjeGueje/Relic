@@ -570,7 +570,6 @@
       "updating": "در حال به روزرسانی..."
     },
     "esync": "فعالسازی Esync",
-    "exit-to-tray": "خروج به میزکار سیستم",
     "FsrSharpnessStrenght": "قدرت تیزی FSR",
     "fsync": "فعالسازی Fsync",
     "gamemode": "استفاده از GameMode (Feral Game Mode باید نصب شده باشد)",
@@ -706,7 +705,6 @@
       "label": ""
     },
     "enable-quick-sync-menu": "",
-    "no-tray-icon": "",
     "analyticsOptIn": "",
     "verboseLogs": {
       "description": ""

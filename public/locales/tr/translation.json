@@ -577,7 +577,6 @@
       "updating": "Güncelleniyor..."
     },
     "esync": "Esync'i Etkinleştir",
-    "exit-to-tray": "Sistem tepsisine küçült",
     "FsrSharpnessStrenght": "FSR Keskinlik Gücü",
     "fsync": "Fsync'i Etkinleştir",
     "gamemode": "GameMode Kullan (Feral Game Mode kurulu olmalıdır)",
@@ -719,7 +718,6 @@
     },
     "analyticsOptIn": "Heroic'in geliştirilmesine yardımcı olmak için anonim veri gönder",
     "hdr": "HDR'ı Etkinleştir",
-    "no-tray-icon": "Sistem Tepsi Simgesini Gizle (yeniden başlatma gerektirir)",
     "wineWayland": "Wine-Wayland'ı Etkinleştir (Deneysel) (Wine sürümünüzün bunu desteklemesi gerekir)",
     "show_valve_proton": {
       "confirmation": {

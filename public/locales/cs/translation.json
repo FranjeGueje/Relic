@@ -580,7 +580,6 @@
       "updating": "Aktualizuji..."
     },
     "esync": "Povolit Esync",
-    "exit-to-tray": "Ukončit do systémové oblasti",
     "FsrSharpnessStrenght": "Síla ostrosti FSR",
     "fsync": "Povolit Fsync",
     "gamemode": "Použít GameMode (Feral GameMode musí být nainstalován)",
@@ -723,7 +722,6 @@
       "wine_selector_warning": "Verze Protonu bez GE jsou ve výchozím nastavení ignorovány, povolte je v pokročilých globálních nastaveních",
       "info_label": "Verze bez GE Protonu ignorovány"
     },
-    "no-tray-icon": "Skrýt ikonu v systémové liště (vyžaduje restart)",
     "show_valve_proton": {
       "confirmation": {
         "dont_show": "Neukazovat",

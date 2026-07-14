@@ -579,7 +579,6 @@
       "updating": "Oppdaterer..."
     },
     "esync": "Aktiver Esync",
-    "exit-to-tray": "Avslutt til systemkurv",
     "FsrSharpnessStrenght": "FSR Skarphet Styrke",
     "fsync": "Aktiver Fsync",
     "gamemode": "Bruk GameMode (Feral Game Mode må installeres)",
@@ -714,7 +713,6 @@
       }
     },
     "analyticsOptIn": "Send anonym statistikk for å hjelpe Heroics utvikling",
-    "no-tray-icon": "Skjul ikonet i systemkurven (krever omstart)",
     "show_valve_proton": {
       "confirmation": {
         "dont_show": "Ikke vis dem",
