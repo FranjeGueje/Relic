@@ -294,3 +294,8 @@
 - `frontend/state/UploadedLogFiles.ts` eliminado
 - `uploadLogFileProps`, `setUploadLogFileProps`, `showUploadedLogFileList` eliminados de `GlobalStateV2.ts`
 - Imports y renders eliminados de `App.tsx`
+
+## Log Settings (logs por juego)
+- Eliminada la lista de logs por juego (installedGames y su useEffect)
+- `LogSettings` simplificado: solo muestra logs de Relic, Epic/Legendary, GOG, Amazon/Nile
+- Eliminados imports de `SettingsContext`, `ContextProvider`, `GameInfo`
