@@ -59,8 +59,7 @@ import {
   MainButton,
   ReportIssue,
   Requirements,
-  Scores,
-  SettingsButton
+  Scores
 } from './components'
 import { hasAnticheatInfo } from 'frontend/hooks/hasAnticheatInfo'
 import { hasHelp } from 'frontend/hooks/hasHelp'
@@ -422,7 +421,6 @@ export default React.memo(function GamePage(): JSX.Element | null {
                       <ArrowBackIosNew />
                     </NavLink>
                     <div className="topRowWapperInner">
-                      {!isBrowserGame && <SettingsButton gameInfo={gameInfo} />}
                       <DotsMenu
                         gameInfo={gameInfo}
                         handleUpdate={handleUpdate}

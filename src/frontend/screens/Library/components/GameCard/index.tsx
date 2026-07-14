@@ -8,8 +8,6 @@ import { faRepeat, faBan } from '@fortawesome/free-solid-svg-icons'
 import DownIcon from 'frontend/assets/down-icon.svg?react'
 import { FavouriteGame, GameInfo, HiddenGame, Runner } from 'common/types'
 import { Link, useNavigate } from 'react-router-dom'
-import PlayIcon from 'frontend/assets/play-icon.svg?react'
-import SettingsIcon from 'frontend/assets/settings_icon_alt.svg?react'
 import StopIcon from 'frontend/assets/stop-icon.svg?react'
 import StopIconAlt from 'frontend/assets/stop-icon-alt.svg?react'
 import {
@@ -41,20 +39,16 @@ import {
   DeleteForever,
   Description,
   Download,
-  Edit,
   Favorite,
   FavoriteBorder,
   List,
   OpenInNew,
-  PlayArrow,
   PlaylistRemove,
   Settings,
   Upgrade,
   Visibility,
   VisibilityOff
 } from '@mui/icons-material'
-import EditGameDialog from 'frontend/components/UI/EditGameDialog'
-import { openInstallGameModal } from 'frontend/state/InstallGameModal'
 
 interface Card {
   buttonClick: () => void
@@ -111,12 +105,8 @@ const GameCard = ({
     activeController,
     connectivity
   } = useContext(ContextProvider)
-  const { openGameSettingsModal, openGameLogsModal, openGameCategoriesModal } =
-    useGlobalState.keys(
-      'openGameSettingsModal',
-      'openGameLogsModal',
-      'openGameCategoriesModal'
-    )
+  const { openGameSettingsModal, openGameLogsModal } =
+    useGlobalState.keys('openGameSettingsModal', 'openGameLogsModal')
 
   const { layout } = useContext(LibraryContext)
 
@@ -249,19 +239,7 @@ const GameCard = ({
       )
     }
     if (isInstalled) {
-      const disabled =
-        isLaunching ||
-        ['syncing-saves', 'launching', 'winetricks', 'redist'].includes(status!)
-      return (
-        <SvgButton
-          className={!notAvailable ? 'playIcon' : 'notAvailableIcon'}
-          onClick={async () => handlePlay(runner)}
-          title={`${t('label.playing.start')} (${title})`}
-          disabled={disabled}
-        >
-          {justPlayed ? <span>{t('button.play', 'PLAY')}</span> : <PlayIcon />}
-        </SvgButton>
-      )
+      return <></>
     } else {
       return (
         <SvgButton
@@ -291,26 +269,6 @@ const GameCard = ({
     setShowUninstallModal(true)
   }
 
-  const isSideloaded = runner === 'sideload'
-
-  const handleEdit = () => {
-    if (isSideloaded) {
-      openInstallGameModal({ appName, runner, gameInfo })
-      return
-    }
-
-    showDialogModal({
-      showDialog: true,
-      title: t('edit-game.title', 'Edit Game'),
-      message: (
-        <EditGameDialog
-          gameInfo={gameInfo}
-          backdropClick={() => showDialogModal({ showDialog: false })}
-        />
-      )
-    })
-  }
-
   const items: Item[] = [
     {
       // remove from install queue
@@ -325,13 +283,6 @@ const GameCard = ({
       onclick: async () => handlePlay(runner),
       show: isPlaying,
       icon: <Cancel />
-    },
-    {
-      // launch game
-      label: t('label.playing.start'),
-      onclick: async () => handlePlay(runner),
-      show: isInstalled && !isPlaying && !isUpdating && !isQueued,
-      icon: <PlayArrow />
     },
     {
       // update
@@ -376,14 +327,6 @@ const GameCard = ({
       icon: <Description />
     },
     {
-      label: isSideloaded
-        ? t('button.sideload.edit', 'Edit App/Game')
-        : t('edit-game.title', 'Edit Game'),
-      onclick: handleEdit,
-      show: true,
-      icon: <Edit />
-    },
-    {
       // hide
       label: t('button.hide_game', 'Hide Game'),
       onclick: () => hiddenGames.add(appName, title),
@@ -402,12 +345,6 @@ const GameCard = ({
       onclick: () => favouriteGames.add(appName, title),
       show: !isFavouriteGame,
       icon: <Favorite />
-    },
-    {
-      label: t('submenu.categories', 'Categories'),
-      onclick: () => openGameCategoriesModal(gameInfo),
-      show: true,
-      icon: <List />
     },
     {
       label: t('button.remove_from_favourites', 'Remove From Favourites'),
@@ -455,7 +392,6 @@ const GameCard = ({
     )
   }
 
-  const showSettingsButton = isInstalled && !isUninstalling && !isBrowserGame
   const showUpdateBadge =
     hasUpdate && !isUpdating && !isQueued && activeController
 
@@ -547,17 +483,7 @@ const GameCard = ({
                   <FontAwesomeIcon size={'2x'} icon={faRepeat} />
                 </SvgButton>
               )}
-              {showSettingsButton && (
-                <>
-                  <SvgButton
-                    title={`${t('submenu.settings')} (${title})`}
-                    className="settingsIcon"
-                    onClick={() => openGameSettingsModal(gameInfo)}
-                  >
-                    <SettingsIcon />
-                  </SvgButton>
-                </>
-              )}
+
               {renderIcon()}
             </span>
           </>

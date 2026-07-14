@@ -7,33 +7,23 @@ import { GameInfo, GameStatus, Runner } from 'common/types'
 import { createNewWindow, repair } from 'frontend/helpers'
 import { useTranslation } from 'react-i18next'
 import ContextProvider from 'frontend/state/ContextProvider'
-import { NavLink } from 'react-router-dom'
 
 import { CircularProgress, SvgIcon } from '@mui/material'
 import UninstallModal from 'frontend/components/UI/UninstallModal'
 import GameContext from '../GameContext'
-import { openInstallGameModal } from 'frontend/state/InstallGameModal'
-import useGlobalState from 'frontend/state/GlobalStateV2'
-import EditGameDialog from 'frontend/components/UI/EditGameDialog'
-
 import {
   ArrowUpward as ArrowUpwardIcon,
   CheckCircle as CheckCircleIcon,
   Delete as DeleteIcon,
   DesktopAccessDisabled as DesktopAccessDisabledIcon,
   DriveFileMove as DriveFileMoveIcon,
-  Edit as EditIcon,
-  FindInPage as FindInPageIcon,
   Folder as FolderIcon,
-  FormatListBulleted as FormatListBulletedIcon,
   Info as InfoIcon,
   PictureInPicture as PictureInPictureIcon,
-  Repartition as RepartitionIcon,
-  Shortcut as ShortcutIcon
+  Repartition as RepartitionIcon
 } from '@mui/icons-material'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLinux, faSteam } from '@fortawesome/free-brands-svg-icons'
-import { faWineGlass } from '@fortawesome/free-solid-svg-icons'
+import { faLinux } from '@fortawesome/free-brands-svg-icons'
 
 interface Props {
   appName: string
@@ -66,16 +56,10 @@ export default function GamesSubmenu({
 }: Props) {
   const { refresh, platform, libraryStatus, showDialogModal } =
     useContext(ContextProvider)
-  const { openGameCategoriesModal } = useGlobalState.keys(
-    'openGameCategoriesModal'
-  )
   const { is, gameSettings } = useContext(GameContext)
   const isWin = platform === 'win32'
   const isLinux = platform === 'linux'
 
-  const [steamRefresh, setSteamRefresh] = useState<boolean>(false)
-  const [addedToSteam, setAddedToSteam] = useState<boolean>(false)
-  const [hasShortcuts, setHasShortcuts] = useState(false)
   const [eosOverlayEnabled, setEosOverlayEnabled] = useState<boolean>(false)
   const [eosOverlayRefresh, setEosOverlayRefresh] = useState<boolean>(false)
   const eosOverlayAppName = '98bc04bc842e4906993fd6d6644ffb8d'
@@ -112,32 +96,6 @@ export default function GamesSubmenu({
     })
   }
 
-  async function onChangeInstallYesClick() {
-    const { defaultInstallPath } = await window.api.requestAppSettings()
-    const path = await window.api.openDialog({
-      buttonLabel: t('box.choose'),
-      properties: ['openDirectory'],
-      title: t('box.change.path'),
-      defaultPath: defaultInstallPath
-    })
-    if (path) {
-      await window.api.changeInstallPath({ appName, path, runner })
-      await refresh(runner)
-    }
-  }
-
-  function handleChangeInstall() {
-    showDialogModal({
-      showDialog: true,
-      message: t('box.change.message'),
-      title: t('box.change.title'),
-      buttons: [
-        { text: t('box.yes'), onClick: onChangeInstallYesClick },
-        { text: t('box.no') }
-      ]
-    })
-  }
-
   async function onRepairYesClick(appName: string) {
     await repair(appName, runner)
   }
@@ -151,34 +109,6 @@ export default function GamesSubmenu({
         { text: t('box.yes'), onClick: async () => onRepairYesClick(appName) },
         { text: t('box.no') }
       ]
-    })
-  }
-
-  function handleShortcuts() {
-    if (hasShortcuts) {
-      window.api.removeShortcut(appName, runner)
-      return setHasShortcuts(false)
-    }
-    window.api.addShortcut(appName, runner, true)
-
-    return setHasShortcuts(true)
-  }
-
-  function handleEdit() {
-    if (isSideloaded) {
-      openInstallGameModal({ appName, runner, gameInfo })
-      return
-    }
-
-    showDialogModal({
-      showDialog: true,
-      title: t('edit-game.title', 'Edit Game'),
-      message: (
-        <EditGameDialog
-          gameInfo={gameInfo}
-          backdropClick={() => showDialogModal({ showDialog: false })}
-        />
-      )
     })
   }
 
@@ -201,34 +131,10 @@ export default function GamesSubmenu({
     setEosOverlayRefresh(false)
   }
 
-  async function handleAddToSteam() {
-    setSteamRefresh(true)
-    if (addedToSteam) {
-      await window.api
-        .removeFromSteam(appName, runner)
-        .then(() => setAddedToSteam(false))
-    } else {
-      await window.api
-        .addToSteam(appName, runner)
-        .then((added) => setAddedToSteam(added))
-    }
-    setSteamRefresh(false)
-  }
-
   useEffect(() => {
-    // Check for game shortcuts on Steam
-    window.api.isAddedToSteam(appName, runner).then((added) => {
-      setAddedToSteam(added)
-    })
-
     if (!isInstalled) {
       return
     }
-
-    // Check for game shortcuts on desktop and start menu
-    window.api.shortcutsExists(appName, runner).then((added) => {
-      setHasShortcuts(added)
-    })
 
     // only unix specific
     if (!isWin && runner === 'legendary') {
@@ -265,9 +171,6 @@ export default function GamesSubmenu({
     isInstalled &&
     !isThirdPartyManaged
 
-  const hasWine =
-    !is.win && !is.native && gameSettings?.wineVersion.type !== 'crossover'
-
   const onBrowseFiles = useCallback(() => {
     const path = gameInfo.install.install_path || gameInfo.folder_name
 
@@ -275,14 +178,6 @@ export default function GamesSubmenu({
       window.api.openFolder(path)
     }
   }, [gameInfo])
-
-  const onBrowsePrefix = useCallback(() => {
-    const path = gameSettings?.winePrefix
-
-    if (path) {
-      window.api.openFolder(path)
-    }
-  }, [gameSettings])
 
   return (
     <>
@@ -298,24 +193,6 @@ export default function GamesSubmenu({
         <div className={`submenu`}>
           {isInstalled && (
             <>
-              <button
-                onClick={async () => handleEdit()}
-                className="link button is-text is-link buttonWithIcon"
-              >
-                <EditIcon />
-                {isSideloaded
-                  ? t('button.sideload.edit', 'Edit App/Game')
-                  : t('button.edit-game', 'Edit Game')}
-              </button>{' '}
-              <button
-                onClick={() => handleShortcuts()}
-                className="link button is-text is-link buttonWithIcon"
-              >
-                <ShortcutIcon />
-                {hasShortcuts
-                  ? t('submenu.removeShortcut', 'Remove shortcuts')
-                  : t('submenu.addShortcut', 'Add shortcut')}
-              </button>
               <button
                 onClick={async () => setShowUninstallModal(true)}
                 className="link button is-text is-link buttonWithIcon"
@@ -345,15 +222,6 @@ export default function GamesSubmenu({
               )}{' '}
               {!isSideloaded && !isThirdPartyManaged && (
                 <button
-                  onClick={async () => handleChangeInstall()}
-                  className="link button is-text is-link buttonWithIcon"
-                >
-                  <FindInPageIcon />
-                  {t('submenu.change', 'Change Install Location')}
-                </button>
-              )}{' '}
-              {!isSideloaded && !isThirdPartyManaged && (
-                <button
                   onClick={async () => handleRepair(appName)}
                   className="link button is-text is-link buttonWithIcon"
                 >
@@ -378,28 +246,6 @@ export default function GamesSubmenu({
                 ))}
             </>
           )}
-          {steamRefresh ? (
-            refreshCircle()
-          ) : (
-            <button
-              onClick={async () => handleAddToSteam()}
-              className="link button is-text is-link buttonWithIcon"
-            >
-              <SvgIcon>
-                <FontAwesomeIcon icon={faSteam} />
-              </SvgIcon>
-              {addedToSteam
-                ? t('submenu.removeFromSteam', 'Remove from Steam')
-                : t('submenu.addToSteam', 'Add to Steam')}
-            </button>
-          )}
-          <button
-            onClick={() => openGameCategoriesModal(gameInfo)}
-            className="link button is-text is-link buttonWithIcon"
-          >
-            <FormatListBulletedIcon />
-            {t('submenu.categories', 'Categories')}
-          </button>
           {!isSideloaded && !!changelog?.length && (
             <button
               onClick={() => handleChangeLog()}
@@ -445,17 +291,6 @@ export default function GamesSubmenu({
             >
               <FolderIcon />
               {t('button.browse_files', 'Browse Files')}
-            </button>
-          )}
-          {hasWine && (
-            <button
-              onClick={async () => onBrowsePrefix()}
-              className="link button is-text is-link buttonWithIcon"
-            >
-              <SvgIcon>
-                <FontAwesomeIcon icon={faWineGlass} />
-              </SvgIcon>
-              {t('button.browse_wine_prefix', 'Browse Wine Prefix')}
             </button>
           )}
         </div>

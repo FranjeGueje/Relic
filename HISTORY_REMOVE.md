@@ -299,3 +299,9 @@
 - Eliminada la lista de logs por juego (installedGames y su useEffect)
 - `LogSettings` simplificado: solo muestra logs de Relic, Epic/Legendary, GOG, Amazon/Nile
 - Eliminados imports de `SettingsContext`, `ContextProvider`, `GameInfo`
+
+## GameCard
+- Botón de Settings (icono a la izquierda del menú de tres puntos) eliminado
+- "Edit Game" eliminado del menú contextual (+ `handleEdit`, `EditGameDialog`, `Edit` icon)
+- "Categories" eliminado del menú contextual (+ `openGameCategoriesModal`, `List` icon)
+- Imports no usados limpiados (`SettingsIcon`, `EditGameDialog`, `openInstallGameModal`, `isSideloaded`)
