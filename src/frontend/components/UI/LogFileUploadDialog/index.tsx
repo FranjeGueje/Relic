@@ -79,7 +79,7 @@ export default function LogUploadDialog() {
         <>
           {t(
             'setting.log.upload.error.content',
-            "Failed to upload log file. Check Heroic's general log for details"
+            "Failed to upload log file. Check Relic's general log for details"
           )}
           <br />
           <br />

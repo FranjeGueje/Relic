@@ -10,20 +10,20 @@ import { GameLogType, getLogFilePath } from './paths'
 import type { Runner } from 'common/types'
 import type { RunnerOrComet } from './types'
 
-let heroicLogWriter: LogWriter
+let relicLogWriter: LogWriter
 const runnerLogWriters = new Map<RunnerOrComet, LogWriter>()
 
 const logDebug = (...params: Parameters<LogWriter['logDebug']>) => {
-  heroicLogWriter.logDebug(...params)
+  relicLogWriter.logDebug(...params)
 }
 const logInfo = (...params: Parameters<LogWriter['logInfo']>) => {
-  heroicLogWriter.logInfo(...params)
+  relicLogWriter.logInfo(...params)
 }
 const logWarning = (...params: Parameters<LogWriter['logWarning']>) => {
-  heroicLogWriter.logWarning(...params)
+  relicLogWriter.logWarning(...params)
 }
 const logError = (...params: Parameters<LogWriter['logError']>) => {
-  heroicLogWriter.logError(...params)
+  relicLogWriter.logError(...params)
 }
 
 function getRunnerLogWriter(runner: RunnerOrComet) {
@@ -65,7 +65,7 @@ function init() {
   // "just" failing to write to the streams)
   for (const channel of ['stdout', 'stderr'] as const) {
     process[channel].once('error', (error: Error) => {
-      heroicLogWriter.writeString(`Error writing to ${channel}: ${error.stack}`)
+      relicLogWriter.writeString(`Error writing to ${channel}: ${error.stack}`)
 
       process[channel].on('error', () => {
         // Silence further write errors
@@ -74,25 +74,25 @@ function init() {
   }
 
   const globalSettings = GlobalConfig.get().getSettings()
-  heroicLogWriter = new LogWriter(
+  relicLogWriter = new LogWriter(
     getLogFilePath({}),
     true,
     globalSettings.disableLogs
   )
 
   if (globalSettings.disableLogs)
-    heroicLogWriter.logWarning(
+    relicLogWriter.logWarning(
       'IMPORTANT: Logs are disabled. Enable logs before reporting any issue',
       { forceLog: true }
     )
 
-  heroicLogWriter.logInfo(
+  relicLogWriter.logInfo(
     ['System Information:', getSystemInfo().then(formatSystemInfo)],
     LogPrefix.Backend
   )
 
   backendEvents.on('settingChanged', ({ key, oldValue, newValue }) =>
-    heroicLogWriter.logInfo([
+    relicLogWriter.logInfo([
       'Settings key',
       key,
       'changed from',

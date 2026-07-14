@@ -3,11 +3,11 @@ import React, { useEffect, useRef, useState } from 'react'
 import CurrentDownload from './components/CurrentDownload'
 import SidebarLinks from './components/SidebarLinks'
 import './index.scss'
-import HeroicVersion from './components/HeroicVersion'
+import RelicVersion from './components/RelicVersion'
 import SidebarTour from './components/SidebarTour'
 import { DMQueueElement } from 'common/types'
 
-import HeroicIcon from 'frontend/assets/heroic-icon.svg?react'
+import RelicIcon from 'frontend/assets/relic-icon.svg?react'
 import { useNavigate } from 'react-router-dom'
 import { WebviewTag } from 'electron'
 
@@ -137,7 +137,7 @@ export default React.memo(function Sidebar() {
 
   return (
     <aside ref={sidebarEl} className="Sidebar">
-      <HeroicIcon className="heroicIcon" />
+      <RelicIcon className="relicIcon" />
       <SidebarLinks />
       <div className="currentDownloads" data-tour="sidebar-downloads">
         {currentDMElement && (
@@ -148,7 +148,7 @@ export default React.memo(function Sidebar() {
           />
         )}
       </div>
-      <HeroicVersion />
+      <RelicVersion />
       <div className="resizer" onMouseDown={handleDragStart} />
       <SidebarTour />
     </aside>

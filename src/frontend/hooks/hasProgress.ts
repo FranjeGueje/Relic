@@ -21,7 +21,7 @@ export const hasProgress = (appName: string, runner: Runner) => {
 
   const calculatePercent = useCallback(
     (newProgress: InstallProgress) => {
-      // current/100 * (100-heroic_stored) + heroic_stored
+      // current/100 * (100-relic_stored) + relic_stored
       if (newProgress.percent && previousProgress.percent) {
         const currentPercent = newProgress.percent
         const storedPercent = previousProgress.percent

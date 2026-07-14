@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { CachedImage } from 'frontend/components/UI'
-import fallBackImage from 'frontend/assets/heroic_card.jpg'
+import fallBackImage from 'frontend/assets/relic_card.jpg'
 import GOGLogo from 'frontend/assets/gog-logo.svg?react'
 import GMGLogo from 'frontend/assets/gmg-logo.svg?react'
 import type { CatalogProduct } from 'common/types/discounts'
@@ -76,12 +76,12 @@ const DiscountCard = ({ product }: Props) => {
               ? drm
                 ? t(
                     'discounts.storeBadge.gmgDrmHint',
-                    'Green Man Gaming — {{drm}} key, redeemed outside Heroic',
+                    'Green Man Gaming — {{drm}} key, redeemed outside Relic',
                     { drm }
                   )
                 : t(
                     'discounts.storeBadge.gmgHint',
-                    'Green Man Gaming — key for an external store, not installable through Heroic'
+                    'Green Man Gaming — key for an external store, not installable through Relic'
                   )
               : 'GOG'
           }

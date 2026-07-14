@@ -80,7 +80,7 @@ interface SyncIPCFunctions {
   removeFolder: ([path, folderName]: [string, string]) => void
   clearCache: (showDialog?: boolean, fromVersionChange?: boolean) => void
   clearAchievementCache: (appName: string) => void
-  resetHeroic: () => void
+  resetRelic: () => void
   createNewWindow: (url: string) => void
   logoutGOG: () => void
   logError: (message: unknown) => void
@@ -161,7 +161,7 @@ interface AsyncIPCFunctions {
   getEpicGamesStatus: () => Promise<boolean>
   updateAll: () => Promise<({ status: 'done' | 'error' | 'abort' } | null)[]>
   getMaxCpus: () => number
-  getHeroicVersion: () => string
+  getRelicVersion: () => string
   getLegendaryVersion: () => Promise<string>
   getGogdlVersion: () => Promise<string>
   getCometVersion: () => Promise<string>

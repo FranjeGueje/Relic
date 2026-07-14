@@ -499,13 +499,13 @@ class GlobalState extends PureComponent<Props> {
 
   showResetDialog = (() => {
     this.handleShowDialogModal({
-      title: t('box.reset-heroic.question.title', 'Reset Heroic'),
+      title: t('box.reset-relic.question.title', 'Reset Relic'),
       message: t(
-        'box.reset-heroic.question.message',
-        "Are you sure you want to reset Heroic? This will remove all Settings and Caching but won't remove your Installed games or your Epic credentials. Portable versions (AppImage, WinPortable, ...) of Heroic needs to be restarted manually afterwards."
+        'box.reset-relic.question.message',
+        "Are you sure you want to reset Relic? This will remove all Settings and Caching but won't remove your Installed games or your Epic credentials. Portable versions (AppImage, WinPortable, ...) of Relic needs to be restarted manually afterwards."
       ),
       buttons: [
-        { text: t('box.yes'), onClick: window.api.resetHeroic },
+        { text: t('box.yes'), onClick: window.api.resetRelic },
         { text: t('box.no') }
       ]
     })

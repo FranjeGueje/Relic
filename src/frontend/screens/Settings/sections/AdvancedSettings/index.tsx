@@ -26,7 +26,7 @@ import {
   DownloadNoHTTPS,
   ExperimentalFeatures,
   HideWindowOnProtocolLaunch,
-  ResetHeroic,
+  ResetRelic,
   SteamGridDbApiKey
 } from '../../components'
 import DisableGOGPresence from '../../components/DisableGOGPresence'
@@ -327,7 +327,7 @@ export default function AdvancedSetting() {
       </div>
 
       <div className="advancedSetting">
-        <ResetHeroic />
+        <ResetRelic />
         <hr />
       </div>
 

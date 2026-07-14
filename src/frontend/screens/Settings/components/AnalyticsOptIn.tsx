@@ -18,13 +18,13 @@ const AnalyticsOptIn = () => {
         handleChange={() => setAnalyticsOptIn(!analyticsOptIn)}
         title={t(
           'setting.analyticsOptIn',
-          'Send anonymous data to help Heroic development'
+          'Send anonymous data to help Relic development'
         )}
       />
       <InfoIcon
         text={t(
           'help.analytics',
-          'Enables Heroic to collect 100% anonymous usage data to help improve the application. Needs restart to take effect.'
+          'Enables Relic to collect 100% anonymous usage data to help improve the application. Needs restart to take effect.'
         )}
       />
     </div>

@@ -33,25 +33,25 @@ const LoginWarning = function ({
   if (warnLoginForStore === 'epic') {
     textContent = t(
       'not_logged_in.epic',
-      "You are not logged in with an Epic account in Heroic. Don't use the store page to login, click the following button instead:"
+      "You are not logged in with an Epic account in Relic. Don't use the store page to login, click the following button instead:"
     )
     loginPath = epicLoginPath
   } else if (warnLoginForStore === 'gog') {
     textContent = t(
       'not_logged_in.gog',
-      "You are not logged in with a GOG account in Heroic. Don't use the store page to login, click the following button instead:"
+      "You are not logged in with a GOG account in Relic. Don't use the store page to login, click the following button instead:"
     )
     loginPath = gogLoginPath
   } else if (warnLoginForStore === 'amazon') {
     textContent = t(
       'not_logged_in.amazon',
-      "You are not logged in with an Amazon account in Heroic. Don't use the store page to login, click the following button instead:"
+      "You are not logged in with an Amazon account in Relic. Don't use the store page to login, click the following button instead:"
     )
     loginPath = amazonLoginPath
   } else if (warnLoginForStore === 'zoom') {
     textContent = t(
       'not_logged_in.zoom',
-      "You are not logged in with a Zoom account in Heroic. Don't use the store page to login, click the following button instead:"
+      "You are not logged in with a Zoom account in Relic. Don't use the store page to login, click the following button instead:"
     )
     loginPath = zoomLoginPath
   }

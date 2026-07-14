@@ -14,7 +14,7 @@ import classNames from 'classnames'
 
 import ContextProvider from 'frontend/state/ContextProvider'
 import { sendKill, updateGame } from 'frontend/helpers'
-import HeroicIcon from 'frontend/assets/heroic-icon.svg?react'
+import RelicIcon from 'frontend/assets/relic-icon.svg?react'
 
 import ConfirmDialog from './components/ConfirmDialog'
 import ConsoleCard from './components/ConsoleCard'
@@ -401,7 +401,7 @@ export default function ConsoleMode() {
         ref={topBarRef}
         onKeyDown={onTopBarKeyDown}
       >
-        <HeroicIcon className="consoleLogo" />
+        <RelicIcon className="consoleLogo" />
         <div className="consoleFilters">
           <button
             key={'installedGames'}

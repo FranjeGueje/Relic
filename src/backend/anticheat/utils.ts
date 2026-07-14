@@ -43,7 +43,7 @@ async function downloadAntiCheatData(latestFileHash?: string) {
 
   runOnceWhenOnline(async () => {
     const url = isMac
-      ? 'https://raw.githubusercontent.com/Heroic-Games-Launcher/MacAnticheatData/main/games.json'
+      ? 'https://raw.githubusercontent.com/anomalyco/MacAnticheatData/main/games.json'
       : 'https://raw.githubusercontent.com/Starz0r/AreWeAntiCheatYet/HEAD/games.json'
 
     try {

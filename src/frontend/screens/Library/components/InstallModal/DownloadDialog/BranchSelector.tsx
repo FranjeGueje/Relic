@@ -87,7 +87,7 @@ export default function BranchSelector({
           const value = e.target.value
           if (value === 'null') {
             setBranch()
-          } else if (value === 'heroic-update-passwordOption') {
+          } else if (value === 'relic-update-passwordOption') {
             setShowBranchPasswordInput(true)
           } else {
             setBranch(e.target.value)
@@ -99,7 +99,7 @@ export default function BranchSelector({
             {branch || t('game.branch.disabled', 'Disabled')}
           </MenuItem>
         ))}
-        <MenuItem value={'heroic-update-passwordOption'}>
+        <MenuItem value={'relic-update-passwordOption'}>
           {t(
             'game.branch.setPrivateBranchPassword',
             'Set private channel password'

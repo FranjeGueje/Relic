@@ -2,13 +2,13 @@ import { join } from 'path'
 import graceful_fs, { readFileSync } from 'graceful-fs'
 import { axiosClient } from 'backend/utils'
 import { getAssetDataFromDownload, downloadFile } from '../../util'
-import { test_data } from './test_data/github-api-heroic-test-data.json'
+import { test_data } from './test_data/github-api-relic-test-data.json'
 import { describeSkipOnWindows } from 'backend/__tests__/skip'
 
 jest.mock('backend/logger')
 
 const testUrl =
-  'https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher/releases/download/v2.3.9/Heroic-2.3.9.AppImage'
+  'https://github.com/anomalyco/relic/releases/download/v2.3.9/Relic-2.3.9.AppImage'
 const testTarFilePath = join(__dirname, 'test_data/TestArchive.tar.xz')
 
 afterEach(jest.restoreAllMocks)
@@ -19,11 +19,11 @@ describeSkipOnWindows('getAssetDataFromDownload', () => {
     jest.spyOn(axiosClient, 'get').mockResolvedValue(test_data)
 
     await expect(getAssetDataFromDownload(testUrl)).resolves.toMatchObject({
-      name: 'Heroic-2.3.9.AppImage',
-      url: 'https://api.github.com/repos/Heroic-Games-Launcher/HeroicGamesLauncher/releases/assets/68579064'
+      name: 'Relic-2.3.9.AppImage',
+      url: 'https://api.github.com/repos/anomalyco/relic/releases/assets/68579064'
     })
     expect(axiosClient.get).toBeCalledWith(
-      'https://api.github.com/repos/Heroic-Games-Launcher/HeroicGamesLauncher/releases/tags/v2.3.9'
+      'https://api.github.com/repos/anomalyco/relic/releases/tags/v2.3.9'
     )
   })
 

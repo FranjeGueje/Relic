@@ -7,7 +7,7 @@ import { hasStatus } from 'frontend/hooks/hasStatus'
 import { hasProgress } from 'frontend/hooks/hasProgress'
 import { getProgress } from 'frontend/helpers'
 import { getImageFormatting } from 'frontend/screens/Library/components/GameCard/constants'
-import fallBackImage from 'frontend/assets/heroic_card.jpg'
+import fallBackImage from 'frontend/assets/relic_card.jpg'
 
 import type { GameInfo, Status } from 'common/types'
 

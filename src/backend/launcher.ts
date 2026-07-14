@@ -591,7 +591,7 @@ async function prepareLaunch(
       let reason =
         'Mangohud is enabled, but `mangohud` executable could not be found on $PATH'
       if (isFlatpak) {
-        reason = `${reason}. Make sure to install Mangohud's flatpak package with runtime ${flatpakRuntimeVersion} and restart Heroic.`
+        reason = `${reason}. Make sure to install Mangohud's flatpak package with runtime ${flatpakRuntimeVersion} and restart Relic.`
       }
       return {
         success: false,
@@ -1113,28 +1113,28 @@ function setupEnvVars(gameSettings: GameSettings, installPath?: string) {
 function setupWrapperEnvVars(wrapperEnv: WrapperEnv) {
   const ret: Record<string, string> = {}
 
-  ret.HEROIC_APP_NAME = wrapperEnv.appName
-  ret.HEROIC_APP_RUNNER = wrapperEnv.appRunner
+  ret.RELIC_APP_NAME = wrapperEnv.appName
+  ret.RELIC_APP_RUNNER = wrapperEnv.appRunner
   ret.GAMEID = 'umu-0'
 
   switch (wrapperEnv.appRunner) {
     case 'gog':
-      ret.HEROIC_APP_SOURCE = 'gog'
+      ret.RELIC_APP_SOURCE = 'gog'
       ret.STORE = 'gog'
       break
     case 'legendary':
-      ret.HEROIC_APP_SOURCE = 'epic'
+      ret.RELIC_APP_SOURCE = 'epic'
       ret.STORE = 'egs'
       break
     case 'nile':
-      ret.HEROIC_APP_SOURCE = 'amazon'
+      ret.RELIC_APP_SOURCE = 'amazon'
       ret.STORE = 'amazon'
       break
     case 'sideload':
-      ret.HEROIC_APP_SOURCE = 'sideload'
+      ret.RELIC_APP_SOURCE = 'sideload'
       break
     case 'zoom':
-      ret.HEROIC_APP_SOURCE = 'zoom'
+      ret.RELIC_APP_SOURCE = 'zoom'
       ret.STORE = 'zoomplatform'
       break
   }
@@ -1145,7 +1145,7 @@ function setupWrapperEnvVars(wrapperEnv: WrapperEnv) {
 /**
  * Maps Wine-related settings to environment variables
  * @param gameSettings The GameSettings to get the environment variables for
- * @param gameId If Proton and the Steam Runtime are used, the SteamGameId variable will be set to `heroic-gameId` if it's unset
+ * @param gameId If Proton and the Steam Runtime are used, the SteamGameId variable will be set to `relic-gameId` if it's unset
  * @returns A Record that can be passed to execAsync/spawn
  */
 function setupWineEnvVars(gameSettings: GameSettings, gameId = '0') {
@@ -1273,7 +1273,7 @@ function setupWineEnvVars(gameSettings: GameSettings, gameId = '0') {
     ret.STEAM_COMPAT_APP_ID = process.env.STEAM_COMPAT_APP_ID || '0'
     ret.SteamAppId = process.env.SteamAppId || ret.STEAM_COMPAT_APP_ID
     // This sets the name of the log file given when setting PROTON_LOG=1
-    ret.SteamGameId = process.env.SteamGameId || `heroic-${gameId}`
+    ret.SteamGameId = process.env.SteamGameId || `relic-${gameId}`
     ret.PROTON_LOG_DIR = flatpakHome
     // add back default wine/dxvk debug logging
     if (gameSettings?.verboseLogs) {
@@ -1340,9 +1340,9 @@ function setupWineEnvVars(gameSettings: GameSettings, gameId = '0') {
     ret.ROSETTA_ADVERTISE_AVX = '1'
   }
   // Workaround for Steam Input virtual gamepad not working for games launched through HGL from Steam
-  // using deprecated WineGE/ProtonGE releases (<= 8.x) following SDL behavior change on version >= 2.30
-  // (included with flatpak Freedesktop runtime 24.08 or newer)
-  // https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher/issues/4708
+// using deprecated WineGE/ProtonGE releases (<= 8.x) following SDL behavior change on version >= 2.30
+// (included with flatpak Freedesktop runtime 24.08 or newer)
+// https://github.com/anomalyco/relic/issues/4708
   // https://github.com/libsdl-org/SDL/issues/14410
   // https://gitlab.com/freedesktop-sdk/freedesktop-sdk/-/issues/1818
   if (
@@ -2036,14 +2036,14 @@ async function runScriptForGame(
   return new Promise((resolve, reject) => {
     const scriptPath = gameSettings[`${scriptStage}LaunchScriptPath`]
     const scriptEnv = {
-      HEROIC_GAME_APP_NAME: gameInfo.app_name,
-      HEROIC_GAME_EXEC: gameInfo.install.executable,
-      HEROIC_GAME_PREFIX: gameSettings.winePrefix,
-      HEROIC_GAME_RUNNER: gameInfo.runner,
-      HEROIC_GAME_SCRIPT_STAGE: scriptStage,
-      HEROIC_GAME_TITLE: gameInfo.title,
-      HEROIC_GAME_SETTINGS: JSON.stringify(gameSettings),
-      HEROIC_GAME_INFO: JSON.stringify(gameInfo),
+      RELIC_GAME_APP_NAME: gameInfo.app_name,
+      RELIC_GAME_EXEC: gameInfo.install.executable,
+      RELIC_GAME_PREFIX: gameSettings.winePrefix,
+      RELIC_GAME_RUNNER: gameInfo.runner,
+      RELIC_GAME_SCRIPT_STAGE: scriptStage,
+      RELIC_GAME_TITLE: gameInfo.title,
+      RELIC_GAME_SETTINGS: JSON.stringify(gameSettings),
+      RELIC_GAME_INFO: JSON.stringify(gameInfo),
       ...process.env
     }
     const child = spawn(scriptPath, {

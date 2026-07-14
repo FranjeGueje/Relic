@@ -44,7 +44,7 @@ export default function ErrorComponent({ message }: { message: string }) {
               <CleaningServicesOutlined />
             </div>
             <span className="button-icon-text">
-              {t('settings.clear-cache', 'Clear Heroic Cache')}
+              {t('settings.clear-cache', 'Clear Relic Cache')}
             </span>
           </div>
         </button>
@@ -58,7 +58,7 @@ export default function ErrorComponent({ message }: { message: string }) {
               <DeleteOutline />
             </div>
             <span className="button-icon-text">
-              {t('settings.reset-heroic', 'Reset Heroic')}
+              {t('settings.reset-relic', 'Reset Relic')}
             </span>
           </div>
         </button>

@@ -62,7 +62,7 @@ export class GOGUser {
 
   public static async getUserDetails(): Promise<UserData | undefined> {
     if (!isOnline()) {
-      logError('Unable to login information, Heroic offline', LogPrefix.Gog)
+      logError('Unable to login information, Relic offline', LogPrefix.Gog)
       return
     }
     logInfo('Checking if login is valid', LogPrefix.Gog)
@@ -79,7 +79,7 @@ export class GOGUser {
       .get(`https://users.gog.com/users/${user.user_id}`, {
         headers: {
           Authorization: `Bearer ${user.access_token}`,
-          'User-Agent': `HeroicGamesLauncher/${app.getVersion()}`
+          'User-Agent': `Relic/${app.getVersion()}`
         }
       })
       .catch((error) => {

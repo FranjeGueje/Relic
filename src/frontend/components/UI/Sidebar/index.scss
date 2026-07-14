@@ -20,7 +20,7 @@
   overflow-x: hidden;
   -webkit-app-region: drag;
 
-  .heroicIcon {
+  .relicIcon {
     grid-area: icon;
     width: 50px;
     height: 68px;
@@ -32,14 +32,14 @@
     grid-area: links;
   }
 
-  .heroicVersion {
+  .relicVersion {
     grid-area: version;
     margin-block: 0 var(--sidebar-vertical-padding);
     margin-inline: var(--sidebar-horizontal-padding) var(--space-3xs);
     -webkit-app-region: no-drag;
   }
 
-  .heroicNewReleases {
+  .relicNewReleases {
     grid-area: updates;
     margin-block: 0 var(--space-sm);
     margin-inline: var(--sidebar-horizontal-padding) var(--space-3xs);
@@ -81,7 +81,7 @@
       margin-inline: auto;
     }
 
-    .heroicVersion {
+    .relicVersion {
       margin: var(--space-sm);
     }
 

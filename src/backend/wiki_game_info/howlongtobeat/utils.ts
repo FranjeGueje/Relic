@@ -2,7 +2,7 @@ import axios from 'axios'
 import { logError, logInfo, LogPrefix } from 'backend/logger'
 import type { Game } from 'common/types/game_manager'
 
-export interface HeroicHowLongToBeatEntry {
+export interface RelicHowLongToBeatEntry {
   completionist: number
   mainStory: number
   mainExtra: number
@@ -16,7 +16,7 @@ const HLTB_BASE_URL = 'https://howlongtobeat.com'
 
 async function getGameDataById(
   gameId: string
-): Promise<HeroicHowLongToBeatEntry | null> {
+): Promise<RelicHowLongToBeatEntry | null> {
   try {
     const gameUrl = `${HLTB_BASE_URL}/game/${gameId}`
 
@@ -92,7 +92,7 @@ async function getGameDataById(
 
 async function getGogHLTBGameData(
   game: Game
-): Promise<HeroicHowLongToBeatEntry | null> {
+): Promise<RelicHowLongToBeatEntry | null> {
   const { app_name, title } = game.getGameInfo()
   const { storeUrl } = await game.getExtraInfo()
   if (!storeUrl) return null
@@ -166,7 +166,7 @@ async function getGogHLTBGameData(
 export async function getHowLongToBeat(
   game: Game,
   hltbId?: string
-): Promise<HeroicHowLongToBeatEntry | null> {
+): Promise<RelicHowLongToBeatEntry | null> {
   const gameInfo = game.getGameInfo()
   if (gameInfo.runner == 'gog') {
     logInfo(

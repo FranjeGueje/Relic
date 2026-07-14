@@ -18,13 +18,13 @@ const HideWindowOnProtocolLaunch = () => {
         }
         title={t(
           'setting.hide-window-on-protocol-launch',
-          'Hide Heroic window when launching games from heroic:// links'
+          'Hide Relic window when launching games from relic:// links'
         )}
       />
       <InfoIcon
         text={t(
           'help.hide-window-on-protocol-launch',
-          "Keeps the Heroic window hidden when a game is launched from an external shortcut, like the 'Add to Steam' feature."
+          "Keeps the Relic window hidden when a game is launched from an external shortcut, like the 'Add to Steam' feature."
         )}
       />
     </div>

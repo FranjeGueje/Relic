@@ -24,13 +24,13 @@ export default function AnalyticsDialog() {
           <>
             {t(
               'analyticsModal.info.pt1',
-              'In order to improve the app, Heroic collects 100% anonymous data.'
+              'In order to improve the app, Relic collects 100% anonymous data.'
             )}
             <ul>
               <li>
                 {t(
                   'analyticsModal.info.pt2',
-                  'Heroic uses the open-source Plausible Analytics platform, self-hosted by the Heroic team, to gather basic data: App Version, OS, System Architecture, Linux Distribution, Stores Connected and Country.'
+                  'Relic uses the open-source Plausible Analytics platform, self-hosted by the Relic team, to gather basic data: App Version, OS, System Architecture, Linux Distribution, Stores Connected and Country.'
                 )}
               </li>
               <li>
@@ -54,7 +54,7 @@ export default function AnalyticsDialog() {
               <li>
                 {t(
                   'analyticsModal.info.pt6',
-                  'For transparency, you can view the data we collect on the Heroic logs.'
+                  'For transparency, you can view the data we collect on the Relic logs.'
                 )}
               </li>
             </ul>

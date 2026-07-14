@@ -4,7 +4,7 @@ import Paper from '@mui/material/Paper'
 import Typography from '@mui/material/Typography'
 import Grid from '@mui/material/Grid'
 
-import HeroicIcon from 'frontend/assets/heroic-icon.svg?react'
+import RelicIcon from 'frontend/assets/relic-icon.svg?react'
 
 import type { SystemInformation } from 'backend/utils/systeminfo'
 import { useTranslation } from 'react-i18next'
@@ -17,7 +17,7 @@ function SoftwareInfo({ software }: Props) {
   const { t } = useTranslation()
 
   const {
-    heroicVersion,
+    relicVersion,
     legendaryVersion,
     gogdlVersion,
     cometVersion,
@@ -31,14 +31,14 @@ function SoftwareInfo({ software }: Props) {
       </Typography>
       <Grid container>
         <Grid item xs={2}>
-          <HeroicIcon className="heroic-icon" />
+          <RelicIcon className="relic-icon" />
         </Grid>
         <Grid item xs={10}>
           {t(
-            'settings.systemInformation.heroicVersion',
-            'Heroic: {{heroicVersion}}',
+            'settings.systemInformation.relicVersion',
+            'Relic: {{relicVersion}}',
             {
-              heroicVersion
+              relicVersion
             }
           )}
           <br />

@@ -4,7 +4,7 @@ import { basename, dirname, extname, join } from 'path'
 import { libraryManagerMap } from '../storeManagers'
 import { downloadFile } from 'backend/utils'
 import { createAbortController } from 'backend/utils/aborthandler/aborthandler'
-import { heroicIconFolder as iconsFolder } from 'backend/constants/paths'
+import { relicIconFolder as iconsFolder } from 'backend/constants/paths'
 
 function createImage(
   buffer: Buffer,

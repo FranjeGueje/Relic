@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom'
 
 import EpicLogo from 'frontend/assets/epic-logo.svg?react'
 import GOGLogo from 'frontend/assets/gog-logo.svg?react'
-import HeroicLogo from 'frontend/assets/heroic-icon.svg?react'
+import RelicLogo from 'frontend/assets/relic-icon.svg?react'
 import AmazonLogo from 'frontend/assets/amazon-logo.svg?react'
 import ZoomLogo from 'frontend/assets/zoom-logo.svg?react'
 
@@ -98,9 +98,9 @@ export default React.memo(function NewLogin() {
       <div className="loginContentWrapper">
         <div className="runnerList">
           <div className="runnerHeader">
-            <HeroicLogo className="runnerHeaderIcon" />
+            <RelicLogo className="runnerHeaderIcon" />
             <div className="runnerHeaderText">
-              <h1 className="title">Heroic</h1>
+              <h1 className="title">Relic</h1>
               <h2 className="subtitle">Games Launcher</h2>
             </div>
 

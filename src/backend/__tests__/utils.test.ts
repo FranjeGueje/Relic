@@ -2,7 +2,7 @@ import { axiosClient } from 'backend/utils'
 import { app } from 'electron'
 import { logError } from '../logger'
 import * as utils from '../utils'
-import { test_data } from './test_data/github-api-heroic-test-data.json'
+import { test_data } from './test_data/github-api-relic-test-data.json'
 
 jest.mock('electron')
 jest.mock('../logger')
@@ -68,7 +68,7 @@ describe('backend/utils.ts', () => {
         [
           {
             "body": "2.5.2 HOTFIX #2 Release",
-            "html_url": "https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher/releases/tag/v2.5.2",
+            "html_url": "https://github.com/anomalyco/relic/releases/tag/v2.5.2",
             "id": 200,
             "name": "2.5.2 HOTFIX #2",
             "prerelease": false,
@@ -78,7 +78,7 @@ describe('backend/utils.ts', () => {
           },
           {
             "body": "2.6.0 Beta Release",
-            "html_url": "https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher/releases/tag/v2.6.0-beta.1",
+            "html_url": "https://github.com/anomalyco/relic/releases/tag/v2.6.0-beta.1",
             "id": 100,
             "name": "2.6.0 Beta",
             "prerelease": true,
@@ -99,7 +99,7 @@ describe('backend/utils.ts', () => {
         [
           {
             "body": "2.6.0 Beta Release",
-            "html_url": "https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher/releases/tag/v2.6.0-beta.1",
+            "html_url": "https://github.com/anomalyco/relic/releases/tag/v2.6.0-beta.1",
             "id": 100,
             "name": "2.6.0 Beta",
             "prerelease": true,
@@ -124,7 +124,7 @@ describe('backend/utils.ts', () => {
 
       const releases = await utils.getLatestReleases()
       expect(logError).toBeCalledWith(
-        ['Error when checking for Heroic updates', 'Failed to fetch!'],
+        ['Error when checking for Relic updates', 'Failed to fetch!'],
         'Backend'
       )
       expect(releases).toMatchInlineSnapshot(`[]`)

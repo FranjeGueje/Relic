@@ -263,7 +263,7 @@ body.high-contrast {
 
   --success-button: #00ddff;
 
-  .heroicVersion {
+  .relicVersion {
     color: var(--text-default);
   }
 }
@@ -306,7 +306,7 @@ body.dracula-classic {
   --install-button: #b889fa;
   --secondary-button: #b889fa;
   --action-icon-hover: var(--accent);
-  .heroicVersion {
+  .relicVersion {
     color: var(--text-default);
   }
 }
@@ -427,7 +427,7 @@ body.nord-light {
     }
   }
 
-  .heroicVersion:hover {
+  .relicVersion:hover {
     color: var(--navbar-active);
   }
   .contextMenu > .MuiPaper-root {

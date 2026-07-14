@@ -7,7 +7,7 @@ export default function CrossoverBottle() {
   const { t } = useTranslation()
   const [wineCrossoverBottle, setWineCrossoverBottle] = useSetting(
     'wineCrossoverBottle',
-    'Heroic'
+    'Relic'
   )
   const [wineVersion] = useSetting('wineVersion', defaultWineVersion)
 

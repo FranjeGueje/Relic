@@ -1,10 +1,10 @@
 import { useTranslation } from 'react-i18next'
 import './index.scss'
-import type { HeroicHowLongToBeatEntry } from 'backend/wiki_game_info/howlongtobeat/utils'
+import type { RelicHowLongToBeatEntry } from 'backend/wiki_game_info/howlongtobeat/utils'
 import { createNewWindow } from 'frontend/helpers'
 
 type Props = {
-  info: HeroicHowLongToBeatEntry
+  info: RelicHowLongToBeatEntry
 }
 
 export default function HowLongToBeat({ info }: Props) {

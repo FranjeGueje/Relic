@@ -64,12 +64,12 @@ export default function WebView() {
   const amazonStore = `https://gaming.amazon.com`
   const zoomStore = `https://www.zoom-platform.com`
   const wikiURL =
-    'https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher/wiki'
+    'https://github.com/Relic-Games-Launcher/RelicGamesLauncher/wiki'
   const gogEmbedRegExp = new RegExp('https://embed.gog.com/on_login_success?')
   const gogLoginUrl =
     'https://auth.gog.com/auth?client_id=46899977096215655&redirect_uri=https%3A%2F%2Fembed.gog.com%2Fon_login_success%3Forigin%3Dclient&response_type=code&layout=galaxy'
   const zoomLoginUrl =
-    'https://www.zoom-platform.com/login?li=heroic&return_li_token=true'
+    'https://www.zoom-platform.com/login?li=relic&return_li_token=true'
 
   const trueAsStr = 'true' as unknown as boolean | undefined
 
@@ -413,7 +413,7 @@ export default function WebView() {
             <p>
               {t(
                 'adtraction-locked.description',
-                'It seems the track.adtraction.com domain was unable to load or is blocked. With adtraction, any purchase you make in the GOG store supports Heroic financially. Consider removing the block if you wish to contribute.'
+                'It seems the track.adtraction.com domain was unable to load or is blocked. With adtraction, any purchase you make in the GOG store supports Relic financially. Consider removing the block if you wish to contribute.'
               )}
             </p>
             <ToggleSwitch

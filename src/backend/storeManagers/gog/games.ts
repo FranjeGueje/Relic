@@ -729,7 +729,7 @@ export default class GOGGame implements Game {
     ) {
       const path = getCometBin()
       child = spawn(join(path.dir, path.bin), [
-        '--from-heroic',
+        '--from-relic',
         '--username',
         userData.username,
         '--quit'

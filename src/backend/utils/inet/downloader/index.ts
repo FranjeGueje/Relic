@@ -70,7 +70,7 @@ async function downloadFile(
     .get(url, {
       ...options.axiosConfig,
       headers: {
-        'User-Agent': `HeroicGamesLauncher/${app.getVersion()}`,
+        'User-Agent': `Relic/${app.getVersion()}`,
         ...options.axiosConfig?.headers
       }
     })

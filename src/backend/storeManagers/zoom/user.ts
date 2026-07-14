@@ -39,7 +39,7 @@ export class ZoomUser {
   public static async getUserDetails() {
     if (!isOnline()) {
       logError(
-        'Unable to get login information, Heroic offline',
+        'Unable to get login information, Relic offline',
         LogPrefix.Zoom
       )
       return
@@ -147,6 +147,6 @@ export class ZoomUser {
   }
 
   public static getLoginUrl(): string {
-    return `${embedUrl}/login?li=heroic&return_li_token=true`
+    return `${embedUrl}/login?li=relic&return_li_token=true`
   }
 }

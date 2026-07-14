@@ -56,7 +56,7 @@ import {
   wineDownloaderInfoStore
 } from './wine/manager/utils'
 import { readdir, lstat } from 'fs/promises'
-import { getHeroicVersion } from './utils/systeminfo/heroicVersion'
+import { getRelicVersion } from './utils/systeminfo/relicVersion'
 import { backendEvents } from './backend_events'
 import { wikiGameInfoStore } from './wiki_game_info/electronStore'
 import EasyDl from 'easydl'
@@ -75,7 +75,7 @@ import {
   configPath,
   fixAsarPath,
   gamesConfigPath,
-  heroicIconFolder,
+  relicIconFolder,
   publicDir,
   toolsPath,
   windowIcon
@@ -194,7 +194,7 @@ async function isEpicServiceOffline(
     title: `${type} ${t('epic.offline-notification-title', 'offline')}`,
     body: t(
       'epic.offline-notification-body',
-      'Heroic will maybe not work probably!'
+      'Relic will maybe not work probably!'
     ),
     urgency: 'normal',
     timeoutType: 'default',
@@ -230,11 +230,11 @@ async function isEpicServiceOffline(
 
 const showAboutWindow = () => {
   app.setAboutPanelOptions({
-    applicationName: 'Heroic Games Launcher',
-    applicationVersion: getHeroicVersion(),
+    applicationName: 'Relic',
+    applicationVersion: getRelicVersion(),
     copyright: 'GPL V3',
     iconPath: windowIcon,
-    website: 'https://heroicgameslauncher.com'
+    website: 'https://github.com/anomalyco/relic'
   })
   return app.showAboutPanel()
 }
@@ -402,7 +402,7 @@ function clearAchievementCache(appName: string) {
   GOGAchievementStore.delete(appName)
 }
 
-function resetHeroic() {
+function resetRelic() {
   const appFolders = [gamesConfigPath, configPath]
   appFolders.forEach((folder) => {
     rmSync(folder, { recursive: true, force: true })
@@ -502,7 +502,7 @@ function getNileBin(): { dir: string; bin: string } {
 }
 
 export function createNecessaryFolders() {
-  const defaultFolders = [gamesConfigPath, heroicIconFolder]
+  const defaultFolders = [gamesConfigPath, relicIconFolder]
 
   const necessaryFoldersByPlatform = {
     win32: [...defaultFolders],
@@ -607,7 +607,7 @@ function constructAndUpdateRPC(gameInfo: GameInfo): RpcClient {
     clientId: '852942976564723722'
   })
 
-  const versionText = `Heroic ${app.getVersion()}`
+  const versionText = `Relic ${app.getVersion()}`
 
   const image = gameInfo.art_icon || gameInfo.art_square
   const title = gameInfo.title
@@ -629,7 +629,7 @@ function constructAndUpdateRPC(gameInfo: GameInfo): RpcClient {
       name: title,
       type: 0,
       startTimestamp: Date.now(),
-      state: 'via Heroic on ' + getFormattedOsName(),
+      state: 'via Relic on ' + getFormattedOsName(),
       statusDisplayType: 0, // Use game title for name plate
       ...overrides
     })
@@ -783,7 +783,7 @@ const getLatestReleases = async (): Promise<Release[]> => {
   if (process.env.CI === 'e2e') return []
 
   const newReleases: Release[] = []
-  logInfo('Checking for new Heroic Updates', LogPrefix.Backend)
+  logInfo('Checking for new Relic Updates', LogPrefix.Backend)
 
   try {
     const { data: releases } = await axiosClient.get<Release[]>(GITHUB_API)
@@ -809,8 +809,8 @@ const getLatestReleases = async (): Promise<Release[]> => {
       notify({
         title: t('Update Available!'),
         body: t(
-          'notify.new-heroic-version',
-          'A new Heroic version was released!'
+          'notify.new-relic-version',
+          'A new Relic version was released!'
         )
       })
     }
@@ -818,7 +818,7 @@ const getLatestReleases = async (): Promise<Release[]> => {
     return newReleases
   } catch (error) {
     logError(
-      ['Error when checking for Heroic updates', error],
+      ['Error when checking for Relic updates', error],
       LogPrefix.Backend
     )
     return []
@@ -840,7 +840,7 @@ const getCurrentChangelog = async (): Promise<Release | null> => {
     return release as Release
   } catch (error) {
     logError(
-      ['Error when checking for current Heroic changelog:', error],
+      ['Error when checking for current Relic changelog:', error],
       LogPrefix.Backend
     )
     return null
@@ -1337,12 +1337,12 @@ export async function checkRosettaInstall() {
   )
 
   if (!result) {
-    // show a dialog saying that Heroic wont run without rosetta and add information on how to install it
+    // show a dialog saying that Relic wont run without rosetta and add information on how to install it
     await dialog.showMessageBox({
       title: i18next.t('box.warning.rosetta.title', 'Rosetta not found'),
       message: i18next.t(
         'box.warning.rosetta.message',
-        'Heroic requires Rosetta to run correctly on macOS with Apple Silicon chips. Please install it from the macOS terminal using the following command: "softwareupdate --install-rosetta" and restart Heroic. '
+        'Relic requires Rosetta to run correctly on macOS with Apple Silicon chips. Please install it from the macOS terminal using the following command: "softwareupdate --install-rosetta" and restart Relic. '
       ),
       buttons: ['OK'],
       icon: windowIcon
@@ -1631,7 +1631,7 @@ const axiosClient = axios.create({
 
 export const writeConfig = (appName: string, config: Partial<AppSettings>) => {
   logInfo(
-    `Writing config for ${appName === 'default' ? 'Heroic' : appName}`,
+    `Writing config for ${appName === 'default' ? 'Relic' : appName}`,
     LogPrefix.Backend
   )
   const oldConfig =
@@ -1680,7 +1680,7 @@ export {
   removeSpecialcharacters,
   clearCache,
   clearAchievementCache,
-  resetHeroic,
+  resetRelic,
   getLegendaryBin,
   getGOGdlBin,
   getCometBin,

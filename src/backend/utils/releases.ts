@@ -12,7 +12,7 @@ export const fetchLastestReleases = () => {
 
   runOnceWhenOnline(async () => {
     const url =
-      'https://raw.githubusercontent.com/Heroic-Games-Launcher/releases-info/refs/heads/main/release-data.json'
+      'https://raw.githubusercontent.com/anomalyco/relic-releases-info/refs/heads/main/release-data.json'
 
     try {
       const { data } = await axiosClient.get<ReleasesInfo>(url)

@@ -19,9 +19,9 @@ type Release = {
 const storage = window.localStorage
 const lastVersion = storage.getItem('last_version')?.replaceAll('"', '')
 
-export default React.memo(function HeroicVersion() {
+export default React.memo(function RelicVersion() {
   const { t } = useTranslation()
-  const [heroicVersion, setHeroicVersion] = useState('')
+  const [relicVersion, setRelicVersion] = useState('')
   const [newReleases, setNewReleases] = useState<Release[]>()
   const [showChangelogModal, setShowChangelogModal] = useState(true)
   const [showChangelogModalOnClick, setShowChangelogModalOnClick] =
@@ -31,13 +31,13 @@ export default React.memo(function HeroicVersion() {
     useContext(ContextProvider)
 
   useEffect(() => {
-    void window.api.getHeroicVersion().then((version) => {
+    void window.api.getRelicVersion().then((version) => {
       if (version !== lastVersion) {
         window.api.logInfo('Updated to a new version, cleaaning up the cache.')
         window.api.clearCache(false, true)
       }
       storage.setItem('last_version', JSON.stringify(version))
-      setHeroicVersion(version)
+      setRelicVersion(version)
     })
   }, [])
 
@@ -58,49 +58,49 @@ export default React.memo(function HeroicVersion() {
   )[0]
   const shouldShowUpdates = newBeta || newStable
 
-  const version = heroicVersion
+  const version = relicVersion
 
   return (
-    <div className="heroicVersionContainer" data-tour="sidebar-version">
+    <div className="relicVersionContainer" data-tour="sidebar-version">
       {((showChangelogModal &&
         !hideChangelogsOnStartup &&
-        heroicVersion !== lastChangelogShown) ||
+        relicVersion !== lastChangelogShown) ||
         showChangelogModalOnClick) && (
         <ChangelogModal
           dimissVersionCheck
           onClose={() => {
             setShowChangelogModal(false)
             setShowChangelogModalOnClick(false)
-            setLastChangelogShown(heroicVersion)
+            setLastChangelogShown(relicVersion)
           }}
         />
       )}
-      <div className="heroicVersionWrapper">
+      <div className="relicVersionWrapper">
         <span
-          className="heroicVersion"
+          className="relicVersion"
           role="link"
           title={t(
-            'info.heroic.click-to-see-changelog',
+            'info.relic.click-to-see-changelog',
             'Click to see changelog'
           )}
           onClick={() => setShowChangelogModalOnClick((current) => !current)}
         >
-          <span className="heroicVersion__title">
-            <span>{t('info.heroic.version', 'Heroic Version')}: </span>
+          <span className="relicVersion__title">
+            <span>{t('info.relic.version', 'Relic Version')}: </span>
           </span>
           <strong>{version}</strong>
         </span>
         <TourButton tourId={SIDEBAR_TOUR_ID} className="sidebar-tour-button" />
       </div>
       {shouldShowUpdates && (
-        <div className="heroicNewReleases">
-          <span>{t('info.heroic.newReleases', 'Update Available!')}</span>
+        <div className="relicNewReleases">
+          <span>{t('info.relic.newReleases', 'Update Available!')}</span>
           {newStable && (
             <a
               title={newStable.tag_name}
               onClick={() => window.api.openExternalUrl(newStable.html_url)}
             >
-              {t('info.heroic.stable', 'Stable')} ({newStable.tag_name})
+              {t('info.relic.stable', 'Stable')} ({newStable.tag_name})
             </a>
           )}
           {newBeta && (
@@ -108,7 +108,7 @@ export default React.memo(function HeroicVersion() {
               title={newBeta.tag_name}
               onClick={() => window.api.openExternalUrl(newBeta.html_url)}
             >
-              {t('info.heroic.beta', 'Beta')} ({newBeta.tag_name})
+              {t('info.relic.beta', 'Beta')} ({newBeta.tag_name})
             </a>
           )}
         </div>

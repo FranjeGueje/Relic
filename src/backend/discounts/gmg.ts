@@ -5,7 +5,7 @@ import { logError, logInfo, LogPrefix } from 'backend/logger'
 import type { CatalogProduct } from 'common/types/discounts'
 
 const GMG_FEED_URL_TEMPLATE =
-  'https://raw.githubusercontent.com/Heroic-Games-Launcher/HeroicGamesLauncher/gmg-feed/gmg-discounts-{currency}.json'
+  'https://raw.githubusercontent.com/anomalyco/relic/gmg-feed/gmg-discounts-{currency}.json'
 
 // Keep in sync with GMG_CURRENCIES in frontend/screens/Discounts/helpers.ts
 // and the files published by .github/workflows/gmg-feed.yml.
@@ -115,7 +115,7 @@ const fetchPage = async (
   const { data } = await axios.get<ImpactCatalogItemsResponse>(url, {
     timeout: 30000,
     params: { PageSize: PAGE_SIZE, Page: page },
-    headers: { 'User-Agent': `HeroicGamesLauncher/${app.getVersion()}` }
+    headers: { 'User-Agent': `Relic/${app.getVersion()}` }
   })
   return data
 }

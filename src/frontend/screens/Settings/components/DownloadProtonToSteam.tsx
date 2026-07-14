@@ -34,7 +34,7 @@ const DownloadProtonToSteam = () => {
       <InfoIcon
         text={t(
           'help.download_proton_steam',
-          "When enabled, GE-Proton will be downloaded directly to the Steam compatibility tools directory instead of the default Heroic path. It will use the Steam path set in the 'Default Steam path' setting above."
+          "When enabled, GE-Proton will be downloaded directly to the Steam compatibility tools directory instead of the default Relic path. It will use the Steam path set in the 'Default Steam path' setting above."
         )}
       />
     </div>

@@ -1,5 +1,5 @@
 /**
- * @file Figures out system information (CPU, GPU, memory) and software versions (Heroic, Legendary, gogdl, etc.)
+ * @file Figures out system information (CPU, GPU, memory) and software versions (Relic, Legendary, gogdl, etc.)
  */
 
 import os from 'os'
@@ -10,7 +10,7 @@ import { getGpuInfo } from './gpu'
 import { getMemoryInfo } from './memory'
 import { getOsInfo } from './osInfo'
 import { getSteamDeckInfo, type SteamDeckInfo } from './steamDeck'
-import { getHeroicVersion } from './heroicVersion'
+import { getRelicVersion } from './relicVersion'
 import {
   getCometVersion,
   getGogdlVersion,
@@ -57,7 +57,7 @@ interface SystemInformation {
   isFlatpak: boolean
   isAppImage: boolean
   softwareInUse: {
-    heroicVersion: string
+    relicVersion: string
     legendaryVersion: string
     gogdlVersion: string
     cometVersion: string
@@ -110,7 +110,7 @@ async function getSystemInfo(cache = true): Promise<SystemInformation> {
     isFlatpak: !!process.env.FLATPAK_ID,
     isAppImage: !!process.env.APPIMAGE,
     softwareInUse: {
-      heroicVersion: getHeroicVersion(),
+      relicVersion: getRelicVersion(),
       legendaryVersion: legendaryVersion,
       gogdlVersion: gogdlVersion,
       cometVersion: cometVersion,
@@ -147,7 +147,7 @@ We are${info.isAppImage ? '' : ' not'} running from an AppImage
     : ''
 }
 Software Versions:
-  Heroic: ${info.softwareInUse.heroicVersion}
+  Relic: ${info.softwareInUse.relicVersion}
   Legendary: ${info.softwareInUse.legendaryVersion}
   gogdl: ${info.softwareInUse.gogdlVersion}
   comet: ${info.softwareInUse.cometVersion}

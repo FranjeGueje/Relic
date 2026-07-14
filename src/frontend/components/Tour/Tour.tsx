@@ -43,8 +43,8 @@ const Tour: React.FC<TourProps> = ({
     showBullets: true,
     exitOnOverlayClick: true,
     disableInteraction: false,
-    highlightClass: 'heroic-tour-highlight',
-    tooltipClass: 'heroic-tour-tooltip',
+    highlightClass: 'relic-tour-highlight',
+    tooltipClass: 'relic-tour-tooltip',
     overlayOpacity: 0.7,
     scrollToElement: false,
     scrollPadding: 0

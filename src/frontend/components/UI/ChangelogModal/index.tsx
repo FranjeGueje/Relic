@@ -19,7 +19,7 @@ export function ChangelogModal({ onClose, dimissVersionCheck }: Props) {
 
   useEffect(() => {
     if (!currentChangelog) {
-      window.api.getHeroicVersion().then((version) => {
+      window.api.getRelicVersion().then((version) => {
         if (dimissVersionCheck || version !== lastChangelog) {
           window.api
             .getCurrentChangelog()

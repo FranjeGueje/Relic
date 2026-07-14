@@ -108,7 +108,7 @@ export default function WineManager(): JSX.Element | null {
             <FontAwesomeIcon icon={faCheck} color={'green'} />
             {t(
               'wineExplanation.proton-ge',
-              'GE-Proton is a Proton variant created by Glorious Eggroll. It is meant to be used along with the umu launcher (default in Heroic).'
+              'GE-Proton is a Proton variant created by Glorious Eggroll. It is meant to be used along with the umu launcher (default in Relic).'
             )}
           </div>
         )

@@ -66,7 +66,7 @@ const fetchPage = async (
   token: string | undefined
 ) => {
   const headers: Record<string, string> = {
-    'User-Agent': `HeroicGamesLauncher/${app.getVersion()}`
+    'User-Agent': `Relic/${app.getVersion()}`
   }
 
   if ((hideOwned && token) || (wishlistOnly && token)) {

@@ -31,7 +31,7 @@ export const initTrayIcon = async (mainWindow: BrowserWindow) => {
   }
   await loadContextMenu()
 
-  appIcon.setToolTip('Heroic')
+  appIcon.setToolTip('Relic')
 
   // event listeners
   appIcon.on('click', () => {
@@ -101,7 +101,7 @@ const contextMenu = (
   const recentsMenu = recentGames.map((game) => {
     return {
       click: function () {
-        handleProtocol([`heroic://launch?appName=${game.appName}`])
+        handleProtocol([`relic://launch?appName=${game.appName}`])
       },
       label: game.title
     }

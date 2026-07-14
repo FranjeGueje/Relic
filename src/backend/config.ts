@@ -25,7 +25,7 @@ import {
   configPath,
   sharedWinePrefix,
   gamesConfigPath,
-  heroicInstallPath,
+  relicInstallPath,
   userHome,
   defaultWinePrefixDir
 } from './constants/paths'
@@ -338,7 +338,7 @@ class GlobalConfigV0 extends GlobalConfig {
       checkForUpdatesOnStartup: !isFlatpak,
       autoUpdateGames: false,
       customWinePaths: [],
-      defaultInstallPath: heroicInstallPath,
+      defaultInstallPath: relicInstallPath,
       libraryTopSection: 'disabled',
       defaultSteamPath: getSteamCompatFolder(),
       defaultWinePrefix: defaultWinePrefixDir,
@@ -352,7 +352,7 @@ class GlobalConfigV0 extends GlobalConfig {
       wrapperOptions: [],
       showFps: false,
       useGameMode: isFlatpak,
-      wineCrossoverBottle: 'Heroic',
+      wineCrossoverBottle: 'Relic',
       winePrefix: isWindows ? '' : sharedWinePrefix,
       wineVersion: defaultWine,
       enableEsync: true,

@@ -22,7 +22,7 @@ import {
 import React, { useCallback, useContext, useEffect, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import { AvailablePlatforms } from '..'
-import fallbackImage from 'frontend/assets/heroic_card.jpg'
+import fallbackImage from 'frontend/assets/relic_card.jpg'
 import ContextProvider from 'frontend/state/ContextProvider'
 import classNames from 'classnames'
 import axios from 'axios'

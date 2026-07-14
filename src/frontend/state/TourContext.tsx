@@ -40,13 +40,13 @@ type TourProviderProps = {
 export const TourProvider: React.FC<TourProviderProps> = ({ children }) => {
   const [tourState, setTourState] = useState<TourState>(() => {
     // Try to load tour state from localStorage
-    const savedState = localStorage.getItem('heroic-tour-state') || undefined
+    const savedState = localStorage.getItem('relic-tour-state') || undefined
     return savedState ? (JSON.parse(savedState) as TourState) : defaultState
   })
 
   // Save state to localStorage whenever it changes
   React.useEffect(() => {
-    localStorage.setItem('heroic-tour-state', JSON.stringify(tourState))
+    localStorage.setItem('relic-tour-state', JSON.stringify(tourState))
   }, [tourState])
 
   const startTour = (tourId: string) => {

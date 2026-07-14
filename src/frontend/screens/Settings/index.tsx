@@ -52,7 +52,7 @@ function Settings() {
 
   const helpContent = t(
     'help.content.settingsDefault',
-    'Shows all settings of Heroic and defaults for games.'
+    'Shows all settings of Relic and defaults for games.'
   )
 
   hasHelp(
@@ -61,7 +61,7 @@ function Settings() {
     <p>{helpContent}</p>
   )
 
-  // Load Heroic's or game's config, only if not loaded already
+  // Load Relic's or game's config, only if not loaded already
   useEffect(() => {
     const getSettings = async () => {
       const config = await window.api.requestAppSettings()

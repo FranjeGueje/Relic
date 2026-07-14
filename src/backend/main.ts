@@ -42,7 +42,7 @@ import {
   isEpicServiceOffline,
   handleExit,
   openUrlOrFile,
-  resetHeroic,
+  resetRelic,
   showAboutWindow,
   showItemInFolder,
   getFileSize,
@@ -117,7 +117,7 @@ import {
   discordLink,
   epicLoginUrl,
   githubSponsorsPage,
-  heroicGithubURL,
+  relicGithubURL,
   kofiPage,
   patreonPage,
   sidInfoUrl,
@@ -161,8 +161,8 @@ async function initializeWindow(): Promise<BrowserWindow> {
     logInfo(
       [
         isSteamDeckGameMode
-          ? 'Heroic started via Steam-Deck gamemode.'
-          : 'Heroic started with --fullscreen',
+          ? 'Relic started via Steam-Deck gamemode.'
+          : 'Relic started with --fullscreen',
         'Switching to fullscreen'
       ],
       LogPrefix.Backend
@@ -309,7 +309,7 @@ const processZoomForScreen = (zoomFactor: number) => {
 }
 
 if (!gotTheLock) {
-  console.log('Heroic is already running, quitting this instance')
+  console.log('Relic is already running, quitting this instance')
   app.quit()
 } else {
   app.on('second-instance', (event, argv) => {
@@ -342,7 +342,7 @@ if (!gotTheLock) {
 
     // try to fix notification app name on windows
     if (isWindows) {
-      app.setAppUserModelId('Heroic Games Launcher')
+      app.setAppUserModelId('Relic')
     }
 
     runOnceWhenOnline(async () => {
@@ -398,12 +398,12 @@ if (!gotTheLock) {
 
     const mainWindow = await initializeWindow()
 
-    protocol.handle('heroic', (request) => {
+    protocol.handle('relic', (request) => {
       handleProtocol([request.url])
       return new Response('Operation initiated.', { status: 201 })
     })
-    if (process.env.CI !== 'e2e' && !app.isDefaultProtocolClient('heroic')) {
-      if (app.setAsDefaultProtocolClient('heroic')) {
+    if (process.env.CI !== 'e2e' && !app.isDefaultProtocolClient('relic')) {
+      if (app.setAsDefaultProtocolClient('relic')) {
         logInfo('Registered protocol with OS.', LogPrefix.Backend)
       } else {
         logWarning('Failed to register protocol with OS.', LogPrefix.Backend)
@@ -472,10 +472,10 @@ addOneTimeListener('frontendReady', () => {
 
   if (isSnap) {
     const snapWarning: Electron.MessageBoxOptions = {
-      title: i18next.t('box.warning.snap.title', 'Heroic is running as a Snap'),
+      title: i18next.t('box.warning.snap.title', 'Relic is running as a Snap'),
       message: i18next.t('box.warning.snap.message', {
         defaultValue:
-          'Some features are not available in the Snap version of the app for now and we are trying to fix it.{{newLine}}Current limitations are: {{newLine}}Heroic will not be able to find Proton from Steam or Wine from Lutris.{{newLine}}{{newLine}}Gamescope, GameMode and MangoHud will also not work since Heroic cannot have access to them.{{newLine}}{{newLine}}To have access to this feature please install Heroic as a Flatpak, DEB or from the AppImage.',
+          'Some features are not available in the Snap version of the app for now and we are trying to fix it.{{newLine}}Current limitations are: {{newLine}}Relic will not be able to find Proton from Steam or Wine from Lutris.{{newLine}}{{newLine}}Gamescope, GameMode and MangoHud will also not work since Relic cannot have access to them.{{newLine}}{{newLine}}To have access to this feature please install Relic as a Flatpak, DEB or from the AppImage.',
         newLine: '\n'
       }),
       checkboxLabel: i18next.t('box.warning.snap.checkbox', {
@@ -515,7 +515,7 @@ process.on('uncaughtException', async (err) => {
   logError(err, LogPrefix.Backend)
 
   // We might get "object has been destroyed" exceptions in CI, since we start
-  // and close Heroic quickly there. Displaying an error box would lock up
+  // and close Relic quickly there. Displaying an error box would lock up
   // the test (until the timeout is reached), so let's not do that
   if (process.env.CI === 'e2e') return
 
@@ -618,7 +618,7 @@ app.on('open-url', (event, url) => {
 addListener('openExternalUrl', async (event, url) => openUrlOrFile(url))
 addListener('openFolder', async (event, folder) => openUrlOrFile(folder))
 addListener('openSupportPage', async () => openUrlOrFile(supportURL))
-addListener('openReleases', async () => openUrlOrFile(heroicGithubURL))
+addListener('openReleases', async () => openUrlOrFile(relicGithubURL))
 addListener('openWeblate', async () => openUrlOrFile(weblateUrl))
 addListener('showAboutWindow', () => showAboutWindow())
 addListener('openLoginPage', async () => openUrlOrFile(epicLoginUrl))
@@ -670,7 +670,7 @@ addHandler('getEpicGamesStatus', async () => isEpicServiceOffline())
 
 addHandler('getMaxCpus', () => cpus().length)
 
-addHandler('getHeroicVersion', () => app.getVersion())
+addHandler('getRelicVersion', () => app.getVersion())
 addHandler('isFullscreen', () => isSteamDeckGameMode || isCLIFullscreen)
 addHandler('getGameOverride', async () =>
   libraryManagerMap['legendary'].getGameOverride()
@@ -704,7 +704,7 @@ addListener('clearCache', (event, showDialog, fromVersionChange = false) => {
       title: i18next.t('box.cache-cleared.title', 'Cache Cleared'),
       message: i18next.t(
         'box.cache-cleared.message',
-        'Heroic Cache Was Cleared!'
+        'Relic Cache Was Cleared!'
       ),
       type: 'MESSAGE',
       buttons: [{ text: i18next.t('box.ok', 'Ok') }]
@@ -720,7 +720,7 @@ addListener('clearAchievementCache', (event, appName: string) => {
   )
 })
 
-addListener('resetHeroic', () => resetHeroic())
+addListener('resetRelic', () => resetRelic())
 
 addListener('createNewWindow', (e, url) => {
   new BrowserWindow({ height: 700, width: 1200 }).loadURL(url)

@@ -691,7 +691,7 @@ export default class LegendaryLibraryManager implements LibraryManager {
 
     const { dir, bin } = getLegendaryBin()
 
-    // Set LEGENDARY_CONFIG_PATH to a custom, Heroic-specific location so user-made
+    // Set LEGENDARY_CONFIG_PATH to a custom, Relic-specific location so user-made
     // changes to Legendary's main config file don't affect us
     if (!options) {
       options = {}
@@ -722,7 +722,7 @@ export default class LegendaryLibraryManager implements LibraryManager {
 
     try {
       const response = await axiosClient.get<ResponseDataLegendaryAPI>(
-        'https://heroic.legendary.gl/v1/version.json'
+        'https://relic.legendary.gl/v1/version.json'
       )
 
       if (response.data.game_overrides) {
@@ -739,7 +739,7 @@ export default class LegendaryLibraryManager implements LibraryManager {
   async getGameSdl(appName: string): Promise<SelectiveDownload[]> {
     try {
       const response = await axiosClient.get<Record<string, SelectiveDownload>>(
-        `https://heroic.legendary.gl/v1/sdl/${appName}.json`
+        `https://relic.legendary.gl/v1/sdl/${appName}.json`
       )
 
       // if data type is not a json return empty array

@@ -16,7 +16,7 @@ import {
 } from './types/zoom'
 import { TitleBarOverlay } from 'electron'
 import { ChildProcess } from 'child_process'
-import type { HeroicHowLongToBeatEntry } from 'backend/wiki_game_info/howlongtobeat/utils'
+import type { RelicHowLongToBeatEntry } from 'backend/wiki_game_info/howlongtobeat/utils'
 import type { Path } from 'backend/schemas'
 import type LogWriter from 'backend/logger/log_writer'
 
@@ -741,7 +741,7 @@ export interface SteamInfo {
 export interface WikiInfo {
   pcgamingwiki: PCGamingWikiInfo | null
   applegamingwiki: AppleGamingWikiInfo | null
-  howlongtobeat: HeroicHowLongToBeatEntry | null
+  howlongtobeat: RelicHowLongToBeatEntry | null
   gamesdb: GamesDBInfo | null
   steamInfo: SteamInfo | null
   umuId: string | null

@@ -24,7 +24,7 @@ const CustomCSS = () => {
       <div className="customCSSWarning">
         {t(
           'setting.custom_css.warning',
-          "Warning: this applies to the whole frontend. That means the wrong style can render Heroic unusable. If needed, the setting can be changes manually in `~/.config/heroic/config.json`. Do NOT copy styles from sources you don't trust."
+          "Warning: this applies to the whole frontend. That means the wrong style can render Relic unusable. If needed, the setting can be changes manually in `~/.config/relic/config.json`. Do NOT copy styles from sources you don't trust."
         )}
       </div>
     </>

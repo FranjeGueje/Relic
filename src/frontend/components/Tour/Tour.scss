@@ -10,7 +10,7 @@
 }
 
 // Add the tooltip class styling
-.heroic-tour-tooltip {
+.relic-tour-tooltip {
   background: var(--tour-popup-background, var(--neutral-02));
   color: var(--text-default);
   box-shadow: 0 3px 12px rgba(0, 0, 0, 0.25);
@@ -110,7 +110,7 @@
   box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.6);
 }
 
-.heroic-tour-highlight {
+.relic-tour-highlight {
   background: rgba(29, 232, 245, 0.1) !important;
   border: 2px solid var(--brand-primary) !important;
   box-sizing: border-box;

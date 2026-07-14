@@ -507,7 +507,7 @@ export default class ZoomGame implements Game {
         title: t('box.error.executableNotFound', 'Executable not found'),
         message: t(
           'box.error.executableNotFoundMessage',
-          'Heroic could not find the executable for this game. Please set it manually in the game settings.'
+          'Relic could not find the executable for this game. Please set it manually in the game settings.'
         ),
         type: 'ERROR'
       })

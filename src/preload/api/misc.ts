@@ -2,11 +2,11 @@ import { makeListenerCaller, makeHandlerInvoker, frontendListenerSlot } from '..
 
 export const clearCache = makeListenerCaller('clearCache')
 export const clearAchievementCache = makeListenerCaller('clearAchievementCache')
-export const resetHeroic = makeListenerCaller('resetHeroic')
+export const resetRelic = makeListenerCaller('resetRelic')
 export const openWeblate = makeListenerCaller('openWeblate')
 export const changeLanguage = makeListenerCaller('changeLanguage')
 export const openExternalUrl = makeListenerCaller('openExternalUrl')
-export const getHeroicVersion = makeHandlerInvoker('getHeroicVersion')
+export const getRelicVersion = makeHandlerInvoker('getRelicVersion')
 export const getLatestReleases = makeHandlerInvoker('getLatestReleases')
 export const getCurrentChangelog = makeHandlerInvoker('getCurrentChangelog')
 export const openPatreonPage = makeListenerCaller('openPatreonPage')

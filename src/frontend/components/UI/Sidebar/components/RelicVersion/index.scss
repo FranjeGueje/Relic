@@ -1,5 +1,5 @@
 .Sidebar {
-  .heroicVersionWrapper {
+  .relicVersionWrapper {
     display: flex;
     gap: 5px;
     align-items: flex-start;
@@ -10,7 +10,7 @@
     }
   }
 
-  .heroicVersion {
+  .relicVersion {
     display: flex;
     gap: 5px;
     font-size: var(--text-sm);
@@ -23,7 +23,7 @@
     }
   }
 
-  .heroicNewReleases {
+  .relicNewReleases {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -42,7 +42,7 @@
   }
 
   &.collapsed {
-    .heroicVersionWrapper {
+    .relicVersionWrapper {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
@@ -54,16 +54,16 @@
       }
     }
 
-    .heroicVersion {
+    .relicVersion {
       font-size: var(--text-xs);
       text-align: center;
     }
 
-    .heroicVersion__title {
+    .relicVersion__title {
       display: none;
     }
 
-    .heroicNewReleases {
+    .relicNewReleases {
       display: none;
     }
   }

@@ -17,7 +17,7 @@ const STICK_REPEAT_DELAY = 250
 const SCROLL_REPEAT_DELAY = 50
 
 /*
- * For more documentation, check here https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher/wiki/Gamepad-Navigation
+ * For more documentation, check here https://github.com/Relic-Games-Launcher/RelicGamesLauncher/wiki/Gamepad-Navigation
  */
 
 let controllerIsDisabled = false
@@ -73,7 +73,7 @@ export const initGamepad = () => {
     if (controllerIsDisabled) return
 
     if (!isFocused) {
-      // ignore gamepad events if Heroic is not the focused app
+      // ignore gamepad events if Relic is not the focused app
       //
       // the browser still detects the gamepad interactions even
       // if the screen is not focused when playing a game

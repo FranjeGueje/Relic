@@ -188,7 +188,7 @@ async function updateQueueElement(params: InstallParams): Promise<{
 }
 
 async function downloadFixesFor(appName: string, runner: Runner) {
-  const url = `https://raw.githubusercontent.com/Heroic-Games-Launcher/known-fixes/main/${storeMap[runner]}/${appName}-${storeMap[runner]}.json`
+  const url = `https://raw.githubusercontent.com/anomalyco/relic-known-fixes/main/${storeMap[runner]}/${appName}-${storeMap[runner]}.json`
   const dest = pathModule.join(fixesPath, `${appName}-${storeMap[runner]}.json`)
   if (!existsSync(fixesPath)) {
     mkdirSync(fixesPath, { recursive: true })

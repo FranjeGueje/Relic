@@ -5,7 +5,7 @@ import useSetting from 'frontend/hooks/useSetting'
 import ContextProvider from 'frontend/state/ContextProvider'
 
 const WIKI_URL =
-  'https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher/wiki/Hybrid-GPUs:-NVIDIA-Optimus-and-AMD-Dynamic-Switchable-Graphics'
+  'https://github.com/Relic-Games-Launcher/RelicGamesLauncher/wiki/Hybrid-GPUs:-NVIDIA-Optimus-and-AMD-Dynamic-Switchable-Graphics'
 
 const NvidiaPrime = () => {
   const { t } = useTranslation()

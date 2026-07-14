@@ -18,9 +18,9 @@ const exists = async (path: PathLike) =>
 export class LegendaryGlobalConfigFolderMigration implements Migration {
   identifier = 'legendary-move-global-config-folder'
   async run(): Promise<boolean> {
-    const hasHeroicSpecificConfig = await exists(legendaryConfigPath)
+    const hasRelicSpecificConfig = await exists(legendaryConfigPath)
     // Don't overwrite existing configuration
-    if (hasHeroicSpecificConfig) return true
+    if (hasRelicSpecificConfig) return true
 
     const globalLegendaryConfig = isLinux
       ? join(app.getPath('appData'), 'legendary')

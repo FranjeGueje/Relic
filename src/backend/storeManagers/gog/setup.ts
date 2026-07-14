@@ -232,9 +232,9 @@ async function setup(
       if (!existsSync(isiPath)) {
         logError(
           [
-            "Script interpreter couldn't be found",
-            isiPath,
-            'to try again restart Heroic and',
+        "Script interpreter couldn't be found",
+          isiPath,
+          'to try again restart Relic and',
             isWindows ? 'reinstall the game' : 'delete wine prefix of the game'
           ],
           {

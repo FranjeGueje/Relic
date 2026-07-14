@@ -12,28 +12,28 @@ let configFolder = app.getPath('appData')
 if (process.env.CI === 'e2e') {
   const temp_dir = dirSync({ unsafeCleanup: true })
   console.log(
-    `CI is set to "e2e", storing Heroic config files in ${temp_dir.name}`
+    `CI is set to "e2e", storing Relic config files in ${temp_dir.name}`
   )
   configFolder = temp_dir.name
-  mkdirSync(join(configFolder, 'heroic'))
+  mkdirSync(join(configFolder, 'relic'))
 }
 
 export const flatpakHome = env.XDG_DATA_HOME?.replace('/data', '') || homedir()
 export const userHome = isSnap ? env.SNAP_REAL_HOME! : homedir()
 
-export const appFolder = join(configFolder, 'heroic')
+export const appFolder = join(configFolder, 'relic')
 export const userDataPath = app.getPath('userData')
 export const toolsPath = join(appFolder, 'tools')
 export const runtimePath = join(toolsPath, 'runtimes')
 export const defaultUmuPath = join(runtimePath, 'umu', 'umu_run.py')
 export const configPath = join(appFolder, 'config.json')
 export const gamesConfigPath = join(appFolder, 'GamesConfig')
-export const heroicIconFolder = join(appFolder, 'icons')
-export const heroicInstallPath = join(userHome, 'Games', 'Heroic')
+export const relicIconFolder = join(appFolder, 'icons')
+export const relicInstallPath = join(userHome, 'Games', 'Relic')
 export const defaultWinePrefixDir = join(
   userHome,
   'Games',
-  'Heroic',
+  'Relic',
   'Prefixes'
 )
 export const sharedWinePrefix = join(defaultWinePrefixDir, 'shared')

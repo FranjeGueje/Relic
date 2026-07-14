@@ -471,7 +471,7 @@ export default class NileLibraryManager implements LibraryManager {
 
     const { dir, bin } = getNileBin()
 
-    // Set NILE_CONFIG_PATH to a custom, Heroic-specific location so user-made
+    // Set NILE_CONFIG_PATH to a custom, Relic-specific location so user-made
     // changes to Nile's main config file don't affect us
     if (!options) {
       options = {}

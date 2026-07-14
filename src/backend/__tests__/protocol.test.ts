@@ -158,7 +158,7 @@ describe('protocol.ts --no-gui behavior', () => {
       test('should exit app when user clicks No', async () => {
         ;(dialog.showMessageBox as jest.Mock).mockResolvedValue({ response: 1 })
 
-        await handleProtocol(['heroic://launch/test-game'])
+        await handleProtocol(['relic://launch/test-game'])
 
         expect(app.quit).toHaveBeenCalled()
       })
@@ -166,7 +166,7 @@ describe('protocol.ts --no-gui behavior', () => {
       test('should show GUI and install when user clicks Yes', async () => {
         ;(dialog.showMessageBox as jest.Mock).mockResolvedValue({ response: 0 })
 
-        await handleProtocol(['heroic://launch/test-game'])
+        await handleProtocol(['relic://launch/test-game'])
 
         expect(mockMainWindow.show).toHaveBeenCalled()
         expect(sendFrontendMessage).toHaveBeenCalledWith(
@@ -186,7 +186,7 @@ describe('protocol.ts --no-gui behavior', () => {
       test('should not exit app when user clicks No', async () => {
         ;(dialog.showMessageBox as jest.Mock).mockResolvedValue({ response: 1 })
 
-        await handleProtocol(['heroic://launch/test-game'])
+        await handleProtocol(['relic://launch/test-game'])
 
         expect(app.quit).not.toHaveBeenCalled()
         expect(mockMainWindow.show).not.toHaveBeenCalled()
@@ -195,7 +195,7 @@ describe('protocol.ts --no-gui behavior', () => {
       test('should install when user clicks Yes (normal behavior)', async () => {
         ;(dialog.showMessageBox as jest.Mock).mockResolvedValue({ response: 0 })
 
-        await handleProtocol(['heroic://launch/test-game'])
+        await handleProtocol(['relic://launch/test-game'])
 
         expect(sendFrontendMessage).toHaveBeenCalledWith(
           'installGame',
@@ -222,7 +222,7 @@ describe('protocol.ts --no-gui behavior', () => {
         launchEventCallback: mockLaunchEventCallback
       }))
 
-      await handleProtocol(['heroic://launch/test-game'])
+      await handleProtocol(['relic://launch/test-game'])
 
       // Should not show dialog for installed games
       expect(dialog.showMessageBox).not.toHaveBeenCalled()
@@ -232,7 +232,7 @@ describe('protocol.ts --no-gui behavior', () => {
 
   describe('edge cases', () => {
     test('should handle invalid URLs gracefully', async () => {
-      await handleProtocol(['not-a-heroic-url'])
+      await handleProtocol(['not-a-relic-url'])
 
       // Should not crash or call any dialog/app methods
       expect(dialog.showMessageBox).not.toHaveBeenCalled()
@@ -245,7 +245,7 @@ describe('protocol.ts --no-gui behavior', () => {
         emptyGameInfoMock
       )
 
-      await handleProtocol(['heroic://launch/nonexistent-game'])
+      await handleProtocol(['relic://launch/nonexistent-game'])
 
       // Should not show dialog if game info cannot be found
       expect(dialog.showMessageBox).not.toHaveBeenCalled()
@@ -256,7 +256,7 @@ describe('protocol.ts --no-gui behavior', () => {
       ;(getMainWindow as jest.Mock).mockReturnValue(null)
       mockIsCLINoGui.mockReturnValue(true)
 
-      await handleProtocol(['heroic://launch/test-game'])
+      await handleProtocol(['relic://launch/test-game'])
 
       // Should return early if no main window available
       expect(dialog.showMessageBox).not.toHaveBeenCalled()
@@ -272,7 +272,7 @@ describe('protocol.ts --no-gui behavior', () => {
 
     test('hides window when URL carries gui=false', async () => {
       await handleProtocol([
-        'heroic://launch?appName=test-game&runner=legendary&gui=false'
+        'relic://launch?appName=test-game&runner=legendary&gui=false'
       ])
 
       expect(mockMainWindow.hide).toHaveBeenCalled()
@@ -281,13 +281,13 @@ describe('protocol.ts --no-gui behavior', () => {
     test('hides window when hideWindowOnProtocolLaunch setting is enabled', async () => {
       mockHideWindowOnProtocolLaunch.mockReturnValue(true)
 
-      await handleProtocol(['heroic://launch/test-game'])
+      await handleProtocol(['relic://launch/test-game'])
 
       expect(mockMainWindow.hide).toHaveBeenCalled()
     })
 
     test('does not hide window when neither setting nor URL param is set', async () => {
-      await handleProtocol(['heroic://launch/test-game'])
+      await handleProtocol(['relic://launch/test-game'])
 
       expect(mockMainWindow.hide).not.toHaveBeenCalled()
     })
@@ -296,7 +296,7 @@ describe('protocol.ts --no-gui behavior', () => {
       mockMainWindow.isVisible.mockReturnValue(false)
       mockHideWindowOnProtocolLaunch.mockReturnValue(true)
 
-      await handleProtocol(['heroic://launch/test-game'])
+      await handleProtocol(['relic://launch/test-game'])
 
       expect(mockMainWindow.hide).not.toHaveBeenCalled()
     })
@@ -306,7 +306,7 @@ describe('protocol.ts --no-gui behavior', () => {
       mockHideWindowOnProtocolLaunch.mockReturnValue(true)
       ;(dialog.showMessageBox as jest.Mock).mockResolvedValue({ response: 0 })
 
-      await handleProtocol(['heroic://launch/test-game'])
+      await handleProtocol(['relic://launch/test-game'])
 
       expect(mockMainWindow.show).toHaveBeenCalled()
       expect(sendFrontendMessage).toHaveBeenCalledWith(
@@ -325,42 +325,42 @@ describe('protocol.ts --no-gui behavior', () => {
     test('returns true when URL has gui=false', () => {
       expect(
         shouldHideWindowForProtocolArgs([
-          'heroic://launch?appName=foo&gui=false'
+          'relic://launch?appName=foo&gui=false'
         ])
       ).toBe(true)
     })
 
     test('accepts gui=0 and gui=no as equivalent to false', () => {
       expect(
-        shouldHideWindowForProtocolArgs(['heroic://launch?appName=foo&gui=0'])
+        shouldHideWindowForProtocolArgs(['relic://launch?appName=foo&gui=0'])
       ).toBe(true)
       expect(
-        shouldHideWindowForProtocolArgs(['heroic://launch?appName=foo&gui=no'])
+        shouldHideWindowForProtocolArgs(['relic://launch?appName=foo&gui=no'])
       ).toBe(true)
     })
 
     test('returns true when setting is enabled', () => {
       mockHideWindowOnProtocolLaunch.mockReturnValue(true)
       expect(
-        shouldHideWindowForProtocolArgs(['heroic://launch/test-game'])
+        shouldHideWindowForProtocolArgs(['relic://launch/test-game'])
       ).toBe(true)
     })
 
     test('returns false when setting is off and URL has no gui param', () => {
       expect(
-        shouldHideWindowForProtocolArgs(['heroic://launch/test-game'])
+        shouldHideWindowForProtocolArgs(['relic://launch/test-game'])
       ).toBe(false)
     })
 
     test('returns false for non-launch protocol URLs even with setting on', () => {
       mockHideWindowOnProtocolLaunch.mockReturnValue(true)
-      expect(shouldHideWindowForProtocolArgs(['heroic://ping'])).toBe(false)
+      expect(shouldHideWindowForProtocolArgs(['relic://ping'])).toBe(false)
     })
 
-    test('returns false when no heroic URL is present', () => {
+    test('returns false when no relic URL is present', () => {
       mockHideWindowOnProtocolLaunch.mockReturnValue(true)
       expect(
-        shouldHideWindowForProtocolArgs(['/path/to/heroic', '--some-flag'])
+        shouldHideWindowForProtocolArgs(['/path/to/relic', '--some-flag'])
       ).toBe(false)
     })
   })

@@ -22,7 +22,7 @@ async function sendRequestToApi(
     body: formData,
     method: 'post',
     headers: {
-      'User-Agent': `HeroicGamesLauncher/${app.getVersion()}`,
+      'User-Agent': `Relic/${app.getVersion()}`,
       'Content-Type': 'application/x-www-form-urlencoded'
     }
   }).catch((err) => {
@@ -53,7 +53,7 @@ async function readPartOfFile(file: string, size: number) {
 }
 
 /**
- * Uploads the log file of a game / runner / Heroic to https://dpaste.com/api/v2/
+ * Uploads the log file of a game / runner / Relic to https://dpaste.com/api/v2/
  * @param name See {@link UploadedLogData.name}
  * @param getLogFileArgs Used to get the log file path. See {@link getLogFilePath}
  * @returns `false` if an error occurred, otherwise the URL to the uploaded file and {@link UploadedLogData}

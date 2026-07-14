@@ -19,7 +19,7 @@ const DefaultSteamPath = () => {
 
   const helpContent = t(
     'help.steam_path.info',
-    'This path lets Heroic determine what version of Proton Steam uses, for adding non-Steam games to Steam.'
+    'This path lets Relic determine what version of Proton Steam uses, for adding non-Steam games to Steam.'
   )
 
   hasHelp(

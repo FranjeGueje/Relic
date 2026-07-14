@@ -9,7 +9,7 @@ export const currentGlobalConfigVersion: GlobalConfigVersion = 'v0'
  * @returns unix: $SHELL or /usr/bin/bash
  */
 function getShell() {
-  // Dont change this logic since Heroic will break when using SH or FISH
+  // Dont change this logic since Relic will break when using SH or FISH
   switch (process.platform) {
     case 'win32':
       return 'powershell.exe'

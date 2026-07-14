@@ -296,10 +296,10 @@ async function addNonSteamGame(game: Game): Promise<boolean> {
 
     const { runner, app_name } = gameInfo
 
-    args.push(`"heroic://launch?appName=${app_name}&runner=${runner}"`)
+    args.push(`"relic://launch?appName=${app_name}&runner=${runner}"`)
     newEntry.LaunchOptions = args.join(' ')
     if (isFlatpak) {
-      newEntry.LaunchOptions = `run com.heroicgameslauncher.hgl ${newEntry.LaunchOptions}`
+      newEntry.LaunchOptions = `run io.github.relic ${newEntry.LaunchOptions}`
     }
     newEntry.IsHidden = false
     newEntry.AllowDesktopConfig = true

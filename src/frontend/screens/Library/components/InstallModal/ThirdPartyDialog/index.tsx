@@ -123,7 +123,7 @@ export default function ThirdPartyDialog({
             <p>
               {t(
                 'third-party-managed.notice2',
-                'After clicking Install, Heroic will run the application in order to complete the installation process'
+                'After clicking Install, Relic will run the application in order to complete the installation process'
               )}
             </p>
           </div>

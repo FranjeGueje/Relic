@@ -14,8 +14,8 @@ import { GlobalConfig } from './config'
 
 const RUNNERS = z.enum(['legendary', 'gog', 'nile', 'sideload'])
 
-function parseHeroicUrl(args: string[]): URL | undefined {
-  const urlStr = args.find((arg) => arg.startsWith('heroic://'))
+function parseRelicUrl(args: string[]): URL | undefined {
+  const urlStr = args.find((arg) => arg.startsWith('relic://'))
   if (!urlStr) return
   try {
     return new URL(urlStr)
@@ -29,11 +29,11 @@ function urlRequestsNoGui(url: URL): boolean {
   return guiParam === 'false' || guiParam === '0' || guiParam === 'no'
 }
 
-// Returns true when a `heroic://launch/...` URL in `args` should suppress
+// Returns true when a `relic://launch/...` URL in `args` should suppress
 // the main window: either the URL carries `gui=false` (or `0`/`no`), or the
 // user enabled the `hideWindowOnProtocolLaunch` setting.
 export function shouldHideWindowForProtocolArgs(args: string[]): boolean {
-  const url = parseHeroicUrl(args)
+  const url = parseRelicUrl(args)
   if (!url || url.hostname !== 'launch') return false
   if (urlRequestsNoGui(url)) return true
   try {
@@ -44,7 +44,7 @@ export function shouldHideWindowForProtocolArgs(args: string[]): boolean {
 }
 
 export function handleProtocol(args: string[]) {
-  const url = parseHeroicUrl(args)
+  const url = parseRelicUrl(args)
   if (!url) return
 
   logInfo(['Received', url.href], LogPrefix.ProtocolHandler)
@@ -72,14 +72,14 @@ async function handleLaunch(url: URL) {
   // Windows automatically adds a trailing / to shortcuts
   if (url.pathname && url.pathname !== '/') {
     // Old-style pathname URLs:
-    // - `heroic://launch/Quail`
-    // - `heroic://launch/legendary/Quail`
+    // - `relic://launch/Quail`
+    // - `relic://launch/legendary/Quail`
     const splitPath = url.pathname.split('/').filter(Boolean)
     appName = splitPath.pop()
     runnerStr = splitPath.pop()
   } else {
     // New-style params URL:
-    // `heroic://launch?appName=Quail&runner=legendary&arg=foo&arg=bar`
+    // `relic://launch?appName=Quail&runner=legendary&arg=foo&arg=bar`
     appName = url.searchParams.get('appName')
     runnerStr = url.searchParams.get('runner')
     args = url.searchParams.getAll('arg').map(decodeURIComponent)

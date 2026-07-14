@@ -8,7 +8,7 @@ const ClearCache = () => {
   const { refreshLibrary } = useContext(ContextProvider)
   const { t } = useTranslation()
 
-  async function clearHeroicCache() {
+  async function clearRelicCache() {
     const storage: Storage = window.localStorage
     storage.removeItem('updates')
     window.api.clearCache(true)
@@ -57,20 +57,20 @@ const ClearCache = () => {
           <li>{t('settings.advanced.clearCache.help8', 'Installed games')}</li>
           <li>{t('settings.advanced.clearCache.help9', 'Games settings')}</li>
           <li>
-            {t('settings.advanced.clearCache.help10', 'Heroic configuration')}
+            {t('settings.advanced.clearCache.help10',               'Relic configuration')}
           </li>
         </ul>
       </InfoBox>
       <button
         className="button is-footer is-danger"
-        onClick={async () => clearHeroicCache()}
+        onClick={async () => clearRelicCache()}
       >
         <div className="button-icontext-flex">
           <div className="button-icon-flex">
             <CleaningServicesOutlined />
           </div>
           <span className="button-icon-text">
-            {t('settings.clear-cache', 'Clear Heroic Cache')}
+            {t('settings.clear-cache', 'Clear Relic Cache')}
           </span>
         </div>
       </button>

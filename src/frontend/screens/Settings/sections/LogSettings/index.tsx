@@ -129,7 +129,7 @@ export default function LogSettings() {
 
   const descriptiveLogFileName = useMemo(() => {
     if (!showLogOf.runner)
-      return t('setting.log.descriptiveNames.heroic', 'General Heroic log')
+      return t('setting.log.descriptiveNames.relic', 'General Relic log')
     if (showLogOf.appName) {
       const gameTitle = installedGames.find(
         ({ app_name }) => app_name === showLogOf.appName
@@ -156,7 +156,7 @@ export default function LogSettings() {
 
   const logFilesToShow = useMemo(() => {
     const baseFiles: { title: string; args: GetLogFileArgs }[] = [
-      { title: 'Heroic', args: {} },
+      { title: 'Relic', args: {} },
       { title: 'Epic/Legendary', args: { runner: 'legendary' } },
       { title: 'GOG', args: { runner: 'gog' } },
       { title: 'Amazon/Nile', args: { runner: 'nile' } }
@@ -257,7 +257,7 @@ export default function LogSettings() {
             </a>
             <a
               onClick={openDiscordLink}
-              title={t('setting.log.join-heroic-discord', 'Join our Discord')}
+              title={t('setting.log.join-relic-discord', 'Join our Discord')}
               className="button is-footer"
             >
               <div className="button-icontext-flex">
@@ -265,7 +265,7 @@ export default function LogSettings() {
                   <FontAwesomeIcon icon={faDiscord} />
                 </div>
                 <span className="button-icon-text">
-                  {t('setting.log.join-heroic-discord', 'Join our Discord')}
+                  {t('setting.log.join-relic-discord', 'Join our Discord')}
                 </span>
               </div>
             </a>

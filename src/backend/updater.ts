@@ -33,7 +33,7 @@ async function showAutoupdateDialog() {
   }
 
   let { response } = await dialog.showMessageBox({
-    title: t('box.info.update.title', 'Heroic Games Launcher'),
+    title: t('box.info.update.title', 'Relic'),
     message: t('box.info.update.message', 'There is a new Version available!'),
     detail: messageDetail,
 
@@ -50,7 +50,7 @@ async function showAutoupdateDialog() {
   }
   if (response === 2) {
     shell.openExternal(
-      'https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher/releases'
+      'https://github.com/anomalyco/relic/releases'
     )
     showAutoupdateDialog()
   }
@@ -62,7 +62,7 @@ autoUpdater.on('update-downloaded', async () => {
     title: t('box.info.update.title-finished', 'Update Finished'),
     message: t(
       'box.info.update.message-finished',
-      'Do you want to restart Heroic now?'
+      'Do you want to restart Relic now?'
     ),
     buttons: [t('box.no'), t('box.yes')]
   })
