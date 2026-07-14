@@ -11,14 +11,9 @@ interface Props {
 
 const InstalledInfo = ({ gameInfo }: Props) => {
   const { t } = useTranslation('gamepage')
-  const { t: t2 } = useTranslation()
-  const { gameSettings, runner, is } = useContext(GameContext)
+  const { runner } = useContext(GameContext)
 
   if (!gameInfo.is_installed) {
-    return null
-  }
-
-  if (!gameSettings) {
     return null
   }
 
@@ -51,20 +46,6 @@ const InstalledInfo = ({ gameInfo }: Props) => {
   }
 
   const appLocation = install_path || folder_name
-
-  const { wineVersion, winePrefix } = gameSettings
-
-  let wineName = ''
-  let wineType = ''
-
-  if (!is.win) {
-    let wine = wineVersion.name.replace('Wine - ', '').replace('Proton - ', '')
-    if (wine.includes('Default')) {
-      wine = wine.split('-')[0]
-    }
-    wineName = wine
-    wineType = wineVersion.type
-  }
 
   const info = (
     <>
@@ -103,20 +84,6 @@ const InstalledInfo = ({ gameInfo }: Props) => {
           <div className="truncatedPath">{appLocation}</div>
         </div>
       )}
-      {!is.win && !is.native && (
-        <>
-          <div>
-            <b>Wine:</b> {wineName}
-          </div>
-          <div
-              className="clickable"
-              onClick={() => window.api.openFolder(winePrefix)}
-            >
-              <b>{t2('setting.wineprefix', 'WinePrefix')}:</b>{' '}
-              <div className="truncatedPath">{winePrefix}</div>
-            </div>
-          </>
-        )}
       </>
     )
 

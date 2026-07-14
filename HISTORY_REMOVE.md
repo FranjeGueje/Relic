@@ -302,6 +302,15 @@
 
 ## GameCard
 - Botón de Settings (icono a la izquierda del menú de tres puntos) eliminado
-- "Edit Game" eliminado del menú contextual (+ `handleEdit`, `EditGameDialog`, `Edit` icon)
-- "Categories" eliminado del menú contextual (+ `openGameCategoriesModal`, `List` icon)
-- Imports no usados limpiados (`SettingsIcon`, `EditGameDialog`, `openInstallGameModal`, `isSideloaded`)
+- Botón verde de PLAY eliminado para juegos instalados
+- "Edit Game", "Categories", "Launch Game" eliminados del menú contextual
+- Imports no usados limpiados (`SettingsIcon`, `EditGameDialog`, `openInstallGameModal`, `isSideloaded`, `PlayIcon`, `PlayArrow`)
+
+## GamePage
+- Botón de Settings (`SettingsButton.tsx`) eliminado de la página de detalle
+
+## GameSubMenu (menú de tres puntos en GamePage)
+- Eliminadas opciones: "Edit Game", "Add Shortcut", "Change Install Location", "Add to Steam", "Categories", "Browse Wine Prefix"
+- Funciones removidas: `handleEdit`, `handleShortcuts`, `handleChangeInstall`/`onChangeInstallYesClick`, `handleAddToSteam`, `onBrowsePrefix`
+- Estados removidos: `steamRefresh`/`setSteamRefresh`, `addedToSteam`/`setAddedToSteam`, `hasShortcuts`/`setHasShortcuts`
+- Imports limpiados: `useGlobalState`, `openInstallGameModal`, `EditGameDialog`, `EditIcon`, `ShortcutIcon`, `FindInPageIcon`, `FormatListBulletedIcon`, `faSteam`, `faWineGlass`, `NavLink`
