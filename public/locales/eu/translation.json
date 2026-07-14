@@ -545,7 +545,6 @@
     "customWineProton": "Ardo/Protoien bideak pertsonalizatuak",
     "default-install-path": "Instalazio-bide lehenetsia",
     "default-steam-path": "Steam bide lehenetsia",
-    "disable_controller": "Desgaitu nabigazio heroikoa kontrolagailua erabiliz",
     "download-no-https": "Deskargatu jokoak HTTPS gabe (CDNetarako erabilgarria, adibidez, LanCache)",
     "dxvkfpslimit": "Limit FPS (DX9, 10 and 11)",
     "enableFSRHack": "Gaitu FSR Hack (Wine bertsioak onartu behar du)",

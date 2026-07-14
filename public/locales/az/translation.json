@@ -545,7 +545,6 @@
     "customWineProton": "Xüsusi Şərab/Proton Yolları",
     "default-install-path": "Defolt Quraşdırma Yolu",
     "default-steam-path": "Defolt Buxar yolu",
-    "disable_controller": "Nəzarətçidən istifadə edərək Qəhrəman naviqasiyasını söndürün",
     "download-no-https": "HTTPS olmadan oyunları endirin (CDN-lər üçün faydalıdır, məsələn, LanCache)",
     "dxvkfpslimit": "Limit FPS (DX9, 10 and 11)",
     "enableFSRHack": "FSR Hack'i aktivləşdirin (Şərab versiyası onu dəstəkləməlidir)",

@@ -544,7 +544,6 @@
     "customWineProton": "커스텀 와인/프로톤 경로",
     "default-install-path": "기본 설치 경로",
     "default-steam-path": "기본 스팀 경로",
-    "disable_controller": "컨트롤러를 이용한 Heroic 탐색 비활성화",
     "download-no-https": "HTTPS를 사용하지 않고 게임 다운로드 (예를 들어 LanCache와 같은 CDN에 유용)",
     "dxvkfpslimit": "FPS 제한 (DX9, 10, 11)",
     "enableFSRHack": "FSR 핵 활성화 (와인 버전에서 지원해야 함)",

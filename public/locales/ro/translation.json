@@ -544,7 +544,6 @@
     "customWineProton": "Căi personalizate pentru Wine/Proton",
     "default-install-path": "Calea de instalare implicită",
     "default-steam-path": "Calea Steam implicită",
-    "disable_controller": "Dezactivați navigarea eroică folosind controlerul",
     "download-no-https": "Descărcați jocuri fără HTTPS (util pentru CDN-uri, de exemplu, LanCache)",
     "dxvkfpslimit": "Limit FPS (DX9, 10 and 11)",
     "enableFSRHack": "Activați FSR Hack (versiunea Wine trebuie să o accepte)",

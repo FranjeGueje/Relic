@@ -544,7 +544,6 @@
     "customWineProton": "Custom Wine/Proton Paths",
     "default-install-path": "Predvolená inštalačná cesta",
     "default-steam-path": "Default Steam path",
-    "disable_controller": "Disable Heroic navigation using controller",
     "download-no-https": "Download games without HTTPS (useful for CDNs e.g. LanCache)",
     "dxvkfpslimit": "Limit FPS (DX9, 10 and 11)",
     "enableFSRHack": "Enable FSR Hack (Wine version needs to support it)",

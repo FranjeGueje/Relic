@@ -545,7 +545,6 @@
     "customWineProton": "ഇഷ്ടാനുസൃതം ചേര്ത്ത വൈന്/പ്രോട്ടോണ് അറകള്",
     "default-install-path": "തനത് സ്ഥാപനയിടം",
     "default-steam-path": "Default Steam path",
-    "disable_controller": "Disable Heroic navigation using controller",
     "download-no-https": "Download games without HTTPS (useful for CDNs e.g. LanCache)",
     "dxvkfpslimit": "Limit FPS (DX9, 10 and 11)",
     "enableFSRHack": "എഫ്എസ്ആര് ഹാക്ക് വയ്ക്കൂ (Wine version needs to support it)",

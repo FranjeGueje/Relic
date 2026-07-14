@@ -555,7 +555,6 @@
     "customWineProton": "自定义 Wine/Proton 路径",
     "default-install-path": "默认安装路径",
     "default-steam-path": "默认 Steam 路径",
-    "disable_controller": "使用控制器禁止 Heroic 导航",
     "download-no-https": "不使用 HTTPS 下载游戏 (对 LanCache 等 CDN 有用)",
     "dxvkfpslimit": "限制 FPS (DX9、10 和 11)",
     "enableFSRHack": "启用 FSR（需要支持的WINE版本）",

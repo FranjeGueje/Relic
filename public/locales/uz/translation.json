@@ -588,7 +588,6 @@
     "customWineProton": "Maxsus sharob/proton yo'llari",
     "default-install-path": "Standart o'rnatish yo'li",
     "default-steam-path": "Standart Steam yo'li",
-    "disable_controller": "Kontroller yordamida qahramonlik navigatsiyasini o'chiring",
     "download-no-https": "HTTPSsiz o'yinlarni yuklab oling (CDN uchun foydali, masalan, LanCache)",
     "dxvkfpslimit": "FPSni cheklash (DX9, 10 va 11)",
     "enableFSRHack": "FSR Hack-ni yoqing (Wine versiyasi uni qo'llab-quvvatlashi kerak)",

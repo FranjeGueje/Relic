@@ -552,7 +552,6 @@
     "customWineProton": "Rutas personalizadas de Wine e Proton",
     "default-install-path": "Ruta de instalación predeterminada",
     "default-steam-path": "Ruta de Steam por defecto",
-    "disable_controller": "Desactivar a navegación de Heroic co controlador",
     "download-no-https": "Descargar xogos sen HTTPS (útil para CDNs, ex. LanCache)",
     "dxvkfpslimit": "Limit FPS (DX9, 10 and 11)",
     "enableFSRHack": "Activar o hack de FSR (A versión de Wine debe soportalo)",

@@ -614,7 +614,6 @@
     "customWineProton": "Custom Wine/Proton Paths",
     "default-install-path": "Default Installation Path",
     "default-steam-path": "Default Steam path",
-    "disable_controller": "Disable Heroic navigation using controller",
     "disable_gog_presence": "Disable GOG Presence updates",
     "disable_logs": "Disable Logs",
     "disableUMU": "Disable umu",

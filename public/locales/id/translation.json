@@ -547,7 +547,6 @@
     "customWineProton": "Lokasi Wine/Proton Khusus",
     "default-install-path": "Lokasi Pemasangan Bawaan",
     "default-steam-path": "Lokasi Steam bawaan",
-    "disable_controller": "Nonaktifkan navigasi Heroic menggunakan pengontrol",
     "download-no-https": "Unduh gim tanpa HTTPS (berguna untuk CDN misalnya LanCache)",
     "dxvkfpslimit": "Batasi FPS (DX9, 10 dan 11)",
     "enableFSRHack": "Aktifkan Peretasan FSR (perlu versi Wine yang mendukung)",

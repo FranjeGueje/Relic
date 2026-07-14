@@ -552,7 +552,6 @@
     "customWineProton": "Özel Wine/Proton Yolları",
     "default-install-path": "Öntanımlı Kurulum Yolu",
     "default-steam-path": "Öntanımlı Steam Yolu",
-    "disable_controller": "Denetleyiciyi kullanarak Heroic gezinmesini devre dışı bırak",
     "download-no-https": "Oyunları HTTPS olmadan indirin (LanCache gibi CDN'ler için kullanışlıdır)",
     "dxvkfpslimit": "FPS'i sınırla (DX9, 10 and 11)",
     "enableFSRHack": "FSR Hack'i Etkinleştir (Wine sürümünün desteklemesi gerekiyor)",

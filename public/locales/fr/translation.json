@@ -553,7 +553,6 @@
     "customWineProton": "Répertoires des versions personnalisées de Wine/Proton",
     "default-install-path": "Répertoire d'installation par défaut",
     "default-steam-path": "Répertoire de Steam par défaut",
-    "disable_controller": "Désactiver la navigation à la manette",
     "download-no-https": "Télécharger les jeux sans utiliser HTTPS (utile pour CDNs e.g. LanCache)",
     "dxvkfpslimit": "Limiter le nombre d'images par secondes (DX9, 10 et 11)",
     "enableFSRHack": "Activer FSR Hack (la version de wine doit le prendre en charge)",

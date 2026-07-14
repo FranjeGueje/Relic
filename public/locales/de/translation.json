@@ -554,7 +554,6 @@
     "customWineProton": "Wähle die Wine- oder Proton-Binärdatei",
     "default-install-path": "Standard-Installationspfad",
     "default-steam-path": "Standard-Steam-Pfad",
-    "disable_controller": "Heroic-Navigation mit Gamepad deaktivieren",
     "download-no-https": "Spiele ohne HTTPS herunterladen (nützlich für CDNs z. B. LanCache)",
     "dxvkfpslimit": "FPS begrenzen (DX9, 10 und 11)",
     "enableFSRHack": "FSR Hack aktivieren (Wine-Version muss es unterstützen)",

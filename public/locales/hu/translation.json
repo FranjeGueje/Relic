@@ -554,7 +554,6 @@
     "customWineProton": "Egyéni Wine/Proton elérési utak",
     "default-install-path": "Alapértelmezett telepítési útvonal",
     "default-steam-path": "A Steam alapértelmezett elérési útja",
-    "disable_controller": "Játékvezérlős navigáció letiltása a Heroicban",
     "download-no-https": "Játékok letöltése HTTPS nélkül (CDN-ek esetén hasznos, például LanCache esetén)",
     "dxvkfpslimit": "FPS korlátozása (DX9, 10 and 11)",
     "enableFSRHack": "FSR hack engedélyezése (a Wine verziónak támogatnia kell)",

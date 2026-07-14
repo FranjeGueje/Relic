@@ -545,7 +545,6 @@
     "customWineProton": "Mukautetut Wine/Proton sijainnit",
     "default-install-path": "Oletus asennussijainti",
     "default-steam-path": "Vakio Steam-polku",
-    "disable_controller": "Poiskytke Heroic-navigaatio käyttäen peliohjainta",
     "download-no-https": "Lataa pelit ilman HTTPS:ää (hyödyllinen CDN:ille kuten LanCache)",
     "dxvkfpslimit": "Aseta ruudunpäivityskatto (DX9, 10 ja 11)",
     "enableFSRHack": "Ota käyttöön FSR Hack (Wine-version pitää tukea sitä)",

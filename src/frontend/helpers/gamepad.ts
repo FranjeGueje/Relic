@@ -1,5 +1,4 @@
 import {
-  AppSettings,
   GamepadActionStatus,
   ValidGamepadAction
 } from 'common/types'
@@ -16,14 +15,9 @@ const KEY_REPEAT_DELAY = 500
 const STICK_REPEAT_DELAY = 250
 const SCROLL_REPEAT_DELAY = 50
 
-let controllerIsDisabled = false
 let currentController = -1
 
 export const initGamepad = () => {
-  window.api.requestAppSettings().then(({ disableController }: AppSettings) => {
-    controllerIsDisabled = disableController || false
-  })
-
   // store the current controllers
   let controllers: number[] = []
 
@@ -66,8 +60,6 @@ export const initGamepad = () => {
     pressed: boolean,
     controllerIndex: number
   ) {
-    if (controllerIsDisabled) return
-
     if (!isFocused) {
       // ignore gamepad events if Relic is not the focused app
       //
@@ -599,12 +591,4 @@ export const initGamepad = () => {
 
   window.addEventListener('gamepadconnected', connecthandler)
   window.addEventListener('gamepaddisconnected', disconnecthandler)
-}
-
-export const toggleControllerIsDisabled = (value: boolean | undefined) => {
-  if (value !== undefined) {
-    controllerIsDisabled = value
-  } else {
-    controllerIsDisabled = !controllerIsDisabled
-  }
 }

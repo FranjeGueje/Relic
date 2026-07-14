@@ -545,7 +545,6 @@
     "customWineProton": "Prilagođeni putevi za Wine/Proton",
     "default-install-path": "Zadani instalacijski put",
     "default-steam-path": "Zadana staza Steam-a",
-    "disable_controller": "Onemogućite navigaciju pomoću kontrolera u Heroicu",
     "download-no-https": "Preuzmite igre bez HTTPS-a (korisno za CDN-ove, npr. LanCache)",
     "dxvkfpslimit": "Limit FPS (DX9, 10 and 11)",
     "enableFSRHack": "Omogući FSR Hack (Wine verzija ga mora podržavati)",

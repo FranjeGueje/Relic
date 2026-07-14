@@ -5,7 +5,6 @@ import {
   AutoUpdateGames,
   DefaultInstallPath,
   DefaultSteamPath,
-  DisableController,
   LibraryTopSection,
   MaxRecentGames,
   MaxWorkers,
@@ -30,8 +29,6 @@ export default function GeneralSettings() {
       <AutoUpdateGames />
 
       <Shortcuts />
-
-      <DisableController />
 
       <LibraryTopSection />
 

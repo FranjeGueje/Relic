@@ -554,7 +554,6 @@
     "customWineProton": "Niestandardowe ścieżki Wine/Proton",
     "default-install-path": "Domyślna ścieżka instalacji",
     "default-steam-path": "Domyślna ścieżka Steam",
-    "disable_controller": "Wyłącz nawigację kontrolerem",
     "download-no-https": "Pobieraj gry bez użycia szyfrowania HTTPS (przydatne przy CDN-ach, np. LanCache)",
     "dxvkfpslimit": "Limit klatek na sekundę (DX9, 10 i 11)",
     "enableFSRHack": "Włącz FSR Hack (wymagana odpowiednia wersja Wine)",

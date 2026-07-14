@@ -549,7 +549,6 @@
     "customWineProton": "カスタムWine/Protonパス",
     "default-install-path": "デフォルトのインストール場所のパス",
     "default-steam-path": "デフォルトのSteamパス",
-    "disable_controller": "コントローラを使用したHeroicナビゲーションを無効にする",
     "download-no-https": "HTTPSを使用せずにゲームをダウンロード（LanCacheなどのCDNで有用）",
     "dxvkfpslimit": "FPSを制限（DX9、10、11）",
     "enableFSRHack": "FSRハックを有効にする（Wineバージョンが対応している必要があります）",

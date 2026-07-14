@@ -552,7 +552,6 @@
     "customWineProton": "தனிப்பயன் Wine/Proton பாதைகள்",
     "default-install-path": "இயல்புநிலை நிறுவல் பாதை",
     "default-steam-path": "இயல்புநிலை நீராவி பாதை",
-    "disable_controller": "கட்டுப்படுத்தியைப் பயன்படுத்தி வீர வழிசெலுத்தலை முடக்கவும்",
     "download-no-https": "HTTPS இல்லாமல் விளையாட்டுகளைப் பதிவிறக்கவும் (சிடிஎன்களுக்குப் பயன்படும் எ.கா. LanCache)",
     "dxvkfpslimit": "வரம்பு FPS (DX9, 10 மற்றும் 11)",
     "enableFSRHack": "FSR ஹேக்கை இயக்கு (ஒயின் பதிப்பு அதை ஆதரிக்க வேண்டும்)",

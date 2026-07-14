@@ -544,7 +544,6 @@
     "customWineProton": "Aangepaste wijn- of protonpaden",
     "default-install-path": "Standaard installatie pad",
     "default-steam-path": "Default Steam path",
-    "disable_controller": "Disable Heroic navigation using controller",
     "download-no-https": "Download spelletjes zonder HTTPS (handig voor CDNs bijv. LanCache)",
     "dxvkfpslimit": "Limit FPS (DX9, 10 and 11)",
     "enableFSRHack": "FSR Hack inschakelen (Wine versie moet dit ondersteunen)",

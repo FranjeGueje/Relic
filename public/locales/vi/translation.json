@@ -544,7 +544,6 @@
     "customWineProton": "Đường Dẫn Wine/Proton Tùy Chọn",
     "default-install-path": "Đường Dẫn Cài Đặt Mặc Định",
     "default-steam-path": "Đường dẫn Steam mặc định",
-    "disable_controller": "Tắt điều hướng Heroic bằng bộ điều khiển",
     "download-no-https": "Tải xuống trò chơi không có HTTPS (hữu ích cho CDN, ví dụ: LanCache)",
     "dxvkfpslimit": "Limit FPS (DX9, 10 and 11)",
     "enableFSRHack": "Bật FSR Hack (Phiên bản Wine cần hỗ trợ)",

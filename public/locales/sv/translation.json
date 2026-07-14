@@ -545,7 +545,6 @@
     "customWineProton": "Anpassad Wine/Proton sökväg",
     "default-install-path": "Standard installationssökväg",
     "default-steam-path": "Standard Steam sökväg",
-    "disable_controller": "Deaktivera navigering via handkontroll",
     "download-no-https": "Ladda ner spel utan HTTPS (användbart till CDNs t.ex. LanCache)",
     "dxvkfpslimit": "Begränsa FPS (DX9, 10 and 11)",
     "enableFSRHack": "Aktivera FSR Hack (Wine-versionen måste stödja det)",

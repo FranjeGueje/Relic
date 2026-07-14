@@ -553,7 +553,6 @@
     "customWineProton": "Kohandatud Wine/Proton teed",
     "default-install-path": "Vaikimisi paigaldustee",
     "default-steam-path": "Steami vaiketee",
-    "disable_controller": "Keela Heroicu mängupuldiga navigeerimine",
     "download-no-https": "Mängude allalaadimine ilma HTTPS-ita (kasulik CDNide jaoks, nt LanCache)",
     "dxvkfpslimit": "Piira kaadrisagedust (DX9, 10 ja 11)",
     "enableFSRHack": "Luba FSR häkk (Wine'i versioon peab seda toetama)",

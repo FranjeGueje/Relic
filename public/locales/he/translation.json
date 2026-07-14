@@ -358,7 +358,6 @@
     "wineversion": "גרסת Wine",
     "addgamestosteam": "הוסף משחקים לSteam באופן אוטומטי",
     "customWineProton": "מיקומי Wine/Proton מותאמים אישית",
-    "disable_controller": "בטל ניווט של Heroic באמצעות קונטרולר",
     "download-no-https": "הורד משחקים ללא HTTPS (שימושי עבור CDNים למשל LanCache)",
     "dxvkfpslimit": "הגבל קצב פריימים (FPS) (DX9, 10, ו-11)",
     "enableFSRHack": "הפעל FSR hack (גרסת הWine צריכה לתמוך בה)",

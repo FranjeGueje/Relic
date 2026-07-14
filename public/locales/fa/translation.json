@@ -545,7 +545,6 @@
     "customWineProton": "مسیرهای سفارشی Wine/Proton",
     "default-install-path": "محل پیشفرض نصب",
     "default-steam-path": "مسیر پیش فرض استیم",
-    "disable_controller": "غیر فعال کردن کنترل Heroic با استفاده از دسته",
     "download-no-https": "دانلود بازی ها بدون HTTPS (مفید برای CDNs مانند LanCache)",
     "dxvkfpslimit": "محدودیت فریم ریت (DX9, 10 & 11)",
     "enableFSRHack": "فعالسازی FSR Hack (نسخه Wine باید از آن پشتیبانی کند)",

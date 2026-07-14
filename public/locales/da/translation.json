@@ -430,7 +430,6 @@
     "start-in-tray": "Start minimeret",
     "steamruntime": "Brug Steam Runtime",
     "winecrossoverbottle": "CrossOver flaske",
-    "disable_controller": "Deaktiver heroisk navigation ved hjælp af controller",
     "download-no-https": "Hent spil uden HTTPS (nyttigt til CDN'er, f.eks. LanCache)",
     "enableFSRHack": "Aktiver FSR Hack (vinversion skal understøtte det)",
     "eosOverlay": {

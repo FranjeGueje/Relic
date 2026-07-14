@@ -554,7 +554,6 @@
     "customWineProton": "Egendefinerte Wine-/Proton-stier",
     "default-install-path": "Standard installasjonsbane",
     "default-steam-path": "Standard Steam-bane",
-    "disable_controller": "Deaktiver kontrollernavigasjon av Heroic",
     "download-no-https": "Last ned spill uten HTTPS (nyttig for CDN-er, f.eks. LanCache)",
     "dxvkfpslimit": "Begrens bildehastighet (DX9, 10 og 11)",
     "enableFSRHack": "Aktiver FSR Hack (Wine-versjonen må støtte det)",
