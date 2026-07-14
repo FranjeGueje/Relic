@@ -1,14 +1,13 @@
 import { faApple, faLinux, faWindows } from '@fortawesome/free-brands-svg-icons'
 import { IconDefinition } from '@fortawesome/free-solid-svg-icons'
 
-import { useContext, useEffect, useState } from 'react'
+import { useContext, useState } from 'react'
 
 import ContextProvider from 'frontend/state/ContextProvider'
 import {
   GameInfo,
   InstallPlatform,
-  Runner,
-  WineInstallation
+  Runner
 } from 'common/types'
 import { Dialog } from 'frontend/components/UI/Dialog'
 
@@ -16,7 +15,6 @@ import './index.scss'
 
 import DownloadDialog from './DownloadDialog'
 import ImportDialog from './ImportDialog'
-import WineSelector from './WineSelector'
 import { SelectField } from 'frontend/components/UI'
 import { useTranslation } from 'react-i18next'
 import ThirdPartyDialog from './ThirdPartyDialog'
@@ -44,11 +42,6 @@ function InstallModal({ appName, runner, gameInfo = null }: Props) {
   const { platform } = useContext(ContextProvider)
   const { t } = useTranslation('gamepage')
   const { action = 'install' } = useInstallGameModal()
-
-  const [winePrefix, setWinePrefix] = useState('...')
-  const [wineVersion, setWineVersion] = useState<WineInstallation>()
-  const [wineVersionList, setWineVersionList] = useState<WineInstallation[]>([])
-  const [crossoverBottle, setCrossoverBottle] = useState('')
 
   const isLinuxNative = Boolean(gameInfo?.is_linux_native)
   const isMacNative = Boolean(gameInfo?.is_mac_native)
@@ -92,28 +85,6 @@ function InstallModal({ appName, runner, gameInfo = null }: Props) {
 
   const [platformToInstall, setPlatformToInstall] =
     useState<InstallPlatform>(getDefaultplatform())
-
-  const hasWine = platformToInstall === 'Windows' && !isWin
-
-  useEffect(() => {
-    if (hasWine) {
-      const getWine = async () => {
-        const newWineList: WineInstallation[] =
-          await window.api.getAlternativeWine()
-        setWineVersionList(newWineList)
-        if (wineVersion?.bin) {
-          if (
-            !newWineList.some(
-              (newWine) => wineVersion && newWine.bin === wineVersion.bin
-            )
-          ) {
-            setWineVersion(undefined)
-          }
-        }
-      }
-      getWine()
-    }
-  }, [hasWine])
 
   function platformSelection() {
     const showPlatformSelection = availablePlatforms.length > 1
@@ -163,83 +134,34 @@ function InstallModal({ appName, runner, gameInfo = null }: Props) {
           <ThirdPartyDialog
             appName={appName}
             runner={runner}
-            winePrefix={winePrefix}
-            wineVersion={wineVersion}
             availablePlatforms={availablePlatforms}
             backdropClick={closeModal}
             platformToInstall={platformToInstall}
             gameInfo={gameInfo}
-            crossoverBottle={crossoverBottle}
           >
             {platformSelection()}
-            {hasWine ? (
-              <WineSelector
-                appName={appName}
-                winePrefix={winePrefix}
-                wineVersion={wineVersion}
-                wineVersionList={wineVersionList}
-                title={gameInfo?.title}
-                setWinePrefix={setWinePrefix}
-                setWineVersion={setWineVersion}
-                crossoverBottle={crossoverBottle}
-                setCrossoverBottle={setCrossoverBottle}
-                initiallyOpen
-              />
-            ) : null}
           </ThirdPartyDialog>
         ) : isImportMode && showDownloadDialog ? (
           <ImportDialog
             appName={appName}
             runner={runner}
-            winePrefix={winePrefix}
-            wineVersion={wineVersion}
             availablePlatforms={availablePlatforms}
             backdropClick={closeModal}
             platformToInstall={platformToInstall}
             gameInfo={gameInfo}
-            crossoverBottle={crossoverBottle}
           >
             {platformSelection()}
-            {hasWine ? (
-              <WineSelector
-                appName={appName}
-                winePrefix={winePrefix}
-                wineVersion={wineVersion}
-                wineVersionList={wineVersionList}
-                title={gameInfo?.title}
-                setWinePrefix={setWinePrefix}
-                setWineVersion={setWineVersion}
-                crossoverBottle={crossoverBottle}
-                setCrossoverBottle={setCrossoverBottle}
-              />
-            ) : null}
           </ImportDialog>
         ) : showDownloadDialog ? (
           <DownloadDialog
             appName={appName}
             runner={runner}
-            winePrefix={winePrefix}
-            wineVersion={wineVersion}
             availablePlatforms={availablePlatforms}
             backdropClick={closeModal}
             platformToInstall={platformToInstall}
             gameInfo={gameInfo}
-            crossoverBottle={crossoverBottle}
           >
             {platformSelection()}
-            {hasWine ? (
-              <WineSelector
-                appName={appName}
-                winePrefix={winePrefix}
-                wineVersion={wineVersion}
-                wineVersionList={wineVersionList}
-                title={gameInfo?.title}
-                setWinePrefix={setWinePrefix}
-                setWineVersion={setWineVersion}
-                crossoverBottle={crossoverBottle}
-                setCrossoverBottle={setCrossoverBottle}
-              />
-            ) : null}
           </DownloadDialog>
         ) : null}
       </Dialog>

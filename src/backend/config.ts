@@ -309,7 +309,7 @@ class GlobalConfigV0 extends GlobalConfig {
       addSteamShortcuts: false,
       preferSystemLibs: false,
       checkForUpdatesOnStartup: true,
-      autoUpdateGames: false,
+      autoUpdateGames: true,
       customWinePaths: [],
       defaultInstallPath: relicInstallPath,
       defaultSteamPath: getSteamCompatFolder(),

@@ -11,8 +11,7 @@ import {
   GameStatus,
   InstallInfo,
   InstallPlatform,
-  Runner,
-  WineInstallation
+  Runner
 } from 'common/types'
 import {
   SelectiveDownload,
@@ -30,7 +29,6 @@ import {
   getProgress,
   size,
   getInstallInfo,
-  writeConfig,
   install,
   getPreferredInstallLanguage
 } from 'frontend/helpers'
@@ -59,9 +57,6 @@ interface Props {
   runner: Runner
   platformToInstall: InstallPlatform
   availablePlatforms: AvailablePlatforms
-  winePrefix: string
-  crossoverBottle: string
-  wineVersion: WineInstallation | undefined
   children: React.ReactNode
   gameInfo: GameInfo
 }
@@ -97,19 +92,14 @@ export default function DownloadDialog({
   runner,
   platformToInstall,
   availablePlatforms,
-  winePrefix,
-  wineVersion,
   children,
-  gameInfo,
-  crossoverBottle
+  gameInfo
 }: Props) {
   const previousProgress = JSON.parse(
     storage.getItem(appName) || '{}'
   ) as InstallProgress
-  const { libraryStatus, platform, showDialogModal } =
+  const { libraryStatus, showDialogModal } =
     useContext(ContextProvider)
-
-  const isWin = platform === 'win32'
 
   const [gameInstallInfo, setGameInstallInfo] = useState<InstallInfo | null>(
     null
@@ -263,23 +253,6 @@ export default function DownloadDialog({
     }
 
     backdropClick()
-
-    // Write Default game config with prefix on linux
-    if (!isWin) {
-      const gameSettings = await window.api.requestGameSettings(appName)
-
-      if (wineVersion) {
-        writeConfig({
-          appName,
-          config: {
-            ...gameSettings,
-            winePrefix,
-            wineVersion,
-            wineCrossoverBottle: crossoverBottle
-          }
-        })
-      }
-    }
 
     return install({
       gameInfo,

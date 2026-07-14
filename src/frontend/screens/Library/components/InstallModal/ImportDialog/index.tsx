@@ -4,8 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   GameInfo,
   InstallPlatform,
-  Runner,
-  WineInstallation
+  Runner
 } from 'common/types'
 import { PathSelectionBox } from 'frontend/components/UI'
 import {
@@ -25,9 +24,6 @@ interface Props {
   runner: Runner
   platformToInstall: InstallPlatform
   availablePlatforms: AvailablePlatforms
-  winePrefix: string
-  crossoverBottle: string
-  wineVersion: WineInstallation | undefined
   children: React.ReactNode
   gameInfo: GameInfo
 }
@@ -47,9 +43,6 @@ export default function ImportDialog({
   runner,
   platformToInstall,
   availablePlatforms,
-  winePrefix,
-  wineVersion,
-  crossoverBottle,
   children,
   gameInfo
 }: Props) {
@@ -74,10 +67,7 @@ export default function ImportDialog({
       appName,
       path: importPath,
       runner,
-      platform: platformToInstall,
-      winePrefix,
-      wineVersion,
-      wineCrossoverBottle: crossoverBottle
+      platform: platformToInstall
     })
   }
 
