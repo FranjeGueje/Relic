@@ -510,7 +510,7 @@ export function createNecessaryFolders() {
     darwin: [...defaultFolders, toolsPath]
   }
 
-  necessaryFoldersByPlatform[process.platform].forEach((folder: string) => {
+  necessaryFoldersByPlatform[process.platform as keyof typeof necessaryFoldersByPlatform].forEach((folder: string) => {
     if (!existsSync(folder)) {
       mkdirSync(folder)
     }

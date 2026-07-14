@@ -89,7 +89,7 @@ const getIcon = (platform = process.platform) => {
 
   return nativeImage
     .createFromPath(darkTrayIcon ? iconDark : iconLight)
-    .resize(iconSizesByPlatform[platform])
+    .resize(iconSizesByPlatform[platform as keyof typeof iconSizesByPlatform])
 }
 
 // generate the context menu
