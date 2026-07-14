@@ -5,11 +5,10 @@ import { wikiGameInfoStore } from './electronStore'
 import { removeSpecialcharacters } from '../utils'
 import { SteamInfo, WikiInfo } from 'common/types'
 import { logError, logInfo, LogPrefix } from 'backend/logger'
-import { getInfoFromAppleGamingWiki } from './applegamingwiki/utils'
 import { getHowLongToBeat } from './howlongtobeat/utils'
 import { getInfoFromPCGamingWiki } from './pcgamingwiki/utils'
 import { getUmuId } from './umu/utils'
-import { isLinux, isMac } from 'backend/constants/environment'
+import { isLinux } from 'backend/constants/environment'
 import type { Game } from 'common/types/game_manager'
 
 export async function getWikiGameInfo(game: Game): Promise<WikiInfo | null> {
@@ -32,10 +31,9 @@ export async function getWikiGameInfo(game: Game): Promise<WikiInfo | null> {
 
     logInfo(`Getting ExtraGameInfo data for ${title}`, LogPrefix.ExtraGameInfo)
 
-    const [pcgamingwiki, gamesdb, applegamingwiki, umuId] = await Promise.all([
+    const [pcgamingwiki, gamesdb, umuId] = await Promise.all([
       getInfoFromPCGamingWiki(title, runner === 'gog' ? appName : undefined),
       getInfoFromGamesDB(title, appName, runner),
-      isMac ? getInfoFromAppleGamingWiki(title) : null,
       isLinux ? getUmuId(appName, runner) : null
     ])
 
@@ -65,7 +63,6 @@ export async function getWikiGameInfo(game: Game): Promise<WikiInfo | null> {
 
     const wikiGameInfo = {
       pcgamingwiki,
-      applegamingwiki,
       howlongtobeat,
       gamesdb,
       steamInfo,

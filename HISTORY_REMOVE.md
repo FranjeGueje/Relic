@@ -240,3 +240,15 @@
 - `AppleWikiInfo.tsx` y `MacOSCompatibility/index.scss` eliminados
 - Referencia `wineCrossoverBottle` eliminada de `InstalledInfo.tsx`
 - Limpiados imports/exports en `components/index.ts`, `GamesSettings/index.tsx`, `GamePage/index.tsx`
+
+## AppleGamingWiki (backend)
+- Directorio `backend/wiki_game_info/applegamingwiki/` eliminado (utils, constants, tests)
+- Interfaz `AppleGamingWikiInfo` y campo `applegamingwiki` eliminados de `common/types.ts`
+- Referencias a `applegamingwiki` eliminadas de `GamePage/index.tsx` y `ClearCache.tsx`
+
+## Referencias a "Heroic" en URLs
+- `common/types/legendary.ts`: comentario URL actualizado
+- `backend/tools/index.ts`: URLs de Heroic-Games-Launcher/vkd3d-proton cambiadas a HansKristian-Work/vkd3d-proton
+
+## Settings Windows-only sin UI
+- `addStartMenuShortcuts` eliminado de `common/types.ts`, `backend/config.ts`, `shortcuts/shortcuts.ts`

@@ -29,7 +29,7 @@ const ClearCache = () => {
           <li>
             {t(
               'settings.advanced.clearCache.help2',
-              'Third-party game info (scores, steam compatibility, howlongtobeat, pcgamingwiki, applegamingwiki)'
+              'Third-party game info (scores, steam compatibility, howlongtobeat, pcgamingwiki)'
             )}
           </li>
           <li>

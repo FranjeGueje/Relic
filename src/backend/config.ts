@@ -303,7 +303,6 @@ class GlobalConfigV0 extends GlobalConfig {
       checkUpdatesInterval: 10,
       enableUpdates: false,
       addDesktopShortcuts: false,
-      addStartMenuShortcuts: false,
       autoInstallDxvk: isLinux || isMac,
       autoInstallVkd3d: isLinux,
       autoInstallDxvkNvapi: isLinux,

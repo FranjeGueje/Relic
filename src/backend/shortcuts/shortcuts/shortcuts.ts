@@ -37,7 +37,7 @@ async function addShortcuts(game: Game, fromMenu?: boolean) {
   const { app_name, runner, title } = gameInfo
 
   logInfo(`Adding shortcuts for ${title}`, LogPrefix.Backend)
-  const { addDesktopShortcuts, addStartMenuShortcuts, addSteamShortcuts } =
+  const { addDesktopShortcuts, addSteamShortcuts } =
     GlobalConfig.get().getSettings()
 
   if (addSteamShortcuts) {
@@ -68,11 +68,6 @@ Categories=Game;
           logInfo(`Shortcut saved on ${desktopFile}`, LogPrefix.Backend)
         })
       }
-      if (addStartMenuShortcuts || fromMenu) {
-        writeFile(menuFile, shortcut, () => {
-          logInfo(`Shortcut saved on ${menuFile}`, LogPrefix.Backend)
-        })
-      }
       break
     }
     case 'win32': {
@@ -99,16 +94,6 @@ Categories=Game;
 
       if (addDesktopShortcuts || fromMenu) {
         shell.writeShortcutLink(desktopFile, shortcutOptions)
-      }
-
-      if (addStartMenuShortcuts || fromMenu) {
-        shell.writeShortcutLink(menuFile, shortcutOptions)
-      }
-      break
-    }
-    case 'darwin': {
-      if (addStartMenuShortcuts || fromMenu) {
-        await generateMacOsApp(gameInfo)
       }
       break
     }

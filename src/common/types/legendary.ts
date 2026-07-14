@@ -194,7 +194,7 @@ interface TagInfo {
   size: number
 }
 
-// types for the Legendary API https://heroic.legendary.gl/v1/version.json
+// types for the Legendary API
 /* export type CxBottle = {
   base_url: string | null
   compatible_apps: string[]

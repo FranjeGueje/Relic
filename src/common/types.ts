@@ -89,7 +89,6 @@ export type ExperimentalFeatures = {
 
 export interface AppSettings extends GameSettings {
   addDesktopShortcuts: boolean
-  addStartMenuShortcuts: boolean
   addSteamShortcuts: boolean
   altGogdlBin: string
   altCometBin: string
@@ -688,12 +687,6 @@ export interface PCGamingWikiInfo {
   releaseDate: string[]
 }
 
-export interface AppleGamingWikiInfo {
-  crossoverRating: string
-  wineRating: string
-  crossoverLink: string
-}
-
 export interface GamesDBInfo {
   steamID: string
 }
@@ -713,7 +706,6 @@ export interface SteamInfo {
 
 export interface WikiInfo {
   pcgamingwiki: PCGamingWikiInfo | null
-  applegamingwiki: AppleGamingWikiInfo | null
   howlongtobeat: RelicHowLongToBeatEntry | null
   gamesdb: GamesDBInfo | null
   steamInfo: SteamInfo | null

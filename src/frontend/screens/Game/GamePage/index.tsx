@@ -264,7 +264,7 @@ export default React.memo(function GamePage(): JSX.Element | null {
     window.api.getWikiGameInfo(gameInfo.title, appName, runner).then((info) => {
       if (
         info &&
-        (info.applegamingwiki || info.howlongtobeat || info.pcgamingwiki)
+        (info.howlongtobeat || info.pcgamingwiki)
       ) {
         setWikiInfo(info)
       }
@@ -369,7 +369,6 @@ export default React.memo(function GamePage(): JSX.Element | null {
     }
 
     const hasWikiInfo =
-      wikiInfo?.applegamingwiki ||
       wikiInfo?.howlongtobeat ||
       wikiInfo?.pcgamingwiki?.metacritic.score ||
       wikiInfo?.pcgamingwiki?.opencritic.score ||
