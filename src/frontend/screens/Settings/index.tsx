@@ -12,7 +12,6 @@ import LogSettings from './sections/LogSettings'
 import FooterInfo from './sections/FooterInfo'
 import {
   GeneralSettings,
-  GamesSettings,
   SyncSaves,
   AdvancedSettings,
   SystemInfo
@@ -40,7 +39,6 @@ function Settings() {
   const appName = 'default'
   const isGeneralSettings = type === 'general'
   const isSyncSettings = type === 'sync'
-  const isGamesSettings = type === 'games_settings'
   const isLogSettings = type === 'log'
   const isAdvancedSetting = type === 'advanced'
   const isSystemInfo = type === 'systeminfo'
@@ -116,7 +114,6 @@ function Settings() {
             </h1>
 
             {isGeneralSettings && <GeneralSettings />}
-            {isGamesSettings && <GamesSettings />}
             {isSyncSettings && <SyncSaves />}
             {isAdvancedSetting && <AdvancedSettings />}
             {isLogSettings && <LogSettings />}

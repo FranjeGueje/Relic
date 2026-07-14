@@ -1,11 +1,6 @@
 import { useMemo } from 'react'
 import { GameInfo } from 'common/types'
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader
-} from 'frontend/components/UI/Dialog'
-import { GamesSettings } from '../../sections'
+import { Dialog, DialogContent, DialogHeader } from 'frontend/components/UI/Dialog'
 import SettingsContext from '../../SettingsContext'
 import useSettingsContext from 'frontend/hooks/useSettingsContext'
 import LogSettings from '../../sections/LogSettings'
@@ -60,7 +55,6 @@ function SettingsModal({ gameInfo, type }: Props) {
       </DialogHeader>
       <DialogContent className="settingsDialogContent">
         <SettingsContext.Provider value={contextValues}>
-          {type === 'settings' && <GamesSettings />}
           {type === 'log' && <LogSettings />}
           {type === 'category' && <CategorySettings />}
         </SettingsContext.Provider>

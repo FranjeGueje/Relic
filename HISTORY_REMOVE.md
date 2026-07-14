@@ -252,3 +252,8 @@
 
 ## Settings Windows-only sin UI
 - `addStartMenuShortcuts` eliminado de `common/types.ts`, `backend/config.ts`, `shortcuts/shortcuts.ts`
+
+## Game Defaults (GamesSettings)
+- Directorio `sections/GamesSettings/` eliminado
+- Sidebar link a `/settings/games_settings` eliminado
+- Import y renderizado eliminados de `Settings/index.tsx`, `SettingsModal/index.tsx`, `sections/index.tsx`

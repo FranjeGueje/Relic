@@ -96,18 +96,6 @@ export default function SidebarLinks() {
               label={t('settings.navbar.general')}
             />
 
-            {!isWin && (
-              <SidebarItem
-                url="/settings/games_settings"
-                isActiveFallback={type === 'games_settings'}
-                className="SidebarLinks__subItem"
-                label={t(
-                  'settings.navbar.games_settings_defaults',
-                  'Game Defaults'
-                )}
-              />
-            )}
-
             <SidebarItem
               url="/settings/advanced"
               isActiveFallback={type === 'advanced'}
