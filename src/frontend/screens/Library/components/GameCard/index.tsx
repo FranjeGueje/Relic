@@ -395,6 +395,8 @@ const GameCard = ({
   const showUpdateBadge =
     hasUpdate && !isUpdating && !isQueued && activeController
 
+  const hasIcons = showUpdateButton || !isInstalled || isPlaying || isUninstalling || notSupportedGame || !isInstallable
+
   return (
     <div>
       {showUninstallModal && (
@@ -472,7 +474,7 @@ const GameCard = ({
               {getStoreName(runner, t2('Other'))}
             </span>
           </Link>
-          <>
+          {hasIcons && (
             <span className="icons">
               {showUpdateButton && (
                 <SvgButton
@@ -486,7 +488,7 @@ const GameCard = ({
 
               {renderIcon()}
             </span>
-          </>
+          )}
         </div>
       </ContextMenu>
     </div>
