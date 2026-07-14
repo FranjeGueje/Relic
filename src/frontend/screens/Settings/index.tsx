@@ -11,8 +11,7 @@ import SettingsContext from './SettingsContext'
 import LogSettings from './sections/LogSettings'
 import FooterInfo from './sections/FooterInfo'
 import {
-  GeneralSettings,
-  SyncSaves
+  GeneralSettings
 } from './sections'
 import { AppSettings, WineInstallation } from 'common/types'
 import { UpdateComponent } from 'frontend/components/UI'
@@ -36,7 +35,6 @@ function Settings() {
   const { type = 'general' } = useParams()
   const appName = 'default'
   const isGeneralSettings = type === 'general'
-  const isSyncSettings = type === 'sync'
   const isLogSettings = type === 'log'
 
   // TODO: Adding this comment translation here for now to not lose the
@@ -110,7 +108,6 @@ function Settings() {
             </h1>
 
             {isGeneralSettings && <GeneralSettings />}
-            {isSyncSettings && <SyncSaves />}
             {isLogSettings && <LogSettings />}
             <FooterInfo />
           </div>

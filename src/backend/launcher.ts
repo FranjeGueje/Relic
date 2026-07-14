@@ -125,7 +125,6 @@ const launchEventCallback: (args: LaunchParams) => StatusPromise = async ({
   }
 
   const gameSettings = await game.getSettings()
-  const { autoSyncSaves, savesPath, gogSaves = [] } = gameSettings
 
   if (!launchArguments && gameSettings.lastUsedLaunchOption) {
     launchArguments = gameSettings.lastUsedLaunchOption
@@ -142,24 +141,6 @@ const launchEventCallback: (args: LaunchParams) => StatusPromise = async ({
   }
 
   logInfo(`Launching ${title} (${appName})`, LogPrefix.Backend)
-
-  if (autoSyncSaves && isOnline()) {
-    sendGameStatusUpdate({
-      appName,
-      runner,
-      status: 'syncing-saves'
-    })
-    logInfo(`Downloading saves for ${title}`, LogPrefix.Backend)
-    try {
-      await game.syncSaves('--skip-upload', savesPath, gogSaves)
-      logInfo(`Saves for ${title} downloaded`, LogPrefix.Backend)
-    } catch (error) {
-      logError(
-        `Error while downloading saves for ${title}. ${error}`,
-        LogPrefix.Backend
-      )
-    }
-  }
 
   sendGameStatusUpdate({
     appName,
@@ -287,31 +268,6 @@ const launchEventCallback: (args: LaunchParams) => StatusPromise = async ({
     }
   }
   await addRecentGame(gameInfo)
-
-  if (autoSyncSaves && isOnline()) {
-    sendGameStatusUpdate({
-      appName,
-      runner,
-      status: 'done'
-    })
-
-    sendGameStatusUpdate({
-      appName,
-      runner,
-      status: 'syncing-saves'
-    })
-
-    logInfo(`Uploading saves for ${title}`, LogPrefix.Backend)
-    try {
-      await game.syncSaves('--skip-download', savesPath, gogSaves)
-      logInfo(`Saves uploaded for ${title}`, LogPrefix.Backend)
-    } catch (error) {
-      logError(
-        `Error uploading saves for ${title}. Error: ${error}`,
-        LogPrefix.Backend
-      )
-    }
-  }
 
   sendGameStatusUpdate({
     appName,

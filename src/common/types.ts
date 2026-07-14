@@ -207,7 +207,6 @@ export interface GameSettings {
   autoInstallDxvk: boolean
   autoInstallVkd3d: boolean
   autoInstallDxvkNvapi: boolean
-  autoSyncSaves: boolean
   battlEyeRuntime: boolean
   DXVKFpsCap: string //Entered as string but used as number
   eacRuntime: boolean

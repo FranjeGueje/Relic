@@ -83,7 +83,6 @@ import {
 } from './online_monitor'
 import { notify, showDialogBoxModalAuto } from './dialog/dialog'
 import { callAbortController } from './utils/aborthandler/aborthandler'
-import { getDefaultSavePath } from './save_sync'
 import { initTrayIcon } from './tray_icon/tray_icon'
 import { createMainWindow, getMainWindow, isFrameless } from './main_window'
 
@@ -1017,9 +1016,6 @@ addHandler('changeInstallPath', async (event, { appName, path, runner }) => {
   )
 })
 
-addHandler('syncGOGSaves', async (event, gogSaves, appName, arg) =>
-  libraryManagerMap['gog'].getGame(appName).syncSaves(arg, '', gogSaves)
-)
 
 addHandler('getLaunchOptions', async (event, appName, runner) => {
   const availableLaunchOptions =
@@ -1046,35 +1042,6 @@ addHandler('getLaunchOptions', async (event, appName, runner) => {
 
   return availableLaunchOptions
 })
-
-addHandler('syncSaves', async (event, { arg = '', path, appName, runner }) => {
-  if (runner === 'legendary') {
-    const epicOffline = await isEpicServiceOffline()
-    if (epicOffline) {
-      logWarning(
-        'Epic is offline right now, cannot sync saves!',
-        LogPrefix.Backend
-      )
-      return 'Epic is offline right now, cannot sync saves!'
-    }
-  }
-  if (!isOnline()) {
-    logWarning('App is offline, cannot sync saves!', LogPrefix.Backend)
-    return 'App is offline, cannot sync saves!'
-  }
-
-  const output = await libraryManagerMap[runner]
-    .getGame(appName)
-    .syncSaves(arg, path)
-  logInfo(output, LogPrefix.Backend)
-  return output
-})
-
-addHandler(
-  'getDefaultSavePath',
-  async (event, appName, runner, alreadyDefinedGogSaves) =>
-    getDefaultSavePath(appName, runner, alreadyDefinedGogSaves)
-)
 
 // Simulate keyboard and mouse actions as if the real input device is used
 addHandler('gamepadAction', async (event, args) => {

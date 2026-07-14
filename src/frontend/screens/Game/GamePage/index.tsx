@@ -48,7 +48,6 @@ import { hasStatus } from 'frontend/hooks/hasStatus'
 import GameContext from '../GameContext'
 import { GameContextType } from 'frontend/types'
 import {
-  CloudSavesSync,
   CompatibilityInfo,
   Description,
   Developer,
@@ -543,7 +542,6 @@ export default React.memo(function GamePage(): JSX.Element | null {
                         >
                           <DownloadSizeInfo gameInfo={gameInfo} />
                           <InstalledInfo gameInfo={gameInfo} />
-                          <CloudSavesSync gameInfo={gameInfo} />
                         </TabPanel>
 
                         <TabPanel

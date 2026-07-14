@@ -1,4 +1,3 @@
-export { default as CloudSavesSync } from './CloudSavesSync'
 export { default as DownloadSizeInfo } from './DownloadSizeInfo'
 export { default as InstalledInfo } from './InstalledInfo'
 export { default as Scores } from './Scores'

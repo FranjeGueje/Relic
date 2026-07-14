@@ -32,7 +32,6 @@ import type {
   RunnerCommandStub,
   RuntimeName,
   RunWineCommandArgs,
-  SaveSyncArgs,
   StatusPromise,
   ToolArgs,
   Tools,
@@ -215,7 +214,6 @@ interface AsyncIPCFunctions {
     appname: string,
     arg: string
   ) => Promise<string>
-  syncSaves: (args: SaveSyncArgs) => Promise<string>
   gamepadAction: (args: GamepadActionArgs) => Promise<void>
   runWineCommandForGame: (args: RunWineCommandArgs) => Promise<ExecResult>
   getShellPath: (path: string) => Promise<string>
@@ -280,11 +278,6 @@ interface AsyncIPCFunctions {
     appName: string,
     runner: Runner
   ) => Promise<WikiInfo | null>
-  getDefaultSavePath: (
-    appName: string,
-    runner: Runner,
-    alreadyDefinedGogSaves: GOGCloudSavesLocation[]
-  ) => Promise<string | GOGCloudSavesLocation[]>
   isGameAvailable: (args: {
     appName: string
     runner: Runner
