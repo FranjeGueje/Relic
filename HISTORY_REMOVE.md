@@ -204,3 +204,16 @@
 - `launcher.ts`: comentario issue #4708 eliminado
 - `package.json`: repository URL actualizada a FranjeGueje/Relic
 - Test data de tests de `getLatestReleases` eliminados
+
+## Wine Manager (gestión de Wine/Proton)
+- Directorio `backend/wine/manager/` eliminado (wine downloader, utils, ipc_handler)
+- Directorio `frontend/screens/WineManager/` eliminado
+- Directorio `frontend/components/UI/Winetricks/` eliminado
+- Ruta `/wine-manager` y sidebar link eliminados
+- `backend/main.ts`: imports `DXVK`, `Winetricks`, `downloadDefaultWine`, `checkRosettaInstall` eliminados; handlers `toggleDXVK`, `toggleDXVKNVAPI`, `toggleVKD3D` eliminados
+- `backend/config.ts`: import `updateWineVersionInfos`/`wineDownloaderInfoStore` y llamada eliminados
+- `backend/utils.ts`: import `installWineVersion`/`updateWineVersionInfos`/`wineDownloaderInfoStore` eliminados; función `downloadDefaultWine` eliminada
+- `backend/tools/dxmt.ts`: import `wineDownloaderInfoStore` eliminado
+- `frontend/screens/Settings/components/Tools/index.tsx`: Winetricks eliminado
+- `frontend/components/UI/index.tsx`: export `Winetricks` eliminado
+- `backend/tools/ipc_handler.ts`: handlers `winetricksInstall`, `winetricksAvailable`, `winetricksInstalled` mantenidos (código muerto)

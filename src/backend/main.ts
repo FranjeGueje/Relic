@@ -25,7 +25,6 @@ import 'source-map-support/register'
 import Backend from 'i18next-fs-backend'
 import i18next from 'i18next'
 import { join } from 'path'
-import { DXVK, Winetricks } from './tools'
 import { GameConfig } from './game_config'
 import { GlobalConfig } from './config'
 import { LegendaryUser } from 'backend/storeManagers/legendary/user'
@@ -45,9 +44,7 @@ import {
   detectVCRedist,
   getShellPath,
   removeFolder,
-  downloadDefaultWine,
   sendGameStatusUpdate,
-  checkRosettaInstall,
   writeConfig,
   createNecessaryFolders,
   clearAchievementCache,
@@ -166,16 +163,6 @@ async function initializeWindow(): Promise<BrowserWindow> {
       }
     }
 
-    void DXVK.getLatest()
-
-    Winetricks.download()
-    if (shouldDownloadWine) {
-      downloadDefaultWine()
-    }
-
-    if (isMac) {
-      checkRosettaInstall()
-    }
   }, 2500)
 
   const globalConf = GlobalConfig.get().getSettings()
@@ -782,30 +769,6 @@ addHandler('requestAppSettings', () => GlobalConfig.get().getSettings())
 addHandler(
   'requestGameSettings',
   async (_e, appName) => await GameConfig.get(appName).getSettings()
-)
-
-addHandler('toggleDXVK', async (event, { appName, action }) =>
-  GameConfig.get(appName)
-    .getSettings()
-    .then(async (gameSettings) =>
-      DXVK.installRemove(gameSettings, 'dxvk', action)
-    )
-)
-
-addHandler('toggleDXVKNVAPI', async (event, { appName, action }) =>
-  GameConfig.get(appName)
-    .getSettings()
-    .then(async (gameSettings) =>
-      DXVK.installRemove(gameSettings, 'dxvk-nvapi', action)
-    )
-)
-
-addHandler('toggleVKD3D', async (event, { appName, action }) =>
-  GameConfig.get(appName)
-    .getSettings()
-    .then(async (gameSettings) =>
-      DXVK.installRemove(gameSettings, 'vkd3d', action)
-    )
 )
 
 addHandler('writeConfig', (event, { appName, config }) =>

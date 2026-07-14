@@ -146,10 +146,6 @@ const router = createHashRouter([
         lazy: makeLazyFunc(import('./screens/Settings'))
       },
       {
-        path: 'wine-manager',
-        lazy: makeLazyFunc(import('./screens/WineManager'))
-      },
-      {
         path: 'download-manager',
         lazy: makeLazyFunc(import('./screens/DownloadManager'))
       },

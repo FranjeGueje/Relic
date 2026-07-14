@@ -14,7 +14,6 @@ import {
   writeFileSync
 } from 'graceful-fs'
 import { toolsPath } from 'backend/constants/paths'
-import { wineDownloaderInfoStore } from 'backend/wine/manager/utils'
 
 const DXMT = {
   getLatest: () => {

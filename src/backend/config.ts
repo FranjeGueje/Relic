@@ -30,10 +30,6 @@ import {
   defaultWinePrefixDir
 } from './constants/paths'
 import { join } from 'path'
-import {
-  updateWineVersionInfos,
-  wineDownloaderInfoStore
-} from './wine/manager/utils'
 
 function getSteamCompatFolder() {
   // Paths are from https://savelocation.net/steam-game-folder
@@ -174,10 +170,6 @@ abstract class GlobalConfig {
   public async getAlternativeWine(
     scanCustom = true
   ): Promise<WineInstallation[]> {
-    if (wineDownloaderInfoStore.get('wine-releases', []).length === 0) {
-      await updateWineVersionInfos(true)
-    }
-
     if (isMac) {
       const macOsWineSet = await this.getMacOsWineSet()
       return [...macOsWineSet]

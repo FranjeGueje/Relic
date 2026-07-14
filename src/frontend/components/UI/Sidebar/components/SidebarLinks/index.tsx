@@ -3,7 +3,6 @@ import {
   faSlidersH,
   faUser,
   faUserAlt,
-  faWineGlass,
   faBarsProgress,
   faTv
 } from '@fortawesome/free-solid-svg-icons'
@@ -147,15 +146,6 @@ export default function SidebarLinks() {
         label={t('sidebar.console', 'Console Mode')}
         dataTour="sidebar-console"
       />
-
-      {!isWin && (
-        <SidebarItem
-          url="/wine-manager"
-          icon={faWineGlass}
-          label={t('wine.manager.link', 'Wine Manager')}
-          dataTour="sidebar-wine"
-        />
-      )}
 
       <div className="divider" />
 

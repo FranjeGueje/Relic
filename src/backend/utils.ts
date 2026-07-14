@@ -48,11 +48,6 @@ import { GlobalConfig } from './config'
 import { GameConfig } from './game_config'
 import { validWine, runWineCommand } from './launcher'
 import { libraryManagerMap } from 'backend/storeManagers'
-import {
-  installWineVersion,
-  updateWineVersionInfos,
-  wineDownloaderInfoStore
-} from './wine/manager/utils'
 import { readdir, lstat } from 'fs/promises'
 import { getRelicVersion } from './utils/systeminfo/relicVersion'
 import { backendEvents } from './backend_events'
@@ -63,7 +58,7 @@ import {
   deviceNameCache,
   vendorNameCache
 } from './utils/systeminfo/gpu/pci_ids'
-import type { AppSettings, WineManagerStatus } from 'common/types'
+import type { AppSettings } from 'common/types'
 import { isUmuSupported } from './utils/compatibility_layers'
 import { getSystemInfo } from './utils/systeminfo'
 import { configStore } from './constants/key_value_stores'
@@ -834,56 +829,6 @@ async function ContinueWithFoundWine(
   return { response }
 }
 
-export async function downloadDefaultWine() {
-  if (isWindows) return null
-  // refresh wine list
-  await updateWineVersionInfos(true)
-  // get list of wines on wineDownloaderInfoStore
-  const availableWine = wineDownloaderInfoStore.get('wine-releases', [])
-  const isMacOSUpToDate = await isMacSonomaOrHigher()
-  const release = availableWine.find((version) => {
-    if (isLinux) {
-      return version.type === 'Proton-CachyOS'
-    } else if (isMac) {
-      if (isIntelMac || !isMacOSUpToDate) {
-        return version.type === 'Wine-Crossover'
-      } else {
-        return version.type === 'Game-Porting-Toolkit'
-      }
-    }
-    return false
-  })
-
-  if (!release) {
-    logError('Could not find default wine version', LogPrefix.Backend)
-    return null
-  }
-
-  // download the latest version
-  const onProgress = (state: WineManagerStatus) => {
-    sendFrontendMessage('progressOfWineManager', release.version, state)
-  }
-  const result = await installWineVersion(release, onProgress)
-
-  if (result === 'success') {
-    let downloadedWine = null
-    try {
-      const wineList = await GlobalConfig.get().getAlternativeWine()
-      // update the game config to use that wine
-      downloadedWine = wineList[0]
-      logInfo(`Changing wine version to ${downloadedWine.name}`)
-      GlobalConfig.get().setSetting('wineVersion', downloadedWine)
-    } catch (error) {
-      logError(
-        ['Error when changing wine version to default', error],
-        LogPrefix.Backend
-      )
-    }
-    return downloadedWine
-  }
-  return null
-}
-
 export async function checkWineBeforeLaunch(
   gameInfo: GameInfo,
   gameSettings: GameSettings,
@@ -942,16 +887,11 @@ export async function checkWineBeforeLaunch(
       const isValidWine = await validWine(firstFoundWine)
 
       if (!wineList.length || !firstFoundWine || !isValidWine) {
-        const firstFoundWine = await downloadDefaultWine()
-        if (firstFoundWine) {
-          logInfo(`Changing wine version to ${firstFoundWine.name}`)
-          gameSettings.wineVersion = firstFoundWine
-          GameConfig.get(gameInfo.app_name).setSetting(
-            'wineVersion',
-            firstFoundWine
-          )
-          return true
-        }
+        logError(
+          'No valid Wine version found and automatic download is not available.',
+          LogPrefix.Backend
+        )
+        return false
       }
 
       if (firstFoundWine && isValidWine) {

@@ -8,12 +8,10 @@ import { getGameInfo } from 'frontend/helpers'
 
 import SettingsContext from '../../SettingsContext'
 import ContextProvider from 'frontend/state/ContextProvider'
-import { Winetricks } from 'frontend/components/UI'
 
 export default function Tools() {
   const { t } = useTranslation()
   const [winecfgRunning, setWinecfgRunning] = useState(false)
-  const [winetricksRunning, setWinetricksRunning] = useState(false)
   const [runExeRunning, setRunExeRunning] = useState(false)
   const { appName, runner, isDefault } = useContext(SettingsContext)
   const { platform } = useContext(ContextProvider)
@@ -64,20 +62,9 @@ export default function Tools() {
     }
   }
 
-  function openWinetricksDialog() {
-    setWinetricksRunning(true)
-  }
-
-  function winetricksDialogClosed() {
-    setWinetricksRunning(false)
-  }
-
   return (
     <>
       <div data-testid="toolsSettings" className="settingsTools">
-        {winetricksRunning && (
-          <Winetricks onClose={winetricksDialogClosed} runner={runner} />
-        )}
         <div className="toolsWrapper">
           <button
             data-testid="wineCFG"
@@ -85,13 +72,6 @@ export default function Tools() {
             onClick={async () => callTools('winecfg')}
           >
             <span className="toolTitle">Winecfg</span>
-          </button>
-          <button
-            data-testid="wineTricks"
-            className="button outline"
-            onClick={async () => openWinetricksDialog()}
-          >
-            <span className="toolTitle">Winetricks</span>
           </button>
           <a
             className={classNames('button outline', {
