@@ -1,7 +1,6 @@
 import { app, BrowserWindow, Menu, nativeImage, Tray } from 'electron'
 import i18next from 'i18next'
 import { RecentGame } from 'common/types'
-import { handleProtocol } from '../protocol'
 import { getRecentGames, maxRecentGames } from '../recent_games/recent_games'
 import { handleExit, showAboutWindow } from '../utils'
 import { GlobalConfig } from '../config'
@@ -82,7 +81,7 @@ const contextMenu = (
   const recentsMenu = recentGames.map((game) => {
     return {
       click: function () {
-        handleProtocol([`relic://launch?appName=${game.appName}`])
+        mainWindow.show()
       },
       label: game.title
     }

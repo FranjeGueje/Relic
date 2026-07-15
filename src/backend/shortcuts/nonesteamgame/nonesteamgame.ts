@@ -294,7 +294,6 @@ async function addNonSteamGame(game: Game): Promise<boolean> {
 
     const { runner, app_name } = gameInfo
 
-    args.push(`"relic://launch?appName=${app_name}&runner=${runner}"`)
     newEntry.LaunchOptions = args.join(' ')
     newEntry.IsHidden = false
     newEntry.AllowDesktopConfig = true

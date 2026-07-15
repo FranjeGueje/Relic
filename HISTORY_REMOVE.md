@@ -369,3 +369,13 @@
 - `helpers/gamepad.ts`: eliminado `playGame()` y `playable()`
 - `helpers/index.ts`: eliminado `launch` de import y export
 - `helpers/library.ts`: eliminado `launch` de export (función interna ahora inaccesible)
+
+## Protocolo relic://
+- Eliminado `src/backend/protocol.ts` (handleProtocol completo)
+- Eliminado `src/backend/__tests__/protocol.test.ts`
+- `src/backend/main.ts`: eliminado registro de protocolo (`protocol.handle('relic')`, `setAsDefaultProtocolClient`), import de `handleProtocol`, llamadas a `handleProtocol`, handler `open-url` de macOS, variable `openUrlArgument`
+- `src/backend/tray_icon/tray_icon.ts`: eliminado `handleProtocol` de imports; click de juegos recientes ahora solo muestra la ventana
+- `src/backend/shortcuts/`: eliminados `relic://launch` de shortcuts .desktop, .lnk y macOS .app; shortcuts apuntan directamente al binario de Relic
+- `src/backend/config.ts`: eliminado `hideWindowOnProtocolLaunch`
+- `src/common/types.ts`: eliminado `hideWindowOnProtocolLaunch`
+- `src/frontend/`: eliminado `HideWindowOnProtocolLaunch.tsx` y su export

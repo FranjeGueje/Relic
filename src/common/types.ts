@@ -114,7 +114,6 @@ export interface AppSettings extends GameSettings {
   enableUpdates: boolean
   experimentalFeatures?: ExperimentalFeatures
   framelessWindow: boolean
-  hideWindowOnProtocolLaunch: boolean
   maxWorkers: number
   minimizeOnLaunch: boolean
   startInTray: boolean

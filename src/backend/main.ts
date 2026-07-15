@@ -59,7 +59,6 @@ import {
 import { Path } from './schemas'
 
 import { uninstallGameCallback } from './utils/uninstaller'
-import { handleProtocol, shouldHideWindowForProtocolArgs } from './protocol'
 import {
   init as initLogger,
   logDebug,
@@ -253,7 +252,6 @@ async function initializeWindow(): Promise<BrowserWindow> {
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 const gotTheLock = app.requestSingleInstanceLock()
-let openUrlArgument = ''
 
 const processZoomForScreen = (zoomFactor: number) => {
   const screenSize = screen.getPrimaryDisplay().workAreaSize.width
@@ -272,11 +270,7 @@ if (!gotTheLock) {
   app.on('second-instance', (event, argv) => {
     // Someone tried to run a second instance, we should focus our window.
     const mainWindow = getMainWindow()
-    if (!shouldHideWindowForProtocolArgs(argv)) {
-      mainWindow?.show()
-    }
-
-    handleProtocol(argv)
+    mainWindow?.show()
   })
   app.whenReady().then(async () => {
     initLogger()
@@ -346,27 +340,8 @@ if (!gotTheLock) {
 
     const mainWindow = await initializeWindow()
 
-    protocol.handle('relic', (request) => {
-      handleProtocol([request.url])
-      return new Response('Operation initiated.', { status: 201 })
-    })
-    if (process.env.CI !== 'e2e' && !app.isDefaultProtocolClient('relic')) {
-      if (app.setAsDefaultProtocolClient('relic')) {
-        logInfo('Registered protocol with OS.', LogPrefix.Backend)
-      } else {
-        logWarning('Failed to register protocol with OS.', LogPrefix.Backend)
-      }
-    } else {
-      logWarning('Protocol already registered.', LogPrefix.Backend)
-    }
-
-    const hideForProtocol = shouldHideWindowForProtocolArgs([
-      openUrlArgument,
-      ...process.argv
-    ])
     const headless =
       isCLINoGui ||
-      hideForProtocol ||
       (settings.startInTray)
     if (!headless) {
       const isWayland = Boolean(process.env.WAYLAND_DISPLAY)
@@ -414,7 +389,6 @@ addListener('notify', (event, args) => notify(args))
 
 addOneTimeListener('frontendReady', () => {
   logInfo('Frontend Ready', LogPrefix.Backend)
-  handleProtocol([openUrlArgument, ...process.argv])
 
   if (isSnap) {
     const snapWarning: Electron.MessageBoxOptions = {
@@ -548,16 +522,6 @@ app.on('window-all-closed', () => {
   }
 })
 
-app.on('open-url', (event, url) => {
-  event.preventDefault()
-  const mainWindow = getMainWindow()
-
-  if (mainWindow) {
-    handleProtocol([url])
-  } else {
-    openUrlArgument = url
-  }
-})
 
 addListener('openExternalUrl', async (event, url) => openUrlOrFile(url))
 addListener('openFolder', async (event, folder) => openUrlOrFile(folder))
