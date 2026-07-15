@@ -19,7 +19,6 @@ import {
 } from 'common/types/legendary'
 import { BuildItem, DLCInfo as GOGDLCInfo } from 'common/types/gog'
 import { PathSelectionBox, ToggleSwitch } from 'frontend/components/UI'
-import Anticheat from 'frontend/components/UI/Anticheat'
 import {
   DialogHeader,
   DialogFooter,
@@ -41,13 +40,12 @@ import React, {
   useMemo,
   useState
 } from 'react'
-import { Trans, useTranslation } from 'react-i18next'
+import { useTranslation } from 'react-i18next'
 import { AvailablePlatforms } from '../index'
 import { configStore } from 'frontend/helpers/electronStores'
 import DLCDownloadListing from './DLCDownloadListing'
 import BuildSelector from './BuildSelector'
 import GameLanguageSelector from './GameLanguageSelector'
-import { hasAnticheatInfo } from 'frontend/hooks/hasAnticheatInfo'
 import BranchSelector from './BranchSelector'
 import { openInstallGameModal } from 'frontend/state/InstallGameModal'
 
@@ -139,8 +137,6 @@ export default function DownloadDialog({
     spaceLeftAfter: ''
   })
 
-  const anticheatInfo = hasAnticheatInfo(gameInfo)
-
   const { i18n, t } = useTranslation('gamepage')
   const { t: tr } = useTranslation()
 
@@ -180,78 +176,7 @@ export default function DownloadDialog({
     [selectedSdls]
   )
 
-  async function confirmInstallBrokenAnticheat(path?: string) {
-    const { allowInstallationBrokenAnticheat } =
-      await window.api.requestAppSettings()
-    const title = t(
-      'install.anticheat-warning.title',
-      'Anticheat Broken/Denied'
-    )
-    if (allowInstallationBrokenAnticheat) {
-      showDialogModal({
-        title,
-        message: t(
-          'install.anticheat-warning.multiplayer_message',
-          'The anticheat support is broken or denied. The game may open but the multiplayer features will not work. Do you want to install it anyway?'
-        ),
-        buttons: [
-          {
-            text: t(
-              'install.anticheat-warning.install_anyway',
-              'Yes (I understand the multiplayer features will not work)'
-            ),
-            onClick: async () => handleInstall(path, true)
-          },
-          {
-            text: t('install.anticheat-warning.cancel', 'No'),
-            onClick: () => null
-          }
-        ]
-      })
-    } else {
-      showDialogModal({
-        title,
-        message: (
-          <Trans
-            key="install.anticheat-warning.disabled_installation"
-            i18n={i18n}
-          >
-            This game uses anticheat software that is not compatible with your
-            operating system or the support was not enabled by the game
-            developers. This means that the multiplayer features will not work,
-            and there is nothing you (or the Relic team) can do about it.
-            <br />
-            <br />
-            To install this game and try it anyway, go to Settings, Advanced,
-            and check the option to allow the installation of games with broken
-            or denied anticheat.
-            <br />
-            <br />
-            Note that there is no solution for this and you will risk getting
-            banned in the game.
-          </Trans>
-        ),
-        buttons: [
-          {
-            text: t('install.anticheat-warning.ok', 'Ok'),
-            onClick: () => null
-          }
-        ]
-      })
-    }
-  }
-
-  async function handleInstall(path?: string, ignoreAnticheat = false) {
-    if (
-      anticheatInfo &&
-      ['Denied', 'Broken', 'Unknown'].includes(anticheatInfo.status)
-    ) {
-      if (!ignoreAnticheat) {
-        confirmInstallBrokenAnticheat(path)
-        return
-      }
-    }
-
+  async function handleInstall(path?: string) {
     backdropClick()
 
     return install({
@@ -566,7 +491,6 @@ export default function DownloadDialog({
           />
         ))}
       </DialogHeader>
-      <Anticheat anticheatInfo={anticheatInfo} />
       <DialogContent>
         <div className="InstallModal__sizes">
           <div className="InstallModal__size">

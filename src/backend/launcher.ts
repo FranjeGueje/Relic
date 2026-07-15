@@ -90,7 +90,6 @@ import {
   isSteamDeck
 } from './constants/environment'
 import { formatSystemInfo, getSystemInfo } from './utils/systeminfo'
-import { gameAnticheatInfo } from './anticheat/utils'
 
 import type { PartialDeep } from 'type-fest'
 import type LogWriter from './logger/log_writer'
@@ -457,18 +456,6 @@ async function prepareLaunch(
     '\n',
     `Stored at: ${join(gamesConfigPath, gameInfo.app_name + '.json')}`,
     '\n\n'
-  ])
-
-  const acInfoPromise = gameAnticheatInfo(gameInfo.namespace)
-  logWriter.logInfo(
-    acInfoPromise.then((info) =>
-      info?.status ? `Anticheat Status: ${info.status}` : ''
-    )
-  )
-  logWriter.logInfo([
-    acInfoPromise.then((info) =>
-      info?.anticheats ? `Anticheats: ${info.anticheats}\n\n` : ''
-    )
   ])
 
   // Figure out where GameMode is located, if it's enabled

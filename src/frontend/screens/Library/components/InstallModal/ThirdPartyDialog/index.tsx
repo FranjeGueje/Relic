@@ -4,14 +4,12 @@ import {
   InstallPlatform,
   Runner
 } from 'common/types'
-import Anticheat from 'frontend/components/UI/Anticheat'
 import {
   DialogFooter,
   DialogHeader,
   DialogContent
 } from 'frontend/components/UI/Dialog'
 import { install } from 'frontend/helpers'
-import { hasAnticheatInfo } from 'frontend/hooks/hasAnticheatInfo'
 import { InstallProgress } from 'frontend/types'
 import React, { useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -40,8 +38,6 @@ export default function ThirdPartyDialog({
 }: Props) {
   const { t } = useTranslation('gamepage')
   const progress = {} as InstallProgress
-
-  const anticheatInfo = hasAnticheatInfo(gameInfo)
 
   const handleInstall = useCallback(async () => {
     backdropClick()
@@ -101,7 +97,6 @@ export default function ThirdPartyDialog({
             </p>
           </div>
         </div>
-        <Anticheat anticheatInfo={anticheatInfo} />
         {children}
       </DialogContent>
       <DialogFooter>

@@ -116,7 +116,6 @@ export interface AppSettings extends GameSettings {
   maxWorkers: number
   minimizeOnLaunch: boolean
   startInTray: boolean
-  allowInstallationBrokenAnticheat: boolean
   disableUMU: boolean
   verboseLogs: boolean
   showValveProton: boolean
@@ -443,53 +442,6 @@ export interface WrapperEnv {
   appRunner: Runner
 }
 
-type AntiCheat =
-  | 'Arbiter'
-  | 'BattlEye'
-  | 'Denuvo Anti-Cheat'
-  | 'Easy Anti-Cheat'
-  | 'EQU8'
-  | 'FACEIT'
-  | 'FairFight'
-  | 'Mail.ru Anti-Cheat'
-  | 'miHoYo Protect'
-  | 'miHoYo Protect 2'
-  | 'NEAC Protect'
-  | 'Nexon Game Security'
-  | 'nProtect GameGuard'
-  | 'PunkBuster'
-  | 'RICOCHET'
-  | 'Sabreclaw'
-  | 'Treyarch Anti-Cheat'
-  | 'UNCHEATER'
-  | 'Unknown (Custom)'
-  | 'VAC'
-  | 'Vanguard'
-  | 'Warden'
-  | 'XIGNCODE3'
-  | 'Zakynthos'
-
-export interface AntiCheatInfo {
-  status: 'Broken' | 'Denied' | 'Working' | 'Running' | 'Supported'
-  anticheats: AntiCheat[]
-  notes: string[]
-  native: boolean
-  storeIds: {
-    epic?: {
-      namespace: string
-      slug: string
-    }
-    steam?: string
-  }
-  reference: string
-  updates: AntiCheatReference[]
-}
-
-interface AntiCheatReference {
-  name: string
-  date: string
-  reference: string
-}
 
 export interface Runtime {
   id: number
@@ -770,9 +722,4 @@ export type ReleasesInfo = Record<
     tag: string
     published_at: string
   }
-> & {
-  anticheatFiles: {
-    shaMac: string
-    shaLinux: string
-  }
-}
+>

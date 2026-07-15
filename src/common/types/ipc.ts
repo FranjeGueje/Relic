@@ -3,7 +3,6 @@ import type { OpenDialogOptions, TitleBarOverlay } from 'electron'
 import type { SystemInformation } from 'backend/utils/systeminfo'
 
 import type {
-  AntiCheatInfo,
   AppSettings,
   ButtonOptions,
   ConnectivityStatus,
@@ -227,7 +226,6 @@ interface AsyncIPCFunctions {
   addToSteam: (appName: string, runner: Runner) => Promise<boolean>
   removeFromSteam: (appName: string, runner: Runner) => Promise<void>
   isAddedToSteam: (appName: string, runner: Runner) => Promise<boolean>
-  getAnticheatInfo: (appNamespace: string) => Promise<AntiCheatInfo | null>
   getKnownFixes: (appName: string, runner: Runner) => KnowFixesInfo | null
   getGameMetadataOverride: (appName: string) => Promise<{
     title?: string

@@ -394,3 +394,18 @@
 - `common/types/electron_store.ts`: eliminado `wikigameinfo` del schema
 - `backend/`: eliminado `getUmuId` de store managers (gog, legendary, nile, zoom), eliminado import de `ipc_handler` en main.ts
 - `backend/shortcuts/__tests__/`: eliminado `jest.mock` de `wiki_game_info`
+
+## AntiCheat (AreWeAntiCheatYet)
+- Eliminado `src/backend/anticheat/` (utils + ipc_handler)
+- Eliminado `src/frontend/components/UI/Anticheat/` (componente + SCSS)
+- Eliminado `src/frontend/hooks/hasAnticheatInfo.ts`
+- Eliminado `src/frontend/screens/Settings/components/AllowInstallationBrokenAnticheat.tsx`
+- `backend/main.ts`: eliminado import de `anticheat/ipc_handler`
+- `backend/launcher.ts`: eliminado `gameAnticheatInfo` import y logging
+- `GamePage/index.tsx`: eliminado `Anticheat` import, `hasAnticheatInfo`, `<Anticheat>`
+- `DownloadDialog/index.tsx`: eliminado `Anticheat`, `hasAnticheatInfo`, `confirmInstallBrokenAnticheat`, anticheat check en `handleInstall`
+- `ThirdPartyDialog/index.tsx`: eliminado `Anticheat`, `hasAnticheatInfo`, `<Anticheat>`
+- `Settings/components/index.ts`: eliminado export de `AllowInstallationBrokenAnticheat`
+- `preload/api/misc.ts`: eliminado `getAnticheatInfo`
+- `common/types.ts`: eliminados `AntiCheat`, `AntiCheatInfo`, `AntiCheatReference`, `allowInstallationBrokenAnticheat`, `anticheatFiles`
+- `common/types/ipc.ts`: eliminado `AntiCheatInfo` import y `getAnticheatInfo`

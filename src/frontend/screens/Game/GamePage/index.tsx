@@ -37,7 +37,6 @@ import GamePicture from '../GamePicture'
 import { install } from 'frontend/helpers/library'
 import { hasProgress } from 'frontend/hooks/hasProgress'
 import ErrorComponent from 'frontend/components/UI/ErrorComponent'
-import Anticheat from 'frontend/components/UI/Anticheat'
 
 import StoreLogos from 'frontend/components/UI/StoreLogos'
 import { hasStatus } from 'frontend/hooks/hasStatus'
@@ -53,7 +52,6 @@ import {
   InstalledInfo,
   Requirements
 } from './components'
-import { hasAnticheatInfo } from 'frontend/hooks/hasAnticheatInfo'
 import { hasHelp } from 'frontend/hooks/hasHelp'
 import Genres from './components/Genres'
 import ReleaseDate from './components/ReleaseDate'
@@ -122,8 +120,6 @@ export default React.memo(function GamePage(): JSX.Element | null {
     error: boolean
     message: unknown
   }>({ error: false, message: '' })
-
-  const anticheatInfo = hasAnticheatInfo(gameInfo)
 
   const knownFixes = hasKnownFixes(appName, runner)
 
@@ -502,8 +498,6 @@ export default React.memo(function GamePage(): JSX.Element | null {
                         </TabPanel>
                       </div>
                     </div>
-
-                    <Anticheat anticheatInfo={anticheatInfo} />
                   </div>
                 </>
               </GameContext.Provider>
