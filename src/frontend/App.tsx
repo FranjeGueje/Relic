@@ -17,7 +17,6 @@ import WindowControls from './components/UI/WindowControls'
 import classNames from 'classnames'
 import { ThemeProvider, createTheme } from '@mui/material/styles'
 import { InstallGameWrapper } from './screens/Library/components/InstallModal'
-import { SettingsModalWrapper } from './screens/Settings/components/SettingsModal'
 
 function Root() {
   const {
@@ -88,7 +87,6 @@ function Root() {
             <main className="content">
               <DialogHandler />
               <InstallGameWrapper />
-              <SettingsModalWrapper />
               <ExternalLinkDialog />
               <Outlet />
             </main>

@@ -23,6 +23,7 @@ import {
   spawnAsync
 } from '../../utils'
 import {
+  logDebug,
   logError,
   logInfo,
   LogPrefix,

@@ -2,61 +2,16 @@ import { create } from 'zustand'
 import { useShallow } from 'zustand/react/shallow'
 
 import type { GameInfo } from 'common/types'
-import type { GameSettingsModalType } from '../screens/Settings/components/SettingsModal'
 import { gameOverridesStore } from 'frontend/helpers/electronStores'
 
 type GameOverride = NonNullable<GameInfo['overrides']>
 
 interface GlobalStateV2 {
-  settingsModalProps:
-    | { isOpen: false }
-    | {
-        isOpen: true
-        type: GameSettingsModalType
-        gameInfo: GameInfo
-      }
-  openGameSettingsModal: (gameInfo: GameInfo) => void
-  openGameLogsModal: (gameInfo: GameInfo) => void
-  openGameCategoriesModal: (gameInfo: GameInfo) => void
-  closeSettingsModal: () => void
-
   gameOverrides: Record<string, GameOverride>
   setGameOverrides: (overrides: Record<string, GameOverride>) => void
 }
 
 const useGlobalStateRaw = create<GlobalStateV2>()((set) => ({
-  settingsModalProps: { isOpen: false },
-  openGameSettingsModal: (gameInfo) => {
-    set({
-      settingsModalProps: {
-        isOpen: true,
-        type: 'settings',
-        gameInfo
-      }
-    })
-  },
-  openGameLogsModal: (gameInfo) => {
-    set({
-      settingsModalProps: {
-        isOpen: true,
-        type: 'log',
-        gameInfo
-      }
-    })
-  },
-  openGameCategoriesModal: (gameInfo) => {
-    set({
-      settingsModalProps: {
-        isOpen: true,
-        type: 'category',
-        gameInfo
-      }
-    })
-  },
-  closeSettingsModal: () => {
-    set({ settingsModalProps: { isOpen: false } })
-  },
-
   gameOverrides: gameOverridesStore.get('overrides', {}),
   setGameOverrides: (gameOverrides) => set({ gameOverrides }),
 }))

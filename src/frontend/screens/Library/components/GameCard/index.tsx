@@ -31,18 +31,15 @@ import { getCardStatus, getImageFormatting } from './constants'
 import { hasStatus } from 'frontend/hooks/hasStatus'
 import fallBackImage from 'frontend/assets/relic_card.jpg'
 import LibraryContext from '../../LibraryContext'
-import useGlobalState from 'frontend/state/GlobalStateV2'
 import {
   Cancel,
   DeleteForever,
-  Description,
   Download,
   Favorite,
   FavoriteBorder,
   List,
   OpenInNew,
   PlaylistRemove,
-  Settings,
   Upgrade,
   Visibility,
   VisibilityOff
@@ -102,9 +99,6 @@ const GameCard = ({
     activeController,
     connectivity
   } = useContext(ContextProvider)
-  const { openGameSettingsModal, openGameLogsModal } =
-    useGlobalState.keys('openGameSettingsModal', 'openGameLogsModal')
-
   const { layout } = useContext(LibraryContext)
 
   const {
@@ -308,19 +302,6 @@ const GameCard = ({
         navigate(`/gamepage/${runner}/${appName}`, { state: { gameInfo } }),
       show: true,
       icon: <OpenInNew />
-    },
-    {
-      // settings
-      label: t('submenu.settings', 'Settings'),
-      onclick: () => openGameSettingsModal(gameInfo),
-      show: isInstalled && !isUninstalling && !isBrowserGame,
-      icon: <Settings />
-    },
-    {
-      label: t('submenu.logs', 'Logs'),
-      onclick: () => openGameLogsModal(gameInfo),
-      show: isInstalled && !isUninstalling && !isBrowserGame,
-      icon: <Description />
     },
     {
       // hide
