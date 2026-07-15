@@ -353,3 +353,9 @@
 - Eliminado `'winetricks'` de arrays `allowed` y `allowedPendingOps` en `GlobalState.tsx`
 - Eliminado `winetricks` de `hooks/constants.ts`
 - Renombrado `winetricksOutputBottomRef` → `logRef` en `ProgressDialog`
+
+## Tiempo de juego (Playtime)
+- Eliminado directorio `Game/TimeContainer/` (componente + CSS)
+- Eliminado import y `<TimeContainer />` de `GamePage/index.tsx`
+- Eliminado `timestampStore` de `frontend/helpers/electronStores.ts` (declaración + export)
+- Eliminado `fetchPlaytimeFromServer` de `preload/api/misc.ts`

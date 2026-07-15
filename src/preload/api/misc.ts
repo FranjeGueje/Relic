@@ -93,7 +93,6 @@ export const storeGet = (storeName: string, key: string, defaultValue?: unknown)
 export const storeDelete = (storeName: string, key: string) => stores[storeName].delete(key)
 
 export const getWikiGameInfo = makeHandlerInvoker('getWikiGameInfo')
-export const fetchPlaytimeFromServer = makeHandlerInvoker('getPlaytimeFromRunner')
 export const isIntelMac = makeHandlerInvoker('isIntelMac')
 export const steamgriddb = {
   hasApiKey: makeHandlerInvoker('steamgriddb.hasApiKey'),
