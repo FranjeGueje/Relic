@@ -40,7 +40,6 @@ import {
   logWarning
 } from './logger'
 import { GlobalConfig } from './config'
-import { runWineCommandOnGame } from './tools'
 import gogSetup from './storeManagers/gog/setup'
 import nileSetup from './storeManagers/nile/setup'
 import { spawn, spawnSync } from 'child_process'
@@ -287,21 +286,13 @@ function filterGameSettingsForLog(
   // if this is visible, it means verboseLogs is true, no need to print it
   delete gameSettings.verboseLogs
 
-  // remove settings that are not used on Linux
-  if (isLinux) {
-    delete gameSettings.wineCrossoverBottle
-
-    if (!notNative) {
-      delete gameSettings.wineVersion
-      delete gameSettings.winePrefix
-    }
+  if (isLinux && !notNative) {
+    delete gameSettings.wineVersion
+    delete gameSettings.winePrefix
   }
 
-  // remove settings that are not used on Mac
   if (isMac) {
     delete gameSettings.disableUMU
-    delete gameSettings.wineCrossoverBottle
-
     if (!notNative) {
       delete gameSettings.wineVersion
       delete gameSettings.winePrefix
@@ -344,12 +335,8 @@ async function prepareLaunch(
   const isThirdPartyManagedApp = gameInfo && !!gameInfo.thirdPartyManagedApp
 
   if (isThirdPartyManagedApp) {
-    let prefixOrBottleFolder: string | null = gameSettings.winePrefix
-    if (isMac && gameSettings.wineVersion.type === 'crossover') {
-      prefixOrBottleFolder = await getCrossoverBottleFolder(gameSettings)
-    }
-    if (prefixOrBottleFolder)
-      await logWriter.logInfo(['Installed in:', prefixOrBottleFolder])
+    if (gameSettings.winePrefix)
+      await logWriter.logInfo(['Installed in:', gameSettings.winePrefix])
 
     await logWriter.logInfo([
       'Managed by a third-party app:',
@@ -395,32 +382,6 @@ async function prepareLaunch(
   }
 }
 
-// Use Crossover's verbose output to extract the path of the game's configured bottle
-async function getCrossoverBottleFolder(gameSettings: GameSettings) {
-  const command = runWineCommand({
-    commandParts: [
-      '--bottle',
-      gameSettings.wineCrossoverBottle,
-      '--verbose', // so it prints the WINEPREFIX env value
-      'whoami' // using whoami because we have to call a command
-    ],
-    gameSettings,
-    skipPrefixCheckIKnowWhatImDoing: true
-  })
-
-  return command
-    .then((result) => {
-      // match the `WINEPREFIX = .....` line to extract the bottle folder
-      const match = result.stderr.match(/WINEPREFIX = "(.*)"\n/)
-      if (match) return match[1]
-
-      return null
-    })
-    .catch(() => {
-      return null
-    })
-}
-
 async function prepareWineLaunch(
   game: Game,
   logWriter: LogWriter
@@ -441,36 +402,6 @@ async function prepareWineLaunch(
     }
   }
 
-  // Verify that the CrossOver bottle exists
-  if (isMac && gameSettings.wineVersion.type === 'crossover') {
-    const bottleExists = existsSync(
-      join(
-        userHome,
-        'Library/Application Support/CrossOver/Bottles',
-        gameSettings.wineCrossoverBottle,
-        'cxbottle.conf'
-      )
-    )
-    if (!bottleExists) {
-      showDialogBoxModalAuto({
-        title: i18next.t(
-          'box.error.cx-bottle-not-found.title',
-          'CrossOver bottle not found'
-        ),
-        message: i18next.t(
-          'box.error.cx-bottle-not-found.message',
-          `The CrossOver bottle "{{bottle_name}}" does not exist, can't launch!`,
-          { bottle_name: gameSettings.wineCrossoverBottle }
-        ),
-        type: 'ERROR'
-      })
-      return {
-        success: false,
-        failureReason: `CrossOver bottle "${gameSettings.wineCrossoverBottle}" does not exist`
-      }
-    }
-  }
-
   if (gameSettings.offlineMode && !gameInfo.canRunOffline) {
     void logWriter.logWarning(
       "Warning: 'offlineMode' is turned on but the game does not support offline mode. Disable 'offlineMode' in the game's settings."
@@ -483,17 +414,12 @@ async function prepareWineLaunch(
 
   let hasUpdated = false
 
-  let prefixOrBottleFolder: string | null = gameSettings.winePrefix
-  if (isMac && gameSettings.wineVersion.type === 'crossover') {
-    prefixOrBottleFolder = await getCrossoverBottleFolder(gameSettings)
-  }
+  const prefixFolder = gameSettings.winePrefix
 
-  // we check this because if the Crossover's bottle is not configured
-  // properly, this path will be null
-  if (prefixOrBottleFolder) {
-    const appsNamesPath = join(prefixOrBottleFolder, 'installed_games')
+  if (prefixFolder) {
+    const appsNamesPath = join(prefixFolder, 'installed_games')
     if (!existsSync(appsNamesPath)) {
-      mkdirSync(prefixOrBottleFolder, { recursive: true })
+      mkdirSync(prefixFolder, { recursive: true })
       writeFileSync(appsNamesPath, JSON.stringify([gameInfo.app_name]), 'utf-8')
       hasUpdated = true
     } else {
@@ -688,7 +614,7 @@ function setupWrapperEnvVars(wrapperEnv: WrapperEnv) {
  * @returns A Record that can be passed to execAsync/spawn
  */
 function setupWineEnvVars(gameSettings: GameSettings, gameId = '0') {
-  const { wineVersion, winePrefix, wineCrossoverBottle } = gameSettings
+  const { wineVersion, winePrefix } = gameSettings
 
   const ret: Record<string, string> = {}
 
@@ -702,9 +628,6 @@ function setupWineEnvVars(gameSettings: GameSettings, gameId = '0') {
       ret.WINEPREFIX = winePrefix
       ret.STEAM_COMPAT_DATA_PATH = winePrefix
       ret.PROTONPATH = dirname(gameSettings.wineVersion.bin)
-      break
-    case 'crossover':
-      ret.CX_BOTTLE = wineCrossoverBottle
       break
     case 'toolkit':
       ret.WINEPREFIX = winePrefix
@@ -778,10 +701,6 @@ export async function verifyWinePrefix(
     return { res: { stdout: '', stderr: '' } }
   }
 
-  if (wineVersion.type === 'crossover') {
-    return { res: { stdout: '', stderr: '' } }
-  }
-
   if (!existsSync(winePrefix) && !(await isUmuSupported(settings))) {
     mkdirSync(winePrefix, { recursive: true })
   }
@@ -834,7 +753,7 @@ async function runWineCommand({
     : GlobalConfig.get().getSettings()
   const { wineVersion, winePrefix } = settings
 
-  if (!skipPrefixCheckIKnowWhatImDoing && wineVersion.type !== 'crossover') {
+  if (!skipPrefixCheckIKnowWhatImDoing) {
     let requiredPrefixFiles = [
       'dosdevices',
       'drive_c',
@@ -1373,6 +1292,30 @@ async function runScriptForGame(
     child.on('exit', () => {
       resolve(true)
     })
+  })
+}
+
+export async function runWineCommandOnGame(
+  runner: Runner,
+  appName: string,
+  { commandParts, wait = false, protonVerb, startFolder }: WineCommandArgs
+): Promise<ExecResult> {
+  const game = libraryManagerMap[runner].getGame(appName)
+  if (game.isNative()) {
+    logError('runWineCommand called on native game!', LogPrefix.Gog)
+    return { stdout: '', stderr: '' }
+  }
+  const { folder_name, install } = game.getGameInfo()
+  const gameSettings = await game.getSettings()
+
+  return runWineCommand({
+    gameSettings,
+    installFolderName: folder_name,
+    gameInstallPath: install.install_path,
+    commandParts,
+    wait,
+    protonVerb,
+    startFolder
   })
 }
 

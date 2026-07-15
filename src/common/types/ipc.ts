@@ -30,10 +30,8 @@ import type {
   Runner,
   RunnerCommandStub,
   RuntimeName,
-  RunWineCommandArgs,
   StatusPromise,
-  ToolArgs,
-  Tools,
+
   UpdateParams,
   UploadedLogData,
   UserInfo,
@@ -129,7 +127,6 @@ interface TestSyncIPCFunctions {
 interface AsyncIPCFunctions {
   kill: (appName: string, runner: Runner) => Promise<void>
   checkDiskSpace: (folder: string) => Promise<DiskSpaceData>
-  callTool: (args: Tools) => Promise<void>
   runWineCommand: (
     args: WineCommandArgs
   ) => Promise<{ stdout: string; stderr: string }>
@@ -211,7 +208,6 @@ interface AsyncIPCFunctions {
     arg: string
   ) => Promise<string>
   gamepadAction: (args: GamepadActionArgs) => Promise<void>
-  runWineCommandForGame: (args: RunWineCommandArgs) => Promise<ExecResult>
   getShellPath: (path: string) => Promise<string>
   getWebviewPreloadPath: () => string
   clipboardReadText: () => string
@@ -258,9 +254,7 @@ interface AsyncIPCFunctions {
     appName: string
     runner: Runner
   }) => Promise<boolean>
-  toggleDXVK: (args: ToolArgs) => Promise<boolean>
-  toggleVKD3D: (args: ToolArgs) => Promise<boolean>
-  toggleDXVKNVAPI: (args: ToolArgs) => Promise<boolean>
+
   pathExists: (path: string) => Promise<boolean>
   getLaunchOptions: (appName: string, runner: Runner) => Promise<LaunchOption[]>
   getPlaytimeFromRunner: (

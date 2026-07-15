@@ -210,7 +210,6 @@ class GameConfigV0 extends GameConfig {
       savesPath,
       targetExe,
       winePrefix,
-      wineCrossoverBottle,
       wineVersion,
       beforeLaunchScriptPath,
       afterLaunchScriptPath,
@@ -243,11 +242,6 @@ class GameConfigV0 extends GameConfig {
 
     if (!isWindows) {
       defaultSettings.wineVersion = wineVersion
-
-      // set specific keys depending on the platform
-      if (isMac) {
-        defaultSettings.wineCrossoverBottle = wineCrossoverBottle
-      }
 
       defaultSettings.winePrefix = winePrefix || sharedWinePrefix
 

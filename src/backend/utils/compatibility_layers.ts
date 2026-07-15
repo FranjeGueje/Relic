@@ -113,22 +113,6 @@ export async function getLinuxWineSet(
     })
   })
 
-  const lutrisPath = `${homedir()}/.local/share/lutris`
-  const lutrisCompatPath = `${lutrisPath}/runners/wine/`
-
-  if (existsSync(lutrisCompatPath)) {
-    readdirSync(lutrisCompatPath).forEach((version) => {
-      const wineBin = join(lutrisCompatPath, version, 'bin', 'wine')
-      altWine.add({
-        bin: wineBin,
-        name: version,
-        type: 'wine',
-        ...getWineLibs(wineBin),
-        ...getWineExecs(wineBin)
-      })
-    })
-  }
-
   const protonPaths = [`${toolsPath}/proton/`]
 
   await getSteamLibraries().then((libs) => {
@@ -146,7 +130,6 @@ export async function getLinuxWineSet(
   protonPaths.forEach((path) => {
     if (existsSync(path)) {
       readdirSync(path).forEach((version) => {
-        // Only relevant to Lutris
         if (version.startsWith('UMU-Latest')) {
           return
         }
@@ -274,48 +257,6 @@ export async function getWineskinWine(): Promise<Set<WineInstallation>> {
     }
   }
   return wineSet
-}
-
-/**
- * Detects CrossOver installs on Mac
- *
- * @returns Promise<Set<WineInstallation>>
- */
-export async function getCrossover(): Promise<Set<WineInstallation>> {
-  const crossover = new Set<WineInstallation>()
-
-  if (!isMac) {
-    return crossover
-  }
-
-  await execAsync(
-    'mdfind kMDItemCFBundleIdentifier = "com.codeweavers.CrossOver"'
-  )
-    .then(async ({ stdout }) => {
-      stdout.split('\n').forEach((crossoverMacPath) => {
-        const infoFilePath = join(crossoverMacPath, 'Contents/Info.plist')
-        if (crossoverMacPath && existsSync(infoFilePath)) {
-          const info = plistParse(
-            readFileSync(infoFilePath, 'utf-8')
-          ) as PlistObject
-          const version = info['CFBundleShortVersionString'] || ''
-          const crossoverWineBin = join(
-            crossoverMacPath,
-            'Contents/SharedSupport/CrossOver/bin/wine'
-          )
-          crossover.add({
-            bin: crossoverWineBin,
-            name: `CrossOver - ${version}`,
-            type: 'crossover',
-            ...getWineExecs(crossoverWineBin)
-          })
-        }
-      })
-    })
-    .catch(() => {
-      logInfo('CrossOver not found', LogPrefix.GlobalConfig)
-    })
-  return crossover
 }
 
 /**
@@ -508,12 +449,6 @@ export async function getWineFlags(
           (wrapper ? `${wrapper} ` : '') + `"${await getUmuPath()}"`
         )
       }
-      break
-    case 'crossover':
-      partialCommand = {
-        '--wine': Path.parse(wineBin)
-      }
-      if (wrapper) partialCommand['--wrapper'] = NonEmptyString.parse(wrapper)
       break
     default:
       break

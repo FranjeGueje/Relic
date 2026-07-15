@@ -44,7 +44,6 @@ export const getGOGLinuxInstallersLangs = makeHandlerInvoker('getGOGLinuxInstall
 export const getAlternativeWine = makeHandlerInvoker('getAlternativeWine')
 export const getShellPath = makeHandlerInvoker('getShellPath')
 export const getWebviewPreloadPath = makeHandlerInvoker('getWebviewPreloadPath')
-export const callTool = makeHandlerInvoker('callTool')
 export const getKnownFixes = makeHandlerInvoker('getKnownFixes')
 export const clipboardReadText = makeHandlerInvoker('clipboardReadText')
 export const clipboardWriteText = makeListenerCaller('clipboardWriteText')

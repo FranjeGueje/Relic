@@ -206,7 +206,6 @@ export interface GameSettings {
   offlineMode: boolean
   otherOptions?: string
   targetExe: string
-  wineCrossoverBottle: string
   winePrefix: string
   wineVersion: WineInstallation
   savesPath: string
@@ -414,7 +413,7 @@ export interface Runtime {
   url: string
 }
 
-export type RuntimeName = 'eac_runtime' | 'battleye_runtime' | 'umu'
+export type RuntimeName = 'umu'
 
 export type RecentGame = {
   appName: string
@@ -495,20 +494,6 @@ export type InstallPlatform =
 
 export type ConnectivityStatus = 'offline' | 'check-online' | 'online'
 
-export interface Tools {
-  exe?: string
-  tool: string
-  appName: string
-  runner: Runner
-}
-
-export interface Tool {
-  name: string
-  url: string
-  os: string
-  strip?: number
-}
-
 export type DMStatus = 'done' | 'error' | 'abort' | 'paused'
 export interface DMQueueElement {
   type: 'update' | 'install'
@@ -547,12 +532,6 @@ export interface SaveSyncArgs {
   runner: Runner
 }
 
-export interface RunWineCommandArgs {
-  appName: string
-  runner: Runner
-  commandParts: string[]
-}
-
 export interface ImportGameArgs {
   appName: string
   path: string
@@ -560,7 +539,6 @@ export interface ImportGameArgs {
   platform: InstallPlatform
   winePrefix?: string
   wineVersion?: WineInstallation
-  wineCrossoverBottle?: string
 }
 
 export interface MoveGameArgs {
@@ -577,11 +555,6 @@ export interface DiskSpaceData {
 
 }
 
-export interface ToolArgs {
-  appName: string
-  action: 'backup' | 'restore'
-}
-
 export type StatusPromise = Promise<{ status: 'done' | 'error' | 'abort' }>
 
 /**
@@ -590,9 +563,7 @@ export type StatusPromise = Promise<{ status: 'done' | 'error' | 'abort' }>
 export type Type =
   | 'Wine-GE'
   | 'Proton'
-  | 'Wine-Lutris'
   | 'Wine-Kron4ek'
-  | 'Wine-Crossover'
   | 'Wine-Staging-macOS'
   | 'Game-Porting-Toolkit'
 

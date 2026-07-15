@@ -20,9 +20,6 @@ interface LaunchCommand {
   '--wine'?: Path
   '--wine-prefix'?: Path
   '--no-wine'?: true
-  '--crossover'?: true
-  '--crossover-app'?: Path
-  '--crossover-bottle'?: NonEmptyString
 }
 
 export default LaunchCommand

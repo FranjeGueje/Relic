@@ -884,8 +884,7 @@ addHandler(
       runner,
       platform,
       winePrefix,
-      wineVersion,
-      wineCrossoverBottle
+      wineVersion
     }
   ): StatusPromise => {
     if (runner === 'legendary') {
@@ -942,8 +941,7 @@ addHandler(
       writeConfig(appName, {
         ...gameSettings,
         winePrefix,
-        wineVersion,
-        wineCrossoverBottle
+        wineVersion
       })
     }
 
@@ -1254,10 +1252,8 @@ addHandler('wine.isValidVersion', async (e, wineVersion: WineInstallation) =>
  */
 import './logger/ipc_handler'
 import './shortcuts/ipc_handler'
-import './wine/runtimes/ipc_handler'
 import './downloadmanager/ipc_handler'
 import './utils/ipc_handler'
 import './recent_games/ipc_handler'
-import './tools/ipc_handler'
 import './progress_bar'
 import './steamgrid/ipc_handler'

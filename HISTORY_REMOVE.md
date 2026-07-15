@@ -419,6 +419,38 @@
 - `preload/api/library.ts`: eliminados `getGameOverride` y `getGameSdl` invokers
 - `frontend/DownloadDialog`: eliminado `useEffect` que llamaba `getGameOverride` + `getGameSdl`
 
+## Fase 3: Limpieza gestión Wine/Proton
+
+### tools/ (DXVK, VKD3D, DXMT, Winetricks)
+- Directorio `backend/tools/` eliminado (index.ts, ipc_handler.ts, dxmt.ts)
+- `runWineCommandOnGame` movido a `launcher.ts`
+- `main.ts`: import `tools/ipc_handler` eliminado
+- `ipc.ts`: tipos `callTool`, `runWineCommandForGame`, `toggleDXVK`, `toggleVKD3D`, `toggleDXVKNVAPI`, imports `Tools`, `ToolArgs`, `RunWineCommandArgs` eliminados
+- `types.ts`: interfaces `Tools`, `Tool`, `ToolArgs`, `RunWineCommandArgs` eliminados
+- `preload/helpers.ts`: `runWineCommandForGame` eliminado
+- `preload/misc.ts`: `callTool` eliminado
+
+### CrossOver
+- `launcher.ts`: `getCrossoverBottleFolder` completa, CrossOver bottle verify, `case 'crossover'` en setupWineEnvVars, `wineCrossoverBottle` de filterGameSettingsForLog, `prefixOrBottleFolder` simplificado eliminados
+- `compatibility_layers.ts`: `getCrossover()` completa y `case 'crossover'` eliminados
+- `config.ts`: import y llamada `getCrossover()` eliminados
+- `game_config.ts`: `wineCrossoverBottle` eliminado
+- `commands/launch.ts`: flags `--crossover`, `--crossover-app`, `--crossover-bottle` eliminados
+- `main.ts`: `wineCrossoverBottle` de handler importGame eliminado
+- `types.ts`: `wineCrossoverBottle` de GameSettings e ImportGameArgs eliminados
+
+### Lutris
+- `types.ts`: `'Wine-Lutris'` del type `Type` eliminado
+- `compatibility_layers.ts`: detección de Wine de Lutris (`.local/share/lutris`) eliminada
+- `wine/runtimes/runtimes.ts`: fetch a `lutris.net/api/runtimes` eliminado; `_get()` eliminado; `download()`/`isInstalled()` simplificados a local check
+
+### wine/runtimes/
+- `runtimes.ts`: simplificado (sin lutris API, solo check local)
+- `ipc_handler.ts` eliminado
+- `ipc.ts`: `downloadRuntime`, `isRuntimeInstalled` eliminados de AsyncIPCFunctions
+- `preload/wine.ts`: `downloadRuntime`, `isRuntimeInstalled` invokers eliminados
+- `types.ts`: `RuntimeName` simplificado a solo `'umu'`
+
 ## Fase 2: Settings Wine prohibidas
 - Archivos `.tsx` eliminados: `EnvVariablesTable.tsx`, `WrappersTable.tsx`, `LauncherArgs.tsx`, `NvidiaPrime.tsx`, `ShowFPS.tsx`, `BattlEyeRuntime.tsx`
 - `components/index.ts`: exports limpiados

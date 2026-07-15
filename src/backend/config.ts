@@ -9,7 +9,6 @@ import { currentGlobalConfigVersion } from 'backend/constants/others'
 
 import { logError, logInfo, LogPrefix } from './logger'
 import {
-  getCrossover,
   getDefaultWine,
   getGamePortingToolkitWine,
   getLinuxWineSet,
@@ -147,7 +146,6 @@ abstract class GlobalConfig {
 
     const getGPTKWine = await getGamePortingToolkitWine()
     const getSystemGPTK = await getSystemGamePortingToolkitWine()
-    const crossover = await getCrossover()
     const wineOnMac = await getWineOnMac()
     const wineskinWine = await getWineskinWine()
     const whiskyWine = await getWhisky()
@@ -155,7 +153,6 @@ abstract class GlobalConfig {
     return new Set([
       ...getGPTKWine,
       ...getSystemGPTK,
-      ...crossover,
       ...wineOnMac,
       ...wineskinWine,
       ...whiskyWine
@@ -313,7 +310,6 @@ class GlobalConfigV0 extends GlobalConfig {
       language: 'en',
       maxWorkers: 0,
       minimizeOnLaunch: false,
-      wineCrossoverBottle: 'Relic',
       winePrefix: isWindows ? '' : sharedWinePrefix,
       wineVersion: defaultWine,
       framelessWindow: false,
