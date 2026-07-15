@@ -4,6 +4,7 @@ import { useContext, CSSProperties, useMemo, useState, useEffect } from 'react'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faRepeat, faBan } from '@fortawesome/free-solid-svg-icons'
+import { faLinux } from '@fortawesome/free-brands-svg-icons'
 
 import DownIcon from 'frontend/assets/down-icon.svg?react'
 import { FavouriteGame, GameInfo, HiddenGame, Runner } from 'common/types'
@@ -11,9 +12,11 @@ import { Link, useNavigate } from 'react-router-dom'
 import StopIcon from 'frontend/assets/stop-icon.svg?react'
 import StopIconAlt from 'frontend/assets/stop-icon-alt.svg?react'
 import {
+  createNewWindow,
   getGameInfo,
   getProgress,
   getStoreName,
+  repair,
   sendKill
 } from 'frontend/helpers'
 import { useTranslation } from 'react-i18next'
@@ -27,19 +30,25 @@ import RemoveCircleIcon from '@mui/icons-material/RemoveCircle'
 import classNames from 'classnames'
 import StoreLogos from 'frontend/components/UI/StoreLogos'
 import UninstallModal from 'frontend/components/UI/UninstallModal'
+import ModifyInstallModal from 'frontend/screens/Game/ModifyInstallModal'
 import { getCardStatus, getImageFormatting } from './constants'
 import { hasStatus } from 'frontend/hooks/hasStatus'
 import fallBackImage from 'frontend/assets/relic_card.jpg'
 import LibraryContext from '../../LibraryContext'
 import {
   Cancel,
+  CheckCircle,
   DeleteForever,
+  DesktopAccessDisabled,
   Download,
+  DriveFileMove,
   Favorite,
   FavoriteBorder,
+  Folder,
   List,
   OpenInNew,
   PlaylistRemove,
+  Repartition,
   Upgrade,
   Visibility,
   VisibilityOff
@@ -86,6 +95,7 @@ const GameCard = ({
 
   const [gameInfo, setGameInfo] = useState<GameInfo>(gameInfoFromProps)
   const [showUninstallModal, setShowUninstallModal] = useState(false)
+  const [showModifyInstallModal, setShowModifyInstallModal] = useState(false)
 
   const { t } = useTranslation('gamepage')
   const { t: t2 } = useTranslation()
@@ -97,7 +107,8 @@ const GameCard = ({
     favouriteGames,
     showDialogModal,
     activeController,
-    connectivity
+    connectivity,
+    platform
   } = useContext(ContextProvider)
   const { layout } = useContext(LibraryContext)
 
@@ -125,6 +136,9 @@ const GameCard = ({
   const { status, folder, label } = hasStatus(gameInfo, size)
 
   const isBrowserGame = gameInfo.install.platform === 'Browser'
+  const isSideloaded = runner === 'sideload'
+  const isThirdPartyManaged = !!gameInfo.thirdPartyManagedApp
+  const isLinux = platform === 'linux'
 
   useEffect(() => {
     const updateGameInfo = async () => {
@@ -139,6 +153,47 @@ const GameCard = ({
   async function handleUpdate() {
     if (gameInfo.runner !== 'sideload')
       updateGame({ appName, runner, gameInfo })
+  }
+
+  async function onMoveInstallYesClick() {
+    const { defaultInstallPath } = await window.api.requestAppSettings()
+    const path = await window.api.openDialog({
+      buttonLabel: t('box.choose'),
+      properties: ['openDirectory'],
+      title: t('box.move.path'),
+      defaultPath: defaultInstallPath
+    })
+    if (path) {
+      await window.api.moveInstall({ appName, path, runner })
+    }
+  }
+
+  function handleMoveInstall() {
+    showDialogModal({
+      showDialog: true,
+      message: t('box.move.message'),
+      title: t('box.move.title'),
+      buttons: [
+        { text: t('box.yes'), onClick: onMoveInstallYesClick },
+        { text: t('box.no') }
+      ]
+    })
+  }
+
+  async function onRepairYesClick() {
+    await repair(appName, runner)
+  }
+
+  function handleRepair() {
+    showDialogModal({
+      showDialog: true,
+      message: t('box.repair.message'),
+      title: t('box.repair.title'),
+      buttons: [
+        { text: t('box.yes'), onClick: onRepairYesClick },
+        { text: t('box.no') }
+      ]
+    })
   }
 
   const grid = forceCard || layout === 'grid'
@@ -304,6 +359,54 @@ const GameCard = ({
       icon: <OpenInNew />
     },
     {
+      label: t('button.force_update', 'Force Update if Available'),
+      onclick: async () => handleUpdate(),
+      show: isInstalled && !isSideloaded && !isThirdPartyManaged,
+      icon: <Upgrade />
+    },
+    {
+      label: t('submenu.move', 'Move Game'),
+      onclick: () => handleMoveInstall(),
+      show: isInstalled && !isSideloaded && !isThirdPartyManaged,
+      icon: <DriveFileMove />
+    },
+    {
+      label: t('submenu.verify', 'Verify and Repair'),
+      onclick: () => handleRepair(),
+      show: isInstalled && !isSideloaded && !isThirdPartyManaged,
+      icon: <CheckCircle />
+    },
+    {
+      label: t('submenu.protondb', 'Check Compatibility'),
+      onclick: () =>
+        createNewWindow(
+          `https://www.protondb.com/search?q=${encodeURIComponent(title)}`
+        ),
+      show: !isSideloaded && isLinux,
+      icon: (
+        <FontAwesomeIcon icon={faLinux} />
+      )
+    },
+    {
+      label: t('game.modify', 'Modify Installation'),
+      onclick: () => setShowModifyInstallModal(true),
+      show:
+        ['legendary', 'gog'].includes(runner) &&
+        isInstalled &&
+        !isThirdPartyManaged,
+      icon: <Repartition />
+    },
+    {
+      label: t('button.browse_files', 'Browse Files'),
+      onclick: () => {
+        const folder =
+          gameInfo.install.install_path || gameInfo.folder_name
+        if (folder) window.api.openFolder(folder)
+      },
+      show: isInstalled,
+      icon: <Folder />
+    },
+    {
       // hide
       label: t('button.hide_game', 'Hide Game'),
       onclick: () => hiddenGames.add(appName, title),
@@ -382,6 +485,13 @@ const GameCard = ({
           runner={runner}
           isDlc={Boolean(gameInfo.install.is_dlc)}
           onClose={() => setShowUninstallModal(false)}
+        />
+      )}
+      {showModifyInstallModal && (
+        <ModifyInstallModal
+          gameInfo={gameInfo}
+          gameInstallInfo={null}
+          onClose={() => setShowModifyInstallModal(false)}
         />
       )}
       <ContextMenu items={items}>
