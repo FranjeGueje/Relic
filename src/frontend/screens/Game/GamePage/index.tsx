@@ -52,7 +52,6 @@ import {
   GameStatus,
   HLTB,
   InstalledInfo,
-  ReportIssue,
   Requirements,
   Scores
 } from './components'
@@ -539,7 +538,6 @@ export default React.memo(function GamePage(): JSX.Element | null {
 
                     <Anticheat anticheatInfo={anticheatInfo} />
                   </div>
-                  <ReportIssue gameInfo={gameInfo} />
                 </>
               </GameContext.Provider>
             </>
