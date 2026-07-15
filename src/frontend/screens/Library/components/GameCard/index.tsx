@@ -14,8 +14,6 @@ import {
   getGameInfo,
   getProgress,
   getStoreName,
-  install,
-  launch,
   sendKill
 } from 'frontend/helpers'
 import { useTranslation } from 'react-i18next'
@@ -91,7 +89,6 @@ const GameCard = ({
 
   const [gameInfo, setGameInfo] = useState<GameInfo>(gameInfoFromProps)
   const [showUninstallModal, setShowUninstallModal] = useState(false)
-  const [isLaunching, setIsLaunching] = useState(false)
 
   const { t } = useTranslation('gamepage')
   const { t: t2 } = useTranslation()
@@ -136,7 +133,6 @@ const GameCard = ({
   const isBrowserGame = gameInfo.install.platform === 'Browser'
 
   useEffect(() => {
-    setIsLaunching(false)
     const updateGameInfo = async () => {
       const newInfo = await getGameInfo(appName, runner)
       if (newInfo) {
@@ -220,7 +216,7 @@ const GameCard = ({
       return (
         <SvgButton
           className="cancelIcon"
-          onClick={async () => handlePlay(runner)}
+          onClick={async () => sendKill(appName, runner)}
           title={`${t('label.playing.stop')} (${title})`}
         >
           <StopIconAlt />
@@ -231,7 +227,7 @@ const GameCard = ({
       return (
         <SvgButton
           className="cancelIcon"
-          onClick={async () => handlePlay(runner)}
+          onClick={async () => sendKill(appName, runner)}
           title={`${t('button.cancel')} (${title})`}
         >
           <StopIcon />
@@ -280,7 +276,7 @@ const GameCard = ({
     {
       // stop if running
       label: t('label.playing.stop'),
-      onclick: async () => handlePlay(runner),
+      onclick: async () => sendKill(appName, runner),
       show: isPlaying,
       icon: <Cancel />
     },
@@ -301,7 +297,7 @@ const GameCard = ({
     {
       // cancel installation/update
       label: t('button.cancel'),
-      onclick: async () => handlePlay(runner),
+      onclick: async () => sendKill(appName, runner),
       show: isInstalling || isUpdating,
       icon: <Cancel />
     },
@@ -493,45 +489,6 @@ const GameCard = ({
       </ContextMenu>
     </div>
   )
-
-  async function handlePlay(runner: Runner) {
-    if (!isInstalled && !isQueued && gameInfo.runner !== 'sideload') {
-      return install({
-        gameInfo,
-        installPath: folder || 'default',
-        isInstalling,
-        previousProgress,
-        progress,
-        t,
-        showDialogModal
-      })
-    }
-
-    if (isPlaying || isUpdating) {
-      return sendKill(appName, runner)
-    }
-
-    if (isQueued) {
-      storage.removeItem(appName)
-      return window.api.removeFromDMQueue(appName)
-    }
-
-    if (isInstalled) {
-      setIsLaunching(true)
-      const isOffline = connectivity.status !== 'online'
-      const notPlayableOffline = isOffline && !gameInfo.canRunOffline
-      await launch({
-        appName,
-        t,
-        runner,
-        hasUpdate,
-        showDialogModal,
-        notPlayableOffline
-      })
-      setIsLaunching(false)
-    }
-    return
-  }
 }
 
 export default GameCard

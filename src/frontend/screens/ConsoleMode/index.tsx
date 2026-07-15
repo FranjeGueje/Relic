@@ -19,7 +19,6 @@ import RelicIcon from 'frontend/assets/relic-icon.svg?react'
 import ConfirmDialog from './components/ConfirmDialog'
 import ConsoleCard from './components/ConsoleCard'
 import ControllerHints from './components/ControllerHints'
-import LaunchOverlay from './components/LaunchOverlay'
 import InstallOverlay from './InstallOverlay'
 import {
   BTN_L1,
@@ -74,7 +73,6 @@ export default function ConsoleMode() {
   const [ascending, setAscending] = useState(true)
   const [filteringByInstalled, setFilteringByInstalled] = useState(false)
   const [focusedIndex, setFocusedIndex] = useState(0)
-  const [launchingGame, setLaunchingGame] = useState<GameInfo | null>(null)
   const [installingGame, setInstallingGame] = useState<GameInfo | null>(null)
   const [updateNoticeGame, setUpdateNoticeGame] = useState<GameInfo | null>(
     null
@@ -227,7 +225,6 @@ export default function ConsoleMode() {
   const quit = useCallback(() => navigate('/'), [navigate])
 
   const idle =
-    !launchingGame &&
     !installingGame &&
     !updateNoticeGame &&
     !cancelDownloadGame &&
@@ -259,7 +256,6 @@ export default function ConsoleMode() {
         setUpdateNoticeGame(game)
         return
       }
-      setLaunchingGame(game)
     },
     [idle, libraryStatus, gameUpdates]
   )
@@ -275,13 +271,6 @@ export default function ConsoleMode() {
         gameInfo: game
       })
     }
-  }, [updateNoticeGame])
-
-  const handleLaunchWithoutUpdate = useCallback(() => {
-    if (!updateNoticeGame) return
-    const game = updateNoticeGame
-    setUpdateNoticeGame(null)
-    setLaunchingGame(game)
   }, [updateNoticeGame])
 
   const dismissUpdateNotice = useCallback(() => setUpdateNoticeGame(null), [])
@@ -382,12 +371,6 @@ export default function ConsoleMode() {
   }, [quit, idle])
 
   // Read by gamepad.ts to block the Guide/back buttons during launch.
-  useEffect(() => {
-    if (!launchingGame) return
-    document.body.classList.add('console-launching')
-    return () => document.body.classList.remove('console-launching')
-  }, [launchingGame])
-
   const toggleSort = useCallback(() => setAscending((v) => !v), [])
 
   useGamepadButtonPress(BTN_L1, () => cycleStore(-1), idle)
@@ -395,7 +378,7 @@ export default function ConsoleMode() {
   useGamepadButtonPress(BTN_R2, toggleSort, idle)
 
   return (
-    <div className={classNames('ConsoleMode', { launching: !!launchingGame })}>
+    <div className="ConsoleMode">
       <div
         className="consoleTopBar"
         ref={topBarRef}
@@ -421,36 +404,32 @@ export default function ConsoleMode() {
                 className={classNames('consoleChip', {
                   active: activeStore === f.key
                 })}
-                onClick={() => setActiveStore(f.key)}
-                disabled={!!launchingGame}
-              >
-                {f.label}
-              </button>
-            ))}
-        </div>
-        <div className="consoleTopRight">
-          <button
-            className="consoleChip"
-            onClick={toggleSort}
-            aria-label={t('console.sort', 'Sort')}
-            disabled={!!launchingGame}
-          >
-            {ascending ? 'A → Z' : 'Z → A'}
-          </button>
-          <button
-            className="consoleQuitButton"
-            onClick={quit}
-            disabled={!!launchingGame}
-          >
-            {t('console.quit', 'Quit Console')}
-          </button>
-          <button
-            className="consoleQuitButton danger"
-            onClick={() => window.api.quit()}
-            disabled={!!launchingGame}
-          >
-            {t('console.quitApp', 'Quit App')}
-          </button>
+                  onClick={() => setActiveStore(f.key)}
+                >
+                  {f.label}
+                </button>
+              ))}
+          </div>
+          <div className="consoleTopRight">
+            <button
+              className="consoleChip"
+              onClick={toggleSort}
+              aria-label={t('console.sort', 'Sort')}
+            >
+              {ascending ? 'A → Z' : 'Z → A'}
+            </button>
+            <button
+              className="consoleQuitButton"
+              onClick={quit}
+            >
+              {t('console.quit', 'Quit Console')}
+            </button>
+            <button
+              className="consoleQuitButton danger"
+              onClick={() => window.api.quit()}
+            >
+              {t('console.quitApp', 'Quit App')}
+            </button>
         </div>
       </div>
 
@@ -507,17 +486,10 @@ export default function ConsoleMode() {
       </div>
 
       <div className="consoleFooter">
-        {gamepadConnected && !launchingGame && (
+        {gamepadConnected && (
           <ControllerHints layout={controllerLayout} />
         )}
       </div>
-
-      {launchingGame && (
-        <LaunchOverlay
-          game={launchingGame}
-          onDismiss={() => setLaunchingGame(null)}
-        />
-      )}
 
       {installingGame && (
         <InstallOverlay
@@ -535,7 +507,7 @@ export default function ConsoleMode() {
           cancelLabel={t('gamepage:box.no')}
           dismissLabel={t('button.cancel', 'Cancel')}
           onConfirm={handleUpdateFromNotice}
-          onCancel={handleLaunchWithoutUpdate}
+          onCancel={dismissUpdateNotice}
           onDismiss={dismissUpdateNotice}
           gamepadConnected={gamepadConnected}
           backButtonLabel={backButtonLabel}

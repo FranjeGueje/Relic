@@ -7,7 +7,7 @@ import {
   InstallInfo
 } from 'common/types'
 
-import { install, launch, repair, updateGame } from './library'
+import { install, repair, updateGame } from './library'
 import * as fileSize from 'filesize'
 const readFile = window.api.readConfig
 
@@ -142,7 +142,6 @@ export {
   getProgress,
   handleQuit,
   install,
-  launch,
   loginPage,
   notify,
   repair,

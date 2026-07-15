@@ -163,8 +163,7 @@ export const initGamepad = () => {
         case 'altAction':
           if (isGameCard()) {
             // launch game on pressing Y
-            if (playable()) playGame()
-            else installGame()
+            installGame()
           } else if (VirtualKeyboardController.isActive()) {
             VirtualKeyboardController.space()
             return
@@ -309,33 +308,6 @@ export const initGamepad = () => {
     if (!el) return false
 
     return !!el.closest('.MuiPopover-root')
-  }
-
-  function playable() {
-    const el = currentElement()
-    if (!el) return false
-
-    const parent = el.parentElement
-    if (!parent) return false
-
-    const classes = parent.classList
-    const isGameCard =
-      classes.contains('gameCard') || classes.contains('gameListItem')
-    const isInstalled = classes.contains('installed')
-    return isGameCard && isInstalled
-  }
-
-  function playGame() {
-    const el = currentElement()
-    if (!el) return false
-
-    const parent = el.parentElement
-    if (!parent) return false
-
-    const playButton = parent.querySelector<HTMLButtonElement>('.playIcon')
-    if (playButton) playButton.click()
-
-    return true
   }
 
   function installGame() {

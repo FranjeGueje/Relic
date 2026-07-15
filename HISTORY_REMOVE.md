@@ -359,3 +359,13 @@
 - Eliminado import y `<TimeContainer />` de `GamePage/index.tsx`
 - Eliminado `timestampStore` de `frontend/helpers/electronStores.ts` (declaración + export)
 - Eliminado `fetchPlaytimeFromServer` de `preload/api/misc.ts`
+
+## Lanzamiento de juegos (PLAY / JUGAR AHORA)
+- Eliminados archivos: `MainButton.tsx`, `LaunchOverlay/`, `useLaunchOptions.ts`, `LaunchOptionSelector.tsx`
+- Eliminados exports de `MainButton` y `LaunchOptionSelector` de barrel files
+- `GamePage/index.tsx`: eliminado `handlePlay`, `playClicked`, `MainButton`, `LaunchOptionSelector`, imports de `launch`/`sendKill`
+- `GameCard/index.tsx`: eliminado `handlePlay`, `isLaunching`/`setIsLaunching`, imports de `launch`/`install`; stop/cancel buttons ahora usan `sendKill` directo
+- `ConsoleMode/index.tsx`: eliminado `launchingGame`/`setLaunchingGame`, `handleLaunchWithoutUpdate`, `<LaunchOverlay>`, CSS class `launching`
+- `helpers/gamepad.ts`: eliminado `playGame()` y `playable()`
+- `helpers/index.ts`: eliminado `launch` de import y export
+- `helpers/library.ts`: eliminado `launch` de export (función interna ahora inaccesible)

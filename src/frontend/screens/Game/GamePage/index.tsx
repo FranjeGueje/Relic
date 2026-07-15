@@ -15,8 +15,6 @@ import { Tab, Tabs } from '@mui/material'
 import {
   getGameInfo,
   getInstallInfo,
-  launch,
-  sendKill,
   updateGame
 } from 'frontend/helpers'
 import { Link, NavLink, useLocation, useParams } from 'react-router-dom'
@@ -54,7 +52,6 @@ import {
   GameStatus,
   HLTB,
   InstalledInfo,
-  MainButton,
   ReportIssue,
   Requirements,
   Scores
@@ -69,7 +66,6 @@ import useSettingsContext from 'frontend/hooks/useSettingsContext'
 import SettingsContext from 'frontend/screens/Settings/SettingsContext'
 import useGlobalState from 'frontend/state/GlobalStateV2'
 import Achievements from './components/Achievements'
-import { LaunchOptionSelector } from 'frontend/screens/Settings/components'
 
 export default React.memo(function GamePage(): JSX.Element | null {
   const { appName, runner } = useParams() as { appName: string; runner: Runner }
@@ -130,7 +126,6 @@ export default React.memo(function GamePage(): JSX.Element | null {
     error: boolean
     message: unknown
   }>({ error: false, message: '' })
-  const [playClicked, setPlayClicked] = useState(false)
 
   const anticheatInfo = hasAnticheatInfo(gameInfo)
 
@@ -266,12 +261,6 @@ export default React.memo(function GamePage(): JSX.Element | null {
     })
   }, [appName])
 
-  useEffect(() => {
-    // when the user clicks the Play button, we disable it so the user can't click it again
-    // once we receive the "launching" status update we can safely unset this state
-    if (status === 'launching') setPlayClicked(false)
-  }, [status])
-
   function handleUpdate() {
     if (gameInfo.runner !== 'sideload')
       updateGame({ appName, runner, gameInfo })
@@ -337,7 +326,7 @@ export default React.memo(function GamePage(): JSX.Element | null {
         installing: isInstalling,
         importing: isImporting,
         installingRedist: isInstallingRedist,
-        launching: isLaunching || playClicked,
+        launching: isLaunching,
         linux: isLinux,
         linuxNative: isLinuxNative,
         mac: isMac,
@@ -455,14 +444,6 @@ export default React.memo(function GamePage(): JSX.Element | null {
                         handleUpdate={handleUpdate}
                         hasUpdate={hasUpdate}
                       />
-                      <LaunchOptionSelector showTitle={false} />
-                      <div className="buttons">
-                        <MainButton
-                          gameInfo={gameInfo}
-                          handlePlay={handlePlay}
-                          handleInstall={handleInstall}
-                        />
-                      </div>
                       {wikiLink}
                     </div>
                   </div>
@@ -570,23 +551,6 @@ export default React.memo(function GamePage(): JSX.Element | null {
     )
   }
   return <UpdateComponent />
-
-  async function handlePlay(gameInfo: GameInfo) {
-    if (isPlaying || isUpdating) {
-      return sendKill(appName, gameInfo.runner)
-    }
-
-    setPlayClicked(true)
-    await launch({
-      appName,
-      t,
-      runner: gameInfo.runner,
-      hasUpdate,
-      showDialogModal,
-      notPlayableOffline
-    })
-    setPlayClicked(false)
-  }
 
   async function handleInstall(is_installed: boolean) {
     if (isQueued) {

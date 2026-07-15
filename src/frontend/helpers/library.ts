@@ -475,4 +475,4 @@ export const sideloadedCategories = ['all', 'sideload']
 export const amazonCategories = ['all', 'nile', 'amazon']
 export const zoomCategories = ['all', 'zoom']
 
-export { handleStopInstallation, install, launch, repair, updateGame }
+export { handleStopInstallation, install, repair, updateGame }
