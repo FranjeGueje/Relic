@@ -49,6 +49,7 @@ import {
   DotsMenu,
   DownloadSizeInfo,
   GameStatus,
+  InstallButton,
   InstalledInfo,
   Requirements
 } from './components'
@@ -419,6 +420,13 @@ export default React.memo(function GamePage(): JSX.Element | null {
                         handleUpdate={handleUpdate}
                         hasUpdate={hasUpdate}
                       />
+                      <div className="buttons">
+                        <InstallButton
+                          gameInfo={gameInfo}
+                          is_installed={gameInfo.is_installed}
+                          handleInstall={handleInstall}
+                        />
+                      </div>
                       {wikiLink}
                     </div>
                   </div>
