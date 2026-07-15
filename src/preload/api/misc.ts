@@ -41,7 +41,7 @@ export const openFolder = makeListenerCaller('openFolder')
 export const syncGOGSaves = makeHandlerInvoker('syncGOGSaves')
 export const checkDiskSpace = makeHandlerInvoker('checkDiskSpace')
 export const getGOGLinuxInstallersLangs = makeHandlerInvoker('getGOGLinuxInstallersLangs')
-export const getAlternativeWine = makeHandlerInvoker('getAlternativeWine')
+
 export const getShellPath = makeHandlerInvoker('getShellPath')
 export const getWebviewPreloadPath = makeHandlerInvoker('getWebviewPreloadPath')
 export const getKnownFixes = makeHandlerInvoker('getKnownFixes')

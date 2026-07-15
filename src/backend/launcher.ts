@@ -5,8 +5,6 @@ import {
   WrapperEnv,
   ExecResult,
   LaunchPreperationResult,
-  WineInstallation,
-  WineCommandArgs,
   GameSettings,
   KnowFixesInfo,
   LaunchParams,
@@ -15,8 +13,8 @@ import {
 // This handles launching games, prefix creation etc..
 
 import i18next from 'i18next'
-import { existsSync, mkdirSync } from 'graceful-fs'
-import { join, dirname, isAbsolute } from 'path'
+import { existsSync } from 'graceful-fs'
+import { join, isAbsolute } from 'path'
 
 import {
   isEpicServiceOffline,
@@ -25,8 +23,6 @@ import {
   removeQuoteIfNecessary,
   memoryLog,
   sendGameStatusUpdate,
-  checkWineBeforeLaunch,
-  isMacSonomaOrHigher,
   askForceUninstall,
   getGame
 } from './utils'
@@ -40,15 +36,12 @@ import {
   logWarning
 } from './logger'
 import { GlobalConfig } from './config'
-import gogSetup from './storeManagers/gog/setup'
-import nileSetup from './storeManagers/nile/setup'
-import { spawn, spawnSync } from 'child_process'
+import { spawn } from 'child_process'
 import shlex from 'shlex'
 import { isOnline } from './online_monitor'
 import { showDialogBoxModalAuto } from './dialog/dialog'
-import { legendarySetup } from './storeManagers/legendary/setup'
 import { libraryManagerMap } from 'backend/storeManagers'
-import { readFileSync, writeFileSync } from 'fs'
+import { readFileSync } from 'fs'
 import { LegendaryCommand } from './storeManagers/legendary/commands'
 import {
   createAbortController,
@@ -57,18 +50,14 @@ import {
 import { download, isInstalled } from './wine/runtimes/runtimes'
 import { storeMap } from 'common/utils'
 import { getMainWindow } from './main_window'
-import { sendFrontendMessage } from './ipc'
 import { getUmuPath, isUmuSupported } from './utils/compatibility_layers'
-import { copyFile } from 'fs/promises'
 import { app, powerSaveBlocker } from 'electron'
 import gogPresence from './storeManagers/gog/presence'
 import { addRecentGame } from './recent_games/recent_games'
 import { tsStore } from './constants/key_value_stores'
 import {
   defaultUmuPath,
-  sharedWinePrefix,
   fixesPath,
-  galaxyCommunicationExePath,
   gamesConfigPath,
   runtimePath,
   userHome
@@ -79,7 +68,6 @@ import {
   isMac,
   isSteamDeckGameMode,
   isWindows,
-  isIntelMac,
   isSteamDeck
 } from './constants/environment'
 import { formatSystemInfo, getSystemInfo } from './utils/systeminfo'
@@ -163,32 +151,6 @@ const launchEventCallback: (args: LaunchParams) => StatusPromise = async ({
   }
 
   const isNative = game.isNative()
-
-  // check if isNative, if not, check if wine is valid
-  if (!isNative) {
-    const isWineOkToLaunch = await checkWineBeforeLaunch(
-      gameInfo,
-      gameSettings,
-      logWriter
-    )
-
-    if (!isWineOkToLaunch) {
-      logError(
-        `Was not possible to launch using ${gameSettings.wineVersion.name}`,
-        LogPrefix.Backend
-      )
-
-      sendGameStatusUpdate({
-        appName,
-        runner,
-        status: 'done'
-      })
-
-      await logWriter.close()
-
-      return { status: 'error' }
-    }
-  }
 
   await runBeforeLaunchScript(gameInfo, gameSettings, logWriter)
 
@@ -281,22 +243,11 @@ function filterGameSettingsForLog(
   const gameSettings: PartialDeep<GameSettings> =
     structuredClone(originalSettings)
 
-  // this is irrelevant for support
   delete gameSettings.enableQuickSavesMenu
-  // if this is visible, it means verboseLogs is true, no need to print it
   delete gameSettings.verboseLogs
-
-  if (isLinux && !notNative) {
-    delete gameSettings.wineVersion
-    delete gameSettings.winePrefix
-  }
 
   if (isMac) {
     delete gameSettings.disableUMU
-    if (!notNative) {
-      delete gameSettings.wineVersion
-      delete gameSettings.winePrefix
-    }
   }
 
   return gameSettings
@@ -335,8 +286,6 @@ async function prepareLaunch(
   const isThirdPartyManagedApp = gameInfo && !!gameInfo.thirdPartyManagedApp
 
   if (isThirdPartyManagedApp) {
-    if (gameSettings.winePrefix)
-      await logWriter.logInfo(['Installed in:', gameSettings.winePrefix])
 
     await logWriter.logInfo([
       'Managed by a third-party app:',
@@ -382,121 +331,6 @@ async function prepareLaunch(
   }
 }
 
-async function prepareWineLaunch(
-  game: Game,
-  logWriter: LogWriter
-): Promise<{
-  success: boolean
-  failureReason?: string
-  envVars?: Record<string, string>
-}> {
-  const gameInfo = game.getGameInfo()
-
-  const gameSettings = await game.getSettings()
-
-  if (!(await validWine(gameSettings.wineVersion))) {
-    const defaultWine = GlobalConfig.get().getSettings().wineVersion
-    // now check if the default wine is valid as well
-    if (!(await validWine(defaultWine))) {
-      return { success: false }
-    }
-  }
-
-  if (gameSettings.offlineMode && !gameInfo.canRunOffline) {
-    void logWriter.logWarning(
-      "Warning: 'offlineMode' is turned on but the game does not support offline mode. Disable 'offlineMode' in the game's settings."
-    )
-  }
-
-  await verifyWinePrefix(gameSettings)
-  const experimentalFeatures =
-    GlobalConfig.get().getSettings().experimentalFeatures
-
-  let hasUpdated = false
-
-  const prefixFolder = gameSettings.winePrefix
-
-  if (prefixFolder) {
-    const appsNamesPath = join(prefixFolder, 'installed_games')
-    if (!existsSync(appsNamesPath)) {
-      mkdirSync(prefixFolder, { recursive: true })
-      writeFileSync(appsNamesPath, JSON.stringify([gameInfo.app_name]), 'utf-8')
-      hasUpdated = true
-    } else {
-      const installedGames: string[] = JSON.parse(
-        readFileSync(appsNamesPath, 'utf-8')
-      )
-      if (!installedGames.includes(gameInfo.app_name)) {
-        installedGames.push(gameInfo.app_name)
-        writeFileSync(appsNamesPath, JSON.stringify(installedGames), 'utf-8')
-        hasUpdated = true
-      }
-    }
-  }
-
-  if (hasUpdated) {
-    logInfo(
-      ['Created/Updated Wineprefix at', gameSettings.winePrefix],
-      LogPrefix.Backend
-    )
-    if (gameInfo.runner === 'gog') {
-      await gogSetup(gameInfo.app_name)
-      sendFrontendMessage('gameStatusUpdate', {
-        appName: gameInfo.app_name,
-        runner: 'gog',
-        status: 'launching'
-      })
-    }
-    if (gameInfo.runner === 'nile') {
-      await nileSetup(gameInfo.app_name)
-    }
-    if (gameInfo.runner === 'legendary') {
-      await legendarySetup(gameInfo.app_name, logWriter)
-    }
-
-    await installFixes(gameInfo.app_name, gameInfo.runner)
-  }
-
-  try {
-    if (
-      gameInfo.runner === 'gog' &&
-      experimentalFeatures?.cometSupport !== false
-    ) {
-      const galaxyCommWinePath =
-        'C:\\ProgramData\\GOG.com\\Galaxy\\redists\\GalaxyCommunication.exe'
-      const communicationDest = await getWinePath({
-        path: galaxyCommWinePath,
-        gameSettings,
-        variant: 'unix'
-      })
-
-      if (!existsSync(communicationDest)) {
-        mkdirSync(dirname(communicationDest), { recursive: true })
-        await copyFile(galaxyCommunicationExePath, communicationDest)
-        await runWineCommand({
-          commandParts: [
-            'sc',
-            'create',
-            'GalaxyCommunication',
-            `binpath=${galaxyCommWinePath}`
-          ],
-          gameSettings,
-          protonVerb: 'runinprefix'
-        })
-      }
-    }
-  } catch (err) {
-    logError([
-      'Failed to install GalaxyCommunication dummy into the prefix:',
-      err
-    ])
-  }
-
-  const envVars = setupWineEnvVars(gameSettings, gameInfo.folder_name)
-
-  return { success: true, envVars: envVars }
-}
-
 export function readKnownFixes(appName: string, runner: Runner) {
   const fixPath = join(fixesPath, `${appName}-${storeMap[runner]}.json`)
 
@@ -513,32 +347,6 @@ export function readKnownFixes(appName: string, runner: Runner) {
     // JSON.parse to throw an exception
     logWarning(`Known fixes could not be applied, ignoring.\n${error}`)
     return null
-  }
-}
-
-async function installFixes(appName: string, runner: Runner) {
-  const knownFixes = readKnownFixes(appName, runner)
-
-  if (!knownFixes) return
-
-  if (knownFixes.runInPrefix) {
-    const gameInfo = getGame(appName, runner).getGameInfo()
-
-    sendGameStatusUpdate({
-      appName,
-      runner: runner,
-      status: 'redist',
-      context: 'FIXES'
-    })
-
-    for (const filePath of knownFixes.runInPrefix) {
-      const fullPath = join(gameInfo.install.install_path!, filePath)
-      await runWineCommandOnGame(runner, appName, {
-        commandParts: [fullPath],
-        wait: true,
-        protonVerb: 'run'
-      })
-    }
   }
 }
 
@@ -605,286 +413,6 @@ function setupWrapperEnvVars(wrapperEnv: WrapperEnv) {
   }
 
   return ret
-}
-
-/**
- * Maps Wine-related settings to environment variables
- * @param gameSettings The GameSettings to get the environment variables for
- * @param gameId If Proton and the Steam Runtime are used, the SteamGameId variable will be set to `relic-gameId` if it's unset
- * @returns A Record that can be passed to execAsync/spawn
- */
-function setupWineEnvVars(gameSettings: GameSettings, gameId = '0') {
-  const { wineVersion, winePrefix } = gameSettings
-
-  const ret: Record<string, string> = {}
-
-  const steamInstallPath = join(userHome, '.steam', 'steam')
-  switch (wineVersion.type) {
-    case 'wine':
-      ret.WINEPREFIX = winePrefix
-      break
-    case 'proton':
-      ret.STEAM_COMPAT_CLIENT_INSTALL_PATH = steamInstallPath
-      ret.WINEPREFIX = winePrefix
-      ret.STEAM_COMPAT_DATA_PATH = winePrefix
-      ret.PROTONPATH = dirname(gameSettings.wineVersion.bin)
-      break
-    case 'toolkit':
-      ret.WINEPREFIX = winePrefix
-      break
-  }
-
-  if (wineVersion.type === 'proton') {
-    ret.STEAM_COMPAT_APP_ID = process.env.STEAM_COMPAT_APP_ID || '0'
-    ret.SteamAppId = process.env.SteamAppId || ret.STEAM_COMPAT_APP_ID
-    ret.SteamGameId = process.env.SteamGameId || `relic-${gameId}`
-    ret.PROTON_LOG_DIR = userHome
-  }
-  return ret
-}
-
-function setupWrappers(): Array<string> {
-  return []
-}
-
-/**
- * Checks if the game's selected Wine version exists
- * @param wineVersion an object of type WineInstallation with binary path and name to check
- * @returns true if the wine version exists, false if it doesn't
- */
-export async function validWine(
-  wineVersion: WineInstallation
-): Promise<boolean> {
-  if (!wineVersion) {
-    return false
-  }
-
-  logInfo(
-    `Checking if wine version exists: ${wineVersion.name}`,
-    LogPrefix.Backend
-  )
-
-  // verify if necessary binaries exist
-  const { bin, wineserver, type } = wineVersion
-  const necessary = type === 'wine' ? [bin, wineserver] : [bin]
-  const haveAll = necessary.every((binary) => existsSync(binary as string))
-
-  if (isMac && type === 'toolkit') {
-    const isMacOSUpToDate = await isMacSonomaOrHigher()
-    const isGPTKCompatible: boolean = isMacOSUpToDate && !isIntelMac
-    if (!isGPTKCompatible) {
-      return false
-    }
-  }
-
-  // if wine version does not exist, use the default one
-  if (!haveAll) {
-    return false
-  }
-
-  return true
-}
-
-/**
- * Verifies that a Wineprefix exists by running 'wineboot --init'
- * @param gameSettings The settings of the game to verify the Wineprefix of
- * @returns stderr & stdout of 'wineboot --init'
- */
-export async function verifyWinePrefix(
-  settings: GameSettings
-): Promise<{ res: ExecResult }> {
-  const { winePrefix = sharedWinePrefix, wineVersion } = settings
-
-  const isValidWine = await validWine(wineVersion)
-
-  if (!isValidWine) {
-    return { res: { stdout: '', stderr: '' } }
-  }
-
-  if (!existsSync(winePrefix) && !(await isUmuSupported(settings))) {
-    mkdirSync(winePrefix, { recursive: true })
-  }
-
-  // If the registry isn't available yet, things like DXVK installers might fail. So we have to wait on wineboot then
-  const systemRegPath =
-    wineVersion.type === 'proton'
-      ? join(winePrefix, 'pfx', 'system.reg')
-      : join(winePrefix, 'system.reg')
-  const haveToWait = !existsSync(systemRegPath)
-
-  const command = runWineCommand({
-    commandParts: (await isUmuSupported(settings))
-      ? ['createprefix']
-      : ['wineboot', '--init'],
-    wait: haveToWait,
-    gameSettings: settings,
-    protonVerb: 'run',
-    skipPrefixCheckIKnowWhatImDoing: true
-  })
-
-  return command
-    .then((result) => {
-      return { res: result }
-    })
-    .catch((error) => {
-      logError(['Unable to create Wineprefix: ', error], LogPrefix.Backend)
-      throw error
-    })
-}
-
-async function runWineCommand({
-  gameSettings,
-  commandParts,
-  wait,
-  protonVerb = 'run',
-  installFolderName,
-  gameInstallPath,
-  options,
-  startFolder,
-  skipPrefixCheckIKnowWhatImDoing = false,
-  ignoreLogging = false
-}: WineCommandArgs): Promise<{
-  stderr: string
-  stdout: string
-  code?: number
-}> {
-  const settings = gameSettings
-    ? gameSettings
-    : GlobalConfig.get().getSettings()
-  const { wineVersion, winePrefix } = settings
-
-  if (!skipPrefixCheckIKnowWhatImDoing) {
-    let requiredPrefixFiles = [
-      'dosdevices',
-      'drive_c',
-      'system.reg',
-      'user.reg',
-      'userdef.reg'
-    ]
-    if (wineVersion.type === 'proton') {
-      requiredPrefixFiles = [
-        'pfx.lock',
-        'tracked_files',
-        'version',
-        'config_info',
-        ...requiredPrefixFiles.map((path) => join('pfx', path))
-      ]
-    }
-    requiredPrefixFiles = requiredPrefixFiles.map((path) =>
-      join(winePrefix, path)
-    )
-    requiredPrefixFiles.push(winePrefix)
-
-    if (!requiredPrefixFiles.every((path) => existsSync(path))) {
-      logWarning(
-        'Required prefix files are missing, running `verifyWinePrefix` to create prefix',
-        LogPrefix.Backend
-      )
-      mkdirSync(winePrefix, { recursive: true })
-      await verifyWinePrefix(settings)
-    }
-  }
-
-  if (!(await validWine(wineVersion))) {
-    return { stdout: '', stderr: 'Invalid wine' }
-  }
-
-  const env_vars: Record<string, string> = {
-    ...process.env,
-    ...options?.env,
-    ...setupEnvVars(settings, gameInstallPath),
-    ...setupWineEnvVars(settings, installFolderName),
-    PROTON_VERB: protonVerb
-  }
-
-  if (ignoreLogging) {
-    delete env_vars['PROTON_LOG']
-  }
-
-  const wineBin = wineVersion.bin.replaceAll("'", '')
-  const umuSupported = await isUmuSupported(settings)
-  const runnerBin = umuSupported ? await getUmuPath() : wineBin
-
-  if (wineVersion.type === 'proton' && !umuSupported) {
-    commandParts.unshift(protonVerb)
-  }
-
-  logDebug(['Running Wine command:', commandParts.join(' ')], LogPrefix.Backend)
-
-  return new Promise<{ stderr: string; stdout: string }>((res) => {
-    const wrappers = options?.wrappers || []
-    let bin = runnerBin
-
-    if (wrappers.length) {
-      bin = wrappers.shift()!
-      commandParts.unshift(...wrappers, runnerBin)
-    }
-
-    const child = spawn(bin, commandParts, {
-      env: env_vars,
-      cwd: startFolder
-    })
-    child.stdout.setEncoding('utf-8')
-    child.stderr.setEncoding('utf-8')
-
-    if (options?.logWriters) {
-      options.logWriters.forEach((writer) =>
-        writer.writeString(
-          `Wine Command: ${bin} ${commandParts.join(' ')}\n\nGame Log:\n`
-        )
-      )
-    }
-
-    const stdout = memoryLog()
-    const stderr = memoryLog()
-
-    child.stdout.on('data', (data: string) => {
-      options?.logWriters?.forEach((writer) => writer.writeString(data))
-
-      if (options?.onOutput) {
-        options.onOutput(data, child)
-      }
-
-      stdout.push(data)
-    })
-
-    child.stderr.on('data', (data: string) => {
-      options?.logWriters?.forEach((writer) => writer.writeString(data))
-
-      if (options?.onOutput) {
-        options.onOutput(data, child)
-      }
-
-      stderr.push(data)
-    })
-
-    child.on('close', async (code) => {
-      const response = {
-        stderr: stderr.join(''),
-        stdout: stdout.join(''),
-        code
-      }
-
-      if (wait && wineVersion.wineserver) {
-        await new Promise<void>((res_wait) => {
-          const wait_child = spawn(wineVersion.wineserver!, ['--wait'], {
-            env: env_vars,
-            cwd: startFolder
-          })
-
-          wait_child.on('close', () => {
-            res_wait()
-          })
-        })
-      }
-
-      res(response)
-    })
-
-    child.on('error', (error) => {
-      console.log(error)
-    })
-  })
 }
 
 interface RunnerProps {
@@ -1148,51 +676,6 @@ function getRunnerCallWithoutCredentials(
   ].join(' ')
 }
 
-/**
- * Converts Unix paths to Windows ones or vice versa
- * @param path The Windows/Unix path you have
- * @param game Required for runWineCommand
- * @param variant The path variant (Windows/Unix) that you'd like to get (passed to `winepath` as -u/-w)
- * @returns The path returned by `winepath`
- */
-async function getWinePath({
-  path,
-  gameSettings,
-  variant = 'unix'
-}: {
-  path: string
-  gameSettings: GameSettings
-  variant?: 'win' | 'unix'
-}): Promise<string> {
-  logDebug(`Getting wine path for ${path}.`, LogPrefix.Backend)
-  // TODO: Proton has a special verb for getting Unix paths, and another one for Windows ones. Use those instead
-  //       Note that this would involve running `proton runinprefix cmd /c echo path` first to expand env vars
-  //       https://github.com/ValveSoftware/Proton/blob/4221d9ef07cc38209ff93dbbbca9473581a38255/proton#L1526-L1533
-  const { stdout, stderr } = await runWineCommand({
-    gameSettings,
-    commandParts: [
-      'cmd',
-      '/c',
-      'winepath',
-      variant === 'unix' ? '-u' : '-w',
-      path
-    ],
-    wait: false,
-    protonVerb: 'runinprefix',
-    ignoreLogging: true
-  })
-
-  const result = stdout.trim()
-  if (!result) {
-    logError(
-      `Couldn't get wine path for ${path}.\n${stderr}`,
-      LogPrefix.Backend
-    )
-  }
-
-  return result
-}
-
 async function runBeforeLaunchScript(
   gameInfo: GameInfo,
   gameSettings: GameSettings,
@@ -1257,7 +740,6 @@ async function runScriptForGame(
     const scriptEnv = {
       RELIC_GAME_APP_NAME: gameInfo.app_name,
       RELIC_GAME_EXEC: gameInfo.install.executable,
-      RELIC_GAME_PREFIX: gameSettings.winePrefix,
       RELIC_GAME_RUNNER: gameInfo.runner,
       RELIC_GAME_SCRIPT_STAGE: scriptStage,
       RELIC_GAME_TITLE: gameInfo.title,
@@ -1295,41 +777,15 @@ async function runScriptForGame(
   })
 }
 
-export async function runWineCommandOnGame(
-  runner: Runner,
-  appName: string,
-  { commandParts, wait = false, protonVerb, startFolder }: WineCommandArgs
-): Promise<ExecResult> {
-  const game = libraryManagerMap[runner].getGame(appName)
-  if (game.isNative()) {
-    logError('runWineCommand called on native game!', LogPrefix.Gog)
-    return { stdout: '', stderr: '' }
-  }
-  const { folder_name, install } = game.getGameInfo()
-  const gameSettings = await game.getSettings()
-
-  return runWineCommand({
-    gameSettings,
-    installFolderName: folder_name,
-    gameInstallPath: install.install_path,
-    commandParts,
-    wait,
-    protonVerb,
-    startFolder
-  })
+export function setupWrappers() {
+  return []
 }
 
 export {
   prepareLaunch,
-
-  prepareWineLaunch,
   setupEnvVars,
   setupWrapperEnvVars,
-  setupWineEnvVars,
-  setupWrappers,
-  runWineCommand,
   callRunner,
-  getWinePath,
   launchEventCallback,
   getKnownFixesEnvVariables
 }

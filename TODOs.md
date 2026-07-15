@@ -264,3 +264,4 @@ Estos settings podrían ser el mecanismo del "script externo" de AGENTS.md.
 5. **No romper el flujo principal**: login → descargar → instalar → detectar ejecutable → script externo → Steam.
 6. **Settings sin UI pero con uso en backend**: algunos settings (como `minimizeOnLaunch`, `darkTrayIcon`, `disablePlaytimeSync`) se eliminaron de la UI pero se conservaron en backend porque aún se usan. Revisar si siguen siendo necesarios.
 7. **umu-launcher**: puede ser necesario para el script externo. No eliminar sin analizar.
+8. Conservar: isUmuSupported, getUmuPath (necesario para script externo)

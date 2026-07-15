@@ -5,12 +5,10 @@ import { GlobalConfig } from './config'
 import { logError, logInfo, LogPrefix } from 'backend/logger'
 import { join } from 'path'
 import { currentGameConfigVersion } from 'backend/constants/others'
-import { isMac, isWindows } from './constants/environment'
+import { isWindows } from './constants/environment'
 import {
   configPath,
-  sharedWinePrefix,
-  gamesConfigPath,
-  userHome
+  gamesConfigPath
 } from './constants/paths'
 
 /**
@@ -201,16 +199,11 @@ class GameConfigV0 extends GameConfig {
   }
 
   public async getSettings(): Promise<GameSettings> {
-    // Take defaults, then overwrite if explicitly set values exist.
-    // The settings defined work as overrides.
-
     const {
       maxSharpness,
       offlineMode,
       savesPath,
       targetExe,
-      winePrefix,
-      wineVersion,
       beforeLaunchScriptPath,
       afterLaunchScriptPath,
       verboseLogs
@@ -231,27 +224,12 @@ class GameConfigV0 extends GameConfig {
     let gameSettings = {} as GameSettings
 
     if (existsSync(this.path)) {
-      // read game's settings
       const settings = JSON.parse(readFileSync(this.path, 'utf-8'))
       gameSettings = settings[this.appName] || ({} as GameSettings)
     } else {
-      // only set the `disableUMU` default value when getting settings for a new game
-      // we want it to be `undefined` for games that were installed already
       defaultSettings.disableUMU = false
     }
 
-    if (!isWindows) {
-      defaultSettings.wineVersion = wineVersion
-
-      defaultSettings.winePrefix = winePrefix || sharedWinePrefix
-
-      // fix winePrefix if needed
-      if (gameSettings.winePrefix?.includes('~')) {
-        gameSettings.winePrefix = gameSettings.winePrefix.replace('~', userHome)
-      }
-    }
-
-    // return an object with the game's settings, with fallbacks to the defaults
     return {
       ...defaultSettings,
       ...gameSettings

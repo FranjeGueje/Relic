@@ -1,13 +1,12 @@
 import { existsSync } from 'graceful-fs'
 import { join } from 'path'
-import { RuntimeName } from 'common/types'
 import { runtimePath } from 'backend/constants/paths'
 
-async function download(name: RuntimeName): Promise<boolean> {
+async function download(name: string): Promise<boolean> {
   return false
 }
 
-async function isInstalled(name: RuntimeName) {
+async function isInstalled(name: string) {
   return existsSync(join(runtimePath, name))
 }
 

@@ -24,7 +24,7 @@ export const getAvailableCyberpunkMods = makeHandlerInvoker('getAvailableCyberpu
 export const setCyberpunModConfig = makeHandlerInvoker('setCyberpunkModConfig')
 export const getGameSettings = makeHandlerInvoker('getGameSettings')
 export const getInstallInfo = makeHandlerInvoker('getInstallInfo')
-export const runWineCommand = makeHandlerInvoker('runWineCommand')
+
 export const onConnectivityChanged = frontendListenerSlot('connectivity-changed')
 export const getConnectivityStatus = makeHandlerInvoker('get-connectivity-status')
 export const setConnectivityOnline = makeListenerCaller('set-connectivity-online')

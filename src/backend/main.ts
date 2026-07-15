@@ -1,5 +1,5 @@
 import { initImagesCache } from './images_cache'
-import { DiskSpaceData, StatusPromise, WineInstallation } from 'common/types'
+import { DiskSpaceData, StatusPromise } from 'common/types'
 import * as path from 'path'
 import {
   BrowserWindow,
@@ -70,9 +70,7 @@ import {
 import { gameInfoStore } from 'backend/storeManagers/legendary/electronStores'
 import {
   launchEventCallback,
-  readKnownFixes,
-  runWineCommand,
-  validWine
+  readKnownFixes
 } from './launcher'
 import { initQueue } from './downloadmanager/downloadqueue'
 import {
@@ -101,15 +99,13 @@ import { backendEvents } from './backend_events'
 import { configStore } from './constants/key_value_stores'
 import {
   epicLoginUrl,
-  weblateUrl,
-  wineprefixFAQ
+  weblateUrl
 } from './constants/urls'
 import { legendaryInstalled } from './storeManagers/legendary/constants'
 import {
   isCLIConsoleMode,
   isCLIFullscreen,
   isCLINoGui,
-  isIntelMac,
   isLinux,
   isMac,
   isSnap,
@@ -147,20 +143,6 @@ async function initializeWindow(): Promise<BrowserWindow> {
   }
 
   setTimeout(async () => {
-    // Will download Wine/GPTK if none was found
-    const availableWine = await GlobalConfig.get().getAlternativeWine()
-    let shouldDownloadWine = !availableWine.length
-
-    if (isMac && !isIntelMac) {
-      const toolkitDownloaded = availableWine.some(
-        (wine) => wine.type === 'toolkit'
-      )
-
-      if (!toolkitDownloaded) {
-        shouldDownloadWine = true
-      }
-    }
-
   }, 2500)
 
   const globalConf = GlobalConfig.get().getSettings()
@@ -528,7 +510,6 @@ addListener('openFolder', async (event, folder) => openUrlOrFile(folder))
 addListener('openWeblate', async () => openUrlOrFile(weblateUrl))
 addListener('showAboutWindow', () => showAboutWindow())
 addListener('openLoginPage', async () => openUrlOrFile(epicLoginUrl))
-addListener('openWinePrefixFAQ', async () => openUrlOrFile(wineprefixFAQ))
 addListener('openWebviewPage', async (event, url) => openUrlOrFile(url))
 addListener('showConfigFileInFolder', async (event, appName) => {
   if (appName === 'default') {
@@ -540,8 +521,6 @@ addListener('showConfigFileInFolder', async (event, appName) => {
 addListener('removeFolder', async (e, [path, folderName]) => {
   removeFolder(path, folderName)
 })
-
-addHandler('runWineCommand', async (e, args) => runWineCommand(args))
 
 /// IPC handlers begin here.
 
@@ -708,10 +687,6 @@ addHandler('authZoom', async (event, url) => {
 
 addListener('logoutZoom', () => ZoomUser.logout())
 addHandler('getZoomUserInfo', async () => ZoomUser.getUserDetails())
-
-addHandler('getAlternativeWine', async () =>
-  GlobalConfig.get().getAlternativeWine()
-)
 
 addHandler('readConfig', async (event, configClass) => {
   if (configClass === 'library') {
@@ -882,9 +857,7 @@ addHandler(
       appName,
       path,
       runner,
-      platform,
-      winePrefix,
-      wineVersion
+      platform
     }
   ): StatusPromise => {
     if (runner === 'legendary') {
@@ -934,15 +907,6 @@ addHandler(
       abortMessage()
       logError(error, LogPrefix.Backend)
       return { status: 'error' }
-    }
-
-    if (winePrefix && wineVersion) {
-      const gameSettings = await getGame(appName, runner).getSettings()
-      writeConfig(appName, {
-        ...gameSettings,
-        winePrefix,
-        wineVersion
-      })
     }
 
     notify({
@@ -1235,10 +1199,6 @@ addListener('changeGameVersionPinnedStatus', (e, appName, runner, status) => {
 
 addHandler('getKnownFixes', (e, appName, runner) =>
   readKnownFixes(appName, runner)
-)
-
-addHandler('wine.isValidVersion', async (e, wineVersion: WineInstallation) =>
-  validWine(wineVersion)
 )
 
 /*

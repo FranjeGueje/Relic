@@ -8,7 +8,6 @@ import {
   spawnAsync,
   moveOnUnix,
   moveOnWindows,
-  shutdownWine,
   sendProgressUpdate,
   sendGameStatusUpdate,
   getPathDiskSize,
@@ -46,11 +45,7 @@ import {
 import { GOGUser } from './user'
 import {
   getKnownFixesEnvVariables,
-  getWinePath,
   prepareLaunch,
-  prepareWineLaunch,
-  runWineCommand,
-  runWineCommand as runWineCommandUtil,
   setupEnvVars,
   setupWrapperEnvVars,
   setupWrappers
@@ -72,7 +67,6 @@ import { showDialogBoxModalAuto } from '../../dialog/dialog'
 import { sendFrontendMessage } from '../../ipc'
 import { Game, RemoveArgs } from 'common/types/game_manager'
 import {
-  getWineFlagsArray,
   isUmuSupported
 } from 'backend/utils/compatibility_layers'
 import axios, { AxiosError, AxiosResponse } from 'axios'
@@ -563,34 +557,6 @@ export default class GOGGame implements Game {
 
     const wrappers = setupWrappers()
 
-    let wineFlag: string[] = []
-
-    if (!this.isNative()) {
-      const {
-        success: wineLaunchPrepSuccess,
-        failureReason: wineLaunchPrepFailReason,
-        envVars: wineEnvVars
-      } = await prepareWineLaunch(this, logWriter)
-      if (!wineLaunchPrepSuccess) {
-        logWriter.logError(['Launch aborted:', wineLaunchPrepFailReason])
-        if (wineLaunchPrepFailReason) {
-          showDialogBoxModalAuto({
-            title: t('box.error.launchAborted', 'Launch aborted'),
-            message: wineLaunchPrepFailReason,
-            type: 'ERROR'
-          })
-        }
-        return false
-      }
-
-      commandEnv = {
-        ...commandEnv,
-        ...wineEnvVars
-      }
-
-      wineFlag = await getWineFlagsArray(gameSettings, '')
-    }
-
     const launchArgumentsArgs =
       launchArguments &&
       (launchArguments.type === undefined || launchArguments.type === 'basic')
@@ -605,7 +571,6 @@ export default class GOGGame implements Game {
       gameInfo.install.cyberpunk?.modsEnabled
         ? '1597316373'
         : gameInfo.app_name,
-      ...wineFlag,
       '--platform',
       gameInfo.install.platform.toLowerCase(),
       ...shlex.split(launchArgumentsArgs),
@@ -620,14 +585,8 @@ export default class GOGGame implements Game {
         'bin'
       )
 
-      if (existsSync(startFolder)) {
-        const installDirectory = isWindows
-          ? gameInfo.install.install_path
-          : await getWinePath({
-              path: gameInfo.install.install_path,
-              variant: 'win',
-              gameSettings
-            })
+      if (existsSync(startFolder) && isWindows) {
+        const installDirectory = gameInfo.install.install_path
 
         const availableMods = await libraryManagerMap['gog'].getCyberpunkMods()
         const modsEnabledToLoad = gameInfo.install.cyberpunk.modsToLoad
@@ -655,22 +614,8 @@ export default class GOGGame implements Game {
           ...modsAbleToLoad.map((mod) => ['-mod', mod]).flat()
         ]
 
-        let result: { stdout: string; stderr: string; code?: number | null } = {
-          stdout: '',
-          stderr: ''
-        }
-        if (isWindows) {
-          const [bin, ...args] = redModCommand
-          result = await spawnAsync(bin, args, { cwd: startFolder })
-        } else {
-          result = await runWineCommandUtil({
-            commandParts: redModCommand,
-            wait: true,
-            gameSettings,
-            gameInstallPath: gameInfo.install.install_path,
-            startFolder
-          })
-        }
+        const [bin, ...args] = redModCommand
+        const result = await spawnAsync(bin, args, { cwd: startFolder })
         logInfo(result.stdout, { prefix: LogPrefix.Gog })
         logWriter.writeString(
           `\nMods deploy log:\n${result.stdout}\n\n${result.stderr}\n\n\n`
@@ -684,6 +629,8 @@ export default class GOGGame implements Game {
           return true
         }
         commandParts.push('--prefer-task', '0')
+      } else if (!isWindows) {
+        logInfo('Cyberpunk mod deployment is handled by the external script on Linux', LogPrefix.Gog)
       } else {
         logError(['Unable to start modded game'], { prefix: LogPrefix.Gog })
       }
@@ -772,8 +719,7 @@ export default class GOGGame implements Game {
       moveResult.installPath
     )
     if (
-      gameInfo.install.platform === 'windows' &&
-      (isWindows || existsSync(gameConfig.winePrefix))
+      gameInfo.install.platform === 'windows' && isWindows
     ) {
       await setup(this.id, undefined, false)
     }
@@ -901,15 +847,8 @@ export default class GOGGame implements Game {
     const uninstallerPath = join(object.install_path, 'unins000.exe')
 
     const res: ExecResult = { stdout: '', stderr: '' }
-    if (existsSync(uninstallerPath)) {
-      const gameSettings = await this.getSettings()
-
-      const installDirectory = isWindows
-        ? object.install_path
-        : await getWinePath({
-            path: object.install_path,
-            gameSettings
-          })
+    if (existsSync(uninstallerPath) && isWindows) {
+      const installDirectory = object.install_path
 
       const command = [
         uninstallerPath,
@@ -921,32 +860,22 @@ export default class GOGGame implements Game {
 
       logInfo(['Executing uninstall command', command.join(' ')], LogPrefix.Gog)
 
-      if (!isWindows) {
-        if (existsSync(gameSettings.winePrefix) && !shouldRemovePrefix) {
-          await runWineCommandUtil({
-            gameSettings,
-            commandParts: command,
-            wait: true
-          })
-        }
-      } else {
-        const adminCommand = [
-          '-NoProfile',
-          'Start-Process',
-          '-FilePath',
-          uninstallerPath,
-          '-Verb',
-          'RunAs',
-          '-Wait',
-          '-ArgumentList'
-        ]
+      const adminCommand = [
+        '-NoProfile',
+        'Start-Process',
+        '-FilePath',
+        uninstallerPath,
+        '-Verb',
+        'RunAs',
+        '-Wait',
+        '-ArgumentList'
+      ]
 
-        await spawnAsync('powershell', [
-          ...adminCommand,
-          `"/verysilent","\`"/dir=${installDirectory}\`""`,
-          ``
-        ])
-      }
+      await spawnAsync('powershell', [
+        ...adminCommand,
+        `"/verysilent","\`"/dir=${installDirectory}\`""`,
+        ``
+      ])
     }
     if (existsSync(object.install_path)) {
       rmSync(object.install_path, { recursive: true })
@@ -1013,17 +942,14 @@ export default class GOGGame implements Game {
       if (
         removedDlcs.length &&
         gameData.install.platform === 'windows' &&
-        (isWindows || existsSync(gameConfig.winePrefix))
+        isWindows
       ) {
-        // Run uninstaller per DLC
-        // Find uninstallers of dlcs we are looking for first
         const listOfFiles = await readdir(gameData.install.install_path!)
         const uninstallerIniList = listOfFiles.filter((file) =>
           file.match(/unins\d{3}\.ini/)
         )
 
         for (const uninstallerFile of uninstallerIniList) {
-          // Parse ini and find all uninstallers we need
           const rawData = await readFile(
             join(gameData.install.install_path!, uninstallerFile),
             { encoding: 'utf8' }
@@ -1031,41 +957,25 @@ export default class GOGGame implements Game {
           const parsedData = ini.parse(rawData)
           const productId = parsedData['InstallSettings']['productID']
           if (removedDlcs.includes(productId)) {
-            // Run uninstall on DLC
             const uninstallExeFile = uninstallerFile.replace('ini', 'exe')
-            if (isWindows) {
-              const adminCommand = [
-                '-NoProfile',
-                'Start-Process',
-                '-FilePath',
-                uninstallExeFile,
-                '-Verb',
-                'RunAs',
-                '-Wait',
-                '-ArgumentList'
-              ]
-              await spawnAsync(
-                'powershell',
-                [
-                  ...adminCommand,
-                  `"/ProductId=${productId}","/VERYSILENT","/galaxyclient","/KEEPSAVES"`
-                ],
-                { cwd: gameData.install.install_path }
-              )
-            } else {
-              await runWineCommand({
-                gameSettings: gameConfig,
-                protonVerb: 'run',
-                commandParts: [
-                  uninstallExeFile,
-                  `/ProductId=${productId}`,
-                  '/VERYSILENT',
-                  '/galaxyclient',
-                  '/KEEPSAVES'
-                ],
-                startFolder: gameData.install.install_path!
-              })
-            }
+            const adminCommand = [
+              '-NoProfile',
+              'Start-Process',
+              '-FilePath',
+              uninstallExeFile,
+              '-Verb',
+              'RunAs',
+              '-Wait',
+              '-ArgumentList'
+            ]
+            await spawnAsync(
+              'powershell',
+              [
+                ...adminCommand,
+                `"/ProductId=${productId}","/VERYSILENT","/galaxyclient","/KEEPSAVES"`
+              ],
+              { cwd: gameData.install.install_path }
+            )
           }
         }
       }
@@ -1184,12 +1094,8 @@ export default class GOGGame implements Game {
     gameObject.install_size = getFileSize(sizeOnDisk)
     installedGamesStore.set('installed', installedArray)
     libraryManagerMap['gog'].refreshInstalled()
-    const gameSettings = await this.getSettings()
-    // Simple check if wine prefix exists and setup can be performed because of an
-    // update
     if (
-      gameObject.platform === 'windows' &&
-      (isWindows || existsSync(gameSettings.winePrefix))
+      gameObject.platform === 'windows' && isWindows
     ) {
       await setup(this.id, gameObject, false)
     } else if (gameObject.platform === 'linux') {
@@ -1261,12 +1167,7 @@ export default class GOGGame implements Game {
     sendFrontendMessage('pushGameToLibrary', this.getGameInfo())
   }
 
-  // GOGDL now handles the signal, this is no longer needed
-  async stop(stopWine = true): Promise<void> {
-    if (stopWine && !this.isNative()) {
-      const gameSettings = await this.getSettings()
-      await shutdownWine(gameSettings)
-    }
+  async stop(): Promise<void> {
   }
 
   async isGameAvailable(): Promise<boolean> {

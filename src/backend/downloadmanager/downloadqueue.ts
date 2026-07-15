@@ -275,7 +275,7 @@ function resumeCurrentDownload() {
 function stopCurrentDownload() {
   const { appName, runner } = currentElement!.params
   callAbortController(appName)
-  libraryManagerMap[runner].getGame(appName).stop(false)
+  libraryManagerMap[runner].getGame(appName).stop()
 }
 
 // notify the user based on the status of the element and the status of the queue

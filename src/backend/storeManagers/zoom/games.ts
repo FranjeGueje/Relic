@@ -7,7 +7,7 @@ import {
   sendGameStatusUpdate,
   sendProgressUpdate
 } from '../../utils'
-import { join, relative, dirname, basename, isAbsolute } from 'node:path'
+import { join, relative, dirname, basename } from 'node:path'
 import * as fs from 'fs'
 import axios, { AxiosProgressEvent } from 'axios'
 import { createWriteStream } from 'node:fs'
@@ -38,9 +38,7 @@ import {
   setupWrapperEnvVars,
   setupWrappers,
   callRunner,
-  getKnownFixesEnvVariables,
-  prepareWineLaunch,
-  runWineCommand
+  getKnownFixesEnvVariables
 } from '../../launcher'
 import {
   addShortcuts as addShortcutsUtil,
@@ -343,48 +341,8 @@ export default class ZoomGame implements Game {
         })
       }
     } else {
-      // windows
-
-      // Determine executable based on platform (similar to zoom.py's AUTO_ELF_EXE, AUTO_WIN32_EXE)
-      // eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
-      executable = installers.find((file) =>
-        file.filename.endsWith('.exe')
-      )?.filename!
-
-      logInfo(`Executing installer: ${executable}`, LogPrefix.Zoom)
-
-      const gameSettings = await this.getSettings()
-      await writeFile(
-        infFilePath,
-        `[Setup]\nLang=english\nDisableWelcomePage=yes\nDisableDirPage=yes\nDisableProgramGroupPage=yes\nDisableReadyPage=yes\n`,
-        { encoding: 'utf8' }
-      )
-
-      if (fs.existsSync(installPath)) {
-        confFilesBefore = await this.findConfFiles(installPath)
-      } else {
-        fs.mkdirSync(installPath, { recursive: true })
-      }
-
-      installResult = await runWineCommand({
-        commandParts: [
-          join(downloadRoot, executable),
-          '/NORESTART',
-          '/NOICONS',
-          '/SP-',
-          `/DIR=Z:${installPath.replaceAll('/', '\\')}`,
-          `/LOADINF=Z:${infFilePath.replaceAll('/', '\\')}`,
-          '/LOG=C:\\zoom_installer.log'
-        ],
-        gameSettings,
-        gameInstallPath: path,
-        wait: true,
-        options: {
-          logMessagePrefix: `Installing ${this.id}`,
-          logWriters: [await createGameLogWriter(this.id, 'zoom', 'install')],
-          abortId: this.id
-        }
-      })
+      logInfo('Windows installer on non-Windows is handled by the external script', LogPrefix.Zoom)
+      installResult = { stdout: '', stderr: '' }
     }
 
     if (installResult.error) {
@@ -675,50 +633,8 @@ export default class ZoomGame implements Game {
 
       return !error
     } else {
-      const {
-        success: wineLaunchPrepSuccess,
-        failureReason: wineLaunchPrepFailReason,
-        envVars
-      } = await prepareWineLaunch(this, logWriter)
-
-      if (!wineLaunchPrepSuccess) {
-        logWriter.logError(['Launch aborted:', wineLaunchPrepFailReason])
-        showDialogBoxModalAuto({
-          title: t('box.error.launchAborted', 'Launch aborted'),
-          message: wineLaunchPrepFailReason!,
-          type: 'ERROR'
-        })
-        return false
-      }
-
-      const executable = gameSettings.targetExe || gameInfo.install.executable
-      const startFolder = isAbsolute(executable)
-        ? dirname(executable)
-        : dirname(join(gameInfo.install.install_path, executable))
-
-      const result = await runWineCommand({
-        commandParts: [basename(executable), ...commandParts],
-        gameSettings,
-        gameInstallPath: gameInfo.install.install_path,
-        installFolderName: gameInfo.folder_name,
-        protonVerb: 'waitforexitandrun',
-        startFolder,
-        options: {
-          env: { ...commandEnv, ...envVars },
-          wrappers,
-          logMessagePrefix: `Launching ${gameInfo.title}`,
-          logWriters: [logWriter],
-          abortId: this.id
-        }
-      })
-
-      const hasError = result.code !== 0 && result.stderr
-
-      if (hasError) {
-        logError(['Error launching game:', result.stderr], LogPrefix.Zoom)
-      }
-
-      return !hasError
+      logInfo('Non-native launch is handled by the external script', LogPrefix.Zoom)
+      return true
     }
   }
 

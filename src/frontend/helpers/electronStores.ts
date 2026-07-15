@@ -118,14 +118,6 @@ const libraryStore = new CacheStore<GameInfo[], 'library'>(
   null
 )
 
-const wineDownloaderInfoStore = new TypeCheckedStoreFrontend(
-  'wineDownloaderInfoStore',
-  {
-    cwd: 'store',
-    name: 'wine-downloader-info'
-  }
-)
-
 const gogLibraryStore = new CacheStore<GameInfo[], 'games'>('gog_library', null)
 const gogInstalledGamesStore = new TypeCheckedStoreFrontend(
   'gogInstalledGamesStore',
@@ -183,7 +175,6 @@ export {
   gogConfigStore,
   libraryStore,
   sideloadLibrary,
-  wineDownloaderInfoStore,
   downloadManagerStore,
   nileLibraryStore,
   nileConfigStore,

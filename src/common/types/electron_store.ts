@@ -2,7 +2,6 @@ import Store from 'electron-store'
 import { Get } from 'type-fest'
 
 import {
-  WineVersionInfo,
   InstalledInfo,
   UserInfo,
   RecentGame,
@@ -49,9 +48,6 @@ export interface StoreStructure {
     settings: AppSettings
     skipVcRuntime: boolean
     showSnapWarning: boolean
-  }
-  wineDownloaderInfoStore: {
-    'wine-releases': WineVersionInfo[]
   }
   gogInstalledGamesStore: {
     installed: InstalledInfo[]

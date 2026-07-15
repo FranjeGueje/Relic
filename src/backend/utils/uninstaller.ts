@@ -1,6 +1,5 @@
 import { GlobalConfig } from 'backend/config'
 import {
-  defaultWinePrefix,
   fixesPath,
   gamesConfigPath
 } from 'backend/constants/paths'
@@ -11,63 +10,37 @@ import { sendGameStatusUpdate } from 'backend/utils'
 import { Runner } from 'common/types'
 import { storeMap } from 'common/utils'
 import { Event } from 'electron'
-import { existsSync, readdirSync, rmSync } from 'graceful-fs'
+import { existsSync, rmSync } from 'graceful-fs'
 import i18next from 'i18next'
 import { join } from 'path'
 
 export const removePrefix = async (appName: string, runner: Runner) => {
-  const { winePrefix } = await libraryManagerMap[runner]
-    .getGame(appName)
-    .getSettings()
-  logInfo(`Removing prefix ${winePrefix}`, LogPrefix.Backend)
+  const game = libraryManagerMap[runner].getGame(appName)
+  const { install } = game.getGameInfo()
 
-  if (!existsSync(winePrefix)) {
-    logInfo(`Prefix folder ${winePrefix} doesn't exist, ignoring removal`)
+  if (!install?.install_path) {
+    logInfo('No install path found, skipping removal', LogPrefix.Backend)
     return
   }
 
-  // folder exists, do some sanity checks before deleting it
-  const { defaultInstallPath, sharedWinePrefix } =
-    GlobalConfig.get().getSettings()
+  const installPath = install.install_path
+  logInfo(`Removing install folder ${installPath}`, LogPrefix.Backend)
 
-  if (winePrefix === defaultInstallPath) {
+  const { defaultInstallPath } = GlobalConfig.get().getSettings()
+
+  if (installPath === defaultInstallPath) {
     logInfo(
-      `Can't delete folder ${winePrefix}, prefix folder is the default install directory ${defaultInstallPath}`
+      `Can't delete folder ${installPath}, it is the default install directory ${defaultInstallPath}`
     )
     return
   }
 
-  if (winePrefix === sharedWinePrefix) {
-    logInfo(
-      `Can't delete folder ${winePrefix}, prefix folder is the shared prefix directory ${sharedWinePrefix}`
-    )
+  if (!existsSync(installPath)) {
+    logInfo(`Install folder ${installPath} doesn't exist, ignoring removal`)
     return
   }
 
-  // keep this check for backwards compatibility
-  if (winePrefix === defaultWinePrefix) {
-    logInfo(
-      `Can't delete folder ${winePrefix}, prefix folder is the default prefix directory ${defaultWinePrefix}`
-    )
-    return
-  }
-
-  const dirContent = readdirSync(winePrefix)
-
-  if (dirContent.length > 0) {
-    const driveCPath = join(winePrefix, 'drive_c')
-    const pfxPath = join(winePrefix, 'pfx')
-
-    if (!existsSync(driveCPath) && !existsSync(pfxPath)) {
-      logInfo(
-        `Can't delete folder ${winePrefix}, folder does not contain a drive_c/pfx folder. If this is the correct prefix folder, delete it manually.`
-      )
-      return
-    }
-  }
-
-  // if we got here, we are safe to delete this folder
-  rmSync(winePrefix, { recursive: true })
+  rmSync(installPath, { recursive: true })
 }
 
 const removeFixFile = (appName: string, runner: Runner) => {

@@ -1,8 +1,6 @@
 import { callAllAbortControllers } from './utils/aborthandler/aborthandler'
 import {
   Runner,
-  WineInstallation,
-  SteamRuntime,
   Release,
   GameInfo,
   GameSettings,
@@ -46,7 +44,6 @@ import { getMainWindow } from './main_window'
 import { sendFrontendMessage } from './ipc'
 import { GlobalConfig } from './config'
 import { GameConfig } from './game_config'
-import { validWine, runWineCommand } from './launcher'
 import { libraryManagerMap } from 'backend/storeManagers'
 import { readdir, lstat } from 'fs/promises'
 import { getRelicVersion } from './utils/systeminfo/relicVersion'
@@ -58,7 +55,6 @@ import {
   vendorNameCache
 } from './utils/systeminfo/gpu/pci_ids'
 import type { AppSettings } from 'common/types'
-import { isUmuSupported } from './utils/compatibility_layers'
 import { getSystemInfo } from './utils/systeminfo'
 import { configStore } from './constants/key_value_stores'
 import { isLinux, isMac, isIntelMac, isWindows } from './constants/environment'
@@ -73,7 +69,6 @@ import {
 } from './constants/paths'
 import { parse } from '@node-steam/vdf'
 
-import type LogWriter from 'backend/logger/log_writer'
 import { isRunning } from './downloadmanager/downloadqueue'
 import { isOnline } from './online_monitor'
 import type { Game } from 'common/types/game_manager'
@@ -132,48 +127,6 @@ function semverGt(target: string, base: string) {
 }
 
 const getFileSize = fileSize.partial({ base: 2 }) as (arg: unknown) => string
-
-async function getWineFromProton(
-  gameSettings: GameSettings
-): Promise<{ winePrefix: string; wineVersion: WineInstallation }> {
-  const wineVersion = gameSettings.wineVersion
-  let winePrefix = gameSettings.winePrefix
-
-  if (wineVersion.type !== 'proton' || (await isUmuSupported(gameSettings))) {
-    return { winePrefix, wineVersion }
-  }
-
-  winePrefix = join(winePrefix, 'pfx')
-
-  // Some Proton versions use 'files', some use 'dist'
-  for (const distPath of ['dist', 'files']) {
-    const protonBaseDir = dirname(wineVersion.bin)
-    const wineBin = join(protonBaseDir, distPath, 'bin', 'wine')
-    if (!existsSync(wineBin)) continue
-
-    const wineserverBin = join(protonBaseDir, distPath, 'bin', 'wineserver')
-    return {
-      winePrefix,
-      wineVersion: {
-        ...wineVersion,
-        type: 'wine',
-        bin: wineBin,
-        wineserver: existsSync(wineserverBin) ? wineserverBin : undefined
-      }
-    }
-  }
-
-  logError(
-    [
-      'Proton',
-      wineVersion.name,
-      'has an abnormal structure, unable to supply Wine binary!'
-    ],
-    LogPrefix.Backend
-  )
-
-  return { wineVersion, winePrefix }
-}
 
 async function isEpicServiceOffline(
   type: 'Epic Games Store' | 'Fortnite' | 'Rocket League' = 'Epic Games Store'
@@ -544,55 +497,6 @@ export async function getSteamLibraries(): Promise<string[]> {
   return libraries
 }
 
-async function getSteamRuntime(
-  requestedType: SteamRuntime['type']
-): Promise<SteamRuntime> {
-  const steamLibraries = await getSteamLibraries()
-  const runtimeTypes: SteamRuntime[] = [
-    {
-      path: 'steamapps/common/SteamLinuxRuntime_sniper/_v2-entry-point',
-      type: 'sniper',
-      args: ['--']
-    },
-    {
-      path: 'steamapps/common/SteamLinuxRuntime_soldier/_v2-entry-point',
-      type: 'soldier',
-      args: ['--']
-    },
-    {
-      path: 'ubuntu12_32/steam-runtime/run.sh',
-      type: 'scout',
-      args: []
-    }
-  ]
-  const allAvailableRuntimes: SteamRuntime[] = []
-  steamLibraries.forEach((library) => {
-    runtimeTypes.forEach(({ path, type, args }) => {
-      const fullPath = join(library, path)
-      if (existsSync(fullPath)) {
-        allAvailableRuntimes.push({ path: fullPath, type, args })
-      }
-    })
-  })
-  // Add dummy runtime at the end to not return `undefined`
-  allAvailableRuntimes.push({ path: '', type: 'scout', args: [] })
-  const requestedRuntime = allAvailableRuntimes.find(({ type }) => {
-    return type === requestedType
-  })
-  if (requestedRuntime) {
-    return requestedRuntime
-  }
-  logWarning(
-    [
-      'No runtimes of type',
-      requestedType,
-      'could be found, returning first available one'
-    ],
-    LogPrefix.Backend
-  )
-  return allAvailableRuntimes.pop()!
-}
-
 const specialCharactersRegex =
   /('\w)|(\\(\w|\d){5})|(\\"(\\.|[^"])*")|[^((0-9)|(a-z)|(A-Z)|\s)]/g // addeed regex for capturings "'s" + unicodes + remove subtitles in quotes
 const cleanTitle = (title: string) =>
@@ -750,21 +654,6 @@ function killPattern(pattern: string) {
   return ret
 }
 
-async function shutdownWine(gameSettings: GameSettings) {
-  if (gameSettings.wineVersion.wineserver) {
-    spawnSync(gameSettings.wineVersion.wineserver, ['-k'], {
-      env: { WINEPREFIX: gameSettings.winePrefix }
-    })
-  } else {
-    await runWineCommand({
-      gameSettings,
-      commandParts: ['wineboot', '-k'],
-      wait: true,
-      protonVerb: 'run'
-    })
-  }
-}
-
 const getShellPath = async (path: string): Promise<string> =>
   normalize((await execAsync(`echo ${path}`)).stdout.trim())
 
@@ -806,114 +695,6 @@ export const spawnAsync = async (
       })
     })
   })
-}
-
-async function ContinueWithFoundWine(
-  selectedWine: string,
-  foundWine: string
-): Promise<{ response: number }> {
-  const { response } = await dialog.showMessageBox({
-    title: i18next.t('box.warning.wine-change.title', 'Wine not found!'),
-    message: i18next.t('box.warning.wine-change.message', {
-      defaultValue:
-        'We could not find the selected wine version to launch this title ({{selectedWine}}). {{newline}} We found another one, do you want to continue launching using {{foundWine}} ?',
-      newline: '\n',
-      selectedWine: selectedWine,
-      foundWine: foundWine
-    }),
-    buttons: [i18next.t('box.yes'), i18next.t('box.no')]
-  })
-
-  return { response }
-}
-
-export async function checkWineBeforeLaunch(
-  gameInfo: GameInfo,
-  gameSettings: GameSettings,
-  logWriter: LogWriter
-): Promise<boolean> {
-  const wineIsValid = await validWine(gameSettings.wineVersion)
-
-  if (wineIsValid) {
-    return true
-  } else {
-    const { disableLogs } = GlobalConfig.get().getSettings()
-    if (!disableLogs) {
-      logError(
-        `Wine version ${gameSettings.wineVersion.name} is not valid, trying another one.`,
-        LogPrefix.Backend
-      )
-    }
-
-    if (gameSettings.verboseLogs) {
-      logWriter.logWarning([
-        'Wine version',
-        gameSettings.wineVersion.name,
-        'is not valid, trying another one.\n'
-      ])
-    }
-
-    // check if the default wine is valid now
-    const { wineVersion: defaultwine } = GlobalConfig.get().getSettings()
-    const defaultWineIsValid = await validWine(defaultwine)
-    if (defaultWineIsValid) {
-      const { response } = await ContinueWithFoundWine(
-        gameSettings.wineVersion.name,
-        defaultwine.name
-      )
-
-      if (response === 0) {
-        logInfo(`Changing wine version to ${defaultwine.name}`)
-        if (gameSettings.verboseLogs) {
-          logWriter.logInfo([
-            'Changing wine version to',
-            defaultwine.name,
-            '\n'
-          ])
-        }
-        gameSettings.wineVersion = defaultwine
-        GameConfig.get(gameInfo.app_name).setSetting('wineVersion', defaultwine)
-        return true
-      } else {
-        logInfo('User canceled the launch', LogPrefix.Backend)
-        return false
-      }
-    } else {
-      const wineList = await GlobalConfig.get().getAlternativeWine()
-      const firstFoundWine = wineList[0]
-
-      const isValidWine = await validWine(firstFoundWine)
-
-      if (!wineList.length || !firstFoundWine || !isValidWine) {
-        logError(
-          'No valid Wine version found and automatic download is not available.',
-          LogPrefix.Backend
-        )
-        return false
-      }
-
-      if (firstFoundWine && isValidWine) {
-        const { response } = await ContinueWithFoundWine(
-          gameSettings.wineVersion.name,
-          firstFoundWine.name
-        )
-
-        if (response === 0) {
-          logInfo(`Changing wine version to ${firstFoundWine.name}`)
-          gameSettings.wineVersion = firstFoundWine
-          GameConfig.get(gameInfo.app_name).setSetting(
-            'wineVersion',
-            firstFoundWine
-          )
-          return true
-        } else {
-          logInfo('User canceled the launch', LogPrefix.Backend)
-          return false
-        }
-      }
-    }
-  }
-  return false
 }
 
 export async function moveOnWindows(
@@ -1517,14 +1298,11 @@ export {
   getCometBin,
   getNileBin,
   formatEpicStoreUrl,
-  getSteamRuntime,
   quoteIfNecessary,
   removeQuoteIfNecessary,
   detectVCRedist,
   killPattern,
-  shutdownWine,
   getShellPath,
-  getWineFromProton,
   getFileSize,
   memoryLog,
   removeFolder,

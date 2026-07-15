@@ -8,8 +8,6 @@ import {
   callRunner,
   getKnownFixesEnvVariables,
   prepareLaunch,
-  prepareWineLaunch,
-  runWineCommand,
   setupEnvVars,
   setupWrapperEnvVars,
   setupWrappers
@@ -155,7 +153,8 @@ export async function launchGame(
     } = await prepareLaunch(gameSettings, logWriter, gameInfo, isNative)
 
     if (!isNative) {
-      await prepareWineLaunch(game, logWriter)
+      logInfo('Non-native launch is handled by the external script', LogPrefix.Backend)
+      return true
     }
 
     if (!launchPrepSuccess) {
@@ -224,25 +223,7 @@ export async function launchGame(
       return true
     }
 
-    logInfo(
-      `launching non-native sideloaded: ${executable} ${extraArgsJoined}`,
-      LogPrefix.Backend
-    )
-
-    await runWineCommand({
-      commandParts: [executable, ...extraArgs],
-      gameSettings,
-      wait: true,
-      protonVerb: 'waitforexitandrun',
-      startFolder: dirname(executable),
-      options: {
-        wrappers: setupWrappers(),
-        logWriters: [logWriter],
-        logMessagePrefix: LogPrefix.Backend
-      }
-    })
-
-    return true
+    return false
   }
   return false
 }

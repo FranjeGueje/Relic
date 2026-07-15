@@ -475,3 +475,24 @@
 - `preload/api/settings.ts`: 4 invokers EOS Overlay eliminados
 - `frontend/GameSubMenu/index.tsx`: state, useEffect, handleEosOverlay, JSX toggle button, import PictureInPictureIcon eliminados
 - `CurrentDownload/index.tsx`: hack de título EOS Overlay eliminado
+
+## Wine Full Removal (types + dependencias)
+- `common/types.ts`: eliminados todos los tipos Wine (`WineInstallation`, `SteamRuntime`, `Runtime`, `RuntimeName`, `WineCommandArgs`, `ProtonVerb`, union `Type`, `VersionInfo`, `WineVersionInfo`, `ReleasesInfo`); eliminados `winePrefix`/`wineVersion` de `GameSettings` e `ImportGameArgs`; eliminados `sharedWinePrefix`/`defaultWinePrefix`/`defaultWinePrefixDir` de `AppSettings`
+- `backend/config.ts`: import `WineInstallation` eliminado; funciones `getMacOsWineSet`, `getAlternativeWine` eliminadas; defaults Wine eliminados
+- `backend/launcher.ts`: `setupWineEnvVars`, `verifyWinePrefix`, `validWine`, `getWinePath`, `runWineCommand`, `runWineCommandOnGame`, `prepareWineLaunch` eliminados; `setupWrappers` reducido a stub que retorna `[]`; referencias a `gameSettings.winePrefix` eliminadas
+- `backend/game_config.ts`: `winePrefix`/`wineVersion` eliminados
+- `backend/utils/compatibility_layers.ts`: reducido solo a `getUmuPath`/`isUmuSupported` (todo Wine detection eliminado)
+- `backend/utils.ts`: `getWineFromProton`, `shutdownWine`, `killWineGame`, `getSteamRuntime` eliminados
+- `backend/utils/__tests__/compatibility_layers.test.ts`: eliminado (testeaba funciones Wine eliminadas)
+- `backend/main.ts`: handlers `runWineCommand`, `wine.isValidVersion`, `installWineVersion`, `refreshWineVersionInfo`, `removeWineVersion`, `getAlternativeWine` eliminados
+- `backend/backend_events.ts`: eventos `wineVersionInfoReady` y tipo `WineVersionInfo` eliminados
+- `backend/electron_store.ts` (common/types): `wine-releases` del schema eliminado
+- `backend/wine/runtimes/runtimes.ts`: dependencia `RuntimeName` eliminada
+- `backend/storeManagers/`: todos los imports/usos de `setupWrappers()` ahora importan stub de launcher; `shutdownWine` eliminado de sideload; `runWineCommand` eliminado de storeManagerCommon
+- `common/types/ipc.ts`: todos los tipos IPC Wine eliminados de `AsyncIPCFunctions`
+- `preload/api/wine.ts`: archivo eliminado
+- `preload/api/index.ts`: import y spread de `Wine` eliminados
+- `preload/api/helpers.ts`: `runWineCommand` eliminado
+- `preload/api/misc.ts`: `getAlternativeWine` eliminado
+- `frontend/helpers/electronStores.ts`: `wineDownloaderInfoStore` eliminado (instancia + export)
+- `backend/downloadmanager/downloadqueue.ts`: `stop(false)` → `stop()` (parámetro Wine eliminado)

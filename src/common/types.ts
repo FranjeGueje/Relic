@@ -99,9 +99,6 @@ export interface AppSettings extends GameSettings {
   darkTrayIcon: boolean
   defaultInstallPath: string
   defaultSteamPath: string
-  sharedWinePrefix: string
-  defaultWinePrefix: string
-  defaultWinePrefixDir: string
   disableController: boolean
   disablePlaytimeSync: boolean
   disableSmoothScrolling: boolean
@@ -206,8 +203,6 @@ export interface GameSettings {
   offlineMode: boolean
   otherOptions?: string
   targetExe: string
-  winePrefix: string
-  wineVersion: WineInstallation
   savesPath: string
   gogSaves?: GOGCloudSavesLocation[]
   beforeLaunchScriptPath: string
@@ -310,15 +305,6 @@ export type UserInfo = {
   displayName: string
   user: string
 }
-export interface WineInstallation {
-  bin: string
-  name: string
-  type: 'wine' | 'proton' | 'crossover' | 'toolkit'
-  lib?: string
-  lib32?: string
-  wineserver?: string
-}
-
 export interface InstallArgs {
   path: string
   platformToInstall: InstallPlatform
@@ -376,12 +362,6 @@ export interface GOGImportData {
   dlcs: string[]
 }
 
-export interface SteamRuntime {
-  path: string
-  type: 'sniper' | 'scout' | 'soldier'
-  args: string[]
-}
-
 export interface LaunchPreperationResult {
   success: boolean
   failureReason?: string
@@ -405,16 +385,6 @@ export interface WrapperEnv {
 }
 
 
-export interface Runtime {
-  id: number
-  name: string
-  created_at: string
-  architecture: string
-  url: string
-}
-
-export type RuntimeName = 'umu'
-
 export type RecentGame = {
   appName: string
   title: string
@@ -429,12 +399,6 @@ export type RefreshOptions = {
   fullRefresh?: boolean
   library?: Runner | 'all'
   runInBackground?: boolean
-}
-
-export interface WineVersionInfo extends VersionInfo {
-  isInstalled: boolean
-  hasUpdate: boolean
-  installDir: string
 }
 
 export type GamepadActionStatus = Record<
@@ -504,27 +468,6 @@ export interface DMQueueElement {
   status?: DMStatus
 }
 
-type ProtonVerb =
-  | 'run'
-  | 'waitforexitandrun'
-  | 'runinprefix'
-  | 'destroyprefix'
-  | 'getcompatpath'
-  | 'getnativepath'
-
-export type WineCommandArgs = {
-  commandParts: string[]
-  wait?: boolean
-  protonVerb?: ProtonVerb
-  gameSettings?: GameSettings
-  gameInstallPath?: string
-  installFolderName?: string
-  options?: CallRunnerOptions
-  startFolder?: string
-  skipPrefixCheckIKnowWhatImDoing?: boolean
-  ignoreLogging?: boolean
-}
-
 export interface SaveSyncArgs {
   arg: string | undefined
   path: string
@@ -537,8 +480,6 @@ export interface ImportGameArgs {
   path: string
   runner: Runner
   platform: InstallPlatform
-  winePrefix?: string
-  wineVersion?: WineInstallation
 }
 
 export interface MoveGameArgs {
@@ -556,40 +497,6 @@ export interface DiskSpaceData {
 }
 
 export type StatusPromise = Promise<{ status: 'done' | 'error' | 'abort' }>
-
-/**
- * Defines from where the version comes
- */
-export type Type =
-  | 'Wine-GE'
-  | 'Proton'
-  | 'Wine-Kron4ek'
-  | 'Wine-Staging-macOS'
-  | 'Game-Porting-Toolkit'
-
-/**
- * Interface contains information about a version
- * - version
- * - type (wine, proton, lutris, ge ...)
- * - date
- * - download link
- * - checksum link
- * - size (download and disk)
- */
-export interface VersionInfo {
-  version: string
-  type: Type
-  date: string
-  download: string
-  downsize: number
-  disksize: number
-  checksum: string
-  release_notes_link: string
-}
-
-/**
- * Enum for the supported repositorys
- */
 
 export type DownloadManagerState = 'idle' | 'running' | 'paused' | 'stopped'
 
@@ -642,18 +549,3 @@ export interface SGDBGame {
   id: number
   name: string
 }
-
-export type ReleasesInfo = Record<
-  | 'wine-ge'
-  | 'game-porting-toolkit'
-  | 'wine-staging'
-  | 'wine-crossover'
-  | 'dxvk'
-  | 'dxvk-mac'
-  | 'dxmt'
-  | 'vkd3d',
-  {
-    tag: string
-    published_at: string
-  }
->

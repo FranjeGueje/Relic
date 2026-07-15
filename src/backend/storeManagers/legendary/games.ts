@@ -20,7 +20,6 @@ import {
   moveOnWindows,
   sendGameStatusUpdate,
   sendProgressUpdate,
-  shutdownWine,
   spawnAsync
 } from '../../utils'
 import {
@@ -31,12 +30,10 @@ import {
 } from 'backend/logger'
 import {
   prepareLaunch,
-  prepareWineLaunch,
   setupEnvVars,
   setupWrapperEnvVars,
   setupWrappers,
-  getKnownFixesEnvVariables,
-  getWinePath
+  getKnownFixesEnvVariables
 } from '../../launcher'
 import {
   addShortcuts as addShortcutsUtil,
@@ -53,8 +50,6 @@ import { Catalog, Product } from 'common/types/epic-graphql'
 import { sendFrontendMessage } from '../../ipc'
 import { Game } from 'common/types/game_manager'
 import {
-  AllowedWineFlags,
-  getWineFlags,
   isUmuSupported
 } from 'backend/utils/compatibility_layers'
 import {
@@ -191,7 +186,7 @@ export default class LegendaryGame implements Game {
         return null
       }
     } catch (error) {
-      logError(
+      logDebug(
         ['Failed to get info from Epic API:', error],
         LogPrefix.Legendary
       )
@@ -910,36 +905,9 @@ export default class LegendaryGame implements Game {
 
     const wrappers = setupWrappers()
 
-    let wineFlags: AllowedWineFlags = wrappers.length
+    const wineFlags: Record<string, unknown> = wrappers.length
       ? { '--wrapper': NonEmptyString.parse(shlex.join(wrappers)) }
       : {}
-
-    if (!this.isNative()) {
-      // -> We're using Wine/Proton on Linux or CX on Mac
-      const {
-        success: wineLaunchPrepSuccess,
-        failureReason: wineLaunchPrepFailReason,
-        envVars: wineEnvVars
-      } = await prepareWineLaunch(this, logWriter)
-      if (!wineLaunchPrepSuccess) {
-        logWriter.logError(['Launch aborted:', wineLaunchPrepFailReason])
-        if (wineLaunchPrepFailReason) {
-          showDialogBoxModalAuto({
-            title: t('box.error.launchAborted', 'Launch aborted'),
-            message: wineLaunchPrepFailReason,
-            type: 'ERROR'
-          })
-        }
-        return false
-      }
-
-      commandEnv = {
-        ...commandEnv,
-        ...wineEnvVars
-      }
-
-      wineFlags = await getWineFlags(gameSettings, shlex.join(wrappers))
-    }
 
     const appNameToLaunch =
       launchArguments?.type === 'dlc'
@@ -1032,20 +1000,9 @@ export default class LegendaryGame implements Game {
     }
   }
 
-  // Could be removed if legendary handles SIGKILL and SIGTERM for us
-  // which is send via AbortController
-  async stop(stopWine = true) {
-    // until the legendary bug gets fixed, kill legendary on mac
-    // not a perfect solution but it's the only choice for now
-
-    // @adityaruplaha: this is kinda arbitary and I don't understand it.
+  async stop() {
     const pattern = isWindows ? 'legendary' : this.appName
     killPattern(pattern)
-
-    if (stopWine && !this.isNative()) {
-      const gameSettings = await this.getSettings()
-      await shutdownWine(gameSettings)
-    }
   }
 
   async isGameAvailable(): Promise<boolean> {

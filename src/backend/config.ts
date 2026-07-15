@@ -2,31 +2,19 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'graceful-fs'
 
 import {
   AppSettings,
-  GlobalConfigVersion,
-  WineInstallation
+  GlobalConfigVersion
 } from 'common/types'
 import { currentGlobalConfigVersion } from 'backend/constants/others'
 
 import { logError, logInfo, LogPrefix } from './logger'
-import {
-  getDefaultWine,
-  getGamePortingToolkitWine,
-  getLinuxWineSet,
-  getSystemGamePortingToolkitWine,
-  getWhisky,
-  getWineOnMac,
-  getWineskinWine
-} from './utils/compatibility_layers'
 import { backendEvents } from './backend_events'
 import { configStore } from './constants/key_value_stores'
-import { isLinux, isMac, isWindows } from './constants/environment'
+import { isMac, isWindows } from './constants/environment'
 import {
   configPath,
-  sharedWinePrefix,
   gamesConfigPath,
   relicInstallPath,
-  userHome,
-  defaultWinePrefixDir
+  userHome
 } from './constants/paths'
 import { join } from 'path'
 
@@ -135,49 +123,6 @@ abstract class GlobalConfig {
   }
 
   /**
-   * Detects Wine on Mac
-   * @returns Promise<Set<WineInstallation>>
-   * @memberof GlobalConfig
-   **/
-  public async getMacOsWineSet(): Promise<Set<WineInstallation>> {
-    if (!isMac) {
-      return new Set<WineInstallation>()
-    }
-
-    const getGPTKWine = await getGamePortingToolkitWine()
-    const getSystemGPTK = await getSystemGamePortingToolkitWine()
-    const wineOnMac = await getWineOnMac()
-    const wineskinWine = await getWineskinWine()
-    const whiskyWine = await getWhisky()
-
-    return new Set([
-      ...getGPTKWine,
-      ...getSystemGPTK,
-      ...wineOnMac,
-      ...wineskinWine,
-      ...whiskyWine
-    ])
-  }
-
-  /**
-   * Detects Wine/Proton on the user's system.
-   *
-   * @returns An Array of Wine/Proton installations.
-   */
-  public async getAlternativeWine(
-    scanCustom = true
-  ): Promise<WineInstallation[]> {
-    if (isMac) {
-      const macOsWineSet = await this.getMacOsWineSet()
-      return [...macOsWineSet]
-    }
-
-    const linuxWineSet = await getLinuxWineSet(scanCustom)
-
-    return [...linuxWineSet]
-  }
-
-  /**
    * Gets the actual settings from the config file.
    * Does not modify its parent object.
    * Always reads from file regardless of `this.config`.
@@ -274,28 +219,15 @@ class GlobalConfigV0 extends GlobalConfig {
     let settings = JSON.parse(readFileSync(configPath, 'utf-8'))
     const defaultSettings = settings.defaultSettings as AppSettings
 
-    // keep old setting value for backwards compatibility, always use defaultWinePrefixDir in new code
-    if (!defaultSettings.defaultWinePrefixDir)
-      defaultSettings.defaultWinePrefixDir = defaultSettings.defaultWinePrefix
-
-    // fix relative paths
-    const winePrefix = !isWindows
-      ? defaultSettings?.winePrefix?.replace('~', userHome)
-      : ''
-
     settings = {
       ...this.getFactoryDefaults(),
-      ...defaultSettings,
-      winePrefix
+      ...defaultSettings
     } as AppSettings
 
     return settings
   }
 
   public getFactoryDefaults(): AppSettings {
-    // @ts-expect-error FIXME: Settings values don't work like this in other parts of the codebase
-    const defaultWine: WineInstallation = isWindows ? {} : getDefaultWine()
-
     const settings: Partial<AppSettings> = {
       checkUpdatesInterval: 10,
       enableUpdates: false,
@@ -305,13 +237,9 @@ class GlobalConfigV0 extends GlobalConfig {
       autoUpdateGames: true,
       defaultInstallPath: relicInstallPath,
       defaultSteamPath: getSteamCompatFolder(),
-      defaultWinePrefix: defaultWinePrefixDir,
-      defaultWinePrefixDir: defaultWinePrefixDir,
       language: 'en',
       maxWorkers: 0,
       minimizeOnLaunch: false,
-      winePrefix: isWindows ? '' : sharedWinePrefix,
-      wineVersion: defaultWine,
       framelessWindow: false,
       beforeLaunchScriptPath: '',
       afterLaunchScriptPath: '',
@@ -320,8 +248,7 @@ class GlobalConfigV0 extends GlobalConfig {
       steamGridDbApiKey: '',
       disableGOGPresence: false
     }
-    // @ts-expect-error TODO: We need to settle on *one* place to define settings defaults
-    return settings
+    return settings as AppSettings
   }
 
   public setSetting(key: keyof AppSettings, value: unknown) {

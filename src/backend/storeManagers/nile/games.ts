@@ -20,7 +20,6 @@ import { GameConfig } from 'backend/game_config'
 import {
   getKnownFixesEnvVariables,
   prepareLaunch,
-  prepareWineLaunch,
   setupEnvVars,
   setupWrapperEnvVars,
   setupWrappers
@@ -29,7 +28,6 @@ import { existsSync } from 'graceful-fs'
 import { showDialogBoxModalAuto } from 'backend/dialog/dialog'
 import { t } from 'i18next'
 import {
-  getWineFlagsArray,
   isUmuSupported
 } from 'backend/utils/compatibility_layers'
 import shlex from 'shlex'
@@ -38,8 +36,7 @@ import {
   moveOnUnix,
   moveOnWindows,
   sendGameStatusUpdate,
-  sendProgressUpdate,
-  shutdownWine
+  sendProgressUpdate
 } from 'backend/utils'
 import { GlobalConfig } from 'backend/config'
 import {
@@ -334,38 +331,6 @@ export default class NileGameManager implements Game {
 
     const wrappers = setupWrappers()
 
-    let wineFlag: string[] = []
-
-    if (!this.isNative()) {
-      const {
-        success: wineLaunchPrepSuccess,
-        failureReason: wineLaunchPrepFailReason,
-        envVars: wineEnvVars
-      } = await prepareWineLaunch(this, logWriter)
-      if (!wineLaunchPrepSuccess) {
-        logWriter.logError(['Launch aborted:', wineLaunchPrepFailReason])
-        if (wineLaunchPrepFailReason) {
-          showDialogBoxModalAuto({
-            title: t('box.error.launchAborted', 'Launch aborted'),
-            message: wineLaunchPrepFailReason,
-            type: 'ERROR'
-          })
-        }
-        return false
-      }
-
-      commandEnv = {
-        ...commandEnv,
-        ...wineEnvVars
-      }
-
-      wineFlag = [
-        ...(await getWineFlagsArray(gameSettings, '')),
-        '--wine-prefix',
-        gameSettings.winePrefix
-      ]
-    }
-
     const launchArgumentsArgs =
       launchArguments &&
       (launchArguments.type === undefined || launchArguments.type === 'basic')
@@ -375,7 +340,6 @@ export default class NileGameManager implements Game {
     const commandParts = [
       'launch',
       ...exeOverrideFlag,
-      ...wineFlag,
       ...shlex.split(launchArgumentsArgs),
       this.id,
       ...args
@@ -530,14 +494,9 @@ export default class NileGameManager implements Game {
     libraryManagerMap['nile'].removeFromInstalledConfig(this.id)
   }
 
-  async stop(stopWine = true) {
+  async stop() {
     const pattern = isLinux ? this.id : 'nile'
     killPattern(pattern)
-
-    if (stopWine && !this.isNative()) {
-      const gameSettings = await this.getSettings()
-      await shutdownWine(gameSettings)
-    }
   }
 
   async isGameAvailable(): Promise<boolean> {

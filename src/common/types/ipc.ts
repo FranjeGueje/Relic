@@ -29,15 +29,11 @@ import type {
   Release,
   Runner,
   RunnerCommandStub,
-  RuntimeName,
   StatusPromise,
 
   UpdateParams,
   UploadedLogData,
-  UserInfo,
-  WineCommandArgs,
-  WineInstallation,
-  WineVersionInfo
+  UserInfo
 } from '../types'
 import type { GOGCloudSavesLocation, UserData } from './gog'
 import type { NileLoginData, NileRegisterData, NileUserData } from './nile'
@@ -127,9 +123,6 @@ interface TestSyncIPCFunctions {
 interface AsyncIPCFunctions {
   kill: (appName: string, runner: Runner) => Promise<void>
   checkDiskSpace: (folder: string) => Promise<DiskSpaceData>
-  runWineCommand: (
-    args: WineCommandArgs
-  ) => Promise<{ stdout: string; stderr: string }>
   checkGameUpdates: () => Promise<string[]>
   getEpicGamesStatus: () => Promise<boolean>
   updateAll: () => Promise<({ status: 'done' | 'error' | 'abort' } | null)[]>
@@ -182,7 +175,6 @@ interface AsyncIPCFunctions {
   authZoom: (url: string) => Promise<{ status: 'done' | 'error' }>
   logoutLegendary: () => Promise<void>
   logoutAmazon: () => Promise<void>
-  getAlternativeWine: () => Promise<WineInstallation[]>
   readConfig: (config_class: 'library' | 'user') => Promise<GameInfo[] | string>
   requestAppSettings: () => AppSettings
   requestGameSettings: (appName: string) => Promise<GameSettings>
@@ -213,10 +205,6 @@ interface AsyncIPCFunctions {
   clipboardReadText: () => string
   isNative: (args: { appName: string; runner: Runner }) => boolean
   getLogContent: (args: GetLogFileArgs) => string
-  installWineVersion: (release: WineVersionInfo) => Promise<void>
-  refreshWineVersionInfo: (fetch?: boolean) => Promise<void>
-  removeWineVersion: (release: WineVersionInfo) => Promise<void>
-  'wine.isValidVersion': (release: WineInstallation) => Promise<boolean>
   shortcutsExists: (appName: string, runner: Runner) => boolean
   addToSteam: (appName: string, runner: Runner) => Promise<boolean>
   removeFromSteam: (appName: string, runner: Runner) => Promise<void>
@@ -237,8 +225,6 @@ interface AsyncIPCFunctions {
       }
     >
   >
-  downloadRuntime: (runtime_name: RuntimeName) => Promise<boolean>
-  isRuntimeInstalled: (runtime_name: RuntimeName) => Promise<boolean>
   getDMQueueInformation: () => {
     elements: DMQueueElement[]
     finished: DMQueueElement[]
@@ -293,7 +279,6 @@ interface AsyncIPCFunctions {
 
 interface FrontendMessages {
   gameStatusUpdate: (status: GameStatus) => void
-  wineVersionsUpdated: () => void
   showDialog: (
     title: string,
     message: string,

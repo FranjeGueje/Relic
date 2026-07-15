@@ -7,7 +7,7 @@ import {
 } from 'common/types'
 import { libraryStore } from './electronStores'
 import { GameConfig } from '../../game_config'
-import { killPattern, sendGameStatusUpdate, shutdownWine } from '../../utils'
+import { killPattern, sendGameStatusUpdate } from '../../utils'
 import { logInfo, LogPrefix, logWarning } from 'backend/logger'
 import { dirname } from 'path'
 import { existsSync, rmSync } from 'graceful-fs'
@@ -89,11 +89,6 @@ export default class SideloadGame implements Game {
       const split = executable.split('/')
       const exe = split[split.length - 1]
       killPattern(exe)
-
-      if (!this.isNative()) {
-        const gameSettings = await this.getSettings()
-        shutdownWine(gameSettings)
-      }
     }
   }
 
