@@ -429,3 +429,17 @@
 - `backend/storeManagers/`: `launcherArgs` eliminado de legendary/gog/nile/zoom; `gameModeBin`/`steamRuntime` destructuring de `prepareLaunch` eliminado; `setupWrappers()` simplificado
 - `backend/utils/compatibility_layers.ts`: `getCustomWinePaths` simplificado; `showValveProton` eliminado
 - `common/types.ts`: `showValveProton` eliminado de comentarios de JSDoc en shortcuts
+
+## EOS Overlay
+- Directorio `backend/storeManagers/legendary/eos_overlay/` eliminado (eos_overlay.ts + ipc_handler.ts)
+- `backend/storeManagers/legendary/commands/eos_overlay.ts` eliminado
+- `commands/index.ts`: import y type union de `EosOverlayCommand` eliminados
+- `setup.ts`: import de `enable`/`getStatus`/`isEnabled` y bloque auto-enable EOS Overlay eliminados
+- `library.ts`: case `'eos-overlay'` eliminado
+- `launcher.ts`: import `isEnabled` y EOS status logging eliminados
+- `main.ts`: import de `eos_overlay/ipc_handler` eliminado
+- `common/types/ipc.ts`: 8 tipos IPC EOS Overlay eliminados
+- `preload/api/menu.ts`: 4 invokers EOS Overlay eliminados
+- `preload/api/settings.ts`: 4 invokers EOS Overlay eliminados
+- `frontend/GameSubMenu/index.tsx`: state, useEffect, handleEosOverlay, JSX toggle button, import PictureInPictureIcon eliminados
+- `CurrentDownload/index.tsx`: hack de título EOS Overlay eliminado

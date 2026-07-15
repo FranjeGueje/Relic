@@ -1,7 +1,6 @@
 import { join } from 'path'
 import { libraryManagerMap } from '..'
 import { sendGameStatusUpdate } from 'backend/utils'
-import { enable, getStatus, isEnabled } from './eos_overlay/eos_overlay'
 import { split } from 'shlex'
 import { logError, LogPrefix } from 'backend/logger'
 import { runWineCommand } from 'backend/launcher'
@@ -104,19 +103,4 @@ export const legendarySetup = async (appName: string, logWriter: LogWriter) => {
     }
   }
 
-  // We only want to enable the EOS Overlay on linux
-  // On windows, the overlay is installed globally
-  // On mac, the overlay doesn't work
-  if (isLinux) {
-    const isOverlayEnabled = await isEnabled(appName)
-
-    if (!isOverlayEnabled) {
-      if (getStatus().isInstalled) {
-        void logWriter.logInfo('EOS Overlay: Enabling')
-        await enable(appName)
-      } else {
-        void logWriter.logInfo('EOS Overlay: Not Installed')
-      }
-    }
-  }
 }

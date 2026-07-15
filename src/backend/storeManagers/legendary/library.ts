@@ -749,9 +749,6 @@ export default class LegendaryLibraryManager implements LibraryManager {
       case 'move':
         commandParts.push(command.appName, command.newBasePath)
         break
-      case 'eos-overlay':
-        commandParts.push(command.action)
-        break
       case 'import':
         commandParts.push(command.appName, command.installationDirectory)
         break

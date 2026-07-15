@@ -241,20 +241,6 @@ interface AsyncIPCFunctions {
       }
     >
   >
-  getEosOverlayStatus: () => {
-    isInstalled: boolean
-    version?: string
-    install_path?: string
-  }
-  getLatestEosOverlayVersion: () => Promise<string>
-  updateEosOverlayInfo: () => Promise<void>
-  installEosOverlay: () => Promise<string | undefined>
-  removeEosOverlay: () => Promise<boolean>
-  enableEosOverlay: (
-    appName: string
-  ) => Promise<{ wasEnabled: boolean; installNow?: boolean }>
-  disableEosOverlay: (appName: string) => Promise<void>
-  isEosOverlayEnabled: (appName?: string) => Promise<boolean>
   downloadRuntime: (runtime_name: RuntimeName) => Promise<boolean>
   isRuntimeInstalled: (runtime_name: RuntimeName) => Promise<boolean>
   getDMQueueInformation: () => {

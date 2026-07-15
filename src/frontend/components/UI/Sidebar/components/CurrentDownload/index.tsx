@@ -26,16 +26,7 @@ export default React.memo(function CurrentDownload({ appName, runner }: Props) {
 
   useEffect(() => {
     const getGameTitle = async () => {
-      // Hack for EOS Overlay. Not sure if this can be done better
-      let title
-      if (
-        appName === '98bc04bc842e4906993fd6d6644ffb8d' &&
-        runner === 'legendary'
-      ) {
-        title = 'EOS Overlay'
-      } else {
-        title = (await getGameInfo(appName, runner))!.title
-      }
+      const title = (await getGameInfo(appName, runner))!.title
       setGameTitle(title)
     }
     getGameTitle()

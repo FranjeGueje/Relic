@@ -1,8 +1,8 @@
 import './index.css'
 
-import { useCallback, useContext, useEffect, useState } from 'react'
+import { useCallback, useContext, useState } from 'react'
 
-import { GameInfo, GameStatus, Runner } from 'common/types'
+import { GameInfo, Runner } from 'common/types'
 
 import { createNewWindow, repair } from 'frontend/helpers'
 import { useTranslation } from 'react-i18next'
@@ -19,7 +19,6 @@ import {
   DriveFileMove as DriveFileMoveIcon,
   Folder as FolderIcon,
   Info as InfoIcon,
-  PictureInPicture as PictureInPictureIcon,
   Repartition as RepartitionIcon
 } from '@mui/icons-material'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -60,9 +59,6 @@ export default function GamesSubmenu({
   const isWin = platform === 'win32'
   const isLinux = platform === 'linux'
 
-  const [eosOverlayEnabled, setEosOverlayEnabled] = useState<boolean>(false)
-  const [eosOverlayRefresh, setEosOverlayRefresh] = useState<boolean>(false)
-  const eosOverlayAppName = '98bc04bc842e4906993fd6d6644ffb8d'
   const [showUninstallModal, setShowUninstallModal] = useState(false)
   const [protonDBurl, setProtonDBurl] = useState(
     `https://www.protondb.com/search?q=${title}`
@@ -111,45 +107,6 @@ export default function GamesSubmenu({
       ]
     })
   }
-
-  async function handleEosOverlay() {
-    setEosOverlayRefresh(true)
-    if (eosOverlayEnabled) {
-      await window.api.disableEosOverlay(appName)
-      setEosOverlayEnabled(false)
-    } else {
-      const initialEnableResult = await window.api.enableEosOverlay(appName)
-      const { installNow } = initialEnableResult
-      let { wasEnabled } = initialEnableResult
-
-      if (installNow) {
-        await window.api.installEosOverlay()
-        wasEnabled = (await window.api.enableEosOverlay(appName)).wasEnabled
-      }
-      setEosOverlayEnabled(wasEnabled)
-    }
-    setEosOverlayRefresh(false)
-  }
-
-  useEffect(() => {
-    if (!isInstalled) {
-      return
-    }
-
-    // only unix specific
-    if (!isWin && runner === 'legendary') {
-      // check if eos overlay is enabled
-      const { status } =
-        libraryStatus.filter(
-          (game: GameStatus) => game.appName === eosOverlayAppName
-        )[0] || {}
-      setEosOverlayRefresh(status === 'installing')
-
-      window.api
-        .isEosOverlayEnabled(appName)
-        .then((enabled) => setEosOverlayEnabled(enabled))
-    }
-  }, [isInstalled])
 
   const refreshCircle = () => {
     return <CircularProgress className="link button is-text is-link" />
@@ -219,21 +176,6 @@ export default function GamesSubmenu({
                   {t('submenu.verify', 'Verify and Repair')}
                 </button>
               )}{' '}
-              {isLinux &&
-                runner === 'legendary' &&
-                (eosOverlayRefresh ? (
-                  refreshCircle()
-                ) : (
-                  <button
-                    className="link button is-text is-link buttonWithIcon"
-                    onClick={handleEosOverlay}
-                  >
-                    <PictureInPictureIcon />
-                    {eosOverlayEnabled
-                      ? t('submenu.disableEosOverlay', 'Disable EOS Overlay')
-                      : t('submenu.enableEosOverlay', 'Enable EOS Overlay')}
-                  </button>
-                ))}
             </>
           )}
           {!isSideloaded && !!changelog?.length && (

@@ -87,7 +87,6 @@ import { formatSystemInfo, getSystemInfo } from './utils/systeminfo'
 
 import type { PartialDeep } from 'type-fest'
 import type LogWriter from './logger/log_writer'
-import { isEnabled } from './storeManagers/legendary/eos_overlay/eos_overlay'
 import { Game } from 'common/types/game_manager'
 
 let powerDisplayId: number | null
@@ -470,20 +469,6 @@ async function prepareWineLaunch(
         failureReason: `CrossOver bottle "${gameSettings.wineCrossoverBottle}" does not exist`
       }
     }
-  }
-
-  // We only want to log this for legendary on Linux
-  // On windows, the overlay is installed globally
-  // On mac, the overlay doesn't work
-  if (gameInfo.runner === 'legendary' && isLinux) {
-    const checkEOSOverlayStatusPromise = isEnabled(gameInfo.app_name)
-
-    // The first time a game runs, the overlay is not enabled yet at this point
-    void logWriter.logInfo(
-      checkEOSOverlayStatusPromise.then(
-        (enabled) => `EOS Overlay: ${enabled ? 'Enabled' : 'Not enabled'}`
-      )
-    )
   }
 
   if (gameSettings.offlineMode && !gameInfo.canRunOffline) {

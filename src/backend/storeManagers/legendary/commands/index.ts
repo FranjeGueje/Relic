@@ -7,7 +7,6 @@ import InfoCommand from './info'
 import MoveCommand from './move'
 import SyncSavesCommand from './sync_saves'
 import StatusCommand from './status'
-import EosOverlayCommand from './eos_overlay'
 import UninstallCommand from './uninstall'
 import ImportCommand from './import'
 import CleanupCommand from './cleanup'
@@ -37,7 +36,6 @@ export type LegendaryCommand = BaseLegendaryCommand &
     | MoveCommand
     | SyncSavesCommand
     | StatusCommand
-    | EosOverlayCommand
     | UninstallCommand
     | ImportCommand
     | CleanupCommand
