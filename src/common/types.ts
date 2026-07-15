@@ -16,7 +16,6 @@ import {
 } from './types/zoom'
 import { TitleBarOverlay } from 'electron'
 import { ChildProcess } from 'child_process'
-import type { RelicHowLongToBeatEntry } from 'backend/wiki_game_info/howlongtobeat/utils'
 import type { Path } from 'backend/schemas'
 import type LogWriter from 'backend/logger/log_writer'
 
@@ -669,46 +668,6 @@ export interface ToolArgs {
 }
 
 export type StatusPromise = Promise<{ status: 'done' | 'error' | 'abort' }>
-
-export interface GameScoreInfo {
-  score: string
-  urlid: string
-}
-export interface PCGamingWikiInfo {
-  steamID: string
-  howLongToBeatID: string
-  metacritic: GameScoreInfo
-  opencritic: GameScoreInfo
-  igdb: GameScoreInfo
-  direct3DVersions: string[]
-  genres: string[]
-  releaseDate: string[]
-}
-
-export interface GamesDBInfo {
-  steamID: string
-}
-
-export interface ProtonDBCompatibilityInfo {
-  level: string
-}
-
-export interface SteamDeckComp {
-  category: number
-}
-
-export interface SteamInfo {
-  compatibilityLevel: string | null
-  steamDeckCatagory: number | null
-}
-
-export interface WikiInfo {
-  pcgamingwiki: PCGamingWikiInfo | null
-  howlongtobeat: RelicHowLongToBeatEntry | null
-  gamesdb: GamesDBInfo | null
-  steamInfo: SteamInfo | null
-  umuId: string | null
-}
 
 /**
  * Defines from where the version comes

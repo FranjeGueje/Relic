@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import GameContext from '../../GameContext'
 
 type ReleaseDateProps = {
-  date: string[] | undefined
+  date?: string[] | undefined
   runnerDate: string | undefined
 }
 

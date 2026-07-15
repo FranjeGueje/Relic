@@ -1,7 +1,5 @@
 export { default as DownloadSizeInfo } from './DownloadSizeInfo'
 export { default as InstalledInfo } from './InstalledInfo'
-export { default as Scores } from './Scores'
-export { default as HLTB } from './HLTB'
 export { default as Requirements } from './Requirements'
 export { default as DotsMenu } from './DotsMenu'
 export { default as Developer } from './Developer'

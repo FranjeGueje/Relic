@@ -49,7 +49,6 @@ import {
 import { removeNonSteamGame } from 'backend/shortcuts/nonesteamgame/nonesteamgame'
 import { sendFrontendMessage } from '../../ipc'
 import setup from './setup'
-import { getUmuId } from 'backend/wiki_game_info/umu/utils'
 import { isLinux, isWindows } from 'backend/constants/environment'
 
 import type LogWriter from 'backend/logger/log_writer'
@@ -367,13 +366,6 @@ export default class NileGameManager implements Game {
       commandEnv = {
         ...commandEnv,
         ...wineEnvVars
-      }
-
-      if (await isUmuSupported(gameSettings)) {
-        const umuId = await getUmuId(gameInfo.app_name, gameInfo.runner)
-        if (umuId) {
-          commandEnv['GAMEID'] = umuId
-        }
       }
 
       wineFlag = [

@@ -21,7 +21,6 @@ import { logError, logInfo, LogPrefix, logWarning } from 'backend/logger'
 import i18next from 'i18next'
 import { notify, showDialogBoxModalAuto } from '../../dialog/dialog'
 import { GlobalConfig } from '../../config'
-import { getWikiGameInfo } from 'backend/wiki_game_info/wiki_game_info'
 import { tsStore } from 'backend/constants/key_value_stores'
 import { isAppImage, isWindows } from 'backend/constants/environment'
 import type { Game } from 'common/types/game_manager'
@@ -206,8 +205,7 @@ function checkIfAlreadyAdded(object: Partial<ShortcutObject>, title: string) {
 async function addNonSteamGame(game: Game): Promise<boolean> {
   const gameInfo = game.getGameInfo()
   const steamUserdataDir = await getSteamUserdataDir()
-  const wikiInfo = await getWikiGameInfo(game)
-  const steamID = wikiInfo?.pcgamingwiki?.steamID ?? wikiInfo?.gamesdb?.steamID
+  const steamID = undefined
 
   const { folders, error } = checkSteamUserDataDir(steamUserdataDir)
 

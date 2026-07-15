@@ -11,7 +11,6 @@ import {
   DMQueueElement,
   GOGLoginData,
   AppSettings,
-  WikiInfo,
   GameInfo,
   WindowProps,
   UploadedLogData
@@ -104,9 +103,6 @@ export interface StoreStructure {
   }
   gogPrivateBranches: {
     [appName: string]: string
-  }
-  wikigameinfo: {
-    [title: string]: WikiInfo
   }
   uploadedLogs: Record<string, UploadedLogData>
   migrationsStore: {

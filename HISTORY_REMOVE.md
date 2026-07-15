@@ -373,9 +373,24 @@
 ## Protocolo relic://
 - Eliminado `src/backend/protocol.ts` (handleProtocol completo)
 - Eliminado `src/backend/__tests__/protocol.test.ts`
-- `src/backend/main.ts`: eliminado registro de protocolo (`protocol.handle('relic')`, `setAsDefaultProtocolClient`), import de `handleProtocol`, llamadas a `handleProtocol`, handler `open-url` de macOS, variable `openUrlArgument`
-- `src/backend/tray_icon/tray_icon.ts`: eliminado `handleProtocol` de imports; click de juegos recientes ahora solo muestra la ventana
-- `src/backend/shortcuts/`: eliminados `relic://launch` de shortcuts .desktop, .lnk y macOS .app; shortcuts apuntan directamente al binario de Relic
-- `src/backend/config.ts`: eliminado `hideWindowOnProtocolLaunch`
-- `src/common/types.ts`: eliminado `hideWindowOnProtocolLaunch`
+- `src/backend/main.ts`: eliminado registro de protocolo, import y llamadas a `handleProtocol`, handler `open-url` de macOS, variable `openUrlArgument`
+- `src/backend/tray_icon/tray_icon.ts`: click de juegos recientes ahora solo muestra la ventana
+- `src/backend/shortcuts/`: eliminados `relic://launch` de shortcuts; apuntan al binario de Relic
+- `src/backend/config.ts` + `src/common/types.ts`: eliminado `hideWindowOnProtocolLaunch`
 - `src/frontend/`: eliminado `HideWindowOnProtocolLaunch.tsx` y su export
+
+## ExtraGameInfo (PCGamingWiki, HLTB, ProtonDB, SteamDeck, GamesDB, UMU)
+- Eliminado `src/backend/wiki_game_info/` (directorio completo con orquestador, IPC handler, stores, mocks + 6 scrapers + tests)
+- Eliminado `src/frontend/components/UI/WikiGameInfo/` (HLTB + GameScore con SCSS)
+- Eliminado `src/frontend/screens/Game/GamePage/components/Scores.tsx` y `HLTB.tsx`
+- `GamePage/index.tsx`: eliminado `wikiInfo` state/useEffect/context, `<Scores>`, `<HLTB>`, tab "Extra info", `WikiInfo` de imports
+- `GamePage/components/index.tsx`: eliminados exports de `Scores` y `HLTB`
+- `GameContext.tsx`: eliminado `wikiInfo: null`
+- `frontend/types.ts`: eliminado `wikiInfo: WikiInfo | null` de GameContextType
+- `GameSubMenu/index.tsx`: eliminado `getWikiGameInfo` call
+- `preload/api/misc.ts`: eliminado `getWikiGameInfo` invoker
+- `common/types.ts`: eliminados `WikiInfo`, `PCGamingWikiInfo`, `GamesDBInfo`, `ProtonDBCompatibilityInfo`, `SteamDeckComp`, `SteamInfo`, `GameScoreInfo`
+- `common/types/ipc.ts`: eliminado `getWikiGameInfo` de AsyncIPCFunctions
+- `common/types/electron_store.ts`: eliminado `wikigameinfo` del schema
+- `backend/`: eliminado `getUmuId` de store managers (gog, legendary, nile, zoom), eliminado import de `ipc_handler` en main.ts
+- `backend/shortcuts/__tests__/`: eliminado `jest.mock` de `wiki_game_info`

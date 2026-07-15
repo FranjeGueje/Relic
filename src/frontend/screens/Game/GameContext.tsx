@@ -33,8 +33,7 @@ const initialContext: GameContextType = {
     win: false,
     notPlayableOffline: false
   },
-  status: undefined,
-  wikiInfo: null
+  status: undefined
 }
 
 export default React.createContext(initialContext)

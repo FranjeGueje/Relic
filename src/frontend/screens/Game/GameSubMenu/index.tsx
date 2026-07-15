@@ -151,16 +151,6 @@ export default function GamesSubmenu({
     }
   }, [isInstalled])
 
-  useEffect(() => {
-    // Get steam id and set direct proton db link
-    window.api.getWikiGameInfo(title, appName, runner).then((info) => {
-      const steamID = info?.pcgamingwiki?.steamID ?? info?.gamesdb?.steamID
-      if (steamID) {
-        setProtonDBurl(`https://www.protondb.com/app/${steamID}`)
-      }
-    })
-  }, [title, appName])
-
   const refreshCircle = () => {
     return <CircularProgress className="link button is-text is-link" />
   }

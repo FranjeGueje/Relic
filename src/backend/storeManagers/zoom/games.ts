@@ -56,7 +56,6 @@ import { Game } from 'common/types/game_manager'
 import { isLinux, isMac, isWindows } from 'backend/constants/environment'
 import { libraryManagerMap } from '..'
 import { isUmuSupported } from 'backend/utils/compatibility_layers'
-import { getUmuId } from 'backend/wiki_game_info/umu/utils'
 
 import type LogWriter from 'backend/logger/log_writer'
 import { rm, writeFile } from 'node:fs/promises'
@@ -703,13 +702,6 @@ export default class ZoomGame implements Game {
       const startFolder = isAbsolute(executable)
         ? dirname(executable)
         : dirname(join(gameInfo.install.install_path, executable))
-
-      if (await isUmuSupported(gameSettings)) {
-        const umuId = await getUmuId(gameInfo.app_name, gameInfo.runner)
-        if (umuId) {
-          commandEnv['GAMEID'] = umuId
-        }
-      }
 
       const result = await runWineCommand({
         commandParts: [basename(executable), ...commandParts],

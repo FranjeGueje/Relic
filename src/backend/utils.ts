@@ -51,7 +51,6 @@ import { libraryManagerMap } from 'backend/storeManagers'
 import { readdir, lstat } from 'fs/promises'
 import { getRelicVersion } from './utils/systeminfo/relicVersion'
 import { backendEvents } from './backend_events'
-import { wikiGameInfoStore } from './wiki_game_info/electronStore'
 import EasyDl from 'easydl'
 
 import {
@@ -362,7 +361,6 @@ function clearCache(
   library?: 'gog' | 'legendary' | 'nile' | 'zoom',
   fromVersionChange = false
 ) {
-  wikiGameInfoStore.clear()
   if (library === 'gog' || !library) {
     GOGapiInfoCache.clear()
     GOGlibraryStore.clear()

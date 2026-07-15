@@ -64,7 +64,6 @@ import {
   PositiveInteger
 } from './commands/base'
 import { LegendaryCommand } from './commands'
-import { getUmuId } from 'backend/wiki_game_info/umu/utils'
 import thirdParty from './thirdParty'
 import { Path } from 'backend/schemas'
 import { mkdirSync } from 'fs'
@@ -966,13 +965,6 @@ export default class LegendaryGame implements Game {
       commandEnv = {
         ...commandEnv,
         ...wineEnvVars
-      }
-
-      if (await isUmuSupported(gameSettings)) {
-        const umuId = await getUmuId(gameInfo.app_name, gameInfo.runner)
-        if (umuId) {
-          commandEnv['GAMEID'] = umuId
-        }
       }
 
       wineFlags = await getWineFlags(gameSettings, shlex.join(wrappers))

@@ -1330,7 +1330,7 @@ export default class GOGLibraryManager implements LibraryManager {
             `Was not able to get GamesDB data for ${game_id}`,
             error.response?.data
           ],
-          LogPrefix.ExtraGameInfo
+          LogPrefix.Gog
         )
         if (error.response?.status === 404) {
           return null

@@ -81,7 +81,6 @@ import { readdir, readFile } from 'fs/promises'
 import ini from 'ini'
 import { getRequiredRedistList, updateRedist } from './redist'
 import { spawn } from 'child_process'
-import { getUmuId } from 'backend/wiki_game_info/umu/utils'
 import { gogdlConfigPath, gogSupportPath } from './constants'
 import { isLinux, isMac, isWindows } from 'backend/constants/environment'
 
@@ -595,13 +594,6 @@ export default class GOGGame implements Game {
       commandEnv = {
         ...commandEnv,
         ...wineEnvVars
-      }
-
-      if (await isUmuSupported(gameSettings)) {
-        const umuId = await getUmuId(gameInfo.app_name, gameInfo.runner)
-        if (umuId) {
-          commandEnv['GAMEID'] = umuId
-        }
       }
 
       wineFlag = await getWineFlagsArray(gameSettings, shlex.join(wrappers))

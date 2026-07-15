@@ -11,7 +11,6 @@ jest.mock('backend/logger')
 jest.mock('backend/dialog/dialog')
 jest.mock('backend/utils')
 jest.mock('backend/config')
-jest.mock('backend/wiki_game_info/wiki_game_info')
 
 let tmpDir = {} as DirResult
 let tmpSteamUserConfigDir = ''

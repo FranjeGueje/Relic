@@ -38,7 +38,6 @@ import type {
   UpdateParams,
   UploadedLogData,
   UserInfo,
-  WikiInfo,
   WineCommandArgs,
   WineInstallation,
   WineVersionInfo
@@ -272,11 +271,6 @@ interface AsyncIPCFunctions {
   }
   getSystemInfo: (cache?: boolean) => Promise<SystemInformation>
   removeRecent: (appName: string) => Promise<void>
-  getWikiGameInfo: (
-    title: string,
-    appName: string,
-    runner: Runner
-  ) => Promise<WikiInfo | null>
   isGameAvailable: (args: {
     appName: string
     runner: Runner

@@ -28,7 +28,6 @@ import {
   GameInfo,
   GameSettings,
   Runner,
-  WikiInfo,
   InstallInfo,
   GameAchievement
 } from 'common/types'
@@ -50,10 +49,8 @@ import {
   DotsMenu,
   DownloadSizeInfo,
   GameStatus,
-  HLTB,
   InstalledInfo,
-  Requirements,
-  Scores
+  Requirements
 } from './components'
 import { hasAnticheatInfo } from 'frontend/hooks/hasAnticheatInfo'
 import { hasHelp } from 'frontend/hooks/hasHelp'
@@ -77,7 +74,6 @@ export default React.memo(function GamePage(): JSX.Element | null {
   const { gameInfo: locationGameInfo } = location.state
 
   const [showUninstallModal, setShowUninstallModal] = useState(false)
-  const [wikiInfo, setWikiInfo] = useState<WikiInfo | null>(null)
 
   const { epic, gog, gameUpdates, platform, showDialogModal, connectivity } =
     useContext(ContextProvider)
@@ -249,17 +245,6 @@ export default React.memo(function GamePage(): JSX.Element | null {
     isOffline
   ])
 
-  useEffect(() => {
-    window.api.getWikiGameInfo(gameInfo.title, appName, runner).then((info) => {
-      if (
-        info &&
-        (info.howlongtobeat || info.pcgamingwiki)
-      ) {
-        setWikiInfo(info)
-      }
-    })
-  }, [appName])
-
   function handleUpdate() {
     if (gameInfo.runner !== 'sideload')
       updateGame({ appName, runner, gameInfo })
@@ -346,15 +331,8 @@ export default React.memo(function GamePage(): JSX.Element | null {
         notPlayableOffline: notPlayableOffline
       },
       statusContext,
-      status,
-      wikiInfo
+      status
     }
-
-    const hasWikiInfo =
-      wikiInfo?.howlongtobeat ||
-      wikiInfo?.pcgamingwiki?.metacritic.score ||
-      wikiInfo?.pcgamingwiki?.opencritic.score ||
-      wikiInfo?.steamInfo
 
     const hasRequirements = extraInfo ? extraInfo.reqs.length > 0 : false
 
@@ -426,14 +404,12 @@ export default React.memo(function GamePage(): JSX.Element | null {
                       <Genres
                         genres={
                           gameInfo.extra?.genres ||
-                          wikiInfo?.pcgamingwiki?.genres ||
                           []
                         }
                       />
                       <Developer gameInfo={gameInfo} />
                       <ReleaseDate
                         runnerDate={extraInfo?.releaseDate}
-                        date={wikiInfo?.pcgamingwiki?.releaseDate}
                       />
 
                       <Description />
@@ -479,15 +455,6 @@ export default React.memo(function GamePage(): JSX.Element | null {
                               }
                             />
                           )}
-                          {hasWikiInfo && (
-                            <Tab
-                              className="tabButton"
-                              value={'extra'}
-                              label={t('game.extra_info', 'Extra info')}
-                              iconPosition="start"
-                              icon={<Star className="gameInfoTabsIcon" />}
-                            />
-                          )}
                           {hasRequirements && (
                             <Tab
                               className="tabButton"
@@ -517,15 +484,7 @@ export default React.memo(function GamePage(): JSX.Element | null {
                           <InstalledInfo gameInfo={gameInfo} />
                         </TabPanel>
 
-                        <TabPanel
-                          value={currentTab}
-                          index="extra"
-                          className="extraTab"
-                        >
-                          <Scores gameInfo={gameInfo} />
-                          <HLTB />
-                        </TabPanel>
-
+                         
                         <TabPanel
                           className="tabPanelRequirements"
                           value={currentTab}

@@ -10,7 +10,6 @@ import {
   DownloadManagerState,
   ExperimentalFeatures,
   GameSettings,
-  WikiInfo,
   ExtraInfo,
   Status,
   InstallInfo
@@ -277,7 +276,6 @@ export interface GameContextType {
   }
   statusContext?: string
   status: Status | undefined
-  wikiInfo: WikiInfo | null
 }
 
 export type DMQueue = {
