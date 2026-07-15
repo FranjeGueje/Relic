@@ -44,7 +44,7 @@ export default function InstallOverlay({
     if (isMac && (isSideload || game.is_mac_native)) {
       options.push({ value: 'Mac', label: 'macOS' })
     }
-    // Windows is always installable (via Wine/Proton when not on Windows).
+    // Windows is always installable.
     options.push({ value: 'Windows', label: 'Windows' })
     return options
   }, [isLinux, isMac, isSideload, game.is_linux_native, game.is_mac_native])

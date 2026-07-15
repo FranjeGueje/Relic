@@ -8,7 +8,6 @@ import {
   HiddenGame,
   RefreshOptions,
   Runner,
-  WineVersionInfo,
   ExperimentalFeatures,
   Status
 } from 'common/types'
@@ -31,7 +30,6 @@ import {
   libraryStore,
   nileConfigStore,
   nileLibraryStore,
-  wineDownloaderInfoStore,
   sideloadLibrary,
   zoomConfigStore,
   zoomInstalledGamesStore,
@@ -73,7 +71,6 @@ interface StateProps {
     username?: string
     enabled: boolean
   }
-  wineVersions: WineVersionInfo[]
   error: boolean
   gameUpdates: string[]
   language: string
@@ -205,7 +202,6 @@ class GlobalState extends PureComponent<Props> {
       username: zoomConfigStore.get_nodefault('username'),
       enabled: !!globalSettings?.experimentalFeatures?.zoomPlatform
     },
-    wineVersions: wineDownloaderInfoStore.get('wine-releases', []),
     error: false,
     gameUpdates: [],
     language: this.props.i18n.language,
@@ -780,7 +776,6 @@ class GlobalState extends PureComponent<Props> {
         'playing',
         'extracting',
         'launching',
-        'winetricks',
         'redist',
         'queued'
       ].includes(status)
@@ -1002,7 +997,6 @@ class GlobalState extends PureComponent<Props> {
       'launching',
       'playing',
       'redist',
-      'winetricks',
       'extracting',
       'repairing',
       'moving',

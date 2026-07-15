@@ -48,7 +48,6 @@ import { hasStatus } from 'frontend/hooks/hasStatus'
 import GameContext from '../GameContext'
 import { GameContextType } from 'frontend/types'
 import {
-  CompatibilityInfo,
   Description,
   Developer,
   DotsMenu,
@@ -154,7 +153,6 @@ export default React.memo(function GamePage(): JSX.Element | null {
   const isUninstalling = status === 'uninstalling'
   const isSyncing = status === 'syncing-saves'
   const isLaunching = status === 'launching'
-  const isInstallingWinetricksPackages = status === 'winetricks'
   const isInstallingRedist = status === 'redist'
   const notAvailable = !gameAvailable && gameInfo.is_installed
   const notSupportedGame =
@@ -339,7 +337,6 @@ export default React.memo(function GamePage(): JSX.Element | null {
       is: {
         installing: isInstalling,
         importing: isImporting,
-        installingWinetricksPackages: isInstallingWinetricksPackages,
         installingRedist: isInstallingRedist,
         launching: isLaunching || playClicked,
         linux: isLinux,
@@ -549,7 +546,6 @@ export default React.memo(function GamePage(): JSX.Element | null {
                         >
                           <Scores gameInfo={gameInfo} />
                           <HLTB />
-                          <CompatibilityInfo gameInfo={gameInfo} />
                         </TabPanel>
 
                         <TabPanel

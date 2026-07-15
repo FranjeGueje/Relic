@@ -38,7 +38,6 @@ const MainButton = ({ gameInfo, handlePlay, handleInstall }: Props) => {
     is.uninstalling ||
     is.syncing ||
     is.launching ||
-    is.installingWinetricksPackages ||
     is.installingRedist
 
   const disabledInstallButtons =
@@ -62,9 +61,6 @@ const MainButton = ({ gameInfo, handlePlay, handleInstall }: Props) => {
     }
     if (is.installingRedist) {
       return t('label.redist', 'Installing Redistributables')
-    }
-    if (is.installingWinetricksPackages) {
-      return t('label.winetricks', 'Installing Winetricks Packages')
     }
     if (is.launching) {
       return t('label.launching', 'Launching')

@@ -314,3 +314,42 @@
 - Funciones removidas: `handleEdit`, `handleShortcuts`, `handleChangeInstall`/`onChangeInstallYesClick`, `handleAddToSteam`, `onBrowsePrefix`
 - Estados removidos: `steamRefresh`/`setSteamRefresh`, `addedToSteam`/`setAddedToSteam`, `hasShortcuts`/`setHasShortcuts`
 - Imports limpiados: `useGlobalState`, `openInstallGameModal`, `EditGameDialog`, `EditIcon`, `ShortcutIcon`, `FindInPageIcon`, `FormatListBulletedIcon`, `faSteam`, `faWineGlass`, `NavLink`
+
+## Wine/Proton del frontend
+
+### Archivos eliminados
+- `Settings/components/`: `WinePrefix.tsx`, `WineVersionSelector.tsx`, `CustomWineProton.tsx`, `DefaultSteamPath.tsx`, `EnableEsync.tsx`, `EnableFsync.tsx`, `EnableWineWayland.tsx`, `EnableWoW64.tsx`, `PreferSystemLibs.tsx`, `SteamRuntime.tsx`, `DisableUMU.tsx`, `EnableDXVKFpsLimit.tsx`, `EnableFSR.tsx`, `EacRuntime.tsx`, `GameMode.tsx`, `Tools/` (winecfg)
+- `Game/GamePage/components/`: `CompatibilityInfo.tsx` (ProtonDB)
+
+### Settings
+- Eliminados todos los exports de los componentes borrados en `components/index.ts`
+- Eliminado `defaultWineVersion` y su import `WineInstallation` de `Settings/index.tsx`
+- Eliminado `<DefaultSteamPath />` de `GeneralSettings`
+
+### GamePage
+- Eliminado `isInstallingWinetricksPackages` de `GamePage/index.tsx`
+- Eliminado `installingWinetricksPackages` del contexto en `GamePage/index.tsx`
+- Eliminado `is.installingWinetricksPackages` de `MainButton.tsx` (disabled + label)
+- Eliminado `CompatibilityInfo` import, barrel export y JSX de GamePage
+
+### GameContext & types
+- Eliminado `installingWinetricksPackages: boolean` de `types.ts`
+- Eliminado `installingWinetricksPackages: false` de `GameContext.tsx`
+
+### GameCard
+- Eliminado `isInstallingWinetricksPackages` de `constants.ts`
+
+### UninstallModal
+- Eliminado checkbox "Remove prefix" y toda la lógica asociada (`winePrefix`, `deletePrefixChecked`, `disableDeleteWine`)
+
+### ConsoleMode
+- Eliminado `'winetricks'` de `ACTIVE_STATUSES` en `ConsoleCard`
+- Eliminado `case 'winetricks'` de `LaunchOverlay`
+- Eliminado comentario "via Wine/Proton" de `InstallOverlay`
+
+### Estado global & hooks
+- Eliminado `wineVersions` state e import de `WineVersionInfo` de `GlobalState.tsx`
+- Eliminado `wineDownloaderInfoStore` de imports en `GlobalState.tsx`
+- Eliminado `'winetricks'` de arrays `allowed` y `allowedPendingOps` en `GlobalState.tsx`
+- Eliminado `winetricks` de `hooks/constants.ts`
+- Renombrado `winetricksOutputBottomRef` → `logRef` en `ProgressDialog`

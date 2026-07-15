@@ -5,7 +5,6 @@ import {
   AutoUpdateGames,
   ClearCache,
   DefaultInstallPath,
-  DefaultSteamPath,
   MaxWorkers,
   ResetRelic,
   Shortcuts,
@@ -25,8 +24,6 @@ export default function GeneralSettings() {
       <ThemeSelector />
 
       <DefaultInstallPath />
-
-      <DefaultSteamPath />
 
       <AutoUpdateGames />
 

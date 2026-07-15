@@ -19,12 +19,11 @@ export function ProgressDialog(props: {
   className?: string
 }) {
   const { t } = useTranslation()
-  const winetricksOutputBottomRef = useRef<HTMLDivElement>(null)
   const logRef = useRef<HTMLDivElement>(null)
   const [autoScroll, setAutoScroll] = useState(true)
 
   const scrollToBottom = () => {
-    winetricksOutputBottomRef.current?.scrollIntoView({ behavior: 'auto' })
+    logRef.current?.scrollIntoView({ behavior: 'auto' })
   }
 
   useEffect(() => {
@@ -86,7 +85,7 @@ export function ProgressDialog(props: {
                 )
               }
             })}
-            <div ref={winetricksOutputBottomRef} />
+            <div ref={logRef} />
           </div>
           <LinearProgress className="progressDialog linearProgress" />
         </DialogContent>

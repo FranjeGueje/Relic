@@ -93,9 +93,6 @@ export default function LaunchOverlay({
         { redist: statusContext || '' }
       )
       break
-    case 'winetricks':
-      label = t('gamepage:status.winetricks', 'Applying Winetricks fixes')
-      break
     case 'launching':
       label = t('gamepage:status.launching', 'Launching')
       break

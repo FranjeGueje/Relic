@@ -24,8 +24,7 @@ const ACTIVE_STATUSES = new Set<Status>([
   'repairing',
   'syncing-saves',
   'extracting',
-  'redist',
-  'winetricks'
+  'redist'
 ])
 
 type Props = {
