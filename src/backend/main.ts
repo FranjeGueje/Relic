@@ -567,12 +567,6 @@ addHandler('getMaxCpus', () => cpus().length)
 
 addHandler('getRelicVersion', () => app.getVersion())
 addHandler('isFullscreen', () => isSteamDeckGameMode || isCLIFullscreen)
-addHandler('getGameOverride', async () =>
-  libraryManagerMap['legendary'].getGameOverride()
-)
-addHandler('getGameSdl', async (event, appName) =>
-  libraryManagerMap['legendary'].getGameSdl(appName)
-)
 
 addHandler('showUpdateSetting', () => true)
 

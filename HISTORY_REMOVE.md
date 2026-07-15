@@ -409,3 +409,12 @@
 - `preload/api/misc.ts`: eliminado `getAnticheatInfo`
 - `common/types.ts`: eliminados `AntiCheat`, `AntiCheatInfo`, `AntiCheatReference`, `allowInstallationBrokenAnticheat`, `anticheatFiles`
 - `common/types/ipc.ts`: eliminado `AntiCheatInfo` import y `getAnticheatInfo`
+
+## Game Override API (relic.legendary.gl)
+- `backend/storeManagers/legendary/library.ts`: eliminadas funciones `getGameOverride()` y `getGameSdl()` (fetch a `relic.legendary.gl`)
+- `backend/storeManagers/legendary/electronStores.ts`: eliminado `gamesOverrideStore`
+- `backend/main.ts`: eliminados handlers `getGameOverride` y `getGameSdl`
+- `common/types/legendary.ts`: eliminados `GameOverride`, `ResponseDataLegendaryAPI`
+- `common/types/ipc.ts`: eliminados `getGameOverride` y `getGameSdl` de AsyncIPCFunctions
+- `preload/api/library.ts`: eliminados `getGameOverride` y `getGameSdl` invokers
+- `frontend/DownloadDialog`: eliminado `useEffect` que llamaba `getGameOverride` + `getGameSdl`

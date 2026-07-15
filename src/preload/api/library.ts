@@ -19,5 +19,3 @@ export const setGameMetadataOverride = makeListenerCaller('setGameMetadataOverri
 export const getGameMetadataOverride = makeHandlerInvoker('getGameMetadataOverride')
 export const getAllGameOverrides = makeHandlerInvoker('getAllGameOverrides')
 export const changeGameVersionPinnedStatus = makeListenerCaller('changeGameVersionPinnedStatus')
-export const getGameOverride = makeHandlerInvoker('getGameOverride')
-export const getGameSdl = makeHandlerInvoker('getGameSdl')
