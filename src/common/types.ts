@@ -96,12 +96,11 @@ export interface AppSettings extends GameSettings {
   autoUpdateGames: boolean
   checkForUpdatesOnStartup: boolean
   checkUpdatesInterval: number
-  customWinePaths: string[]
   darkTrayIcon: boolean
   defaultInstallPath: string
   defaultSteamPath: string
   sharedWinePrefix: string
-  defaultWinePrefix: string // only here for backwards compatibility, don't use in new code
+  defaultWinePrefix: string
   defaultWinePrefixDir: string
   disableController: boolean
   disablePlaytimeSync: boolean
@@ -118,7 +117,6 @@ export interface AppSettings extends GameSettings {
   startInTray: boolean
   disableUMU: boolean
   verboseLogs: boolean
-  showValveProton: boolean
   steamGridDbApiKey: string
 }
 
@@ -201,45 +199,22 @@ export interface GameInfo {
 }
 
 export interface GameSettings {
-  autoInstallDxvk: boolean
-  autoInstallVkd3d: boolean
-  autoInstallDxvkNvapi: boolean
-  battlEyeRuntime: boolean
-  DXVKFpsCap: string //Entered as string but used as number
-  eacRuntime: boolean
-  enableDXVKFpsLimit: boolean
-  enableEsync: boolean
-  enableFSR: boolean
-  enableMsync: boolean
-  enableFsync: boolean
-  enableWineWayland: boolean
-  enableHDR: boolean
-  enableWoW64: boolean
-  enviromentOptions: EnviromentVariable[]
   ignoreGameUpdates: boolean
   language: string
-  launcherArgs: string
   lastUsedLaunchOption?: LaunchOption
   maxSharpness?: number
-  nvidiaPrime: boolean
   offlineMode: boolean
-  otherOptions?: string //deprecated
-  preferSystemLibs: boolean
-  showFps: boolean
+  otherOptions?: string
   targetExe: string
-  useGameMode: boolean
-  useSteamRuntime: boolean
   wineCrossoverBottle: string
   winePrefix: string
   wineVersion: WineInstallation
-  wrapperOptions: WrapperVariable[]
   savesPath: string
   gogSaves?: GOGCloudSavesLocation[]
   beforeLaunchScriptPath: string
   afterLaunchScriptPath: string
   disableUMU: boolean
   verboseLogs: boolean
-  advertiseAvxForRosetta: boolean
   enableQuickSavesMenu: boolean
 }
 
@@ -411,8 +386,6 @@ export interface SteamRuntime {
 export interface LaunchPreperationResult {
   success: boolean
   failureReason?: string
-  gameModeBin?: string
-  steamRuntime?: string[]
   offlineMode?: boolean
 }
 
@@ -425,16 +398,6 @@ export interface CallRunnerOptions {
   onOutput?: (output: string, child: ChildProcess) => void
   abortId?: string
   cwd?: string
-}
-
-export interface EnviromentVariable {
-  key: string
-  value: string
-}
-
-export interface WrapperVariable {
-  exe: string
-  args: string
 }
 
 export interface WrapperEnv {

@@ -205,75 +205,27 @@ class GameConfigV0 extends GameConfig {
     // The settings defined work as overrides.
 
     const {
-      autoInstallDxvk,
-      autoInstallDxvkNvapi,
-      autoInstallVkd3d,
-      DXVKFpsCap,
-      preferSystemLibs,
-      enableEsync,
-      enableFSR,
-      enableMsync,
-      enableFsync,
-      enableWineWayland,
-      enableHDR,
-      enableDXVKFpsLimit,
-      enableWoW64,
       maxSharpness,
-      launcherArgs,
-      nvidiaPrime,
       offlineMode,
-      enviromentOptions,
-      wrapperOptions,
       savesPath,
-      showFps,
       targetExe,
-      useGameMode,
       winePrefix,
       wineCrossoverBottle,
       wineVersion,
-      useSteamRuntime,
-      eacRuntime,
-      battlEyeRuntime,
       beforeLaunchScriptPath,
       afterLaunchScriptPath,
-      verboseLogs,
-      advertiseAvxForRosetta
+      verboseLogs
     } = GlobalConfig.get().getSettings()
 
-    // initialize generic defaults
-    // TODO: I know more values can be moved that are not used in windows
     const defaultSettings = {
-      autoInstallDxvk,
-      autoInstallDxvkNvapi,
-      autoInstallVkd3d,
-      DXVKFpsCap,
-      preferSystemLibs,
-      enableEsync,
-      enableMsync,
-      enableFSR,
-      enableFsync,
-      enableWineWayland,
-      enableHDR,
-      enableWoW64,
-      enableDXVKFpsLimit,
       maxSharpness,
-      launcherArgs,
-      nvidiaPrime,
       offlineMode,
-      enviromentOptions: [...enviromentOptions],
-      wrapperOptions,
       savesPath,
-      showFps,
       targetExe,
-      useGameMode,
-      useSteamRuntime,
-      battlEyeRuntime,
-      eacRuntime,
-      language: '', // we want to fallback to '' always here, fallback lang for games should be ''
+      language: '',
       beforeLaunchScriptPath,
       afterLaunchScriptPath,
       verboseLogs,
-      advertiseAvxForRosetta,
       enableQuickSavesMenu: false
     } as GameSettings
 

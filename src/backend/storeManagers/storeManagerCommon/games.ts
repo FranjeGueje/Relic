@@ -15,7 +15,6 @@ import {
   setupWrappers
 } from '../../launcher'
 import { access, chmod } from 'fs/promises'
-import shlex from 'shlex'
 import { showDialogBoxModalAuto } from '../../dialog/dialog'
 import {
   createAbortController,
@@ -145,28 +144,19 @@ export async function launchGame(
   }
 
   const gameSettings = await getAppSettings(appName)
-  const { launcherArgs } = gameSettings
-  const extraArgs = [...shlex.split(launcherArgs ?? ''), ...args]
+  const extraArgs = [...args]
   const extraArgsJoined = extraArgs.join(' ')
 
   if (executable) {
     const isNative = game.isNative()
     const {
       success: launchPrepSuccess,
-      failureReason: launchPrepFailReason,
-      gameModeBin,
-      steamRuntime
+      failureReason: launchPrepFailReason
     } = await prepareLaunch(gameSettings, logWriter, gameInfo, isNative)
 
     if (!isNative) {
       await prepareWineLaunch(game, logWriter)
     }
-
-    const wrappers = setupWrappers(
-      gameSettings,
-      gameModeBin,
-      steamRuntime?.length ? [...steamRuntime] : undefined
-    )
 
     if (!launchPrepSuccess) {
       logWriter.logError(['Launch aborted:', launchPrepFailReason])
@@ -198,7 +188,6 @@ export async function launchGame(
           'File not executable, changing permissions temporarily',
           LogPrefix.Backend
         )
-        // On Mac, it gives an error when changing the permissions of the file inside the app bundle. But we need it for other executables like scripts.
         if (isLinux || (isMac && !executable.endsWith('.app'))) {
           await chmod(executable, 0o775)
         }
@@ -210,17 +199,14 @@ export async function launchGame(
         ...getKnownFixesEnvVariables(appName, runner)
       }
 
-      if (wrappers.length > 0) {
-        extraArgs.unshift(...wrappers, executable)
-        executable = extraArgs.shift()!
-      }
+      const wrappers = setupWrappers()
 
       await callRunner(
         extraArgs,
         {
           name: runner,
           logPrefix: LogPrefix.Backend,
-          bin: basename(executable),
+          bin: executable,
           dir: dirname(executable)
         },
         {
@@ -250,7 +236,7 @@ export async function launchGame(
       protonVerb: 'waitforexitandrun',
       startFolder: dirname(executable),
       options: {
-        wrappers,
+        wrappers: setupWrappers(),
         logWriters: [logWriter],
         logMessagePrefix: LogPrefix.Backend
       }

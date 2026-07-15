@@ -418,3 +418,14 @@
 - `common/types/ipc.ts`: eliminados `getGameOverride` y `getGameSdl` de AsyncIPCFunctions
 - `preload/api/library.ts`: eliminados `getGameOverride` y `getGameSdl` invokers
 - `frontend/DownloadDialog`: eliminado `useEffect` que llamaba `getGameOverride` + `getGameSdl`
+
+## Fase 2: Settings Wine prohibidas
+- Archivos `.tsx` eliminados: `EnvVariablesTable.tsx`, `WrappersTable.tsx`, `LauncherArgs.tsx`, `NvidiaPrime.tsx`, `ShowFPS.tsx`, `BattlEyeRuntime.tsx`
+- `components/index.ts`: exports limpiados
+- `common/types.ts`: eliminados de `GameSettings`: `autoInstallDxvk`, `autoInstallVkd3d`, `autoInstallDxvkNvapi`, `battlEyeRuntime`, `DXVKFpsCap`, `eacRuntime`, `enableDXVKFpsLimit`, `enableEsync`, `enableFSR`, `enableMsync`, `enableFsync`, `enableWineWayland`, `enableHDR`, `enableWoW64`, `enviromentOptions`, `launcherArgs`, `nvidiaPrime`, `preferSystemLibs`, `showFps`, `useGameMode`, `useSteamRuntime`, `wrapperOptions`, `advertiseAvxForRosetta`. Eliminado `customWinePaths` de `AppSettings`. Eliminados `LaunchPreperationResult.gameModeBin` y `steamRuntime`. Eliminados tipos `EnviromentVariable` y `WrapperVariable`.
+- `backend/config.ts`: defaults de todos los settings eliminados
+- `backend/game_config.ts`: lectura/escritura eliminada
+- `backend/launcher.ts`: `filterGameSettingsForLog` simplificado; GameMode check eliminado; SteamRuntime completo eliminado; EAC/BattlEye downloads eliminados; `setupEnvVars` simplificado (nvidiaPrime, showFps, enviromentOptions); `setupWineEnvVars` simplificado (env vars Esync/Fsync/FSR/WineWayland/WoW64/DXVKFps/HDR/EAC/BattlEye/preferSystemLibs eliminados); `setupWrappers` simplificado (sin args, retorna [])
+- `backend/storeManagers/`: `launcherArgs` eliminado de legendary/gog/nile/zoom; `gameModeBin`/`steamRuntime` destructuring de `prepareLaunch` eliminado; `setupWrappers()` simplificado
+- `backend/utils/compatibility_layers.ts`: `getCustomWinePaths` simplificado; `showValveProton` eliminado
+- `common/types.ts`: `showValveProton` eliminado de comentarios de JSDoc en shortcuts

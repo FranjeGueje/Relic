@@ -49,27 +49,7 @@ export function getDefaultWine(): WineInstallation {
 }
 
 function getCustomWinePaths(): Set<WineInstallation> {
-  const customPaths = new Set<WineInstallation>()
-  // skips this on new installations to avoid infinite loops
-  if (existsSync(configPath)) {
-    const { customWinePaths = [] } = GlobalConfig.get().getSettings()
-    customWinePaths.forEach((path: string) => {
-      if (path.endsWith('proton')) {
-        return customPaths.add({
-          bin: path,
-          name: `Custom Proton - ${path}`,
-          type: 'proton'
-        })
-      }
-      return customPaths.add({
-        bin: path,
-        name: `Custom Wine - ${path}`,
-        type: 'wine',
-        ...getWineExecs(path)
-      })
-    })
-  }
-  return customPaths
+  return new Set<WineInstallation>()
 }
 
 /**
@@ -151,14 +131,10 @@ export async function getLinuxWineSet(
 
   const protonPaths = [`${toolsPath}/proton/`]
 
-  const { showValveProton } = GlobalConfig.get().getSettings()
-
   await getSteamLibraries().then((libs) => {
     libs.forEach((path) => {
-      if (showValveProton) {
-        protonPaths.push(`${path}/steam/steamapps/common`)
-        protonPaths.push(`${path}/steamapps/common`)
-      }
+      protonPaths.push(`${path}/steam/steamapps/common`)
+      protonPaths.push(`${path}/steamapps/common`)
       protonPaths.push(`${path}/root/compatibilitytools.d`)
       protonPaths.push(`${path}/compatibilitytools.d`)
       return

@@ -533,9 +533,7 @@ export default class GOGGame implements Game {
 
     const {
       success: launchPrepSuccess,
-      failureReason: launchPrepFailReason,
-      gameModeBin,
-      steamRuntime
+      failureReason: launchPrepFailReason
     } = await prepareLaunch(gameSettings, logWriter, gameInfo, this.isNative())
     if (!launchPrepSuccess) {
       logWriter.logError(['Launch aborted:', launchPrepFailReason])
@@ -563,15 +561,9 @@ export default class GOGGame implements Game {
       ...getKnownFixesEnvVariables(this.id, 'gog')
     }
 
-    const wrappers = setupWrappers(
-      gameSettings,
-      gameModeBin,
-      steamRuntime?.length ? [...steamRuntime] : undefined
-    )
+    const wrappers = setupWrappers()
 
-    let wineFlag: string[] = wrappers.length
-      ? ['--wrapper', shlex.join(wrappers)]
-      : []
+    let wineFlag: string[] = []
 
     if (!this.isNative()) {
       const {
@@ -596,7 +588,7 @@ export default class GOGGame implements Game {
         ...wineEnvVars
       }
 
-      wineFlag = await getWineFlagsArray(gameSettings, shlex.join(wrappers))
+      wineFlag = await getWineFlagsArray(gameSettings, '')
     }
 
     const launchArgumentsArgs =
@@ -617,7 +609,6 @@ export default class GOGGame implements Game {
       '--platform',
       gameInfo.install.platform.toLowerCase(),
       ...shlex.split(launchArgumentsArgs),
-      ...shlex.split(gameSettings.launcherArgs ?? ''),
       ...args
     ]
 

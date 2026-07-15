@@ -2,14 +2,11 @@ import {
   CallRunnerOptions,
   GameInfo,
   Runner,
-  EnviromentVariable,
   WrapperEnv,
-  WrapperVariable,
   ExecResult,
   LaunchPreperationResult,
   WineInstallation,
   WineCommandArgs,
-  SteamRuntime,
   GameSettings,
   KnowFixesInfo,
   LaunchParams,
@@ -22,7 +19,6 @@ import { existsSync, mkdirSync } from 'graceful-fs'
 import { join, dirname, isAbsolute } from 'path'
 
 import {
-  getSteamRuntime,
   isEpicServiceOffline,
   quoteIfNecessary,
   errorHandler,
@@ -53,10 +49,8 @@ import { isOnline } from './online_monitor'
 import { showDialogBoxModalAuto } from './dialog/dialog'
 import { legendarySetup } from './storeManagers/legendary/setup'
 import { libraryManagerMap } from 'backend/storeManagers'
-import * as VDF from '@node-steam/vdf'
 import { readFileSync, writeFileSync } from 'fs'
 import { LegendaryCommand } from './storeManagers/legendary/commands'
-import { searchForExecutableOnPath } from './utils/os/path'
 import {
   createAbortController,
   deleteAbortController
@@ -296,93 +290,22 @@ function filterGameSettingsForLog(
 
   // remove settings that are not used on Linux
   if (isLinux) {
-    delete gameSettings.enableMsync
     delete gameSettings.wineCrossoverBottle
-    delete gameSettings.advertiseAvxForRosetta
 
-    if (notNative) {
-      const wineVersion = gameSettings.wineVersion
-      if (wineVersion) {
-        if (wineVersion.type === 'proton') {
-          delete gameSettings.autoInstallDxvk
-          delete gameSettings.autoInstallVkd3d
-        } else {
-          delete gameSettings.useSteamRuntime
-        }
-      }
-
-      if (isSteamDeck) {
-        delete gameSettings.autoInstallDxvkNvapi
-      }
-    } else {
-      // remove settings that are not used on native Linux games
+    if (!notNative) {
       delete gameSettings.wineVersion
       delete gameSettings.winePrefix
-      delete gameSettings.autoInstallDxvk
-      delete gameSettings.autoInstallDxvkNvapi
-      delete gameSettings.autoInstallVkd3d
-      delete gameSettings.enableFsync
-      delete gameSettings.enableEsync
-      delete gameSettings.enableFSR
-      delete gameSettings.enableWineWayland
-      delete gameSettings.enableHDR
-      delete gameSettings.enableWoW64
-      delete gameSettings.showFps
-      delete gameSettings.enableDXVKFpsLimit
-      delete gameSettings.eacRuntime
-      delete gameSettings.battlEyeRuntime
-      delete gameSettings.useGameMode
     }
   }
 
   // remove settings that are not used on Mac
   if (isMac) {
-    delete gameSettings.useGameMode
-    delete gameSettings.nvidiaPrime
-    delete gameSettings.battlEyeRuntime
-    delete gameSettings.eacRuntime
-    delete gameSettings.enableFSR
-    delete gameSettings.enableWineWayland
-    delete gameSettings.enableHDR
-    delete gameSettings.enableWoW64
     delete gameSettings.disableUMU
-    delete gameSettings.useSteamRuntime
-    delete gameSettings.enableFsync
+    delete gameSettings.wineCrossoverBottle
 
-    if (notNative) {
-      const wineType = gameSettings.wineVersion
-      delete gameSettings.preferSystemLibs
-      delete gameSettings.autoInstallVkd3d
-      delete gameSettings.autoInstallDxvkNvapi
-      if (wineType) {
-        if (wineType.type === 'wine') {
-          delete gameSettings.wineCrossoverBottle
-          delete gameSettings.advertiseAvxForRosetta
-          if (wineType.name?.includes('DXMT')) {
-            delete gameSettings.autoInstallDxvk
-          }
-        }
-
-        if (wineType.type === 'toolkit') {
-          delete gameSettings.autoInstallDxvk
-          delete gameSettings.wineCrossoverBottle
-        }
-
-        if (wineType.type === 'crossover') {
-          delete gameSettings.autoInstallDxvk
-          delete gameSettings.winePrefix
-        }
-      }
-    } else {
-      // remove settings that are not used on native Mac games
-      delete gameSettings.enableDXVKFpsLimit
+    if (!notNative) {
       delete gameSettings.wineVersion
       delete gameSettings.winePrefix
-      delete gameSettings.wineCrossoverBottle
-      delete gameSettings.advertiseAvxForRosetta
-      delete gameSettings.autoInstallDxvk
-      delete gameSettings.autoInstallDxvkNvapi
-      delete gameSettings.autoInstallVkd3d
     }
   }
 
@@ -458,19 +381,6 @@ async function prepareLaunch(
     '\n\n'
   ])
 
-  // Figure out where GameMode is located, if it's enabled
-  let gameModeBin: string | null = null
-  if (gameSettings.useGameMode) {
-    gameModeBin = await searchForExecutableOnPath('gamemoderun')
-    if (!gameModeBin) {
-      return {
-        success: false,
-        failureReason:
-          'GameMode is enabled, but `gamemoderun` executable could not be found on $PATH'
-      }
-    }
-  }
-
   if (
     (await isUmuSupported(gameSettings, false)) &&
     isOnline() &&
@@ -480,58 +390,8 @@ async function prepareLaunch(
     await download('umu')
   }
 
-  // If the Steam Runtime is enabled, find a valid one
-  let steamRuntime: string[] = []
-  const shouldUseRuntime =
-    gameSettings.useSteamRuntime &&
-    (isNative ||
-      (!(await isUmuSupported(gameSettings)) &&
-        gameSettings.wineVersion.type === 'proton'))
-
-  if (shouldUseRuntime) {
-    // Determine which runtime to use based on toolmanifest.vdf which is shipped with proton
-    let nonNativeRuntime: SteamRuntime['type'] = 'soldier'
-    if (!isNative) {
-      try {
-        const parentPath = dirname(gameSettings.wineVersion.bin)
-        const requiredAppId = VDF.parse(
-          readFileSync(join(parentPath, 'toolmanifest.vdf'), 'utf-8')
-        ).manifest?.require_tool_appid
-        if (requiredAppId === 1628350) nonNativeRuntime = 'sniper'
-      } catch (error) {
-        logError(
-          ['Failed to parse toolmanifest.vdf:', error],
-          LogPrefix.Backend
-        )
-      }
-    }
-
-    const runtimeType = isNative ? 'scout' : nonNativeRuntime
-    const { path, args } = await getSteamRuntime(runtimeType)
-    if (!path) {
-      return {
-        success: false,
-        failureReason:
-          'Steam Runtime is enabled, but no runtimes could be found\n' +
-          `Make sure Steam ${
-            isNative
-              ? 'is'
-              : `and the SteamLinuxRuntime - ${
-                  nonNativeRuntime === 'sniper' ? 'Sniper' : 'Soldier'
-                } are`
-          } installed`
-      }
-    }
-
-    logInfo(`Using Steam ${runtimeType} Runtime`, LogPrefix.Backend)
-
-    steamRuntime = [path, ...args]
-  }
-
   return {
     success: true,
-    gameModeBin: gameModeBin ?? undefined,
-    steamRuntime,
     offlineMode
   }
 }
@@ -721,22 +581,6 @@ async function prepareWineLaunch(
     ])
   }
 
-  if (
-    gameSettings.eacRuntime &&
-    isOnline() &&
-    !(await isInstalled('eac_runtime'))
-  ) {
-    await download('eac_runtime')
-  }
-
-  if (
-    gameSettings.battlEyeRuntime &&
-    isOnline() &&
-    !(await isInstalled('battleye_runtime'))
-  ) {
-    await download('battleye_runtime')
-  }
-
   const envVars = setupWineEnvVars(gameSettings, gameInfo.folder_name)
 
   return { success: true, envVars: envVars }
@@ -800,25 +644,9 @@ function getKnownFixesEnvVariables(appName: string, runner: Runner) {
  */
 function setupEnvVars(gameSettings: GameSettings, installPath?: string) {
   const ret: Record<string, string> = {}
-  if (gameSettings.nvidiaPrime) {
-    ret.DRI_PRIME = '1'
-    ret.__NV_PRIME_RENDER_OFFLOAD = '1'
-    ret.__GLX_VENDOR_LIBRARY_NAME = 'nvidia'
-  }
-
-  if (isMac && gameSettings.showFps) {
-    ret.MTL_HUD_ENABLED = '1'
-  }
 
   if (isLinux && installPath) {
-    // Used by steam runtime to mount the game directory to the container
     ret.STEAM_COMPAT_INSTALL_PATH = installPath
-  }
-
-  if (gameSettings.enviromentOptions) {
-    gameSettings.enviromentOptions.forEach((envEntry: EnviromentVariable) => {
-      ret[envEntry.key] = removeQuoteIfNecessary(envEntry.value)
-    })
   }
 
   // setup LD_PRELOAD if not defined
@@ -879,27 +707,11 @@ function setupWineEnvVars(gameSettings: GameSettings, gameId = '0') {
 
   const ret: Record<string, string> = {}
 
-  // Add WINEPREFIX / STEAM_COMPAT_DATA_PATH / CX_BOTTLE
   const steamInstallPath = join(userHome, '.steam', 'steam')
   switch (wineVersion.type) {
-    case 'wine': {
+    case 'wine':
       ret.WINEPREFIX = winePrefix
-
-      // Disable Winemenubuilder to not mess with file associations
-      const wmbDisableString = 'winemenubuilder.exe=d'
-      // If the user already set WINEDLLOVERRIDES, append to the end
-      const dllOverridesVar = gameSettings.enviromentOptions.find(
-        ({ key }) => key.toLowerCase() === 'winedlloverrides'
-      )
-      if (dllOverridesVar) {
-        ret[dllOverridesVar.key] =
-          dllOverridesVar.value + ';' + wmbDisableString
-      } else {
-        ret.WINEDLLOVERRIDES = wmbDisableString
-      }
-
       break
-    }
     case 'proton':
       ret.STEAM_COMPAT_CLIENT_INSTALL_PATH = steamInstallPath
       ret.WINEPREFIX = winePrefix
@@ -914,195 +726,17 @@ function setupWineEnvVars(gameSettings: GameSettings, gameId = '0') {
       break
   }
 
-  if (gameSettings.showFps) {
-    if (isMac) ret.MTL_HUD_ENABLED = '1'
-    else ret.DXVK_HUD = 'fps'
-  }
-  if (gameSettings.enableDXVKFpsLimit) {
-    ret.DXVK_FRAME_RATE = gameSettings.DXVKFpsCap
-  }
-  if (gameSettings.enableFSR) {
-    ret.WINE_FULLSCREEN_FSR = '1'
-    ret.WINE_FULLSCREEN_FSR_STRENGTH =
-      gameSettings.maxSharpness?.toString() || '2'
-  } else {
-    ret.WINE_FULLSCREEN_FSR = '0'
-  }
-  if (gameSettings.enableEsync && wineVersion.type !== 'proton') {
-    ret.WINEESYNC = '1'
-  }
-  if (!gameSettings.enableEsync && wineVersion.type === 'proton') {
-    ret.PROTON_NO_ESYNC = '1'
-  }
-  if (
-    isMac &&
-    (gameSettings.enableMsync || wineVersion.name.endsWith('-DXMT'))
-  ) {
-    ret.WINEMSYNC = '1'
-    // This is to solve a problem with d3dmetal
-    if (wineVersion.type === 'toolkit') {
-      ret.WINEESYNC = '1'
-    }
-  }
-  if (isLinux && gameSettings.enableFsync && wineVersion.type !== 'proton') {
-    ret.WINEFSYNC = '1'
-  }
-  if (isLinux && !gameSettings.enableFsync && wineVersion.type === 'proton') {
-    ret.PROTON_NO_FSYNC = '1'
-  }
-  if (isLinux && gameSettings.enableWineWayland) {
-    if (wineVersion.type === 'proton') {
-      ret.PROTON_ENABLE_WAYLAND = '1'
-      if (gameSettings.enableHDR) {
-        ret.PROTON_ENABLE_HDR = '1'
-      }
-    } else {
-      ret.DISPLAY = ''
-      if (gameSettings.enableHDR) {
-        ret.DXVK_HDR = '1'
-      }
-    }
-  }
-  if (isLinux && gameSettings.enableWoW64) {
-    if (wineVersion.type === 'proton') {
-      ret.PROTON_USE_WOW64 = '1'
-    } else {
-      ret.WINEARCH = 'wow64'
-    }
-  }
   if (wineVersion.type === 'proton') {
-    if (gameSettings.autoInstallDxvkNvapi) {
-      ret.PROTON_ENABLE_NVAPI = '1'
-      ret.DXVK_NVAPI_ALLOW_OTHER_DRIVERS = '1'
-    }
-    // proton 9 enabled NVAPI by default
-    else {
-      ret.PROTON_DISABLE_NVAPI = '1'
-    }
-  }
-  if (
-    isLinux &&
-    gameSettings.autoInstallDxvkNvapi &&
-    wineVersion.type === 'wine'
-  ) {
-    ret.DXVK_ENABLE_NVAPI = '1'
-    ret.DXVK_NVAPI_ALLOW_OTHER_DRIVERS = '1'
-  }
-  if (isLinux && gameSettings.eacRuntime) {
-    ret.PROTON_EAC_RUNTIME = join(runtimePath, 'eac_runtime')
-  }
-  if (isLinux && gameSettings.battlEyeRuntime) {
-    ret.PROTON_BATTLEYE_RUNTIME = join(runtimePath, 'battleye_runtime')
-  }
-  if (wineVersion.type === 'proton') {
-    // If Proton, set the Steam AppID to enable Steam support
     ret.STEAM_COMPAT_APP_ID = process.env.STEAM_COMPAT_APP_ID || '0'
     ret.SteamAppId = process.env.SteamAppId || ret.STEAM_COMPAT_APP_ID
-    // This sets the name of the log file given when setting PROTON_LOG=1
     ret.SteamGameId = process.env.SteamGameId || `relic-${gameId}`
     ret.PROTON_LOG_DIR = userHome
-    // add back default wine/dxvk debug logging
-    if (gameSettings?.verboseLogs) {
-      if (
-        !gameSettings?.enviromentOptions.find((env) => env.key === 'WINEDEBUG')
-      )
-        ret.WINEDEBUG = '+fixme'
-      if (
-        !gameSettings?.enviromentOptions.find(
-          (env) => env.key === 'DXVK_LOG_LEVEL'
-        )
-      )
-        ret.DXVK_LOG_LEVEL = 'info'
-      if (
-        !gameSettings?.enviromentOptions.find(
-          (env) => env.key === 'VKD3D_DEBUG'
-        )
-      )
-        ret.VKD3D_DEBUG = 'fixme'
-    }
-  }
-  if (!gameSettings.preferSystemLibs && wineVersion.type === 'wine') {
-    // https://github.com/ValveSoftware/Proton/blob/4221d9ef07cc38209ff93dbbbca9473581a38255/proton#L1091-L1093
-    if (!process.env.ORIG_LD_LIBRARY_PATH) {
-      ret.ORIG_LD_LIBRARY_PATH = process.env.LD_LIBRARY_PATH ?? ''
-    }
-
-    const { lib32, lib } = wineVersion
-    if (lib32 && lib) {
-      // append wine libs at the beginning
-      ret.LD_LIBRARY_PATH = [lib, lib32, process.env.LD_LIBRARY_PATH]
-        .filter(Boolean)
-        .join(':')
-
-      // https://github.com/ValveSoftware/Proton/blob/4221d9ef07cc38209ff93dbbbca9473581a38255/proton#L1099
-      // NOTE: Proton does not make sure that these folders exist first, I believe we should :^)
-      const gstp_path_lib64 = join(lib, 'gstreamer-1.0')
-      const gstp_path_lib32 = join(lib32, 'gstreamer-1.0')
-      if (existsSync(gstp_path_lib64) && existsSync(gstp_path_lib32)) {
-        ret.GST_PLUGIN_SYSTEM_PATH_1_0 = gstp_path_lib64 + ':' + gstp_path_lib32
-      }
-
-      // https://github.com/ValveSoftware/Proton/blob/4221d9ef07cc38209ff93dbbbca9473581a38255/proton#L1097
-      const winedll_path_lib64 = join(lib, 'wine')
-      const winedll_path_lib32 = join(lib32, 'wine')
-      if (existsSync(winedll_path_lib64) && existsSync(winedll_path_lib32)) {
-        ret.WINEDLLPATH = winedll_path_lib64 + ':' + winedll_path_lib32
-      }
-    } else {
-      logError(
-        [
-          `Couldn't find all library folders of ${wineVersion.name}!`,
-          `Missing ${lib32} and/or ${lib}!`,
-          `Falling back to system libraries!`
-        ].join('\n')
-      )
-    }
-  }
-  if (
-    gameSettings.advertiseAvxForRosetta &&
-    isMac &&
-    wineVersion.type === 'toolkit'
-  ) {
-    ret.ROSETTA_ADVERTISE_AVX = '1'
-  }
-  // Workaround for Steam Input virtual gamepad not working for games launched through HGL from Steam
-  // using deprecated WineGE/ProtonGE releases (<= 8.x) following SDL behavior change on version >= 2.30
-  // https://github.com/libsdl-org/SDL/issues/14410
-  // https://gitlab.com/freedesktop-sdk/freedesktop-sdk/-/issues/1818
-  if (
-    isLinux &&
-    /(GE|Wine|Proton)-(Proton[7-8]|[4-7].*-GE|GE-4.[0-9]*)/.test(
-      wineVersion.name
-    )
-  ) {
-    ret.SteamVirtualGamepadInfo = ''
-    logWarning(
-      `Deprecated Wine-GE/Proton-GE release (<= 8.x) detected. Applying workaround for Steam Input virtual gamepad detection.`
-    )
   }
   return ret
 }
 
-function setupWrappers(
-  gameSettings: GameSettings,
-  gameModeBin?: string,
-  steamRuntime?: string[]
-): Array<string> {
-  const wrappers: string[] = []
-
-  if (gameSettings.wrapperOptions) {
-    gameSettings.wrapperOptions.forEach((wrapperEntry: WrapperVariable) => {
-      wrappers.push(wrapperEntry.exe)
-      wrappers.push(...shlex.split(wrapperEntry.args ?? ''))
-    })
-  }
-  if (gameModeBin) {
-    wrappers.push(gameModeBin)
-  }
-  if (steamRuntime) {
-    wrappers.push(...steamRuntime)
-  }
-  return wrappers.filter((n) => n)
+function setupWrappers(): Array<string> {
+  return []
 }
 
 /**

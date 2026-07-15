@@ -886,8 +886,6 @@ export default class LegendaryGame implements Game {
     const {
       success: launchPrepSuccess,
       failureReason: launchPrepFailReason,
-      gameModeBin,
-      steamRuntime,
       offlineMode
     } = await prepareLaunch(gameSettings, logWriter, gameInfo, this.isNative())
     if (!launchPrepSuccess) {
@@ -910,34 +908,7 @@ export default class LegendaryGame implements Game {
       ...getKnownFixesEnvVariables(this.appName, 'legendary')
     }
 
-    // Use the wrapper EXE to launch games.
-    if (
-      ![undefined, '0', 'false'].includes(commandEnv['USE_FAKE_EPIC_EXE']) &&
-      existsSync(fakeEpicExePath)
-    ) {
-      if (isWindows) {
-        commandEnv['LEGENDARY_WRAPPER_EXE'] = fakeEpicExePath
-      } else {
-        // on linux and mac, we copy the fake exe
-        const fakeExeWinPath = 'C:\\windows\\command\\EpicGamesLauncher.exe'
-        const fakeEpicExePathInPrefix = await getWinePath({
-          path: fakeExeWinPath,
-          gameSettings,
-          variant: 'unix'
-        })
-
-        // we copy the file inside the prefix to avoid permission issues
-        if (!existsSync(fakeEpicExePathInPrefix))
-          copyFileSync(fakeEpicExePath, fakeEpicExePathInPrefix)
-        commandEnv['LEGENDARY_WRAPPER_EXE'] = fakeExeWinPath
-      }
-    }
-
-    const wrappers = setupWrappers(
-      gameSettings,
-      gameModeBin,
-      steamRuntime?.length ? [...steamRuntime] : undefined
-    )
+    const wrappers = setupWrappers()
 
     let wineFlags: AllowedWineFlags = wrappers.length
       ? { '--wrapper': NonEmptyString.parse(shlex.join(wrappers)) }
@@ -984,7 +955,7 @@ export default class LegendaryGame implements Game {
     const command: LegendaryCommand = {
       subcommand: 'launch',
       appName: LegendaryAppName.parse(appNameToLaunch),
-      extraArguments: [...args, launchArgumentArgs, gameSettings.launcherArgs]
+      extraArguments: [...args, launchArgumentArgs]
         .filter(Boolean)
         .join(' '),
       ...wineFlags

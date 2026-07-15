@@ -599,9 +599,7 @@ export default class ZoomGame implements Game {
 
     const {
       success: launchPrepSuccess,
-      failureReason: launchPrepFailReason,
-      gameModeBin,
-      steamRuntime
+      failureReason: launchPrepFailReason
     } = await prepareLaunch(gameSettings, logWriter, gameInfo, this.isNative())
     if (!launchPrepSuccess) {
       logWriter.logError(['Launch aborted:', launchPrepFailReason])
@@ -622,11 +620,7 @@ export default class ZoomGame implements Game {
       ...getKnownFixesEnvVariables(this.id, 'zoom')
     }
 
-    const wrappers = setupWrappers(
-      gameSettings,
-      gameModeBin,
-      steamRuntime?.length ? [...steamRuntime] : undefined
-    )
+    const wrappers = setupWrappers()
 
     const launchArgumentsArgs =
       launchArguments &&
@@ -636,7 +630,6 @@ export default class ZoomGame implements Game {
 
     const commandParts = [
       ...shlex.split(launchArgumentsArgs),
-      ...shlex.split(gameSettings.launcherArgs ?? ''),
       ...args
     ]
 

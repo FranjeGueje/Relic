@@ -303,9 +303,7 @@ export default class NileGameManager implements Game {
 
     const {
       success: launchPrepSuccess,
-      failureReason: launchPrepFailReason,
-      gameModeBin,
-      steamRuntime
+      failureReason: launchPrepFailReason
     } = await prepareLaunch(gameSettings, logWriter, gameInfo, this.isNative())
 
     if (!launchPrepSuccess) {
@@ -334,18 +332,11 @@ export default class NileGameManager implements Game {
       ...getKnownFixesEnvVariables(this.id, 'nile')
     }
 
-    const wrappers = setupWrappers(
-      gameSettings,
-      gameModeBin,
-      steamRuntime?.length ? [...steamRuntime] : undefined
-    )
+    const wrappers = setupWrappers()
 
-    let wineFlag: string[] = wrappers.length
-      ? ['--wrapper', shlex.join(wrappers)]
-      : []
+    let wineFlag: string[] = []
 
     if (!this.isNative()) {
-      // -> We're using Wine/Proton on Linux or CX on Mac
       const {
         success: wineLaunchPrepSuccess,
         failureReason: wineLaunchPrepFailReason,
@@ -369,7 +360,7 @@ export default class NileGameManager implements Game {
       }
 
       wineFlag = [
-        ...(await getWineFlagsArray(gameSettings, shlex.join(wrappers))),
+        ...(await getWineFlagsArray(gameSettings, '')),
         '--wine-prefix',
         gameSettings.winePrefix
       ]
@@ -383,10 +374,9 @@ export default class NileGameManager implements Game {
 
     const commandParts = [
       'launch',
-      ...exeOverrideFlag, // Check if this works
+      ...exeOverrideFlag,
       ...wineFlag,
       ...shlex.split(launchArgumentsArgs),
-      ...shlex.split(gameSettings.launcherArgs ?? ''),
       this.id,
       ...args
     ]
