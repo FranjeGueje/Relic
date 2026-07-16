@@ -1,4 +1,4 @@
-# TODOs - Limpieza de código muerto en Relic (HISTÓRICO - COMPLETADO)
+# TODOs - Limpieza de código muerto en Relic
 
 ## Contexto
 Relic es un fork de Heroic Game Launcher, Linux-only. Según AGENTS.md:
@@ -7,15 +7,14 @@ Relic es un fork de Heroic Game Launcher, Linux-only. Según AGENTS.md:
 - Relic NO instala componentes de Wine automáticamente
 - Solo: autenticación, descarga, instalación, detección de ejecutable, script externo → Steam
 
-## Estado final
+## Estado actual
 - `pnpm codecheck` → 0 errores
 - `pnpm dist:linux` → AppImage genera correctamente
-- ~7500+ líneas de código muerto eliminadas en ~100+ archivos
-- **Todas las fases completadas**
+- ~7500+ líneas de código muerto identificadas en ~100+ archivos
 
 ---
 
-## FASE 1: Limpieza segura (sin riesgo de romper nada) ✅ COMPLETADA
+## FASE 1: Limpieza segura (sin riesgo de romper nada)
 
 ### 1.1 - Eliminar dependencias no usadas en package.json
 Eliminar de `dependencies` y `devDependencies`:
@@ -63,7 +62,7 @@ Archivos a editar:
 
 ---
 
-## FASE 2: Limpieza de settings Wine prohibidas por AGENTS.md ✅ COMPLETADA
+## FASE 2: Limpieza de settings Wine prohibidas por AGENTS.md
 
 ### 2.1 - Eliminar toggles Esync/Fsync/FSR/WineWayland/WoW64/DXVKFpsLimit
 Archivos a borrar:
@@ -116,7 +115,7 @@ Limpiar:
 
 ---
 
-## FASE 3: Limpieza de gestión Wine/Proton ✅ COMPLETADA
+## FASE 3: Limpieza de gestión Wine/Proton
 
 ### 3.1 - Eliminar WineVersionSelector y WinePrefix
 Archivos a borrar:
@@ -174,7 +173,7 @@ Limpiar:
 
 ---
 
-## FASE 4: Limpieza de ramas isMac/isWindows muertas ✅ COMPLETADA
+## FASE 4: Limpieza de ramas isMac/isWindows muertas
 
 ### 4.1 - Eliminar ramas `if (isMac)` en backend
 Archivos principales:
@@ -235,18 +234,17 @@ Archivos principales:
 - **5.8**: 94 archivos de traducción limpiados (eosOverlay, before/after-launch-script-path, disableUMU, protondb).
 - **5.9**: HISTORY_REMOVE.md actualizado.
 
-### FASE 6: Eliminación de settings muertos/sin UI ✅ COMPLETADA
-
-- **6.1-6.10**: 10 settings eliminados: `minimizeOnLaunch`, `disableController`, `disableAnimations`, `disableLogs`, `downloadNoHttps`, `disablePlaytimeSync`, `darkTrayIcon`, `disableSmoothScrolling`, `framelessWindow`, `startInTray`. Eliminados de types, config, backend, frontend, tests y UI. Verificado con `pnpm codecheck` (0 errores) y `pnpm dist:linux`.
+### Pendiente para fase futura
+- Ninguno. Todos los settings sin UI han sido analizados y eliminados (Fase 6).
 
 ---
 
-## Fin del plan de limpieza
+## Notas para el modelo que ejecute
 
-Todas las fases planificadas han sido ejecutadas y verificadas.
-
-Este documento se mantiene como registro histórico del trabajo realizado.
-
-## Notas (históricas - ya no aplican)
-
-Todas las fases han sido completadas. Este documento se conserva únicamente como referencia del proceso de limpieza.
+1. **Orden de ejecución**: FASE 1 → 2 → 3 → 4 → 5. Cada fase es incremental.
+2. **Verificación después de cada tarea**: `pnpm codecheck` (0 errores) y `pnpm dist:linux` (AppImage genera).
+3. **Commit después de cada fase**: para poder revertir si algo falla.
+4. **HISTORY_REMOVE.md**: actualizar después de cada tarea completada.
+5. **No romper el flujo principal**: login → descargar → instalar → detectar ejecutable → script externo → Steam.
+6. **umu-launcher**: puede ser necesario para el script externo. No eliminar sin analizar.
+7. Conservar: isUmuSupported, getUmuPath (necesario para script externo)
