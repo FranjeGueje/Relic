@@ -6,6 +6,8 @@
 
 Relic es un fork de Heroic Game Launcher orientado exclusivamente a Linux.
 
+Relic funciona exclusivamente en Linux. No existe soporte para macOS ni Windows. Todo el código específico de esas plataformas ha sido eliminado.
+
 Su propósito es permitir iniciar sesión en Epic Games, GOG y Amazon Games, descargar e instalar juegos y añadirlos automáticamente a Steam.
 
 Relic NO es un launcher.
@@ -40,6 +42,8 @@ Relic debe permitir:
 - Login en Epic Games.
 - Login en GOG.
 - Login en Amazon Games.
+- Login en Zoom Platform.
+- Añadir juegos manualmente (Sideload).
 - Mostrar biblioteca.
 - Descargar juegos.
 - Actualizar juegos.
@@ -177,7 +181,8 @@ Actualizar
 
 Desinstalar
 
-Añadir a Steam
+La integración con Steam ocurre automáticamente al finalizar la instalación
+mediante el script externo. No hay un botón "Añadir a Steam".
 
 Abrir carpeta
 
@@ -186,6 +191,9 @@ Abrir Steam
 Eliminar cualquier opción relacionada con Wine o Proton.
 
 Reducir al mínimo el número de pantallas.
+
+Relic dispone de un modo consola (ConsoleMode) para navegación con mando,
+accesible desde la interfaz gráfica o por línea de comandos.
 
 ---
 
@@ -280,9 +288,8 @@ Más estabilidad.
 
 # Historial
 
-Quiero que en fichero HISTORY_REMOVE.md se vaya guardando todas las tareas que se han ido haciendo y lo más importante: quitando.
-
-Que sea breve, no extenso.
+- `HISTORY_REMOVE.md` — documenta todo el código eliminado durante el proceso de limpieza del fork.
+- `HISTORY_ADD.md` — registra cada funcionalidad nueva o modificada respecto a Heroic que se añada en el futuro.
 
 # Objetivo final
 
