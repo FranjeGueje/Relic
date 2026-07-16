@@ -154,14 +154,9 @@
     "installedPlatform": "Instalatutako plataforma",
     "path": "Instalazio-ibilbidea",
     "size": "Tamaina",
-    "syncsaves": "Sinkronizatu gordetakoak",
     "version": "Bertsioa",
-    "apple-gaming-wiki": "AppleGamingWiki balorazioa",
     "clickToOpen": "Egin klik irekitzeko",
-    "game-scores": "Joko puntuazioak",
     "installedInfo": "Instalatutako informazioa",
-    "protondb-compatibility-info": "Protoien bateragarritasun maila",
-    "steamdeck-compatibility-info": "SteamDeck bateragarritasuna",
     "third-party-app": ""
   },
   "install": {
@@ -171,17 +166,7 @@
     "path-not-writtable": "Ohartarazpena: sarbide-ibilbidea ezin da idatzi.",
     "space-after-install": "Instalazioaren ondoren",
     "wineprefix": "WinePrefix",
-    "wineversion": "Ardoaren bertsioa",
-    "anticheat-warning": {
-      "message": "Anticheat-a hautsita edo ukatu egiten da. Jokoak ez du funtzionatuko. Instalatu nahi duzu hala ere?",
-      "cancel": "Ez",
-      "install": "Bai (ulertzen dut ez duela funtzionatuko)",
-      "title": "Antiiruzurra hautsita/ukatua",
-      "multiplayer_message": "Anticheat-a hautsita edo ukatu egiten da. Jokoak ez du funtzionatuko. Instalatu nahi duzu hala ere?",
-      "disabled_installation": "",
-      "install_anyway": "",
-      "ok": ""
-    }
+    "wineversion": "Ardoaren bertsioa"
   },
   "label": {
     "game": {
@@ -201,7 +186,6 @@
     "steam": {
       "pleaseWait": "Please wait..."
     },
-    "winetricks": "",
     "redist": ""
   },
   "launch": {
@@ -209,23 +193,18 @@
     "default": ""
   },
   "not_logged_in": {
-    "epic": "You are not logged in with an Epic account in Heroic. Don't use the store page to login, click the following button instead:",
-    "gog": "You are not logged in with a GOG account in Heroic. Don't use the store page to login, click the following button instead:",
+    "epic": "You are not logged in with an Epic account in Relic. Don't use the store page to login, click the following button instead:",
+    "gog": "You are not logged in with a GOG account in Relic. Don't use the store page to login, click the following button instead:",
     "login": "Log in",
     "title": "You are NOT logged in",
-    "amazon": "You are not logged in with an Epic account in Heroic. Don't use the store page to login, click the following button instead:",
-    "zoom": "You are not logged in with a GOG account in Heroic. Don't use the store page to login, click the following button instead:"
+    "amazon": "You are not logged in with an Epic account in Relic. Don't use the store page to login, click the following button instead:",
+    "zoom": "You are not logged in with a GOG account in Relic. Don't use the store page to login, click the following button instead:"
   },
   "report_problem": "Joko hau gauzatzean arazo baten berri ematea",
   "sdl": {
     "title": "Instalatzeko osagaiak hautatzea"
   },
-  "setting": {
-    "winecrossoverbottle": "CrossOver botila",
-    "warn-use-shared-wine-config": "",
-    "show-wine-settings": "",
-    "use-shared-wine-config": ""
-  },
+  "setting": {},
   "sideload": {
     "field": {
       "title": "Title"
@@ -280,25 +259,13 @@
     "gog-goodie": "Joko hau ez dirudi instalagarria denik. Egiaztatu deskarga daitekeen edukia https://gog.com/account helbidean",
     "goodie": "Ez da instalagarria",
     "redist": "",
-    "winetricks": "",
     "importing": ""
   },
   "submenu": {
-    "addShortcut": "Sarbide zuzena gehitu",
-    "addToSteam": "Gehitu Steam-i",
     "change": "Instalazio-ibilbidea aldatu",
-    "disableEosOverlay": "OS-en gainjartzea desgaitzea",
-    "enableEosOverlay": "OS-en gainjartzea gaitzea",
     "move": "Mugimendu jokoa",
-    "protondb": "Bateragarritasuna egiaztatu",
-    "removeFromSteam": "Steam-en ezabatzea",
-    "removeShortcut": "Sarbide zuzenak kendu",
-    "settings": "Konfigurazioa",
-    "store": "Dendaren orrialdea",
     "verify": "Egiaztatzea eta konpontzea",
-    "extraInfo": "Informazio gehigarria",
-    "logs": "Erregistroak",
-    "categories": ""
+    "extraInfo": "Informazio gehigarria"
   },
   "help": {
     "cloud_save_unsupported": "Joko honek ez du onartzen hodeian gordetzea. Informazio hau jokoen garatzaileek ematen dute. Zenbait jokok hodeian gordetzeko sistema propioa ezartzen dute",
@@ -316,11 +283,6 @@
       "resume": "",
       "pause": ""
     }
-  },
-  "third-party-managed": {
-    "header": "",
-    "notice2": "",
-    "notice1": ""
   },
   "modifyInstall": {
     "redMod": {

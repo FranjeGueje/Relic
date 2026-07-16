@@ -153,14 +153,9 @@
     "installedPlatform": "Installed Platform",
     "path": "നടീലിടം",
     "size": "വലുപ്പം",
-    "syncsaves": "സൂക്ഷിക്കപ്പെട്ട ഒന്നിപ്പിക്കലുകള്",
     "version": "പതിപ്പ്",
-    "apple-gaming-wiki": "AppleGamingWiki റേറ്റിംഗ്",
     "clickToOpen": "തുറക്കാൻ ക്ലിക്ക് ചെയ്യുക",
-    "game-scores": "ഗെയിം സ്കോറുകൾ",
     "installedInfo": "ഇൻസ്റ്റാൾ ചെയ്ത വിവരങ്ങൾ",
-    "protondb-compatibility-info": "പ്രോട്ടോൺ കോംപാറ്റിബിലിറ്റി ടയർ",
-    "steamdeck-compatibility-info": "SteamDeck അനുയോജ്യത",
     "third-party-app": ""
   },
   "install": {
@@ -170,15 +165,7 @@
     "path-not-writtable": "Warning: path might not be writable.",
     "space-after-install": "After Install",
     "wineprefix": "വൈൻ പ്രിഫിക്സ്",
-    "wineversion": "Wine Version",
-    "anticheat-warning": {
-      "ok": "ശരി",
-      "cancel": "",
-      "disabled_installation": "",
-      "install_anyway": "",
-      "multiplayer_message": "",
-      "title": ""
-    }
+    "wineversion": "Wine Version"
   },
   "label": {
     "game": {
@@ -200,7 +187,6 @@
       "pleaseWait": "Please wait...",
       "installation": "നടീല് നിര്ത്തൂ"
     },
-    "winetricks": "",
     "redist": ""
   },
   "launch": {
@@ -208,23 +194,18 @@
     "default": ""
   },
   "not_logged_in": {
-    "epic": "You are not logged in with an Epic account in Heroic. Don't use the store page to login, click the following button instead:",
-    "gog": "You are not logged in with a GOG account in Heroic. Don't use the store page to login, click the following button instead:",
+    "epic": "You are not logged in with an Epic account in Relic. Don't use the store page to login, click the following button instead:",
+    "gog": "You are not logged in with a GOG account in Relic. Don't use the store page to login, click the following button instead:",
     "login": "Log in",
     "title": "You are NOT logged in",
-    "amazon": "You are not logged in with an Epic account in Heroic. Don't use the store page to login, click the following button instead:",
-    "zoom": "You are not logged in with a GOG account in Heroic. Don't use the store page to login, click the following button instead:"
+    "amazon": "You are not logged in with an Epic account in Relic. Don't use the store page to login, click the following button instead:",
+    "zoom": "You are not logged in with a GOG account in Relic. Don't use the store page to login, click the following button instead:"
   },
   "report_problem": "Report a problem running this game",
   "sdl": {
     "title": "നടുവാനുള്ള ഘടകങ്ങള് തിരഞ്ഞെടുക്കൂ"
   },
-  "setting": {
-    "winecrossoverbottle": "ക്രോസ്സോവര് കുപ്പി",
-    "warn-use-shared-wine-config": "",
-    "show-wine-settings": "",
-    "use-shared-wine-config": ""
-  },
+  "setting": {},
   "sideload": {
     "field": {
       "title": "Title"
@@ -279,25 +260,13 @@
     "goodie": "ഇൻസ്റ്റാൾ ചെയ്യാൻ കഴിയില്ല",
     "gog-goodie": "ഈ ഗെയിം ഇൻസ്റ്റാൾ ചെയ്യാൻ കഴിയുന്നതായി തോന്നുന്നില്ല. https://gog.com/account എന്നതിൽ ഡൗൺലോഡ് ചെയ്യാവുന്ന ഉള്ളടക്കം പരിശോധിക്കുക",
     "redist": "",
-    "winetricks": "",
     "importing": "ഇറക്കുമതി ചെയ്യൂ."
   },
   "submenu": {
-    "addShortcut": "കുറുക്കുവഴി ചേര്ക്കൂ",
-    "addToSteam": "Add to Steam",
     "change": "നടീലിടം മാറ്റുന്നു",
-    "disableEosOverlay": "Disable EOS Overlay",
-    "enableEosOverlay": "Enable EOS Overlay",
     "move": "കളി മാറ്റൂ",
-    "protondb": "പറ്റുമോന്നു നോക്കൂ",
-    "removeFromSteam": "Remove from Steam",
-    "removeShortcut": "Remove shortcuts",
-    "settings": "ക്രമീകരണങ്ങള്",
-    "store": "കടത്താള്",
     "verify": "കണ്ടെത്തി നന്നാക്കൂ",
-    "extraInfo": "അധിക വിവരങ്ങൾ",
-    "logs": "രേഖകൾ",
-    "categories": "വിഭാഗങ്ങൾ"
+    "extraInfo": "അധിക വിവരങ്ങൾ"
   },
   "help": {
     "cloud_save_unsupported": "ഈ ഗെയിം ക്ലൗഡ് സേവുകളെ പിന്തുണയ്ക്കുന്നില്ല. ഗെയിം ഡെവലപ്പർമാരാണ് ഈ വിവരങ്ങൾ നൽകിയിരിക്കുന്നത്. ചില ഗെയിമുകൾ അവരുടെ സ്വന്തം ക്ലൗഡ് സേവ് സിസ്റ്റം നടപ്പിലാക്കുന്നു",
@@ -325,11 +294,6 @@
     },
     "nodlcs": "",
     "versionCollapsable": ""
-  },
-  "third-party-managed": {
-    "header": "",
-    "notice2": "",
-    "notice1": ""
   },
   "open-saves-folder": "",
   "wikiLink": "",

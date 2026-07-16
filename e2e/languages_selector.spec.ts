@@ -2,7 +2,7 @@ import { supportedLanguages } from '../src/common/languages'
 import { test } from '@playwright/test'
 import { electronTest } from './helpers'
 
-// ensure heroic always render correctly for all languages when library is empty
+// ensure relic always render correctly for all languages when library is empty
 electronTest('Settings', async (app, page) => {
   test.setTimeout(120_000)
 

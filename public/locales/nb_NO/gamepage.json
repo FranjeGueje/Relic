@@ -156,14 +156,9 @@
     "installedPlatform": "Installert plattform",
     "path": "Installasjonssti",
     "size": "Størrelse",
-    "syncsaves": "Synkroniser lagrer",
     "version": "Versjon",
-    "apple-gaming-wiki": "AppleGamingWiki-vurdering",
     "clickToOpen": "Klikk for å åpne",
-    "game-scores": "Spillresultater",
     "installedInfo": "Installert informasjon",
-    "protondb-compatibility-info": "Proton-kompatibilitetsnivå",
-    "steamdeck-compatibility-info": "SteamDeck-kompatibilitet",
     "third-party-app": "Tredjepartsbehandler"
   },
   "install": {
@@ -173,15 +168,7 @@
     "path-not-writtable": "Advarsel: banen er kanskje ikke skrivbar.",
     "space-after-install": "Etter installasjon",
     "wineprefix": "WinePrefix",
-    "wineversion": "Wine-versjon",
-    "anticheat-warning": {
-      "ok": "Ok",
-      "install_anyway": "Ja (jeg forstår at flerspillerfunksjonene ikke vil fungere)",
-      "disabled_installation": "Dette spillet bruker anti-jukse-programvare som ikke er kompatibelt med operativsystemet ditt, eller at har ikke utviklerne til dette spillet skrudd det på. Dette betyr at flerspillerdelen av spillet ikke kommer til å fungere, og det er ingenting du (eller Heroic) kan gjøre med det.<br /><br /> Hvis du vil installere det og prøve det allikevel, gå til «Innstillinger», «Avansert», og skru på installering av spill med ødelagt eller ikke-fungerende anti-jukse-programmer.<br /><br />Merk at det ikke finnes noen løsning på dette problemet og du kan risikere å bli bannlyst fra spillet.",
-      "multiplayer_message": "Støtten for anti-juks er ødelagt eller avvist. Spillet vil kanskje starte, men flerspillerfunksjonene vil ikke fungere. Vil du installere det likevel?",
-      "cancel": "Nei",
-      "title": "Anti-juks ødelagt/avvist"
-    }
+    "wineversion": "Wine-versjon"
   },
   "label": {
     "game": {
@@ -199,7 +186,6 @@
     "launching": "Starter",
     "ubisoft": "Installerer Ubisoft Connect",
     "redist": "Installerer redistributables",
-    "winetricks": "Installerer Winetricks-pakker",
     "steam": {
       "pleaseWait": "Please wait",
       "abort": "Avbryt installering",
@@ -213,18 +199,18 @@
       "install-path": "Installasjonssti for Steam",
       "installation": "Steam-installasjon",
       "installing": "Installerer",
-      "launch": "Start Steam med Heroics kompatibilitetslag",
+      "launch": "Start Steam med Relics kompatibilitetslag",
       "launching": "Starter Steam...",
       "macOS": "macOS 14.0 eller nyere",
-      "install-tooltip": "Dette installerer Windows-versjonen av Steam og kjører det gjennom et Heroic-kompatibilitetslag. \n\n    Noen spill, spesielt eldre spill, nyere 3D-spill, eller de med antijukseprogramvare, kan hende at ikke fungerer riktig. \n\n    ",
-      "notification": "Heroic vil si ifra når installasjonen er ferdig.",
+      "install-tooltip": "Dette installerer Windows-versjonen av Steam og kjører det gjennom et Relic-kompatibilitetslag. \n\n    Noen spill, spesielt eldre spill, nyere 3D-spill, eller de med antijukseprogramvare, kan hende at ikke fungerer riktig. \n\n    ",
+      "notification": "Relic vil si ifra når installasjonen er ferdig.",
       "patience": "Hvis du ønsker å fortsette, bemerk at det kan ta noen minutter å fullføre, avhengig av internetthastigheten og systemkonfigurasjonen din.",
       "ram": "8 GB RAM",
       "recommended": "Anbefalte spesifikasjoner for en bedre opplevelse",
       "select-path": "Velg innstallasjonsmappe for Steam",
       "specificVersion-pt1": "Dette vil laste den en spesifikk versjon av Steam fra",
       "specificVersion-pt2": "archive.org",
-      "specificVersion-pt3": "som har blitt modifisert for å fungere gjennom Heroic, siden nyere versjoner av Steam ikke fungerer på macOS."
+      "specificVersion-pt3": "som har blitt modifisert for å fungere gjennom Relic, siden nyere versjoner av Steam ikke fungerer på macOS."
     }
   },
   "launch": {
@@ -232,23 +218,18 @@
     "default": "Standard"
   },
   "not_logged_in": {
-    "epic": "Du er ikke logget inn med en Epic-konto i Heroic. Ikke bruk butikksiden for å logge inn, klikk i stedet på følgende knapp:",
-    "gog": "Du er ikke logget inn med en GOG-konto i Heroic. Ikke bruk butikksiden for å logge inn, klikk i stedet på følgende knapp:",
+    "epic": "Du er ikke logget inn med en Epic-konto i Relic. Ikke bruk butikksiden for å logge inn, klikk i stedet på følgende knapp:",
+    "gog": "Du er ikke logget inn med en GOG-konto i Relic. Ikke bruk butikksiden for å logge inn, klikk i stedet på følgende knapp:",
     "login": "Logg inn",
     "title": "Du er IKKE logget inn",
-    "amazon": "Du er ikke logget inn med en Amazon-konto i Heroic. Ikke bruk butikksiden for å logge inn, klikk i stedet på følgende knapp:",
-    "zoom": "Du har ikke logget inn i Zoom med Heroic. Ikke bruk butikksiden for å logge inn. Bruk heller følgende knapp istedenfor:"
+    "amazon": "Du er ikke logget inn med en Amazon-konto i Relic. Ikke bruk butikksiden for å logge inn, klikk i stedet på følgende knapp:",
+    "zoom": "Du har ikke logget inn i Zoom med Relic. Ikke bruk butikksiden for å logge inn. Bruk heller følgende knapp istedenfor:"
   },
   "report_problem": "Rapporter et problem med å kjøre dette spillet",
   "sdl": {
     "title": "Velg komponenter som skal installeres"
   },
-  "setting": {
-    "winecrossoverbottle": "CrossOver Bottle",
-    "show-wine-settings": "Vis Wine-innstillinger",
-    "warn-use-shared-wine-config": "Bruk kun dette alternativet hvis du vet hva du gjør.<br/>Å dele samme prefiks for flere spill kan skape problemer hvis avhengighetene deres er inkompatible.",
-    "use-shared-wine-config": "Bruk delt Wine-prefiks"
-  },
+  "setting": {},
   "sideload": {
     "field": {
       "title": "Tittel"
@@ -307,26 +288,14 @@
     "extracting": "Pakker ut",
     "gog-goodie": "Dette spillet ser ikke ut til å være installerbart. Sjekk nedlastbart innhold på https://gog.com/account",
     "goodie": "Kan ikke installeres",
-    "winetricks": "Aktiverer Winetricks-rettelser",
     "redist": "Installerer Redistributables ({{redist}})",
     "importing": "Imporerer"
   },
   "submenu": {
-    "addShortcut": "Legg til snarvei",
-    "addToSteam": "Legg til Steam",
     "change": "Endre installasjonsbane",
-    "disableEosOverlay": "Deaktiver EOS Overlay",
-    "enableEosOverlay": "Aktiver EOS Overlay",
     "move": "Flytt spill",
-    "protondb": "Sjekk kompatibilitet",
-    "removeFromSteam": "Fjern fra Steam",
-    "removeShortcut": "Fjern snarveier",
-    "settings": "Innstillinger",
-    "store": "Butikkside",
     "verify": "Bekreft og reparer",
-    "extraInfo": "Ekstra info",
-    "logs": "Logger",
-    "categories": "Kategorier"
+    "extraInfo": "Ekstra info"
   },
   "help": {
     "cloud_save_unsupported": "Dette spillet støtter ikke skylagring. Denne informasjonen er gitt av spillutviklerne. Noen spill implementerer sitt eget skylagringssystem.",
@@ -345,11 +314,6 @@
       "enable": "Aktiver modifikasjoner"
     },
     "versionCollapsable": "Spillversjon"
-  },
-  "third-party-managed": {
-    "header": "Dette spillet administreres av en tredjepartsapplikasjon",
-    "notice2": "Etter å ha klikket på installer, vil Heroic kjøre applikasjonen for å fullføre installasjonsprosessen",
-    "notice1": "Dette spillet administreres av en tredjepartsapplikasjon: \"{{application_name}}\""
   },
   "queue": {
     "label": {

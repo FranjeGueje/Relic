@@ -11,171 +11,48 @@
     "multiplayer_may_not_work": "由於拒絕或破壞的反作弊支持，它可能無法運作。"
   },
   "box": {
-    "cache-cleared": {
-      "message": "Heroic 快取已清理。",
-      "title": "清理快取"
-    },
     "choose": "請選擇",
-    "choose-gogdl-binary": "選擇 GOGDL 二進位檔案（需要重啟）",
-    "choose-legendary-binary": "選擇 Legendary 二進位檔案",
-    "customWine": "選擇 Wine 或 Proton 二進位檔案",
-    "default-install-path": "選擇預設安裝路徑",
-    "default-steam-path": "Steam 路徑。",
-    "downloadNow": "現在下載",
     "error": {
-      "add": {
-        "steam": {
-          "body": "新增 {{game}} 到 Steam 失敗，錯誤：{{newLine}} {{error}}",
-          "title": "新增錯誤"
-        }
-      },
-      "credentials": {
-        "message": "您的憑證已過期，請登出並重新登入。"
-      },
-      "cx-bottle-not-found": {
-        "message": "CrossOver 容器 \"{{bottle_name}}\" 不存在，無法啟動！",
-        "title": "未找到 CrossOver 容器"
-      },
       "diskspace": {
         "message": "磁碟空間不足",
         "title": "空間不足"
       },
-      "dxvk": {
-        "message": "安裝 DXVK/VKD3D 錯誤！請檢查您的網路！",
-        "title": "DXVK/VKD3D 錯誤"
-      },
-      "folder-not-found": {
-        "title": "遊戲資料夾似乎已被刪除，您是否要從安裝列表中移除遊戲？"
-      },
-      "generic": {
-        "message": "一般錯誤訊息",
-        "title": "選擇要執行的 EXE 檔案"
-      },
-      "launchAborted": "啟動已中止",
       "title": "錯誤",
-      "uncaught-exception": {
-        "message": "A uncaught exception occured:{{newLine}}{{error}}{{newLine}}{{newLine}} Report the exception on our Github repository.",
-        "title": "Uncaught Exception occured!"
-      },
-      "update": {
-        "message": "更新出現問題，請檢查日誌或稍後再試！",
-        "title": "更新錯誤"
-      },
       "wine-not-found": {
         "invalid": "The selected wine version was not found. Install it or select a different version in the game's settings{{newline}}Version: {{version}}{{newline}}Path: {{path}}",
         "message": "沒有選擇之 Wine 版本。檢查遊戲設定！",
         "title": "未找到Wine"
       },
-      "winetricks": {
-        "message": "Winetricks returned the following error during execution:{{newLine}}{{error}}",
-        "title": "Winetricks 錯誤"
-      },
-      "moving": "錯誤移動遊戲 {{error}}",
       "ubisoft-connect": {
-        "message": "在遊戲前綴中安裝 Ubisoft Connect 失敗。查看我們的 wiki 頁面 https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher/wiki/How-to-install-Ubisoft-Connect-on-Linux-and-Mac 來手動安裝它。",
+        "message": "在遊戲前綴中安裝 Ubisoft Connect 失敗。查看我們的 wiki 頁面 https://github.com/Relic-Games-Launcher/RelicGamesLauncher/wiki/How-to-install-Ubisoft-Connect-on-Linux-and-Mac 來手動安裝它。",
         "title": "育碧連接"
       },
-      "legendary": {
-        "generic": "發生錯誤！嘗試登出並登入您的 Epic 帳戶。{{newline}} {{error}}"
-      },
       "executableNotFound": "",
-      "dxmt": {
-        "message": "",
-        "title": ""
-      },
       "executableNotFoundMessage": ""
     },
-    "info": {
-      "update": {
-        "changelog": "開啟更新日誌",
-        "detail": "您想在背景下載更新嗎？",
-        "message": "目前有新版本可用！",
-        "message-finished": "您想立即重啟 Heroic 嗎？",
-        "title": "Heroic Games Launcher",
-        "title-finished": "更新完成",
-        "detailNoAutoupdate": ""
-      }
-    },
+    "info": {},
     "no": "否",
     "ok": "是",
-    "protocol": {
-      "install": {
-        "not_installed": "未安裝，要安裝嗎？"
-      }
-    },
     "quit": {
       "message": "有待處理的操作，您確定嗎？",
       "title": "退出"
     },
-    "reset-heroic": {
-      "question": {
-        "message": "Are you sure you want to reset Heroic? This will remove all Settings and Caching but won't remove your Installed games or your Epic credentials. Portable versions (AppImage, WinPortable, ...) of heroic needs to be restarted manually afterwards.",
-        "title": "重置 Heroic"
-      }
-    },
-    "runexe": {
-      "title": "選擇要執行的 EXE 檔案"
-    },
-    "select": {
-      "button": "選擇",
-      "exe": "選擇 EXE",
-      "script": "選擇指令碼…"
-    },
+    "select": {},
     "shortcuts": {
       "message": "已建立捷徑在桌面和開始功能表內",
-      "message-mac": "捷徑建立於應用程式資料夾裡",
       "message-remove": "將捷徑從桌面和開始功能表移除",
-      "message-remove-mac": "已從應用程式資料夾中移除捷徑",
       "title": "捷徑"
     },
-    "sync": {
-      "button": "選擇",
-      "error": "無效路徑",
-      "title": "選擇存檔的目錄"
-    },
-    "vcruntime": {
-      "install": {
-        "message": "Visual C++ Runtimes 下載連結已開啟。請同時安裝 x86 和 x64 版本。"
-      },
-      "notfound": {
-        "message": "未安裝某些遊戲需要的 Microsoft Visual C++ Runtimes",
-        "title": "未安裝 VCRuntime"
-      }
-    },
     "warning": {
-      "epic": {
-        "import": "Epic 伺服器出現大故障，無法導入遊戲！",
-        "install": "Epic 伺服器出現大故障，無法安裝遊戲！",
-        "update": "Epic 伺服器出現大故障，無法更新遊戲！"
-      },
       "title": "警告",
-      "wine-change": {
-        "message": "我們找不到啟動此遊戲選定的 wine 版本 ({{selectedWine}})。{{newline}} 我們找到了另一個，您想繼續使用 {{foundWine}} 啟動嗎？",
-        "title": "未找到 Wine！"
-      },
-      "sideload": {
-        "confirmExit": {
-          "title": "您確定要登出嗎？",
-          "message": "任何未儲存進度將遺失"
-        }
-      },
       "snap": {
         "checkbox": "不要再顯示此訊息",
         "title": "",
         "message": ""
-      },
-      "rosetta": {
-        "title": "",
-        "message": ""
       }
     },
-    "wineprefix": "選擇 WinePrefix 資料夾",
     "yes": "是",
-    "dontShowAgain": "不再顯示",
-    "choose-nile-binary": "選擇 Nile 二進位檔案",
-    "update": "更新",
-    "changelog": "更新日誌",
-    "postpone": "延遲"
+    "update": "更新"
   },
   "button": {
     "cancel": "取消",
@@ -207,28 +84,10 @@
     }
   },
   "download-manager": {
-    "install-type": {
-      "install": "安裝",
-      "update": "更新"
-    },
-    "label": {
-      "disk": "磁碟",
-      "speed": "下載"
-    },
     "link": "下載",
-    "queue": {
-      "end-time": "完成於",
-      "queue-time": "新增於",
-      "start-time": "開始於",
-      "type": "類型"
-    },
-    "title": "下載",
-    "ETA": "預計時間"
+    "title": "下載"
   },
-  "epic": {
-    "offline-notification-body": "因為 Epic Games 伺服器離線，可能無法提供完整線上服務！",
-    "offline-notification-title": "離線"
-  },
+  "epic": {},
   "Epic Games": "Epic Games",
   "error": "錯誤",
   "favourites": "最愛",
@@ -273,109 +132,41 @@
     "no_categories": ""
   },
   "help": {
-    "amdfsr": "AMD FSR 通過在全螢幕模式下提高較低解析度來提高畫面幀率。影像品質從 5 提高到 1，但代價是效能稍有下降。啟用可能會提高效能。",
-    "dxvk": "DXVK 是一個基於 Vulkan 的轉譯層，用於 DirectX 9、10 和 11 遊戲。啟用也許會提高相容性。但可能會導致問題，特別是對老舊的 DirectX 遊戲。",
     "dxvkfpslimit": "Sets a frame rate cap for DXVK games",
-    "esync": "Esync 的目標是在 CPU 消耗很大的遊戲中減少 wineserver 的開銷。啟用可能會提高效能。",
-    "fsync": "Fsync 的目標是在 CPU 消耗很大的遊戲中減少 wineserver 的開銷。啟用可能會提高受支援的 Linux 內核的效能。",
     "game_language": {
-      "fallback": "留空使用 Heroic 的語言。",
       "in_game_config": "不是所有遊戲都支援此設定，一些遊戲內有語言設定。",
       "valid_codes": "有效語言代碼取決於遊戲。"
     },
-    "gamemode": "執行遊戲時，Feral GameMode 使用自動和臨時的系統調整。啟用可能會提高效能。",
-    "other": {
-      "part4": "使用 ",
-      "part5": "遊戲參數",
-      "part6": " 在執行啟動命令後調用，例如： ",
-      "part7": " 在某些遊戲中跳過啟動器等。"
-    },
-    "preferSystemLibs": "自訂 Wine 版本(Wine- ge、Wine- lutris)隨它們的庫依賴項一起發布。啟用此選項，這些附帶的庫將被忽略，Wine 將載入系統庫。警告！如果不滿足依賴關系，可能會出現問題。",
     "primerun": "Use dedicated graphics card to render game on multi-GPU systems. Only needed on gaming laptops or desktops that use a headless GPU for rendering (NVIDIA Optimus, AMD CrossFire)",
-    "steam_path": {
-      "info": "This path lets Heroic determine what version of Proton Steam uses, for adding non-Steam games to Steam."
-    },
-    "steamruntime": "Steam 提供的用於幫助執行 Linux 和 Windows（Proton）遊戲的自訂庫。啟用可能會提高相容性。",
-    "sync": {
-      "part1": "大多數情況下，Heroic 啟動器會正確猜測存檔的位置。但如果位置是錯誤的，請使用覆蓋框更改。",
-      "part2": "如果您改變了 Wine 或 Proton 的資料夾，將需要再次檢查路徑，因為 Proton 使用不同的前綴（/pfx）和使用者名稱（steamuser）。很簡單，您可以直接刪除目前的路徑，離開同步設定頁面再回來，Heroic 會去重新猜測正確 Prefix 的資料夾。",
-      "part3": "手動同步：選擇下載以下載儲存在雲端的存檔。選擇上傳將會把本地存檔上傳到雲端。強制下載將會忽略本地版本，強制上傳將會忽略雲端版本。",
-      "part4": "自動同步將在您每次開始遊戲時和結束遊戲後同步存檔。"
-    },
-    "vkd3d": "VKD3D 是一個基於 Vulkan 的轉換層，用於 DirectX 12 遊戲。啟用可能會顯著提高相容性。對老舊的 DirectX 遊戲沒有效果。",
-    "wine": {
-      "part1": "Heroic 啟動器會在以下資料夾中搜尋現有的 Wine/Proton/CrossOver：",
-      "part2": "如果在其它位置，請使用軟鏈接連接到這些中的一個資料夾"
-    },
+    "steam_path": {},
+    "sync": {},
     "disable_logs": "將此核取方塊切換為“開啟”可停用對日誌檔案的大部分寫入（始終記錄關鍵訊息）。請確保在報告任何問題之前關閉此設定。",
     "title": {
-      "accessibility": "無障礙設定",
-      "login": "登入",
-      "settings": "設定",
-      "downloadManager": "下載管理器",
-      "wineManager": "Wine 管理員",
-      "library": "遊戲庫"
+      "settings": "設定"
     },
-    "msync": "Fsync 的目標是在 CPU 消耗很大的遊戲中減少 wineserver 的開銷。啟用可能會提高受支援的 Linux 內核的效能。",
     "content": {
-      "settingsGame": "顯示遊戲的全部設定。",
-      "defaultInstallPath": "",
-      "settingsDefault": "",
-      "downloadManager": "",
-      "wineManager": "",
-      "library": "",
-      "accessibility": "",
-      "login": ""
+      "defaultInstallPath": ""
     },
     "button": {
       "open": "開啟幫助",
       "close": "關閉幫助"
     },
-    "dxfpslimit": "Sets a frame rate cap for DXVK games",
-    "download_proton_steam": "",
-    "wine-hdr": "",
-    "dxvknvapi": "",
-    "WoW64": "",
-    "wine-wayland": "",
-    "advertiseAvxForRosetta": "",
-    "nvidiaprime": {
-      "details": "Use dedicated graphics card to render game on multi-GPU systems. Only needed on gaming laptops or desktops that use a headless GPU for rendering (NVIDIA Optimus, AMD CrossFire)"
-    }
+    "dxfpslimit": "Sets a frame rate cap for DXVK games"
   },
   "info": {
-    "heroic": {
-      "beta": "Beta",
-      "click-to-see-changelog": "點擊查看更新日誌",
-      "newReleases": "Update Available!",
-      "stable": "Stable",
-      "version": "Heroic 版本"
-    },
-    "save-sync": {
-      "searching": "Trying to detect the correct save folder (click to cancel)"
-    },
     "settings": "設定會自動保存",
     "version": "Wine 版本"
   },
   "infobox": {
     "help": "幫助",
     "requirements": "系統要求",
-    "warning": "警告",
-    "wine-path": "Wine 路徑",
-    "wine-prefix": {
-      "title": "Wine Prefix"
-    },
-    "wine-repfix": {
-      "message": "Wine uses what is called a WINEPREFIX to encapsulate Windows applications. This prefix contains the Wine configuration files and a reproduction of the file hierarchy of C: (the main disk on a Windows OS). In this reproduction of the C: drive, your game save files and dependencies installed via winetricks are stored."
-    },
-    "wine-path-invalid": "Wine Path 無效，請選擇另一個。",
-    "wine-path-none-found": "沒有找到 Wine 版本，從 Wine Manager 下載一個"
+    "warning": "警告"
   },
   "install": {
     "path": "選擇安裝路徑"
   },
   "label": {
-    "loading": "載入中",
-    "releaseDate": "發行日期"
+    "loading": "載入中"
   },
   "library": {
     "refresh": "重新整理",
@@ -400,7 +191,6 @@
     "gog": "GOG 登入",
     "message": "登入您的平台。您可以同時登入多個平台。",
     "amazon": "Amazon 登入",
-    "old-mac": "您的 macOS 版本是 {{version}}。需要 macOS 12 或以上版本才能登入。",
     "zoom": ""
   },
   "message": {},
@@ -437,7 +227,6 @@
     },
     "moved": "移動完成",
     "moving": "移動遊戲中",
-    "new-heroic-version": "A new Heroic version was released!",
     "refresh": {
       "error": "不能從上遊獲取releases，可能是因為 Github API 的限制！請稍後再試。"
     },
@@ -461,45 +250,11 @@
     "retrying": "重試中"
   },
   "Open": "開啟",
-  "options": {
-    "advanced": {
-      "key": "變數名稱",
-      "placeHolderKey": "名稱",
-      "placeHolderValue": "例：Path/To/ExtraFiles",
-      "title": "環境變數",
-      "value": "數值"
-    },
-    "env_variables": {
-      "error": {
-        "empty_key": "Variable names can't be empty",
-        "equal_sign_in_key": "Variable names can't contain the \"=\" sign",
-        "space_in_key": "Variable names can't contain spaces"
-      },
-      "example": "Do NOT include the \"=\" sign, e.g: for a setting like \"MY_FLAG=123\", set MY_FLAG in NAME and 123 in VALUE.",
-      "info": "Set environment variables to append to the command."
-    },
-    "gameargs": {
-      "placeholder": "將啟動參數放在這裡",
-      "title": "遊戲參數（在命令後執行）：",
-      "error": {
-        "command": "",
-        "env": ""
-      }
-    },
-    "quote-args-with-spaces": "警告：請確保引用參數時使用空格！例：\"path/with spaces/\"",
-    "wrapper": {
-      "args": "引數",
-      "arguments_example": "引數例子： --arg; --extra-file=\"file-path/ with/spaces\"",
-      "exe": "包裝容器",
-      "placeHolderKey": "新的包裝容器",
-      "placeHolderValue": "包裝容器參數",
-      "title": "包裝容器命令："
-    }
-  },
+  "options": {},
   "other": {
     "gogdl-version": "GOGDL 版本: ",
     "legendary-version": "Legendary 版本: ",
-    "weblate": "請協助翻譯 Heroic。",
+    "weblate": "請協助翻譯 Relic。",
     "nile-version": "Nile 版本： "
   },
   "Other": "其它",
@@ -535,227 +290,38 @@
   "search": "搜尋遊戲",
   "setting": {
     "addgamestosteam": "自動新增遊戲到 Steam",
-    "alt-gogdl-bin": "選擇要使用的替代 GOGDL 二進位檔案",
-    "alt-legendary-bin": "選擇替代的 Legendary 二進位檔案",
-    "autodxvk": "自動在 Prefix 中安裝/更新 DXVK",
-    "autosync": "自動同步存檔",
-    "autovkd3d": "自動在 Prefix 中安裝/更新 VKD3D",
-    "change-target-exe": "選擇要執行的替代 EXE",
-    "crossover-version": "Crossover/Wine 版本",
-    "customWineProton": "自訂 Wine/Proton 路徑",
-    "default-install-path": "預設安裝路徑",
-    "default-steam-path": "預設 Steam 路徑",
-    "download-no-https": "不使用 HTTPS 下載遊戲 （對 LanCache 等 CDN 有用）",
     "dxvkfpslimit": "Limit FPS (DX9, 10 and 11)",
-    "enableFSRHack": "啟用 FSR（需要支援的 Wine 版本）",
-    "eosOverlay": {
-      "cancelInstall": "取消",
-      "checkForUpdates": "檢查更新",
-      "checkingForUpdates": "檢查更新中...",
-      "currentVersion": "目前版本： {{version}}",
-      "disable": "停用",
-      "enable": "啟用",
-      "install": "安裝",
-      "installed": "已安裝 EOS 內嵌介面",
-      "installing": "正在安裝 EOS 內嵌介面...",
-      "latestVersion": "最新版本： {{version}}",
-      "notInstalled": "未安裝 EOS 內嵌介面",
-      "notInstalledMsg": "未安裝 EOS 內嵌介面。是否現在安裝？",
-      "notInstalledTitle": "未安裝內嵌介面",
-      "remove": "解除安裝",
-      "removeConfirm": "確定要現在解除安裝 EOS 內嵌介面嗎？",
-      "removeConfirmTitle": "確認移除內嵌介面",
-      "updateNow": "更新",
-      "updating": "更新中..."
-    },
-    "esync": "啟用 Esync",
-    "FsrSharpnessStrenght": "FSR 銳利度",
-    "fsync": "啟用 Fsync",
-    "gamemode": "使用 GameMode（需要已安裝 Feral Game Mode）",
-    "language": "選擇 Heroic 語言",
-    "library_top_option": {
-      "disabled": "已關閉",
-      "favourites": "我的最愛",
-      "recently_played": "最近遊玩",
-      "recently_played_installed": "最近遊玩的遊戲（僅已安裝）"
-    },
-    "library_top_section": "遊戲庫頂部",
+    "language": "選擇 Relic 語言",
     "log": {
       "copy-to-clipboard": "複製日誌內容至剪貼簿",
       "current-log": "目前日誌",
-      "instructions_title": "如何回報問題？",
-      "last-log": "上一個日誌",
-      "no-file": "未找到日誌檔案",
-      "show-in-folder": "顯示日誌所在資料夾",
-      "upload": {
-        "actions": "操作",
-        "done": {
-          "title": "上載完成",
-          "content": ""
-        },
-        "uploading": {
-          "title": "上載中",
-          "content": ""
-        },
-        "upload-date": "上載日期",
-        "delete": "",
-        "hours-ago": "",
-        "title": "",
-        "error": {
-          "title": "",
-          "manual_upload": "",
-          "content": ""
-        },
-        "open": "",
-        "header": "",
-        "no-files": "",
-        "confirm": {
-          "content": "",
-          "title": ""
-        },
-        "minutes-ago": "",
-        "button": ""
-      },
-      "descriptiveNames": {
-        "legendary": "",
-        "nile": "",
-        "gog": "",
-        "zoom": "",
-        "game-log": "",
-        "heroic": ""
-      },
-      "show-uploads": ""
-    },
-    "manualsync": {
-      "download": "下載",
-      "forcedownload": "強制下載",
-      "forceupload": "強制上傳",
-      "sync": "同步",
-      "syncing": "正在同步",
-      "title": "手動同步存檔",
-      "upload": "上傳"
+      "last-log": "上一個日誌"
     },
     "maxworkers": "下載時的最大 Worker 數量",
-    "offlinemode": "離線執行遊戲",
-    "prefered_language": "偏好語言（語言代碼）",
-    "preferSystemLibs": "偏好系統庫",
-    "runexe": {
-      "message": "將檔案拖曳到此處",
-      "title": "在 Prefix 上執行 EXE 檔案"
-    },
-    "savefolder": {
-      "not-found": "Save folder not found, please select it manually (click to retry)",
-      "placeholder": "選擇存檔的儲存位置",
-      "warning": "Please check twice if the path is correct (click to retry)"
-    },
     "select_theme": "選擇主題",
-    "showfps": "顯示幀數（Directx 9，10 和 11）",
-    "start-in-tray": "啟動時最小化",
-    "steamruntime": "使用 Steam 執行環境",
-    "winecrossoverbottle": "CrossOver 容器",
-    "wineprefix": "WinePrefix 資料夾",
-    "wineversion": "Wine 版本",
-    "autoUpdateGames": "自動更新遊戲",
-    "ignoreGameUpdates": "忽略遊戲更新",
-    "disable_logs": "停用日誌",
-    "showMetalOverlay": "顯示統計數據疊加",
-    "alt-nile-bin": "選擇替代的 Nile 二進位檔案",
-    "autodxvknvapi": "自動在 Prefix 中安裝/更新 DXVK-NVAPI",
-    "msync": "啟用 Esync",
     "experimental_features": {
       "enableHelp": "幫助元件",
       "enableNewDesign": "新設計",
       "cometSupport": "",
       "zoomPlatform": ""
     },
-    "allow_installation_broken_anticheat": {
-      "confirmation": {
-        "understand": "我理解",
-        "title": "",
-        "message": ""
-      },
-      "label": ""
-    },
-    "frameless-window": {
-      "confirmation": {
-        "title": "實驗性功能",
-        "message": ""
-      },
-      "description": ""
-    },
-    "WoW64": "",
-    "download-proton-steam": "",
-    "scripts": "",
-    "wineWayland": "",
-    "hdr": "",
-    "show_valve_proton": {
-      "wine_selector_warning": "",
-      "confirmation": {
-        "show": "",
-        "title": "",
-        "dont_show": "",
-        "message": ""
-      },
-      "label": "",
-      "info_label": ""
-    },
-    "dxfpslimit": "",
-    "enable-quick-sync-menu": "",
-    "analyticsOptIn": "",
     "verboseLogs": {
       "description": ""
     },
     "advertiseAvxForRosetta": "",
-    "custom_css": {
-      "warning": ""
-    },
-    "start-in-console-mode": "",
     "disable_gog_presence": ""
   },
   "settings": {
-    "battlEyeRuntime": {
-      "installing": "安裝 BattlEye Runtime 中...",
-      "name": "BattlEye AntiCheat Runtime"
-    },
-    "clear-cache": "清理 Heroic 快取",
-    "copiedToClipboard": "已複製到剪貼簿！",
-    "copyToClipboard": "複製所有設定至剪貼簿",
-    "default_hint": "Changes in this section only apply as default values when installing games. If you want to change the settings of an already installed game, use the Settings button in the game page.",
-    "eacRuntime": {
-      "gameModeRequired": {
-        "title": "需要啟用 GameMode"
-      },
-      "installing": "安裝 EAC Runtime 中...",
-      "name": "EasyAntiCheat Runtime"
-    },
-    "gameMode": {
-      "eacRuntimeEnabled": {
-        "message": "EAC runtime 已啟用，但沒有 GameMode 它無法正常運作。您想停用 EAC Runtime 和 GameMode 嗎？",
-        "title": "已啟用 EAC runtime"
-      }
-    },
+    "clear-cache": "清理 Relic 快取",
     "log": {
       "long-log-hint": "日誌被截斷，顯示最後 1000 行！"
     },
     "navbar": {
-      "advanced": "進階",
-      "games_settings_defaults": "遊戲預設",
       "general": "一般",
       "log": "日誌",
-      "other": "其它",
-      "sync": "同步雲端存檔",
-      "wineExt": "Wine 擴充元件",
-      "systemInformation": "系統資訊",
-      "legacy": ""
+      "wineExt": "Wine 擴充元件"
     },
     "open-config-file": "開啟配置檔案",
-    "reset-heroic": "重置 Heroic",
-    "saves": {
-      "label": "Save Location:",
-      "warning": "雲端存檔功能處於測試階段，請在同步前備份您的存檔（以防出現問題）",
-      "not_supported": "",
-      "gog_linux_native_warning": ""
-    },
     "advanced": {
       "clearCache": {
         "help8": "已安裝的遊戲",
@@ -770,52 +336,15 @@
         "help4": ""
       },
       "details": "內容",
-      "title": {
-        "resetHeroic": "重置 Heroic",
-        "clearCache": "清理快取"
-      },
-      "resetHeroic": {
-        "help": "這會移除所有設定和快取但不會移除您已安裝的遊戲或 Epic 憑證。免安裝版的 heroic（AppImage, WinPortable, ...）需要手動重新啟動。"
-      }
+      "title": {}
     },
-    "systemInformation": {
-      "systemSpecifications": "系統規格：",
-      "showDetailed": "顯示詳細系統規格",
-      "gpu": "顯示卡：",
-      "software": "軟體：",
-      "os": "作業系統：",
-      "copyToClipboard": "複製到剪貼簿",
-      "osVersion": "版本 {{versionNumber}}",
-      "cpu": "處理器：",
-      "gpuDriver": "驅動程式：{{driverVersion}}",
-      "memory": "記憶體：",
-      "systemModel": "系統型號：",
-      "cpuDescription": "{{numOfCores}}x {{modelName}}",
-      "gpuWithNumber": "GPU {{number}}：",
-      "legendaryVersion": "",
-      "steamDeck": "",
-      "gogdlVersion": "",
-      "cometVersion": "",
-      "memoryStats": "",
-      "heroicVersion": "",
-      "nileVersion": ""
-    },
-    "experimental_features": {
-      "title": "實驗性功能"
-    },
-    "launchOptions": "啟動選項…",
-    "legacy_warning": "",
-    "offline": {
-      "warning": ""
-    },
+    "experimental_features": {},
+    "offline": {},
     "steamgriddb": {
       "apikey": {
         "title": "",
         "placeholder": "",
         "placeholder_saved": ""
-      },
-      "help": {
-        "description": ""
       }
     }
   },
@@ -834,24 +363,11 @@
   "title": {
     "allGames": "所有遊戲"
   },
-  "toolbox": {
-    "settings": {
-      "default-wineprefix": "為新配置選擇預設 Prefix 資料夾",
-      "wineprefix": "為新的 Wine Prefix 選擇資料夾"
-    }
-  },
-  "tooltip": {
-    "addpath": "新增新路徑",
-    "removepath": "移除路徑"
-  },
   "tray": {
     "about": "關於",
     "quit": "退出",
     "reload": "重新載入",
     "show": "顯示"
-  },
-  "two_col_table": {
-    "save_hint": "Changes in this table are not saved automatically. Click the + button"
   },
   "Update Available!": "Update Available!",
   "userselector": {
@@ -871,24 +387,6 @@
       "reload": "重新載入頁面"
     }
   },
-  "wine": {
-    "actions": "操作",
-    "manager": {
-      "link": "Wine 管理員",
-      "not-found": "No Wine versions found. Please click the refresh icon to try again.",
-      "title": "Wine 管理員",
-      "unzipping": "解壓縮",
-      "search": "",
-      "loading": "",
-      "open_folder": "",
-      "update": "Update",
-      "settings": "設定",
-      "no-results": ""
-    },
-    "release": "發行日期",
-    "size": "大小",
-    "notes": ""
-  },
   "externalLink": {
     "dontAskAgain": "不再詢問",
     "warning": "您即將打開一個外部連結。"
@@ -906,17 +404,6 @@
   "amazon": "亞馬遜",
   "Amazon Games": "Amazon 遊戲",
   "prime-gaming": "Prime Gaming",
-  "winetricks": {
-    "install": "安裝",
-    "loading": "載入中",
-    "installing": "正在安裝： {{component}}",
-    "installed": "已安裝元件：",
-    "search": "搜尋字型或元件",
-    "no-components": "",
-    "openGUI": "",
-    "loading-available": "",
-    "nothingYet": ""
-  },
   "category-settings": {
     "cancel": "取消",
     "warning": "警告",
@@ -943,32 +430,12 @@
     "no-categories": "尚未分類。",
     "remove": "移除\"{{name}}\""
   },
-  "launch": {
-    "options": "啟動選項…"
-  },
+  "launch": {},
   "emptyLibrary": {
     "noGames": "",
     "noResults": ""
   },
-  "wineExplanation": {
-    "proton-ge": "",
-    "gpt": "",
-    "wine-crossover": "",
-    "wine-staging-macos": ""
-  },
-  "steamgriddb": {
-    "error": {
-      "no-games": "",
-      "no-grids": "",
-      "search": "",
-      "grids": ""
-    },
-    "picker": {
-      "search": "",
-      "title": "",
-      "select-game": ""
-    }
-  },
+  "steamgriddb": {},
   "console": {
     "update": {
       "hintPrefix": "",

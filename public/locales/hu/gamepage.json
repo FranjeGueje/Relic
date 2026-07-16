@@ -155,14 +155,9 @@
     "installedPlatform": "Telepített platform",
     "path": "Telepítési útvonal",
     "size": "Méret",
-    "syncsaves": "Mentések szinkronizálása",
     "version": "Verzió",
-    "apple-gaming-wiki": "AppleGamingWiki értékelés",
     "clickToOpen": "Kattints a megnyitáshoz",
-    "game-scores": "Játékpontszámok",
     "installedInfo": "Telepített információk",
-    "protondb-compatibility-info": "Proton kompatibilitási szint",
-    "steamdeck-compatibility-info": "SteamDeck kompatibilitás",
     "third-party-app": "Külső kezelő"
   },
   "install": {
@@ -172,17 +167,7 @@
     "path-not-writtable": "Figyelmeztetés: az elérési út lehet, hogy nem írható.",
     "space-after-install": "Telepítés után",
     "wineprefix": "Wine-környezet",
-    "wineversion": "Wine verzió",
-    "anticheat-warning": {
-      "cancel": "Nem",
-      "install": "Igen (megértettem, hogy nem fog működni)",
-      "message": "A csalás elleni védelem támogatása hibás vagy le van tiltva. A játék nem fog működni. Mindenképp telepíti?",
-      "title": "A csalás elleni védelem hibás vagy tiltásra került",
-      "ok": "Ok",
-      "install_anyway": "Igen (Megértettem, hogy a többjátékos funkciók nem fognak működni)",
-      "multiplayer_message": "A csalás elleni szoftver támogatása hibás vagy tiltásra került. A játékot lehet, hogy meg lehet nyitni, de a többjátékos funkciók nem fognak működni. Mindenképp telepíted?",
-      "disabled_installation": "A játék olyan csalás elleni szoftvert használ, amely nem kompatibilis az operációs rendszereddel, vagy a támogatást a játék fejlesztői nem engedélyezték. Ez azt jelenti, hogy a többjátékos funkciók nem fognak működni, és ez ellen semmit sem tehetsz (ahogy a Heroic csapata sem).<br /><br />A játék telepítéséhez, és hogy mégis megpróbáld, kattints a Beállítások, Speciális menüpontra, és kapcsold be a hibás vagy letiltott csalás elleni szoftverrel rendelkező játékok telepítésének engedélyezését.<br /><br />Vedd figyelembe, hogy erre nincs megoldás, és azt kockáztatod, hogy kitiltsanak a játékból."
-    }
+    "wineversion": "Wine verzió"
   },
   "label": {
     "game": {
@@ -199,7 +184,6 @@
     },
     "launching": "Indítás…",
     "ubisoft": "A Ubisoft Connect telepítése",
-    "winetricks": "Winetricks csomagok telepítése",
     "redist": "Terjeszthető csomagok telepítése",
     "steam": {
       "pleaseWait": "Kis türelmet…",
@@ -209,19 +193,19 @@
       "hardware": "Apple Silicon M1+ (az inteles Macre készült Steam nem fog működni a Crossoverrel)",
       "install": "Steam telepítése",
       "install-path": "A Steam telepítési útvonala",
-      "install-tooltip": "Ez telepíti a Steam windowsos verzióját, és a Heroic kompatibilitási rétegével lesz futtatva. \n\n    Egyes játékok, különösen régebbi címek, újabb 3D-s játékok, vagy a csalás elleni szoftvert használók, lehet hogy nem fognak megfelelően működni. \n\n    ",
+      "install-tooltip": "Ez telepíti a Steam windowsos verzióját, és a Relic kompatibilitási rétegével lesz futtatva. \n\n    Egyes játékok, különösen régebbi címek, újabb 3D-s játékok, vagy a csalás elleni szoftvert használók, lehet hogy nem fognak megfelelően működni. \n\n    ",
       "installation": "A Steam telepítése",
       "patience": "Ha folytatná, akkor legyen türelemmel, mert az internetkapcsolatától és a rendszer beállításaitól függően ez percekig is eltarthat.",
       "specificVersion-pt2": "archive.org-ról,",
-      "specificVersion-pt3": "amely a Heroicon keresztül működik, mert a Steam új verziói nem fognak működni macOS-en.",
+      "specificVersion-pt3": "amely a Relicon keresztül működik, mert a Steam új verziói nem fognak működni macOS-en.",
       "abort": "Telepítés megszakítása",
       "cancel": "Telepítés megszakítása",
       "compatibility": "Vegye figyelembe, hogy nem minden játék fog működni, és ha működik is, nem biztos hogy a várt módon.",
       "downloading": "Letöltés: {{percent}}%",
-      "launch": "A Steam indítása a Heroic kompatibilitási réteggel",
+      "launch": "A Steam indítása a Relic kompatibilitási réteggel",
       "launching": "A Steam indítása…",
       "macOS": "macOS 14.0 vagy újabb",
-      "notification": "A Heroic értesíteni fogja, ha a telepítés elkészült.",
+      "notification": "A Relic értesíteni fogja, ha a telepítés elkészült.",
       "ram": "8GB RAM",
       "recommended": "A jobb élmény érdekében javasolt specifikációk",
       "select-path": "A Steam telepítési mappájának kiválasztása",
@@ -233,23 +217,18 @@
     "default": "Alapértelmezett"
   },
   "not_logged_in": {
-    "epic": "Nem vagy Epic-fiókkal bejelentkezve a Heroicba. Ne az áruházi oldalon jelentkezz be, kattints helyette erre a gombra:",
-    "gog": "Nem vagy GOG-fiókkal bejelentkezve a Heroicba. Ne az áruházi oldalon jelentkezz be, kattints helyette erre a gombra:",
+    "epic": "Nem vagy Epic-fiókkal bejelentkezve a Relicba. Ne az áruházi oldalon jelentkezz be, kattints helyette erre a gombra:",
+    "gog": "Nem vagy GOG-fiókkal bejelentkezve a Relicba. Ne az áruházi oldalon jelentkezz be, kattints helyette erre a gombra:",
     "login": "Bejelentkezés",
     "title": "Nem vagy bejelentkezve",
-    "amazon": "Nem vagy Amazon-fiókkal bejelentkezve a Heroicban. Ne az áruházi oldalon jelentkezz be, kattints helyette erre a gombra:",
-    "zoom": "Nem vagy Zoom-fiókkal bejelentkezve a Heroicban. Ne az áruházi oldalon jelentkezz be, kattints helyette erre a gombra:"
+    "amazon": "Nem vagy Amazon-fiókkal bejelentkezve a Relicban. Ne az áruházi oldalon jelentkezz be, kattints helyette erre a gombra:",
+    "zoom": "Nem vagy Zoom-fiókkal bejelentkezve a Relicban. Ne az áruházi oldalon jelentkezz be, kattints helyette erre a gombra:"
   },
   "report_problem": "Játék futtatásával kapcsolatos hiba jelentése",
   "sdl": {
     "title": "Válaszd ki a telepítendő elemeket"
   },
-  "setting": {
-    "winecrossoverbottle": "CrossOver palack",
-    "show-wine-settings": "Wine beállítások megjelenítése",
-    "warn-use-shared-wine-config": "Csak akkor használd ezt, ha tudod, hogy mit csinálsz.<br/>Ha azonos környezetet használsz több játékhoz, akkor az problémákat okozhat, ha a függőségeik nem kompatibilisek.",
-    "use-shared-wine-config": "Megosztott Wine-környezet használata"
-  },
+  "setting": {},
   "sideload": {
     "field": {
       "title": "Cím"
@@ -308,26 +287,14 @@
     "extracting": "Kibontás",
     "gog-goodie": "Úgy tűnik, hogy ez a játék nem telepíthető. Ellenőrizd a letölthető tartalmat a https://gog.com/account oldalon.",
     "goodie": "Nem telepíthető",
-    "winetricks": "Winetricks javítások alkalmazása",
     "redist": "Terjeszthető csomagok telepítése ({{redist}})",
     "importing": "Importálás"
   },
   "submenu": {
-    "addShortcut": "Parancsikon hozzáadása",
-    "addToSteam": "Hozzáadás a Steamhez",
     "change": "Telepítési útvonal megváltoztatása",
-    "disableEosOverlay": "EOS átfedés letiltása",
-    "enableEosOverlay": "EOS átfedés engedélyezése",
     "move": "Játék áthelyezése",
-    "protondb": "Kompatibilitás ellenőrzése",
-    "removeFromSteam": "Eltávolítás a Steamből",
-    "removeShortcut": "Parancsikonok eltávolítása",
-    "settings": "Beállítások",
-    "store": "Áruházi oldal",
     "verify": "Ellenőrzés és javítás",
-    "extraInfo": "Extra Info",
-    "logs": "Naplók",
-    "categories": "Kategóriák"
+    "extraInfo": "Extra Info"
   },
   "help": {
     "cloud_save_unsupported": "Ez a játék nem támogatja a felhőalapú mentést. Ezt az információt a játékfejlesztők biztosítják. Egyes játékok saját felhőalapú mentési rendszert alkalmaznak.",
@@ -346,11 +313,6 @@
     "dlcsCollapsible": "DLC",
     "nodlcs": "Nem érhető el DLC",
     "versionCollapsable": "Játékverzió"
-  },
-  "third-party-managed": {
-    "header": "Ezt a játékot egy külső alkalmazás kezeli",
-    "notice1": "Ezt a játékot egy külső alkalmazás kezeli: „{{application_name}}”",
-    "notice2": "A Telepítés gombra való kattintás után a Heroic futtatni fogja az alkalmazást, hogy befejezze a telepítési folyamatot"
   },
   "Open": "Megnyitás",
   "queue": {

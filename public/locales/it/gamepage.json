@@ -155,14 +155,9 @@
     "installedPlatform": "Piattaforma installata",
     "path": "Percorso d'installazione",
     "size": "Dimensione",
-    "syncsaves": "Sincronizza i salvataggi",
     "version": "Versione",
-    "apple-gaming-wiki": "Valutazione di AppleGamingWiki",
     "clickToOpen": "Clicca per aprire",
-    "game-scores": "Punteggi di gioco",
     "installedInfo": "Informazioni di installazione",
-    "protondb-compatibility-info": "Livello di compatibilità Proton",
-    "steamdeck-compatibility-info": "Compatibilità SteamDeck",
     "third-party-app": "Gestore Terze Parti"
   },
   "install": {
@@ -172,17 +167,7 @@
     "path-not-writtable": "Attenzione: il percorso potrebbe non essere scrivibile.",
     "space-after-install": "Dopo l'installazione",
     "wineprefix": "Prefisso Wine",
-    "wineversion": "Versione di Wine",
-    "anticheat-warning": {
-      "cancel": "No",
-      "message": "Il supporto dell'anticheat è non funzionante o negato. Il gioco non funzionerà. Vuoi installarlo comunque?",
-      "install": "Si (Capisco che non funzionerà)",
-      "title": "Anticheat Rotto/Negato",
-      "ok": "Ok",
-      "install_anyway": "Sì (comprendo che le funzionalità multiplayer non funzioneranno)",
-      "disabled_installation": "Questo gioco utilizza un anticheat che non è compatibile con il tuo sistema operativo o il supporto non è stato abilitato dagli sviluppatori. Questo significa che le funzionalità multigiocatore non saranno disponibili e non c'è nulla che tu (o il team di Heroic) possa fare.<br /><br />Per installare questo gioco e provarlo comunque, vai nelle Impostazioni, Avanzate, e abilita l'opzione per consentire l'installazione di giochi con anticheat non funzionanti o rifiutati.<br /><br />Considera che non c'è alcuna soluzione e che rischi di essere bannato in gioco.",
-      "multiplayer_message": "Il supporto dell'anticheat è bloccato o non funzionante. Il gioco potrebbe aprirsi ma le funzionalità multiplayer non funzioneranno. Vuoi installarlo comunque?"
-    }
+    "wineversion": "Versione di Wine"
   },
   "label": {
     "game": {
@@ -200,7 +185,6 @@
     "launching": "Avviando",
     "ubisoft": "Installazione di Ubisoft Connect",
     "redist": "Installazione componenti ridistribuibili",
-    "winetricks": "Installazione pacchetti Winetricks",
     "steam": {
       "installing": "Installazione in corso",
       "pleaseWait": "Attendi, per favore",
@@ -213,19 +197,19 @@
       "crossover": "Se hai installato Crossover, non ne avrai bisogno poiché funzionerà correttamente con Steam.",
       "install": "Installa Steam",
       "install-path": "Percorso di installazione Steam",
-      "install-tooltip": "Verrà installata la versione Windows di Steam, che verrà eseguita utilizzando un Heroic Compatibility Layer. \n\n    Alcuni giochi, in particolare i titoli più vecchi, i giochi 3D più recenti o quelli con software anti-cheat potrebbero non funzionare correttamente. \n\n    ",
+      "install-tooltip": "Verrà installata la versione Windows di Steam, che verrà eseguita utilizzando un Relic Compatibility Layer. \n\n    Alcuni giochi, in particolare i titoli più vecchi, i giochi 3D più recenti o quelli con software anti-cheat potrebbero non funzionare correttamente. \n\n    ",
       "installation": "Installazione Steam",
-      "launch": "Avvia Steam utilizzando il Layer di compatibilità Heroic",
+      "launch": "Avvia Steam utilizzando il Layer di compatibilità Relic",
       "launching": "Avvio di Steam...",
       "macOS": "macOS 14.0 o versioni successive",
-      "notification": "Heroic ti avviserà una volta completata l'installazione.",
+      "notification": "Relic ti avviserà una volta completata l'installazione.",
       "patience": "Se desideri continuare, ti preghiamo di pazientare poiché il completamento potrebbe richiedere alcuni minuti, a seconda della tua connessione Internet e della configurazione del sistema.",
       "ram": "8GB di RAM",
       "recommended": "Specifiche consigliate per un'esperienza migliore",
       "select-path": "Seleziona la cartella di installazione per Steam",
       "specificVersion-pt1": "Questo scaricherà una versione specifica di Steam da",
       "specificVersion-pt2": "archive.org",
-      "specificVersion-pt3": "è stato reso compatibile con Heroic poiché le nuove versioni di Steam non funzionano su macOS."
+      "specificVersion-pt3": "è stato reso compatibile con Relic poiché le nuove versioni di Steam non funzionano su macOS."
     }
   },
   "launch": {
@@ -233,23 +217,18 @@
     "default": "Predefinito"
   },
   "not_logged_in": {
-    "epic": "Non hai effettuato l'accesso con nessun account Epic in Heroic. Non usare la pagina dello store per accede ma clicca sul seguente pulsante:",
-    "gog": "Non hai effettuato l'accesso con nessun account GOG in Heroic. Non usare la pagina dello store per accede ma clicca sul seguente pulsante:",
+    "epic": "Non hai effettuato l'accesso con nessun account Epic in Relic. Non usare la pagina dello store per accede ma clicca sul seguente pulsante:",
+    "gog": "Non hai effettuato l'accesso con nessun account GOG in Relic. Non usare la pagina dello store per accede ma clicca sul seguente pulsante:",
     "login": "Accedi",
     "title": "NON hai effettuato l'accesso",
-    "amazon": "Non hai effettuato l'accesso con un account Amazon in Heroic. Non usare la pagina dello store per accede ma clicca sul seguente pulsante:",
-    "zoom": "Non hai effettuato l'accesso con nessun account Zoom in Heroic. Non usare la pagina dello store per accede ma clicca sul seguente pulsante:"
+    "amazon": "Non hai effettuato l'accesso con un account Amazon in Relic. Non usare la pagina dello store per accede ma clicca sul seguente pulsante:",
+    "zoom": "Non hai effettuato l'accesso con nessun account Zoom in Relic. Non usare la pagina dello store per accede ma clicca sul seguente pulsante:"
   },
   "report_problem": "Segnala un problema nell'esecuzione di questo gioco",
   "sdl": {
     "title": "Seleziona i componenti da installare"
   },
-  "setting": {
-    "winecrossoverbottle": "Bottiglia di CrossOver",
-    "show-wine-settings": "Mostra impostazioni Wine",
-    "warn-use-shared-wine-config": "Utilizza questa opzione solo se sai ciò che stai facendo.<br /> Condividere lo stesso prefisso per giochi differenti potrebbe creare problemi se le loro dipendenze sono incompatibili.",
-    "use-shared-wine-config": "Usa il prefisso Wine condiviso"
-  },
+  "setting": {},
   "sideload": {
     "field": {
       "title": "Titolo"
@@ -309,25 +288,13 @@
     "gog-goodie": "Questo gioco non sembra essere installabile. Controlla i contenuti scaricabili su https://gog.com/account",
     "goodie": "Non installabile",
     "redist": "Installazione ridistribuibili ({{redist}})",
-    "winetricks": "Applicazione correzioni Winetricks",
     "importing": "Importando"
   },
   "submenu": {
-    "addShortcut": "Aggiungi scorciatoia",
-    "addToSteam": "Aggiungi a Steam",
     "change": "Cambia percorso d'installazione",
-    "disableEosOverlay": "Disabilita overlay EOS",
-    "enableEosOverlay": "Abilita overlay EOS",
     "move": "Muovi gioco",
-    "protondb": "Controlla compatibilità",
-    "removeFromSteam": "Rimuovi da Steam",
-    "removeShortcut": "Rimuovi le scorciatoie",
-    "settings": "Impostazioni",
-    "store": "Pagina dello store",
     "verify": "Verifica e ripara",
-    "extraInfo": "Ulteriori informazioni",
-    "logs": "Registri",
-    "categories": "Categorie"
+    "extraInfo": "Ulteriori informazioni"
   },
   "help": {
     "cloud_save_unsupported": "Questo gioco non supporta i salvataggi nel cloud. Queste informazioni sono fornite dagli sviluppatori del gioco. Alcuni giochi implementano il proprio sistema di salvataggio nel cloud.",
@@ -346,11 +313,6 @@
       "enable": "Abilita mods"
     },
     "versionCollapsable": "Versione Gioco"
-  },
-  "third-party-managed": {
-    "header": "Questo gioco è gestito da un'applicazione di terze parti",
-    "notice1": "Questo gioco è gestito da un'applicazione di terze parti: \"{{application_name}}\"",
-    "notice2": "Dopo aver cliccato Installa, Heroic eseguirà l'applicazione al fine di completare il processo d'installazione"
   },
   "Open": "Apri",
   "queue": {

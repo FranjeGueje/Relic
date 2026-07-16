@@ -153,14 +153,9 @@
     "installedPlatform": "Instalirane Platforme",
     "path": "Staza instalacije",
     "size": "Veličina",
-    "syncsaves": "Sinkroniziraj podatke",
     "version": "Verzija",
-    "apple-gaming-wiki": "Ocjena AppleGamingWiki",
     "clickToOpen": "Kliknite za otvaranje",
-    "game-scores": "Rezultati igre",
     "installedInfo": "Instalirane informacije",
-    "protondb-compatibility-info": "Razina kompatibilnosti protona",
-    "steamdeck-compatibility-info": "Kompatibilnost sa SteamDeckom",
     "third-party-app": ""
   },
   "install": {
@@ -170,15 +165,7 @@
     "path-not-writtable": "Upozorenje: u stazu se možda ne može pisati.",
     "space-after-install": "Nakon Instalacije",
     "wineprefix": "WinePrefix",
-    "wineversion": "Wine verzija",
-    "anticheat-warning": {
-      "ok": "Ok",
-      "cancel": "",
-      "disabled_installation": "",
-      "install_anyway": "",
-      "multiplayer_message": "",
-      "title": ""
-    }
+    "wineversion": "Wine verzija"
   },
   "label": {
     "game": {
@@ -200,7 +187,6 @@
       "pleaseWait": "Please wait...",
       "installation": "Zaustavi instalaciju"
     },
-    "winetricks": "",
     "redist": ""
   },
   "launch": {
@@ -208,23 +194,18 @@
     "default": ""
   },
   "not_logged_in": {
-    "epic": "You are not logged in with an Epic account in Heroic. Don't use the store page to login, click the following button instead:",
-    "gog": "You are not logged in with a GOG account in Heroic. Don't use the store page to login, click the following button instead:",
+    "epic": "You are not logged in with an Epic account in Relic. Don't use the store page to login, click the following button instead:",
+    "gog": "You are not logged in with a GOG account in Relic. Don't use the store page to login, click the following button instead:",
     "login": "Log in",
     "title": "You are NOT logged in",
-    "amazon": "You are not logged in with an Epic account in Heroic. Don't use the store page to login, click the following button instead:",
-    "zoom": "You are not logged in with a GOG account in Heroic. Don't use the store page to login, click the following button instead:"
+    "amazon": "You are not logged in with an Epic account in Relic. Don't use the store page to login, click the following button instead:",
+    "zoom": "You are not logged in with a GOG account in Relic. Don't use the store page to login, click the following button instead:"
   },
   "report_problem": "Prijavi problem za ovu igru",
   "sdl": {
     "title": "Odaberite komponente za instalaciju"
   },
-  "setting": {
-    "winecrossoverbottle": "CrossOver Bottle",
-    "warn-use-shared-wine-config": "",
-    "show-wine-settings": "",
-    "use-shared-wine-config": ""
-  },
+  "setting": {},
   "sideload": {
     "field": {
       "title": "Title"
@@ -279,25 +260,13 @@
     "gog-goodie": "Čini se da se ova igra ne može instalirati. Provjerite sadržaj za preuzimanje na https://gog.com/account",
     "goodie": "Nije moguće instalirati",
     "redist": "",
-    "winetricks": "",
     "importing": "Uvezi"
   },
   "submenu": {
-    "addShortcut": "Dodaj prečace",
-    "addToSteam": "Dodaj Steamu",
     "change": "Promijeni stazu instalacije",
-    "disableEosOverlay": "Isključi EOS prekrivanje",
-    "enableEosOverlay": "Uključi EOS prekrivanje",
     "move": "Premjesti igru",
-    "protondb": "Provjeri Kompatibilnost",
-    "removeFromSteam": "Ukloni iz Steama",
-    "removeShortcut": "Ukloni prečace",
-    "settings": "Postavke",
-    "store": "Stranica Trgovine",
     "verify": "Provjeri i popravi",
-    "extraInfo": "Dodatne informacije",
-    "logs": "Dnevnici",
-    "categories": "Kategorije"
+    "extraInfo": "Dodatne informacije"
   },
   "help": {
     "cloud_save_unsupported": "Ova igra ne podržava spremanje u oblak. Ove informacije pružaju programeri igre. Neke igre implementiraju vlastiti sustav spremanja u oblak",
@@ -325,11 +294,6 @@
     },
     "nodlcs": "",
     "versionCollapsable": ""
-  },
-  "third-party-managed": {
-    "header": "",
-    "notice2": "",
-    "notice1": ""
   },
   "open-saves-folder": "",
   "wikiLink": "",

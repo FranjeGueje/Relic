@@ -153,14 +153,9 @@
     "installedPlatform": "Installerad plattform",
     "path": "Installationssökväg",
     "size": "Storlek",
-    "syncsaves": "Synkronisera sparfiler",
     "version": "Version",
-    "apple-gaming-wiki": "AppleGamingWiki-betyg",
     "clickToOpen": "Klicka för att öppna",
-    "game-scores": "Spelresultat",
     "installedInfo": "Installerad information",
-    "protondb-compatibility-info": "Protonkompatibilitetsnivå",
-    "steamdeck-compatibility-info": "SteamDeck-kompatibilitet",
     "third-party-app": "Tredjeparts hanterare"
   },
   "install": {
@@ -170,17 +165,7 @@
     "path-not-writtable": "Varning: sökvägen kan vara skrivskyddad.",
     "space-after-install": "Efter installation",
     "wineprefix": "Wine-prefix",
-    "wineversion": "Wine-version",
-    "anticheat-warning": {
-      "cancel": "Nej",
-      "message": "Antifusk stödet är trasigt eller nekat. Spelet kommer inte att fungera. Vill du installera det ändå?",
-      "install": "Ja (jag förstår att det inte kommer att fungera)",
-      "title": "Antifusk trasigt/nekat",
-      "install_anyway": "Ja (Jag förstår att flerspelarfunktioner inte kommer att fungera)",
-      "multiplayer_message": "Antifuskstödet är trasigt eller nekat. Spelet kan öppnas men flerspelarfunktionerna kommer inte att fungera. Vill du installera det ändå?",
-      "ok": "Ok",
-      "disabled_installation": "Det här spelet använder antifusk-programvara som inte är kompatibelt med ditt operativsystem, eller så har stödet inte aktiverats av spelutvecklarna. Det betyder att flerspelarfunktionerna inte kommer att fungera, och det finns inget du (eller Heroic-teamet) kan göra åt det.<br /><br />För att installera det här spelet och prova det ändå, gå till Inställningar, Avancerat och markera alternativet för att tillåta installation av spel med trasiga eller nekade antifusk-funktioner.<br /><br />Observera att det inte finns någon lösning för detta och du riskerar att bli avstängd i spelet."
-    }
+    "wineversion": "Wine-version"
   },
   "label": {
     "game": {
@@ -197,7 +182,6 @@
     },
     "launching": "Startar",
     "ubisoft": "Installera Ubisoft Connect",
-    "winetricks": "Installerar Winetricks paket",
     "prerequisites": "Installerar krav",
     "redist": "Installerar Redistributables",
     "steam": {
@@ -213,23 +197,18 @@
     "default": "Standard"
   },
   "not_logged_in": {
-    "epic": "Du är ej inloggad med Epic-konto i Heroic. Använd inte Butiksidan för att logga in, klicka denna knapp istället:",
-    "gog": "Du är ej inloggad med GOG-konto i Heroic. Använd inte Butiksidan för att logga in, klicka denna knapp istället:",
+    "epic": "Du är ej inloggad med Epic-konto i Relic. Använd inte Butiksidan för att logga in, klicka denna knapp istället:",
+    "gog": "Du är ej inloggad med GOG-konto i Relic. Använd inte Butiksidan för att logga in, klicka denna knapp istället:",
     "login": "Logga in",
     "title": "Du är ej inloggad!",
-    "amazon": "Du är ej inloggad med Epic-konto i Heroic. Använd inte Butiksidan för att logga in, klicka denna knapp istället:",
-    "zoom": "Du är inte inloggad med ett Zoom-konto i Heroic. Använd inte butiksidan för att logga in, klicka istället på följande knapp:"
+    "amazon": "Du är ej inloggad med Epic-konto i Relic. Använd inte Butiksidan för att logga in, klicka denna knapp istället:",
+    "zoom": "Du är inte inloggad med ett Zoom-konto i Relic. Använd inte butiksidan för att logga in, klicka istället på följande knapp:"
   },
   "report_problem": "Rapportera problem med spelet",
   "sdl": {
     "title": "Ange komponenter att installera"
   },
-  "setting": {
-    "winecrossoverbottle": "CrossOver prefix",
-    "show-wine-settings": "Visa Wine inställningar",
-    "warn-use-shared-wine-config": "Använd bara det här alternativet om du vet vad du gör.<br/>Att dela samma prefix för flera spel kan skapa problem om deras beroenden är inkompatibla.",
-    "use-shared-wine-config": "Använd delat Wine prefix"
-  },
+  "setting": {},
   "sideload": {
     "field": {
       "title": "Titel"
@@ -284,26 +263,14 @@
     "gog-goodie": "Det här spelet verkar inte gå att installera. Kontrollera nedladdningsbart innehåll på https://gog.com/account",
     "goodie": "Ej installationsbar",
     "prerequisites": "Installerar krav",
-    "winetricks": "Verkställer Winetricks fixar",
     "redist": "Installerar Redistributables ({{redist}})",
     "importing": "Importerar"
   },
   "submenu": {
-    "addShortcut": "Skapa genväg",
-    "addToSteam": "Lägg till i Steam",
     "change": "Ändra installationssökväg",
-    "disableEosOverlay": "Deaktivera EOS Overlay",
-    "enableEosOverlay": "Aktivera EOS Overlay",
     "move": "Flytta spelet",
-    "protondb": "Kontrollera kompatibilitet",
-    "removeFromSteam": "Ta bort från Steam",
-    "removeShortcut": "Ta bort genvägar",
-    "settings": "Inställningar",
-    "store": "Butikssida",
     "verify": "Verifiera och reparera",
-    "extraInfo": "Ytterligare information",
-    "logs": "Loggar",
-    "categories": "Kategorier"
+    "extraInfo": "Ytterligare information"
   },
   "help": {
     "cloud_save_unsupported": "Spelet stöder inte sparfiler i molnlagring. Denna information tillhandahålls av spelutvecklarna. Vissa spel implementerar sitt eget molnsparsystem",
@@ -322,11 +289,6 @@
     "dlcsCollapsible": "DLC",
     "versionCollapsable": "Spelversion",
     "nodlcs": "Ingen DLC tillgänglig"
-  },
-  "third-party-managed": {
-    "header": "Detta spel hanteras av ett tredjeparts program",
-    "notice1": "Detta spel hanteras av tredjeparts programmet: \"{{application_name}}\"",
-    "notice2": "Efter att ha klickat på Installera kommer Heroic att köra programmet för att slutföra installationsprocessen"
   },
   "Open": "Öppna",
   "queue": {

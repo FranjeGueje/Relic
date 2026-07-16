@@ -155,14 +155,9 @@
     "installedPlatform": "Plataforma Instalada",
     "path": "Caminho da Instalação",
     "size": "Tamanho",
-    "syncsaves": "Sincronização de Progressos Guardados na Nuvem",
     "version": "Versão",
-    "apple-gaming-wiki": "Avaliação da AppleGamingWiki",
     "clickToOpen": "Clique para abrir",
-    "game-scores": "Pontuações do Jogo",
     "installedInfo": "Informação Instalada",
-    "protondb-compatibility-info": "Níveis de Compatibilidade com o Proton",
-    "steamdeck-compatibility-info": "Compatibilidade com a SteamDeck",
     "third-party-app": "Gestor de Terceiros"
   },
   "install": {
@@ -172,17 +167,7 @@
     "path-not-writtable": "Aviso: o caminho pode não ter permissões de escrita.",
     "space-after-install": "Depois da Instalação",
     "wineprefix": "Prefixo do Wine",
-    "wineversion": "Versão do Wine",
-    "anticheat-warning": {
-      "cancel": "Não",
-      "message": "O suporte anti-batota está danificado ou foi recusado. O jogo não irá funcionar. Deseja instalá-lo mesmo assim?",
-      "install": "Sim (Eu entendo que não irá funcionar)",
-      "title": "Sistema de Anti-Batota Danificado/Recusado",
-      "install_anyway": "Sim (eu entendo que as funcionalidades de multi-jogador não vão funcionar)",
-      "multiplayer_message": "O suporte anti-batota está danificado ou recusado. O jogo poderá abrir mas as funcionalidades de multi-jogador não vão funcionar. Pretende fazer a instalação à mesma?",
-      "ok": "Ok",
-      "disabled_installation": "Este jogo usa um sistema de anti-batota que não é compatível com o seu sistema operativo ou não está ativado para o suportar, pelos criadores do jogo. Isso significa que as funcionalidades de multi-jogador não vão funcionar e não há nada que você (ou a equipa do Heroic) possa fazer em relação a isto. <br /><br />Mesmo assim, se quiser instalar o jogo e verificar se funciona, vá a 'Definições', depois 'Avançado' e selecione a opção para permitir a instalação de jogos com anti-batota danificada ou recusada. <br /><br />Lembre-se que não existe solução para isto, pode correr o risco de ser banido no jogo."
-    }
+    "wineversion": "Versão do Wine"
   },
   "label": {
     "game": {
@@ -199,15 +184,14 @@
     },
     "launching": "A iniciar",
     "ubisoft": "A instalar Ubisoft Connect",
-    "winetricks": "A Instalar os Pacotes do Winetricks",
     "redist": "A Instalar Redistribuíveis",
     "steam": {
       "installing": "A instalar",
       "pleaseWait": "Por favor aguarde",
       "patience": "Se deseja prosseguir, por favor tenha paciência pois poderá demorar alguns minutos a concluir dependendo da conexão com a internet e configurações de sistema.",
-      "notification": "O Heroic irá notificá-lo aquando da conclusão da instalação.",
+      "notification": "O Relic irá notificá-lo aquando da conclusão da instalação.",
       "select-path": "Seleciona a pasta de instalação da Steam",
-      "specificVersion-pt3": "feito para funcionar através do Heroic visto que novas versões da Steam não funcionam no macOS.",
+      "specificVersion-pt3": "feito para funcionar através do Relic visto que novas versões da Steam não funcionam no macOS.",
       "abort": "Abortar Instalação",
       "compatibility": "Esteja consciente de que nem todos os jogos irão funcionar e, mesmo que funcionem, podem não funcionar corretamente.",
       "cancel": "Cancelar Instalação",
@@ -222,8 +206,8 @@
       "compatibility-layer-not-available": "Compatibilidade não disponível. Por favor instala a partir de \"Definições>Wine Manager\"",
       "crossover": "Caso você tiver o Crossover instalado, você não vai precisar dele, pois ele pode rodar o Steam normalmente.",
       "hardware": "Apple Silicon M1+ (para Macs com Intel, o Steam rodará com Crossover)",
-      "install-tooltip": "Isso vai instalar a versão do Steam de Windows e isso vai rodar usando uma Camada de Compatibilidade do Heroic.\n\nAlguns jogos, especialmente jogos mais antigos, jogos 3D novos, ou que usam software anti-cheat, podem não funcionar corretamente. \n\n    ",
-      "launch": "Iniciar o Steam usando Camada de Compatibilidade do Heroic",
+      "install-tooltip": "Isso vai instalar a versão do Steam de Windows e isso vai rodar usando uma Camada de Compatibilidade do Relic.\n\nAlguns jogos, especialmente jogos mais antigos, jogos 3D novos, ou que usam software anti-cheat, podem não funcionar corretamente. \n\n    ",
+      "launch": "Iniciar o Steam usando Camada de Compatibilidade do Relic",
       "specificVersion-pt1": "Isso vai fazer o download de uma versão especifica do Steam",
       "specificVersion-pt2": "archive.org"
     }
@@ -233,23 +217,18 @@
     "default": "Padrão"
   },
   "not_logged_in": {
-    "epic": "Não tem a sessão iniciada com uma conta da Epic no Heroic. Não use a página da loja para iniciar a sessão, em vez disso clique no botão seguinte:",
-    "gog": "Não tem a sessão iniciada com uma conta da GOG no Heroic. Não use a página da loja para iniciar a sessão, em vez disso clique no botão seguinte:",
+    "epic": "Não tem a sessão iniciada com uma conta da Epic no Relic. Não use a página da loja para iniciar a sessão, em vez disso clique no botão seguinte:",
+    "gog": "Não tem a sessão iniciada com uma conta da GOG no Relic. Não use a página da loja para iniciar a sessão, em vez disso clique no botão seguinte:",
     "login": "Iniciar sessão",
     "title": "NÃO tem a sessão iniciada",
-    "amazon": "Não tem a sessão iniciada com uma conta da Amazon no Heroic. Não use a página da loja para iniciar a sessão, em vez disso clique no botão seguinte:",
-    "zoom": "Não tem a sessão iniciada numa conta Zoom no Heroic. Não utilize a página da loja para iniciar a sessão, em vez disso clique no botão seguinte:"
+    "amazon": "Não tem a sessão iniciada com uma conta da Amazon no Relic. Não use a página da loja para iniciar a sessão, em vez disso clique no botão seguinte:",
+    "zoom": "Não tem a sessão iniciada numa conta Zoom no Relic. Não utilize a página da loja para iniciar a sessão, em vez disso clique no botão seguinte:"
   },
   "report_problem": "Reportar algum problema que ocorra ao executar este jogo",
   "sdl": {
     "title": "Selecione os componentes a Instalar"
   },
-  "setting": {
-    "winecrossoverbottle": "Garrafa do CrossOver",
-    "show-wine-settings": "Mostrar as Definições do Wine",
-    "warn-use-shared-wine-config": "Só selecione esta opção se souber o que está a fazer.<br/>Partilhar o mesmo prefixo para vários jogos pode criar problemas se as dependências forem incompatíveis.",
-    "use-shared-wine-config": "Usar o prefixo Wine partilhado"
-  },
+  "setting": {},
   "sideload": {
     "field": {
       "title": "Título"
@@ -309,25 +288,13 @@
     "gog-goodie": "Parece que não é possível instalar este jogo. Verifique o conteúdo transferível em https://gog.com/account",
     "goodie": "Não é instalável",
     "redist": "A Instalar os Redistribuíveis ({{redist}})",
-    "winetricks": "A aplicar as correções do Winetricks",
     "importing": "A importar"
   },
   "submenu": {
-    "addShortcut": "Adicionar atalho",
-    "addToSteam": "Adicionar ao Steam",
     "change": "Alterar o caminho de instalação",
-    "disableEosOverlay": "Desativar a Janela de Sobreposição EOS",
-    "enableEosOverlay": "Ativar a Janela de Sobreposição EOS",
     "move": "Mover Jogo",
-    "protondb": "Verificar Compatibilidade",
-    "removeFromSteam": "Remover do Steam",
-    "removeShortcut": "Remover atalhos",
-    "settings": "Definições",
-    "store": "Página da Loja",
     "verify": "Verificar e Reparar",
-    "extraInfo": "Informação extra",
-    "logs": "Registos de Eventos",
-    "categories": "Categorias"
+    "extraInfo": "Informação extra"
   },
   "help": {
     "cloud_save_unsupported": "Este jogo não suporta a cópia de progressos guardados na nuvem. Esta informação é fornecida pelos programadores do jogo. Alguns jogos implementam o seu próprio sistema de cópia de progressos guardados na nuvem",
@@ -346,11 +313,6 @@
       "collapsible": "Integração REDmod"
     },
     "versionCollapsable": "Versão do Jogo"
-  },
-  "third-party-managed": {
-    "header": "Este jogo é gerido por uma aplicação de terceiros",
-    "notice2": "Após clicar em Instalar, o Heroic executará a aplicação para concluir o processo de instalação",
-    "notice1": "Este jogo é gerido por uma aplicação de terceiros: \"{{application_name}}\""
   },
   "Open": "Abrir",
   "queue": {

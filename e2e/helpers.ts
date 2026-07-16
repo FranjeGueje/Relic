@@ -9,7 +9,7 @@ import {
 const main_js = join(__dirname, '../build/main/main.js')
 
 /**
- * Helper function to define a test requiring Heroic to be running
+ * Helper function to define a test requiring Relic to be running
  * @param name The name of the test
  * @param func The test callback
  */

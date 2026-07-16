@@ -153,14 +153,9 @@
     "installedPlatform": "Geïnstalleerd platform",
     "path": "Installatie pad",
     "size": "Grootte",
-    "syncsaves": "Synchroniseer saves",
     "version": "Versie",
-    "apple-gaming-wiki": "AppleGamingWiki-beoordeling",
     "clickToOpen": "Klik om te openen",
-    "game-scores": "Spelscores",
     "installedInfo": "Geïnstalleerde informatie",
-    "protondb-compatibility-info": "Proton-compatibiliteitslaag",
-    "steamdeck-compatibility-info": "SteamDeck-compatibiliteit",
     "third-party-app": "Beheerder van derden"
   },
   "install": {
@@ -170,17 +165,7 @@
     "path-not-writtable": "Waarschuwing: pad mogelijk niet schrijfbaar",
     "space-after-install": "Na installatie",
     "wineprefix": "WinePrefix",
-    "wineversion": "Wine Versie",
-    "anticheat-warning": {
-      "install": "Ja (Ik begrijp dat dit niet zal werken)",
-      "cancel": "Nee",
-      "title": "Anticheat geblokkeerd/stuk",
-      "message": "De anticheat-ondersteuning is stuk of is geblokkeerd. Deze game zal niet werken. Wil je het toch installeren?",
-      "ok": "Ok",
-      "install_anyway": "Ja (Ik begrijp dat de multiplayeronderdelen niet zullen werken)",
-      "multiplayer_message": "De anticheatondersteuning is kapot of verworpen. Het spel opent mogelijks wel, maal multiplayeronderdelen werken niet. Toch installeren?",
-      "disabled_installation": "De anticheatondersteuning is kapot of verworpen en multiplayeronderdelen werken niet. Het spel kan niet geïnstalleerd worden. Om het spel toch te installeren, zet de check in de geavanceerde instellingen uit."
-    }
+    "wineversion": "Wine Versie"
   },
   "label": {
     "game": {
@@ -197,7 +182,6 @@
     },
     "launching": "Lancering",
     "ubisoft": "Ubisoft Connect installeren",
-    "winetricks": "Winetricks Paketten aan het installeren",
     "redist": "Herverdelers installeren",
     "steam": {
       "installing": "Installing",
@@ -210,23 +194,18 @@
     "default": ""
   },
   "not_logged_in": {
-    "epic": "Je bent niet ingelogd met een Epic account in Heroic. Gebruik de winkel pagina NIET om in te loggen,  Klik in plaats op de volgende knop:",
-    "gog": "Je bent niet ingelogd met een GOG account in Heroic. Gebruik de winkel pagina NIET om in te loggen,  Klik in plaats op de volgende knop:",
+    "epic": "Je bent niet ingelogd met een Epic account in Relic. Gebruik de winkel pagina NIET om in te loggen,  Klik in plaats op de volgende knop:",
+    "gog": "Je bent niet ingelogd met een GOG account in Relic. Gebruik de winkel pagina NIET om in te loggen,  Klik in plaats op de volgende knop:",
     "login": "Log in",
     "title": "Je bent NIET ingelogd",
-    "amazon": "You are not logged in with an Epic account in Heroic. Don't use the store page to login, click the following button instead:",
-    "zoom": "You are not logged in with a GOG account in Heroic. Don't use the store page to login, click the following button instead:"
+    "amazon": "You are not logged in with an Epic account in Relic. Don't use the store page to login, click the following button instead:",
+    "zoom": "You are not logged in with a GOG account in Relic. Don't use the store page to login, click the following button instead:"
   },
   "report_problem": "Rapporteer een probleem met deze game",
   "sdl": {
     "title": "Selecteer componenten om te installeren"
   },
-  "setting": {
-    "winecrossoverbottle": "CrossOver Bottle",
-    "warn-use-shared-wine-config": "Gebruik deze optie alleen als je weet wat je doet.<br/>Dezelfde prefix gebruiken voor meerdere games kan problemen veroorzaken als afhankelijkheden niet compatibel zijn.",
-    "show-wine-settings": "Bekijk Wine instellingen",
-    "use-shared-wine-config": ""
-  },
+  "setting": {},
   "sideload": {
     "field": {
       "title": "Titel"
@@ -281,25 +260,13 @@
     "gog-goodie": "Deze game lijkt niet te kunnen worden geïnstalleerd. Controleer downloadbare inhoud op https://gog.com/account",
     "goodie": "Niet installeerbaar",
     "redist": "Herverdelers installeren {{redist}}",
-    "winetricks": "Winetricks verbeteringen toepassen",
     "importing": ""
   },
   "submenu": {
-    "addShortcut": "Snelkoppeling toevoegen",
-    "addToSteam": "Voeg toe aan Steam",
     "change": "Wijzig installatiepad",
-    "disableEosOverlay": "Schakel EOS Overlay uit",
-    "enableEosOverlay": "Schakel EOS Overlay in",
     "move": "Spel verplaatsen",
-    "protondb": "Compatibiliteit controleren",
-    "removeFromSteam": "Verwijder uit Steam",
-    "removeShortcut": "Verwijder snelkoppelingen",
-    "settings": "Instellingen",
-    "store": "Winkel",
     "verify": "Verifiëren en repareren",
-    "extraInfo": "Extra info",
-    "logs": "Logboeken",
-    "categories": "Categorieën"
+    "extraInfo": "Extra info"
   },
   "help": {
     "cloud_save_unsupported": "Deze game ondersteunt geen opslag in de cloud. Deze informatie wordt verstrekt door de game-ontwikkelaars. Sommige games implementeren hun eigen cloudopslagsysteem",
@@ -318,11 +285,6 @@
     "versionCollapsable": "Game Versie",
     "dlcsCollapsible": "DLC",
     "nodlcs": "Geen DLC beschikbaar"
-  },
-  "third-party-managed": {
-    "header": "Dit spel wordt beheerd door een third-party applicatie",
-    "notice1": "Het volgende spel wordt beheerd door een third-party applicatie: \"{{application_name}}\"",
-    "notice2": "Nadat je op installeren hebt geklikt zal Heroic de applicatie starten om het installatieproces te voltooien"
   },
   "Open": "Open de",
   "queue": {

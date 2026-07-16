@@ -11,171 +11,48 @@
     "multiplayer_may_not_work": "Posible da ez funtzionatzea antitranpa sistema ukatu edo apurtutako batengatik."
   },
   "box": {
-    "cache-cleared": {
-      "message": "Heroic-en catxea garbitu da.",
-      "title": "Cachea ezabatuta"
-    },
     "choose": "Aukeratu",
-    "choose-gogdl-binary": "Hautatu GOGDL binarioa (berrabiarazi behar da)",
-    "choose-legendary-binary": "Aukeratu Legendary-ren binarioa",
-    "customWine": "Aukeratu Wine edo Proton binarioa",
-    "default-install-path": "Aukeratu lehenetsitako instalazio-ibilbidea",
-    "default-steam-path": "Steam bide-izena.",
-    "downloadNow": "Deskargatu orain",
     "error": {
-      "add": {
-        "steam": {
-          "body": "{{game}} Steam-era gehitzeak huts egin du honekin:{{newLine}} {{error}}",
-          "title": "Gehitze-errorea"
-        }
-      },
-      "credentials": {
-        "message": "Zure kredentzialak amaitu dira. Mesedez, amaitu saioa eta hasi berriro saioa."
-      },
-      "cx-bottle-not-found": {
-        "message": "CrossOver botila \"{{bottle_name}}\" ez da existitzen, ezin da abiarazi!",
-        "title": "Ez da CrossOver botila aurkitu"
-      },
       "diskspace": {
         "message": "Ez dago espazio nahikorik diskoan",
         "title": "Espaziorik ez"
       },
-      "dxvk": {
-        "message": "Errorea DXVK/VKD3D instalatzean! Egiaztatu zure konexioa mesedez!",
-        "title": "DXVK/VKD3D errorea"
-      },
-      "folder-not-found": {
-        "title": "Joko karpeta ezabatu egin dela dirudi, jokoa instalatutako zerrendatik kendu nahi duzu?"
-      },
-      "generic": {
-        "message": "Errore mezu generikoa",
-        "title": "Errore ezezaguna"
-      },
-      "launchAborted": "Exekuzioa abortatu egin da",
       "title": "Errorea",
-      "uncaught-exception": {
-        "message": "Errore bat gertatu da: {{newLine}} {{error}} {{newLine}} {{newLine}} Eman errorea gure GitHub biltegian.",
-        "title": "Harrapatu gabeko Salbuespena gertatu da!"
-      },
-      "update": {
-        "message": "Zerbait gaizki joan da eguneratzean, mesedez egiaztatu erregistroak edo saiatu berriz geroago!",
-        "title": "Eguneraketa errorea"
-      },
       "wine-not-found": {
         "invalid": "Wine bertsio hautatua ez da aurkitu. Instalatu edo hautatu beste bat {{newline}} Bertsioa: {{version}} {{newline}} Kokapena: {{path}}",
         "message": "Ez da Wine bertsioa hautatu. Egiaztatu jokoaren konfigurazioa!",
         "title": "Wine ez da aurkitu"
       },
-      "winetricks": {
-        "message": "Winetricks-ek errore hau itzuli du exekuzioan:{{newLine}}{{error}}",
-        "title": "Winetricks errorea"
-      },
-      "moving": "Errorea jokoa mugitzean {{error}}",
       "ubisoft-connect": {
         "title": "Ubisoft Connect",
-        "message": "Ezin izan da instalatu Ubisoft Connect jokoaren aurrizkian. Begiratu gure wiki orria https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher/wiki/How-to-install-Ubisoft-Connect-on-Linux-and-Mac helbidean modu egokian instalatzeko."
-      },
-      "legendary": {
-        "generic": "Akats bat gertatu da! Saiatu saioa amaitzen eta saioa hasten zure Epic kontuan. {{newline}} {{error}}"
+        "message": "Ezin izan da instalatu Ubisoft Connect jokoaren aurrizkian. Begiratu gure wiki orria https://github.com/Relic-Games-Launcher/RelicGamesLauncher/wiki/How-to-install-Ubisoft-Connect-on-Linux-and-Mac helbidean modu egokian instalatzeko."
       },
       "executableNotFound": "",
-      "dxmt": {
-        "message": "",
-        "title": ""
-      },
       "executableNotFoundMessage": ""
     },
-    "info": {
-      "update": {
-        "changelog": "Ireki aldaketa erregistroa",
-        "detail": "Eguneraketa atzeko planoan deskargatu nahi duzu?",
-        "message": "Bertsio berri bat eskuragarri dago!",
-        "message-finished": "Heroic berrabiarazi nahi duzu?",
-        "title": "Heroic Games Launcher",
-        "title-finished": "Eguneraketa bukatu da",
-        "detailNoAutoupdate": ""
-      }
-    },
+    "info": {},
     "no": "EZ",
     "ok": "Adoz",
-    "protocol": {
-      "install": {
-        "not_installed": "Ez dago instalatuta. Instalatu?"
-      }
-    },
     "quit": {
       "message": "Oraindik eragiketa batzuk egiteko daude, ziur zaude?",
       "title": "Irten"
     },
-    "reset-heroic": {
-      "question": {
-        "message": "Ziur zaude Heroic berrabiarazi nahi duzula? Horrek ezarpen guztiak eta cacheko biltegiratzea ezabatuko ditu, baina ez ditu zure instalatutako jokoak edo Epic-eko kredentzialak ezabatuko. Heroic-en bertsio eramangarriak (AppImage, WinPortable, ...) berrabiarazi egin behar dira.",
-        "title": "Berrezarri Heroic"
-      }
-    },
-    "runexe": {
-      "title": "Hautatu exekutatzeko EXEa"
-    },
-    "select": {
-      "button": "Hautatu",
-      "exe": "Hautatu EXE",
-      "script": ""
-    },
+    "select": {},
     "shortcuts": {
       "message": "Lasterbideak sortu dira Mahaigainean eta Hasierako Menuan",
-      "message-mac": "Lasterbideak sortu dira Aplikazioak karpetan",
       "message-remove": "Lasterbideak mahaigainetik eta Hasi menutik kendu dira",
-      "message-remove-mac": "Aplikazioak karpetatik lasterbideak kendu dira.",
       "title": "Lasterbideak"
     },
-    "sync": {
-      "button": "Aukeratu",
-      "error": "Ibilbideak ez du balio",
-      "title": "Aukeratu gordetzeko direktorioa"
-    },
-    "vcruntime": {
-      "install": {
-        "message": "Visual C++ Runtimes deskargatzeko estekak ireki dira. Mesedez, instalatu x86 eta x64 bertsioak."
-      },
-      "notfound": {
-        "message": "Microsoft Visual C++ Runtimeak ez daude instalatuta, joko batzuek eskatzen dituztenak",
-        "title": "VCRuntime ez dago instalatuta"
-      }
-    },
     "warning": {
-      "epic": {
-        "import": "Epic zerbitzariak etenaldi handia izaten ari dira une honetan, jokoa ezin da inportatu!",
-        "install": "Epic zerbitzariak ebaki garrantzitsu bat izaten ari dira une honetan, jokoa ezin da instalatu!",
-        "update": "Epic zerbitzariak etenaldi handia izaten ari dira une honetan, jokoa ezin da eguneratu!"
-      },
       "title": "Oharra",
-      "wine-change": {
-        "message": "Ezin izan dugu hautatutako ardoaren bertsioa aurkitu izenburu hau abiarazteko ({{selectedWine}}). {{newline}} Beste bat aurkitu dugu, {{foundWine}} erabiliz abiarazten jarraitu nahi duzu?",
-        "title": "Ez da ardorik aurkitu!"
-      },
-      "rosetta": {
-        "title": "",
-        "message": ""
-      },
       "snap": {
         "checkbox": "",
         "title": "",
         "message": ""
-      },
-      "sideload": {
-        "confirmExit": {
-          "title": "",
-          "message": ""
-        }
       }
     },
-    "wineprefix": "Hautatu WinePrefix karpeta",
     "yes": "BAI",
-    "dontShowAgain": "Ez erakutsi berriro",
-    "choose-nile-binary": "Hautatu Nile bitarra",
-    "update": "Update",
-    "changelog": "",
-    "postpone": ""
+    "update": "Update"
   },
   "button": {
     "cancel": "Ezeztatu",
@@ -207,28 +84,10 @@
     }
   },
   "download-manager": {
-    "install-type": {
-      "install": "Install",
-      "update": "Update"
-    },
-    "label": {
-      "disk": "Diskoa",
-      "speed": "Download"
-    },
     "link": "Downloads",
-    "queue": {
-      "end-time": "Finished at",
-      "queue-time": "Added at",
-      "start-time": "Started at",
-      "type": "Type"
-    },
-    "title": "Downloads",
-    "ETA": "Aurreikusitako denbora"
+    "title": "Downloads"
   },
-  "epic": {
-    "offline-notification-body": "Baliteke lineako zerbitzuak guztiz ez funtzionatzea Epic Games zerbitzariak lineaz kanpo daudelako!",
-    "offline-notification-title": "lineaz kanpo"
-  },
+  "epic": {},
   "Epic Games": "Epic Games",
   "error": "Error",
   "favourites": "Gogokoenak",
@@ -273,109 +132,41 @@
     "uncategorized": ""
   },
   "help": {
-    "amdfsr": "AMD-ren FSR-k fotograma-tasa areagotzen laguntzen du pantaila osoko moduan bereizmen baxuagoak igoz. Irudiaren kalitatea 5etik 1era igotzen da errendimendu txiki baten truke. Gaitzeak errendimendua hobetu dezake.",
-    "dxvk": "DXVK DirectX 9, 10 eta 11 jokoetarako Vulkan-en oinarritutako translazio-geruza da. Gaitzeak bateragarritasuna hobetu dezake. Arazoak sor ditzake bereziki DirectX joko zaharretan.",
     "dxvkfpslimit": "Sets a frame rate cap for DXVK games",
-    "esync": "Esync-ek ardo-zerbitzariaren gainkostua murriztea du helburu PUZa duten jokoetan. Gaitzeak errendimendua hobe dezake.",
-    "fsync": "Fsync-ek ardo-zerbitzariaren gainkostua murriztea du helburu PUZa duten jokoetan. Gaitzeak errendimendua hobetu dezake onartzen diren Linux nukleoetan.",
     "game_language": {
-      "fallback": "Utzi hutsik Heroic-en hizkuntza erabiltzeko.",
       "in_game_config": "Joko guztiek ez dute konfigurazio hau onartzen, batzuek jokoaren hizkuntza ezarpena dute.",
       "valid_codes": "Baliozko hizkuntza-kodeak jokoaren araberakoak dira."
     },
-    "gamemode": "Feral GameMode-k sistemari doikuntza automatikoak eta aldi baterakoak aplikatzen dizkio jokoak exekutatzen direnean. Gaitzeak errendimendua hobe dezake.",
-    "other": {
-      "part4": "Erabili ",
-      "part5": "Jokoaren argudioak",
-      "part6": " jaurtiketa-komandoaren ondoren deitzeko, adibidez: ",
-      "part7": " jaurtigailua ez erabiltzea joko batzuetan, etab."
-    },
-    "preferSystemLibs": "Wine bertsio pertsonalizatuak (Wine-GE, Wine-Lutris) beren liburutegiko mendekotasunekin bidaltzen dira. Aukera hau gaituz gero, bidaltzen diren liburutegi hauek ez ikusi egingo dira eta Wine-k sistemako liburutegiak kargatuko ditu ordez. Kontuz! Arazoak gerta daitezke mendekotasunak betetzen ez badira.",
     "primerun": "Erabili txartel grafiko dedikatua jokoa errendatzeko GPU anitzeko sistemetan. Errendatzeko bururik gabeko GPU bat erabiltzen duten joko-ordenagailu eramangarrietan edo mahaigainetan bakarrik behar da (NVIDIA Optimus, AMD CrossFire)",
-    "steam_path": {
-      "info": "This path lets Heroic determine what version of Proton Steam uses, for adding non-Steam games to Steam."
-    },
-    "steamruntime": "Steam-ek eskaintzen dituen liburutegi pertsonalizatuak Linux eta Windows (Proton) jokoak exekutatzen laguntzeko. Gaitzeak bateragarritasuna hobetu dezake.",
-    "sync": {
-      "part1": "Heroic ondo gordetzeko karpeta asmatzen saiatzen da, eta honek kasu gehienetan funtzionatuko du. Karpeta okerra bada, erabili baliogabetze-koadroa karpeta aldatzeko.",
-      "part2": "Prefix karpeta Wine edo Proton karpeta erabiliz gero, berriro egiaztatu beharko duzu ibilbidea, Proton-ek Prefix (/pfx) bat eta erabiltzaile-izen (steamuser) bat erabiltzen baititu. Beraz, uneko ibilbidea ezaba dezakezu, sinkronizazioko konfigurazio-orritik irten eta itzuli Heroic-ek karpeta berriro ere Prefix zuzenarekin asma dezan.",
-      "part3": "Eskuzko sinkronizazioa: Aukeratu «Deskargatu» hodeian gordetako jokoak deskargatzeko. «Igo» Igo lokalak hodeira igotzeko. «Behartu deskarga» eta «Karga behartua» ez dute kontuan hartuko tokiko bertsioa edo hodeiko bertsioa.",
-      "part4": "Automatikoki gordetako sinkronizatzeak gordeak sinkronizatuko ditu joko bat hasten den bakoitzean eta jolasten amaitu ondoren."
-    },
-    "vkd3d": "VKD3D DirectX 12 jokoetarako Vulkan-en oinarritutako translazio-geruza bat da. Gaitzeak bateragarritasuna nabarmen hobetu dezake. Ez du eraginik DirectX joko zaharretan.",
-    "wine": {
-      "part1": "Heroikoek Wine, Proton eta CrossOver-en bertsioak bilatzen ditu karpeta hauetan:",
-      "part2": "Beste leku batzuetarako, erabili karpeta horietako batera esteka sinboliko bat"
-    },
+    "steam_path": {},
+    "sync": {},
     "disable_logs": "Aktibatu kontrol-lauki hau erregistro-fitxategietako idazketa gehienak desgaitzeko (informazio kritikoa beti erregistratzen da). Ziurtatu ezarpen hau desaktibatu duzula edozein arazoren berri eman aurretik.",
     "title": {
-      "accessibility": "Erabilerraztasuna",
-      "downloadManager": "Download Manager",
-      "login": "",
-      "settings": "",
-      "wineManager": "",
-      "library": ""
+      "settings": ""
     },
     "dxfpslimit": "Sets a frame rate cap for DXVK games",
     "content": {
-      "defaultInstallPath": "",
-      "settingsDefault": "",
-      "settingsGame": "",
-      "downloadManager": "",
-      "wineManager": "",
-      "library": "",
-      "accessibility": "",
-      "login": ""
+      "defaultInstallPath": ""
     },
-    "msync": "",
     "button": {
       "open": "",
       "close": ""
-    },
-    "download_proton_steam": "",
-    "wine-hdr": "",
-    "dxvknvapi": "",
-    "WoW64": "",
-    "wine-wayland": "",
-    "advertiseAvxForRosetta": "",
-    "nvidiaprime": {
-      "details": "Erabili txartel grafiko dedikatua jokoa errendatzeko GPU anitzeko sistemetan. Errendatzeko bururik gabeko GPU bat erabiltzen duten joko-ordenagailu eramangarrietan edo mahaigainetan bakarrik behar da (NVIDIA Optimus, AMD CrossFire)"
     }
   },
   "info": {
-    "heroic": {
-      "beta": "Beta",
-      "click-to-see-changelog": "Egin klik aldaketen erregistroa ikusteko",
-      "newReleases": "Eguneraketa eskuragarri!",
-      "stable": "Egonkorra",
-      "version": "Heroic bertsioa"
-    },
-    "save-sync": {
-      "searching": "Trying to detect the correct save folder (click to cancel)"
-    },
     "settings": "Ezarpenak automatikoki gordetzen dira",
     "version": "Ardoaren Bertsioa"
   },
   "infobox": {
     "help": "Laguntza",
     "requirements": "Sistemaren eskakizunak",
-    "warning": "Oharra",
-    "wine-path": "Ardoaren Bidea",
-    "wine-prefix": {
-      "title": "Ardoaren aurrizkia"
-    },
-    "wine-repfix": {
-      "message": "Wine-k WINEPREFIX deritzona erabiltzen du Windows aplikazioak kapsulatzeko. Aurrizki honek Wine konfigurazio-fitxategiak eta C:-ren fitxategi-hierarkiaren erreprodukzioa ditu (Windows OS bateko disko nagusia). C: diskoaren erreprodukzio honetan, zure jokoa gordetzeko fitxategiak eta winetricks bidez instalatutako mendekotasunak gordetzen dira."
-    },
-    "wine-path-invalid": "Ardoaren bidea baliogabea da, hautatu beste bat.",
-    "wine-path-none-found": "Ez da Wine bertsiorik aurkitu, deskargatu bat Wine Manager-etik"
+    "warning": "Oharra"
   },
   "install": {
     "path": "Hautatu Instalatu bidea"
   },
   "label": {
-    "loading": "Loading",
-    "releaseDate": ""
+    "loading": "Loading"
   },
   "library": {
     "refresh": "Freskatu",
@@ -400,7 +191,6 @@
     "gog": "Hasi GOG saioa",
     "message": "Hasi saioa zure plataformetan. Saioa behin baino gehiagotan batera has dezakezu.",
     "amazon": "Amazon-en saioa",
-    "old-mac": "",
     "zoom": ""
   },
   "message": {},
@@ -437,7 +227,6 @@
     },
     "moved": "Mugitzen amaitu",
     "moving": "Mugimendu Jokoa",
-    "new-heroic-version": "Bertsio heroiko berri bat kaleratu zen!",
     "refresh": {
       "error": "Ezin izan dira igoko bertsioak eskuratu, agian Github APIaren murrizketak direla eta! Saiatu berriro geroago."
     },
@@ -461,45 +250,11 @@
     "retrying": "Retrying"
   },
   "Open": "Ireki",
-  "options": {
-    "advanced": {
-      "key": "Aldagaiaren izena",
-      "placeHolderKey": "IZENA",
-      "placeHolderValue": "Adib.: Path/To/ExtraFiles",
-      "title": "Inguruneko aldagaiak",
-      "value": "Balioa"
-    },
-    "env_variables": {
-      "error": {
-        "empty_key": "Aldagaien izenak ezin dira hutsik egon",
-        "equal_sign_in_key": "Aldagaien izenek ezin dute \"=\" zeinua izan",
-        "space_in_key": "Aldagaien izenek ezin dute zuriunerik izan"
-      },
-      "example": "EZ sartu \"=\" ikurra, adibidez: \"MY_FLAG=123\" bezalako ezarpen baterako, ezarri NIRE_FLAG NAME eta 123 VALUE atalean.",
-      "info": "Ezarri ingurune-aldagaiak komandoari eransteko."
-    },
-    "gameargs": {
-      "placeholder": "Jarri hemen abiarazlearen argudioak",
-      "title": "Jokoaren argudioak (komandoaren ondoren exekutatzeko):",
-      "error": {
-        "command": "",
-        "env": ""
-      }
-    },
-    "quote-args-with-spaces": "Abisua: ziurtatu argudioak zuriuneekin aipatzea! Adib.: \"bidea/espazioekin/\"",
-    "wrapper": {
-      "args": "Argudioak",
-      "arguments_example": "Argumentuen adibidea: --arg; --extra-file=\"fitxategi-bidea/-rekin/espazioekin\"",
-      "exe": "Bilgarri",
-      "placeHolderKey": "Bilgarri berria",
-      "placeHolderValue": "Biltzeko argudioak",
-      "title": "Wrapper komandoa:"
-    }
-  },
+  "options": {},
   "other": {
     "gogdl-version": "GOGDL bertsioa: ",
     "legendary-version": "Bertsio mitikoa: ",
-    "weblate": "Lagundu Heroic itzultzen.",
+    "weblate": "Lagundu Relic itzultzen.",
     "nile-version": "Nile bertsioa: "
   },
   "Other": "Other",
@@ -535,236 +290,41 @@
   "search": "Bilatu jokoak",
   "setting": {
     "addgamestosteam": "Add games to Steam automatically",
-    "alt-gogdl-bin": "Aukeratu GOGDL Binario alternatibo bat erabiltzeko",
-    "alt-legendary-bin": "Aukeratu kondairazko bitar alternatibo bat",
-    "autodxvk": "Instalatu/Eguneratu automatikoki DXVK aurrizkian",
-    "autosync": "Sinkronizazio automatikoa gordetzen du",
-    "autovkd3d": "Instalatu/Eguneratu automatikoki VKD3D aurrizkian",
-    "change-target-exe": "Hautatu exekutatzeko EXE alternatibo bat",
-    "crossover-version": "Crossover/Wine bertsioa",
-    "customWineProton": "Ardo/Protoien bideak pertsonalizatuak",
-    "default-install-path": "Instalazio-bide lehenetsia",
-    "default-steam-path": "Steam bide lehenetsia",
-    "download-no-https": "Deskargatu jokoak HTTPS gabe (CDNetarako erabilgarria, adibidez, LanCache)",
     "dxvkfpslimit": "Limit FPS (DX9, 10 and 11)",
-    "enableFSRHack": "Gaitu FSR Hack (Wine bertsioak onartu behar du)",
-    "eosOverlay": {
-      "cancelInstall": "Utzi",
-      "checkForUpdates": "Egiaztatu eguneratzeak",
-      "checkingForUpdates": "Eguneratzeak bilatzen...",
-      "currentVersion": "Uneko bertsioa: {{version}}",
-      "disable": "Desgaitu",
-      "enable": "Gaitu",
-      "install": "Instalatu",
-      "installed": "EOS Overlay instalatuta dago",
-      "installing": "EOS Overlay instalatzen ari da...",
-      "latestVersion": "Azken bertsioa: {{version}}",
-      "notInstalled": "EOS Overlay ez dago instalatuta",
-      "notInstalledMsg": "EOS Overlay ez dago instalatuta. Orain instalatu nahi duzu?",
-      "notInstalledTitle": "Gainjarri ez da instalatu",
-      "remove": "Desinstalatu",
-      "removeConfirm": "Ziur EOS Overlay desinstalatu nahi duzula?",
-      "removeConfirmTitle": "Berretsi gainjartzea kentzea",
-      "updateNow": "Eguneratu",
-      "updating": "Eguneratzen..."
-    },
-    "esync": "Gaitu Esync",
-    "FsrSharpnessStrenght": "FSR zorroztasunaren indarra",
-    "fsync": "Gaitu Fsync",
-    "gamemode": "Erabili GameMode (Feral Game Mode instalatu behar da)",
     "language": "Aukeratu aplikazioaren hizkuntza",
-    "library_top_option": {
-      "disabled": "Desgaituta",
-      "favourites": "Joko gogokoenak",
-      "recently_played": "Duela gutxi jokatutako jokoak",
-      "recently_played_installed": "Duela gutxi jokatutako jokoak (bakarrik instalatuta)"
-    },
-    "library_top_section": "Liburutegiaren Goiko Atala",
     "log": {
       "copy-to-clipboard": "Kopiatu erregistroko edukia arbelean",
       "current-log": "Uneko erregistroa",
-      "instructions_title": "Nola salatu arazo bat?",
-      "last-log": "Azken erregistroa",
-      "no-file": "Ez da aurkitu erregistro-fitxategirik",
-      "show-in-folder": "Erakutsi erregistro-fitxategia karpetan",
-      "upload": {
-        "actions": "Action",
-        "delete": "",
-        "hours-ago": "",
-        "title": "",
-        "upload-date": "",
-        "error": {
-          "title": "",
-          "manual_upload": "",
-          "content": ""
-        },
-        "uploading": {
-          "title": "",
-          "content": ""
-        },
-        "open": "",
-        "header": "",
-        "no-files": "",
-        "confirm": {
-          "content": "",
-          "title": ""
-        },
-        "minutes-ago": "",
-        "done": {
-          "content": "",
-          "title": ""
-        },
-        "button": ""
-      },
-      "descriptiveNames": {
-        "legendary": "",
-        "nile": "",
-        "gog": "",
-        "zoom": "",
-        "game-log": "",
-        "heroic": ""
-      },
-      "show-uploads": ""
-    },
-    "manualsync": {
-      "download": "Deskargatu",
-      "forcedownload": "Deskargatu behartu",
-      "forceupload": "Behartu kargatzea",
-      "sync": "Sinkronizatu",
-      "syncing": "Sinkronizatzen",
-      "title": "Eskuzko sinkronizazioa gordetzen du",
-      "upload": "Kargatu"
+      "last-log": "Azken erregistroa"
     },
     "maxworkers": "Gehienezko Langile kopurua deskargatzerakoan",
-    "offlinemode": "Exekutatu jokoa lineaz kanpo",
-    "prefered_language": "Lehenetsitako hizkuntza (Hizkuntza-kodea)",
-    "preferSystemLibs": "Sistemaren liburutegiak hobetsi",
-    "runexe": {
-      "message": "Arrastatu eta Jaregin Fitxategiak hemen",
-      "title": "Exekutatu EXE aurrizkian"
-    },
-    "savefolder": {
-      "not-found": "Save folder not found, please select it manually (click to retry)",
-      "placeholder": "Hautatu partidak gordetzeko karpeta zehatza",
-      "warning": "Please check twice if the path is correct (click to retry)"
-    },
     "select_theme": "Hautatu Gaia",
-    "showfps": "Erakutsi FPS (DX9, 10 eta 11)",
-    "start-in-tray": "Hasi minimizatua",
-    "steamruntime": "Erabili Steam Runtime",
-    "winecrossoverbottle": "CrossOver botila",
-    "wineprefix": "WinePrefix karpeta",
-    "wineversion": "Ardoaren Bertsioa",
-    "autoUpdateGames": "Eguneratu jokoak automatikoki",
-    "ignoreGameUpdates": "Ez ikusi jokoaren eguneraketak",
-    "disable_logs": "Desgaitu erregistroak",
-    "showMetalOverlay": "Erakutsi estatistikak gainjartzea",
-    "alt-nile-bin": "Aukeratu Nile Binary alternatibo bat",
-    "WoW64": "",
-    "frameless-window": {
-      "confirmation": {
-        "message": "",
-        "title": ""
-      },
-      "description": ""
-    },
-    "download-proton-steam": "",
-    "scripts": "",
-    "wineWayland": "",
     "experimental_features": {
       "cometSupport": "",
       "enableNewDesign": "",
       "enableHelp": "",
       "zoomPlatform": ""
     },
-    "hdr": "",
-    "autodxvknvapi": "",
-    "show_valve_proton": {
-      "wine_selector_warning": "",
-      "confirmation": {
-        "show": "",
-        "title": "",
-        "dont_show": "",
-        "message": ""
-      },
-      "label": "",
-      "info_label": ""
-    },
-    "dxfpslimit": "",
-    "allow_installation_broken_anticheat": {
-      "confirmation": {
-        "understand": "",
-        "title": "",
-        "message": ""
-      },
-      "label": ""
-    },
-    "enable-quick-sync-menu": "",
-    "analyticsOptIn": "",
     "verboseLogs": {
       "description": ""
     },
-    "msync": "",
     "advertiseAvxForRosetta": "",
-    "custom_css": {
-      "warning": ""
-    },
-    "start-in-console-mode": "",
     "disable_gog_presence": ""
   },
   "settings": {
-    "battlEyeRuntime": {
-      "installing": "BattlEye Runtime instalatzen...",
-      "name": "BattlEye AntiCheat Runtime"
-    },
     "clear-cache": "Garbitu Cache heroikoa",
-    "copiedToClipboard": "Arbelean kopiatu da!",
-    "copyToClipboard": "Kopiatu ezarpen guztiak arbelean",
-    "default_hint": "Changes in this section only apply as default values when installing games. If you want to change the settings of an already installed game, use the Settings button in the game page.",
-    "eacRuntime": {
-      "gameModeRequired": {
-        "title": "GameMode beharrezkoa da"
-      },
-      "installing": "EAC Runtime instalatzen...",
-      "name": "EasyAntiCheat Runtime"
-    },
-    "gameMode": {
-      "eacRuntimeEnabled": {
-        "message": "EAC exekuzio-denbora gaituta dago, eta horrek ez du behar bezala funtzionatuko GameMode gabe. EAC Runtime eta GameMode desgaitu nahi dituzu?",
-        "title": "EAC exekuzio-denbora gaituta"
-      }
-    },
     "log": {
       "long-log-hint": "Erregistroa moztuta, azken 1000 lerroak erakusten dira!"
     },
     "navbar": {
-      "advanced": "Aurreratua",
-      "games_settings_defaults": "Game Defaults",
       "general": "Orokorra",
       "log": "Erregistroa",
-      "other": "Bestela",
-      "sync": "Hodeiko gordetzeen sinkronizazioa",
-      "wineExt": "Ardoaren luzapenak",
-      "systemInformation": "",
-      "legacy": ""
+      "wineExt": "Ardoaren luzapenak"
     },
     "open-config-file": "Ireki Konfigurazio fitxategia",
-    "reset-heroic": "Berrezarri Heroic",
-    "saves": {
-      "label": "Gorde kokapena:",
-      "warning": "Hodeiko Gordeen eginbidea beta-n dago. Sinkronizatu aurretik gordetako babeskopiak egin behar dira (zerbait gaizki gertatzen bada)",
-      "not_supported": "",
-      "gog_linux_native_warning": ""
-    },
     "advanced": {
       "details": "Xehetasunak",
-      "title": {
-        "resetHeroic": "Berrezarri Heroic",
-        "clearCache": ""
-      },
-      "resetHeroic": {
-        "help": "Ziur zaude Heroic berrabiarazi nahi duzula? Horrek ezarpen guztiak eta cacheko biltegiratzea ezabatuko ditu, baina ez ditu zure instalatutako jokoak edo Epic-eko kredentzialak ezabatuko. Heroic-en bertsio eramangarriak (AppImage, WinPortable, ...) berrabiarazi egin behar dira."
-      },
+      "title": {},
       "clearCache": {
         "help9": "Game Settings",
         "help1": "",
@@ -778,44 +338,13 @@
         "help4": ""
       }
     },
-    "launchOptions": "Jaurtiketa-aukerak...",
-    "legacy_warning": "",
-    "systemInformation": {
-      "cpu": "",
-      "gpuWithNumber": "",
-      "cpuDescription": "",
-      "legendaryVersion": "",
-      "systemSpecifications": "",
-      "steamDeck": "",
-      "gpuDriver": "",
-      "os": "",
-      "gpu": "",
-      "gogdlVersion": "",
-      "osVersion": "",
-      "software": "",
-      "cometVersion": "",
-      "memoryStats": "",
-      "systemModel": "",
-      "showDetailed": "",
-      "memory": "",
-      "copyToClipboard": "",
-      "heroicVersion": "",
-      "nileVersion": ""
-    },
-    "experimental_features": {
-      "title": ""
-    },
-    "offline": {
-      "warning": ""
-    },
+    "experimental_features": {},
+    "offline": {},
     "steamgriddb": {
       "apikey": {
         "title": "",
         "placeholder": "",
         "placeholder_saved": ""
-      },
-      "help": {
-        "description": ""
       }
     }
   },
@@ -834,24 +363,11 @@
   "title": {
     "allGames": "Joko guztiak"
   },
-  "toolbox": {
-    "settings": {
-      "default-wineprefix": "Hautatu aurrizkiaren karpeta lehenetsia konfigurazio berrietarako",
-      "wineprefix": "Hautatu Karpeta bat Ardo-aurrizki berrietarako"
-    }
-  },
-  "tooltip": {
-    "addpath": "Gehitu bide berria",
-    "removepath": "Kendu bidea"
-  },
   "tray": {
     "about": "Buruz",
     "quit": "Irten",
     "reload": "Berriz kargatu",
     "show": "Erakutsi"
-  },
-  "two_col_table": {
-    "save_hint": "Taula honetako aldaketak ez dira automatikoki gordetzen. Egin klik + botoian"
   },
   "Update Available!": "Eguneraketa eskuragarri!",
   "userselector": {
@@ -871,24 +387,6 @@
       "reload": "Berriz kargatu orria"
     }
   },
-  "wine": {
-    "actions": "Ekintza",
-    "manager": {
-      "link": "Ardo kudeatzailea",
-      "not-found": "No Wine versions found. Please click the refresh icon to try again.",
-      "title": "Ardo kudeatzailea",
-      "unzipping": "Deskonprimitzea",
-      "search": "",
-      "loading": "",
-      "open_folder": "",
-      "update": "Update",
-      "settings": "",
-      "no-results": ""
-    },
-    "release": "Argitaratze data",
-    "size": "Tamaina",
-    "notes": ""
-  },
   "externalLink": {
     "warning": "Kanpoko esteka bat irekitzera zoaz.",
     "dontAskAgain": "Ez galdetu berriro"
@@ -906,17 +404,6 @@
   "amazon": "Amazon",
   "Amazon Games": "Amazon Jokoak",
   "prime-gaming": "Prime Gaming",
-  "winetricks": {
-    "install": "Install",
-    "loading": "Kargatzen",
-    "no-components": "",
-    "installing": "",
-    "openGUI": "",
-    "search": "",
-    "loading-available": "",
-    "nothingYet": "",
-    "installed": ""
-  },
   "category-settings": {
     "cancel": "Ezeztatu",
     "warning": "Warning",
@@ -931,9 +418,7 @@
     "maximize": "",
     "restore": ""
   },
-  "launch": {
-    "options": "Jaurtiketa-aukerak..."
-  },
+  "launch": {},
   "categories-manager": {
     "confirm-rename": "",
     "cancel-remove": "",
@@ -950,25 +435,7 @@
     "noGames": "",
     "noResults": ""
   },
-  "wineExplanation": {
-    "proton-ge": "",
-    "gpt": "",
-    "wine-crossover": "",
-    "wine-staging-macos": ""
-  },
-  "steamgriddb": {
-    "error": {
-      "no-games": "",
-      "no-grids": "",
-      "search": "",
-      "grids": ""
-    },
-    "picker": {
-      "search": "",
-      "title": "",
-      "select-game": ""
-    }
-  },
+  "steamgriddb": {},
   "console": {
     "update": {
       "hintPrefix": "",

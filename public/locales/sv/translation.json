@@ -11,170 +11,47 @@
     "multiplayer_may_not_work": "Flerspelarfunktioner kanske inte fungerar på grund av nekat eller trasigt antifusk stöd."
   },
   "box": {
-    "cache-cleared": {
-      "message": "Heroic cache rensades.",
-      "title": "Cache rensades"
-    },
     "choose": "Välj",
-    "choose-gogdl-binary": "Ange GOGDL-programfil (omstart krävs)",
-    "choose-legendary-binary": "Ange Legendary programfil",
-    "customWine": "Ange Wine/Proton version",
-    "default-install-path": "Ange standard installationssökväg",
-    "default-steam-path": "Sökväg till Steam.",
-    "downloadNow": "Ladda ner nu",
     "error": {
-      "add": {
-        "steam": {
-          "body": "Misslyckades lägga till {{game}} i Steam:{{newLine}} {{error}}",
-          "title": "Misslyckades lägga till spel"
-        }
-      },
-      "credentials": {
-        "message": "Autentisering har utgått, logga ut och logga sedan in igen."
-      },
-      "cx-bottle-not-found": {
-        "message": "CrossOver prefix \"{{bottle_name}}\" saknas, kan ej starta!",
-        "title": "CrossOver prefix saknas"
-      },
       "diskspace": {
         "message": "Otillräckligt ledigt hårdiskutrymme",
         "title": "Otillräckligt utrymme"
       },
-      "dxvk": {
-        "message": "Problem vid installation av DXVK/VKD3D! Kontrollera din internetanslutning!",
-        "title": "DXVK/VKD3D problem"
-      },
-      "folder-not-found": {
-        "title": "Spelets installationsmapp saknas, vill du ta bort det från Installerade spel-listan?"
-      },
-      "generic": {
-        "message": "allmänt felmeddelande",
-        "title": "Välj exekverbar fil att köra"
-      },
-      "launchAborted": "Start avbröts",
       "title": "Problem",
-      "uncaught-exception": {
-        "message": "Okänt fel:{{newLine}}{{error}}{{newLine}}{{newLine}} Vänligen rapportera felet på vår Github.",
-        "title": "Okänt fel!"
-      },
-      "update": {
-        "message": "Uppdateringen misslyckades, kontrollera loggfilen eller försök igen senare!",
-        "title": "Problem vid uppdatering"
-      },
       "wine-not-found": {
         "invalid": "Angiven Wine version hittades ej. Installera denna version eller välj något annat i spelets inställningar{{newline}}Version: {{version}}{{newline}}Sökväg: {{path}}",
         "message": "Ingen Wine version vald. Kontrollera spelinställningar!",
         "title": "Wine hittades ej"
       },
-      "winetricks": {
-        "message": "Winetricks misslyckades, felmeddelande:{{newLine}}{{error}}",
-        "title": "Winetricks problem"
-      },
-      "moving": "Fel när spelet flyttades {{error}}",
       "ubisoft-connect": {
-        "message": "Installationen av Ubisoft Connect i spelprefixet misslyckades. Kolla vår wikisida på https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher/wiki/How-to-install-Ubisoft-Connect-on-Linux-and-Mac för att installera det manuellt.",
+        "message": "Installationen av Ubisoft Connect i spelprefixet misslyckades. Kolla vår wikisida på https://github.com/Relic-Games-Launcher/RelicGamesLauncher/wiki/How-to-install-Ubisoft-Connect-on-Linux-and-Mac för att installera det manuellt.",
         "title": "Ubisoft Connect"
       },
-      "legendary": {
-        "generic": "Ett fel har uppstått! Försök att logga ut och in på ditt Epic-konto. {{newline}} {{error}}"
-      },
       "executableNotFound": "Exekverbar fil hittades inte",
-      "executableNotFoundMessage": "Heroic kunde inte hitta den exekverbara filen för det här spelet. Vänligen ställ in den manuellt i spelinställningarna.",
-      "dxmt": {
-        "message": "Fel vid nedleddning av DXMT! Kontrollera din anslutning!",
-        "title": "DXMT nedladdningsfel"
-      }
+      "executableNotFoundMessage": "Relic kunde inte hitta den exekverbara filen för det här spelet. Vänligen ställ in den manuellt i spelinställningarna."
     },
-    "info": {
-      "update": {
-        "changelog": "Visa ändringsloggen",
-        "detail": "Vill du ladda ner uppdateringen i bakgrunden?",
-        "message": "Ny version tillgänglig!",
-        "message-finished": "Vill du starta om Heroic nu?",
-        "title": "Heroic Games Launcher",
-        "title-finished": "Uppdatering slutförd",
-        "detailNoAutoupdate": "Automatiska uppdateringar stöds inte för ditt paketformat. Använd din pakethanterare för att uppdatera."
-      }
-    },
+    "info": {},
     "no": "Nej",
     "ok": "OK",
-    "protocol": {
-      "install": {
-        "not_installed": "Spel ej installerat. Vill du installera nu?"
-      }
-    },
     "quit": {
       "message": "Det finns pågående nedladdningar, är du säker?",
       "title": "Avbryt"
     },
-    "reset-heroic": {
-      "question": {
-        "message": "Är du säker att du vill grundåterställa Heroic? Detta raderar alla inställningar och cachefiler men raderar inte installerade spel eller Epic inloggningsuppgifter. Portabla versioner (AppImage, WinPortable, ...) av Heroic måste startas om manuellt efteråt.",
-        "title": "Grundåterställ Heroic"
-      }
-    },
-    "runexe": {
-      "title": "Välj körbart program"
-    },
-    "select": {
-      "button": "Ange val",
-      "exe": "Välj exekverbar fil",
-      "script": "Välj skript ..."
-    },
+    "select": {},
     "shortcuts": {
       "message": "Genvägar skapades på Skrivbordet och Startmenyn",
-      "message-mac": "Genväg skapades i applikationens mapp",
       "message-remove": "Genvägar togs bort från skrivbordet och startmenyn",
-      "message-remove-mac": "Genväg togs bort från applikationens mapp",
       "title": "Genvägar"
     },
-    "sync": {
-      "button": "Ok",
-      "error": "Ogilltig sökväg",
-      "title": "Väl mapp för sparfiler"
-    },
-    "vcruntime": {
-      "install": {
-        "message": "Nedladdningslänk för Visual C++ Runtimes har öppnats. Var god och installera både x86 och x64 versionerna."
-      },
-      "notfound": {
-        "message": "Microsoft Visual C++ Runtimes är inte installerad vilket krävs för vissa spel",
-        "title": "VCRuntime är inte installerad"
-      }
-    },
     "warning": {
-      "epic": {
-        "import": "Epics servrar är nere för tillfället, spelet kan inte importeras!",
-        "install": "Epics servrar är nere för tillfället, spelet kan inte installeras!",
-        "update": "Epics servrar är nere för tillfället, spelet kan inte uppdateras!"
-      },
       "title": "Varning",
-      "wine-change": {
-        "message": "Vi kunde inte hitta den valda vinversionen för att lansera den här titeln ({{selectedWine}}). {{newline}} Vi hittade en till, vill du fortsätta lanseringen med {{foundWine}}?",
-        "title": "Vinet hittades inte!"
-      },
-      "sideload": {
-        "confirmExit": {
-          "title": "Är du säker på att du vill avsluta?",
-          "message": "Alla osparade framsteg kan gå förlorade"
-        }
-      },
       "snap": {
         "checkbox": "Visa inte detta meddelande igen",
-        "title": "Heroic körs som Snap"
-      },
-      "rosetta": {
-        "message": "Heroic kräver Rosetta för att det ska fungera korrekt på macOS med Apple Silicon-chips, installera det från macOS-terminalen med följande kommando: \"softwareupdate --install-rosetta\" och starta om Heroic. ",
-        "title": "Rosetta hittades inte"
+        "title": "Relic körs som Snap"
       }
     },
-    "wineprefix": "Ange Wine-prefix mapp",
     "yes": "Ja",
-    "dontShowAgain": "Visa inte igen",
-    "choose-nile-binary": "Välj Nile binär",
-    "update": "Uppdatering",
-    "changelog": "Ändringslogg",
-    "postpone": "Skjut upp"
+    "update": "Uppdatering"
   },
   "button": {
     "cancel": "Avbryt",
@@ -206,28 +83,10 @@
     }
   },
   "download-manager": {
-    "install-type": {
-      "install": "Installation",
-      "update": "Uppdatering"
-    },
-    "label": {
-      "disk": "Disk",
-      "speed": "Nedladdning"
-    },
     "link": "Nedladdningar",
-    "queue": {
-      "end-time": "Avslutades",
-      "queue-time": "Tillagd",
-      "start-time": "Påbörjades",
-      "type": "Typ"
-    },
-    "title": "Nedladdningar",
-    "ETA": "Beräknad tid"
+    "title": "Nedladdningar"
   },
-  "epic": {
-    "offline-notification-body": "Onlinetjänster kanske inte fungerar korrekt då Epics servrar är nere för tillfället!",
-    "offline-notification-title": "Offline"
-  },
+  "epic": {},
   "Epic Games": "Epic Games",
   "error": "Error",
   "favourites": "Favoriter",
@@ -273,109 +132,41 @@
     "show_updates_only": "Visa spel med uppdateringar endast"
   },
   "help": {
-    "amdfsr": "AMD's FSR hjälper till att öka bildhastigheten genom att skala upp lägre upplösningar i helskärmsläge. Bildkvaliteten ökar från 5 mot 1 till priset av en liten påverkan av prestandan. Aktivering kan förbättra prestandan.",
-    "dxvk": "DXVK är ett Vulkan-baserat översättningslager för DirectX 9, 10 och 11 spel. Aktivering kan förbättra kompatibiliteten. Kan orsaka problem särskilt för äldre DirectX-spel.",
     "dxvkfpslimit": "Ställer in ett bildhastighetstak för DXVK spel",
-    "esync": "Esync syftar till att minska wineserver overhead i CPU-intensiva spel. Aktivering kan förbättra prestandan.",
-    "fsync": "Fsync syftar till att minska wineserver overhead i CPU-intensiva spel. Aktivering kan förbättra prestandan om stöd finns i Linux kärnan.",
     "game_language": {
-      "fallback": "Lämna tom för att använda samma språk som Heroic.",
       "in_game_config": "Inte alla spel stödjer denna konfigurationen en del har språkinställningar i spelet.",
       "valid_codes": "Giltiga språkkoder beror på spelet."
     },
-    "gamemode": "Feral GameMode tillämpar automatiska och tillfälliga justeringar av systemet när spel körs. Aktivering kan förbättra prestandan.",
-    "other": {
-      "part4": "Använd ",
-      "part5": "Spelspecifika argument",
-      "part6": " körs efter startkommandot, t.ex: ",
-      "part7": " för att starta utan launcher i vissa spel."
-    },
-    "preferSystemLibs": "Anpassade Wine-versioner (Wine-GE, Wine-Lutris) levereras med sina biblioteksberoenden. Genom att aktivera det här alternativet kommer dessa levererade bibliotek att ignoreras och Wine laddar systemets bibliotek istället. Varning! Problem kan uppstå om beroenden inte uppfylls.",
     "primerun": "Använd dedikerat grafikkort för att rendera spel på multi-GPU system. Behövs endast på laptop eller stationära datorer som använder en headless GPU för rendering (NVIDIA Optimus, AMD CrossFire)",
-    "steam_path": {
-      "info": "Den här sökvägen låter Heroic bestämma vilken version av Proton, Steam använder för att lägga till icke-Steam-spel till Steam."
-    },
-    "steamruntime": "Anpassade bibliotek från Steam för att hjälpa till att köra Linux och Windows (Proton) spel. Aktivering kan förbättra kompatibiliteten.",
-    "sync": {
-      "part1": "Heroic försöker gissa mapp för sparfiler vilket oftast fungerar. Om det blir fel, använd fältet för att ange korrekt sökväg.",
-      "part2": "Om du ändrar sökväg för Wine eller Proton prefix kommer du behöva kontrollera sökvägen igen. Proton använder annorlunda prefix (/pfx) och användarnamn (steamuser) jämfört med Wine. Du kan radera aktuell sökväg och lämna synkroniseringsinställningarna, öppna dem på nytt så försöker Heroic automatiskt hitta rätt prefix igen.",
-      "part3": "Manuell synkronisering: Ladda ner sparfiler från molnlagring. Ladda upp lokala sparfiler till molnlagring. Tvingad nedladdning och tvingad uppladdning ignorerar versionskontroll både lokalt och i molnlagring.",
-      "part4": "Synkronisera sparfiler automatiskt kommer synkronisera sparfiler varje gång ett spel startas samt avslutas."
-    },
-    "vkd3d": "VKD3D är ett Vulkan-baserat översättningslager för DirectX 12 spel. Aktivering kan förbättra kompatibiliteten avsevärt. Har ingen effekt på äldre DirectX spel, det kräver DXVK.",
-    "wine": {
-      "part1": "Heroic söker efter Wine, Proton och CrossOver i dessa mappar:",
-      "part2": "För övriga platser, använd symbolisk länk till en av dessa mappar"
-    },
+    "steam_path": {},
+    "sync": {},
     "disable_logs": "Slå den här kryssrutan PÅ för att inaktivera de flesta skrivningar till loggfiler (kritisk information loggas alltid). Se till att stänga AV den här inställningen innan du rapporterar något problem.",
-    "dxvknvapi": "DXVK-NVAPI är en implementering av NVAPI byggt ovanpå DXVK och Linux-native NVAPI, det tillåter användning av DLSS på Nvidia GPU:er.",
     "title": {
-      "accessibility": "Handikappsanpassning",
-      "login": "Login",
-      "settings": "Inställningar",
-      "downloadManager": "Download Manager",
-      "wineManager": "Wine hanterare",
-      "library": "Bibliotek"
+      "settings": "Inställningar"
     },
     "content": {
-      "defaultInstallPath": "Detta är den sökvägen som är förvald när du installerar spel.",
-      "settingsDefault": "Visar alla inställningar för Heroic och standardinställningar för spel.",
-      "settingsGame": "Visar alla inställningar för ett spel.",
-      "downloadManager": "Visar nuvarande och tidigare nedladdningar.",
-      "wineManager": "Installera olika versioner av Wine, Proton, Crossover, etc.",
-      "library": "Visar alla ägda spel.",
-      "accessibility": "Visar tillgänglighetsinställningar.",
-      "login": "Logga in i olika butiker."
+      "defaultInstallPath": "Detta är den sökvägen som är förvald när du installerar spel."
     },
     "button": {
       "open": "Öppna hjälp",
       "close": "Stäng hjälp"
     },
-    "msync": "Msync syftar till att minska wineserver overhead i CPU-intensiva spel. Aktivering kan förbättra prestandan med Linux-kärnor som stöds.",
-    "dxfpslimit": "Ställer in ett bildhastighetstak för DirectX spel (9-12)",
-    "advertiseAvxForRosetta": "Aktiverar stöd för AVX-instruktionsuppsättningar när Windows-spel körs via Rosetta på Apple Silicon Macar. Detta kan krävas för vissa spel som Death Stranding som behöver AVX-stöd.",
-    "download_proton_steam": "När det är aktiverat kommer GE-Proton att laddas ner direkt till Steams kompatibilitetsverktygskatalog istället för standardsökvägen för Heroic. Det kommer att använda Steam-sökvägen som angetts i inställningen \"Standardsökväg för Steam\" ovan.",
-    "wine-hdr": "HDR förstärker färgerna genom att ge ljusare höjdpunkter och djupare kontraster. För att HDR ska fungera måste både skärmen och spelet stödja det.",
-    "wine-wayland": "Den experimentella drivrutinen Wine-Wayland tillåter spel att köras direkt under Wayland visningsprotokoll. Aktivering kan orsaka problem i vissa spel.",
-    "WoW64": "Wine WoW64-läget gör att 32-bitars Windows-spel kan köras på 64-bitars Wine. Aktivering kan förbättra prestandan, men kan också förstöra äldre 32-bitars spel.",
-    "nvidiaprime": {
-      "details": "Använd dedikerat grafikkort för att rendera spel på multi-GPU system. Behövs endast på laptop eller stationära datorer som använder en headless GPU för rendering (NVIDIA Optimus, AMD CrossFire)"
-    }
+    "dxfpslimit": "Ställer in ett bildhastighetstak för DirectX spel (9-12)"
   },
   "info": {
-    "heroic": {
-      "beta": "Beta",
-      "click-to-see-changelog": "Klicka för att se ändringsloggen",
-      "newReleases": "Uppdatering tillgänglig!",
-      "stable": "Stabil",
-      "version": "Heroicversion"
-    },
-    "save-sync": {
-      "searching": "Söker efter mapp för sparfiler (klicka för att avbryta)"
-    },
     "settings": "Inställningar sparas automatiskt",
     "version": "Wineversion"
   },
   "infobox": {
     "help": "Hjälp",
     "requirements": "Systemkrav",
-    "warning": "Varning",
-    "wine-path": "Winesökväg",
-    "wine-prefix": {
-      "title": "Wineprefix"
-    },
-    "wine-repfix": {
-      "message": "Wine använder WINEPREFIX för att kapsla in Windows-applikationer. Detta prefix innehåller Wines konfigurationsfiler och en skapad filhierarki för C: (huvuddisken på ett Windows-operativsystem). I den skapade C:-enheten lagras spelets sparfiler och beroenden som installerats via winetricks."
-    },
-    "wine-path-invalid": "Vinvägen är ogiltig, välj en annan.",
-    "wine-path-none-found": "Ingen Wine-version hittades, ladda ner en från Wine Manager"
+    "warning": "Varning"
   },
   "install": {
     "path": "Ange installationssökväg"
   },
   "label": {
-    "loading": "Läser in",
-    "releaseDate": "Utgivningsdatum"
+    "loading": "Läser in"
   },
   "library": {
     "refresh": "Uppdatera",
@@ -400,7 +191,6 @@
     "gog": "GOG-inloggning",
     "message": "Logga in på önskad plattform. Du kan vara inloggad på fler än en plattform samtidigt.",
     "amazon": "Amazon-inloggning",
-    "old-mac": "Din macOS version är {{version}}. macOS 12 eller senare krävs för att logga in.",
     "zoom": "Zoom inloggning"
   },
   "message": {},
@@ -437,7 +227,6 @@
     },
     "moved": "Spelflytt slutförd",
     "moving": "Flyttar spel",
-    "new-heroic-version": "En ny version av Heroic är tillgänglig!",
     "refresh": {
       "error": "Det gick inte att ladda ner en ny version, kanske beror det på begränsningar i Github API, Försök igen senare."
     },
@@ -461,45 +250,11 @@
     "retrying": "Försöker igen"
   },
   "Open": "Öppna",
-  "options": {
-    "advanced": {
-      "key": "Variabelnamn",
-      "placeHolderKey": "NAMN",
-      "placeHolderValue": "T.ex: Sökväg/till/extrafiler",
-      "title": "Miljövariabler",
-      "value": "Värde"
-    },
-    "env_variables": {
-      "error": {
-        "empty_key": "Variabelnamn kan inte vara tomt",
-        "equal_sign_in_key": "Variabelnamn kan får inte innehålla \"=\"",
-        "space_in_key": "Variabelnamn får inte innehålla mellanslag"
-      },
-      "example": "Ha INTE med \"=\" tecken, t.ex: istället för \"MIN_FLAGGA=123\", använd MIN_FLAGGA som NAMN och 123 som VÄRDE.",
-      "info": "Ställ in miljövariabler som ska läggas till kommandot."
-    },
-    "gameargs": {
-      "placeholder": "Ange Launcher-specifika argument",
-      "title": "Spelspecifika argument (körs efter startkommandot):",
-      "error": {
-        "command": "Syntaxen %command% från Steam är inte giltig som ett spelargument.",
-        "env": "Miljövariabler måste konfigureras i tabellen nedan."
-      }
-    },
-    "quote-args-with-spaces": "Varning: Argument med mellanrum kräver citattecken t.ex: \"sökväg/med mellanrum/\"",
-    "wrapper": {
-      "args": "Argument",
-      "arguments_example": "Exempel på argument: --arg; --extra-fil=\"sökväg/ med/mellanrum\"",
-      "exe": "Wrapper",
-      "placeHolderKey": "Ny Wrapper",
-      "placeHolderValue": "Wrapper Argument",
-      "title": "Wrapper kommando:"
-    }
-  },
+  "options": {},
   "other": {
     "gogdl-version": "GOGDL-version: ",
     "legendary-version": "Legendary-version: ",
-    "weblate": "Bidra till översättning av Heroic.",
+    "weblate": "Bidra till översättning av Relic.",
     "nile-version": "Nile-version: "
   },
   "Other": "Övrigt",
@@ -535,131 +290,15 @@
   "search": "Sök efter spel",
   "setting": {
     "addgamestosteam": "Lägg till spel till Steam automatiskt",
-    "alt-gogdl-bin": "Ange alternativ GOGDL version (omstart krävs)",
-    "alt-legendary-bin": "Ange alternativ Legendary version",
-    "autodxvk": "Installera/uppdatera DXVK i prefix automatiskt",
-    "autosync": "Synkronisera sparfiler automatiskt",
-    "autovkd3d": "Installera/uppdatera VKD3D i prefix automatiskt",
-    "change-target-exe": "Ange alternativ EXE-fil att köra",
-    "crossover-version": "Crossover/Wine version",
-    "customWineProton": "Anpassad Wine/Proton sökväg",
-    "default-install-path": "Standard installationssökväg",
-    "default-steam-path": "Standard Steam sökväg",
-    "download-no-https": "Ladda ner spel utan HTTPS (användbart till CDNs t.ex. LanCache)",
     "dxvkfpslimit": "Begränsa FPS (DX9, 10 and 11)",
-    "enableFSRHack": "Aktivera FSR Hack (Wine-versionen måste stödja det)",
-    "eosOverlay": {
-      "cancelInstall": "Avbryt",
-      "checkForUpdates": "Sök efter uppdateringar",
-      "checkingForUpdates": "Söker efter uppdateringar...",
-      "currentVersion": "Aktuell version: {{version}}",
-      "disable": "Inaktivera",
-      "enable": "Aktivera",
-      "install": "Install",
-      "installed": "EOS Overlay är installerat",
-      "installing": "EOS Overlay installeras...",
-      "latestVersion": "Senaste version: {{version}}",
-      "notInstalled": "EOS Overlay är inte installerad",
-      "notInstalledMsg": "EOS Overlay är inte installerad. Vill du installera den?",
-      "notInstalledTitle": "Overlay är inte installerad",
-      "remove": "Avinstallera",
-      "removeConfirm": "Är du säker på att du vill avinstallera EOS Overlay?",
-      "removeConfirmTitle": "Bekräfta borttagning av overlay",
-      "updateNow": "Update",
-      "updating": "Uppdaterar..."
-    },
-    "esync": "Aktivera Esync",
-    "FsrSharpnessStrenght": "FSR skärpningsnivå",
-    "fsync": "Aktivera Fsync",
-    "gamemode": "Använd GameMode (Feral Game Mode måste vara installerat)",
     "language": "Välj språk",
-    "library_top_option": {
-      "disabled": "Deaktiverad",
-      "favourites": "Favoritspel",
-      "recently_played": "Nyligen spelade",
-      "recently_played_installed": "Nyligen spelade spel (endast installerade)"
-    },
-    "library_top_section": "Bibliotek topplista",
     "log": {
       "copy-to-clipboard": "Kopiera loggen till urklipp/klippbord",
       "current-log": "Aktuell logg",
-      "instructions_title": "Hur rapporterar jag problem?",
-      "last-log": "Senaste logg",
-      "no-file": "Ingen loggfil hittades",
-      "show-in-folder": "Visa loggfiler i mapp",
-      "upload": {
-        "actions": "Åtgärd",
-        "button": "Ladda upp loggfil",
-        "confirm": {
-          "title": "Ladda upp loggfil?",
-          "content": "Vill du verkligen ladda upp \"{{name}}\"?"
-        },
-        "done": {
-          "title": "Uppladdning klar",
-          "content": "Uppladdad till {{url}} (URL har kopierats till ditt urklipp)"
-        },
-        "error": {
-          "title": "Uppladdning misslyckades",
-          "content": "Misslyckades att ladda upp loggfil. Kontrollera Heroics allmänna logg för detaljer"
-        },
-        "header": "Uppladdade loggfiler",
-        "delete": "Begär borttagning av loggfil",
-        "hours-ago": "Uppladdad {{hoursAgo, relativetime(hours)}}",
-        "minutes-ago": "Uppladdad {{minutesAgo, relativetime(minutes)}}",
-        "no-files": "Inga loggfiler laddades upp",
-        "open": "Öppna uppladdning av loggfil",
-        "title": "Loggtitel",
-        "upload-date": "Uppladdningsdatum",
-        "uploading": {
-          "content": "Laddar upp loggfil...",
-          "title": "Laddar upp"
-        }
-      },
-      "descriptiveNames": {
-        "game-log": "Spellogg för {{gameTitle}}",
-        "gog": "GOG-logg",
-        "heroic": "Allmän Heroic logg",
-        "legendary": "Epic Games / Legendary logg",
-        "nile": "Amazon / Nile logg",
-        "zoom": "Zoom logg"
-      },
-      "show-uploads": "Visa uppladdade loggfiler"
-    },
-    "manualsync": {
-      "download": "Ladda ner",
-      "forcedownload": "Tvinga nedladdning",
-      "forceupload": "Tvinga uppladdning",
-      "sync": "Synkronisera",
-      "syncing": "Synkroniserar",
-      "title": "Synkronisera sparfiler manuellt",
-      "upload": "Ladda upp"
+      "last-log": "Senaste logg"
     },
     "maxworkers": "Maximalt antal samtida nedladdningar",
-    "offlinemode": "Kör spelet offline",
-    "prefered_language": "Föredraget språk (Språkkod)",
-    "preferSystemLibs": "Föredra systemets bibliotek",
-    "runexe": {
-      "message": "Drag och släpp filer här",
-      "title": "Kör EXE-fil i prefix"
-    },
-    "savefolder": {
-      "not-found": "Sparfils-mapp hittades inte, ange sökväg istället (eller klicka för att försöka igen)",
-      "placeholder": "Ange specifik sparfilsmapp",
-      "warning": "Dubbelkolla att sökvägen är korrekt (klicka för att försöka igen)"
-    },
     "select_theme": "Välj tema",
-    "showfps": "Visa FPS (DX9, 10 och 11)",
-    "start-in-tray": "Starta minimerad",
-    "steamruntime": "Använd Steam Runtime",
-    "winecrossoverbottle": "CrossOver prefix",
-    "wineprefix": "Wine-prefix mapp",
-    "wineversion": "Wineversion",
-    "ignoreGameUpdates": "Ignorera speluppdateringar",
-    "autoUpdateGames": "Uppdatera spel automatiskt",
-    "disable_logs": "Inaktivera loggar",
-    "showMetalOverlay": "Visa statistiköverlägg",
-    "alt-nile-bin": "Välj en alternativ Nile Binär",
-    "autodxvknvapi": "Installera/uppdatera DXVK-NVAPI i prefix automatiskt",
     "experimental_features": {
       "enableNewDesign": "Ny design",
       "enableHelp": "Hjälp komponent",
@@ -668,128 +307,30 @@
       "cometSupport": "Comet stöd",
       "zoomPlatform": "Stöd för Zoom-plattformen (endast Linux)"
     },
-    "frameless-window": {
-      "confirmation": {
-        "message": "Denna funktion är fortfarande experimentell. Vänligen rapportera eventuella problem du stöter på med den på GitHub.",
-        "title": "Experimentell funktioner framför"
-      },
-      "description": "Använd kantlöst fönster (kräver omstart)"
-    },
-    "msync": "Aktivera Msync",
-    "allow_installation_broken_anticheat": {
-      "confirmation": {
-        "title": "Är du säker?",
-        "message": "Spel med trasiga eller nekade antifusk kanske inte kan köras, men flerspelarspel funktioner fungerar inte. Be inte om support om du installerar dem med vetskap om detta.",
-        "understand": "Jag förstår"
-      },
-      "label": "Tillåt installation av spel med trasigt eller nekat antifusk"
-    },
     "verboseLogs": {
       "description": "Aktivera detaljerade loggar"
-    },
-    "custom_css": {
-      "warning": "Varning: detta gäller hela frontenden. Detta betyder att fel stil kan göra att Heroic blir oanvändbar. Om det behövs kan inställningen ändras manuellt i `~/.config/heroic/config.json`. Kopiera INTE stiler from källor du inte litar på."
     },
     "allow_non_ge_proton": {
       "confirmation": {
         "title": "Är du säker?"
       }
     },
-    "show_valve_proton": {
-      "confirmation": {
-        "title": "Är du säker?",
-        "dont_show": "Visa inte dom",
-        "message": "Vi rekommenderar anpassade Proton-gafflar (GE-Proton, Proton-CachyOS, etc.) att använda med Heroic eftersom Valves Proton-byggen saknar winetricks och protofixes. Du kan fortfarande använda dem om du vill.",
-        "show": "Jag förstår, visa dom"
-      },
-      "info_label": "Valve Proton-versioner ignoreras",
-      "label": "Tillåt användning av Valve Proton-byggen för att köra spel",
-      "wine_selector_warning": "Valve version av Proton ignoreras som standard, aktivera dem i de avancerade globala inställningarna"
-    },
     "advertiseAvxForRosetta": "Annonsera AVX för Rosetta",
-    "analyticsOptIn": "Skicka anonym data för att hjälpa Heroics utveckling",
-    "download-proton-steam": "Ladda ner GE-Proton till Steam katalog",
-    "dxfpslimit": "Begränsa FPS i DirectX-spel",
-    "hdr": "Aktivera HDR",
-    "wineWayland": "Aktivera Wine-Wayland (Experimentellt) (Wine-versionen behöver stödja det)",
-    "WoW64": "Aktivera WoW64 (Experimentellt)",
-    "scripts": "Skript:",
-    "enable-quick-sync-menu": "Aktivera snabbspara synkronisera meny på spelsidan",
-    "disable_gog_presence": "Inaktivera GOG-närvarouppdateringar",
-    "start-in-console-mode": ""
+    "disable_gog_presence": "Inaktivera GOG-närvarouppdateringar"
   },
   "settings": {
-    "battlEyeRuntime": {
-      "installing": "Installerar BattlEye Runtime...",
-      "name": "BattlEye AntiCheat Runtime"
-    },
-    "clear-cache": "Rensa Heroic cache",
-    "copiedToClipboard": "Kopierat till urklipp/klippbord!",
-    "copyToClipboard": "Kopiera all inställningar till urklipp/klippbord",
-    "default_hint": "Ändringar i det här avsnittet gäller endast som standardvärden vid installation av spel. Om du vill ändra inställningarna för ett redan installerat spel, använd knappen Inställningar på spelsidan.",
-    "eacRuntime": {
-      "gameModeRequired": {
-        "title": "GameMode krävs"
-      },
-      "installing": "Installerar EAC Runtime...",
-      "name": "EasyAntiCheat Runtime"
-    },
-    "gameMode": {
-      "eacRuntimeEnabled": {
-        "message": "EAC runtime är aktiverad, vilket inte fungerar korrekt utan GameMode. Vill du inaktivera EAC Runtime och GameMode?",
-        "title": "EAC runtime aktiverad"
-      }
-    },
+    "clear-cache": "Rensa Relic cache",
     "log": {
       "long-log-hint": "Loggen avkortad , enbart senaste 1000 rader visas!"
     },
     "navbar": {
-      "advanced": "Avancerat",
-      "games_settings_defaults": "Standardinställningar",
       "general": "Allmänt",
       "log": "Logg",
-      "other": "Övrigt",
-      "sync": "Synkronisera molnsparfiler",
-      "wineExt": "Wine Extensions",
-      "systemInformation": "Systeminformation",
-      "legacy": "Föråldrat"
+      "wineExt": "Wine Extensions"
     },
     "open-config-file": "Öppna konfigurationsfil",
-    "reset-heroic": "Återställ Heroic",
-    "saves": {
-      "label": "Plats för sparfiler:",
-      "warning": "Molnlagringsfunktionen är i beta, vänligen säkerhetskopiera dina sparade filer innan du synkroniserar (ifall något går fel)",
-      "gog_linux_native_warning": "Linux native spel har inte stöd för GOG:s Cloud sparnings-funktion. Använd Windows-versionen istället.",
-      "not_supported": "Detta spel stödjer inte moln sparningar."
-    },
-    "systemInformation": {
-      "cpu": "CPU:",
-      "gpuWithNumber": "GPU {{number}}:",
-      "cpuDescription": "{{numOfCores}}x {{modelName}}",
-      "legendaryVersion": "Legendary: {{legendaryVersion}}",
-      "systemSpecifications": "Systemspecifikationer:",
-      "steamDeck": "Steam Deck {{model}}",
-      "gpuDriver": "Drivrutin: {{driverVersion}}",
-      "os": "Oprativsystem:",
-      "gpu": "GPU:",
-      "gogdlVersion": "Gogdl: {{gogdlVersion}}",
-      "osVersion": "Version {{versionNumber}}",
-      "software": "Programvara:",
-      "memoryStats": "{{percentUsed}}% använt ({{usedGib}} / {{totalGib}}",
-      "systemModel": "Systemmodell:",
-      "showDetailed": "Visa detaljerade systemspecifikationer",
-      "memory": "Minne:",
-      "copyToClipboard": "Kopiera till urklipp",
-      "heroicVersion": "Heroic: {{heroicVersion}}",
-      "nileVersion": "Nile: {{nileVersion}}",
-      "cometVersion": "Comet: {{cometVersion}}"
-    },
-    "experimental_features": {
-      "title": "Experimentella funktioner"
-    },
-    "offline": {
-      "warning": "Det här spelet tillåter inte uttryckligen offlineläge, aktivera detta på egen risk. Spelet kanske inte fungerar."
-    },
+    "experimental_features": {},
+    "offline": {},
     "advanced": {
       "clearCache": {
         "help8": "Installerade spel",
@@ -798,30 +339,19 @@
         "help7": "Butik inloggning",
         "help5": "Amazon biblioteksinformation (lista över spel, installationsdialoginformation)",
         "help1": "Denna åtgärd rensar följande cacheminne:",
-        "help10": "Heroickonfiguration",
+        "help10": "Relickonfiguration",
         "help3": "Legendary biblioteksinformation (lista över spel, installationsdialoginformation, spelinformation)",
         "help4": "GOG-biblioteksinformation (lista över spel, installationsdialoginformation, api-information -dvs: krav-)",
         "help9": "Spelinställningar"
       },
-      "title": {
-        "resetHeroic": "Grundåterställ Heroic",
-        "clearCache": "Rensa cache"
-      },
-      "details": "Detaljer",
-      "resetHeroic": {
-        "help": "Detta tar bort alla inställningar och cachelagring men tar inte bort dina installerade spel eller dina Epic-uppgifter. Portabla versioner (AppImage, WinPortable, ...) av heroic måste startas om manuellt efteråt."
-      }
+      "title": {},
+      "details": "Detaljer"
     },
-    "launchOptions": "Uppstartsalternativ",
-    "legacy_warning": "Varning: Inställningarna på den här fliken är mestadels föråldrade och kanske inte fungerar alls.",
     "steamgriddb": {
       "apikey": {
         "title": "",
         "placeholder": "",
         "placeholder_saved": ""
-      },
-      "help": {
-        "description": ""
       }
     }
   },
@@ -841,24 +371,11 @@
   "title": {
     "allGames": "Alla spel"
   },
-  "toolbox": {
-    "settings": {
-      "default-wineprefix": "Ange standard prefix-sökväg för nya konfigurationer",
-      "wineprefix": "Ange sökväg för nya Wineprefix"
-    }
-  },
-  "tooltip": {
-    "addpath": "Lägg till ny sökväg",
-    "removepath": "Ta bort sökväg"
-  },
   "tray": {
     "about": "Om",
     "quit": "Avsluta",
     "reload": "Ladda om",
     "show": "Visa"
-  },
-  "two_col_table": {
-    "save_hint": "Ändringar i den här tabellen sparas inte automatiskt. Klicka på +knappen"
   },
   "Update Available!": "Uppdatering tillgänglig!",
   "userselector": {
@@ -878,24 +395,6 @@
       "reload": "Ladda om sida"
     }
   },
-  "wine": {
-    "actions": "Åtgärd",
-    "manager": {
-      "link": "Winehanterare",
-      "not-found": "Inga Wineversioner hittades. Klicka på uppdateringsikonen för att försöka igen.",
-      "title": "Winehanterare",
-      "unzipping": "Packar upp",
-      "search": "",
-      "loading": "",
-      "open_folder": "",
-      "update": "Uppdatering",
-      "settings": "Inställningar",
-      "no-results": ""
-    },
-    "release": "Utgivningsdatum",
-    "size": "Storlek",
-    "notes": "Anteckningar"
-  },
   "externalLink": {
     "warning": "Du är på väg att öppna en extern länk.",
     "dontAskAgain": "Fråga inte igen"
@@ -913,17 +412,6 @@
   "amazon": "Amazon",
   "Amazon Games": "Amazon-Spel",
   "prime-gaming": "Prime Gaming",
-  "winetricks": {
-    "install": "Installera",
-    "loading": "Läser in",
-    "installing": "Installation pågår: {{component}}",
-    "openGUI": "Öppna Winetricks GUI",
-    "search": "Sök teckensnitt eller komponenter",
-    "installed": "Installerade komponenter:",
-    "nothingYet": "Inget har installerats av Winetricks ännu",
-    "loading-available": "Laddar tillgängliga komponenter...",
-    "no-components": "Inga tillgängliga komponenter"
-  },
   "window": {
     "minimize": "Minimera fönstret",
     "maximize": "Maximera fönstret",
@@ -937,12 +425,6 @@
     "add-new-category": "Lägg till ny kategori",
     "cancel": "Avbryt",
     "warning": "Varning"
-  },
-  "wineExplanation": {
-    "proton-ge": "GE-Proton är en Proton-variant skapad av Glorious Eggroll. Den är tänkt att användas för Steam, men vissa spel utanför Steam kan fungera bättre med denna variant. Den ger mestadels värdelösa loggar för felsökning.",
-    "gpt": "",
-    "wine-crossover": "",
-    "wine-staging-macos": ""
   },
   "emptyLibrary": {
     "noResults": "De nuvarande filtren gav inga resultat.",
@@ -960,22 +442,8 @@
     "rename": "Byt namn \"{{name}}\"",
     "title": "Hantera kategorier"
   },
-  "launch": {
-    "options": "Startalternativ..."
-  },
-  "steamgriddb": {
-    "error": {
-      "no-games": "Inga spel hittades",
-      "no-grids": "",
-      "search": "",
-      "grids": ""
-    },
-    "picker": {
-      "search": "",
-      "title": "",
-      "select-game": ""
-    }
-  },
+  "launch": {},
+  "steamgriddb": {},
   "console": {
     "update": {
       "hintPrefix": "",

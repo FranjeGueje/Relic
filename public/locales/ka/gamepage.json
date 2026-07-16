@@ -143,26 +143,13 @@
     "size": "ზომა",
     "version": "ვერსია",
     "canRunOffline": "",
-    "syncsaves": "",
     "installedInfo": "",
     "path": "",
     "clickToOpen": "",
-    "steamdeck-compatibility-info": "",
-    "game-scores": "",
-    "protondb-compatibility-info": "",
-    "apple-gaming-wiki": "",
     "third-party-app": "",
     "installedPlatform": ""
   },
   "install": {
-    "anticheat-warning": {
-      "cancel": "არა",
-      "ok": "დიახ",
-      "disabled_installation": "",
-      "install_anyway": "",
-      "multiplayer_message": "",
-      "title": ""
-    },
     "wineprefix": "Wine-ის პრეფიქსი",
     "wineversion": "Wine-ის ვერსია",
     "disk-space-left": "",
@@ -178,7 +165,6 @@
       "specificVersion-pt2": "archive.org",
       "installation": "დაყენების გაჩერება"
     },
-    "winetricks": "",
     "playing": {
       "start": "",
       "start_with_logs": "",
@@ -251,7 +237,6 @@
     "redist": "",
     "notSupported": "",
     "clickToUpdate": "",
-    "winetricks": "",
     "syncingSaves": "",
     "processing": "",
     "notinstalled": "",
@@ -268,25 +253,9 @@
     "hasUpdates": ""
   },
   "submenu": {
-    "categories": "კატეგორიები",
-    "logs": "ჟურნალი",
-    "settings": "პარამეტრები",
     "verify": "თამაშის შემოწმება და შეკეთება",
     "change": "",
-    "protondb": "",
-    "enableEosOverlay": "",
-    "store": "",
-    "disableEosOverlay": "",
-    "addShortcut": "",
-    "addToSteam": "",
-    "removeFromSteam": "",
-    "removeShortcut": "",
     "move": ""
-  },
-  "third-party-managed": {
-    "header": "",
-    "notice2": "",
-    "notice1": ""
   },
   "not_logged_in": {
     "gog": "",
@@ -296,12 +265,7 @@
     "zoom": "",
     "epic": ""
   },
-  "setting": {
-    "warn-use-shared-wine-config": "",
-    "show-wine-settings": "",
-    "use-shared-wine-config": "",
-    "winecrossoverbottle": ""
-  },
+  "setting": {},
   "open-saves-folder": "",
   "sdl": {
     "title": ""

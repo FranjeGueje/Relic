@@ -104,16 +104,11 @@
   "info": {
     "version": "גרסה",
     "path": "מיקום התקנה",
-    "apple-gaming-wiki": "דירוג AppleGamingWiki",
     "canRunOffline": "אינטרנט נדרש",
     "clickToOpen": "לחצו על מנת לפתוח",
-    "game-scores": "תוצאות המשחק",
     "installedInfo": "מידע מותקן",
     "installedPlatform": "פלטפורמה מותקנת",
     "size": "גודל",
-    "steamdeck-compatibility-info": "התאמה לSteamDeck",
-    "syncsaves": "סנכרון שמירות",
-    "protondb-compatibility-info": "רמת תאימות Proton",
     "third-party-app": ""
   },
   "sideload": {
@@ -166,24 +161,12 @@
     "updating": "מעדכן משחק",
     "uninstalling": "מסיר התקנה",
     "redist": "",
-    "winetricks": "",
     "importing": "ייבא"
   },
   "submenu": {
-    "settings": "הגדרות",
-    "store": "דף החנות",
     "change": "שינוי מיקום התקנה",
-    "enableEosOverlay": "הדלק תגית EOS",
-    "protondb": "בדוק התאמה",
-    "removeFromSteam": "הסר מSteam",
-    "removeShortcut": "הסר קיצורי דרך",
-    "disableEosOverlay": "בטל תגית EOS",
-    "logs": "לוג",
     "move": "הזז משחק",
-    "addShortcut": "הוסף קיצור דרך",
-    "addToSteam": "הוסף ל-Steam",
-    "verify": "אמת קבצים ותקן",
-    "categories": ""
+    "verify": "אמת קבצים ותקן"
   },
   "cloud_save_unsupported": "לא נתמך",
   "enabled": "מופעל",
@@ -261,7 +244,6 @@
       "pleaseWait": "נא לחכות...",
       "installation": "הפסק התקנה"
     },
-    "winetricks": "",
     "redist": ""
   },
   "install": {
@@ -271,25 +253,15 @@
     "wineprefix": "WinePrefix",
     "not-enough-disk-space": "לא מספיק שטח דיסק",
     "path": "בחרו מיקום התקנה",
-    "path-not-writtable": "אזהרה: מיקום עלול להיות בלתי ניתן לכתיבה.",
-    "anticheat-warning": {
-      "cancel": "לא",
-      "message": "התמיכה במערכת נגד רמאות מקולקלת או לא מתאפשרת. המשחק לא יעבוד. האם אתה עדיין רוצה להתקין אותו?",
-      "install": "כן (אני מבין שהמשחק לא יעבוד)",
-      "title": "מערכת נגד רמאות מקולקלת/לא מתאפשרת",
-      "multiplayer_message": "התמיכה במערכת נגד רמאות מקולקלת או לא מתאפשרת. המשחק לא יעבוד. האם אתה עדיין רוצה להתקין אותו?",
-      "disabled_installation": "",
-      "install_anyway": "",
-      "ok": ""
-    }
+    "path-not-writtable": "אזהרה: מיקום עלול להיות בלתי ניתן לכתיבה."
   },
   "not_logged_in": {
-    "amazon": "אתה לא מחובר לחשבון אמזון בHeroic. אל תשתמש בדף החנות כדי להתחבר, לחץ על הכפתור הבא במקום:",
+    "amazon": "אתה לא מחובר לחשבון אמזון בRelic. אל תשתמש בדף החנות כדי להתחבר, לחץ על הכפתור הבא במקום:",
     "title": "אתה לא מחובר",
-    "epic": "אתה לא מחובר עם חשבון Epic בHeroic. אל תשתמש בדף החנות כדי להתחבר, לחץ על הכפתור הבא במקום:",
-    "gog": "אתה לא מחובר לחשבון GOG בHeroic. אל תשתמש בדף החנות כדי להתחבר, לחץ על הכפתור הבא במקום:",
+    "epic": "אתה לא מחובר עם חשבון Epic בRelic. אל תשתמש בדף החנות כדי להתחבר, לחץ על הכפתור הבא במקום:",
+    "gog": "אתה לא מחובר לחשבון GOG בRelic. אל תשתמש בדף החנות כדי להתחבר, לחץ על הכפתור הבא במקום:",
     "login": "היכנס",
-    "zoom": "אתה לא מחובר לחשבון GOG בHeroic. אל תשתמש בדף החנות כדי להתחבר, לחץ על הכפתור הבא במקום:"
+    "zoom": "אתה לא מחובר לחשבון GOG בRelic. אל תשתמש בדף החנות כדי להתחבר, לחץ על הכפתור הבא במקום:"
   },
   "report_problem": "דיווח על בעיה בהפעלת המשחק",
   "launch": {
@@ -299,12 +271,7 @@
   "sdl": {
     "title": "בחרו רכיבים להתקין"
   },
-  "setting": {
-    "winecrossoverbottle": "CrossOver Bottle",
-    "warn-use-shared-wine-config": "",
-    "show-wine-settings": "",
-    "use-shared-wine-config": ""
-  },
+  "setting": {},
   "specs": {
     "minimum": "מינימום",
     "recommended": "מומלצים"
@@ -326,11 +293,6 @@
     },
     "nodlcs": "",
     "versionCollapsable": ""
-  },
-  "third-party-managed": {
-    "header": "",
-    "notice2": "",
-    "notice1": ""
   },
   "open-saves-folder": "",
   "wikiLink": "",

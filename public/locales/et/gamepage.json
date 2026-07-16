@@ -154,14 +154,9 @@
     "installedPlatform": "Paigaldatud platvorm",
     "path": "Paigalduskoht",
     "size": "Suurus",
-    "syncsaves": "Sünkrooni salvestised",
     "version": "Versioon",
-    "apple-gaming-wiki": "AppleGamingWiki hinne",
     "clickToOpen": "Avamiseks klõpsake",
-    "game-scores": "Mängu skoorid",
     "installedInfo": "Paigaldatud teave",
-    "protondb-compatibility-info": "Protoni ühilduvustase",
-    "steamdeck-compatibility-info": "SteamDecki ühilduvus",
     "third-party-app": "Kolmanda osapoole haldur"
   },
   "install": {
@@ -171,17 +166,7 @@
     "path-not-writtable": "Hoiatus: tee ei pruugi olla kirjutatav.",
     "space-after-install": "Pärast paigaldamist",
     "wineprefix": "WinePrefiks",
-    "wineversion": "Wine'i versioon",
-    "anticheat-warning": {
-      "cancel": "Ei",
-      "install": "Jah (ma mõistan, et see ei tööta)",
-      "title": "Sohivastased meetmed katkised/keelatud",
-      "message": "Sohivastaste meetmete tugi on katkine või keelatud. Mäng ei hakka tööle. Kas soovite seda siiski installeerida?",
-      "ok": "Ok",
-      "multiplayer_message": "Sohivastased meetmed on katkised või keelatud. Mäng võib käivituda, aga mitmikmängu funktsioonid ei toimi. Kas soovite seda siiski paigaldada?",
-      "install_anyway": "Jah (ma saan aru, et mitmikmängu funktsioonid ei toimi)",
-      "disabled_installation": "See mäng kasutab sohivastast tarkvara, mis ei ühildu teie operatsioonisüsteemiga, või mängu loojad ei ole selle tuge lubanud. See tähendab, et mitmikmängu funktsioonid ei toimi ning selle vastu pole teil (ega Heroicu tiimil) võimalik midagi teha.<br /><br />Et seda mängu siiski paigaldada ja käivitada, minge Seaded, Täpsem, ja pange linnuke sättele, mis lubab katkiste või keelatud sohivastaste meetmetega mängude paigaldamist.<br /><br />Pange tähele, et selle vastu ei ole lahendust ning mäng võib teie konto blokeerida."
-    }
+    "wineversion": "Wine'i versioon"
   },
   "label": {
     "game": {
@@ -199,7 +184,6 @@
     "launching": "Käivitamine",
     "ubisoft": "Ubisoft Connecti installimine",
     "redist": "Vajalike pakkide paigaldamine",
-    "winetricks": "Winetricksi pakkide paigaldamine",
     "steam": {
       "installing": "Paigaldamine",
       "pleaseWait": "Palun oodake...",
@@ -212,19 +196,19 @@
       "hardware": "Apple Silicon M1+ (Intel Mac-ide puhul toimib Steam Crossoveriga)",
       "install": "Paigalda Steam",
       "install-path": "Steami paigaldamise asukoht",
-      "install-tooltip": "See paigaldab Steami Windowsi versiooni ning see töötab Heroicu ühilduvuskihiga. \n\n\tMõned mängud, eriti vanemad mängud, uuemad 3D-mängud või mängud sohivastase tarkvaraga ei pruugi korralikult toimida. \n\n    ",
+      "install-tooltip": "See paigaldab Steami Windowsi versiooni ning see töötab Relicu ühilduvuskihiga. \n\n\tMõned mängud, eriti vanemad mängud, uuemad 3D-mängud või mängud sohivastase tarkvaraga ei pruugi korralikult toimida. \n\n    ",
       "installation": "Steami paigaldamine",
-      "launch": "Käivita Steam Heroicu ühilduvuskihiga",
+      "launch": "Käivita Steam Relicu ühilduvuskihiga",
       "launching": "Steami käivitamine...",
       "macOS": "macOS 14.0 või uuem",
-      "notification": "Heroic teavitab teid, kui paigaldamine valmis saab.",
+      "notification": "Relic teavitab teid, kui paigaldamine valmis saab.",
       "patience": "Kui soovite jätkata, palun olge kannatlik, kuna lõpuni viimine võib võtta mitu minutit olenevalt teie internetiühendusest ja süsteemi seadistusest.",
       "ram": "8GB RAM-i",
       "recommended": "Soovitatav riistvara parema kogemuse jaoks",
       "select-path": "Vali Steami jaoks paigalduskaust",
       "specificVersion-pt1": "See laeb alla konkreetse Steami versiooni asukohast",
       "specificVersion-pt2": "archive.org",
-      "specificVersion-pt3": "mis toimib läbi Heroicu, sest uued Steami versioonid ei tööta macOS-il."
+      "specificVersion-pt3": "mis toimib läbi Relicu, sest uued Steami versioonid ei tööta macOS-il."
     }
   },
   "launch": {
@@ -232,23 +216,18 @@
     "default": "Vaikimisi"
   },
   "not_logged_in": {
-    "epic": "Te pole Epic kontoga Heroicusse sisse logitud. Ärge kasutage sisse logimiseks poelehte, vaid klikkige sellele nupule:",
-    "gog": "Te pole GOG kontoga Heroicusse sisse logitud. Ärge kasutage sisse logimiseks poelehte, vaid klikkige sellele nupule:",
+    "epic": "Te pole Epic kontoga Relicusse sisse logitud. Ärge kasutage sisse logimiseks poelehte, vaid klikkige sellele nupule:",
+    "gog": "Te pole GOG kontoga Relicusse sisse logitud. Ärge kasutage sisse logimiseks poelehte, vaid klikkige sellele nupule:",
     "login": "Log in",
     "title": "Te EI OLE sisse logitud",
-    "amazon": "Te ei ole Heroicus Amazoni kontoga sisse logitud. Ärge kasutage sisselogimiseks poelehekülge. Klikkige selle asemel seda nuppu:",
-    "zoom": "Te ei ole Heroicus Zoomi kontoga sisse logitud. Ärge kasutage sisselogimiseks poelehekülge. Klikkige selle asemel seda nuppu:"
+    "amazon": "Te ei ole Relicus Amazoni kontoga sisse logitud. Ärge kasutage sisselogimiseks poelehekülge. Klikkige selle asemel seda nuppu:",
+    "zoom": "Te ei ole Relicus Zoomi kontoga sisse logitud. Ärge kasutage sisselogimiseks poelehekülge. Klikkige selle asemel seda nuppu:"
   },
   "report_problem": "Teatage selle mängu käivitamise probleemist",
   "sdl": {
     "title": "Valige komponendid, mida paigaldada"
   },
-  "setting": {
-    "winecrossoverbottle": "CrossOveri pudel",
-    "warn-use-shared-wine-config": "Kasutage seda valikut ainult siis, kui teate, mida teete.<br/>Sama prefiksi jagamine mitme mängu puhul võib luua probleeme, kui pakid, millel need mängud sõltuvad, ei sobi kokku.",
-    "show-wine-settings": "Näita Wine'i seadeid",
-    "use-shared-wine-config": "Kasuta jagatud Wine'i prefiksi"
-  },
+  "setting": {},
   "sideload": {
     "field": {
       "title": "Pealkiri"
@@ -303,25 +282,13 @@
     "gog-goodie": "See mäng ei paista olevat paigaldatav. Kontrollige allalaaditavat sisu (DLC) aadressil https://gog.com/account",
     "goodie": "Ei ole paigaldatav",
     "redist": "Vajalike pakkide paigaldamine ({{redist}})",
-    "winetricks": "Winetricksi paranduste rakendamine",
     "importing": "Importimine"
   },
   "submenu": {
-    "addShortcut": "Lisa otsetee",
-    "addToSteam": "Lisa Steami",
     "change": "Muuda paigalduskohta",
-    "disableEosOverlay": "Lülita välja EOS-i ülekate",
-    "enableEosOverlay": "Luba EOS-i ülekate",
     "move": "Liiguta mängu",
-    "protondb": "Kontrolli ühilduvust",
-    "removeFromSteam": "Eemalda Steamist",
-    "removeShortcut": "Eemalda otseteed",
-    "settings": "Seaded",
-    "store": "Poe lehekülg",
     "verify": "Kontrolli ja paranda",
-    "extraInfo": "Lisainfo",
-    "logs": "Logid",
-    "categories": "Kategooriad"
+    "extraInfo": "Lisainfo"
   },
   "help": {
     "cloud_save_unsupported": "See mäng ei toeta pilvesalvestust. Seda teavet pakuvad mängu arendajad. Mõned mängud rakendavad omaenda pilvesalvestussüsteemi",
@@ -340,11 +307,6 @@
       "enable": "Luba modifikatsioonid"
     },
     "versionCollapsable": "Mängu versioon"
-  },
-  "third-party-managed": {
-    "notice2": "Pärast paigaldamise alustamist käivitab Heroic selle rakenduse, et paigaldus lõpuni viia",
-    "header": "Seda mängu haldab kolmanda osapoole rakendus",
-    "notice1": "Seda mängu haldab kolmanda osapoole rakendus: \"{{application_name}}\""
   },
   "wikiLink": "Tähtis teave selle mängu kohta, lugege:&nbsp;<1>Ava lehekülg</1>",
   "queue": {

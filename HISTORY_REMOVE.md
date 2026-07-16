@@ -652,3 +652,39 @@
 ## Vulkan Helper (dead code)
 - `public/bin/x64/linux/vulkan-helper` (715 KB) y `public/bin/arm64/linux/vulkan-helper` (707 KB): binarios ELF eliminados
 - `src/backend/utils/graphics/vulkan/index.ts` (84 líneas): módulo completo eliminado (funciones `get_vulkan_instance_version`, `any_gpu_supports_version`, `get_nvngx_path` — ningún import en el codebase)
+
+## Limpieza raíz y directorios no-src (TODOs-root)
+### FASE A: Ficheros muertos eliminados
+- `appveyor.yml` (CI Windows), `.idea/` (IDE JetBrains), `downloadCount.js` (stats Heroic), `doc/cla.md` (CLA Heroic Labs)
+- `.eslintcache`, `public/entitlements.mac.plist`, `public/dmg.png`, `public/mac-icon.icns`, `public/win_icon.ico`
+- **Conservados** (uso externo): `public/bin/` (todos los binarios, incluidos `.exe` Windows)
+
+### FASE B: Assets públicos muertos
+- Eliminados: `icon-dark.png`, `icon-dark@2x.png`, `icon-dark@3x.png`, `icon-light@2x.png`, `icon-light@3x.png`, `icon.icns`
+- `electron-builder.yml`: icono corregido (`icon.icns` → `icon.png`), `icon-dark.png` eliminado de `asarUnpack`
+- `tray_icon.test.ts`: test `'can show dark or light icon'` eliminado
+
+### FASE C: Config Heroic→Relic
+- `electron-builder.yml`: Comment actualizado
+- `shell.nix`: `heroic-fhs-dev` → `relic-fhs-dev`
+- `.vscode/launch.json`: `"Launch Heroic"` → `"Launch Relic"`
+- `package.json`: description actualizada
+- `CODE_OF_CONDUCT.md`: email Heroic → relic@franje.dev
+
+### FASE D: Documentación
+- `README.md`: reescritura completa (sin Windows/macOS, sin Wine/Proton, sin badges Heroic)
+- `CONTRIBUTING.md` y `Support.md`: eliminados
+
+### FASE F: E2E tests
+- `e2e/api.spec.ts`: asserts actualizados (Heroic Games Launcher → Relic)
+- `e2e/helpers.ts`: comentario actualizado
+- `e2e/languages_selector.spec.ts`: comentario actualizado
+
+### FASE G: downloadHelperBinaries.ts
+- `User-Agent`: `HeroicBinaryUpdater/1.0` → `RelicBinaryUpdater/1.0`
+- Repos GitHub mantenidos (dependencia de binarios Heroic)
+
+### FASE E: Traducciones (94 archivos)
+- 49 locales × 2 archivos (`translation.json` + `gamepage.json`): claves muertas eliminadas (Wine, Winetricks, EOS Overlay, log upload, reset-heroic, frameless-window, etc.)
+- Reemplazo `"Heroic"` → `"Relic"` en valores vivos (Snap warning, Weblate, Clear Cache, login warnings, etc.)
+- Script `meta/cleanLocales.mjs` (eliminado tras ejecución)

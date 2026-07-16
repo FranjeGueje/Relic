@@ -155,14 +155,9 @@
     "installedPlatform": "Plataforma instalada",
     "path": "Pasta de instalação",
     "size": "Tamanho",
-    "syncsaves": "Sincronizar saves",
     "version": "Versão",
     "installedInfo": "Informação instalada",
-    "apple-gaming-wiki": "Classificação AppleGamingWiki",
     "clickToOpen": "Clique para abrir",
-    "game-scores": "Pontuações do jogo",
-    "protondb-compatibility-info": "Compatibilidade com o Proton",
-    "steamdeck-compatibility-info": "Compatibilidade com o Steam Deck",
     "third-party-app": "Gerenciador de aplicativos de terceiros"
   },
   "install": {
@@ -172,17 +167,7 @@
     "path-not-writtable": "Aviso: caminho pode não permitir escrita.",
     "space-after-install": "Pós-instalação",
     "wineprefix": "Prefixo Wine (WinePrefix)",
-    "wineversion": "Versão do Wine",
-    "anticheat-warning": {
-      "cancel": "Não",
-      "message": "O suporte antitrapaça está quebrado ou foi negado. O jogo não vai funcionar. Você quer instalá-lo de qualquer maneira?",
-      "install": "Sim (eu entendo que não vai funcionar)",
-      "title": "Anti trapaça quebrado/negado",
-      "ok": "Ok",
-      "install_anyway": "Sim (Entendo que a função multijogador não funcionará)",
-      "multiplayer_message": "Suporte ao sistema anti trapaça foi negado ou comprometido. Talvez o jogo funcione, mas a função multijogador não funcionará. Instalar mesmo assim?",
-      "disabled_installation": "Este jogo utiliza sistema anti-trapaça que não é compatível com seu sistema operacional ou o suporte não esta disponível pelos desenvolvedores. Isto significa que recursos multijogador não funcionarão e não há nada que você (ou o Time Heroic) possa fazer sobre isso. <br /><br /> Para instalar este jogo ou tentar de alguma forma, vá para Configurações, Avançado e marque a opção para permitir a instalação de jogos com anti-trapaça quebrado ou negado.<br /><br /> Note que não há solução para isso e você terá risco de ser banido do jogo."
-    }
+    "wineversion": "Versão do Wine"
   },
   "label": {
     "game": {
@@ -199,7 +184,6 @@
     },
     "launching": "Iniciando",
     "ubisoft": "Instalando o Ubisoft Connect",
-    "winetricks": "Instalando pacotes Winetricks",
     "prerequisites": "Instalando Pré-requisitos",
     "redist": "Instalando distribuições",
     "steam": {
@@ -214,18 +198,18 @@
       "crossover": "Se possuir o Crossover instalado, não será necessário, pois a Steam normal pode funcionar bem.",
       "downloading": "Baixando {{percent}}%",
       "install": "Instalar Steam",
-      "install-tooltip": "Isso irá instalar a versão de Windows da Steam e será executada com a camada de compatibilidade do Heroic. \n\n    Alguns jogos, especialmente títulos mais antigos, jogos 3D mais recentes, ou aqueles com software anti-trapaças podem não funcionar corretamente \n\n    ",
-      "launch": "Iniciar a Steam usando a camada de compatibilidade do Heroic",
+      "install-tooltip": "Isso irá instalar a versão de Windows da Steam e será executada com a camada de compatibilidade do Relic. \n\n    Alguns jogos, especialmente títulos mais antigos, jogos 3D mais recentes, ou aqueles com software anti-trapaças podem não funcionar corretamente \n\n    ",
+      "launch": "Iniciar a Steam usando a camada de compatibilidade do Relic",
       "launching": "Iniciando a Steam...",
       "macOS": "macOS 14.0 ou superior",
-      "notification": "O Heroic notificará quando a instalação estiver pronta.",
+      "notification": "O Relic notificará quando a instalação estiver pronta.",
       "patience": "Se deseja continuar, seja paciente, isso pode levar alguns minutos para finalizar dependendo da sua conexão a internet e configurações do sistema.",
       "ram": "8GB de RAM",
       "recommended": "Especificações recomendadas para uma experiência melhor",
       "select-path": "Selecione a pasta de instalação para a Steam",
       "specificVersion-pt1": "Isso irá baixar uma versão específica da Steam para",
       "specificVersion-pt2": "archive.org",
-      "specificVersion-pt3": "feito para funcionar através do Heroic, desde que as versões da Steam não irão funcionar no macOS.",
+      "specificVersion-pt3": "feito para funcionar através do Relic, desde que as versões da Steam não irão funcionar no macOS.",
       "hardware": "Apple Silicon M1+ (Para Macs Intel, a Steam irá funcionar com Crossover)"
     }
   },
@@ -234,23 +218,18 @@
     "default": "Padrão"
   },
   "not_logged_in": {
-    "epic": "Você não está logado em uma conta Epic no Heroic. Não use a página da loja para fazer login, clique no seguinte botão:",
-    "gog": "Você não está logado em uma conta GOG no Heroic. Não use a página da loja para fazer login, clique no seguinte botão:",
+    "epic": "Você não está logado em uma conta Epic no Relic. Não use a página da loja para fazer login, clique no seguinte botão:",
+    "gog": "Você não está logado em uma conta GOG no Relic. Não use a página da loja para fazer login, clique no seguinte botão:",
     "login": "Entrar",
     "title": "Você NÃO está logado",
-    "amazon": "Você não está logado em uma conta Amazon no Heroic. Não use a página da loja para fazer login, clique no seguinte botão:",
-    "zoom": "Você não está conectado com uma conta Zoom no Heroic. Não use a página da loja para fazer login, clique no botão a seguir:"
+    "amazon": "Você não está logado em uma conta Amazon no Relic. Não use a página da loja para fazer login, clique no seguinte botão:",
+    "zoom": "Você não está conectado com uma conta Zoom no Relic. Não use a página da loja para fazer login, clique no botão a seguir:"
   },
   "report_problem": "Relatar um problema na execução deste jogo",
   "sdl": {
     "title": "Selecione os componentes para instalar"
   },
-  "setting": {
-    "winecrossoverbottle": "CrossOver Bottle",
-    "show-wine-settings": "Mostrar configurações do Wine",
-    "warn-use-shared-wine-config": "Somente use essa opção se souber o que está fazendo.<br/>Compartilhar o mesmo prefixo para múltiplos jogos pode gerar problemas.",
-    "use-shared-wine-config": "Usar prefixo Wine compartilhado"
-  },
+  "setting": {},
   "sideload": {
     "field": {
       "title": "Título"
@@ -310,26 +289,14 @@
     "gog-goodie": "Este jogo não parece ser instalável. Verifique o conteúdo para download em https://gog.com/account",
     "goodie": "Não instalável",
     "prerequisites": "Instalando Pré-requisitos",
-    "winetricks": "Aplicando correções do Winetricks",
     "redist": "Instalando redistribuíveis {{redist}}",
     "importing": "Importando"
   },
   "submenu": {
-    "addShortcut": "Adicionar atalho",
-    "addToSteam": "Adicionar ao Steam",
     "change": "Mudar local de instalação",
-    "disableEosOverlay": "Desativar sobreposição do EOS",
-    "enableEosOverlay": "Ativar sobreposição do EOS",
     "move": "Mover o jogo",
-    "protondb": "Verificar compatibilidade",
-    "removeFromSteam": "Remover do Steam",
-    "removeShortcut": "Remover atalhos",
-    "settings": "Configurações",
-    "store": "Página na loja",
     "verify": "Verificar e reparar",
-    "extraInfo": "Informação extra",
-    "logs": "Registros",
-    "categories": "Categorias"
+    "extraInfo": "Informação extra"
   },
   "help": {
     "cloud_save_unsupported": "Este jogo não suporta salvamentos em nuvem (Informação fornecida por desenvolvedores do jogo). Alguns jogos possuem sistema próprio de salvamento em nuvem.",
@@ -348,11 +315,6 @@
       "collapsible": "Integração REDmod",
       "enable": "Permitir mods"
     }
-  },
-  "third-party-managed": {
-    "header": "Este jogo é gerenciado por um aplicativo de terceiros",
-    "notice2": "Ao clicar em instalar, o Heroic irá executar o aplicativo para terminar o processo de instalação",
-    "notice1": "Este jogo é gerenciado por um aplicativo de terceiros: \"{{application_name}}\""
   },
   "queue": {
     "label": {

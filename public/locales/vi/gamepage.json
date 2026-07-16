@@ -154,14 +154,9 @@
     "installedPlatform": "Nền Tảng Đã Cài Đặt",
     "path": "Đường Dẫn Cài Đặt",
     "size": "Kích Thước",
-    "syncsaves": "Đồng Bộ Bản Lưu",
     "version": "Phiên Bản",
-    "apple-gaming-wiki": "Xếp Hạng Wiki của AppleGaming",
     "clickToOpen": "Bấm để mở",
-    "game-scores": "Điểm Trò Chơi",
     "installedInfo": "Thông Tin Đã Cài Đặt",
-    "protondb-compatibility-info": "Bậc Tương Thích Proton",
-    "steamdeck-compatibility-info": "Khả Năng Tương Thích SteamDeck",
     "third-party-app": "Trình Quản Lý Bên Thứ Ba"
   },
   "install": {
@@ -171,15 +166,7 @@
     "path-not-writtable": "Cảnh báo: đường dẫn có thể không ghi được.",
     "space-after-install": "Sau Khi Cài Đặt",
     "wineprefix": "WinePrefix",
-    "wineversion": "Phiên bản Wine",
-    "anticheat-warning": {
-      "cancel": "Không",
-      "disabled_installation": "Trò chơi này sử dụng chống gian lận không tương thích với hệ điều hành của bạn hoặc nhà phát triển trò chơi không kích hoạt hỗ trợ. Điều này có nghĩa là các tính năng nhiều người chơi sẽ không hoạt động và bạn (hoặc nhóm Heroic) không thể làm gì với điều đó.<br /><br />Để cài đặt trò chơi này và dùng thử, hãy đi tới Cài đặt, Nâng cao và chọn tùy chọn cho phép cài đặt các trò chơi có tính năng chống gian lận bị hỏng hoặc bị từ chối.<br /><br />Lưu ý rằng không có giải pháp nào cho vấn đề này và bạn sẽ có nguy cơ bị cấm trong trò chơi.",
-      "install_anyway": "Có (Tôi hiểu rằng tính năng nhiều người chơi sẽ không hoạt động)",
-      "multiplayer_message": "Hỗ trợ chống gian lận bị hỏng hoặc bị từ chối. Trò chơi có thể mở nhưng tính năng nhiều người chơi sẽ không hoạt động. Bạn có muốn cài đặt nó không?",
-      "ok": "Ok",
-      "title": "Chống Gian Lận Bị Hỏng/Từ Chối"
-    }
+    "wineversion": "Phiên bản Wine"
   },
   "label": {
     "game": {
@@ -202,31 +189,25 @@
       "installation": "Dừng quá trình cài đặt",
       "install-path": "Chọn thư mục cài đặt Steam"
     },
-    "redist": "Cài Đặt Bản Phân Phối Lại",
-    "winetricks": "Cài Đặt Gói Winetricks"
+    "redist": "Cài Đặt Bản Phân Phối Lại"
   },
   "launch": {
     "options": "Khởi Chạy Tuỳ Chọn ...",
     "default": "Mặc định"
   },
   "not_logged_in": {
-    "epic": "Bạn chưa đăng nhập bằng tài khoản Epic trong Heroic. Không sử dụng trang cửa hàng để đăng nhập, thay vào đó hãy nhấp vào nút sau:",
-    "gog": "Bạn chưa đăng nhập bằng tài khoản GOG trong Heroic. Không sử dụng trang cửa hàng để đăng nhập, thay vào đó hãy nhấp vào nút sau:",
+    "epic": "Bạn chưa đăng nhập bằng tài khoản Epic trong Relic. Không sử dụng trang cửa hàng để đăng nhập, thay vào đó hãy nhấp vào nút sau:",
+    "gog": "Bạn chưa đăng nhập bằng tài khoản GOG trong Relic. Không sử dụng trang cửa hàng để đăng nhập, thay vào đó hãy nhấp vào nút sau:",
     "login": "Log in",
     "title": "Bạn CHƯA đăng nhập",
-    "amazon": "You are not logged in with an Epic account in Heroic. Don't use the store page to login, click the following button instead:",
-    "zoom": "Bạn chưa đăng nhập bằng tài khoản Zoom trong Heroic. Không sử dụng trang cửa hàng để đăng nhập, thay vào đó hãy nhấp vào nút sau:"
+    "amazon": "You are not logged in with an Epic account in Relic. Don't use the store page to login, click the following button instead:",
+    "zoom": "Bạn chưa đăng nhập bằng tài khoản Zoom trong Relic. Không sử dụng trang cửa hàng để đăng nhập, thay vào đó hãy nhấp vào nút sau:"
   },
   "report_problem": "Báo cáo sự cố khi chạy game này",
   "sdl": {
     "title": "Chọn các thành phần cần Cài Đặt"
   },
-  "setting": {
-    "winecrossoverbottle": "Chai chéo",
-    "show-wine-settings": "Hiển thị cài đặt Wine",
-    "use-shared-wine-config": "Sử dụng tiền tố Wine được chia sẻ",
-    "warn-use-shared-wine-config": "Chỉ sử dụng tùy chọn này nếu bạn biết mình đang làm gì.<br />Việc chia sẻ cùng một tiền tố cho nhiều trò chơi có thể gây ra sự cố nếu phần phụ thuộc của chúng không tương thích."
-  },
+  "setting": {},
   "sideload": {
     "field": {
       "title": "Tiêu Đề"
@@ -281,25 +262,13 @@
     "gog-goodie": "Trò chơi này dường như không thể cài đặt được. Kiểm tra nội dung có thể tải xuống trên https://gog.com/account",
     "goodie": "Không thể cài đặt",
     "importing": "Đang Nhập",
-    "redist": "Cài Đặt Bản Phân Phối Lại ({{redist}})",
-    "winetricks": "Áp dụng bản sửa lỗi Winetricks"
+    "redist": "Cài Đặt Bản Phân Phối Lại ({{redist}})"
   },
   "submenu": {
-    "addShortcut": "Thêm lối tắt",
-    "addToSteam": "Thêm vào Steam",
     "change": "Thay đổi đường dẫn cài đặt",
-    "disableEosOverlay": "Tắt EOS Overlay",
-    "enableEosOverlay": "Bật EOS Overlay",
     "move": "Di Chuyển Trò Chơi",
-    "protondb": "Kiểm Tra Mức Độ Tương Thích",
-    "removeFromSteam": "Xóa khỏi Steam",
-    "removeShortcut": "Xóa lối tắt",
-    "settings": "Cài Đặt",
-    "store": "Trang Cửa Hàng",
     "verify": "Kiểm Tra và Sửa Chữa",
-    "extraInfo": "Thông tin thêm",
-    "logs": "Nhật ký",
-    "categories": "Phân Loại"
+    "extraInfo": "Thông tin thêm"
   },
   "help": {
     "cloud_save_unsupported": "Trò chơi này không hỗ trợ lưu vào đám mây. Thông tin này được cung cấp bởi các nhà phát triển trò chơi. Một số trò chơi triển khai hệ thống lưu trữ đám mây của riêng họ",
@@ -328,11 +297,6 @@
     "versionCollapsable": "Phiên Bản Trò Chơi"
   },
   "Open": "Mở",
-  "third-party-managed": {
-    "header": "Trò chơi này được quản lý bởi ứng dụng của bên thứ ba",
-    "notice1": "Trò chơi này được quản lý bởi ứng dụng của bên thứ ba: \"{{application_name}}\"",
-    "notice2": "Sau khi nhấn Cài Đặt, Heroic sẽ chạy ứng dụng để hoàn tất quá trình cài đặt"
-  },
   "wikiLink": "Thông tin quan trọng về trò chơi này, hãy đọc phần này: <1>Mở trang</1>",
   "open-saves-folder": "Mở thư mục lưu",
   "edit-game": {

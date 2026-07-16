@@ -2,66 +2,15 @@
   "box": {
     "choose": "აირჩიეთ",
     "no": "არა",
-    "select": {
-      "button": "არჩევა",
-      "script": "",
-      "exe": ""
-    },
+    "select": {},
     "yes": "დიახ",
     "update": "განახლება",
-    "changelog": "ცვლილებების ჟურნალი",
     "error": {
       "title": "შეცდომა",
-      "generic": {
-        "title": "აირჩიეთ გასაშვები EXE",
-        "message": ""
-      },
-      "launchAborted": "",
-      "credentials": {
-        "message": ""
-      },
-      "legendary": {
-        "generic": ""
-      },
-      "winetricks": {
-        "message": "",
-        "title": ""
-      },
       "executableNotFound": "",
-      "dxvk": {
-        "message": "",
-        "title": ""
-      },
-      "update": {
-        "message": "",
-        "title": ""
-      },
-      "dxmt": {
-        "message": "",
-        "title": ""
-      },
-      "moving": "",
-      "uncaught-exception": {
-        "message": "",
-        "title": ""
-      },
-      "add": {
-        "steam": {
-          "title": "",
-          "body": ""
-        }
-      },
-      "cx-bottle-not-found": {
-        "title": "",
-        "message": ""
-      },
-      "executableNotFoundMessage": "",
-      "folder-not-found": {
-        "title": ""
-      }
+      "executableNotFoundMessage": ""
     },
     "ok": "დიახ",
-    "postpone": "გადადება",
     "quit": {
       "title": "გასვლა",
       "message": ""
@@ -69,87 +18,17 @@
     "shortcuts": {
       "title": "მალსახმობები",
       "message-remove": "",
-      "message": "",
-      "message-remove-mac": "",
-      "message-mac": ""
+      "message": ""
     },
     "warning": {
       "title": "გაფრთხილება",
-      "epic": {
-        "install": "",
-        "import": "",
-        "update": ""
-      },
-      "wine-change": {
-        "message": "",
-        "title": ""
-      },
-      "rosetta": {
-        "title": "",
-        "message": ""
-      },
       "snap": {
         "checkbox": "",
         "title": "",
         "message": ""
-      },
-      "sideload": {
-        "confirmExit": {
-          "title": "",
-          "message": ""
-        }
       }
     },
-    "downloadNow": "გადმოწერა",
-    "runexe": {
-      "title": "აირჩიეთ გასაშვები EXE"
-    },
-    "choose-gogdl-binary": "",
-    "info": {
-      "update": {
-        "detail": "",
-        "title-finished": "",
-        "message-finished": "",
-        "message": "",
-        "detailNoAutoupdate": "",
-        "title": ""
-      }
-    },
-    "choose-legendary-binary": "",
-    "reset-heroic": {
-      "question": {
-        "title": "",
-        "message": ""
-      }
-    },
-    "protocol": {
-      "install": {
-        "not_installed": ""
-      }
-    },
-    "vcruntime": {
-      "install": {
-        "message": ""
-      },
-      "notfound": {
-        "message": "",
-        "title": ""
-      }
-    },
-    "default-install-path": "",
-    "wineprefix": "",
-    "default-steam-path": "",
-    "dontShowAgain": "",
-    "cache-cleared": {
-      "message": "",
-      "title": ""
-    },
-    "sync": {
-      "title": "",
-      "error": ""
-    },
-    "choose-nile-binary": "",
-    "customWine": ""
+    "info": {}
   },
   "controller": {
     "hints": {
@@ -172,178 +51,23 @@
     }
   },
   "setting": {
-    "eosOverlay": {
-      "remove": "წაშლა",
-      "disable": "გათიშულია",
-      "enable": "ჩართულია",
-      "install": "დაყენება",
-      "updateNow": "განახლება",
-      "cancelInstall": "გაუქმება",
-      "updating": "განახლება...",
-      "installing": "",
-      "checkForUpdates": "",
-      "removeConfirm": "",
-      "notInstalledMsg": "",
-      "currentVersion": "",
-      "notInstalledTitle": "",
-      "checkingForUpdates": "",
-      "installed": "",
-      "latestVersion": "",
-      "notInstalled": "",
-      "removeConfirmTitle": ""
-    },
-    "library_top_option": {
-      "disabled": "გათიშულია",
-      "favourites": "",
-      "recently_played_installed": "",
-      "recently_played": ""
-    },
     "log": {
-      "upload": {
-        "actions": "ქმედებები",
-        "uploading": {
-          "title": "ატვირთვა",
-          "content": ""
-        },
-        "delete": "",
-        "hours-ago": "",
-        "title": "",
-        "upload-date": "",
-        "error": {
-          "title": "",
-          "manual_upload": "",
-          "content": ""
-        },
-        "open": "",
-        "header": "",
-        "no-files": "",
-        "confirm": {
-          "content": "",
-          "title": ""
-        },
-        "minutes-ago": "",
-        "done": {
-          "content": "",
-          "title": ""
-        },
-        "button": ""
-      },
-      "descriptiveNames": {
-        "legendary": "",
-        "nile": "",
-        "gog": "",
-        "zoom": "",
-        "game-log": "",
-        "heroic": ""
-      },
-      "no-file": "",
-      "instructions_title": "",
-      "show-uploads": "",
-      "instructions": "",
-      "show-in-folder": ""
+      "instructions": ""
     },
-    "manualsync": {
-      "download": "გადმოწერა",
-      "sync": "სინქრონიზაცია",
-      "syncing": "სინქრონიზდება",
-      "upload": "ატვირთვა",
-      "title": "",
-      "forceupload": "",
-      "forcedownload": ""
-    },
-    "wineversion": "Wine-ის ვერსია",
-    "WoW64": "",
-    "frameless-window": {
-      "confirmation": {
-        "message": "",
-        "title": ""
-      },
-      "description": ""
-    },
-    "alt-gogdl-bin": "",
-    "alt-nile-bin": "",
-    "download-proton-steam": "",
-    "scripts": "",
-    "wineWayland": "",
-    "fsync": "",
-    "showfps": "",
     "experimental_features": {
       "cometSupport": "",
       "enableNewDesign": "",
       "enableHelp": "",
       "zoomPlatform": ""
     },
-    "hdr": "",
-    "autodxvknvapi": "",
-    "library_top_section": "",
-    "savefolder": {
-      "placeholder": "",
-      "warning": "",
-      "not-found": ""
-    },
-    "autosync": "",
-    "show_valve_proton": {
-      "wine_selector_warning": "",
-      "confirmation": {
-        "show": "",
-        "title": "",
-        "dont_show": "",
-        "message": ""
-      },
-      "label": "",
-      "info_label": ""
-    },
-    "preferSystemLibs": "",
-    "dxfpslimit": "",
-    "allow_installation_broken_anticheat": {
-      "confirmation": {
-        "understand": "",
-        "title": "",
-        "message": ""
-      },
-      "label": ""
-    },
-    "autodxvk": "",
-    "download-no-https": "",
-    "customWineProton": "",
-    "enable-quick-sync-menu": "",
-    "runexe": {
-      "title": ""
-    },
-    "disable_logs": "",
-    "start-in-tray": "",
-    "change-target-exe": "",
-    "offlinemode": "",
-    "analyticsOptIn": "",
     "language": "",
-    "FsrSharpnessStrenght": "",
-    "crossover-version": "",
-    "esync": "",
     "addgamestosteam": "",
-    "winecrossoverbottle": "",
-    "alt-legendary-bin": "",
-    "autovkd3d": "",
-    "ignoreGameUpdates": "",
     "verboseLogs": {
       "description": ""
     },
-    "default-steam-path": "",
     "maxworkers": "",
-    "steamruntime": "",
-    "gamemode": "",
     "select_theme": "",
-    "default-install-path": "",
-    "enableFSRHack": "",
-    "autoUpdateGames": "",
-    "msync": "",
-    "wineprefix": "",
     "advertiseAvxForRosetta": "",
-    "prefered_language": "",
-    "showMetalOverlay": "",
-    "custom_css": {
-      "warning": ""
-    },
-    "start-in-console-mode": "",
     "disable_gog_presence": ""
   },
   "window": {
@@ -367,23 +91,8 @@
     "noDlcFound": ""
   },
   "download-manager": {
-    "install-type": {
-      "install": "დაყენება",
-      "update": "განახლება"
-    },
-    "label": {
-      "disk": "დისკი",
-      "speed": "გადმოწერა"
-    },
     "link": "გადმოწერები",
-    "queue": {
-      "type": "ტიპი",
-      "end-time": "",
-      "queue-time": "",
-      "start-time": ""
-    },
-    "title": "გადმოწერები",
-    "ETA": ""
+    "title": "გადმოწერები"
   },
   "header": {
     "categories": "კატეგორიები",
@@ -403,68 +112,23 @@
   },
   "help": {
     "title": {
-      "settings": "პარამეტრები",
-      "accessibility": "წვდომადობა",
-      "library": "ბიბლიოთეკა",
-      "login": "შესვლა",
-      "downloadManager": "",
-      "wineManager": ""
+      "settings": "პარამეტრები"
     },
-    "sync": {
-      "part2": "",
-      "part1": "",
-      "part3": "",
-      "part4": ""
-    },
+    "sync": {},
     "disable_logs": "",
     "dxfpslimit": "",
-    "dxvk": "",
     "content": {
-      "defaultInstallPath": "",
-      "settingsDefault": "",
-      "settingsGame": "",
-      "downloadManager": "",
-      "wineManager": "",
-      "library": "",
-      "accessibility": "",
-      "login": ""
+      "defaultInstallPath": ""
     },
-    "msync": "",
-    "other": {
-      "part6": "",
-      "part4": "",
-      "part5": "",
-      "part7": ""
-    },
-    "amdfsr": "",
     "button": {
       "open": "",
       "close": ""
     },
-    "preferSystemLibs": "",
-    "download_proton_steam": "",
-    "wine-hdr": "",
     "game_language": {
       "valid_codes": "",
-      "in_game_config": "",
-      "fallback": ""
+      "in_game_config": ""
     },
-    "wine": {
-      "part1": "",
-      "part2": ""
-    },
-    "dxvknvapi": "",
-    "steamruntime": "",
-    "steam_path": {
-      "info": ""
-    },
-    "vkd3d": "",
-    "WoW64": "",
-    "wine-wayland": "",
-    "advertiseAvxForRosetta": "",
-    "fsync": "",
-    "gamemode": "",
-    "esync": ""
+    "steam_path": {}
   },
   "notify": {
     "uninstalled": "წაშლა",
@@ -508,7 +172,6 @@
       "error": "",
       "imported": ""
     },
-    "new-heroic-version": "",
     "moved": "",
     "refresh": {
       "error": ""
@@ -539,127 +202,28 @@
         "help2": "",
         "help4": ""
       },
-      "title": {
-        "resetHeroic": "",
-        "clearCache": ""
-      },
-      "resetHeroic": {
-        "help": ""
-      }
+      "title": {}
     },
     "navbar": {
       "log": "ჟურნალი",
-      "advanced": "დამატებით",
-      "general": "ზოგადი",
-      "other": "სხვა",
-      "games_settings_defaults": "",
-      "systemInformation": "",
-      "sync": "",
-      "legacy": ""
+      "general": "ზოგადი"
     },
-    "systemInformation": {
-      "cpu": "CPU:",
-      "gpu": "GPU:",
-      "memory": "მეხსიერება:",
-      "software": "პროგრამა:",
-      "gpuWithNumber": "",
-      "cpuDescription": "",
-      "legendaryVersion": "",
-      "systemSpecifications": "",
-      "steamDeck": "",
-      "gpuDriver": "",
-      "os": "",
-      "gogdlVersion": "",
-      "osVersion": "",
-      "cometVersion": "",
-      "memoryStats": "",
-      "systemModel": "",
-      "showDetailed": "",
-      "copyToClipboard": "",
-      "heroicVersion": "",
-      "nileVersion": ""
-    },
-    "legacy_warning": "",
-    "eacRuntime": {
-      "name": "",
-      "installing": "",
-      "gameModeRequired": {
-        "title": "",
-        "message": ""
-      }
-    },
-    "experimental_features": {
-      "title": ""
-    },
-    "reset-heroic": "",
-    "default_hint": "",
-    "gameMode": {
-      "eacRuntimeEnabled": {
-        "message": "",
-        "title": ""
-      }
-    },
-    "saves": {
-      "warning": "",
-      "not_supported": "",
-      "gog_linux_native_warning": ""
-    },
+    "experimental_features": {},
     "log": {
       "long-log-hint": ""
     },
-    "offline": {
-      "warning": ""
-    },
-    "battlEyeRuntime": {
-      "installing": "",
-      "name": ""
-    },
+    "offline": {},
     "clear-cache": "",
-    "copyToClipboard": "",
-    "launchOptions": "",
-    "copiedToClipboard": "",
     "open-config-file": "",
     "steamgriddb": {
       "apikey": {
         "title": "",
         "placeholder": "",
         "placeholder_saved": ""
-      },
-      "help": {
-        "description": ""
       }
     }
   },
   "Settings": "პარამეტრები",
-  "wine": {
-    "size": "ზომა",
-    "actions": "ქმედება",
-    "manager": {
-      "unzipping": "გაშლა",
-      "link": "",
-      "title": "",
-      "not-found": "",
-      "search": "",
-      "loading": "",
-      "open_folder": "",
-      "update": "განახლება",
-      "settings": "პარამეტრები",
-      "no-results": ""
-    },
-    "notes": "",
-    "release": ""
-  },
-  "winetricks": {
-    "install": "დაყენება",
-    "loading": "იტვირთება",
-    "no-components": "",
-    "installing": "",
-    "openGUI": "",
-    "search": "",
-    "loading-available": "",
-    "nothingYet": "",
-    "installed": ""
-  },
   "anticheat": {
     "anticheats": "ანტიჩიტები",
     "reference": "მიმართვა",
@@ -670,17 +234,7 @@
   },
   "info": {
     "version": "Wine-ის ვერსია",
-    "heroic": {
-      "beta": "ბეტა",
-      "stable": "სტაბილური",
-      "version": "",
-      "newReleases": "",
-      "click-to-see-changelog": ""
-    },
-    "settings": "",
-    "save-sync": {
-      "searching": ""
-    }
+    "settings": ""
   },
   "button": {
     "cancel": "გაუქმება",
@@ -708,10 +262,7 @@
     "new-category": "",
     "add-new-category": ""
   },
-  "epic": {
-    "offline-notification-title": "ხაზგარეშე",
-    "offline-notification-body": ""
-  },
+  "epic": {},
   "error": "შეცდომა",
   "favourites": "რჩეულები",
   "game": {
@@ -724,20 +275,10 @@
   "infobox": {
     "help": "დახმარება",
     "warning": "გაფრთხილება",
-    "requirements": "სისტემური მოთხოვნები",
-    "wine-path-none-found": "",
-    "wine-prefix": {
-      "title": ""
-    },
-    "wine-repfix": {
-      "message": ""
-    },
-    "wine-path-invalid": "",
-    "wine-path": ""
+    "requirements": "სისტემური მოთხოვნები"
   },
   "label": {
-    "loading": "იტვირთება",
-    "releaseDate": ""
+    "loading": "იტვირთება"
   },
   "Library": "ბიბლიოთეკა",
   "loading": {
@@ -751,41 +292,7 @@
     "hint": "",
     "offline-retry-in": ""
   },
-  "options": {
-    "advanced": {
-      "placeHolderKey": "სახელი",
-      "value": "მნიშვნელობა",
-      "title": "",
-      "key": "",
-      "placeHolderValue": ""
-    },
-    "wrapper": {
-      "args": "არგუმენტები",
-      "exe": "Wrapper",
-      "placeHolderValue": "",
-      "placeHolderKey": "",
-      "arguments_example": "",
-      "title": ""
-    },
-    "env_variables": {
-      "error": {
-        "space_in_key": "",
-        "equal_sign_in_key": "",
-        "empty_key": ""
-      },
-      "info": "",
-      "example": ""
-    },
-    "gameargs": {
-      "error": {
-        "command": "",
-        "env": ""
-      },
-      "placeholder": "",
-      "title": ""
-    },
-    "quote-args-with-spaces": ""
-  },
+  "options": {},
   "Other": "სხვა",
   "platforms": {
     "browser": "ბრაუზერი",
@@ -815,10 +322,6 @@
     "dxvkfpsvalue": "",
     "alt-legendary-bin": "",
     "alt-gogdl-bin": ""
-  },
-  "tooltip": {
-    "removepath": "",
-    "addpath": ""
   },
   "title": {
     "allGames": ""
@@ -856,26 +359,15 @@
       "openInBrowser": ""
     }
   },
-  "launch": {
-    "options": ""
-  },
+  "launch": {},
   "message": {},
-  "two_col_table": {
-    "save_hint": ""
-  },
   "login": {
     "amazon": "",
     "alternative_method": "",
     "message": "",
     "gog": "",
     "epic": "",
-    "old-mac": "",
     "zoom": ""
-  },
-  "toolbox": {
-    "settings": {
-      "wineprefix": ""
-    }
   },
   "please-wait": "",
   "Recent": "",
@@ -895,26 +387,8 @@
     "uninstall": "წაშლა"
   },
   "search": "",
-  "wineExplanation": {
-    "proton-ge": "",
-    "gpt": "",
-    "wine-crossover": "",
-    "wine-staging-macos": ""
-  },
   "Amazon Games": "",
-  "steamgriddb": {
-    "error": {
-      "no-games": "",
-      "no-grids": "",
-      "search": "",
-      "grids": ""
-    },
-    "picker": {
-      "search": "",
-      "title": "",
-      "select-game": ""
-    }
-  },
+  "steamgriddb": {},
   "console": {
     "update": {
       "hintPrefix": "",

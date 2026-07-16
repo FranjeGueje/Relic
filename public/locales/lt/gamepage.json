@@ -139,14 +139,6 @@
   },
   "hours": "Valandos",
   "install": {
-    "anticheat-warning": {
-      "ok": "Gerai",
-      "cancel": "Ne",
-      "install_anyway": "Taip (Aš suvokiu, kad daugiažaidėjė̄škumo funkcijos neveiks)",
-      "title": "Anti-sukčiavimas sugedęs/neleistas",
-      "disabled_installation": "Šis žaidimas naudoja anti-sukčiavimo taikomąją programą, kuri nėra palaikoma su Jūsų operacine sistema. Tai reiškia, kad daugiažaidėjė̄škumo funkcijos neveiks. Šio negali sutaisyti, nei Jūs, nei „Heroic“ komanda, o žaidimo kūrėja/-s.<br /><br />Žaidimas negali būti įdiegtas. Norint įdiegti šį žaidimą, išjunkite šią patikrą pažangiose nustatymuose.<br /><br />Svarbu: Galimai gali nukentėti Jūsų žaidimo paskyros būsena (būtų uždrausta) dėl sukčiavimo ar pan. priežasčių.",
-      "multiplayer_message": "Anti-sukčiavimo palaikymas yra sugedęs arba neleidžiamas. Žaidimas galimai pasileis, bet daugiažaidėjė̄škumo funkcijos neveiks.. Ar Jūs vis tiek norite įdiegti šį žaidimą?"
-    },
     "wineversion": "„Wine“ versija",
     "not-enough-disk-space": "Nepakankamai disko vietos/talpos",
     "disk-space-left": "Laisva talpa/vietovė",
@@ -169,7 +161,6 @@
       "not-installable-game": "Žaidimas NĖRA įdiegiamas",
       "third-party-game": "Trečiosios šalies žaidimas NEPALAIKOMAS"
     },
-    "winetricks": "Įdiegiami „Winetricks“ paketai",
     "redist": "Įdiegiami įterptiniai taikomieji komponentai",
     "steam": {
       "installing": "Įdiegiama",
@@ -201,18 +192,13 @@
     "completionist": "Užbaigikas"
   },
   "info": {
-    "apple-gaming-wiki": "„AppleGamingWiki“ įvertinimas",
     "installedInfo": "Įdiegta informacija",
     "installedPlatform": "Įdiegta platforma",
-    "steamdeck-compatibility-info": "„SteamDeck“ palaikymas",
-    "syncsaves": "Sinchronizuoti (žaidimo) išsaugojimus",
     "clickToOpen": "Paspauskite, kad atidarytumėte",
     "size": "Dydis",
     "version": "Versija",
     "path": "Įdiegimo kelias",
     "canRunOffline": "Reikalinga interneto prieiga",
-    "game-scores": "Žaidimo taškai",
-    "protondb-compatibility-info": "„Proton“ palaikymo sluoksnis/pakopa",
     "third-party-app": "Trečiosios šalies tvarkytuvas/-ė"
   },
   "howLongToBeat": "Laikas įveikti",
@@ -271,7 +257,6 @@
     "playing": "Žaidžiama",
     "totalDownloaded": "Iš viso atsisiųsta",
     "queued": "Eilėje",
-    "winetricks": "Pritaikomi „Winetricks“ sutaisymai",
     "gog-goodie": "Šis žaidimas neatrodo įdiegiamas. Patikrinkite/Peržiūrėkite atsisiunčiama turinį – https://gog.com/account",
     "this-game-uses-third-party": "Šis žaidimas naudoja trečios šalies paleidiklį, o jis nėra palaikomas (kol kas)",
     "redist": "Įdiegiami įterptiniai taikomieji komponentai („{{redist}}“)",
@@ -280,35 +265,19 @@
   "not_logged_in": {
     "login": "Prisijungti",
     "title": "Jūs nesate prisijungę",
-    "amazon": "Jūs nesate prisijungę su „Amazon“ paskyrą prie „Heroic“. Nenaudokite parduotuvės puslapio, kad prisijungtumėte, vietoj to, paspauskite šį mygtuką:",
-    "epic": "Jūs nesate prisijungę su „Epic“ paskyrą prie „Heroic“. Nenaudokite parduotuvės puslapio, kad prisijungtumėte, vietoj to, paspauskite šį mygtuką:",
-    "gog": "Jūs nesate prisijungę su „GOG“ paskyrą prie „Heroic“. Nenaudokite parduotuvės puslapio, kad prisijungtumėte, vietoj to, paspauskite šį mygtuką:",
-    "zoom": "Jūs nesate prisijungę su „Zoom“ paskyrą prie „Heroic“. Nenaudokite parduotuvės puslapio, kad prisijungtumėte, vietoj to, paspauskite šį mygtuką:"
+    "amazon": "Jūs nesate prisijungę su „Amazon“ paskyrą prie „Relic“. Nenaudokite parduotuvės puslapio, kad prisijungtumėte, vietoj to, paspauskite šį mygtuką:",
+    "epic": "Jūs nesate prisijungę su „Epic“ paskyrą prie „Relic“. Nenaudokite parduotuvės puslapio, kad prisijungtumėte, vietoj to, paspauskite šį mygtuką:",
+    "gog": "Jūs nesate prisijungę su „GOG“ paskyrą prie „Relic“. Nenaudokite parduotuvės puslapio, kad prisijungtumėte, vietoj to, paspauskite šį mygtuką:",
+    "zoom": "Jūs nesate prisijungę su „Zoom“ paskyrą prie „Relic“. Nenaudokite parduotuvės puslapio, kad prisijungtumėte, vietoj to, paspauskite šį mygtuką:"
   },
-  "setting": {
-    "show-wine-settings": "Rodyti „Wine“ nustatymus",
-    "warn-use-shared-wine-config": "Naudokite šią parinktį tik, jei Jūs žinote ką darote.<br/>Naudodami tą patį prielinksnį/priešdėlį keliems žaidimams gali sukelti problemų, jeigu jų priklausomybės yra nesuderinamos.",
-    "winecrossoverbottle": "„CrossOver butelis“",
-    "use-shared-wine-config": "Naudoti bendrinamą „Wine“ prielinksnį/priešdėlį"
-  },
+  "setting": {},
   "sdl": {
     "title": "Pasirinkti komponentus, kurios įdiegti"
   },
   "submenu": {
-    "addShortcut": "Pridėti nuorodą",
-    "logs": "Žurnalai",
     "move": "Perkelti žaidimą",
-    "protondb": "Patikrinti palaikymą",
-    "addToSteam": "Pridėti prie „Steam“",
     "change": "Pakeisti įdiegimo kelią",
-    "removeFromSteam": "Pašalinti iš „Steam“",
-    "settings": "Nustatymai",
-    "categories": "Kategorijos",
-    "store": "Parduotuvės puslapis",
-    "removeShortcut": "Pašalinti nuorodas",
-    "verify": "Patikrinti/Patvirtinti ir sutaisyti",
-    "disableEosOverlay": "Išjungti „EOS“ uždangą",
-    "enableEosOverlay": "Įjungti „EOS“ uždangą"
+    "verify": "Patikrinti/Patvirtinti ir sutaisyti"
   },
   "launch": {
     "options": "Paleidimo parinktys...",
@@ -317,11 +286,6 @@
   "disabled": "Išjungta/Neįgalinta (-as/-i)",
   "enabled": "Įjungta/Įgalinta (-as/-i)",
   "report_problem": "Praneškite apie problemą, paleidžiant ir žaidžiant šį žaidimą",
-  "third-party-managed": {
-    "notice2": "Paspaudus – „Įdiegti“, „Heroic“ vykdys nurodytą aplikaciją, kad užbaigtų įdiegimo procesą",
-    "header": "Šis žaidimas tvarkomas trečios šalies aplikacijos",
-    "notice1": "Šis žaidimas tvarkomas trečios šalies aplikacijos: „{{application_name}}“"
-  },
   "wikiLink": "Svarbi informacija apie šį žaidimą, skaitykite šį:&nbsp;<1>Atidaryti puslapį</1>",
   "Open": "Atidaryti",
   "queue": {

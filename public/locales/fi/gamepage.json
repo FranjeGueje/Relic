@@ -153,14 +153,9 @@
     "installedPlatform": "Asennettu alusta",
     "path": "Asennuksen sijainti",
     "size": "Koko",
-    "syncsaves": "Synkronoi tallennukset",
     "version": "Versio",
-    "apple-gaming-wiki": "AppleGamingWiki-luokitus",
     "clickToOpen": "Avaa napsauttamalla",
-    "game-scores": "Pelin Pisteet",
     "installedInfo": "Asennettu tiedot",
-    "protondb-compatibility-info": "Protonien yhteensopivuustaso",
-    "steamdeck-compatibility-info": "SteamDeck-yhteensopivuus",
     "third-party-app": "Hallinta kolmansien osapuolten asetuksille"
   },
   "install": {
@@ -170,17 +165,7 @@
     "path-not-writtable": "Varoitus: polkuun ei ehkä pysty kirjoittamaan.",
     "space-after-install": "Asennuksen jälkeen",
     "wineprefix": "WinePrefix",
-    "wineversion": "Wine Version",
-    "anticheat-warning": {
-      "cancel": "Ei",
-      "message": "Huijauksenesto on rikki tai evätty. Peli ei tule toimimaan. Haluatko asentaa sen tästä huolimatta?",
-      "install": "Kyllä (ymmärtäen että tämä ei tule toimimaan)",
-      "title": "Huijauksenesto rikki/evätty",
-      "ok": "Ok",
-      "install_anyway": "Kyllä (ymmärrän että moninpeliominaisuudet eivät tule toimimaan)",
-      "multiplayer_message": "Huijaukseneston tuki on rikki tai evätty. Peli voi käynnistyä mutta moninpeliominaisuudet eivät tule toimimaan. Haluatko asentaa pelin tästä huolimatta?",
-      "disabled_installation": "Tämä peli käyttää huijauksenestojärjestelmää joka ei ole yhteensopiva käyttöjärjestelmäsi kanssa, tai pelinkehittäjät eivät ole aktivoineet sitä. Tämä tarkoittaa, että moninpeliominaisuudet eivät toimi, etkä sinä (tai Heroic-tiimi) voi asialle mitään.<br /><br />Asentaaksesi tämän pelin jokatapauksessa, mene asetuksiin, sieltä lisäasetuksiin ja salli niiden pelien asennus joissa huijauksenesto on rikki tai muutoin estetty.<br /><br />Huomaa, että tähän ei ole ratkaisua ja saatat saada peliin pelikiellon."
-    }
+    "wineversion": "Wine Version"
   },
   "label": {
     "game": {
@@ -197,7 +182,6 @@
     },
     "launching": "Käynnistetään",
     "ubisoft": "Ubisoft Connectin asentaminen",
-    "winetricks": "Asennetaan Winetricks-paketteja",
     "redist": "Asennetaan uudelleenjaeltavat osat",
     "steam": {
       "installing": "Installing",
@@ -214,19 +198,14 @@
     "gog": "Et ole kirjautunut sisään GOG-käyttäjällä. Älä käytä kauppaa sisäänkirjautumiseen, vaan paina seuraavaa nappia:",
     "login": "Log in",
     "title": "ET ole kirjautunut sisään",
-    "amazon": "You are not logged in with an Epic account in Heroic. Don't use the store page to login, click the following button instead:",
-    "zoom": "You are not logged in with a GOG account in Heroic. Don't use the store page to login, click the following button instead:"
+    "amazon": "You are not logged in with an Epic account in Relic. Don't use the store page to login, click the following button instead:",
+    "zoom": "You are not logged in with a GOG account in Relic. Don't use the store page to login, click the following button instead:"
   },
   "report_problem": "Ilmoita ongelmasta tässä pelissä",
   "sdl": {
     "title": "Valitse asennettavat komponentit"
   },
-  "setting": {
-    "winecrossoverbottle": "CrossOver Bottle",
-    "warn-use-shared-wine-config": "Käytä tätä vaihtoehtoa vain, jos tiedät, mitä olet tekemässä.<br/>Saman prefixin käyttäminen useissa peleissä voi aiheuttaa ongelmia, jos niiden riippuvuudet eivät ole yhteensopivia.",
-    "show-wine-settings": "Näytä Wine-asetukset",
-    "use-shared-wine-config": "Käytä jaettua Wine-prefix kansiota"
-  },
+  "setting": {},
   "sideload": {
     "field": {
       "title": "Otsikko"
@@ -280,26 +259,14 @@
     "extracting": "Purkaminen",
     "goodie": "Ei asennettavissa",
     "gog-goodie": "Tämä peli ei näytä olevan asennettavissa. Tarkista ladattava sisältö osoitteessa https://gog.com/account",
-    "winetricks": "Asetetaan Winetricks-korjauksia",
     "redist": "Asennetaan uudelleenjaeltavat osat ({{redist}})",
     "importing": "Tuodaan"
   },
   "submenu": {
-    "addShortcut": "Lisää pikakuvake",
-    "addToSteam": "Lisää Steamiin",
     "change": "Vaihda asennussijaintia",
-    "disableEosOverlay": "Poista EOS-päällyskerros",
-    "enableEosOverlay": "Poista EOS-päällyskerros",
     "move": "Siirrä peli",
-    "protondb": "Tarkista yhteensopivuus",
-    "removeFromSteam": "Poista Steamista",
-    "removeShortcut": "Poista näppäinyhdistelmät",
-    "settings": "Asetukset",
-    "store": "Kauppasivu",
     "verify": "Vahvista ja korjaa",
-    "extraInfo": "Lisätiedot",
-    "logs": "Lokit",
-    "categories": "Kategoriat"
+    "extraInfo": "Lisätiedot"
   },
   "help": {
     "cloud_save_unsupported": "Tämä peli ei tue pilvitallennusta. Nämä tiedot ovat pelin kehittäjien toimittamia. Jotkin pelit toteuttavat oman pilvitallennusjärjestelmänsä.",
@@ -318,11 +285,6 @@
       "enable": "Salli modit"
     },
     "versionCollapsable": "Pelin versio"
-  },
-  "third-party-managed": {
-    "header": "Tätä peliä hallinnoi kolmannen osapuolen sovellus",
-    "notice1": "Tätä peliä hallinnoi kolmannen osapuolen sovellus: \"{{application_name}}\"",
-    "notice2": "Napsauttaessasi Asenna, Heroic ajaa sovelluksen jotta sen asennus voidaan saattaa päätökseen"
   },
   "Open": "Avaa",
   "queue": {

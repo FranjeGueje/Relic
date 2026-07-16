@@ -153,14 +153,9 @@
     "installedPlatform": "已安裝平台",
     "path": "安裝路徑",
     "size": "大小",
-    "syncsaves": "同步存檔",
     "version": "版本",
-    "apple-gaming-wiki": "AppleGamingWiki 評級",
     "clickToOpen": "點擊開啟",
-    "game-scores": "遊戲分數",
     "installedInfo": "安裝訊息",
-    "protondb-compatibility-info": "Proton 相容性等級",
-    "steamdeck-compatibility-info": "SteamDeck 相容性",
     "third-party-app": "第三方管理器"
   },
   "install": {
@@ -170,15 +165,7 @@
     "path-not-writtable": "警告：路徑可能不可寫入。",
     "space-after-install": "安裝後",
     "wineprefix": "WinePrefix",
-    "wineversion": "Wine 版本",
-    "anticheat-warning": {
-      "ok": "Ok",
-      "install_anyway": "是（我理解多人遊戲功能不會正常工作）",
-      "cancel": "否",
-      "disabled_installation": "",
-      "multiplayer_message": "",
-      "title": ""
-    }
+    "wineversion": "Wine 版本"
   },
   "label": {
     "game": {
@@ -199,7 +186,6 @@
       "pleaseWait": "Please wait...",
       "installing": "正在安裝"
     },
-    "winetricks": "",
     "redist": ""
   },
   "launch": {
@@ -207,23 +193,18 @@
     "default": ""
   },
   "not_logged_in": {
-    "epic": "You are not logged in with an Epic account in Heroic. Don't use the store page to login, click the following button instead:",
-    "gog": "You are not logged in with a GOG account in Heroic. Don't use the store page to login, click the following button instead:",
+    "epic": "You are not logged in with an Epic account in Relic. Don't use the store page to login, click the following button instead:",
+    "gog": "You are not logged in with a GOG account in Relic. Don't use the store page to login, click the following button instead:",
     "login": "登入",
     "title": "您未登入",
-    "amazon": "You are not logged in with an Epic account in Heroic. Don't use the store page to login, click the following button instead:",
-    "zoom": "You are not logged in with a GOG account in Heroic. Don't use the store page to login, click the following button instead:"
+    "amazon": "You are not logged in with an Epic account in Relic. Don't use the store page to login, click the following button instead:",
+    "zoom": "You are not logged in with a GOG account in Relic. Don't use the store page to login, click the following button instead:"
   },
   "report_problem": "回報執行此遊戲時出現的問題",
   "sdl": {
     "title": "選擇要安裝的元件"
   },
-  "setting": {
-    "winecrossoverbottle": "CrossOver 容器",
-    "show-wine-settings": "顯示 Wine 設定",
-    "warn-use-shared-wine-config": "",
-    "use-shared-wine-config": ""
-  },
+  "setting": {},
   "sideload": {
     "field": {
       "title": "標題"
@@ -278,25 +259,13 @@
     "goodie": "不可安裝",
     "gog-goodie": "該遊戲似乎無法安裝。在 https://gog.com/account 上查看可下載內容",
     "redist": "",
-    "winetricks": "",
     "importing": ""
   },
   "submenu": {
-    "addShortcut": "新增捷徑",
-    "addToSteam": "加入到 Steam",
     "change": "更改安裝路徑",
-    "disableEosOverlay": "停用 EOS 內嵌介面",
-    "enableEosOverlay": "啟用 EOS 內嵌介面",
     "move": "移動遊戲",
-    "protondb": "檢查相容性",
-    "removeFromSteam": "從 Steam 移除",
-    "removeShortcut": "移除捷徑",
-    "settings": "設定",
-    "store": "商店頁面",
     "verify": "驗證並修復遊戲檔案",
-    "extraInfo": "額外信息",
-    "logs": "日誌",
-    "categories": "分類"
+    "extraInfo": "額外信息"
   },
   "help": {
     "cloud_save_unsupported": "本遊戲不支援雲端存檔。此訊息由遊戲開發商提供。有些遊戲確實實現了自己的雲端存檔系統",
@@ -324,11 +293,6 @@
       "resume": "",
       "pause": ""
     }
-  },
-  "third-party-managed": {
-    "header": "",
-    "notice2": "",
-    "notice1": ""
   },
   "open-saves-folder": "",
   "wikiLink": "",

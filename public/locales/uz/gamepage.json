@@ -53,7 +53,6 @@
     "gog-goodie": "Bu oʻyinni oʻrnatib boʻlmaydi. Yuklab olinadigan kontentni https://gog.com/account orqali tekshiring",
     "goodie": "Oʻrnatish mumkin emas",
     "redist": "",
-    "winetricks": "",
     "importing": ""
   },
   "box": {
@@ -219,14 +218,9 @@
     "installedPlatform": "O'rnatilgan platforma",
     "path": "Yo'lni o'rnatish",
     "size": "Hajmi",
-    "syncsaves": "Saqlashlarni sinxronlash",
     "version": "Versiya",
-    "apple-gaming-wiki": "AppleGamingWiki reytingi",
     "clickToOpen": "Ochish uchun bosing",
-    "game-scores": "O'yin natijalari",
     "installedInfo": "O'rnatilgan ma'lumotlar",
-    "protondb-compatibility-info": "Proton muvofiqlik darajasi",
-    "steamdeck-compatibility-info": "SteamDeck mosligi",
     "third-party-app": ""
   },
   "install": {
@@ -236,15 +230,7 @@
     "path-not-writtable": "Ogohlantirish: yo'l yozilmasligi mumkin.",
     "space-after-install": "O'rnatishdan keyin",
     "wineprefix": "WinePrefix",
-    "wineversion": "Vino versiyasi",
-    "anticheat-warning": {
-      "cancel": "",
-      "disabled_installation": "",
-      "install_anyway": "",
-      "ok": "",
-      "multiplayer_message": "",
-      "title": ""
-    }
+    "wineversion": "Vino versiyasi"
   },
   "label": {
     "game": {
@@ -261,7 +247,6 @@
       "syncing": "Saqlashlarni sinxronlash"
     },
     "ubisoft": "Ubisoft Connect o'rnatilmoqda",
-    "winetricks": "",
     "redist": ""
   },
   "launch": {
@@ -269,44 +254,23 @@
     "default": ""
   },
   "not_logged_in": {
-    "epic": "Siz Heroic-da Epic hisob qaydnomasi bilan tizimga kirmagansiz. Kirish uchun doʻkon sahifasidan foydalanmang, uning oʻrniga quyidagi tugmani bosing:",
-    "gog": "Siz Heroic-da GOG hisobi bilan tizimga kirmagansiz. Kirish uchun doʻkon sahifasidan foydalanmang, uning oʻrniga quyidagi tugmani bosing:",
+    "epic": "Siz Relic-da Epic hisob qaydnomasi bilan tizimga kirmagansiz. Kirish uchun doʻkon sahifasidan foydalanmang, uning oʻrniga quyidagi tugmani bosing:",
+    "gog": "Siz Relic-da GOG hisobi bilan tizimga kirmagansiz. Kirish uchun doʻkon sahifasidan foydalanmang, uning oʻrniga quyidagi tugmani bosing:",
     "login": "Tizimga kirish",
     "title": "Siz tizimga kirmadingiz",
-    "amazon": "Siz Heroic-da Amazon hisob qaydnomasi bilan tizimga kirmagansiz. Kirish uchun doʻkon sahifasidan foydalanmang, uning oʻrniga quyidagi tugmani bosing:",
+    "amazon": "Siz Relic-da Amazon hisob qaydnomasi bilan tizimga kirmagansiz. Kirish uchun doʻkon sahifasidan foydalanmang, uning oʻrniga quyidagi tugmani bosing:",
     "zoom": ""
   },
   "report_problem": "Ushbu o'yinni ishga tushirishda muammo haqida xabar bering",
   "sdl": {
     "title": "O'rnatish uchun komponentlarni tanlang"
   },
-  "setting": {
-    "winecrossoverbottle": "Krossover shishasi",
-    "warn-use-shared-wine-config": "",
-    "show-wine-settings": "",
-    "use-shared-wine-config": ""
-  },
+  "setting": {},
   "submenu": {
-    "addShortcut": "Yorliq qo'shing",
-    "addToSteam": "Steam-ga qo'shing",
     "change": "O'rnatish yo'lini o'zgartiring",
-    "disableEosOverlay": "EOS Overlay-ni o'chirib qo'ying",
-    "enableEosOverlay": "EOS Overlay-ni yoqing",
     "extraInfo": "Qo'shimcha ma'lumot",
-    "logs": "Jurnallar",
     "move": "Ko'chirish o'yin",
-    "protondb": "Muvofiqlikni tekshiring",
-    "removeFromSteam": "Steam-dan olib tashlang",
-    "removeShortcut": "Yorliqlarni olib tashlang",
-    "settings": "Sozlamalar",
-    "store": "Do'kon sahifasi",
-    "verify": "Tasdiqlash va ta'mirlash",
-    "categories": ""
-  },
-  "third-party-managed": {
-    "header": "",
-    "notice2": "",
-    "notice1": ""
+    "verify": "Tasdiqlash va ta'mirlash"
   },
   "queue": {
     "label": {

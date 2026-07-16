@@ -151,15 +151,10 @@
   "info": {
     "canRunOffline": "จำเป็นต้องออนไลน์",
     "clickToOpen": "คลิกเพื่อเปิด",
-    "game-scores": "คะแนนเกม",
     "size": "ขนาด",
-    "steamdeck-compatibility-info": "ความเข้ากันได้กับ SteamDeck",
     "version": "เวอร์ชั่น",
-    "syncsaves": "",
     "installedInfo": "",
     "path": "",
-    "protondb-compatibility-info": "",
-    "apple-gaming-wiki": "",
     "third-party-app": "",
     "installedPlatform": ""
   },
@@ -170,7 +165,6 @@
       "stop": "กำลังเล่น (หยุด)",
       "start_with_logs": ""
     },
-    "winetricks": "",
     "redist": "",
     "game": {
       "third-party-game": "",
@@ -238,7 +232,6 @@
     "updating": "กำลังอัปเดตเกม",
     "redist": "",
     "notSupported": "",
-    "winetricks": "",
     "syncingSaves": "",
     "processing": "",
     "importing": "",
@@ -254,25 +247,9 @@
     "notSupportedGame": ""
   },
   "submenu": {
-    "addShortcut": "เพิ่มชอร์ตคัท",
-    "addToSteam": "เพิ่มไปยัง Steam",
-    "categories": "หมวดหมู่",
     "move": "ย้ายเกม",
-    "protondb": "ตรวจสอบความเข้ากันได้",
-    "removeFromSteam": "ลบออกจาก Steam",
-    "removeShortcut": "ลบชอร์ตคัท",
-    "settings": "การตั้งค่า",
-    "store": "หน้าร้านค้า",
     "verify": "ตรวจสอบและซ่อมแซม",
-    "change": "",
-    "logs": "",
-    "enableEosOverlay": "",
-    "disableEosOverlay": ""
-  },
-  "third-party-managed": {
-    "header": "",
-    "notice2": "",
-    "notice1": ""
+    "change": ""
   },
   "queue": {
     "label": {
@@ -282,24 +259,11 @@
       "canceled": ""
     }
   },
-  "setting": {
-    "warn-use-shared-wine-config": "",
-    "show-wine-settings": "",
-    "use-shared-wine-config": "",
-    "winecrossoverbottle": ""
-  },
+  "setting": {},
   "open-saves-folder": "",
   "install": {
     "disk-space-left": "",
     "space-after-install": "",
-    "anticheat-warning": {
-      "cancel": "ไม่",
-      "disabled_installation": "",
-      "install_anyway": "",
-      "ok": "",
-      "multiplayer_message": "",
-      "title": ""
-    },
     "wineprefix": "",
     "not-enough-disk-space": "",
     "path": "",

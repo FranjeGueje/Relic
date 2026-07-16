@@ -11,170 +11,47 @@
     "multiplayer_may_not_work": "Các tính năng nhiều người chơi có thể không hoạt động do hỗ trợ chống gian lận bị từ chối hoặc bị hỏng."
   },
   "box": {
-    "cache-cleared": {
-      "message": "Đã xoá bộ nhớ đệm của Heroic.",
-      "title": "Đã xoá bộ nhớ đệm"
-    },
     "choose": "Chọn",
-    "choose-gogdl-binary": "Chọn GOGDL Binary (cần khởi động lại)",
-    "choose-legendary-binary": "Chọn Legendary binary",
-    "customWine": "Chọn Wine hoặc Proton binary",
-    "default-install-path": "Chọn Đường Dẫn Cài Mặc Định",
-    "default-steam-path": "Đường dẫn Steam.",
-    "downloadNow": "Tải xuống ngay bây giờ",
     "error": {
-      "add": {
-        "steam": {
-          "body": "Thêm {{game}} vào Steam không thành công do:{{newLine}} {{error}}",
-          "title": "Thêm Lỗi"
-        }
-      },
-      "credentials": {
-        "message": "Thông tin đăng nhập của bạn đã hết hạn, vui lòng đăng xuất và đăng nhập lại."
-      },
-      "cx-bottle-not-found": {
-        "message": "CrossOver Bottle \"{{bottle_name}}\" không tồn tại, không thể khởi chạy!",
-        "title": "Không tìm thấy CrossOver bottle"
-      },
       "diskspace": {
         "message": "Không đủ bộ nhớ trống",
         "title": "Không đủ bộ nhớ"
       },
-      "dxvk": {
-        "message": "Lỗi cài đặt DXVK/VKD3D! Vui lòng kiểm tra kết nối của bạn!",
-        "title": "Lỗi DXVK/VKD3D"
-      },
-      "folder-not-found": {
-        "title": "Thư mục game dường như bị xóa, bạn có muốn xóa game khỏi danh sách đã cài đặt không?"
-      },
-      "generic": {
-        "message": "thông báo lỗi chung",
-        "title": "Chọn EXE để Chạy"
-      },
-      "launchAborted": "Việc khởi chạy bị hủy bỏ",
       "title": "Lỗi",
-      "uncaught-exception": {
-        "message": "Đã xảy ra ngoại lệ chưa được phát hiện:{{newLine}}{{error}}{{newLine}}{{newLine}} Báo cáo ngoại lệ trên kho lưu trữ Github của chúng tôi.",
-        "title": "Đã xảy ra Ngoại Lệ Chưa Được Bắt Gặp!"
-      },
-      "update": {
-        "message": "Đã xảy ra lỗi khi cập nhật, vui lòng kiểm tra nhật ký hoặc thử lại sau!",
-        "title": "Lỗi Cập Nhật"
-      },
       "wine-not-found": {
         "invalid": "The selected wine version was not found. Install it or select a different version in the game's settings{{newline}}Version: {{version}}{{newline}}Path: {{path}}",
         "message": "Chưa chọn phiên bản Wine. Kiểm tra phần cài đặt!",
         "title": "Không tìm thấy Wine"
       },
-      "winetricks": {
-        "message": "Winetricks đã trả về lỗi sau trong khi thực thi:{{newLine}}{{error}}",
-        "title": "Lỗi Winetricks"
-      },
-      "moving": "Lỗi Di Chuyển Trò Chơi {{error}}",
       "ubisoft-connect": {
-        "message": "Cài đặt Ubisoft Connect trong tiền tố trò chơi không thành công. Kiểm tra trang wiki của chúng tôi tại https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher/wiki/How-to-install-Ubisoft-Connect-on-Linux-and-Mac để cài đặt nó một cách nhanh chóng.",
+        "message": "Cài đặt Ubisoft Connect trong tiền tố trò chơi không thành công. Kiểm tra trang wiki của chúng tôi tại https://github.com/Relic-Games-Launcher/RelicGamesLauncher/wiki/How-to-install-Ubisoft-Connect-on-Linux-and-Mac để cài đặt nó một cách nhanh chóng.",
         "title": "Kết nối Ubisoft"
       },
-      "legendary": {
-        "generic": "Một lỗi đã xảy ra! Hãy thử Đăng Xuất và Đăng Nhập vào tài khoản Epic của bạn. {{newline}}   {{error}}"
-      },
       "executableNotFound": "Tệp thực thi không được tìm thấy",
-      "executableNotFoundMessage": "Heroic không thể tìm thấy tệp thực thi cho trò chơi này. Vui lòng thiết đặt nó một cách thủ công trong cài đặt của trò chơi.",
-      "dxmt": {
-        "message": "Lỗi tải DXMT! Kiểm tra kết nối của bạn!",
-        "title": "Lỗi tải xuống DXMT"
-      }
+      "executableNotFoundMessage": "Relic không thể tìm thấy tệp thực thi cho trò chơi này. Vui lòng thiết đặt nó một cách thủ công trong cài đặt của trò chơi."
     },
-    "info": {
-      "update": {
-        "changelog": "Mở changelog",
-        "detail": "Bạn có muốn tải xuống bản cập nhật ở chế độ nền không?",
-        "message": "Đã có Phiên Bản mới!",
-        "message-finished": "Bạn có muốn khởi động lại Heroic ngay bây giờ không?",
-        "title": "Heroic Games Launcher",
-        "title-finished": "Cập nhật đã hoàn tất",
-        "detailNoAutoupdate": "Cập nhật tự động không được hỗ trợ cho định dạng đóng gói của bạn. Vui lòng sử dụng trình quản lý gói của bạn để cập nhật."
-      }
-    },
+    "info": {},
     "no": "KHÔNG",
     "ok": "OK",
-    "protocol": {
-      "install": {
-        "not_installed": "Hiện tại chưa được cài đặt. Cài đặt nó?"
-      }
-    },
     "quit": {
       "message": "Có những hoạt động đang chờ xử lý, bạn có chắc chắn không?",
       "title": "Thoát"
     },
-    "reset-heroic": {
-      "question": {
-        "message": "Bạn có chắc chắn muốn thiết lập lại Heroic không? Thao tác này sẽ xóa tất cả Cài Đặt và Bộ Nhớ Đệm nhưng sẽ không xóa Trò chơi đã cài đặt hoặc thông tin xác thực Epic của bạn. Các phiên bản di động (AppImage, WinPortable, ...) của Heroic cần được khởi động lại theo cách thủ công sau đó.",
-        "title": "Đặt Lại Heroic"
-      }
-    },
-    "runexe": {
-      "title": "Chọn EXE để Chạy"
-    },
-    "select": {
-      "button": "Chọn",
-      "exe": "Chọn EXE",
-      "script": "Chọn kịch bản ..."
-    },
+    "select": {},
     "shortcuts": {
       "message": "Lối Tắt đã được tạo ở Desktop và Start Menu",
-      "message-mac": "Lối Tắt đã được tạo trên thư mục Ứng Dụng",
       "message-remove": "Lối Tắt đã bị xóa khỏi Desktop và Start Menu",
-      "message-remove-mac": "Lối Tắt đã bị xóa khỏi thư mục Ứng Dụng",
       "title": "Lối Tắt"
     },
-    "sync": {
-      "button": "Chọn",
-      "error": "Đường Dẫn Không Hợp Lệ",
-      "title": "Chọn thư mục lưu"
-    },
-    "vcruntime": {
-      "install": {
-        "message": "Liên kết tải xuống Visual C++ Runtimes đã được mở. Vui lòng cài đặt cả phiên bản x86 và x64."
-      },
-      "notfound": {
-        "message": "Chưa cài đặt Microsoft Visual C++ Runtimes, một số trò chơi yêu cầu tính năng này",
-        "title": "VCRuntime chưa được cài đặt"
-      }
-    },
     "warning": {
-      "epic": {
-        "import": "Máy chủ Epic hiện đang ngừng hoạt động nghiêm trọng, trò chơi không thể nhập được!",
-        "install": "Máy chủ Epic hiện đang ngừng hoạt động nghiêm trọng, không thể cài đặt trò chơi!",
-        "update": "Máy chủ Epic hiện đang ngừng hoạt động nghiêm trọng, trò chơi không thể cập nhật được!"
-      },
       "title": "Cảnh báo",
-      "wine-change": {
-        "message": "Chúng tôi không thể tìm thấy phiên bản wine đã chọn để ra mắt tựa game này ({{selectedWine}}). {{newline}} Chúng tôi đã tìm thấy một phiên bản khác, bạn có muốn tiếp tục khởi chạy bằng cách sử dụng {{foundWine}} không?",
-        "title": "Không tìm thấy Wine!"
-      },
-      "sideload": {
-        "confirmExit": {
-          "title": "Bạn có chắc chắn muốn thoát không?",
-          "message": "Mọi tiến trình chưa được lưu có thể bị mất"
-        }
-      },
-      "rosetta": {
-        "message": "Heroic yêu cầu Rosetta chạy chính xác trên macOS với chip Apple Silicon. Vui lòng cài đặt nó từ thiết bị đầu cuối macOS bằng lệnh sau: \"softwareupdate --install-rosetta\" và khởi động lại Heroic. ",
-        "title": "Không tìm thấy Rosetta"
-      },
       "snap": {
         "checkbox": "Không hiển thị lại thông báo này",
-        "title": "Heroic đang chạy như Snap"
+        "title": "Relic đang chạy như Snap"
       }
     },
-    "wineprefix": "Chọn thư mục WinePrefix",
     "yes": "CÓ",
-    "dontShowAgain": "Không hiển thị lại",
-    "choose-nile-binary": "Chọn Nile binary",
-    "update": "Cập Nhật",
-    "changelog": "Nhật Ký Thay Đổi",
-    "postpone": "Hoãn"
+    "update": "Cập Nhật"
   },
   "button": {
     "cancel": "Hủy",
@@ -206,28 +83,10 @@
     }
   },
   "download-manager": {
-    "install-type": {
-      "install": "Cài Đặt",
-      "update": "Cập Nhật"
-    },
-    "label": {
-      "disk": "Ổ Đĩa",
-      "speed": "Tải Xuống"
-    },
     "link": "Tải Xuống",
-    "queue": {
-      "end-time": "Hoàn thành lúc",
-      "queue-time": "Đã thêm vào lúc",
-      "start-time": "Bắt đầu lúc",
-      "type": "Kiểu"
-    },
-    "title": "Tải Xuống",
-    "ETA": "Thời gian dự kiến"
+    "title": "Tải Xuống"
   },
-  "epic": {
-    "offline-notification-body": "Các dịch vụ trực tuyến có thể không hoạt động đầy đủ vì máy chủ của Epic Games đang ngoại tuyến!",
-    "offline-notification-title": "ngoại tuyến"
-  },
+  "epic": {},
   "Epic Games": "Epic Games",
   "error": "Lỗi",
   "favourites": "Ưa Thích",
@@ -272,109 +131,41 @@
     "uncategorized": "Chưa được phân loại"
   },
   "help": {
-    "amdfsr": "FSR của AMD giúp tăng tốc độ khung hình bằng cách nâng cấp độ phân giải thấp hơn ở Chế độ toàn màn hình. Chất lượng hình ảnh tăng từ 5 lên 1 với cái giá phải trả là hiệu suất bị giảm nhẹ. Việc kích hoạt có thể cải thiện hiệu suất.",
-    "dxvk": "DXVK là lớp dịch thuật dựa trên Vulkan dành cho các trò chơi DirectX 9, 10 và 11. Việc kích hoạt có thể cải thiện khả năng tương thích. Có thể gây ra sự cố đặc biệt đối với các trò chơi DirectX cũ hơn.",
     "dxvkfpslimit": "Sets a frame rate cap for DXVK games",
-    "esync": "Esync nhằm mục đích giảm chi phí sử dụng wineserver trong các trò chơi sử dụng nhiều CPU. Việc kích hoạt có thể cải thiện hiệu suất.",
-    "fsync": "Fsync nhằm mục đích giảm chi phí sử dụng máy chủ rượu trong các trò chơi sử dụng nhiều CPU. Việc kích hoạt có thể cải thiện hiệu suất trên các nhân Linux được hỗ trợ.",
     "game_language": {
-      "fallback": "Để trống để sử dụng ngôn ngữ của Heroic.",
       "in_game_config": "Không phải trò chơi nào cũng hỗ trợ cấu hình này, một số có cài đặt ngôn ngữ trong trò chơi.",
       "valid_codes": "Mã ngôn ngữ hợp lệ phụ thuộc vào trò chơi."
     },
-    "gamemode": "Feral GameMode áp dụng các tinh chỉnh tự động và tạm thời cho hệ thống khi chạy game. Việc kích hoạt có thể cải thiện hiệu suất.",
-    "other": {
-      "part4": "Sử dụng ",
-      "part5": "Đối Số Trò Chơi",
-      "part6": " được gọi sau lệnh khởi chạy, ví dụ: ",
-      "part7": " để bỏ qua trình khởi chạy trong một số trò chơi, v.v."
-    },
-    "preferSystemLibs": "Các phiên bản Wine tùy chỉnh (Wine-GE, Wine-Lutris) được cung cấp cùng với các phần phụ thuộc vào thư viện của chúng. Bằng cách bật tùy chọn này, các thư viện đã vận chuyển này sẽ bị bỏ qua và thay vào đó Wine sẽ tải các thư viện hệ thống. Cảnh báo! Các vấn đề có thể xảy ra nếu sự phụ thuộc không được đáp ứng.",
     "primerun": "Sử dụng card đồ họa chuyên dụng để render game trên hệ thống nhiều GPU. Chỉ cần trên máy tính xách tay chơi game hoặc máy tính để bàn sử dụng GPU không đầu để kết xuất (NVIDIA Optimus, AMD CrossFire)",
-    "steam_path": {
-      "info": "Đường dẫn này cho phép Heroic xác định phiên bản Proton Steam sử dụng để thêm các trò chơi không phải Steam vào Steam."
-    },
-    "steamruntime": "Thư viện tùy chỉnh do Steam cung cấp để giúp chạy các trò chơi Linux và Windows (Proton). Việc kích hoạt có thể cải thiện khả năng tương thích.",
-    "sync": {
-      "part1": "Heroic cố gắng đoán đúng thư mục lưu và điều này sẽ có tác dụng trong phần lớn các trường hợp. Trong trường hợp thư mục sai, hãy sử dụng hộp ghi đè để thay đổi.",
-      "part2": "Trong trường hợp bạn thay đổi thư mục tiền tố cho Wine hoặc Proton, bạn sẽ cần kiểm tra lại đường dẫn vì Proton sử dụng tiền tố (/pfx) và tên người dùng (steamuser) khác. Vì vậy, bạn có thể đơn giản xóa đường dẫn hiện tại ra khỏi trang cài đặt đồng bộ hóa và quay lại để Heroic đoán thư mục một lần nữa với tiền tố phù hợp.",
-      "part3": "Đồng Bộ Hóa Thủ Công: Chọn Tải Xuống để tải xuống các trò chơi đã lưu được lưu trữ trên Đám Mây. Tải lên để tải những cái cục bộ lên đám mây. Buộc Tải Xuống và Buộc Tải Lên sẽ bỏ qua phiên bản cục bộ hoặc trên đám mây.",
-      "part4": "Đồng Bộ Hóa Tự Động Lưu sẽ đồng bộ các bản sao lưu mỗi lần bạn bắt đầu và kết thúc chơi game."
-    },
-    "vkd3d": "VKD3D là lớp dịch dựa trên Vulkan dành cho trò chơi DirectX 12. Việc kích hoạt có thể cải thiện đáng kể khả năng tương thích. Không có tác dụng với các game DirectX cũ hơn, nó yêu cầu DXVK.",
-    "wine": {
-      "part1": "Heroic tìm kiếm các phiên bản Wine, Proton và CrossOver trong các thư mục sau:",
-      "part2": "Đối với những nơi khác, hãy sử dụng liên kết tượng trưng đến một trong các thư mục này"
-    },
+    "steam_path": {},
+    "sync": {},
     "disable_logs": "BẬT hộp kiểm này để vô hiệu hóa hầu hết việc ghi vào tệp nhật ký (thông tin quan trọng luôn được ghi lại). Đảm bảo TẮT cài đặt này trước khi báo cáo bất kỳ sự cố nào.",
     "title": {
-      "accessibility": "Khả Năng Tiếp Cận",
-      "settings": "Cài Đặt",
-      "downloadManager": "Trình Quản Lý Tải Xuốn",
-      "wineManager": "Trình Quản Lý Wine",
-      "library": "Thư Viện",
-      "login": "Đăng Nhập"
+      "settings": "Cài Đặt"
     },
-    "msync": "Msync nhằm mục đích giảm chi phí sử dụng wineserver trong các trò chơi sử dụng nhiều CPU. Việc kích hoạt có thể cải thiện hiệu suất trên các nhân Linux được hỗ trợ.",
     "dxfpslimit": "Đặt giới hạn tốc độ khung hình cho Trò chơi DirectX (12-9)",
-    "advertiseAvxForRosetta": "Bật hỗ trợ tập lệnh AVX khi chạy trò chơi Windows thông qua Rosetta trên máy Mac Apple Silicon. Điều này có thể được yêu cầu đối với một số trò chơi như Death Stranding cần hỗ trợ AVX.",
     "button": {
       "close": "Đóng Trợ Giúp",
       "open": "Mở Trợ Giúp"
     },
     "content": {
-      "accessibility": "Hiển thị cài đặt trợ năng.",
-      "defaultInstallPath": "Đây là đường dẫn mặc định được chọn sẵn khi cài đặt game.",
-      "downloadManager": "Hiển thị các lượt tải xuống hiện tại và trước đây.",
-      "library": "Hiển thị tất cả các trò chơi thuộc sở hữu.",
-      "login": "Đăng nhập vào các cửa hàng khác nhau.",
-      "settingsDefault": "Hiển thị tất cả các cài đặt của Heroic và mặc định cho trò chơi.",
-      "settingsGame": "Hiển thị tất cả các cài đặt cho một trò chơi.",
-      "wineManager": "Cài đặt các phiên bản khác nhau của Wine, Proton, Crossover, v.v."
-    },
-    "download_proton_steam": "Khi được bật, GE-Proton sẽ được tải trực tiếp vào thư mục công cụ tương thích Steam thay vì đường dẫn Heroic mặc định. Nó sẽ sử dụng đường dẫn Steam được đặt trong cài đặt 'Đường dẫn Steam mặc định' ở trên.",
-    "dxvknvapi": "DXVK-NVAPI là một triển khai NVAPI được xây dựng dựa trên DXVK và NVAPI gốc linux, nó cho phép sử dụng DLSS trên GPU Nvidia.",
-    "wine-hdr": "HDR tăng cường màu sắc bằng cách mang lại những highlight sáng hơn và độ tương phản sâu hơn. Để HDR hoạt động, cả màn hình và trò chơi đều phải hỗ trợ nó.",
-    "wine-wayland": "Trình điều khiển thử nghiệm Wine-Wayland cho phép trò chơi chạy nguyên bản theo giao thức hiển thị Wayland. Việc kích hoạt có thể làm hỏng một số trò chơi.",
-    "WoW64": "Chế độ Wine WoW64 cho phép các trò chơi Windows 32 bit chạy trên Wine 64 bit. Việc kích hoạt có thể cải thiện hiệu suất nhưng cũng có thể làm hỏng các trò chơi 32 bit cũ hơn.",
-    "nvidiaprime": {
-      "details": "Use dedicated graphics card to render game on multi-GPU systems. Only needed on gaming laptops or desktops that use a headless GPU for rendering (NVIDIA Optimus, AMD CrossFire)"
+      "defaultInstallPath": "Đây là đường dẫn mặc định được chọn sẵn khi cài đặt game."
     }
   },
   "info": {
-    "heroic": {
-      "beta": "Beta",
-      "click-to-see-changelog": "Bấm vào để xem nhật ký thay đổi",
-      "newReleases": "Cập Nhật Có Sẵn!",
-      "stable": "Ổn Định",
-      "version": "Phiên Bản Heroic"
-    },
-    "save-sync": {
-      "searching": "Đang cố gắng phát hiện đúng thư mục lưu (bấm để hủy)"
-    },
     "settings": "Cài đặt được lưu tự động",
     "version": "Phiên Bản Wine"
   },
   "infobox": {
     "help": "Trợ Giúp",
     "requirements": "Yêu cầu hệ thống",
-    "warning": "Cảnh Báo",
-    "wine-path": "Đường Dẫn Wine",
-    "wine-prefix": {
-      "title": "Tiền Tố Wine"
-    },
-    "wine-repfix": {
-      "message": "Wine sử dụng cái được gọi là WINEPREFIX để đóng gói các ứng dụng Windows. Tiền tố này chứa các tệp cấu hình Wine và bản sao phân cấp tệp của C: (đĩa chính trên HĐH Windows). Trong quá trình tái tạo ổ C: này, các tệp lưu trò chơi của bạn và các tệp phụ thuộc được cài đặt qua winetricks sẽ được lưu trữ."
-    },
-    "wine-path-invalid": "Đường Dẫn Wine không hợp lệ, vui lòng chọn một đường dẫn khác.",
-    "wine-path-none-found": "Không tìm thấy phiên bản Wine nào, hãy tải xuống một phiên bản từ Trình Quản Lý Wine"
+    "warning": "Cảnh Báo"
   },
   "install": {
     "path": "Chọn đường dẫn cài"
   },
   "label": {
-    "loading": "Đang Tải",
-    "releaseDate": "Ngày Phát Hành"
+    "loading": "Đang Tải"
   },
   "library": {
     "refresh": "Tải lại",
@@ -399,7 +190,6 @@
     "gog": "Đăng Nhập GOG",
     "message": "Đăng nhập với nền tảng của bạn. Bạn có thể đăng nhập vào nhiều nền tảng cùng một lúc.",
     "amazon": "Đăng Nhập Amazon",
-    "old-mac": "Phiên bản macOS của bạn là {{version}}. Cần có macOS 12 hoặc mới hơn để đăng nhập.",
     "zoom": "Đăng nhập Zoom"
   },
   "message": {},
@@ -436,7 +226,6 @@
     },
     "moved": "Đã Di Chuyển Xong",
     "moving": "Đang Di Chuyển Trò Chơi",
-    "new-heroic-version": "Một phiên bản Heroic mới đã được phát hành!",
     "refresh": {
       "error": "Không thể tìm nạp các bản phát hành từ thượng nguồn, có thể do các hạn chế của API Github! Hãy thử lại sau."
     },
@@ -460,45 +249,11 @@
     "retrying": "Đang Thử Lại"
   },
   "Open": "Mở",
-  "options": {
-    "advanced": {
-      "key": "Tên Biến",
-      "placeHolderKey": "TÊN",
-      "placeHolderValue": "Ví dụ: Đường dẫn/Tới/TệpBổSung",
-      "title": "Biến Môi Trường",
-      "value": "Giá Trị"
-    },
-    "env_variables": {
-      "error": {
-        "empty_key": "Tên biến không được để trống",
-        "equal_sign_in_key": "Tên biến không được chứa dấu \"=\"",
-        "space_in_key": "Tên biến không được chứa dấu cách"
-      },
-      "example": "KHÔNG bao gồm dấu \"=\", ví dụ: đối với cài đặt như \"MY_FLAG=123\", hãy đặt MY_FLAG trong NAME và 123 trong VALUE.",
-      "info": "Đặt các biến môi trường để thêm vào lệnh."
-    },
-    "gameargs": {
-      "placeholder": "Thêm Đối Số Trình Khởi Chạy ở đây",
-      "title": "Đối Số Trò chơi (Để chạy sau lệnh):",
-      "error": {
-        "command": "Cú pháp %command% từ Steam không hợp lệ làm đối số trò chơi.",
-        "env": "Các biến môi trường phải được cấu hình trong bảng bên dưới."
-      }
-    },
-    "quote-args-with-spaces": "Cảnh báo: Đảm bảo trích dẫn các đối số có dấu cách! Ví dụ: \"đường dẫn/có dấu cách/\"",
-    "wrapper": {
-      "args": "Đối Số",
-      "arguments_example": "Ví dụ về đối số: --arg; --extra-file=\"đường dẫn tập tin/với/dấu cách\"",
-      "exe": "Wrapper",
-      "placeHolderKey": "Wrapper Mới",
-      "placeHolderValue": "Đối Số Wrapper",
-      "title": "Lệnh Wrapper:"
-    }
-  },
+  "options": {},
   "other": {
     "gogdl-version": "Phiên Bản GOGDL: ",
     "legendary-version": "Phiên Bản Legendary ",
-    "weblate": "Giúp dịch Heroic.",
+    "weblate": "Giúp dịch Relic.",
     "nile-version": "Phiên bản Nile: "
   },
   "Other": "Khác",
@@ -534,233 +289,44 @@
   "search": "Tìm Kiếm Trò Chơi",
   "setting": {
     "addgamestosteam": "Thêm trò chơi vào Steam tự động",
-    "alt-gogdl-bin": "Chọn một GOGDL Binary thay thế để sử dụng",
-    "alt-legendary-bin": "Chọn một Legendary Binary thay thế",
-    "autodxvk": "Tự Động Cài Đặt/Cập Nhật DXVK trên Tiền Tố",
-    "autosync": "Tự Động Lưu",
-    "autovkd3d": "Tự Động Cài Đặt/Cập Nhật VKD3D trên Tiền Tố",
-    "change-target-exe": "Chọn một EXE thay thế để chạy",
-    "crossover-version": "Phiên Bản Crossover/Wine",
-    "customWineProton": "Đường Dẫn Wine/Proton Tùy Chọn",
-    "default-install-path": "Đường Dẫn Cài Đặt Mặc Định",
-    "default-steam-path": "Đường dẫn Steam mặc định",
-    "download-no-https": "Tải xuống trò chơi không có HTTPS (hữu ích cho CDN, ví dụ: LanCache)",
     "dxvkfpslimit": "Limit FPS (DX9, 10 and 11)",
-    "enableFSRHack": "Bật FSR Hack (Phiên bản Wine cần hỗ trợ)",
-    "eosOverlay": {
-      "cancelInstall": "Hủy",
-      "checkForUpdates": "Kiểm tra các bản cập nhật",
-      "checkingForUpdates": "Đang kiểm tra cập nhật...",
-      "currentVersion": "Phiên bản hiện tại: {{version}}",
-      "disable": "Tắt",
-      "enable": "Bật",
-      "install": "Cài Đặt",
-      "installed": "EOS Overlay đã được cài đặt",
-      "installing": "EOS Overlay đang được cài đặt...",
-      "latestVersion": "Phiên Bản Mới Nhất: {{version}}",
-      "notInstalled": "EOS Overlay chưa được cài đặt",
-      "notInstalledMsg": "EOS Overlay chưa được cài đặt. Bạn có muốn cài đặt nó ngay bây giờ không?",
-      "notInstalledTitle": "Overlay chưa được cài đặt",
-      "remove": "Gỡ cài đặt",
-      "removeConfirm": "Bạn có chắc chắn muốn gỡ cài đặt EOS Overlay không?",
-      "removeConfirmTitle": "Xác nhận xóa overlay",
-      "updateNow": "Cập Nhật",
-      "updating": "Đang Cập Nhật..."
-    },
-    "esync": "Bật Esync",
-    "FsrSharpnessStrenght": "Độ Sắc Nét Của FSR",
-    "fsync": "Bật Fsync",
-    "gamemode": "Sử Dụng GameMode (Cần cài đặt Feral Game Mode)",
     "language": "Chọn ngôn ngữ ứng dụng",
-    "library_top_option": {
-      "disabled": "Tắt",
-      "favourites": "Trò chơi ưa thích",
-      "recently_played": "Trò Chơi Đã Chơi Gần Đây",
-      "recently_played_installed": "Trò Chơi Đã Chơi Gần Đây (Chỉ Được Cài Đặt)"
-    },
-    "library_top_section": "Phần Trên Cùng Của Thư Viện",
     "log": {
       "copy-to-clipboard": "Sao chép nội dung log vào bộ nhớ tạm",
       "current-log": "Log hiện tại",
-      "instructions_title": "Làm thế nào để báo cáo một vấn đề?",
-      "last-log": "Log lần trước",
-      "no-file": "Không tìm thấy tệp nhật ký",
-      "show-in-folder": "Hiển thị tệp nhật ký trong thư mục",
-      "upload": {
-        "actions": "Hành Động",
-        "button": "Tải lên tệp nhật ký",
-        "confirm": {
-          "content": "Bạn có thực sự muốn tải lên \"{{name}}\" không?",
-          "title": "Tải lên tệp nhật ký?"
-        },
-        "delete": "Yêu cầu xóa tệp nhật ký",
-        "done": {
-          "content": "Đã tải lên {{url}} (URL được sao chép vào bộ nhớ tạm của bạn)",
-          "title": "Tải lên hoàn tất"
-        },
-        "error": {
-          "content": "Không thể tải lên tệp nhật ký. Kiểm tra nhật ký tổng quan của Heroic để biết chi tiết",
-          "title": "Tải lên không thành công",
-          "manual_upload": ""
-        },
-        "header": "Tệp nhật ký đã tải lên",
-        "hours-ago": "Đã tải lên {{hoursAgo, relativetime(hours)}}",
-        "minutes-ago": "Đã tải lên {{minutesAgo, relativetime(minutes)}}",
-        "no-files": "Không có tệp nhật ký nào được tải lên",
-        "open": "Mở tải lên tệp nhật ký",
-        "title": "Tiêu đề nhật ký",
-        "upload-date": "Ngày tải lên",
-        "uploading": {
-          "content": "Đang tải lên tệp nhật ký...",
-          "title": "Đang tải lên"
-        }
-      },
-      "descriptiveNames": {
-        "game-log": "Nhật ký trò chơi của {{gameTitle}}",
-        "gog": "Nhật ký GOG",
-        "heroic": "Tổng Quan Nhật Ký Heroic",
-        "legendary": "Nhật ký",
-        "nile": "Nhật ký",
-        "zoom": "Nhật ký Zoom"
-      },
-      "show-uploads": "Hiển thị tệp nhật ký đã tải lên"
-    },
-    "manualsync": {
-      "download": "Tải Xuống",
-      "forcedownload": "Buộc Tải Xuống",
-      "forceupload": "Buộc Tải Lên",
-      "sync": "Đồng Bộ",
-      "syncing": "Đang Đồng Bộ",
-      "title": "Lưu Đồng Bộ Hóa Thủ Công",
-      "upload": "Tải Lên"
+      "last-log": "Log lần trước"
     },
     "maxworkers": "Số Lượng Công Nhân Tối Đa khi tải xuống",
-    "offlinemode": "Chạy Trò Chơi Ngoại Tuyến",
-    "prefered_language": "Ngôn Ngữ Ưa Thích (Mã Ngôn Ngữ)",
-    "preferSystemLibs": "Ưu tiên thư viện hệ thống",
-    "runexe": {
-      "message": "Kéo thả file vào đây",
-      "title": "Chạy EXE trên Tiền Tố"
-    },
-    "savefolder": {
-      "not-found": "Không tìm thấy thư mục lưu, vui lòng chọn thủ công (bấm để thử lại)",
-      "placeholder": "Chọn thư mục lưu trò chơi chính xác",
-      "warning": "Vui lòng kiểm tra lại xem đường dẫn có đúng không (click để thử lại)"
-    },
     "select_theme": "Chọn Chủ Đề",
-    "showfps": "Hiển Thị FPS (DX9, 10 và 11)",
-    "start-in-tray": "Thu Nhỏ Khi Khởi Động",
-    "steamruntime": "Sử Dụng Steam Runtime",
-    "winecrossoverbottle": "CrossOver Bottle",
-    "wineprefix": "Thư Mục WinePrefix",
-    "wineversion": "Phiên Bản Wine",
-    "autoUpdateGames": "Tự động cập nhật trò chơi",
-    "ignoreGameUpdates": "Bỏ qua cập nhật trò chơi",
-    "disable_logs": "Tắt Nhật Ký",
-    "showMetalOverlay": "Hiển thị overlay thống kê",
-    "alt-nile-bin": "Chọn một Nile Binary Thay Thế",
-    "autodxvknvapi": "Tự Động Cài Đặt/Cập Nhật DXVK-NVAPI trên Tiền Tố",
-    "msync": "Bật Msync",
     "advertiseAvxForRosetta": "Quảng cáo AVX cho Rosetta",
-    "allow_installation_broken_anticheat": {
-      "confirmation": {
-        "message": "Các trò chơi có hệ thống chống gian lận bị hỏng hoặc bị từ chối có thể chạy nhưng tính năng nhiều người chơi sẽ không hoạt động. Đừng yêu cầu hỗ trợ nếu bạn cài đặt chúng khi biết điều này.",
-        "title": "Bạn có chắc không?",
-        "understand": "Tôi hiểu"
-      },
-      "label": "Cho phép cài đặt các trò chơi có chống gian lận bị hỏng hoặc bị từ chối"
-    },
-    "analyticsOptIn": "Gửi dữ liệu ẩn danh để giúp phát triển Heroic",
-    "custom_css": {
-      "warning": "Cảnh báo: điều này áp dụng cho toàn bộ giao diện người dùng. Điều đó có nghĩa là kiểu dáng sai có thể khiến Heroic không thể sử dụng được. Nếu cần, bạn có thể thay đổi cài đặt theo cách thủ công trong `~/.config/heroic/config.json`. KHÔNG sao chép kiểu từ các nguồn mà bạn không tin tưởng."
-    },
-    "download-proton-steam": "Tải GE-Proton về thư mục Steam",
-    "dxfpslimit": "Giới Hạn FPS Của Trò Chơi DirectX",
     "experimental_features": {
       "cometSupport": "Hỗ trợ Comet",
       "enableHelp": "Thành phần trợ giúp",
       "enableNewDesign": "Thiết kế mới",
       "zoomPlatform": "Hỗ trợ nền tảng Zoom (chỉ Linux)"
     },
-    "frameless-window": {
-      "confirmation": {
-        "message": "Tính năng này vẫn đang thử nghiệm. Vui lòng báo cáo bất kỳ vấn đề nào bạn gặp phải với nó trên GitHub.",
-        "title": "Tính năng thử nghiệm phía trước"
-      },
-      "description": "Sử dụng cửa sổ không khung (yêu cầu khởi động lại)"
-    },
-    "hdr": "Bật HDR",
-    "show_valve_proton": {
-      "confirmation": {
-        "dont_show": "Đừng hiện chúng",
-        "message": "Chúng tôi khuyên bạn nên sử dụng các nhánh Proton tùy chỉnh (GE-Proton, Proton-CachyOS, v.v.) với Heroic vì các bản dựng Proton của Valve thiếu winetricks và protofix. Bạn vẫn có thể sử dụng sau đó nếu muốn.",
-        "show": "Tôi hiểu, hãy hiện chúng",
-        "title": "Bạn có chắc không?"
-      },
-      "info_label": "Phiên bản Valve Proton bị bỏ qua",
-      "label": "Cho phép sử dụng các bản build Valve Proton để chạy game",
-      "wine_selector_warning": "Các phiên bản Valve của Proton bị bỏ qua theo mặc định, hãy bật chúng trong cài đặt chung Nâng Cao"
-    },
     "verboseLogs": {
       "description": "Bật nhật ký chi tiết"
     },
-    "wineWayland": "Kích hoạt Wine-Wayland (Thử nghiệm) (Phiên bản Wine cần hỗ trợ)",
-    "WoW64": "Kích hoạt WoW64 (Thử nghiệm)",
-    "scripts": "Kịch bản:",
-    "enable-quick-sync-menu": "",
-    "start-in-console-mode": "",
     "disable_gog_presence": ""
   },
   "settings": {
-    "battlEyeRuntime": {
-      "installing": "Đang cài đặt BattlEye Runtime...",
-      "name": "BattlEye AntiCheat Runtime"
-    },
-    "clear-cache": "Xóa Bộ Nhớ Đệm Của Heroic",
-    "copiedToClipboard": "Đã sao chép vào Bộ Nhớ Tạm!",
-    "copyToClipboard": "Sao Chép Toàn Bộ Cài Đặt vào Bộ Nhớ Tạm",
-    "default_hint": "Những thay đổi trong phần này chỉ áp dụng làm giá trị mặc định khi cài đặt trò chơi. Nếu bạn muốn thay đổi cài đặt của trò chơi đã cài đặt, hãy sử dụng nút Cài đặt trong trang trò chơi.",
-    "eacRuntime": {
-      "gameModeRequired": {
-        "title": "Yêu cầu GameMode"
-      },
-      "installing": "Đang cài đặt EAC Runtime...",
-      "name": "EasyAntiCheat Runtime"
-    },
-    "gameMode": {
-      "eacRuntimeEnabled": {
-        "message": "Thời gian chạy EAC được bật, thời gian chạy này sẽ không hoạt động chính xác nếu không có GameMode. Bạn có muốn tắt EAC Runtime và GameMode không?",
-        "title": "Đã bật EAC runtime"
-      }
-    },
+    "clear-cache": "Xóa Bộ Nhớ Đệm Của Relic",
     "log": {
       "long-log-hint": "Nhật ký bị cắt bớt, 1000 dòng cuối cùng được hiển thị!"
     },
     "navbar": {
-      "advanced": "Nâng Cao",
-      "games_settings_defaults": "Mặc Định Trò Chơi",
       "general": "Tổng Quan",
       "log": "Nhật Ký",
-      "other": "Khác",
-      "sync": "Đồng Bộ Hóa Lưu Trữ Đám Mây",
-      "wineExt": "Wine Extensions",
-      "systemInformation": "Thông Tin Hệ Thống",
-      "legacy": ""
+      "wineExt": "Wine Extensions"
     },
     "open-config-file": "Mở Tệp Cấu Hình",
-    "reset-heroic": "Đặt Lại Heroic",
-    "saves": {
-      "label": "Save Location:",
-      "warning": "Tính năng Cloud Saves đang ở giai đoạn Beta, vui lòng sao lưu các bản lưu của bạn trước khi đồng bộ hóa (phòng trường hợp có sự cố)",
-      "gog_linux_native_warning": "Các trò chơi gốc của Linux không hỗ trợ tính năng Cloud Saves của GOG. Thay vào đó hãy sử dụng phiên bản Windows.",
-      "not_supported": "Trò chơi này không hỗ trợ Cloud Save."
-    },
     "advanced": {
       "clearCache": {
         "help8": "Trò chơi đã cài",
         "help9": "Cài đặt trò chơi",
         "help1": "Hành động này sẽ xóa các bộ đệm sau:",
-        "help10": "Cấu hình Heroic",
+        "help10": "Cấu hình Relic",
         "help2": "Thông tin trò chơi của bên thứ ba (điểm số, khả năng tương thích Steam, howlongtobeat, pcgamingwiki, applegamingwiki)",
         "help3": "Thông tin thư viện Legendary (danh sách trò chơi, thông tin hộp thoại cài đặt, thông tin trò chơi)",
         "help4": "Thông tin thư viện GOG (danh sách trò chơi, thông tin hộp thoại cài đặt, thông tin api -v.d: yêu cầu-)",
@@ -769,52 +335,15 @@
         "help7": "Đăng nhập cửa hàng"
       },
       "details": "Chi Tiết",
-      "title": {
-        "resetHeroic": "Đặt Lại Heroic",
-        "clearCache": "Xóa Bộ Nhớ Đệm"
-      },
-      "resetHeroic": {
-        "help": "Thao tác này sẽ xóa tất cả Cài Đặt và Bộ Nhớ Đệm nhưng sẽ không xóa Trò chơi đã cài đặt hoặc thông tin xác thực Epic của bạn. Các phiên bản di động (AppImage, WinPortable, ...) của Heroic cần được khởi động lại theo cách thủ công sau đó."
-      }
+      "title": {}
     },
-    "systemInformation": {
-      "copyToClipboard": "Sao chép vào bộ nhớ tạm",
-      "cometVersion": "Comet: {{cometVersion}}",
-      "cpu": "CPU:",
-      "cpuDescription": "{{numOfCores}}x {{modelName}}",
-      "gogdlVersion": "Gogdl: {{gogdlVersion}}",
-      "gpu": "GPU:",
-      "gpuDriver": "Driver: {{driverVersion}}",
-      "gpuWithNumber": "GPU {{number}}:",
-      "heroicVersion": "Heroic: {{heroicVersion}}",
-      "legendaryVersion": "Legendary: {{legendaryVersion}}",
-      "memory": "Bộ Nhớ:",
-      "memoryStats": "Đã sử dụng {{percentUsed}}% ({{usedGib}} / {{totalGib}}",
-      "os": "Hệ Điều Hành:",
-      "osVersion": "Phiên bản {{versionNumber}}",
-      "showDetailed": "Hiển thị thông số kỹ thuật chi tiết của hệ thống",
-      "software": "Phần mềm:",
-      "systemModel": "Mô Hình Hệ Thống:",
-      "systemSpecifications": "Thông Số Hệ Thống:",
-      "nileVersion": "Nile: {{nileVersion}}",
-      "steamDeck": "Steam Deck {{model}}"
-    },
-    "experimental_features": {
-      "title": "Tính Năng Thử Nghiệm"
-    },
-    "offline": {
-      "warning": "Trò chơi này không cho phép chế độ ngoại tuyến một cách rõ ràng, hãy tự chịu rủi ro khi bật chế độ này. Trò chơi có thể không hoạt động."
-    },
-    "launchOptions": "Tùy chọn khởi chạy",
-    "legacy_warning": "",
+    "experimental_features": {},
+    "offline": {},
     "steamgriddb": {
       "apikey": {
         "title": "",
         "placeholder": "",
         "placeholder_saved": ""
-      },
-      "help": {
-        "description": ""
       }
     }
   },
@@ -834,24 +363,11 @@
   "title": {
     "allGames": "Tất Cả game"
   },
-  "toolbox": {
-    "settings": {
-      "default-wineprefix": "Chọn thư mục prefix mặc định cho các cấu hình mới",
-      "wineprefix": "Chọn Thư Mục cho Tiền Tố Wine mới"
-    }
-  },
-  "tooltip": {
-    "addpath": "Thêm Đường Dẫn Mới",
-    "removepath": "Xóa Đường Dẫn"
-  },
   "tray": {
     "about": "Giới Thiệu",
     "quit": "Thoát",
     "reload": "Tải Lại",
     "show": "Hiển Thị"
-  },
-  "two_col_table": {
-    "save_hint": "Những thay đổi trong bảng này không được lưu tự động. Nhấp vào nút +"
   },
   "Update Available!": "Cập Nhật Có Sẵn!",
   "userselector": {
@@ -871,24 +387,6 @@
       "reload": "Tải lại trang"
     }
   },
-  "wine": {
-    "actions": "Hành Động",
-    "manager": {
-      "link": "Trình Quản Lý Wine",
-      "not-found": "Không tìm thấy phiên bản Wine nào. Vui lòng nhấp vào biểu tượng làm mới để thử lại.",
-      "title": "Trình Quản Lý Wine (thử nghiệm)",
-      "unzipping": "Đang Giải Nén",
-      "search": "",
-      "loading": "",
-      "open_folder": "",
-      "update": "Update",
-      "settings": "Cài đặt",
-      "no-results": ""
-    },
-    "release": "Ngày Phát Hành",
-    "size": "Kích Thước",
-    "notes": "Ghi chú"
-  },
   "externalLink": {
     "dontAskAgain": "Đừng hỏi lại",
     "warning": "Bạn sắp mở một liên kết bên ngoài."
@@ -906,17 +404,6 @@
   "amazon": "amazon",
   "Amazon Games": "Trò Chơi Amazon",
   "prime-gaming": "Trò chơi chính",
-  "winetricks": {
-    "install": "Cài Đặt",
-    "loading": "Đang Tải",
-    "installed": "Các thành phần được cài đặt:",
-    "installing": "Đang tiến hành cài đặt: {{component}}",
-    "loading-available": "Đang tải các thành phần có sẵn ...",
-    "no-components": "Không có thành phần có sẵn",
-    "nothingYet": "Chưa có gì được cài đặt bởi Winetricks",
-    "openGUI": "Mở GUI Winetricks",
-    "search": "Tìm kiếm phông chữ hoặc thành phần"
-  },
   "category-settings": {
     "cancel": "Hủy",
     "warning": "Cảnh Báo",
@@ -947,28 +434,8 @@
     "noGames": "Thư viện của bạn trống.<br /><br />Nhấp vào <4>đây</4> để đăng nhập bằng tài khoản Epic, GOG.com hoặc Amazon của bạn. Sau đó, trò chơi của bạn sẽ hiển thị tại đây trong Thư Viện.<br /><br />Để sử dụng trò chơi hoặc ứng dụng từ các nguồn khác, hãy nhấp vào <br /> để thêm chúng theo cách thủ công.",
     "noResults": "Các bộ lọc hiện tại không cho ra kết quả nào."
   },
-  "wineExplanation": {
-    "proton-ge": "GE-Proton là một biến thể Proton được tạo ra bởi Glorious Eggroll. Nó được sử dụng cùng với trình khởi chạy umu (mặc định trong Heroic).",
-    "gpt": "",
-    "wine-crossover": "",
-    "wine-staging-macos": ""
-  },
-  "launch": {
-    "options": "Khởi Chạy Tuỳ Chọn ..."
-  },
-  "steamgriddb": {
-    "error": {
-      "no-games": "Không tìm thấy game nào",
-      "no-grids": "",
-      "search": "",
-      "grids": ""
-    },
-    "picker": {
-      "search": "",
-      "title": "",
-      "select-game": ""
-    }
-  },
+  "launch": {},
+  "steamgriddb": {},
   "console": {
     "update": {
       "hintPrefix": "",

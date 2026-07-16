@@ -154,14 +154,9 @@
     "installedPlatform": "Platform yang Terinstal",
     "path": "Lokasi Pemasangan",
     "size": "Ukuran",
-    "syncsaves": "Sinkronkan Penyimpanan",
     "version": "Versi",
-    "apple-gaming-wiki": "Peringkat AppleGamingWiki",
     "clickToOpen": "Klik untuk membuka",
-    "game-scores": "Skor Game",
     "installedInfo": "Informasi Instalasi",
-    "protondb-compatibility-info": "Tingkat Kompatibilitas Proton",
-    "steamdeck-compatibility-info": "Kompatibilitas SteamDeck",
     "third-party-app": "Manajer Pihak Ketiga"
   },
   "install": {
@@ -171,17 +166,7 @@
     "path-not-writtable": "Peringatan: lokasi mungkin tidak dapat ditulis.",
     "space-after-install": "Setelah Instalasi",
     "wineprefix": "PrefiksWine",
-    "wineversion": "Versi Wine",
-    "anticheat-warning": {
-      "cancel": "Tidak",
-      "message": "Anticheat tidak didukung. Gim mungkin tidak akan berfungsi. Apakah anda akan melanjutkan pemasangan?",
-      "install": "Ya (Saya mengerti aksi ini mungkin tidak berhasil)",
-      "title": "Anticheat Rusak/Ditolak",
-      "ok": "Ok",
-      "install_anyway": "Ya (Saya mengerti bahwa fitur multipemain tidak akan bekerja)",
-      "disabled_installation": "Game ini menggunakan perangkat lunak anticheat yang tidak kompatibel dengan sistem operasi Anda atau dukungan untuk perangkat lunak tersebut tidak diaktifkan oleh pengembang game. Hal ini berarti fitur multiplayer tidak akan berfungsi, dan tidak ada yang dapat Anda (atau tim Heroic) lakukan untuk mengatasinya. <br /><br />Untuk menginstal game ini dan mencobanya meskipun demikian, pergi ke Pengaturan, Lanjutan, dan centang opsi untuk mengizinkan instalasi game dengan anticheat yang rusak atau ditolak.<br /><br />Perlu diingat bahwa tidak ada solusi untuk ini dan Anda berisiko diblokir dalam game.",
-      "multiplayer_message": "Dukungan anticheat rusak atau ditolak. Gim mungkin bisa dibuka namun fitur multipemain tidak akan bekerja. Apakah Anda ingin menginstalnya?"
-    }
+    "wineversion": "Versi Wine"
   },
   "label": {
     "game": {
@@ -198,7 +183,6 @@
     },
     "launching": "Meluncurkan",
     "ubisoft": "Memasang Ubisoft Connect",
-    "winetricks": "Menginstal Paket Winetricks",
     "redist": "Menginstal Redistributable",
     "steam": {
       "installing": "Memasang",
@@ -211,23 +195,18 @@
     "default": "Bawaan"
   },
   "not_logged_in": {
-    "epic": "Anda tidak masuk dengan akun Epic di Heroic. Jangan gunakan halaman toko untuk masuk, klik tombol berikut sebagai gantinya:",
-    "gog": "Anda tidak masuk dengan akun GOG di Heroic. Jangan gunakan halaman toko untuk masuk, klik tombol berikut sebagai gantinya:",
+    "epic": "Anda tidak masuk dengan akun Epic di Relic. Jangan gunakan halaman toko untuk masuk, klik tombol berikut sebagai gantinya:",
+    "gog": "Anda tidak masuk dengan akun GOG di Relic. Jangan gunakan halaman toko untuk masuk, klik tombol berikut sebagai gantinya:",
     "login": "Masuk",
     "title": "Anda TIDAK masuk",
-    "amazon": "Anda tidak masuk dengan akun Epic di Heroic. Jangan gunakan halaman toko untuk masuk, klik tombol berikut sebagai gantinya:",
-    "zoom": "Anda tidak masuk dengan akun GOG di Heroic. Jangan gunakan halaman toko untuk masuk, klik tombol berikut sebagai gantinya:"
+    "amazon": "Anda tidak masuk dengan akun Epic di Relic. Jangan gunakan halaman toko untuk masuk, klik tombol berikut sebagai gantinya:",
+    "zoom": "Anda tidak masuk dengan akun GOG di Relic. Jangan gunakan halaman toko untuk masuk, klik tombol berikut sebagai gantinya:"
   },
   "report_problem": "Laporkan masalah yang terjadi saat memainkan gim ini",
   "sdl": {
     "title": "Pilih komponen untuk diinstal"
   },
-  "setting": {
-    "winecrossoverbottle": "CrossOver Bottle",
-    "show-wine-settings": "Tampilkan pengaturan Wine",
-    "warn-use-shared-wine-config": "Hanya gunakan opsi ini jika Anda tahu apa yang Anda lakukan. <br/> Berbagi prefiks yang sama untuk beberapa gim dapat menimbulkan masalah jika dependensinya tidak kompatibel.",
-    "use-shared-wine-config": "Gunakan Wine prefix bersama"
-  },
+  "setting": {},
   "sideload": {
     "field": {
       "title": "Judul"
@@ -273,7 +252,7 @@
     "processing": "Memproses berkas, harap tunggu",
     "queued": "Dalam Antrian",
     "reparing": "Memperbaiki Gim, harap tunggu",
-    "this-game-uses-third-party": "Gim ini menggunakan peluncur pihak ketiga dan belum didukung oleh Heroic",
+    "this-game-uses-third-party": "Gim ini menggunakan peluncur pihak ketiga dan belum didukung oleh Relic",
     "totalDownloaded": "Jumlah yang Diunduh",
     "uninstalling": "Mencopot",
     "updating": "Memperbarui Gim",
@@ -286,26 +265,14 @@
     "extracting": "Mengekstrak",
     "goodie": "Tidak dapat diinstal",
     "gog-goodie": "Game ini tampaknya tidak dapat diinstal. Periksa konten yang dapat diunduh di https://gog.com/account",
-    "winetricks": "Menerapkan perbaikan Winetricks",
     "redist": "Menginstal Redistributable ({{redist}})",
     "importing": "Mengimpor"
   },
   "submenu": {
-    "addShortcut": "Tambahkan pintasan",
-    "addToSteam": "Tambahkan ke Steam",
     "change": "Ubah lokasi pemsangan",
-    "disableEosOverlay": "Nonaktifkan EOS Overlay",
-    "enableEosOverlay": "Aktifkan EOS Overlay",
     "move": "Pindahkan gim",
-    "protondb": "Periksa Kompatibilitas",
-    "removeFromSteam": "Hapus dari Steam",
-    "removeShortcut": "Hapus pintasan",
-    "settings": "Pengaturan",
-    "store": "Halaman Toko",
     "verify": "Verifikasi dan Perbaiki",
-    "extraInfo": "Informasi tambahan",
-    "logs": "Log",
-    "categories": "Kategori"
+    "extraInfo": "Informasi tambahan"
   },
   "help": {
     "cloud_save_unsupported": "Gim ini tidak mendukung penyimpanan cloud. Informasi ini disediakan oleh pengembang gim. Beberapa gim menerapkan sistem penyimpanan cloud mereka sendiri",
@@ -324,11 +291,6 @@
     },
     "versionCollapsable": "Versi Gim",
     "dlcsCollapsible": "DLC"
-  },
-  "third-party-managed": {
-    "notice1": "Gim ini dikelola oleh aplikasi pihak ketiga: \"{{application_name}}\"",
-    "header": "Gim ini dikelola oleh aplikasi pihak ketiga",
-    "notice2": "Setelah mengklik Pasang, Heroic akan menjalankan aplikasi untuk menyelesaikan proses pemasangan"
   },
   "Open": "Buka",
   "queue": {

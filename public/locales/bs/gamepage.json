@@ -154,14 +154,9 @@
     "installedPlatform": "Instalirane platforme",
     "path": "Put instalacije",
     "size": "Veličina",
-    "syncsaves": "Sinhroniziraj podatke",
     "version": "Verzija",
     "clickToOpen": "Kliknite da otvorite",
-    "apple-gaming-wiki": "AppleGamingWiki Ocjena",
-    "game-scores": "Rezultati igre",
     "installedInfo": "Instalirane informacije",
-    "protondb-compatibility-info": "Proton Compatibility Tier",
-    "steamdeck-compatibility-info": "SteamDeck kompatibilnost",
     "third-party-app": ""
   },
   "install": {
@@ -171,15 +166,7 @@
     "path-not-writtable": "Upozorenje: put možda nije upisiv.",
     "space-after-install": "Nakon instalacije",
     "wineprefix": "WinePrefix",
-    "wineversion": "Wine verzija",
-    "anticheat-warning": {
-      "cancel": "",
-      "disabled_installation": "",
-      "install_anyway": "",
-      "ok": "",
-      "multiplayer_message": "",
-      "title": ""
-    }
+    "wineversion": "Wine verzija"
   },
   "label": {
     "game": {
@@ -201,7 +188,6 @@
       "pleaseWait": "Please wait...",
       "installation": "Zaustavi instalaciju"
     },
-    "winetricks": "",
     "redist": ""
   },
   "launch": {
@@ -209,23 +195,18 @@
     "default": ""
   },
   "not_logged_in": {
-    "epic": "You are not logged in with an Epic account in Heroic. Don't use the store page to login, click the following button instead:",
-    "gog": "You are not logged in with a GOG account in Heroic. Don't use the store page to login, click the following button instead:",
+    "epic": "You are not logged in with an Epic account in Relic. Don't use the store page to login, click the following button instead:",
+    "gog": "You are not logged in with a GOG account in Relic. Don't use the store page to login, click the following button instead:",
     "login": "Log in",
     "title": "You are NOT logged in",
-    "amazon": "You are not logged in with an Epic account in Heroic. Don't use the store page to login, click the following button instead:",
-    "zoom": "You are not logged in with a GOG account in Heroic. Don't use the store page to login, click the following button instead:"
+    "amazon": "You are not logged in with an Epic account in Relic. Don't use the store page to login, click the following button instead:",
+    "zoom": "You are not logged in with a GOG account in Relic. Don't use the store page to login, click the following button instead:"
   },
   "report_problem": "Prijavi problem za ovu video igru",
   "sdl": {
     "title": "Odaberite komponente za instalaciju"
   },
-  "setting": {
-    "winecrossoverbottle": "CrossOver Bottle",
-    "warn-use-shared-wine-config": "",
-    "show-wine-settings": "",
-    "use-shared-wine-config": ""
-  },
+  "setting": {},
   "sideload": {
     "field": {
       "title": "Title"
@@ -280,25 +261,13 @@
     "goodie": "Nije moguće instalirati",
     "gog-goodie": "Čini se da se ova igra ne može instalirati. Provjerite sadržaj koji se može preuzeti na https://gog.com/account",
     "redist": "",
-    "winetricks": "",
     "importing": ""
   },
   "submenu": {
-    "addShortcut": "Dodaj prečicu",
-    "addToSteam": "Dodaj u Steam",
     "change": "Promijeni put instalacije",
-    "disableEosOverlay": "Onemogućite EOS Overlay",
-    "enableEosOverlay": "Omogućite EOS Overlay",
     "move": "Premjesti video igru",
-    "protondb": "Provjeri kompatibilnost",
-    "removeFromSteam": "Uklonite sa Steam-a",
-    "removeShortcut": "Uklonite prečice",
-    "settings": "Postavke",
-    "store": "Webstranica Trgovine",
     "verify": "Provjeri i popravi",
-    "extraInfo": "Extra Info",
-    "logs": "Dnevnici",
-    "categories": ""
+    "extraInfo": "Extra Info"
   },
   "help": {
     "cloud_save_unsupported": "Ova igra ne podržava spremanje u oblaku. Ove informacije daju programeri igre. Neke igre implementiraju sopstveni sistem čuvanja u oblaku",
@@ -316,11 +285,6 @@
       "resume": "",
       "pause": ""
     }
-  },
-  "third-party-managed": {
-    "header": "",
-    "notice2": "",
-    "notice1": ""
   },
   "modifyInstall": {
     "redMod": {

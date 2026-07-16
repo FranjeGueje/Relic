@@ -1,7 +1,7 @@
 { pkgs ? import <nixpkgs> {} }:
 
 (pkgs.buildFHSEnv {
-  name = "heroic-fhs-dev";
+  name = "relic-fhs-dev";
   targetPkgs = pkgs: with pkgs; [
     # Base requirements
     git

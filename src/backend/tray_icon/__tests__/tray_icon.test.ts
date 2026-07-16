@@ -242,23 +242,8 @@ describe('TrayIcon', () => {
 
   describe('icon', () => {
     // the mock returns the icon path, the width, and the height
-    it('shows different size per platform', () => {
-      let icon = testingExportsTrayIcon.getIcon('linux')
-      expect(icon).toMatch(/.*icon-light.png width=32 height=32/)
-
-      icon = testingExportsTrayIcon.getIcon('darwin')
-      expect(icon).toMatch(/.*icon-light.png width=20 height=20/)
-    })
-
-    it('can show dark or light icon', () => {
-      GlobalConfig.setConfigValue('darkTrayIcon', true)
-
-      let icon = testingExportsTrayIcon.getIcon()
-      expect(icon).toMatch(/.*icon-dark.png/)
-
-      GlobalConfig.setConfigValue('darkTrayIcon', false)
-
-      icon = testingExportsTrayIcon.getIcon()
+    it('shows the correct tray icon', () => {
+      const icon = testingExportsTrayIcon.getIcon('linux')
       expect(icon).toMatch(/.*icon-light.png/)
     })
   })

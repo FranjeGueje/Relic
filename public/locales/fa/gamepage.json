@@ -153,14 +153,9 @@
     "installedPlatform": "پلتفرم های نصب شده",
     "path": "مسیر نصب",
     "size": "اندازه",
-    "syncsaves": "همگام سازی ذخیره ها",
     "version": "نسخه",
-    "apple-gaming-wiki": "رتبه بندی AppleGamingWiki",
     "clickToOpen": "برای باز کردن کلیک کنید",
-    "game-scores": "امتیازات بازی",
     "installedInfo": "اطلاعات نصب شده",
-    "protondb-compatibility-info": "ردیف سازگاری پروتون",
-    "steamdeck-compatibility-info": "سازگاری SteamDeck",
     "third-party-app": ""
   },
   "install": {
@@ -170,17 +165,7 @@
     "path-not-writtable": "خطا: مسیر ممکن است قابل نوشتن نباشد.",
     "space-after-install": "بعد از نصب",
     "wineprefix": "Wine Prefix",
-    "wineversion": "نسخه Wine",
-    "anticheat-warning": {
-      "message": "پشتیبانی از آنتی چیت ناقص و یا رد شده است. بازی ممکن است کار نکند. آیا می خواهید با این وجود نصب کنید؟",
-      "install": "بله (از عدم کار کردن آگاه هستم)",
-      "title": "آنتی چیت ناقص / رد شده",
-      "cancel": "نه",
-      "ok": "Ok",
-      "multiplayer_message": "پشتیبانی از آنتی چیت ناقص و یا رد شده است. بازی ممکن است کار نکند. آیا می خواهید با این وجود نصب کنید؟",
-      "disabled_installation": "",
-      "install_anyway": ""
-    }
+    "wineversion": "نسخه Wine"
   },
   "label": {
     "game": {
@@ -202,7 +187,6 @@
       "pleaseWait": "لطفا صیر کنید...",
       "installation": "توقف نصب"
     },
-    "winetricks": "",
     "redist": ""
   },
   "launch": {
@@ -210,23 +194,18 @@
     "default": ""
   },
   "not_logged_in": {
-    "epic": "شما با حساب Epic در Heroic وارد نشده اید. از صفحه استور برای ورود استفاده نکنید، به جای آن بر دکمه زیر کلیک کنید:",
-    "gog": "شما با حساب GOG در Heroic وارد نشده اید. از صفحه استور برای ورود استفاده نکنید، به جای آن بر دکمه زیر کلیک کنید:",
+    "epic": "شما با حساب Epic در Relic وارد نشده اید. از صفحه استور برای ورود استفاده نکنید، به جای آن بر دکمه زیر کلیک کنید:",
+    "gog": "شما با حساب GOG در Relic وارد نشده اید. از صفحه استور برای ورود استفاده نکنید، به جای آن بر دکمه زیر کلیک کنید:",
     "login": "ورود",
     "title": "شما وارد نشده اید",
-    "amazon": "شما با حساب Epic در Heroic وارد نشده اید. از صفحه استور برای ورود استفاده نکنید، به جای آن بر دکمه زیر کلیک کنید:",
-    "zoom": "شما با حساب GOG در Heroic وارد نشده اید. از صفحه استور برای ورود استفاده نکنید، به جای آن بر دکمه زیر کلیک کنید:"
+    "amazon": "شما با حساب Epic در Relic وارد نشده اید. از صفحه استور برای ورود استفاده نکنید، به جای آن بر دکمه زیر کلیک کنید:",
+    "zoom": "شما با حساب GOG در Relic وارد نشده اید. از صفحه استور برای ورود استفاده نکنید، به جای آن بر دکمه زیر کلیک کنید:"
   },
   "report_problem": "گزارش مشکل اجرای این بازی",
   "sdl": {
     "title": "انتخاب محتواها برای نصب"
   },
-  "setting": {
-    "winecrossoverbottle": "CrossOver Bottle",
-    "warn-use-shared-wine-config": "",
-    "show-wine-settings": "",
-    "use-shared-wine-config": ""
-  },
+  "setting": {},
   "sideload": {
     "field": {
       "title": "عنوان"
@@ -281,25 +260,13 @@
     "gog-goodie": "به نظر نمی رسد این بازی قابل نصب باشد. محتوای قابل دانلود را در https://gog.com/account بررسی کنید",
     "goodie": "قابل نصب نیست",
     "redist": "",
-    "winetricks": "",
     "importing": "وارد کردن"
   },
   "submenu": {
-    "addShortcut": "افزودن میانبر",
-    "addToSteam": "افزودن به استیم",
     "change": "تغییر محل نصب",
-    "disableEosOverlay": "عیر فعال کردن EOS Overlay",
-    "enableEosOverlay": "فعال کردن EOS Overlay",
     "move": "انتقال بازی",
-    "protondb": "بررسی سازگاری",
-    "removeFromSteam": "حذف کردن از استیم",
-    "removeShortcut": "حذف میانبرها",
-    "settings": "تنظیمات",
-    "store": "صفحه فروشگاه",
     "verify": "بررسی و تعمیر",
-    "extraInfo": "اطلاعات اضافی",
-    "logs": "لاگ ها",
-    "categories": ""
+    "extraInfo": "اطلاعات اضافی"
   },
   "help": {
     "cloud_save_unsupported": "این بازی از ذخیره ابری پشتیبانی نمی کند. این اطلاعات توسط سازندگان بازی ارائه شده است. برخی از بازی ها سیستم ذخیره ابری خود را پیاده سازی می کنند",
@@ -327,11 +294,6 @@
     },
     "nodlcs": "",
     "versionCollapsable": ""
-  },
-  "third-party-managed": {
-    "header": "",
-    "notice2": "",
-    "notice1": ""
   },
   "open-saves-folder": "",
   "wikiLink": "",

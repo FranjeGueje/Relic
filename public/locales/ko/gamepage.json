@@ -153,14 +153,9 @@
     "installedPlatform": "설치된 플랫폼",
     "path": "설치 경로",
     "size": "크기",
-    "syncsaves": "저장 동기화",
     "version": "버전",
-    "apple-gaming-wiki": "AppleGamingWiki 등급",
     "clickToOpen": "클릭하여 열기",
-    "game-scores": "게임 점수",
     "installedInfo": "설치 정보",
-    "protondb-compatibility-info": "프로톤 호환성 수준",
-    "steamdeck-compatibility-info": "스팀덱 호환성",
     "third-party-app": "타사 관리자"
   },
   "install": {
@@ -170,16 +165,7 @@
     "path-not-writtable": "경고: 경로가 쓰기가 불가능할 수 있습니다.",
     "space-after-install": "설치 후",
     "wineprefix": "WinePrefix",
-    "wineversion": "와인 버전",
-    "anticheat-warning": {
-      "cancel": "아니오",
-      "install": "예(프로그램이 정상적으로 작동하지 않을 것을 확인했습니다)",
-      "ok": "확인",
-      "disabled_installation": "안티치트 지원이 중단되었거나 거부되었으며 멀티플레이어 기능이 작동하지 않습니다. 게임을 설치할 수 없습니다. 이 게임을 설치하려면 고급 설정에서 이 체크를 비활성화하세요.",
-      "install_anyway": "예 (멀티플레이어 기능이 작동하지 않을 것임을 이해함)",
-      "multiplayer_message": "안티치트 지원이 중단되었거나 거부되었습니다. 게임은 열릴 수 있지만 멀티플레이어 기능은 작동하지 않습니다. 그래도 설치하겠습니까?",
-      "title": "안티치트 손상됨/거부됨"
-    }
+    "wineversion": "와인 버전"
   },
   "label": {
     "game": {
@@ -197,7 +183,6 @@
     "launching": "실행 중",
     "ubisoft": "Ubisoft 연결 설치",
     "redist": "재배포 가능 패키지 설치",
-    "winetricks": "와인트릭스 패키지 설치",
     "steam": {
       "installing": "Installing",
       "pleaseWait": "잠시만 기다려 주세요....",
@@ -209,23 +194,18 @@
     "default": ""
   },
   "not_logged_in": {
-    "epic": "Heroic에서 에픽 계정으로 로그인하지 않았습니다. 스토어 페이지를 사용하여 로그인하지 말고 대신 다음 버튼을 클릭하세요:",
-    "gog": "Heroic에서 GOG 계정으로 로그인하지 않았습니다. 스토어 페이지를 사용하여 로그인하지 말고 대신 다음 버튼을 클릭하세요:",
+    "epic": "Relic에서 에픽 계정으로 로그인하지 않았습니다. 스토어 페이지를 사용하여 로그인하지 말고 대신 다음 버튼을 클릭하세요:",
+    "gog": "Relic에서 GOG 계정으로 로그인하지 않았습니다. 스토어 페이지를 사용하여 로그인하지 말고 대신 다음 버튼을 클릭하세요:",
     "login": "로그인",
     "title": "로그인하지 않았음",
-    "amazon": "Heroic에서 아마존 계정으로 로그인하지 않았습니다. 스토어 페이지를 사용하여 로그인하지 말고 대신 다음 버튼을 클릭하세요:",
-    "zoom": "Heroic에서 GOG 계정으로 로그인하지 않았습니다. 스토어 페이지를 사용하여 로그인하지 말고 대신 다음 버튼을 클릭하세요:"
+    "amazon": "Relic에서 아마존 계정으로 로그인하지 않았습니다. 스토어 페이지를 사용하여 로그인하지 말고 대신 다음 버튼을 클릭하세요:",
+    "zoom": "Relic에서 GOG 계정으로 로그인하지 않았습니다. 스토어 페이지를 사용하여 로그인하지 말고 대신 다음 버튼을 클릭하세요:"
   },
   "report_problem": "이 게임을 실행 중 문제 있음을 보고하기",
   "sdl": {
     "title": "설치할 구성 요소를 선택"
   },
-  "setting": {
-    "winecrossoverbottle": "크로스오버 보틀",
-    "warn-use-shared-wine-config": "무엇을 해야 할지 아는 경우에만 이 옵션을 사용하세요. <br/>여러 게임에 동일한 설치 경로를 공유하면 종속성이 호환되지 않을 경우 문제가 발생할 수 있습니다.",
-    "show-wine-settings": "와인 설정 표시",
-    "use-shared-wine-config": ""
-  },
+  "setting": {},
   "sideload": {
     "field": {
       "title": "제목"
@@ -280,25 +260,13 @@
     "gog-goodie": "이 게임은 설치할 수 없는 것 같습니다. https://gog.com/account에서 다운로드 가능한 콘텐츠를 확인",
     "goodie": "설치할 수 없음",
     "redist": "재배포 가능 패키지 설치 ({{redist}})",
-    "winetricks": "와인트릭스 수정 사항 적용",
     "importing": "들여오기"
   },
   "submenu": {
-    "addShortcut": "바로가기 추가",
-    "addToSteam": "Steam에 추가",
     "change": "설치 경로 변경",
-    "disableEosOverlay": "EOS 오버레이 비활성화",
-    "enableEosOverlay": "EOS 오버레이 활성화",
     "move": "게임 이동",
-    "protondb": "호환성 확인",
-    "removeFromSteam": "Steam에서 제거",
-    "removeShortcut": "바로가기 제거",
-    "settings": "설정",
-    "store": "스토어 페이지",
     "verify": "확인 및 복구",
-    "extraInfo": "추가 정보",
-    "logs": "로그",
-    "categories": "범주"
+    "extraInfo": "추가 정보"
   },
   "help": {
     "cloud_save_unsupported": "이 게임은 클라우드 저장을 지원하지 않습니다. 이 정보는 게임 개발자에 의해 제공됩니다. 일부 게임은 자체 클라우드 저장 시스템을 지원합니다",
@@ -317,11 +285,6 @@
     },
     "dlcsCollapsible": "DLC",
     "versionCollapsable": "게임 버전"
-  },
-  "third-party-managed": {
-    "header": "이 게임은 타사 애플리케이션에 의해 관리됨",
-    "notice2": "설치를 클릭하면 Heroic이 설치 프로세스를 완료하기 위해 애플리케이션을 실행",
-    "notice1": "이 게임은 타사 애플리케이션에서 관리합니다: \"{{application_name}}\""
   },
   "Open": "열기",
   "queue": {

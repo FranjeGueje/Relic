@@ -156,29 +156,16 @@
   },
   "howLongToBeat": "Cá fhad a bhualadh",
   "info": {
-    "apple-gaming-wiki": "Rátáil AppleGamingWiki",
     "canRunOffline": "Ar Líne Riachtanach",
     "clickToOpen": "Cliceáil chun oscailt",
-    "game-scores": "Scóir Cluiche",
     "installedInfo": "Faisnéis Suiteáilte",
     "installedPlatform": "Ardán Suiteáilte",
     "path": "Cosán Suiteála",
-    "protondb-compatibility-info": "Sraith Chomhoiriúnachta Prótóin",
     "size": "Méid",
-    "steamdeck-compatibility-info": "Comhoiriúnacht SteamDeck",
-    "syncsaves": "Sioncrónaigh Sábhálacha",
     "third-party-app": "Bainisteoir Tríú Páirtí",
     "version": "Leagan"
   },
   "install": {
-    "anticheat-warning": {
-      "cancel": "Níl",
-      "install_anyway": "Sea (tuigim nach n-oibreoidh na gnéithe il-imreora)",
-      "multiplayer_message": "Tá an tacaíocht frith-cheilt briste nó diúltaithe. Féadfaidh an cluiche oscailt ach ní oibreoidh na gnéithe il-imreora. Ar mhaith leat é a shuiteáil ar aon nós?",
-      "ok": "Ceart go leor",
-      "title": "Frith-aicearra Briste/Diúltaithe",
-      "disabled_installation": "Úsáideann an cluiche seo bogearraí frith-cheilt nach bhfuil comhoiriúnach le do chóras oibriúcháin nó níor chuir forbróirí an chluiche an tacaíocht ar chumas. Ciallaíonn sé seo nach n-oibreoidh na gnéithe il-imreora, agus níl aon rud is féidir leatsa (ná le foireann Heroic) a dhéanamh faoi.<br /><br />Chun an cluiche seo a shuiteáil agus triail a bhaint as ar aon nós, téigh go Socruithe, Ardleibhéil, agus seiceáil an rogha chun suiteáil cluichí a cheadú le frith-cheilt briste nó diúltaithe.<br /><br />Tabhair faoi deara nach bhfuil aon réiteach ann don fhadhb seo agus go mbeidh baol ann go gcuirfear cosc ort sa chluiche."
-    },
     "disk-space-left": "Spás atá ar Fáil",
     "not-enough-disk-space": "Gan dóthain spáis diosca",
     "path": "Roghnaigh Cosán Suiteála",
@@ -211,13 +198,13 @@
       "hardware": "Apple Silicon M1+ (do ríomhairí Mac Intel oibreoidh Steam le Crossover)",
       "install": "Suiteáil Steam",
       "install-path": "Cosán Suiteála Gaile",
-      "install-tooltip": "Suiteálfaidh sé seo leagan Windows de Steam agus rithfidh sé ag baint úsáide as Sraith Chomhoiriúnachta Heroic.\n\nB’fhéidir nach n-oibreoidh roinnt cluichí i gceart, go háirithe teidil níos sine, cluichí 3D níos nuaí, nó iad siúd a bhfuil bogearraí frith-cheat orthu. \n\n    ",
+      "install-tooltip": "Suiteálfaidh sé seo leagan Windows de Steam agus rithfidh sé ag baint úsáide as Sraith Chomhoiriúnachta Relic.\n\nB’fhéidir nach n-oibreoidh roinnt cluichí i gceart, go háirithe teidil níos sine, cluichí 3D níos nuaí, nó iad siúd a bhfuil bogearraí frith-cheat orthu. \n\n    ",
       "installation": "Suiteáil Steam",
       "installing": "Ag suiteáil",
-      "launch": "Seoladh Gaile ag baint úsáide as an gCiseal Comhoiriúnachta Heroic",
+      "launch": "Seoladh Gaile ag baint úsáide as an gCiseal Comhoiriúnachta Relic",
       "launching": "Ag lainseáil Steam...",
       "macOS": "macOS 14.0 nó níos airde",
-      "notification": "Cuirfidh Heroic in iúl duit nuair a bheidh an suiteáil déanta.",
+      "notification": "Cuirfidh Relic in iúl duit nuair a bheidh an suiteáil déanta.",
       "patience": "Más mian leat leanúint ar aghaidh, bí foighneach le do thoil mar d’fhéadfadh sé cúpla nóiméad a thógáil le críochnú ag brath ar do nasc idirlín agus ar chumraíocht an chórais.",
       "pleaseWait": "Fan le do thoil",
       "ram": "8GB RAM",
@@ -225,10 +212,9 @@
       "select-path": "Roghnaigh fillteán suiteála do Steam",
       "specificVersion-pt1": "Íoslódálfaidh sé seo leagan sonrach de Steam ó",
       "specificVersion-pt2": "archive.org",
-      "specificVersion-pt3": "déanta chun oibriú trí Heroic ós rud é nach n-oibreoidh leaganacha nua de Steam ar macOS.",
+      "specificVersion-pt3": "déanta chun oibriú trí Relic ós rud é nach n-oibreoidh leaganacha nua de Steam ar macOS.",
       "compatibility-layer-not-available": "Níl an ciseal comhoiriúnachta ar fáil. Suiteáil ceann ó \"Socruithe > Bainisteoir Fíona\" ar dtús."
-    },
-    "winetricks": "Ag Suiteáil Pacáistí Winetricks"
+    }
   },
   "launch": {
     "options": "Roghanna Seolta...",
@@ -244,12 +230,12 @@
     "versionCollapsable": "Leagan Cluiche"
   },
   "not_logged_in": {
-    "amazon": "Níl tú logáilte isteach le cuntas Amazon i Heroic. Ná húsáid leathanach an tsiopa chun logáil isteach, cliceáil an cnaipe seo a leanas ina ionad:",
-    "epic": "Níl tú logáilte isteach le cuntas Epic i Heroic. Ná húsáid leathanach an tsiopa chun logáil isteach, cliceáil an cnaipe seo a leanas ina ionad:",
-    "gog": "Níl tú logáilte isteach le cuntas GOG i Heroic. Ná húsáid leathanach an tsiopa chun logáil isteach, cliceáil an cnaipe seo a leanas ina ionad:",
+    "amazon": "Níl tú logáilte isteach le cuntas Amazon i Relic. Ná húsáid leathanach an tsiopa chun logáil isteach, cliceáil an cnaipe seo a leanas ina ionad:",
+    "epic": "Níl tú logáilte isteach le cuntas Epic i Relic. Ná húsáid leathanach an tsiopa chun logáil isteach, cliceáil an cnaipe seo a leanas ina ionad:",
+    "gog": "Níl tú logáilte isteach le cuntas GOG i Relic. Ná húsáid leathanach an tsiopa chun logáil isteach, cliceáil an cnaipe seo a leanas ina ionad:",
     "login": "Logáil isteach",
     "title": "Níl tú logáilte isteach",
-    "zoom": "Níl tú logáilte isteach le cuntas Zoom i Heroic. Ná húsáid leathanach an tsiopa chun logáil isteach, cliceáil an cnaipe seo a leanas ina ionad:"
+    "zoom": "Níl tú logáilte isteach le cuntas Zoom i Relic. Ná húsáid leathanach an tsiopa chun logáil isteach, cliceáil an cnaipe seo a leanas ina ionad:"
   },
   "Open": "Oscail",
   "queue": {
@@ -264,12 +250,7 @@
   "sdl": {
     "title": "Roghnaigh comhpháirteanna le Suiteáil"
   },
-  "setting": {
-    "show-wine-settings": "Taispeáin socruithe Wine",
-    "use-shared-wine-config": "Úsáid réimír chomhroinnte Wine",
-    "winecrossoverbottle": "Buidéal CrossOver",
-    "warn-use-shared-wine-config": "Ná húsáid an rogha seo ach amháin má tá a fhios agat cad atá á dhéanamh agat.<br />Is féidir fadhbanna a chruthú má roinntear an réimír céanna le haghaidh cluichí iolracha mura bhfuil a spleáchais comhoiriúnach."
-  },
+  "setting": {},
   "sideload": {
     "field": {
       "title": "Teideal"
@@ -328,29 +309,12 @@
     "this-game-uses-third-party": "Úsáideann an cluiche seo lainseálaí tríú páirtí agus níl tacaíocht leis fós",
     "totalDownloaded": "Iomlán Íoslódáilte",
     "uninstalling": "Ag Díshuiteáil",
-    "updating": "Nuashonrú Cluiche",
-    "winetricks": "Ag cur socruithe Winetricks i bhfeidhm"
+    "updating": "Nuashonrú Cluiche"
   },
   "submenu": {
-    "addShortcut": "Cuir aicearra leis",
-    "addToSteam": "Cuir le Steam",
-    "categories": "Catagóirí",
     "change": "Athraigh an cosán suiteála",
-    "disableEosOverlay": "Díchumasaigh Forleagan EOS",
-    "enableEosOverlay": "Cumasaigh Forleagan EOS",
-    "logs": "Logaí",
     "move": "Cluiche Bogadh",
-    "protondb": "Seiceáil Comhoiriúnacht",
-    "removeFromSteam": "Bain de Steam",
-    "removeShortcut": "Bain na haicearraí",
-    "settings": "Socruithe",
-    "store": "Leathanach Siopa",
     "verify": "Fíoraigh agus Deisigh"
-  },
-  "third-party-managed": {
-    "header": "Tá an cluiche seo á bhainistiú ag feidhmchlár tríú páirtí",
-    "notice1": "Tá an cluiche seo á bhainistiú ag feidhmchlár tríú páirtí: \"{{application_name}}\"",
-    "notice2": "Tar éis cliceáil ar Suiteáil, rithfidh Heroic an feidhmchlár chun an próiseas suiteála a chríochnú"
   },
   "wikiLink": "Eolas tábhachtach faoin gcluiche seo, léigh seo:<1>Oscail an leathanach</1>",
   "open-saves-folder": "Oscail Fillteán Sábhálann",

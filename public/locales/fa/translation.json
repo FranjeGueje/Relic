@@ -11,171 +11,48 @@
     "multiplayer_may_not_work": "ممکن است به خاطر پشتیبانی ناقص یا عدم پشتیبانی آنتی چیت کار نکند."
   },
   "box": {
-    "cache-cleared": {
-      "message": "کش Heroic پاک شد.",
-      "title": "کش پاک شد"
-    },
     "choose": "انتخاب",
-    "choose-gogdl-binary": "انتخاب باینری GOGDL (نیازمند راهاندازی مجدد)",
-    "choose-legendary-binary": "انتخاب باینری Legendary",
-    "customWine": "انتخاب فایل باینری Wine یا Proton",
-    "default-install-path": "انتخاب محل پیشفرض نصب",
-    "default-steam-path": "مسیر استیم.",
-    "downloadNow": "شروع دانلود",
     "error": {
-      "add": {
-        "steam": {
-          "body": "افزودن {{game}} به استیم با مشکل مواجه شد:{{newLine}} {{error}}",
-          "title": "خطای افزودن"
-        }
-      },
-      "credentials": {
-        "message": "اعتبار ورود شما منقضی شده است، لطفا دوباره خارج شده و داخل شوید."
-      },
-      "cx-bottle-not-found": {
-        "message": "باتل CrossOver \"{{bottle_name}}\" موجود نمی باشد، نمیتوان اجرا کرد!",
-        "title": "باتل CrossOver یافت نشد"
-      },
       "diskspace": {
         "message": "فضای ذخیره سازی کافی موجود نیست",
         "title": "فضایی موجود نیست"
       },
-      "dxvk": {
-        "message": "خطا در نصب DXVK/VKD3D! اتصال به اینترنت خود را چک کنید!",
-        "title": "خطای DXVK/VKD3D"
-      },
-      "folder-not-found": {
-        "title": "به نظر می رسد پوشه بازی حذف شده است،cآیا می خواهید بازی از لیست نصب شده ها حذف شود؟"
-      },
-      "generic": {
-        "message": "پیام خطای عمومی",
-        "title": "انتخاب EXE برای اجرا"
-      },
-      "launchAborted": "راه اندازی متوقف شد",
       "title": "خطا",
-      "uncaught-exception": {
-        "message": "خطای غیر منتظره رخ داد:{{newLine}}{{error}}{{newLine}}{{newLine}} خطا را در ریپوزیتوری گیتهاب ما گزارش دهید.",
-        "title": "خطای نامشخص رخ داد!"
-      },
-      "update": {
-        "message": "مشکلی در به روز رسانی پیش آمد، لطفا لاگ ها را بررسی کرده و مجددا امتحان کنید!",
-        "title": "Update Error"
-      },
       "wine-not-found": {
         "invalid": "The selected wine version was not found. Install it or select a different version in the game's settings{{newline}}Version: {{version}}{{newline}}Path: {{path}}",
         "message": "نسخه ای از Wine انتخاب نشده است. تنظیمات بازی را چک کنید!",
         "title": "Wine یافت نشد"
       },
-      "winetricks": {
-        "message": "Winetricks هنگام اجرا این خطا را برگرداند:{{newLine}}{{error}}",
-        "title": "خطای Winetricks"
-      },
-      "moving": "خطا در انتقال بازی {{error}}",
       "ubisoft-connect": {
-        "message": "نصب Ubisoft Connect در مسیر بازی انجام نشد. صفحه ویکی ما را در https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher/wiki/How-to-install-Ubisoft-Connect-on-Linux-and-Mac را برای نصب کردن دستی برسی کنید.",
+        "message": "نصب Ubisoft Connect در مسیر بازی انجام نشد. صفحه ویکی ما را در https://github.com/Relic-Games-Launcher/RelicGamesLauncher/wiki/How-to-install-Ubisoft-Connect-on-Linux-and-Mac را برای نصب کردن دستی برسی کنید.",
         "title": "Ubisoft Connect"
       },
-      "legendary": {
-        "generic": "خطایی رخ داده است! سعی کنید از حساب Epic خود خارج شده و وارد شوید. {{newline}} {{error}}"
-      },
       "executableNotFound": "",
-      "dxmt": {
-        "message": "",
-        "title": ""
-      },
       "executableNotFoundMessage": ""
     },
-    "info": {
-      "update": {
-        "changelog": "باز کردن تغییرات جدید",
-        "detail": "آیا می خواهید در پس زمینه به روز رسانی را دانلود کنید؟",
-        "message": "نسخه جدید موجود است!",
-        "message-finished": "آیا می خواهید اکنون Heroic را مجددا اجرا کنید؟",
-        "title": "Heroic Games Launcher",
-        "title-finished": "به روز رسانی به پایان رسید",
-        "detailNoAutoupdate": ""
-      }
-    },
+    "info": {},
     "no": "خیر",
     "ok": "اوکی",
-    "protocol": {
-      "install": {
-        "not_installed": "نصب نشده است، آیا میخواهید آن را نصب کنید؟"
-      }
-    },
     "quit": {
       "message": "کارهای ناتمامی موجود است، آیا مطمئن هستید؟",
       "title": "خروج"
     },
-    "reset-heroic": {
-      "question": {
-        "message": "آیا از بازنشانی Heroic مطمئن هستید؟ این کار تمام تنظیمات و کش ها را پاک می کند اما بازی های نصب شده شما یا اعتبارهای Epic شما را پاک نمی کند. نسخه های پورتابل (AppImage, WinPortable, ...) نیازمند راه اندازی مجدد دستی پس از آن هستند.",
-        "title": "Reset Heroic"
-      }
-    },
-    "runexe": {
-      "title": "انتخاب EXE برای اجرا"
-    },
-    "select": {
-      "button": "انتخاب",
-      "exe": "انتخاب EXE",
-      "script": ""
-    },
+    "select": {},
     "shortcuts": {
       "message": "میانبرها در دسکتاپ و منوی استارت ایجاد شدند",
-      "message-mac": "مینابرها در پوشه نرم افزارها ایجاد شدند",
       "message-remove": "میانبرها از میزکار و منوی استارت حذف شدند",
-      "message-remove-mac": "میانبرها از پوشه نرم افزارها پاک شدند",
       "title": "میانبرها"
     },
-    "sync": {
-      "button": "انتخاب",
-      "error": "مسیر نامعتبر",
-      "title": "انتخاب محل ذخیره"
-    },
-    "vcruntime": {
-      "install": {
-        "message": "لینک های بارگیری برای ران تایم های ++Visual C باز شده اند. لطفا هر دو نسخه X86 و X64 را نصب کنید."
-      },
-      "notfound": {
-        "message": "ران تایم های Microsoft Visual C++ مورد نیاز برخی بازی ها هستند، نصب نشده اند",
-        "title": "VCRuntime نصب نشده است"
-      }
-    },
     "warning": {
-      "epic": {
-        "import": "سرورهای اپیک در حال حاضر قطعی عمده دارند، بازی نمیتواند اضافه شود!",
-        "install": "سرورهای اپیک در حال حاضر قطعی عمده دارند، بازی نمیتواند نصب شود!",
-        "update": "سرورهای اپیک در حال حاضر قطعی عمده دارند، بازی نمیتواند بهروزرسانی شود!"
-      },
       "title": "هشدار",
-      "wine-change": {
-        "message": "ما نتوانستیم نسخه Wine انتخابی را برای راه اندازی این عنوان ({{selectedWine}}) پیدا کنیم. {{newline}} ما یکی دیگر را پیدا کردیم، آیا می‌خواهید با استفاده از {{foundWine}} راه‌اندازی را ادامه دهید؟",
-        "title": "Wine پیدا نشد!"
-      },
-      "sideload": {
-        "confirmExit": {
-          "title": "آیا مطمئن هستید که می خواهید خارج شوید؟",
-          "message": "پیشرفت های ذخیره نشده ممکن است پاک شود"
-        }
-      },
-      "rosetta": {
-        "title": "",
-        "message": ""
-      },
       "snap": {
         "checkbox": "",
         "title": "",
         "message": ""
       }
     },
-    "wineprefix": "انتخاب پوشه WinePrefix",
     "yes": "بله",
-    "dontShowAgain": "عدم نمایش",
-    "choose-nile-binary": "باینری Nile را انتخاب کنید",
-    "update": "Update",
-    "changelog": "",
-    "postpone": ""
+    "update": "Update"
   },
   "button": {
     "cancel": "انصراف",
@@ -207,28 +84,10 @@
     }
   },
   "download-manager": {
-    "install-type": {
-      "install": "Install",
-      "update": "Update"
-    },
-    "label": {
-      "disk": "دیسک",
-      "speed": "Download"
-    },
     "link": "Downloads",
-    "queue": {
-      "end-time": "به پایان رسیده در",
-      "queue-time": "افزوده شده در",
-      "start-time": "آغاز شده در",
-      "type": "Type"
-    },
-    "title": "Downloads",
-    "ETA": "زمان تخمینی"
+    "title": "Downloads"
   },
-  "epic": {
-    "offline-notification-body": "به علت آفلاین بودن سرورهای اپیک گیمز سرویسهای آنلاین ممکن است کار نکنند!",
-    "offline-notification-title": "offline"
-  },
+  "epic": {},
   "Epic Games": "اپیک گیمز",
   "error": "Error",
   "favourites": "علاقه مندی ها",
@@ -273,109 +132,41 @@
     "uncategorized": ""
   },
   "help": {
-    "amdfsr": "AMD's FSR با ارتقاء مقیاس وضوح پایینتر در حالت تمام صفحه به افزایش فریم ریت کمک می کند. کیفیت تصویر در ازای کاهش جزئی عملکرد از ۵ به ۱ افزایش می یابد. فعال کردن ممکن است باعث بهبود کارایی شود.",
-    "dxvk": "DXVK لایه ترجمهcای بر پایه Vulkan برای بازی های DirectX 9، 10، 11 می باشد. فعال کردن ممکن است سبب افزایش سازگاری شود. ممکن است باعث ایجاد مشکلات خصوصا برای بازی های DirectX قدیمی شود.",
     "dxvkfpslimit": "انتخاب فریم ریت کپ برای بازی های DXVK",
-    "esync": "Esync در بازی های متمرکز بر CPU سبب کاهش سربار wineserver میشود. فعال کردن ممکن است باعث افزایش کارایی شود.",
-    "fsync": "Fsync در بازی های متمرکز بر CPU سبب کاهش سربار wineserver میشود. فعال کردن ممکن است در لینوکس کرنل های پشتیبانی شده باعث افزایش کارایی شود.",
     "game_language": {
-      "fallback": "برای استفاده از زبان Heroic خالی بگذارید.",
       "in_game_config": "تمام بازی ها از این پیکربندی پشتیبانی نمی کنند،cبرخی تنظیمات زبان داخل بازی دارند.",
       "valid_codes": "کدهای معتبر زبان وابسته به بازی هستند."
     },
-    "gamemode": "Feral GameMode هنگام اجرای بازی ها تغییرات خودکار و موقت را در سیستم به وجود می آورد. فعال کردن ممکن است باعث افزایش کارایی شود.",
-    "other": {
-      "part4": "استفاده کنید ",
-      "part5": "آرگومانهای بازی",
-      "part6": " تا قبل از اجرای دستور صدا زده شود، به عنوان مثال: ",
-      "part7": " تا لانچر در برخی بازیها رد شود، غیره."
-    },
-    "preferSystemLibs": "نسخه های سفارشی Wine (Wine-GE, Wine-Lutris) همراه با وابستگی های کتابخانه خود عرضه می شوند. با فعال کردن این گزینه، این کتابخانه ها نادیده گرفته شده و Wine به جای آن کتابخانه های سیستم را اجرا خواهد کرد. هشدار! در صورت عدم وجود وابستگی ها امکان بروز مشکلات وجود دارد.",
     "primerun": "استفاده از کارت گرافیک اختصاصی برای رندر بازی در سیستم های حاوی چندین کارت گرافیک. فقط برای سیستم ها و لب تاپ هایی که از headless GPU برای رندر کردن استفاده می کنند (NVIDIA Optimus, AMD CrossFire)",
-    "steam_path": {
-      "info": "این مسیر برای اضافه کردن بازی های غیر استیمی به آن به Heroic اجازه دسترسی به نسخه پروتون استیم را می دهد."
-    },
-    "steamruntime": "کتابخانه های سفارشی توسط استیم برای کمک به اجرا بازی های لینوکس و ویندوز (Proton) ارائه می شود. فعال کردن ممکن است سبب افزایش سازگاری شود.",
-    "sync": {
-      "part1": "Heroic تلاش میکند تا پوشه صحیح ذخیره سازی را پیدا کند و در اکثر مواقع کار خواهد کرد. در صورتی که پوشه اشتباه بود، از بخش رونویسی برای تغییر آن استفاده کنید.",
-      "part2": "در صورتی که محل Wine یا Proton را تغییر دهید، شما باید دوباره مسیر را چک کنید از آنجایی که Proton از محل و کاربر متفاوتی استفاده می کند. پس شما می توانید مسیر فعلی را حذف ساده کنید از صفحه تنظیمات همگام سازی خارج شده و دوباره برگردید تا Heroic یک بار دیگر با محل درست پوشه را پیدا کند.",
-      "part3": "همگام سازی دستی: برای بارگیری ذخیره بازیهای ذخیره شده در Cloud ، بارگیری را انتخاب کنید. آپلود تا موارد محلی را روی ابر آپلود کنید. دانلود اجباری و آپلود اجباری نسخه ای را که بصورت محلی یا روی ابر است نادیده می گیرند.",
-      "part4": "همگامسازی ذخیرهها به طور خودکار هر زمان که یک بازی را شروع می کنید و پس از اتمام بازی ، ذخیره ها را همگامسازی می کند."
-    },
-    "vkd3d": "VKD3D یک لایه ترجمه ای برا پایه Vulkan برای بازی های DirectX 12 است. فعال کردن ممکن است سبب افزایش چشمگیر سازگاری شود. بر روی بازی های قدیمی تر DirectX تاثیری ندارد.",
-    "wine": {
-      "part1": "Heroic در این پوشهها برای نسخههای Wine، Proton و CrossOver جستوجو میکند:",
-      "part2": "برای دیگر مکانها،از یک symbolic link به یکی از این پوشهها استفاده کنید"
-    },
+    "steam_path": {},
+    "sync": {},
     "disable_logs": "این چک باکس را روشن کنید تا بسیاری از نوشتن‌ها در فایل‌های گزارش غیرفعال شود (اطلاعات مهم همیشه ثبت می‌شوند). قبل از گزارش هر مشکلی حتماً این تنظیم را خاموش کنید.",
     "title": {
-      "accessibility": "دسترسی ها",
-      "login": "Login",
-      "settings": "تنظیمات",
-      "downloadManager": "Download Manager",
-      "wineManager": "مدیریت کننده Wine",
-      "library": "کتابخانه"
+      "settings": "تنظیمات"
     },
-    "msync": "Fsync در بازی های متمرکز بر CPU سبب کاهش سربار wineserver میشود. فعال کردن ممکن است در لینوکس کرنل های پشتیبانی شده باعث افزایش کارایی شود.",
     "dxfpslimit": "انتخاب فریم ریت کپ برای بازی های DXVK",
     "content": {
-      "defaultInstallPath": "",
-      "settingsDefault": "",
-      "settingsGame": "",
-      "downloadManager": "",
-      "wineManager": "",
-      "library": "",
-      "accessibility": "",
-      "login": ""
+      "defaultInstallPath": ""
     },
     "button": {
       "open": "",
       "close": ""
-    },
-    "download_proton_steam": "",
-    "wine-hdr": "",
-    "dxvknvapi": "",
-    "WoW64": "",
-    "wine-wayland": "",
-    "advertiseAvxForRosetta": "",
-    "nvidiaprime": {
-      "details": "استفاده از کارت گرافیک اختصاصی برای رندر بازی در سیستم های حاوی چندین کارت گرافیک. فقط برای سیستم ها و لب تاپ هایی که از headless GPU برای رندر کردن استفاده می کنند (NVIDIA Optimus, AMD CrossFire)"
     }
   },
   "info": {
-    "heroic": {
-      "beta": "Beta",
-      "click-to-see-changelog": "برای نمایش تغییرات کلیک کنید",
-      "newReleases": "به روزرسانی موجود است!",
-      "stable": "پایدار",
-      "version": "Heroic Version"
-    },
-    "save-sync": {
-      "searching": "در حال تلاش برای یافتن پوشه ذخیره صحیح (برای انصراف کیک کنید)"
-    },
     "settings": "تنظیمات به صورت خودکار ذخیره شدند",
     "version": "نسخه واین"
   },
   "infobox": {
     "help": "راهنما",
     "requirements": "نیازمندیهای سیستم",
-    "warning": "هشدار",
-    "wine-path": "مسیر Wine",
-    "wine-prefix": {
-      "title": "Wine Prefix"
-    },
-    "wine-repfix": {
-      "message": "واین از WINEPREFIX برای کپسوله کردن اپلیکیشن های ویندوز استفاده می کند. این مسیر شامل فایل های پیکربندی واین و فایل سیستم اصلی :C ویندوز می شود. در این بازسازی درایو :C، ذخیره های بازی و وابستگی هایی که توسط winetricks نصب شده اندذخیره می شوند."
-    },
-    "wine-path-invalid": "مسیر Wine نامعتبر است، لطفاً مسیر دیگری را انتخاب کنید.",
-    "wine-path-none-found": "نسخه Wine پیدا نشد، یکی از Wine Manager را دانلود کنید"
+    "warning": "هشدار"
   },
   "install": {
     "path": "انتخاب محل نصب"
   },
   "label": {
-    "loading": "درحال بارگذاری",
-    "releaseDate": "Release Date"
+    "loading": "درحال بارگذاری"
   },
   "library": {
     "refresh": "تازه کردن",
@@ -400,7 +191,6 @@
     "gog": "ورود GOG",
     "message": "با پلتفرم خود وارد شوید. شما می توانید همزمان از چندین پلتفرم وارد شوید.",
     "amazon": "ورود به آمازون",
-    "old-mac": "",
     "zoom": ""
   },
   "message": {},
@@ -437,7 +227,6 @@
     },
     "moved": "انتقال کامل شد",
     "moving": "در حال انتقال بازی",
-    "new-heroic-version": "نسخه جدید Heroic منتشر شد!",
     "refresh": {
       "error": "امکان دریافت نسخه از آپ استریم گیت هاب نیست! بعدا تلاش کنید."
     },
@@ -461,45 +250,11 @@
     "retrying": "تلاش مجدد"
   },
   "Open": "باز کردن",
-  "options": {
-    "advanced": {
-      "key": "Variable Name",
-      "placeHolderKey": "NAME",
-      "placeHolderValue": "مثال: Path/To/ExtraFiles",
-      "title": "متغیرهای محیطی",
-      "value": "مقدار"
-    },
-    "env_variables": {
-      "error": {
-        "empty_key": "نام متغیر نمی تواند خالی باشد",
-        "equal_sign_in_key": "نام متغیر نمی تواند شامل علامت \"=\" باشد",
-        "space_in_key": "نام متغیر نمیتواند شامل فاصله باشد"
-      },
-      "example": "از علامت \"=\" استفاده نکنید، به عنوان مثال: برای یک متن مانند \"MY_FLAG=123\"،‌ در قسمت اسم، MY_FLAG و در قسمت مقدار، 123 را درج کنید.",
-      "info": "تنظیم متغیرهای محیطی برای افزودن به دستور."
-    },
-    "gameargs": {
-      "placeholder": "آرگومانهای لانچر را اینجا بگذارید",
-      "title": "آرگومانهای بازی (برای اجرا پس از دستور):",
-      "error": {
-        "command": "",
-        "env": ""
-      }
-    },
-    "quote-args-with-spaces": "هشدار: مطمئن شوید که برای آرگومان های به همراه فاصله از کوت استفاده کنید! مثال: \"path/with spaces/\"",
-    "wrapper": {
-      "args": "آرگومان ها",
-      "arguments_example": "مثال آرگومان ها: --arg; --extra-file=\"file-path/ with/spaces\"",
-      "exe": "Wrapper",
-      "placeHolderKey": "Wrapper جدید",
-      "placeHolderValue": "آرگومان های Wrapper",
-      "title": "دستور Wrapper:"
-    }
-  },
+  "options": {},
   "other": {
     "gogdl-version": "نسخه GOGDL: ",
     "legendary-version": "نسخه Legendary: ",
-    "weblate": "کمک به ترجمه Heroic.",
+    "weblate": "کمک به ترجمه Relic.",
     "nile-version": "نسخه نیل: "
   },
   "Other": "Other",
@@ -535,229 +290,39 @@
   "search": "جست و جو برای بازی ها",
   "setting": {
     "addgamestosteam": "افزودن خودکار بازی ها به استیم",
-    "alt-gogdl-bin": "انتخاب باینری GOGDL جایگزین برای استفاده",
-    "alt-legendary-bin": "انتخاب باینری Legendary جایگزین",
-    "autodxvk": "نصب/بهروزرسانی خودکار DXVK در Prefix",
-    "autosync": "همگامسازی خودکار ذخیرهها",
-    "autovkd3d": "نصب/بهروزرسانی خودکار VKD3D در مسیر",
-    "change-target-exe": "انتخاب EXE جایگزین برای اجرا",
-    "crossover-version": "نسخه Crossover/Wine",
-    "customWineProton": "مسیرهای سفارشی Wine/Proton",
-    "default-install-path": "محل پیشفرض نصب",
-    "default-steam-path": "مسیر پیش فرض استیم",
-    "download-no-https": "دانلود بازی ها بدون HTTPS (مفید برای CDNs مانند LanCache)",
     "dxvkfpslimit": "محدودیت فریم ریت (DX9, 10 & 11)",
-    "enableFSRHack": "فعالسازی FSR Hack (نسخه Wine باید از آن پشتیبانی کند)",
-    "eosOverlay": {
-      "cancelInstall": "لغو",
-      "checkForUpdates": "بررسی برای به روزرسانی",
-      "checkingForUpdates": "در حال بررسی برای به روزرسانی...",
-      "currentVersion": "نسخه فعلی: {{version}}",
-      "disable": "غیرفعال سازی",
-      "enable": "فعال سازی",
-      "install": "Install",
-      "installed": "EOS Overlay نصب شده است",
-      "installing": "EOS Overlay در حال نصب شدن است...",
-      "latestVersion": "آخرین نسخه: {{version}}",
-      "notInstalled": "EOS Overlay نصب نشده است",
-      "notInstalledMsg": "EOS Overlay نصب نشده است. آیا می خواهید آن را نصب کنید؟",
-      "notInstalledTitle": "Overlay نصب نشده است",
-      "remove": "حذف",
-      "removeConfirm": "آیا مطمئن هستید که می خواهید EOS Overlay را حذف کنید؟",
-      "removeConfirmTitle": "تایید حذف overlay",
-      "updateNow": "Update",
-      "updating": "در حال به روزرسانی..."
-    },
-    "esync": "فعالسازی Esync",
-    "FsrSharpnessStrenght": "قدرت تیزی FSR",
-    "fsync": "فعالسازی Fsync",
-    "gamemode": "استفاده از GameMode (Feral Game Mode باید نصب شده باشد)",
     "language": "انتخاب زبان نرم افزار",
-    "library_top_option": {
-      "disabled": "غیر فعال",
-      "favourites": "بازی های مورد علاقه",
-      "recently_played": "بازی های اخیرا اجرا شده",
-      "recently_played_installed": "بازی های اخیرا اجرا شده (فقط نصب شده)"
-    },
-    "library_top_section": "قسمت بالایی کتابخانه",
     "log": {
       "copy-to-clipboard": "کپی کردن محتوای لاگ در کليپ بورد",
       "current-log": "لاگ اخیر",
       "instructions": "به دیسکورد ما بپیوندید و به کانال منطبق با سیستم عامل خود نگاه کنید. محتوای لاگ نمایش داده شده در اینجا را با توضیح واضح از مشکل همراه هر اطلاعات مربوط به اشتراک بگذارید.",
-      "instructions_title": "چگونه یک مشکل را گزارش کنید؟",
-      "last-log": "آخرین لاگ",
-      "no-file": "فایل لاگی پیدا نشد",
-      "show-in-folder": "نمایش فایل لاگ در پوشه",
-      "upload": {
-        "actions": "Action",
-        "delete": "",
-        "hours-ago": "",
-        "title": "",
-        "upload-date": "",
-        "error": {
-          "title": "",
-          "manual_upload": "",
-          "content": ""
-        },
-        "uploading": {
-          "title": "",
-          "content": ""
-        },
-        "open": "",
-        "header": "",
-        "no-files": "",
-        "confirm": {
-          "content": "",
-          "title": ""
-        },
-        "minutes-ago": "",
-        "done": {
-          "content": "",
-          "title": ""
-        },
-        "button": ""
-      },
-      "descriptiveNames": {
-        "legendary": "",
-        "nile": "",
-        "gog": "",
-        "zoom": "",
-        "game-log": "",
-        "heroic": ""
-      },
-      "show-uploads": ""
-    },
-    "manualsync": {
-      "download": "دانلود",
-      "forcedownload": "دانلود اجباری",
-      "forceupload": "آپلود اجباری",
-      "sync": "همگامسازی",
-      "syncing": "در حال همگامسازی",
-      "title": "همگامسازی دستی ذخیرهها",
-      "upload": "آپلود"
+      "last-log": "آخرین لاگ"
     },
     "maxworkers": "بیسترین تعداد ورکر هنگام دانلود",
-    "offlinemode": "اجرای آفلاین بازی",
-    "prefered_language": "زبان ترجیحی (کد زبان)",
-    "preferSystemLibs": "ارجحیت کتابخانه های سیستم",
-    "runexe": {
-      "message": "فایلها را اینجا درج کنید",
-      "title": "اجرای EXE در محل"
-    },
-    "savefolder": {
-      "not-found": "پوشه سیو ها یافت نشد، لطفا به صورت دستی انتخاب کنید (برای تلاش مجدد کلیک کنید)",
-      "placeholder": "پوشه ی دقیق سیو بازی ها را انتخاب کنید",
-      "warning": "لطفا برای درست بودن مسیر مجددا آن را چک کنید (برای تلاش مجدد کلیک کنید)"
-    },
     "select_theme": "انتخاب تم",
-    "showfps": "نمایش تعداد فریم (11 و DX9, 10)",
-    "start-in-tray": "شروع در حالت پسزمینه",
-    "steamruntime": "استفاده از Steam Runtime",
-    "winecrossoverbottle": "CrossOver Bottle",
-    "wineprefix": "پوشه محل Wine",
-    "wineversion": "نسخه Wine",
-    "ignoreGameUpdates": "نادیده گرفتن به‌روزرسانی‌های بازی",
-    "autoUpdateGames": "به روز رسانی خودکار بازی ها",
-    "disable_logs": "غیرفعال کردن گزارش‌ها",
-    "showMetalOverlay": "نمایش همپوشانی آمار",
-    "alt-nile-bin": "یک باینری جایگزین نیل را انتخاب کنید",
-    "autodxvknvapi": "نصب/بهروزرسانی خودکار DXVK-NVAPI در Prefix",
-    "msync": "فعالسازی Esync",
-    "WoW64": "",
-    "frameless-window": {
-      "confirmation": {
-        "message": "",
-        "title": ""
-      },
-      "description": ""
-    },
-    "download-proton-steam": "",
-    "scripts": "",
-    "wineWayland": "",
     "experimental_features": {
       "cometSupport": "",
       "enableNewDesign": "",
       "enableHelp": "",
       "zoomPlatform": ""
     },
-    "hdr": "",
-    "show_valve_proton": {
-      "wine_selector_warning": "",
-      "confirmation": {
-        "show": "",
-        "title": "",
-        "dont_show": "",
-        "message": ""
-      },
-      "label": "",
-      "info_label": ""
-    },
-    "dxfpslimit": "",
-    "allow_installation_broken_anticheat": {
-      "confirmation": {
-        "understand": "",
-        "title": "",
-        "message": ""
-      },
-      "label": ""
-    },
-    "enable-quick-sync-menu": "",
-    "analyticsOptIn": "",
     "verboseLogs": {
       "description": ""
     },
     "advertiseAvxForRosetta": "",
-    "custom_css": {
-      "warning": ""
-    },
-    "start-in-console-mode": "",
     "disable_gog_presence": ""
   },
   "settings": {
-    "battlEyeRuntime": {
-      "installing": "در حال نصب ران تایم BattlEye...",
-      "name": "ران تایم BattlEye AntiCheat"
-    },
-    "clear-cache": "پاک کردن کش Heroic",
-    "copiedToClipboard": "در کليپ بورد کپی شد!",
-    "copyToClipboard": "کپی کردن همه تنظیمات در کليپ بورد",
-    "default_hint": "تغییرات در این قسمت فقط به عنوان مقدار پیش فرض در هنگام نصب بازی ها اعمال می شود. اگر می خواهید تنظیمات بازی نصب شده را تغییر دهید، از دکمه تنظیمات در صفحه بازی استفاده کنید.",
-    "eacRuntime": {
-      "gameModeRequired": {
-        "message": "GameMode برای ران تایم EAC برای کار کردن در فلتپک نیاز است. آیا می خواهید آن را فعال کنید؟",
-        "title": "GameMode الزامی است"
-      },
-      "installing": "در حال نصب ران تایم EAC...",
-      "name": "ران تایم Easy AntiCheat"
-    },
-    "gameMode": {
-      "eacRuntimeEnabled": {
-        "message": "ران تایم EAC که بدون GameMode به درستی کار نمی کند، فعال شده است. آیا می خواهید ران تایم EAC و GameMode را غیرفعال کنید؟",
-        "title": "ران تایم EAC فعال شد"
-      }
-    },
+    "clear-cache": "پاک کردن کش Relic",
     "log": {
       "long-log-hint": "لاگ کوتاه شد، ١٠٠٠ خط آخر نمایش داده شدهاند!"
     },
     "navbar": {
-      "advanced": "پیشرفته",
-      "games_settings_defaults": "پیش فرض های بازی",
       "general": "عمومی",
       "log": "Log",
-      "other": "بقیه",
-      "sync": "همگام سازی ذخیره های ابری",
-      "wineExt": "افزونه های Wine",
-      "systemInformation": "",
-      "legacy": ""
+      "wineExt": "افزونه های Wine"
     },
     "open-config-file": "باز کردن فایل پیکربندی",
-    "reset-heroic": "Reset Heroic",
-    "saves": {
-      "label": "محل ذخیره:",
-      "warning": "ویژگی ذخیره های ابری آزمایشی می باشد، لطفا قبل از هنگام سازی از ذخیره های خود نسخه پشتیبان تهیه کنید (در صورتی که مشکلی به وجود آید)",
-      "not_supported": "",
-      "gog_linux_native_warning": ""
-    },
     "advanced": {
       "clearCache": {
         "help8": "بازی‌های نصب شده",
@@ -771,53 +336,16 @@
         "help2": "",
         "help4": ""
       },
-      "title": {
-        "resetHeroic": "Reset Heroic",
-        "clearCache": ""
-      },
-      "resetHeroic": {
-        "help": "آیا از بازنشانی Heroic مطمئن هستید؟ این کار تمام تنظیمات و کش ها را پاک می کند اما بازی های نصب شده شما یا اعتبارهای Epic شما را پاک نمی کند. نسخه های پورتابل (AppImage, WinPortable, ...) نیازمند راه اندازی مجدد دستی پس از آن هستند."
-      },
+      "title": {},
       "details": ""
     },
-    "systemInformation": {
-      "copyToClipboard": "در کليپ بورد کپی شد!",
-      "software": "GL نرم‌افزاری",
-      "cpu": "",
-      "gpuWithNumber": "",
-      "cpuDescription": "",
-      "legendaryVersion": "",
-      "systemSpecifications": "",
-      "steamDeck": "",
-      "gpuDriver": "",
-      "os": "",
-      "gpu": "",
-      "gogdlVersion": "",
-      "osVersion": "",
-      "cometVersion": "",
-      "memoryStats": "",
-      "systemModel": "",
-      "showDetailed": "",
-      "memory": "",
-      "heroicVersion": "",
-      "nileVersion": ""
-    },
-    "launchOptions": "گزینه های اجرا...",
-    "legacy_warning": "",
-    "experimental_features": {
-      "title": ""
-    },
-    "offline": {
-      "warning": ""
-    },
+    "experimental_features": {},
+    "offline": {},
     "steamgriddb": {
       "apikey": {
         "title": "",
         "placeholder": "",
         "placeholder_saved": ""
-      },
-      "help": {
-        "description": ""
       }
     }
   },
@@ -837,24 +365,11 @@
   "title": {
     "allGames": "همه بازیها"
   },
-  "toolbox": {
-    "settings": {
-      "default-wineprefix": "انتخاب پوشه مسیر پیشفرض برای تنظیمات جدید",
-      "wineprefix": "انتخاب پوشه برای مسیر Wine جدید"
-    }
-  },
-  "tooltip": {
-    "addpath": "افزودن مسیر جدید",
-    "removepath": "حذف مسیر"
-  },
   "tray": {
     "about": "درباره",
     "quit": "خروج",
     "reload": "بارگیری مجدد",
     "show": "نمایش"
-  },
-  "two_col_table": {
-    "save_hint": "بازی های این جدول به صورت خودکار ذخیره نشده اند. بر روی دکمه + کلیک کنید"
   },
   "Update Available!": "به روزرسانی موجود است!",
   "userselector": {
@@ -874,24 +389,6 @@
       "reload": "تازه کردن صفحه"
     }
   },
-  "wine": {
-    "actions": "Action",
-    "manager": {
-      "link": "مدیریت Wine",
-      "not-found": "هیچ نسخه Wine یافت نشد. برای تلاش مجدد روی آیکون بارگذاری کلیک کنید.",
-      "title": "مدیریت کننده Wine",
-      "unzipping": "در حال خارج کردن از حالت فشرده",
-      "search": "",
-      "loading": "",
-      "open_folder": "",
-      "update": "Update",
-      "settings": "تنظیمات",
-      "no-results": ""
-    },
-    "release": "Release Date",
-    "size": "اندازه",
-    "notes": ""
-  },
   "externalLink": {
     "warning": "شما در حال باز کردن یک لینک خارجی هستید.",
     "dontAskAgain": "عدم پرسش مجدد"
@@ -909,17 +406,6 @@
   "amazon": "آمازون",
   "Amazon Games": "بازی های آمازون",
   "prime-gaming": "پرایم گیمینگ",
-  "winetricks": {
-    "install": "Install",
-    "loading": "درحال بارگذاری",
-    "no-components": "",
-    "installing": "",
-    "openGUI": "",
-    "search": "",
-    "loading-available": "",
-    "nothingYet": "",
-    "installed": ""
-  },
   "window": {
     "close": "بستن",
     "minimize": "",
@@ -934,9 +420,7 @@
     "new-category": "",
     "add-new-category": ""
   },
-  "launch": {
-    "options": "گزینه های اجرا..."
-  },
+  "launch": {},
   "categories-manager": {
     "confirm-rename": "",
     "cancel-remove": "",
@@ -953,25 +437,7 @@
     "noGames": "",
     "noResults": ""
   },
-  "wineExplanation": {
-    "proton-ge": "",
-    "gpt": "",
-    "wine-crossover": "",
-    "wine-staging-macos": ""
-  },
-  "steamgriddb": {
-    "error": {
-      "no-games": "بازی یافت نشد",
-      "no-grids": "",
-      "search": "",
-      "grids": ""
-    },
-    "picker": {
-      "search": "",
-      "title": "",
-      "select-game": ""
-    }
-  },
+  "steamgriddb": {},
   "console": {
     "update": {
       "hintPrefix": "",

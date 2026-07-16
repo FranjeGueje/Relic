@@ -155,14 +155,9 @@
     "installedPlatform": "Plataforma instal·lada",
     "path": "Ruta d'instal·lació",
     "size": "Mida",
-    "syncsaves": "Sincronitza les partides desades",
     "version": "Versió",
-    "apple-gaming-wiki": "Classificació AppleGamingWiki",
     "clickToOpen": "Fes clic per a obrir",
-    "game-scores": "Puntuacions del joc",
     "installedInfo": "Informació de la instal·lació",
-    "protondb-compatibility-info": "Nivell de compatibilitat amb el Proton",
-    "steamdeck-compatibility-info": "Compatibilitat amb l'SteamDeck",
     "third-party-app": "Gestor de tercers"
   },
   "install": {
@@ -172,17 +167,7 @@
     "path-not-writtable": "Avís: potser no es pot escriure a la ruta indicada.",
     "space-after-install": "Després de la instal·lació",
     "wineprefix": "WinePrefix",
-    "wineversion": "Versió del Wine",
-    "anticheat-warning": {
-      "cancel": "No",
-      "message": "La compatibilitat amb el sistema antitrampes s'ha trencat o rebutjat. El joc no funcionarà. Segur que el voleu instal·lar de totes maneres?",
-      "install": "Sí (entenc que no funcionarà)",
-      "title": "Antitrampes trencat/rebutjat",
-      "multiplayer_message": "El suport antitrampes està trencat o s'ha blocat. El joc pot executar-se, però les característiques multijugador no funcionaran. Vols instal·lar-lo igualment?",
-      "install_anyway": "Sí (entenc que les funcions multijugador no funcionen)",
-      "ok": "D'acord",
-      "disabled_installation": "Aquest joc fa servir programari antitrampes que no és compatible amb el teu sistema operatiu, o els desenvolupadors del joc no n'han activat la compatibilitat. Això significa que les funcions multijugador no funcionaran i no hi ha res que pugues fer per a resoldre-ho, ni tan sols l'equip de l'Heroic.<br /><br />Per a instal·lar aquest joc i provar-lo de totes maneres, ves a Configuració → Avançat i selecciona l'opció d'instal·lar jocs amb antitrampes trencat o denegat.<br /><br />Tingues en compte que no hi ha manera de resoldre-ho i t'arrisques a què t'expulsin de les partides."
-    }
+    "wineversion": "Versió del Wine"
   },
   "label": {
     "game": {
@@ -199,7 +184,6 @@
     },
     "launching": "S'executa",
     "ubisoft": "S'instal·la l'Ubisoft Connect",
-    "winetricks": "S'estan instal·lant els paquets del Winetricks",
     "prerequisites": "S'estan instal·lant els prerequisits",
     "redist": "Instal·la redistribuïbles",
     "steam": {
@@ -214,19 +198,19 @@
       "install": "Instal·la Steam",
       "hardware": "Apple Silicon M1+ (per als Intel Mac, Steam funcionarà amb el Crossover)",
       "install-path": "Ruta d'instal·lació del Steam",
-      "install-tooltip": "Això instal·larà la versió de Windows del Steam i l'executarà utilitzant la capa de compatibilitat de l'Heroic. \n\n    Alguns jocs, especialment els antics, els nous en 3D o els que tinguin programes antitrampes, podrien no funcionar correctament. \n\n    ",
+      "install-tooltip": "Això instal·larà la versió de Windows del Steam i l'executarà utilitzant la capa de compatibilitat de l'Relic. \n\n    Alguns jocs, especialment els antics, els nous en 3D o els que tinguin programes antitrampes, podrien no funcionar correctament. \n\n    ",
       "installation": "Instal·lació del Steam",
-      "launch": "Inicia el Steam utilitzant la capa de compatibilitat de l'Heroic",
+      "launch": "Inicia el Steam utilitzant la capa de compatibilitat de l'Relic",
       "launching": "S'està iniciant el Steam...",
       "macOS": "macOS 14.0 o superior",
-      "notification": "L'Heroic et notificarà quan finalitzi la instal·lació.",
+      "notification": "L'Relic et notificarà quan finalitzi la instal·lació.",
       "patience": "Si vols continuar, tingues paciència, ja que podria trigar uns pocs minuts a finalitzar, depenent de la teva connexió a internet i la configuració del sistema.",
       "ram": "8 GB de RAM",
       "recommended": "Especificacions recomanades per a una millor experiència",
       "select-path": "Selecciona la carpeta d'instal·lació del Steam",
       "specificVersion-pt1": "Això baixarà una versió específica del Steam des de",
       "specificVersion-pt2": "archive.org",
-      "specificVersion-pt3": "feta perquè funcioni amb l'Heroic, ja que les versions noves del Steam no funcionen en macOS."
+      "specificVersion-pt3": "feta perquè funcioni amb l'Relic, ja que les versions noves del Steam no funcionen en macOS."
     }
   },
   "launch": {
@@ -234,23 +218,18 @@
     "default": "Predefinit"
   },
   "not_logged_in": {
-    "epic": "No has iniciat sessió amb un compte d'Epic a l'Heroic. No facis servir la pàgina de la botiga per a iniciar-la. Fes-ho després de prémer el botó següent:",
-    "gog": "No has iniciat sessió amb un compte de GOG a l'Heroic. No facis servir la pàgina de la botiga per a iniciar-la. Fes-ho després de prémer el botó següent:",
+    "epic": "No has iniciat sessió amb un compte d'Epic a l'Relic. No facis servir la pàgina de la botiga per a iniciar-la. Fes-ho després de prémer el botó següent:",
+    "gog": "No has iniciat sessió amb un compte de GOG a l'Relic. No facis servir la pàgina de la botiga per a iniciar-la. Fes-ho després de prémer el botó següent:",
     "login": "Inicia la sessió",
     "title": "No has iniciat sessió",
-    "amazon": "No has iniciat sessió amb un compte d'Amazon a l'Heroic. No facis servir la pàgina de la botiga per a iniciar-la, fes-ho millor amb aquest botó:",
-    "zoom": "No has iniciat sessió amb un compte Zoom a Heroic. No utilitzes la pàgina de la botiga per iniciar la sessió, en compte d'això fes clic al botó següent:"
+    "amazon": "No has iniciat sessió amb un compte d'Amazon a l'Relic. No facis servir la pàgina de la botiga per a iniciar-la, fes-ho millor amb aquest botó:",
+    "zoom": "No has iniciat sessió amb un compte Zoom a Relic. No utilitzes la pàgina de la botiga per iniciar la sessió, en compte d'això fes clic al botó següent:"
   },
   "report_problem": "Informa d'un problema quan s'executa el joc",
   "sdl": {
     "title": "Selecciona els components a instal·lar"
   },
-  "setting": {
-    "winecrossoverbottle": "Ampolla CrossOver",
-    "warn-use-shared-wine-config": "Fes servir aquesta opció només si saps què fas.<br/>Si es comparteix el mateix prefix per a diversos jocs, poden produir-se alguns problemes si les seves dependències no són compatibles.",
-    "show-wine-settings": "Mostra la configuració del Wine",
-    "use-shared-wine-config": "Usa el prefix del Wine compartit"
-  },
+  "setting": {},
   "sideload": {
     "field": {
       "title": "Títol"
@@ -310,26 +289,14 @@
     "gog-goodie": "Sembla que aquest joc no es pot instal·lar. Comprova el contingut descarregable a https://gog.com/account",
     "goodie": "No instal·lable",
     "prerequisites": "S'estan instal·lant els prerequisits",
-    "winetricks": "S'estan aplicant les correccions del Winetricks",
     "redist": "S'instal·len els redistribuïbles ({{redist}})",
     "importing": "S'està important"
   },
   "submenu": {
-    "addShortcut": "Afegeix una drecera",
-    "addToSteam": "Afegeix a l'Steam",
     "change": "Canvia la ruta d'instal·lació",
-    "disableEosOverlay": "Desactiva la superposició EOS",
-    "enableEosOverlay": "Activa la superposició EOS",
     "move": "Mou el joc",
-    "protondb": "Comprova la compatibilitat",
-    "removeFromSteam": "Suprimeix de l'Steam",
-    "removeShortcut": "Suprimeix les dreceres",
-    "settings": "Configuració",
-    "store": "Botiga",
     "verify": "Verifica i repara",
-    "extraInfo": "Informació extra",
-    "logs": "Registres",
-    "categories": "Categories"
+    "extraInfo": "Informació extra"
   },
   "help": {
     "cloud_save_unsupported": "Aquest joc no admet partides desades al núvol. Aquesta informació la proporcionen els desenvolupadors del joc. Alguns jocs implementen el seu propi sistema de desament al núvol.",
@@ -348,11 +315,6 @@
       "enable": "Activa mods"
     },
     "versionCollapsable": "Versió del joc"
-  },
-  "third-party-managed": {
-    "header": "Aquest joc el gestiona una aplicació de tercers",
-    "notice1": "Aquest joc el gestiona una aplicació de tercers: «{{application_name}}»",
-    "notice2": "Després de fer clic a «Instal·la», el Heroic executarà l'aplicació per tal de completar el procés d'instal·lació."
   },
   "wikiLink": "Informació important d'aquest joc. Llegiu:&nbsp;<1>Obre la pàgina</1>",
   "Open": "Obre",

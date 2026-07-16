@@ -8,7 +8,6 @@ files:
 
 asarUnpack:
   - build/icon.png
-  - build/icon-dark.png
   - build/icon-light.png
   - build/bin/**/*
   - '!build/bin/legendary.LICENSE'
@@ -21,11 +20,11 @@ protocols:
 linux:
   artifactName: ${productName}-${version}-linux-${arch}.${ext}
   category: Game
-  icon: build/icon.icns
+  icon: build/icon.png
   desktop:
     entry:
       Name: Relic
-      Comment: A minimalist game installer for GOG, Epic Games and Amazon Games. Fork of Heroic.
+      Comment: Relic - Linux games installer for GOG, Epic Games and Amazon Games
   target:
     - AppImage
   files:

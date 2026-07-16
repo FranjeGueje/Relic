@@ -5,15 +5,15 @@ import { electronTest } from './helpers'
 declare const window: { api: typeof import('../src/preload/api').default }
 
 electronTest('renders the first page', async (app, page) => {
-  await expect(page).toHaveTitle('Heroic Games Launcher')
+  await expect(page).toHaveTitle('Relic')
 })
 
-electronTest('gets heroic, legendary, and gog versions', async (app, page) => {
-  await test.step('get heroic version', async () => {
-    const heroicVersion = await page.evaluate(async () =>
+electronTest('gets relic, legendary, and gog versions', async (app, page) => {
+  await test.step('get relic version', async () => {
+    const relicVersion = await page.evaluate(async () =>
       window.api.getHeroicVersion()
     )
-    // check that heroic version is newer or equal to 2.6.3
+    // check that relic version is newer or equal to 2.6.3
     expect(compareVersions(heroicVersion, '2.6.3')).toBeGreaterThanOrEqual(0)
   })
 

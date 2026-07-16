@@ -11,171 +11,48 @@
     "multiplayer_may_not_work": ""
   },
   "box": {
-    "cache-cleared": {
-      "message": "Qəhrəmanca yaddaş silindi.",
-      "title": "Keş təmizləndi"
-    },
     "choose": "Seçin",
-    "choose-gogdl-binary": "GOGDL Binary seçin (yenidən başlamalıdır)",
-    "choose-legendary-binary": "Əfsanəvi binar seçin",
-    "customWine": "Şərab və ya Proton binarını seçin",
-    "default-install-path": "Defolt quraşdırma yolunu seçin",
-    "default-steam-path": "Buxar yolu.",
-    "downloadNow": "İndi yüklə",
     "error": {
-      "add": {
-        "steam": {
-          "body": "Buxara {{game}} əlavə etmək uğursuz oldu:{{newLine}} {{error}}",
-          "title": "Əlavə etmə xətası"
-        }
-      },
-      "credentials": {
-        "message": "Etibarnamənizin müddəti başa çatıb, lütfən, sistemdən çıxın və yenidən daxil olun."
-      },
-      "cx-bottle-not-found": {
-        "message": "CrossOver şüşəsi \"{{bottle_name}}\" mövcud deyil, işə salına bilməz!",
-        "title": "CrossOver şüşə tapılmadı"
-      },
       "diskspace": {
         "message": "Kifayət qədər mövcud disk sahəsi yoxdur",
         "title": "Yer yoxdur"
       },
-      "dxvk": {
-        "message": "DXVK/VKD3D quraşdırarkən xəta baş verdi! Zəhmət olmasa əlaqənizi yoxlayın!",
-        "title": "DXVK/VKD3D xətası"
-      },
-      "folder-not-found": {
-        "title": "Oyun qovluğu silinmiş kimi görünür, oyunu quraşdırılmış siyahıdan silmək istəyirsiniz?"
-      },
-      "generic": {
-        "message": "ümumi səhv mesajı",
-        "title": "Select EXE to Run"
-      },
-      "launchAborted": "Launch aborted",
       "title": "Xəta",
-      "uncaught-exception": {
-        "message": "A uncaught exception occured:{{newLine}}{{error}}{{newLine}}{{newLine}} Report the exception on our Github repository.",
-        "title": "Tutulmamış İstisna baş verdi!"
-      },
-      "update": {
-        "message": "Güncəlləmə ilə nəsə xəta baş verdi, qeydləri yoxlayın və ya daha sonra yenidən cəhd edin!",
-        "title": "Yeniləmə xətası"
-      },
       "wine-not-found": {
         "invalid": "The selected wine version was not found. Install it or select a different version in the game's settings{{newline}}Version: {{version}}{{newline}}Path: {{path}}",
         "message": "Şərab Versiyası Seçilməyib. Oyun Parametrlərini yoxlayın!",
         "title": "Şərab tapılmadı"
       },
-      "winetricks": {
-        "message": "Winetricks icra zamanı aşağıdakı xətanı qaytardı:{{newLine}}{{error}}",
-        "title": "Winetricks xətası"
-      },
-      "moving": "Oyunun köçürülməsi xətası {{error}}",
       "ubisoft-connect": {
-        "message": "Ubisoft Connect-in oyun prefiksində quraşdırılması uğursuz oldu. Onu əl ilə quraşdırmaq üçün https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher/wiki/How-to-install-Ubisoft-Connect-on-Linux-and-Mac ünvanında wiki səhifəmizi yoxlayın.",
+        "message": "Ubisoft Connect-in oyun prefiksində quraşdırılması uğursuz oldu. Onu əl ilə quraşdırmaq üçün https://github.com/Relic-Games-Launcher/RelicGamesLauncher/wiki/How-to-install-Ubisoft-Connect-on-Linux-and-Mac ünvanında wiki səhifəmizi yoxlayın.",
         "title": "Ubisoft Connect"
       },
-      "legendary": {
-        "generic": "Bir səhv baş verdi! Epic hesabınızdan çıxmağa və daxil olmağa çalışın. {{newline}} {{error}}"
-      },
       "executableNotFound": "",
-      "dxmt": {
-        "message": "",
-        "title": ""
-      },
       "executableNotFoundMessage": ""
     },
-    "info": {
-      "update": {
-        "changelog": "Dəyişikliklər jurnalını açın",
-        "detail": "Güncəlləməni arxa planda yükləmək istəyirsiniz?",
-        "message": "Yeni Versiya mövcuddur!",
-        "message-finished": "İndi Heroic-i yenidən başlatmaq istəyirsiniz?",
-        "title": "Qəhrəmanlıq Oyunları Başlatıcısı",
-        "title-finished": "Yeniləmə Tamamlandı",
-        "detailNoAutoupdate": ""
-      }
-    },
+    "info": {},
     "no": "YOX",
     "ok": "tamam",
-    "protocol": {
-      "install": {
-        "not_installed": "Hazırda quraşdırılmayıb. Quraşdırılsın?"
-      }
-    },
     "quit": {
       "message": "Gözləyən əməliyyatlar var, əminsinizmi?",
       "title": "Çıx"
     },
-    "reset-heroic": {
-      "question": {
-        "message": "Heroic'i sıfırlamaq istədiyinizə əminsiniz? Bu, bütün Parametrləri və Keşləməni siləcək, lakin Quraşdırılmış oyunları və ya Epic etimadnaməsini silməyəcək",
-        "title": "Qəhrəmanı sıfırlayın"
-      }
-    },
-    "runexe": {
-      "title": "Çalıştırmaq üçün EXE seçin"
-    },
-    "select": {
-      "button": "seçin",
-      "exe": "EXE seçin",
-      "script": ""
-    },
+    "select": {},
     "shortcuts": {
       "message": "Qısayollar Masaüstü və Başlat menyusunda yaradılmışdır",
-      "message-mac": "Shortcuts were created on the Applications folder",
       "message-remove": "Qısayollar Masaüstü və Başlat Menyusundan silindi",
-      "message-remove-mac": "Shortcuts were removed from the Applications folder",
       "title": "Qısa yollar"
     },
-    "sync": {
-      "button": "Seçin",
-      "error": "Yanlış Yol",
-      "title": "Saxlama qovluğunu seçin"
-    },
-    "vcruntime": {
-      "install": {
-        "message": "Visual C++ Runtimes üçün yükləmə linkləri açıldı. Zəhmət olmasa həm x86, həm də x64 versiyalarını quraşdırın."
-      },
-      "notfound": {
-        "message": "Bəzi oyunlar üçün tələb olunan Microsoft Visual C++ Runtimes quraşdırılmayıb",
-        "title": "VCRuntime quraşdırılmayıb"
-      }
-    },
     "warning": {
-      "epic": {
-        "import": "Epic Serverlərdə hazırda böyük fasilə var, oyunu idxal etmək mümkün deyil!",
-        "install": "Epic Serverlərdə hazırda böyük fasilə var, oyunu quraşdırmaq mümkün deyil!",
-        "update": "Epic Serverlərdə hazırda böyük fasilə var, oyunu yeniləmək mümkün deyil!"
-      },
       "title": "Xəbərdarlıq",
-      "wine-change": {
-        "message": "Bu başlığı işə salmaq üçün seçilmiş şərab versiyasını tapa bilmədik ({{selectedWine}}). {{newline}} Başqasını tapdıq, {{foundWine}} istifadə edərək işə davam etmək istəyirsiniz?",
-        "title": "Şərab tapılmadı!"
-      },
-      "rosetta": {
-        "title": "",
-        "message": ""
-      },
       "snap": {
         "checkbox": "",
         "title": "",
         "message": ""
-      },
-      "sideload": {
-        "confirmExit": {
-          "title": "",
-          "message": ""
-        }
       }
     },
-    "wineprefix": "Şərab Prefiks Qovluğu seçin",
     "yes": "HƏ",
-    "dontShowAgain": "Bir daha göstərmə",
-    "choose-nile-binary": "Nil binarını seçin",
-    "update": "Update",
-    "changelog": "",
-    "postpone": ""
+    "update": "Update"
   },
   "button": {
     "cancel": "Cancel",
@@ -207,28 +84,10 @@
     }
   },
   "download-manager": {
-    "install-type": {
-      "install": "Install",
-      "update": "Update"
-    },
-    "label": {
-      "disk": "Disk",
-      "speed": "Download"
-    },
     "link": "Downloads",
-    "queue": {
-      "end-time": "Finished at",
-      "queue-time": "Added at",
-      "start-time": "Started at",
-      "type": "Type"
-    },
-    "title": "Downloads",
-    "ETA": "Təxmini vaxt"
+    "title": "Downloads"
   },
-  "epic": {
-    "offline-notification-body": "Epic Games serverləri oflayn olduğu üçün onlayn xidmətlər tam işləməyə bilər!",
-    "offline-notification-title": "oflayn"
-  },
+  "epic": {},
   "Epic Games": "Epik oyunlar",
   "error": "Error",
   "favourites": "Sevimlilər",
@@ -273,109 +132,41 @@
     "uncategorized": ""
   },
   "help": {
-    "amdfsr": "AMD-nin FSR tam ekran rejimində daha aşağı təsvir ölçüsünü artırmaqla kadr sürətini artırmağa kömək edir. Şəkil keyfiyyəti cüzi performans zərbəsi hesabına 5-dən 1-ə yüksəlir. Aktivləşdirmək performansı yaxşılaşdıra bilər.",
-    "dxvk": "DXVK DirectX 9, 10 və 11 oyunları üçün Vulkan əsaslı tərcümə qatıdır. Aktivləşdirmə uyğunluğu yaxşılaşdıra bilər. Xüsusilə köhnə DirectX oyunları üçün problemlər yarada bilər.",
     "dxvkfpslimit": "Sets a frame rate cap for DXVK games",
-    "esync": "Esync, intensiv CPU tələb edən oyunlarda şərab serverinin yükünü azaltmağı hədəfləyir. Aktivləşdirmək performansı yaxşılaşdıra bilər.",
-    "fsync": "Fsync, intensiv CPU tələb edən oyunlarda şərab serverinin yükünü azaltmağı hədəfləyir. Aktivləşdirilməsi dəstəklənən Linux nüvələrində performansı yaxşılaşdıra bilər.",
     "game_language": {
-      "fallback": "Heroic dilindən istifadə etmək üçün boş buraxın.",
       "in_game_config": "Bütün oyunlar bu konfiqurasiyanı dəstəkləmir, bəzilərində oyundaxili dil parametrləri var.",
       "valid_codes": "Etibarlı dil kodları oyundan asılıdır."
     },
-    "gamemode": "Feral GameMode oyunları oynayarkən sistemə avtomatik və müvəqqəti çimdiklər tətbiq edir. Aktivləşdirmək performansı yaxşılaşdıra bilər.",
-    "other": {
-      "part4": "istifadə edin ",
-      "part5": "Oyun Arqumentlər",
-      "part6": " işə salma əmrindən sonra çağırılacaq, məsələn: ",
-      "part7": " bəzi oyunlarda başlatma qurğusundan keçmək və s."
-    },
-    "preferSystemLibs": "Fərdi Şərab versiyaları (Wine-GE, Wine-Lutris) kitabxana asılılıqları ilə göndərilir. Bu seçimi aktiv etməklə, bu göndərilmiş kitabxanalar nəzərə alınmayacaq və Wine əvəzinə sistem kitabxanalarını yükləyəcək. Xəbərdarlıq! Asılılıqlar təmin edilmədikdə problemlər yarana bilər.",
     "primerun": "Multi-GPU sistemlərində oyunu göstərmək üçün xüsusi qrafik kartdan istifadə edin. Yalnız göstərmə üçün başsız GPU istifadə edən oyun noutbukları və ya stolüstü kompüterlərdə lazımdır (NVIDIA Optimus, AMD CrossFire)",
-    "steam_path": {
-      "info": "This path lets Heroic determine what version of Proton Steam uses, for adding non-Steam games to Steam."
-    },
-    "steamruntime": "Linux və Windows (Proton) oyunlarını idarə etməyə kömək etmək üçün Steam tərəfindən təmin edilən xüsusi kitabxanalar. Aktivləşdirmə uyğunluğu yaxşılaşdıra bilər.",
-    "sync": {
-      "part1": "Heroic düzgün saxlama qovluğunu təxmin etməyə çalışır və bu, əksər hallarda işləyəcək. Qovluq səhv olarsa, onu dəyişdirmək üçün dəyişdirmə qutusundan istifadə edin.",
-      "part2": "Şərab və ya Proton üçün prefiks qovluğunu dəyişdirdiyiniz halda, Proton fərqli prefiks (/pfx) və istifadəçi adından (buxarlayıcı) istifadə etdiyi üçün yolu yenidən yoxlamalı olacaqsınız. Beləliklə, siz sinxronizasiya parametrləri səhifəsindən sadəcə olaraq cari yolu silə və Heroic üçün düzgün prefikslə qovluğu bir daha təxmin etmək üçün yenidən geri qayıda bilərsiniz.",
-      "part3": "Manual Sync: Buludda saxlanan oyunları yükləmək üçün Download seçin. Yerliləri buludlara yükləmək üçün yükləyin. Məcburi Endirmə və Məcburi Yükləmə yerli və ya buludda olan versiyaya məhəl qoymayacaq.",
-      "part4": "Sync Saves Avtomatik olaraq hər dəfə Oyuna Başladığınız zaman və oyunu bitirdikdən sonra yadda saxlamaları sinxronlaşdıracaq."
-    },
-    "vkd3d": "VKD3D DirectX 12 oyunları üçün Vulkan əsaslı tərcümə qatıdır. Aktivləşdirmə uyğunluğu əhəmiyyətli dərəcədə yaxşılaşdıra bilər. Köhnə DirectX oyunlarına heç bir təsiri yoxdur.",
-    "wine": {
-      "part1": "Qəhrəmanlıq aşağıdakı qovluqlarda Wine, Proton və CrossOver versiyalarını axtarır:",
-      "part2": "Digər yerlər üçün bu qovluqlardan birinə simvolik keçiddən istifadə edin"
-    },
+    "steam_path": {},
+    "sync": {},
     "disable_logs": "Giriş fayllarına yazılanların əksəriyyətini söndürmək üçün bu qeyd qutusunu AKTİV vəziyyətinə qoyun (kritik məlumatlar həmişə qeyd olunur). Hər hansı problemi bildirməzdən əvvəl bu ayarı SÖNDÜRLƏNDİYƏ əmin olun.",
     "title": {
-      "downloadManager": "Download Manager",
-      "accessibility": "",
-      "login": "",
-      "settings": "",
-      "wineManager": "",
-      "library": ""
+      "settings": ""
     },
     "dxfpslimit": "Sets a frame rate cap for DXVK games",
     "content": {
-      "defaultInstallPath": "",
-      "settingsDefault": "",
-      "settingsGame": "",
-      "downloadManager": "",
-      "wineManager": "",
-      "library": "",
-      "accessibility": "",
-      "login": ""
+      "defaultInstallPath": ""
     },
-    "msync": "",
     "button": {
       "open": "",
       "close": ""
-    },
-    "download_proton_steam": "",
-    "wine-hdr": "",
-    "dxvknvapi": "",
-    "WoW64": "",
-    "wine-wayland": "",
-    "advertiseAvxForRosetta": "",
-    "nvidiaprime": {
-      "details": "Multi-GPU sistemlərində oyunu göstərmək üçün xüsusi qrafik kartdan istifadə edin. Yalnız göstərmə üçün başsız GPU istifadə edən oyun noutbukları və ya stolüstü kompüterlərdə lazımdır (NVIDIA Optimus, AMD CrossFire)"
     }
   },
   "info": {
-    "heroic": {
-      "beta": "Beta",
-      "click-to-see-changelog": "Click to see changelog",
-      "newReleases": "Yeniləmə Mövcuddur!",
-      "stable": "Stabil",
-      "version": "Qəhrəmanlıq versiyası"
-    },
-    "save-sync": {
-      "searching": "Trying to detect the correct save folder (click to cancel)"
-    },
     "settings": "Parametrlər avtomatik olaraq saxlanılır",
     "version": "Şərab versiyası"
   },
   "infobox": {
     "help": "Kömək edin",
     "requirements": "Sistem Tələbləri",
-    "warning": "Warning",
-    "wine-path": "Şərab yolu",
-    "wine-prefix": {
-      "title": "Şərab prefiksi"
-    },
-    "wine-repfix": {
-      "message": "Wine, Windows proqramlarını əhatə etmək üçün WINEPREFIX adlanandan istifadə edir. Bu prefiks Şərab konfiqurasiya fayllarını və C: fayl iyerarxiyasının reproduksiyasını ehtiva edir (Windows OS-də əsas disk). C: sürücüsünün bu reproduksiyasında oyun saxlama faylları və winetricks vasitəsilə quraşdırılmış asılılıqlar saxlanılır."
-    },
-    "wine-path-invalid": "Şərab Yolu yanlışdır, lütfən, başqa birini seçin.",
-    "wine-path-none-found": "Şərab versiyası tapılmadı, Wine Manager-dən birini endirin"
+    "warning": "Warning"
   },
   "install": {
     "path": "Quraşdırma yolunu seçin"
   },
   "label": {
-    "loading": "Loading",
-    "releaseDate": ""
+    "loading": "Loading"
   },
   "library": {
     "refresh": "təzələmək",
@@ -400,7 +191,6 @@
     "gog": "GOG Login",
     "message": "Login with your platform. You can login to more than one platform at the same time.",
     "amazon": "Amazon Giriş",
-    "old-mac": "",
     "zoom": ""
   },
   "message": {},
@@ -437,7 +227,6 @@
     },
     "moved": "Hərəkət tamamlandı",
     "moving": "Hərəkətli Oyun",
-    "new-heroic-version": "Yeni \"Heroic\" versiyası təqdim edildi!",
     "refresh": {
       "error": "Github API məhdudiyyətlərinə görə ola bilsin ki, yuxarıdan buraxılışları əldə etmək mümkün olmadı! Biraz sonra yenidən cəhd edin."
     },
@@ -461,45 +250,11 @@
     "retrying": "Retrying"
   },
   "Open": "Açıq",
-  "options": {
-    "advanced": {
-      "key": "Dəyişən adı",
-      "placeHolderKey": "NAME",
-      "placeHolderValue": "Məsələn: Path/To/ExtraFiles",
-      "title": "Qabaqcıl Seçimlər (Ətraf Mühit Dəyişənləri):",
-      "value": "Dəyər"
-    },
-    "env_variables": {
-      "error": {
-        "empty_key": "Dəyişən adları boş ola bilməz",
-        "equal_sign_in_key": "Dəyişən adlarında \"=\" işarəsi ola bilməz",
-        "space_in_key": "Dəyişən adlarında boşluq ola bilməz"
-      },
-      "example": "\"=\" işarəsini DAXİL ETMƏYİN, məsələn: \"MY_FLAG=123\" kimi parametr üçün MY_FLAG-ı NAME, 123-ü VALUE-da təyin edin.",
-      "info": "Komandaya əlavə etmək üçün mühit dəyişənlərini təyin edin."
-    },
-    "gameargs": {
-      "placeholder": "Launcher Arqumentlərini bura qoyun",
-      "title": "Oyun Arqumentləri (Əmrdən sonra işləmək üçün):",
-      "error": {
-        "command": "",
-        "env": ""
-      }
-    },
-    "quote-args-with-spaces": "Xəbərdarlıq: Arqları boşluqlarla gətirdiyinizə əmin olun! Məsələn: \"yol/boşluqlarla/\"",
-    "wrapper": {
-      "args": "Arqumentlər",
-      "arguments_example": "Arqumentlərə misal: --arg; --extra-file=\"file-path/ with/spaces\"",
-      "exe": "Sarğı",
-      "placeHolderKey": "Yeni Qapaq",
-      "placeHolderValue": "Sarmalayıcı Arqumentlər",
-      "title": "Sarma əmri:"
-    }
-  },
+  "options": {},
   "other": {
     "gogdl-version": "GOGDL versiyası: ",
     "legendary-version": "Əfsanəvi Versiya: ",
-    "weblate": "Heroic tərcüməsinə kömək edin.",
+    "weblate": "Relic tərcüməsinə kömək edin.",
     "nile-version": "Nil versiyası: "
   },
   "Other": "Other",
@@ -535,227 +290,38 @@
   "search": "Oyunlar axtarın",
   "setting": {
     "addgamestosteam": "Add games to Steam automatically",
-    "alt-gogdl-bin": "İstifadə etmək üçün Alternativ GOGDL Binary seçin",
-    "alt-legendary-bin": "Alternativ Əfsanəvi Binary seçin",
-    "autodxvk": "Prefiksdə DXVK-nı Avtomatik Quraşdırın/Yeniləyin",
-    "autosync": "Avtosinxronizasiya Saxlayır",
-    "autovkd3d": "Prefiksdə VKD3D-ni Avtomatik Quraşdırın/Yeniləyin",
-    "change-target-exe": "Çalıştırmaq üçün alternativ EXE seçin",
-    "crossover-version": "Krossover versiyası",
-    "customWineProton": "Xüsusi Şərab/Proton Yolları",
-    "default-install-path": "Defolt Quraşdırma Yolu",
-    "default-steam-path": "Defolt Buxar yolu",
-    "download-no-https": "HTTPS olmadan oyunları endirin (CDN-lər üçün faydalıdır, məsələn, LanCache)",
     "dxvkfpslimit": "Limit FPS (DX9, 10 and 11)",
-    "enableFSRHack": "FSR Hack'i aktivləşdirin (Şərab versiyası onu dəstəkləməlidir)",
-    "eosOverlay": {
-      "cancelInstall": "Ləğv et",
-      "checkForUpdates": "Yeniləmələri yoxlayın",
-      "checkingForUpdates": "Güncəlləmələr yoxlanılır...",
-      "currentVersion": "Cari versiya: {{version}}",
-      "disable": "Deaktiv edin",
-      "enable": "Aktivləşdirin",
-      "install": "Yüklemek",
-      "installed": "EOS Overlay quraşdırılıb",
-      "installing": "EOS Overlay quraşdırılır...",
-      "latestVersion": "Ən son versiya: {{version}}",
-      "notInstalled": "EOS Overlay quraşdırılmayıb",
-      "notInstalledMsg": "EOS Overlay quraşdırılmayıb. Onu indi quraşdırmaq istəyirsiniz?",
-      "notInstalledTitle": "Overlay quraşdırılmayıb",
-      "remove": "Silin",
-      "removeConfirm": "EOS Overlay-i silmək istədiyinizə əminsiniz?",
-      "removeConfirmTitle": "Üst qatın silinməsini təsdiqləyin",
-      "updateNow": "Yeniləyin",
-      "updating": "Yenilənir..."
-    },
-    "esync": "Esync'i aktivləşdirin",
-    "FsrSharpnessStrenght": "FSR Kəskinlik Gücü",
-    "fsync": "Fsync-i aktivləşdirin",
-    "gamemode": "GameMode istifadə edin (Feral Game Mode quraşdırılmalıdır)",
     "language": "Tətbiq dilini seçin",
-    "library_top_option": {
-      "disabled": "Əlil",
-      "favourites": "Sevimli Oyunlar",
-      "recently_played": "Son Oynanan Oyunlar",
-      "recently_played_installed": "Son Oynanan Oyunlar (Yalnız Quraşdırılıb)"
-    },
-    "library_top_section": "Kitabxananın yuxarı bölməsi",
     "log": {
       "copy-to-clipboard": "Giriş məzmununu panoya kopyalayın",
       "current-log": "Cari Qeyd",
-      "instructions_title": "Problemi necə bildirmək olar?",
-      "last-log": "Son Giriş",
-      "no-file": "Heç bir jurnal faylı tapılmadı",
-      "show-in-folder": "Günlük faylını qovluqda göstərin",
-      "upload": {
-        "actions": "Action",
-        "delete": "",
-        "hours-ago": "",
-        "title": "",
-        "upload-date": "",
-        "error": {
-          "title": "",
-          "manual_upload": "",
-          "content": ""
-        },
-        "uploading": {
-          "title": "",
-          "content": ""
-        },
-        "open": "",
-        "header": "",
-        "no-files": "",
-        "confirm": {
-          "content": "",
-          "title": ""
-        },
-        "minutes-ago": "",
-        "done": {
-          "content": "",
-          "title": ""
-        },
-        "button": ""
-      },
-      "descriptiveNames": {
-        "legendary": "",
-        "nile": "",
-        "gog": "",
-        "zoom": "",
-        "game-log": "",
-        "heroic": ""
-      },
-      "show-uploads": ""
-    },
-    "manualsync": {
-      "download": "Yüklə",
-      "forcedownload": "Yükləməyə məcbur edin",
-      "forceupload": "Yükləməyə məcbur edin",
-      "sync": "Sinxronizasiya",
-      "syncing": "Sinxronizasiya",
-      "title": "Manual Sync Saves",
-      "upload": "Yükləmək"
+      "last-log": "Son Giriş"
     },
     "maxworkers": "Yükləyərkən İşçilərin Maksimum Sayı",
-    "offlinemode": "Oyunu Oflayn Çalışın",
-    "prefered_language": "Üstünlük Verilən Dil (Dil Kodu)",
-    "preferSystemLibs": "Sistem kitabxanalarına üstünlük verin",
-    "runexe": {
-      "message": "Faylları buraya sürükləyin və buraxın",
-      "title": "Prefiksdə EXE-ni işə salın"
-    },
-    "savefolder": {
-      "not-found": "Save folder not found, please select it manually (click to retry)",
-      "placeholder": "Oyunların dəqiq saxlanması qovluğunu seçin",
-      "warning": "Please check twice if the path is correct (click to retry)"
-    },
     "select_theme": "Mövzu seçin",
-    "showfps": "FPS göstərin (DX9, 10 və 11)",
-    "start-in-tray": "Minimallaşdırılmış başlayın",
-    "steamruntime": "Steam Runtime istifadə edin",
-    "winecrossoverbottle": "Krossover şüşə",
-    "wineprefix": "WinePrefix qovluğu",
-    "wineversion": "Şərab versiyası",
-    "autoUpdateGames": "Oyunları avtomatik yeniləyin",
-    "ignoreGameUpdates": "Oyun yeniləmələrinə məhəl qoymayın",
-    "disable_logs": "Qeydləri deaktiv edin",
-    "showMetalOverlay": "Statistikanı göstərin",
-    "alt-nile-bin": "Alternativ Nil Binarını seçin",
-    "WoW64": "",
-    "frameless-window": {
-      "confirmation": {
-        "message": "",
-        "title": ""
-      },
-      "description": ""
-    },
-    "download-proton-steam": "",
-    "scripts": "",
-    "wineWayland": "",
     "experimental_features": {
       "cometSupport": "",
       "enableNewDesign": "",
       "enableHelp": "",
       "zoomPlatform": ""
     },
-    "hdr": "",
-    "autodxvknvapi": "",
-    "show_valve_proton": {
-      "wine_selector_warning": "",
-      "confirmation": {
-        "show": "",
-        "title": "",
-        "dont_show": "",
-        "message": ""
-      },
-      "label": "",
-      "info_label": ""
-    },
-    "dxfpslimit": "",
-    "allow_installation_broken_anticheat": {
-      "confirmation": {
-        "understand": "",
-        "title": "",
-        "message": ""
-      },
-      "label": ""
-    },
-    "enable-quick-sync-menu": "",
-    "analyticsOptIn": "",
     "verboseLogs": {
       "description": ""
     },
-    "msync": "",
     "advertiseAvxForRosetta": "",
-    "custom_css": {
-      "warning": ""
-    },
-    "start-in-console-mode": "",
     "disable_gog_presence": ""
   },
   "settings": {
-    "battlEyeRuntime": {
-      "installing": "BattlEye Runtime quraşdırılır...",
-      "name": "BattlEye AntiCheat Runtime"
-    },
     "clear-cache": "Qəhrəmanlıq önbelleğini təmizləyin",
-    "copiedToClipboard": "Buferə kopyalandı!",
-    "copyToClipboard": "Bütün Parametrləri Panoya kopyalayın",
-    "default_hint": "Changes in this section only apply as default values when installing games. If you want to change the settings of an already installed game, use the Settings button in the game page.",
-    "eacRuntime": {
-      "gameModeRequired": {
-        "title": "GameMode tələb olunur"
-      },
-      "installing": "EAC Runtime quraşdırılır...",
-      "name": "EasyAntiCheat İş vaxtı"
-    },
-    "gameMode": {
-      "eacRuntimeEnabled": {
-        "message": "GameMode olmadan düzgün işləməyəcək EAC işləmə vaxtı işə salınıb. EAC Runtime və GameMode-u deaktiv etmək istəyirsiniz?",
-        "title": "EAC işləmə vaxtı aktivləşdirildi"
-      }
-    },
     "log": {
       "long-log-hint": "Giriş kəsildi, son 1000 sətir göstərilir!"
     },
     "navbar": {
-      "advanced": "Qabaqcıl",
-      "games_settings_defaults": "Game Defaults",
       "general": "General",
       "log": "Giriş",
-      "other": "Digər",
-      "sync": "Saxla-Sinxronizasiya",
-      "wineExt": "Şərab uzantıları",
-      "systemInformation": "",
-      "legacy": ""
+      "wineExt": "Şərab uzantıları"
     },
     "open-config-file": "Konfiqurasiya faylını açın",
-    "reset-heroic": "Qəhrəmanı sıfırlayın",
-    "saves": {
-      "label": "Məkanı Saxla:",
-      "warning": "Bulud Saxlama funksiyası Beta-dadır, lütfən, sinxronizasiya etməzdən əvvəl yaddaşı ehtiyat nüsxəsini çıxarın (nəsə səhv olarsa)",
-      "not_supported": "",
-      "gog_linux_native_warning": ""
-    },
     "advanced": {
       "details": "Təfərrüatlar",
       "clearCache": {
@@ -770,52 +336,15 @@
         "help2": "",
         "help4": ""
       },
-      "title": {
-        "resetHeroic": "",
-        "clearCache": ""
-      },
-      "resetHeroic": {
-        "help": ""
-      }
+      "title": {}
     },
-    "launchOptions": "Başlama Seçimləri...",
-    "legacy_warning": "",
-    "systemInformation": {
-      "cpu": "",
-      "gpuWithNumber": "",
-      "cpuDescription": "",
-      "legendaryVersion": "",
-      "systemSpecifications": "",
-      "steamDeck": "",
-      "gpuDriver": "",
-      "os": "",
-      "gpu": "",
-      "gogdlVersion": "",
-      "osVersion": "",
-      "software": "",
-      "cometVersion": "",
-      "memoryStats": "",
-      "systemModel": "",
-      "showDetailed": "",
-      "memory": "",
-      "copyToClipboard": "",
-      "heroicVersion": "",
-      "nileVersion": ""
-    },
-    "experimental_features": {
-      "title": ""
-    },
-    "offline": {
-      "warning": ""
-    },
+    "experimental_features": {},
+    "offline": {},
     "steamgriddb": {
       "apikey": {
         "title": "",
         "placeholder": "",
         "placeholder_saved": ""
-      },
-      "help": {
-        "description": ""
       }
     }
   },
@@ -834,24 +363,11 @@
   "title": {
     "allGames": "Bütün Oyunlar"
   },
-  "toolbox": {
-    "settings": {
-      "default-wineprefix": "Yeni konfiqurasiyalar üçün standart prefiks qovluğunu seçin",
-      "wineprefix": "Yeni Şərab Prefiksləri üçün Qovluq seçin"
-    }
-  },
-  "tooltip": {
-    "addpath": "Yeni Yol əlavə edin",
-    "removepath": "Yolu Sil"
-  },
   "tray": {
     "about": "Haqqında",
     "quit": "Çıxın",
     "reload": "Yenidən yükləyin",
     "show": "Göstər"
-  },
-  "two_col_table": {
-    "save_hint": "Bu cədvəldəki dəyişikliklər avtomatik olaraq yadda saxlanmır. + düyməsini basın"
   },
   "Update Available!": "Yeniləmə Mövcuddur!",
   "userselector": {
@@ -871,24 +387,6 @@
       "reload": "Səhifəni yenidən yükləyin"
     }
   },
-  "wine": {
-    "actions": "Fəaliyyət",
-    "manager": {
-      "link": "Şərab meneceri",
-      "not-found": "No Wine versions found. Please click the refresh icon to try again.",
-      "title": "Şərab meneceri",
-      "unzipping": "Açma",
-      "search": "",
-      "loading": "",
-      "open_folder": "",
-      "update": "Update",
-      "settings": "",
-      "no-results": ""
-    },
-    "release": "Buraxılış tarixi",
-    "size": "Ölçü",
-    "notes": ""
-  },
   "externalLink": {
     "dontAskAgain": "Bir daha soruşma",
     "warning": "Siz xarici keçid açmaq üzrəsiniz."
@@ -906,17 +404,6 @@
   "amazon": "Amazon",
   "Amazon Games": "Amazon Oyunları",
   "prime-gaming": "Baş Oyun",
-  "winetricks": {
-    "install": "Install",
-    "loading": "Loading",
-    "no-components": "",
-    "installing": "",
-    "openGUI": "",
-    "search": "",
-    "loading-available": "",
-    "nothingYet": "",
-    "installed": ""
-  },
   "category-settings": {
     "cancel": "Cancel",
     "warning": "Warning",
@@ -931,9 +418,7 @@
     "maximize": "",
     "restore": ""
   },
-  "launch": {
-    "options": "Başlama Seçimləri..."
-  },
+  "launch": {},
   "categories-manager": {
     "confirm-rename": "",
     "cancel-remove": "",
@@ -950,25 +435,7 @@
     "noGames": "",
     "noResults": ""
   },
-  "wineExplanation": {
-    "proton-ge": "",
-    "gpt": "",
-    "wine-crossover": "",
-    "wine-staging-macos": ""
-  },
-  "steamgriddb": {
-    "error": {
-      "no-games": "",
-      "no-grids": "",
-      "search": "",
-      "grids": ""
-    },
-    "picker": {
-      "search": "",
-      "title": "",
-      "select-game": ""
-    }
-  },
+  "steamgriddb": {},
   "console": {
     "update": {
       "hintPrefix": "",

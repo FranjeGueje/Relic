@@ -155,14 +155,9 @@
     "installedPlatform": "Platformă instalată",
     "path": "Cale De Instalare",
     "size": "Mărime",
-    "syncsaves": "Salvări sincronizate",
     "version": "Versiune",
-    "apple-gaming-wiki": "Evaluare AppleGamingWiki",
     "clickToOpen": "Faceți clic pentru a deschide",
-    "game-scores": "Scoruri de joc",
     "installedInfo": "Informații instalate",
-    "protondb-compatibility-info": "Nivelul de compatibilitate cu protoni",
-    "steamdeck-compatibility-info": "Compatibilitate cu SteamDeck",
     "third-party-app": "Manager Third-Party"
   },
   "install": {
@@ -172,15 +167,7 @@
     "path-not-writtable": "Atenție: este posibil ca calea să nu poată fi scrisă.",
     "space-after-install": "După instalare",
     "wineprefix": "WinePrefix",
-    "wineversion": "Versiune Wine",
-    "anticheat-warning": {
-      "ok": "Ok",
-      "cancel": "Nu",
-      "disabled_installation": "Acest joc folosește software anticheat care nu este compatibil cu sistemul tău de operare sau suportul nu a fost activat de dezvoltatorii jocului. Asta înseamnă că funcțiile multiplayer nu vor funcționa, iar tu (sau echipa Heroic) nu puteți face nimic în privința asta. <br /><br /> Pentru a instala acest joc și a-l încerca oricum, mergi la Setări, Avansat și bifează opțiunea de a permite instalarea jocurilor cu anticheat defect sau refuzat. <br /><br />Reține că nu există nicio soluție pentru asta și vei risca să fii restricționat (Ban Permanent) în joc.",
-      "install_anyway": "Da (Ințeleg că funcțiile multiplayer nu vor funcționa)",
-      "multiplayer_message": "Suportul pentru anti-cheat este defect sau refuzat. Jocul se poate deschide, dar funcțiile multiplayer nu vor funcționa. Doriți să îl instalați oricum?",
-      "title": "Anti-cheat defect/refuzat"
-    }
+    "wineversion": "Versiune Wine"
   },
   "label": {
     "game": {
@@ -202,7 +189,6 @@
       "pleaseWait": "Please wait...",
       "installation": "Opriți instalarea"
     },
-    "winetricks": "",
     "redist": ""
   },
   "launch": {
@@ -210,23 +196,18 @@
     "default": ""
   },
   "not_logged_in": {
-    "epic": "You are not logged in with an Epic account in Heroic. Don't use the store page to login, click the following button instead:",
-    "gog": "You are not logged in with a GOG account in Heroic. Don't use the store page to login, click the following button instead:",
+    "epic": "You are not logged in with an Epic account in Relic. Don't use the store page to login, click the following button instead:",
+    "gog": "You are not logged in with a GOG account in Relic. Don't use the store page to login, click the following button instead:",
     "login": "Log in",
     "title": "You are NOT logged in",
-    "amazon": "You are not logged in with an Epic account in Heroic. Don't use the store page to login, click the following button instead:",
-    "zoom": "You are not logged in with a GOG account in Heroic. Don't use the store page to login, click the following button instead:"
+    "amazon": "You are not logged in with an Epic account in Relic. Don't use the store page to login, click the following button instead:",
+    "zoom": "You are not logged in with a GOG account in Relic. Don't use the store page to login, click the following button instead:"
   },
   "report_problem": "Raportați o problemă la rularea acestui joc",
   "sdl": {
     "title": "Selectați componentele de instalat"
   },
-  "setting": {
-    "winecrossoverbottle": "CrossOver Bottle",
-    "warn-use-shared-wine-config": "",
-    "show-wine-settings": "",
-    "use-shared-wine-config": ""
-  },
+  "setting": {},
   "sideload": {
     "field": {
       "title": "Title"
@@ -281,25 +262,13 @@
     "gog-goodie": "Acest joc nu pare a fi instalabil. Verificați conținutul descărcabil pe https://gog.com/account",
     "goodie": "Nu se poate instala",
     "redist": "",
-    "winetricks": "",
     "importing": "Importă"
   },
   "submenu": {
-    "addShortcut": "Adaugă scurtătură",
-    "addToSteam": "Adăugați la Steam",
     "change": "Schimbați calea de instalare",
-    "disableEosOverlay": "Dezactivați suprapunerea EOS",
-    "enableEosOverlay": "Activați EOS Overlay",
     "move": "Mută Jocul",
-    "protondb": "Verificați compatibilitatea",
-    "removeFromSteam": "Scoateți din Steam",
-    "removeShortcut": "Eliminați comenzile rapide",
-    "settings": "Setări",
-    "store": "Pagina magazinului",
     "verify": "Verificați și Reparați",
-    "extraInfo": "Informații suplimentare",
-    "logs": "Bușteni",
-    "categories": ""
+    "extraInfo": "Informații suplimentare"
   },
   "help": {
     "cloud_save_unsupported": "Acest joc nu acceptă salvări în cloud. Aceste informații sunt furnizate de dezvoltatorii jocului. Unele jocuri implementează propriul sistem de salvare în cloud.",
@@ -326,11 +295,6 @@
     },
     "nodlcs": "",
     "versionCollapsable": ""
-  },
-  "third-party-managed": {
-    "header": "",
-    "notice2": "",
-    "notice1": ""
   },
   "open-saves-folder": "",
   "Open": "",

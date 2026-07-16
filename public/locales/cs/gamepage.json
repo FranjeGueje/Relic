@@ -155,14 +155,9 @@
     "installedPlatform": "Nainstalovaná platforma",
     "path": "Adresář instalace",
     "size": "Velikost",
-    "syncsaves": "Synchronizace uložených souborů",
     "version": "Verze",
-    "apple-gaming-wiki": "Hodnocení AppleGamingWiki",
     "clickToOpen": "Kliknutím otevřete",
-    "game-scores": "Skóre hry",
     "installedInfo": "Instalované informace",
-    "protondb-compatibility-info": "Úroveň protonové kompatibility",
-    "steamdeck-compatibility-info": "Kompatibilita se SteamDeck",
     "third-party-app": "Správce třetí strany"
   },
   "install": {
@@ -172,17 +167,7 @@
     "path-not-writtable": "Varování: na cestu možná nelze zapisovat.",
     "space-after-install": "Po instalaci",
     "wineprefix": "WinePrefix",
-    "wineversion": "Verze Wine",
-    "anticheat-warning": {
-      "cancel": "Ne",
-      "message": "Podpora anticheatu je rozbitá nebo zakázaná. Hra nebude fungovat. Chcete jej přesto nainstalovat?",
-      "install": "Ano (chápu, že to nebude fungovat)",
-      "title": "Rozbitý/zakázaný anticheat",
-      "install_anyway": "Ano (rozumím, že funkce hry více hráčů nebudou fungovat)",
-      "multiplayer_message": "Podpora anticheatu je rozbitá nebo odmítnutá. Hra se může otevřít, ale nebudou fungovat funkce hry více hráčů. Chcete ji přesto nainstalovat?",
-      "ok": "Ok",
-      "disabled_installation": "Tato hra používá anticheat program, který není kompatibilní s vaším operačním systémem, nebo vývojáři hry nepovolili jeho podporu. To znamená, že funkce pro více hráčů nebudou fungovat a vy (ani tým Heroic) s tím nemůžete nic udělat.<br /><br />Chcete-li tuto hru přesto nainstalovat a vyzkoušet, přejděte do Nastavení, Rozšířené a zaškrtněte možnost povolit instalaci her s nefunkčním nebo zakázaným anticheatem.<br /><br />Upozorňujeme, že pro tuto situaci neexistuje žádné řešení a riskujete, že budete ve hře zablokován."
-    }
+    "wineversion": "Verze Wine"
   },
   "label": {
     "game": {
@@ -199,7 +184,6 @@
     },
     "launching": "Spouštění",
     "ubisoft": "Instalace Ubisoft Connect",
-    "winetricks": "Instalace balíčků Winetricks",
     "prerequisites": "Instalace závislostí",
     "redist": "Instalace Redistributables",
     "steam": {
@@ -214,19 +198,19 @@
       "hardware": "Apple Silicon M1+ (pro počítače Intel Mac Steam bude fungovat s Crossoverem)",
       "install": "Nainstalovat Steam",
       "install-path": "Cesta k instalaci Steamu",
-      "install-tooltip": "Nainstaluje se verze Steam pro systém Windows a spustí se pomocí vrstvy kompatibility Heroic. \n\n    Některé hry, zejména starší tituly, novější 3D hry nebo hry se softwarem proti podvodům, nemusí fungovat správně. \n\n    ",
+      "install-tooltip": "Nainstaluje se verze Steam pro systém Windows a spustí se pomocí vrstvy kompatibility Relic. \n\n    Některé hry, zejména starší tituly, novější 3D hry nebo hry se softwarem proti podvodům, nemusí fungovat správně. \n\n    ",
       "installation": "Instalace Steamu",
-      "launch": "Spustit Steam pomocí vrstvy kompatibility Heroic",
+      "launch": "Spustit Steam pomocí vrstvy kompatibility Relic",
       "launching": "Spouštění Steamu...",
       "macOS": "macOS 14.0 nebo novější",
-      "notification": "Po dokončení instalace vás Heroic upozorní.",
+      "notification": "Po dokončení instalace vás Relic upozorní.",
       "patience": "Pokud chcete pokračovat, buďte trpěliví, protože dokončení může trvat několik minut v závislosti na vašem internetovém připojení a konfiguraci systému.",
       "ram": "8 GB RAM",
       "recommended": "Doporučené specifikace pro lepší zážitek",
       "select-path": "Vybrat instalační složku pro Steam",
       "specificVersion-pt1": "Tím se stáhne určitá verze služby Steam z",
       "specificVersion-pt2": "archive.org",
-      "specificVersion-pt3": "zprovozněna přes Heroic, protože nové verze Steamu v systému MacOS nefungují."
+      "specificVersion-pt3": "zprovozněna přes Relic, protože nové verze Steamu v systému MacOS nefungují."
     }
   },
   "launch": {
@@ -234,23 +218,18 @@
     "default": "Výchozí"
   },
   "not_logged_in": {
-    "epic": "V Heroic nejste přihlášeni pomocí účtu Epic. K přihlášení nepoužívejte stránku obchodu, ale klikněte na následující tlačítko:",
-    "gog": "V Heroic nejste přihlášeni pomocí účtu GOG. K přihlášení nepoužívejte stránku obchodu, ale klikněte na následující tlačítko:",
+    "epic": "V Relic nejste přihlášeni pomocí účtu Epic. K přihlášení nepoužívejte stránku obchodu, ale klikněte na následující tlačítko:",
+    "gog": "V Relic nejste přihlášeni pomocí účtu GOG. K přihlášení nepoužívejte stránku obchodu, ale klikněte na následující tlačítko:",
     "login": "Log in",
     "title": "Nejste přihlášeni",
-    "amazon": "V Heroic nejste přihlášeni pomocí účtu Amazon. K přihlášení nepoužívejte stránku obchodu, ale klikněte na následující tlačítko:",
-    "zoom": "Nejste přihlášeni k účtu Zoom v Heroic. Nepoužívejte stránku obchodu k přihlášení, místo toho klikněte na následující tlačítko:"
+    "amazon": "V Relic nejste přihlášeni pomocí účtu Amazon. K přihlášení nepoužívejte stránku obchodu, ale klikněte na následující tlačítko:",
+    "zoom": "Nejste přihlášeni k účtu Zoom v Relic. Nepoužívejte stránku obchodu k přihlášení, místo toho klikněte na následující tlačítko:"
   },
   "report_problem": "Nahlásit problém se spouštěním této hry",
   "sdl": {
     "title": "Vyberte součásti k instalaci"
   },
-  "setting": {
-    "winecrossoverbottle": "CrossOver Bottle",
-    "warn-use-shared-wine-config": "Tuto možnost použijte pouze pokud víte, co děláte.<br/>Sdílení stejného prefixu pro více her může způsobit problémy, pokud jsou jejich závislosti nekompatibilní.",
-    "show-wine-settings": "Zobrazit nastavení Wine",
-    "use-shared-wine-config": "Použít sdílený prefix Wine"
-  },
+  "setting": {},
   "sideload": {
     "field": {
       "title": "Název"
@@ -310,26 +289,14 @@
     "gog-goodie": "Zdá se, že tuto hru nelze nainstalovat. Zkontrolujte obsah ke stažení na https://gog.com/account",
     "goodie": "Nelze nainstalovat",
     "prerequisites": "Instalace závislostí",
-    "winetricks": "Aplikace oprav Winetricks",
     "redist": "Instalace Redistributables ({{redist}})",
     "importing": "Importování"
   },
   "submenu": {
-    "addShortcut": "Přidat zástupce",
-    "addToSteam": "Přidat do Steamu",
     "change": "Změnit cestu instalace",
-    "disableEosOverlay": "Zakázat překrytí služby EOS",
-    "enableEosOverlay": "Povolit překrytí služby EOS",
     "move": "Přesunout hru",
-    "protondb": "Zkontrolovat kompatibilitu",
-    "removeFromSteam": "Odebrat ze Steamu",
-    "removeShortcut": "Odebrat zástupce",
-    "settings": "Nastavení",
-    "store": "Stránka obchodu",
     "verify": "Zkontrolovat a opravit",
-    "extraInfo": "Další informace",
-    "logs": "Protokoly",
-    "categories": "Kategorie"
+    "extraInfo": "Další informace"
   },
   "help": {
     "cloud_save_unsupported": "Tato hra nepodporuje ukládání do cloudu. Tyto informace poskytují vývojáři hry. Některé hry implementují svůj vlastní cloudový systém ukládání.",
@@ -348,11 +315,6 @@
     },
     "versionCollapsable": "Verze hry",
     "nodlcs": "Není dostupné žádné DLC"
-  },
-  "third-party-managed": {
-    "notice2": "Po kliknutí na Instalovat spustí Heroic aplikaci, aby dokončil proces instalace",
-    "header": "Tato hra je spravována aplikací třetí strany",
-    "notice1": "Tato hra je spravována aplikací třetí strany: „{{application_name}}“"
   },
   "wikiLink": "Důležité informace o této hře si přečtěte zde:&nbsp;<1>Otevřít stránku</1>",
   "Open": "Otevřít",

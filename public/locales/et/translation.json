@@ -11,72 +11,21 @@
     "multiplayer_may_not_work": "Mitmikmängu funktsioonid ei pruugi toimida keelatud või katkiste sohivastaste meetmete tõttu."
   },
   "box": {
-    "cache-cleared": {
-      "message": "Heroicu vahemälu puhastati.",
-      "title": "Vahemälu puhastati"
-    },
     "choose": "Valige",
-    "choose-gogdl-binary": "Vali GOGDL binaarfail (vajab taaskäivitust)",
-    "choose-legendary-binary": "Valige Legendary binaarfail",
-    "customWine": "Valige Wine või Proton-i binaar",
-    "default-install-path": "Valige Vaikimisi paigaldustee",
-    "default-steam-path": "Steami tee.",
-    "downloadNow": "Lae alla nüüd",
     "error": {
-      "add": {
-        "steam": {
-          "body": "Mängu {{game}} lisamine Steami ebaõnnestus: {{newLine}} {{error}}",
-          "title": "Viga lisamisel"
-        }
-      },
-      "credentials": {
-        "message": "Teie kasutaja andmed on aegunud, palun logige välja ja logige uuesti sisse."
-      },
-      "cx-bottle-not-found": {
-        "message": "CrossOveri pudelit \"{{bottle_name}}\" pole olemas, ei saa käivitada!",
-        "title": "CrossOveri pudelit ei leitud"
-      },
       "diskspace": {
         "message": "Ei ole piisavalt vaba kettaruumi",
         "title": "Ei ole ruumi"
       },
-      "dxvk": {
-        "message": "Viga DXVK/VKD3D installimisel! Palun kontrollige ühendust!",
-        "title": "DXVK/VKD3D viga"
-      },
-      "folder-not-found": {
-        "title": "Mängukaust tundub olevat kustutatud, kas soovite mängu paigaldatute nimekirjast eemaldada?"
-      },
-      "generic": {
-        "message": "üldine veateade",
-        "title": "Valige EXE, mida käivitada"
-      },
-      "launchAborted": "Käivitamine aborditud",
       "title": "Viga",
-      "uncaught-exception": {
-        "message": "Kinnipüüdmata erand:{{newLine}}{{error}}{{newLine}}{{newLine}} Teavitage erandist meie GitHubi repositooriumis.",
-        "title": "Tekkis ootamatu erand!"
-      },
-      "update": {
-        "message": "Midagi läks uuendusega valesti, palun kontrollige logisid või proovige hiljem uuesti!",
-        "title": "Viga uuendamisel"
-      },
       "wine-not-found": {
         "invalid": "The selected wine version was not found. Install it or select a different version in the game's settings{{newline}}Version: {{version}}{{newline}}Path: {{path}}",
         "message": "Wine'i versiooni pole valitud. Kontrolli mängu seadeid!",
         "title": "Wine'i ei leitud"
       },
-      "winetricks": {
-        "message": "Winetricks tagastas jooksmise ajal järgmise vea:{{newLine}}{{error}}",
-        "title": "Winetricksi viga"
-      },
-      "moving": "Viga mängu teisaldamisel {{error}}",
       "ubisoft-connect": {
-        "message": "Ubisoft Connecti installimine mängu eesliitesse ebaõnnestus. Selle käsitsi installimiseks vaadake meie wiki lehte aadressil https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher/wiki/How-to-install-Ubisoft-Connect-on-Linux-and-Mac.",
+        "message": "Ubisoft Connecti installimine mängu eesliitesse ebaõnnestus. Selle käsitsi installimiseks vaadake meie wiki lehte aadressil https://github.com/Relic-Games-Launcher/RelicGamesLauncher/wiki/How-to-install-Ubisoft-Connect-on-Linux-and-Mac.",
         "title": "Ubisoft Connect"
-      },
-      "legendary": {
-        "generic": "Esines tõrge! Proovige oma Epic kontost välja logida ja uuesti sisse logida. {{newline}}  {{error}}"
       },
       "steam": {
         "error": "Steami programmi ei leitud. Paigaldamine oli ilmselt kasutaja poolt tühistatud või ebaõnnestus Steami poolel.",
@@ -84,102 +33,30 @@
         "title": "Steami viga"
       },
       "executableNotFound": "Käivitatavat programmi ei leitud",
-      "executableNotFoundMessage": "Heroic ei leidnud selle mängu jaoks käivitatavat programmi. Palun määrake see käsitsi mängu seadetes.",
-      "dxmt": {
-        "message": "Viga DXMT allalaadimisel! Kontrollige oma ühendust!",
-        "title": "Viga DXMT allalaadimisel"
-      }
+      "executableNotFoundMessage": "Relic ei leidnud selle mängu jaoks käivitatavat programmi. Palun määrake see käsitsi mängu seadetes."
     },
-    "info": {
-      "update": {
-        "changelog": "Ava muudatuste logi",
-        "detail": "Kas soovite uuenduse taustal alla laadida?",
-        "message": "Saadaval on uus versioon!",
-        "message-finished": "Kas soovite Heroicu nüüd taaskäivitada?",
-        "title": "Heroic Games Launcher",
-        "title-finished": "Uuendus lõpetatud",
-        "detailNoAutoupdate": "Teie pakiformaat ei toeta automaatseid uuendusi. Palun kasutage uuendamiseks oma pakihaldurit."
-      }
-    },
+    "info": {},
     "no": "EI",
     "ok": "OK",
-    "protocol": {
-      "install": {
-        "not_installed": "Hetkel ei ole paigaldatud, kas soovite selle paigaldada?"
-      }
-    },
     "quit": {
       "message": "On pooleliolevad toimingud, kas olete kindel?",
       "title": "Välju"
     },
-    "reset-heroic": {
-      "question": {
-        "message": "Kas olete kindel, et soovite Heroicu lähtestada? See eemaldab kõik seaded ja vahemällu salvestamise, kuid ei eemalda teie paigaldatud mänge ega Epicu sisselogimise seisundit. Heroicu kompaktsed versioonid (AppImage, WinPortable jne.) peab pärast käsitsi taaskäivitama.",
-        "title": "Lähtesta Heroic"
-      }
-    },
-    "runexe": {
-      "title": "Valige EXE, mida käivitada"
-    },
-    "select": {
-      "button": "Vali",
-      "exe": "Vali EXE",
-      "script": "Vali skript ..."
-    },
+    "select": {},
     "shortcuts": {
       "message": "Töölauale ja Start Menüüsse on loodud otseteed",
-      "message-mac": "Otseteed loodi rakenduste kaustas",
       "message-remove": "Otseteed eemaldati töölaualt ja startmenüüst",
-      "message-remove-mac": "Otseteed eemaldati rakenduste kaustast",
       "title": "Otseteed"
     },
-    "sync": {
-      "button": "Valige",
-      "error": "Sobimatu tee",
-      "title": "Valige salvestuste kaust"
-    },
-    "vcruntime": {
-      "install": {
-        "message": "Visual C++ Runtime'ide allalaadimislingid on avatud. Palun paigaldage nii x86 kui ka x64 versioonid."
-      },
-      "notfound": {
-        "message": "Microsoft Visual C++ Runtime'e pole installitud, mida mõned mängud nõuavad",
-        "title": "VCRuntime ei ole paigaldatud"
-      }
-    },
     "warning": {
-      "epic": {
-        "import": "Epicu serveritel on praegu suur katkestus, mängu ei saa importida!",
-        "install": "Epicu serveritel on praegu suur katkestus, mängu ei saa paigaldada!",
-        "update": "Epicu serveritel on praegu suur katkestus, mängu ei saa uuendada!"
-      },
       "title": "Hoiatus",
-      "wine-change": {
-        "message": "Me ei leidnud selle pealkirja ({{selectedWine}}) käivitamiseks valitud Wine'i versiooni. {{newline}} Leidsime veel ühe. Kas soovite jätkata käivitamist, kasutades {{foundWine}}?",
-        "title": "Wine'i ei leitud!"
-      },
-      "sideload": {
-        "confirmExit": {
-          "title": "Kas olete kindel, et soovite lahkuda?",
-          "message": "Salvestamata edumaa võib kaduma minna"
-        }
-      },
       "snap": {
         "checkbox": "Ära enam seda teavitust näita",
-        "title": "Heroic töötab kui Snap"
-      },
-      "rosetta": {
-        "title": "Rosettat ei leitud",
-        "message": "Heroic nõuab Rosettat, et Apple Siliconi kiipidega macOS süsteemidel korralikult toimida. Palun paigaldage see macOS-i terminalist kasutades järgmist käsku: \"softwareupdate --install-rosetta\" ja taaskäivitage Heroic. "
+        "title": "Relic töötab kui Snap"
       }
     },
-    "wineprefix": "Valige WinePrefiksi kaust",
     "yes": "JAH",
-    "dontShowAgain": "Ära enam näita",
-    "choose-nile-binary": "Valige Nile programm",
     "update": "Uuenda",
-    "changelog": "Muutuste nimekiri",
-    "postpone": "Hiljem",
     "launchAnyway": "Mängi siiski",
     "shaderPreCachingDisabledMessage": "Steami Shader Pre-cache (shaderite ettelaadimine) on keelatud. Palun lülitage see töölauarežiimis Steami seadetest sisse, et mäng toimiks UMU-ga korralikult.",
     "shaderPreCachingDisabledTitle": "Shaderite ettelaadimine keelatud"
@@ -214,28 +91,10 @@
     }
   },
   "download-manager": {
-    "install-type": {
-      "install": "Paigaldus",
-      "update": "Uuendus"
-    },
-    "label": {
-      "disk": "Ketas",
-      "speed": "Allalaadimine"
-    },
     "link": "Allalaadimised",
-    "queue": {
-      "end-time": "Valmis",
-      "queue-time": "Lisatud",
-      "start-time": "Alustatud",
-      "type": "Tüüp"
-    },
-    "title": "Allalaadimised",
-    "ETA": "Eeldatav kellaaeg"
+    "title": "Allalaadimised"
   },
-  "epic": {
-    "offline-notification-body": "Võrguteenused ei pruugi täielikult töötada, kuna Epic Gamesi serverid on võrguühenduseta!",
-    "offline-notification-title": "ühenduseta"
-  },
+  "epic": {},
   "Epic Games": "Epic Games",
   "error": "Viga",
   "favourites": "Lemmikud",
@@ -280,110 +139,41 @@
     "show_updates_only": "Näita ainult uuendustega mänge"
   },
   "help": {
-    "amdfsr": "AMD FSR aitab suurendada kaadrisagedust, suurendades madalamaid resolutsioone täisekraani režiimis. Pildikvaliteet suureneb 5-st 1-le, mis toob aga kaasa kerge jõudluse vähenemise. Lubamine võib parandada jõudlust.",
-    "dxvk": "DXVK on Vulkanil põhinev tõlkekiht DirectX 9, 10 ja 11 mängude jaoks. Lubamine võib parandada ühilduvust. Võib põhjustada probleeme, eriti vanemate DirectX-mängude puhul.",
     "dxvkfpslimit": "Kehtestab kaadrisageduse piirangu DXVK mängude jaoks",
-    "esync": "Esynci eesmärk on vähendada wineserveri koormust CPU-mahukates mängudes. Lubamine võib parandada jõudlust.",
-    "fsync": "Fsynci eesmärk on vähendada wineserveri koormust CPU-mahukates mängudes. Lubamine võib parandada jõudlust toetatud Linuxi kernelitel.",
     "game_language": {
-      "fallback": "Heroicu keele kasutamiseks jätke väli tühjaks.",
       "in_game_config": "Kõik mängud ei toeta seda seadistust, mõnel on mängusisene keeleseadistus.",
       "valid_codes": "Kehtivad keelekoodid sõltuvad mängust."
     },
-    "gamemode": "Feral GameMode rakendab mängude käivitamisel süsteemile automaatseid ja ajutisi kohandusi. Lubamine võib parandada jõudlust.",
-    "other": {
-      "part4": "Kasutage ",
-      "part5": "Mängu argumendid",
-      "part6": " kutsutakse pärast käivituskäsku, näiteks: ",
-      "part7": " et jätta mõnedes mängudes käivitaja vahele jne."
-    },
-    "preferSystemLibs": "Kohandatud Wine versioonid (Wine-GE, Wine-Lutris) tarnitakse koos nende teegi sõltuvustega. Selle valiku lubamisel ignoreeritakse neid tarnitud teeke ja Wine laadib selle asemel süsteemiteeke. Hoiatus! Kui sõltuvusi ei täideta, võib tekkida probleeme.",
     "primerun": "Mitme GPU-süsteemides mängu renderdamiseks kasutage spetsiaalset graafikakaarti. Vajalik ainult mängusülearvutites või lauaarvutites, mis kasutavad renderdamiseks peata GPU-d (NVIDIA Optimus, AMD CrossFire)",
-    "steam_path": {
-      "info": "See asukoht lubab Heroicul määrata, millist Protoni versiooni Steam kasutab, et lisada Steamiväliseid mänge Steami."
-    },
-    "steamruntime": "Steami pakutavad kohandatud teegid, mis aitavad käivitada Linuxi ja Windowsi (Protoni) mänge. Lubamine võib parandada ühilduvust.",
-    "sync": {
-      "part1": "Heroic üritab ära arvata õige salvestuskausta ja see toimib enamikul juhtudel. Juhul kui kaust on vale, kasutage selle muutmiseks override-kasti.",
-      "part2": "Kui te muudate Wine'i või Proton'i prefiksi kausta, peate te tee uuesti kontrollima, kuna Proton kasutab teistsugust prefiksit (/pfx) ja kasutajanime (steamuser). Nii et võite lihtsalt kustutada praeguse faili koha, lahkuda sünkroonimise seadete lehelt ja minna uuesti tagasi, et Heroic saaks arvata veelkord kausta õige eesliitega.",
-      "part3": "Manuaalne sünkroonimine: Valige Download, et laadida alla pilve salvestatud mängude salvestused. Upload, et laadida kohalikud pilve üles. Force Download ja Force Upload ignoreerivad lokaalselt või pilves olevat versiooni.",
-      "part4": "Automaatne salvestuste sünkroonimine sünkroonib salvestused iga kord, kui alustate mängu ja pärast mängimise lõpetamist."
-    },
-    "vkd3d": "VKD3D on Vulkanil põhinev tõlkekiht DirectX 12 mängude jaoks. Selle lubamine võib ühilduvust oluliselt parandada. Ei mõjuta vanemaid DirectX mänge, nõuab DXVK-d.",
-    "wine": {
-      "part1": "Heroic otsib Wine'i, Proton'i ja CrossOveri versioone järgmistes kaustades:",
-      "part2": "Muude kohtade puhul kasutage sümboolset linki ühele neist kaustadest"
-    },
+    "steam_path": {},
+    "sync": {},
     "disable_logs": "Lülitage see märkeruut sisse, et keelata suurem osa logifailidesse kirjutamisest (oluline teave logitakse alati sisse). Enne probleemist teatamist lülitage see seade kindlasti VÄLJA.",
     "title": {
-      "accessibility": "Ligipääsetavus",
-      "login": "Sisselogimine",
-      "settings": "Seaded",
-      "downloadManager": "Allalaadimiste haldur",
-      "wineManager": "Wine'i haldur",
-      "library": "Varamu"
+      "settings": "Seaded"
     },
-    "dxvknvapi": "DXVK-NVAPI on NVAPI implementatsioon, mis on ehitatud DXVK põhjal ning Linuxi oma NVAPI põhjal, lubades DLSS-i kasutamist Nvidia graafikaprotsessoritel.",
     "content": {
-      "settingsGame": "Näitab kõiki mängu seadeid.",
-      "wineManager": "Paigalda Wine'i, Protoni, Crossoveri jms. erinevaid versioone.",
-      "defaultInstallPath": "See on vaikimisi asukoht, mida kasutatakse mängude paigaldamisel.",
-      "library": "Näitab kõiki omatud mänge.",
-      "accessibility": "Näita ligipääsetavuse seadeid.",
-      "downloadManager": "Näitab praeguseid ja eelnevaid allalaadimisi.",
-      "login": "Logi sisse erinevatesse poodidesse.",
-      "settingsDefault": "Näitab kõiki Heroicu seadeid ja mängude vaikimisi sätteid."
+      "defaultInstallPath": "See on vaikimisi asukoht, mida kasutatakse mängude paigaldamisel."
     },
-    "msync": "Msync üritab vähendada wineserveri töökulu CPU-nõudlikes mängudes. Selle lubamine võib parandada jõudlust toetatud Linuxi kernelite puhul.",
     "button": {
       "close": "Sulge abi",
       "open": "Ava abi"
     },
-    "dxfpslimit": "Kehtestab kaadrisageduse piirangu DXVK mängude jaoks",
-    "download_proton_steam": "Kui lubatud, laetakse GE-Proton alla otse Steami ühilduvustööriistade kausta, mitte Heroicu vaikimisi teele. See kasutab Steami vaiketeed, mis on määratud üleval 'Steami vaiketee' valikus.",
-    "advertiseAvxForRosetta": "Lubab toe AVX käsustiku jaoks, kui mängite Windowsi mänge Apple Siliconi Mac-idel läbi Rosetta. See võib olla vajalik teatud mängude jaoks, mis vajavad AVX-i tuge, näiteks \"Death Stranding\".",
-    "wine-hdr": "HDR täiustab värve võimendades eredaid kohti ja pakkudes sügavamat kontrasti. HDR-i toimimiseks peavad nii ekraan kui ka mäng seda toetama.",
-    "wine-wayland": "Wine-Waylandi eksperimentaalne draiver lubab mängudel otse käivituda läbi Waylandi kuvaprotokolli. Selle lubamine võib mõned mängud katki teha.",
-    "WoW64": "Wine'i WoW64 režiim lubab 32-bitistel Windowsi mängudel toimida 64-bitisel Wine'il. Selle lubamine võib muuta kogemuse sujuvamaks, aga võib ka vanemaid 32-bitiseid mänge katki teha.",
-    "nvidiaprime": {
-      "details": "Mitme GPU-süsteemides mängu renderdamiseks kasutage spetsiaalset graafikakaarti. Vajalik ainult mängusülearvutites või lauaarvutites, mis kasutavad renderdamiseks peata GPU-d (NVIDIA Optimus, AMD CrossFire)",
-      "link": "Vaata rohkem üksikasju meie vikis"
-    }
+    "dxfpslimit": "Kehtestab kaadrisageduse piirangu DXVK mängude jaoks"
   },
   "info": {
-    "heroic": {
-      "beta": "Beeta",
-      "click-to-see-changelog": "Klikkige, et näha muutuste nimekirja",
-      "newReleases": "Uuendus saadaval!",
-      "stable": "Stabiilne",
-      "version": "Heroicu versioon"
-    },
-    "save-sync": {
-      "searching": "Üritan leida õiget salvestuste kausta (kliki, et tühistada)"
-    },
     "settings": "Seaded salvestatakse automaatselt",
     "version": "Wine'i versioon"
   },
   "infobox": {
     "help": "Abi",
     "requirements": "Süsteeminõuded",
-    "warning": "Hoiatus",
-    "wine-path": "Wine'i asukoht",
-    "wine-prefix": {
-      "title": "Wine prefiks"
-    },
-    "wine-repfix": {
-      "message": "Wine kasutab Windowsi rakenduste kapseldamiseks nn WINEPREFIXi. See eesliide sisaldab Wine'i konfiguratsioonifaile ja C: (Windows OSi põhiketta) failihierarhia reproduktsiooni. Sellesse C: ketta reproduktsiooni salvestatakse teie mängu salvestusfailid ja winetricks'i kaudu paigaldatud sõltuvused."
-    },
-    "wine-path-invalid": "Wine'i asukoht on kehtetu, valige mõni muu.",
-    "wine-path-none-found": "Wine'i versiooni ei leitud, laadige see alla Wine'i haldurist"
+    "warning": "Hoiatus"
   },
   "install": {
     "path": "Valige paigaldustee"
   },
   "label": {
-    "loading": "Laadimine",
-    "releaseDate": "Väljalaske kuupäev"
+    "loading": "Laadimine"
   },
   "library": {
     "refresh": "Värskenda",
@@ -408,7 +198,6 @@
     "gog": "GOG-i sisselogimine",
     "message": "Logi sisse oma platvormiga. Võite samaaegselt olla sisse logitud mitmesse platvormi.",
     "amazon": "Amazoni sisselogimine",
-    "old-mac": "Teie macOS versioon on {{version}}. Sisselogimiseks on vajalik macOS 12 või uuem.",
     "zoom": "Zoomi sisselogimine"
   },
   "message": {},
@@ -445,7 +234,6 @@
     },
     "moved": "Teisaldamine on lõpule viidud",
     "moving": "Mängu liigutamine",
-    "new-heroic-version": "Ilmus uus Heroicu versioon!",
     "refresh": {
       "error": "Ei saanud hankida väljalaskeid upstream'ist, võib-olla Githubi API piirangute tõttu! Proovige hiljem uuesti."
     },
@@ -469,45 +257,11 @@
     "retrying": "Proovin uuesti"
   },
   "Open": "Avatud",
-  "options": {
-    "advanced": {
-      "key": "Muutuja nimi",
-      "placeHolderKey": "NIMI",
-      "placeHolderValue": "Nt: Teekond/Lisa/Failideni",
-      "title": "Keskkonnamuutujad",
-      "value": "Väärtus"
-    },
-    "env_variables": {
-      "error": {
-        "empty_key": "Muutujate nimed ei saa olla tühjad",
-        "equal_sign_in_key": "Muutujate nimed ei tohi sisaldada märki \"=\"",
-        "space_in_key": "Muutujate nimed ei tohi sisaldada tühikuid"
-      },
-      "example": "ÄRGE lisage märki \"=\", nt: sellise seadistuse nagu \"MY_FLAG=123\" puhul määrake NAME-sse MY_FLAG ja VALUE-sse 123.",
-      "info": "Määra keskkonnamuutujad, mis lisatakse käsule."
-    },
-    "gameargs": {
-      "placeholder": "Pange siia käiviti argumendid",
-      "title": "Mängu argumendid (käivitatakse pärast käsku):",
-      "error": {
-        "command": "Steami %command% süntaks ei ole kõlblik mänguargumentide jaoks.",
-        "env": "Keskkonnamuutujaid (\"environment variables\") peab seadistama allpool olevas tabelis."
-      }
-    },
-    "quote-args-with-spaces": "Hoiatus: Veenduge, et tühikutega argumendid oleksid tsiteeritud! Näiteks: \"path/with spaces/\"",
-    "wrapper": {
-      "args": "Argumendid",
-      "arguments_example": "Argumentide näide: --arg; --extra-file=\"file-path/ with/spaces\"",
-      "exe": "Ümbris",
-      "placeHolderKey": "Uus ümbris",
-      "placeHolderValue": "Ümbrise argumendid",
-      "title": "Ümbrise käsklus:"
-    }
-  },
+  "options": {},
   "other": {
     "gogdl-version": "GOGDL versioon: ",
     "legendary-version": "Legendary versioon: ",
-    "weblate": "Aidake tõlkida Heroicut.",
+    "weblate": "Aidake tõlkida Relicut.",
     "nile-version": "Nile Version: "
   },
   "Other": "Muu",
@@ -543,132 +297,15 @@
   "search": "Otsi mänge",
   "setting": {
     "addgamestosteam": "Lisa mängud Steami automaatselt",
-    "alt-gogdl-bin": "Valige alternatiivne GOGDL binaarfail",
-    "alt-legendary-bin": "Valige alternatiivne Legendary binaarfail",
-    "autodxvk": "DXVK automaatne paigaldamine/uuendamine prefiksile",
-    "autosync": "Automaatne salvestiste sünkroonimine",
-    "autovkd3d": "VKD3D automaatne paigaldamine/uuendamine prefiksile",
-    "change-target-exe": "Vali alternatiivne EXE käivitamiseks",
-    "crossover-version": "Crossoveri/Wine'i versioon",
-    "customWineProton": "Kohandatud Wine/Proton teed",
-    "default-install-path": "Vaikimisi paigaldustee",
-    "default-steam-path": "Steami vaiketee",
-    "download-no-https": "Mängude allalaadimine ilma HTTPS-ita (kasulik CDNide jaoks, nt LanCache)",
     "dxvkfpslimit": "Piira kaadrisagedust (DX9, 10 ja 11)",
-    "enableFSRHack": "Luba FSR häkk (Wine'i versioon peab seda toetama)",
-    "eosOverlay": {
-      "cancelInstall": "Tühista",
-      "checkForUpdates": "Kontrolli uuendusi",
-      "checkingForUpdates": "Uuenduste otsimine...",
-      "currentVersion": "Praegune versioon: {{version}}",
-      "disable": "Lülita välja",
-      "enable": "Luba",
-      "install": "Paigaldus",
-      "installed": "EOS-i ülekate on paigaldatud",
-      "installing": "EOS-i ülekatet paigaldatakse...",
-      "latestVersion": "Uusim versioon: {{version}}",
-      "notInstalled": "EOS-i ülekate ei ole paigaldatud",
-      "notInstalledMsg": "EOS-i ülekate pole paigaldatud. Kas soovite selle kohe paigaldada?",
-      "notInstalledTitle": "Ülekate pole paigaldatud",
-      "remove": "Eemalda",
-      "removeConfirm": "Kas olete kindel, et soovite EOS-i ülekatte eemaldada?",
-      "removeConfirmTitle": "Ülekatte eemaldamise kinnitamine",
-      "updateNow": "Uuenda",
-      "updating": "Uuendamine..."
-    },
-    "esync": "Luba Esync",
-    "FsrSharpnessStrenght": "FSR teravuse tugevus",
-    "fsync": "Luba Fsync",
-    "gamemode": "Kasuta GameMode'i (Feral Game Mode peab olema paigaldatud)",
     "language": "Valige rakenduse keel",
-    "library_top_option": {
-      "disabled": "Keelatud",
-      "favourites": "Lemmikmängud",
-      "recently_played": "Hiljuti mängitud mängud",
-      "recently_played_installed": "Hiljuti mängitud mängud (ainult paigaldatud)"
-    },
-    "library_top_section": "Teegi ülemine osa",
     "log": {
       "copy-to-clipboard": "Kopeeri logi sisu lõikelauale",
       "current-log": "Praegune logi",
-      "instructions_title": "Kuidas teatada probleemist?",
-      "last-log": "Viimane logi",
-      "no-file": "Logifaili ei leitud",
-      "show-in-folder": "Kuva logifail kaustas",
-      "upload": {
-        "actions": "Toimingud",
-        "delete": "Taotle logifaili kustutamist",
-        "done": {
-          "content": "Üles laetud asukohta {{url}} (URL kopeeritud lõikelauale)",
-          "title": "Üleslaadimine lõpetatud"
-        },
-        "button": "Lae üles logifail",
-        "confirm": {
-          "content": "Kas soovite tõesti üles laadida \"{{name}}\"?",
-          "title": "Lae logifail üles?"
-        },
-        "error": {
-          "content": "Ei suutnud logifaili üles laadida. Üksikasjade jaoks kontrollige Heroicu üldist logi",
-          "title": "Üleslaadimine ebaõnnestus"
-        },
-        "header": "Üles laetud logifailid",
-        "hours-ago": "Üles laetud {{hoursAgo, relativetime(hours)}}",
-        "minutes-ago": "Üles laetud {{minutesAgo, relativetime(minutes)}}",
-        "no-files": "Ühtegi logifaili ei laetud üles",
-        "open": "Ava logifaili üleslaadimine",
-        "title": "Logi pealkiri",
-        "upload-date": "Üleslaadimise kuupäev",
-        "uploading": {
-          "content": "Laen logifaili üles...",
-          "title": "Üleslaadimine"
-        }
-      },
-      "descriptiveNames": {
-        "heroic": "Üldine Heroicu logi",
-        "legendary": "Epic Games / Legendary logi",
-        "game-log": "{{gameTitle}} mängu logi",
-        "gog": "GOG logi",
-        "nile": "Amazon / Nile logi",
-        "zoom": "Zoomi logi"
-      },
-      "show-uploads": "Näita üles laetud logifaile"
-    },
-    "manualsync": {
-      "download": "Laadi alla",
-      "forcedownload": "Sunni alla laadima",
-      "forceupload": "Sunni üleslaadimine",
-      "sync": "Sünkrooni",
-      "syncing": "Sünkroonimine",
-      "title": "Käsitsi salvestuste sünkroonimine",
-      "upload": "Laadi üles"
+      "last-log": "Viimane logi"
     },
     "maxworkers": "Töötajate maksimaalne arv allalaadimisel",
-    "offlinemode": "Käivita mäng võrguühenduseta",
-    "prefered_language": "Eelistatud keel (keelekood)",
-    "preferSystemLibs": "Eelista süsteemiteeke",
-    "runexe": {
-      "message": "Lohistage failid siia",
-      "title": "Käivita EXE prefiksil"
-    },
-    "savefolder": {
-      "not-found": "Salvestuste kausta ei leitud, palun valige see käsitsi (klikkige, et uuesti proovida)",
-      "placeholder": "Valige täpne mängude salvestiste kaust",
-      "warning": "Palun kontrollige veelkord, kas tee on õige (klikkige, et uuesti proovida)"
-    },
     "select_theme": "Valige teema",
-    "showfps": "Näita kaadrisagedust (DX9, 10 ja 11)",
-    "start-in-tray": "Käivita minimeeritult",
-    "steamruntime": "Kasuta Steam Runtime'i",
-    "winecrossoverbottle": "CrossOveri pudel",
-    "wineprefix": "WinePrefiksi kaust",
-    "wineversion": "Wine'i versioon",
-    "autoUpdateGames": "Mängude automaatne värskendamine",
-    "ignoreGameUpdates": "Ignoreeri mängu värskendusi",
-    "disable_logs": "Keela logid",
-    "showMetalOverlay": "Kuva statistika ülekate",
-    "alt-nile-bin": "Valige mõni muu Nile programm",
-    "autodxvknvapi": "DXVK-NVAPI automaatne paigaldamine/uuendamine prefiksile",
-    "msync": "Luba Msync",
     "experimental_features": {
       "enableHelp": "Abi komponent",
       "enableNewDesign": "Uus disain",
@@ -677,108 +314,34 @@
       "cometSupport": "Comet tugi",
       "zoomPlatform": "Zoomi platvormi tugi (ainult Linux)"
     },
-    "frameless-window": {
-      "confirmation": {
-        "message": "See võimalus on veel eksperimentaalne. Kui kohtate probleeme, andke neist teada GitHubis.",
-        "title": "Eksperimentaalsed funktsioonid"
-      },
-      "description": "Kasuta ääretut akent (restart vajalik)"
-    },
-    "allow_installation_broken_anticheat": {
-      "confirmation": {
-        "message": "Mängud katkiste või keelatud sohivastaste meetmetega võivad toimida, aga mitmikmängu funktsioonid ei toimi. Ärge paluge tuge, kui olete sellest paigaldamise hetkel teadlik.",
-        "title": "Kas olete kindel?",
-        "understand": "Ma saan aru"
-      },
-      "label": "Luba katkiste või keelatud sohivastaste meetmetega mängude paigaldamine"
-    },
     "verboseLogs": {
       "description": "Luba üksikasjalised logid"
     },
-    "custom_css": {
-      "warning": "Hoiatus: see rakendub tervele eesliidesele. See tähendab, et vale stiil võib teha Heroicu kasutuskõlbmatuks. Kui vaja, võib seda sätet käsitsi muuta failis `~/.config/heroic/config.json`. ÄRGE KOPEERIGE stiile allikatest, mida te ei usalda."
-    },
     "advertiseAvxForRosetta": "Kuuluta Rosettale AVX-tuge",
-    "download-proton-steam": "Lae alla GE-Proton Steami kausta",
-    "dxfpslimit": "Piira DirectX mängude kaadrisagedust",
-    "hdr": "Luba HDR",
-    "wineWayland": "Luba Wine-Wayland (eksperimentaalne) (Wine'i versioon peab seda toetama)",
     "allow_non_ge_proton": {
       "confirmation": {
         "title": "Kas olete kindel?",
         "dont_show": "Ära näita neid",
-        "message": "Soovitame Heroicuga kasutamiseks GE-Protonit, sest Protoni versioonidel, mis ei ole GE, puuduvad winetricks ja protonfixes. Võite neid see-eest siiski kasutada.",
+        "message": "Soovitame Relicuga kasutamiseks GE-Protonit, sest Protoni versioonidel, mis ei ole GE, puuduvad winetricks ja protonfixes. Võite neid see-eest siiski kasutada.",
         "show": "Ma saan aru, näita neid"
       },
       "info_label": "Mitte-GE Protoni versioonid ignoreeritud",
       "label": "Luba mitte-GE Protoni versioone mängude mängimiseks",
       "wine_selector_warning": "Mitte-GE Protoni versioone vaikimisi ignoreeritakse, luba need täpsemates globaalsetes seadetes"
     },
-    "analyticsOptIn": "Saada anonüümseid andmeid, et aidata Heroicu arendamist",
-    "show_valve_proton": {
-      "confirmation": {
-        "dont_show": "Ära näita neid",
-        "show": "Ma saan aru, näita neid",
-        "title": "Kas olete kindel?",
-        "message": "Soovitame Heroicuga kasutada kohandatud Protoni variante (GE-Proton, Proton-CachyOS jms.), kuna Valve'i Protoni versioonidel puuduvad winetricks ja protofixes. Kui soovite, võite neid siiski kasutada."
-      },
-      "label": "Luba mitte-GE Protoni versioone mängude mängimiseks",
-      "wine_selector_warning": "Mitte-GE Protoni versioone vaikimisi ignoreeritakse, luba need täpsemates globaalsetes seadetes",
-      "info_label": "Valve'i Protoni versioonid eiratud"
-    },
-    "WoW64": "Luba WoW64 (eksperimentaalne)",
-    "scripts": "Skriptid:",
-    "enable-quick-sync-menu": "Luba kiire salvestuste sünkroonimine mängu lehel",
-    "disable_gog_presence": "Keela GOG Presence'i uuendused",
-    "start-in-console-mode": "Alusta Konsoolirežiimis",
-    "nvidiaprime": {
-      "description": "Sunni NVIDIA Optimuse või AMD Dynamic Switchable Graphics dGPU kasutamist. Kasutage seda AINULT OpenGL-i ja Vulkani mängude puhul."
-    }
+    "disable_gog_presence": "Keela GOG Presence'i uuendused"
   },
   "settings": {
-    "battlEyeRuntime": {
-      "installing": "BattlEye Runtime paigaldamine...",
-      "name": "BattlEye AntiCheat Runtime"
-    },
-    "clear-cache": "Tühjenda Heroicu vahemälu",
-    "copiedToClipboard": "Kopeeritud lõikelauale!",
-    "copyToClipboard": "Kopeeri kõik seaded lõikelauale",
-    "default_hint": "Muutused selles sektsioonis rakenduvad vaikimisi ainult mängude paigaldamisel. Kui soovite muuta juba paigaldatud mängu seadeid, kasutage Seadete nuppu mängu leheküljel.",
-    "eacRuntime": {
-      "gameModeRequired": {
-        "title": "GameMode on vajalik"
-      },
-      "installing": "EAC Runtime paigaldamine...",
-      "name": "EasyAntiCheat Runtime"
-    },
-    "gameMode": {
-      "eacRuntimeEnabled": {
-        "message": "EAC runtime on sisse lülitatud, mis ei tööta õigesti ilma GameMode'ita. Kas soovite lülitada välja EAC runtime'i ja GameMode'i?",
-        "title": "EAC runtime sisse lülitatud"
-      }
-    },
+    "clear-cache": "Tühjenda Relicu vahemälu",
     "log": {
       "long-log-hint": "Logi on kärbitud, näidatakse viimased 1000 rida!"
     },
     "navbar": {
-      "advanced": "Täpsem",
-      "games_settings_defaults": "Mängude vaikimisi seaded",
       "general": "Üldine",
       "log": "Logi",
-      "other": "Muu",
-      "sync": "Pilvesalvestuste sünkroniseerimine",
-      "wineExt": "Wine'i laiendused",
-      "systemInformation": "Süsteemi teave",
-      "legacy": "Igand"
+      "wineExt": "Wine'i laiendused"
     },
     "open-config-file": "Ava konfiguratsioonifail",
-    "reset-heroic": "Lähtesta Heroic",
-    "saves": {
-      "label": "Salvestuste asukoht:",
-      "warning": "Pilvesalvestuse funktsioon on beetaversioonis, enne sünkroonimist varundage oma salvestused (juhuks, kui midagi läheb valesti)",
-      "gog_linux_native_warning": "Linuxil otse mängivad mängud ei toeta GOG pilvesalvestusi. Kasutage selle asemel Windowsi versiooni.",
-      "not_supported": "See mäng ei toeta pilvesalvestusi."
-    },
     "advanced": {
       "clearCache": {
         "help8": "Paigaldatud mängud",
@@ -788,57 +351,20 @@
         "help7": "Sisselogimine poodi",
         "help6": "See EI kustuta:",
         "help1": "See toiming lähtestab järgmised vahemälud:",
-        "help10": "Heroicu konfiguratsioon",
+        "help10": "Relicu konfiguratsioon",
         "help2": "Kolmanda osapoole mängude teave (skoorid, steam compatibility, howlongtobeat, pcgamingwiki, applegamingwiki)",
         "help5": "Amazon varamu teave (mängude loend, installeerimisdialoogi teave)"
       },
-      "title": {
-        "resetHeroic": "Lähtesta Heroic",
-        "clearCache": "Tühjenda vahemälu"
-      },
-      "resetHeroic": {
-        "help": "See eemaldab kõik seaded ja vahemälud, aga ei eemalda teie installeeritud mänge ega Epicu sisselogimise seisundit. Heroicu kompaktseid versioone (AppImage, WinPortable jne.) peab pärast käsitsi taaskäivitama."
-      },
+      "title": {},
       "details": "Üksikasjad"
     },
-    "systemInformation": {
-      "osVersion": "Versioon {{versionNumber}}",
-      "software": "Tarkvara:",
-      "gogdlVersion": "Gogdl: {{gogdlVersion}}",
-      "legendaryVersion": "Legendary: {{legendaryVersion}}",
-      "gpuDriver": "Draiver: {{driverVersion}}",
-      "gpuWithNumber": "Graafikaprotsessor {{number}}:",
-      "systemModel": "Süsteemi mudel:",
-      "os": "Operatsioonisüsteem:",
-      "memoryStats": "{{percentUsed}}% kasutuses ({{usedGib}} / {{totalGib}}",
-      "copyToClipboard": "Kopeeri lõikelauale",
-      "cpu": "Protsessor:",
-      "cpuDescription": "{{numOfCores}}x {{modelName}}",
-      "gpu": "Graafikaprotsessor:",
-      "heroicVersion": "Heroic: {{heroicVersion}}",
-      "memory": "Mälu:",
-      "nileVersion": "Nile: {{nileVersion}}",
-      "showDetailed": "Näita üksikasjalikke süsteemi omadusi",
-      "steamDeck": "Steam Deck {{model}}",
-      "systemSpecifications": "Süsteemi üksikasjad:",
-      "cometVersion": "Comet: {{cometVersion}}"
-    },
-    "offline": {
-      "warning": "Mäng ei luba ilma võrguühenduseta režiimi, lülitage see sisse vaid omaenda vastutusel. Mäng ei pruugi toimida."
-    },
-    "experimental_features": {
-      "title": "Eksperimentaalsed funktsioonid"
-    },
-    "launchOptions": "Käivitusvalikud",
-    "legacy_warning": "Hoiatus: Sätted sellel vahelehel on enamasti aegunud ja ei pruugi üldse toimida.",
+    "offline": {},
+    "experimental_features": {},
     "steamgriddb": {
       "apikey": {
         "title": "SteamGridDB API võti",
         "placeholder": "Sisestage SteamGridDB API võti siia",
         "placeholder_saved": "Võti salvestatud — kirjutage siia, et asendada; tühjendage, et eemaldada"
-      },
-      "help": {
-        "description": "Varustage oma SteamGridDB API võti, et lubada mängude kaanepiltide otsing. Võti talletatakse krüpteeritult, kui teie süsteem seda toetab. Võite leida võtme aadressil {{url}}"
       }
     }
   },
@@ -858,24 +384,11 @@
   "title": {
     "allGames": "Kõik mängud"
   },
-  "toolbox": {
-    "settings": {
-      "default-wineprefix": "Valige vaikimisi prefiksi kaust uute konfiguratsioonide jaoks",
-      "wineprefix": "Valige uute Wine'i prefikside jaoks kaust"
-    }
-  },
-  "tooltip": {
-    "addpath": "Lisa uus tee",
-    "removepath": "Eemalda tee"
-  },
   "tray": {
     "about": "Info",
     "quit": "Sulge",
     "reload": "Laadi uuesti",
     "show": "Näita"
-  },
-  "two_col_table": {
-    "save_hint": "Selles tabelis tehtud muudatusi ei salvestata automaatselt. Klikkige nuppu +"
   },
   "Update Available!": "Uuendus saadaval!",
   "userselector": {
@@ -895,24 +408,6 @@
       "reload": "Laadi leht uuesti"
     }
   },
-  "wine": {
-    "actions": "Tegevus",
-    "manager": {
-      "link": "Wine'i haldur",
-      "not-found": "Wine'i versioone ei leitud. Palun klikkige.",
-      "title": "Wine'i haldur",
-      "unzipping": "Lahtipakkimine",
-      "search": "Otsi versioone...",
-      "loading": "Laen wine versioone...",
-      "open_folder": "Ava kaust",
-      "update": "Uuendus",
-      "settings": "Seaded",
-      "no-results": "Teie otsing ei vastanud ühelegi Wine'i otsingule."
-    },
-    "release": "Väljalaske kuupäev",
-    "size": "Suurus",
-    "notes": "Märkused"
-  },
   "externalLink": {
     "dontAskAgain": "Ära enam küsi",
     "warning": "Olete avamas välist linki."
@@ -930,17 +425,6 @@
   "amazon": "Amazon",
   "Amazon Games": "Amazon Games",
   "prime-gaming": "Prime Gaming",
-  "winetricks": {
-    "install": "Paigaldus",
-    "loading": "Laadimine",
-    "installed": "Paigaldatud komponendid:",
-    "nothingYet": "Winetricksis ei ole veel midagi paigaldatud",
-    "openGUI": "Ava Winetricksi graafiline kasutajaliides",
-    "installing": "Paigaldamine: {{component}}",
-    "search": "Otsi fonte või komponente",
-    "loading-available": "Laen saadavalolevaid komponente ...",
-    "no-components": "Komponente pole saadaval"
-  },
   "category-settings": {
     "cancel": "Tühista",
     "warning": "Hoiatus",
@@ -961,12 +445,6 @@
     "remove": "Eemalda \"{{name}}\"",
     "title": "Halda kategooriaid"
   },
-  "wineExplanation": {
-    "proton-ge": "GE-Proton on Protoni variant, mille lõi Glorious Eggroll. See on mõeldud Steami jaoks kasutamiseks, aga mõned Steami-välised mängud võivad sellega paremini töötada. Selle tõrkeotsingu logid on enamasti kasutud.",
-    "gpt": "Game Porting Toolkit on arendatud Apple'i poolt ja on soovitatav Apple Siliconi Macidele M1+ kiipidega ja töötab kõige paremini uuemate mängude puhul, mis kasutavad DX12-t.",
-    "wine-crossover": "Wine-Crossover põhineb Crossover OpenSource Wine'i projektil ja on soovitatav Inteli Macidele ja DX11 või vanemate mängude puhul.",
-    "wine-staging-macos": "Wine-Staging-macOS põhineb peavoolu Wine'i projektil ja on soovitatav Inteli Macidele ja DX11 või vanemate mängude puhul, eriti koos DXMT tööriistaga."
-  },
   "window": {
     "maximize": "Maksimeeri aken",
     "minimize": "Minimeeri aken",
@@ -983,22 +461,8 @@
       "success": "Steam Windowsi jaoks on edukalt paigaldatud!"
     }
   },
-  "launch": {
-    "options": "Käivitusvalikud..."
-  },
-  "steamgriddb": {
-    "error": {
-      "no-games": "Mänge ei leitud",
-      "no-grids": "Selle mängu jaoks ei leitud kaanepilte.",
-      "search": "Ei suutnud mänge otsida, palun kontrollige oma SteamGridDB API võtit ja proovige uuesti",
-      "grids": "Ei suutnud ruudustikke hankida"
-    },
-    "picker": {
-      "search": "Otsi mängu",
-      "title": "SteamGridDB kaanepildid",
-      "select-game": "Valige mäng:"
-    }
-  },
+  "launch": {},
+  "steamgriddb": {},
   "console": {
     "update": {
       "hintPrefix": "Vajuta",

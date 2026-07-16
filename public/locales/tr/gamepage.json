@@ -155,14 +155,9 @@
     "installedPlatform": "Kurulu Platform",
     "path": "Kurulum Yolu",
     "size": "Boyut",
-    "syncsaves": "Kayıtları Eşzamanla",
     "version": "Sürüm",
-    "apple-gaming-wiki": "AppleGamingWiki Derecelendirmesi",
     "clickToOpen": "açmak için tıklayın",
-    "game-scores": "Oyun Skorları",
     "installedInfo": "Kurulu Bilgiler",
-    "protondb-compatibility-info": "Proton Uyumluluk Katmanı",
-    "steamdeck-compatibility-info": "SteamDeck Uyumluluğu",
     "third-party-app": "Üçüncü Parti Yönetici"
   },
   "install": {
@@ -172,17 +167,7 @@
     "path-not-writtable": "Uyarı: yol yazılabilir olmayabilir.",
     "space-after-install": "Kurulumdan Sonra",
     "wineprefix": "WinePrefix",
-    "wineversion": "Wine sürümü",
-    "anticheat-warning": {
-      "cancel": "Hayır",
-      "message": "Anti hile desteği bozuldu ya da reddedildi. Oyun çalışmayacak. Yine de kurmak istiyor musunuz?",
-      "install": "Evet (Bunun işe yaramayacağının farkındayım)",
-      "title": "Anti Hile Bozuldu/Reddedildi",
-      "install_anyway": "Evet (çoklu oyuncu özelliklerinin çalışmayabileceğini anlıyorum)",
-      "multiplayer_message": "Hile koruması desteği bozuk veya engellenmiş. Oyun açılabilir ancak çok oyunculu özellikler çalışmayacaktır. Yine de yüklemek istiyor musunuz?",
-      "ok": "Tamam",
-      "disabled_installation": "Bu oyun, işletim sisteminizle uyumlu olmayan veya geliştiriciler tarafından desteklenmeyen bir hile karşıtı yazılım kullanıyor. Bu nedenle çok oyunculu özellikler çalışmayacak ve ne siz ne de Heroic ekibi bu durumu değiştiremez.<br /><br />Yine de oyunu kurmayı denemek isterseniz, Ayarlar > Gelişmiş bölümüne giderek “bozuk veya desteklenmeyen anticheat'e sahip oyunların yüklenmesine izin ver” seçeneğini işaretleyin.<br /><br />Bu durumun bir çözümü olmadığını ve oyunda ban yeme riskiniz olduğunu unutmayın."
-    }
+    "wineversion": "Wine sürümü"
   },
   "label": {
     "game": {
@@ -199,7 +184,6 @@
     },
     "launching": "Başlatılıyor",
     "ubisoft": "Ubisoft Connect Yükleniyor",
-    "winetricks": "Winetricks Paketleri Kuruluyor",
     "prerequisites": "Gereksinimler Kuruluyor",
     "redist": "Dağıtılabilirler Kuruluyor",
     "steam": {
@@ -216,17 +200,17 @@
       "install": "Steam'i Yükle",
       "install-path": "Steam Kurulum Yolu",
       "installation": "Steam Kurulumu",
-      "launch": "Steam’i Heroic Uyumluluk Katmanını kullanarak başlat",
+      "launch": "Steam’i Relic Uyumluluk Katmanını kullanarak başlat",
       "launching": "Steam Başlatılıyor...",
       "macOS": "macOS 14.0 ve sonrası",
-      "notification": "Kurulum tamamlandığında Heroic sizi bilgilendirecek.",
+      "notification": "Kurulum tamamlandığında Relic sizi bilgilendirecek.",
       "patience": "Devam etmek istiyorsanız lütfen sabırlı olun, çünkü işlem internet bağlantınıza ve sistem yapılandırmanıza bağlı olarak birkaç dakika sürebilir.",
       "ram": "8 GB RAM",
       "recommended": "Daha iyi bir deneyim için önerilen sistem gereksinimleri",
       "select-path": "Steam için kurulum klasörünü seçin",
-      "install-tooltip": "Bu işlem, Steam'in Windows sürümünü yükleyecek ve uygulama, bir Heroic Uyumluluk Katmanı kullanılarak çalıştırılacaktır. \n\n    Bazı oyunlar, özellikle de eski oyunlar, yeni 3D oyunlar veya hile koruma yazılımına sahip olanlar düzgün çalışmayabilir. \n\n    ",
+      "install-tooltip": "Bu işlem, Steam'in Windows sürümünü yükleyecek ve uygulama, bir Relic Uyumluluk Katmanı kullanılarak çalıştırılacaktır. \n\n    Bazı oyunlar, özellikle de eski oyunlar, yeni 3D oyunlar veya hile koruma yazılımına sahip olanlar düzgün çalışmayabilir. \n\n    ",
       "specificVersion-pt2": "archive.org",
-      "specificVersion-pt3": "Steam'in yeni sürümleri macOS'ta çalışmadığı için, Heroic üzerinden çalışır hale getirdik."
+      "specificVersion-pt3": "Steam'in yeni sürümleri macOS'ta çalışmadığı için, Relic üzerinden çalışır hale getirdik."
     }
   },
   "launch": {
@@ -234,23 +218,18 @@
     "default": "Varsayılan"
   },
   "not_logged_in": {
-    "epic": "Heroic'te Epic hesabıyla giriş yapmadınız. Giriş yapmak için mağaza sayfasını kullanmayın, bunun yerine aşağıdaki düğmeye tıklayın:",
-    "gog": "Heroic'te GOG hesabıyla giriş yapmadınız. Giriş yapmak için mağaza sayfasını kullanmayın, bunun yerine aşağıdaki düğmeye tıklayın:",
+    "epic": "Relic'te Epic hesabıyla giriş yapmadınız. Giriş yapmak için mağaza sayfasını kullanmayın, bunun yerine aşağıdaki düğmeye tıklayın:",
+    "gog": "Relic'te GOG hesabıyla giriş yapmadınız. Giriş yapmak için mağaza sayfasını kullanmayın, bunun yerine aşağıdaki düğmeye tıklayın:",
     "login": "Log in",
     "title": "Giriş yapmadınız",
-    "amazon": "Heroic'te Amazon hesabıyla oturum açmadınız. Giriş yapmak için mağaza sayfasını kullanmayın. Bunun yerine aşağıdaki düğmeye tıklayın:",
-    "zoom": "Heroic'e Zoom hesabıyla giriş yapmadınız. Giriş yapmak için mağaza sayfasını kullanmayın, bunun yerine şu düğmeye tıklayın:"
+    "amazon": "Relic'te Amazon hesabıyla oturum açmadınız. Giriş yapmak için mağaza sayfasını kullanmayın. Bunun yerine aşağıdaki düğmeye tıklayın:",
+    "zoom": "Relic'e Zoom hesabıyla giriş yapmadınız. Giriş yapmak için mağaza sayfasını kullanmayın, bunun yerine şu düğmeye tıklayın:"
   },
   "report_problem": "Bu oyunun çalışmasıyla ilgili bir sorun bildir",
   "sdl": {
     "title": "Kurulacak bileşenleri seç"
   },
-  "setting": {
-    "winecrossoverbottle": "CrossOver Bottle",
-    "warn-use-shared-wine-config": "Bu seçeneği yalnızca ne yaptığınızı biliyorsanız kullanın.<br />Birden fazla oyun için aynı prefix'i paylaşmak, bağımlılıkları uyumsuzsa sorunlara yol açabilir.",
-    "show-wine-settings": "Wine ayarlarını göster",
-    "use-shared-wine-config": "Paylaşılan Wine prefix kullan"
-  },
+  "setting": {},
   "sideload": {
     "field": {
       "title": "Başlık"
@@ -310,26 +289,14 @@
     "gog-goodie": "Bu oyun kurulabilir görünmüyor. İndirilebilir içeriği https://gog.com/account adresinden kontrol edin",
     "goodie": "Kurulamaz",
     "prerequisites": "Gereklilikler Kuruluyor",
-    "winetricks": "Winetricks düzeltmeleri uygulanıyor",
     "redist": "Yeniden Dağıtılabilir ({{redist}}) Kuruluyor",
     "importing": "İçe Aktarılıyor"
   },
   "submenu": {
-    "addShortcut": "Kısayol ekle",
-    "addToSteam": "Steam'e Ekle",
     "change": "Kurulum yolunu değiştir",
-    "disableEosOverlay": "EOS Arayüzünü Devre Dışı Bırak",
-    "enableEosOverlay": "EOS Arayüzünü Etkinleştir",
     "move": "Oyunu Taşı",
-    "protondb": "Uyumluluğu Denetle",
-    "removeFromSteam": "Steam'den Kaldır",
-    "removeShortcut": "Kısayolları kaldır",
-    "settings": "Ayarlar",
-    "store": "Mağaza Sayfası",
     "verify": "Doğrula ve Onar",
-    "extraInfo": "Fazladan bilgi",
-    "logs": "Kayıtlar",
-    "categories": "Kategoriler"
+    "extraInfo": "Fazladan bilgi"
   },
   "help": {
     "cloud_save_unsupported": "Bu oyun bulutta kaydetmeyi desteklemiyor. Bu bilgiler oyun geliştiricileri tarafından sağlanmaktadır. Bazı oyunlar kendine ait buluta kaydetme sistemini uygular.",
@@ -348,11 +315,6 @@
       "enable": "Modları etkinleştir"
     },
     "versionCollapsable": "Oyun Sürümü"
-  },
-  "third-party-managed": {
-    "header": "Oyun üçüncü parti bir uygulama tarafından yönetiliyor",
-    "notice1": "Bu oyun üçüncü parti {{application_name}} uygulaması tarafından yönetiliyor",
-    "notice2": "Kur'a bastıktan sonra, Heroic kurulum işlemini bitirmek için uygulamayı çalıştıracak"
   },
   "Open": "Epic Store'u",
   "queue": {
