@@ -631,3 +631,20 @@
 ### Constants final
 - `environment.ts`: export eliminados `isWindows`, `isMac`, `isIntelMac` (solo queda `isLinux = true`)
 - Claves de traducción muertas: `box.shortcuts.message-mac`, `box.shortcuts.message-remove-mac`, `box.warning.rosetta.*`, `box.vcruntime.*`, `login.old-mac` (aún existen en translation.json pero no se referencian desde código)
+
+## Fase 6 — Eliminación de settings muertos/sin UI
+### Completamente muertos (0 uso en backend/frontend)
+- `minimizeOnLaunch`: eliminado de `types.ts`, `config.ts`
+- `disableController`: eliminado de `types.ts` (única ubicación)
+- `disableAnimations`: eliminado de `types.ts`, `electron_store.ts`, `frontend/types.ts`, `GlobalState.tsx` (estado, setter, context), `ContextProvider.tsx` (default), `App.tsx` (destructure + className), `App.css` (regla `body:has(.disableAnimations)`)
+
+### Parcialmente muertos (backend vivo, UI huérfana)
+- `disableLogs`: eliminado de `types.ts`, `logger/index.ts` (forzado a `false` en los 3 constructores `LogWriter`), borrado `DisableLogs.tsx`, borrada export del barrel `index.ts`
+- `downloadNoHttps`: eliminado de `types.ts`, `legendary/games.ts` (3 remos: update/install/repair), borrado `DownloadNoHTTPS.tsx`, borrada export del barrel `index.ts`
+
+### Vivos solo backend (sin UI)
+- `disablePlaytimeSync`: eliminado de `types.ts`, `gog/presence.ts` (guard en `setPresence` y `deletePresence`). Conservado `disableGOGPresence` (activo, con UI).
+- `darkTrayIcon`: eliminado de `types.ts`, `tray_icon/tray_icon.ts` (`getIcon` simplificado a siempre `iconLight`), `__mocks__/config.ts`
+- `disableSmoothScrolling`: eliminado de `types.ts`, `main.ts` (bloque `app.commandLine.appendSwitch`)
+- `framelessWindow`: eliminado de `types.ts`, `config.ts`, `main_window.ts` (bloque `frame = false`), import `AppSettings` de `main_window.ts`, tests `main_window.test.ts` (describe blocks "enabled"/"disabled")
+- `startInTray`: eliminado de `types.ts`, `main.ts` (simplificado `headless = isCLINoGui`)

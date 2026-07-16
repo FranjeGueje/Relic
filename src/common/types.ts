@@ -85,22 +85,12 @@ export interface AppSettings extends GameSettings {
   autoUpdateGames: boolean
   checkForUpdatesOnStartup: boolean
   checkUpdatesInterval: number
-  darkTrayIcon: boolean
   defaultInstallPath: string
   defaultSteamPath: string
-  disableController: boolean
-  disablePlaytimeSync: boolean
-  disableSmoothScrolling: boolean
-  disableLogs: boolean
-  disableAnimations: boolean
   disableGOGPresence: boolean
-  downloadNoHttps: boolean
   enableUpdates: boolean
   experimentalFeatures?: ExperimentalFeatures
-  framelessWindow: boolean
   maxWorkers: number
-  minimizeOnLaunch: boolean
-  startInTray: boolean
   verboseLogs: boolean
   steamGridDbApiKey: string
 }

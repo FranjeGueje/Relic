@@ -287,10 +287,6 @@ if (!gotTheLock) {
 
     const settings = GlobalConfig.get().getSettings()
 
-    if (settings?.disableSmoothScrolling) {
-      app.commandLine.appendSwitch('disable-smooth-scrolling')
-    }
-
     runOnceWhenOnline(gogPresence.setPresence)
     await i18next.use(Backend).init({
       backend: {
@@ -308,9 +304,7 @@ if (!gotTheLock) {
 
     const mainWindow = await initializeWindow()
 
-    const headless =
-      isCLINoGui ||
-      (settings.startInTray)
+    const headless = isCLINoGui
     if (!headless) {
       const isWayland = Boolean(process.env.WAYLAND_DISPLAY)
       const showWindow = () => {

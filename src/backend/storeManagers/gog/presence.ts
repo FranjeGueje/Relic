@@ -23,11 +23,10 @@ function setCurrentGame(game: string) {
 
 async function setPresence() {
   try {
-    const { disablePlaytimeSync, disableGOGPresence } =
+    const { disableGOGPresence } =
       GlobalConfig.get().getSettings()
     if (
       disableGOGPresence ||
-      disablePlaytimeSync ||
       !GOGUser.isLoggedIn() ||
       !isOnline()
     )
@@ -66,10 +65,9 @@ async function setPresence() {
 
 async function deletePresence(force = false) {
   try {
-    const { disablePlaytimeSync, disableGOGPresence } =
+    const { disableGOGPresence } =
       GlobalConfig.get().getSettings()
     if (
-      disablePlaytimeSync ||
       (!force && disableGOGPresence) ||
       !GOGUser.isLoggedIn() ||
       !isOnline()

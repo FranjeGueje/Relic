@@ -482,7 +482,7 @@ export default class LegendaryGame implements Game {
       runner: 'legendary',
       status: 'updating'
     })
-    const { maxWorkers, downloadNoHttps } = GlobalConfig.get().getSettings()
+    const { maxWorkers } = GlobalConfig.get().getSettings()
     const installPlatform = this.getGameInfo().install.platform!
     const info = await libraryManagerMap['legendary'].getInstallInfo(
       this.appName,
@@ -496,7 +496,6 @@ export default class LegendaryGame implements Game {
       '--skip-sdl': true
     }
     if (maxWorkers) command['--max-workers'] = PositiveInteger.parse(maxWorkers)
-    if (downloadNoHttps) command['--no-https'] = true
 
     const onOutput = (data: string) => {
       this.onInstallOrUpdateOutput(
@@ -576,7 +575,7 @@ export default class LegendaryGame implements Game {
       )
       return { status: 'error' }
     }
-    const { maxWorkers, downloadNoHttps } = GlobalConfig.get().getSettings()
+    const { maxWorkers } = GlobalConfig.get().getSettings()
     const info = await libraryManagerMap['legendary'].getInstallInfo(
       this.appName,
       platformToInstall
@@ -591,7 +590,6 @@ export default class LegendaryGame implements Game {
       '-y': true
     }
     if (maxWorkers) command['--max-workers'] = PositiveInteger.parse(maxWorkers)
-    if (downloadNoHttps) command['--no-https'] = true
     if (sdlList?.length)
       command.sdlList = sdlList.map((tag) => NonEmptyString.parse(tag))
     else command['--skip-sdl'] = true
@@ -729,7 +727,7 @@ export default class LegendaryGame implements Game {
    * Does NOT check for online connectivity.
    */
   async repair(): Promise<ExecResult> {
-    const { maxWorkers, downloadNoHttps } = GlobalConfig.get().getSettings()
+    const { maxWorkers } = GlobalConfig.get().getSettings()
 
     const command: LegendaryCommand = {
       subcommand: 'repair',
@@ -738,7 +736,6 @@ export default class LegendaryGame implements Game {
       '--skip-sdl': true
     }
     if (maxWorkers) command['--max-workers'] = PositiveInteger.parse(maxWorkers)
-    if (downloadNoHttps) command['--no-https'] = true
 
     const repairLogWriter = await createGameLogWriter(
       this.appName,

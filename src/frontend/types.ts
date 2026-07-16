@@ -114,8 +114,6 @@ export interface ContextType {
   handleExperimentalFeatures: (newSetting: ExperimentalFeatures) => void
   disableDialogBackdropClose: boolean
   setDisableDialogBackdropClose: (value: boolean) => void
-  disableAnimations: boolean
-  setDisableAnimations: (value: boolean) => void
 }
 
 export type DialogModalOptions = {

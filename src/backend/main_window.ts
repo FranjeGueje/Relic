@@ -1,4 +1,4 @@
-import { AppSettings, WindowProps } from 'common/types'
+import { WindowProps } from 'common/types'
 import { BrowserWindow, screen } from 'electron'
 import path from 'path'
 import { configStore } from './constants/key_value_stores'
@@ -39,12 +39,6 @@ export const createMainWindow = () => {
     if (screenInfo?.workAreaSize?.width < windowProps.width) {
       windowProps.width = screenInfo.workAreaSize.width * 0.8
     }
-  }
-  // Set up frameless window if enabled in settings
-  const settings = configStore.get('settings', <AppSettings>{})
-  if (settings?.framelessWindow) {
-    // use native overlay controls where supported
-    windowProps.frame = false
   }
 
   // Create the browser window.

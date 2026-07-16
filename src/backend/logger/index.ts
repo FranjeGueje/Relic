@@ -34,7 +34,7 @@ function getRunnerLogWriter(runner: RunnerOrComet) {
   const newWriter = new LogWriter(
     getLogFilePath({ runner }),
     false,
-    globalConfig.disableLogs
+    false
   )
   runnerLogWriters.set(runner, newWriter)
   return newWriter
@@ -45,7 +45,6 @@ async function createGameLogWriter(
   runner: Runner,
   type: GameLogType = 'launch'
 ): Promise<LogWriter> {
-  const logsDisabledGlobally = GlobalConfig.get().getSettings().disableLogs
   const logsDisabledPerGame =
     type === 'launch'
       ? !(await GameConfig.get(appName).getSettings()).verboseLogs
@@ -54,7 +53,7 @@ async function createGameLogWriter(
   return new LogWriter(
     getLogFilePath({ appName, runner, type }),
     false,
-    logsDisabledGlobally || logsDisabledPerGame
+    logsDisabledPerGame
   )
 }
 
@@ -77,14 +76,8 @@ function init() {
   relicLogWriter = new LogWriter(
     getLogFilePath({}),
     true,
-    globalSettings.disableLogs
+    false
   )
-
-  if (globalSettings.disableLogs)
-    relicLogWriter.logWarning(
-      'IMPORTANT: Logs are disabled. Enable logs before reporting any issue',
-      { forceLog: true }
-    )
 
   relicLogWriter.logInfo(
     ['System Information:', getSystemInfo().then(formatSystemInfo)],

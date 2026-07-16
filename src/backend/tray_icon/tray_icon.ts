@@ -3,12 +3,10 @@ import i18next from 'i18next'
 import { RecentGame } from 'common/types'
 import { getRecentGames, maxRecentGames } from '../recent_games/recent_games'
 import { handleExit, showAboutWindow } from '../utils'
-import { GlobalConfig } from '../config'
 import { backendEvents } from '../backend_events'
 import { join } from 'node:path'
 import { fixAsarPath, publicDir } from 'backend/constants/paths'
 
-const iconDark = fixAsarPath(join(publicDir, 'icon-dark.png'))
 const iconLight = fixAsarPath(join(publicDir, 'icon-light.png'))
 
 export const initTrayIcon = async (mainWindow: BrowserWindow) => {
@@ -54,11 +52,8 @@ const iconSizesByPlatform = {
 
 // get the icon path based on platform and settings
 const getIcon = (platform = process.platform) => {
-  const settings = GlobalConfig.get().getSettings()
-  const { darkTrayIcon } = settings
-
   return nativeImage
-    .createFromPath(darkTrayIcon ? iconDark : iconLight)
+    .createFromPath(iconLight)
     .resize(iconSizesByPlatform[platform as keyof typeof iconSizesByPlatform])
 }
 

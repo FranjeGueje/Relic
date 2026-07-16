@@ -35,7 +35,6 @@ export interface StoreStructure {
     allTilesInColor: boolean
     titlesAlwaysVisible: boolean
     disableDialogBackdropClose: boolean
-    disableAnimations: boolean
     language: string
     'general-logs': {
       currentLogFile: string

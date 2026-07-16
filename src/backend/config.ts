@@ -231,8 +231,6 @@ class GlobalConfigV0 extends GlobalConfig {
       defaultSteamPath: getSteamCompatFolder(),
       language: 'en',
       maxWorkers: 0,
-      minimizeOnLaunch: false,
-      framelessWindow: false,
       verboseLogs: true,
       steamGridDbApiKey: '',
       disableGOGPresence: false

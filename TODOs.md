@@ -235,9 +235,7 @@ Archivos principales:
 - **5.9**: HISTORY_REMOVE.md actualizado.
 
 ### Pendiente para fase futura
-- `minimizeOnLaunch` (backend + types, sin UI): revisar si sigue siendo necesario
-- `disablePlaytimeSync` (backend + types, sin UI): revisar si sigue siendo necesario
-- `darkTrayIcon`, `disableController`, `disableSmoothScrolling`, `disableAnimations`, `disableLogs`, `downloadNoHttps`, `framelessWindow`, `startInTray`: settings sin UI, posible código muerto
+- Ninguno. Todos los settings sin UI han sido analizados y eliminados (Fase 6).
 
 ---
 
@@ -248,6 +246,5 @@ Archivos principales:
 3. **Commit después de cada fase**: para poder revertir si algo falla.
 4. **HISTORY_REMOVE.md**: actualizar después de cada tarea completada.
 5. **No romper el flujo principal**: login → descargar → instalar → detectar ejecutable → script externo → Steam.
-6. **Settings sin UI pero con uso en backend**: algunos settings (como `minimizeOnLaunch`, `darkTrayIcon`, `disablePlaytimeSync`) se eliminaron de la UI pero se conservaron en backend porque aún se usan. Revisar si siguen siendo necesarios.
-7. **umu-launcher**: puede ser necesario para el script externo. No eliminar sin analizar.
-8. Conservar: isUmuSupported, getUmuPath (necesario para script externo)
+6. **umu-launcher**: puede ser necesario para el script externo. No eliminar sin analizar.
+7. Conservar: isUmuSupported, getUmuPath (necesario para script externo)

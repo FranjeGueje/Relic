@@ -20,12 +20,12 @@ import { InstallGameWrapper } from './screens/Library/components/InstallModal'
 
 function Root() {
   const {
+    disableDialogBackdropClose,
     isRTL,
     isFullscreen,
     isFrameless,
     experimentalFeatures,
     help,
-    disableAnimations
   } = useContext(ContextProvider)
 
   const hasNativeOverlayControls = navigator['windowControlsOverlay']?.visible
@@ -69,7 +69,6 @@ function Root() {
         isRTL,
         frameless: isFrameless,
         fullscreen: isFullscreen,
-        disableAnimations,
         consoleMode: isConsoleMode
       })}
       // disable dragging for all elements by default
