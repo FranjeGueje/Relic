@@ -269,6 +269,20 @@ Siempre que sea posible:
 
 ---
 
+# Estructura del código
+
+Para minimizar conflictos al fusionar cambios con Heroic, todo el código nuevo
+específico de Relic debe ubicarse en subdirectorios `relic/` dentro de cada área:
+
+- `src/backend/relic/` — módulos nuevos del backend
+- `src/frontend/relic/` — componentes y pantallas nuevos
+- `src/common/relic/` — tipos compartidos nuevos
+
+Las modificaciones a archivos existentes de Heroic se realizan in-place y se
+documentan en `HISTORY_ADD.md`.
+
+---
+
 # Principios de desarrollo
 
 Cada nueva funcionalidad debe responder afirmativamente a esta pregunta:

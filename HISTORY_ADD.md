@@ -7,4 +7,14 @@ El objetivo es mantener trazabilidad de los cambios respecto al padre.
 
 ---
 
-*(Aún no se ha añadido ninguna funcionalidad nueva. Solo se ha eliminado código muerto.)*
+## v0.2.0
+
+| Fecha | Archivo | Cambio |
+|---|---|---|
+| 2026-07-17 | `AGENTS.md` | Añadida sección "Estructura del código": convención de subdirectorios `relic/` para código nuevo |
+| 2026-07-17 | `AGENTS.md` | Añadido Zoom Platform y Sideload al Alcance |
+| 2026-07-17 | `AGENTS.md` | Aclarado que Relic es Linux-only (sin macOS ni Windows) |
+| 2026-07-17 | `AGENTS.md` | Añadida mención de ConsoleMode en Interfaz |
+| 2026-07-17 | `AGENTS.md` | Actualizada sección Historial con referencias a HISTORY_REMOVE.md y HISTORY_ADD.md |
+| 2026-07-17 | `package.json` | Version bump 0.1.0 → 0.2.0 |
+| 2026-07-17 | `package.json` | Eliminados scripts `release:mac` y `release:linux` (Linux-only) |
