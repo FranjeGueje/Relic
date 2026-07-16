@@ -648,3 +648,7 @@
 - `disableSmoothScrolling`: eliminado de `types.ts`, `main.ts` (bloque `app.commandLine.appendSwitch`)
 - `framelessWindow`: eliminado de `types.ts`, `config.ts`, `main_window.ts` (bloque `frame = false`), import `AppSettings` de `main_window.ts`, tests `main_window.test.ts` (describe blocks "enabled"/"disabled")
 - `startInTray`: eliminado de `types.ts`, `main.ts` (simplificado `headless = isCLINoGui`)
+
+## Vulkan Helper (dead code)
+- `public/bin/x64/linux/vulkan-helper` (715 KB) y `public/bin/arm64/linux/vulkan-helper` (707 KB): binarios ELF eliminados
+- `src/backend/utils/graphics/vulkan/index.ts` (84 líneas): módulo completo eliminado (funciones `get_vulkan_instance_version`, `any_gpu_supports_version`, `get_nvngx_path` — ningún import en el codebase)
