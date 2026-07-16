@@ -1016,6 +1016,10 @@
       "platform": "Platform",
       "title": "게임 설치",
       "wineLoading": "Loading"
+    },
+    "uninstall": {
+      "title": "게임 제거",
+      "message": "\"{{title}}\"을(를) 제거하시겠습니까?"
     }
   },
   "next": ""

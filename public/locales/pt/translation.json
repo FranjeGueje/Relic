@@ -1052,6 +1052,10 @@
     },
     "removeFromQueue": {
       "message": "Este jogo está na fila para descarregar. Removê-lo da fila?"
+    },
+    "uninstall": {
+      "title": "Desinstalar jogo",
+      "message": "Quer desinstalar \"{{title}}\"?"
     }
   },
   "next": "Próximo"

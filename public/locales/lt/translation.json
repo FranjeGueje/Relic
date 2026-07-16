@@ -983,6 +983,10 @@
     },
     "removeFromQueue": {
       "message": "Šis žaidimas yra eilėje, kad būtų atsisiųstas. Pašalinti jį iš eilės?"
+    },
+    "uninstall": {
+      "title": "Pašalinti žaidimą",
+      "message": "Ar norite pašalinti \"{{title}}\"?"
     }
   },
   "steamgriddb": {

@@ -1053,6 +1053,10 @@
     },
     "removeFromQueue": {
       "message": "Bu oyun indirmek için kuyrukta. Kuyruktan çıkar?"
+    },
+    "uninstall": {
+      "title": "Oyunu kaldır",
+      "message": "\"{{title}}\" oyununu kaldırmak istiyor musunuz?"
     }
   }
 }

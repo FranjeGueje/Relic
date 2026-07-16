@@ -1028,6 +1028,10 @@
     },
     "removeFromQueue": {
       "message": "Game ini sedang antri untuk diunduh. Hapus dari antrian?"
+    },
+    "uninstall": {
+      "title": "Hapus instal gim",
+      "message": "Apakah Anda ingin menghapus instalasi \"{{title}}\"?"
     }
   },
   "next": "Berikutnya"

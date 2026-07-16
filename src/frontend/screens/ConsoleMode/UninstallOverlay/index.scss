@@ -1,0 +1,87 @@
+.consoleInstallOverlay {
+  position: fixed;
+  inset: 0;
+  gap: 16px;
+  backdrop-filter: blur(10px);
+  z-index: 10;
+  align-items: center;
+  animation: overlayFade 220ms ease;
+  display: flex;
+  justify-content: center;
+}
+
+.consoleModal {
+  background: color-mix(
+    in srgb,
+    var(--body-background, #101014) 90%,
+    transparent
+  );
+  z-index: 20;
+  gap: 16px;
+  flex-direction: column;
+  padding: var(--space-xl);
+  border-radius: var(--space-lg);
+}
+
+@keyframes overlayFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.consoleModalTitle {
+  font-size: 1rem;
+  color: var(--text-secondary, #b1b1b1);
+  letter-spacing: 0.2em;
+  margin-bottom: var(--space-md);
+}
+
+.consoleModalGameTitle {
+  font-size: clamp(1.6rem, 2.4vw, 2.4rem);
+  font-weight: 700;
+  color: var(--text-title, var(--text-default, #eae8e5));
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+  max-width: 80vw;
+  text-align: center;
+}
+
+.consoleInstallFields {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm, 8px);
+  margin-top: var(--space-md);
+  min-width: min(460px, 80vw);
+}
+
+.consoleInstallRow {
+  display: grid;
+  grid-template-columns: minmax(120px, max-content) 1fr;
+  align-items: center;
+  gap: var(--space-md, 12px);
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: color-mix(
+    in srgb,
+    var(--background-darker, #1a1a20) 50%,
+    transparent
+  );
+}
+
+.consoleInstallLabel {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-secondary, #b1b1b1);
+}
+
+.consoleInstallButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: var(--space-lg);
+}

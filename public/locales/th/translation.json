@@ -952,6 +952,10 @@
     "loading": "",
     "install": {
       "wineLoading": "กำลังโหลด…"
+    },
+    "uninstall": {
+      "title": "ถอนการติดตั้งเกม",
+      "message": "คุณต้องการถอนการติดตั้ง \"{{title}}\" หรือไม่?"
     }
   },
   "next": "",

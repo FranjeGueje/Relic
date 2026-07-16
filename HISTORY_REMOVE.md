@@ -496,3 +496,26 @@
 - `preload/api/misc.ts`: `getAlternativeWine` eliminado
 - `frontend/helpers/electronStores.ts`: `wineDownloaderInfoStore` eliminado (instancia + export)
 - `backend/downloadmanager/downloadqueue.ts`: `stop(false)` → `stop()` (parámetro Wine eliminado)
+
+## Legendary 404 (ExtraGameInfo API)
+- `backend/storeManagers/legendary/extraGameInfo.ts`: `logError` → `logDebug` para errores 404 (no son error real)
+
+## Settings/Logs modals eliminados
+- `SettingsModal/` directorio completo eliminado (index.tsx + CategorySettings/)
+- `GameCard/index.tsx`: items "Settings" y "Logs" del menú contextual eliminados + imports
+- `GlobalStateV2.ts`: estados `showSettingsModal`, `settingsModalGameInfo`, `showLogModal` y setters eliminados
+- `App.tsx`: `<SettingsModalWrapper>` eliminado
+- `GamePage/index.tsx`: residual wine references limpiadas
+- `useSettingsContext.ts`: residual references limpiadas
+
+## Context menu ampliado (Library)
+- `GameCard/index.tsx`: añadidos items: Force Update, Move Game, Verify & Repair, Check Compatibility, Modify Installation, Browse Files
+- Modales asociados: `MoveGameModal`, `RepairModal`, `ModifyInstallModal`
+
+## ConsoleMode: overlay de desinstalación
+- `ConsoleMode/UninstallOverlay/`: nuevo componente (overlay de confirmación al seleccionar juego instalado)
+- `ConsoleMode/index.tsx`: `activateGame` ya no navega a GamePage; abre overlay de desinstalación
+- Estados: `uninstallingGame`/`setUninstallingGame`
+
+## Claves de traducción `console.uninstall`
+- `console.uninstall.title` y `console.uninstall.message` añadidas a 47 archivos `translation.json`

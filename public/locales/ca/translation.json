@@ -1049,6 +1049,10 @@
     },
     "removeFromQueue": {
       "message": "El joc s'ha posat en cua per a baixar-lo. Vols suprimir-lo de la cua?"
+    },
+    "uninstall": {
+      "title": "Desinstal·la el joc",
+      "message": "Vols desinstal·lar \"{{title}}\"?"
     }
   },
   "next": "Següent"

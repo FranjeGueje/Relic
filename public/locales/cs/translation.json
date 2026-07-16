@@ -1056,6 +1056,10 @@
     },
     "removeFromQueue": {
       "message": "Tato hra je ve frontě na stažení. Odstranit z fronty?"
+    },
+    "uninstall": {
+      "title": "Odinstalovat hru",
+      "message": "Chcete odinstalovat \"{{title}}\"?"
     }
   },
   "next": "Další"

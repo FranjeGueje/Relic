@@ -1050,6 +1050,10 @@
     },
     "removeFromQueue": {
       "message": "Este juego está en la cola de descargas. ¿Eliminarlo de la cola?"
+    },
+    "uninstall": {
+      "title": "Desinstalar juego",
+      "message": "¿Quieres desinstalar \"{{title}}\"?"
     }
   },
   "next": "Siguiente"

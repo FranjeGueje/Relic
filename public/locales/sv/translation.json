@@ -1018,6 +1018,10 @@
       "platform": "Platform",
       "title": "Installera spel",
       "wineLoading": "Laddar…"
+    },
+    "uninstall": {
+      "title": "Avinstallera spel",
+      "message": "Vill du avinstallera \"{{title}}\"?"
     }
   },
   "next": "Nästa"

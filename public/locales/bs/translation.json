@@ -1008,6 +1008,10 @@
     "install": {
       "platform": "Platform",
       "wineLoading": "Loading"
+    },
+    "uninstall": {
+      "title": "Deinstaliraj igricu",
+      "message": "Želite li deinstalirati \"{{title}}\"?"
     }
   },
   "next": ""

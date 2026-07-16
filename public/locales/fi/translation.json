@@ -1020,6 +1020,10 @@
       "platform": "Platform",
       "title": "Asenna peli",
       "wineLoading": "Ladataan"
+    },
+    "uninstall": {
+      "title": "Poista peli",
+      "message": "Haluatko poistaa \"{{title}}\"?"
     }
   },
   "next": "Seuraava"

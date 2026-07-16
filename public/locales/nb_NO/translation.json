@@ -1046,6 +1046,10 @@
     },
     "removeFromQueue": {
       "message": "Dette spillet står i nedlastingskø. Vil du fjerne det fra køen?"
+    },
+    "uninstall": {
+      "title": "Avinstaller spill",
+      "message": "Vil du avinstallere \"{{title}}\"?"
     }
   },
   "next": "Neste"

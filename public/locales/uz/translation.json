@@ -988,7 +988,11 @@
     "empty": "",
     "games": "",
     "quitApp": "",
-    "loading": ""
+    "loading": "",
+    "uninstall": {
+      "title": "O'yinni o'chirish",
+      "message": "\"{{title}}\" oʻyinni oʻchirishni xohlaysizmi?"
+    }
   },
   "next": "",
   "sidebar": {

@@ -1009,6 +1009,10 @@
       "platform": "Platform",
       "title": "Install game",
       "wineLoading": "Loading"
+    },
+    "uninstall": {
+      "title": "Uninstall game",
+      "message": "Do you want to uninstall \"{{title}}\"?"
     }
   },
   "next": ""

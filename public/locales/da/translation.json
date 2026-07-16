@@ -1060,6 +1060,10 @@
     "cancelUpdate": {
       "message": "Dette spil er i gang med overførsel. Afbryd den igangværende opdatering?",
       "title": "Afbryd opdatering?"
+    },
+    "uninstall": {
+      "title": "Afinstaller spil",
+      "message": "Vil du afinstallere \"{{title}}\"?"
     }
   },
   "next": "Næste"

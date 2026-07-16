@@ -1048,6 +1048,10 @@
     },
     "removeFromQueue": {
       "message": "Dieses Spiel steht zum Herunterladen an. Möchten Sie es aus der Warteschlange entfernen?"
+    },
+    "uninstall": {
+      "title": "Spiel deinstallieren",
+      "message": "Möchtest du \"{{title}}\" deinstallieren?"
     }
   },
   "next": "Weiter"

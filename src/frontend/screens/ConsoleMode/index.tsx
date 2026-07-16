@@ -20,6 +20,7 @@ import ConfirmDialog from './components/ConfirmDialog'
 import ConsoleCard from './components/ConsoleCard'
 import ControllerHints from './components/ControllerHints'
 import InstallOverlay from './InstallOverlay'
+import UninstallOverlay from './UninstallOverlay'
 import {
   BTN_L1,
   BTN_R1,
@@ -74,6 +75,7 @@ export default function ConsoleMode() {
   const [filteringByInstalled, setFilteringByInstalled] = useState(false)
   const [focusedIndex, setFocusedIndex] = useState(0)
   const [installingGame, setInstallingGame] = useState<GameInfo | null>(null)
+  const [uninstallingGame, setUninstallingGame] = useState<GameInfo | null>(null)
   const [updateNoticeGame, setUpdateNoticeGame] = useState<GameInfo | null>(
     null
   )
@@ -226,6 +228,7 @@ export default function ConsoleMode() {
 
   const idle =
     !installingGame &&
+    !uninstallingGame &&
     !updateNoticeGame &&
     !cancelDownloadGame &&
     !queuedNoticeGame
@@ -256,6 +259,7 @@ export default function ConsoleMode() {
         setUpdateNoticeGame(game)
         return
       }
+      setUninstallingGame(game)
     },
     [idle, libraryStatus, gameUpdates]
   )
@@ -272,6 +276,11 @@ export default function ConsoleMode() {
       })
     }
   }, [updateNoticeGame])
+
+  const handleUninstallFinished = useCallback(() => {
+    setUninstallingGame(null)
+    void refreshLibrary({ runInBackground: true })
+  }, [refreshLibrary])
 
   const dismissUpdateNotice = useCallback(() => setUpdateNoticeGame(null), [])
 
@@ -495,6 +504,13 @@ export default function ConsoleMode() {
         <InstallOverlay
           game={installingGame}
           onDismiss={() => setInstallingGame(null)}
+        />
+      )}
+
+      {uninstallingGame && (
+        <UninstallOverlay
+          game={uninstallingGame}
+          onDismiss={handleUninstallFinished}
         />
       )}
 

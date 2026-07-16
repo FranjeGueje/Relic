@@ -1007,6 +1007,10 @@
     "install": {
       "platform": "Platform",
       "wineLoading": "Yüklənir"
+    },
+    "uninstall": {
+      "title": "Oyunu sil",
+      "message": "\"{{title}}\" oyununu silmək istəyirsiniz?"
     }
   },
   "next": ""

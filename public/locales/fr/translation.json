@@ -1048,6 +1048,10 @@
       "platform": "Système",
       "title": "Installer le jeu",
       "wineLoading": "Chargement…"
+    },
+    "uninstall": {
+      "title": "Désinstaller le jeu",
+      "message": "Voulez-vous désinstaller \"{{title}}\" ?"
     }
   },
   "next": "Suivant"

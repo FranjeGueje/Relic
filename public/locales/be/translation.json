@@ -1034,6 +1034,10 @@
       "platform": "Platform",
       "title": "Усталяваць гульню",
       "wineLoading": "Загрузка"
+    },
+    "uninstall": {
+      "title": "Выдаліць гульню",
+      "message": "Вы хочаце выдаліць \"{{title}}\"?"
     }
   },
   "next": "Далей"

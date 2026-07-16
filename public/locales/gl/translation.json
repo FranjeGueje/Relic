@@ -1036,6 +1036,10 @@
       "platform": "Platform",
       "title": "Instalar xogo",
       "wineLoading": "Cargando"
+    },
+    "uninstall": {
+      "title": "Desinstalar xogo",
+      "message": "Queres desinstalar \"{{title}}\"?"
     }
   }
 }

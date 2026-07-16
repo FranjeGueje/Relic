@@ -1041,6 +1041,10 @@
       "platform": "Platform",
       "title": "Paigalda mäng",
       "wineLoading": "Laadimine"
+    },
+    "uninstall": {
+      "title": "Desinstallige mäng",
+      "message": "Kas soovite mängu \"{{title}}\" desinstallida?"
     }
   },
   "next": "Järgmine"

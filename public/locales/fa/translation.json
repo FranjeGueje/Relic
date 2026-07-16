@@ -1011,6 +1011,10 @@
       "platform": "Platform",
       "title": "نصب بازی",
       "wineLoading": "درحال بارگذاری"
+    },
+    "uninstall": {
+      "title": "حذف بازی",
+      "message": "آیا می‌خواهید \"{{title}}\" را حذف کنید؟"
     }
   },
   "next": ""

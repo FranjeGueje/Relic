@@ -1015,6 +1015,10 @@
       "platform": "Platform",
       "title": "Install game",
       "wineLoading": "Načítavam…"
+    },
+    "uninstall": {
+      "title": "Uninstall game",
+      "message": "Do you want to uninstall \"{{title}}\"?"
     }
   },
   "next": ""

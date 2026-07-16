@@ -974,6 +974,10 @@
     },
     "removeFromQueue": {
       "message": "Tá an cluiche seo i scuaine le híoslódáil. Bain den scuaine é?"
+    },
+    "uninstall": {
+      "title": "Díshuiteáil cluiche",
+      "message": "Ar mhaith leat \"{{title}}\" a dhíshuiteáil?"
     }
   },
   "steamgriddb": {

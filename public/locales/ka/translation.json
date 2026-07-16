@@ -952,6 +952,10 @@
     "loading": "",
     "install": {
       "wineLoading": "იტვირთება"
+    },
+    "uninstall": {
+      "title": "თამაშის წაშლა",
+      "message": "გსურთ წაშალოთ \"{{title}}\"?"
     }
   },
   "next": "შემდეგი",

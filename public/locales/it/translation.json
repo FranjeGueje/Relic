@@ -1052,6 +1052,10 @@
     },
     "removeFromQueue": {
       "message": "Questo gioco è in coda per il download. Rimuoverlo dalla coda?"
+    },
+    "uninstall": {
+      "title": "Disinstalla gioco",
+      "message": "Vuoi disinstallare \"{{title}}\"?"
     }
   },
   "next": "Prossimo"

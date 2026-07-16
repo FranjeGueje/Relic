@@ -230,7 +230,11 @@
     "removeFromQueue": {
       "message": "This game is queued for download. Remove it from the queue?"
     },
-    "sort": "Sort"
+    "sort": "Sort",
+    "uninstall": {
+      "title": "Uninstall game",
+      "message": "Do you want to uninstall \"{{title}}\"?"
+    }
   },
   "controller": {
     "hints": {

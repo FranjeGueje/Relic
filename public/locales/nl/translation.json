@@ -1016,6 +1016,10 @@
       "platform": "Platform",
       "title": "Install game",
       "wineLoading": "Loading"
+    },
+    "uninstall": {
+      "title": "Uninstall game",
+      "message": "Uninstall game"
     }
   },
   "next": "Volgende"
