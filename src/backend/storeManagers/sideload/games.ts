@@ -2,8 +2,7 @@ import {
   ExecResult,
   ExtraInfo,
   GameInfo,
-  GameSettings,
-  LaunchOption
+  GameSettings
 } from 'common/types'
 import { libraryStore } from './electronStores'
 import { GameConfig } from '../../game_config'
@@ -17,14 +16,11 @@ import {
   removeShortcuts as removeShortcutsUtil
 } from '../../shortcuts/shortcuts/shortcuts'
 import { notify } from '../../dialog/dialog'
-import { launchGame } from 'backend/storeManagers/storeManagerCommon/games'
 import { Game, InstallResult, RemoveArgs } from 'common/types/game_manager'
 import { removePrefix } from 'backend/utils/uninstaller'
 import { removeRecentGame } from 'backend/recent_games/recent_games'
 import { isLinux } from 'backend/constants/environment'
 import { removeNonSteamGame } from 'backend/shortcuts/nonesteamgame/nonesteamgame'
-
-import type LogWriter from 'backend/logger/log_writer'
 
 export default class SideloadGame implements Game {
   private readonly id: string
@@ -70,14 +66,6 @@ export default class SideloadGame implements Game {
         resolve(existsSync(install.executable))
       }
     })
-  }
-
-  async launch(
-    logWriter: LogWriter,
-    launchArguments?: LaunchOption,
-    args: string[] = []
-  ): Promise<boolean> {
-    return launchGame(this, logWriter, args)
   }
 
   async stop(): Promise<void> {

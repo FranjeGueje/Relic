@@ -17,9 +17,6 @@ interface LaunchCommand {
   '--origin'?: true
   '--ubisoft'?: true
   '--json'?: true
-  '--wine'?: Path
-  '--wine-prefix'?: Path
-  '--no-wine'?: true
 }
 
 export default LaunchCommand

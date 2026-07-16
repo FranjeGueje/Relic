@@ -9,13 +9,9 @@ export const getUmuPath = async () =>
   searchForExecutableOnPath('umu-run').then((path) => path ?? defaultUmuPath)
 
 export async function isUmuSupported(
-  gameSettings: { disableUMU?: boolean },
   checkUmuInstalled = true
 ): Promise<boolean> {
   if (!isLinux) return false
-  if (gameSettings.disableUMU === true) {
-    return false
-  }
   if (!checkUmuInstalled) return true
   if (!existsSync(await getUmuPath())) return false
 

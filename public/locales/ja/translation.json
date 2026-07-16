@@ -688,9 +688,6 @@
       },
       "label": "アンチチートが壊れていたり、拒否されているゲームのインストールを許可"
     },
-    "before-launch-script-path": "ゲーム起動前に実行するスクリプトを選択",
-    "after-launch-script-path": "ゲーム終了後に実行するスクリプトを選択",
-    "disableUMU": "UMUを無効にする",
     "custom_css": {
       "warning": "警告：これはフロントエンド全体に適用されます。間違ったCSSスタイルはHeroicを利用できなくなる可能性があります。必要に応じて、設定は`~/.config/heroic/config.json`で手動で変更できます。信頼できないソースからCSSスタイルをコピーしないでください。"
     },

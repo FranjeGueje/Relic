@@ -684,8 +684,6 @@
       },
       "description": "Użyj okna bez ramki (wymaga restartu)"
     },
-    "after-launch-script-path": "Wybierz skrypt do uruchomienia po zakończeniu gry",
-    "before-launch-script-path": "Wybierz skrypt do uruchomienia przed rozpoczęciem gry",
     "msync": "Włącz Msync",
     "allow_installation_broken_anticheat": {
       "confirmation": {
@@ -701,7 +699,6 @@
     "custom_css": {
       "warning": "Ostrzeżenie: dotyczy to całego frontendu. Oznacza to, że niewłaściwy styl może sprawić, że Heroic będzie nieużywalny. W razie potrzeby, można zmienić ustawienia ręcznie w `~/.config/heroic/config.json`. NIE kopiuj stylów ze źródeł, którym nie ufasz."
     },
-    "disableUMU": "Wyłącz umu",
     "advertiseAvxForRosetta": "Promuj AVX dla Rosetty",
     "dxfpslimit": "Ogranicz klatki na sekundę w grach DirectX",
     "download-proton-steam": "Pobierz GE-Proton do katalogu Steam",

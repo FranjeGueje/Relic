@@ -773,7 +773,6 @@ class GlobalState extends PureComponent<Props> {
         'updating',
         'playing',
         'extracting',
-        'launching',
         'redist',
         'queued'
       ].includes(status)
@@ -988,7 +987,6 @@ class GlobalState extends PureComponent<Props> {
     const allowedPendingOps: Status[] = [
       'installing',
       'updating',
-      'launching',
       'playing',
       'redist',
       'extracting',

@@ -377,17 +377,6 @@ const GameCard = ({
       icon: <CheckCircle />
     },
     {
-      label: t('submenu.protondb', 'Check Compatibility'),
-      onclick: () =>
-        createNewWindow(
-          `https://www.protondb.com/search?q=${encodeURIComponent(title)}`
-        ),
-      show: !isSideloaded && isLinux,
-      icon: (
-        <FontAwesomeIcon icon={faLinux} />
-      )
-    },
-    {
       label: t('game.modify', 'Modify Installation'),
       onclick: () => setShowModifyInstallModal(true),
       show:

@@ -28,13 +28,7 @@ import {
   LogPrefix,
   createGameLogWriter
 } from 'backend/logger'
-import {
-  prepareLaunch,
-  setupEnvVars,
-  setupWrapperEnvVars,
-  setupWrappers,
-  getKnownFixesEnvVariables
-} from '../../launcher'
+
 import {
   addShortcuts as addShortcutsUtil,
   removeShortcuts as removeShortcutsUtil
@@ -836,96 +830,6 @@ export default class LegendaryGame implements Game {
       )
     }
     return fullOutput
-  }
-
-  async launch(
-    logWriter: LogWriter,
-    launchArguments?: LaunchOption,
-    args: string[] = [],
-    skipVersionCheck = false
-  ): Promise<boolean> {
-    const gameSettings = await this.getSettings()
-    const gameInfo = this.getGameInfo()
-
-    const {
-      success: launchPrepSuccess,
-      failureReason: launchPrepFailReason,
-      offlineMode
-    } = await prepareLaunch(gameSettings, logWriter, gameInfo, this.isNative())
-    if (!launchPrepSuccess) {
-      logWriter.logError(['Launch aborted:', launchPrepFailReason])
-      showDialogBoxModalAuto({
-        title: t('box.error.launchAborted', 'Launch aborted'),
-        message: launchPrepFailReason!,
-        type: 'ERROR'
-      })
-      return false
-    }
-
-    const languageCode =
-      gameSettings.language || configStore.get('language', '')
-
-    let commandEnv = {
-      ...process.env,
-      ...setupWrapperEnvVars({ appName: this.appName, appRunner: 'legendary' }),
-      ...setupEnvVars(gameSettings, gameInfo.install.install_path),
-      ...getKnownFixesEnvVariables(this.appName, 'legendary')
-    }
-
-    const wrappers = setupWrappers()
-
-    const wineFlags: Record<string, unknown> = wrappers.length
-      ? { '--wrapper': NonEmptyString.parse(shlex.join(wrappers)) }
-      : {}
-
-    const appNameToLaunch =
-      launchArguments?.type === 'dlc'
-        ? launchArguments.dlcAppName
-        : this.appName
-
-    const launchArgumentArgs =
-      launchArguments &&
-      (launchArguments.type === undefined || launchArguments.type === 'basic')
-        ? launchArguments.parameters
-        : undefined
-
-    const command: LegendaryCommand = {
-      subcommand: 'launch',
-      appName: LegendaryAppName.parse(appNameToLaunch),
-      extraArguments: [...args, launchArgumentArgs]
-        .filter(Boolean)
-        .join(' '),
-      ...wineFlags
-    }
-    if (skipVersionCheck) command['--skip-version-check'] = true
-    if (languageCode) command['--language'] = NonEmptyString.parse(languageCode)
-    if (launchArguments?.type === 'altExe')
-      command['--override-exe'] = launchArguments.executable
-    else if (gameSettings.targetExe)
-      command['--override-exe'] = Path.parse(gameSettings.targetExe)
-    if (offlineMode) command['--offline'] = true
-    if (isCLINoGui) command['--skip-version-check'] = true
-    if (gameInfo.isEAManaged) command['--origin'] = true
-    if (gameInfo.isUbisoftManaged) command['--ubisoft'] = true
-
-    sendGameStatusUpdate({
-      appName: this.appName,
-      runner: 'legendary',
-      status: 'playing'
-    })
-
-    const { error } = await libraryManagerMap['legendary'].runRunnerCommand(
-      command,
-      {
-        abortId: this.appName,
-        env: commandEnv,
-        wrappers: wrappers,
-        logMessagePrefix: `Launching ${gameInfo.title}`,
-        logWriters: gameSettings.verboseLogs ? [logWriter] : []
-      }
-    )
-
-    return !error
   }
 
   isNative(): boolean {

@@ -687,8 +687,6 @@
       "description": "使用无框架窗口（需要重启）"
     },
     "msync": "启用 Msync",
-    "after-launch-script-path": "选择在游戏退出后要运行的脚本",
-    "before-launch-script-path": "选择游戏启动前要运行的脚本",
     "allow_installation_broken_anticheat": {
       "confirmation": {
         "title": "你确定吗？",
@@ -697,7 +695,6 @@
       },
       "label": "允许安装反作弊损坏或被拒绝的游戏"
     },
-    "disableUMU": "禁用 umu",
     "custom_css": {
       "warning": "警告：这应用到整个前端，意味着错误样式可以造成 Heroic 不稳定。如果有需要，可以手动在 `~/.config/heroic/config.json`文件中更改设置。不要从你不信任的来源复制样式。"
     },

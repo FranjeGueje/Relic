@@ -682,8 +682,6 @@
       },
       "description": "Çerçevesiz pencere kullan (yeniden başlatma gerektirir)"
     },
-    "after-launch-script-path": "Oyun kapandıktan sonra çalıştırılacak betiği seçin",
-    "before-launch-script-path": "Oyun başlatılmadan önce çalıştırılacak betiği seçin",
     "msync": "Msync Etkinleştir",
     "allow_installation_broken_anticheat": {
       "confirmation": {
@@ -696,7 +694,6 @@
     "advertiseAvxForRosetta": "Rosetta için AVX tanıtın",
     "download-proton-steam": "GE-Protonu Steam dizinine indirin",
     "dxfpslimit": "DirectX Oyunlarında FPS Sınırla",
-    "disableUMU": "Umu devre dışı bırak",
     "custom_css": {
       "warning": "Uyarı: Bu değişiklik tüm arayüzü etkiler. Bu, yanlış bir stilin Heroic'i kullanılamaz hale getirebileceği anlamına gelir. Gerekirse, ayar `~/.config/heroic/config.json` dosyası üzerinden elle değiştirilebilir. Güvenmediğiniz kaynaklardan stil KOPYALAMAYIN."
     },

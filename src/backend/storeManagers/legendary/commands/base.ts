@@ -1,6 +1,4 @@
 import { z } from 'zod'
-import path from 'path'
-import { existsSync } from 'graceful-fs'
 
 import { Path } from 'backend/schemas'
 
@@ -27,7 +25,4 @@ export type URL = z.infer<typeof URL>
 export const URI = z.union([Path, URL])
 export type URI = z.infer<typeof URI>
 
-export const ValidWinePrefix = Path.refine((potPath) =>
-  existsSync(path.join(potPath, 'user.reg'))
-).brand('ValidWinePrefix')
-export type ValidWinePrefix = z.infer<typeof ValidWinePrefix>
+

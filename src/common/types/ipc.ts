@@ -22,8 +22,6 @@ import type {
   InstallParams,
   InstallPlatform,
   KnowFixesInfo,
-  LaunchOption,
-  LaunchParams,
   MoveGameArgs,
   RecentGame,
   Release,
@@ -53,7 +51,6 @@ interface SyncIPCFunctions {
   openWeblate: () => void
   showAboutWindow: () => void
   openLoginPage: () => void
-  openWinePrefixFAQ: () => void
   openWebviewPage: (url: string) => void
   showConfigFileInFolder: (appName: string) => void
   removeFolder: ([path, folderName]: [string, string]) => void
@@ -180,7 +177,6 @@ interface AsyncIPCFunctions {
   requestGameSettings: (appName: string) => Promise<GameSettings>
   writeConfig: (args: { appName: string; config: Partial<AppSettings> }) => void
   refreshLibrary: (library?: Runner | 'all') => Promise<void>
-  launch: (args: LaunchParams) => StatusPromise
   openDialog: (args: OpenDialogOptions) => Promise<string | false>
   install: (args: InstallParams) => Promise<void>
   uninstall: (
@@ -242,11 +238,6 @@ interface AsyncIPCFunctions {
   }) => Promise<boolean>
 
   pathExists: (path: string) => Promise<boolean>
-  getLaunchOptions: (appName: string, runner: Runner) => Promise<LaunchOption[]>
-  getPlaytimeFromRunner: (
-    runner: Runner,
-    appName: string
-  ) => Promise<number | undefined>
   getAmazonLoginData: () => Promise<NileLoginData>
   hasExecutable: (executable: string) => Promise<boolean>
 
@@ -297,7 +288,6 @@ interface FrontendMessages {
     status: ConnectivityStatus
     retryIn: number
   }) => void
-  launchGame: (appName: string, runner: Runner, args: string[]) => void
   installGame: (appName: string, runner: Runner) => void
   recentGamesChanged: (newRecentGames: RecentGame[]) => void
   pushGameToLibrary: (info: GameInfo) => void

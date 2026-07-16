@@ -1,5 +1,52 @@
 # HISTORY_REMOVE.md
 
+## Fase 5 — Refactorización profunda
+### Eliminación del flujo de lanzamiento de juegos
+- `src/backend/launcher.ts`: eliminado `launchEventCallback`, `prepareLaunch`, `filterGameSettingsForLog`, `setupEnvVars`, `setupWrapperEnvVars`, `setupWrappers`, `runBeforeLaunchScript`, `runAfterLaunchScript`, `runScriptForGame`. Mantenidos: `callRunner`, `readKnownFixes`, `getRunnerCallWithoutCredentials`, `appNameFromCommandParts`.
+- Eliminados `LaunchParams`, `LaunchPreperationResult`, `lastUsedLaunchOption`, `beforeLaunchScriptPath`, `afterLaunchScriptPath`, `disableUMU` de `common/types.ts`
+- Eliminado `launch()`, `getLaunchOptions()` de la interfaz `Game` y `LibraryManager` en `game_manager.ts`
+- Eliminado `launch`, `launchGame`, `getLaunchOptions`, `getPlaytimeFromRunner` de `AsyncIPCFunctions`/`FrontendMessages` en `ipc.ts`
+- Eliminado `openWinePrefixFAQ` de `SyncIPCFunctions`
+
+### Eliminación de `launch()` en store managers
+- `storeManagerCommon/games.ts`: archivo completo eliminado (`launchGame`, `openNewBrowserGameWindow`)
+- `legendary/games.ts`: método `launch()` (~90 líneas) e imports eliminados
+- `gog/games.ts`: método `launch()` (~140 líneas) e imports eliminados
+- `nile/games.ts`: método `launch()` (~80 líneas) e imports eliminados
+- `zoom/games.ts`: método `launch()` (~100 líneas) e imports eliminados
+- `sideload/games.ts`: método `launch()` e imports eliminados
+
+### Eliminación de IPC y preload de lanzamiento
+- `main.ts`: handler `launch`, `getLaunchOptions`, `getPlaytimeFromRunner` eliminados. Import de `playtimeSyncQueue` y su lógica de startup eliminados.
+- `preload/api/library.ts`: `export const launch` eliminado
+- `preload/api/helpers.ts`: `openWinePrefixFAQ`, `getLaunchOptions` eliminados
+
+### Eliminación de settings de scripts y disableUMU
+- `config.ts`, `game_config.ts`: campos `beforeLaunchScriptPath`, `afterLaunchScriptPath`, `disableUMU` eliminados
+- `compatibility_layers.ts`: parámetro `disableUMU` eliminado de `isUmuSupported`
+- Componentes `BeforeLaunchScriptPath.tsx`, `AfterLaunchScriptPath.tsx` eliminados
+- Exports del barrel `Settings/components/index.ts` eliminados
+
+### Eliminación de frontend launch code y ProtonDB
+- `helpers/library.ts`: funciones `launch`, `checkLaunchOptionsAndLaunch` eliminadas (eran internas, no exportadas)
+- Referencias a `'launching'` status eliminadas de: `GameCard/constants.ts`, `GamePage/index.tsx`, `GlobalState.tsx`, `hooks/constants.ts`, `ConsoleCard/index.tsx`, `GameContext.tsx`, `types.ts`
+- ProtonDB eliminado de `GameSubMenu/index.tsx` y `GameCard/index.tsx`
+- `faLinux` import eliminado de `GameSubMenu`
+
+### Eliminación de código muerto Wine/Proton
+- `wineprefixFAQ` eliminado de `urls.ts`
+- `defaultWinePrefixDir`, `sharedWinePrefix`, `defaultWinePrefix` eliminados de `paths.ts`
+- `ValidWinePrefix` eliminado de `legendary/commands/base.ts`
+- `WineDownloader`, `WineTricks` eliminados de `logger/constants.ts`
+- `--wine`, `--wine-prefix`, `--no-wine` eliminados de `legendary/commands/launch.ts`
+- `--egl-wine-prefix` eliminado de `legendary/commands/egl_sync.ts`
+- `import path from 'path'`, `import { existsSync } from 'graceful-fs'` eliminados de `legendary/commands/base.ts`
+- Directorio `src/backend/wine/` completo eliminado (6 archivos)
+
+### Limpieza de traducciones
+- 47 `translation.json`: `eosOverlay` block, `setting.before-launch-script-path`, `setting.after-launch-script-path`, `setting.disableUMU` eliminados
+- 47 `gamepage.json`: `protondb`, `disableEosOverlay`, `enableEosOverlay` eliminados (si existían)
+
 ## Rebranding Heroic → Relic
 - Renombrado: package.json, electron-builder.yml, index.html, manifest.json
 - Identificadores, textos, URLs, scheme de protocolo (`heroic://` → `relic://`)

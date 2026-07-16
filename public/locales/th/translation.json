@@ -463,7 +463,6 @@
     "download-proton-steam": "",
     "scripts": "",
     "wineWayland": "",
-    "after-launch-script-path": "",
     "fsync": "",
     "showfps": "",
     "experimental_features": {
@@ -526,12 +525,10 @@
     "verboseLogs": {
       "description": ""
     },
-    "before-launch-script-path": "",
     "wineversion": "",
     "default-steam-path": "",
     "maxworkers": "",
     "steamruntime": "",
-    "disableUMU": "",
     "gamemode": "",
     "custom_css": {
       "warning": ""

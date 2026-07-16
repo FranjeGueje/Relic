@@ -669,7 +669,6 @@
     "autodxvknvapi": "Autoinstalar/actualizar DXVK-NVAPI no prefixo",
     "msync": "Activar Msync",
     "advertiseAvxForRosetta": "Amosar AVX a Rosetta",
-    "after-launch-script-path": "Selecciona unha secuencia de comandos para executar despois de que se peche o xogo",
     "allow_installation_broken_anticheat": {
       "confirmation": {
         "message": "Os xogos con antitrampas roto ou rexeitado poderían funcionar, pero as funcións de multixogador non van funcionar. Non pidas asistencia se os instalas sabendo isto.",
@@ -689,11 +688,9 @@
       "label": "Permitir usar versións de Proton que non sexan de GE para executar xogos",
       "wine_selector_warning": "As versións de Proton que non sexan de GE son ignoradas por defecto, podes activalas na configuración avanzada global"
     },
-    "before-launch-script-path": "Selecciona unha secuencia de comandos para executar antes de lanzar o xogo",
     "custom_css": {
       "warning": "Advertencia: isto aplícase a todo o frontend. Isto significa que un estilo incorrecto podería facer Heroic inusable. En caso de ser necesario, a configuración pódese cambiar manualmente en `~/.config/heroic/config.json`. NON copies estilos de fontes non confiables."
     },
-    "disableUMU": "Desactivar umu",
     "download-proton-steam": "Descargar GE-Proton no cartafol de Steam",
     "dxfpslimit": "Limitar FPS en xogos de DirectX",
     "experimental_features": {

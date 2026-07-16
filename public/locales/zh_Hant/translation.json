@@ -662,7 +662,6 @@
     "alt-nile-bin": "選擇替代的 Nile 二進位檔案",
     "autodxvknvapi": "自動在 Prefix 中安裝/更新 DXVK-NVAPI",
     "msync": "啟用 Esync",
-    "before-launch-script-path": "選擇遊戲啟動前要執行的指令碼",
     "experimental_features": {
       "enableHelp": "幫助元件",
       "enableNewDesign": "新設計",
@@ -688,7 +687,6 @@
     "download-proton-steam": "",
     "scripts": "",
     "wineWayland": "",
-    "after-launch-script-path": "",
     "hdr": "",
     "show_valve_proton": {
       "wine_selector_warning": "",
@@ -707,7 +705,6 @@
     "verboseLogs": {
       "description": ""
     },
-    "disableUMU": "",
     "advertiseAvxForRosetta": "",
     "custom_css": {
       "warning": ""

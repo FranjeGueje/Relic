@@ -203,8 +203,6 @@ class GameConfigV0 extends GameConfig {
       offlineMode,
       savesPath,
       targetExe,
-      beforeLaunchScriptPath,
-      afterLaunchScriptPath,
       verboseLogs
     } = GlobalConfig.get().getSettings()
 
@@ -214,8 +212,6 @@ class GameConfigV0 extends GameConfig {
       savesPath,
       targetExe,
       language: '',
-      beforeLaunchScriptPath,
-      afterLaunchScriptPath,
       verboseLogs,
       enableQuickSavesMenu: false
     } as GameSettings
@@ -225,8 +221,6 @@ class GameConfigV0 extends GameConfig {
     if (existsSync(this.path)) {
       const settings = JSON.parse(readFileSync(this.path, 'utf-8'))
       gameSettings = settings[this.appName] || ({} as GameSettings)
-    } else {
-      defaultSettings.disableUMU = false
     }
 
     return {

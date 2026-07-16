@@ -671,7 +671,6 @@
     "download-proton-steam": "",
     "scripts": "",
     "wineWayland": "",
-    "after-launch-script-path": "",
     "experimental_features": {
       "cometSupport": "",
       "enableNewDesign": "",
@@ -705,8 +704,6 @@
     "verboseLogs": {
       "description": ""
     },
-    "before-launch-script-path": "",
-    "disableUMU": "",
     "msync": "",
     "advertiseAvxForRosetta": "",
     "custom_css": {

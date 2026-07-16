@@ -17,13 +17,7 @@ import {
   createGameLogWriter
 } from 'backend/logger'
 import { GameConfig } from 'backend/game_config'
-import {
-  getKnownFixesEnvVariables,
-  prepareLaunch,
-  setupEnvVars,
-  setupWrapperEnvVars,
-  setupWrappers
-} from 'backend/launcher'
+
 import { existsSync } from 'graceful-fs'
 import { showDialogBoxModalAuto } from 'backend/dialog/dialog'
 import { t } from 'i18next'
@@ -283,83 +277,6 @@ export default class NileGameManager implements Game {
    */
   async removeShortcuts() {
     return removeShortcutsUtil(this)
-  }
-
-  async launch(
-    logWriter: LogWriter,
-    launchArguments?: LaunchOption,
-    args: string[] = []
-  ): Promise<boolean> {
-    const gameSettings = await this.getSettings()
-    const gameInfo = this.getGameInfo()
-
-    const {
-      success: launchPrepSuccess,
-      failureReason: launchPrepFailReason
-    } = await prepareLaunch(gameSettings, logWriter, gameInfo, this.isNative())
-
-    if (!launchPrepSuccess) {
-      logWriter.logError(['Launch aborted:', launchPrepFailReason])
-      showDialogBoxModalAuto({
-        title: t('box.error.launchAborted', 'Launch aborted'),
-        message: launchPrepFailReason!,
-        type: 'ERROR'
-      })
-      return false
-    }
-
-    let exeOverrideFlag: string[] = []
-    if (launchArguments?.type === 'altExe') {
-      exeOverrideFlag = ['--override-exe', launchArguments.executable]
-    } else if (gameSettings.targetExe) {
-      exeOverrideFlag = ['--override-exe', gameSettings.targetExe]
-    }
-
-    let commandEnv = {
-      ...process.env,
-      ...setupWrapperEnvVars({ appName: this.id, appRunner: 'nile' }),
-      ...setupEnvVars(gameSettings, gameInfo.install.install_path),
-      ...getKnownFixesEnvVariables(this.id, 'nile')
-    }
-
-    const wrappers = setupWrappers()
-
-    const launchArgumentsArgs =
-      launchArguments &&
-      (launchArguments.type === undefined || launchArguments.type === 'basic')
-        ? launchArguments.parameters
-        : ''
-
-    const commandParts = [
-      'launch',
-      ...exeOverrideFlag,
-      ...shlex.split(launchArgumentsArgs),
-      this.id,
-      ...args
-    ]
-
-    sendGameStatusUpdate({
-      appName: this.id,
-      runner: 'nile',
-      status: 'playing'
-    })
-
-    const { error } = await libraryManagerMap['nile'].runRunnerCommand(
-      commandParts,
-      {
-        abortId: this.id,
-        env: commandEnv,
-        wrappers,
-        logMessagePrefix: `Launching ${gameInfo.title}`,
-        logWriters: [logWriter]
-      }
-    )
-
-    if (error) {
-      logError(['Error launching game:', error], LogPrefix.Nile)
-    }
-
-    return !error
   }
 
   async moveInstall(newInstallPath: string): Promise<InstallResult> {

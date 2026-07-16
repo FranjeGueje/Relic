@@ -678,8 +678,6 @@
       },
       "label": "Tillat installasjon av spill med ødelagt eller nektet anticheat"
     },
-    "after-launch-script-path": "Velg et skript som skal kjøres etter spillet avslutter",
-    "before-launch-script-path": "Velg et skript som skal kjøres før spillet starter",
     "experimental_features": {
       "enableHelp": "Hjelpskomponent",
       "cometSupport": "Comet støtte",
@@ -693,7 +691,6 @@
       },
       "description": "Bruk rammeløst vindu (behøver omstart)"
     },
-    "disableUMU": "Skru av umu",
     "verboseLogs": {
       "description": "Aktiver detaljerte logger"
     },

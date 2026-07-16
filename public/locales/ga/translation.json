@@ -273,7 +273,6 @@
     "winecrossoverbottle": "Buidéal CrossOver",
     "addgamestosteam": "Cuir cluichí le Steam go huathoibríoch",
     "advertiseAvxForRosetta": "Fógraigh AVX do Rosetta",
-    "after-launch-script-path": "Roghnaigh script le rith tar éis don chluiche críochnú",
     "allow_installation_broken_anticheat": {
       "confirmation": {
         "message": "D’fhéadfadh cluichí a bhfuil frith-cheat briste nó diúltaithe acu rith, ach ní oibreoidh gnéithe il-imreora. Ná hiarr tacaíocht má shuiteálann tú iad agus tú ar an eolas faoi seo.",
@@ -291,7 +290,6 @@
     "autosync": "Sábhálacha Uath-Shioncrónaithe",
     "autoUpdateGames": "Nuashonraigh cluichí go huathoibríoch",
     "autovkd3d": "Suiteáil/Nuashonrú Uathoibríoch VKD3D ar Réimír",
-    "before-launch-script-path": "Roghnaigh script le rith sula seoltar an cluiche",
     "change-target-exe": "Roghnaigh EXE malartach le rith",
     "crossover-version": "Leagan Trasnaithe/Wine",
     "custom_css": {
@@ -301,7 +299,6 @@
     "default-install-path": "Cosán Suiteála Réamhshocraithe",
     "default-steam-path": "Cosán réamhshocraithe Steam",
     "disable_logs": "Díchumasaigh Logaí",
-    "disableUMU": "Díchumasaigh umu",
     "download-no-https": "Íoslódáil cluichí gan HTTPS (úsáideach do CDNanna m.sh. LanCache)",
     "download-proton-steam": "Íoslódáil GE-Proton chuig eolaire Steam",
     "dxfpslimit": "Teorainn a chur le FPS Cluichí DirectX",

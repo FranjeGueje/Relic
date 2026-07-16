@@ -667,7 +667,6 @@
         "title": "Πειραματική λειτουργία"
       }
     },
-    "disableUMU": "Απενεργοποίηση umu",
     "allow_installation_broken_anticheat": {
       "confirmation": {
         "title": "Είστε σίγουροι;",
@@ -699,9 +698,7 @@
       "wine_selector_warning": "Οι εκδόσεις Valve του Proton αγνοούνται από προεπιλογή, ενεργοποιήστε τες στις ρυθμίσεις για προχωρημένους"
     },
     "advertiseAvxForRosetta": "Advertise AVX για το Rosetta",
-    "after-launch-script-path": "Επιλέξτε ένα script για εκτέλεση μετά την έξοδο από το παιχνίδι",
     "analyticsOptIn": "Στείλτε ανώνυμα δεδομένα για να βοηθήσετε στην ανάπτυξη του Heroic",
-    "before-launch-script-path": "Επιλέξτε ένα script για εκτέλεση πριν από την εκκίνηση του παιχνιδιού",
     "custom_css": {
       "warning": "Προειδοποίηση: αυτό ισχύει για ολόκληρο το UI. Αυτό σημαίνει ότι ένα λάθος στυλ μπορεί να καταστήσει το Heroic άχρηστο. Εάν χρειαστεί, η ρύθμιση μπορεί να αλλάξει χειροκίνητα από το `~/.config/heroic/config.json`. ΜΗΝ αντιγράφετε στυλ από πηγές που δεν εμπιστεύεστε."
     },

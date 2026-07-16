@@ -685,9 +685,7 @@
       },
       "description": "Mostra la finestra sense marc (requereix reiniciar)"
     },
-    "after-launch-script-path": "Selecciona un script que s'executarà després de sortir del joc",
     "msync": "Activa l'Msync",
-    "before-launch-script-path": "Selecciona un script que s'executarà abans que s'iniciï el joc",
     "allow_installation_broken_anticheat": {
       "confirmation": {
         "title": "Estàs segur?",
@@ -699,7 +697,6 @@
     "verboseLogs": {
       "description": "Activa els registres detallats"
     },
-    "disableUMU": "Desactiva l'umu",
     "custom_css": {
       "warning": "Avís: s'aplica a tota la interfície. Això significa que amb un estil erroni pots inutilitzar l'Heroic. Si ho necessites, pots canviar manualment l'opció des de `~/.config/heroic/config.json`. No copiïs estils d'orígens desconeguts o de poca confiança."
     },

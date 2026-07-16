@@ -32,14 +32,7 @@ import {
   createGameLogWriter,
   logDebug
 } from 'backend/logger'
-import {
-  prepareLaunch,
-  setupEnvVars,
-  setupWrapperEnvVars,
-  setupWrappers,
-  callRunner,
-  getKnownFixesEnvVariables
-} from '../../launcher'
+
 import {
   addShortcuts as addShortcutsUtil,
   removeShortcuts as removeShortcutsUtil
@@ -518,110 +511,6 @@ export default class ZoomGame implements Game {
 
   async removeShortcuts() {
     return removeShortcutsUtil(this)
-  }
-
-  async launch(
-    logWriter: LogWriter,
-    launchArguments?: LaunchOption,
-    args: string[] = []
-  ): Promise<boolean> {
-    const gameSettings = await this.getSettings()
-    const gameInfo = this.getGameInfo()
-
-    if (
-      !gameInfo.install ||
-      !gameInfo.install.install_path ||
-      !gameInfo.install.platform ||
-      !gameInfo.install.executable
-    ) {
-      logError(`Missing install info for ${this.id}`, LogPrefix.Zoom)
-      return false
-    }
-
-    if (!existsSync(gameInfo.install.install_path)) {
-      errorHandler('appears to be deleted', this.id, 'zoom')
-      return false
-    }
-
-    const {
-      success: launchPrepSuccess,
-      failureReason: launchPrepFailReason
-    } = await prepareLaunch(gameSettings, logWriter, gameInfo, this.isNative())
-    if (!launchPrepSuccess) {
-      logWriter.logError(['Launch aborted:', launchPrepFailReason])
-      showDialogBoxModalAuto({
-        title: t('box.error.launchAborted', 'Launch aborted'),
-        message: launchPrepFailReason!,
-        type: 'ERROR'
-      })
-      return false
-    }
-
-    const commandEnv = {
-      ...process.env,
-      ...setupWrapperEnvVars({ appName: this.id, appRunner: 'zoom' }),
-      ...setupEnvVars(gameSettings, gameInfo.install.install_path),
-      ...getKnownFixesEnvVariables(this.id, 'zoom')
-    }
-
-    const wrappers = setupWrappers()
-
-    const launchArgumentsArgs =
-      launchArguments &&
-      (launchArguments.type === undefined || launchArguments.type === 'basic')
-        ? launchArguments.parameters
-        : ''
-
-    const commandParts = [
-      ...shlex.split(launchArgumentsArgs),
-      ...args
-    ]
-
-    if (gameInfo.install.isDosbox && gameInfo.install.dosboxConf) {
-      gameInfo.install.dosboxConf.forEach((conf) => {
-        commandParts.push('-conf', conf)
-      })
-    }
-
-    sendGameStatusUpdate({
-      appName: this.id,
-      runner: 'zoom',
-      status: 'playing'
-    })
-
-    if (this.isNative()) {
-      const isNativeDosbox = this.isNative() && gameInfo.install.isDosbox
-      const { error, abort } = await callRunner(
-        commandParts,
-        {
-          name: 'zoom',
-          logPrefix: LogPrefix.Zoom,
-          bin: gameInfo.install.executable,
-          dir: isNativeDosbox ? undefined : gameInfo.install.install_path
-        },
-        {
-          env: commandEnv,
-          wrappers,
-          logMessagePrefix: `Launching ${gameInfo.title}`,
-          logWriters: [logWriter],
-          abortId: this.id,
-          cwd: gameInfo.install.install_path
-        }
-      )
-
-      if (abort) {
-        return true
-      }
-
-      if (error) {
-        logError(['Error launching game:', error], LogPrefix.Zoom)
-      }
-
-      return !error
-    } else {
-      logInfo('Non-native launch is handled by the external script', LogPrefix.Zoom)
-      return true
-    }
   }
 
   async moveInstall(): Promise<

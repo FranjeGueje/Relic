@@ -13,7 +13,6 @@ const initialContext: GameContextType = {
     installing: false,
     importing: false,
     installingRedist: false,
-    launching: false,
     linux: false,
     linuxNative: false,
     mac: false,

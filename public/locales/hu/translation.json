@@ -693,9 +693,6 @@
       },
       "label": "A hibás vagy letiltott csalás elleni szoftverrel rendelkező játékok telepítésének engedélyezése"
     },
-    "before-launch-script-path": "Válassz egy a játék indítása előtt futtatandó parancsfájlt",
-    "after-launch-script-path": "Válaszd ki a játék kilépése után futtatandó parancsfájlt",
-    "disableUMU": "Az umu letiltása",
     "verboseLogs": {
       "description": "Bőbeszédű naplók engedélyezése"
     },

@@ -677,7 +677,6 @@
       },
       "label": "손상되거나 거부된 안티치트가 있는 게임 설치 허용"
     },
-    "before-launch-script-path": "게임을 시작하기 전에 실행할 스크립트를 선택",
     "experimental_features": {
       "enableNewDesign": "새 디자인",
       "enableHelp": "도움말 구성 요소",
@@ -686,7 +685,6 @@
       "umuSupport": "umu를 프로톤 런타임으로 사용",
       "zoomPlatform": ""
     },
-    "after-launch-script-path": "게임을 나간 후 실행할 스크립트를 선택",
     "allow_non_ge_proton": {
       "confirmation": {
         "title": "확실합니까?"
@@ -714,7 +712,6 @@
     "verboseLogs": {
       "description": ""
     },
-    "disableUMU": "",
     "advertiseAvxForRosetta": "",
     "custom_css": {
       "warning": ""

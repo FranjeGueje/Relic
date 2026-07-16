@@ -59,9 +59,6 @@ export default function GamesSubmenu({
   const isLinux = platform === 'linux'
 
   const [showUninstallModal, setShowUninstallModal] = useState(false)
-  const [protonDBurl, setProtonDBurl] = useState(
-    `https://www.protondb.com/search?q=${title}`
-  )
   const { t } = useTranslation('gamepage')
   const isSideloaded = runner === 'sideload'
   const isThirdPartyManaged = !!gameInfo.thirdPartyManagedApp
@@ -186,17 +183,6 @@ export default function GamesSubmenu({
               {t('button.changelog', 'Show Changelog')}
             </button>
           )}{' '}
-          {!isSideloaded && isLinux && (
-            <button
-              onClick={() => createNewWindow(protonDBurl)}
-              className="link button is-text is-link buttonWithIcon"
-            >
-              <SvgIcon>
-                <FontAwesomeIcon icon={faLinux} />
-              </SvgIcon>
-              {t('submenu.protondb', 'Check Compatibility')}
-            </button>
-          )}
           {onShowRequirements && (
             <button
               onClick={async () => onShowRequirements()}

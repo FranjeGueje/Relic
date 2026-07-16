@@ -36,7 +36,6 @@ export function getStatusLabel({
       runner === 'sideload' ? '' : size
     }`,
     notInstalled: t('gamepage:status.notinstalled'),
-    launching: t('gamepage:status.launching', 'Launching'),
     redist: t(
       'gamepage:status.redist',
       'Installing Redistributables ({{redist}})',

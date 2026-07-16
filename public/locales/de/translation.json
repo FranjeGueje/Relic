@@ -684,8 +684,6 @@
       },
       "description": "Rahmenloses Fenster verwenden (Neustart erforderlich)"
     },
-    "after-launch-script-path": "Wähle ein Skript aus, das nach dem Beenden des Spiels ausgeführt werden soll",
-    "before-launch-script-path": "Wähle ein Skript aus, das vor dem Start des Spiels ausgeführt werden soll",
     "msync": "Msync Aktivieren",
     "allow_installation_broken_anticheat": {
       "confirmation": {
@@ -695,7 +693,6 @@
       },
       "label": "Installation von Spielen mit defektem oder abgelehntem Anticheat zulassen"
     },
-    "disableUMU": "umu ausschalten",
     "custom_css": {
       "warning": "Achtung: Dies bezieht sich auf das gesamte Frontend. Das bedeutet, das ein falscher Style Heroic unbenutzbar machen kann. Falls nötig, kann diese Einstellung manuell in `~/.config/heroic/config.json` geändert werden. Kopiere KEINE Styles aus Quellen, denen du nicht vertraust."
     },

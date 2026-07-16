@@ -233,9 +233,6 @@ class GlobalConfigV0 extends GlobalConfig {
       maxWorkers: 0,
       minimizeOnLaunch: false,
       framelessWindow: false,
-      beforeLaunchScriptPath: '',
-      afterLaunchScriptPath: '',
-      disableUMU: false,
       verboseLogs: true,
       steamGridDbApiKey: '',
       disableGOGPresence: false

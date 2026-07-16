@@ -591,7 +591,6 @@
   "setting": {
     "addgamestosteam": "Add games to Steam automatically",
     "advertiseAvxForRosetta": "Advertise AVX for Rosetta",
-    "after-launch-script-path": "Select a script to run after the game exits",
     "allow_installation_broken_anticheat": {
       "confirmation": {
         "message": "Games with broken or denied anticheat may run, but multiplayer features won't work. Do not ask for support if you install them knowing this.",
@@ -609,7 +608,6 @@
     "autosync": "Autosync Saves",
     "autoUpdateGames": "Automatically update games",
     "autovkd3d": "Auto Install/Update VKD3D on Prefix",
-    "before-launch-script-path": "Select a script to run before the game is launched",
     "change-target-exe": "Select an alternative EXE to run",
     "crossover-version": "Crossover/Wine Version",
     "custom_css": {
@@ -620,7 +618,6 @@
     "default-steam-path": "Default Steam path",
     "disable_gog_presence": "Disable GOG Presence updates",
     "disable_logs": "Disable Logs",
-    "disableUMU": "Disable umu",
     "download-no-https": "Download games without HTTPS (useful for CDNs e.g. LanCache)",
     "download-proton-steam": "Download GE-Proton to Steam directory",
     "dxfpslimit": "Limit DirectX Games FPS",

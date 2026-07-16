@@ -6,7 +6,6 @@ import {
   ExecResult,
   InstallArgs,
   InstallInfo,
-  LaunchOption,
   GOGAchievement
 } from 'common/types'
 import { GOGCloudSavesLocation } from './gog'
@@ -36,12 +35,6 @@ export interface Game {
   isNative: () => boolean
   addShortcuts: (fromMenu?: boolean) => Promise<void>
   removeShortcuts: () => Promise<void>
-  launch: (
-    logWriter: LogWriter,
-    launchArguments?: LaunchOption,
-    args?: string[],
-    skipVersionCheck?: boolean
-  ) => Promise<boolean>
   moveInstall: (newInstallPath: string) => Promise<InstallResult>
   repair: () => Promise<ExecResult>
   syncSaves: (
@@ -82,7 +75,4 @@ export interface LibraryManager {
   changeGameInstallPath: (appName: string, newPath: string) => Promise<void>
   changeVersionPinnedStatus: (appName: string, status: boolean) => void
   installState: (appName: string, state: boolean) => void
-  getLaunchOptions: (
-    appName: string
-  ) => LaunchOption[] | Promise<LaunchOption[]>
 }

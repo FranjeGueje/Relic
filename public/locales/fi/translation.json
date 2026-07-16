@@ -707,13 +707,10 @@
     "download-proton-steam": "Lataa GE-Proton Steam-kansioon",
     "scripts": "Skriptit:",
     "wineWayland": "Ota käyttöön Wine-Wayland (Kokeellinen) (Wine-version täytyy tukea sitä)",
-    "after-launch-script-path": "Valitse skripti, joka ajetaan kun peli sulkeutuu",
     "hdr": "Ota käyttöön HDR",
     "dxfpslimit": "Rajoita DirectX pelien FPS:ää",
     "enable-quick-sync-menu": "Ota käyttöön pikatallennuksen synkronointivalikko pelisivulla",
     "analyticsOptIn": "Lähetä anonyymiä tietoa auttaaksesi Heroicin kehittämisessä",
-    "before-launch-script-path": "Valitse skripti, joka ajetaan ennen kuin peli käynnistyy",
-    "disableUMU": "Poista umu käytöstä",
     "custom_css": {
       "warning": "Varoitus: tämä pätee koko käyttöliittymään. Tämä tarkoittaa, että väärä tyyli voi tehdä Heroicista käyttökelvottoman. Asetusta voi tarvittaessa muuttaa `~/.config/heroic/config.json` tiedostossa. Älä kopioi tyylejä lähteistä joihin et luota."
     },

@@ -661,7 +661,6 @@
     "alt-nile-bin": "Kies een alternatief Nijlbinair getal",
     "autodxvknvapi": "Automatisch installeren/updated van DXVK-NVAPI op Prefix",
     "msync": "Msync inschakelen",
-    "before-launch-script-path": "Selecteer een script om uit te voeren voordat een game is opgestart",
     "frameless-window": {
       "description": "Gebruik kaderloos venster (herstart nodig)",
       "confirmation": {
@@ -669,7 +668,6 @@
         "title": "Experimentele functie"
       }
     },
-    "after-launch-script-path": "Selecteer een script om uit te voeren nadat het spel afsluit",
     "allow_installation_broken_anticheat": {
       "confirmation": {
         "message": "Spelletjes met kapotte of niet werkende anticheat kunnen het doen, maar multiplayerfuncties zullen niet werken. Vraag niet om ondersteuning als je een spel installeert en dit weet.",
@@ -712,7 +710,6 @@
     "custom_css": {
       "warning": "Waarschuwing: dit geldt voor de gehele frontend. Dit betekent dat de verkeerde stijl Heroic onbruikbaar kan maken.Zodra nodig kan deze instelling handmatig aangepast worden in `~/.config/heroic/config.json`. Kopieer GEEN stijlen van bronnen die je niet vertrouwt."
     },
-    "disableUMU": "Umu uitschakelen",
     "download-proton-steam": "Download GE-Proton naar de Steam map",
     "dxfpslimit": "Limiteer DirectX Games FPS",
     "enable-quick-sync-menu": "",

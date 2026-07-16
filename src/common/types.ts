@@ -30,33 +30,22 @@ export interface ButtonOptions {
   onClick?: () => void
 }
 
-export type LaunchParams = {
-  appName: string
-  launchArguments?: LaunchOption
-  runner: Runner
-  skipVersionCheck?: boolean
-  args?: string[]
-}
-
 export type LaunchOption =
   | BaseLaunchOption
   | AltExeLaunchOption
   | DLCLaunchOption
 
-// Option to append extra parameters to the launch command
 interface BaseLaunchOption {
   type?: 'basic'
   name: string
   parameters: string
 }
 
-// Option to launch an alternative executable instead
 interface AltExeLaunchOption {
   type: 'altExe'
   executable: Path
 }
 
-// Option to launch a DLC (another game) instead of the base game
 interface DLCLaunchOption {
   type: 'dlc'
   dlcAppName: string
@@ -112,7 +101,6 @@ export interface AppSettings extends GameSettings {
   maxWorkers: number
   minimizeOnLaunch: boolean
   startInTray: boolean
-  disableUMU: boolean
   verboseLogs: boolean
   steamGridDbApiKey: string
 }
@@ -198,16 +186,11 @@ export interface GameInfo {
 export interface GameSettings {
   ignoreGameUpdates: boolean
   language: string
-  lastUsedLaunchOption?: LaunchOption
   maxSharpness?: number
   offlineMode: boolean
-  otherOptions?: string
   targetExe: string
   savesPath: string
   gogSaves?: GOGCloudSavesLocation[]
-  beforeLaunchScriptPath: string
-  afterLaunchScriptPath: string
-  disableUMU: boolean
   verboseLogs: boolean
   enableQuickSavesMenu: boolean
 }
@@ -360,12 +343,6 @@ export interface GOGImportData {
   platform: GogInstallPlatform
   versionName: string
   dlcs: string[]
-}
-
-export interface LaunchPreperationResult {
-  success: boolean
-  failureReason?: string
-  offlineMode?: boolean
 }
 
 export interface CallRunnerOptions {

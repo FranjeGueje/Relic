@@ -668,7 +668,6 @@
     "showMetalOverlay": "Kuva statistika ülekate",
     "alt-nile-bin": "Valige mõni muu Nile programm",
     "autodxvknvapi": "DXVK-NVAPI automaatne paigaldamine/uuendamine prefiksile",
-    "after-launch-script-path": "Vali skript, mida käitada pärast mängu sulgemist",
     "msync": "Luba Msync",
     "experimental_features": {
       "enableHelp": "Abi komponent",
@@ -678,7 +677,6 @@
       "cometSupport": "Comet tugi",
       "zoomPlatform": "Zoomi platvormi tugi (ainult Linux)"
     },
-    "before-launch-script-path": "Vali skript, mida käitada enne mängu käivitamist",
     "frameless-window": {
       "confirmation": {
         "message": "See võimalus on veel eksperimentaalne. Kui kohtate probleeme, andke neist teada GitHubis.",
@@ -694,7 +692,6 @@
       },
       "label": "Luba katkiste või keelatud sohivastaste meetmetega mängude paigaldamine"
     },
-    "disableUMU": "Keela umu",
     "verboseLogs": {
       "description": "Luba üksikasjalised logid"
     },

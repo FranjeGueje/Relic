@@ -17,7 +17,6 @@ const ACTIVE_STATUSES = new Set<Status>([
   'installing',
   'updating',
   'queued',
-  'launching',
   'playing',
   'uninstalling',
   'moving',

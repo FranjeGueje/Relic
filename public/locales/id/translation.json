@@ -677,7 +677,6 @@
     },
     "msync": "Aktifkan Esync",
     "advertiseAvxForRosetta": "Iklankan AVX untuk Rosetta",
-    "after-launch-script-path": "Pilih skrip untuk dijalankan setelah game keluar",
     "allow_installation_broken_anticheat": {
       "confirmation": {
         "message": "Game dengan anticheat rusak atau ditolak mungkin dapat dijalankan, tetapi fitur multipemain tidak akan berfungsi. Jangan meminta dukungan jika Anda memasangnya dengan mengetahui hal ini.",
@@ -687,11 +686,9 @@
       "label": "Izinkan pemasangan game dengan anticheat rusak atau ditolak"
     },
     "analyticsOptIn": "Kirim data anonim untuk membantu pengembangan Heroic",
-    "before-launch-script-path": "Pilih skrip untuk dijalankan sebelum game diluncurkan",
     "custom_css": {
       "warning": "Peringatan: ini berlaku untuk seluruh antarmuka. Artinya, gaya yang salah dapat membuat Heroic tidak dapat digunakan. Jika diperlukan, pengaturan dapat diubah secara manual di `~/.config/heroic/config.json`. Jangan menyalin gaya dari sumber yang tidak tepercaya."
     },
-    "disableUMU": "Nonaktifkan umu",
     "download-proton-steam": "Unduh GE-Proton ke direktori Steam",
     "dxfpslimit": "Batasi FPS Game DirectX",
     "hdr": "Aktifkan HDR",

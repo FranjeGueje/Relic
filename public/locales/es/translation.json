@@ -694,8 +694,6 @@
       },
       "label": "Permitir la instalación de juegos con anticheat roto o denegado"
     },
-    "before-launch-script-path": "Seleccionar una secuencia de comandos para ejecutar antes de que se inicie el juego",
-    "after-launch-script-path": "Seleccionar una secuencia de comandos para ejecutar cuando se sale del juego",
     "download-proton-steam": "Descargar GE-Proton en el directorio de Steam",
     "dxfpslimit": "Limitar FPS en Juegos con DirectX",
     "verboseLogs": {
@@ -704,7 +702,6 @@
     "custom_css": {
       "warning": "Advertencia: esto se aplica a todo el frontend. Eso significa que el estilo incorrecto podría provocar que Heroic no se pueda usar. De ser necesario, la configuración se puede cambiar manualmente en `~/.config/heroic/config.json`. NO COPIAR estilos de fuentes no confiables."
     },
-    "disableUMU": "Desactivar umu",
     "advertiseAvxForRosetta": "Promociona AVX para Rosetta",
     "hdr": "Activar HDR",
     "wineWayland": "Activar Wine-Wayland (Experimental) (La version de Wine debe ser compatible)",

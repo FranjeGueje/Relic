@@ -686,8 +686,6 @@
       "description": "Выкарыстоўваць безрамачнае акно (патрабуецца перазагрузка)"
     },
     "msync": "Уключыць Msync",
-    "after-launch-script-path": "Выберыце скрыпт для запуску пасля выхаду з гульні",
-    "before-launch-script-path": "Выберыце скрыпт для запуску перад запускам гульні",
     "allow_installation_broken_anticheat": {
       "confirmation": {
         "understand": "Зразумела",
@@ -700,7 +698,6 @@
     "verboseLogs": {
       "description": "Уключыць падрабязныя журналы"
     },
-    "disableUMU": "Адключыць umu",
     "download-proton-steam": "Спампаваць GE-Proton у каталог Steam",
     "custom_css": {
       "warning": "Папярэджанне: гэта тычыцца ўсяго фронтэнда. Гэта азначае, що няправільны стыль можа зрабіць Heroic непрыдатным для выкарыстання. Пры неабходнасці налады можна змяніць уручную ў `~/.config/heroic/config.json`. НЕ капіюйце стылі з крыніц, якім вы не давяраеце."

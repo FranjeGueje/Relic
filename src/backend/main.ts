@@ -68,7 +68,6 @@ import {
 } from './logger'
 import { gameInfoStore } from 'backend/storeManagers/legendary/electronStores'
 import {
-  launchEventCallback,
   readKnownFixes
 } from './launcher'
 import { initQueue } from './downloadmanager/downloadqueue'
@@ -82,7 +81,6 @@ import { callAbortController } from './utils/aborthandler/aborthandler'
 import { initTrayIcon } from './tray_icon/tray_icon'
 import { createMainWindow, getMainWindow, isFrameless } from './main_window'
 
-import { playtimeSyncQueue } from './storeManagers/gog/electronStores'
 import {
   autoUpdate,
   initStoreManagers,
@@ -293,15 +291,6 @@ if (!gotTheLock) {
       app.commandLine.appendSwitch('disable-smooth-scrolling')
     }
 
-    // Make sure lock is not present when starting up
-    playtimeSyncQueue.delete('lock')
-    if (!settings.disablePlaytimeSync) {
-      runOnceWhenOnline(() => libraryManagerMap['gog'].syncQueuedPlaytime())
-    } else {
-      logDebug('Skipping playtime sync queue upload - playtime sync disabled', {
-        prefix: LogPrefix.Backend
-      })
-    }
     runOnceWhenOnline(gogPresence.setPresence)
     await i18next.use(Backend).init({
       backend: {
@@ -738,11 +727,6 @@ addHandler('refreshLibrary', async (e, library?) => {
   }
 })
 
-// get pid/tid on launch and inject
-addHandler('launch', (event, args): StatusPromise => {
-  return launchEventCallback(args)
-})
-
 addHandler('openDialog', async (e, args) => {
   const mainWindow = getMainWindow()
   if (!mainWindow) {
@@ -931,32 +915,6 @@ addHandler('changeInstallPath', async (event, { appName, path, runner }) => {
   )
 })
 
-
-addHandler('getLaunchOptions', async (event, appName, runner) => {
-  const availableLaunchOptions =
-    await libraryManagerMap[runner].getLaunchOptions(appName)
-
-  // add a default option if there are other options but no default
-  if (
-    availableLaunchOptions.length > 0 &&
-    !availableLaunchOptions.some(
-      (option) =>
-        (option.type === undefined || option.type === 'basic') &&
-        option.name === 'Default' &&
-        option.parameters === ''
-    )
-  ) {
-    availableLaunchOptions.unshift({
-      name: i18next.t('launch.default', 'Default', {
-        ns: 'gamepage'
-      }),
-      parameters: '',
-      type: 'basic'
-    })
-  }
-
-  return availableLaunchOptions
-})
 
 // Simulate keyboard and mouse actions as if the real input device is used
 addHandler('gamepadAction', async (event, args) => {
@@ -1158,21 +1116,6 @@ addListener('processShortcut', async (e, combination: string) => {
       break
   }
 })
-
-addHandler(
-  'getPlaytimeFromRunner',
-  async (e, runner, appName): Promise<number | undefined> => {
-    const { disablePlaytimeSync } = GlobalConfig.get().getSettings()
-    if (disablePlaytimeSync) {
-      return
-    }
-    if (runner === 'gog') {
-      return libraryManagerMap[runner].getGame(appName).getGOGPlaytime()
-    }
-
-    return
-  }
-)
 
 addHandler('getPrivateBranchPassword', (e, appName) =>
   libraryManagerMap['gog'].getGame(appName).getBranchPassword()

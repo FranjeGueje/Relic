@@ -507,8 +507,6 @@
       "instructions_title": "Kaip pranešti apie problemą?",
       "no-file": "Joks žurnalo failas nebuvo rastas"
     },
-    "after-launch-script-path": "Pasirinkti skriptą, kurį vykdyti po žaidimo išjungimo",
-    "before-launch-script-path": "Pasirinkti skriptą, kurį vykdyti prieš paleidžiant žaidimą",
     "customWineProton": "Pasirinktiniai „Wine“/„Proton“ keliai",
     "offlinemode": "Paleisti žaidimą kaip neprisijungus",
     "prefered_language": "Pageidaujama kalba (kalbos kodas)",
@@ -549,7 +547,6 @@
     "start-in-tray": "Pradėti minimizuotai",
     "showMetalOverlay": "Rodyti perdangos statistiką",
     "gamemode": "Naudoti žaidimo veikseną („Feral“ žaidimo veiksena turi būti įdiegta)",
-    "disableUMU": "Išjungti/Išgalinti „UMU“",
     "allow_non_ge_proton": {
       "confirmation": {
         "title": "Ar Jūs esate tikra/-s?"

@@ -222,36 +222,22 @@ Archivos principales:
 
 ---
 
-## FASE 5: Refactorización profunda (requiere análisis)
+## FASE 5: Refactorización profunda ✅ COMPLETADA
 
-### 5.1 - Refactorizar src/backend/launcher.ts
-Este archivo (~1830 líneas) es el motor de lanzamiento. Relic NO lanza juegos.
-- Extraer funciones útiles: `runWineCommand`, `verifyWinePrefix`, `callRunner`
-- Eliminar: lógica de lanzamiento, prefijos, env vars, wrappers, GameMode, Steam Runtime, EAC/BattlEye runtime, DXVK, FPS, HDR, FSR
-- Posiblemente eliminar el archivo completo y mover las funciones útiles a otro módulo
+- **5.1**: `launcher.ts` refactorizado (~1810 líneas eliminadas). Mantenidos: `callRunner`, `readKnownFixes`, `appNameFromCommandParts`, `getRunnerCallWithoutCredentials`.
+- **5.2**: `compatibility_layers.ts` ya estaba limpio (solo umu). `disableUMU` eliminado de `isUmuSupported`.
+- **5.3**: EOS Overlay ya estaba eliminado en fases anteriores. Traducciones huérfanas limpiadas en 5.8.
+- **5.4**: `beforeLaunchScriptPath`/`afterLaunchScriptPath` eliminados completamente (backend, types, UI, traducciones). No son el mecanismo del script externo.
+- **5.5**: Flujo de lanzamiento eliminado: `launch`, `launchGame`, `getLaunchOptions`, `getPlaytimeFromRunner` eliminados de IPC, preload, store managers, y frontend.
+- **5.6**: `disableUMU` eliminado.
+- **5.7**: Código muerto Wine/Proton eliminado: `wineprefixFAQ`, `defaultWinePrefix*`, `ValidWinePrefix`, `WineDownloader`/`WineTricks` log prefixes, wine flags de legendary commands, `src/backend/wine/` directory.
+- **5.8**: 94 archivos de traducción limpiados (eosOverlay, before/after-launch-script-path, disableUMU, protondb).
+- **5.9**: HISTORY_REMOVE.md actualizado.
 
-### 5.2 - Simplificar src/backend/utils/compatibility_layers.ts
-Mantener solo detección básica de Proton/Wine si es necesaria para el script externo.
-Eliminar: CrossOver, Lutris, GamePortingToolkit, Whisky, Wineskin, GPTK, CachyOS
-
-### 5.3 - Eliminar EOS Overlay completo
-Borrar:
-- `src/backend/storeManagers/legendary/eos_overlay/` (directorio completo)
-- Limpiar imports en `src/backend/main.ts`
-- Limpiar handlers IPC en `src/common/types/ipc.ts`
-- Limpiar preload exports
-
-### 5.4 - Revisar beforeLaunchScriptPath / afterLaunchScriptPath
-Estos settings podrían ser el mecanismo del "script externo" de AGENTS.md.
-- Verificar si son la integration point con Steam
-- Si sí, mantener y documentar
-- Si no, eliminar
-
-### 5.5 - Revisar ejecución directa de juegos
-- `src/common/types/ipc.ts` → `launchGame` en `FrontendMessages` y `launch` en `AsyncIPCFunctions`
-- `src/backend/storeManagers/storeManagerCommon/games.ts` → función `launchGame()`
-- `src/backend/storeManagers/sideload/games.ts` → uso de `launchGame`
-- Decidir: ¿Relic necesita lanzar juegos para sideload? ¿O también va a Steam?
+### Pendiente para fase futura
+- `minimizeOnLaunch` (backend + types, sin UI): revisar si sigue siendo necesario
+- `disablePlaytimeSync` (backend + types, sin UI): revisar si sigue siendo necesario
+- `darkTrayIcon`, `disableController`, `disableSmoothScrolling`, `disableAnimations`, `disableLogs`, `downloadNoHttps`, `framelessWindow`, `startInTray`: settings sin UI, posible código muerto
 
 ---
 

@@ -676,8 +676,6 @@
       "description": "Använd kantlöst fönster (kräver omstart)"
     },
     "msync": "Aktivera Msync",
-    "after-launch-script-path": "Välj ett skript att köra efter att spelet avslutats",
-    "before-launch-script-path": "Välj ett skript att köra innan spelet startas",
     "allow_installation_broken_anticheat": {
       "confirmation": {
         "title": "Är du säker?",
@@ -689,7 +687,6 @@
     "verboseLogs": {
       "description": "Aktivera detaljerade loggar"
     },
-    "disableUMU": "Inaktivera umu",
     "custom_css": {
       "warning": "Varning: detta gäller hela frontenden. Detta betyder att fel stil kan göra att Heroic blir oanvändbar. Om det behövs kan inställningen ändras manuellt i `~/.config/heroic/config.json`. Kopiera INTE stiler from källor du inte litar på."
     },

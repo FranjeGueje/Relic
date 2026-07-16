@@ -693,10 +693,7 @@
         "title": "Funzionalità sperimentale di seguito"
       }
     },
-    "before-launch-script-path": "Seleziona uno script da eseguire prima che il gioco venga avviato",
-    "after-launch-script-path": "Seleziona uno script da eseguire all'uscita del gioco",
     "msync": "Abilita Msync",
-    "disableUMU": "Disabilita umu",
     "verboseLogs": {
       "description": "Attiva log dettagliati"
     },

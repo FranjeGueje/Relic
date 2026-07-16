@@ -662,7 +662,6 @@
     "autodxvknvapi": "Tự Động Cài Đặt/Cập Nhật DXVK-NVAPI trên Tiền Tố",
     "msync": "Bật Msync",
     "advertiseAvxForRosetta": "Quảng cáo AVX cho Rosetta",
-    "after-launch-script-path": "Chọn kịch bản để chạy sau khi thoát trò chơi",
     "allow_installation_broken_anticheat": {
       "confirmation": {
         "message": "Các trò chơi có hệ thống chống gian lận bị hỏng hoặc bị từ chối có thể chạy nhưng tính năng nhiều người chơi sẽ không hoạt động. Đừng yêu cầu hỗ trợ nếu bạn cài đặt chúng khi biết điều này.",
@@ -672,11 +671,9 @@
       "label": "Cho phép cài đặt các trò chơi có chống gian lận bị hỏng hoặc bị từ chối"
     },
     "analyticsOptIn": "Gửi dữ liệu ẩn danh để giúp phát triển Heroic",
-    "before-launch-script-path": "Chọn tập lệnh để chạy trước khi trò chơi được khởi chạy",
     "custom_css": {
       "warning": "Cảnh báo: điều này áp dụng cho toàn bộ giao diện người dùng. Điều đó có nghĩa là kiểu dáng sai có thể khiến Heroic không thể sử dụng được. Nếu cần, bạn có thể thay đổi cài đặt theo cách thủ công trong `~/.config/heroic/config.json`. KHÔNG sao chép kiểu từ các nguồn mà bạn không tin tưởng."
     },
-    "disableUMU": "Tắt umu",
     "download-proton-steam": "Tải GE-Proton về thư mục Steam",
     "dxfpslimit": "Giới Hạn FPS Của Trò Chơi DirectX",
     "experimental_features": {

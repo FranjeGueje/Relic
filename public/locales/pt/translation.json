@@ -685,8 +685,6 @@
       },
       "description": "Usar janela sem moldura (é necessário reiniciar a aplicação)"
     },
-    "after-launch-script-path": "Selecione um script para executar após fechar o jogo",
-    "before-launch-script-path": "Selecione um script para executar antes do jogo ser iniciado",
     "msync": "Ativar o Msync",
     "allow_installation_broken_anticheat": {
       "confirmation": {
@@ -699,7 +697,6 @@
     "verboseLogs": {
       "description": "Ativar registos de eventos em modo verboso"
     },
-    "disableUMU": "Desativar umu",
     "custom_css": {
       "warning": "Aviso: isto aplica-se à interface do utilizador toda. Isto significa que um estilo incorreto pode tornar o Heroic inutilizável. Caso seja necessário, a definição pode ser alterada manualmente em `~/.config/heroic/config.json`. NÃO copie estilos a partir de fontes que não tenha confiança."
     },

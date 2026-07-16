@@ -695,12 +695,9 @@
       },
       "label": "Permitir instalação de jogos com o sistema anti-trapaças comprometido ou não suportado"
     },
-    "before-launch-script-path": "Selecione um script para executar antes do jogo ser iniciado",
-    "after-launch-script-path": "Selecione um script para executar após o jogo ser fechado",
     "verboseLogs": {
       "description": "Habilitar logs detalhados"
     },
-    "disableUMU": "Desabilitar umu",
     "custom_css": {
       "warning": "Alerta: Isso é aplicado a todo o frontend. Isto significa que o estilo errado pode tornar o Heroic inutilizável. Se necessário, as configurações podem ser alteradas manualmente em `~/.config/heroic/config.json`. NÃO copie estilos de fontes que você não confia."
     },

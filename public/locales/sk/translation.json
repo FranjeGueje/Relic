@@ -684,8 +684,6 @@
       },
       "label": "Povoliť inštaláciu hier s nefunkčným alebo odmietnutým anticheatom"
     },
-    "before-launch-script-path": "Vyberte skript, ktorý sa má spustiť pred spustením hry",
-    "after-launch-script-path": "Vyberte skript, ktorý sa má spustiť po ukončení hry",
     "allow_non_ge_proton": {
       "confirmation": {
         "title": "Ste si istý?"
@@ -714,7 +712,6 @@
       "description": ""
     },
     "advertiseAvxForRosetta": "",
-    "disableUMU": "",
     "custom_css": {
       "warning": ""
     },

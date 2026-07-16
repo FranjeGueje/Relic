@@ -481,7 +481,6 @@
     "showMetalOverlay": "Vis statistikoverlejring",
     "alt-nile-bin": "Vælg en alternativ Nile Binær",
     "advertiseAvxForRosetta": "Annoncér AVX for Rosetta",
-    "after-launch-script-path": "Vælg et script, der skal køres, når spillet forlades",
     "allow_installation_broken_anticheat": {
       "confirmation": {
         "message": "Spil med ikke-fungerende anticheat kan muligvis køre, men multiplayer-funktionerne vil ikke fungere. Kontakt ikke support, hvis du installerer dem med denne viden.",
@@ -492,11 +491,9 @@
     },
     "analyticsOptIn": "Send anonyme data for at hjælpe Heroic med udvikling",
     "autodxvknvapi": "Autoinstallér/Opdatér DXVK-NVAPI på Præfiks",
-    "before-launch-script-path": "Vælg et script, der skal køres, før spillet startes",
     "custom_css": {
       "warning": "Advarsel: Dette gælder for hele frontend. Det betyder, at den forkerte stil kan gøre Heroic ubrugelig. Hvis det er nødvendigt, kan indstillingen ændres manuelt i `~/.config/heroic/config.json`. Kopier IKKE stilarter fra kilder, du ikke stoler på."
     },
-    "disableUMU": "Deaktiver umu",
     "download-proton-steam": "Download GE-Proton til Steam-mappen",
     "dxfpslimit": "Begræns FPS på DirectX-spil",
     "experimental_features": {

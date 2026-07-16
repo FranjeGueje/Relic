@@ -679,7 +679,6 @@
     "download-proton-steam": "",
     "scripts": "",
     "wineWayland": "",
-    "after-launch-script-path": "",
     "hdr": "",
     "show_valve_proton": {
       "wine_selector_warning": "",
@@ -706,8 +705,6 @@
     "verboseLogs": {
       "description": ""
     },
-    "before-launch-script-path": "",
-    "disableUMU": "",
     "advertiseAvxForRosetta": "",
     "custom_css": {
       "warning": ""
