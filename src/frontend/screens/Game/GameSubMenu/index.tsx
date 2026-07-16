@@ -56,7 +56,6 @@ export default function GamesSubmenu({
   const { refresh, platform, libraryStatus, showDialogModal } =
     useContext(ContextProvider)
   const { is, gameSettings } = useContext(GameContext)
-  const isWin = platform === 'win32'
   const isLinux = platform === 'linux'
 
   const [showUninstallModal, setShowUninstallModal] = useState(false)

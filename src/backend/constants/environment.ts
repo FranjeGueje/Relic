@@ -1,9 +1,6 @@
 import { env } from 'process'
 
 export const isLinux = true
-export const isWindows = false
-export const isMac = false
-export const isIntelMac = false
 export const isSteamDeckGameMode =
   process.env.XDG_CURRENT_DESKTOP === 'gamescope'
 const isSteamDeckDesktopMode =

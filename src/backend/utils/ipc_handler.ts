@@ -10,8 +10,6 @@ import {
 } from './helperBinaries'
 import { hasExecutable } from './os/path'
 import { formatSystemInfo, getSystemInfo } from './systeminfo'
-import { isIntelMac } from 'backend/constants/environment'
-
 addListener('abort', (event, id) => {
   callAbortController(id)
 })
@@ -27,8 +25,4 @@ addListener('copySystemInfoToClipboard', async () => {
 })
 addHandler('hasExecutable', async (event, executable) => {
   return hasExecutable(executable)
-})
-
-addHandler('isIntelMac', () => {
-  return isIntelMac
 })

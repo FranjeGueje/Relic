@@ -17,7 +17,6 @@ import {
   downloadFile,
   killPattern,
   moveOnUnix,
-  moveOnWindows,
   sendGameStatusUpdate,
   sendProgressUpdate,
   spawnAsync
@@ -65,7 +64,7 @@ import { Path } from 'backend/schemas'
 import { mkdirSync } from 'fs'
 import { configStore } from 'backend/constants/key_value_stores'
 import { epicRedistPath, legendaryInstalled } from './constants'
-import { isCLINoGui, isMac, isWindows } from 'backend/constants/environment'
+import { isCLINoGui } from 'backend/constants/environment'
 import { fakeEpicExePath } from 'backend/constants/paths'
 
 import type LogWriter from 'backend/logger/log_writer'
@@ -350,7 +349,7 @@ export default class LegendaryGame implements Game {
     const gameInfo = this.getGameInfo()
     logInfo(`Moving ${gameInfo.title} to ${newInstallPath}`, LogPrefix.Gog)
 
-    const moveImpl = isWindows ? moveOnWindows : moveOnUnix
+    const moveImpl = moveOnUnix
     const moveResult = await moveImpl(newInstallPath, gameInfo)
 
     if (moveResult.status === 'error') {
@@ -676,17 +675,6 @@ export default class LegendaryGame implements Game {
       }
     }
 
-    if (isWindows) {
-      const process = await spawnAsync(installerPath, [
-        'EAX_LAUNCH_CLIENT=0',
-        'IGNORE_INSTALLED=1'
-      ])
-
-      if (process.code !== null && process.code === 3) {
-        return { status: 'abort' }
-      }
-    }
-
     await thirdParty.addInstalledGame(gameInfo.app_name, platformToInstall)
 
     return { status: 'done' }
@@ -700,29 +688,9 @@ export default class LegendaryGame implements Game {
     error?: string
   }> {
     logInfo('Getting Ubisoft installer', LogPrefix.Legendary)
-    const installerPath = join(epicRedistPath, 'UbisoftConnectInstaller.exe')
 
     if (!existsSync(epicRedistPath)) {
       mkdirSync(epicRedistPath, { recursive: true })
-    }
-
-    if (!existsSync(installerPath)) {
-      try {
-        await downloadFile({
-          url: 'https://static3.cdn.ubi.com/orbit/launcher_installer/UbisoftConnectInstaller.exe',
-          dest: installerPath
-        })
-      } catch (e) {
-        return { status: 'error', error: `${e}` }
-      }
-    }
-
-    if (isWindows) {
-      const process = await spawnAsync(installerPath, ['/S'])
-
-      if (process.code !== null && process.code === 3) {
-        return { status: 'abort' }
-      }
     }
 
     await thirdParty.addInstalledGame(gameInfo.app_name, platformToInstall)
@@ -961,16 +929,6 @@ export default class LegendaryGame implements Game {
   }
 
   isNative(): boolean {
-    const gameInfo = this.getGameInfo()
-
-    if (isWindows) {
-      return true
-    }
-
-    if (isMac && gameInfo?.install?.platform === 'Mac') {
-      return true
-    }
-
     return false
   }
 
@@ -1002,7 +960,7 @@ export default class LegendaryGame implements Game {
   }
 
   async stop() {
-    const pattern = isWindows ? 'legendary' : this.appName
+    const pattern = this.appName
     killPattern(pattern)
   }
 

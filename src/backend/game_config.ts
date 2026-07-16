@@ -5,7 +5,6 @@ import { GlobalConfig } from './config'
 import { logError, logInfo, LogPrefix } from 'backend/logger'
 import { join } from 'path'
 import { currentGameConfigVersion } from 'backend/constants/others'
-import { isWindows } from './constants/environment'
 import {
   configPath,
   gamesConfigPath

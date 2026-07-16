@@ -44,12 +44,7 @@ export const createMainWindow = () => {
   const settings = configStore.get('settings', <AppSettings>{})
   if (settings?.framelessWindow) {
     // use native overlay controls where supported
-    if (['darwin', 'win32'].includes(process.platform)) {
-      windowProps.titleBarStyle = 'hidden'
-      windowProps.titleBarOverlay = true
-    } else {
-      windowProps.frame = false
-    }
+    windowProps.frame = false
   }
 
   // Create the browser window.

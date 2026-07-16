@@ -31,7 +31,6 @@ export default function SidebarLinks() {
   } = useContext(ContextProvider)
 
   const isSettings = location.pathname.includes('settings')
-  const isWin = platform === 'win32'
 
   const loggedIn =
     epic.username || gog.username || amazon.user_id || zoom.username

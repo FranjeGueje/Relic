@@ -519,3 +519,68 @@
 
 ## Claves de traducción `console.uninstall`
 - `console.uninstall.title` y `console.uninstall.message` añadidas a 47 archivos `translation.json`
+
+## Fase 4: Ramas isMac/isWindows/isIntelMac muertas (~104 ocurrencias, ~28 archivos)
+
+### isMac backend (14 archivos)
+- `environment.ts`: eliminado `export const isMac = false`
+- `main.ts`: `if (!isMac) { app.quit() }` → `app.quit()`
+- `launcher.ts`: eliminado bloque `if (isMac) { delete gameSettings.disableUMU }`
+- `config.ts`: eliminado `else if (isMac)` en `getSteamCompatFolder()`
+- `tray_icon/tray_icon.ts`: eliminado `if (isMac) app.dock?.setMenu()` + import
+- `shortcuts/ipc_handler.ts`: ternarios `isMac ? bodyMac : body` → `body`
+- `shortcuts/shortcuts/shortcuts.ts`: simplificado `removeShortcuts` (eliminadas ramas isMac)
+- `logger/paths.ts`: eliminado bloque `if (isMac)` + import
+- `storeManagers/gog/games.ts`: eliminadas 2 condiciones `isMac &&`
+- `storeManagers/legendary/games.ts`: eliminada condición `isMac &&` en isNative
+- `storeManagers/sideload/library.ts`: eliminado bloque `.app` macOS + imports
+- `storeManagers/sideload/games.ts`: eliminada condición `isMac &&`
+- `storeManagers/storeManagerCommon/games.ts`: `isLinux || (isMac && ...)` → `isLinux`
+- `storeManagers/zoom/games.ts`: eliminada condición `isMac &&` en isNative
+- `utils.ts`: eliminada función `isMacSonomaOrHigher()` completa
+
+### isWindows backend (11 archivos)
+- `config.ts`: eliminado bloque `if (isWindows)` en `getSteamCompatFolder()`
+- `logger/paths.ts`: eliminado bloque `if (isWindows)` + import
+- `shortcuts/nonesteamgame/nonesteamgame.ts`: simplificadas 3 condiciones isWindows
+- `storeManagers/gog/games.ts`: eliminadas ~10 ramas isWindows (setup, isNative, Cyberpunk mods, moveImpl, uninstaller, DLC removal)
+- `storeManagers/legendary/games.ts`: eliminadas 5 ramas isWindows (moveImpl, EA installer, Ubisoft installer, isNative, killPattern)
+- `storeManagers/nile/games.ts`: eliminadas 4 ramas isWindows (setup, isNative, envVars, moveImpl)
+- `storeManagers/sideload/games.ts`: eliminada rama `isWindows` en isNative
+- `storeManagers/zoom/games.ts`: eliminadas 3 ramas isWindows (DOSBox, isNative, envVars)
+- `utils.ts`: eliminada función `detectVCRedist()` completa; eliminado branch Windows en `killPattern()`
+- `main.ts`: eliminado import y llamada `detectVCRedist`
+- Import `moveOnWindows` eliminado de gog, legendary, nile store managers (ya no usado)
+
+### isIntelMac backend (3 archivos)
+- `utils.ts`: eliminada función `checkRosettaInstall()` completa
+- `utils/ipc_handler.ts`: eliminado handler IPC `isIntelMac`
+- `common/types/ipc.ts`: eliminado tipo `isIntelMac`
+- `preload/api/misc.ts`: eliminado export `isIntelMac`
+
+### process.platform (6 archivos)
+- `tray_icon/tray_icon.ts`: eliminados entries darwin/win32 de `iconSizesByPlatform`; ternarios `platform === 'darwin'` simplificados; parámetro `platform` eliminado de `contextMenu`
+- `shortcuts/shortcuts/shortcuts.ts`: eliminados cases `darwin`/`win32` de `shortcutFiles()`; eliminadas funciones `generateMacOsApp()` + `convertPngToICNS()` + imports no usados
+- `constants/others.ts`: `getShell()` simplificado a `return '/bin/bash'`
+- `main_window.ts`: eliminado `if (['darwin', 'win32'].includes(process.platform))`
+- `utils.ts`: `createNecessaryFolders()` simplificado (eliminado platform map); `getFormattedOsName()` → `return 'Linux'`; `archSpecificBinary()` simplificado
+- `utils/os/path/index.ts`: `process.platform === 'win32' ? 'where' : 'which'` → `'which'`
+
+### Frontend platform checks (8 archivos)
+- `Library/index.tsx`: eliminado filtro mac (3 ramas)
+- `LibraryFilters/index.tsx`: eliminado `{platform === 'darwin' && platformToggle('mac')}`; simplificado `platform === 'linux'` → siempre visible
+- `InstallModal/index.tsx`: eliminado isMac, isWin, macOS platform option, getDefaultplatform simplificado
+- `GamePage/index.tsx`: eliminado isWin, isMac de variables y contexto (valores hardcodeados a false)
+- `ConsoleMode/InstallOverlay/index.tsx`: eliminado isWin, isMac, macOS platform option
+- `Login/index.tsx`: eliminado bloque oldMac/oldMacMessage
+- `useSettingsContext.ts`: eliminado isMac, isMacNative
+- `SidebarLinks/index.tsx`: eliminado isWin no usado
+
+### Frontend isIntelMac propagation (3 archivos)
+- `types.ts`: eliminado `isIntelMac: boolean` de GameContextType
+- `GlobalState.tsx`: eliminado estado, default y fetch de isIntelMac
+- `ContextProvider.tsx`: eliminado `isIntelMac: false`
+
+### Constants final
+- `environment.ts`: export eliminados `isWindows`, `isMac`, `isIntelMac` (solo queda `isLinux = true`)
+- Claves de traducción muertas: `box.shortcuts.message-mac`, `box.shortcuts.message-remove-mac`, `box.warning.rosetta.*`, `box.vcruntime.*`, `login.old-mac` (aún existen en translation.json pero no se referencian desde código)

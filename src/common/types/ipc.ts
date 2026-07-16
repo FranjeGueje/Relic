@@ -259,7 +259,6 @@ interface AsyncIPCFunctions {
     modsToLoad: string[]
   }) => Promise<void>
 
-  isIntelMac: () => boolean
   'steamgriddb.hasApiKey': () => Promise<boolean>
   'steamgriddb.setApiKey': (key: string) => Promise<void>
   'steamgriddb.searchGame': (

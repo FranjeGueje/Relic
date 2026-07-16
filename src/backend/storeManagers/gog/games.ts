@@ -7,7 +7,6 @@ import {
   getFileSize,
   spawnAsync,
   moveOnUnix,
-  moveOnWindows,
   sendProgressUpdate,
   sendGameStatusUpdate,
   getPathDiskSize,
@@ -76,7 +75,7 @@ import ini from 'ini'
 import { getRequiredRedistList, updateRedist } from './redist'
 import { spawn } from 'child_process'
 import { gogdlConfigPath, gogSupportPath } from './constants'
-import { isLinux, isMac, isWindows } from 'backend/constants/environment'
+import { isLinux } from 'backend/constants/environment'
 
 import type LogWriter from 'backend/logger/log_writer'
 
@@ -91,9 +90,7 @@ export default class GOGGame implements Game {
     const gameInfo = this.getGameInfo()
     let targetPlatform: GogInstallPlatform = 'windows'
 
-    if (isMac && gameInfo.is_mac_native) {
-      targetPlatform = 'osx'
-    } else if (isLinux && gameInfo.is_linux_native) {
+    if (isLinux && gameInfo.is_linux_native) {
       targetPlatform = 'linux'
     } else {
       targetPlatform = 'windows'
@@ -446,24 +443,7 @@ export default class GOGGame implements Game {
     gameInfo.is_installed = true
     gameInfo.install = installedData
     libraryManagerMap['gog'].refreshInstalled()
-    if (isWindows) {
-      logInfo(
-        'Windows os, running setup instructions on install',
-        LogPrefix.Gog
-      )
-      try {
-        await setup(this.id, installedData)
-      } catch (e) {
-        logWarning(
-          [
-            `Failed to run setup instructions on install for ${gameInfo.title}`,
-            'Error:',
-            e
-          ],
-          LogPrefix.Gog
-        )
-      }
-    } else if (isLinuxNative) {
+    if (isLinuxNative) {
       const installer = join(install_path, 'support/postinst.sh')
       if (existsSync(installer)) {
         logInfo(`Running ${installer}`, LogPrefix.Gog)
@@ -481,14 +461,6 @@ export default class GOGGame implements Game {
 
   isNative(): boolean {
     const gameInfo = this.getGameInfo()
-    if (isWindows) {
-      return true
-    }
-
-    if (isMac && gameInfo.install.platform === 'osx') {
-      return true
-    }
-
     if (isLinux && gameInfo.install.platform === 'linux') {
       return true
     }
@@ -549,9 +521,7 @@ export default class GOGGame implements Game {
     let commandEnv = {
       ...process.env,
       ...setupWrapperEnvVars({ appName: this.id, appRunner: 'gog' }),
-      ...(isWindows
-        ? {}
-        : setupEnvVars(gameSettings, gameInfo.install.install_path)),
+      ...setupEnvVars(gameSettings, gameInfo.install.install_path),
       ...getKnownFixesEnvVariables(this.id, 'gog')
     }
 
@@ -585,55 +555,7 @@ export default class GOGGame implements Game {
         'bin'
       )
 
-      if (existsSync(startFolder) && isWindows) {
-        const installDirectory = gameInfo.install.install_path
-
-        const availableMods = await libraryManagerMap['gog'].getCyberpunkMods()
-        const modsEnabledToLoad = gameInfo.install.cyberpunk.modsToLoad
-        const modsAbleToLoad: string[] = []
-
-        for (const mod of modsEnabledToLoad) {
-          if (availableMods.includes(mod)) {
-            modsAbleToLoad.push(mod)
-          }
-        }
-
-        if (!modsEnabledToLoad.length && !!availableMods.length) {
-          logWarning(
-            'No mods selected to load, loading all in alphabetic order'
-          )
-          modsAbleToLoad.push(...availableMods)
-        }
-
-        const redModCommand = [
-          'redMod.exe',
-          'deploy',
-          '-reportProgress',
-          '-root',
-          installDirectory,
-          ...modsAbleToLoad.map((mod) => ['-mod', mod]).flat()
-        ]
-
-        const [bin, ...args] = redModCommand
-        const result = await spawnAsync(bin, args, { cwd: startFolder })
-        logInfo(result.stdout, { prefix: LogPrefix.Gog })
-        logWriter.writeString(
-          `\nMods deploy log:\n${result.stdout}\n\n${result.stderr}\n\n\n`
-        )
-        if (result.stderr.includes('deploy has succeeded')) {
-          showDialogBoxModalAuto({
-            title: 'Mod deploy failed',
-            message: `Following logs are also available in game log\n\nredMod log:\n ${result.stdout}\n\n\n${result.stderr}`,
-            type: 'ERROR'
-          })
-          return true
-        }
-        commandParts.push('--prefer-task', '0')
-      } else if (!isWindows) {
-        logInfo('Cyberpunk mod deployment is handled by the external script on Linux', LogPrefix.Gog)
-      } else {
-        logError(['Unable to start modded game'], { prefix: LogPrefix.Gog })
-      }
+      logInfo('Cyberpunk mod deployment is handled by the external script on Linux', LogPrefix.Gog)
     }
 
     const userData: UserData | undefined = configStore.get_nodefault('userData')
@@ -701,7 +623,7 @@ export default class GOGGame implements Game {
     const gameConfig = await this.getSettings()
     logInfo(`Moving ${gameInfo.title} to ${newInstallPath}`, LogPrefix.Gog)
 
-    const moveImpl = isWindows ? moveOnWindows : moveOnUnix
+    const moveImpl = moveOnUnix
     const moveResult = await moveImpl(newInstallPath, gameInfo)
 
     if (moveResult.status === 'error') {
@@ -718,11 +640,7 @@ export default class GOGGame implements Game {
       this.id,
       moveResult.installPath
     )
-    if (
-      gameInfo.install.platform === 'windows' && isWindows
-    ) {
-      await setup(this.id, undefined, false)
-    }
+
     return { status: 'done' }
   }
 
@@ -843,40 +761,7 @@ export default class GOGGame implements Game {
 
     const [object] = array.splice(index, 1)
     logInfo(['Removing', object.install_path], LogPrefix.Gog)
-    // Run unins000.exe /verysilent /dir=Z:/path/to/game
-    const uninstallerPath = join(object.install_path, 'unins000.exe')
-
     const res: ExecResult = { stdout: '', stderr: '' }
-    if (existsSync(uninstallerPath) && isWindows) {
-      const installDirectory = object.install_path
-
-      const command = [
-        uninstallerPath,
-        '/VERYSILENT',
-        `/ProductId=${this.id}`,
-        '/galaxyclient',
-        '/KEEPSAVES'
-      ]
-
-      logInfo(['Executing uninstall command', command.join(' ')], LogPrefix.Gog)
-
-      const adminCommand = [
-        '-NoProfile',
-        'Start-Process',
-        '-FilePath',
-        uninstallerPath,
-        '-Verb',
-        'RunAs',
-        '-Wait',
-        '-ArgumentList'
-      ]
-
-      await spawnAsync('powershell', [
-        ...adminCommand,
-        `"/verysilent","\`"/dir=${installDirectory}\`""`,
-        ``
-      ])
-    }
     if (existsSync(object.install_path)) {
       rmSync(object.install_path, { recursive: true })
     }
@@ -939,46 +824,7 @@ export default class GOGGame implements Game {
       const removedDlcs = installedDlcs.filter(
         (dlc) => !updateOverwrites.dlcs?.includes(dlc)
       )
-      if (
-        removedDlcs.length &&
-        gameData.install.platform === 'windows' &&
-        isWindows
-      ) {
-        const listOfFiles = await readdir(gameData.install.install_path!)
-        const uninstallerIniList = listOfFiles.filter((file) =>
-          file.match(/unins\d{3}\.ini/)
-        )
 
-        for (const uninstallerFile of uninstallerIniList) {
-          const rawData = await readFile(
-            join(gameData.install.install_path!, uninstallerFile),
-            { encoding: 'utf8' }
-          )
-          const parsedData = ini.parse(rawData)
-          const productId = parsedData['InstallSettings']['productID']
-          if (removedDlcs.includes(productId)) {
-            const uninstallExeFile = uninstallerFile.replace('ini', 'exe')
-            const adminCommand = [
-              '-NoProfile',
-              'Start-Process',
-              '-FilePath',
-              uninstallExeFile,
-              '-Verb',
-              'RunAs',
-              '-Wait',
-              '-ArgumentList'
-            ]
-            await spawnAsync(
-              'powershell',
-              [
-                ...adminCommand,
-                `"/ProductId=${productId}","/VERYSILENT","/galaxyclient","/KEEPSAVES"`
-              ],
-              { cwd: gameData.install.install_path }
-            )
-          }
-        }
-      }
     }
 
     const privateBranchPassword = privateBranchesStore.get(this.id, '')
@@ -1095,7 +941,7 @@ export default class GOGGame implements Game {
     installedGamesStore.set('installed', installedArray)
     libraryManagerMap['gog'].refreshInstalled()
     if (
-      gameObject.platform === 'windows' && isWindows
+      false
     ) {
       await setup(this.id, gameObject, false)
     } else if (gameObject.platform === 'linux') {

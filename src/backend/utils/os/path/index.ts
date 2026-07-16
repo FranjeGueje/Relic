@@ -1,6 +1,6 @@
 import { spawn } from 'child_process'
 
-const findCommand = process.platform === 'win32' ? 'where' : 'which'
+const findCommand = 'which'
 
 /**
  * Finds an executable on %PATH%/$PATH

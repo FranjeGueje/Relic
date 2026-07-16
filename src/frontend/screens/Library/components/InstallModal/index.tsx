@@ -44,10 +44,6 @@ function InstallModal({ appName, runner, gameInfo = null }: Props) {
   const { action = 'install' } = useInstallGameModal()
 
   const isLinuxNative = Boolean(gameInfo?.is_linux_native)
-  const isMacNative = Boolean(gameInfo?.is_mac_native)
-
-  const isMac = platform === 'darwin'
-  const isWin = platform === 'win32'
   const isLinux = platform === 'linux'
 
   const platforms: AvailablePlatforms = [
@@ -56,12 +52,6 @@ function InstallModal({ appName, runner, gameInfo = null }: Props) {
       available: isLinux && isLinuxNative,
       value: 'linux',
       icon: faLinux
-    },
-    {
-      name: 'macOS',
-      available: isMac && isMacNative,
-      value: 'Mac',
-      icon: faApple
     },
     {
       name: 'Windows',
@@ -76,10 +66,6 @@ function InstallModal({ appName, runner, gameInfo = null }: Props) {
   )
 
   const getDefaultplatform = (): InstallPlatform => {
-    if (isMac && gameInfo?.is_mac_native) {
-      return 'Mac'
-    }
-
     return 'Windows'
   }
 

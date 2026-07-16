@@ -187,8 +187,7 @@ export default function LibraryFilters() {
       {storeToggle('sideload')}
       <hr />
       {platformToggle('win')}
-      {platform === 'linux' && platformToggle('linux')}
-      {platform === 'darwin' && platformToggle('mac')}
+      {platformToggle('linux')}
       {platformToggle('browser')}
       <hr />
       <ToggleSwitch

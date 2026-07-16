@@ -9,7 +9,7 @@ import { currentGlobalConfigVersion } from 'backend/constants/others'
 import { logError, logInfo, LogPrefix } from './logger'
 import { backendEvents } from './backend_events'
 import { configStore } from './constants/key_value_stores'
-import { isMac, isWindows } from './constants/environment'
+
 import {
   configPath,
   gamesConfigPath,
@@ -19,15 +19,7 @@ import {
 import { join } from 'path'
 
 function getSteamCompatFolder() {
-  // Paths are from https://savelocation.net/steam-game-folder
-  if (isWindows) {
-    const defaultWinPath = join(process.env['PROGRAMFILES(X86)'] ?? '', 'Steam')
-    return defaultWinPath
-  } else if (isMac) {
-    return join(userHome, 'Library/Application Support/Steam')
-  } else {
-    return join(userHome, '.steam/steam')
-  }
+  return join(userHome, '.steam/steam')
 }
 
 /**

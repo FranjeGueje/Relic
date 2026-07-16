@@ -76,7 +76,6 @@ interface StateProps {
   language: string
   libraryStatus: GameStatus[]
   platform: NodeJS.Platform
-  isIntelMac: boolean
   refreshing: boolean
   refreshingInTheBackground: boolean
   hiddenGames: HiddenGame[]
@@ -207,7 +206,6 @@ class GlobalState extends PureComponent<Props> {
     language: this.props.i18n.language,
     libraryStatus: [],
     platform: window.platform,
-    isIntelMac: false,
     refreshing: false,
     refreshingInTheBackground: true,
     hiddenGames: configStore.get('games.hidden', []),
@@ -903,10 +901,6 @@ class GlobalState extends PureComponent<Props> {
         })
       }
     })
-
-    if (platform === 'darwin') {
-      this.setState({ isIntelMac: await window.api.isIntelMac() })
-    }
 
     this.setState({
       isFullscreen: await window.api.isFullscreen(),

@@ -10,7 +10,6 @@ const initialContext: SettingsContextType = {
   appName: 'default',
   runner: 'legendary',
   gameInfo: undefined,
-  isMacNative: false,
   isLinuxNative: false
 }
 

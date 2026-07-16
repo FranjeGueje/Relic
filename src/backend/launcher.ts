@@ -65,9 +65,7 @@ import {
 import {
   isCLINoGui,
   isLinux,
-  isMac,
   isSteamDeckGameMode,
-  isWindows,
   isSteamDeck
 } from './constants/environment'
 import { formatSystemInfo, getSystemInfo } from './utils/systeminfo'
@@ -246,9 +244,7 @@ function filterGameSettingsForLog(
   delete gameSettings.enableQuickSavesMenu
   delete gameSettings.verboseLogs
 
-  if (isMac) {
-    delete gameSettings.disableUMU
-  }
+
 
   return gameSettings
 }

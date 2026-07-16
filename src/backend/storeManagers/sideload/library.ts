@@ -1,11 +1,9 @@
 import { ExecResult, GameInfo } from 'common/types'
-import { readdirSync } from 'graceful-fs'
 import { dirname, join } from 'path'
 import { libraryStore } from './electronStores'
 import { logWarning } from 'backend/logger'
 import { addShortcuts } from 'backend/shortcuts/shortcuts/shortcuts'
 import { sendFrontendMessage } from 'backend/ipc'
-import { isMac } from 'backend/constants/environment'
 import { LibraryManager } from 'common/types/game_manager'
 import SideloadGame from './games'
 
@@ -46,18 +44,6 @@ export default class SideloadLibraryManager implements LibraryManager {
       description,
       customUserAgent,
       launchFullScreen
-    }
-
-    if (isMac && executable?.endsWith('.app')) {
-      const macAppExecutable = readdirSync(
-        join(executable, 'Contents', 'MacOS')
-      )[0]
-      game.install.executable = join(
-        executable,
-        'Contents',
-        'MacOS',
-        macAppExecutable
-      )
     }
 
     const current = libraryStore.get('games', [])

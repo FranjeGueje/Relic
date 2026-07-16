@@ -120,9 +120,7 @@ export default React.memo(function GamePage(): JSX.Element | null {
 
   const knownFixes = hasKnownFixes(appName, runner)
 
-  const isWin = platform === 'win32'
   const isLinux = platform === 'linux'
-  const isMac = platform === 'darwin'
   const isSideloaded = runner === 'sideload'
   const isBrowserGame = gameInfo?.install.platform === 'Browser'
 
@@ -189,7 +187,7 @@ export default React.memo(function GamePage(): JSX.Element | null {
         } = { ...gameInfo }
 
         const installPlatform =
-          install.platform || (is_mac_native && isMac ? 'Mac' : 'Windows')
+          install.platform || 'Windows'
 
         if (
           runner !== 'sideload' &&
@@ -306,10 +304,10 @@ export default React.memo(function GamePage(): JSX.Element | null {
         launching: isLaunching,
         linux: isLinux,
         linuxNative: isLinuxNative,
-        mac: isMac,
+        mac: false,
         macNative: isMacNative,
         moving: isMoving,
-        native: isWin || isMacNative || isLinuxNative,
+        native: isMacNative || isLinuxNative,
         notAvailable,
         notInstallable,
         notSupportedGame,
@@ -320,7 +318,7 @@ export default React.memo(function GamePage(): JSX.Element | null {
         syncing: isSyncing,
         uninstalling: isUninstalling,
         updating: isUpdating,
-        win: isWin,
+        win: false,
         notPlayableOffline: notPlayableOffline
       },
       statusContext,

@@ -51,7 +51,7 @@ import { t } from 'i18next'
 import { showDialogBoxModalAuto } from '../../dialog/dialog'
 import { sendFrontendMessage } from '../../ipc'
 import { Game } from 'common/types/game_manager'
-import { isLinux, isMac, isWindows } from 'backend/constants/environment'
+import { isLinux } from 'backend/constants/environment'
 import { libraryManagerMap } from '..'
 import { isUmuSupported } from 'backend/utils/compatibility_layers'
 
@@ -375,27 +375,23 @@ export default class ZoomGame implements Game {
         const dosboxExePath = await this.findDosboxExecutable(gameDirectory)
         if (dosboxExePath) {
           isDosbox = true
-          if (isWindows) {
-            finalExecutable = relative(installPath, dosboxExePath)
-          } else {
-            finalExecutable = 'dosbox'
-            finalInstallPlatform = 'linux'
-            const sourceDir = gameDirectory
-            const destDir = join(path, gameInfo.folder_name)
-            logInfo(
-              `Copying DOSBox game files from ${sourceDir} to ${destDir}`,
-              LogPrefix.Zoom
-            )
-            const items = await fs.promises.readdir(sourceDir)
-            for (const item of items) {
-              await fs.promises.cp(join(sourceDir, item), join(destDir, item), {
-                recursive: true
-              })
-            }
-            dosboxConf = newConfFiles.map((file) =>
-              join(destDir, basename(file))
-            )
+          finalExecutable = 'dosbox'
+          finalInstallPlatform = 'linux'
+          const sourceDir = gameDirectory
+          const destDir = join(path, gameInfo.folder_name)
+          logInfo(
+            `Copying DOSBox game files from ${sourceDir} to ${destDir}`,
+            LogPrefix.Zoom
+          )
+          const items = await fs.promises.readdir(sourceDir)
+          for (const item of items) {
+            await fs.promises.cp(join(sourceDir, item), join(destDir, item), {
+              recursive: true
+            })
           }
+          dosboxConf = newConfFiles.map((file) =>
+            join(destDir, basename(file))
+          )
         }
       }
 
@@ -509,14 +505,6 @@ export default class ZoomGame implements Game {
 
   isNative(): boolean {
     const gameInfo = this.getGameInfo()
-    if (isWindows) {
-      return true
-    }
-
-    if (isMac && gameInfo.install.platform === 'osx') {
-      return true
-    }
-
     if (isLinux && gameInfo.install.platform === 'linux') {
       return true
     }
@@ -572,9 +560,7 @@ export default class ZoomGame implements Game {
     const commandEnv = {
       ...process.env,
       ...setupWrapperEnvVars({ appName: this.id, appRunner: 'zoom' }),
-      ...(isWindows
-        ? {}
-        : setupEnvVars(gameSettings, gameInfo.install.install_path)),
+      ...setupEnvVars(gameSettings, gameInfo.install.install_path),
       ...getKnownFixesEnvVariables(this.id, 'zoom')
     }
 

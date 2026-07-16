@@ -6,7 +6,6 @@ import { handleExit, showAboutWindow } from '../utils'
 import { GlobalConfig } from '../config'
 import { backendEvents } from '../backend_events'
 import { join } from 'node:path'
-import { isMac } from 'backend/constants/environment'
 import { fixAsarPath, publicDir } from 'backend/constants/paths'
 
 const iconDark = fixAsarPath(join(publicDir, 'icon-dark.png'))
@@ -21,7 +20,6 @@ export const initTrayIcon = async (mainWindow: BrowserWindow) => {
     recentGames ??= await getRecentGames({ limited: true })
     const newContextMenu = contextMenu(mainWindow, recentGames)
     appIcon.setContextMenu(newContextMenu)
-    if (isMac) app.dock?.setMenu(newContextMenu)
   }
   await loadContextMenu()
 
@@ -48,15 +46,7 @@ export const initTrayIcon = async (mainWindow: BrowserWindow) => {
 }
 
 const iconSizesByPlatform = {
-  darwin: {
-    width: 20,
-    height: 20
-  },
   linux: {
-    width: 32,
-    height: 32
-  },
-  win32: {
     width: 32,
     height: 32
   }
@@ -75,8 +65,7 @@ const getIcon = (platform = process.platform) => {
 // generate the context menu
 const contextMenu = (
   mainWindow: BrowserWindow,
-  recentGames: RecentGame[],
-  platform = process.platform
+  recentGames: RecentGame[]
 ) => {
   const recentsMenu = recentGames.map((game) => {
     return {
@@ -103,7 +92,7 @@ const contextMenu = (
       label: i18next.t('tray.about', 'About')
     },
     {
-      accelerator: platform === 'darwin' ? 'Cmd+R' : 'Ctrl+R',
+      accelerator: 'Ctrl+R',
       click: function () {
         mainWindow.reload()
       },
@@ -111,7 +100,7 @@ const contextMenu = (
     },
     {
       label: 'Debug',
-      accelerator: platform === 'darwin' ? 'Alt+Cmd+I' : 'Ctrl+Shift+I',
+      accelerator: 'Ctrl+Shift+I',
       click: () => {
         mainWindow.webContents.openDevTools()
       }
@@ -121,7 +110,7 @@ const contextMenu = (
         handleExit()
       },
       label: i18next.t('tray.quit', 'Quit'),
-      accelerator: platform === 'darwin' ? 'Cmd+Q' : 'Ctrl+Q'
+      accelerator: 'Ctrl+Q'
     }
   ])
 }

@@ -1,8 +1,6 @@
 import { homedir } from 'os'
 import { join } from 'path'
 
-import { isMac, isWindows } from '../constants/environment'
-
 import type { Runner } from 'common/types'
 import type { RunnerOrComet } from './types'
 
@@ -10,14 +8,6 @@ import type { RunnerOrComet } from './types'
  * Returns the base directory to store all logs
  */
 function getBaseLogPath(): string {
-  if (isWindows) {
-    const localAppData =
-      process.env.LOCALAPPDATA ?? join(homedir(), 'AppData', 'Local')
-    return join(localAppData, 'Relic', 'logs')
-  }
-  if (isMac) {
-    return join(homedir(), 'Library', 'Logs', 'Relic')
-  }
   const stateHome =
     process.env.XDG_STATE_HOME ?? join(homedir(), '.local', 'state')
   return join(stateHome, 'Relic', 'logs')

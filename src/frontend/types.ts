@@ -34,7 +34,6 @@ export interface ContextType {
   setLanguage: (newLanguage: string) => void
   libraryStatus: GameStatus[]
   platform: NodeJS.Platform | 'unknown'
-  isIntelMac: boolean
   refresh: (library: Runner, checkUpdates?: boolean) => Promise<void>
   refreshLibrary: (options: RefreshOptions) => Promise<void>
   refreshing: boolean
@@ -189,7 +188,6 @@ export interface SettingsContextType {
   appName: string
   runner?: Runner
   gameInfo?: GameInfo
-  isMacNative: boolean
   isLinuxNative: boolean
 }
 

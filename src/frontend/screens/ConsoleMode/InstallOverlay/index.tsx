@@ -31,8 +31,6 @@ export default function InstallOverlay({
   const { platform } = useContext(ContextProvider)
   const [progress] = hasProgress(game.app_name, game.runner)
 
-  const isWin = platform === 'win32'
-  const isMac = platform === 'darwin'
   const isLinux = platform === 'linux'
   const isSideload = game.runner === 'sideload'
 
@@ -41,18 +39,13 @@ export default function InstallOverlay({
     if (isLinux && (isSideload || game.is_linux_native)) {
       options.push({ value: 'linux', label: 'Linux' })
     }
-    if (isMac && (isSideload || game.is_mac_native)) {
-      options.push({ value: 'Mac', label: 'macOS' })
-    }
     // Windows is always installable.
     options.push({ value: 'Windows', label: 'Windows' })
     return options
-  }, [isLinux, isMac, isSideload, game.is_linux_native, game.is_mac_native])
+  }, [isLinux, isSideload, game.is_linux_native])
 
   const defaultPlatform: InstallPlatform =
-    (isMac && game.is_mac_native && 'Mac') ||
-    (isLinux && game.is_linux_native && 'linux') ||
-    'Windows'
+    (isLinux && game.is_linux_native && 'linux') || 'Windows'
 
   const [platformIndex, setPlatformIndex] = useState(() => {
     const idx = availablePlatforms.findIndex((p) => p.value === defaultPlatform)

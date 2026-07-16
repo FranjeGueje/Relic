@@ -288,9 +288,6 @@ export default React.memo(function Library(): JSX.Element {
     if (platformsFilters['win']) {
       displayedPlatforms.push('win')
     }
-    if (platformsFilters['mac'] && platform === 'darwin') {
-      displayedPlatforms.push('mac')
-    }
     if (platformsFilters['linux'] && platform === 'linux') {
       displayedPlatforms.push('linux')
     }
@@ -307,10 +304,6 @@ export default React.memo(function Library(): JSX.Element {
     if (displayedPlatforms.includes('win')) {
       displayedPlatforms.push('windows')
     }
-    if (displayedPlatforms.includes('mac')) {
-      displayedPlatforms.push('osx', 'Mac')
-    }
-
     return library.filter((game) => {
       let gamePlatforms: string[] = []
 
@@ -319,9 +312,6 @@ export default React.memo(function Library(): JSX.Element {
       } else {
         if (game.is_linux_native && platform === 'linux') {
           gamePlatforms.push('linux')
-        }
-        if (game.is_mac_native && platform === 'darwin') {
-          gamePlatforms.push('mac')
         }
         gamePlatforms.push('windows')
       }

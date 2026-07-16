@@ -34,7 +34,6 @@ import shlex from 'shlex'
 import {
   killPattern,
   moveOnUnix,
-  moveOnWindows,
   sendGameStatusUpdate,
   sendProgressUpdate
 } from 'backend/utils'
@@ -46,7 +45,7 @@ import {
 import { removeNonSteamGame } from 'backend/shortcuts/nonesteamgame/nonesteamgame'
 import { sendFrontendMessage } from '../../ipc'
 import setup from './setup'
-import { isLinux, isWindows } from 'backend/constants/environment'
+import { isLinux } from 'backend/constants/environment'
 
 import type LogWriter from 'backend/logger/log_writer'
 
@@ -259,15 +258,11 @@ export default class NileGameManager implements Game {
     libraryManagerMap['nile'].installState(this.id, true)
     const metadata = libraryManagerMap['nile'].getInstallMetadata(this.id)
 
-    if (isWindows) {
-      await setup(this.id, metadata?.path)
-    }
-
     return { status: 'done' }
   }
 
   isNative(): boolean {
-    return isWindows
+    return false
   }
 
   /**
@@ -323,9 +318,7 @@ export default class NileGameManager implements Game {
     let commandEnv = {
       ...process.env,
       ...setupWrapperEnvVars({ appName: this.id, appRunner: 'nile' }),
-      ...(isWindows
-        ? {}
-        : setupEnvVars(gameSettings, gameInfo.install.install_path)),
+      ...setupEnvVars(gameSettings, gameInfo.install.install_path),
       ...getKnownFixesEnvVariables(this.id, 'nile')
     }
 
@@ -373,7 +366,7 @@ export default class NileGameManager implements Game {
     const gameInfo = this.getGameInfo()
     logInfo(`Moving ${gameInfo.title} to ${newInstallPath}`, LogPrefix.Nile)
 
-    const moveImpl = isWindows ? moveOnWindows : moveOnUnix
+    const moveImpl = moveOnUnix
     const moveResult = await moveImpl(newInstallPath, gameInfo)
 
     if (moveResult.status === 'error') {

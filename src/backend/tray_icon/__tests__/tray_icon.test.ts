@@ -53,18 +53,10 @@ describe('TrayIcon', () => {
       })
 
       it('sets accelerators per platform', () => {
-        let menu = testingExportsTrayIcon.contextMenu(mainWindow, [], 'linux')
+        const menu = testingExportsTrayIcon.contextMenu(mainWindow, [])
 
         expect(menu).toContainEqual({
           accelerator: 'Ctrl+R',
-          label: 'tray.reload',
-          click: expect.any(Function)
-        })
-
-        menu = testingExportsTrayIcon.contextMenu(mainWindow, [], 'darwin')
-
-        expect(menu).toContainEqual({
-          accelerator: 'Cmd+R',
           label: 'tray.reload',
           click: expect.any(Function)
         })

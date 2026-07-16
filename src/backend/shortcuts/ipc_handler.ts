@@ -8,24 +8,16 @@ import {
 } from './nonesteamgame/nonesteamgame'
 import { shortcutFiles } from './shortcuts/shortcuts'
 import { notify } from 'backend/dialog/dialog'
-import { isMac } from 'backend/constants/environment'
 import { getGame } from '../utils'
 
 addListener('addShortcut', async (event, appName, runner, fromMenu) => {
   getGame(appName, runner).addShortcuts(fromMenu)
 
-  const body = i18next.t(
-    'box.shortcuts.message',
-    'Shortcuts were created on Desktop and Start Menu'
-  )
-
-  const bodyMac = i18next.t(
-    'box.shortcuts.message-mac',
-    'Shortcuts were created on the Applications folder'
-  )
-
   notify({
-    body: isMac ? bodyMac : body,
+    body: i18next.t(
+      'box.shortcuts.message',
+      'Shortcuts were created on Desktop and Start Menu'
+    ),
     title: i18next.t('box.shortcuts.title', 'Shortcuts')
   })
 })
@@ -41,18 +33,11 @@ addHandler('shortcutsExists', (event, appName, runner) => {
 addListener('removeShortcut', async (event, appName, runner) => {
   getGame(appName, runner).removeShortcuts()
 
-  const body = i18next.t(
-    'box.shortcuts.message-remove',
-    'Shortcuts were removed from Desktop and Start Menu'
-  )
-
-  const bodyMac = i18next.t(
-    'box.shortcuts.message-remove-mac',
-    'Shortcuts were removed from the Applications folder'
-  )
-
   notify({
-    body: isMac ? bodyMac : body,
+    body: i18next.t(
+      'box.shortcuts.message-remove',
+      'Shortcuts were removed from Desktop and Start Menu'
+    ),
     title: i18next.t('box.shortcuts.title', 'Shortcuts Removed')
   })
 })

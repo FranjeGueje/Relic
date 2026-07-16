@@ -16,10 +16,6 @@ const useSettingsContext = ({ appName, gameInfo, runner }: Props) => {
   const { platform } = useContext(ContextProvider)
   const isDefault = appName === 'default'
   const isLinux = platform === 'linux'
-  const isMac = platform === 'darwin'
-  const isMacNative =
-    isMac &&
-    (['Mac', 'osx'].includes(gameInfo?.install.platform ?? '') || false)
   const isLinuxNative =
     isLinux && (gameInfo?.install.platform === 'linux' || false)
 
@@ -50,8 +46,7 @@ const useSettingsContext = ({ appName, gameInfo, runner }: Props) => {
     appName,
     runner,
     gameInfo,
-    isLinuxNative,
-    isMacNative
+    isLinuxNative
   }
 
   if (Object.keys(contextValues.config).length === 0) {

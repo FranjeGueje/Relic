@@ -20,7 +20,7 @@ import {
 } from '../../utils/aborthandler/aborthandler'
 import { BrowserWindow, dialog, Menu } from 'electron'
 import { sendGameStatusUpdate } from 'backend/utils'
-import { isLinux, isMac } from 'backend/constants/environment'
+import { isLinux } from 'backend/constants/environment'
 import { windowIcon } from 'backend/constants/paths'
 
 import type LogWriter from 'backend/logger/log_writer'
@@ -187,7 +187,7 @@ export async function launchGame(
           'File not executable, changing permissions temporarily',
           LogPrefix.Backend
         )
-        if (isLinux || (isMac && !executable.endsWith('.app'))) {
+        if (isLinux) {
           await chmod(executable, 0o775)
         }
       }
@@ -217,7 +217,7 @@ export async function launchGame(
       )
 
       // TODO: check and revert to previous permissions
-      if (isLinux || (isMac && !executable.endsWith('.app'))) {
+      if (isLinux) {
         await chmod(executable, 0o775)
       }
       return true

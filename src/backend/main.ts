@@ -41,7 +41,6 @@ import {
   showAboutWindow,
   showItemInFolder,
   getFileSize,
-  detectVCRedist,
   getShellPath,
   removeFolder,
   sendGameStatusUpdate,
@@ -107,7 +106,7 @@ import {
   isCLIFullscreen,
   isCLINoGui,
   isLinux,
-  isMac,
+
   isSnap,
   isSteamDeckGameMode
 } from './constants/environment'
@@ -171,8 +170,6 @@ async function initializeWindow(): Promise<BrowserWindow> {
 
     handleExit()
   })
-
-  detectVCRedist(mainWindow)
 
   const startHash =
     '/console'
@@ -499,9 +496,7 @@ addListener('quit', async () => handleExit())
 // for applications and their menu bar to stay active until the user quits
 // explicitly with Cmd + Q.
 app.on('window-all-closed', () => {
-  if (!isMac) {
-    app.quit()
-  }
+  app.quit()
 })
 
 

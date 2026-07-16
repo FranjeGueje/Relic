@@ -22,7 +22,7 @@ import i18next from 'i18next'
 import { notify, showDialogBoxModalAuto } from '../../dialog/dialog'
 import { GlobalConfig } from '../../config'
 import { tsStore } from 'backend/constants/key_value_stores'
-import { isAppImage, isWindows } from 'backend/constants/environment'
+import { isAppImage } from 'backend/constants/environment'
 import type { Game } from 'common/types/game_manager'
 
 const getSteamUserdataDir = async () => {
@@ -256,11 +256,8 @@ async function addNonSteamGame(game: Game): Promise<boolean> {
     newEntry.Exe = `"${app.getPath('exe')}"`
     newEntry.StartDir = `"${process.cwd()}"`
 
-    if (!isWindows && isAppImage) {
+    if (isAppImage) {
       newEntry.Exe = `"${process.env.APPIMAGE}"`
-    } else if (isWindows && process.env.PORTABLE_EXECUTABLE_FILE) {
-      newEntry.Exe = `"${process.env.PORTABLE_EXECUTABLE_FILE}"`
-      newEntry.StartDir = `"${process.env.PORTABLE_EXECUTABLE_DIR}"`
     }
 
     newEntry.appid = generateShortcutId(newEntry.Exe, newEntry.AppName)
@@ -285,10 +282,7 @@ async function addNonSteamGame(game: Game): Promise<boolean> {
     })
 
     const args = []
-    args.push('--no-gui')
-    if (!isWindows) {
-      args.push('--no-sandbox')
-    }
+    args.push('--no-gui', '--no-sandbox')
 
     const { runner, app_name } = gameInfo
 

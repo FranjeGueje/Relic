@@ -21,7 +21,7 @@ import { launchGame } from 'backend/storeManagers/storeManagerCommon/games'
 import { Game, InstallResult, RemoveArgs } from 'common/types/game_manager'
 import { removePrefix } from 'backend/utils/uninstaller'
 import { removeRecentGame } from 'backend/recent_games/recent_games'
-import { isLinux, isMac, isWindows } from 'backend/constants/environment'
+import { isLinux } from 'backend/constants/environment'
 import { removeNonSteamGame } from 'backend/shortcuts/nonesteamgame/nonesteamgame'
 
 import type LogWriter from 'backend/logger/log_writer'
@@ -142,14 +142,6 @@ export default class SideloadGame implements Game {
     } = this.getGameInfo()
     if (platform) {
       if (platform === 'Browser') {
-        return true
-      }
-
-      if (isWindows) {
-        return true
-      }
-
-      if (isMac && platform === 'Mac') {
         return true
       }
 

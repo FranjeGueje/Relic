@@ -57,7 +57,7 @@ import {
 import type { AppSettings } from 'common/types'
 import { getSystemInfo } from './utils/systeminfo'
 import { configStore } from './constants/key_value_stores'
-import { isLinux, isMac, isIntelMac, isWindows } from './constants/environment'
+import { isLinux } from './constants/environment'
 import {
   configPath,
   fixAsarPath,
@@ -378,9 +378,6 @@ function splitPathAndName(fullPath: string): { dir: string; bin: string } {
 }
 
 function archSpecificBinary(binaryName: string) {
-  // On Windows the helper binaries have .exe extension
-  if (process.platform === 'win32') binaryName += '.exe'
-
   // Try to use the arch-native binary first, if that doesn't exist fall back to
   // the x64 version (assume a compatibility layer like box64 is installed)
   const archSpecificPath = join(
@@ -446,15 +443,7 @@ function getNileBin(): { dir: string; bin: string } {
 export function createNecessaryFolders() {
   const defaultFolders = [gamesConfigPath, relicIconFolder]
 
-  const necessaryFoldersByPlatform = {
-    win32: [...defaultFolders],
-    linux: [...defaultFolders, toolsPath],
-    darwin: [...defaultFolders, toolsPath]
-  }
-
-  necessaryFoldersByPlatform[
-    process.platform as keyof typeof necessaryFoldersByPlatform
-  ].forEach((folder: string) => {
+  ;[...defaultFolders, toolsPath].forEach((folder: string) => {
     if (!existsSync(folder)) {
       mkdirSync(folder)
     }
@@ -462,16 +451,7 @@ export function createNecessaryFolders() {
 }
 
 function getFormattedOsName(): string {
-  switch (process.platform) {
-    case 'linux':
-      return 'Linux'
-    case 'win32':
-      return 'Windows'
-    case 'darwin':
-      return 'macOS'
-    default:
-      return 'Unknown OS'
-  }
+  return 'Linux'
 }
 
 export async function getSteamLibraries(): Promise<string[]> {
@@ -537,119 +517,11 @@ function removeQuoteIfNecessary(stringToUnquote: string) {
   return String(stringToUnquote)
 }
 
-/**
- * Detects MS Visual C++ Redistributable and prompts for its installation if it's not found
- * Many games require this while not actually specifying it, so it's good to have
- *
- * Only works on Windows of course
- */
-function detectVCRedist(mainWindow: BrowserWindow) {
-  if (!isWindows) {
-    return
-  }
-
-  const skip = configStore.get('skipVcRuntime', false)
-
-  if (skip) {
-    return
-  }
-
-  // According to this article avoid using wmic and Win32_Product
-  // https://xkln.net/blog/please-stop-using-win32product-to-find-installed-software-alternatives-inside/
-  // wmic is also deprecated
-  const detectedVCRInstallations: string[] = []
-  let stderr = ''
-
-  // get applications
-  const child = spawn('powershell.exe', [
-    'Get-ItemProperty',
-    'HKLM:\\Software\\WOW6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\*,',
-    'HKLM:\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\*',
-    '|',
-    'Select-Object',
-    'DisplayName',
-    '|',
-    'Format-Table',
-    '-AutoSize'
-  ])
-
-  child.stdout.setEncoding('utf-8')
-  child.stdout.on('data', (data: string) => {
-    const splitData = data.split('\n')
-    for (const installation of splitData) {
-      if (installation && installation.includes('Microsoft Visual C++ 2022')) {
-        detectedVCRInstallations.push(installation)
-      }
-    }
-  })
-
-  child.stderr.setEncoding('utf-8')
-  child.stderr.on('data', (data: string) => {
-    stderr += data
-  })
-
-  child.on('error', (error: Error) => {
-    logError(['Check of VCRuntime crashed with:', error], LogPrefix.Backend)
-    return
-  })
-
-  child.on('close', async (code: number) => {
-    if (code) {
-      logError(
-        `Failed to check for VCRuntime installations\n${stderr}`,
-        LogPrefix.Backend
-      )
-      return
-    }
-    // VCR installers install both the "Minimal" and "Additional" runtime, and we have 2 installers (x86 and x64) -> 4 installations in total
-    if (detectedVCRInstallations.length < 4) {
-      const { response } = await dialog.showMessageBox(mainWindow, {
-        title: t('box.vcruntime.notfound.title', 'VCRuntime not installed'),
-        message: t(
-          'box.vcruntime.notfound.message',
-          'The Microsoft Visual C++ Runtimes are not installed, which are required by some games'
-        ),
-        buttons: [
-          t('box.downloadNow', 'Download now'),
-          t('box.ok', 'Ok'),
-          t('box.dontShowAgain', "Don't show again")
-        ]
-      })
-
-      if (response === 2) {
-        return configStore.set('skipVcRuntime', true)
-      }
-
-      if (response === 0) {
-        openUrlOrFile('https://aka.ms/vs/17/release/vc_redist.x86.exe')
-        openUrlOrFile('https://aka.ms/vs/17/release/vc_redist.x64.exe')
-        dialog.showMessageBox(mainWindow, {
-          message: t(
-            'box.vcruntime.install.message',
-            'The download links for the Visual C++ Runtimes have been opened. Please install both the x86 and x64 versions.'
-          )
-        })
-      }
-    } else {
-      logInfo('VCRuntime is installed', LogPrefix.Backend)
-    }
-  })
-}
-
-
-
 // can be removed if legendary and gogdl handle SIGTERM and SIGKILL
 // for us
 function killPattern(pattern: string) {
   logInfo(['Trying to kill', pattern], LogPrefix.Backend)
-  let ret
-  if (isWindows) {
-    ret = spawnSync('Stop-Process', ['-name', pattern], {
-      shell: 'powershell.exe'
-    })
-  } else {
-    ret = spawnSync('pkill', ['-f', pattern])
-  }
+  const ret = spawnSync('pkill', ['-f', pattern])
   logInfo(['Killed', pattern], LogPrefix.Backend)
   return ret
 }
@@ -931,59 +803,6 @@ async function getPathDiskSize(path: string): Promise<number> {
   }
 
   return statData.size
-}
-
-export async function checkRosettaInstall() {
-  if (isIntelMac) {
-    return
-  }
-
-  const { stdout: rosettaCheck } = await execAsync(
-    'arch -x86_64 /usr/sbin/sysctl sysctl.proc_translated'
-  )
-
-  const result = rosettaCheck.split(':')[1].trim() === '1'
-
-  logInfo(
-    `Rosetta is ${result ? 'available' : 'not available'} on this system.`,
-    LogPrefix.Backend
-  )
-
-  if (!result) {
-    // show a dialog saying that Relic wont run without rosetta and add information on how to install it
-    await dialog.showMessageBox({
-      title: i18next.t('box.warning.rosetta.title', 'Rosetta not found'),
-      message: i18next.t(
-        'box.warning.rosetta.message',
-        'Relic requires Rosetta to run correctly on macOS with Apple Silicon chips. Please install it from the macOS terminal using the following command: "softwareupdate --install-rosetta" and restart Relic. '
-      ),
-      buttons: ['OK'],
-      icon: windowIcon
-    })
-
-    logInfo(
-      'Rosetta is not available, install it with: softwareupdate --install-rosetta from the terminal',
-      LogPrefix.Backend
-    )
-  }
-}
-
-export async function isMacSonomaOrHigher() {
-  if (!isMac) return false
-  logInfo('Checking if macOS is Sonoma or higher', LogPrefix.Backend)
-
-  const release = (await getSystemInfo(true)).OS.version
-  const [major] = release.split('.').map(Number)
-  const isMacSonomaOrHigher = major >= 14
-
-  logInfo(
-    `macOS is ${
-      isMacSonomaOrHigher ? 'Sonoma or higher' : 'not Sonoma or higher'
-    }`,
-    LogPrefix.Backend
-  )
-
-  return isMacSonomaOrHigher
 }
 
 function sendGameStatusUpdate(payload: GameStatus) {
@@ -1300,7 +1119,6 @@ export {
   formatEpicStoreUrl,
   quoteIfNecessary,
   removeQuoteIfNecessary,
-  detectVCRedist,
   killPattern,
   getShellPath,
   getFileSize,

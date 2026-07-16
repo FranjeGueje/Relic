@@ -44,7 +44,6 @@ import thirdParty from './thirdParty'
 import { Entries } from 'type-fest'
 import { runLegendaryCommandStub } from './e2eMock'
 import { legendaryConfigPath, legendaryMetadata } from './constants'
-import { isWindows } from 'backend/constants/environment'
 import { LibraryManager } from 'common/types/game_manager'
 import LegendaryGame from './games'
 

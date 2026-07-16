@@ -47,17 +47,6 @@ export default React.memo(function NewLogin() {
 
   let oldMac = false
   let oldMacMessage = ''
-  if (systemInfo?.OS.platform === 'darwin') {
-    const version = parseInt(systemInfo.OS.version.split('.')[0])
-    if (version < 12) {
-      oldMac = true
-      oldMacMessage = t(
-        'login.old-mac',
-        'Your macOS version is {{version}}. macOS 12 or newer is required to log in.',
-        { version: systemInfo.OS.version }
-      )
-    }
-  }
 
   const loginMessage = t(
     'login.message',
