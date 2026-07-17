@@ -672,9 +672,9 @@ export default class GOGLibraryManager implements LibraryManager {
       logMessagePrefix: 'Getting game metadata'
     })
 
-    if (!res.stdout || res.abort) {
+    if (!res.stdout?.trim() || res.abort) {
       logError(
-        `stdout = ${!!res.stdout} and res.abort = ${!!res.abort} in getInstallInfo`,
+        `Empty response or aborted in getInstallInfo for ${appName}`,
         LogPrefix.Gog
       )
       if (res.stderr.includes("Game doesn't support content system api")) {

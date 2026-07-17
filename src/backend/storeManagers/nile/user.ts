@@ -33,6 +33,9 @@ export class NileUser {
         logSanitizer: authLogSanitizer
       }
     )
+    if (!stdout?.trim()) {
+      throw Error('Empty response from nile auth command')
+    }
     const output: NileLoginData = JSON.parse(stdout)
 
     logInfo(['Register data is:', output], LogPrefix.Nile)

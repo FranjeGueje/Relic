@@ -241,6 +241,19 @@ export default class LegendaryLibraryManager implements LibraryManager {
     if (res.error) {
       logError(['Failed to get more details:', res.error], LogPrefix.Legendary)
     }
+    if (!res.stdout?.trim()) {
+      const nextRetry = retries !== undefined ? retries - 1 : 3
+      if (nextRetry > 0) {
+        logWarning(
+          `Empty response from legendary for ${appName}. Retrying (${nextRetry} left).`,
+          LogPrefix.Legendary
+        )
+        return this.getInstallInfo(appName, installPlatform, { retries: nextRetry })
+      }
+      throw Error(
+        `Empty response from legendary for ${appName} after 3 retries.`
+      )
+    }
     try {
       const info: LegendaryInstallInfo = JSON.parse(res.stdout)
       if (info.manifest) {

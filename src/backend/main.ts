@@ -630,7 +630,9 @@ addHandler(
     } catch (error) {
       logError(
         error,
-        runner === 'legendary' ? LogPrefix.Legendary : LogPrefix.Gog
+        runner === 'legendary' ? LogPrefix.Legendary
+          : runner === 'nile' ? LogPrefix.Nile
+          : LogPrefix.Gog
       )
       return null
     }

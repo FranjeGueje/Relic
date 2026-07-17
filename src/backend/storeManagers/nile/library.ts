@@ -338,6 +338,9 @@ export default class NileLibraryManager implements LibraryManager {
         { abortId: appName }
       )
 
+      if (!output?.trim()) {
+        throw Error(`Empty response from nile for ${appName}`)
+      }
       const { download_size }: NileGameDownloadInfo = JSON.parse(output)
       const installInfo = {
         game: {
