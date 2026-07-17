@@ -11,10 +11,12 @@ export interface AddGameToSteamResult {
 }
 
 export interface SteamShortcut {
+  gameName: string
   appId: string
+  store: GameRunner
   steamAppId: number
-  batPath: string
   installPath: string
+  execPath: string
 }
 
 export interface UserdataInfo {

@@ -68,7 +68,14 @@ export async function onGameInstalled(
   })
 
   if (result.success && result.steamAppId) {
-    addShortcut(appName, result.steamAppId, batPath, installPath)
+    addShortcut(
+      gameInfo.title,
+      appName,
+      gameInfo.runner,
+      result.steamAppId,
+      installPath,
+      batPath
+    )
   }
 
   return result
@@ -79,14 +86,14 @@ export async function onGameUninstalled(game: Game) {
   const appName = gameInfo.app_name
 
   const known = findShortcut(appName)
-  if (known?.batPath) {
+  if (known?.execPath) {
     try {
-      if (existsSync(known.batPath)) {
-        unlinkSync(known.batPath)
-        logInfo(`Deleted ${known.batPath}`, LOG_PREFIX)
+      if (existsSync(known.execPath)) {
+        unlinkSync(known.execPath)
+        logInfo(`Deleted ${known.execPath}`, LOG_PREFIX)
       }
     } catch (e) {
-      logError(`Failed to delete ${known.batPath}: ${e}`, LOG_PREFIX)
+      logError(`Failed to delete ${known.execPath}: ${e}`, LOG_PREFIX)
     }
   }
 

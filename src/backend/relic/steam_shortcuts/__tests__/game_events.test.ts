@@ -68,7 +68,7 @@ describe('onGameInstalled', () => {
       install: { install_path: '/games/test' }
     })
 
-    mockedFindShortcut.mockReturnValue({ appId: 'test_app', steamAppId: 123, batPath: '/games/test/TestGame.bat', installPath: '/games/test' })
+    mockedFindShortcut.mockReturnValue({ gameName: 'TestGame', appId: 'test_app', store: 'gog', steamAppId: 123, execPath: '/games/test/TestGame.bat', installPath: '/games/test' })
 
     const result = await onGameInstalled(mockGame as never, '/custom/path')
 
@@ -103,7 +103,7 @@ describe('onGameInstalled', () => {
     expect(mockedAddGameToSteam).toHaveBeenCalledWith({
       gameName: 'TestGame'
     })
-    expect(mockedAddShortcut).toHaveBeenCalledWith('test_app', 123, '/path/to/TestGame.bat', '/custom/path')
+    expect(mockedAddShortcut).toHaveBeenCalledWith('TestGame', 'test_app', 'gog', 123, '/custom/path', '/path/to/TestGame.bat')
     expect(result.success).toBe(true)
   })
 
@@ -236,9 +236,11 @@ describe('onGameUninstalled', () => {
     })
 
     mockedFindShortcut.mockReturnValue({
+      gameName: 'TestGame',
       appId: 'test_app',
+      store: 'legendary',
       steamAppId: 12345,
-      batPath: '/path/to/TestGame.bat',
+      execPath: '/path/to/TestGame.bat',
       installPath: '/some/game/path'
     })
     mockedExistsSync.mockReturnValue(true)

@@ -40,3 +40,15 @@ El objetivo es mantener trazabilidad de los cambios respecto al padre.
 | 2026-07-17 | `src/backend/storeManagers/zoom/games.ts` | `removeNonSteamGame()` → `onGameUninstalled()` |
 | 2026-07-17 | `src/backend/storeManagers/sideload/games.ts` | `removeNonSteamGame()` → `onGameUninstalled()` |
 | 2026-07-17 | `src/backend/storeManagers/sideload/library.ts` | Añadido `onGameInstalled()` al añadir juego manual |
+| 2026-07-17 | `src/backend/storeManagers/legendary/library.ts` | Protegido `JSON.parse(res.stdout)` contra stdout vacío con retry (3 reintentos) |
+| 2026-07-17 | `src/backend/storeManagers/nile/library.ts` | Protegido `JSON.parse(output)` contra stdout vacío con error descriptivo |
+| 2026-07-17 | `src/backend/storeManagers/nile/user.ts` | Protegido `JSON.parse(stdout)` contra stdout vacío con error descriptivo |
+| 2026-07-17 | `src/backend/storeManagers/gog/library.ts` | Mejorado check de stdout vacío (usa `res.stdout?.trim()` y mensaje más claro) |
+| 2026-07-17 | `src/backend/main.ts` | Corregido log prefix en IPC handler `getInstallInfo`: ahora distingue legendary, nile y gog (antes Nile se logueaba como GOG) |
+| 2026-07-17 | `src/backend/storeManagers/legendary/__tests__/getInstallInfo.test.ts` | Tests para stdout vacío (retry + valid response) |
+| 2026-07-17 | `src/backend/storeManagers/nile/__tests__/getInstallInfo.test.ts` | Tests para stdout vacío en getInstallInfo |
+| 2026-07-17 | `src/backend/storeManagers/nile/__tests__/user.test.ts` | Tests para stdout vacío en getLoginData |
+| 2026-07-17 | `src/backend/storeManagers/gog/__tests__/getInstallInfo.test.ts` | Tests para stdout vacío en getInstallInfo |
+| 2026-07-17 | `src/backend/relic/steam_shortcuts/types.ts` | `SteamShortcut`: +`gameName`, +`store`, `batPath`→`execPath` |
+| 2026-07-17 | `src/backend/relic/steam_shortcuts/store.ts` | `addShortcut(gameName, appId, store, steamAppId, installPath, execPath)` — nuevo orden de campos |
+| 2026-07-17 | `src/backend/relic/game_events.ts` | `onGameInstalled()` pasa `gameInfo.title` y `gameInfo.runner` a `addShortcut`; `onGameUninstalled()` lee `known.execPath` |
