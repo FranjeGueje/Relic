@@ -1,28 +1,62 @@
-import { existsSync, unlinkSync, writeFileSync } from 'graceful-fs'
+import { existsSync, mkdirSync, unlinkSync, writeFileSync } from 'graceful-fs'
 import { basename, join } from 'path'
 import { logError, logInfo } from 'backend/logger'
 import { spawnAsync } from 'backend/utils'
+import { relicRunnerPath } from 'backend/constants/paths'
 import {
   findGameInAllUsers,
   getShortcutId,
   checkSteamProtocolHandler
 } from './steam_helpers'
-import type { AddGameToSteamOptions, AddGameToSteamResult } from './types'
+import type { AddGameToSteamOptions, AddGameToSteamResult, GameRunner } from './types'
 
 const LOG_PREFIX = 'Relic'
 const POLL_INTERVAL_MS = 1500
 const POLL_TIMEOUT_MS = 15000
 const ADD_GAME_MARKER = '/tmp/addnonsteamgamefile'
 
-export function createMockBat(installPath: string, gameName: string): string {
-  const batPath = join(installPath, `${gameName}.bat`)
+export function createRelicBat(
+  installPath: string,
+  gameName: string,
+  runner: GameRunner,
+  appName: string
+): string {
+  const batPath = join(relicRunnerPath, `${gameName}.bat`)
 
   if (existsSync(batPath)) {
     logInfo(`${batPath} already exists`, LOG_PREFIX)
     return batPath
   }
 
-  const content = `@echo off\necho ${gameName}\npause\n`
+  mkdirSync(relicRunnerPath, { recursive: true })
+
+  const header = [
+    '@echo off',
+    'echo runner version 2',
+    '@SET LEGENDARY_CONFIG_PATH=c:\\heroic\\Legendary',
+    '@SET NILE_CONFIG_PATH=c:\\heroic\\',
+    '@SET GOGDL_CONFIG_PATH=c:\\heroic\\',
+    '@SET PATH=%PATH%;c:\\heroic\\bin'
+  ]
+
+  let runnerCmd: string
+  switch (runner) {
+    case 'legendary':
+      runnerCmd = `@legendary launch ${appName} %*`
+      break
+    case 'gog':
+      runnerCmd =
+        `@gogdl --auth-config-path c:\\heroic\\gog_store\\auth.json ` +
+        `launch --platform windows "${installPath}" ${appName} -- %*`
+      break
+    case 'nile':
+      runnerCmd = `@nile launch ${appName} -- %*`
+      break
+    default:
+      runnerCmd = '@echo En desarrollo...'
+  }
+
+  const content = [...header, '', runnerCmd].join('\n')
   writeFileSync(batPath, content, 'utf-8')
 
   logInfo(`Created ${batPath}`, LOG_PREFIX)
@@ -56,14 +90,13 @@ async function waitForGameInSteam(
 export async function addGameToSteam(
   options: AddGameToSteamOptions
 ): Promise<AddGameToSteamResult> {
-  const { gameName, installPath } = options
+  const { gameName } = options
 
-  const batPath = join(installPath, `${gameName}.bat`)
+  const batPath = join(relicRunnerPath, `${gameName}.bat`)
   const steamName = basename(batPath)
 
   checkSteamProtocolHandler()
 
-  createMockBat(installPath, gameName)
   const encodedPath = encodeURIComponent(batPath)
   const steamUrl = `steam://addnonsteamgame/${encodedPath}`
 

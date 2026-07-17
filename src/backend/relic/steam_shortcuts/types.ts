@@ -1,6 +1,7 @@
+export type GameRunner = 'legendary' | 'gog' | 'nile' | 'sideload' | 'zoom'
+
 export interface AddGameToSteamOptions {
   gameName: string
-  installPath: string
 }
 
 export interface AddGameToSteamResult {
@@ -12,6 +13,7 @@ export interface AddGameToSteamResult {
 export interface SteamShortcut {
   appId: string
   steamAppId: number
+  batPath: string
 }
 
 export interface UserdataInfo {

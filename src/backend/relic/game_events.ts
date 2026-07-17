@@ -1,10 +1,11 @@
+import { existsSync, unlinkSync } from 'graceful-fs'
 import { Game } from 'common/types/game_manager'
 import { GameInfo } from 'common/types'
 import { libraryManagerMap } from 'backend/storeManagers'
 import { logError, logInfo } from 'backend/logger'
-import { addGameToSteam, findShortcut, addShortcut, removeShortcut } from './steam_shortcuts'
+import { addGameToSteam, createRelicBat, findShortcut, addShortcut, removeShortcut } from './steam_shortcuts'
 import { removeNonSteamGame } from 'backend/shortcuts/nonesteamgame/nonesteamgame'
-import type { AddGameToSteamResult } from './steam_shortcuts/types'
+import type { AddGameToSteamResult, GameRunner } from './steam_shortcuts/types'
 
 const LOG_PREFIX = 'Relic'
 
@@ -55,13 +56,19 @@ export async function onGameInstalled(
     LOG_PREFIX
   )
 
+  const batPath = createRelicBat(
+    installPath,
+    gameInfo.title,
+    gameInfo.runner as GameRunner,
+    gameInfo.app_name
+  )
+
   const result = await addGameToSteam({
-    gameName: gameInfo.title,
-    installPath
+    gameName: gameInfo.title
   })
 
   if (result.success && result.steamAppId) {
-    addShortcut(appName, result.steamAppId)
+    addShortcut(appName, result.steamAppId, batPath)
   }
 
   return result
@@ -70,6 +77,18 @@ export async function onGameInstalled(
 export async function onGameUninstalled(game: Game) {
   const gameInfo = game.getGameInfo()
   const appName = gameInfo.app_name
+
+  const known = findShortcut(appName)
+  if (known?.batPath) {
+    try {
+      if (existsSync(known.batPath)) {
+        unlinkSync(known.batPath)
+        logInfo(`Deleted ${known.batPath}`, LOG_PREFIX)
+      }
+    } catch (e) {
+      logError(`Failed to delete ${known.batPath}: ${e}`, LOG_PREFIX)
+    }
+  }
 
   removeShortcut(appName)
   logInfo(`Removing ${gameInfo.title} from Steam shortcuts`, LOG_PREFIX)

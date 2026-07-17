@@ -39,13 +39,14 @@ export function findShortcut(appId: string): SteamShortcut | undefined {
   return listShortcuts().find((s) => s.appId === appId)
 }
 
-export function addShortcut(appId: string, steamAppId: number): void {
+export function addShortcut(appId: string, steamAppId: number, batPath: string): void {
   const shortcuts = listShortcuts()
   const existing = shortcuts.findIndex((s) => s.appId === appId)
   if (existing >= 0) {
     shortcuts[existing].steamAppId = steamAppId
+    shortcuts[existing].batPath = batPath
   } else {
-    shortcuts.push({ appId, steamAppId })
+    shortcuts.push({ appId, steamAppId, batPath })
   }
   save(shortcuts)
   logInfo(`Saved shortcut: ${appId} → ${steamAppId}`, LOG_PREFIX)

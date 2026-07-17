@@ -1,5 +1,6 @@
 import { onGameInstalled, onGameUninstalled } from '../../game_events'
-import { addGameToSteam } from '../add_game'
+import { existsSync, unlinkSync } from 'graceful-fs'
+import { addGameToSteam, createRelicBat } from '../add_game'
 import { removeNonSteamGame } from 'backend/shortcuts/nonesteamgame/nonesteamgame'
 import { libraryManagerMap } from 'backend/storeManagers'
 import * as store from '../store'
@@ -7,6 +8,12 @@ import * as store from '../store'
 const mockGetGameInfo = jest.fn()
 const mockGame = { getGameInfo: mockGetGameInfo }
 
+jest.mock('graceful-fs', () => ({
+  existsSync: jest.fn(),
+  unlinkSync: jest.fn(),
+  readFileSync: jest.fn(),
+  writeFileSync: jest.fn()
+}))
 jest.mock('backend/logger', () => ({
   logInfo: jest.fn(),
   logError: jest.fn(),
@@ -24,7 +31,8 @@ jest.mock('backend/storeManagers', () => ({
 }))
 
 jest.mock('../add_game', () => ({
-  addGameToSteam: jest.fn()
+  addGameToSteam: jest.fn(),
+  createRelicBat: jest.fn()
 }))
 
 jest.mock('../store', () => ({
@@ -38,6 +46,9 @@ jest.mock('backend/shortcuts/nonesteamgame/nonesteamgame', () => ({
 }))
 
 const mockedAddGameToSteam = jest.mocked(addGameToSteam)
+const mockedCreateRelicBat = jest.mocked(createRelicBat)
+const mockedExistsSync = jest.mocked(existsSync)
+const mockedUnlinkSync = jest.mocked(unlinkSync)
 const mockedRemoveNonSteamGame = jest.mocked(removeNonSteamGame)
 const mockedFindShortcut = jest.mocked(store.findShortcut)
 const mockedAddShortcut = jest.mocked(store.addShortcut)
@@ -45,6 +56,7 @@ const mockedRemoveShortcut = jest.mocked(store.removeShortcut)
 
 beforeEach(() => {
   jest.clearAllMocks()
+  mockedCreateRelicBat.mockReturnValue('/path/to/TestGame.bat')
 })
 
 describe('onGameInstalled', () => {
@@ -56,11 +68,12 @@ describe('onGameInstalled', () => {
       install: { install_path: '/games/test' }
     })
 
-    mockedFindShortcut.mockReturnValue({ appId: 'test_app', steamAppId: 123 })
+    mockedFindShortcut.mockReturnValue({ appId: 'test_app', steamAppId: 123, batPath: '/games/test/TestGame.bat' })
 
     const result = await onGameInstalled(mockGame as never, '/custom/path')
 
     expect(mockedAddGameToSteam).not.toHaveBeenCalled()
+    expect(mockedCreateRelicBat).not.toHaveBeenCalled()
     expect(result.success).toBe(true)
     expect(result.steamAppId).toBe(123)
   })
@@ -81,11 +94,16 @@ describe('onGameInstalled', () => {
 
     const result = await onGameInstalled(mockGame as never, '/custom/path')
 
+    expect(mockedCreateRelicBat).toHaveBeenCalledWith(
+      '/custom/path',
+      'TestGame',
+      'gog',
+      'test_app'
+    )
     expect(mockedAddGameToSteam).toHaveBeenCalledWith({
-      gameName: 'TestGame',
-      installPath: '/custom/path'
+      gameName: 'TestGame'
     })
-    expect(mockedAddShortcut).toHaveBeenCalledWith('test_app', 123)
+    expect(mockedAddShortcut).toHaveBeenCalledWith('test_app', 123, '/path/to/TestGame.bat')
     expect(result.success).toBe(true)
   })
 
@@ -135,9 +153,14 @@ describe('onGameInstalled', () => {
     const result = await onGameInstalled(mockGame as never)
 
     expect(getGameInfoMock).toHaveBeenCalledWith('test_app', true)
+    expect(mockedCreateRelicBat).toHaveBeenCalledWith(
+      '/games/test',
+      'TestGame',
+      'legendary',
+      'test_app'
+    )
     expect(mockedAddGameToSteam).toHaveBeenCalledWith({
-      gameName: 'TestGame',
-      installPath: '/games/test'
+      gameName: 'TestGame'
     })
     expect(result.success).toBe(true)
   })
@@ -158,9 +181,14 @@ describe('onGameInstalled', () => {
 
     const result = await onGameInstalled(mockGame as never)
 
+    expect(mockedCreateRelicBat).toHaveBeenCalledWith(
+      '/sideload/game',
+      'TestGame',
+      'sideload',
+      'test_app'
+    )
     expect(mockedAddGameToSteam).toHaveBeenCalledWith({
-      gameName: 'TestGame',
-      installPath: '/sideload/game'
+      gameName: 'TestGame'
     })
     expect(result.success).toBe(true)
   })
@@ -186,26 +214,39 @@ describe('onGameInstalled', () => {
     const result = await onGameInstalled(mockGame as never)
 
     expect(getGameInfoMock).toHaveBeenCalledWith('test_app', true)
+    expect(mockedCreateRelicBat).toHaveBeenCalledWith(
+      '/stale/path',
+      'TestGame',
+      'legendary',
+      'test_app'
+    )
     expect(mockedAddGameToSteam).toHaveBeenCalledWith({
-      gameName: 'TestGame',
-      installPath: '/stale/path'
+      gameName: 'TestGame'
     })
     expect(result.success).toBe(true)
   })
 })
 
 describe('onGameUninstalled', () => {
-  test('removes from store and calls removeNonSteamGame', async () => {
+  test('deletes bat file, removes from store and calls removeNonSteamGame', async () => {
     mockGetGameInfo.mockReturnValue({
       title: 'TestGame',
       app_name: 'test_app',
       runner: 'legendary'
     })
 
+    mockedFindShortcut.mockReturnValue({
+      appId: 'test_app',
+      steamAppId: 12345,
+      batPath: '/path/to/TestGame.bat'
+    })
+    mockedExistsSync.mockReturnValue(true)
     mockedRemoveNonSteamGame.mockResolvedValueOnce(undefined)
 
     await onGameUninstalled(mockGame as never)
 
+    expect(mockedExistsSync).toHaveBeenCalledWith('/path/to/TestGame.bat')
+    expect(mockedUnlinkSync).toHaveBeenCalledWith('/path/to/TestGame.bat')
     expect(mockedRemoveShortcut).toHaveBeenCalledWith('test_app')
     expect(mockedRemoveNonSteamGame).toHaveBeenCalledWith(mockGame)
   })
