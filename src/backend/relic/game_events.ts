@@ -68,7 +68,7 @@ export async function onGameInstalled(
   })
 
   if (result.success && result.steamAppId) {
-    addShortcut(appName, result.steamAppId, batPath)
+    addShortcut(appName, result.steamAppId, batPath, installPath)
   }
 
   return result

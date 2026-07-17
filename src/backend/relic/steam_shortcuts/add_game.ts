@@ -33,10 +33,10 @@ export function createRelicBat(
   const header = [
     '@echo off',
     'echo runner version 2',
-    '@SET LEGENDARY_CONFIG_PATH=c:\\heroic\\Legendary',
-    '@SET NILE_CONFIG_PATH=c:\\heroic\\',
-    '@SET GOGDL_CONFIG_PATH=c:\\heroic\\',
-    '@SET PATH=%PATH%;c:\\heroic\\bin'
+    '@SET LEGENDARY_CONFIG_PATH=c:\\relic\\Legendary',
+    '@SET NILE_CONFIG_PATH=c:\\relic\\',
+    '@SET GOGDL_CONFIG_PATH=c:\\relic\\',
+    '@SET PATH=%PATH%;c:\\relic\\bin'
   ]
 
   let runnerCmd: string
@@ -46,7 +46,7 @@ export function createRelicBat(
       break
     case 'gog':
       runnerCmd =
-        `@gogdl --auth-config-path c:\\heroic\\gog_store\\auth.json ` +
+        `@gogdl --auth-config-path c:\\relic\\gog_store\\auth.json ` +
         `launch --platform windows "${installPath}" ${appName} -- %*`
       break
     case 'nile':

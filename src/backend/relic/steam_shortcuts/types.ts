@@ -14,6 +14,7 @@ export interface SteamShortcut {
   appId: string
   steamAppId: number
   batPath: string
+  installPath: string
 }
 
 export interface UserdataInfo {

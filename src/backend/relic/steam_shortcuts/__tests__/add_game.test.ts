@@ -1,10 +1,9 @@
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'graceful-fs'
+import { existsSync, mkdirSync, readFileSync, writeFileSync, rmSync } from 'graceful-fs'
 import { join } from 'path'
 import { DirResult, dirSync } from 'tmp'
 import { addGameToSteam, createRelicBat } from '../add_game'
 import * as steamHelpers from '../steam_helpers'
 import { spawnAsync } from 'backend/utils'
-import { relicRunnerPath } from 'backend/constants/paths'
 
 jest.mock('backend/logger', () => ({
   logInfo: jest.fn(),
@@ -21,16 +20,23 @@ jest.mock('../steam_helpers', () => ({
   checkSteamProtocolHandler: jest.fn()
 }))
 
+let mockRelicRunnerPath = '/tmp/default-relic-runner'
+jest.mock('backend/constants/paths', () => ({
+  get relicRunnerPath() { return mockRelicRunnerPath },
+  relicMountPath: '/tmp/mount',
+  relicInstallPath: '/tmp/games'
+}))
+
 const mockedFindGameInAllUsers = jest.mocked(steamHelpers.findGameInAllUsers)
 const mockedGetShortcutId = jest.mocked(steamHelpers.getShortcutId)
 
 const HEADER_LINES = [
   '@echo off',
   'echo runner version 2',
-  '@SET LEGENDARY_CONFIG_PATH=c:\\heroic\\Legendary',
-  '@SET NILE_CONFIG_PATH=c:\\heroic\\',
-  '@SET GOGDL_CONFIG_PATH=c:\\heroic\\',
-  '@SET PATH=%PATH%;c:\\heroic\\bin'
+  '@SET LEGENDARY_CONFIG_PATH=c:\\relic\\Legendary',
+  '@SET NILE_CONFIG_PATH=c:\\relic\\',
+  '@SET GOGDL_CONFIG_PATH=c:\\relic\\',
+  '@SET PATH=%PATH%;c:\\relic\\bin'
 ]
 
 describe('addGameToSteam', () => {
@@ -79,6 +85,7 @@ describe('createRelicBat', () => {
 
   beforeEach(() => {
     tmpDir = dirSync({ unsafeCleanup: true })
+    mockRelicRunnerPath = tmpDir.name
     jest.clearAllMocks()
   })
 
@@ -89,7 +96,7 @@ describe('createRelicBat', () => {
   test('creates legendary bat with correct runner command', () => {
     const batPath = createRelicBat(tmpDir.name, 'TestGame', 'legendary', 'abc123')
 
-    expect(batPath).toBe(join(relicRunnerPath, 'TestGame.bat'))
+    expect(batPath).toBe(join(tmpDir.name, 'TestGame.bat'))
     expect(existsSync(batPath)).toBe(true)
 
     const content = readFileSync(batPath, 'utf-8')
@@ -102,7 +109,7 @@ describe('createRelicBat', () => {
   test('creates gog bat with correct runner command', () => {
     const batPath = createRelicBat(tmpDir.name, 'GogGame', 'gog', 'gog123')
 
-    expect(batPath).toBe(join(relicRunnerPath, 'GogGame.bat'))
+    expect(batPath).toBe(join(tmpDir.name, 'GogGame.bat'))
     expect(existsSync(batPath)).toBe(true)
 
     const content = readFileSync(batPath, 'utf-8')
@@ -110,7 +117,7 @@ describe('createRelicBat', () => {
       expect(content).toContain(line)
     }
     expect(content).toContain(
-      `@gogdl --auth-config-path c:\\heroic\\gog_store\\auth.json ` +
+      `@gogdl --auth-config-path c:\\relic\\gog_store\\auth.json ` +
       `launch --platform windows "${tmpDir.name}" gog123 -- %*`
     )
   })
@@ -118,7 +125,7 @@ describe('createRelicBat', () => {
   test('creates nile bat with correct runner command', () => {
     const batPath = createRelicBat(tmpDir.name, 'AmazonGame', 'nile', 'nile789')
 
-    expect(batPath).toBe(join(relicRunnerPath, 'AmazonGame.bat'))
+    expect(batPath).toBe(join(tmpDir.name, 'AmazonGame.bat'))
     expect(existsSync(batPath)).toBe(true)
 
     const content = readFileSync(batPath, 'utf-8')
@@ -131,7 +138,7 @@ describe('createRelicBat', () => {
   test('creates default bat for sideload with placeholder', () => {
     const batPath = createRelicBat(tmpDir.name, 'SideloadGame', 'sideload', '')
 
-    expect(batPath).toBe(join(relicRunnerPath, 'SideloadGame.bat'))
+    expect(batPath).toBe(join(tmpDir.name, 'SideloadGame.bat'))
     expect(existsSync(batPath)).toBe(true)
 
     const content = readFileSync(batPath, 'utf-8')
@@ -144,7 +151,7 @@ describe('createRelicBat', () => {
   test('creates default bat for zoom with placeholder', () => {
     const batPath = createRelicBat(tmpDir.name, 'ZoomGame', 'zoom', '')
 
-    expect(batPath).toBe(join(relicRunnerPath, 'ZoomGame.bat'))
+    expect(batPath).toBe(join(tmpDir.name, 'ZoomGame.bat'))
     expect(existsSync(batPath)).toBe(true)
 
     const content = readFileSync(batPath, 'utf-8')
@@ -155,8 +162,8 @@ describe('createRelicBat', () => {
   })
 
   test('returns existing path without rewriting when file exists', () => {
-    mkdirSync(relicRunnerPath, { recursive: true })
-    const batPath = join(relicRunnerPath, 'ExistingGame.bat')
+    mkdirSync(tmpDir.name, { recursive: true })
+    const batPath = join(tmpDir.name, 'ExistingGame.bat')
     writeFileSync(batPath, 'old content', 'utf-8')
 
     const result = createRelicBat(tmpDir.name, 'ExistingGame', 'legendary', 'abc')
