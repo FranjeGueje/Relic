@@ -202,9 +202,7 @@ interface AsyncIPCFunctions {
   isNative: (args: { appName: string; runner: Runner }) => boolean
   getLogContent: (args: GetLogFileArgs) => string
   shortcutsExists: (appName: string, runner: Runner) => boolean
-  addToSteam: (appName: string, runner: Runner) => Promise<boolean>
-  removeFromSteam: (appName: string, runner: Runner) => Promise<void>
-  isAddedToSteam: (appName: string, runner: Runner) => Promise<boolean>
+
   getKnownFixes: (appName: string, runner: Runner) => KnowFixesInfo | null
   getGameMetadataOverride: (appName: string) => Promise<{
     title?: string

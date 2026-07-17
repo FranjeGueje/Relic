@@ -1,2 +1,3 @@
 export { addGameToSteam } from './add_game'
-export type { AddGameToSteamOptions, AddGameToSteamResult } from './types'
+export { findShortcut, addShortcut, removeShortcut } from './store'
+export type { AddGameToSteamOptions, AddGameToSteamResult, SteamShortcut } from './types'

@@ -20,7 +20,7 @@ import { Game, InstallResult, RemoveArgs } from 'common/types/game_manager'
 import { removePrefix } from 'backend/utils/uninstaller'
 import { removeRecentGame } from 'backend/recent_games/recent_games'
 import { isLinux } from 'backend/constants/environment'
-import { removeNonSteamGame } from 'backend/shortcuts/nonesteamgame/nonesteamgame'
+import { onGameUninstalled } from 'backend/relic/game_events'
 
 export default class SideloadGame implements Game {
   private readonly id: string
@@ -112,7 +112,7 @@ export default class SideloadGame implements Game {
 
     removeShortcutsUtil(this)
     removeRecentGame(this.id)
-    removeNonSteamGame(this)
+    onGameUninstalled(this)
 
     sendGameStatusUpdate({
       appName: this.id,

@@ -48,7 +48,7 @@ import {
   removeShortcuts as removeShortcutsUtil
 } from '../../shortcuts/shortcuts/shortcuts'
 import setup from './setup'
-import { removeNonSteamGame } from '../../shortcuts/nonesteamgame/nonesteamgame'
+import { onGameInstalled, onGameUninstalled } from 'backend/relic/game_events'
 import shlex from 'shlex'
 import {
   GOGCloudSavesLocation,
@@ -206,6 +206,7 @@ export default class GOGGame implements Game {
         JSON.parse(res.stdout),
         folderPath
       )
+      onGameInstalled(this)
       this.addShortcuts()
     } catch (error) {
       logError([`Failed to import ${this.id}:`, error], LogPrefix.Gog)
@@ -449,6 +450,7 @@ export default class GOGGame implements Game {
         )
       }
     }
+    onGameInstalled(this, install_path)
     this.addShortcuts()
     return { status: 'done' }
   }
@@ -634,7 +636,7 @@ export default class GOGGame implements Game {
     gameInfo.install = { is_dlc: false }
     await removeShortcutsUtil(this)
     syncStore.delete(this.id)
-    await removeNonSteamGame(this)
+    await onGameUninstalled(this)
     sendFrontendMessage('pushGameToLibrary', gameInfo)
     return res
   }

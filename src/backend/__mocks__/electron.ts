@@ -99,6 +99,10 @@ class Tray {
   }
 }
 
+const shell = {
+  openExternal: jest.fn()
+}
+
 const ipcMain = new EventEmitter()
 
 export {
@@ -110,5 +114,6 @@ export {
   nativeImage,
   Tray,
   ipcMain,
-  screen
+  screen,
+  shell
 }

@@ -9,7 +9,7 @@ export { default as IgnoreGameUpdates } from './IgnoreGameUpdates'
 export { default as MaxWorkers } from './MaxWorkers'
 export { default as OfflineMode } from './OfflineMode'
 export { default as PreferedLanguage } from './PreferedLanguage'
-export { default as Shortcuts } from './Shortcuts'
+
 export { default as SteamGridDbApiKey } from './SteamGridDbApiKey'
 export { default as VerboseLogs } from './VerboseLogs'
 export { default as ClearCache } from './ClearCache'

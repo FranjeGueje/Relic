@@ -36,7 +36,7 @@ import {
   addShortcuts as addShortcutsUtil,
   removeShortcuts as removeShortcutsUtil
 } from '../../shortcuts/shortcuts/shortcuts'
-import { removeNonSteamGame } from 'backend/shortcuts/nonesteamgame/nonesteamgame'
+import { onGameInstalled, onGameUninstalled } from 'backend/relic/game_events'
 import { sendFrontendMessage } from '../../ipc'
 import setup from './setup'
 import { isLinux } from 'backend/constants/environment'
@@ -127,6 +127,7 @@ export default class NileGameManager implements Game {
     }
 
     try {
+      onGameInstalled(this)
       this.addShortcuts()
       libraryManagerMap['nile'].installState(this.id, true)
     } catch (error) {
@@ -248,6 +249,7 @@ export default class NileGameManager implements Game {
       }
       return { status: 'error', error: res.error }
     }
+    onGameInstalled(this)
     this.addShortcuts()
     libraryManagerMap['nile'].installState(this.id, true)
     const metadata = libraryManagerMap['nile'].getInstallMetadata(this.id)
@@ -355,7 +357,7 @@ export default class NileGameManager implements Game {
       )
     } else if (!res.abort) {
       await removeShortcutsUtil(this)
-      await removeNonSteamGame(this)
+      await onGameUninstalled(this)
       libraryManagerMap['nile'].installState(this.id, false)
     }
     sendFrontendMessage('refreshLibrary', 'nile')

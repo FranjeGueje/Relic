@@ -1,14 +1,9 @@
 import { existsSync } from 'graceful-fs'
 import { addListener, addHandler } from 'backend/ipc'
 import i18next from 'i18next'
-import {
-  addNonSteamGame,
-  isAddedToSteam,
-  removeNonSteamGame
-} from './nonesteamgame/nonesteamgame'
 import { shortcutFiles } from './shortcuts/shortcuts'
-import { notify } from 'backend/dialog/dialog'
 import { getGame } from '../utils'
+import { notify } from 'backend/dialog/dialog'
 
 addListener('addShortcut', async (event, appName, runner, fromMenu) => {
   getGame(appName, runner).addShortcuts(fromMenu)
@@ -40,19 +35,4 @@ addListener('removeShortcut', async (event, appName, runner) => {
     ),
     title: i18next.t('box.shortcuts.title', 'Shortcuts Removed')
   })
-})
-
-addHandler('addToSteam', async (event, appName, runner) => {
-  const game = getGame(appName, runner)
-  return addNonSteamGame(game)
-})
-
-addHandler('removeFromSteam', async (event, appName, runner) => {
-  const game = getGame(appName, runner)
-  await removeNonSteamGame(game)
-})
-
-addHandler('isAddedToSteam', async (event, appName, runner) => {
-  const game = getGame(appName, runner)
-  return isAddedToSteam(game)
 })

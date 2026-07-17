@@ -8,7 +8,6 @@ import { join } from 'path'
 import { logError, logInfo, LogPrefix } from 'backend/logger'
 import { GlobalConfig } from '../../config'
 import { getIcon } from '../utils'
-import { addNonSteamGame } from '../nonesteamgame/nonesteamgame'
 import sanitize from 'sanitize-filename'
 import { libraryManagerMap } from 'backend/storeManagers'
 import { userHome } from 'backend/constants/paths'
@@ -28,12 +27,8 @@ async function addShortcuts(game: Game, fromMenu?: boolean) {
   const { app_name, runner, title } = gameInfo
 
   logInfo(`Adding shortcuts for ${title}`, LogPrefix.Backend)
-  const { addDesktopShortcuts, addSteamShortcuts } =
+  const { addDesktopShortcuts } =
     GlobalConfig.get().getSettings()
-
-  if (addSteamShortcuts) {
-    addNonSteamGame(game)
-  }
 
   const [desktopFile, menuFile] = shortcutFiles(gameInfo.title)
   if (!desktopFile || !menuFile) {

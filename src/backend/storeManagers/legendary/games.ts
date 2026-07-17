@@ -35,7 +35,7 @@ import {
 } from '../../shortcuts/shortcuts/shortcuts'
 import { join } from 'path'
 import { gameInfoStore } from './electronStores'
-import { removeNonSteamGame } from '../../shortcuts/nonesteamgame/nonesteamgame'
+import { onGameInstalled, onGameUninstalled } from 'backend/relic/game_events'
 import shlex from 'shlex'
 import { t } from 'i18next'
 import { isOnline } from '../../online_monitor'
@@ -637,6 +637,7 @@ export default class LegendaryGame implements Game {
       }
       return { status: 'error', error: res.error }
     }
+    onGameInstalled(this)
     this.addShortcuts()
 
     return { status: 'done' }
@@ -716,7 +717,7 @@ export default class LegendaryGame implements Game {
     } else if (!res.abort) {
       libraryManagerMap['legendary'].installState(this.appName, false)
       await removeShortcutsUtil(this)
-      await removeNonSteamGame(this)
+      await onGameUninstalled(this)
     }
     sendFrontendMessage('refreshLibrary', 'legendary')
     return res
@@ -780,6 +781,7 @@ export default class LegendaryGame implements Game {
       abortId: this.appName,
       logWriters: [logWriter]
     })
+    onGameInstalled(this)
     this.addShortcuts()
     const errorMatch = res.stderr.match(/^.*ERROR:.*$/gm)?.join('') ?? ''
     res.error = (res.error ?? '') + errorMatch

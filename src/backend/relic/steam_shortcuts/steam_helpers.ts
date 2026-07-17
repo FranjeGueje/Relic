@@ -3,10 +3,10 @@ import { readFileSync } from 'fs-extra'
 import { join } from 'path'
 import { parseBuffer, ShortcutEntry, ShortcutObject } from 'steam-shortcut-editor'
 import { GlobalConfig } from 'backend/config'
-import { logError, LogPrefix } from 'backend/logger'
+import { logError } from 'backend/logger'
 import type { UserdataInfo, FindResult } from './types'
 
-const LOG_PREFIX = LogPrefix.Relic
+const LOG_PREFIX = 'Relic'
 
 export function getSteamPath(): string {
   const { defaultSteamPath } = GlobalConfig.get().getSettings()
@@ -30,22 +30,29 @@ export function getUserdataInfo(): UserdataInfo {
   return { userdataDir, folders }
 }
 
+const READ_RETRIES = 3
+
 export function readShortcutsVdf(
   filePath: string
 ): Partial<ShortcutObject> | null {
-  if (!existsSync(filePath)) return null
+  for (let i = 0; i < READ_RETRIES; i++) {
+    if (!existsSync(filePath)) return null
 
-  try {
-    const content = readFileSync(filePath)
-    return parseBuffer(content, {
-      autoConvertArrays: true,
-      autoConvertBooleans: true,
-      dateProperties: ['LastPlayTime']
-    })
-  } catch (error) {
-    logError(`Failed to parse ${filePath}: ${error}`, LOG_PREFIX)
-    return null
+    try {
+      const content = readFileSync(filePath)
+      return parseBuffer(content, {
+        autoConvertArrays: true,
+        autoConvertBooleans: true,
+        dateProperties: ['LastPlayTime']
+      })
+    } catch (error) {
+      if (i === READ_RETRIES - 1) {
+        logError(`Failed to parse ${filePath}: ${error}`, LOG_PREFIX)
+        return null
+      }
+    }
   }
+  return null
 }
 
 export function getAppName(entry: Record<string, unknown>): string {
@@ -57,10 +64,16 @@ export function getAppName(entry: Record<string, unknown>): string {
 }
 
 export function getShortcutId(entry: Record<string, unknown>): number {
-  return (entry.appid as number) ?? 0
+  const id = entry.appid
+  if (typeof id === 'number') return id >>> 0
+  if (id === false || id === true) return 0
+  return 0
 }
 
-export function findGameInAllUsers(gameName: string): FindResult {
+export function findGameInAllUsers(
+  names: string | string[]
+): FindResult {
+  const nameList = Array.isArray(names) ? names : [names]
   const { userdataDir, folders } = getUserdataInfo()
 
   if (folders.length === 0) {
@@ -76,14 +89,16 @@ export function findGameInAllUsers(gameName: string): FindResult {
     const content = readShortcutsVdf(shortcutsFile)
     if (!content?.shortcuts?.length) continue
 
-    const entry = content.shortcuts.find(
-      (e) => getAppName(e as unknown as Record<string, unknown>) === gameName
-    )
-    if (entry)
-      return {
-        entry: entry as unknown as Record<string, unknown>,
-        found: true
-      }
+    for (const name of nameList) {
+      const entry = content.shortcuts.find(
+        (e) => getAppName(e as unknown as Record<string, unknown>) === name
+      )
+      if (entry)
+        return {
+          entry: entry as unknown as Record<string, unknown>,
+          found: true
+        }
+    }
   }
 
   return { entry: null, found: false }

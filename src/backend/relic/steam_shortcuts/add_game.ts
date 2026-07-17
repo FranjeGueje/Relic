@@ -1,93 +1,38 @@
-import { shell } from 'electron'
-import { existsSync, writeFileSync } from 'graceful-fs'
-import { join } from 'path'
-import { logError, logInfo, LogPrefix } from 'backend/logger'
+import { existsSync, unlinkSync, writeFileSync } from 'graceful-fs'
+import { basename, join } from 'path'
+import { logError, logInfo } from 'backend/logger'
+import { spawnAsync } from 'backend/utils'
 import {
   findGameInAllUsers,
   getShortcutId,
-  getUserdataInfo,
-  readShortcutsVdf,
-  checkSteamProtocolHandler,
-  getAppName
+  checkSteamProtocolHandler
 } from './steam_helpers'
 import type { AddGameToSteamOptions, AddGameToSteamResult } from './types'
 
-const LOG_PREFIX = LogPrefix.Relic
+const LOG_PREFIX = 'Relic'
 const POLL_INTERVAL_MS = 1500
 const POLL_TIMEOUT_MS = 15000
+const ADD_GAME_MARKER = '/tmp/addnonsteamgamefile'
 
-function createMockBat(installPath: string, gameName: string): string {
+export function createMockBat(installPath: string, gameName: string): string {
   const batPath = join(installPath, `${gameName}.bat`)
 
   if (existsSync(batPath)) {
-    logInfo(`Mock .bat already exists at ${batPath}`, LOG_PREFIX)
+    logInfo(`${batPath} already exists`, LOG_PREFIX)
     return batPath
   }
 
   const content = `@echo off\necho ${gameName}\npause\n`
   writeFileSync(batPath, content, 'utf-8')
 
-  logInfo(`Created mock .bat at ${batPath}`, LOG_PREFIX)
+  logInfo(`Created ${batPath}`, LOG_PREFIX)
   return batPath
 }
 
-function getInitialShortcutState(): Map<string, Set<number>> {
-  const { userdataDir, folders } = getUserdataInfo()
-  const state = new Map<string, Set<number>>()
-
-  for (const folder of folders) {
-    const shortcutsFile = join(userdataDir, folder, 'config', 'shortcuts.vdf')
-    const content = readShortcutsVdf(shortcutsFile)
-    if (!content?.shortcuts?.length) {
-      state.set(folder, new Set())
-      continue
-    }
-
-    const ids = new Set(
-      content.shortcuts.map(
-        (e) => getShortcutId(e as unknown as Record<string, unknown>)
-      )
-    )
-    state.set(folder, ids)
-  }
-
-  return state
-}
-
-function detectNewEntry(
-  previousState: Map<string, Set<number>>,
-  gameName: string
-): { steamAppId: number | null } {
-  const { userdataDir, folders } = getUserdataInfo()
-
-  for (const folder of folders) {
-    const shortcutsFile = join(userdataDir, folder, 'config', 'shortcuts.vdf')
-    const content = readShortcutsVdf(shortcutsFile)
-    if (!content?.shortcuts?.length) continue
-
-    const prevIds = previousState.get(folder) ?? new Set()
-
-    for (const entry of content.shortcuts) {
-      const entryRecord = entry as unknown as Record<string, unknown>
-      const appid = getShortcutId(entryRecord)
-
-      if (!prevIds.has(appid)) {
-        const entryName = getAppName(entryRecord)
-        if (entryName === gameName) {
-          return { steamAppId: appid }
-        }
-      }
-    }
-  }
-
-  return { steamAppId: null }
-}
-
-async function pollForNewEntry(
-  previousState: Map<string, Set<number>>,
+async function waitForGameInSteam(
   gameName: string,
   startTime: number
-): Promise<number | null> {
+): Promise<{ found: boolean; steamAppId?: number }> {
   const elapsed = Date.now() - startTime
 
   if (elapsed >= POLL_TIMEOUT_MS) {
@@ -95,81 +40,66 @@ async function pollForNewEntry(
       `Timeout waiting for "${gameName}" to appear in Steam shortcuts (${POLL_TIMEOUT_MS}ms).`,
       LOG_PREFIX
     )
-    return null
+    return { found: false }
   }
 
-  const { steamAppId } = detectNewEntry(previousState, gameName)
+  const result = findGameInAllUsers(gameName)
 
-  if (steamAppId !== null) {
-    return steamAppId
+  if (result.found && result.entry) {
+    return { found: true, steamAppId: getShortcutId(result.entry) }
   }
 
   await new Promise((resolve) => setTimeout(resolve, POLL_INTERVAL_MS))
-  return pollForNewEntry(previousState, gameName, startTime)
+  return waitForGameInSteam(gameName, startTime)
 }
 
 export async function addGameToSteam(
   options: AddGameToSteamOptions
 ): Promise<AddGameToSteamResult> {
-  const { gameName, installPath, runner, appName } = options
+  const { gameName, installPath } = options
 
-  logInfo(
-    `Adding "${gameName}" to Steam (runner: ${runner ?? 'unknown'}, appName: ${appName ?? 'unknown'})`,
-    LOG_PREFIX
-  )
+  const batPath = join(installPath, `${gameName}.bat`)
+  const steamName = basename(batPath)
 
   checkSteamProtocolHandler()
 
-  const exists = findGameInAllUsers(gameName)
-
-  if (exists.found) {
-    logInfo(`"${gameName}" is already in Steam.`, LOG_PREFIX)
-    return {
-      success: false,
-      alreadyExists: true,
-      steamAppId: exists.entry
-        ? getShortcutId(exists.entry)
-        : undefined
-    }
-  }
-
-  if (exists.error) {
-    logError(exists.error, LOG_PREFIX)
-    return { success: false, error: exists.error }
-  }
-
-  const batPath = createMockBat(installPath, gameName)
+  createMockBat(installPath, gameName)
   const encodedPath = encodeURIComponent(batPath)
   const steamUrl = `steam://addnonsteamgame/${encodedPath}`
 
-  const previousState = getInitialShortcutState()
+  try {
+    unlinkSync(ADD_GAME_MARKER)
+  } catch {
+    // File doesn't exist, that's fine
+  }
+  writeFileSync(ADD_GAME_MARKER, '', 'utf-8')
 
   try {
-    await shell.openExternal(steamUrl)
+    await spawnAsync('xdg-open', [steamUrl])
     logInfo(`Opened ${steamUrl}`, LOG_PREFIX)
   } catch (error) {
     logError(`Failed to open steam:// URL: ${error}`, LOG_PREFIX)
     return { success: false, error: `Failed to open steam:// URL: ${error}` }
   }
 
-  logInfo(
-    `Waiting for "${gameName}" to be added to Steam...`,
-    LOG_PREFIX
+  logInfo(`Waiting for "${steamName}" to be added to Steam...`, LOG_PREFIX)
+
+  const { found, steamAppId } = await waitForGameInSteam(
+    steamName,
+    Date.now()
   )
 
-  const steamAppId = await pollForNewEntry(previousState, gameName, Date.now())
-
-  if (steamAppId === null) {
+  if (!found) {
     return {
       success: false,
       error:
-        `"${gameName}" was not added to Steam in time. ` +
+        `"${steamName}" was not added to Steam in time. ` +
         `Make sure Steam is running and you confirmed the dialog.`
     }
   }
 
   logInfo(
-    `"${gameName}" added to Steam with app ID ${steamAppId}.`,
+    `"${steamName}" added to Steam with app ID ${steamAppId}.`,
     LOG_PREFIX
   )
 

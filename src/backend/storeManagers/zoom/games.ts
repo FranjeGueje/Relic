@@ -37,7 +37,7 @@ import {
   addShortcuts as addShortcutsUtil,
   removeShortcuts as removeShortcutsUtil
 } from '../../shortcuts/shortcuts/shortcuts'
-import { removeNonSteamGame } from '../../shortcuts/nonesteamgame/nonesteamgame'
+import { onGameUninstalled } from 'backend/relic/game_events'
 import shlex from 'shlex'
 import { ZoomInstallPlatform, ZoomDownloadFile } from 'common/types/zoom'
 import { t } from 'i18next'
@@ -555,7 +555,7 @@ export default class ZoomGame implements Game {
     gameInfo.is_installed = false
     gameInfo.install = { is_dlc: false }
     await removeShortcutsUtil(this)
-    await removeNonSteamGame(this)
+    await onGameUninstalled(this)
     sendFrontendMessage('pushGameToLibrary', gameInfo)
     return { stdout: 'Uninstalled', stderr: '' }
   }

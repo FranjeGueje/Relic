@@ -7,7 +7,6 @@ import {
   DefaultInstallPath,
   MaxWorkers,
   ResetRelic,
-  Shortcuts,
   SteamGridDbApiKey,
   VerboseLogs
 } from '../../components'
@@ -28,8 +27,6 @@ export default function GeneralSettings() {
       <AutoUpdateGames />
 
       <VerboseLogs />
-
-      <Shortcuts />
 
       <SteamGridDbApiKey />
 

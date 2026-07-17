@@ -1,15 +1,17 @@
 export interface AddGameToSteamOptions {
   gameName: string
   installPath: string
-  runner?: string
-  appName?: string
 }
 
 export interface AddGameToSteamResult {
   success: boolean
   steamAppId?: number
-  alreadyExists?: boolean
   error?: string
+}
+
+export interface SteamShortcut {
+  appId: string
+  steamAppId: number
 }
 
 export interface UserdataInfo {
