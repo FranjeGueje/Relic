@@ -1,0 +1,125 @@
+import { existsSync, readdirSync } from 'graceful-fs'
+import { readFileSync } from 'fs-extra'
+import { join } from 'path'
+import { parseBuffer, ShortcutEntry, ShortcutObject } from 'steam-shortcut-editor'
+import { GlobalConfig } from 'backend/config'
+import { logError, LogPrefix } from 'backend/logger'
+import type { UserdataInfo, FindResult } from './types'
+
+const LOG_PREFIX = LogPrefix.Relic
+
+export function getSteamPath(): string {
+  const { defaultSteamPath } = GlobalConfig.get().getSettings()
+  return defaultSteamPath.replaceAll("'", '')
+}
+
+export function getUserdataInfo(): UserdataInfo {
+  const steamPath = getSteamPath()
+  const userdataDir = join(steamPath, 'userdata')
+
+  if (!existsSync(userdataDir)) {
+    return { userdataDir, folders: [] }
+  }
+
+  const ignoreFolders = ['0', 'ac']
+  const folders = readdirSync(userdataDir, { withFileTypes: true })
+    .filter((d) => d.isDirectory())
+    .filter((d) => !ignoreFolders.includes(d.name))
+    .map((d) => d.name)
+
+  return { userdataDir, folders }
+}
+
+export function readShortcutsVdf(
+  filePath: string
+): Partial<ShortcutObject> | null {
+  if (!existsSync(filePath)) return null
+
+  try {
+    const content = readFileSync(filePath)
+    return parseBuffer(content, {
+      autoConvertArrays: true,
+      autoConvertBooleans: true,
+      dateProperties: ['LastPlayTime']
+    })
+  } catch (error) {
+    logError(`Failed to parse ${filePath}: ${error}`, LOG_PREFIX)
+    return null
+  }
+}
+
+export function getAppName(entry: Record<string, unknown>): string {
+  return (
+    (Object.entries(entry).find(
+      ([k]) => k.toLowerCase() === 'appname'
+    )?.[1] as string) ?? ''
+  )
+}
+
+export function getShortcutId(entry: Record<string, unknown>): number {
+  return (entry.appid as number) ?? 0
+}
+
+export function findGameInAllUsers(gameName: string): FindResult {
+  const { userdataDir, folders } = getUserdataInfo()
+
+  if (folders.length === 0) {
+    return {
+      entry: null,
+      found: false,
+      error: `No Steam userdata directories found in ${userdataDir}`
+    }
+  }
+
+  for (const folder of folders) {
+    const shortcutsFile = join(userdataDir, folder, 'config', 'shortcuts.vdf')
+    const content = readShortcutsVdf(shortcutsFile)
+    if (!content?.shortcuts?.length) continue
+
+    const entry = content.shortcuts.find(
+      (e) => getAppName(e as unknown as Record<string, unknown>) === gameName
+    )
+    if (entry)
+      return {
+        entry: entry as unknown as Record<string, unknown>,
+        found: true
+      }
+  }
+
+  return { entry: null, found: false }
+}
+
+export function checkSteamProtocolHandler(): void {
+  const mimeFile = join(
+    require('os').homedir(),
+    '.config',
+    'mimeapps.list'
+  )
+
+  if (!existsSync(mimeFile)) {
+    logError(
+      `steam:// protocol handler not registered. ${mimeFile} not found. The steam:// URL may not open correctly.`,
+      LOG_PREFIX
+    )
+    return
+  }
+
+  try {
+    const content = readFileSync(mimeFile).toString()
+    if (
+      !content
+        .split('\n')
+        .some((line) => line.toLowerCase().includes('x-scheme-handler/steam='))
+    ) {
+      logError(
+        `steam:// protocol handler not registered in ${mimeFile}. The steam:// URL may not open correctly.`,
+        LOG_PREFIX
+      )
+    }
+  } catch (error) {
+    logError(
+      `Failed to read ${mimeFile}: ${error}. Cannot verify steam:// handler.`,
+      LOG_PREFIX
+    )
+  }
+}
