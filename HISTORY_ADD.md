@@ -52,3 +52,4 @@ El objetivo es mantener trazabilidad de los cambios respecto al padre.
 | 2026-07-17 | `src/backend/relic/steam_shortcuts/types.ts` | `SteamShortcut`: +`gameName`, +`store`, `batPath`→`execPath` |
 | 2026-07-17 | `src/backend/relic/steam_shortcuts/store.ts` | `addShortcut(gameName, appId, store, steamAppId, installPath, execPath)` — nuevo orden de campos |
 | 2026-07-17 | `src/backend/relic/game_events.ts` | `onGameInstalled()` pasa `gameInfo.title` y `gameInfo.runner` a `addShortcut`; `onGameUninstalled()` lee `known.execPath` |
+| 2026-07-17 | `src/backend/relic/game_events.ts` | Fix Legendary installPath vacío: llama `refreshInstalled?.()` antes de `getGameInfo(appName, true)` para refrescar datos instalados desde disco |

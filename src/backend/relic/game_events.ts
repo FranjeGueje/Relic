@@ -31,13 +31,14 @@ export async function onGameInstalled(
 
   if (!installPath) {
     try {
-      const freshInfo = (
-        libraryManagerMap[
-          runner as keyof typeof libraryManagerMap
-        ] as unknown as {
-          getGameInfo?: (appName: string, forceReload: boolean) => GameInfo | undefined
-        }
-      ).getGameInfo?.(appName, true)
+      const manager = libraryManagerMap[
+        runner as keyof typeof libraryManagerMap
+      ] as unknown as {
+        getGameInfo?: (appName: string, forceReload: boolean) => GameInfo | undefined
+        refreshInstalled?: () => void
+      }
+      manager.refreshInstalled?.()
+      const freshInfo = manager.getGameInfo?.(appName, true)
       if (freshInfo) {
         gameInfo = freshInfo
       }
