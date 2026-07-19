@@ -35,7 +35,7 @@ import {
 } from '../../shortcuts/shortcuts/shortcuts'
 import { join } from 'path'
 import { gameInfoStore } from './electronStores'
-import { onGameInstalled, onGameUninstalled } from 'backend/relic/game_events'
+import { onGameInstalled, onGameImported, onGameMoved, onGameUninstalled } from 'backend/relic/game_events'
 import shlex from 'shlex'
 import { t } from 'i18next'
 import { isOnline } from '../../online_monitor'
@@ -360,6 +360,7 @@ export default class LegendaryGame implements Game {
       this.appName,
       moveResult.installPath
     )
+    onGameMoved(this, moveResult.installPath)
     return { status: 'done' }
   }
 
@@ -781,7 +782,7 @@ export default class LegendaryGame implements Game {
       abortId: this.appName,
       logWriters: [logWriter]
     })
-    onGameInstalled(this)
+    onGameImported(this)
     this.addShortcuts()
     const errorMatch = res.stderr.match(/^.*ERROR:.*$/gm)?.join('') ?? ''
     res.error = (res.error ?? '') + errorMatch

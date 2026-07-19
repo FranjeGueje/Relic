@@ -2,7 +2,7 @@ import { existsSync, readFileSync, writeFileSync } from 'graceful-fs'
 import { join } from 'path'
 import { appFolder } from 'backend/constants/paths'
 import { logError, logInfo } from 'backend/logger'
-import type { SteamShortcut } from './types'
+import type { SteamShortcut, GameRunner } from './types'
 
 const LOG_PREFIX = 'Relic'
 const STORE_FILE = join(appFolder, 'steam_shortcuts.json')

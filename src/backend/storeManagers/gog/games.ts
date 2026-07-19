@@ -48,7 +48,7 @@ import {
   removeShortcuts as removeShortcutsUtil
 } from '../../shortcuts/shortcuts/shortcuts'
 import setup from './setup'
-import { onGameInstalled, onGameUninstalled } from 'backend/relic/game_events'
+import { onGameInstalled, onGameImported, onGameMoved, onGameUninstalled } from 'backend/relic/game_events'
 import shlex from 'shlex'
 import {
   GOGCloudSavesLocation,
@@ -206,7 +206,7 @@ export default class GOGGame implements Game {
         JSON.parse(res.stdout),
         folderPath
       )
-      onGameInstalled(this)
+      onGameImported(this)
       this.addShortcuts()
     } catch (error) {
       logError([`Failed to import ${this.id}:`, error], LogPrefix.Gog)
@@ -496,6 +496,7 @@ export default class GOGGame implements Game {
       this.id,
       moveResult.installPath
     )
+    onGameMoved(this, moveResult.installPath)
 
     return { status: 'done' }
   }

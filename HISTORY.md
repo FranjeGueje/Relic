@@ -80,6 +80,9 @@ Para ver el detalle completo de cada categoría, consultar:
 #### Eventos de instalación
 - `src/backend/relic/game_events.ts`: orquestador que crea .bat, añade a Steam y guarda en store.
 - Todos los runners (legendary, gog, nile, zoom, sideload) llaman `onGameInstalled()`/`onGameUninstalled()`.
+- Añadidos `onGameImported()` y `onGameMoved()` como stubs (solo log).
+- `importGame()` en legendary/gog/nile usa `onGameImported()` en vez de `onGameInstalled()`.
+- `moveInstall()` en legendary/gog/nile llama `onGameMoved()` tras mover el juego.
 - Fix: Legendary installPath vacío — se llama `refreshInstalled?.()` antes de leer datos instalados.
 
 #### Robustez
@@ -88,6 +91,6 @@ Para ver el detalle completo de cada categoría, consultar:
 - Tests unitarios para stdout vacío en los 3 store managers (8 tests).
 
 #### Tests
-- 33 tests en módulos relic (steam_helpers, add_game, game_events, symlinks).
+- 35 tests en módulos relic (steam_helpers, add_game, game_events, symlinks).
 - 8 tests en store managers (empty stdout handling).
-- Total: 88 tests (83 pasan, 5 preexistentes fallan por plataforma Linux).
+- Total: 90 tests (85 pasan, 5 preexistentes fallan por plataforma Linux).

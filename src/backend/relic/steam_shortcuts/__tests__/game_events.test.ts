@@ -1,4 +1,4 @@
-import { onGameInstalled, onGameUninstalled } from '../../game_events'
+import { onGameInstalled, onGameUninstalled, onGameImported, onGameMoved } from '../../game_events'
 import { existsSync, unlinkSync } from 'graceful-fs'
 import { addGameToSteam, createRelicBat } from '../add_game'
 import { removeNonSteamGame } from 'backend/shortcuts/nonesteamgame/nonesteamgame'
@@ -252,5 +252,41 @@ describe('onGameUninstalled', () => {
     expect(mockedUnlinkSync).toHaveBeenCalledWith('/path/to/TestGame.bat')
     expect(mockedRemoveShortcut).toHaveBeenCalledWith('test_app')
     expect(mockedRemoveNonSteamGame).toHaveBeenCalledWith(mockGame)
+  })
+})
+
+describe('onGameImported', () => {
+  test('logs that game was imported', async () => {
+    mockGetGameInfo.mockReturnValue({
+      title: 'ImportedGame',
+      app_name: 'imported_app',
+      runner: 'legendary',
+      install: { install_path: '/games/imported' }
+    })
+
+    await onGameImported(mockGame as never)
+
+    expect(require('backend/logger').logInfo).toHaveBeenCalledWith(
+      'Game imported: "ImportedGame" (imported_app)',
+      'Relic'
+    )
+  })
+})
+
+describe('onGameMoved', () => {
+  test('logs that game was moved', async () => {
+    mockGetGameInfo.mockReturnValue({
+      title: 'MovedGame',
+      app_name: 'moved_app',
+      runner: 'gog',
+      install: { install_path: '/games/old' }
+    })
+
+    await onGameMoved(mockGame as never, '/games/new')
+
+    expect(require('backend/logger').logInfo).toHaveBeenCalledWith(
+      'Game moved: "MovedGame" (moved_app) to /games/new',
+      'Relic'
+    )
   })
 })

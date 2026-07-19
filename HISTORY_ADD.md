@@ -53,3 +53,9 @@ El objetivo es mantener trazabilidad de los cambios respecto al padre.
 | 2026-07-17 | `src/backend/relic/steam_shortcuts/store.ts` | `addShortcut(gameName, appId, store, steamAppId, installPath, execPath)` — nuevo orden de campos |
 | 2026-07-17 | `src/backend/relic/game_events.ts` | `onGameInstalled()` pasa `gameInfo.title` y `gameInfo.runner` a `addShortcut`; `onGameUninstalled()` lee `known.execPath` |
 | 2026-07-17 | `src/backend/relic/game_events.ts` | Fix Legendary installPath vacío: llama `refreshInstalled?.()` antes de `getGameInfo(appName, true)` para refrescar datos instalados desde disco |
+| 2026-07-19 | `src/backend/relic/game_events.ts` | Añadidos `onGameImported()` y `onGameMoved()` como stubs (solo log) |
+| 2026-07-19 | `src/backend/storeManagers/legendary/games.ts` | `importGame()` usa `onGameImported()` en vez de `onGameInstalled()`; `moveInstall()` llama `onGameMoved()` |
+| 2026-07-19 | `src/backend/storeManagers/gog/games.ts` | `importGame()` usa `onGameImported()` en vez de `onGameInstalled()`; `moveInstall()` llama `onGameMoved()` |
+| 2026-07-19 | `src/backend/storeManagers/nile/games.ts` | `importGame()` usa `onGameImported()` en vez de `onGameInstalled()`; `moveInstall()` llama `onGameMoved()` |
+| 2026-07-19 | `src/backend/storeManagers/sideload/library.ts` | `addGame()` usa `onGameImported()` en vez de `onGameInstalled()` |
+| 2026-07-19 | `src/backend/relic/steam_shortcuts/__tests__/game_events.test.ts` | Tests para `onGameImported` y `onGameMoved` |

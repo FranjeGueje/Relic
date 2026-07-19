@@ -36,7 +36,7 @@ import {
   addShortcuts as addShortcutsUtil,
   removeShortcuts as removeShortcutsUtil
 } from '../../shortcuts/shortcuts/shortcuts'
-import { onGameInstalled, onGameUninstalled } from 'backend/relic/game_events'
+import { onGameInstalled, onGameImported, onGameMoved, onGameUninstalled } from 'backend/relic/game_events'
 import { sendFrontendMessage } from '../../ipc'
 import setup from './setup'
 import { isLinux } from 'backend/constants/environment'
@@ -127,7 +127,7 @@ export default class NileGameManager implements Game {
     }
 
     try {
-      onGameInstalled(this)
+      onGameImported(this)
       this.addShortcuts()
       libraryManagerMap['nile'].installState(this.id, true)
     } catch (error) {
@@ -301,6 +301,7 @@ export default class NileGameManager implements Game {
       this.id,
       moveResult.installPath
     )
+    onGameMoved(this, moveResult.installPath)
     return { status: 'done' }
   }
 

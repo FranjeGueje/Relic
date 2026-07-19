@@ -287,6 +287,40 @@ del fork. Tanto `HISTORY_REMOVE.md` como `HISTORY_ADD.md` contienen el detalle.
 
 ---
 
+# Módulo `relic` (`src/backend/relic/`)
+
+El módulo relic debe ser rápido, conciso, fácil de leer y libre de errores
+de tipo (TypeScript strict).
+
+## Entry points
+
+Las 4 funciones públicas son la API de Relic hacia Heroic:
+
+- `onGameInstalled(game, installPath?)`
+- `onGameUninstalled(game)`
+- `onGameImported(game)`
+- `onGameMoved(game, newInstallPath)`
+
+Cada función debe ser un orquestador delgado y legible.
+
+No deben contener lógica inline extensa.
+
+Toda la lógica compleja debe delegarse a helpers y funciones privadas
+ubicadas en subdirectorios específicos (ej. `steam_shortcuts/`, `runner/`,
+`store/`).
+
+## Reglas
+
+- Una función pública = un flujo de alto nivel, pocas líneas, legible.
+- Cualquier bloque que requiera más de 5 líneas o un comentario para
+  entenderse debe extraerse a una función helper privada con nombre
+  autoexplicativo.
+- Sin `any`: tipado estricto en todo el módulo relic. Errores TS = bug.
+- Las funciones privadas de apoyo se testean individualmente. Las funciones
+  públicas se testean como integración de los helpers que llaman.
+
+---
+
 # Principios de desarrollo
 
 Cada nueva funcionalidad debe responder afirmativamente a esta pregunta:
