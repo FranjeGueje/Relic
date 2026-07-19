@@ -1,33 +1,40 @@
-import { copyFileSync, cpSync, existsSync, mkdirSync, readFileSync, unlinkSync, symlinkSync, writeFileSync } from 'graceful-fs'
+import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, symlinkSync, unlinkSync, writeFileSync } from 'graceful-fs'
 import { basename, join } from 'path'
 import { logError, logInfo, logWarning } from 'backend/logger'
 import { relicMountPath, relicInstallPath, relicGamesPath, userDataPath } from 'backend/constants/paths'
-import { legendaryInstalled } from 'backend/storeManagers/legendary/constants'
-import { nileInstalled } from 'backend/storeManagers/nile/constants'
-import { gogdlConfigPath, gogdlAuthConfig } from 'backend/storeManagers/gog/constants'
+import { legendaryConfigPath, legendaryInstalled } from 'backend/storeManagers/legendary/constants'
+import { nileConfigPath, nileInstalled } from 'backend/storeManagers/nile/constants'
+import { gogdlConfigPath } from 'backend/storeManagers/gog/constants'
 import { GameInfo } from 'common/types'
 import type { GameRunner } from './steam_shortcuts/types'
 
 const LOG_PREFIX = 'Relic'
 
-const STORE_CONFIGS: Record<GameRunner, {
-  source: string
+type StoreConfig = {
+  configDir: string
+  installedFile: string
   mountDir: string
   transform: (data: unknown) => unknown
-}> = {
+}
+
+const STORE_CONFIGS: Record<GameRunner, StoreConfig> = {
   legendary: {
-    source: legendaryInstalled,
+    configDir: legendaryConfigPath,
+    installedFile: legendaryInstalled,
     mountDir: 'legendary',
     transform: (data: unknown) => {
-      if (!Array.isArray(data)) return data
-      return data.map((entry: Record<string, unknown>) => ({
-        ...entry,
-        install_path: `c:\\games\\${basename(entry.install_path as string)}`
-      }))
+      const obj = data as Record<string, Record<string, unknown>>
+      return Object.fromEntries(
+        Object.entries(obj).map(([key, entry]) => [
+          key,
+          { ...entry, install_path: `c:\\games\\${basename(entry.install_path as string)}` }
+        ])
+      )
     }
   },
   gog: {
-    source: join(userDataPath, 'gog_store', 'installed.json'),
+    configDir: join(userDataPath, 'gog_store'),
+    installedFile: join(userDataPath, 'gog_store', 'installed.json'),
     mountDir: 'gog_store',
     transform: (data: unknown) => {
       const obj = data as Record<string, unknown>
@@ -42,7 +49,8 @@ const STORE_CONFIGS: Record<GameRunner, {
     }
   },
   nile: {
-    source: nileInstalled,
+    configDir: nileConfigPath,
+    installedFile: nileInstalled,
     mountDir: 'nile',
     transform: (data: unknown) => {
       if (!Array.isArray(data)) return data
@@ -52,8 +60,8 @@ const STORE_CONFIGS: Record<GameRunner, {
       }))
     }
   },
-  sideload: { source: '', mountDir: '', transform: (d) => d },
-  zoom: { source: '', mountDir: '', transform: (d) => d }
+  sideload: { configDir: '', installedFile: '', mountDir: '', transform: (d) => d },
+  zoom: { configDir: '', installedFile: '', mountDir: '', transform: (d) => d }
 }
 
 function ensureMountDirs(): void {
@@ -64,6 +72,27 @@ function ensureMountDirs(): void {
   }
   mkdirSync(join(relicMountPath, 'gogdl'), { recursive: true })
   mkdirSync(join(relicMountPath, 'heroic_gogdl'), { recursive: true })
+}
+
+function symlinkStoreFiles(sourceDir: string, mountDir: string): void {
+  if (!existsSync(sourceDir)) {
+    logWarning(`Source directory not found: ${sourceDir}`, LOG_PREFIX)
+    return
+  }
+  mkdirSync(mountDir, { recursive: true })
+
+  const entries = readdirSync(sourceDir)
+  for (const entry of entries) {
+    const sourcePath = join(sourceDir, entry)
+    const mountPath = join(mountDir, entry)
+
+    if (existsSync(mountPath)) {
+      rmSync(mountPath, { recursive: true })
+    }
+
+    symlinkSync(sourcePath, mountPath)
+  }
+  logInfo(`Symlinked ${entries.length} entries from ${sourceDir} → ${mountDir}`, LOG_PREFIX)
 }
 
 function createGameSymlink(gameInfo: GameInfo): void {
@@ -84,31 +113,6 @@ function createGameSymlink(gameInfo: GameInfo): void {
     logInfo(`Created symlink: ${linkPath} → ${installPath}`, LOG_PREFIX)
   } catch (error) {
     logError(`Failed to create symlink ${linkPath}: ${error}`, LOG_PREFIX)
-  }
-}
-
-function copyGogAuth(): void {
-  const source = gogdlAuthConfig
-  const target = join(relicMountPath, 'gog_store', 'auth.json')
-  if (!existsSync(source)) return
-  try {
-    copyFileSync(source, target)
-    logInfo(`Copied GOG auth to mount`, LOG_PREFIX)
-  } catch (error) {
-    logWarning(`Failed to copy GOG auth: ${error}`, LOG_PREFIX)
-  }
-}
-
-function copyGogConfig(): void {
-  if (!existsSync(gogdlConfigPath)) return
-  try {
-    const gogdlTarget = join(relicMountPath, 'gogdl')
-    const heroicTarget = join(relicMountPath, 'heroic_gogdl')
-    cpSync(gogdlConfigPath, gogdlTarget, { recursive: true })
-    cpSync(gogdlConfigPath, heroicTarget, { recursive: true })
-    logInfo(`Copied GOG config to mount/gogdl and mount/heroic_gogdl`, LOG_PREFIX)
-  } catch (error) {
-    logWarning(`Failed to copy GOG config: ${error}`, LOG_PREFIX)
   }
 }
 
@@ -142,27 +146,45 @@ function copyAndTransformInstalled(
   logInfo(`Windowified ${sourcePath} → ${targetPath}`, LOG_PREFIX)
 }
 
+function syncGogdlConfig(): void {
+  if (!existsSync(gogdlConfigPath)) return
+  for (const target of ['gogdl', 'heroic_gogdl']) {
+    const mountDir = join(relicMountPath, target)
+    symlinkStoreFiles(gogdlConfigPath, mountDir)
+  }
+}
+
 export function windowify(gameInfo: GameInfo): void {
   ensureMountDirs()
   createGameSymlink(gameInfo)
-  copyGogAuth()
-  copyGogConfig()
+  syncGogdlConfig()
 
   const config = STORE_CONFIGS[gameInfo.runner as GameRunner]
-  if (!config || !config.source) {
+  if (!config || !config.installedFile) {
     logWarning(`windowify not implemented for runner: ${gameInfo.runner}`, LOG_PREFIX)
     return
   }
 
+  const mountDir = join(relicMountPath, config.mountDir)
+
   try {
-    if (!existsSync(config.source)) {
-      logWarning(`No installed.json found at ${config.source}`, LOG_PREFIX)
+    if (config.configDir) {
+      symlinkStoreFiles(config.configDir, mountDir)
+    }
+
+    if (!existsSync(config.installedFile)) {
+      logWarning(`No installed.json found at ${config.installedFile}`, LOG_PREFIX)
       return
     }
 
+    const installedTarget = join(mountDir, 'installed.json')
+    if (existsSync(installedTarget)) {
+      unlinkSync(installedTarget)
+    }
+
     copyAndTransformInstalled(
-      config.source,
-      join(relicMountPath, config.mountDir, 'installed.json'),
+      config.installedFile,
+      installedTarget,
       config.transform
     )
   } catch (error) {

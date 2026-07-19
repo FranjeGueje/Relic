@@ -64,10 +64,12 @@ El objetivo es mantener trazabilidad de los cambios respecto al padre.
 | 2026-07-19 | `src/backend/constants/paths.ts` | Añadido `relicGamesPath = ~/.local/share/relic/games/` |
 | 2026-07-19 | `src/backend/relic/windowify.ts` | Nuevo módulo: `windowify()` copia config de la tienda al mount y transforma paths Linux→Windows; `createGameSymlink()` crea symlink en `games/<title>` → `installPath`; `copyAndTransformInstalled()` lee/transforma/escribe installed.json |
 | 2026-07-19 | `AGENTS.md` | Añadida sección "Módulo `relic`": entry points, helpers, reglas de tipado estricto |
-| 2026-07-19 | `src/backend/relic/windowify.ts` | `copyGogAuth()` copia `gogdlAuthConfig` → `mount/gog_store/auth.json` |
-| 2026-07-19 | `src/backend/relic/windowify.ts` | `copyGogConfig()` copia `gogdlConfigPath` → `mount/gogdl/` y `mount/heroic_gogdl/` mediante `cpSync()` |
-| 2026-07-19 | `src/backend/relic/windowify.ts` | `ensureMountDirs()` añadidos `gogdl` y `heroic_gogdl` |
-| 2026-07-19 | `src/backend/relic/windowify.ts` | `windowify()` llama `copyGogAuth()` y `copyGogConfig()` tras `createGameSymlink()` |
+| 2026-07-19 | `src/backend/relic/windowify.ts` | Copia/transforma installed.json para cada tienda + symlinks de todos los ficheros de config |
 | 2026-07-19 | `src/backend/relic/windowify.ts` | Movido `createRelicSymlinks()` desde `symlinks.ts` |
 | 2026-07-19 | `src/backend/relic/symlinks.ts` | Eliminado — contenido fusionado en `windowify.ts` |
 | 2026-07-19 | `src/backend/relic/__tests__/symlinks.test.ts` | Actualizado import de `../symlinks` → `../windowify`; añadidos mocks de store constants y environment |
+| 2026-07-19 | `src/backend/relic/windowify.ts` | `symlinkStoreFiles()` — symlinkea todos los ficheros/dirs de un directorio fuente al mount (reemplaza copyGogAuth, copyGogConfig) |
+| 2026-07-19 | `src/backend/relic/windowify.ts` | `syncGogdlConfig()` — symlinkea `gogdlConfigPath` → `mount/gogdl/` y `mount/heroic_gogdl/` |
+| 2026-07-19 | `src/backend/relic/windowify.ts` | Fix legendary transform: ahora itera `Object.entries()` en vez de `Array.isArray()` (installed.json de legendary es object, no array) |
+| 2026-07-19 | `src/backend/relic/windowify.ts` | Eliminadas `copyGogAuth()` y `copyGogConfig()` — reemplazadas por `symlinkStoreFiles()` |
+| 2026-07-19 | `src/backend/relic/windowify.ts` | `STORE_CONFIGS` añadido campo `configDir` para symlinkear todos los ficheros de config antes de transformar installed.json |

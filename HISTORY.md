@@ -94,12 +94,13 @@ Para ver el detalle completo de cada categoría, consultar:
 
 #### Windowify
 - Nuevo módulo `src/backend/relic/windowify.ts`: transforma paths de instalación de Linux a Windows (`c:\games\<title>`).
+- `symlinkStoreFiles()` symlinkea todos los ficheros del directorio de config de cada tienda al mount (reemplaza antigua copia solo de installed.json).
+- `syncGogdlConfig()` symlinkea `gogdlConfigPath` → `mount/gogdl/` y `mount/heroic_gogdl/`.
 - `createGameSymlink()` crea symlink en `~/.local/share/relic/games/<title>` → `<installPath>`.
 - `createRelicSymlinks()` migrado desde `symlinks.ts` (eliminado).
-- `copyAndTransformInstalled()` copia installed.json de la tienda al mount y transforma paths.
-- `copyGogAuth()` copia `gogdlAuthConfig` → `mount/gog_store/auth.json`.
-- `copyGogConfig()` copia `gogdlConfigPath` → `mount/gogdl/` y `mount/heroic_gogdl/`.
-- `ensureMountDirs()` crea también `gogdl/` y `heroic_gogdl/`.
+- `copyAndTransformInstalled()` lee installed.json de la tienda, transforma paths a Windows y escribe en mount.
+- Fix legendary transform: ahora maneja formato object (keyed por app_name), no solo array.
+- Eliminadas `copyGogAuth()` y `copyGogConfig()` — reemplazadas por `symlinkStoreFiles()`.
 - Añadido `relicGamesPath` a constants/paths.ts.
 - Fix TS2304 en `store.ts`: añadido `GameRunner` al import.
 
