@@ -281,6 +281,10 @@ específico de Relic debe ubicarse en subdirectorios `relic/` dentro de cada ár
 Las modificaciones a archivos existentes de Heroic se realizan in-place y se
 documentan en `HISTORY_ADD.md`.
 
+Todo cambio debe registrarse también en `HISTORY.md` (resumen ejecutivo de
+eliminaciones y adiciones) para mantener una visión general de la evolución
+del fork. Tanto `HISTORY_REMOVE.md` como `HISTORY_ADD.md` contienen el detalle.
+
 ---
 
 # Principios de desarrollo
