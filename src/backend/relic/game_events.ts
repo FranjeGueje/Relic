@@ -4,6 +4,7 @@ import { GameInfo } from 'common/types'
 import { libraryManagerMap } from 'backend/storeManagers'
 import { logError, logInfo } from 'backend/logger'
 import { addGameToSteam, createRelicBat, findShortcut, addShortcut, removeShortcut } from './steam_shortcuts'
+import { windowify } from './windowify'
 import { removeNonSteamGame } from 'backend/shortcuts/nonesteamgame/nonesteamgame'
 import type { AddGameToSteamResult, GameRunner } from './steam_shortcuts/types'
 
@@ -83,10 +84,6 @@ function createRunnerFile(
     logError(`Failed to create runner file: ${e}`, LOG_PREFIX)
     return { error: `Failed to create runner file: ${e}` }
   }
-}
-
-function windowify(gameInfo: GameInfo): void {
-  // TODO: Transform linux game to windows
 }
 
 function prepareUmuPrefix(gameInfo: GameInfo): void {

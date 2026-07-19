@@ -84,13 +84,26 @@ Para ver el detalle completo de cada categoría, consultar:
 - `importGame()` en legendary/gog/nile usa `onGameImported()` en vez de `onGameInstalled()`.
 - `moveInstall()` en legendary/gog/nile llama `onGameMoved()` tras mover el juego.
 - Fix: Legendary installPath vacío — se llama `refreshInstalled?.()` antes de leer datos instalados.
+- Refactor `onGameInstalled()` en 6 helpers privados: `validateGameInput()`, `createRunnerFile()`, `addToSteam()`, `windowify()`, `prepareUmuPrefix()`, `downloadGrids()`.
+- Eliminado `forceRefreshInstallPath()` — lógica inline en `validateGameInput()`.
 
 #### Robustez
 - Protegidos todos los `JSON.parse()` contra stdout vacío en legendary, nile y gog library/user.
 - Corregido log prefix en IPC handler `getInstallInfo` (Nile se logueaba como GOG).
 - Tests unitarios para stdout vacío en los 3 store managers (8 tests).
 
+#### Windowify
+- Nuevo módulo `src/backend/relic/windowify.ts`: transforma paths de instalación de Linux a Windows (`c:\games\<title>`).
+- `createGameSymlink()` crea symlink en `~/.local/share/relic/games/<title>` → `<installPath>`.
+- `createRelicSymlinks()` migrado desde `symlinks.ts` (eliminado).
+- `copyAndTransformInstalled()` copia installed.json de la tienda al mount y transforma paths.
+- `copyGogAuth()` copia `gogdlAuthConfig` → `mount/gog_store/auth.json`.
+- `copyGogConfig()` copia `gogdlConfigPath` → `mount/gogdl/` y `mount/heroic_gogdl/`.
+- `ensureMountDirs()` crea también `gogdl/` y `heroic_gogdl/`.
+- Añadido `relicGamesPath` a constants/paths.ts.
+- Fix TS2304 en `store.ts`: añadido `GameRunner` al import.
+
 #### Tests
-- 35 tests en módulos relic (steam_helpers, add_game, game_events, symlinks).
+- 35 tests en módulos relic (steam_helpers, add_game, game_events, symlinks, windowify).
 - 8 tests en store managers (empty stdout handling).
 - Total: 90 tests (85 pasan, 5 preexistentes fallan por plataforma Linux).

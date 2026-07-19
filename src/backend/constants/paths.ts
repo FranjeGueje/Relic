@@ -32,6 +32,7 @@ export const relicInstallPath = join(userHome, 'Games', 'Relic')
 export const fixesPath = join(appFolder, 'fixes')
 export const relicRunnerPath = join(userHome, '.local', 'share', 'relic', 'runner')
 export const relicMountPath = join(userHome, '.local', 'share', 'relic', 'mount')
+export const relicGamesPath = join(userHome, '.local', 'share', 'relic', 'games')
 
 export const publicDir = resolve(
   __dirname,
