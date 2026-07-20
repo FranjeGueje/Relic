@@ -162,3 +162,37 @@ Para ver el detalle completo de cada categoría, consultar:
 - `husky` 8 → 9, `prepare` script actualizado.
 - `jest.config.js`: `globals` deprecated → `transform` config.
 - Build compila sin errores de emotion.
+
+---
+
+### v0.2.0 — FIX_VULNERA (Jul 2026)
+
+#### Resumen
+- Reducción de 130 vulnerabilidades a 0.
+- Se eliminaron: 2 críticas, 63 high, 58 moderate, 7 low → 0 total.
+
+#### Electron 43
+- Bump de electron 41.9.0 → 43.1.1 (elimina 32 CVEs high del runtime de Electron).
+
+#### CVEs críticas eliminadas
+- `node-tar` (CRITICAL) via `tar@6.2.1`/`tar@7.5.9` → override pnpm a `>=7.5.19`.
+- `simple-git` (CRITICAL) vía `unimported` → eliminado en UPGRADE-MINIMAL.
+- `shell-quote` (CRITICAL, UPGRADE-MINIMAL): override a `>=1.8.4`.
+- `i18next-fs-backend` (CRITICAL): 2.6.0 → 2.6.6 (UPGRADE-MINIMAL).
+
+#### CVEs altas eliminadas
+- `axios`: update a última 1.x.
+- `fast-xml-parser`: update a última 5.x.
+- `vite`: añadido como devDep a 6.4.3 (elimina 2 highs).
+- `uuid`: override pnpm a `^11.0.0`.
+- `cross-spawn` (UPGRADE-MINIMAL): override a `>=6.0.6`.
+
+#### Dependencias deprecated
+- `@fortawesome/react-fontawesome` 0.2.x → ^3.
+- `react-devtools` eliminado (dev-only, arrastraba electron 23 → 4 CVEs high).
+- `i18next-http-backend` 2.x → ^3.0.5 (elimina moderate path traversal).
+
+#### Resultado audit
+- Antes: 130 vulnerabilidades (7 low, 58 moderate, 63 high, 2 critical).
+- Después: **0 vulnerabilidades.**
+- `pnpm audit` reporta "No known vulnerabilities found".
