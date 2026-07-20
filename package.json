@@ -135,5 +135,11 @@
   },
   "resolutions": {
     "ts-morph": "17.0.1"
+  },
+  "pnpm": {
+    "overrides": {
+      "shell-quote": ">=1.8.4",
+      "cross-spawn": ">=6.0.6"
+    }
   }
 }
