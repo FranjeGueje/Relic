@@ -5,7 +5,7 @@
   targetPkgs = pkgs: with pkgs; [
     # Base requirements
     git
-    nodejs_22
+    nodejs_24
     pnpm
 
     # Commit hooks use bash

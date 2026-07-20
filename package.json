@@ -19,7 +19,7 @@
     "email": ""
   },
   "engines": {
-    "node": ">=22"
+    "node": ">=24"
   },
   "packageManager": "pnpm@10.28.0",
   "scripts": {
@@ -37,8 +37,8 @@
     "prepare": "husky install",
     "prettier": "prettier --check .",
     "prettier-fix": "prettier --write .",
-    "download-helper-binaries": "esbuild --bundle --platform=node --target=node21 meta/downloadHelperBinaries.ts | node",
-    "lint-translations": "esbuild --bundle --platform=node --target=node21 meta/lintTranslations.ts | node"
+    "download-helper-binaries": "esbuild --bundle --platform=node --target=node24 meta/downloadHelperBinaries.ts | node",
+    "lint-translations": "esbuild --bundle --platform=node --target=node24 meta/lintTranslations.ts | node"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",

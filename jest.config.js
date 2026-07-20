@@ -2,8 +2,8 @@
 module.exports = {
   preset: 'ts-jest',
   testEnvironment: 'node',
-  globals: {
-    'ts-jest': {}
+  transform: {
+    '^.+\\.tsx?$': ['ts-jest', {}]
   },
 
   collectCoverageFrom: ['**/*.{js,jsx,ts,tsx}', '!**/*.config.js'],
