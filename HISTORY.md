@@ -127,6 +127,7 @@ Para ver el detalle completo de cada categoría, consultar:
 - `download.ts`: `downloadGrids(gameInfo, steamAppId)` descarga 5 imágenes (header, portrait, hero, logo, icon) a `~/.steam/steam/userdata/*/config/grid/`.
 - `game_events.ts` llama a `downloadGrids` tras `addToSteam` exitoso. Toda la lógica de grids delegada al módulo `steamgrid`.
 - `downloadGrids` retorna `boolean`. Notificación de escritorio tras descarga exitosa.
+- `deleteGrids(steamAppId)` elimina los 5 ficheros grid de todos los usuarios Steam. Se llama en `onGameUninstalled`.
 
 #### Tests
 - 35 tests en módulos relic (steam_helpers, add_game, game_events, symlinks, windowify).

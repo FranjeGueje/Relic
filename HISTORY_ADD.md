@@ -89,3 +89,5 @@ El objetivo es mantener trazabilidad de los cambios respecto al padre.
 | 2026-07-20 | `src/backend/relic/game_events.ts` | Notificación de escritorio cuando grids se descargan: "Restart Steam to see the grid images" |
 | 2026-07-20 | `src/backend/relic/game_events.ts` | `onGameInstalled` abre `steam://gameproperties/{id}` al final (después de grids) |
 | 2026-07-20 | `src/backend/relic/game_events.ts` | `onGameUninstalled` abre `steam://gameproperties/{id}` al principio (antes de borrar registro) |
+| 2026-07-20 | `src/backend/relic/steamgrid/delete.ts` | Nuevo módulo `deleteGrids(steamAppId)` — elimina ficheros grid (5 tipos) de todos los usuarios Steam |
+| 2026-07-20 | `src/backend/relic/game_events.ts` | `onGameUninstalled` llama `deleteGrids` para limpiar grid images tras desinstalar |

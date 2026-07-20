@@ -12,7 +12,7 @@ import { preparePrefix, prepareUmuPrefix } from './prefix'
 import { removeNonSteamGame } from 'backend/shortcuts/nonesteamgame/nonesteamgame'
 import { notify } from 'backend/dialog/dialog'
 import type { AddGameToSteamResult, GameRunner } from './steam_shortcuts/types'
-import { downloadGrids } from './steamgrid'
+import { downloadGrids, deleteGrids } from './steamgrid'
 
 const LOG_PREFIX = 'Relic'
 
@@ -202,6 +202,10 @@ export async function onGameUninstalled(game: Game) {
       unlinkSync(linkPath)
       logInfo(`Deleted symlink ${linkPath}`, LOG_PREFIX)
     } catch {}
+  }
+
+  if (known?.steamAppId) {
+    deleteGrids(known.steamAppId)
   }
 
   removeShortcut(appName)

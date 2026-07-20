@@ -2,6 +2,7 @@ import { onGameInstalled, onGameUninstalled, onGameImported, onGameMoved } from 
 import { existsSync, unlinkSync } from 'graceful-fs'
 import { addGameToSteam, createRelicBat } from '../add_game'
 import { removeNonSteamGame } from 'backend/shortcuts/nonesteamgame/nonesteamgame'
+import { deleteGrids } from '../../steamgrid'
 import { libraryManagerMap } from 'backend/storeManagers'
 import * as store from '../store'
 
@@ -50,11 +51,17 @@ jest.mock('backend/shortcuts/nonesteamgame/nonesteamgame', () => ({
   removeNonSteamGame: jest.fn()
 }))
 
+jest.mock('../../steamgrid', () => ({
+  downloadGrids: jest.fn(),
+  deleteGrids: jest.fn()
+}))
+
 const mockedAddGameToSteam = jest.mocked(addGameToSteam)
 const mockedCreateRelicBat = jest.mocked(createRelicBat)
 const mockedExistsSync = jest.mocked(existsSync)
 const mockedUnlinkSync = jest.mocked(unlinkSync)
 const mockedRemoveNonSteamGame = jest.mocked(removeNonSteamGame)
+const mockedDeleteGrids = jest.mocked(deleteGrids)
 const mockedFindShortcut = jest.mocked(store.findShortcut)
 const mockedAddShortcut = jest.mocked(store.addShortcut)
 const mockedRemoveShortcut = jest.mocked(store.removeShortcut)
@@ -255,6 +262,7 @@ describe('onGameUninstalled', () => {
 
     expect(mockedExistsSync).toHaveBeenCalledWith('/path/to/TestGame.bat')
     expect(mockedUnlinkSync).toHaveBeenCalledWith('/path/to/TestGame.bat')
+    expect(mockedDeleteGrids).toHaveBeenCalledWith(12345)
     expect(mockedRemoveShortcut).toHaveBeenCalledWith('test_app')
     expect(mockedRemoveNonSteamGame).toHaveBeenCalledWith(mockGame)
   })
