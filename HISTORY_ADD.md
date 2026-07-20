@@ -91,3 +91,7 @@ El objetivo es mantener trazabilidad de los cambios respecto al padre.
 | 2026-07-20 | `src/backend/relic/game_events.ts` | `onGameUninstalled` abre `steam://gameproperties/{id}` al principio (antes de borrar registro) |
 | 2026-07-20 | `src/backend/relic/steamgrid/delete.ts` | Nuevo módulo `deleteGrids(steamAppId)` — elimina ficheros grid (5 tipos) de todos los usuarios Steam |
 | 2026-07-20 | `src/backend/relic/game_events.ts` | `onGameUninstalled` llama `deleteGrids` para limpiar grid images tras desinstalar |
+| 2026-07-20 | `src/backend/relic/steam_shortcuts/steam_helpers.ts` | `findExistingGameByName(gameName)` — busca en shortcuts.vdf por `${gameName}.bat` o `${gameName}` |
+| 2026-07-20 | `src/backend/relic/steam_shortcuts/add_game.ts` | Check temprano en `addGameToSteam`: si el juego ya existe en Steam, devuelve el steamAppId existente sin abrir diálogo |
+| 2026-07-20 | `src/backend/relic/steam_shortcuts/add_game.ts` | Rename `batPath` → `runnerPath` (variable, parámetros, return) |
+| 2026-07-20 | `src/backend/relic/game_events.ts` | Rename `batPath` → `runnerPath` (variable, parámetro, argumento) |

@@ -79,13 +79,13 @@ function createRunnerFile(
   installPath: string
 ): { path: string } | { error: string } {
   try {
-    const batPath = createRelicBat(
+    const runnerPath = createRelicBat(
       installPath,
       gameInfo.title,
       gameInfo.runner as GameRunner,
       gameInfo.app_name
     )
-    return { path: batPath }
+    return { path: runnerPath }
   } catch (e) {
     logError(`Failed to create runner file: ${e}`, LOG_PREFIX)
     return { error: `Failed to create runner file: ${e}` }
@@ -95,7 +95,7 @@ function createRunnerFile(
 async function addToSteam(
   gameInfo: GameInfo,
   installPath: string,
-  batPath: string
+  runnerPath: string
 ): Promise<AddGameToSteamResult> {
   const result = await addGameToSteam({ gameName: gameInfo.title })
 
@@ -113,7 +113,7 @@ async function addToSteam(
     gameInfo.runner,
     result.steamAppId!,
     installPath,
-    batPath
+    runnerPath
   )
 
   return result
@@ -211,5 +211,5 @@ export async function onGameUninstalled(game: Game) {
   removeShortcut(appName)
   logInfo(`Removing ${gameInfo.title} from Steam shortcuts`, LOG_PREFIX)
 
-  await removeNonSteamGame(game)
+  //await removeNonSteamGame(game)
 }

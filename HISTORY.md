@@ -76,6 +76,8 @@ Para ver el detalle completo de cada categoría, consultar:
 - Eliminado toggle "Add games to Steam automatically" — siempre se añade tras instalar.
 - Eliminados IPC handlers `addToSteam`, `removeFromSteam`, `isAddedToSteam`.
 - `onGameInstalled()` / `onGameUninstalled()` en todos los store managers.
+- `findExistingGameByName()` busca en shortcuts.vdf por `${gameName}.bat` o `${gameName}`. Check temprano en `addGameToSteam` evita diálogos duplicados.
+- Rename `batPath` → `runnerPath` en todo el módulo.
 
 #### Eventos de instalación
 - `src/backend/relic/game_events.ts`: orquestador que crea .bat, añade a Steam y guarda en store.
@@ -112,7 +114,7 @@ Para ver el detalle completo de cada categoría, consultar:
 
 #### Runner GOG
 - Fix ruta en .bat: `installPath` se transforma a `c:\games\<basename>` en vez de usar ruta Linux directamente.
-- Eliminado guard `if (existsSync(batPath)) return` — el .bat se regenera siempre con el contenido correcto.
+- Eliminado guard `if (existsSync(runnerPath)) return` — el .bat se regenera siempre con el contenido correcto.
 
 #### Prefijos
 - Nuevo módulo `src/backend/relic/prefix.ts` con `preparePrefix(steamAppId)` y `prepareUmuPrefix()`.

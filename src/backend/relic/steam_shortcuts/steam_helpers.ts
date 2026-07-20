@@ -104,6 +104,16 @@ export function findGameInAllUsers(
   return { entry: null, found: false }
 }
 
+export function findExistingGameByName(
+  gameName: string
+): { found: boolean; steamAppId?: number } {
+  const result = findGameInAllUsers([`${gameName}.bat`, gameName])
+  if (result.found && result.entry) {
+    return { found: true, steamAppId: getShortcutId(result.entry) }
+  }
+  return { found: false }
+}
+
 export function checkSteamProtocolHandler(): void {
   const mimeFile = join(
     require('os').homedir(),

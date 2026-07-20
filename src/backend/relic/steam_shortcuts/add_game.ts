@@ -5,6 +5,7 @@ import { spawnAsync } from 'backend/utils'
 import { relicRunnerPath } from 'backend/constants/paths'
 import {
   findGameInAllUsers,
+  findExistingGameByName,
   getShortcutId,
   checkSteamProtocolHandler
 } from './steam_helpers'
@@ -21,7 +22,7 @@ export function createRelicBat(
   runner: GameRunner,
   appName: string
 ): string {
-  const batPath = join(relicRunnerPath, `${gameName}.bat`)
+  const runnerPath = join(relicRunnerPath, `${gameName}.bat`)
 
   mkdirSync(relicRunnerPath, { recursive: true })
 
@@ -54,10 +55,10 @@ export function createRelicBat(
   }
 
   const content = [...header, '', runnerCmd].join('\n')
-  writeFileSync(batPath, content, 'utf-8')
+  writeFileSync(runnerPath, content, 'utf-8')
 
-  logInfo(`Created ${batPath}`, LOG_PREFIX)
-  return batPath
+  logInfo(`Created ${runnerPath}`, LOG_PREFIX)
+  return runnerPath
 }
 
 async function waitForGameInSteam(
@@ -89,12 +90,18 @@ export async function addGameToSteam(
 ): Promise<AddGameToSteamResult> {
   const { gameName } = options
 
-  const batPath = join(relicRunnerPath, `${gameName}.bat`)
-  const steamName = basename(batPath)
+  const runnerPath = join(relicRunnerPath, `${gameName}.bat`)
+  const steamName = basename(runnerPath)
 
   checkSteamProtocolHandler()
 
-  const encodedPath = encodeURIComponent(batPath)
+  const existing = findExistingGameByName(gameName)
+  if (existing.found) {
+    logInfo(`"${gameName}" already exists in Steam (ID ${existing.steamAppId}). Skipping.`, LOG_PREFIX)
+    return { success: true, steamAppId: existing.steamAppId }
+  }
+
+  const encodedPath = encodeURIComponent(runnerPath)
   const steamUrl = `steam://addnonsteamgame/${encodedPath}`
 
   try {
