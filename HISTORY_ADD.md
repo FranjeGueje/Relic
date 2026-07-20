@@ -82,3 +82,10 @@ El objetivo es mantener trazabilidad de los cambios respecto al padre.
 | 2026-07-20 | `src/backend/relic/game_events.ts` | Llamada a `preparePrefix(result.steamAppId)` con guard (solo si `addToSteam` tuvo éxito) |
 | 2026-07-20 | `src/backend/relic/game_events.ts` | `onGameUninstalled` borra symlink usando `installPath` del JSON store (no `gameInfo.install.install_path` que Legendary/GOG ya vaciaron). Usa `unlinkSync` directo en try/catch (no `existsSync` que sigue symlinks). |
 | 2026-07-20 | `src/backend/relic/windowify.ts` | `createGameSymlink` usa `basename(installPath)` en vez de `gameInfo.title` para el nombre del symlink |
+| 2026-07-20 | `src/backend/relic/steamgrid/api.ts` | API client propio de SteamGridDB (searchGame, getGrids, getHeroes, getLogos, getIcons) — no modifica código Heroic |
+| 2026-07-20 | `src/backend/relic/steamgrid/download.ts` | `downloadGrids(gameInfo, steamAppId)` — descarga 5 imágenes (header, portrait, hero, logo, icon) a `~/.steam/steam/userdata/*/config/grid/` |
+| 2026-07-20 | `src/backend/relic/game_events.ts` | `downloadGrids` se ejecuta tras `addToSteam` exitoso. Lógica de grids delegada a `./steamgrid` |
+| 2026-07-20 | `src/backend/relic/steamgrid/download.ts` | `downloadGrids` retorna `boolean` (true si descargó grids) |
+| 2026-07-20 | `src/backend/relic/game_events.ts` | Notificación de escritorio cuando grids se descargan: "Restart Steam to see the grid images" |
+| 2026-07-20 | `src/backend/relic/game_events.ts` | `onGameInstalled` abre `steam://gameproperties/{id}` al final (después de grids) |
+| 2026-07-20 | `src/backend/relic/game_events.ts` | `onGameUninstalled` abre `steam://gameproperties/{id}` al principio (antes de borrar registro) |

@@ -1,4 +1,5 @@
 import { existsSync, unlinkSync } from 'graceful-fs'
+import { shell } from 'electron'
 import { Game } from 'common/types/game_manager'
 import { GameInfo } from 'common/types'
 import { basename, join } from 'path'
@@ -9,7 +10,9 @@ import { addGameToSteam, createRelicBat, findShortcut, addShortcut, removeShortc
 import { windowify } from './windowify'
 import { preparePrefix, prepareUmuPrefix } from './prefix'
 import { removeNonSteamGame } from 'backend/shortcuts/nonesteamgame/nonesteamgame'
+import { notify } from 'backend/dialog/dialog'
 import type { AddGameToSteamResult, GameRunner } from './steam_shortcuts/types'
+import { downloadGrids } from './steamgrid'
 
 const LOG_PREFIX = 'Relic'
 
@@ -116,10 +119,6 @@ async function addToSteam(
   return result
 }
 
-async function downloadGrids(gameInfo: GameInfo): Promise<void> {
-  // TODO: Download steam grid images
-}
-
 export async function onGameInstalled(
   game: Game,
   installPath?: string
@@ -141,13 +140,19 @@ export async function onGameInstalled(
 
   const result = await addToSteam(input.gameInfo, input.installPath, runnerFile.path)
 
-  windowify(input.gameInfo)
   if (result.success && result.steamAppId) {
+    windowify(input.gameInfo)
     preparePrefix(result.steamAppId)
+    const gridsDownloaded = await downloadGrids(input.gameInfo, result.steamAppId)
+    if (gridsDownloaded) {
+      notify({
+        title: 'Added to Steam',
+        body: `"${input.gameInfo.title}" was added to Steam. Restart Steam to see the grid images.`
+      })
+    }
+    shell.openExternal(`steam://gameproperties/${result.steamAppId}`)
   }
   prepareUmuPrefix(input.gameInfo)
-
-  await downloadGrids(input.gameInfo)
 
   return result
 }
@@ -176,6 +181,10 @@ export async function onGameUninstalled(game: Game) {
   const appName = gameInfo.app_name
 
   const known = findShortcut(appName)
+  if (known?.steamAppId) {
+    shell.openExternal(`steam://gameproperties/${known.steamAppId}`)
+  }
+
   if (known?.execPath) {
     try {
       if (existsSync(known.execPath)) {

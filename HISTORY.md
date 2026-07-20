@@ -86,6 +86,7 @@ Para ver el detalle completo de cada categoría, consultar:
 - Fix: Legendary installPath vacío — se llama `refreshInstalled?.()` antes de leer datos instalados.
 - Refactor `onGameInstalled()` en 6 helpers privados: `validateGameInput()`, `createRunnerFile()`, `addToSteam()`, `windowify()`, `prepareUmuPrefix()`, `downloadGrids()`.
 - Eliminado `forceRefreshInstallPath()` — lógica inline en `validateGameInput()`.
+- `onGameInstalled` abre `steam://gameproperties/{id}` al final. `onGameUninstalled` abre `steam://gameproperties/{id}` al principio.
 
 #### Robustez
 - Protegidos todos los `JSON.parse()` contra stdout vacío en legendary, nile y gog library/user.
@@ -119,6 +120,13 @@ Para ver el detalle completo de cada categoría, consultar:
 - `prepareUmuPrefix` movida desde `game_events.ts` (stub).
 - `onGameInstalled` llama a `preparePrefix()` solo si `addToSteam` tuvo éxito.
 - `onGameUninstalled` borra symlink usando `installPath` del JSON store. Usa `unlinkSync` directo (no `existsSync` que sigue symlinks y falla con enlaces rotos).
+
+#### SteamGridDB
+- Nuevo módulo `src/backend/relic/steamgrid/` — API client propio de SteamGridDB (no modifica código Heroic).
+- `api.ts`: searchGame, getGrids, getHeroes, getLogos, getIcons.
+- `download.ts`: `downloadGrids(gameInfo, steamAppId)` descarga 5 imágenes (header, portrait, hero, logo, icon) a `~/.steam/steam/userdata/*/config/grid/`.
+- `game_events.ts` llama a `downloadGrids` tras `addToSteam` exitoso. Toda la lógica de grids delegada al módulo `steamgrid`.
+- `downloadGrids` retorna `boolean`. Notificación de escritorio tras descarga exitosa.
 
 #### Tests
 - 35 tests en módulos relic (steam_helpers, add_game, game_events, symlinks, windowify).

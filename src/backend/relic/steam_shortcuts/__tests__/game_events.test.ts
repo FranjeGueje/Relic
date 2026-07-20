@@ -16,6 +16,9 @@ jest.mock('graceful-fs', () => ({
   mkdirSync: jest.fn(),
   symlinkSync: jest.fn()
 }))
+jest.mock('fs-extra', () => ({
+  readFileSync: jest.fn()
+}))
 jest.mock('backend/logger', () => ({
   logInfo: jest.fn(),
   logError: jest.fn(),

@@ -1,5 +1,5 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync, rmSync } from 'graceful-fs'
-import { join } from 'path'
+import { basename, join } from 'path'
 import { DirResult, dirSync } from 'tmp'
 import { addGameToSteam, createRelicBat } from '../add_game'
 import * as steamHelpers from '../steam_helpers'
@@ -118,7 +118,7 @@ describe('createRelicBat', () => {
     }
     expect(content).toContain(
       `@gogdl --auth-config-path c:\\relic\\gog_store\\auth.json ` +
-      `launch --platform windows "${tmpDir.name}" gog123 -- %*`
+      `launch --platform windows "c:\\games\\${basename(tmpDir.name)}" gog123 -- %*`
     )
   })
 
@@ -161,7 +161,7 @@ describe('createRelicBat', () => {
     expect(content).toContain('@echo En desarrollo...')
   })
 
-  test('returns existing path without rewriting when file exists', () => {
+  test('overwrites existing file with new content', () => {
     mkdirSync(tmpDir.name, { recursive: true })
     const batPath = join(tmpDir.name, 'ExistingGame.bat')
     writeFileSync(batPath, 'old content', 'utf-8')
@@ -170,6 +170,7 @@ describe('createRelicBat', () => {
 
     expect(result).toBe(batPath)
     const content = readFileSync(batPath, 'utf-8')
-    expect(content).toBe('old content')
+    expect(content).toContain('@legendary launch abc %*')
+    expect(content).not.toBe('old content')
   })
 })
