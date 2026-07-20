@@ -135,3 +135,30 @@ Para ver el detalle completo de cada categoría, consultar:
 - 35 tests en módulos relic (steam_helpers, add_game, game_events, symlinks, windowify).
 - 8 tests en store managers (empty stdout handling).
 - Total: 90 tests (85 pasan, 5 preexistentes fallan por plataforma Linux).
+
+---
+
+### v0.2.0 — UPGRADE-MINIMAL (Jul 2026)
+
+#### Build fix
+- Añadidas `@emotion/react` y `@emotion/styled` como dependencias explícitas (peer deps de MUI que causaban el error de build en Vite).
+
+#### Paquetes deprecated eliminados
+- `ts-prune` (deprecated), `unimported` (deprecated), `@types/react-router-dom` (obsoleto, v6 trae tipos propios).
+- Eliminados configs `.ts-prunerc`, `.unimportedrc.json`, script `find-deadcode`.
+
+#### CVEs
+- `i18next-fs-backend` 2.6.0 → 2.6.6 (critical, prototype pollution).
+- `undici` 7.24.0 → 7.28.0 (high, multiple vulns).
+- `shell-quote` y `cross-spawn` transitivos protegidos vía overrides de pnpm.
+- `simple-git` critical eliminado al remover `unimported`.
+- 3 criticals → 1 residual (`node-tar` del ecosistema `node-gyp`, build-time, aceptado).
+
+#### Toolchain modernizada
+- `engines.node`: `>=22` → `>=24`.
+- `shell.nix`: `nodejs_22` → `nodejs_24`.
+- Esbuild: `--target=node21` → `--target=node24`.
+- `.npmrc` eliminado, `nodeLinker: hoisted` movido a `pnpm-workspace.yaml`.
+- `husky` 8 → 9, `prepare` script actualizado.
+- `jest.config.js`: `globals` deprecated → `transform` config.
+- Build compila sin errores de emotion.
