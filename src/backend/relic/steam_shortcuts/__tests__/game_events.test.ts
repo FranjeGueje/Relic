@@ -1,7 +1,6 @@
 import { onGameInstalled, onGameUninstalled, onGameImported, onGameMoved } from '../../game_events'
 import { existsSync, unlinkSync } from 'graceful-fs'
 import { addGameToSteam, createRelicBat } from '../add_game'
-import { removeNonSteamGame } from 'backend/shortcuts/nonesteamgame/nonesteamgame'
 import { deleteGrids } from '../../steamgrid'
 import { libraryManagerMap } from 'backend/storeManagers'
 import * as store from '../store'
@@ -47,10 +46,6 @@ jest.mock('../store', () => ({
   removeShortcut: jest.fn()
 }))
 
-jest.mock('backend/shortcuts/nonesteamgame/nonesteamgame', () => ({
-  removeNonSteamGame: jest.fn()
-}))
-
 jest.mock('../../steamgrid', () => ({
   downloadGrids: jest.fn(),
   deleteGrids: jest.fn()
@@ -60,7 +55,6 @@ const mockedAddGameToSteam = jest.mocked(addGameToSteam)
 const mockedCreateRelicBat = jest.mocked(createRelicBat)
 const mockedExistsSync = jest.mocked(existsSync)
 const mockedUnlinkSync = jest.mocked(unlinkSync)
-const mockedRemoveNonSteamGame = jest.mocked(removeNonSteamGame)
 const mockedDeleteGrids = jest.mocked(deleteGrids)
 const mockedFindShortcut = jest.mocked(store.findShortcut)
 const mockedAddShortcut = jest.mocked(store.addShortcut)
@@ -240,7 +234,7 @@ describe('onGameInstalled', () => {
 })
 
 describe('onGameUninstalled', () => {
-  test('deletes bat file, removes from store and calls removeNonSteamGame', async () => {
+  test('deletes bat file and removes from store', async () => {
     mockGetGameInfo.mockReturnValue({
       title: 'TestGame',
       app_name: 'test_app',
@@ -256,7 +250,6 @@ describe('onGameUninstalled', () => {
       installPath: '/some/game/path'
     })
     mockedExistsSync.mockReturnValue(true)
-    mockedRemoveNonSteamGame.mockResolvedValueOnce(undefined)
 
     await onGameUninstalled(mockGame as never)
 
@@ -264,7 +257,6 @@ describe('onGameUninstalled', () => {
     expect(mockedUnlinkSync).toHaveBeenCalledWith('/path/to/TestGame.bat')
     expect(mockedDeleteGrids).toHaveBeenCalledWith(12345)
     expect(mockedRemoveShortcut).toHaveBeenCalledWith('test_app')
-    expect(mockedRemoveNonSteamGame).toHaveBeenCalledWith(mockGame)
   })
 })
 

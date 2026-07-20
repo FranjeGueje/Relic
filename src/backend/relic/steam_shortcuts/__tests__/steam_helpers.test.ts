@@ -18,12 +18,6 @@ jest.mock('backend/config')
 
 const TEST_VDF_DIR = join(
   __dirname,
-  '..',
-  '..',
-  '..',
-  'shortcuts',
-  'nonesteamgame',
-  '__tests__',
   'test_data'
 )
 
