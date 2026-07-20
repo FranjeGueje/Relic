@@ -116,6 +116,7 @@ import {
   webviewPreloadPath,
   windowIcon
 } from './constants/paths'
+import { syncMountBin } from './relic/windowify'
 import { supportedLanguages } from 'common/languages'
 import MigrationSystem from './migration'
 
@@ -251,6 +252,8 @@ if (!gotTheLock) {
   })
   app.whenReady().then(async () => {
     initLogger()
+
+    syncMountBin()
 
     await MigrationSystem.get().applyMigrations()
 

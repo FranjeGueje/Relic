@@ -104,6 +104,15 @@ Para ver el detalle completo de cada categoría, consultar:
 - Añadido `relicGamesPath` a constants/paths.ts.
 - Fix TS2304 en `store.ts`: añadido `GameRunner` al import.
 
+#### Mount bin sync
+- `syncMountBin()` en `windowify.ts`: al arrancar compara md5 de `public/bin/x64/win32/` contra `mount/bin/` y copia si falta o difiere.
+- Llamada desde `main.ts` una sola vez al arrancar (`app.whenReady()`).
+- `electron-builder.yml`: `linux.files` usa glob `build/bin/x64/win32/*` para incluir los 6 exe en el AppImage (antes solo incluía 2).
+
+#### Runner GOG
+- Fix ruta en .bat: `installPath` se transforma a `c:\games\<basename>` en vez de usar ruta Linux directamente.
+- Eliminado guard `if (existsSync(batPath)) return` — el .bat se regenera siempre con el contenido correcto.
+
 #### Tests
 - 35 tests en módulos relic (steam_helpers, add_game, game_events, symlinks, windowify).
 - 8 tests en store managers (empty stdout handling).

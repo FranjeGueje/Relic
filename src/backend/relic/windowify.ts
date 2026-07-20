@@ -1,7 +1,8 @@
-import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, symlinkSync, unlinkSync, writeFileSync } from 'graceful-fs'
+import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, statSync, symlinkSync, unlinkSync, writeFileSync, copyFileSync } from 'graceful-fs'
 import { basename, join } from 'path'
+import { createHash } from 'node:crypto'
 import { logError, logInfo, logWarning } from 'backend/logger'
-import { relicMountPath, relicInstallPath, relicGamesPath, userDataPath } from 'backend/constants/paths'
+import { relicMountPath, relicInstallPath, relicGamesPath, userDataPath, publicDir } from 'backend/constants/paths'
 import { legendaryConfigPath, legendaryInstalled } from 'backend/storeManagers/legendary/constants'
 import { nileConfigPath, nileInstalled } from 'backend/storeManagers/nile/constants'
 import { gogdlConfigPath } from 'backend/storeManagers/gog/constants'
@@ -152,6 +153,46 @@ function syncGogdlConfig(): void {
     const mountDir = join(relicMountPath, target)
     symlinkStoreFiles(gogdlConfigPath, mountDir)
   }
+}
+
+function md5File(filePath: string): string {
+  const content = readFileSync(filePath)
+  return createHash('md5').update(content).digest('hex')
+}
+
+export function syncMountBin(): void {
+  const sourceDir = join(publicDir, 'bin', 'x64', 'win32')
+  const targetDir = join(relicMountPath, 'bin')
+
+  if (!existsSync(sourceDir)) {
+    logWarning(`syncMountBin: source not found: ${sourceDir}`, LOG_PREFIX)
+    return
+  }
+
+  mkdirSync(targetDir, { recursive: true })
+
+  const files = readdirSync(sourceDir)
+  let copied = 0
+
+  for (const file of files) {
+    const sourcePath = join(sourceDir, file)
+    const targetPath = join(targetDir, file)
+
+    if (!statSync(sourcePath).isFile()) continue
+
+    const sourceHash = md5File(sourcePath)
+
+    if (existsSync(targetPath)) {
+      const targetHash = md5File(targetPath)
+      if (sourceHash === targetHash) continue
+    }
+
+    copyFileSync(sourcePath, targetPath)
+    logInfo(`syncMountBin: ${file} copiado`, LOG_PREFIX)
+    copied++
+  }
+
+  logInfo(`syncMountBin: ${files.length} ficheros, ${copied} copiados`, LOG_PREFIX)
 }
 
 export function windowify(gameInfo: GameInfo): void {

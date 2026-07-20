@@ -73,3 +73,8 @@ El objetivo es mantener trazabilidad de los cambios respecto al padre.
 | 2026-07-19 | `src/backend/relic/windowify.ts` | Fix legendary transform: ahora itera `Object.entries()` en vez de `Array.isArray()` (installed.json de legendary es object, no array) |
 | 2026-07-19 | `src/backend/relic/windowify.ts` | Eliminadas `copyGogAuth()` y `copyGogConfig()` — reemplazadas por `symlinkStoreFiles()` |
 | 2026-07-19 | `src/backend/relic/windowify.ts` | `STORE_CONFIGS` añadido campo `configDir` para symlinkear todos los ficheros de config antes de transformar installed.json |
+| 2026-07-20 | `src/backend/relic/windowify.ts` | `syncMountBin()` — al arrancar compara md5 de `public/bin/x64/win32/` contra `mount/bin/` y copia si falta o difiere |
+| 2026-07-20 | `src/backend/main.ts` | Llamada a `syncMountBin()` al arrancar tras `initLogger()` |
+| 2026-07-20 | `electron-builder.yml` | `linux.files` usa glob `build/bin/x64/win32/*` en vez de listar solo 2 exe (incluye los 6 exe en el AppImage) |
+| 2026-07-20 | `src/backend/relic/steam_shortcuts/add_game.ts` | Fix ruta GOG en .bat: `installPath` se transforma a `c:\games\<basename>` en vez de usar ruta Linux directamente |
+| 2026-07-20 | `src/backend/relic/steam_shortcuts/add_game.ts` | Eliminado guard `if (existsSync(batPath)) return` — el .bat se regenera siempre con el contenido correcto |

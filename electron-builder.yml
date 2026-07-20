@@ -29,5 +29,4 @@ linux:
     - AppImage
   files:
     - build/bin/${arch}/linux/*
-    - build/bin/x64/win32/GalaxyCommunication.exe
-    - build/bin/x64/win32/EpicGamesLauncher.exe
+    - build/bin/${arch}/win32/*

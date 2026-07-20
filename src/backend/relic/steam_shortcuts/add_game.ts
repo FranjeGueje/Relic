@@ -23,11 +23,6 @@ export function createRelicBat(
 ): string {
   const batPath = join(relicRunnerPath, `${gameName}.bat`)
 
-  if (existsSync(batPath)) {
-    logInfo(`${batPath} already exists`, LOG_PREFIX)
-    return batPath
-  }
-
   mkdirSync(relicRunnerPath, { recursive: true })
 
   const header = [
@@ -44,11 +39,13 @@ export function createRelicBat(
     case 'legendary':
       runnerCmd = `@legendary launch ${appName} %*`
       break
-    case 'gog':
+    case 'gog': {
+      const winPath = `c:\\games\\${basename(installPath)}`
       runnerCmd =
         `@gogdl --auth-config-path c:\\relic\\gog_store\\auth.json ` +
-        `launch --platform windows "${installPath}" ${appName} -- %*`
+        `launch --platform windows "${winPath}" ${appName} -- %*`
       break
+    }
     case 'nile':
       runnerCmd = `@nile launch ${appName} -- %*`
       break
