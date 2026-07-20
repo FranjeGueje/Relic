@@ -78,3 +78,7 @@ El objetivo es mantener trazabilidad de los cambios respecto al padre.
 | 2026-07-20 | `electron-builder.yml` | `linux.files` usa glob `build/bin/x64/win32/*` en vez de listar solo 2 exe (incluye los 6 exe en el AppImage) |
 | 2026-07-20 | `src/backend/relic/steam_shortcuts/add_game.ts` | Fix ruta GOG en .bat: `installPath` se transforma a `c:\games\<basename>` en vez de usar ruta Linux directamente |
 | 2026-07-20 | `src/backend/relic/steam_shortcuts/add_game.ts` | Eliminado guard `if (existsSync(batPath)) return` — el .bat se regenera siempre con el contenido correcto |
+| 2026-07-20 | `src/backend/relic/prefix.ts` | `preparePrefix(steamAppId)` — crea directorio `compatdata/{id}/pfx/drive_c` en Steam y symlink `mount/` y `games/` al prefijo |
+| 2026-07-20 | `src/backend/relic/game_events.ts` | Llamada a `preparePrefix(result.steamAppId)` con guard (solo si `addToSteam` tuvo éxito) |
+| 2026-07-20 | `src/backend/relic/game_events.ts` | `onGameUninstalled` borra symlink usando `installPath` del JSON store (no `gameInfo.install.install_path` que Legendary/GOG ya vaciaron). Usa `unlinkSync` directo en try/catch (no `existsSync` que sigue symlinks). |
+| 2026-07-20 | `src/backend/relic/windowify.ts` | `createGameSymlink` usa `basename(installPath)` en vez de `gameInfo.title` para el nombre del symlink |

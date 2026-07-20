@@ -103,7 +103,7 @@ function createGameSymlink(gameInfo: GameInfo): void {
     return
   }
 
-  const linkPath = join(relicGamesPath, gameInfo.title)
+  const linkPath = join(relicGamesPath, basename(installPath))
 
   try {
     if (existsSync(linkPath)) {

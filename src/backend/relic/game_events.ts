@@ -1,10 +1,13 @@
 import { existsSync, unlinkSync } from 'graceful-fs'
 import { Game } from 'common/types/game_manager'
 import { GameInfo } from 'common/types'
+import { basename, join } from 'path'
 import { libraryManagerMap } from 'backend/storeManagers'
+import { relicGamesPath } from 'backend/constants/paths'
 import { logError, logInfo } from 'backend/logger'
 import { addGameToSteam, createRelicBat, findShortcut, addShortcut, removeShortcut } from './steam_shortcuts'
 import { windowify } from './windowify'
+import { preparePrefix, prepareUmuPrefix } from './prefix'
 import { removeNonSteamGame } from 'backend/shortcuts/nonesteamgame/nonesteamgame'
 import type { AddGameToSteamResult, GameRunner } from './steam_shortcuts/types'
 
@@ -86,10 +89,6 @@ function createRunnerFile(
   }
 }
 
-function prepareUmuPrefix(gameInfo: GameInfo): void {
-  // TODO: Create prefix with umu-launcher
-}
-
 async function addToSteam(
   gameInfo: GameInfo,
   installPath: string,
@@ -143,6 +142,9 @@ export async function onGameInstalled(
   const result = await addToSteam(input.gameInfo, input.installPath, runnerFile.path)
 
   windowify(input.gameInfo)
+  if (result.success && result.steamAppId) {
+    preparePrefix(result.steamAppId)
+  }
   prepareUmuPrefix(input.gameInfo)
 
   await downloadGrids(input.gameInfo)
@@ -185,7 +187,16 @@ export async function onGameUninstalled(game: Game) {
     }
   }
 
+  if (known?.installPath) {
+    const linkPath = join(relicGamesPath, basename(known.installPath))
+    try {
+      unlinkSync(linkPath)
+      logInfo(`Deleted symlink ${linkPath}`, LOG_PREFIX)
+    } catch {}
+  }
+
   removeShortcut(appName)
   logInfo(`Removing ${gameInfo.title} from Steam shortcuts`, LOG_PREFIX)
+
   await removeNonSteamGame(game)
 }

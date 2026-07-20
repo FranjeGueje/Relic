@@ -113,6 +113,13 @@ Para ver el detalle completo de cada categoría, consultar:
 - Fix ruta en .bat: `installPath` se transforma a `c:\games\<basename>` en vez de usar ruta Linux directamente.
 - Eliminado guard `if (existsSync(batPath)) return` — el .bat se regenera siempre con el contenido correcto.
 
+#### Prefijos
+- Nuevo módulo `src/backend/relic/prefix.ts` con `preparePrefix(steamAppId)` y `prepareUmuPrefix()`.
+- `preparePrefix()` crea `compatdata/{id}/pfx/drive_c` en Steam y copia `mount/` y `games/` al prefijo.
+- `prepareUmuPrefix` movida desde `game_events.ts` (stub).
+- `onGameInstalled` llama a `preparePrefix()` solo si `addToSteam` tuvo éxito.
+- `onGameUninstalled` borra symlink usando `installPath` del JSON store. Usa `unlinkSync` directo (no `existsSync` que sigue symlinks y falla con enlaces rotos).
+
 #### Tests
 - 35 tests en módulos relic (steam_helpers, add_game, game_events, symlinks, windowify).
 - 8 tests en store managers (empty stdout handling).
