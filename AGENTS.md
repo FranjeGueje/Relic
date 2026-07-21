@@ -27,7 +27,7 @@ Todo el código debe orientarse a cuatro tareas:
 - Autenticación en tiendas.
 - Descarga de juegos.
 - Instalación y actualización.
-- Integración con Steam mediante un script externo.
+- Integración con Steam mediante los módulos `relic/`.
 
 Cualquier funcionalidad que no contribuya directamente a estas tareas debe eliminarse o rechazarse.
 
@@ -50,7 +50,7 @@ Relic debe permitir:
 - Reparar instalaciones.
 - Desinstalar juegos.
 - Detectar ejecutables.
-- Ejecutar un script externo tras la instalación.
+- Ejecutar los módulos `relic/` tras la instalación.
 - Abrir la carpeta del juego.
 - Abrir Steam.
 
@@ -76,11 +76,11 @@ Detectar ejecutable principal
 
 ↓
 
-Ejecutar script externo
+Ejecutar módulos `relic/`
 
 ↓
 
-El script añade el juego a Steam
+Los módulos añaden el juego a Steam
 
 ↓
 
@@ -94,9 +94,10 @@ Relic nunca ejecuta el juego.
 
 # Integración con Steam
 
-Toda la integración con Steam debe realizarse mediante un script externo.
+Toda la integración con Steam debe realizarse mediante los módulos
+`src/backend/relic/`, `src/frontend/relic/` y `src/common/relic/`.
 
-Relic únicamente proporciona al script la información necesaria.
+Relic (Heroic) únicamente proporciona a estos módulos la información necesaria.
 
 Por ejemplo:
 
@@ -122,7 +123,7 @@ Relic NO administra:
 - Compatibilidad
 - Variables de entorno
 
-Sin embargo, el script externo puede:
+Sin embargo, el módulo `relic/` puede:
 
 - añadir el juego a Steam
 - ejecutar umu-launcher
@@ -131,9 +132,9 @@ Sin embargo, el script externo puede:
 - realizar configuraciones necesarias
 - devolver un código de éxito o error
 
-Toda esa lógica pertenece exclusivamente al script.
+Toda esa lógica pertenece exclusivamente a los módulos `relic/`.
 
-Nunca implementar esa lógica dentro de Relic.
+Nunca implementar esa lógica dentro de Heroic.
 
 ---
 
@@ -182,7 +183,7 @@ Actualizar
 Desinstalar
 
 La integración con Steam ocurre automáticamente al finalizar la instalación
-mediante el script externo. No hay un botón "Añadir a Steam".
+mediante los módulos `relic/`. No hay un botón "Añadir a Steam".
 
 Abrir carpeta
 
@@ -213,7 +214,7 @@ Relic
 - detección del ejecutable
 - llamada al script
 
-Script externo
+Script (módulos `relic/`)
 
 - integración con Steam
 - creación del prefijo mediante umu-launcher
@@ -351,7 +352,7 @@ El usuario instala un juego desde Epic, GOG o Amazon.
 
 Relic lo descarga.
 
-Relic ejecuta el script.
+Relic ejecuta los módulos `relic/`.
 
 El juego aparece en Steam.
 
