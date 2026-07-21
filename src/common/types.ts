@@ -76,8 +76,6 @@ export type ExperimentalFeatures = {
 }
 
 export interface AppSettings extends GameSettings {
-  addDesktopShortcuts: boolean
-  addSteamShortcuts: boolean
   altGogdlBin: string
   altCometBin: string
   altLegendaryBin: string

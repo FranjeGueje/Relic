@@ -33,8 +33,6 @@ export interface Game {
   ) => void
   install: (args: InstallArgs) => Promise<InstallResult>
   isNative: () => boolean
-  addShortcuts: (fromMenu?: boolean) => Promise<void>
-  removeShortcuts: () => Promise<void>
   moveInstall: (newInstallPath: string) => Promise<InstallResult>
   repair: () => Promise<ExecResult>
   syncSaves: (

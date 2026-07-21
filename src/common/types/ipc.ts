@@ -65,8 +65,6 @@ interface SyncIPCFunctions {
   clipboardWriteText: (text: string) => void
   processShortcut: (combination: string) => void
   addNewApp: (args: GameInfo) => void
-  addShortcut: (appName: string, runner: Runner, fromMenu: boolean) => void
-  removeShortcut: (appName: string, runner: Runner) => void
   removeFromDMQueue: (appName: string) => void
   clearDMFinished: () => void
   abort: (id: string) => void
@@ -201,8 +199,6 @@ interface AsyncIPCFunctions {
   clipboardReadText: () => string
   isNative: (args: { appName: string; runner: Runner }) => boolean
   getLogContent: (args: GetLogFileArgs) => string
-  shortcutsExists: (appName: string, runner: Runner) => boolean
-
   getKnownFixes: (appName: string, runner: Runner) => KnowFixesInfo | null
   getGameMetadataOverride: (appName: string) => Promise<{
     title?: string

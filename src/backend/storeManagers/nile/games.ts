@@ -32,10 +32,6 @@ import {
   sendProgressUpdate
 } from 'backend/utils'
 import { GlobalConfig } from 'backend/config'
-import {
-  addShortcuts as addShortcutsUtil,
-  removeShortcuts as removeShortcutsUtil
-} from '../../shortcuts/shortcuts/shortcuts'
 import { onGameInstalled, onGameImported, onGameMoved, onGameUninstalled } from 'backend/relic/game_events'
 import { sendFrontendMessage } from '../../ipc'
 import setup from './setup'
@@ -128,7 +124,6 @@ export default class NileGameManager implements Game {
 
     try {
       onGameImported(this)
-      this.addShortcuts()
       libraryManagerMap['nile'].installState(this.id, true)
     } catch (error) {
       logError(['Failed to import', `${this.id}:`, error], LogPrefix.Nile)
@@ -250,7 +245,6 @@ export default class NileGameManager implements Game {
       return { status: 'error', error: res.error }
     }
     onGameInstalled(this)
-    this.addShortcuts()
     libraryManagerMap['nile'].installState(this.id, true)
     const metadata = libraryManagerMap['nile'].getInstallMetadata(this.id)
 
@@ -268,19 +262,6 @@ export default class NileGameManager implements Game {
    * @async
    * @public
    */
-  async addShortcuts(fromMenu?: boolean) {
-    return addShortcutsUtil(this, fromMenu)
-  }
-
-  /**
-   * Removes a desktop shortcut from $HOME/Desktop and to $HOME/.local/share/applications
-   * @async
-   * @public
-   */
-  async removeShortcuts() {
-    return removeShortcutsUtil(this)
-  }
-
   async moveInstall(newInstallPath: string): Promise<InstallResult> {
     const gameInfo = this.getGameInfo()
     logInfo(`Moving ${gameInfo.title} to ${newInstallPath}`, LogPrefix.Nile)
@@ -357,7 +338,6 @@ export default class NileGameManager implements Game {
         LogPrefix.Nile
       )
     } else if (!res.abort) {
-      await removeShortcutsUtil(this)
       await onGameUninstalled(this)
       libraryManagerMap['nile'].installState(this.id, false)
     }

@@ -11,10 +11,6 @@ import { logInfo, LogPrefix, logWarning } from 'backend/logger'
 import { dirname } from 'path'
 import { existsSync, rmSync } from 'graceful-fs'
 import i18next from 'i18next'
-import {
-  addShortcuts as addShortcutsUtil,
-  removeShortcuts as removeShortcutsUtil
-} from '../../shortcuts/shortcuts/shortcuts'
 import { notify } from '../../dialog/dialog'
 import { Game, InstallResult, RemoveArgs } from 'common/types/game_manager'
 import { removePrefix } from 'backend/utils/uninstaller'
@@ -44,14 +40,6 @@ export default class SideloadGame implements Game {
       GameConfig.get(this.id).config ||
       (await GameConfig.get(this.id).getSettings())
     )
-  }
-
-  async addShortcuts(fromMenu?: boolean): Promise<void> {
-    return addShortcutsUtil(this, fromMenu)
-  }
-
-  async removeShortcuts(): Promise<void> {
-    return removeShortcutsUtil(this)
   }
 
   async isGameAvailable(): Promise<boolean> {
@@ -110,7 +98,6 @@ export default class SideloadGame implements Game {
 
     notify({ title, body: i18next.t('notify.uninstalled') })
 
-    removeShortcutsUtil(this)
     removeRecentGame(this.id)
     onGameUninstalled(this)
 

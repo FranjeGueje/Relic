@@ -33,10 +33,6 @@ import {
   logDebug
 } from 'backend/logger'
 
-import {
-  addShortcuts as addShortcutsUtil,
-  removeShortcuts as removeShortcutsUtil
-} from '../../shortcuts/shortcuts/shortcuts'
 import { onGameUninstalled } from 'backend/relic/game_events'
 import shlex from 'shlex'
 import { ZoomInstallPlatform, ZoomDownloadFile } from 'common/types/zoom'
@@ -505,14 +501,6 @@ export default class ZoomGame implements Game {
     return false
   }
 
-  async addShortcuts(fromMenu?: boolean) {
-    return addShortcutsUtil(this, fromMenu)
-  }
-
-  async removeShortcuts() {
-    return removeShortcutsUtil(this)
-  }
-
   async moveInstall(): Promise<
     { status: 'done' } | { status: 'error'; error: string }
   > {
@@ -554,7 +542,6 @@ export default class ZoomGame implements Game {
     const gameInfo = this.getGameInfo()
     gameInfo.is_installed = false
     gameInfo.install = { is_dlc: false }
-    await removeShortcutsUtil(this)
     await onGameUninstalled(this)
     sendFrontendMessage('pushGameToLibrary', gameInfo)
     return { stdout: 'Uninstalled', stderr: '' }

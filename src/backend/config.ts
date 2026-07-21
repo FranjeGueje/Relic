@@ -223,8 +223,6 @@ class GlobalConfigV0 extends GlobalConfig {
     const settings: Partial<AppSettings> = {
       checkUpdatesInterval: 10,
       enableUpdates: false,
-      addDesktopShortcuts: false,
-      addSteamShortcuts: false,
       checkForUpdatesOnStartup: true,
       autoUpdateGames: true,
       defaultInstallPath: relicInstallPath,

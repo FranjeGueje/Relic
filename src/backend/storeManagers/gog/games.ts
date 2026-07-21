@@ -43,10 +43,6 @@ import {
 } from 'backend/logger'
 import { GOGUser } from './user'
 
-import {
-  addShortcuts as addShortcutsUtil,
-  removeShortcuts as removeShortcutsUtil
-} from '../../shortcuts/shortcuts/shortcuts'
 import setup from './setup'
 import { onGameInstalled, onGameImported, onGameMoved, onGameUninstalled } from 'backend/relic/game_events'
 import shlex from 'shlex'
@@ -207,7 +203,6 @@ export default class GOGGame implements Game {
         folderPath
       )
       onGameImported(this)
-      this.addShortcuts()
     } catch (error) {
       logError([`Failed to import ${this.id}:`, error], LogPrefix.Gog)
     }
@@ -451,7 +446,6 @@ export default class GOGGame implements Game {
       }
     }
     onGameInstalled(this, install_path)
-    this.addShortcuts()
     return { status: 'done' }
   }
 
@@ -462,14 +456,6 @@ export default class GOGGame implements Game {
     }
 
     return false
-  }
-
-  async addShortcuts(fromMenu?: boolean) {
-    return addShortcutsUtil(this, fromMenu)
-  }
-
-  async removeShortcuts() {
-    return removeShortcutsUtil(this)
   }
 
   async moveInstall(
@@ -635,7 +621,6 @@ export default class GOGGame implements Game {
     const gameInfo = this.getGameInfo()
     gameInfo.is_installed = false
     gameInfo.install = { is_dlc: false }
-    await removeShortcutsUtil(this)
     syncStore.delete(this.id)
     await onGameUninstalled(this)
     sendFrontendMessage('pushGameToLibrary', gameInfo)

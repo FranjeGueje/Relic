@@ -1148,7 +1148,6 @@ addHandler('getKnownFixes', (e, appName, runner) =>
  * INSERT OTHER IPC HANDLERS HERE
  */
 import './logger/ipc_handler'
-import './shortcuts/ipc_handler'
 import './downloadmanager/ipc_handler'
 import './utils/ipc_handler'
 import './recent_games/ipc_handler'

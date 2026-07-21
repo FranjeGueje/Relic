@@ -2,7 +2,6 @@ import { ExecResult, GameInfo } from 'common/types'
 import { dirname, join } from 'path'
 import { libraryStore } from './electronStores'
 import { logWarning } from 'backend/logger'
-import { addShortcuts } from 'backend/shortcuts/shortcuts/shortcuts'
 import { onGameImported } from 'backend/relic/game_events'
 import { sendFrontendMessage } from 'backend/ipc'
 import { LibraryManager } from 'common/types/game_manager'
@@ -57,7 +56,6 @@ export default class SideloadLibraryManager implements LibraryManager {
     } else {
       current.push(game)
       onGameImported(new SideloadGame(app_name))
-      addShortcuts(new SideloadGame(app_name))
     }
 
     libraryStore.set('games', current)

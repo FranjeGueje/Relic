@@ -29,10 +29,6 @@ import {
   createGameLogWriter
 } from 'backend/logger'
 
-import {
-  addShortcuts as addShortcutsUtil,
-  removeShortcuts as removeShortcutsUtil
-} from '../../shortcuts/shortcuts/shortcuts'
 import { join } from 'path'
 import { gameInfoStore } from './electronStores'
 import { onGameInstalled, onGameImported, onGameMoved, onGameUninstalled } from 'backend/relic/game_events'
@@ -541,19 +537,6 @@ export default class LegendaryGame implements Game {
    * @async
    * @public
    */
-  async addShortcuts(fromMenu?: boolean) {
-    return addShortcutsUtil(this, fromMenu)
-  }
-
-  /**
-   * Removes a desktop shortcut from $HOME/Desktop and to $HOME/.local/share/applications
-   * @async
-   * @public
-   */
-  async removeShortcuts() {
-    return removeShortcutsUtil(this)
-  }
-
   /**
    * Install game.
    * Does NOT check for online connectivity.
@@ -639,7 +622,6 @@ export default class LegendaryGame implements Game {
       return { status: 'error', error: res.error }
     }
     onGameInstalled(this)
-    this.addShortcuts()
 
     return { status: 'done' }
   }
@@ -717,7 +699,6 @@ export default class LegendaryGame implements Game {
       )
     } else if (!res.abort) {
       libraryManagerMap['legendary'].installState(this.appName, false)
-      await removeShortcutsUtil(this)
       await onGameUninstalled(this)
     }
     sendFrontendMessage('refreshLibrary', 'legendary')
@@ -783,7 +764,6 @@ export default class LegendaryGame implements Game {
       logWriters: [logWriter]
     })
     onGameImported(this)
-    this.addShortcuts()
     const errorMatch = res.stderr.match(/^.*ERROR:.*$/gm)?.join('') ?? ''
     res.error = (res.error ?? '') + errorMatch
     if (res.error) {
