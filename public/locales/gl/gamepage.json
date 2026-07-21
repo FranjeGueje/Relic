@@ -24,9 +24,6 @@
       "button": "Seleccionar",
       "image": "Seleccionar imaxe"
     },
-    "sideload": {
-      "exe": "Seleccionar executable"
-    },
     "stopInstall": {
       "keepInstalling": "Continuar coa instalación",
       "message": "Desexa MANTER os ficheiros descargados?",
@@ -86,9 +83,6 @@
     "remove_from_recent": "Eliminar de recentes",
     "run-exe-first": "Executar instalador primeiro",
     "running-setup": "Executando configuración",
-    "sideload": {
-      "edit": "Editar aplicación/xogo"
-    },
     "unhide_game": "Amosar xogo",
     "uninstall": "Desinstalar",
     "update": "Actualizar",
@@ -228,29 +222,6 @@
     "title": "Seleccione os compoñentes a instalar"
   },
   "setting": {},
-  "sideload": {
-    "field": {
-      "title": "Título"
-    },
-    "info": {
-      "exe": "Seleccionar Executabel",
-      "image": "Imaxe da aplicación/xogo",
-      "title": "Título da aplicación/xogo",
-      "broser": "URL do navegador",
-      "fullscreen": "Iniciar a pantalla completa (F11 para saír)",
-      "useragent": "Axente de usuario personalizado"
-    },
-    "placeholder": {
-      "image": "Inserta a URL dunha imaxe ou selecciona unha do teu ordenador",
-      "title": "Engade un título ao teu xogo/aplicación",
-      "url": "Pega aquí o URL do xogo",
-      "useragent": "Escribe aquí un axente de usuario personalizado que se usará nesta aplicación/xogo de navegador"
-    },
-    "import-hint": {
-      "content": "NON usar esta función para iso.<br />No seu lugar, <3>inicia sesión</3> na tenda, busca o xogo na túa biblioteca, abre o diálogo de instalación, e fai clic no botón de &quot;Importar Xogo&quot;",
-      "title": "Importante! Estás engadindo un xogo de Epic/GOG/Amazon? Fai clic aquí!"
-    }
-  },
   "specs": {
     "minimum": "Mínimo",
     "recommended": "Recomendado"

@@ -35,9 +35,6 @@
       "body": "Please select a launch option for this game (it can be changed later on the game settings):",
       "title": "Select Launch Option ({{seconds}}s)"
     },
-    "sideload": {
-      "exe": "Select Executable"
-    },
     "stopInstall": {
       "keepInstalling": "Keep Installing",
       "message": "Do you wish to KEEP downloaded files?",
@@ -91,9 +88,6 @@
     "remove_from_recent": "Remove From Recent",
     "run-exe-first": "Run Installer First",
     "running-setup": "Running Setup",
-    "sideload": {
-      "edit": "Edit App/Game"
-    },
     "unhide_game": "Unhide Game",
     "uninstall": "Uninstall",
     "update": "Update"
@@ -242,33 +236,6 @@
     "title": "Select components to Install"
   },
   "setting": {},
-  "sideload": {
-    "field": {
-      "title": "Title"
-    },
-    "images": {
-      "summary": "Images"
-    },
-    "import-hint": {
-      "content": "Do NOT use this feature for that.<br />Instead, <3>log into</3> the store, look for the game in your library, open the installation dialog, and click the &quot;Import Game&quot; button",
-      "title": "Important! Are you adding a game from Epic/GOG/Amazon? Click here!"
-    },
-    "info": {
-      "broser": "BrowserURL",
-      "cover-hint": "Cover/Hero Art (click on the image to search on SteamGridDB)",
-      "exe": "Select Executable",
-      "fullscreen": "Launch Fullscreen (F11 to exit)",
-      "image-hint": "Square Art (click on the image to search on SteamGridDB)",
-      "title": "Game/App Title",
-      "useragent": "Custom User Agent"
-    },
-    "placeholder": {
-      "image": "Paste an URL of an Image or select one from your computer",
-      "title": "Add a title to your Game/App",
-      "url": "Paste the Game URL here",
-      "useragent": "Write a custom user agent here to be used on this browser app/game"
-    }
-  },
   "specs": {
     "minimum": "Minimum",
     "recommended": "Recommended"

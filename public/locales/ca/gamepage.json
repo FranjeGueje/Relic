@@ -24,9 +24,6 @@
       "button": "Tria",
       "image": "Tria una imatge"
     },
-    "sideload": {
-      "exe": "Selecciona l'executable"
-    },
     "stopInstall": {
       "keepInstalling": "Continua amb la instal·lació",
       "message": "Vols MANTENIR els fitxers baixats?",
@@ -86,9 +83,6 @@
     "remove_from_recent": "Suprimeix dels recents",
     "run-exe-first": "Executa primer l'instal·lador",
     "running-setup": "S'executa la configuració",
-    "sideload": {
-      "edit": "Edita el joc o aplicació"
-    },
     "unhide_game": "Torna a mostrar el joc",
     "uninstall": "Desinstal·la",
     "update": "Actualitza",
@@ -230,34 +224,6 @@
     "title": "Selecciona els components a instal·lar"
   },
   "setting": {},
-  "sideload": {
-    "field": {
-      "title": "Títol"
-    },
-    "info": {
-      "exe": "Selecciona l'executable",
-      "image": "Imatge de l'aplicació",
-      "title": "Títol del joc o aplicació",
-      "broser": "URL del navegador",
-      "useragent": "Agent d'usuari personalitzat",
-      "fullscreen": "Executa a pantalla completa (F11 per a sortir)",
-      "cover-hint": "Art de la caràtula/principal (fes clic en la imatge per a cercar al SteamGridDB)",
-      "image-hint": "Art quadrada (fes clic en la imatge per a cercar al SteamGridDB)"
-    },
-    "placeholder": {
-      "image": "Enganxa l'URL d'una imatge o selecciona'n una del teu ordinador",
-      "title": "Afegeix un títol al joc o aplicació",
-      "url": "Enganxa l'URL del joc aquí",
-      "useragent": "Escriviu aquí un agent d'usuari personalitzat per a fer-lo servir en aquesta aplicació/joc de navegador."
-    },
-    "import-hint": {
-      "title": "Important! Si vols afegir un joc d'Epic/GOG/Amazon, fes clic aquí.",
-      "content": "No facis servir aquesta funció per a això.<br />En el seu lloc, <3>inicia la sessió</3> a la botiga, cerca el joc a la teva biblioteca, obre el diàleg d'instal·lació i fes clic al botó &quot;Importa un joc&quot;."
-    },
-    "images": {
-      "summary": "Imatges"
-    }
-  },
   "specs": {
     "minimum": "Mínim",
     "recommended": "Recomanat"

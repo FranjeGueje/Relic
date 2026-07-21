@@ -120,3 +120,49 @@ El objetivo es mantener trazabilidad de los cambios respecto al padre.
 | 2026-07-21 | `public/bin/x64/linux/innoextract` | **Eliminado** — el script llevaba su propio innoextract embebido como base64. |
 | 2026-07-21 | `src/backend/constants/paths.ts` | **Eliminado** `innoextractPath` — ya no se necesita el binario externo. |
 | 2026-07-21 | `electron-builder.yml` | Añadido `build/bin/zoom/*` a `linux.files` para incluir `zoom-platform.sh` en el AppImage. |
+| 2026-07-22 | `package.json` | Script `start`: añadido `node node_modules/electron/install.js` antes de `electron-vite dev` — soluciona `Error: Electron uninstall` cuando el binario no se descarga en `pnpm install` (p.ej. reinstalaciones sin caché). |
+| 2026-07-22 | `src/common/types.ts` | Runner `'sideload'` eliminado del type union (line 22) y `GameInfo.runner` (line 128) |
+| 2026-07-22 | `src/common/types/electron_store.ts` | Key `sideloadedStore` eliminada del schema |
+| 2026-07-22 | `src/common/types/ipc.ts` | `addNewApp` eliminado de `FrontendMessages` |
+| 2026-07-22 | `src/common/utils.ts` | `sideload: undefined` eliminado de `storeMap` |
+| 2026-07-22 | `src/frontend/types.ts` | `'sideload'` eliminado de `Category`, `sideloadedLibrary` de `ContextType`, `sideload` de `StoresFilters`, `sideloaded` del status interface |
+| 2026-07-22 | `src/backend/relic/steam_shortcuts/types.ts` | `'sideload'` eliminado de `GameRunner` |
+| 2026-07-22 | `src/backend/storeManagers/index.ts` | Import de `SideloadLibraryManager` y entrada `sideload` de `libraryManagerMap` eliminados |
+| 2026-07-22 | `src/backend/main.ts` | Handler IPC `addNewApp` eliminado |
+| 2026-07-22 | `src/backend/logger/constants.ts` | `LogPrefix.Sideload` y entrada en `RunnerToLogPrefixMap` eliminados |
+| 2026-07-22 | `src/backend/relic/windowify.ts` | Entrada `sideload` de `STORE_CONFIGS` eliminada |
+| 2026-07-22 | `src/backend/relic/umu/store.ts` | `sideload: undefined` de `umuStoreMap` eliminado |
+| 2026-07-22 | `src/preload/api/library.ts` | Export `addNewApp` eliminado |
+| 2026-07-22 | `src/frontend/helpers/electronStores.ts` | Instancia `sideloadLibrary` y su export eliminados |
+| 2026-07-22 | `src/frontend/helpers/library.ts` | `sideloadedCategories` eliminado |
+| 2026-07-22 | `src/frontend/state/ContextProvider.tsx` | `sideloadedLibrary: []` del default context eliminado |
+| 2026-07-22 | `src/frontend/state/GlobalState.tsx` | Import `sideloadLibrary`, campo `sideloadedLibrary`, lecturas/guardas sideload eliminados |
+| 2026-07-22 | `src/frontend/screens/Library/Library/index.tsx` | `sideloadedCategories` import, `sideloadedLibrary` destructure, filtro/merge sideload eliminados |
+| 2026-07-22 | `src/frontend/screens/Library/Library/LibraryContext.tsx` | `sideload: true` de `initialContext` eliminado |
+| 2026-07-22 | `src/frontend/screens/Library/LibraryHeader/index.tsx` | Check `runner !== 'sideload'` en filtro DLC eliminado |
+| 2026-07-22 | `src/frontend/screens/Library/components/GameCard/index.tsx` | `isSideloaded` variable y guards eliminados |
+| 2026-07-22 | `src/frontend/screens/Library/components/GamesList/index.tsx` | Guards `runner !== 'sideload'` eliminados |
+| 2026-07-22 | `src/frontend/screens/Library/components/RecentlyPlayed/index.tsx` | `sideloadedLibrary` merge eliminado |
+| 2026-07-22 | `src/frontend/screens/Game/GameContext.tsx` | `sideloaded: false` del default status eliminado |
+| 2026-07-22 | `src/frontend/screens/Game/GamePage/index.tsx` | `isSideloaded` variable y guards `runner !== 'sideload'` eliminados |
+| 2026-07-22 | `src/frontend/screens/Game/GamePage/InstalledInfo.tsx` | `isSideloaded` variable y 3 condicionales eliminados |
+| 2026-07-22 | `src/frontend/screens/Game/GamePage/DownloadSizeInfo.tsx` | Early return `runner === 'sideload'` eliminado |
+| 2026-07-22 | `src/frontend/screens/Game/GamePage/Description.tsx` | Guard `runner !== 'sideload'` y variable `runner` eliminados |
+| 2026-07-22 | `src/frontend/screens/Game/GamePage/Developer.tsx` | Early return `runner === 'sideload'` eliminado |
+| 2026-07-22 | `src/frontend/screens/Game/GameSubMenu/index.tsx` | `isSideloaded` variable y 4 condicionales eliminados |
+| 2026-07-22 | `src/frontend/screens/ConsoleMode/index.tsx` | Sideload references en context, merge, filters, guards eliminados |
+| 2026-07-22 | `src/frontend/screens/Game/InstallOverlay/index.tsx` | `isSideload` variable y condición simplificada |
+| 2026-07-22 | `src/frontend/screens/DownloadManager/DownloadManagerItem/index.tsx` | Guard `newInfo.runner !== 'sideload'` eliminado |
+| 2026-07-22 | `src/frontend/screens/Settings/components/AlternativeExe.tsx` | `runner === 'sideload'` del early return simplificado |
+| 2026-07-22 | `src/frontend/components/UI/LibraryFilters/index.tsx` | Sideload entries en RunnerToStore, setStoreOnly, resetFilters, render eliminados |
+| 2026-07-22 | `src/frontend/components/UI/LibrarySearchBar/index.tsx` | `sideloadedLibrary` merge eliminado |
+| 2026-07-22 | `src/frontend/components/UI/UninstallModal/index.tsx` | Guard navegación sideload eliminado |
+| 2026-07-22 | `src/frontend/hooks/hasStatus.ts` | Default `runner` cambiado de `'sideload'` a `'legendary'` |
+| 2026-07-22 | `src/frontend/hooks/constants.ts` | Ternario `runner === 'sideload'` simplificado |
+| 2026-07-22 | `src/frontend/screens/Library/LibraryHeader/index.css` | Clase `.sideloadGameButton` y hover/focus styles eliminados |
+| 2026-07-22 | `src/frontend/screens/Game/InstallModal/index.scss` | Clases `.sideloadForm` y `.sideloadImportHint` eliminadas |
+| 2026-07-22 | `public/locales/*/gamepage.json` | Bloque `sideload` completo eliminado de 51 archivos |
+| 2026-07-22 | `public/locales/{ga,gl,lt,tr}/translation.json` | `console.filter.sideload` eliminado (4 archivos) |
+| 2026-07-22 | `src/backend/storeManagers/sideload/` | Directorio eliminado (3 archivos: `electronStores.ts`, `library.ts`, `games.ts`) |
+| 2026-07-22 | `src/frontend/components/UI/EditGameDialog/` | Directorio eliminado (2 archivos: `index.tsx`, `index.css`) |
+| 2026-07-22 | `src/frontend/screens/Library/components/EmptyLibrary/` | `index.css` eliminado (componente ya eliminado en Fase 3) |

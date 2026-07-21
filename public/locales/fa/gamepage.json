@@ -24,9 +24,6 @@
       "button": "انتخاب",
       "image": ""
     },
-    "sideload": {
-      "exe": "انتخاب فایل احرایی"
-    },
     "stopInstall": {
       "keepInstalling": "ادامه به نصب",
       "message": "آیا مایل هستید فایلهای دانلود شده را نگه دارید؟",
@@ -85,9 +82,6 @@
     "remove_from_recent": "حذف از اخیر",
     "run-exe-first": "اجرای اول نصاب",
     "running-setup": "در حال اجرای ستاپ",
-    "sideload": {
-      "edit": "ویرایش نرم افزار/بازی"
-    },
     "unhide_game": "نشان دادن بازی",
     "uninstall": "حذف",
     "update": "بهروزرسانی",
@@ -206,29 +200,6 @@
     "title": "انتخاب محتواها برای نصب"
   },
   "setting": {},
-  "sideload": {
-    "field": {
-      "title": "عنوان"
-    },
-    "info": {
-      "exe": "انتخاب فایل اجرایی",
-      "image": "App Image",
-      "title": "عنوان بازی/نرم افزار",
-      "broser": "BrowserURL",
-      "useragent": "",
-      "fullscreen": ""
-    },
-    "placeholder": {
-      "image": "آدرس ایمیج را اینجا درج کنید",
-      "title": "افزودن عنوان به بازی/نرم افزار شما",
-      "url": "آدرس بازی را اینجا قرار دهید",
-      "useragent": ""
-    },
-    "import-hint": {
-      "content": "",
-      "title": ""
-    }
-  },
   "specs": {
     "minimum": "حداقل",
     "recommended": "پیشنهادی"

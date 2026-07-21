@@ -24,9 +24,6 @@
       "button": "Auswählen",
       "image": "Bild auswählen"
     },
-    "sideload": {
-      "exe": "Ausführbare Datei auswählen"
-    },
     "stopInstall": {
       "keepInstalling": "Installation fortsetzen",
       "message": "Möchtest du die heruntergeladenen Dateien BEHALTEN?",
@@ -86,9 +83,6 @@
     "remove_from_recent": "Aus „Zuletzt gespielte Spiele“ entfernen",
     "run-exe-first": "Zuerst Installationsprogramm ausführen",
     "running-setup": "Setup ausführen",
-    "sideload": {
-      "edit": "Anwendung/Spiel bearbeiten"
-    },
     "unhide_game": "Spiel einblenden",
     "uninstall": "Deinstallieren",
     "update": "Aktualisieren",
@@ -230,34 +224,6 @@
     "title": "Zu installierende Komponenten auswählen"
   },
   "setting": {},
-  "sideload": {
-    "field": {
-      "title": "Titel"
-    },
-    "info": {
-      "exe": "Ausführbare Datei auswählen",
-      "image": "App-Bild",
-      "title": "Spiele-/App-Titel",
-      "broser": "Browser-URL",
-      "fullscreen": "Im Vollbild starten (F11 zum Beenden)",
-      "useragent": "Benutzerdefinierter Agent",
-      "cover-hint": "Cover-Art (Klicke auf das Bild, um auf SteamGridDB zu suchen)",
-      "image-hint": "Quadratisches Symbol (Klicke auf das Bild, um in SteamGridDB zu suchen)"
-    },
-    "placeholder": {
-      "image": "Hier die URL eines Bildes einfügen oder eines auf deinem Computer auswählen",
-      "title": "Einen Titel zum Spiel / zur Anwendung hinzufügen",
-      "url": "Hier die URL des Spiels einfügen",
-      "useragent": "Schreibe hier einen eigenen User-Agent, der für diese Browser-Anwendung/dieses Spiel verwendet werden soll"
-    },
-    "import-hint": {
-      "title": "Wichtig! Fügst du ein Spiel von Epic/GOG/Amazon hinzu? Klicke hier!",
-      "content": "Verwende diese Funktion NICHT dafür.<br />Logge dich stattdessen im Store ein, suche das Spiel in deiner Bibliothek, öffne den Installationsdialog und klicke auf die Schaltfläche &quot;Spiel importieren&quot;"
-    },
-    "images": {
-      "summary": "Bilder"
-    }
-  },
   "specs": {
     "minimum": "Minimum",
     "recommended": "Empfohlen"

@@ -24,9 +24,6 @@
       "button": "Seleccionar",
       "image": "Seleccionar Imagen"
     },
-    "sideload": {
-      "exe": "Seleccionar ejecutable"
-    },
     "stopInstall": {
       "keepInstalling": "Continuar con la instalación",
       "message": "¿Deseas MANTENER los archivos descargados?",
@@ -86,9 +83,6 @@
     "remove_from_recent": "Eliminar de recientes",
     "run-exe-first": "Ejecutar el instalador primero",
     "running-setup": "Ejecutando configuración",
-    "sideload": {
-      "edit": "Editar aplicación/juego"
-    },
     "unhide_game": "Mostrar juego",
     "uninstall": "Desinstalar",
     "update": "Actualizar",
@@ -230,32 +224,6 @@
     "title": "Elige que componentes quieres instalar"
   },
   "setting": {},
-  "sideload": {
-    "field": {
-      "title": "Título"
-    },
-    "info": {
-      "exe": "Seleccionar ejecutable",
-      "image": "Imagen de la aplicación/juego",
-      "title": "Título de la aplicación/juego",
-      "broser": "Enlace web del navegador",
-      "fullscreen": "Iniciar a pantalla completa (F11 para salir)",
-      "useragent": "Agente de usuario personalizado"
-    },
-    "placeholder": {
-      "image": "Inserta el enlace web de una imagen or selecciona una de la computadora",
-      "title": "Añade un título a tu juego/aplicación",
-      "url": "Pega el enlace web del juego aquí",
-      "useragent": "Escriba aquí un agente de usuario personalizado que se utilizará en esta aplicación/juego del navegador"
-    },
-    "import-hint": {
-      "content": "NO utilizar esta función para eso.<br />En vez, <3>inicia sesión</3> en la tienda, busca el juego en tu librería, abre el diálogo de instalación, y presiona en el botón de &quot;Importar Juego&quot;",
-      "title": "¡Importante! ¿Estás añadiendo un juego de Epic/GOG/Amazon? ¡Presiona aquí!"
-    },
-    "images": {
-      "summary": "Imágenes"
-    }
-  },
   "specs": {
     "minimum": "Mínimo",
     "recommended": "Recomendado"

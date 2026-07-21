@@ -24,9 +24,6 @@
       "button": "Selecionar",
       "image": "Selecionar Imagem"
     },
-    "sideload": {
-      "exe": "Selecionar executável"
-    },
     "stopInstall": {
       "keepInstalling": "Continuar a Instalação",
       "message": "Deseja MANTER os arquivos baixados?",
@@ -86,9 +83,6 @@
     "remove_from_recent": "Remover dos recentes",
     "run-exe-first": "Executar instalador antes",
     "running-setup": "Executando Setup",
-    "sideload": {
-      "edit": "Editar App/Jogo"
-    },
     "unhide_game": "Reexibir jogo",
     "uninstall": "Desinstalar",
     "update": "Atualizar",
@@ -230,34 +224,6 @@
     "title": "Selecione os componentes para instalar"
   },
   "setting": {},
-  "sideload": {
-    "field": {
-      "title": "Título"
-    },
-    "info": {
-      "exe": "Selecionar executável",
-      "image": "Imagem do Aplicativo",
-      "title": "Título do jogo/app",
-      "broser": "URL do navegador",
-      "useragent": "\"User Agent\" personalizado",
-      "fullscreen": "Inicie em tela cheia (F11 para sair)",
-      "image-hint": "Arte quadrada (clique na imagem para buscar no SteamGridDB)",
-      "cover-hint": "Arte da capa/herói (clique na imagem para buscar no SteamGridDB)"
-    },
-    "placeholder": {
-      "image": "Cole uma URL de uma imagem ou selecione uma do seu computador",
-      "title": "Adicione um título ao seu jogo/app",
-      "url": "Cole a URL do jogo aqui",
-      "useragent": "Escreva aqui um \"user agent\" personalizado para ser usado neste app/jogo de navegador"
-    },
-    "import-hint": {
-      "title": "Importante! Você está adicionando um jogo da Epic/GOG/Amazon? Clique aqui!",
-      "content": "NÃO utilize essa função para isso.<br />Em vez disso, <3>faça o login</3> na loja, procure pelo jogo na sua biblioteca, abra o diálogo de instalação, e clique no botão &quot;Importar Jogo&quot;"
-    },
-    "images": {
-      "summary": "Imagens"
-    }
-  },
   "specs": {
     "minimum": "Mínimo",
     "recommended": "Recomendado"

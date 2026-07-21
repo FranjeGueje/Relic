@@ -24,9 +24,6 @@
       "button": "Selecione",
       "image": "Selecionar Imagem"
     },
-    "sideload": {
-      "exe": "Selecionar o Executável"
-    },
     "stopInstall": {
       "keepInstalling": "Continuar Instalação",
       "message": "Pretende MANTER os ficheiros transferidos?",
@@ -86,9 +83,6 @@
     "remove_from_recent": "Remover dos Recentes",
     "run-exe-first": "Execute Primeiro o Instalador",
     "running-setup": "A Executar Configuração",
-    "sideload": {
-      "edit": "Editar Aplicação/Jogo"
-    },
     "unhide_game": "Exibir Jogo",
     "uninstall": "Desinstalar",
     "update": "Atualizar",
@@ -229,34 +223,6 @@
     "title": "Selecione os componentes a Instalar"
   },
   "setting": {},
-  "sideload": {
-    "field": {
-      "title": "Título"
-    },
-    "info": {
-      "exe": "Selecionar Executável",
-      "image": "Imagem da Aplicação",
-      "title": "Titulo do Jogo/Aplicação",
-      "broser": "URL do Browser",
-      "useragent": "Agente de Utilizador Personalizado",
-      "fullscreen": "Iniciar em Ecrã Inteiro (F11 para sair)",
-      "cover-hint": "Arte de Capa/Herói (clique na imagem para pesquisar em SteamGridDB)",
-      "image-hint": "Arte quadrada (clique na imagem para pesquisar em SteamGridDB)"
-    },
-    "placeholder": {
-      "image": "Cole um URL de uma Imagem aqui ou selecione a partir do seu computador",
-      "title": "Adicionar um título ao Jogo/Aplicação",
-      "url": "Colar a URL do Jogo aqui",
-      "useragent": "Escreva aqui um agente de utilizador personalizado para ser usado nesta aplicação/jogo do browser"
-    },
-    "import-hint": {
-      "content": "NÃO utilize esta funcionalidade para isso.<br />Em vez disso, <3>inicie sessão</3> na loja, procure o jogo na sua biblioteca, abra a janela de instalação e clique no botão &quot;Importar Jogo&quot;",
-      "title": "Importante! Está a adicionar um jogo da Epic/GOG/Amazon? Clique aqui!"
-    },
-    "images": {
-      "summary": "Imagens"
-    }
-  },
   "specs": {
     "minimum": "Mínimo",
     "recommended": "Recomendado"

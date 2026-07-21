@@ -24,9 +24,6 @@
       "button": "Select",
       "image": ""
     },
-    "sideload": {
-      "exe": "Select Executable"
-    },
     "stopInstall": {
       "keepInstalling": "Instalatzen jarraitu",
       "message": "Fitxategiak deskargatuta MANTENDU nahi dituzu?",
@@ -86,9 +83,6 @@
     "remove_from_recent": "Remove From Recent",
     "run-exe-first": "Run Installer First",
     "running-setup": "Running Setup",
-    "sideload": {
-      "edit": "Edit App/Game"
-    },
     "unhide_game": "Erakutsi jokoa",
     "uninstall": "Desinslalatu",
     "update": "Eguneratu",
@@ -205,29 +199,6 @@
     "title": "Instalatzeko osagaiak hautatzea"
   },
   "setting": {},
-  "sideload": {
-    "field": {
-      "title": "Title"
-    },
-    "info": {
-      "exe": "Select Executable",
-      "image": "App Image",
-      "title": "Game/App Title",
-      "broser": "ArakatzailearenURLa",
-      "useragent": "",
-      "fullscreen": ""
-    },
-    "placeholder": {
-      "image": "Paste an Image URL here",
-      "title": "Add a title to your Game/App",
-      "url": "Itsatsi jokoaren URLa hemen",
-      "useragent": ""
-    },
-    "import-hint": {
-      "content": "",
-      "title": ""
-    }
-  },
   "specs": {
     "minimum": "Gutxienekoa",
     "recommended": "Gomendatua"

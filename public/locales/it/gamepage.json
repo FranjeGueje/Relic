@@ -24,9 +24,6 @@
       "button": "Seleziona",
       "image": "Seleziona un'immagine"
     },
-    "sideload": {
-      "exe": "Seleziona Eseguibile"
-    },
     "stopInstall": {
       "keepInstalling": "Continua l'installazione",
       "message": "Desideri CONSERVARE i file scaricati?",
@@ -86,9 +83,6 @@
     "remove_from_recent": "Rimuovi da Recenti",
     "run-exe-first": "Esegui prima il file di installazione",
     "running-setup": "Sto eseguendo il Setup",
-    "sideload": {
-      "edit": "Modifica App/Gioco"
-    },
     "unhide_game": "Mostra gioco",
     "uninstall": "Disinstalla",
     "update": "Aggiorna",
@@ -229,34 +223,6 @@
     "title": "Seleziona i componenti da installare"
   },
   "setting": {},
-  "sideload": {
-    "field": {
-      "title": "Titolo"
-    },
-    "info": {
-      "exe": "Seleziona l'Eseguibile",
-      "image": "Immagine dell'App",
-      "title": "Titolo Gioco/App",
-      "broser": "URL del browser",
-      "useragent": "Agente Utente Personalizzato",
-      "fullscreen": "Apri schermo intero (F11 per uscire)",
-      "cover-hint": "Grafica (clicca sull'immagine per cercare su SteamGridDB)",
-      "image-hint": "Grafica quadrata (clicca sull'immagine per cercare su SteamGridDB)"
-    },
-    "placeholder": {
-      "image": "Incolla qui l'URL di un'Immagine o seleziona un'immagine dal computer",
-      "title": "Aggiungi un Titolo per il tuo Gioco/App",
-      "url": "Incolla qui l'URL del gioco",
-      "useragent": "Scrivi un user agent personalizzato qui da utilizzare su questa applicazione/gioco su browser"
-    },
-    "import-hint": {
-      "title": "Importante! Stai aggiungendo un gioco da Epic/GOG/Amazon? Clicca qui!",
-      "content": "NON utilizzare questa funzionalità per fare questo.<br />Invece, <3>accedi</3> al negozio, cerca il gioco nella tua libreria, apri la finestra d'installazione e clicca il tasto &quot;Importa Gioco&quot;"
-    },
-    "images": {
-      "summary": "Immagini"
-    }
-  },
   "specs": {
     "minimum": "Minime",
     "recommended": "Raccomandate"

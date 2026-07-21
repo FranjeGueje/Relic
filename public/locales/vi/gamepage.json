@@ -24,9 +24,6 @@
       "button": "Chọn",
       "image": "Chọn Hình Ảnh"
     },
-    "sideload": {
-      "exe": "Chọn Có Thể Thực Thi"
-    },
     "stopInstall": {
       "keepInstalling": "Tiếp Tục Cài Đặt",
       "message": "Bạn có muốn GIỮ các tệp đã tải xuống không?",
@@ -86,9 +83,6 @@
     "remove_from_recent": "Xóa Khỏi Gần Đây",
     "run-exe-first": "Chạy Trình Cài Đặt Trước",
     "running-setup": "Đang Chạy Thiết Lập",
-    "sideload": {
-      "edit": "Chỉnh Sửa Ứng Dụng/Trò Chơi"
-    },
     "unhide_game": "Bỏ Ẩn Trò Chơi",
     "uninstall": "Gỡ Cài Đặt",
     "update": "Cập Nhật",
@@ -208,29 +202,6 @@
     "title": "Chọn các thành phần cần Cài Đặt"
   },
   "setting": {},
-  "sideload": {
-    "field": {
-      "title": "Tiêu Đề"
-    },
-    "info": {
-      "exe": "Chọn Có Thể Thực Thi",
-      "image": "App Image",
-      "title": "Tiêu Đề Trò Chơi/Ứng Dụng",
-      "broser": "TrìnhDuyệtURL",
-      "fullscreen": "Khởi Chạy Toàn Màn Hình (F11 để thoát)",
-      "useragent": "Tác Nhân Người Dùng Tùy Chỉnh"
-    },
-    "placeholder": {
-      "image": "Dán URL của Hình ảnh hoặc chọn một hình ảnh từ máy tính của bạn",
-      "title": "Thêm tiêu đề vào Trò Chơi/Ứng Dụng của bạn",
-      "url": "Dán URL trò chơi vào đây",
-      "useragent": "Viết tác nhân người dùng tùy chỉnh tại đây để sử dụng trên ứng dụng/trò chơi trình duyệt này"
-    },
-    "import-hint": {
-      "content": "KHÔNG sử dụng tính năng này cho mục đích đó.<br />Thay vào đó, hãy <3>đăng nhập vào</3> cửa hàng, tìm trò chơi trong thư viện của bạn, mở hộp thoại cài đặt và nhấp vào nút \"Nhập trò chơi\"",
-      "title": "Quan trọng! Bạn có đang thêm trò chơi từ Epic/GOG/Amazon không? Bấm vào đây!"
-    }
-  },
   "specs": {
     "minimum": "Thu Nhỏ",
     "recommended": "Đề Xuất"

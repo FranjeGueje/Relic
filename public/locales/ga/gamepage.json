@@ -66,9 +66,6 @@
       "image": "Roghnaigh Íomhá"
     },
     "select-install-path": "Roghnaigh Cosán Suiteála Steam",
-    "sideload": {
-      "exe": "Roghnaigh Inrite"
-    },
     "stopInstall": {
       "keepInstalling": "Lean ort ag Suiteáil",
       "message": "Ar mhaith leat comhaid íoslódáilte a COIMÉAD?",
@@ -120,9 +117,6 @@
     "remove_from_recent": "Bain as Le Déanaí",
     "run-exe-first": "Rith an Suiteálaí Ar dtús",
     "running-setup": "Socrú Rith",
-    "sideload": {
-      "edit": "Cuir Aip/Cluiche in Eagar"
-    },
     "unhide_game": "Nocht Cluiche",
     "uninstall": "Díshuiteáil",
     "update": "Nuashonrú",
@@ -251,34 +245,6 @@
     "title": "Roghnaigh comhpháirteanna le Suiteáil"
   },
   "setting": {},
-  "sideload": {
-    "field": {
-      "title": "Teideal"
-    },
-    "import-hint": {
-      "title": "Tábhachtach! An bhfuil cluiche ó Epic/GOG/Amazon á chur leis agat? Cliceáil anseo!",
-      "content": "NÁ húsáid an ghné seo chuige sin.<br />Ina áit sin, <3>logáil isteach</3> sa siopa, cuardaigh an cluiche i do leabharlann, oscail an dialóg suiteála, agus cliceáil an cnaipe &quot;Iompórtáil Cluiche&quot;"
-    },
-    "info": {
-      "broser": "BrabhsálaíURL",
-      "exe": "Roghnaigh Inrite",
-      "fullscreen": "Seoladh Lánscáileáin (F11 le scoir)",
-      "image": "Íomhá na hAipe",
-      "title": "Teideal Cluiche/Aipe",
-      "useragent": "Gníomhaire Úsáideora Saincheaptha",
-      "cover-hint": "Ealaín Chlúdaigh/Laoch (cliceáil ar an íomhá le cuardach a dhéanamh ar SteamGridDB)",
-      "image-hint": "Ealaín Chearnógach (cliceáil ar an íomhá le cuardach a dhéanamh ar SteamGridDB)"
-    },
-    "placeholder": {
-      "image": "Greamaigh URL Íomhá nó roghnaigh ceann ó do ríomhaire",
-      "title": "Cuir teideal le do Chluiche/Aip",
-      "url": "Greamaigh URL an Chluiche anseo",
-      "useragent": "Scríobh gníomhaire úsáideora saincheaptha anseo le húsáid ar an aip/cluiche brabhsálaí seo"
-    },
-    "images": {
-      "summary": "Íomhánna"
-    }
-  },
   "specs": {
     "minimum": "Íosmhéid",
     "recommended": "Molta"

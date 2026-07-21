@@ -24,9 +24,6 @@
       "button": "Seç",
       "image": "Resim Seç"
     },
-    "sideload": {
-      "exe": "Yürütülebilir Dosyayı Seçin"
-    },
     "stopInstall": {
       "keepInstalling": "Kuruluma Devam Et",
       "message": "İndirilen dosyaları SAKLAMAK ister misiniz?",
@@ -86,9 +83,6 @@
     "remove_from_recent": "Son Kullanılanlardan Kaldır",
     "run-exe-first": "Önce Kurucuyu Çalıştırın",
     "running-setup": "Kurulum Çalıştırılıyor",
-    "sideload": {
-      "edit": "Uygulamayı/Oyunu Düzenle"
-    },
     "unhide_game": "Oyunu Göster",
     "uninstall": "Kaldır",
     "update": "Güncelle",
@@ -230,34 +224,6 @@
     "title": "Kurulacak bileşenleri seç"
   },
   "setting": {},
-  "sideload": {
-    "field": {
-      "title": "Başlık"
-    },
-    "info": {
-      "exe": "Yürütülebilir Dosyayı Seçin",
-      "image": "App Image",
-      "title": "Oyun/Uygulama Adı",
-      "broser": "Tarayıcı URL'si",
-      "useragent": "Özel Kullanıcı Aracısı",
-      "fullscreen": "Tam Ekran Başlat (Çıkmak için F11)",
-      "cover-hint": "Kapak/Ana Görsel (SteamGridDB'de aramak için resme tıklayın)",
-      "image-hint": "Kare Görsel (SteamGridDB'de aramak için resme tıklayın)"
-    },
-    "placeholder": {
-      "image": "Bir resim URL'si yapıştırın ya da bilgisayarınızdan bir tane seçin",
-      "title": "Oyununuza/Uygulamanıza bir başlık ekleyin",
-      "url": "Oyun URL'sini buraya yapıştırın",
-      "useragent": "Bu tarayıcı uygulamasında veya oyununda kullanılacak özel bir kullanıcı aracısını buraya yazın"
-    },
-    "import-hint": {
-      "title": "Önemli! Epic/GOG/Amazon'dan bir oyun mu ekliyorsunuz? Buraya tıklayın!",
-      "content": "Bu özelliği bu amaç için KULLANMAYIN.<br />Bunun yerine, mağazaya <3>giriş yapın</3>, kütüphanenizde oyunu bulun, yükleme penceresini açın ve &quot;Oyunu İçe Aktar&quot; butonuna tıklayın"
-    },
-    "images": {
-      "summary": "Görseller"
-    }
-  },
   "specs": {
     "minimum": "Asgari",
     "recommended": "Tavsiye edilen"

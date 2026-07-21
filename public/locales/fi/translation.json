@@ -473,7 +473,6 @@
       "needsUpdate": "Tarvitsee päivityksen"
     },
     "filter": {
-      "sideload": "Muu",
       "all": "Kaikki"
     },
     "empty": "Ei asennettuja pelejä näytettäväksi. Asenna jotain ensin.",

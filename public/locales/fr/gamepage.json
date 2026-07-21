@@ -24,9 +24,6 @@
       "button": "Sélectionner",
       "image": "Sélectionner une image"
     },
-    "sideload": {
-      "exe": "Sélectionner un exécutable"
-    },
     "stopInstall": {
       "keepInstalling": "Poursuivre l’installation",
       "message": "Souhaitez-vous CONSERVER les fichiers téléchargés ?",
@@ -86,9 +83,6 @@
     "remove_from_recent": "Retirer de la liste des jeux récents",
     "run-exe-first": "Lancer l’installateur en premier",
     "running-setup": "Lancer la configuration",
-    "sideload": {
-      "edit": "Modifier l’application/le jeu"
-    },
     "unhide_game": "Dé-masquer le jeu",
     "uninstall": "Désinstaller",
     "update": "Mettre à jour",
@@ -228,29 +222,6 @@
     "title": "Sélectionner les éléments à installer"
   },
   "setting": {},
-  "sideload": {
-    "field": {
-      "title": "Titre"
-    },
-    "info": {
-      "exe": "Sélectionner l'exécutable",
-      "image": "Vignette de l'application",
-      "title": "Titre du Jeu/de l'Application",
-      "broser": "URL du navigateur",
-      "useragent": "Compte Utilisateur Personnalisé",
-      "fullscreen": "Exécuter en plein écran (F11 pour quitter)"
-    },
-    "placeholder": {
-      "image": "Coller ici l'URL d'une image ou sélectionnez-en une provenant de votre ordinateur",
-      "title": "Ajouter un titre à votre Jeu/Application",
-      "url": "Coller l'URL du jeu ici",
-      "useragent": "Créer un compte utilisateur personnalisé qui sera utilisé dans ce navigateur d'application/jeu"
-    },
-    "import-hint": {
-      "title": "Important ! Ajoutez-vous un jeu provenant de Epic/GOG/Amazon ? Cliquez ici !",
-      "content": "N'utilisez PAS cette fonctionnalité pour cela. <br />À la place, <3>connectez-vous</3> à la boutique, recherchez le jeu dans votre bibliothèque, ouvrez la fenêtre d'installation, et cliquez sur le bouton &quot;Import Game&quot;"
-    }
-  },
   "specs": {
     "minimum": "Minimum",
     "recommended": "Recommandé"

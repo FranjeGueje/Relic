@@ -61,7 +61,6 @@ const STORE_CONFIGS: Record<GameRunner, StoreConfig> = {
       }))
     }
   },
-  sideload: { configDir: '', installedFile: '', mountDir: '', transform: (d) => d },
   zoom: { configDir: '', installedFile: '', mountDir: '', transform: (d) => d }
 }
 

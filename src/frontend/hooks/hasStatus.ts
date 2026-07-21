@@ -24,7 +24,7 @@ export function hasStatus(gameInfo: GameInfo, gameSize?: string) {
   const {
     thirdPartyManagedApp = undefined,
     is_installed,
-    runner = 'sideload',
+    runner = 'legendary',
     isEAManaged,
     isUbisoftManaged
   } = { ...newGameInfo }
@@ -36,7 +36,7 @@ export function hasStatus(gameInfo: GameInfo, gameSize?: string) {
     const getGameInfo = async () => {
       const updatedInfo = await window.api.getGameInfo(
         appName,
-        runner || 'sideload'
+        runner || 'legendary'
       )
       if (updatedInfo) {
         setNewGameInfo(updatedInfo)

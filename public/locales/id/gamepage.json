@@ -24,9 +24,6 @@
       "button": "Pilih",
       "image": "Pilih Gambar"
     },
-    "sideload": {
-      "exe": "Pilih Executable"
-    },
     "stopInstall": {
       "keepInstalling": "Tetap Menginstal",
       "message": "Apakah Anda ingin MENYIMPAN berkas yang diunduh?",
@@ -85,9 +82,6 @@
     "remove_from_recent": "Hapus dari Terbaru",
     "run-exe-first": "Jalankan Penginstalan Terlebih Dahulu",
     "running-setup": "Menjalankan Pengaturan",
-    "sideload": {
-      "edit": "Edit App/Gim"
-    },
     "unhide_game": "Tampilkan Gim yang Disembunyikan",
     "uninstall": "Copot",
     "update": "Perbarui",
@@ -207,34 +201,6 @@
     "title": "Pilih komponen untuk diinstal"
   },
   "setting": {},
-  "sideload": {
-    "field": {
-      "title": "Judul"
-    },
-    "info": {
-      "exe": "Pilih Executable",
-      "image": "Gambar App",
-      "title": "Gim/Judul App",
-      "broser": "URL browser",
-      "useragent": "Kustomisasi User Agent",
-      "fullscreen": "Luncurkan Layar Penuh (F11 untuk keluar)",
-      "cover-hint": "Gambar Sampul/Hero (klik pada gambar untuk mencari di SteamGridDB)",
-      "image-hint": "Gambar Persegi (klik pada gambar untuk mencari di SteamGridDB)"
-    },
-    "placeholder": {
-      "image": "Tempel URL gambar atau pilih salah satu dari komputer Anda",
-      "title": "Tambahkan judul ke Gim/App Anda",
-      "url": "Rekatkan URL Game di sini",
-      "useragent": "Tulis user agent kustom di sini untuk digunakan pada aplikasi browser/game ini"
-    },
-    "import-hint": {
-      "content": "JANGAN gunakan fitur ini untuk tujuan tersebut.<br />Sebagai gantinya, <3>masuk ke</3> toko, cari game di pustaka Anda, buka dialog instalasi, lalu klik tombol &quot;Impor Game&quot;",
-      "title": "Penting! Apakah Anda menambahkan game dari Epic/GOG/Amazon? Klik di sini!"
-    },
-    "images": {
-      "summary": "Gambar"
-    }
-  },
   "specs": {
     "minimum": "Minimum",
     "recommended": "Direkomendasikan"

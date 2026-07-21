@@ -23,10 +23,6 @@ const DownloadSizeInfo = ({ gameInfo }: Props) => {
     return null
   }
 
-  if (runner === 'sideload') {
-    return null
-  }
-
   if (gameInfo.thirdPartyManagedApp) {
     return (
       <div className="iconWithText">

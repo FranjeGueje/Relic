@@ -1,27 +1,4 @@
 {
-  "sideload": {
-    "placeholder": {
-      "title": "O'yin/ilovangizga sarlavha qo'shing",
-      "image": "Tasvir URL manzilini bu yerga joylashtiring",
-      "url": "Oʻyin URL manzilini shu yerga qoʻying",
-      "useragent": ""
-    },
-    "field": {
-      "title": "Sarlavha"
-    },
-    "info": {
-      "exe": "Bajariladigan ni tanlang",
-      "image": "Ilova tasviri",
-      "title": "O'yin/ilova nomi",
-      "broser": "BrowserURL",
-      "useragent": "",
-      "fullscreen": ""
-    },
-    "import-hint": {
-      "content": "",
-      "title": ""
-    }
-  },
   "specs": {
     "minimum": "Eng kam",
     "recommended": "Tavsiya etilgan"
@@ -79,9 +56,6 @@
     "select": {
       "button": "Tanlang",
       "image": ""
-    },
-    "sideload": {
-      "exe": "Bajariladigan ni tanlang"
     },
     "stopInstall": {
       "keepInstalling": "Oʻrnatishda davom eting",
@@ -142,9 +116,6 @@
     "remove_from_recent": "Oxirgidan olib tashlash",
     "run-exe-first": "Avval o'rnatuvchini ishga tushiring",
     "running-setup": "O'rnatishni ishga tushirish",
-    "sideload": {
-      "edit": "Ilova/o‘yinni tahrirlash"
-    },
     "unhide_game": "O'yinni ko'rsatish",
     "uninstall": "Oʻchirish",
     "update": "Yangilash",

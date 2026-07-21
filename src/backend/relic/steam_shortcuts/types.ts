@@ -1,4 +1,4 @@
-export type GameRunner = 'legendary' | 'gog' | 'nile' | 'sideload' | 'zoom'
+export type GameRunner = 'legendary' | 'gog' | 'nile' | 'zoom'
 
 export interface AddGameToSteamOptions {
   gameName: string

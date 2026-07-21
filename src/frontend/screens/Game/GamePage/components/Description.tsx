@@ -4,16 +4,12 @@ import { useTranslation } from 'react-i18next'
 
 const Description = () => {
   const { t } = useTranslation('gamepage')
-  const { gameExtraInfo, runner } = useContext(GameContext)
+  const { gameExtraInfo } = useContext(GameContext)
 
-  let description = ''
-
-  if (runner !== 'sideload') {
-    description =
-      gameExtraInfo?.about?.shortDescription ||
-      gameExtraInfo?.about?.description ||
-      t('generic.noDescription', 'No description available')
-  }
+  const description =
+    gameExtraInfo?.about?.shortDescription ||
+    gameExtraInfo?.about?.description ||
+    t('generic.noDescription', 'No description available')
 
   return <div className="summary">{description}</div>
 }

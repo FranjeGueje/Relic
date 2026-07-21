@@ -138,9 +138,7 @@ const GamesList = ({
           const { app_name, is_installed, runner } = gameInfo
           const isJustPlayed = (isFavourite || isRecent) && index === 0
           let is_dlc = false
-          if (gameInfo.runner !== 'sideload') {
-            is_dlc = gameInfo.install.is_dlc ?? false
-          }
+          is_dlc = gameInfo.install.is_dlc ?? false
 
           if (is_dlc) {
             return null
@@ -155,8 +153,7 @@ const GamesList = ({
               key={`${runner}_${app_name}${isFirstLane ? '_firstlane' : ''}`}
               hasUpdate={hasUpdate}
               buttonClick={() => {
-                if (gameInfo.runner !== 'sideload')
-                  handleGameCardClick(app_name, runner, gameInfo)
+                handleGameCardClick(app_name, runner, gameInfo)
               }}
               forceCard={layout === 'grid'}
               isRecent={isRecent}

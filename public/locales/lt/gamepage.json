@@ -40,9 +40,6 @@
     "runexe": {
       "title": "Pažymėti „.*EXE“, kurį vykdyti"
     },
-    "sideload": {
-      "exe": "Pažymėti vykdomąjį"
-    },
     "stopInstall": {
       "keepInstalling": "Tęsti įdiegimo procesą",
       "message": "Ar Jūs norite LAIKYTI atsisiųstus failus?",
@@ -72,9 +69,6 @@
     "add_to_favourites": "Pridėti prie mėgstamiausių",
     "uninstall": "Išdiegti",
     "running-setup": "Vykdoma sąranka",
-    "sideload": {
-      "edit": "Redaguoti programą/žaidimą"
-    },
     "unhide_game": "Nebeslėpti žaidimo",
     "update": "Atnaujinti",
     "cancel": "Sustabdyti/Atšaukti",
@@ -202,34 +196,6 @@
     "third-party-app": "Trečiosios šalies tvarkytuvas/-ė"
   },
   "howLongToBeat": "Laikas įveikti",
-  "sideload": {
-    "info": {
-      "broser": "Naršyklės „URL“ – saitas",
-      "fullscreen": "Paleisti pilno ekrano režimu (spauskite – „F11“, kad išeitumėte)",
-      "exe": "Pažymėti vykdomąjį",
-      "image": "Programos laikmena",
-      "title": "Žaidimo/Programos antraštė/pavadinimas",
-      "useragent": "Pasirinktinis naudotojo/vartotojo agentas",
-      "cover-hint": "Viršelio/„Hero“ menas (spustelėkite ant atvaizdo, kad jį ieškotumėte „SteamGridDB“)",
-      "image-hint": "Kvadratinis menas (spustelėkite ant atvaizdo, kad jį ieškotumėte „SteamGridDB“)"
-    },
-    "field": {
-      "title": "Antraštė/Pavadinimas"
-    },
-    "placeholder": {
-      "image": "Įklijuokite nuotraukos/vaizdo/paveikslėlio „URL“ – saitą arba pasirinkite jį iš savo kompiuterio",
-      "url": "Įklijuokite žaidimo „URL“ – saitą čia",
-      "title": "Pridėkite antraštę/pavadinimą prie savo žaidimo/programos",
-      "useragent": "Įrašykite pasirinktinį naudotojo/vartotojo agentą čia, norint jį pritaikyti šioje naršyklėje; programos/žaidimo"
-    },
-    "import-hint": {
-      "content": "NENAUDOKITE šios funkcijos šiam.<br />Vietoj to, <3>prisijunkite prie</3> parduotuvės, susiieškokite žaidimo savo bibliotekoje, atidarykite jo įdiegimo langą ir spauskite/spustelėkite – „&quot;Importuoti žaidimą&quot;“ mygtuką",
-      "title": "Svarbu! Ar Jūs pridedate žaidimą iš „Epic“/„GOG“/„Amazon“? Spauskite/Spustelėkite čia!"
-    },
-    "images": {
-      "summary": "Atvaizdai"
-    }
-  },
   "specs": {
     "recommended": "Rekomenduojama",
     "minimum": "Minimumas"

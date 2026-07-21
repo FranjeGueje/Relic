@@ -11,7 +11,6 @@ const RunnerToStore = {
   legendary: 'Epic Games',
   gog: 'GOG',
   nile: 'Amazon Games',
-  sideload: 'Other',
   zoom: 'ZOOM Platform'
 }
 
@@ -89,7 +88,6 @@ export default function LibraryFilters() {
       legendary: false,
       gog: false,
       nile: false,
-      sideload: false,
       zoom: false
     }
     newFilters = { ...newFilters, [store]: true }
@@ -154,7 +152,6 @@ export default function LibraryFilters() {
       legendary: true,
       gog: true,
       nile: true,
-      sideload: true,
       zoom: true
     })
     setPlatformsFilters({
@@ -184,7 +181,6 @@ export default function LibraryFilters() {
       {gog.username && storeToggle('gog')}
       {amazon.user_id && storeToggle('nile')}
       {zoom.username && storeToggle('zoom')}
-      {storeToggle('sideload')}
       <hr />
       {platformToggle('win')}
       {platformToggle('linux')}

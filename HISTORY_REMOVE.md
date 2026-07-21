@@ -760,3 +760,82 @@
 - `src/backend/constants/__tests__/constants.test.ts`: tests `getShell for windows` y `getShell for mac` eliminados (función simplificada a Linux-only)
 - `src/backend/tray_icon/__tests__/tray_icon.test.ts`: test `shows no icon if noTrayIcon setting` eliminado (no existe `setConfigValue`); test `limits number games` simplificado (usa 3 juegos hardcodeados en vez de `maxRecentGames`)
 - `src/backend/relic/__tests__/symlinks.test.ts`: `defaultUmuPath` eliminado del mock de `paths.ts`
+
+---
+
+## Fase 7 — Sideload eliminado (Jul 2026)
+
+### Directorios eliminados (6 archivos)
+- `src/backend/storeManagers/sideload/` (3 archivos: `electronStores.ts`, `library.ts`, `games.ts`): store manager completo. `addNewApp` (única función real) no tenía caller desde el frontend.
+- `src/frontend/components/UI/EditGameDialog/` (2 archivos: `index.tsx`, `index.css`): componente huérfano — nunca se importaba desde ningún componente (eliminado de GameCard y GameSubMenu en fases anteriores).
+- `src/frontend/screens/Library/components/EmptyLibrary/` (`index.css`): CSS huérfano — componente `EmptyLibraryMessage.tsx` eliminado en Fase 3 (Add Game).
+
+### Tipos fundamentales
+- `src/common/types.ts`: `'sideload'` eliminado del type union `Runner` (line 22) y del literal `GameInfo.runner` (line 128).
+- `src/common/types/electron_store.ts`: key `sideloadedStore` eliminada del schema.
+- `src/common/types/ipc.ts`: `addNewApp` eliminado de `FrontendMessages`.
+- `src/common/utils.ts`: `sideload: undefined` eliminado de `storeMap`.
+- `src/frontend/types.ts`: `'sideload'` eliminado de `Category`, `sideloadedLibrary` de `ContextType`, `sideload` de `StoresFilters`, `sideloaded` del status interface.
+- `src/backend/relic/steam_shortcuts/types.ts`: `'sideload'` eliminado de `GameRunner`.
+
+### Backend
+- `src/backend/storeManagers/index.ts`: import de `SideloadLibraryManager` y entrada `sideload` de `libraryManagerMap` eliminados.
+- `src/backend/main.ts`: handler IPC `addNewApp` eliminado.
+- `src/backend/logger/constants.ts`: `LogPrefix.Sideload` y entrada en `RunnerToLogPrefixMap` eliminados.
+- `src/backend/relic/windowify.ts`: entrada `sideload` de `STORE_CONFIGS` eliminada.
+- `src/backend/relic/umu/store.ts`: `sideload: undefined` de `umuStoreMap` eliminado.
+- `src/preload/api/library.ts`: export `addNewApp` eliminado.
+
+### Frontend — state & store
+- `src/frontend/helpers/electronStores.ts`: instancia `sideloadLibrary` y su export eliminados.
+- `src/frontend/helpers/library.ts`: `sideloadedCategories` eliminado.
+- `src/frontend/state/ContextProvider.tsx`: `sideloadedLibrary: []` del default context eliminado.
+- `src/frontend/state/GlobalState.tsx`: import de `sideloadLibrary`, campo `sideloadedLibrary` del state, todas las lecturas `sideloadLibrary.get(...)` en init/refresh, y guard `runner === 'sideload'` en `handleInstallGame` eliminados.
+
+### Frontend — Library (6 archivos)
+- `Library/index.tsx`: `sideloadedCategories` import, `sideloadedLibrary` destructure, filtro `sideload` en `initialStoresfilters`, merge `sideloadedLibrary` en favourites/list, dependencia `sideloadedLibrary` en useMemo eliminados.
+- `Library/LibraryContext.tsx`: `sideload: true` de `initialContext` eliminado.
+- `LibraryHeader/index.tsx`: check `runner !== 'sideload'` en filtro DLC eliminado.
+- `GameCard/index.tsx`: variable `isSideloaded` eliminada; guard `runner !== 'sideload'` en `handleUpdate()` eliminado; condicionales `!isSideloaded` en Force Update/Move/Verify eliminados.
+- `GamesList/index.tsx`: guards `runner !== 'sideload'` en is_dlc check y handleGameCardClick eliminados.
+- `RecentlyPlayed/index.tsx`: `sideloadedLibrary` del context, merge en recientes, y dependencia useMemo eliminados.
+
+### Frontend — Game (7 archivos)
+- `GameContext.tsx`: `sideloaded: false` del default status eliminado.
+- `GamePage/index.tsx`: variable `isSideloaded` eliminada; guard `runner !== 'sideload'` en `notSupportedGame`, `getInstallInfo` early return, `handleUpdate`, y handler de instalación eliminados; `sideloaded: isSideloaded` del statusContext eliminado.
+- `InstalledInfo.tsx`: `isSideloaded` variable y 3 condicionales (`!isSideloaded` gateando install_path/size/version, `!isSideloaded && !isThirdParty` en size y version) eliminados.
+- `DownloadSizeInfo.tsx`: early return `runner === 'sideload'` eliminado.
+- `Description.tsx`: guard `runner !== 'sideload'` y variable `runner` eliminados. `gameExtraInfo` siempre se usa.
+- `Developer.tsx`: early return `runner === 'sideload'` eliminado.
+- `GameSubMenu/index.tsx`: variable `isSideloaded` y 4 condicionales (`!isSideloaded && !isThirdPartyManaged` en Force Update/Move/Verify, `!isSideloaded && !!changelog` en Show Changelog) eliminados.
+
+### Frontend — ConsoleMode, DownloadManager, Settings
+- `ConsoleMode/index.tsx`: `sideloadedLibrary` del context, merge en allGames, dependencia useMemo, filtro sideload en storeFilters, guard `runner !== 'sideload'` en handleUpdateFromNotice eliminados.
+- `InstallOverlay/index.tsx`: variable `isSideload` y condición `isSideload || game.is_linux_native` simplificada a solo `game.is_linux_native`.
+- `DownloadManagerItem/index.tsx`: guard `newInfo.runner !== 'sideload'` eliminado.
+- `AlternativeExe.tsx`: `runner === 'sideload'` del early return simplificado a solo `isDefault`.
+
+### Frontend — UI components
+- `LibraryFilters/index.tsx`: `sideload: 'Other'` de `RunnerToStore`, `sideload: false` de reset `setStoreOnly`, `sideload: true` de `resetFilters`, y `{storeToggle('sideload')}` del render eliminados.
+- `LibrarySearchBar/index.tsx`: `sideloadedLibrary` del context, merge en lista de búsqueda, y dependencia useMemo eliminados.
+- `UninstallModal/index.tsx`: guard `runner === 'sideload' && location.pathname.match(/gamepage/)` que navegaba a `/#library` eliminado.
+
+### Hooks
+- `hasStatus.ts`: default de `runner` cambiado de `'sideload'` a `'legendary'`; fallback `runner || 'sideload'` cambiado a `runner || 'legendary'`.
+- `constants.ts`: ternario `runner === 'sideload' ? '' : size` en label `installed` simplificado a solo `size`.
+
+### CSS huérfano
+- `LibraryHeader/index.css`: clase `.sideloadGameButton` y hover/focus styles eliminados.
+- `InstallModal/index.scss`: clases `.sideloadForm` y `.sideloadImportHint` eliminadas.
+
+### i18n (51 archivos)
+- 51 `gamepage.json`: bloque `sideload` completo (field.title, images.summary, import-hint, info.*, placeholder.*), `box.sideload`, `button.sideload` eliminados.
+- 3 `translation.json`: `console.filter.sideload` eliminado (locales ga, gl, lt, tr que tenían la clave).
+
+### Tests (3 test cases, 1 mock)
+- `game_events.test.ts`: mock `sideload: {}` en `libraryManagerMap` eliminado; test `'handles runner without getGameInfo gracefully'` eliminado (verificaba creación de .bat para sideload).
+- `add_game.test.ts`: test `'creates default bat for sideload with placeholder'` eliminado.
+- `store.test.ts`: test `'returns undefined for sideload'` eliminado.
+
+### Store persistente
+- `~/.config/relic/sideload_apps/`: directorio vacío eliminado.

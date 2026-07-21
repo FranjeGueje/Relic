@@ -17,7 +17,6 @@ const LogPrefix = {
   Connection: 'Connection',
   DownloadManager: 'DownloadManager',
   ExtraGameInfo: 'ExtraGameInfo',
-  Sideload: 'Sideload',
   LogUploader: 'LogUploader',
   Relic: 'Relic'
 }
@@ -31,7 +30,6 @@ const RunnerToLogPrefixMap: Record<Runner, LogPrefix> = {
   legendary: LogPrefix.Legendary,
   gog: LogPrefix.Gog,
   nile: LogPrefix.Nile,
-  sideload: LogPrefix.Sideload,
   zoom: LogPrefix.Zoom
 }
 

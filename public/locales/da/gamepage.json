@@ -46,9 +46,6 @@
     "runexe": {
       "title": "Vælg EXE at køre"
     },
-    "sideload": {
-      "exe": "Vælg Eksekverbar"
-    },
     "close": "Luk",
     "warning": {
       "title": "Advarsel"
@@ -89,9 +86,6 @@
     "no-path-selected": "Ingen sti valgt",
     "run-exe-first": "Kør Installation Først",
     "running-setup": "Kører Opsætning",
-    "sideload": {
-      "edit": "Redigér App/Spil"
-    },
     "details": "Oplysninger",
     "changelog": "Vis Ændringslog",
     "browse_files": "Gennemse Filer",
@@ -248,29 +242,6 @@
       "remove": "Fjern fra Downloads",
       "pause": "Sæt download på pause",
       "resume": "Genoptag download"
-    }
-  },
-  "sideload": {
-    "field": {
-      "title": "Titel"
-    },
-    "info": {
-      "exe": "Vælg Eksekverbar",
-      "image": "App billede",
-      "title": "Spil/App titel",
-      "broser": "BrowserURL",
-      "fullscreen": "Start Fuld Skærm (F11 for at forlade)",
-      "useragent": "Brugerdefineret User Agent"
-    },
-    "placeholder": {
-      "image": "Indsæt en billed-URL her, eller vælg en fra din computer",
-      "title": "Tilføj en titel til dit spil/app",
-      "url": "Indsæt spillets URL her",
-      "useragent": "Skriv en brugerdefineret agent, der kan bruger i denne browser app/spil"
-    },
-    "import-hint": {
-      "content": "Brug IKKE denne funktionalitet til dettte. .<br />Istedet, skal du <3>logge ind</3> butikken, finde spillet i dit biblotek, åben installationsdialogkassen og kikke &quot;Import Game&quot; knappen",
-      "title": "Vigtigt! Vil du tilfølge et spil fra Epic/GOG/Amazon? Klik her!"
     }
   },
   "setting": {},

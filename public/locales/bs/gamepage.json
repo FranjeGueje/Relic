@@ -24,9 +24,6 @@
       "button": "Select",
       "image": ""
     },
-    "sideload": {
-      "exe": "Select Executable"
-    },
     "stopInstall": {
       "keepInstalling": "Nastavite instalaciju",
       "message": "Želite li ZADRŽATI preuzete datoteke?",
@@ -86,9 +83,6 @@
     "remove_from_recent": "Remove From Recent",
     "run-exe-first": "Run Installer First",
     "running-setup": "Running Setup",
-    "sideload": {
-      "edit": "Edit App/Game"
-    },
     "unhide_game": "Prikaži igru",
     "uninstall": "Deinstaliraj",
     "update": "Ažuriraj",
@@ -207,29 +201,6 @@
     "title": "Odaberite komponente za instalaciju"
   },
   "setting": {},
-  "sideload": {
-    "field": {
-      "title": "Title"
-    },
-    "info": {
-      "exe": "Select Executable",
-      "image": "App Image",
-      "title": "Game/App Title",
-      "broser": "BrowserURL",
-      "useragent": "",
-      "fullscreen": ""
-    },
-    "placeholder": {
-      "image": "Paste an Image URL here",
-      "title": "Add a title to your Game/App",
-      "url": "Ovdje zalijepite URL igre",
-      "useragent": ""
-    },
-    "import-hint": {
-      "content": "",
-      "title": ""
-    }
-  },
   "specs": {
     "minimum": "Minimalno",
     "recommended": "Preporučeno"

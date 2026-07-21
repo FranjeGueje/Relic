@@ -66,9 +66,6 @@ const UninstallModal: React.FC<UninstallModalProps> = function ({
       false,
       false
     )
-    if (runner === 'sideload' && location.pathname.match(/gamepage/)) {
-      navigate('/#library')
-    }
     storage.removeItem(appName)
   }
 

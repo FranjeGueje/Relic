@@ -7,12 +7,6 @@ interface Props {
 }
 
 const Developer = ({ gameInfo }: Props) => {
-  const { runner } = useContext(GameContext)
-
-  if (runner === 'sideload') {
-    return null
-  }
-
   return <div className="developer">{gameInfo.developer}</div>
 }
 

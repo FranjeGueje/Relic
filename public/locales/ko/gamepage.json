@@ -24,9 +24,6 @@
       "button": "선택",
       "image": ""
     },
-    "sideload": {
-      "exe": "실행 파일 선택"
-    },
     "stopInstall": {
       "keepInstalling": "계속 설치",
       "message": "다운로드한 파일을 유지하겠습니까?",
@@ -85,9 +82,6 @@
     "remove_from_recent": "최근 기록에서 제거",
     "run-exe-first": "먼저 설치 프로그램 실행",
     "running-setup": "설치 실행",
-    "sideload": {
-      "edit": "앱/게임 편집"
-    },
     "unhide_game": "게임 숨기기 해제",
     "uninstall": "설치 제거",
     "update": "업데이트",
@@ -206,29 +200,6 @@
     "title": "설치할 구성 요소를 선택"
   },
   "setting": {},
-  "sideload": {
-    "field": {
-      "title": "제목"
-    },
-    "info": {
-      "exe": "실행 파일 선택",
-      "image": "앱 이미지",
-      "title": "게임/앱 제목",
-      "broser": "브라우저URL",
-      "useragent": "커스텀 사용자 에이전트",
-      "fullscreen": "전체 화면 실행 (나가려면 F11)"
-    },
-    "placeholder": {
-      "image": "여기에 이미지 URL 붙여넣기",
-      "title": "게임/앱에 제목 추가",
-      "url": "여기에 게임 URL 붙여넣기",
-      "useragent": "이 브라우저 앱/게임에서 사용할 커스텀 사용자 에이전트를 여기에 작성"
-    },
-    "import-hint": {
-      "content": "",
-      "title": ""
-    }
-  },
   "specs": {
     "minimum": "최소 사양",
     "recommended": "권장 사양"

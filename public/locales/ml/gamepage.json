@@ -24,9 +24,6 @@
       "button": "തിരഞ്ഞെടുക്കൂ",
       "image": ""
     },
-    "sideload": {
-      "exe": "എക്സക്യൂട്ടബിള്‍ തിരഞ്ഞെടുക്കൂ"
-    },
     "stopInstall": {
       "keepInstalling": "നടീല് തുടര്ന്നുകൊള്ളൂ",
       "message": "ഇറക്കിയെടുത്ത രേഖകള് സുക്ഷിക്കണോ?",
@@ -85,9 +82,6 @@
     "remove_from_recent": "Remove From Recent",
     "run-exe-first": "Run Installer First",
     "running-setup": "Running Setup",
-    "sideload": {
-      "edit": "Edit App/Game"
-    },
     "unhide_game": "Unhide Game",
     "uninstall": "എടുത്തുനീക്കൂ",
     "update": "പുതുക്കൂ",
@@ -206,29 +200,6 @@
     "title": "നടുവാനുള്ള ഘടകങ്ങള് തിരഞ്ഞെടുക്കൂ"
   },
   "setting": {},
-  "sideload": {
-    "field": {
-      "title": "Title"
-    },
-    "info": {
-      "exe": "Select Executable",
-      "image": "App Image",
-      "title": "Game/App Title",
-      "broser": "ബ്രൗസർURL",
-      "useragent": "",
-      "fullscreen": ""
-    },
-    "placeholder": {
-      "image": "Paste an Image URL here",
-      "title": "Add a title to your Game/App",
-      "url": "ഗെയിം URL ഇവിടെ ഒട്ടിക്കുക",
-      "useragent": ""
-    },
-    "import-hint": {
-      "content": "",
-      "title": ""
-    }
-  },
   "specs": {
     "minimum": "കുറഞ്ഞത്",
     "recommended": "വേണ്ടുന്നത്"

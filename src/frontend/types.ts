@@ -20,7 +20,6 @@ export type Category =
   | 'all'
   | 'legendary'
   | 'gog'
-  | 'sideload'
   | 'nile'
   | 'zoom'
 
@@ -101,7 +100,6 @@ export interface ContextType {
   showResetDialog: () => void
   externalLinkDialogOptions: ExternalLinkDialogOptions
   handleExternalLinkDialog: (options: ExternalLinkDialogOptions) => void
-  sideloadedLibrary: GameInfo[]
   lastChangelogShown: string | null
   setLastChangelogShown: (value: string) => void
   help: {
@@ -192,7 +190,6 @@ export interface StoresFilters {
   legendary: boolean
   gog: boolean
   nile: boolean
-  sideload: boolean
   zoom: boolean
 }
 
@@ -261,7 +258,6 @@ export interface GameContextType {
     playing: boolean
     queued: boolean
     reparing: boolean
-    sideloaded: boolean
     syncing: boolean
     uninstalling: boolean
     updating: boolean

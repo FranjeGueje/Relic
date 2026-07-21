@@ -32,10 +32,6 @@ describe('getUmuStoreLabel', () => {
     expect(getUmuStoreLabel('nile')).toBe('amazon')
   })
 
-  it('returns undefined for sideload', () => {
-    expect(getUmuStoreLabel('sideload')).toBeUndefined()
-  })
-
   it('returns zoom for zoom', () => {
     expect(getUmuStoreLabel('zoom')).toBe('zoom')
   })

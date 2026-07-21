@@ -24,9 +24,6 @@
       "button": "Wybierz",
       "image": "Wybierz obraz"
     },
-    "sideload": {
-      "exe": "Wybierz plik wykonywalny"
-    },
     "stopInstall": {
       "keepInstalling": "Kontynuuj instalację",
       "message": "Czy chcesz ZACHOWAĆ pobrane pliki?",
@@ -86,9 +83,6 @@
     "remove_from_recent": "Usuń z ostatnio uruchamianych",
     "run-exe-first": "Najpierw uruchom instalator",
     "running-setup": "Rozpoczynanie instalacji",
-    "sideload": {
-      "edit": "Edytuj aplikację/grę"
-    },
     "unhide_game": "Odkryj grę",
     "uninstall": "Odinstaluj",
     "update": "Aktualizuj",
@@ -230,34 +224,6 @@
     "title": "Wybierz komponenty do instalacji"
   },
   "setting": {},
-  "sideload": {
-    "field": {
-      "title": "Tytuł"
-    },
-    "info": {
-      "exe": "Wybierz plik wykonywalny",
-      "image": "Obraz aplikacji",
-      "title": "Tytuł gry/aplikacji",
-      "broser": "Adres URL",
-      "useragent": "Niestandardowy User Agent",
-      "fullscreen": "Otwórz w trybie pełnoekranowym (F11 aby wyjść)",
-      "cover-hint": "Okładka/Ikona (kliknij obraz, aby szukać na SteamGridDB)",
-      "image-hint": "Ikona (kliknij obraz, aby szukać na SteamGridDB)"
-    },
-    "placeholder": {
-      "image": "Wklej adres URL obrazu lub wybierz jeden z komputera",
-      "title": "Dodaj tytuł do swojej gry/aplikacji",
-      "url": "Wklej adres URL gry",
-      "useragent": "Wpisz niestandardowy User Agent, który będzie używany w przeglądarkowej aplikacji/grze"
-    },
-    "import-hint": {
-      "title": "Uwaga! Czy dodajesz grę z Epic/GOG/Amazon? Kliknij tutaj!",
-      "content": "NIE używaj do tego tej funkcjonalności.<br />. Zamiast tego <3>zaloguj się</3> do sklepu, poszukaj gry w swojej bibliotece, otwórz okno dialogowe instalacji i kliknij przycisk &quot;Import Game&quot;"
-    },
-    "images": {
-      "summary": "Obrazy"
-    }
-  },
   "specs": {
     "minimum": "Minimalne",
     "recommended": "Zalecane"

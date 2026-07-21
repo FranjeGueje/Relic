@@ -1,8 +1,5 @@
 {
   "button": {
-    "sideload": {
-      "edit": "Измените апликацију/игру"
-    },
     "unhide_game": "Откриј игру",
     "uninstall": "Деинсталирај",
     "update": "Ажурирај",
@@ -60,9 +57,6 @@
     "select": {
       "button": "Изабери",
       "image": ""
-    },
-    "sideload": {
-      "exe": "Изаберите извршну датотеку"
     },
     "stopInstall": {
       "keepInstalling": "Наставите са инсталирањем",
@@ -207,29 +201,6 @@
     "title": "Изаберите компоненте за инсталирање"
   },
   "setting": {},
-  "sideload": {
-    "field": {
-      "title": "Наслов"
-    },
-    "info": {
-      "exe": "Изаберите Извршни",
-      "image": "Слика апликације",
-      "title": "Игра/Наслов апликације",
-      "broser": "БровсерУРЛ",
-      "useragent": "",
-      "fullscreen": ""
-    },
-    "placeholder": {
-      "image": "Налепите URL слике овде",
-      "title": "Додајте наслов својој игрици/апликацији",
-      "url": "Овде налепите УРЛ игре",
-      "useragent": ""
-    },
-    "import-hint": {
-      "content": "",
-      "title": ""
-    }
-  },
   "specs": {
     "minimum": "Минимум",
     "recommended": "Препоручено"

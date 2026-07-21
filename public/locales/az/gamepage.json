@@ -24,9 +24,6 @@
       "button": "Select",
       "image": ""
     },
-    "sideload": {
-      "exe": "Select Executable"
-    },
     "stopInstall": {
       "keepInstalling": "Quraşdırmağa davam edin",
       "message": "Endirilmiş faylları SAXLAMAQ istəyirsiniz?",
@@ -86,9 +83,6 @@
     "remove_from_recent": "Remove From Recent",
     "run-exe-first": "Run Installer First",
     "running-setup": "Running Setup",
-    "sideload": {
-      "edit": "Edit App/Game"
-    },
     "unhide_game": "Oyunu Gizlət",
     "uninstall": "Silin",
     "update": "Yeniləyin",
@@ -205,29 +199,6 @@
     "title": "Quraşdırılacaq komponentləri seçin"
   },
   "setting": {},
-  "sideload": {
-    "field": {
-      "title": "Title"
-    },
-    "info": {
-      "exe": "Select Executable",
-      "image": "App Image",
-      "title": "Game/App Title",
-      "broser": "BrowserURL",
-      "fullscreen": "Tam Ekranda Başlat (çıxmaq üçün F11-ə basın)",
-      "useragent": "Özəl İstifadəçi Agenti"
-    },
-    "placeholder": {
-      "image": "Paste an Image URL here",
-      "title": "Add a title to your Game/App",
-      "url": "Oyun URL-ni bura yerləşdirin",
-      "useragent": "Bu brauzer proqramında/oyununda istifadə etmək üçün özəl istifadəçi agenti yazın"
-    },
-    "import-hint": {
-      "content": "",
-      "title": ""
-    }
-  },
   "specs": {
     "minimum": "Minimum",
     "recommended": "Tövsiyə"

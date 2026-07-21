@@ -30,7 +30,6 @@ import {
   libraryStore,
   nileConfigStore,
   nileLibraryStore,
-  sideloadLibrary,
   zoomConfigStore,
   zoomInstalledGamesStore,
   zoomLibraryStore
@@ -91,7 +90,6 @@ interface StateProps {
   connectivity: { status: ConnectivityStatus; retryIn: number }
   dialogModalOptions: DialogModalOptions
   externalLinkDialogOptions: ExternalLinkDialogOptions
-  sideloadedLibrary: GameInfo[]
   lastChangelogShown: string | null
   showInstallModal: {
     show: boolean
@@ -225,7 +223,6 @@ class GlobalState extends PureComponent<Props> {
       runner: 'legendary',
       gameInfo: null
     },
-    sideloadedLibrary: applyGameOverrides(sideloadLibrary.get('games', [])),
     dialogModalOptions: { showDialog: false },
     externalLinkDialogOptions: { showDialog: false },
     lastChangelogShown: JSON.parse(storage.getItem('last_changelog') || 'null'),
@@ -609,10 +606,6 @@ class GlobalState extends PureComponent<Props> {
         ...this.state.amazon,
         library: this.loadAmazonLibrary(overrides)
       },
-      sideloadedLibrary: applyGameOverrides(
-        sideloadLibrary.get('games', []),
-        overrides
-      )
     })
   }
 
@@ -666,8 +659,6 @@ class GlobalState extends PureComponent<Props> {
       amazonLibrary = this.loadAmazonLibrary(overrides)
     }
 
-    const updatedSideload = sideloadLibrary.get('games', [])
-
     this.setState({
       epic: {
         library: applyGameOverrides(epicLibrary, overrides),
@@ -688,8 +679,7 @@ class GlobalState extends PureComponent<Props> {
       },
       gameUpdates: updates,
       refreshing: false,
-      refreshingInTheBackground: true,
-      sideloadedLibrary: applyGameOverrides(updatedSideload, overrides)
+      refreshingInTheBackground: true
     })
 
     if (currentLibraryLength !== epicLibrary.length) {
@@ -815,7 +805,7 @@ class GlobalState extends PureComponent<Props> {
       )[0]
       if (!currentApp || (currentApp && currentApp.status !== 'installing')) {
         const gameInfo = await getGameInfo(appName, runner)
-        if (!gameInfo || gameInfo.runner === 'sideload') {
+        if (!gameInfo) {
           return
         }
         return this.setState({

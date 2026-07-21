@@ -30,7 +30,6 @@ jest.mock('backend/storeManagers', () => ({
     legendary: { getGameInfo: jest.fn() },
     gog: { getGameInfo: jest.fn() },
     nile: { getGameInfo: jest.fn() },
-    sideload: {},
     zoom: {}
   }
 }))
@@ -163,34 +162,6 @@ describe('onGameInstalled', () => {
       '/games/test',
       'TestGame',
       'legendary',
-      'test_app'
-    )
-    expect(mockedAddGameToSteam).toHaveBeenCalledWith({
-      gameName: 'TestGame'
-    })
-    expect(result.success).toBe(true)
-  })
-
-  test('handles runner without getGameInfo gracefully', async () => {
-    mockGetGameInfo.mockReturnValue({
-      title: 'TestGame',
-      app_name: 'test_app',
-      runner: 'sideload',
-      install: { install_path: '/sideload/game' }
-    })
-
-    mockedFindShortcut.mockReturnValue(undefined)
-    mockedAddGameToSteam.mockResolvedValueOnce({
-      success: true,
-      steamAppId: 789
-    })
-
-    const result = await onGameInstalled(mockGame as never)
-
-    expect(mockedCreateRelicBat).toHaveBeenCalledWith(
-      '/sideload/game',
-      'TestGame',
-      'sideload',
       'test_app'
     )
     expect(mockedAddGameToSteam).toHaveBeenCalledWith({

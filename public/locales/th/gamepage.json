@@ -24,9 +24,6 @@
       "button": "เลิอก",
       "image": ""
     },
-    "sideload": {
-      "exe": "เลือกไฟล์ปฎิบัติการ (EXE)"
-    },
     "stopInstall": {
       "keepInstalling": "ติดตั้งต่อไป",
       "message": "คุณต้องการที่จะเก็บไฟล์ที่ดาวน์โหลดไว้หรือไม่?",
@@ -85,9 +82,6 @@
     "uninstall": "ถอนการติดตั้ง",
     "update": "อัปเดต",
     "unhide_game": "ซ่อนเกม",
-    "sideload": {
-      "edit": ""
-    },
     "changelog": "",
     "force_update": "",
     "browse_wine_prefix": "",
@@ -190,29 +184,6 @@
     "title": "",
     "zoom": "",
     "epic": ""
-  },
-  "sideload": {
-    "info": {
-      "exe": "เลือกไฟล์ปฎิบัติการ (EXE)",
-      "image": "ภาพของแอป",
-      "broser": "",
-      "title": "",
-      "useragent": "",
-      "fullscreen": ""
-    },
-    "placeholder": {
-      "url": "",
-      "useragent": "",
-      "image": "",
-      "title": ""
-    },
-    "import-hint": {
-      "content": "",
-      "title": ""
-    },
-    "field": {
-      "title": ""
-    }
   },
   "specs": {
     "minimum": "ขั้นต่ำ",

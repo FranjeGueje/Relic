@@ -77,11 +77,6 @@ export interface StoreStructure {
   nileConfigStore: {
     userData?: NileUserData
   }
-  sideloadedStore: {
-    games: GameInfo[]
-    // FIXME: Not sure if this is correct, seems like this key is only used once
-    installed: InstalledInfo[]
-  }
   downloadManager: {
     queue: DMQueueElement[]
     finished: DMQueueElement[]

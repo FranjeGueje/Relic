@@ -24,9 +24,6 @@
       "button": "Velg",
       "image": "Velg bilde"
     },
-    "sideload": {
-      "exe": "Velg kjørbar fil"
-    },
     "stopInstall": {
       "keepInstalling": "Fortsett å installere",
       "message": "Behold nedlastede filer?",
@@ -87,9 +84,6 @@
     "remove_from_recent": "Fjern fra nylige",
     "run-exe-first": "Kjør installasjon først",
     "running-setup": "Kjører oppsett",
-    "sideload": {
-      "edit": "Rediger app/spill"
-    },
     "unhide_game": "Synligjør spillet",
     "uninstall": "Avinstaller",
     "update": "Oppdater",
@@ -230,34 +224,6 @@
     "title": "Velg komponenter som skal installeres"
   },
   "setting": {},
-  "sideload": {
-    "field": {
-      "title": "Tittel"
-    },
-    "info": {
-      "exe": "Velg kjørbar fil",
-      "image": "App Image",
-      "title": "Spill/app tittel",
-      "broser": "NettleserURL",
-      "fullscreen": "Start fullskjerm (F11 for å avslutte)",
-      "useragent": "Egendefinert brukeragent",
-      "cover-hint": "Forside/Heltekunst (klikk på bildet for å søke på SteamGridDB)",
-      "image-hint": "Stående forsidekunst (klikk på bildet for å søke på SteamGridDB)"
-    },
-    "placeholder": {
-      "image": "Lim inn en bilde-URL her eller velg et bilde fra datamaskinen din",
-      "title": "Legg til en tittel til spillet/programmet ditt",
-      "url": "Lim inn spillets URL her",
-      "useragent": "Skriv inn en egendefinert brukeragent her som skal brukes på denne nettleserappen/spillet"
-    },
-    "import-hint": {
-      "content": "IKKE bruk denne egenskapen for det. <br /> Bruk heller, <3>logg inn på</3> butikken, let etter spillet i biblioteket ditt, åpne installasjonsdialogen, og klikk på &quot;Importer Spill&quot; knappen",
-      "title": "Viktig! Legger du til et spill fra Epic/GOG/Amazon? Klikk her!"
-    },
-    "images": {
-      "summary": "Bilder"
-    }
-  },
   "specs": {
     "minimum": "Minimum",
     "recommended": "Anbefalt"

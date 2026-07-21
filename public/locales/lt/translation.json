@@ -415,7 +415,6 @@
   "launch": {},
   "console": {
     "filter": {
-      "sideload": "Kita/-s/-i",
       "all": "Visi/-as/-os/-us"
     },
     "games": "Įdiegti žaidimai",

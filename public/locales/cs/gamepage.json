@@ -24,9 +24,6 @@
       "button": "Zvolit",
       "image": "Vybrat Obrázek"
     },
-    "sideload": {
-      "exe": "Vybrat spustitelný soubor"
-    },
     "stopInstall": {
       "keepInstalling": "Pokračovat v instalaci",
       "message": "Chcete PONECHAT stažené soubory?",
@@ -86,9 +83,6 @@
     "remove_from_recent": "Odebrat z nedávných",
     "run-exe-first": "Nejprve spustit instalátor",
     "running-setup": "Spouštění nastavení",
-    "sideload": {
-      "edit": "Upravit aplikaci/hru"
-    },
     "unhide_game": "Odkrýt hru",
     "uninstall": "Odinstalovat",
     "update": "Aktualizace",
@@ -230,34 +224,6 @@
     "title": "Vyberte součásti k instalaci"
   },
   "setting": {},
-  "sideload": {
-    "field": {
-      "title": "Název"
-    },
-    "info": {
-      "exe": "Vyberte spustitelný soubor",
-      "image": "Obrázek aplikace",
-      "title": "Název hry/aplikace",
-      "broser": "Adresa URL prohlížeče",
-      "useragent": "Vlastní User Agent",
-      "fullscreen": "Spustit na celé obrazovce (F11 pro opuštění)",
-      "cover-hint": "Ikona/Grafika (klikněte na obrázek pro hledání v SteamGridDB)",
-      "image-hint": "Čtvercová Ikona (klikněte na obrázek pro hledání v SteamGridDB)"
-    },
-    "placeholder": {
-      "image": "Sem vložte URL obrázku, nebo vyberte soubor z vašeho zařízení",
-      "title": "Přidejte název ke své hře/aplikaci",
-      "url": "Sem vložte adresu URL hry",
-      "useragent": "Sem zadejte vlastní User Agent (uživatelský agent) pro použití v této prohlížečové aplikaci/hře"
-    },
-    "import-hint": {
-      "content": "Tuto funkci k této akci NEPOUŽÍVEJTE.<br />Namísto toho se <3>přihlaste do obchodu</3>, vyhledejte hru ve své knihovně, otevřete instalační dialog a klikněte na tlačítko &quot;Importovat hru&quot;",
-      "title": "Důležité! Přidáváte hru z obchodu Epic/GOG/Amazon? Klikněte sem!"
-    },
-    "images": {
-      "summary": "Obrázky"
-    }
-  },
   "specs": {
     "minimum": "Minimální",
     "recommended": "Doporučené"

@@ -24,9 +24,6 @@
       "button": "Selecteer",
       "image": "Selecteer prent"
     },
-    "sideload": {
-      "exe": "Selecteer uitvoerbaar bestand"
-    },
     "stopInstall": {
       "keepInstalling": "Doorgaan met installeren",
       "message": "Wilt u de gedownloade bestanden bewaren?",
@@ -85,9 +82,6 @@
     "remove_from_recent": "Verwijder uit recent",
     "run-exe-first": "Run Installer First",
     "running-setup": "Running Setup",
-    "sideload": {
-      "edit": "Bewerk App/Game"
-    },
     "unhide_game": "Zet Game terug",
     "uninstall": "Verwijderen",
     "update": "Update",
@@ -206,29 +200,6 @@
     "title": "Selecteer componenten om te installeren"
   },
   "setting": {},
-  "sideload": {
-    "field": {
-      "title": "Titel"
-    },
-    "info": {
-      "exe": "Selecteer uitvoerbaar bestand",
-      "image": "App Image",
-      "title": "Game/App Titel",
-      "broser": "BrowserURL",
-      "fullscreen": "Start volledig scherm (F11 om af te sluiten)",
-      "useragent": "Aangepaste User Agent"
-    },
-    "placeholder": {
-      "image": "Plak een foto URL hier",
-      "title": "Voeg een titel toe aan jouw Game/App",
-      "url": "Plak hier de game-URL",
-      "useragent": "Schrijf een aangepaste user agent hier om te gebruiken in deze browser applicatie/game"
-    },
-    "import-hint": {
-      "content": "Gebruik deze functie daar NIET voor.<br />In plaats daarvan, <3>Log in</3>zoek het spel in jouw bibliotheek in de winkel, open het installatiedialoogvenster en klik op de &quot;Import Game&quot; knop",
-      "title": "Belangrijk! Voeg je een spel toe vanaf Epic/GOG/Amazon? Klik hier!"
-    }
-  },
   "specs": {
     "minimum": "Minimum",
     "recommended": "Aanbevolen"

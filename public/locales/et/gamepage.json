@@ -24,9 +24,6 @@
       "button": "Vali",
       "image": "Vali pilt"
     },
-    "sideload": {
-      "exe": "Vali käivitatav programm"
-    },
     "stopInstall": {
       "keepInstalling": "Jätka paigaldamist",
       "message": "Kas soovite allalaaditud faile alles hoida?",
@@ -86,9 +83,6 @@
     "remove_from_recent": "Eemalda hiljutistest",
     "run-exe-first": "Käivita enne installeerija",
     "running-setup": "Ülesseadmine",
-    "sideload": {
-      "edit": "Muuda rakendust/mängu"
-    },
     "unhide_game": "Näita mäng",
     "uninstall": "Eemalda",
     "update": "Uuenda",
@@ -228,29 +222,6 @@
     "title": "Valige komponendid, mida paigaldada"
   },
   "setting": {},
-  "sideload": {
-    "field": {
-      "title": "Pealkiri"
-    },
-    "info": {
-      "exe": "Vali käivitatav programm",
-      "image": "Rakenduse pilt",
-      "title": "Mängu/rakenduse pealkiri",
-      "broser": "BrowserURL",
-      "fullscreen": "Käivita täisekraanis (sulge klahviga F11)",
-      "useragent": "Kohandatud User Agent"
-    },
-    "placeholder": {
-      "image": "Kleepige pildi URL siia või valige üks oma arvutist",
-      "title": "Lisa pealkiri oma mängule/rakendusele",
-      "url": "Asetage mängu URL siia",
-      "useragent": "Kirjuta käsitsi User Agent siia, et kasutada seda selle brauseri äpi/mänguga"
-    },
-    "import-hint": {
-      "title": "Tähtis! Kas lisate Epic/GOG/Amazoni mängu? Kliki siia!",
-      "content": "Ärge kasutage selleks seda funktsiooni.<br />Selle asemel <3>logige sisse</3> poodi, otsige mäng oma varamust üles, avage paigaldusaken ja klikkige nupul &quot;Impordi mäng&quot;"
-    }
-  },
   "specs": {
     "minimum": "Miinimum",
     "recommended": "Soovitatav"

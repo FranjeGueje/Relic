@@ -24,9 +24,6 @@
       "button": "Vybrať",
       "image": ""
     },
-    "sideload": {
-      "exe": "Vyberte Spustiteľný Súbor"
-    },
     "stopInstall": {
       "keepInstalling": "Pokračujte v inštalácii",
       "message": "Prajete si PONECHAŤ stiahnuté súbory?",
@@ -85,9 +82,6 @@
     "remove_from_recent": "Vymazať z posledných",
     "run-exe-first": "Spustiť Inštalátor",
     "running-setup": "Beží Inštalátor",
-    "sideload": {
-      "edit": "Upraviť nastavenie App/Game"
-    },
     "unhide_game": "Odkryť hru",
     "uninstall": "Odinštalovať",
     "update": "Aktualizovať",
@@ -206,29 +200,6 @@
     "title": "Vyberte komponenty na inštaláciu"
   },
   "setting": {},
-  "sideload": {
-    "field": {
-      "title": "Názov"
-    },
-    "info": {
-      "exe": "Vybrať spustiteľný súbor",
-      "image": "Fotka Aplikácie",
-      "title": "Game/App Názov",
-      "broser": "Adresa URL prehliadača",
-      "fullscreen": "Spustiť na celú obrazovku (ukončiť z F11)",
-      "useragent": "Vlastný Useragent"
-    },
-    "placeholder": {
-      "image": "Sem prilepte adresu URL obrázka",
-      "title": "Pridať názov k vašej Game/App",
-      "url": "Sem prilepte webovú adresu hry",
-      "useragent": "Sem napíšte vlastného useragenta, ktorý sa bude používať v tejto aplikácii/hre prehliadača"
-    },
-    "import-hint": {
-      "title": "Dôležité! Pridáte hru z Epic/GOG/Amazon? Kliknite tu!",
-      "content": "Nepoužívajte túto funkciu.<br />Namiesto, <3>log do</3> obchod, hľadať hru vo vašej knižnici, otvorte inštalačný dialóg a kliknite na \"Import Game \" tlačidlo"
-    }
-  },
   "specs": {
     "minimum": "Minimum",
     "recommended": "Odporúčané"

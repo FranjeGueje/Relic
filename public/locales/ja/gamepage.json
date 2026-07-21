@@ -24,9 +24,6 @@
       "button": "選択",
       "image": "画像を選択"
     },
-    "sideload": {
-      "exe": "実行可能ファイルを選択"
-    },
     "stopInstall": {
       "keepInstalling": "インストールを続ける",
       "message": "ダウンロードしたファイルを保持しますか?",
@@ -85,9 +82,6 @@
     "remove_from_recent": "最近のゲームから削除",
     "run-exe-first": "最初にインストーラを実行",
     "running-setup": "セットアップを実行中",
-    "sideload": {
-      "edit": "App/ゲームを編集"
-    },
     "unhide_game": "ゲームを再表示",
     "uninstall": "アンインストール",
     "update": "アップデート",
@@ -207,29 +201,6 @@
     "title": "インストールするコンポーネントを選択"
   },
   "setting": {},
-  "sideload": {
-    "field": {
-      "title": "タイトル"
-    },
-    "info": {
-      "exe": "実行可能ファイルを選択",
-      "image": "Appイメージ",
-      "title": "ゲーム/Appタイトル",
-      "broser": "ブラウザURL",
-      "useragent": "カスタムユーザーエージェント",
-      "fullscreen": "フルスクリーンで起動（F11で終了）"
-    },
-    "placeholder": {
-      "image": "画像のURLを貼り付けるか、お使いのコンピュータから画像を選択してください",
-      "title": "ゲーム/Appにタイトルを追加してください",
-      "url": "ゲームのURLをここに貼り付けます",
-      "useragent": "このブラウザゲーム/Appで使用するカスタムユーザーエージェントを入力します"
-    },
-    "import-hint": {
-      "content": "そのためにこの機能を使用しないでください。<br />代わりに、ストアに<3>ログイン</3>し、ライブラリでゲームを探し、インストールダイアログを開いて「ゲームのインポート」ボタンをクリックします。",
-      "title": "重要! Epic/GOG/Amazonからゲームを追加しますか? ここをクリックしてください!"
-    }
-  },
   "specs": {
     "minimum": "最低",
     "recommended": "推奨"

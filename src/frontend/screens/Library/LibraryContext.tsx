@@ -8,7 +8,6 @@ const initialContext: LibraryContextType = {
     legendary: true,
     gog: true,
     nile: true,
-    sideload: true,
     zoom: true
   },
   platformsFilters: { win: true, linux: true, mac: true, browser: true },

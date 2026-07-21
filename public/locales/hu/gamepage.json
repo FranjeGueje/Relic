@@ -24,9 +24,6 @@
       "button": "Kiválasztás",
       "image": "Kép kiválasztása"
     },
-    "sideload": {
-      "exe": "Indítófájl kiválasztása"
-    },
     "stopInstall": {
       "keepInstalling": "Telepítés folytatása",
       "message": "MEGTARTOD a letöltött fájlokat?",
@@ -86,9 +83,6 @@
     "remove_from_recent": "Eltávolítás a legutóbbiak közül",
     "run-exe-first": "Először a telepítő futtatása",
     "running-setup": "Telepítés futtatása",
-    "sideload": {
-      "edit": "Alkalmazás/játék szerkesztése"
-    },
     "unhide_game": "Játék felfedése",
     "uninstall": "Eltávolítás",
     "update": "Frissítés",
@@ -229,34 +223,6 @@
     "title": "Válaszd ki a telepítendő elemeket"
   },
   "setting": {},
-  "sideload": {
-    "field": {
-      "title": "Cím"
-    },
-    "info": {
-      "exe": "Indítófájl kiválasztása",
-      "image": "Alkalmazásképfájl",
-      "title": "Játék/alkalmazás címe",
-      "broser": "Webcím",
-      "fullscreen": "Indítás teljes képernyőben (F11 a kilépéshez)",
-      "useragent": "Egyéni felhasználói ügynök",
-      "cover-hint": "Borítógrafika/Kiemelt kép (kattints a képre a SteamGridDB-n való kereséshez)",
-      "image-hint": "Négyzetes grafika (kattints a képre a SteamGridDB-n való kereséshez)"
-    },
-    "placeholder": {
-      "image": "Ide illeszd be a kép webcímét, vagy válassz egyet a számítógépedről",
-      "title": "Adj címet a játékának/alkalmazásának",
-      "url": "Ide illeszd be a játék webcímét",
-      "useragent": "Írj ide egy egyéni felhasználói ügynököt, melyet ehhez a böngészős alkalmazáshoz/játékhoz használna"
-    },
-    "import-hint": {
-      "title": "Fontos! Épp egy játékot adsz hozzá az Epicről/GOG-ról/Amazonról? Kattints ide!",
-      "content": "NE használd erre ezt a funkciót.<br />Helyette <3>jelentkezz be</3> az áruházba, keresd meg a játékot a könyvtárodban, nyisd meg a telepítési párbeszédablakot, és kattints a „Játék importálása” gombra."
-    },
-    "images": {
-      "summary": "Képek"
-    }
-  },
   "specs": {
     "minimum": "Minimum",
     "recommended": "Ajánlott"

@@ -470,8 +470,7 @@
   "next": "Sonraki",
   "console": {
     "filter": {
-      "all": "Tümü",
-      "sideload": "Other"
+      "all": "Tümü"
     },
     "games": "Kurulu oyunlar",
     "hints": {

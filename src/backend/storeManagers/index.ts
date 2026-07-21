@@ -1,4 +1,3 @@
-import SideloadLibraryManager from 'backend/storeManagers/sideload/library'
 import GOGLibraryManager from 'backend/storeManagers/gog/library'
 import LegendaryLibraryManager from 'backend/storeManagers/legendary/library'
 import NileLibraryManager from 'backend/storeManagers/nile/library'
@@ -11,7 +10,6 @@ import type { DMQueueElement, GameInfo, Runner } from 'common/types'
 import type { LibraryManager } from 'common/types/game_manager'
 
 export const libraryManagerMap = {
-  sideload: new SideloadLibraryManager(),
   gog: new GOGLibraryManager(),
   legendary: new LegendaryLibraryManager(),
   nile: new NileLibraryManager(),

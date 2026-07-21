@@ -32,17 +32,16 @@ export default function InstallOverlay({
   const [progress] = hasProgress(game.app_name, game.runner)
 
   const isLinux = platform === 'linux'
-  const isSideload = game.runner === 'sideload'
 
   const availablePlatforms = useMemo<PlatformOption[]>(() => {
     const options: PlatformOption[] = []
-    if (isLinux && (isSideload || game.is_linux_native)) {
+    if (isLinux && game.is_linux_native) {
       options.push({ value: 'linux', label: 'Linux' })
     }
     // Windows is always installable.
     options.push({ value: 'Windows', label: 'Windows' })
     return options
-  }, [isLinux, isSideload, game.is_linux_native])
+  }, [isLinux, game.is_linux_native])
 
   const defaultPlatform: InstallPlatform =
     (isLinux && game.is_linux_native && 'linux') || 'Windows'

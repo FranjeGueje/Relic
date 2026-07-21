@@ -291,3 +291,28 @@ Para ver el detalle completo de cada categoría, consultar:
 
 #### Tests
 - TypeScript 0 errores, 95 tests pasan (ningún fallo preexistente nuevo).
+
+---
+
+### v0.2.1 — SLIM-SIDELOAD (Jul 2026)
+
+#### Sideload eliminado completamente
+- Directorios eliminados: `src/backend/storeManagers/sideload/`, `src/frontend/components/UI/EditGameDialog/`, `src/frontend/screens/Library/components/EmptyLibrary/` (CSS).
+- Runner `'sideload'` eliminado del type union en types compartidos (6 archivos).
+- Backend: store manager, handler IPC `addNewApp`, `LogPrefix.Sideload`, y entradas en `libraryManagerMap`, `STORE_CONFIGS`, `umuStoreMap` eliminados.
+- Frontend state: `sideloadedLibrary` eliminado del context y GlobalState.
+- Library (~6 archivos), GamePage (~7 archivos): variables `isSideloaded` y guards eliminados.
+- ConsoleMode, DownloadManager, Settings: sideload references eliminadas.
+- UI components: LibraryFilters, LibrarySearchBar, UninstallModal limpiados.
+- Hooks: defaults de `sideload` reemplazados por `legendary`.
+- CSS huérfano: `LibraryHeader/index.css`, `InstallModal/index.scss` limpiados.
+- i18n: bloque `sideload` eliminado de 51 `gamepage.json` y 3 `translation.json`.
+- Tests: 3 test cases y 1 mock eliminados.
+- Store persistente `~/.config/relic/sideload_apps/` eliminado.
+- ~40 archivos modificados, 3 directorios eliminados.
+
+#### Electron fix
+- Script `start`: añadido `node node_modules/electron/install.js` antes de `electron-vite dev` para solucionar `Error: Electron uninstall` cuando el binario no se descarga en `pnpm install`.
+
+#### Tests
+- TypeScript 0 errores, 92 tests pasan.

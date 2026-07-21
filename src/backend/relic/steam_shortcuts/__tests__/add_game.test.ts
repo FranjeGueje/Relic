@@ -138,19 +138,6 @@ describe('createRelicBat', () => {
     expect(content).toContain('@nile launch nile789 -- %*')
   })
 
-  test('creates default bat for sideload with placeholder', () => {
-    const runnerPath = createRelicBat(tmpDir.name, 'SideloadGame', 'sideload', '')
-
-    expect(runnerPath).toBe(join(tmpDir.name, 'SideloadGame.bat'))
-    expect(existsSync(runnerPath)).toBe(true)
-
-    const content = readFileSync(runnerPath, 'utf-8')
-    for (const line of HEADER_LINES) {
-      expect(content).toContain(line)
-    }
-    expect(content).toContain('@echo En desarrollo...')
-  })
-
   test('creates default bat for zoom with start command', () => {
     const runnerPath = createRelicBat('/some/path/ZoomGame', 'ZoomGame', 'zoom', '')
 

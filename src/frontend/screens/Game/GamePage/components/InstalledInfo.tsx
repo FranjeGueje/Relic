@@ -17,7 +17,6 @@ const InstalledInfo = ({ gameInfo }: Props) => {
     return null
   }
 
-  const isSideloaded = runner === 'sideload'
   const isThirdParty = !!gameInfo.thirdPartyManagedApp
 
   const {
@@ -35,21 +34,15 @@ const InstalledInfo = ({ gameInfo }: Props) => {
     )
   }
 
-  let install_path: string | undefined
-  let install_size: string | undefined
-  let version: string | undefined
-
-  if (!isSideloaded) {
-    install_path = gameInfo.install.install_path
-    install_size = gameInfo.install.install_size
-    version = gameInfo.install.version
-  }
+  const install_path = gameInfo.install.install_path
+  const install_size = gameInfo.install.install_size
+  const version = gameInfo.install.version
 
   const appLocation = install_path || folder_name
 
   const info = (
     <>
-      {!isSideloaded && !isThirdParty && (
+      {!isThirdParty && (
         <div>
           <b>{t('info.size')}:</b> {install_size}
         </div>
@@ -58,7 +51,7 @@ const InstalledInfo = ({ gameInfo }: Props) => {
         <b>{t('info.installedPlatform', 'Installed Platform')}:</b>{' '}
         {installPlatform === 'osx' ? 'MacOS' : installPlatform}
       </div>
-      {!isSideloaded && !isThirdParty && (
+      {!isThirdParty && (
         <div>
           <b>{t('info.version')}:</b> {version}
         </div>

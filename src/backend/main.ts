@@ -1060,10 +1060,6 @@ addListener('setTitleBarOverlay', (e, args) => {
   }
 })
 
-addListener('addNewApp', (e, args) =>
-  libraryManagerMap['sideload'].addNewApp(args)
-)
-
 addListener('setGameMetadataOverride', (e, args) => {
   const { appName, title, art_cover, art_square } = args
   setGameOverrides(appName, { title, art_cover, art_square })

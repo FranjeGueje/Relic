@@ -24,9 +24,6 @@
       "button": "Ange val",
       "image": "Välj bild"
     },
-    "sideload": {
-      "exe": "Ange spelets körbara fil"
-    },
     "stopInstall": {
       "keepInstalling": "Fortsätt installationen",
       "message": "Vill du behålla nedladdade filer?",
@@ -85,9 +82,6 @@
     "remove_from_recent": "Ta bort från Senast spelat",
     "run-exe-first": "Kör installation först",
     "running-setup": "Setup körs",
-    "sideload": {
-      "edit": "Editera Applikation/Spel"
-    },
     "unhide_game": "Visa dolt spel igen",
     "uninstall": "Avinstallera",
     "update": "Uppdatera",
@@ -209,29 +203,6 @@
     "title": "Ange komponenter att installera"
   },
   "setting": {},
-  "sideload": {
-    "field": {
-      "title": "Titel"
-    },
-    "info": {
-      "exe": "Välj EXE-fil",
-      "image": "Applikationens bild",
-      "title": "Spel/Applikation titel",
-      "broser": "Webbläsar-URL",
-      "useragent": "Anpassad User Agent",
-      "fullscreen": "Starta helskärm (F11 för att avsluta)"
-    },
-    "placeholder": {
-      "image": "Klistra in en URL till en bild eller välj en från din dator",
-      "title": "Lägg till Spel/Applikation titel",
-      "url": "Klistra in spelets URL här",
-      "useragent": "Skriv en anpassad user agent här som ska användas i den här webbläsarappen/spelet"
-    },
-    "import-hint": {
-      "title": "Viktigt! Vill du lägga till ett spel från Epic/GOG/Amazon? Klicka här!",
-      "content": "Använd INTE den här funktionen för detta.<br />Istället <3>loggar du in på</3> butiken, letar efter spelet i ditt bibliotek, öppnar installationsdialogrutan och klickar på &quot;Importera spel&quot; knappen"
-    }
-  },
   "specs": {
     "minimum": "Minimum",
     "recommended": "Rekommenderade"

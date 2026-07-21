@@ -24,9 +24,6 @@
       "button": "Valitse",
       "image": "Valitse kuva"
     },
-    "sideload": {
-      "exe": "Valitse suoritettava tiedosto"
-    },
     "stopInstall": {
       "keepInstalling": "Jatka asentamista",
       "message": "Haluatko SÄILYTTÄÄ ladatut tiedostot?",
@@ -85,9 +82,6 @@
     "remove_from_recent": "Poista viimeisimmistä",
     "run-exe-first": "Suorita asentaja ensin",
     "running-setup": "Suoritetaan järjestelyä",
-    "sideload": {
-      "edit": "Muokkaa sovellusta/peliä"
-    },
     "unhide_game": "Näytä peli",
     "uninstall": "Poista asennus",
     "update": "Päivitä",
@@ -206,29 +200,6 @@
     "title": "Valitse asennettavat komponentit"
   },
   "setting": {},
-  "sideload": {
-    "field": {
-      "title": "Otsikko"
-    },
-    "info": {
-      "exe": "Valitse suoritettava tiedosto",
-      "image": "App Image",
-      "title": "Pelin/sovelluksen otsikko",
-      "broser": "Selaimen URL-osoite",
-      "useragent": "Oma \"User Agent\"",
-      "fullscreen": "Vaihda täyden ruudun näkymään (F11 poistuu)"
-    },
-    "placeholder": {
-      "image": "Liitä kuvan URL tähän, tai valitse kuva laitteeltasi",
-      "title": "Lisää otsikko peliisi/sovellukseesi",
-      "url": "Liitä pelin URL-osoite tähän",
-      "useragent": "Tähän laitetaan vaihtoehtoinen selaimen tunnistetieto tälle sovellukselle/pelille"
-    },
-    "import-hint": {
-      "content": "Älä käytä tätä ominaisuutta siihen.<br/>Sen sijaan, <3>kirjaudu</3> kauppaan, etsi peli kirjastostasi, avaa asennusdialogi, ja klikkaa &quot;Tuo peli&quot; painiketta",
-      "title": "Tärkeää! Oletko lisäämässä peliä Epic/GOG/Amazon palvelusta? Klikkaa tästä!"
-    }
-  },
   "specs": {
     "minimum": "Minimi",
     "recommended": "Suositeltu"

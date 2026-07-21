@@ -39,9 +39,6 @@
     "runexe": {
       "title": "בחרו קובץ EXE להפעיל"
     },
-    "sideload": {
-      "exe": "בחרו קובץ הרצה"
-    },
     "update": {
       "message": "למשחק זה יש עדכון, החל עדכון עכשיו?",
       "title": "משחק זה צריך עדכון"
@@ -86,9 +83,6 @@
       "remove": "הסר מהתור"
     },
     "run-exe-first": "הפעל מתקין קודם",
-    "sideload": {
-      "edit": "ערוך אפליקציה/משחק"
-    },
     "unhide_game": "הסר משחק מרשימת המוסתרים",
     "uninstall": "הסר התקנה",
     "running-setup": "מפעיל הגדרה",
@@ -110,29 +104,6 @@
     "installedPlatform": "פלטפורמה מותקנת",
     "size": "גודל",
     "third-party-app": ""
-  },
-  "sideload": {
-    "info": {
-      "broser": "קישור דפדפן",
-      "exe": "בחרו קובץ הרצה",
-      "image": "תמונת אפליקציה",
-      "title": "כותרת אפליקציה/משחק",
-      "useragent": "",
-      "fullscreen": ""
-    },
-    "placeholder": {
-      "title": "הוסיפו כותרת למשחק/אפליקציה שלכם",
-      "image": "הדבק קישור תמונה לפה",
-      "url": "הדביקו את קישור המשחק פה",
-      "useragent": ""
-    },
-    "field": {
-      "title": "כותרת"
-    },
-    "import-hint": {
-      "content": "",
-      "title": ""
-    }
   },
   "status": {
     "notSupportedGame": "לא נתמך",

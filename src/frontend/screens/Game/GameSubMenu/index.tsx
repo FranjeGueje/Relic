@@ -60,7 +60,6 @@ export default function GamesSubmenu({
 
   const [showUninstallModal, setShowUninstallModal] = useState(false)
   const { t } = useTranslation('gamepage')
-  const isSideloaded = runner === 'sideload'
   const isThirdPartyManaged = !!gameInfo.thirdPartyManagedApp
 
   async function onMoveInstallYesClick() {
@@ -144,7 +143,7 @@ export default function GamesSubmenu({
                 <DeleteIcon />
                 {t('button.uninstall', 'Uninstall')}
               </button>{' '}
-              {!isSideloaded && !isThirdPartyManaged && (
+              {!isThirdPartyManaged && (
                 <button
                   onClick={async () => handleUpdate()}
                   className="link button is-text is-link buttonWithIcon"
@@ -154,7 +153,7 @@ export default function GamesSubmenu({
                   {t('button.force_update', 'Force Update if Available')}
                 </button>
               )}{' '}
-              {!isSideloaded && !isThirdPartyManaged && (
+              {!isThirdPartyManaged && (
                 <button
                   onClick={async () => handleMoveInstall()}
                   className="link button is-text is-link buttonWithIcon"
@@ -163,7 +162,7 @@ export default function GamesSubmenu({
                   {t('submenu.move', 'Move Game')}
                 </button>
               )}{' '}
-              {!isSideloaded && !isThirdPartyManaged && (
+              {!isThirdPartyManaged && (
                 <button
                   onClick={async () => handleRepair(appName)}
                   className="link button is-text is-link buttonWithIcon"
@@ -174,7 +173,7 @@ export default function GamesSubmenu({
               )}{' '}
             </>
           )}
-          {!isSideloaded && !!changelog?.length && (
+          {!!changelog?.length && (
             <button
               onClick={() => handleChangeLog()}
               className="link button is-text is-link buttonWithIcon"

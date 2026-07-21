@@ -18,9 +18,6 @@
       "dlc": ""
     },
     "yes": "დიახ",
-    "sideload": {
-      "exe": "აირჩიეთ გამშვები ფაილი"
-    },
     "stopInstall": {
       "keepInstalling": "დაყენების გაგრძელება",
       "title": "დაყენების გაჩერება",
@@ -81,9 +78,6 @@
     "hide_game": "თამასის დამალვა",
     "import": "თამაშის შემოტანა",
     "running-setup": "დაყენების გაშვება",
-    "sideload": {
-      "edit": "აპის/თამაშის ჩასწორება"
-    },
     "unhide_game": "თამაშის ხილულად გახდომა",
     "add_to_favourites": "",
     "force_update": "",
@@ -195,29 +189,6 @@
       "resume": "",
       "pause": "",
       "remove": ""
-    }
-  },
-  "sideload": {
-    "field": {
-      "title": "სათაური"
-    },
-    "info": {
-      "broser": "ბრაუზერის URL",
-      "exe": "აირჩიეთ გამშვები ფაილი",
-      "title": "",
-      "useragent": "",
-      "fullscreen": "",
-      "image": ""
-    },
-    "placeholder": {
-      "url": "",
-      "useragent": "",
-      "image": "",
-      "title": ""
-    },
-    "import-hint": {
-      "content": "",
-      "title": ""
     }
   },
   "specs": {

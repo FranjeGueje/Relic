@@ -24,9 +24,6 @@
       "button": "Selectare",
       "image": "Selectează Imagine"
     },
-    "sideload": {
-      "exe": "Selectare Executabil"
-    },
     "stopInstall": {
       "keepInstalling": "Continuați să instalați",
       "message": "Doriți să PĂSTRAȚI fișierele descărcate?",
@@ -86,9 +83,6 @@
     "remove_from_recent": "Eliminare din recente",
     "run-exe-first": "Rulează mai întâi instalatorul",
     "running-setup": "Rularea programului de instalare",
-    "sideload": {
-      "edit": "Editarea aplicației/jocului"
-    },
     "unhide_game": "Afișează jocul",
     "uninstall": "Dezinstalează",
     "update": "Actualizează",
@@ -208,29 +202,6 @@
     "title": "Selectați componentele de instalat"
   },
   "setting": {},
-  "sideload": {
-    "field": {
-      "title": "Title"
-    },
-    "info": {
-      "exe": "Select Executable",
-      "image": "App Image",
-      "title": "Game/App Title",
-      "broser": "URL browser",
-      "useragent": "",
-      "fullscreen": ""
-    },
-    "placeholder": {
-      "image": "Paste an Image URL here",
-      "title": "Add a title to your Game/App",
-      "url": "Lipiți adresa URL a jocului aici",
-      "useragent": ""
-    },
-    "import-hint": {
-      "content": "",
-      "title": ""
-    }
-  },
   "specs": {
     "minimum": "Minim",
     "recommended": "Recomandat"

@@ -470,8 +470,7 @@
   "next": "Seguinte",
   "console": {
     "filter": {
-      "all": "Todos",
-      "sideload": "Outros"
+      "all": "Todos"
     },
     "games": "Xogos instalados",
     "hints": {

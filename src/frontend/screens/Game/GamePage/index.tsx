@@ -121,7 +121,6 @@ export default React.memo(function GamePage(): JSX.Element | null {
   const knownFixes = hasKnownFixes(appName, runner)
 
   const isLinux = platform === 'linux'
-  const isSideloaded = runner === 'sideload'
   const isBrowserGame = gameInfo?.install.platform === 'Browser'
 
   const isInstalling = status === 'installing'
@@ -136,7 +135,6 @@ export default React.memo(function GamePage(): JSX.Element | null {
   const isInstallingRedist = status === 'redist'
   const notAvailable = !gameAvailable && gameInfo.is_installed
   const notSupportedGame =
-    gameInfo.runner !== 'sideload' &&
     !!gameInfo.thirdPartyManagedApp &&
     !gameInfo.isEAManaged &&
     !gameInfo.isUbisoftManaged
@@ -189,7 +187,6 @@ export default React.memo(function GamePage(): JSX.Element | null {
           install.platform || 'Windows'
 
         if (
-          runner !== 'sideload' &&
           !notSupportedGame &&
           !notInstallable &&
           !thirdPartyManagedApp &&
@@ -236,8 +233,7 @@ export default React.memo(function GamePage(): JSX.Element | null {
   ])
 
   function handleUpdate() {
-    if (gameInfo.runner !== 'sideload')
-      updateGame({ appName, runner, gameInfo })
+    updateGame({ appName, runner, gameInfo })
   }
 
   function handleModal() {
@@ -312,7 +308,6 @@ export default React.memo(function GamePage(): JSX.Element | null {
         playing: isPlaying,
         queued: isQueued,
         reparing: isReparing,
-        sideloaded: isSideloaded,
         syncing: isSyncing,
         uninstalling: isUninstalling,
         updating: isUpdating,
@@ -516,8 +511,6 @@ export default React.memo(function GamePage(): JSX.Element | null {
     if (!folder) {
       return
     }
-
-    if (gameInfo.runner === 'sideload') return
 
     return install({
       gameInfo,

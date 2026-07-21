@@ -64,7 +64,6 @@ export default function ConsoleMode() {
     amazon,
     zoom,
     libraryStatus,
-    sideloadedLibrary,
     refreshLibrary,
     refreshing,
     gameUpdates
@@ -118,16 +117,14 @@ export default function ConsoleMode() {
       ...epic.library,
       ...gog.library,
       ...amazon.library,
-      ...zoom.library,
-      ...sideloadedLibrary
+      ...zoom.library
     ]
     return all.filter((g) => !g.install?.is_dlc && !g.thirdPartyManagedApp)
   }, [
     epic.library,
     gog.library,
     amazon.library,
-    zoom.library,
-    sideloadedLibrary
+    zoom.library
   ])
 
   const visibleGames = useMemo(() => {
@@ -172,11 +169,6 @@ export default function ConsoleMode() {
       },
       { key: 'gog', label: 'GOG', enabled: storesWithGames.has('gog') },
       { key: 'nile', label: 'Amazon', enabled: storesWithGames.has('nile') },
-      {
-        key: 'sideload',
-        label: t('console.filter.sideload', 'Other'),
-        enabled: storesWithGames.has('sideload')
-      },
       { key: 'zoom', label: 'ZOOM', enabled: storesWithGames.has('zoom') }
     ],
     [t, storesWithGames, allGames.length]
@@ -268,13 +260,11 @@ export default function ConsoleMode() {
     if (!updateNoticeGame) return
     const game = updateNoticeGame
     setUpdateNoticeGame(null)
-    if (game.runner !== 'sideload') {
-      void updateGame({
-        appName: game.app_name,
-        runner: game.runner as Runner,
-        gameInfo: game
-      })
-    }
+    void updateGame({
+      appName: game.app_name,
+      runner: game.runner as Runner,
+      gameInfo: game
+    })
   }, [updateNoticeGame])
 
   const handleUninstallFinished = useCallback(() => {

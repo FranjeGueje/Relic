@@ -136,7 +136,6 @@ const GameCard = ({
   const { status, folder, label } = hasStatus(gameInfo, size)
 
   const isBrowserGame = gameInfo.install.platform === 'Browser'
-  const isSideloaded = runner === 'sideload'
   const isThirdPartyManaged = !!gameInfo.thirdPartyManagedApp
   const isLinux = platform === 'linux'
 
@@ -151,8 +150,7 @@ const GameCard = ({
   }, [status])
 
   async function handleUpdate() {
-    if (gameInfo.runner !== 'sideload')
-      updateGame({ appName, runner, gameInfo })
+    updateGame({ appName, runner, gameInfo })
   }
 
   async function onMoveInstallYesClick() {
@@ -361,19 +359,19 @@ const GameCard = ({
     {
       label: t('button.force_update', 'Force Update if Available'),
       onclick: async () => handleUpdate(),
-      show: isInstalled && !isSideloaded && !isThirdPartyManaged,
+      show: isInstalled && !isThirdPartyManaged,
       icon: <Upgrade />
     },
     {
       label: t('submenu.move', 'Move Game'),
       onclick: () => handleMoveInstall(),
-      show: isInstalled && !isSideloaded && !isThirdPartyManaged,
+      show: isInstalled && !isThirdPartyManaged,
       icon: <DriveFileMove />
     },
     {
       label: t('submenu.verify', 'Verify and Repair'),
       onclick: () => handleRepair(),
-      show: isInstalled && !isSideloaded && !isThirdPartyManaged,
+      show: isInstalled && !isThirdPartyManaged,
       icon: <CheckCircle />
     },
     {

@@ -74,7 +74,7 @@ const DownloadManagerItem = ({
   useEffect(() => {
     const getNewInfo = async () => {
       const newInfo = await getGameInfo(appName, runner)
-      if (newInfo && newInfo.runner !== 'sideload') {
+      if (newInfo) {
         setGameInfo(newInfo)
       }
     }

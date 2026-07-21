@@ -24,9 +24,6 @@
       "button": "选择",
       "image": "选择图片"
     },
-    "sideload": {
-      "exe": "选择可执行文件"
-    },
     "stopInstall": {
       "keepInstalling": "保留安装",
       "message": "要保留已下载的文件吗？",
@@ -86,9 +83,6 @@
     "remove_from_recent": "从最近删除",
     "run-exe-first": "先运行安装包",
     "running-setup": "运行安装",
-    "sideload": {
-      "edit": "编辑应用/游戏"
-    },
     "unhide_game": "取消隐藏游戏",
     "uninstall": "卸载",
     "update": "更新",
@@ -229,29 +223,6 @@
     "title": "选择要安装的组件"
   },
   "setting": {},
-  "sideload": {
-    "field": {
-      "title": "标题"
-    },
-    "info": {
-      "exe": "选择可执行文件",
-      "image": "App 映像",
-      "title": "游戏/应用标题",
-      "broser": "浏览器网址",
-      "useragent": "自定义 User Agent",
-      "fullscreen": "启动全屏（按 F11 退出）"
-    },
-    "placeholder": {
-      "image": "粘贴图片 URL 计算机中选择一张",
-      "title": "添加标题到你的“游戏/应用”",
-      "url": "在此处粘贴游戏网址",
-      "useragent": "在这里写一个定制的 user agent，将用于此浏览器应用/游戏"
-    },
-    "import-hint": {
-      "title": "重要！你正添加一款来自 Epic/GOG/Amazon 的游戏吗？请点击此处！",
-      "content": "不要用此功能来添加。<br />正确做法是， <3>登录</3> 商店账号，在你的库中寻找该游戏，打开安装对话框,，单击 &quot;导入游戏&quot; 按钮"
-    }
-  },
   "specs": {
     "minimum": "最低配置",
     "recommended": "推荐配置"

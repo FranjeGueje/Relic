@@ -25,7 +25,6 @@ const initialContext: GameContextType = {
     playing: false,
     queued: false,
     reparing: false,
-    sideloaded: false,
     syncing: false,
     uninstalling: false,
     updating: false,

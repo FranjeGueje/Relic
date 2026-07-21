@@ -85,8 +85,7 @@
     },
     "empty": "No installed games to show. Install something first.",
     "filter": {
-      "all": "All",
-      "sideload": "Other"
+      "all": "All"
     },
     "games": "Installed games",
     "hints": {
