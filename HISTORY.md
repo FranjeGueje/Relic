@@ -196,3 +196,38 @@ Para ver el detalle completo de cada categoría, consultar:
 - Antes: 130 vulnerabilidades (7 low, 58 moderate, 63 high, 2 critical).
 - Después: **0 vulnerabilidades.**
 - `pnpm audit` reporta "No known vulnerabilities found".
+
+---
+
+### v0.2.0 — SLIM-MODULES (Jul 2026)
+
+#### Módulos eliminados
+- `src/backend/shortcuts/nonesteamgame/` (~500 LOC): editor directo de `shortcuts.vdf`.
+  Relic integra Steam vía `steam://addnonsteamgame` + store propio en
+  `relic/steam_shortcuts/`. Sin callers productivos.
+- `src/backend/shortcuts/shortcuts/` + `ipc_handler.ts` + `utils.ts` + `types.ts`
+  (~250 LOC): creaban atajos `.desktop` que abrían Relic, no Steam. Contradecía
+  la filosofía "Steam es el launcher". Eliminados métodos `addShortcuts`/
+  `removeShortcuts` de la interfaz `GameManager` y de los 5 runners (legendary,
+  gog, nile, zoom, sideload). Eliminados IPC `addShortcut`, `removeShortcut`,
+  `shortcutsExists` y preload correspondiente.
+
+#### Settings muertos
+- `addDesktopShortcuts` y `addSteamShortcuts` eliminados de `AppSettings` y
+  defaults de `config.ts`. No tenían código lector ni UI.
+
+#### Deps npm eliminadas
+- `electron-updater`, `plist`, `@shockpkg/icon-encoder`.
+
+#### Archivos de test movidos
+- `shortcuts/nonesteamgame/__tests__/test_data/` → `relic/steam_shortcuts/__tests__/test_data/`
+  (7 archivos VDF de prueba, necesarios para `steam_helpers.test.ts`).
+
+#### Test arreglado
+- `game_events.test.ts`: eliminado mock y expectativa de `removeNonSteamGame`.
+  El test `deletes bat file and removes from store` ahora pasa (antes era uno
+  de los 4 fallos preexistentes). Fallos preexistentes bajan de 4 a 2
+  (`constants.test.ts` y `tray_icon.test.ts`).
+
+#### LOC
+- ~1000 LOC eliminadas, ~150 movidas. 0 funcionalidad Relic afectada.

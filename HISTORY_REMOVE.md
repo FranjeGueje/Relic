@@ -688,3 +688,53 @@
 - 49 locales × 2 archivos (`translation.json` + `gamepage.json`): claves muertas eliminadas (Wine, Winetricks, EOS Overlay, log upload, reset-heroic, frameless-window, etc.)
 - Reemplazo `"Heroic"` → `"Relic"` en valores vivos (Snap warning, Weblate, Clear Cache, login warnings, etc.)
 - Script `meta/cleanLocales.mjs` (eliminado tras ejecución)
+
+---
+
+## SLIM-MODULES — Jul 2026
+
+### Módulo shortcuts/nonesteamgame (editor directo de shortcuts.vdf)
+- `src/backend/shortcuts/nonesteamgame/nonesteamgame.ts` (508 LOC): `addNonSteamGame`, `removeNonSteamGame`, `shortcutExists`
+- `src/backend/shortcuts/nonesteamgame/constants.ts`
+- `src/backend/shortcuts/nonesteamgame/steamhelper.ts`
+- `src/backend/shortcuts/nonesteamgame/__tests__/nonesteamgame.test.ts`
+- `src/backend/shortcuts/nonesteamgame/__tests__/test_data/` (7 VDF de prueba → movidos a `relic/steam_shortcuts/__tests__/test_data/`)
+- Dependencia `steam-shortcut-editor` se MANTIENE: la usa `relic/steam_shortcuts/steam_helpers.ts`
+- Dependencia `@node-steam/vdf` se MANTIENE: la usa `backend/utils.ts:getSteamLibraries()`
+
+### Módulo shortcuts/shortcuts (atajos .desktop)
+- `src/backend/shortcuts/shortcuts/shortcuts.ts` (124 LOC): `addShortcuts`, `removeShortcuts`, `shortcutFiles`
+- `src/backend/shortcuts/types.ts`
+- `src/backend/shortcuts/utils.ts` (getIcon)
+
+### IPC shortcuts
+- `src/backend/shortcuts/ipc_handler.ts`: handlers `addShortcut`, `removeShortcut`, `shortcutsExists`
+- Import `'./shortcuts/ipc_handler'` en `main.ts`
+
+### Interfaz GameManager
+- `addShortcuts: (fromMenu?: boolean) => Promise<void>`
+- `removeShortcuts: () => Promise<void>`
+
+### Métodos en store managers
+- `legendary/games.ts`: métodos `addShortcuts`/`removeShortcuts` y llamadas `this.addShortcuts()` (×2), `removeShortcutsUtil(this)` en uninstall
+- `gog/games.ts`: métodos `addShortcuts`/`removeShortcuts`, llamadas `this.addShortcuts()` (×2), `removeShortcutsUtil(this)` en uninstall
+- `nile/games.ts`: métodos `addShortcuts`/`removeShortcuts`, llamadas `this.addShortcuts()` (×2), `removeShortcutsUtil(this)` en uninstall
+- `zoom/games.ts`: métodos `addShortcuts`/`removeShortcuts`, llamada `removeShortcutsUtil(this)` en uninstall
+- `sideload/games.ts`: métodos `addShortcuts`/`removeShortcuts`, llamada `removeShortcutsUtil(this)` en uninstall
+- `sideload/library.ts`: import + llamada `addShortcuts(new SideloadGame(app_name))` en addNewApp
+
+### Settings muertos
+- `addDesktopShortcuts: boolean` y `addSteamShortcuts: boolean` de `AppSettings`
+- Defaults correspondientes en `config.ts`
+
+### Preload
+- `removeShortcut`, `addShortcut`, `shortcutsExists` de `preload/api/menu.ts`
+
+### IPC types
+- `addShortcut`, `removeShortcut` de `SyncIPCFunctions`
+- `shortcutsExists` de `AsyncIPCFunctions`
+
+### Deps npm
+- `electron-updater`
+- `plist`
+- `@shockpkg/icon-encoder`
