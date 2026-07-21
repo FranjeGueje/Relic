@@ -315,8 +315,7 @@
       "automaticWinetricksFixes": "Aplica les correccions conegudes de manera automàtica",
       "enableHelp": "Component d'ajuda",
       "cometSupport": "Suport Comet",
-      "umuSupport": "Fes servir umu com a execució Proton",
-      "zoomPlatform": "Compatibilitat amb Zoom Platform (només Linux)"
+      "umuSupport": "Fes servir umu com a execució Proton"
     },
     "verboseLogs": {
       "description": "Activa els registres detallats"

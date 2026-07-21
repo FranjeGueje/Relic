@@ -305,8 +305,7 @@
     "experimental_features": {
       "enableNewDesign": "പുതിയ ഡിസൈൻ",
       "cometSupport": "",
-      "enableHelp": "",
-      "zoomPlatform": ""
+      "enableHelp": ""
     },
     "verboseLogs": {
       "description": ""

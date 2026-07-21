@@ -315,8 +315,7 @@
       "enableHelp": "Componente de ajuda",
       "automaticWinetricksFixes": "Aplicar correções conhecidas automaticamente",
       "umuSupport": "Utilize umu como runtime do Proton",
-      "cometSupport": "Suporte para o Comet",
-      "zoomPlatform": "Suporte da plataforma Zoom (apenas Linux)"
+      "cometSupport": "Suporte para o Comet"
     },
     "verboseLogs": {
       "description": "Ativar registos de eventos em modo verboso"

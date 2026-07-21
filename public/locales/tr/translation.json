@@ -312,8 +312,7 @@
       "enableHelp": "Yardım bileşeni",
       "automaticWinetricksFixes": "Bilinen düzeltmeleri kendiliğinden uygula",
       "cometSupport": "Comet desteği",
-      "umuSupport": "Proton çalışma zamanı olarak umu kullan",
-      "zoomPlatform": "Zoom Platform desteği (yalnızca Linux)"
+      "umuSupport": "Proton çalışma zamanı olarak umu kullan"
     },
     "advertiseAvxForRosetta": "Rosetta için AVX tanıtın",
     "verboseLogs": {

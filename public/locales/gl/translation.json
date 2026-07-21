@@ -324,8 +324,7 @@
     "experimental_features": {
       "cometSupport": "Soporte para Comet",
       "enableHelp": "Compoñente de axuda",
-      "enableNewDesign": "Novo deseño",
-      "zoomPlatform": "Compatibilidade con Zoom Platform (só Linux)"
+      "enableNewDesign": "Novo deseño"
     },
     "verboseLogs": {
       "description": "Activar rexistros detallados"

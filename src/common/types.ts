@@ -71,7 +71,6 @@ export type Release = {
 export type ExperimentalFeatures = {
   enableHelp: boolean
   cometSupport: boolean
-  zoomPlatform?: boolean
 }
 
 export interface AppSettings extends GameSettings {

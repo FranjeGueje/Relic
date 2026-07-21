@@ -311,8 +311,7 @@
       "enableHelp": "ヘルプコンポーネント",
       "automaticWinetricksFixes": "既存の修正を自動的に適用",
       "cometSupport": "Cometサポート",
-      "umuSupport": "umuをProtonのランタイムとして使用",
-      "zoomPlatform": "Zoomプラットフォームのサポート（Linuxのみ）"
+      "umuSupport": "umuをProtonのランタイムとして使用"
     },
     "verboseLogs": {
       "description": "詳細なログを有効にする"

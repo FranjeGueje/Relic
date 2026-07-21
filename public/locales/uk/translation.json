@@ -316,8 +316,7 @@
       "enableHelp": "Компонент допомоги",
       "automaticWinetricksFixes": "Автоматично застосовувати відомі виправлення",
       "cometSupport": "Підтримка Comet",
-      "umuSupport": "Використовувати umu як середовище виконання Proton",
-      "zoomPlatform": "Підтримка платформи Zoom (лише Linux)"
+      "umuSupport": "Використовувати umu як середовище виконання Proton"
     },
     "verboseLogs": {
       "description": "Увімкнути розлогі журнали"

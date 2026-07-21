@@ -314,8 +314,7 @@
       "automaticWinetricksFixes": "Ismert javítások automatikus alkalmazása",
       "enableHelp": "Súgó összetevő",
       "cometSupport": "Comet támogatás",
-      "umuSupport": "Az umu használata Proton futtatókörnyezetként",
-      "zoomPlatform": "Zoom Platform támogatása (csak Linux)"
+      "umuSupport": "Az umu használata Proton futtatókörnyezetként"
     },
     "verboseLogs": {
       "description": "Bőbeszédű naplók engedélyezése"

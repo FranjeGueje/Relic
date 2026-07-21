@@ -314,8 +314,7 @@
       "automaticWinetricksFixes": "Zastosuj znane poprawki automatycznie",
       "enableHelp": "Element pomocy",
       "cometSupport": "Wsparcie Comet",
-      "umuSupport": "Używanie umu jako środowiska uruchomieniowego Proton",
-      "zoomPlatform": "Wsparcie platformy Zoom (tylko Linux)"
+      "umuSupport": "Używanie umu jako środowiska uruchomieniowego Proton"
     },
     "verboseLogs": {
       "description": "Włącz szczegółowe logi"

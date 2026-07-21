@@ -306,8 +306,7 @@
       "enableNewDesign": "Nový Dizajn",
       "automaticWinetricksFixes": "Automaticky použiť známe opravy",
       "cometSupport": "Podpora",
-      "umuSupport": "Použite umu ako Proton runtime",
-      "zoomPlatform": ""
+      "umuSupport": "Použite umu ako Proton runtime"
     },
     "allow_non_ge_proton": {
       "confirmation": {

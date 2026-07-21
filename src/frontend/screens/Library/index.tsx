@@ -89,7 +89,7 @@ export default React.memo(function Library(): JSX.Element {
       gog: gogCategories.includes(storedCategory),
       nile: amazonCategories.includes(storedCategory),
       sideload: sideloadedCategories.includes(storedCategory),
-      zoom: zoom.enabled && zoomCategories.includes(storedCategory)
+      zoom: zoomCategories.includes(storedCategory)
     }
   }
 

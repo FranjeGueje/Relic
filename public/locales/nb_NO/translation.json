@@ -312,8 +312,7 @@
     "experimental_features": {
       "enableHelp": "Hjelpskomponent",
       "cometSupport": "Comet støtte",
-      "enableNewDesign": "Nytt design",
-      "zoomPlatform": "Støtte for Zoom-plattformen (bare for Linux)"
+      "enableNewDesign": "Nytt design"
     },
     "verboseLogs": {
       "description": "Aktiver detaljerte logger"

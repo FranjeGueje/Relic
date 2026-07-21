@@ -313,8 +313,7 @@
     "experimental_features": {
       "enableNewDesign": "புதிய வடிவமைப்பு",
       "enableHelp": "உதவி கூறு",
-      "cometSupport": "வால்மீன் உதவி",
-      "zoomPlatform": "சூம் பிளாட்ஃபார்ம் உதவி (லினக்ச் மட்டும்)"
+      "cometSupport": "வால்மீன் உதவி"
     },
     "advertiseAvxForRosetta": "ரொசெட்டாவுக்கு AVX ஐ விளம்பரம் செய்யுங்கள்",
     "verboseLogs": {

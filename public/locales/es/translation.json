@@ -316,8 +316,7 @@
       "enableHelp": "Componente de ayuda",
       "automaticWinetricksFixes": "Aplicar correcciones conocidas automáticamente",
       "cometSupport": "Soporte para Comet",
-      "umuSupport": "Usar umu como entorno de ejecución de Proton",
-      "zoomPlatform": "Compatibilidad con Zoom Platform (solo Linux)"
+      "umuSupport": "Usar umu como entorno de ejecución de Proton"
     },
     "verboseLogs": {
       "description": "Activar registrados detallados"

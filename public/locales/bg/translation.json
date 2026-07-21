@@ -315,8 +315,7 @@
       "enableHelp": "Помощен компонент",
       "automaticWinetricksFixes": "Автоматично прилагане на известните поправки",
       "umuSupport": "Използване на umu като среда за изпълнение на Proton",
-      "cometSupport": "Поддръжка на Comet",
-      "zoomPlatform": "Поддръжка на Zoom (само за Линукс)"
+      "cometSupport": "Поддръжка на Comet"
     },
     "verboseLogs": {
       "description": "Включване на подробните журнали"

@@ -314,8 +314,7 @@
       "enableNewDesign": "Uus disain",
       "automaticWinetricksFixes": "Rakenda teadaolevad parandused automaatselt",
       "umuSupport": "Kasuta umu-d Protoni platvormina",
-      "cometSupport": "Comet tugi",
-      "zoomPlatform": "Zoomi platvormi tugi (ainult Linux)"
+      "cometSupport": "Comet tugi"
     },
     "verboseLogs": {
       "description": "Luba üksikasjalised logid"

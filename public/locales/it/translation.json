@@ -315,8 +315,7 @@
       "automaticWinetricksFixes": "Applica correzioni note automaticamente",
       "enableHelp": "Componente aiuto",
       "cometSupport": "Supporto Comet",
-      "umuSupport": "Utilizza umu come runtime Proton",
-      "zoomPlatform": "Supporto Zoom Platform (solo Linux)"
+      "umuSupport": "Utilizza umu come runtime Proton"
     },
     "verboseLogs": {
       "description": "Attiva log dettagliati"

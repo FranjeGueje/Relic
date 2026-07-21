@@ -253,8 +253,7 @@
     "experimental_features": {
       "cometSupport": "",
       "enableNewDesign": "",
-      "enableHelp": "",
-      "zoomPlatform": ""
+      "enableHelp": ""
     },
     "verboseLogs": {
       "description": ""

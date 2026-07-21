@@ -313,8 +313,7 @@
       "enableHelp": "Компонент Справки",
       "automaticWinetricksFixes": "Автоматическое применение известных исправлений",
       "cometSupport": "Поддержка Comet",
-      "umuSupport": "Использовать umu как среду Proton",
-      "zoomPlatform": "Поддержка платформы Zoom (только Linux)"
+      "umuSupport": "Использовать umu как среду Proton"
     },
     "allow_non_ge_proton": {
       "confirmation": {

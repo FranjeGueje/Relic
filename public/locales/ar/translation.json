@@ -310,8 +310,7 @@
       "automaticWinetricksFixes": "قم بتطبيق الإصلاحات المعروفة تلقائيًا",
       "enableHelp": "مكون المساعدة",
       "cometSupport": "دعم كوميت",
-      "umuSupport": "استخدم يو.إم.يو. كمشغّل بروتون",
-      "zoomPlatform": ""
+      "umuSupport": "استخدم يو.إم.يو. كمشغّل بروتون"
     },
     "allow_non_ge_proton": {
       "confirmation": {

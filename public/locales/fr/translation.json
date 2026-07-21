@@ -322,8 +322,7 @@
       "enableHelp": "Composant d'Aide",
       "automaticWinetricksFixes": "Appliquer les corrections connues automatiquement",
       "cometSupport": "Intégration de Comet",
-      "umuSupport": "Utiliser umu comme moteur de Proton",
-      "zoomPlatform": "Prise en charge de la plateforme Zoom (disponible seulement sur Linux)"
+      "umuSupport": "Utiliser umu comme moteur de Proton"
     },
     "verboseLogs": {
       "description": "Rendre les rapports d'événements verbeux"

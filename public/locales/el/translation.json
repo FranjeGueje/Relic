@@ -304,8 +304,7 @@
     "experimental_features": {
       "cometSupport": "Υποστήριξη Comet",
       "enableNewDesign": "Νέα σχεδίαση",
-      "enableHelp": "Στοιχείο βοήθειας",
-      "zoomPlatform": "Υποστήριξη πλατφόρμας Zoom (μόνο για Linux)"
+      "enableHelp": "Στοιχείο βοήθειας"
     },
     "allow_non_ge_proton": {
       "confirmation": {

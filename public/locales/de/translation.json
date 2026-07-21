@@ -314,8 +314,7 @@
       "automaticWinetricksFixes": "Bekannte Winetricks Hilfsskripte automatisch anwenden",
       "enableHelp": "Hilfe aktivieren",
       "umuSupport": "umu als Proton Laufzeit verwenden",
-      "cometSupport": "Comet Support",
-      "zoomPlatform": "Zoom-Plattform-Support (nur Linux)"
+      "cometSupport": "Comet Support"
     },
     "verboseLogs": {
       "description": "Aktiviere ausführliche Logs"

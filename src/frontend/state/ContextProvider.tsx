@@ -28,8 +28,7 @@ const initialContext: ContextType = {
   zoom: {
     library: [],
     login: async () => Promise.resolve(''),
-    logout: async () => Promise.resolve(),
-    enabled: false
+    logout: async () => Promise.resolve()
   },
   installingEpicGame: false,
   sideloadedLibrary: [],
@@ -91,8 +90,7 @@ const initialContext: ContextType = {
   },
   experimentalFeatures: {
     enableHelp: false,
-    cometSupport: true,
-    zoomPlatform: false
+    cometSupport: true
   },
   handleExperimentalFeatures: () => null,
   disableDialogBackdropClose: false,

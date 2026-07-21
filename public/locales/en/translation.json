@@ -351,8 +351,7 @@
     "experimental_features": {
       "cometSupport": "Comet support",
       "enableHelp": "Help component",
-      "enableNewDesign": "New design",
-      "zoomPlatform": "Zoom Platform support (only Linux)"
+      "enableNewDesign": "New design"
     },
     "language": "Choose App Language",
     "log": {},

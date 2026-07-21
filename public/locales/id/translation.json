@@ -305,8 +305,7 @@
     "experimental_features": {
       "enableNewDesign": "Desain baru",
       "cometSupport": "Dukungan Comet",
-      "enableHelp": "Komponen Bantuan",
-      "zoomPlatform": "Dukungan platform Zoom (hanya Linux)"
+      "enableHelp": "Komponen Bantuan"
     },
     "advertiseAvxForRosetta": "Iklankan AVX untuk Rosetta",
     "verboseLogs": {

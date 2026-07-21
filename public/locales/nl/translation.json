@@ -304,8 +304,7 @@
     "experimental_features": {
       "enableNewDesign": "Nieuw uiterlijk",
       "cometSupport": "Ondersteunt door Comet",
-      "enableHelp": "Hulpcomponent",
-      "zoomPlatform": "Zoom Platform ondersteuning (alleen Linux)"
+      "enableHelp": "Hulpcomponent"
     },
     "allow_non_ge_proton": {
       "confirmation": {

@@ -307,8 +307,7 @@
       "enableHelp": "Hjälp komponent",
       "automaticWinetricksFixes": "Tillämpa kända fixar automatiskt",
       "umuSupport": "Använd umu som Proton körtid",
-      "cometSupport": "Comet stöd",
-      "zoomPlatform": "Stöd för Zoom-plattformen (endast Linux)"
+      "cometSupport": "Comet stöd"
     },
     "verboseLogs": {
       "description": "Aktivera detaljerade loggar"

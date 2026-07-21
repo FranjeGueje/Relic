@@ -305,8 +305,7 @@
     "experimental_features": {
       "cometSupport": "Hỗ trợ Comet",
       "enableHelp": "Thành phần trợ giúp",
-      "enableNewDesign": "Thiết kế mới",
-      "zoomPlatform": "Hỗ trợ nền tảng Zoom (chỉ Linux)"
+      "enableNewDesign": "Thiết kế mới"
     },
     "verboseLogs": {
       "description": "Bật nhật ký chi tiết"

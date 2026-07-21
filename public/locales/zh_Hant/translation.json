@@ -305,8 +305,7 @@
     "experimental_features": {
       "enableHelp": "幫助元件",
       "enableNewDesign": "新設計",
-      "cometSupport": "",
-      "zoomPlatform": ""
+      "cometSupport": ""
     },
     "verboseLogs": {
       "description": ""

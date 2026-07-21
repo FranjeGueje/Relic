@@ -305,8 +305,7 @@
       "enableNewShinyFeature": "Tuore uutuuttakiiltävä ominaisuus",
       "enableNewDesign": "Uusi malli",
       "cometSupport": "Comet-tuki",
-      "enableHelp": "Apukomponentti",
-      "zoomPlatform": "Zoom-alustan tuki (ainoastaan Linux)"
+      "enableHelp": "Apukomponentti"
     },
     "allow_non_ge_proton": {
       "confirmation": {

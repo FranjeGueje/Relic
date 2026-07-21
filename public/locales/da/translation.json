@@ -180,8 +180,7 @@
     "experimental_features": {
       "cometSupport": "Comet support",
       "enableHelp": "Hjælpekomponent",
-      "enableNewDesign": "Nyt design",
-      "zoomPlatform": ""
+      "enableNewDesign": "Nyt design"
     },
     "verboseLogs": {
       "description": "Aktivér detaljerede logfiler"

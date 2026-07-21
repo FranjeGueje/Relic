@@ -27,7 +27,6 @@ import {
 } from './electronStores'
 import { isOnline } from '../../online_monitor'
 import { apiUrl } from './constants'
-import { GlobalConfig } from 'backend/config'
 import { LibraryManager } from 'common/types/game_manager'
 
 const libraryCache = new CacheStore<ZoomGameInfo[]>('zoom-library')
@@ -36,8 +35,6 @@ const installedGames: Map<string, InstalledInfo> = new Map()
 
 export default class ZoomLibraryManager implements LibraryManager {
   async init() {
-    if (!GlobalConfig.get().getSettings().experimentalFeatures?.zoomPlatform)
-      return
 
     await this.refresh()
   }
@@ -47,8 +44,6 @@ export default class ZoomLibraryManager implements LibraryManager {
   }
 
   async refresh(): Promise<ExecResult> {
-    if (!GlobalConfig.get().getSettings().experimentalFeatures?.zoomPlatform)
-      return { stdout: '', stderr: 'Zoom Support disabled' }
     libraryCache.clear()
     this.refreshInstalled()
     if (!(await ZoomUser.isLoggedIn())) {
@@ -111,8 +106,6 @@ export default class ZoomLibraryManager implements LibraryManager {
   }
 
   private async getZoomLibrary(): Promise<ZoomGameInfo[]> {
-    if (!GlobalConfig.get().getSettings().experimentalFeatures?.zoomPlatform)
-      return []
     const cachedGames = libraryCache.get('library')
     if (cachedGames) {
       logDebug('Returning cached Zoom library', LogPrefix.Zoom)
@@ -144,8 +137,6 @@ export default class ZoomLibraryManager implements LibraryManager {
   }
 
   zoomToUnifiedInfo(zoomGame: ZoomGameInfo): GameInfo {
-    if (!GlobalConfig.get().getSettings().experimentalFeatures?.zoomPlatform)
-      return {} as GameInfo
     const object: GameInfo = {
       runner: 'zoom',
       app_name: String(zoomGame.id),
@@ -176,15 +167,11 @@ export default class ZoomLibraryManager implements LibraryManager {
   }
 
   getGameInfo(slug: string): GameInfo | undefined {
-    if (!GlobalConfig.get().getSettings().experimentalFeatures?.zoomPlatform)
-      return
 
     return library.get(slug) || this.getInstallAndGameInfo(slug)
   }
 
   getInstallAndGameInfo(slug: string): GameInfo | undefined {
-    if (!GlobalConfig.get().getSettings().experimentalFeatures?.zoomPlatform)
-      return
     const lib = libraryStore.get('games', [])
     const game = lib.find((value) => value.app_name === slug)
 
@@ -204,8 +191,6 @@ export default class ZoomLibraryManager implements LibraryManager {
     appName: string,
     installPlatform = 'windows'
   ): Promise<ZoomInstallInfo | undefined> {
-    if (!GlobalConfig.get().getSettings().experimentalFeatures?.zoomPlatform)
-      return
 
     logInfo(
       `Getting install info for ${appName} on ${installPlatform}`,
@@ -267,8 +252,6 @@ export default class ZoomLibraryManager implements LibraryManager {
   }
 
   refreshInstalled() {
-    if (!GlobalConfig.get().getSettings().experimentalFeatures?.zoomPlatform)
-      return
     const installedArray = installedGamesStore.get('installed', [])
     installedGames.clear()
     installedArray.forEach((value) => {
@@ -280,8 +263,6 @@ export default class ZoomLibraryManager implements LibraryManager {
   }
 
   async getExtras(appName: string) {
-    if (!GlobalConfig.get().getSettings().experimentalFeatures?.zoomPlatform)
-      return { extras: [] }
     logDebug(`Fetching extras for Zoom ID ${appName}`, LogPrefix.Zoom)
     try {
       const filesRequest = await ZoomUser.makeRequest<ZoomFilesResponse>(
@@ -319,8 +300,6 @@ export default class ZoomLibraryManager implements LibraryManager {
     platform: string,
     appName: string
   ): Promise<ZoomDownloadFile[]> {
-    if (!GlobalConfig.get().getSettings().experimentalFeatures?.zoomPlatform)
-      return []
 
     logDebug(
       `Fetching installers for ${appName} on platform ${platform}`,
@@ -372,8 +351,6 @@ export default class ZoomLibraryManager implements LibraryManager {
     appName: string,
     newInstallPath: string
   ): Promise<void> {
-    if (!GlobalConfig.get().getSettings().experimentalFeatures?.zoomPlatform)
-      return
 
     const cachedGameData = library.get(appName)
     if (!cachedGameData || !cachedGameData.install) {
@@ -395,8 +372,6 @@ export default class ZoomLibraryManager implements LibraryManager {
   }
 
   installState() {
-    if (!GlobalConfig.get().getSettings().experimentalFeatures?.zoomPlatform)
-      return
     logWarning(
       `installState not implemented on Zoom Library Manager`,
       LogPrefix.Zoom
@@ -404,8 +379,6 @@ export default class ZoomLibraryManager implements LibraryManager {
   }
 
   changeVersionPinnedStatus(appName: string, status: boolean) {
-    if (!GlobalConfig.get().getSettings().experimentalFeatures?.zoomPlatform)
-      return
     const game = library.get(appName)
     const installed = installedGames.get(appName)
     if (!game || !installed) {
@@ -428,15 +401,11 @@ export default class ZoomLibraryManager implements LibraryManager {
   }
 
   async listUpdateableGames(): Promise<string[]> {
-    if (!GlobalConfig.get().getSettings().experimentalFeatures?.zoomPlatform)
-      return []
     logWarning('listUpdateableGames not implemented for Zoom', LogPrefix.Zoom)
     return []
   }
 
   updateGameInLibrary(game: GameInfo) {
-    if (!GlobalConfig.get().getSettings().experimentalFeatures?.zoomPlatform)
-      return
     if (library.has(game.app_name)) {
       library.set(game.app_name, game)
     }

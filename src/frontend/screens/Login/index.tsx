@@ -138,8 +138,7 @@ export default React.memo(function NewLogin() {
               logoutAction={amazon.logout}
               disabled={oldMac}
             />
-            {zoom.enabled && (
-              <Runner
+            <Runner
                 class="zoom"
                 buttonText={t('login.zoom', 'Zoom Login')}
                 icon={() => <ZoomLogo />}
@@ -149,7 +148,6 @@ export default React.memo(function NewLogin() {
                 logoutAction={zoom.logout}
                 disabled={oldMac}
               />
-            )}
           </div>
         </div>
         <button
