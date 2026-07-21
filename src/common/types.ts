@@ -80,12 +80,9 @@ export interface AppSettings extends GameSettings {
   altLegendaryBin: string
   altNileBin: string
   autoUpdateGames: boolean
-  checkForUpdatesOnStartup: boolean
-  checkUpdatesInterval: number
   defaultInstallPath: string
   defaultSteamPath: string
   disableGOGPresence: boolean
-  enableUpdates: boolean
   experimentalFeatures?: ExperimentalFeatures
   maxWorkers: number
   protonPath: string

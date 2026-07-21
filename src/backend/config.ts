@@ -233,9 +233,6 @@ class GlobalConfigV0 extends GlobalConfig {
 
   public getFactoryDefaults(): AppSettings {
     const settings: Partial<AppSettings> = {
-      checkUpdatesInterval: 10,
-      enableUpdates: false,
-      checkForUpdatesOnStartup: true,
       autoUpdateGames: true,
       defaultInstallPath: relicInstallPath,
       defaultSteamPath: getSteamCompatFolder(),
