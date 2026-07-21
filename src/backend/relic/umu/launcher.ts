@@ -10,6 +10,7 @@ export interface UmuLaunchOptions {
   protonPath: string
   store: string
   executable: string
+  args?: string[]
 }
 
 export async function launchUmu(
@@ -37,7 +38,7 @@ export async function launchUmu(
   )
 
   return new Promise((resolve) => {
-    const child = spawn(umuPath, [options.executable], { env, stdio: 'pipe' })
+    const child = spawn(umuPath, [options.executable, ...(options.args || [])], { env, stdio: 'pipe' })
 
     let stderr = ''
     child.stderr?.on('data', (chunk: Buffer) => { stderr += chunk.toString() })

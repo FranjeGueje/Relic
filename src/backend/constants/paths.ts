@@ -62,5 +62,8 @@ export function fixAsarPath(origin: string): string {
   }
   return origin
 }
-
 export const windowIcon = fixAsarPath(join(publicDir, 'icon.png'))
+
+export const zoomPlatformScriptPath = fixAsarPath(
+  join(publicDir, 'bin', 'zoom', 'zoom-platform.sh')
+)

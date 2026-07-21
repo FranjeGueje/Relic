@@ -1,5 +1,5 @@
-import { mkdirSync, symlinkSync } from 'graceful-fs'
-import { join } from 'path'
+import { existsSync, mkdirSync, rmSync, symlinkSync, unlinkSync } from 'graceful-fs'
+import { dirname, join } from 'path'
 import { logInfo, logError } from 'backend/logger'
 import { relicMountPath, relicGamesPath } from 'backend/constants/paths'
 import { getSteamPath } from './steam_shortcuts/steam_helpers'
@@ -72,5 +72,37 @@ export async function prepareUmuPrefix(
     logInfo(`UMU prefix prepared for "${gameInfo.title}" (GAMEID=${gameId})`, LOG_PREFIX)
   } else {
     logInfo(`UMU prefix failed for "${gameInfo.title}": ${result.error}`, LOG_PREFIX)
+  }
+}
+
+export function symlinkPrefix(steamAppId: number, installPath: string): void {
+  try {
+    const steamPath = getSteamPath()
+    const compatPath = join(steamPath, 'steamapps', 'compatdata', String(steamAppId))
+
+    mkdirSync(dirname(compatPath), { recursive: true })
+
+    if (existsSync(compatPath)) {
+      rmSync(compatPath, { recursive: true, force: true })
+    }
+
+    symlinkSync(installPath, compatPath)
+    logInfo(`Prefix symlinked: ${compatPath} → ${installPath}`, LOG_PREFIX)
+  } catch (error) {
+    logError(`Failed to symlink prefix for Steam ID ${steamAppId}: ${error}`, LOG_PREFIX)
+  }
+}
+
+export function removePrefixSymlink(steamAppId: number): void {
+  try {
+    const steamPath = getSteamPath()
+    const compatPath = join(steamPath, 'steamapps', 'compatdata', String(steamAppId))
+
+    if (existsSync(compatPath)) {
+      unlinkSync(compatPath)
+      logInfo(`Removed prefix symlink ${compatPath}`, LOG_PREFIX)
+    }
+  } catch (error) {
+    logError(`Failed to remove prefix symlink for Steam ID ${steamAppId}: ${error}`, LOG_PREFIX)
   }
 }

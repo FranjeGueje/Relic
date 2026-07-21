@@ -106,3 +106,17 @@ El objetivo es mantener trazabilidad de los cambios respecto al padre.
 | 2026-07-21 | `src/backend/utils/compatibility_layers.ts` | `getUmuPath()` retorna `string | null`, busca PATH primero, luego bundleado en `publicDir/bin/umu/umu-run` |
 | 2026-07-21 | `electron-builder.yml` | `linux.files` añadido glob `build/bin/umu/*` para incluir umu-launcher en AppImage |
 | 2026-07-21 | `src/frontend/screens/Settings/components/ProtonPath.tsx` | Nuevo componente PathSelectionBox para seleccionar GE-Proton en Settings > General |
+| 2026-07-21 | `pnpm-workspace.yaml` | `nodeLinker: hoisted` → `isolated` para evitar `Cannot find module` en ASAR; `overrides` y `patchedDependencies` movidos desde `package.json` |
+| 2026-07-21 | `package.json` | `packageManager` actualizado a `pnpm@11.15.1`; dependencia directa `yocto-queue` añadida |
+| 2026-07-21 | `pnpm-workspace.yaml` | Añadidos `onlyBuiltDependencies` y `allowBuilds` para builds de `@parcel/watcher`, `@swc/core`, `esbuild` |
+| 2026-07-21 | `patches/@types__node@22.19.3.patch` | Renombrado a `@types__node@22.20.1.patch` y actualizado contenido |
+| 2026-07-21 | `src/common/types.ts` | Eliminado `experimentalFeatures.zoomPlatform` — Zoom siempre activo |
+| 2026-07-21 | `src/backend/config.ts` | Eliminada referencia a `experimentalFeatures.zoomPlatform` en defaults |
+| 2026-07-21 | `src/backend/relic/umu/launcher.ts` | `UmuLaunchOptions.args?: string[]` para pasar flags al instalador (ej. `/VERYSILENT`) |
+| 2026-07-21 | `src/backend/relic/umu/store.ts` | `umuStoreMap` añadido `zoom: 'zoom'` |
+| 2026-07-21 | `src/backend/relic/steam_shortcuts/add_game.ts` | Caso `zoom` en `createRelicBat()`: genera .bat que lanza el ejecutable desde `c:\games\<basename>` |
+| 2026-07-21 | `src/backend/storeManagers/zoom/games.ts` | `install()` reescrito para Windows: ejecuta `public/bin/zoom/zoom-platform.sh` con `PROTONPATH` como env var, elimina `.zoom-download/` tras instalación, llama `onGameInstalled()`, retorna error si no encuentra ejecutable. Reemplazo completo del módulo `zoom_installer/` por el script autónomo. |
+| 2026-07-21 | `src/backend/relic/zoom_installer/` | **Eliminado** — reemplazado por `public/bin/zoom/zoom-platform.sh`. El script embebe su propio innoextract, maneja inf/regkeys/umu y monitoreo. |
+| 2026-07-21 | `public/bin/x64/linux/innoextract` | **Eliminado** — el script llevaba su propio innoextract embebido como base64. |
+| 2026-07-21 | `src/backend/constants/paths.ts` | **Eliminado** `innoextractPath` — ya no se necesita el binario externo. |
+| 2026-07-21 | `electron-builder.yml` | Añadido `build/bin/zoom/*` a `linux.files` para incluir `zoom-platform.sh` en el AppImage. |

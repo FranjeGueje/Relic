@@ -6,7 +6,7 @@ const umuStoreMap: Record<string, string | undefined> = {
   legendary: 'egs',
   gog: 'gog',
   nile: 'amazon',
-  zoom: undefined,
+  zoom: 'zoom',
   sideload: undefined
 }
 

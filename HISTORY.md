@@ -263,3 +263,31 @@ Para ver el detalle completo de cada categoría, consultar:
 
 #### LOC
 - ~1000 LOC eliminadas, ~150 movidas. 0 funcionalidad Relic afectada.
+
+---
+
+### v0.2.0 — ZOOM-INTEGRATION (Jul 2026)
+
+#### Zoom Platform siempre activo
+- `experimentalFeatures.zoomPlatform` eliminado. Zoom está disponible sin toggle experimental.
+- Zoom login, biblioteca y descargas funcionan sin configuración adicional.
+
+#### Instalación Windows mediante zoom-platform.sh
+- La instalación Windows-on-Linux se delega a `public/bin/zoom/zoom-platform.sh` (v1.0.1, script autónomo).
+- El script embebe su propio innoextract como base64, escribe `zoom_installer.inf` y `zoom_regkeys.bat`, lanza el instalador mediante umu, monitorea el log, y crea desktop entries.
+- Relic llama al script con: `PROTONPATH={path} zoom-platform.sh -i installer.exe -d installPath`.
+- `PROTONPATH` se pasa como variable de entorno (no como argumento al script).
+- Eliminado el módulo `src/backend/relic/zoom_installer/` (6 archivos, ~350 LOC).
+- Eliminado el binario `public/bin/x64/linux/innoextract` (560KB).
+- Eliminado `innoextractPath` de `constants/paths.ts`.
+- Añadido `build/bin/zoom/*` a `electron-builder.yml` para incluir el script en el AppImage.
+
+#### pnpm estable
+- `nodeLinker: hoisted` → `isolated` (elimina conflictos de versiones duplicadas).
+- `pnpm@11.15.1` gestionado vía `corepack` (no `npm add -g`).
+- `onlyBuiltDependencies` y `allowBuilds` configurados para builds nativos.
+- Patch `@types/node` actualizado a 22.20.1.
+- Store limpiado y reinstalación completa desde cero.
+
+#### Tests
+- TypeScript 0 errores, 95 tests pasan (ningún fallo preexistente nuevo).

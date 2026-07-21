@@ -1,10 +1,16 @@
 packages:
   - '.'
 
-nodeLinker: hoisted
+nodeLinker: isolated
 
 patchedDependencies:
-  '@types/node@22.19.3': patches/@types__node@22.19.3.patch
+  '@types/node@22.20.1': patches/@types__node@22.20.1.patch
+
+overrides:
+  shell-quote: '>=1.8.4'
+  cross-spawn: '>=6.0.6'
+  tar: '>=7.5.19'
+  uuid: '^11.0.0'
 
 onlyBuiltDependencies:
   - '@fortawesome/fontawesome-common-types'
@@ -17,3 +23,12 @@ onlyBuiltDependencies:
   - esbuild
   - register-scheme
   - unrs-resolver
+
+minimumReleaseAge: 0
+
+allowBuilds:
+  '@parcel/watcher': true
+  '@swc/core': true
+  electron-winstaller: true
+  esbuild: true
+  unrs-resolver: true

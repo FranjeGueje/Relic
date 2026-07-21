@@ -33,7 +33,9 @@ import {
   logDebug
 } from 'backend/logger'
 
-import { onGameUninstalled } from 'backend/relic/game_events'
+import { onGameInstalled, onGameUninstalled } from 'backend/relic/game_events'
+import { zoomPlatformScriptPath } from 'backend/constants/paths'
+import { GlobalConfig } from 'backend/config'
 import shlex from 'shlex'
 import { ZoomInstallPlatform, ZoomDownloadFile } from 'common/types/zoom'
 import { t } from 'i18next'
@@ -235,7 +237,8 @@ export default class ZoomGame implements Game {
 
     const installPath = join(path, gameInfo.folder_name)
     const downloadRoot = join(path, '.zoom-download')
-    const infFilePath = join(downloadRoot, 'zoom_installer.inf')
+
+    fs.mkdirSync(installPath, { recursive: true })
 
     const totalSize = installers
       .map((file) => parseSize(file.size))
@@ -329,8 +332,35 @@ export default class ZoomGame implements Game {
         })
       }
     } else {
-      logInfo('Windows installer on non-Windows is handled by the external script', LogPrefix.Zoom)
-      installResult = { stdout: '', stderr: '' }
+      const downloadPath = join(downloadRoot, installers[0].filename)
+      const protonPath = GlobalConfig.get().getSettings().protonPath
+      if (!protonPath) {
+        logWarning(
+          'No GE-Proton configured for Windows installer. Set it in Settings > General.',
+          LogPrefix.Zoom
+        )
+        installResult = { stdout: '', stderr: 'No GE-Proton configured' }
+      } else {
+        logInfo(
+          `Running zoom-platform.sh: PROTONPATH=${protonPath} ${zoomPlatformScriptPath} -i ${downloadPath} -d ${installPath}`,
+          LogPrefix.Zoom
+        )
+        const scriptResult = await spawnAsync('bash', [
+          zoomPlatformScriptPath, '-i', downloadPath, '-d', installPath
+        ], {
+          env: { ...process.env, PROTONPATH: protonPath }
+        })
+        installResult = {
+          stdout: scriptResult.stdout,
+          stderr: scriptResult.stderr
+        }
+        if (scriptResult.code === 0) {
+          logInfo('Windows installer completed successfully', LogPrefix.Zoom)
+          finalInstallPlatform = 'windows'
+        } else {
+          logError(['Windows installer failed:', scriptResult.stderr], LogPrefix.Zoom)
+        }
+      }
     }
 
     if (installResult.error) {
@@ -338,11 +368,14 @@ export default class ZoomGame implements Game {
         ['Installer execution failed:', installResult.error],
         LogPrefix.Zoom
       )
+      await rm(downloadRoot, { recursive: true, force: true })
       return {
         status: 'error',
         error: `Installer execution failed: ${installResult.error}`
       }
     }
+
+    await rm(downloadRoot, { recursive: true, force: true })
 
     // After successful installation, we need to determine the actual executable path
     let isDosbox = false
@@ -411,8 +444,6 @@ export default class ZoomGame implements Game {
         if (exes.length === 1) {
           finalExecutable = exes[0]
         } else if (exes.length > 1) {
-          // Try to find an exe with the game's name in it
-          const gameInfo = this.getGameInfo()
           const gameName = gameInfo.title
             .toLowerCase()
             .replace(/[^a-z0-9]/g, '')
@@ -425,7 +456,6 @@ export default class ZoomGame implements Game {
           if (bestMatch) {
             finalExecutable = bestMatch
           } else {
-            // As a fallback, pick the largest exe
             let largestSize = 0
             for (const exe of exes) {
               const exePath = join(installPath, exe)
@@ -441,7 +471,6 @@ export default class ZoomGame implements Game {
     } else {
       finalExecutable = executable
     }
-    await rm(downloadRoot, { recursive: true, force: true })
     if (!finalExecutable) {
       logError(['Could not find executable for', this.id], LogPrefix.Zoom)
       showDialogBoxModalAuto({
@@ -452,6 +481,7 @@ export default class ZoomGame implements Game {
         ),
         type: 'ERROR'
       })
+      return { status: 'error', error: 'Executable not found' }
     }
 
     const installedData: InstalledInfo = {
@@ -488,6 +518,7 @@ export default class ZoomGame implements Game {
     }
 
     logInfo(`Installation of ${this.id} completed.`, LogPrefix.Zoom)
+    await onGameInstalled(this, installPath)
     return { status: 'done' }
   }
 

@@ -151,17 +151,17 @@ describe('createRelicBat', () => {
     expect(content).toContain('@echo En desarrollo...')
   })
 
-  test('creates default bat for zoom with placeholder', () => {
-    const runnerPath = createRelicBat(tmpDir.name, 'ZoomGame', 'zoom', '')
+  test('creates default bat for zoom with start command', () => {
+    const runnerPath = createRelicBat('/some/path/ZoomGame', 'ZoomGame', 'zoom', '')
 
-    expect(runnerPath).toBe(join(tmpDir.name, 'ZoomGame.bat'))
+    expect(runnerPath).toBe(join(mockRelicRunnerPath, 'ZoomGame.bat'))
     expect(existsSync(runnerPath)).toBe(true)
 
     const content = readFileSync(runnerPath, 'utf-8')
     for (const line of HEADER_LINES) {
       expect(content).toContain(line)
     }
-    expect(content).toContain('@echo En desarrollo...')
+    expect(content).toContain('@start "" "c:\\games\\ZoomGame\\<executable>" %*')
   })
 
   test('overwrites existing file with new content', () => {

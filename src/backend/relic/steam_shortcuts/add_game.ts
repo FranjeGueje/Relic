@@ -50,6 +50,11 @@ export function createRelicBat(
     case 'nile':
       runnerCmd = `@nile launch ${appName} -- %*`
       break
+    case 'zoom': {
+      const winPath = `c:\\games\\${basename(installPath)}`
+      runnerCmd = `@start "" "${winPath}\\<executable>" %*`
+      break
+    }
     default:
       runnerCmd = '@echo En desarrollo...'
   }
@@ -88,9 +93,9 @@ async function waitForGameInSteam(
 export async function addGameToSteam(
   options: AddGameToSteamOptions
 ): Promise<AddGameToSteamResult> {
-  const { gameName } = options
+  const { gameName, executablePath } = options
 
-  const runnerPath = join(relicRunnerPath, `${gameName}.bat`)
+  const runnerPath = executablePath ?? join(relicRunnerPath, `${gameName}.bat`)
   const steamName = basename(runnerPath)
 
   checkSteamProtocolHandler()

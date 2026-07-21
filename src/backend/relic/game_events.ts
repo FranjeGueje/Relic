@@ -8,7 +8,7 @@ import { relicGamesPath } from 'backend/constants/paths'
 import { logError, logInfo } from 'backend/logger'
 import { addGameToSteam, createRelicBat, findShortcut, addShortcut, removeShortcut } from './steam_shortcuts'
 import { windowify } from './windowify'
-import { preparePrefix, prepareUmuPrefix } from './prefix'
+import { preparePrefix, prepareUmuPrefix, symlinkPrefix, removePrefixSymlink } from './prefix'
 import { notify } from 'backend/dialog/dialog'
 import type { AddGameToSteamResult, GameRunner } from './steam_shortcuts/types'
 import { downloadGrids, deleteGrids } from './steamgrid'
@@ -132,16 +132,42 @@ export async function onGameInstalled(
     return { success: false, error: input.error }
   }
 
-  const runnerFile = createRunnerFile(input.gameInfo, input.installPath)
-  if ('error' in runnerFile) {
-    return { success: false, error: runnerFile.error }
+  const isZoom = input.gameInfo.runner === 'zoom'
+
+  let result: AddGameToSteamResult
+
+  if (isZoom) {
+    const executable = input.gameInfo.install.executable
+    const exePath = executable ? join(input.installPath, executable) : undefined
+    result = await addGameToSteam({ gameName: input.gameInfo.title, executablePath: exePath })
+
+    if (result.success && result.steamAppId) {
+      addShortcut(
+        input.gameInfo.title,
+        input.gameInfo.app_name,
+        input.gameInfo.runner,
+        result.steamAppId,
+        input.installPath,
+        exePath ?? ''
+      )
+    }
+  } else {
+    const runnerFile = createRunnerFile(input.gameInfo, input.installPath)
+    if ('error' in runnerFile) {
+      return { success: false, error: runnerFile.error }
+    }
+
+    result = await addToSteam(input.gameInfo, input.installPath, runnerFile.path)
   }
 
-  const result = await addToSteam(input.gameInfo, input.installPath, runnerFile.path)
-
   if (result.success && result.steamAppId) {
-    windowify(input.gameInfo)
-    preparePrefix(result.steamAppId)
+    if (isZoom) {
+      symlinkPrefix(result.steamAppId, input.installPath)
+    } else {
+      windowify(input.gameInfo)
+      preparePrefix(result.steamAppId)
+    }
+
     const gridsDownloaded = await downloadGrids(input.gameInfo, result.steamAppId)
     if (gridsDownloaded) {
       notify({
@@ -151,7 +177,10 @@ export async function onGameInstalled(
     }
     shell.openExternal(`steam://gameproperties/${result.steamAppId}`)
   }
-  await prepareUmuPrefix(input.gameInfo, input.installPath)
+
+  if (!isZoom) {
+    await prepareUmuPrefix(input.gameInfo, input.installPath)
+  }
 
   return result
 }
@@ -184,23 +213,29 @@ export async function onGameUninstalled(game: Game) {
     shell.openExternal(`steam://gameproperties/${known.steamAppId}`)
   }
 
-  if (known?.execPath) {
-    try {
-      if (existsSync(known.execPath)) {
-        unlinkSync(known.execPath)
-        logInfo(`Deleted ${known.execPath}`, LOG_PREFIX)
-      }
-    } catch (e) {
-      logError(`Failed to delete ${known.execPath}: ${e}`, LOG_PREFIX)
+  if (known?.store === 'zoom') {
+    if (known?.steamAppId) {
+      removePrefixSymlink(known.steamAppId)
     }
-  }
+  } else {
+    if (known?.execPath) {
+      try {
+        if (existsSync(known.execPath)) {
+          unlinkSync(known.execPath)
+          logInfo(`Deleted ${known.execPath}`, LOG_PREFIX)
+        }
+      } catch (e) {
+        logError(`Failed to delete ${known.execPath}: ${e}`, LOG_PREFIX)
+      }
+    }
 
-  if (known?.installPath) {
-    const linkPath = join(relicGamesPath, basename(known.installPath))
-    try {
-      unlinkSync(linkPath)
-      logInfo(`Deleted symlink ${linkPath}`, LOG_PREFIX)
-    } catch {}
+    if (known?.installPath) {
+      const linkPath = join(relicGamesPath, basename(known.installPath))
+      try {
+        unlinkSync(linkPath)
+        logInfo(`Deleted symlink ${linkPath}`, LOG_PREFIX)
+      } catch {}
+    }
   }
 
   if (known?.steamAppId) {

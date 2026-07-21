@@ -36,8 +36,8 @@ describe('getUmuStoreLabel', () => {
     expect(getUmuStoreLabel('sideload')).toBeUndefined()
   })
 
-  it('returns undefined for zoom', () => {
-    expect(getUmuStoreLabel('zoom')).toBeUndefined()
+  it('returns zoom for zoom', () => {
+    expect(getUmuStoreLabel('zoom')).toBe('zoom')
   })
 
   it('returns undefined for unknown runner', () => {
