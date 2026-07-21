@@ -69,7 +69,8 @@ export default function LogSettings() {
     { title: 'Relic', args: {} },
     { title: 'Epic/Legendary', args: { runner: 'legendary' } },
     { title: 'GOG', args: { runner: 'gog' } },
-    { title: 'Amazon/Nile', args: { runner: 'nile' } }
+    { title: 'Amazon/Nile', args: { runner: 'nile' } },
+    { title: 'Zoom', args: { runner: 'zoom' } }
   ]
 
   const getLogContent = () => {

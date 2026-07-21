@@ -209,9 +209,6 @@ export async function onGameUninstalled(game: Game) {
   const appName = gameInfo.app_name
 
   const known = findShortcut(appName)
-  if (known?.steamAppId) {
-    shell.openExternal(`steam://gameproperties/${known.steamAppId}`)
-  }
 
   if (known?.store === 'zoom') {
     if (known?.steamAppId) {
