@@ -40,9 +40,6 @@ import { Catalog, Product } from 'common/types/epic-graphql'
 import { sendFrontendMessage } from '../../ipc'
 import { Game } from 'common/types/game_manager'
 import {
-  isUmuSupported
-} from 'backend/utils/compatibility_layers'
-import {
   LegendaryAppName,
   LegendaryPlatform,
   NonEmptyString,

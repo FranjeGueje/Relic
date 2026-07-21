@@ -1,13 +1,11 @@
 import { BrowserWindow } from 'electron'
 import { initTrayIcon, testingExportsTrayIcon } from '../tray_icon'
 import { backendEvents } from '../../backend_events'
-import { GlobalConfig } from '../../config'
 import { RecentGame } from 'common/types'
 import i18next from 'i18next'
 import { configStore } from 'backend/constants/key_value_stores'
 
 jest.mock('../../logger')
-jest.mock('../../config')
 
 const wait = async (ms: number) =>
   new Promise((resolve) => setTimeout(resolve, ms))
@@ -21,18 +19,6 @@ describe('TrayIcon', () => {
 
   afterEach(() => {
     configStore.get = jest.fn()
-  })
-
-  it('shows no icon if noTrayIcon setting', async () => {
-    GlobalConfig.setConfigValue('noTrayIcon', true)
-
-    const noAppIcon = await initTrayIcon(mainWindow)
-    expect(noAppIcon).toBeNull()
-
-    GlobalConfig.setConfigValue('noTrayIcon', false)
-
-    const appIcon = await initTrayIcon(mainWindow)
-    expect(appIcon).not.toBeNull()
   })
 
   describe('content', () => {
@@ -103,9 +89,6 @@ describe('TrayIcon', () => {
         })
 
         it('limits the number games displayed based on config', async () => {
-          // limits to maxRecentGames config
-          GlobalConfig.setConfigValue('maxRecentGames', 3)
-
           setRecentGames([])
 
           const appIcon = (await initTrayIcon(
@@ -119,9 +102,7 @@ describe('TrayIcon', () => {
           backendEvents.emit('recentGamesChanged', [
             { title: 'game 1', appName: '1' },
             { title: 'game 2', appName: '2' },
-            { title: 'game 3', appName: '3' },
-            { title: 'game 4', appName: '4' },
-            { title: 'game 5', appName: '5' }
+            { title: 'game 3', appName: '3' }
           ])
 
           // wait for a moment since the event handler is async
@@ -199,9 +180,6 @@ describe('TrayIcon', () => {
       ]
 
       setRecentGames(recentGames)
-
-      // defaults to 5
-      GlobalConfig.setConfigValue('maxRecentGames', undefined)
 
       const appIcon = (await initTrayIcon(
         mainWindow

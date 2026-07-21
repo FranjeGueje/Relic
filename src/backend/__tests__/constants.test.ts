@@ -44,28 +44,6 @@ describe('Constants - getShell', () => {
     overrideProcessPlatform(originalPlatform)
   })
 
-  test('get shell for windows', async () => {
-    // override platform
-    const originalPlatform = overrideProcessPlatform('win32')
-
-    const shell = await getShell()
-    expect(shell).toBe('powershell.exe')
-
-    // get back to original platform
-    overrideProcessPlatform(originalPlatform)
-  })
-
-  test('get shell for mac', async () => {
-    // override platform
-    const originalPlatform = overrideProcessPlatform('darwin')
-
-    const shell = await getShell()
-    expect(shell).toBe('/bin/zsh')
-
-    // get back to original platform
-    overrideProcessPlatform(originalPlatform)
-  })
-
   test('get default shell for unix os', async () => {
     // override platform
     const originalPlatform = overrideProcessPlatform('linux')

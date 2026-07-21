@@ -138,6 +138,38 @@ Para ver el detalle completo de cada categoría, consultar:
 
 ---
 
+### v0.2.0 — UMU (Jul 2026)
+
+#### Módulo relic/umu
+- Nuevo módulo `src/backend/relic/umu/` con 3 archivos: `store.ts` (mapeo store → label UMU + lookup API), `launcher.ts` (ejecuta `umu-run` con 4 env vars), `index.ts` (barrel).
+- `prepareUmuPrefix()` en `prefix.ts` ahora async: busca GAMEID en API de UMU, luego ejecuta `umu-run exit` para crear prefijo.
+- `game_events.ts`: llamada actualizada con `await` y `installPath`.
+
+#### Detección y configuración de GE-Proton
+- `config.ts`: nueva función `detectGeProton()` y `protonPath` en defaults (auto-detecta desde `~/.local/share/Steam/compatibilitytools.d/` en primer arranque).
+- `AppSettings`: añadido `protonPath: string`.
+- `constants/paths.ts`: añadido `steamCompatDir`.
+- `compatibility_layers.ts`: `getUmuPath()` retorna `string | null` — busca PATH primero, luego bundleado en `publicDir/bin/umu/umu-run`.
+- `electron-builder.yml`: añadido `build/bin/umu/*` a `linux.files`.
+
+#### Frontend
+- `ProtonPath.tsx`: PathSelectionBox para seleccionar GE-Proton en Settings > General.
+
+#### Cleanup
+- Eliminados imports de `isUmuSupported` en 4 store managers (dead code).
+- Eliminados `defaultUmuPath` y `runtimePath` de `paths.ts`.
+- Eliminado `umuSupport` de `ExperimentalFeatures`.
+- Eliminado duplicado de `logError` en close handler de `launcher.ts`.
+- `prefix.ts` usa `logInfo` en vez de `logError` para fallos de UMU.
+
+#### Tests
+- 95 tests (95 pasan, 0 preexistentes fallan).
+- Eliminados tests `getShell for windows/mac` (función simplificada a Linux-only), test `shows no icon if noTrayIcon setting` (no existe `setConfigValue`), simplificado test `limits number games` (usa 3 juegos en vez de `maxRecentGames`).
+- `launcher.test.ts`: quitada aserción de `logError` en close handler (assertions 3→2).
+- `symlinks.test.ts`: eliminado `defaultUmuPath` del mock.
+
+---
+
 ### v0.2.0 — UPGRADE-MINIMAL (Jul 2026)
 
 #### Build fix

@@ -1,4 +1,4 @@
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'graceful-fs'
+import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'graceful-fs'
 
 import {
   AppSettings,
@@ -14,6 +14,7 @@ import {
   configPath,
   gamesConfigPath,
   relicInstallPath,
+  steamCompatDir,
   userHome
 } from './constants/paths'
 import { join } from 'path'
@@ -219,6 +220,17 @@ class GlobalConfigV0 extends GlobalConfig {
     return settings
   }
 
+  private detectGeProton(): string {
+    try {
+      if (!existsSync(steamCompatDir)) return ''
+      const dirs = readdirSync(steamCompatDir)
+      const geProton = dirs.find((d: string) => /proton/i.test(d))
+      return geProton ? join(steamCompatDir, geProton) : ''
+    } catch {
+      return ''
+    }
+  }
+
   public getFactoryDefaults(): AppSettings {
     const settings: Partial<AppSettings> = {
       checkUpdatesInterval: 10,
@@ -229,6 +241,7 @@ class GlobalConfigV0 extends GlobalConfig {
       defaultSteamPath: getSteamCompatFolder(),
       language: 'en',
       maxWorkers: 0,
+      protonPath: this.detectGeProton(),
       verboseLogs: true,
       steamGridDbApiKey: '',
       disableGOGPresence: false

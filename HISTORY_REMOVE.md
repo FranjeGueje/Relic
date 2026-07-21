@@ -738,3 +738,25 @@
 - `electron-updater`
 - `plist`
 - `@shockpkg/icon-encoder`
+
+---
+
+## UMU integration — Jul 2026
+
+### Dead code eliminado
+- `src/backend/constants/paths.ts`: eliminados `defaultUmuPath` y `runtimePath` (ya no existen en el módulo)
+- `src/common/types.ts`: `ExperimentalFeatures.umuSupport` eliminado
+- `src/backend/storeManagers/legendary/games.ts`: import muerto `isUmuSupported` eliminado
+- `src/backend/storeManagers/gog/games.ts`: import muerto `isUmuSupported` eliminado
+- `src/backend/storeManagers/nile/games.ts`: import muerto `isUmuSupported` eliminado
+- `src/backend/storeManagers/sideload/games.ts`: import muerto `isUmuSupported` eliminado
+- `src/backend/launcher.ts`: duplicado `logError` en close handler eliminado (solo `resolve` ahora)
+- `src/backend/relic/prefix.ts`: `logError` → `logInfo` para fallos de UMU (no es error del usuario)
+
+### isUmuSupported simplificado
+- `src/backend/utils/compatibility_layers.ts`: `isUmuSupported()` reducido a solo `getUmuPath() !== null` (eliminados checks de `defaultUmuPath`, `experimentalFeatures.umuSupport`, Windows)
+
+### Tests eliminados/limpiados
+- `src/backend/constants/__tests__/constants.test.ts`: tests `getShell for windows` y `getShell for mac` eliminados (función simplificada a Linux-only)
+- `src/backend/tray_icon/__tests__/tray_icon.test.ts`: test `shows no icon if noTrayIcon setting` eliminado (no existe `setConfigValue`); test `limits number games` simplificado (usa 3 juegos hardcodeados en vez de `maxRecentGames`)
+- `src/backend/relic/__tests__/symlinks.test.ts`: `defaultUmuPath` eliminado del mock de `paths.ts`

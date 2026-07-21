@@ -57,7 +57,6 @@ jest.mock('backend/constants/paths', () => ({
   gamesConfigPath: '/mock/gamesconfig',
   relicIconFolder: '/mock/icons',
   fixesPath: '/mock/fixes',
-  defaultUmuPath: '/mock/umu.py',
   publicDir: '/mock/public',
   fakeEpicExePath: '/mock/epic.exe',
   galaxyCommunicationExePath: '/mock/galaxy.exe',

@@ -6,6 +6,7 @@ import {
   ClearCache,
   DefaultInstallPath,
   MaxWorkers,
+  ProtonPath,
   ResetRelic,
   SteamGridDbApiKey,
   VerboseLogs
@@ -23,6 +24,8 @@ export default function GeneralSettings() {
       <ThemeSelector />
 
       <DefaultInstallPath />
+
+      <ProtonPath />
 
       <AutoUpdateGames />
 

@@ -55,9 +55,6 @@ import { t } from 'i18next'
 import { showDialogBoxModalAuto } from '../../dialog/dialog'
 import { sendFrontendMessage } from '../../ipc'
 import { Game, RemoveArgs } from 'common/types/game_manager'
-import {
-  isUmuSupported
-} from 'backend/utils/compatibility_layers'
 import axios, { AxiosError, AxiosResponse } from 'axios'
 import { isOnline, runOnceWhenOnline } from 'backend/online_monitor'
 import { readdir, readFile } from 'fs/promises'

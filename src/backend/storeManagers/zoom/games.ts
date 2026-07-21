@@ -42,7 +42,6 @@ import { sendFrontendMessage } from '../../ipc'
 import { Game } from 'common/types/game_manager'
 import { isLinux } from 'backend/constants/environment'
 import { libraryManagerMap } from '..'
-import { isUmuSupported } from 'backend/utils/compatibility_layers'
 
 import type LogWriter from 'backend/logger/log_writer'
 import { rm, writeFile } from 'node:fs/promises'

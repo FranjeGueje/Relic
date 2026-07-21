@@ -151,7 +151,7 @@ export async function onGameInstalled(
     }
     shell.openExternal(`steam://gameproperties/${result.steamAppId}`)
   }
-  prepareUmuPrefix(input.gameInfo)
+  await prepareUmuPrefix(input.gameInfo, input.installPath)
 
   return result
 }

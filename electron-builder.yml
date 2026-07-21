@@ -30,3 +30,4 @@ linux:
   files:
     - build/bin/${arch}/linux/*
     - build/bin/${arch}/win32/*
+    - build/bin/umu/*

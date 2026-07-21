@@ -95,3 +95,14 @@ El objetivo es mantener trazabilidad de los cambios respecto al padre.
 | 2026-07-20 | `src/backend/relic/steam_shortcuts/add_game.ts` | Check temprano en `addGameToSteam`: si el juego ya existe en Steam, devuelve el steamAppId existente sin abrir diálogo |
 | 2026-07-20 | `src/backend/relic/steam_shortcuts/add_game.ts` | Rename `batPath` → `runnerPath` (variable, parámetros, return) |
 | 2026-07-20 | `src/backend/relic/game_events.ts` | Rename `batPath` → `runnerPath` (variable, parámetro, argumento) |
+| 2026-07-21 | `src/common/types.ts` | Añadido `protonPath: string` a `AppSettings` |
+| 2026-07-21 | `src/backend/constants/paths.ts` | Añadido `steamCompatDir = ~/.local/share/Steam/compatibilitytools.d/` |
+| 2026-07-21 | `src/backend/config.ts` | Añadida función `detectGeProton()` (auto-detecta GE-Proton en `steamCompatDir`) y default `protonPath: ''` |
+| 2026-07-21 | `src/backend/relic/umu/store.ts` | Nuevo módulo: `getUmuStoreLabel()` mapea runner→label UMU (`epic`→`egs`, `gog`→`gog`, `nile`→`amazon`); `searchUmuGameId()` consulta API UMU |
+| 2026-07-21 | `src/backend/relic/umu/launcher.ts` | Nuevo módulo: `launchUmu()` ejecuta `umu-run` con 4 env vars (GAMEID, STORE, WINEPREFIX, PROTONPATH) |
+| 2026-07-21 | `src/backend/relic/umu/index.ts` | Barrel export de `launchUmu` y `searchUmuGameId` |
+| 2026-07-21 | `src/backend/relic/prefix.ts` | `prepareUmuPrefix()` ahora async: busca GAMEID en API UMU, llama `launchUmu({ executable: 'exit' })` para crear prefijo |
+| 2026-07-21 | `src/backend/relic/game_events.ts` | Llamada a `prepareUmuPrefix` actualizada: `await prepareUmuPrefix(input.gameInfo, input.installPath)` |
+| 2026-07-21 | `src/backend/utils/compatibility_layers.ts` | `getUmuPath()` retorna `string | null`, busca PATH primero, luego bundleado en `publicDir/bin/umu/umu-run` |
+| 2026-07-21 | `electron-builder.yml` | `linux.files` añadido glob `build/bin/umu/*` para incluir umu-launcher en AppImage |
+| 2026-07-21 | `src/frontend/screens/Settings/components/ProtonPath.tsx` | Nuevo componente PathSelectionBox para seleccionar GE-Proton en Settings > General |

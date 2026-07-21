@@ -3,6 +3,9 @@ import { join } from 'path'
 import { logInfo, logError } from 'backend/logger'
 import { relicMountPath, relicGamesPath } from 'backend/constants/paths'
 import { getSteamPath } from './steam_shortcuts/steam_helpers'
+import { findShortcut } from './steam_shortcuts'
+import { GlobalConfig } from 'backend/config'
+import { getUmuStoreLabel, searchUmuGameId, launchUmu } from './umu'
 import { GameInfo } from 'common/types'
 
 const LOG_PREFIX = 'Relic'
@@ -12,7 +15,7 @@ export function preparePrefix(steamAppId: number): void {
     const steamPath = getSteamPath()
     const driveC = join(
       steamPath, 'steamapps', 'compatdata',
-      String(steamAppId), 'pfx', 'drive_c'
+      String(steamAppId), 'drive_c'
     )
 
     mkdirSync(driveC, { recursive: true })
@@ -26,6 +29,48 @@ export function preparePrefix(steamAppId: number): void {
   }
 }
 
-export function prepareUmuPrefix(gameInfo: GameInfo): void {
-  // TODO: Crear prefijo con umu-launcher
+export async function prepareUmuPrefix(
+  gameInfo: GameInfo,
+  installPath: string
+): Promise<void> {
+  const protonPath = GlobalConfig.get().getSettings().protonPath
+  if (!protonPath) {
+    logInfo('No GE-Proton configured, skipping UMU prefix', LOG_PREFIX)
+    return
+  }
+
+  const storeLabel = getUmuStoreLabel(gameInfo.runner)
+  if (!storeLabel) {
+    logInfo(`Runner "${gameInfo.runner}" has no UMU store mapping, skipping`, LOG_PREFIX)
+    return
+  }
+
+  const umuId = await searchUmuGameId(storeLabel, gameInfo.app_name)
+  const gameId = umuId ?? '0'
+
+  const known = findShortcut(gameInfo.app_name)
+  if (!known?.steamAppId) {
+    logError('No steamAppId found for UMU prefix', LOG_PREFIX)
+    return
+  }
+
+  const steamPath = getSteamPath()
+  const winePrefix = join(
+    steamPath, 'steamapps', 'compatdata',
+    String(known.steamAppId)
+  )
+
+  const result = await launchUmu({
+    winePrefix,
+    gameId,
+    protonPath,
+    store: storeLabel,
+    executable: 'exit'
+  })
+
+  if (result.success) {
+    logInfo(`UMU prefix prepared for "${gameInfo.title}" (GAMEID=${gameId})`, LOG_PREFIX)
+  } else {
+    logInfo(`UMU prefix failed for "${gameInfo.title}": ${result.error}`, LOG_PREFIX)
+  }
 }

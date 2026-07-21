@@ -71,7 +71,6 @@ export type Release = {
 export type ExperimentalFeatures = {
   enableHelp: boolean
   cometSupport: boolean
-  umuSupport?: boolean
   zoomPlatform?: boolean
 }
 
@@ -89,6 +88,7 @@ export interface AppSettings extends GameSettings {
   enableUpdates: boolean
   experimentalFeatures?: ExperimentalFeatures
   maxWorkers: number
+  protonPath: string
   verboseLogs: boolean
   steamGridDbApiKey: string
 }

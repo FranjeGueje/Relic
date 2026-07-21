@@ -21,9 +21,6 @@ import { GameConfig } from 'backend/game_config'
 import { existsSync } from 'graceful-fs'
 import { showDialogBoxModalAuto } from 'backend/dialog/dialog'
 import { t } from 'i18next'
-import {
-  isUmuSupported
-} from 'backend/utils/compatibility_layers'
 import shlex from 'shlex'
 import {
   killPattern,
