@@ -59,7 +59,9 @@
     "update": "Aktualizuj",
     "launchAnyway": "Uruchom grę mimo to",
     "shaderPreCachingDisabledMessage": "Pamięć wstępna cieniowania Steam jest wyłączona. Aby program działał poprawnie z UMU, włącz ją w ustawieniach Steam w trybie pulpitu.",
-    "shaderPreCachingDisabledTitle": "Wstępna pamięć podręczna cieniowania wyłączona"
+    "shaderPreCachingDisabledTitle": "Wstępna pamięć podręczna cieniowania wyłączona",
+    "default-install-path": "Default install path",
+    "proton-path": "Proton path"
   },
   "button": {
     "cancel": "Anuluj",
@@ -156,7 +158,8 @@
       "close": "Zamknij pomoc"
     },
     "content": {
-      "defaultInstallPath": "To jest domyślna ścieżka wybrana podczas instalowania gier."
+      "defaultInstallPath": "To jest domyślna ścieżka wybrana podczas instalowania gier.",
+      "protonPath": "Path to a Proton installation (e.g. GE-Proton) used when running games with UMU."
     },
     "dxfpslimit": "Ustala limit klatek na sekundę dla gier z DXVK (9-12)"
   },
@@ -329,7 +332,11 @@
       "label": "Zezwalanie na używanie kompilacji nie-GE Proton do uruchamiania gier",
       "wine_selector_warning": "Wersje nie-GE Proton są domyślnie ignorowane, włącz je w zaawansowanych ustawieniach globalnych"
     },
-    "disable_gog_presence": "Wyłącz aktualizacje GOG Presence"
+    "disable_gog_presence": "Wyłącz aktualizacje GOG Presence",
+    "default-install-path": "Default install path",
+    "proton-path": "Proton path",
+    "proton-path-info": "Used to generate UMU prefixes and prepare Steam integrations.",
+    "autoUpdateGames": "Automatically update games"
   },
   "settings": {
     "clear-cache": "Wyczyść pamięć podręczną Relic",

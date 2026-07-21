@@ -51,7 +51,9 @@
       }
     },
     "yes": "YA",
-    "update": "Perbarui"
+    "update": "Perbarui",
+    "default-install-path": "Default install path",
+    "proton-path": "Proton path"
   },
   "button": {
     "cancel": "Batalkan",
@@ -150,7 +152,8 @@
       "open": "Buka Bantuan"
     },
     "content": {
-      "defaultInstallPath": "Ini adalah jalur default yang dipilih sebelumnya saat menginstal game."
+      "defaultInstallPath": "Ini adalah jalur default yang dipilih sebelumnya saat menginstal game.",
+      "protonPath": "Path to a Proton installation (e.g. GE-Proton) used when running games with UMU."
     }
   },
   "info": {
@@ -309,7 +312,11 @@
     "verboseLogs": {
       "description": "Aktifkan log mendetail"
     },
-    "disable_gog_presence": "Nonaktifkan pembaruan GOG Presence"
+    "disable_gog_presence": "Nonaktifkan pembaruan GOG Presence",
+    "default-install-path": "Default install path",
+    "proton-path": "Proton path",
+    "proton-path-info": "Used to generate UMU prefixes and prepare Steam integrations.",
+    "autoUpdateGames": "Automatically update games"
   },
   "settings": {
     "clear-cache": "Hapus Tembolok Relic",

@@ -59,7 +59,9 @@
     "update": "Mettre à jour",
     "launchAnyway": "Lancez le jeu quand même",
     "shaderPreCachingDisabledMessage": "La mise en mémoire cache des shaders est désactivée. Veuillez l'activer dans les options de Steam en mode bureau afin que le jeu fonctionne normalement avec UMU.",
-    "shaderPreCachingDisabledTitle": "Mise en mémoire cache des shaders désactivée"
+    "shaderPreCachingDisabledTitle": "Mise en mémoire cache des shaders désactivée",
+    "default-install-path": "Default install path",
+    "proton-path": "Proton path"
   },
   "button": {
     "cancel": "Annuler",
@@ -153,7 +155,8 @@
       "settings": "Options"
     },
     "content": {
-      "defaultInstallPath": "C'est le répertoire présélectionné par défaut pour l'installation des jeux."
+      "defaultInstallPath": "C'est le répertoire présélectionné par défaut pour l'installation des jeux.",
+      "protonPath": "Path to a Proton installation (e.g. GE-Proton) used when running games with UMU."
     },
     "button": {
       "open": "Afficher l'aide",
@@ -337,7 +340,11 @@
       "label": "Permettre l'utilisation de versions non-GE de Proton pour lancer les jeux",
       "wine_selector_warning": "Les versions non-GE de Proton sont ignorées par défaut, activez-les dans les paramètres globaux avancés"
     },
-    "disable_gog_presence": "Désactiver la mise à jour de GOG Présence"
+    "disable_gog_presence": "Désactiver la mise à jour de GOG Présence",
+    "default-install-path": "Default install path",
+    "proton-path": "Proton path",
+    "proton-path-info": "Used to generate UMU prefixes and prepare Steam integrations.",
+    "autoUpdateGames": "Automatically update games"
   },
   "settings": {
     "clear-cache": "Effacer le cache Relic",

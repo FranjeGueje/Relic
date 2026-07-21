@@ -60,7 +60,9 @@
     "update": "Atualizar",
     "launchAnyway": "Executar Jogo Mesmo Assim",
     "shaderPreCachingDisabledMessage": "A Pré-cache de Shader do Steam está desativada. Ativa-a nas Definições do Steam no Modo de Ambiente de Trabalho para garantir que o jogo funciona corretamente com o UMU.",
-    "shaderPreCachingDisabledTitle": "Shader Pre-Caching Desativado"
+    "shaderPreCachingDisabledTitle": "Shader Pre-Caching Desativado",
+    "default-install-path": "Default install path",
+    "proton-path": "Proton path"
   },
   "button": {
     "cancel": "Cancelar",
@@ -153,7 +155,8 @@
       "settings": "Definições"
     },
     "content": {
-      "defaultInstallPath": "Este é o caminho padrão pré-selecionado ao instalar jogos."
+      "defaultInstallPath": "Este é o caminho padrão pré-selecionado ao instalar jogos.",
+      "protonPath": "Path to a Proton installation (e.g. GE-Proton) used when running games with UMU."
     },
     "button": {
       "close": "Fechar Ajuda",
@@ -327,7 +330,11 @@
       "label": "Permitir o uso de compilações não-GE do Proton para executar jogos"
     },
     "advertiseAvxForRosetta": "Anunciar AVX para Rosetta",
-    "disable_gog_presence": "Desativar atualizações presentes do GOG"
+    "disable_gog_presence": "Desativar atualizações presentes do GOG",
+    "default-install-path": "Default install path",
+    "proton-path": "Proton path",
+    "proton-path-info": "Used to generate UMU prefixes and prepare Steam integrations.",
+    "autoUpdateGames": "Automatically update games"
   },
   "settings": {
     "clear-cache": "Limpar o Cache do Relic",

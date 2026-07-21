@@ -51,7 +51,9 @@
       }
     },
     "yes": "Ja",
-    "update": "Uppdatering"
+    "update": "Uppdatering",
+    "default-install-path": "Default install path",
+    "proton-path": "Proton path"
   },
   "button": {
     "cancel": "Avbryt",
@@ -145,7 +147,8 @@
       "settings": "Inställningar"
     },
     "content": {
-      "defaultInstallPath": "Detta är den sökvägen som är förvald när du installerar spel."
+      "defaultInstallPath": "Detta är den sökvägen som är förvald när du installerar spel.",
+      "protonPath": "Path to a Proton installation (e.g. GE-Proton) used when running games with UMU."
     },
     "button": {
       "open": "Öppna hjälp",
@@ -316,7 +319,11 @@
       }
     },
     "advertiseAvxForRosetta": "Annonsera AVX för Rosetta",
-    "disable_gog_presence": "Inaktivera GOG-närvarouppdateringar"
+    "disable_gog_presence": "Inaktivera GOG-närvarouppdateringar",
+    "default-install-path": "Default install path",
+    "proton-path": "Proton path",
+    "proton-path-info": "Used to generate UMU prefixes and prepare Steam integrations.",
+    "autoUpdateGames": "Automatically update games"
   },
   "settings": {
     "clear-cache": "Rensa Relic cache",

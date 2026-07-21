@@ -36,7 +36,9 @@
       "message-remove": "קיצורי דרך הוסרו משולחן העבודה ומהתפריט הראשי",
       "title": "קיצורי דרך"
     },
-    "update": "עדכן"
+    "update": "עדכן",
+    "default-install-path": "Default install path",
+    "proton-path": "Proton path"
   },
   "button": {
     "login": "היכנס",
@@ -175,7 +177,11 @@
       "description": ""
     },
     "advertiseAvxForRosetta": "",
-    "disable_gog_presence": ""
+    "disable_gog_presence": "",
+    "default-install-path": "Default install path",
+    "proton-path": "Proton path",
+    "proton-path-info": "Used to generate UMU prefixes and prepare Steam integrations.",
+    "autoUpdateGames": "Automatically update games"
   },
   "status": {
     "processing": "מעבד קבצים, נא לחכות",
@@ -244,7 +250,8 @@
     },
     "dxfpslimit": "קובע את גבול קצב הפריימים עבור משחקי DXVK",
     "content": {
-      "defaultInstallPath": ""
+      "defaultInstallPath": "",
+      "protonPath": "Path to a Proton installation (e.g. GE-Proton) used when running games with UMU."
     },
     "button": {
       "open": "",

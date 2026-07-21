@@ -60,7 +60,9 @@
     "update": "更新",
     "launchAnyway": "仍要启动游戏",
     "shaderPreCachingDisabledMessage": "Steam 的 Shader 预缓存被禁用。请在桌面模式下于 Steam 设置中启用它确保游戏在 UMU 启动器下正常运行。",
-    "shaderPreCachingDisabledTitle": "禁用了 Shader 预缓存"
+    "shaderPreCachingDisabledTitle": "禁用了 Shader 预缓存",
+    "default-install-path": "Default install path",
+    "proton-path": "Proton path"
   },
   "button": {
     "cancel": "取消",
@@ -151,7 +153,8 @@
     "sync": {},
     "disable_logs": "将此复选框切换为“开”可禁用对日志文件的大部分写入（始终记录关键信息）。请确保在报告任何问题之前关闭此设置。",
     "content": {
-      "defaultInstallPath": "这是安装游戏时预先选择的默认路径。"
+      "defaultInstallPath": "这是安装游戏时预先选择的默认路径。",
+      "protonPath": "Path to a Proton installation (e.g. GE-Proton) used when running games with UMU."
     },
     "title": {
       "settings": "设置"
@@ -332,7 +335,11 @@
       "wine_selector_warning": "非 GE 版本的 Proton 默认被忽略，在高级全局设置中启用它们",
       "info_label": "忽略了非 GE Proton 版本"
     },
-    "disable_gog_presence": "禁用 GOG Presence 更新"
+    "disable_gog_presence": "禁用 GOG Presence 更新",
+    "default-install-path": "Default install path",
+    "proton-path": "Proton path",
+    "proton-path-info": "Used to generate UMU prefixes and prepare Steam integrations.",
+    "autoUpdateGames": "Automatically update games"
   },
   "settings": {
     "clear-cache": "清理 Relic 缓存",

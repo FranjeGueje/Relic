@@ -42,7 +42,9 @@
       },
       "title": "Rabhadh"
     },
-    "yes": "TÁ"
+    "yes": "TÁ",
+    "default-install-path": "Default install path",
+    "proton-path": "Proton path"
   },
   "help": {
     "title": {
@@ -53,7 +55,8 @@
       "open": "Oscail Cabhair"
     },
     "content": {
-      "defaultInstallPath": "Seo an cosán réamhshocraithe a roghnaítear agus cluichí á suiteáil."
+      "defaultInstallPath": "Seo an cosán réamhshocraithe a roghnaítear agus cluichí á suiteáil.",
+      "protonPath": "Path to a Proton installation (e.g. GE-Proton) used when running games with UMU."
     },
     "disable_logs": "Cuir an bosca seiceála seo AR SIÚL chun an chuid is mó de na scríobh chuig comhaid loga a dhíchumasú (logáiltear faisnéis ríthábhachtach i gcónaí). Déan cinnte an socrú seo a mhúchadh sula dtuairiscíonn tú aon fhadhb.",
     "dxfpslimit": "Socraíonn sé uasteorainn ráta fráma do Chluichí DirectX (9-12)",
@@ -88,7 +91,11 @@
     "verboseLogs": {
       "description": "Cumasaigh logaí foclacha"
     },
-    "disable_gog_presence": "Díchumasaigh nuashonruithe GOG Presence"
+    "disable_gog_presence": "Díchumasaigh nuashonruithe GOG Presence",
+    "default-install-path": "Default install path",
+    "proton-path": "Proton path",
+    "proton-path-info": "Used to generate UMU prefixes and prepare Steam integrations.",
+    "autoUpdateGames": "Automatically update games"
   },
   "button": {
     "login": "Logáil isteach",

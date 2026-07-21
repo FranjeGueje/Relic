@@ -59,7 +59,9 @@
     "update": "Update",
     "launchAnyway": "Start spillet alikevel",
     "shaderPreCachingDisabledMessage": "Steams forhåndsinnhenting av shaders er skrudd av. Vennligst skru det på i Steams innstillinger så spillet funker riktig med UMU.",
-    "shaderPreCachingDisabledTitle": "Forhåndslasting av shaders skrudd av"
+    "shaderPreCachingDisabledTitle": "Forhåndslasting av shaders skrudd av",
+    "default-install-path": "Default install path",
+    "proton-path": "Proton path"
   },
   "button": {
     "cancel": "Avbryt",
@@ -152,7 +154,8 @@
       "settings": "Innstillinger"
     },
     "content": {
-      "defaultInstallPath": "Dette er standardstien som er forhåndsvalgt når du installerer spill."
+      "defaultInstallPath": "Dette er standardstien som er forhåndsvalgt når du installerer spill.",
+      "protonPath": "Path to a Proton installation (e.g. GE-Proton) used when running games with UMU."
     },
     "button": {
       "close": "Lukk hjelp",
@@ -321,7 +324,11 @@
         "title": "Er du sikker?"
       }
     },
-    "disable_gog_presence": "Deaktiver GOG Presence-oppdateringer"
+    "disable_gog_presence": "Deaktiver GOG Presence-oppdateringer",
+    "default-install-path": "Default install path",
+    "proton-path": "Proton path",
+    "proton-path-info": "Used to generate UMU prefixes and prepare Steam integrations.",
+    "autoUpdateGames": "Automatically update games"
   },
   "settings": {
     "clear-cache": "Tøm Relic hurtigbuffer",

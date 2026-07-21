@@ -51,7 +51,9 @@
       }
     },
     "yes": "JA",
-    "update": "Update"
+    "update": "Update",
+    "default-install-path": "Default install path",
+    "proton-path": "Proton path"
   },
   "button": {
     "cancel": "Cancel",
@@ -148,7 +150,8 @@
       "open": "Open Help"
     },
     "content": {
-      "defaultInstallPath": "Dit is het standaard pad dat voorgeselecteerd wordt bij het installeren van games."
+      "defaultInstallPath": "Dit is het standaard pad dat voorgeselecteerd wordt bij het installeren van games.",
+      "protonPath": "Path to a Proton installation (e.g. GE-Proton) used when running games with UMU."
     },
     "dxfpslimit": "Sets a frame rate cap for DXVK games"
   },
@@ -313,7 +316,11 @@
       "description": "Breedsprakige logboeken inschakelen"
     },
     "advertiseAvxForRosetta": "Adverteer AVX voor Rosetta",
-    "disable_gog_presence": "Schakel GOG Presence updates uit"
+    "disable_gog_presence": "Schakel GOG Presence updates uit",
+    "default-install-path": "Default install path",
+    "proton-path": "Proton path",
+    "proton-path-info": "Used to generate UMU prefixes and prepare Steam integrations.",
+    "autoUpdateGames": "Automatically update games"
   },
   "settings": {
     "clear-cache": "Relic-Cache legen",

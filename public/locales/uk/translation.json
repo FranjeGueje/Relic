@@ -59,7 +59,9 @@
     "update": "Оновлення",
     "launchAnyway": "Усе одно запустити гру",
     "shaderPreCachingDisabledMessage": "Попереднє кешування шейдерів Steam вимкнено. Увімкніть їх у налаштуваннях Steam у режимі робочого столу, щоби гра працювала належним чином з UMU.",
-    "shaderPreCachingDisabledTitle": "Попереднє кешування шейдерів вимкнено"
+    "shaderPreCachingDisabledTitle": "Попереднє кешування шейдерів вимкнено",
+    "default-install-path": "Default install path",
+    "proton-path": "Proton path"
   },
   "button": {
     "cancel": "Скасувати",
@@ -153,7 +155,8 @@
       "settings": "Налаштування"
     },
     "content": {
-      "defaultInstallPath": "Це типовий шлях, що пропонується під час встановлення ігор."
+      "defaultInstallPath": "Це типовий шлях, що пропонується під час встановлення ігор.",
+      "protonPath": "Path to a Proton installation (e.g. GE-Proton) used when running games with UMU."
     },
     "button": {
       "open": "Відкрити «Допомогу»",
@@ -331,7 +334,11 @@
       "wine_selector_warning": "Версії Proton, що не є GE, типово ігноруються. Увімкніть їх у глобальних налаштуваннях «Розширені»",
       "info_label": "Версії не GE-Proton ігноруються"
     },
-    "disable_gog_presence": "Вимкни оновлення статусу GOG"
+    "disable_gog_presence": "Вимкни оновлення статусу GOG",
+    "default-install-path": "Default install path",
+    "proton-path": "Proton path",
+    "proton-path-info": "Used to generate UMU prefixes and prepare Steam integrations.",
+    "autoUpdateGames": "Automatically update games"
   },
   "settings": {
     "clear-cache": "Очистити кеш Relic",

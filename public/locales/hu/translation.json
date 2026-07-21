@@ -59,7 +59,9 @@
     "update": "Frissítés",
     "launchAnyway": "Játék indítása ennek ellenére",
     "shaderPreCachingDisabledMessage": "A Steam shader előtöltése ki van kapcsolva. Kérjük, engedélyezze a Steam beállításaiban asztali módban, hogy a játék megfelelően működjön az UMU-val.",
-    "shaderPreCachingDisabledTitle": "Shader előtöltés kikapcsolva"
+    "shaderPreCachingDisabledTitle": "Shader előtöltés kikapcsolva",
+    "default-install-path": "Default install path",
+    "proton-path": "Proton path"
   },
   "button": {
     "cancel": "Mégse",
@@ -156,7 +158,8 @@
       "open": "Súgó megnyitása"
     },
     "content": {
-      "defaultInstallPath": "A játékok telepítésénél előre kiválasztott, alapértelmezett elérési út."
+      "defaultInstallPath": "A játékok telepítésénél előre kiválasztott, alapértelmezett elérési út.",
+      "protonPath": "Path to a Proton installation (e.g. GE-Proton) used when running games with UMU."
     },
     "dxfpslimit": "Képkockaszámkorlátot állít be a DXVK-s játékokhoz"
   },
@@ -329,7 +332,11 @@
       "label": "Nem GE-Proton verziók engedélyezése játékok futtatásához",
       "wine_selector_warning": "A nem GE-Proton verziók alapértelmezetten figyelmen kívül vannak hagyva, engedélyezd őket a Globális speciális beállításokban"
     },
-    "disable_gog_presence": "GOG jelenlétfrissítések letiltása"
+    "disable_gog_presence": "GOG jelenlétfrissítések letiltása",
+    "default-install-path": "Default install path",
+    "proton-path": "Proton path",
+    "proton-path-info": "Used to generate UMU prefixes and prepare Steam integrations.",
+    "autoUpdateGames": "Automatically update games"
   },
   "settings": {
     "clear-cache": "Relic gyorsítótár törlése",

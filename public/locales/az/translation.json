@@ -52,7 +52,9 @@
       }
     },
     "yes": "HƏ",
-    "update": "Update"
+    "update": "Update",
+    "default-install-path": "Default install path",
+    "proton-path": "Proton path"
   },
   "button": {
     "cancel": "Cancel",
@@ -146,7 +148,8 @@
     },
     "dxfpslimit": "Sets a frame rate cap for DXVK games",
     "content": {
-      "defaultInstallPath": ""
+      "defaultInstallPath": "",
+      "protonPath": "Path to a Proton installation (e.g. GE-Proton) used when running games with UMU."
     },
     "button": {
       "open": "",
@@ -309,7 +312,11 @@
       "description": ""
     },
     "advertiseAvxForRosetta": "",
-    "disable_gog_presence": ""
+    "disable_gog_presence": "",
+    "default-install-path": "Default install path",
+    "proton-path": "Proton path",
+    "proton-path-info": "Used to generate UMU prefixes and prepare Steam integrations.",
+    "autoUpdateGames": "Automatically update games"
   },
   "settings": {
     "clear-cache": "Qəhrəmanlıq önbelleğini təmizləyin",

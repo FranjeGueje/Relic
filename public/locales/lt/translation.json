@@ -32,7 +32,9 @@
         "message": "Kai kurios funkcijos nėra pasiekiamos „Snap“ versijoje (kol kas) ir stengiamės ta sutvarkyti.{{newLine}}Dabartiniai ribojimai yra:{{newLine}}„Relic“ negalės surasti „Proton“ iš „Steam“ ar „Wine“ iš „Lutris“.{{newLine}}{{newLine}}„Gamescope“, žaidimų veiksena ir „MangoHud“ tai pat neveiks, nes „Relic“ neturi prieigos prie jų.{{newLine}}{{newLine}}Norint gauti prieigą prie šių funkcijų, prašome įdiegti „Relic“ kaip „Flatpack“, „DEB“ ar „AppImage“."
       }
     },
-    "info": {}
+    "info": {},
+    "default-install-path": "Default install path",
+    "proton-path": "Proton path"
   },
   "notify": {
     "uninstalled": "Išdiegti",
@@ -150,7 +152,8 @@
       "open": "Atidaryti pagalbą"
     },
     "content": {
-      "defaultInstallPath": "Šis yra numatytasis kelias, jau parinktas, kai įdiegiami žaidimai."
+      "defaultInstallPath": "Šis yra numatytasis kelias, jau parinktas, kai įdiegiami žaidimai.",
+      "protonPath": "Path to a Proton installation (e.g. GE-Proton) used when running games with UMU."
     },
     "dxvkfpslimit": "Nustato kadrų dažnio ribą „DXVK“ žaidimams",
     "game_language": {
@@ -216,7 +219,11 @@
       "description": "Įjungti derinimo veikseną"
     },
     "advertiseAvxForRosetta": "Pranešti „AVX“ „Rosetta“ palaikymui",
-    "disable_gog_presence": "Išjungti/Išgalinti „GOG“ matomumo (būsenos) atnaujinimus"
+    "disable_gog_presence": "Išjungti/Išgalinti „GOG“ matomumo (būsenos) atnaujinimus",
+    "default-install-path": "Default install path",
+    "proton-path": "Proton path",
+    "proton-path-info": "Used to generate UMU prefixes and prepare Steam integrations.",
+    "autoUpdateGames": "Automatically update games"
   },
   "settings": {
     "advanced": {

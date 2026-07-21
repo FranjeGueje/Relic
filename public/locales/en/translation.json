@@ -37,7 +37,9 @@
       },
       "title": "Warning"
     },
-    "yes": "YES"
+    "yes": "YES",
+    "default-install-path": "Default install path",
+    "proton-path": "Proton path"
   },
   "button": {
     "cancel": "Cancel",
@@ -199,7 +201,8 @@
       "open": "Open Help"
     },
     "content": {
-      "defaultInstallPath": "This is the default path preselected when installing games."
+      "defaultInstallPath": "This is the default path preselected when installing games.",
+      "protonPath": "Path to a Proton installation (e.g. GE-Proton) used when running games with UMU."
     },
     "disable_logs": "Toggle this checkbox ON to disable most of the writes to log files (critical information is always logged). Make sure to turn OFF this setting before reporting any issue.",
     "dxfpslimit": "Sets a frame rate cap for DirectX Games (9-12)",
@@ -357,7 +360,11 @@
     "select_theme": "Select Theme",
     "verboseLogs": {
       "description": "Enable verbose logs"
-    }
+    },
+    "default-install-path": "Default install path",
+    "proton-path": "Proton path",
+    "proton-path-info": "Used to generate UMU prefixes and prepare Steam integrations.",
+    "autoUpdateGames": "Automatically update games"
   },
   "settings": {
     "advanced": {

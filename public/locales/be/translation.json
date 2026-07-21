@@ -59,7 +59,9 @@
     "update": "Абнаўленне",
     "launchAnyway": "Усё адно запусціць гульню",
     "shaderPreCachingDisabledMessage": "Папярэдняе кэшаванне шэйдараў Steam адключана. Каб гульня працавала належным чынам з UMU, уключыце яго ў наладах Steam у рэжыме працоўнага стала.",
-    "shaderPreCachingDisabledTitle": "Папярэдняе кэшаванне шэйдараў адключана"
+    "shaderPreCachingDisabledTitle": "Папярэдняе кэшаванне шэйдараў адключана",
+    "default-install-path": "Default install path",
+    "proton-path": "Proton path"
   },
   "button": {
     "cancel": "Скасаваць",
@@ -157,7 +159,8 @@
       "close": "Закрыць даведку"
     },
     "content": {
-      "defaultInstallPath": "Гэта шлях па змаўчанні, выбраны пры ўсталёўцы гульняў."
+      "defaultInstallPath": "Гэта шлях па змаўчанні, выбраны пры ўсталёўцы гульняў.",
+      "protonPath": "Path to a Proton installation (e.g. GE-Proton) used when running games with UMU."
     },
     "dxfpslimit": "Задае абмежаванне частаты кадраў для гульняў DirectX (9-12)"
   },
@@ -325,7 +328,11 @@
         "title": "Вы ўпэўнены?"
       }
     },
-    "disable_gog_presence": ""
+    "disable_gog_presence": "",
+    "default-install-path": "Default install path",
+    "proton-path": "Proton path",
+    "proton-path-info": "Used to generate UMU prefixes and prepare Steam integrations.",
+    "autoUpdateGames": "Automatically update games"
   },
   "settings": {
     "clear-cache": "Ачысціць кэш Relic",

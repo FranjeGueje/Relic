@@ -52,7 +52,9 @@
       }
     },
     "yes": "是",
-    "update": "更新"
+    "update": "更新",
+    "default-install-path": "Default install path",
+    "proton-path": "Proton path"
   },
   "button": {
     "cancel": "取消",
@@ -145,7 +147,8 @@
       "settings": "設定"
     },
     "content": {
-      "defaultInstallPath": ""
+      "defaultInstallPath": "",
+      "protonPath": "Path to a Proton installation (e.g. GE-Proton) used when running games with UMU."
     },
     "button": {
       "open": "開啟幫助",
@@ -309,7 +312,11 @@
       "description": ""
     },
     "advertiseAvxForRosetta": "",
-    "disable_gog_presence": ""
+    "disable_gog_presence": "",
+    "default-install-path": "Default install path",
+    "proton-path": "Proton path",
+    "proton-path-info": "Used to generate UMU prefixes and prepare Steam integrations.",
+    "autoUpdateGames": "Automatically update games"
   },
   "settings": {
     "clear-cache": "清理 Relic 快取",

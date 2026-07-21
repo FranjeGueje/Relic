@@ -51,7 +51,9 @@
       }
     },
     "yes": "CÓ",
-    "update": "Cập Nhật"
+    "update": "Cập Nhật",
+    "default-install-path": "Default install path",
+    "proton-path": "Proton path"
   },
   "button": {
     "cancel": "Hủy",
@@ -149,7 +151,8 @@
       "open": "Mở Trợ Giúp"
     },
     "content": {
-      "defaultInstallPath": "Đây là đường dẫn mặc định được chọn sẵn khi cài đặt game."
+      "defaultInstallPath": "Đây là đường dẫn mặc định được chọn sẵn khi cài đặt game.",
+      "protonPath": "Path to a Proton installation (e.g. GE-Proton) used when running games with UMU."
     }
   },
   "info": {
@@ -308,7 +311,11 @@
     "verboseLogs": {
       "description": "Bật nhật ký chi tiết"
     },
-    "disable_gog_presence": ""
+    "disable_gog_presence": "",
+    "default-install-path": "Default install path",
+    "proton-path": "Proton path",
+    "proton-path-info": "Used to generate UMU prefixes and prepare Steam integrations.",
+    "autoUpdateGames": "Automatically update games"
   },
   "settings": {
     "clear-cache": "Xóa Bộ Nhớ Đệm Của Relic",

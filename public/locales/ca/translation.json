@@ -59,7 +59,9 @@
     "update": "Actualitza",
     "launchAnyway": "Llança el joc de totes maneres",
     "shaderPreCachingDisabledMessage": "La precaché del shader de l'Steam està desactivada. Activa-la des de la configuració de l'Steam en mode escriptori per a assegurar que el joc funciona adequadament amb UMU.",
-    "shaderPreCachingDisabledTitle": "Pre-caché del shader desactivada"
+    "shaderPreCachingDisabledTitle": "Pre-caché del shader desactivada",
+    "default-install-path": "Default install path",
+    "proton-path": "Proton path"
   },
   "button": {
     "cancel": "Cancel·la",
@@ -157,7 +159,8 @@
       "open": "Obre l'ajuda"
     },
     "content": {
-      "defaultInstallPath": "Aquesta és la ruta predeterminada per a instal·lar jocs."
+      "defaultInstallPath": "Aquesta és la ruta predeterminada per a instal·lar jocs.",
+      "protonPath": "Path to a Proton installation (e.g. GE-Proton) used when running games with UMU."
     },
     "dxfpslimit": "Estableix un límit als FPS per als jocs que utilitzin DirectX (9-12)"
   },
@@ -324,7 +327,11 @@
         "title": "Estàs segur?"
       }
     },
-    "disable_gog_presence": "Desactiva les actualitzacions del GOG Presence"
+    "disable_gog_presence": "Desactiva les actualitzacions del GOG Presence",
+    "default-install-path": "Default install path",
+    "proton-path": "Proton path",
+    "proton-path-info": "Used to generate UMU prefixes and prepare Steam integrations.",
+    "autoUpdateGames": "Automatically update games"
   },
   "settings": {
     "clear-cache": "Esborra la memòria cau de l'Relic",

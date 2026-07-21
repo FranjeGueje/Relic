@@ -53,7 +53,9 @@
         "checkbox": "Vis ikke denne meddelelse igen"
       }
     },
-    "update": "Opdatering"
+    "update": "Opdatering",
+    "default-install-path": "Default install path",
+    "proton-path": "Proton path"
   },
   "All": "Alle",
   "info": {
@@ -100,7 +102,8 @@
       "settings": "Indstillinger"
     },
     "content": {
-      "defaultInstallPath": "Dette er den standardsti, der er forudvalgt ved installation af spil."
+      "defaultInstallPath": "Dette er den standardsti, der er forudvalgt ved installation af spil.",
+      "protonPath": "Path to a Proton installation (e.g. GE-Proton) used when running games with UMU."
     },
     "button": {
       "open": "Åben Hjælp",
@@ -183,7 +186,11 @@
     "verboseLogs": {
       "description": "Aktivér detaljerede logfiler"
     },
-    "disable_gog_presence": ""
+    "disable_gog_presence": "",
+    "default-install-path": "Default install path",
+    "proton-path": "Proton path",
+    "proton-path-info": "Used to generate UMU prefixes and prepare Steam integrations.",
+    "autoUpdateGames": "Automatically update games"
   },
   "library": {
     "refresh": "Opdater",

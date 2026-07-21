@@ -52,7 +52,9 @@
       }
     },
     "yes": "بله",
-    "update": "Update"
+    "update": "Update",
+    "default-install-path": "Default install path",
+    "proton-path": "Proton path"
   },
   "button": {
     "cancel": "انصراف",
@@ -146,7 +148,8 @@
     },
     "dxfpslimit": "انتخاب فریم ریت کپ برای بازی های DXVK",
     "content": {
-      "defaultInstallPath": ""
+      "defaultInstallPath": "",
+      "protonPath": "Path to a Proton installation (e.g. GE-Proton) used when running games with UMU."
     },
     "button": {
       "open": "",
@@ -310,7 +313,11 @@
       "description": ""
     },
     "advertiseAvxForRosetta": "",
-    "disable_gog_presence": ""
+    "disable_gog_presence": "",
+    "default-install-path": "Default install path",
+    "proton-path": "Proton path",
+    "proton-path-info": "Used to generate UMU prefixes and prepare Steam integrations.",
+    "autoUpdateGames": "Automatically update games"
   },
   "settings": {
     "clear-cache": "پاک کردن کش Relic",

@@ -59,7 +59,9 @@
     "update": "Actualizar",
     "launchAnyway": "Arrincar o Xogo De Todos Modos",
     "shaderPreCachingDisabledMessage": "O caché de shaders de Steam está desactivado. Por favor actívao nas opcións de Steam no Modo de Escritorio para garantir que o xogo funcione correctamente con UMU.",
-    "shaderPreCachingDisabledTitle": "Caché de Shaders Desactivado"
+    "shaderPreCachingDisabledTitle": "Caché de Shaders Desactivado",
+    "default-install-path": "Default install path",
+    "proton-path": "Proton path"
   },
   "button": {
     "cancel": "Cancelar",
@@ -157,7 +159,8 @@
       "close": "Pechar Axuda"
     },
     "content": {
-      "defaultInstallPath": "Esta é a localización por defecto para instalar xogos."
+      "defaultInstallPath": "Esta é a localización por defecto para instalar xogos.",
+      "protonPath": "Path to a Proton installation (e.g. GE-Proton) used when running games with UMU."
     }
   },
   "info": {
@@ -327,7 +330,11 @@
     "verboseLogs": {
       "description": "Activar rexistros detallados"
     },
-    "disable_gog_presence": ""
+    "disable_gog_presence": "",
+    "default-install-path": "Default install path",
+    "proton-path": "Proton path",
+    "proton-path-info": "Used to generate UMU prefixes and prepare Steam integrations.",
+    "autoUpdateGames": "Automatically update games"
   },
   "settings": {
     "clear-cache": "Limpar caché de Relic",

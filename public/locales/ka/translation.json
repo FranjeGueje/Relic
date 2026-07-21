@@ -28,7 +28,9 @@
         "message": ""
       }
     },
-    "info": {}
+    "info": {},
+    "default-install-path": "Default install path",
+    "proton-path": "Proton path"
   },
   "controller": {
     "hints": {
@@ -68,7 +70,11 @@
     "maxworkers": "",
     "select_theme": "",
     "advertiseAvxForRosetta": "",
-    "disable_gog_presence": ""
+    "disable_gog_presence": "",
+    "default-install-path": "Default install path",
+    "proton-path": "Proton path",
+    "proton-path-info": "Used to generate UMU prefixes and prepare Steam integrations.",
+    "autoUpdateGames": "Automatically update games"
   },
   "window": {
     "close": "დახურვა",
@@ -118,7 +124,8 @@
     "disable_logs": "",
     "dxfpslimit": "",
     "content": {
-      "defaultInstallPath": ""
+      "defaultInstallPath": "",
+      "protonPath": "Path to a Proton installation (e.g. GE-Proton) used when running games with UMU."
     },
     "button": {
       "open": "",

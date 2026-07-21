@@ -36,7 +36,9 @@
       "title": "Qisqa klavishlar"
     },
     "yes": "HA",
-    "update": ""
+    "update": "",
+    "default-install-path": "Default install path",
+    "proton-path": "Proton path"
   },
   "add_game": "O'yin qo'shish",
   "All": "Hammasi",
@@ -174,7 +176,8 @@
     "disable_logs": "Jurnal fayllariga yozishning ko'p qismini o'chirish uchun ushbu katakchani ON holatiga o'tkazing (muhim ma'lumotlar har doim qayd qilinadi). Har qanday muammo haqida xabar berishdan oldin ushbu sozlamani O‘CHIRING.",
     "dxfpslimit": "",
     "content": {
-      "defaultInstallPath": ""
+      "defaultInstallPath": "",
+      "protonPath": "Path to a Proton installation (e.g. GE-Proton) used when running games with UMU."
     },
     "title": {
       "settings": ""
@@ -333,7 +336,11 @@
       "description": ""
     },
     "advertiseAvxForRosetta": "",
-    "disable_gog_presence": ""
+    "disable_gog_presence": "",
+    "default-install-path": "Default install path",
+    "proton-path": "Proton path",
+    "proton-path-info": "Used to generate UMU prefixes and prepare Steam integrations.",
+    "autoUpdateGames": "Automatically update games"
   },
   "settings": {
     "clear-cache": "Qahramonlik keshini tozalang",

@@ -59,7 +59,9 @@
     "update": "Uuenda",
     "launchAnyway": "Mängi siiski",
     "shaderPreCachingDisabledMessage": "Steami Shader Pre-cache (shaderite ettelaadimine) on keelatud. Palun lülitage see töölauarežiimis Steami seadetest sisse, et mäng toimiks UMU-ga korralikult.",
-    "shaderPreCachingDisabledTitle": "Shaderite ettelaadimine keelatud"
+    "shaderPreCachingDisabledTitle": "Shaderite ettelaadimine keelatud",
+    "default-install-path": "Default install path",
+    "proton-path": "Proton path"
   },
   "button": {
     "cancel": "Tühista",
@@ -152,7 +154,8 @@
       "settings": "Seaded"
     },
     "content": {
-      "defaultInstallPath": "See on vaikimisi asukoht, mida kasutatakse mängude paigaldamisel."
+      "defaultInstallPath": "See on vaikimisi asukoht, mida kasutatakse mängude paigaldamisel.",
+      "protonPath": "Path to a Proton installation (e.g. GE-Proton) used when running games with UMU."
     },
     "button": {
       "close": "Sulge abi",
@@ -329,7 +332,11 @@
       "label": "Luba mitte-GE Protoni versioone mängude mängimiseks",
       "wine_selector_warning": "Mitte-GE Protoni versioone vaikimisi ignoreeritakse, luba need täpsemates globaalsetes seadetes"
     },
-    "disable_gog_presence": "Keela GOG Presence'i uuendused"
+    "disable_gog_presence": "Keela GOG Presence'i uuendused",
+    "default-install-path": "Default install path",
+    "proton-path": "Proton path",
+    "proton-path-info": "Used to generate UMU prefixes and prepare Steam integrations.",
+    "autoUpdateGames": "Automatically update games"
   },
   "settings": {
     "clear-cache": "Tühjenda Relicu vahemälu",

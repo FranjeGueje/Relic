@@ -51,7 +51,9 @@
       }
     },
     "yes": "예",
-    "update": "업데이트"
+    "update": "업데이트",
+    "default-install-path": "Default install path",
+    "proton-path": "Proton path"
   },
   "button": {
     "cancel": "취소",
@@ -144,7 +146,8 @@
       "settings": "설정"
     },
     "content": {
-      "defaultInstallPath": "이는 게임을 설치할 때 기본적으로 선택된 경로입니다."
+      "defaultInstallPath": "이는 게임을 설치할 때 기본적으로 선택된 경로입니다.",
+      "protonPath": "Path to a Proton installation (e.g. GE-Proton) used when running games with UMU."
     },
     "button": {
       "open": "도움말 열기",
@@ -316,7 +319,11 @@
       "description": ""
     },
     "advertiseAvxForRosetta": "",
-    "disable_gog_presence": ""
+    "disable_gog_presence": "",
+    "default-install-path": "Default install path",
+    "proton-path": "Proton path",
+    "proton-path-info": "Used to generate UMU prefixes and prepare Steam integrations.",
+    "autoUpdateGames": "Automatically update games"
   },
   "settings": {
     "clear-cache": "Relic 캐시 지우기",

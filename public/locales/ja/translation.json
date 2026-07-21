@@ -55,7 +55,9 @@
       }
     },
     "yes": "はい",
-    "update": "Update"
+    "update": "Update",
+    "default-install-path": "Default install path",
+    "proton-path": "Proton path"
   },
   "button": {
     "cancel": "キャンセル",
@@ -153,7 +155,8 @@
       "close": "ヘルプを閉じる"
     },
     "content": {
-      "defaultInstallPath": "これは、ゲームのインストール時にあらかじめ選択されているデフォルトのパスです。"
+      "defaultInstallPath": "これは、ゲームのインストール時にあらかじめ選択されているデフォルトのパスです。",
+      "protonPath": "Path to a Proton installation (e.g. GE-Proton) used when running games with UMU."
     },
     "dxfpslimit": "Sets a frame rate cap for DXVK games"
   },
@@ -320,7 +323,11 @@
       }
     },
     "advertiseAvxForRosetta": "",
-    "disable_gog_presence": "GOG Presenceの更新を無効にする"
+    "disable_gog_presence": "GOG Presenceの更新を無効にする",
+    "default-install-path": "Default install path",
+    "proton-path": "Proton path",
+    "proton-path-info": "Used to generate UMU prefixes and prepare Steam integrations.",
+    "autoUpdateGames": "Automatically update games"
   },
   "settings": {
     "clear-cache": "Relicのキャッシュを消去",

@@ -41,7 +41,9 @@
       }
     },
     "yes": "ДА",
-    "update": "Ажурирај"
+    "update": "Ажурирај",
+    "default-install-path": "Default install path",
+    "proton-path": "Proton path"
   },
   "anticheat": {
     "status": "Статус",
@@ -151,7 +153,8 @@
       "open": "Отвори Помоћ"
     },
     "content": {
-      "defaultInstallPath": "Ово је подразумевана путања унапред изабрана приликом инсталирања игара."
+      "defaultInstallPath": "Ово је подразумевана путања унапред изабрана приликом инсталирања игара.",
+      "protonPath": "Path to a Proton installation (e.g. GE-Proton) used when running games with UMU."
     }
   },
   "infobox": {
@@ -257,7 +260,11 @@
       "description": ""
     },
     "advertiseAvxForRosetta": "",
-    "disable_gog_presence": ""
+    "disable_gog_presence": "",
+    "default-install-path": "Default install path",
+    "proton-path": "Proton path",
+    "proton-path-info": "Used to generate UMU prefixes and prepare Steam integrations.",
+    "autoUpdateGames": "Automatically update games"
   },
   "settings": {
     "clear-cache": "Очисти херојски кеш",

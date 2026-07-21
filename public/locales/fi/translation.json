@@ -51,7 +51,9 @@
       }
     },
     "yes": "KYLLÄ",
-    "update": "Päivitä"
+    "update": "Päivitä",
+    "default-install-path": "Default install path",
+    "proton-path": "Proton path"
   },
   "button": {
     "cancel": "Keskeytä",
@@ -144,7 +146,8 @@
       "settings": "Asetukset"
     },
     "content": {
-      "defaultInstallPath": "Tämä on ennalta valittu vakiopolku pelejä asennettaessa."
+      "defaultInstallPath": "Tämä on ennalta valittu vakiopolku pelejä asennettaessa.",
+      "protonPath": "Path to a Proton installation (e.g. GE-Proton) used when running games with UMU."
     },
     "button": {
       "close": "Sulje apu",
@@ -314,7 +317,11 @@
       "description": "Salli laajat lokit"
     },
     "advertiseAvxForRosetta": "Mainosta AVX:ää Rosettalle",
-    "disable_gog_presence": "Poista GOG:n läsnäolopäivitykset käytöstä"
+    "disable_gog_presence": "Poista GOG:n läsnäolopäivitykset käytöstä",
+    "default-install-path": "Default install path",
+    "proton-path": "Proton path",
+    "proton-path-info": "Used to generate UMU prefixes and prepare Steam integrations.",
+    "autoUpdateGames": "Automatically update games"
   },
   "settings": {
     "clear-cache": "Tyhjennä Relicin välimuisti",

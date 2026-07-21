@@ -59,7 +59,9 @@
     "update": "Aktualizovat",
     "launchAnyway": "Spustit hru i tak",
     "shaderPreCachingDisabledMessage": "Předběžné ukládání shaderů ve Steamu je deaktivováno. Aktivujte jej v nastavení Steamu v režimu pro stolní počítače, aby hra s UMU fungovala správně.",
-    "shaderPreCachingDisabledTitle": "Předběžné ukládání do mezipaměti shaderů je zakázáno"
+    "shaderPreCachingDisabledTitle": "Předběžné ukládání do mezipaměti shaderů je zakázáno",
+    "default-install-path": "Default install path",
+    "proton-path": "Proton path"
   },
   "button": {
     "cancel": "Zrušit",
@@ -153,7 +155,8 @@
       "settings": "Nastavení"
     },
     "content": {
-      "defaultInstallPath": "Toto je výchozí cesta předem zvolená při instalaci her."
+      "defaultInstallPath": "Toto je výchozí cesta předem zvolená při instalaci her.",
+      "protonPath": "Path to a Proton installation (e.g. GE-Proton) used when running games with UMU."
     },
     "button": {
       "open": "Otevřít nápovědu",
@@ -331,7 +334,11 @@
       "wine_selector_warning": "Verze Protonu bez GE jsou ve výchozím nastavení ignorovány, povolte je v pokročilých globálních nastaveních",
       "info_label": "Verze bez GE Protonu ignorovány"
     },
-    "disable_gog_presence": "Zakázat aktualizace GOG Presence"
+    "disable_gog_presence": "Zakázat aktualizace GOG Presence",
+    "default-install-path": "Default install path",
+    "proton-path": "Proton path",
+    "proton-path-info": "Used to generate UMU prefixes and prepare Steam integrations.",
+    "autoUpdateGames": "Automatically update games"
   },
   "settings": {
     "clear-cache": "Vymazat mezipaměť Relic",

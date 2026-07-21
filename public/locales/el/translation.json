@@ -51,7 +51,9 @@
       }
     },
     "yes": "ΝΑΙ",
-    "update": "Ενημέρωση"
+    "update": "Ενημέρωση",
+    "default-install-path": "Default install path",
+    "proton-path": "Proton path"
   },
   "button": {
     "cancel": "Ακύρωση",
@@ -148,7 +150,8 @@
       "open": "Άνοιγμα Βοήθειας"
     },
     "content": {
-      "defaultInstallPath": "Αυτή είναι η προεπιλεγμένη διαδρομή για την εγκατάσταση παιχνιδιών."
+      "defaultInstallPath": "Αυτή είναι η προεπιλεγμένη διαδρομή για την εγκατάσταση παιχνιδιών.",
+      "protonPath": "Path to a Proton installation (e.g. GE-Proton) used when running games with UMU."
     },
     "dxfpslimit": "Ορίζει όριο ρυθμού καρέ για παιχνίδια DirectX (9-12)"
   },
@@ -313,7 +316,11 @@
     "verboseLogs": {
       "description": "Ενεργοποίηση λεπτομερών αρχείων καταγραφής"
     },
-    "disable_gog_presence": "Απενεργοποίηση ενημερώσεων GOG Presence"
+    "disable_gog_presence": "Απενεργοποίηση ενημερώσεων GOG Presence",
+    "default-install-path": "Default install path",
+    "proton-path": "Proton path",
+    "proton-path-info": "Used to generate UMU prefixes and prepare Steam integrations.",
+    "autoUpdateGames": "Automatically update games"
   },
   "settings": {
     "clear-cache": "Εκκαθάριση κρυφής μνήμης Relic",

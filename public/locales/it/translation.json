@@ -59,7 +59,9 @@
     "update": "Aggiorna",
     "launchAnyway": "Lancia comunque il gioco",
     "shaderPreCachingDisabledMessage": "La Pre-cache dello Share di Steam è disabilitata. Per favore abilitala nelle Impostazioni Steam nella Modalità Desktop per assicurarti che il gioco funzioni correttamente con UMU.",
-    "shaderPreCachingDisabledTitle": "Pre-Caching Shader Disabilitato"
+    "shaderPreCachingDisabledTitle": "Pre-Caching Shader Disabilitato",
+    "default-install-path": "Default install path",
+    "proton-path": "Proton path"
   },
   "button": {
     "cancel": "Annulla",
@@ -156,7 +158,8 @@
       "open": "Apri Aiuto"
     },
     "content": {
-      "defaultInstallPath": "Questo è il percorso predefinito preselezionato durante l'installazione dei giochi."
+      "defaultInstallPath": "Questo è il percorso predefinito preselezionato durante l'installazione dei giochi.",
+      "protonPath": "Path to a Proton installation (e.g. GE-Proton) used when running games with UMU."
     },
     "dxfpslimit": "Imposta un limite di frame rate per i giochi DirectX (9-12)"
   },
@@ -327,7 +330,11 @@
       },
       "info_label": "Versioni di Non-GE Proton ignorate"
     },
-    "disable_gog_presence": "Disattiva gli aggiornamenti di GOG Presence"
+    "disable_gog_presence": "Disattiva gli aggiornamenti di GOG Presence",
+    "default-install-path": "Default install path",
+    "proton-path": "Proton path",
+    "proton-path-info": "Used to generate UMU prefixes and prepare Steam integrations.",
+    "autoUpdateGames": "Automatically update games"
   },
   "settings": {
     "clear-cache": "Pulisci cache Relic",

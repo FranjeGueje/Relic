@@ -56,7 +56,9 @@
       }
     },
     "yes": "ДА",
-    "update": "Обновление"
+    "update": "Обновление",
+    "default-install-path": "Default install path",
+    "proton-path": "Proton path"
   },
   "button": {
     "cancel": "Отмена",
@@ -150,7 +152,8 @@
       "settings": "Настройки"
     },
     "content": {
-      "defaultInstallPath": "Этот путь выбран по умолчанию для установки игр."
+      "defaultInstallPath": "Этот путь выбран по умолчанию для установки игр.",
+      "protonPath": "Path to a Proton installation (e.g. GE-Proton) used when running games with UMU."
     },
     "button": {
       "open": "Открыть Справку",
@@ -322,7 +325,11 @@
     "verboseLogs": {
       "description": "Включить подробные журналы"
     },
-    "disable_gog_presence": "Отключить обновление статуса в GOG"
+    "disable_gog_presence": "Отключить обновление статуса в GOG",
+    "default-install-path": "Default install path",
+    "proton-path": "Proton path",
+    "proton-path-info": "Used to generate UMU prefixes and prepare Steam integrations.",
+    "autoUpdateGames": "Automatically update games"
   },
   "settings": {
     "clear-cache": "Очистить кэш Relic",
