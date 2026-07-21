@@ -23,7 +23,7 @@
   },
   "packageManager": "pnpm@11.15.1",
   "scripts": {
-    "start": "electron-vite dev --watch",
+    "start": "node node_modules/electron/install.js && electron-vite dev --watch",
     "codecheck": "tsc --noEmit",
     "test": "jest",
     "test-watch": "jest --watch --maxWorkers=25%",
