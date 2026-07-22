@@ -1,7 +1,6 @@
 import { Runner } from 'common/types'
 import EpicLogo from 'frontend/assets/epic-logo.svg?react'
 import GOGLogo from 'frontend/assets/gog-logo.svg?react'
-import SideLoad from 'frontend/assets/relic-icon.svg?react'
 import AmazonLogo from 'frontend/assets/amazon-logo.svg?react'
 import ZoomLogo from 'frontend/assets/zoom-logo.svg?react'
 
@@ -20,7 +19,5 @@ export default function StoreLogos({
       return <AmazonLogo className={className} />
     case 'zoom':
       return <ZoomLogo className={className} />
-    default:
-      return <SideLoad className={className} />
   }
 }

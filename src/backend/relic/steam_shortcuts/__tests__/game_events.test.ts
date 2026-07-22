@@ -1,6 +1,6 @@
 import { onGameInstalled, onGameUninstalled, onGameImported, onGameMoved } from '../../game_events'
 import { existsSync, unlinkSync } from 'graceful-fs'
-import { addGameToSteam, createRelicBat } from '../add_game'
+import { addGameToSteam, createRunnerFile } from '../add_game'
 import { deleteGrids } from '../../steamgrid'
 import { libraryManagerMap } from 'backend/storeManagers'
 import * as store from '../store'
@@ -36,7 +36,7 @@ jest.mock('backend/storeManagers', () => ({
 
 jest.mock('../add_game', () => ({
   addGameToSteam: jest.fn(),
-  createRelicBat: jest.fn()
+  createRunnerFile: jest.fn()
 }))
 
 jest.mock('../store', () => ({
@@ -51,7 +51,7 @@ jest.mock('../../steamgrid', () => ({
 }))
 
 const mockedAddGameToSteam = jest.mocked(addGameToSteam)
-const mockedCreateRelicBat = jest.mocked(createRelicBat)
+const mockedCreateRunnerFile = jest.mocked(createRunnerFile)
 const mockedExistsSync = jest.mocked(existsSync)
 const mockedUnlinkSync = jest.mocked(unlinkSync)
 const mockedDeleteGrids = jest.mocked(deleteGrids)
@@ -61,7 +61,7 @@ const mockedRemoveShortcut = jest.mocked(store.removeShortcut)
 
 beforeEach(() => {
   jest.clearAllMocks()
-  mockedCreateRelicBat.mockReturnValue('/path/to/TestGame.bat')
+  mockedCreateRunnerFile.mockReturnValue({ path: '/path/to/TestGame.bat' })
 })
 
 describe('onGameInstalled', () => {
@@ -78,7 +78,7 @@ describe('onGameInstalled', () => {
     const result = await onGameInstalled(mockGame as never, '/custom/path')
 
     expect(mockedAddGameToSteam).not.toHaveBeenCalled()
-    expect(mockedCreateRelicBat).not.toHaveBeenCalled()
+    expect(mockedCreateRunnerFile).not.toHaveBeenCalled()
     expect(result.success).toBe(true)
     expect(result.steamAppId).toBe(123)
   })
@@ -99,14 +99,13 @@ describe('onGameInstalled', () => {
 
     const result = await onGameInstalled(mockGame as never, '/custom/path')
 
-    expect(mockedCreateRelicBat).toHaveBeenCalledWith(
-      '/custom/path',
-      'TestGame',
-      'gog',
-      'test_app'
+    expect(mockedCreateRunnerFile).toHaveBeenCalledWith(
+      expect.objectContaining({ title: 'TestGame', app_name: 'test_app', runner: 'gog' }),
+      '/custom/path'
     )
     expect(mockedAddGameToSteam).toHaveBeenCalledWith({
-      gameName: 'TestGame'
+      gameName: 'TestGame',
+      runnerPath: '/path/to/TestGame.bat'
     })
     expect(mockedAddShortcut).toHaveBeenCalledWith('TestGame', 'test_app', 'gog', 123, '/custom/path', '/path/to/TestGame.bat')
     expect(result.success).toBe(true)
@@ -158,14 +157,13 @@ describe('onGameInstalled', () => {
     const result = await onGameInstalled(mockGame as never)
 
     expect(getGameInfoMock).toHaveBeenCalledWith('test_app', true)
-    expect(mockedCreateRelicBat).toHaveBeenCalledWith(
-      '/games/test',
-      'TestGame',
-      'legendary',
-      'test_app'
+    expect(mockedCreateRunnerFile).toHaveBeenCalledWith(
+      expect.objectContaining({ title: 'TestGame', app_name: 'test_app', runner: 'legendary' }),
+      '/games/test'
     )
     expect(mockedAddGameToSteam).toHaveBeenCalledWith({
-      gameName: 'TestGame'
+      gameName: 'TestGame',
+      runnerPath: '/path/to/TestGame.bat'
     })
     expect(result.success).toBe(true)
   })
@@ -191,14 +189,13 @@ describe('onGameInstalled', () => {
     const result = await onGameInstalled(mockGame as never)
 
     expect(getGameInfoMock).toHaveBeenCalledWith('test_app', true)
-    expect(mockedCreateRelicBat).toHaveBeenCalledWith(
-      '/stale/path',
-      'TestGame',
-      'legendary',
-      'test_app'
+    expect(mockedCreateRunnerFile).toHaveBeenCalledWith(
+      expect.objectContaining({ title: 'TestGame', app_name: 'test_app', runner: 'legendary' }),
+      '/stale/path'
     )
     expect(mockedAddGameToSteam).toHaveBeenCalledWith({
-      gameName: 'TestGame'
+      gameName: 'TestGame',
+      runnerPath: '/path/to/TestGame.bat'
     })
     expect(result.success).toBe(true)
   })

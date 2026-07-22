@@ -16,7 +16,7 @@ jest.mock('backend/utils', () => ({
 }))
 jest.mock('../steam_helpers', () => ({
   findGameInAllUsers: jest.fn(),
-  findExistingGameByName: jest.fn(),
+  findExistingGame: jest.fn(),
   getShortcutId: jest.fn(),
   checkSteamProtocolHandler: jest.fn()
 }))
@@ -29,12 +29,12 @@ jest.mock('backend/constants/paths', () => ({
 }))
 
 const mockedFindGameInAllUsers = jest.mocked(steamHelpers.findGameInAllUsers)
-const mockedFindExistingGameByName = jest.mocked(steamHelpers.findExistingGameByName)
+const mockedFindExistingGame = jest.mocked(steamHelpers.findExistingGame)
 const mockedGetShortcutId = jest.mocked(steamHelpers.getShortcutId)
 
 const HEADER_LINES = [
   '@echo off',
-  'echo runner version 2',
+  'echo Relic runner version 2',
   '@SET LEGENDARY_CONFIG_PATH=c:\\relic\\Legendary',
   '@SET NILE_CONFIG_PATH=c:\\relic\\',
   '@SET GOGDL_CONFIG_PATH=c:\\relic\\',
@@ -47,7 +47,7 @@ describe('addGameToSteam', () => {
   beforeEach(() => {
     tmpDir = dirSync({ unsafeCleanup: true })
     jest.clearAllMocks()
-    mockedFindExistingGameByName.mockReturnValue({ found: false })
+    mockedFindExistingGame.mockReturnValue({ found: false })
   })
 
   afterEach(() => {
@@ -60,7 +60,8 @@ describe('addGameToSteam', () => {
     )
 
     const result = await addGameToSteam({
-      gameName: 'MyGame'
+      gameName: 'MyGame',
+      runnerPath: '/tmp/MyGame.bat'
     })
 
     expect(result.success).toBe(false)
@@ -75,7 +76,8 @@ describe('addGameToSteam', () => {
     })
     mockedGetShortcutId.mockReturnValue(456)
     const result = await addGameToSteam({
-      gameName: 'MyGame'
+      gameName: 'MyGame',
+      runnerPath: '/tmp/MyGame.bat'
     })
 
     expect(result.success).toBe(true)
@@ -138,7 +140,7 @@ describe('createRelicBat', () => {
     expect(content).toContain('@nile launch nile789 -- %*')
   })
 
-  test('creates default bat for zoom with start command', () => {
+  test('creates default bat for unknown runner', () => {
     const runnerPath = createRelicBat('/some/path/ZoomGame', 'ZoomGame', 'zoom', '')
 
     expect(runnerPath).toBe(join(mockRelicRunnerPath, 'ZoomGame.bat'))
@@ -148,7 +150,7 @@ describe('createRelicBat', () => {
     for (const line of HEADER_LINES) {
       expect(content).toContain(line)
     }
-    expect(content).toContain('@start "" "c:\\games\\ZoomGame\\<executable>" %*')
+    expect(content).toContain('@echo En desarrollo...')
   })
 
   test('overwrites existing file with new content', () => {

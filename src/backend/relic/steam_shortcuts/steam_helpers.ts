@@ -8,6 +8,8 @@ import type { UserdataInfo, FindResult } from './types'
 
 const LOG_PREFIX = 'Relic'
 
+// ── Steam path info ──
+
 export function getSteamPath(): string {
   const { defaultSteamPath } = GlobalConfig.get().getSettings()
   return defaultSteamPath.replaceAll("'", '')
@@ -29,6 +31,8 @@ export function getUserdataInfo(): UserdataInfo {
 
   return { userdataDir, folders }
 }
+
+// ── Shortcut parsing ──
 
 const READ_RETRIES = 3
 
@@ -70,6 +74,8 @@ export function getShortcutId(entry: Record<string, unknown>): number {
   return 0
 }
 
+// ── Game search ──
+
 export function findGameInAllUsers(
   names: string | string[]
 ): FindResult {
@@ -104,15 +110,21 @@ export function findGameInAllUsers(
   return { entry: null, found: false }
 }
 
-export function findExistingGameByName(
-  gameName: string
+export function findExistingGame(
+  basenameWithExt: string
 ): { found: boolean; steamAppId?: number } {
-  const result = findGameInAllUsers([`${gameName}.bat`, gameName])
+  const idx = basenameWithExt.lastIndexOf('.')
+  const hasExt = idx > 0
+  const name = hasExt ? basenameWithExt.slice(0, idx) : basenameWithExt
+  const names = hasExt ? [basenameWithExt, name] : [name]
+  const result = findGameInAllUsers(names)
   if (result.found && result.entry) {
     return { found: true, steamAppId: getShortcutId(result.entry) }
   }
   return { found: false }
 }
+
+// ── Protocol ──
 
 export function checkSteamProtocolHandler(): void {
   const mimeFile = join(

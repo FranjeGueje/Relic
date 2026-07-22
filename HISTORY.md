@@ -316,3 +316,17 @@ Para ver el detalle completo de cada categoría, consultar:
 
 #### Tests
 - TypeScript 0 errores, 92 tests pasan.
+
+---
+
+### v0.2.2 — REFACTOR-ORGANIZE (Jul 2026)
+
+#### Reorganización de código
+- `createRunnerFile()` movido de `game_events.ts` a `add_game.ts`.
+- `preparePrefix()` (orquestador) movido de `game_events.ts` a `prefix.ts`.
+- `preparePrefix` fundido dentro de `prepareUmuPrefix` (ahora incluye creación de drive_c).
+- `validateGameInput` + `GameInput` type eliminados; lógica inlined en `onGameInstalled`.
+- Funciones reordenadas por responsabilidad en `prefix.ts`, `add_game.ts`, `steam_helpers.ts`, `download.ts`, `windowify.ts`.
+
+#### Tests
+- 45 tests, TypeScript 0 errores.

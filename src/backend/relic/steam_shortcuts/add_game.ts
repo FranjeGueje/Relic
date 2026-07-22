@@ -5,16 +5,37 @@ import { spawnAsync } from 'backend/utils'
 import { relicRunnerPath } from 'backend/constants/paths'
 import {
   findGameInAllUsers,
-  findExistingGameByName,
+  findExistingGame,
   getShortcutId,
   checkSteamProtocolHandler
 } from './steam_helpers'
 import type { AddGameToSteamOptions, AddGameToSteamResult, GameRunner } from './types'
+import { GameInfo } from 'common/types'
 
 const LOG_PREFIX = 'Relic'
-const POLL_INTERVAL_MS = 1500
-const POLL_TIMEOUT_MS = 15000
-const ADD_GAME_MARKER = '/tmp/addnonsteamgamefile'
+
+export function createRunnerFile(
+  gameInfo: GameInfo,
+  installPath: string
+): { path: string } | { error: string } {
+  if (gameInfo.runner === 'zoom') {
+    const executable = gameInfo.install.executable
+    return { path: executable ? join(installPath, executable) : '' }
+  }
+
+  try {
+    const runnerPath = createRelicBat(
+      installPath,
+      gameInfo.title,
+      gameInfo.runner as GameRunner,
+      gameInfo.app_name
+    )
+    return { path: runnerPath }
+  } catch (e) {
+    logError(`Failed to create runner file: ${e}`, LOG_PREFIX)
+    return { error: `Failed to create runner file: ${e}` }
+  }
+}
 
 export function createRelicBat(
   installPath: string,
@@ -28,7 +49,7 @@ export function createRelicBat(
 
   const header = [
     '@echo off',
-    'echo runner version 2',
+    'echo Relic runner version 2',
     '@SET LEGENDARY_CONFIG_PATH=c:\\relic\\Legendary',
     '@SET NILE_CONFIG_PATH=c:\\relic\\',
     '@SET GOGDL_CONFIG_PATH=c:\\relic\\',
@@ -50,11 +71,6 @@ export function createRelicBat(
     case 'nile':
       runnerCmd = `@nile launch ${appName} -- %*`
       break
-    case 'zoom': {
-      const winPath = `c:\\games\\${basename(installPath)}`
-      runnerCmd = `@start "" "${winPath}\\<executable>" %*`
-      break
-    }
     default:
       runnerCmd = '@echo En desarrollo...'
   }
@@ -66,41 +82,19 @@ export function createRelicBat(
   return runnerPath
 }
 
-async function waitForGameInSteam(
-  gameName: string,
-  startTime: number
-): Promise<{ found: boolean; steamAppId?: number }> {
-  const elapsed = Date.now() - startTime
-
-  if (elapsed >= POLL_TIMEOUT_MS) {
-    logError(
-      `Timeout waiting for "${gameName}" to appear in Steam shortcuts (${POLL_TIMEOUT_MS}ms).`,
-      LOG_PREFIX
-    )
-    return { found: false }
-  }
-
-  const result = findGameInAllUsers(gameName)
-
-  if (result.found && result.entry) {
-    return { found: true, steamAppId: getShortcutId(result.entry) }
-  }
-
-  await new Promise((resolve) => setTimeout(resolve, POLL_INTERVAL_MS))
-  return waitForGameInSteam(gameName, startTime)
-}
+const POLL_INTERVAL_MS = 1500
+const POLL_TIMEOUT_MS = 15000
+const ADD_GAME_MARKER = '/tmp/addnonsteamgamefile'
 
 export async function addGameToSteam(
   options: AddGameToSteamOptions
 ): Promise<AddGameToSteamResult> {
-  const { gameName, executablePath } = options
-
-  const runnerPath = executablePath ?? join(relicRunnerPath, `${gameName}.bat`)
+  const { gameName, runnerPath } = options
   const steamName = basename(runnerPath)
 
   checkSteamProtocolHandler()
 
-  const existing = findExistingGameByName(gameName)
+  const existing = findExistingGame(steamName)
   if (existing.found) {
     logInfo(`"${gameName}" already exists in Steam (ID ${existing.steamAppId}). Skipping.`, LOG_PREFIX)
     return { success: true, steamAppId: existing.steamAppId }
@@ -149,4 +143,28 @@ export async function addGameToSteam(
     success: true,
     steamAppId
   }
+}
+
+async function waitForGameInSteam(
+  gameName: string,
+  startTime: number
+): Promise<{ found: boolean; steamAppId?: number }> {
+  const elapsed = Date.now() - startTime
+
+  if (elapsed >= POLL_TIMEOUT_MS) {
+    logError(
+      `Timeout waiting for "${gameName}" to appear in Steam shortcuts (${POLL_TIMEOUT_MS}ms).`,
+      LOG_PREFIX
+    )
+    return { found: false }
+  }
+
+  const result = findGameInAllUsers(gameName)
+
+  if (result.found && result.entry) {
+    return { found: true, steamAppId: getShortcutId(result.entry) }
+  }
+
+  await new Promise((resolve) => setTimeout(resolve, POLL_INTERVAL_MS))
+  return waitForGameInSteam(gameName, startTime)
 }

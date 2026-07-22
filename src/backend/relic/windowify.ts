@@ -11,6 +11,8 @@ import type { GameRunner } from './steam_shortcuts/types'
 
 const LOG_PREFIX = 'Relic'
 
+// ── Types and config ──
+
 type StoreConfig = {
   configDir: string
   installedFile: string
@@ -64,135 +66,7 @@ const STORE_CONFIGS: Record<GameRunner, StoreConfig> = {
   zoom: { configDir: '', installedFile: '', mountDir: '', transform: (d) => d }
 }
 
-function ensureMountDirs(): void {
-  for (const config of Object.values(STORE_CONFIGS)) {
-    if (config.mountDir) {
-      mkdirSync(join(relicMountPath, config.mountDir), { recursive: true })
-    }
-  }
-  mkdirSync(join(relicMountPath, 'gogdl'), { recursive: true })
-  mkdirSync(join(relicMountPath, 'heroic_gogdl'), { recursive: true })
-}
-
-function symlinkStoreFiles(sourceDir: string, mountDir: string): void {
-  if (!existsSync(sourceDir)) {
-    logWarning(`Source directory not found: ${sourceDir}`, LOG_PREFIX)
-    return
-  }
-  mkdirSync(mountDir, { recursive: true })
-
-  const entries = readdirSync(sourceDir)
-  for (const entry of entries) {
-    const sourcePath = join(sourceDir, entry)
-    const mountPath = join(mountDir, entry)
-
-    if (existsSync(mountPath)) {
-      rmSync(mountPath, { recursive: true })
-    }
-
-    symlinkSync(sourcePath, mountPath)
-  }
-  logInfo(`Symlinked ${entries.length} entries from ${sourceDir} → ${mountDir}`, LOG_PREFIX)
-}
-
-function createGameSymlink(gameInfo: GameInfo): void {
-  const installPath = gameInfo.install.install_path
-  if (!installPath) {
-    logWarning(`No install path for "${gameInfo.title}", skipping symlink`, LOG_PREFIX)
-    return
-  }
-
-  const linkPath = join(relicGamesPath, basename(installPath))
-
-  try {
-    if (existsSync(linkPath)) {
-      unlinkSync(linkPath)
-    }
-    mkdirSync(relicGamesPath, { recursive: true })
-    symlinkSync(installPath, linkPath)
-    logInfo(`Created symlink: ${linkPath} → ${installPath}`, LOG_PREFIX)
-  } catch (error) {
-    logError(`Failed to create symlink ${linkPath}: ${error}`, LOG_PREFIX)
-  }
-}
-
-export function createRelicSymlinks(linksPath: string): void {
-  const relicLink = join(linksPath, 'relic')
-  const gamesLink = join(linksPath, 'games')
-
-  try {
-    if (existsSync(relicLink)) unlinkSync(relicLink)
-    if (existsSync(gamesLink)) unlinkSync(gamesLink)
-
-    symlinkSync(relicMountPath, relicLink)
-    symlinkSync(relicInstallPath, gamesLink)
-
-    logInfo(`Created symlinks in ${linksPath}`, LOG_PREFIX)
-  } catch (error) {
-    logError(`Failed to create symlinks in ${linksPath}: ${error}`, LOG_PREFIX)
-    throw error
-  }
-}
-
-function copyAndTransformInstalled(
-  sourcePath: string,
-  targetPath: string,
-  transform: (data: unknown) => unknown
-): void {
-  const content = readFileSync(sourcePath, 'utf-8')
-  const data = JSON.parse(content)
-  const transformed = transform(data)
-  writeFileSync(targetPath, JSON.stringify(transformed, null, 2), 'utf-8')
-  logInfo(`Windowified ${sourcePath} → ${targetPath}`, LOG_PREFIX)
-}
-
-function syncGogdlConfig(): void {
-  if (!existsSync(gogdlConfigPath)) return
-  for (const target of ['gogdl', 'heroic_gogdl']) {
-    const mountDir = join(relicMountPath, target)
-    symlinkStoreFiles(gogdlConfigPath, mountDir)
-  }
-}
-
-function md5File(filePath: string): string {
-  const content = readFileSync(filePath)
-  return createHash('md5').update(content).digest('hex')
-}
-
-export function syncMountBin(): void {
-  const sourceDir = join(publicDir, 'bin', 'x64', 'win32')
-  const targetDir = join(relicMountPath, 'bin')
-
-  if (!existsSync(sourceDir)) {
-    logWarning(`syncMountBin: source not found: ${sourceDir}`, LOG_PREFIX)
-    return
-  }
-
-  mkdirSync(targetDir, { recursive: true })
-
-  const files = readdirSync(sourceDir)
-  let copied = 0
-
-  for (const file of files) {
-    const sourcePath = join(sourceDir, file)
-    const targetPath = join(targetDir, file)
-
-    if (!statSync(sourcePath).isFile()) continue
-
-    const sourceHash = md5File(sourcePath)
-
-    if (existsSync(targetPath)) {
-      const targetHash = md5File(targetPath)
-      if (sourceHash === targetHash) continue
-    }
-
-    copyFileSync(sourcePath, targetPath)
-    logInfo(`syncMountBin: ${file} copiado`, LOG_PREFIX)
-    copied++
-  }
-
-  logInfo(`syncMountBin: ${files.length} ficheros, ${copied} copiados`, LOG_PREFIX)
-}
+// ── Public API ──
 
 export function windowify(gameInfo: GameInfo): void {
   ensureMountDirs()
@@ -230,4 +104,136 @@ export function windowify(gameInfo: GameInfo): void {
   } catch (error) {
     logError(`Failed to windowify: ${error}`, LOG_PREFIX)
   }
+}
+
+export function createRelicSymlinks(linksPath: string): void {
+  const relicLink = join(linksPath, 'relic')
+  const gamesLink = join(linksPath, 'games')
+
+  try {
+    if (existsSync(relicLink)) unlinkSync(relicLink)
+    if (existsSync(gamesLink)) unlinkSync(gamesLink)
+
+    symlinkSync(relicMountPath, relicLink)
+    symlinkSync(relicInstallPath, gamesLink)
+
+    logInfo(`Created symlinks in ${linksPath}`, LOG_PREFIX)
+  } catch (error) {
+    logError(`Failed to create symlinks in ${linksPath}: ${error}`, LOG_PREFIX)
+    throw error
+  }
+}
+
+export function syncMountBin(): void {
+  const sourceDir = join(publicDir, 'bin', 'x64', 'win32')
+  const targetDir = join(relicMountPath, 'bin')
+
+  if (!existsSync(sourceDir)) {
+    logWarning(`syncMountBin: source not found: ${sourceDir}`, LOG_PREFIX)
+    return
+  }
+
+  mkdirSync(targetDir, { recursive: true })
+
+  const files = readdirSync(sourceDir)
+  let copied = 0
+
+  for (const file of files) {
+    const sourcePath = join(sourceDir, file)
+    const targetPath = join(targetDir, file)
+
+    if (!statSync(sourcePath).isFile()) continue
+
+    const sourceHash = md5File(sourcePath)
+
+    if (existsSync(targetPath)) {
+      const targetHash = md5File(targetPath)
+      if (sourceHash === targetHash) continue
+    }
+
+    copyFileSync(sourcePath, targetPath)
+    logInfo(`syncMountBin: ${file} copiado`, LOG_PREFIX)
+    copied++
+  }
+
+  logInfo(`syncMountBin: ${files.length} ficheros, ${copied} copiados`, LOG_PREFIX)
+}
+
+// ── Private helpers ──
+
+function ensureMountDirs(): void {
+  for (const config of Object.values(STORE_CONFIGS)) {
+    if (config.mountDir) {
+      mkdirSync(join(relicMountPath, config.mountDir), { recursive: true })
+    }
+  }
+  mkdirSync(join(relicMountPath, 'gogdl'), { recursive: true })
+  mkdirSync(join(relicMountPath, 'heroic_gogdl'), { recursive: true })
+}
+
+function createGameSymlink(gameInfo: GameInfo): void {
+  const installPath = gameInfo.install.install_path
+  if (!installPath) {
+    logWarning(`No install path for "${gameInfo.title}", skipping symlink`, LOG_PREFIX)
+    return
+  }
+
+  const linkPath = join(relicGamesPath, basename(installPath))
+
+  try {
+    if (existsSync(linkPath)) {
+      unlinkSync(linkPath)
+    }
+    mkdirSync(relicGamesPath, { recursive: true })
+    symlinkSync(installPath, linkPath)
+    logInfo(`Created symlink: ${linkPath} → ${installPath}`, LOG_PREFIX)
+  } catch (error) {
+    logError(`Failed to create symlink ${linkPath}: ${error}`, LOG_PREFIX)
+  }
+}
+
+function syncGogdlConfig(): void {
+  if (!existsSync(gogdlConfigPath)) return
+  for (const target of ['gogdl', 'heroic_gogdl']) {
+    const mountDir = join(relicMountPath, target)
+    symlinkStoreFiles(gogdlConfigPath, mountDir)
+  }
+}
+
+function symlinkStoreFiles(sourceDir: string, mountDir: string): void {
+  if (!existsSync(sourceDir)) {
+    logWarning(`Source directory not found: ${sourceDir}`, LOG_PREFIX)
+    return
+  }
+  mkdirSync(mountDir, { recursive: true })
+
+  const entries = readdirSync(sourceDir)
+  for (const entry of entries) {
+    const sourcePath = join(sourceDir, entry)
+    const mountPath = join(mountDir, entry)
+
+    if (existsSync(mountPath)) {
+      rmSync(mountPath, { recursive: true })
+    }
+
+    symlinkSync(sourcePath, mountPath)
+  }
+  logInfo(`Symlinked ${entries.length} entries from ${sourceDir} → ${mountDir}`, LOG_PREFIX)
+}
+
+function copyAndTransformInstalled(
+  sourcePath: string,
+  targetPath: string,
+  transform: (data: unknown) => unknown
+): void {
+  const content = readFileSync(sourcePath, 'utf-8')
+  const data = JSON.parse(content)
+  const transformed = transform(data)
+  writeFileSync(targetPath, JSON.stringify(transformed, null, 2), 'utf-8')
+  logInfo(`Windowified ${sourcePath} → ${targetPath}`, LOG_PREFIX)
+}
+
+function md5File(filePath: string): string {
+  const content = readFileSync(filePath)
+  return createHash('md5').update(content).digest('hex')
 }

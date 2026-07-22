@@ -6,24 +6,40 @@ import { basename, join } from 'path'
 import { libraryManagerMap } from 'backend/storeManagers'
 import { relicGamesPath } from 'backend/constants/paths'
 import { logError, logInfo } from 'backend/logger'
-import { addGameToSteam, createRelicBat, findShortcut, addShortcut, removeShortcut } from './steam_shortcuts'
-import { windowify } from './windowify'
-import { preparePrefix, prepareUmuPrefix, symlinkPrefix, removePrefixSymlink } from './prefix'
+import { addGameToSteam, createRunnerFile, findShortcut, addShortcut, removeShortcut } from './steam_shortcuts'
+import { preparePrefix, removePrefixSymlink } from './prefix'
 import { notify } from 'backend/dialog/dialog'
-import type { AddGameToSteamResult, GameRunner } from './steam_shortcuts/types'
+import type { AddGameToSteamResult } from './steam_shortcuts/types'
 import { downloadGrids, deleteGrids } from './steamgrid'
 
 const LOG_PREFIX = 'Relic'
 
-type GameInput =
-  | { kind: 'ready'; gameInfo: GameInfo; installPath: string }
-  | { kind: 'skip'; steamAppId: number }
-  | { kind: 'error'; error: string }
+function refreshInstallPath(gameInfo: GameInfo): string {
+  try {
+    const manager = libraryManagerMap[
+      gameInfo.runner as keyof typeof libraryManagerMap
+    ] as unknown as {
+      getGameInfo?: (appName: string, forceReload: boolean) => GameInfo | undefined
+      refreshInstalled?: () => void
+    }
+    manager.refreshInstalled?.()
+    const freshInfo = manager.getGameInfo?.(gameInfo.app_name, true)
+    if (freshInfo) {
+      return freshInfo.install.install_path ?? ''
+    }
+  } catch (e) {
+    logError(
+      `Failed to refresh game info for ${gameInfo.runner}: ${e}`,
+      LOG_PREFIX
+    )
+  }
+  return gameInfo.install.install_path ?? ''
+}
 
-function validateGameInput(
+export async function onGameInstalled(
   game: Game,
   installPath?: string
-): GameInput {
+): Promise<AddGameToSteamResult> {
   const gameInfo = game.getGameInfo()
   const appName = gameInfo.app_name
 
@@ -33,70 +49,27 @@ function validateGameInput(
       `"${gameInfo.title}" (${appName}) is already tracked in Steam (ID ${known.steamAppId}). Skipping.`,
       LOG_PREFIX
     )
-    return { kind: 'skip', steamAppId: known.steamAppId }
+    return { success: true, steamAppId: known.steamAppId }
   }
 
-  let resolvedGameInfo = gameInfo
-  let resolvedPath = installPath
-
-  if (!resolvedPath) {
-    try {
-      const manager = libraryManagerMap[
-        gameInfo.runner as keyof typeof libraryManagerMap
-      ] as unknown as {
-        getGameInfo?: (appName: string, forceReload: boolean) => GameInfo | undefined
-        refreshInstalled?: () => void
-      }
-      manager.refreshInstalled?.()
-      const freshInfo = manager.getGameInfo?.(appName, true)
-      if (freshInfo) {
-        resolvedGameInfo = freshInfo
-      }
-    } catch (e) {
-      logError(
-        `Failed to refresh game info for ${gameInfo.runner}: ${e}`,
-        LOG_PREFIX
-      )
-    }
-
-    resolvedPath = resolvedGameInfo.install.install_path ?? ''
-  }
-
+  const resolvedPath = installPath || refreshInstallPath(gameInfo)
   if (!resolvedPath) {
     logError(
       `No install path for "${gameInfo.title}" (${appName})`,
       LOG_PREFIX
     )
-    return { kind: 'error', error: `No install path for "${gameInfo.title}" (${appName})` }
+    return { success: false, error: `No install path for "${gameInfo.title}" (${appName})` }
   }
 
-  return { kind: 'ready', gameInfo: resolvedGameInfo, installPath: resolvedPath }
-}
-
-function createRunnerFile(
-  gameInfo: GameInfo,
-  installPath: string
-): { path: string } | { error: string } {
-  try {
-    const runnerPath = createRelicBat(
-      installPath,
-      gameInfo.title,
-      gameInfo.runner as GameRunner,
-      gameInfo.app_name
-    )
-    return { path: runnerPath }
-  } catch (e) {
-    logError(`Failed to create runner file: ${e}`, LOG_PREFIX)
-    return { error: `Failed to create runner file: ${e}` }
+  const runnerFile = createRunnerFile(gameInfo, resolvedPath)
+  if ('error' in runnerFile) {
+    return { success: false, error: runnerFile.error }
   }
-}
 
-async function addToSteam(
-  gameInfo: GameInfo,
-  installPath: string,
-  runnerPath: string
-): Promise<AddGameToSteamResult> {
-  const result = await addGameToSteam({ gameName: gameInfo.title })
+  const result = await addGameToSteam({
+    gameName: gameInfo.title,
+    runnerPath: runnerFile.path
+  })
 
   if (!result.success) {
     logError(
@@ -106,80 +79,26 @@ async function addToSteam(
     return result
   }
 
-  addShortcut(
-    gameInfo.title,
-    gameInfo.app_name,
-    gameInfo.runner,
-    result.steamAppId!,
-    installPath,
-    runnerPath
-  )
+  if (result.steamAppId) {
+    addShortcut(
+      gameInfo.title,
+      appName,
+      gameInfo.runner,
+      result.steamAppId,
+      resolvedPath,
+      runnerFile.path
+    )
 
-  return result
-}
+    await preparePrefix(gameInfo, result.steamAppId, resolvedPath)
 
-export async function onGameInstalled(
-  game: Game,
-  installPath?: string
-): Promise<AddGameToSteamResult> {
-  const input = validateGameInput(game, installPath)
-
-  if (input.kind === 'skip') {
-    return { success: true, steamAppId: input.steamAppId }
-  }
-
-  if (input.kind === 'error') {
-    return { success: false, error: input.error }
-  }
-
-  const isZoom = input.gameInfo.runner === 'zoom'
-
-  let result: AddGameToSteamResult
-
-  if (isZoom) {
-    const executable = input.gameInfo.install.executable
-    const exePath = executable ? join(input.installPath, executable) : undefined
-    result = await addGameToSteam({ gameName: input.gameInfo.title, executablePath: exePath })
-
-    if (result.success && result.steamAppId) {
-      addShortcut(
-        input.gameInfo.title,
-        input.gameInfo.app_name,
-        input.gameInfo.runner,
-        result.steamAppId,
-        input.installPath,
-        exePath ?? ''
-      )
-    }
-  } else {
-    const runnerFile = createRunnerFile(input.gameInfo, input.installPath)
-    if ('error' in runnerFile) {
-      return { success: false, error: runnerFile.error }
-    }
-
-    result = await addToSteam(input.gameInfo, input.installPath, runnerFile.path)
-  }
-
-  if (result.success && result.steamAppId) {
-    if (isZoom) {
-      symlinkPrefix(result.steamAppId, input.installPath)
-    } else {
-      windowify(input.gameInfo)
-      preparePrefix(result.steamAppId)
-    }
-
-    const gridsDownloaded = await downloadGrids(input.gameInfo, result.steamAppId)
+    const gridsDownloaded = await downloadGrids(gameInfo, result.steamAppId)
     if (gridsDownloaded) {
       notify({
         title: 'Added to Steam',
-        body: `"${input.gameInfo.title}" was added to Steam. Restart Steam to see the grid images.`
+        body: `"${gameInfo.title}" was added to Steam. Restart Steam to see the grid images.`
       })
     }
     shell.openExternal(`steam://gameproperties/${result.steamAppId}`)
-  }
-
-  if (!isZoom) {
-    await prepareUmuPrefix(input.gameInfo, input.installPath)
   }
 
   return result

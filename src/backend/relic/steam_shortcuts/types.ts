@@ -2,7 +2,7 @@ export type GameRunner = 'legendary' | 'gog' | 'nile' | 'zoom'
 
 export interface AddGameToSteamOptions {
   gameName: string
-  executablePath?: string
+  runnerPath: string
 }
 
 export interface AddGameToSteamResult {

@@ -166,3 +166,9 @@ El objetivo es mantener trazabilidad de los cambios respecto al padre.
 | 2026-07-22 | `src/backend/storeManagers/sideload/` | Directorio eliminado (3 archivos: `electronStores.ts`, `library.ts`, `games.ts`) |
 | 2026-07-22 | `src/frontend/components/UI/EditGameDialog/` | Directorio eliminado (2 archivos: `index.tsx`, `index.css`) |
 | 2026-07-22 | `src/frontend/screens/Library/components/EmptyLibrary/` | `index.css` eliminado (componente ya eliminado en Fase 3) |
+| 2026-07-22 | `src/backend/relic/game_events.ts` | `createRunnerFile` movido a `add_game.ts`; `preparePrefix` movido a `prefix.ts`; `validateGameInput` + `GameInput` eliminados; `refreshInstallPath` añadido |
+| 2026-07-22 | `src/backend/relic/steam_shortcuts/add_game.ts` | `createRunnerFile` añadido (move desde `game_events.ts`) |
+| 2026-07-22 | `src/backend/relic/prefix.ts` | `preparePrefix` añadido (move desde `game_events.ts`); `preparePrefix` fundido dentro de `prepareUmuPrefix` |
+| 2026-07-22 | `src/backend/relic/steam_shortcuts/steam_helpers.ts` | Funciones reordenadas y agrupadas por responsabilidad |
+| 2026-07-22 | `src/backend/relic/steamgrid/download.ts` | `downloadGrids` movido al inicio del archivo |
+| 2026-07-22 | `src/backend/relic/windowify.ts` | Funciones reordenadas: `// Public API` → `// Private helpers` |

@@ -10,6 +10,35 @@ import { searchGame, getGrids, getHeroes, getLogos, getIcons } from './api'
 
 const LOG_PREFIX = 'Relic'
 
+export async function downloadGrids(
+  gameInfo: GameInfo,
+  steamAppId: number
+): Promise<boolean> {
+  const apiKey = getApiKey()
+  if (!apiKey) return false
+
+  try {
+    const results = await searchGame(apiKey, gameInfo.title)
+    if (!results.length) return false
+
+    const images = await fetchGridImages(apiKey, results[0].id)
+    const { userdataDir, folders } = getUserdataInfo()
+    if (folders.length === 0) return false
+
+    for (const folder of folders) {
+      const gridFolder = join(userdataDir, folder, 'config', 'grid')
+      const imageMap = buildImageMap(gridFolder, steamAppId, images)
+      await downloadToGridFolder(gridFolder, imageMap)
+    }
+
+    logInfo(`Downloaded grid images for ${gameInfo.title}`, LOG_PREFIX)
+    return true
+  } catch (error) {
+    logError(`Failed to download grid images: ${error}`, LOG_PREFIX)
+    return false
+  }
+}
+
 function getApiKey(): string | null {
   const stored = GlobalConfig.get().getSettings().steamGridDbApiKey
   if (!stored) return null
@@ -54,34 +83,5 @@ async function downloadToGridFolder(
   for (const [filePath, grid] of imageMap) {
     if (!grid || existsSync(filePath)) continue
     await downloadFile({ url: grid.url, dest: filePath })
-  }
-}
-
-export async function downloadGrids(
-  gameInfo: GameInfo,
-  steamAppId: number
-): Promise<boolean> {
-  const apiKey = getApiKey()
-  if (!apiKey) return false
-
-  try {
-    const results = await searchGame(apiKey, gameInfo.title)
-    if (!results.length) return false
-
-    const images = await fetchGridImages(apiKey, results[0].id)
-    const { userdataDir, folders } = getUserdataInfo()
-    if (folders.length === 0) return false
-
-    for (const folder of folders) {
-      const gridFolder = join(userdataDir, folder, 'config', 'grid')
-      const imageMap = buildImageMap(gridFolder, steamAppId, images)
-      await downloadToGridFolder(gridFolder, imageMap)
-    }
-
-    logInfo(`Downloaded grid images for ${gameInfo.title}`, LOG_PREFIX)
-    return true
-  } catch (error) {
-    logError(`Failed to download grid images: ${error}`, LOG_PREFIX)
-    return false
   }
 }
