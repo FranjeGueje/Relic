@@ -21,6 +21,7 @@ linux:
   artifactName: ${productName}-${version}-linux-${arch}.${ext}
   category: Game
   icon: build/icon.png
+  syncDesktopName: true
   desktop:
     entry:
       Name: Relic

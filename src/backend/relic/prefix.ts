@@ -18,7 +18,7 @@ export async function preparePrefix(
   if (gameInfo.runner === 'zoom') {
     symlinkPrefix(steamAppId, installPath)
   } else {
-    windowify(gameInfo)
+    windowify(gameInfo, installPath)
     await prepareUmuPrefix(gameInfo, installPath, steamAppId)
   }
 }

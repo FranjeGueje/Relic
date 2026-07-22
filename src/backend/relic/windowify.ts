@@ -68,9 +68,9 @@ const STORE_CONFIGS: Record<GameRunner, StoreConfig> = {
 
 // ── Public API ──
 
-export function windowify(gameInfo: GameInfo): void {
+export function windowify(gameInfo: GameInfo, installPath: string): void {
   ensureMountDirs()
-  createGameSymlink(gameInfo)
+  createGameSymlink(gameInfo, installPath)
   syncGogdlConfig()
 
   const config = STORE_CONFIGS[gameInfo.runner as GameRunner]
@@ -171,8 +171,7 @@ function ensureMountDirs(): void {
   mkdirSync(join(relicMountPath, 'heroic_gogdl'), { recursive: true })
 }
 
-function createGameSymlink(gameInfo: GameInfo): void {
-  const installPath = gameInfo.install.install_path
+function createGameSymlink(gameInfo: GameInfo, installPath: string): void {
   if (!installPath) {
     logWarning(`No install path for "${gameInfo.title}", skipping symlink`, LOG_PREFIX)
     return

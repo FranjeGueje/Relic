@@ -10,6 +10,7 @@
   "homepage": "./",
   "license": "GPL-3.0-only",
   "description": "Relic - Linux games installer for GOG, Epic Games and Amazon Games",
+  "desktopName": "Relic",
   "repository": {
     "type": "Github",
     "url": "https://github.com/FranjeGueje/Relic"
