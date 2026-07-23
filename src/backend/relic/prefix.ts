@@ -73,6 +73,19 @@ export async function prepareUmuPrefix(
     symlinkSync(relicMountPath, join(driveC, 'relic'))
     symlinkSync(relicGamesPath, join(driveC, 'games'))
 
+    const epicDataDir = join(
+      driveC,
+      'ProgramData',
+      'Epic',
+      'EpicGamesLauncher',
+      'Data'
+    )
+    mkdirSync(epicDataDir, { recursive: true })
+    symlinkSync(
+      join('..', '..', '..', '..', 'relic', 'legendary', 'manifests'),
+      join(epicDataDir, 'manifests')
+    )
+
     logInfo(`Prefix created for Steam ID ${steamAppId}`, LOG_PREFIX)
   } catch (error) {
     logError(`Failed to prepare prefix for Steam ID ${steamAppId}: ${error}`, LOG_PREFIX)
