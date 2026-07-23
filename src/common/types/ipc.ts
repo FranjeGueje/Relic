@@ -292,6 +292,8 @@ interface FrontendMessages {
     >
   ) => void
 
+  installCompleted: (args: { gameTitle: string; steamAppId: number }) => void
+
   // Used inside tests, so we can be a bit lenient with the type checking here
   message: (...params: unknown[]) => void
 }

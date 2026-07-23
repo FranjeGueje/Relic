@@ -172,3 +172,18 @@ El objetivo es mantener trazabilidad de los cambios respecto al padre.
 | 2026-07-22 | `src/backend/relic/steam_shortcuts/steam_helpers.ts` | Funciones reordenadas y agrupadas por responsabilidad |
 | 2026-07-22 | `src/backend/relic/steamgrid/download.ts` | `downloadGrids` movido al inicio del archivo |
 | 2026-07-22 | `src/backend/relic/windowify.ts` | Funciones reordenadas: `// Public API` → `// Private helpers` |
+| 2026-07-22 | `package.json` | Añadido `desktopName: "Relic"` para que electron-builder use `WM_CLASS` correcto |
+| 2026-07-22 | `electron-builder.yml` | Añadido `syncDesktopName: true` a sección `linux` |
+| 2026-07-22 | `src/backend/relic/windowify.ts` | `createGameSymlink(gameInfo, installPath)` y `windowify(gameInfo, installPath)` — reciben `installPath` como parámetro en vez de leer `gameInfo.install.install_path` (vacío para Legendary/Nile) |
+| 2026-07-22 | `src/backend/relic/prefix.ts` | `preparePrefix` pasa `installPath` a `windowify(gameInfo, installPath)` |
+| 2026-07-23 | `src/common/types/ipc.ts` | Añadido `installCompleted` a `FrontendMessages` |
+| 2026-07-23 | `src/preload/api/misc.ts` | Añadido `handleInstallCompleted` listener |
+| 2026-07-23 | `src/backend/relic/game_events.ts` | Reemplazado `notify()` por `sendFrontendMessage('installCompleted', ...)` (notificación contextual en vez de system notification) |
+| 2026-07-23 | `src/frontend/relic/dialogs/useInstallSuccess.ts` | **Nuevo** Hook que escucha IPC `installCompleted`, gestiona estado y auto-dismiss 4s |
+| 2026-07-23 | `src/frontend/relic/dialogs/InstallSuccessOverlay/index.tsx` | **Nuevo** Overlay de éxito estilo consola (gamepad, auto-dismiss, clases `consoleLaunchOverlay/consoleModal`) |
+| 2026-07-23 | `src/frontend/relic/dialogs/InstallSuccessOverlay/index.scss` | **Nuevo** Estilos overlay (animación fade, body, botones) |
+| 2026-07-23 | `src/frontend/App.tsx` | Integración del hook `useInstallSuccess`: en modo consola renderiza `<InstallSuccessOverlay>`, en modo GUI llama `showDialogModal()` |
+| 2026-07-23 | `src/backend/storeManagers/gog/constants.ts` | Fix `gogdlConfigPath`: `relic_gogdl` → `heroic_gogdl`. El binario gogdl tiene `heroic_gogdl` hardcodeado; Relic apuntaba a `relic_gogdl` que está vacío → limpieza de manifiestos no funcionaba, instalaciones fallaban con "Nothing to do" |
+| 2026-07-23 | `src/common/types/gog.ts` | Añadido `folder_name: string` a `GogInstallInfo` (antes solo en `GOGDLInstallInfo`) |
+| 2026-07-23 | `src/backend/storeManagers/gog/library.ts` | Incluido `folder_name` en los dos objetos `GogInstallInfo` retornados (principal y fallback) |
+| 2026-07-23 | `src/backend/storeManagers/gog/games.ts` | Fix `post-install: usa `installInfo.folder_name` en vez de `gameInfo.folder_name`. El cache de `getInstallInfo()` no actualiza el library Map en hits → `folder_name` quedaba vacío tras descarga exitosa |

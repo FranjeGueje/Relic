@@ -330,3 +330,36 @@ Para ver el detalle completo de cada categoría, consultar:
 
 #### Tests
 - 45 tests, TypeScript 0 errores.
+
+---
+
+### v0.2.3 — FIXES-JUL23 (Jul 2026)
+
+#### Desktop name
+- Añadido `desktopName: "Relic"` a `package.json` y `syncDesktopName: true` a `electron-builder.yml`.
+- Electron usa `desktopName` como `WM_CLASS` — sin esto las ventanas no se asocian correctamente con el `.desktop` en entornos de escritorio.
+
+#### Symlink Legendary/Nile
+- `createGameSymlink()` y `windowify()` ahora reciben `installPath` como parámetro en vez de leer `gameInfo.install.install_path` (vacío para Legendary y Nile porque `installed.json` se escribe en disco, el objeto `gameInfo.install` no se refresca hasta `getGameInfo()`).
+- `preparePrefix()` pasa `installPath` a `windowify()`.
+
+#### Notificación de éxito post-instalación
+- Reemplazada system notification (`notify()`) por mensaje contextual en la propia app.
+- Nuevo hook `useInstallSuccess()` que escucha IPC `installCompleted` con auto-dismiss 4s.
+- Nuevo componente `InstallSuccessOverlay` para modo consola (gamepad, clases existentes `consoleLaunchOverlay`/`consoleModal`).
+- En modo GUI se usa `MessageBoxModal` estándar de la app.
+- 3 archivos nuevos en `src/frontend/relic/dialogs/`, 3 archivos Heroic modificados.
+
+#### GOG: Path del manifiesto corregido
+- `gogdlConfigPath` en `constants.ts` apuntaba a `relic_gogdl` pero el binario gogdl tiene `heroic_gogdl` hardcodeado.
+- La limpieza de manifiestos pre-instalación (`downloadmanager/utils.ts:59`) borraba en `relic_gogdl/manifests/` (vacío) en vez de `heroic_gogdl/manifests/` (manifiestos reales).
+- gogdl encontraba el manifiesto stale → "Nothing to do" → instalación fallaba con ENOENT.
+- Fix: revertir el segmento a `heroic_gogdl` (commit `482589a2` lo había cambiado durante el rebrand).
+
+#### GOG: `folder_name` undefined post-instalación
+- `getInstallInfo()` tiene un cache hit que retorna temprano sin actualizar el library Map.
+- Tras descarga exitosa, el código usaba `gameInfo.folder_name` para construir `install_path` pero el Map no se había actualizado → `folder_name` vacío → error.
+- Fix: añadido `folder_name` al tipo `GogInstallInfo`, incluido en el objeto cacheado, y usado `installInfo.folder_name` (directo del cache) en vez de `gameInfo.folder_name` (del library Map).
+
+#### Tests
+- TypeScript 0 errores, 92 tests pasan.

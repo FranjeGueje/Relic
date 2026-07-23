@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 
 import './App.css'
 import {
@@ -17,6 +17,8 @@ import WindowControls from './components/UI/WindowControls'
 import classNames from 'classnames'
 import { ThemeProvider, createTheme } from '@mui/material/styles'
 import { InstallGameWrapper } from './screens/Library/components/InstallModal'
+import { useInstallSuccess } from './relic/dialogs/useInstallSuccess'
+import InstallSuccessOverlay from './relic/dialogs/InstallSuccessOverlay'
 
 function Root() {
   const {
@@ -26,12 +28,24 @@ function Root() {
     isFrameless,
     experimentalFeatures,
     help,
+    showDialogModal,
   } = useContext(ContextProvider)
 
   const hasNativeOverlayControls = navigator['windowControlsOverlay']?.visible
   const showOverlayControls = isFrameless && !hasNativeOverlayControls
 
   const isConsoleMode = useLocation().pathname.startsWith('/console')
+  const installSuccess = useInstallSuccess()
+
+  useEffect(() => {
+    if (!installSuccess.show || isConsoleMode) return
+    showDialogModal({
+      title: 'Instalado',
+      message: `"${installSuccess.gameTitle}" se ha instalado correctamente.`,
+      type: 'MESSAGE',
+      buttons: [{ text: 'OK', onClick: installSuccess.dismiss }]
+    })
+  }, [installSuccess.show])
 
   const theme = createTheme({
     direction: isRTL ? 'rtl' : 'ltr',
@@ -78,6 +92,12 @@ function Root() {
         {isConsoleMode ? (
           <main className="content consoleContent">
             <Outlet />
+            {installSuccess.show && (
+              <InstallSuccessOverlay
+                gameTitle={installSuccess.gameTitle}
+                onDismiss={installSuccess.dismiss}
+              />
+            )}
           </main>
         ) : (
           <>

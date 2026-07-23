@@ -696,7 +696,8 @@ export default class GOGLibraryManager implements LibraryManager {
             versionEtag: '',
             dependencies: [],
             perLangSize: { '*': { download_size: 0, disk_size: 0 } }
-          }
+          },
+          folder_name: gameData.folder_name ?? ''
         }
       }
       return
@@ -822,7 +823,8 @@ export default class GOGLibraryManager implements LibraryManager {
         versionEtag: gogInfo.versionEtag,
         builds: gogInfo?.builds?.items,
         dependencies: gogInfo.dependencies
-      }
+      },
+      folder_name: gogInfo.folder_name
     }
     installInfoStore.set(installInfoStoreKey, info)
     return info

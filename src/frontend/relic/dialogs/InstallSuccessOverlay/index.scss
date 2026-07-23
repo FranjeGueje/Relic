@@ -1,0 +1,25 @@
+@keyframes overlayFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.consoleSuccessModal {
+  animation: overlayFade 220ms ease;
+}
+
+.consoleSuccessBody {
+  font-size: 1rem;
+  color: var(--text-secondary, #b1b1b1);
+  text-align: center;
+  margin: 0;
+}
+
+.consoleSuccessButtons {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-lg);
+}

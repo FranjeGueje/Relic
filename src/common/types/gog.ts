@@ -6,6 +6,7 @@ export type GogInstallPlatform = 'windows' | 'osx' | 'linux'
 export interface GogInstallInfo {
   game: GameInstallInfo
   manifest: GameManifest
+  folder_name: string
 }
 
 export interface GOGSessionSyncQueueItem {

@@ -398,15 +398,15 @@ export default class GOGGame implements Game {
       : null
 
     if (
-      gameInfo.folder_name === undefined ||
-      gameInfo.folder_name.length === 0
+      installInfo.folder_name === undefined ||
+      installInfo.folder_name.length === 0
     ) {
-      logError('game info folder is undefined in GOG install', LogPrefix.Gog)
+      logError('install info folder_name is undefined in GOG install', LogPrefix.Gog)
       return { status: 'error' }
     }
 
-    const sizeOnDisk = await getPathDiskSize(join(path, gameInfo.folder_name))
-    const install_path = join(path, gameInfo.folder_name)
+    const sizeOnDisk = await getPathDiskSize(join(path, installInfo.folder_name))
+    const install_path = join(path, installInfo.folder_name)
 
     const installedData: InstalledInfo = {
       platform: installPlatform,

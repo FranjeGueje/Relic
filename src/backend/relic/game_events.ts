@@ -8,7 +8,7 @@ import { relicGamesPath } from 'backend/constants/paths'
 import { logError, logInfo } from 'backend/logger'
 import { addGameToSteam, createRunnerFile, findShortcut, addShortcut, removeShortcut } from './steam_shortcuts'
 import { preparePrefix, removePrefixSymlink } from './prefix'
-import { notify } from 'backend/dialog/dialog'
+import { sendFrontendMessage } from 'backend/ipc'
 import type { AddGameToSteamResult } from './steam_shortcuts/types'
 import { downloadGrids, deleteGrids } from './steamgrid'
 
@@ -91,13 +91,12 @@ export async function onGameInstalled(
 
     await preparePrefix(gameInfo, result.steamAppId, resolvedPath)
 
-    const gridsDownloaded = await downloadGrids(gameInfo, result.steamAppId)
-    if (gridsDownloaded) {
-      notify({
-        title: 'Added to Steam',
-        body: `"${gameInfo.title}" was added to Steam. Restart Steam to see the grid images.`
-      })
-    }
+    await downloadGrids(gameInfo, result.steamAppId)
+
+    sendFrontendMessage('installCompleted', {
+      gameTitle: gameInfo.title,
+      steamAppId: result.steamAppId
+    })
     shell.openExternal(`steam://gameproperties/${result.steamAppId}`)
   }
 
