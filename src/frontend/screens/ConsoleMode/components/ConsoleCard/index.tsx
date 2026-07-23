@@ -8,6 +8,7 @@ import { hasProgress } from 'frontend/hooks/hasProgress'
 import { getProgress } from 'frontend/helpers'
 import { getImageFormatting } from 'frontend/screens/Library/components/GameCard/constants'
 import fallBackImage from 'frontend/assets/relic_card.jpg'
+import RelicIcon from 'frontend/assets/relic-icon.svg?react'
 
 import type { GameInfo, Status } from 'common/types'
 
@@ -66,6 +67,11 @@ const ConsoleCard = forwardRef<HTMLButtonElement, Props>(function ConsoleCard(
         alt={game.title}
         className="consoleCardArt"
       />
+      {game.is_installed && (
+        <div className="consoleCardInstalledBadge">
+          <RelicIcon />
+        </div>
+      )}
       {needsUpdate && !showStatus && (
         <span className="consoleCardBadge">
           {t('console.card.needsUpdate', 'Needs update')}
