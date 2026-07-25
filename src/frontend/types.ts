@@ -197,7 +197,6 @@ export interface PlatformsFilters {
   win: boolean
   linux: boolean
   mac: boolean
-  browser: boolean
 }
 
 export interface LibraryContextType {

@@ -135,7 +135,6 @@ const GameCard = ({
 
   const { status, folder, label } = hasStatus(gameInfo, size)
 
-  const isBrowserGame = gameInfo.install.platform === 'Browser'
   const isThirdPartyManaged = !!gameInfo.thirdPartyManagedApp
   const isLinux = platform === 'linux'
 

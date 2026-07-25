@@ -121,8 +121,6 @@ export default React.memo(function GamePage(): JSX.Element | null {
   const knownFixes = hasKnownFixes(appName, runner)
 
   const isLinux = platform === 'linux'
-  const isBrowserGame = gameInfo?.install.platform === 'Browser'
-
   const isInstalling = status === 'installing'
   const isImporting = status === 'importing'
   const isPlaying = status === 'playing'

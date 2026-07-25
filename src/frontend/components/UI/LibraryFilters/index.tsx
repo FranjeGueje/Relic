@@ -79,7 +79,7 @@ export default function LibraryFilters() {
   }
 
   const setPlatformOnly = (plat: string) => {
-    let newFilters = { win: false, linux: false, mac: false, browser: false }
+    let newFilters = { win: false, linux: false, mac: false }
     newFilters = { ...newFilters, [plat]: true }
     setPlatformsFilters(newFilters)
   }
@@ -157,8 +157,7 @@ export default function LibraryFilters() {
     setPlatformsFilters({
       win: true,
       linux: true,
-      mac: true,
-      browser: true
+      mac: true
     })
     setShowHidden(true)
     setShowNonAvailable(true)
@@ -184,7 +183,6 @@ export default function LibraryFilters() {
       <hr />
       {platformToggle('win')}
       {platformToggle('linux')}
-      {platformToggle('browser')}
       <hr />
       <ToggleSwitch
         key="show-hidden"

@@ -112,8 +112,7 @@ export default React.memo(function Library(): JSX.Element {
     initialPlatformsfilters = {
       win: ['all', 'win'].includes(storedCategory),
       linux: ['all', 'linux'].includes(storedCategory),
-      mac: ['all', 'mac'].includes(storedCategory),
-      browser: ['all', 'browser'].includes(storedCategory)
+      mac: ['all', 'mac'].includes(storedCategory)
     }
   }
 
@@ -288,10 +287,6 @@ export default React.memo(function Library(): JSX.Element {
     if (platformsFilters['linux'] && platform === 'linux') {
       displayedPlatforms.push('linux')
     }
-    if (platformsFilters['browser']) {
-      displayedPlatforms.push('browser')
-    }
-
     // if all are turned off, display all instead
     if (!displayedPlatforms.length) {
       displayedPlatforms = Object.keys(platformsFilters)

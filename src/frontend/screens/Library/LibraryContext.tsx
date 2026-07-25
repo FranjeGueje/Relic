@@ -10,7 +10,7 @@ const initialContext: LibraryContextType = {
     nile: true,
     zoom: true
   },
-  platformsFilters: { win: true, linux: true, mac: true, browser: true },
+  platformsFilters: { win: true, linux: true, mac: true },
   filterText: '',
   setStoresFilters: () => null,
   handleLayout: () => null,
