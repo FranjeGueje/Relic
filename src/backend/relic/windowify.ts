@@ -2,12 +2,13 @@ import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, statSync, sym
 import { basename, join } from 'path'
 import { createHash } from 'node:crypto'
 import { logError, logInfo, logWarning } from 'backend/logger'
-import { relicMountPath, relicInstallPath, relicGamesPath, userDataPath, publicDir } from 'backend/constants/paths'
+import { relicMountPath, relicInstallPath, userDataPath, publicDir } from 'backend/constants/paths'
 import { legendaryConfigPath, legendaryInstalled } from 'backend/storeManagers/legendary/constants'
 import { nileConfigPath, nileInstalled } from 'backend/storeManagers/nile/constants'
 import { gogdlConfigPath } from 'backend/storeManagers/gog/constants'
 import { GameInfo } from 'common/types'
 import type { GameRunner } from './steam_shortcuts/types'
+import { createGameSymlink } from './steam_shortcuts/add_game'
 
 const LOG_PREFIX = 'Relic'
 
@@ -70,7 +71,7 @@ const STORE_CONFIGS: Record<GameRunner, StoreConfig> = {
 
 export function windowify(gameInfo: GameInfo, installPath: string): void {
   ensureMountDirs()
-  createGameSymlink(gameInfo, installPath)
+  createGameSymlink(installPath)
   syncGogdlConfig()
 
   const config = STORE_CONFIGS[gameInfo.runner as GameRunner]
@@ -169,26 +170,6 @@ function ensureMountDirs(): void {
   }
   mkdirSync(join(relicMountPath, 'gogdl'), { recursive: true })
   mkdirSync(join(relicMountPath, 'heroic_gogdl'), { recursive: true })
-}
-
-function createGameSymlink(gameInfo: GameInfo, installPath: string): void {
-  if (!installPath) {
-    logWarning(`No install path for "${gameInfo.title}", skipping symlink`, LOG_PREFIX)
-    return
-  }
-
-  const linkPath = join(relicGamesPath, basename(installPath))
-
-  try {
-    if (existsSync(linkPath)) {
-      unlinkSync(linkPath)
-    }
-    mkdirSync(relicGamesPath, { recursive: true })
-    symlinkSync(installPath, linkPath)
-    logInfo(`Created symlink: ${linkPath} → ${installPath}`, LOG_PREFIX)
-  } catch (error) {
-    logError(`Failed to create symlink ${linkPath}: ${error}`, LOG_PREFIX)
-  }
 }
 
 function syncGogdlConfig(): void {

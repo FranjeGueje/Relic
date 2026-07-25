@@ -197,3 +197,9 @@ El objetivo es mantener trazabilidad de los cambios respecto al padre.
 | 2026-07-25 | `src/backend/relic/game_events.ts` | `onGameImported()` ahora delega en `onGameInstalled()` (flujo completo: runner file, Steam, prefix, grids) |
 | 2026-07-25 | `src/backend/relic/game_events.ts` | `onGameMoved()` ahora mueve el symlink en `relicGamesPath` y actualiza `installPath` en `steam_shortcuts.json` |
 | 2026-07-25 | `src/backend/relic/steam_shortcuts/__tests__/game_events.test.ts` | Tests actualizados: `onGameImported` verifica delegación a `onGameInstalled`; `onGameMoved` verifica symlink move + shortcut update |
+| 2026-07-25 | `src/backend/relic/steam_shortcuts/add_game.ts` | `createGameSymlink(installPath)` — nuevo export público: crea symlink en `relicGamesPath/<basename>` → `installPath`. Borra symlink existente antes de recrear. |
+| 2026-07-25 | `src/backend/relic/steam_shortcuts/index.ts` | Exporta `createGameSymlink` |
+| 2026-07-25 | `src/backend/relic/windowify.ts` | Importa `createGameSymlink` desde `add_game.ts`. Eliminada función privada duplicada. |
+| 2026-07-25 | `src/backend/relic/game_events.ts` | `onGameInstalled()` bifurca en `gameInfo.is_linux_native`: flujo Linux nativo omite `.bat`, `windowify` y `prepareUmuPrefix`, crea symlink y usa `start.sh` directamente. |
+| 2026-07-25 | `src/backend/relic/steam_shortcuts/__tests__/game_events.test.ts` | Añadido `createGameSymlink: jest.fn()` al mock de `add_game` |
+| 2026-07-25 | `src/backend/relic/__tests__/symlinks.test.ts` | Añadido mock de `createGameSymlink` para evitar cargar `add_game.ts` (importa `backend/utils`) |

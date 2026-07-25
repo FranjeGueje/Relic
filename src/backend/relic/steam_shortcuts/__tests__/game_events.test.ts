@@ -36,7 +36,8 @@ jest.mock('backend/storeManagers', () => ({
 
 jest.mock('../add_game', () => ({
   addGameToSteam: jest.fn(),
-  createRunnerFile: jest.fn()
+  createRunnerFile: jest.fn(),
+  createGameSymlink: jest.fn()
 }))
 
 jest.mock('../store', () => ({

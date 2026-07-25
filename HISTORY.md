@@ -376,3 +376,9 @@ Para ver el detalle completo de cada categoría, consultar:
 #### IPC `installCompleted` eliminado
 - Eliminado el sistema completo de notificación de instalación exitosa (IPC, hook, overlay, dialog en App.tsx).
 - `game_events.ts` ya no envía `sendFrontendMessage('installCompleted')` al finalizar.
+
+#### Soporte para juegos Linux nativos
+- `createGameSymlink()` extraído de `windowify.ts` a `add_game.ts` como función pública y reutilizable. Borra el symlink si existe antes de crearlo.
+- `windowify.ts` ahora importa `createGameSymlink` desde `add_game.ts` en vez de tener su propia copia privada.
+- `onGameInstalled()` bifurca según `gameInfo.is_linux_native`: si es Linux nativo, omite `createRunnerFile` (`.bat`), `windowify` y `prepareUmuPrefix`. En su lugar: crea symlink en `relicGamesPath`, busca `start.sh` en la raíz del juego, y lo usa directamente como target para `addGameToSteam`.
+- El symlink en `~/.local/share/relic/games/<nombre>` se crea también para Linux nativos, garantizando que `onGameMoved` funcione correctamente (busca/existe el symlink por `basename`).

@@ -1,8 +1,8 @@
-import { existsSync, mkdirSync, unlinkSync, writeFileSync } from 'graceful-fs'
+import { existsSync, mkdirSync, symlinkSync, unlinkSync, writeFileSync } from 'graceful-fs'
 import { basename, join } from 'path'
 import { logError, logInfo } from 'backend/logger'
 import { spawnAsync } from 'backend/utils'
-import { relicRunnerPath } from 'backend/constants/paths'
+import { relicRunnerPath, relicGamesPath } from 'backend/constants/paths'
 import {
   findGameInAllUsers,
   findExistingGame,
@@ -80,6 +80,25 @@ export function createRelicBat(
 
   logInfo(`Created ${runnerPath}`, LOG_PREFIX)
   return runnerPath
+}
+
+export function createGameSymlink(installPath: string): { linkPath: string } | { error: string } {
+  if (!installPath) {
+    return { error: 'No install path provided' }
+  }
+  const linkPath = join(relicGamesPath, basename(installPath))
+  try {
+    if (existsSync(linkPath)) {
+      unlinkSync(linkPath)
+    }
+    mkdirSync(relicGamesPath, { recursive: true })
+    symlinkSync(installPath, linkPath)
+    logInfo(`Created symlink: ${linkPath} -> ${installPath}`, LOG_PREFIX)
+    return { linkPath }
+  } catch (error) {
+    logError(`Failed to create symlink ${linkPath}: ${error}`, LOG_PREFIX)
+    return { error: `Failed to create symlink: ${error}` }
+  }
 }
 
 const POLL_INTERVAL_MS = 1500
