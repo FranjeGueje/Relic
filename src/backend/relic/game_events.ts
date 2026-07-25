@@ -99,11 +99,7 @@ export async function onGameInstalled(
 }
 
 export async function onGameImported(game: Game): Promise<void> {
-  const gameInfo = game.getGameInfo()
-  logInfo(
-    `Game imported: "${gameInfo.title}" (${gameInfo.app_name})`,
-    LOG_PREFIX
-  )
+  await onGameInstalled(game)
 }
 
 export async function onGameMoved(
