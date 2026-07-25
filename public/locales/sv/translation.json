@@ -492,7 +492,8 @@
     "uninstall": {
       "title": "Avinstallera spel",
       "message": "Vill du avinstallera \"{{title}}\"?"
-    }
+    },
+    "more": "Mer"
   },
   "next": "Nästa"
 }

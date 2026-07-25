@@ -481,7 +481,8 @@
     "uninstall": {
       "title": "Deinstaliraj igricu",
       "message": "Želite li deinstalirati \"{{title}}\"?"
-    }
+    },
+    "more": "Više"
   },
   "next": ""
 }

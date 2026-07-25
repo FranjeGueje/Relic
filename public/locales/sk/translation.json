@@ -488,7 +488,8 @@
     "uninstall": {
       "title": "Uninstall game",
       "message": "Do you want to uninstall \"{{title}}\"?"
-    }
+    },
+    "more": "Viac"
   },
   "next": ""
 }

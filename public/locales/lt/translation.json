@@ -466,7 +466,8 @@
     "uninstall": {
       "title": "Pašalinti žaidimą",
       "message": "Ar norite pašalinti \"{{title}}\"?"
-    }
+    },
+    "more": "Daugiau"
   },
   "steamgriddb": {},
   "next": "Sekantis",

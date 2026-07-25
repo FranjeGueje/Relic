@@ -489,7 +489,8 @@
     "uninstall": {
       "title": "게임 제거",
       "message": "\"{{title}}\"을(를) 제거하시겠습니까?"
-    }
+    },
+    "more": "더 보기"
   },
   "next": ""
 }

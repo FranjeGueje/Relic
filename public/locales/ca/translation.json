@@ -517,7 +517,8 @@
     "uninstall": {
       "title": "Desinstal·la el joc",
       "message": "Vols desinstal·lar \"{{title}}\"?"
-    }
+    },
+    "more": "Més"
   },
   "next": "Següent"
 }

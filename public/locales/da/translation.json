@@ -532,7 +532,8 @@
     "uninstall": {
       "title": "Afinstaller spil",
       "message": "Vil du afinstallere \"{{title}}\"?"
-    }
+    },
+    "more": "Mere"
   },
   "next": "Næste"
 }

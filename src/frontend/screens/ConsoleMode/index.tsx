@@ -389,7 +389,14 @@ export default function ConsoleMode() {
             className="consoleQuitButton"
             onClick={quit}
           >
-            {t('console.quit', 'Opciones')}
+            {t('console.more', 'More')}
+          </button>
+          <button
+            className="consoleChip"
+            onClick={toggleSort}
+            aria-label={t('console.sort', 'Sort')}
+          >
+            {ascending ? 'A → Z' : 'Z → A'}
           </button>
         </div>
         <div className="consoleFilters">
@@ -418,13 +425,6 @@ export default function ConsoleMode() {
               ))}
           </div>
           <div className="consoleTopRight">
-            <button
-              className="consoleChip"
-              onClick={toggleSort}
-              aria-label={t('console.sort', 'Sort')}
-            >
-              {ascending ? 'A → Z' : 'Z → A'}
-            </button>
             <button
               className="consoleQuitButton danger"
               onClick={() => window.api.quit()}

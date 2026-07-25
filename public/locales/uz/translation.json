@@ -465,7 +465,8 @@
     "uninstall": {
       "title": "O'yinni o'chirish",
       "message": "\"{{title}}\" oʻyinni oʻchirishni xohlaysizmi?"
-    }
+    },
+    "more": "Ko'proq"
   },
   "next": "",
   "sidebar": {

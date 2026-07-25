@@ -498,7 +498,8 @@
     "uninstall": {
       "title": "Uninstall game",
       "message": "Do you want to uninstall \"{{title}}\"?"
-    }
+    },
+    "more": "その他"
   },
   "steamgriddb": {},
   "next": "進む"

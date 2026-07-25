@@ -458,7 +458,8 @@
     "uninstall": {
       "title": "Díshuiteáil cluiche",
       "message": "Ar mhaith leat \"{{title}}\" a dhíshuiteáil?"
-    }
+    },
+    "more": "Tuilleadh"
   },
   "steamgriddb": {},
   "sidebar": {

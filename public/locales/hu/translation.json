@@ -522,7 +522,8 @@
     "uninstall": {
       "title": "Játék eltávolítása",
       "message": "El akarja távolítani a \"{{title}}\" játékot?"
-    }
+    },
+    "more": "Több"
   },
   "next": "Következő"
 }

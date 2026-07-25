@@ -490,7 +490,8 @@
     "uninstall": {
       "title": "Poista peli",
       "message": "Haluatko poistaa \"{{title}}\"?"
-    }
+    },
+    "more": "Lisää"
   },
   "next": "Seuraava"
 }

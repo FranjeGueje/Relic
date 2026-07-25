@@ -518,7 +518,8 @@
     "uninstall": {
       "title": "卸载游戏",
       "message": "您要卸载\"{{title}}\"吗？"
-    }
+    },
+    "more": "更多"
   },
   "next": "下一步"
 }

@@ -511,7 +511,8 @@
     "uninstall": {
       "title": "Desinstallige mäng",
       "message": "Kas soovite mängu \"{{title}}\" desinstallida?"
-    }
+    },
+    "more": "Rohkem"
   },
   "next": "Järgmine"
 }

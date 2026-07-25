@@ -496,7 +496,8 @@
     "uninstall": {
       "title": "Hapus instal gim",
       "message": "Apakah Anda ingin menghapus instalasi \"{{title}}\"?"
-    }
+    },
+    "more": "Lainnya"
   },
   "next": "Berikutnya"
 }

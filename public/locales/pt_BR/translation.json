@@ -524,7 +524,8 @@
     "uninstall": {
       "title": "Desinstalar jogo",
       "message": "Quer desinstalar \"{{title}}\"?"
-    }
+    },
+    "more": "Mais"
   },
   "next": "Próximo"
 }

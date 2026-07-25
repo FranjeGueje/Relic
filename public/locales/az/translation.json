@@ -480,7 +480,8 @@
     "uninstall": {
       "title": "Oyunu sil",
       "message": "\"{{title}}\" oyununu silmək istəyirsiniz?"
-    }
+    },
+    "more": "Daha çox"
   },
   "next": ""
 }

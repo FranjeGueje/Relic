@@ -522,7 +522,8 @@
     "uninstall": {
       "title": "Désinstaller le jeu",
       "message": "Voulez-vous désinstaller \"{{title}}\" ?"
-    }
+    },
+    "more": "Plus"
   },
   "next": "Suivant"
 }

@@ -489,7 +489,8 @@
     "uninstall": {
       "title": "Uninstall game",
       "message": "Uninstall game"
-    }
+    },
+    "more": "Meer"
   },
   "next": "Volgende"
 }
