@@ -43,7 +43,6 @@ Relic debe permitir:
 - Login en GOG.
 - Login en Amazon Games.
 - Login en Zoom Platform.
-- Añadir juegos manualmente (Sideload).
 - Mostrar biblioteca.
 - Descargar juegos.
 - Actualizar juegos.

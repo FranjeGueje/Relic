@@ -377,6 +377,13 @@ Para ver el detalle completo de cada categoría, consultar:
 - Eliminado el sistema completo de notificación de instalación exitosa (IPC, hook, overlay, dialog en App.tsx).
 - `game_events.ts` ya no envía `sendFrontendMessage('installCompleted')` al finalizar.
 
+#### Symlink fix on game move
+- `onGameMoved()` eliminado `existsSync` antes de `unlinkSync`. `existsSync` sigue symlinks y falla cuando el juego ya no está en la ruta original (porque se movió). Ahora `unlinkSync` se ejecuta siempre dentro de try/catch.
+
+#### Console mode UI
+- Botón "Opciones" renombrado a "Más" / "More" con nueva clave `console.more` en los 47 locales.
+- Botón A-Z movido de `.consoleTopRight` a `.consoleLogoRow`, junto al icono Relic y el botón "Más".
+
 #### Soporte para juegos Linux nativos
 - `createGameSymlink()` extraído de `windowify.ts` a `add_game.ts` como función pública y reutilizable. Borra el symlink si existe antes de crearlo.
 - `windowify.ts` ahora importa `createGameSymlink` desde `add_game.ts` en vez de tener su propia copia privada.

@@ -203,3 +203,8 @@ El objetivo es mantener trazabilidad de los cambios respecto al padre.
 | 2026-07-25 | `src/backend/relic/game_events.ts` | `onGameInstalled()` bifurca en `gameInfo.is_linux_native`: flujo Linux nativo omite `.bat`, `windowify` y `prepareUmuPrefix`, crea symlink y usa `start.sh` directamente. |
 | 2026-07-25 | `src/backend/relic/steam_shortcuts/__tests__/game_events.test.ts` | Añadido `createGameSymlink: jest.fn()` al mock de `add_game` |
 | 2026-07-25 | `src/backend/relic/__tests__/symlinks.test.ts` | Añadido mock de `createGameSymlink` para evitar cargar `add_game.ts` (importa `backend/utils`) |
+| 2026-07-25 | `src/frontend/screens/ConsoleMode/index.tsx` | Botón "Opciones" cambia a `t('console.more', 'More')`. Botón A-Z movido dentro de `consoleLogoRow` (junto al icono y "Más"). `consoleTopRight` solo contiene "Salir". |
+| 2026-07-25 | `src/frontend/screens/ConsoleMode/index.scss` | Sin cambios de estilo (`.consoleLogoRow` con `gap: 10px` admite el botón A-Z). |
+| 2026-07-25 | `public/locales/*/translation.json` | Añadida clave `console.more` con traducción en 47 idiomas. |
+| 2026-07-25 | `src/backend/relic/game_events.ts` | `onGameMoved()` eliminado `existsSync` antes de `unlinkSync` (fallaba con symlinks rotos tras mover juego). |
+| 2026-07-25 | `AGENTS.md` | Eliminada línea "Añadir juegos manualmente (Sideload)" de la sección Alcance (Sideload eliminado en v0.2.1). |
