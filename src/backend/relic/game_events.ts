@@ -8,7 +8,6 @@ import { relicGamesPath } from 'backend/constants/paths'
 import { logError, logInfo } from 'backend/logger'
 import { addGameToSteam, createRunnerFile, findShortcut, addShortcut, removeShortcut } from './steam_shortcuts'
 import { preparePrefix, removePrefixSymlink } from './prefix'
-import { sendFrontendMessage } from 'backend/ipc'
 import type { AddGameToSteamResult } from './steam_shortcuts/types'
 import { downloadGrids, deleteGrids } from './steamgrid'
 
@@ -93,10 +92,6 @@ export async function onGameInstalled(
 
     await downloadGrids(gameInfo, result.steamAppId)
 
-    sendFrontendMessage('installCompleted', {
-      gameTitle: gameInfo.title,
-      steamAppId: result.steamAppId
-    })
     shell.openExternal(`steam://gameproperties/${result.steamAppId}`)
   }
 
