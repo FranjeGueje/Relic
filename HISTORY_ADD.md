@@ -187,3 +187,13 @@ El objetivo es mantener trazabilidad de los cambios respecto al padre.
 | 2026-07-23 | `src/common/types/gog.ts` | Añadido `folder_name: string` a `GogInstallInfo` (antes solo en `GOGDLInstallInfo`) |
 | 2026-07-23 | `src/backend/storeManagers/gog/library.ts` | Incluido `folder_name` en los dos objetos `GogInstallInfo` retornados (principal y fallback) |
 | 2026-07-23 | `src/backend/storeManagers/gog/games.ts` | Fix `post-install: usa `installInfo.folder_name` en vez de `gameInfo.folder_name`. El cache de `getInstallInfo()` no actualiza el library Map en hits → `folder_name` quedaba vacío tras descarga exitosa |
+| 2026-07-25 | `src/common/types/ipc.ts` | Eliminado `installCompleted` de `FrontendMessages` |
+| 2026-07-25 | `src/preload/api/misc.ts` | Eliminado `handleInstallCompleted` listener |
+| 2026-07-25 | `src/frontend/App.tsx` | Eliminados `useInstallSuccess`, `InstallSuccessOverlay`, hook, useEffect, y dependencia `showDialogModal` |
+| 2026-07-25 | `src/frontend/relic/dialogs/useInstallSuccess.ts` | **Eliminado** — hook IPC `installCompleted` |
+| 2026-07-25 | `src/frontend/relic/dialogs/InstallSuccessOverlay/` | **Eliminado** — overlay de éxito con auto-dismiss |
+| 2026-07-25 | `src/frontend/relic/dialogs/` | **Eliminado** — directorio vacío |
+| 2026-07-25 | `src/backend/relic/game_events.ts` | Eliminado `import { sendFrontendMessage }` |
+| 2026-07-25 | `src/backend/relic/game_events.ts` | `onGameImported()` ahora delega en `onGameInstalled()` (flujo completo: runner file, Steam, prefix, grids) |
+| 2026-07-25 | `src/backend/relic/game_events.ts` | `onGameMoved()` ahora mueve el symlink en `relicGamesPath` y actualiza `installPath` en `steam_shortcuts.json` |
+| 2026-07-25 | `src/backend/relic/steam_shortcuts/__tests__/game_events.test.ts` | Tests actualizados: `onGameImported` verifica delegación a `onGameInstalled`; `onGameMoved` verifica symlink move + shortcut update |

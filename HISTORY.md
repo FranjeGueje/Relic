@@ -363,3 +363,16 @@ Para ver el detalle completo de cada categoría, consultar:
 
 #### Tests
 - TypeScript 0 errores, 92 tests pasan.
+
+---
+
+### v0.2.3 — EVENTS-IMPL (Jul 2026)
+
+#### Eventos de instalación implementados
+- `onGameImported()` ahora delega en `onGameInstalled()` en vez de ser un stub. Un import hace el mismo flujo que una instalación: runner file, addGameToSteam, shortcut, prefix, grids, Steam properties.
+- `onGameMoved()` ahora mueve el symlink en `~/.local/share/relic/games/` de la ubicación antigua a la nueva y actualiza `installPath` en `steam_shortcuts.json`.
+- Tests actualizados para ambos eventos.
+
+#### IPC `installCompleted` eliminado
+- Eliminado el sistema completo de notificación de instalación exitosa (IPC, hook, overlay, dialog en App.tsx).
+- `game_events.ts` ya no envía `sendFrontendMessage('installCompleted')` al finalizar.

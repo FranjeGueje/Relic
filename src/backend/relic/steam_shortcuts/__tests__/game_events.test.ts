@@ -1,5 +1,5 @@
 import { onGameInstalled, onGameUninstalled, onGameImported, onGameMoved } from '../../game_events'
-import { existsSync, unlinkSync } from 'graceful-fs'
+import { existsSync, unlinkSync, mkdirSync, symlinkSync } from 'graceful-fs'
 import { addGameToSteam, createRunnerFile } from '../add_game'
 import { deleteGrids } from '../../steamgrid'
 import { libraryManagerMap } from 'backend/storeManagers'
@@ -54,6 +54,8 @@ const mockedAddGameToSteam = jest.mocked(addGameToSteam)
 const mockedCreateRunnerFile = jest.mocked(createRunnerFile)
 const mockedExistsSync = jest.mocked(existsSync)
 const mockedUnlinkSync = jest.mocked(unlinkSync)
+const mockedMkdirSync = jest.mocked(mkdirSync)
+const mockedSymlinkSync = jest.mocked(symlinkSync)
 const mockedDeleteGrids = jest.mocked(deleteGrids)
 const mockedFindShortcut = jest.mocked(store.findShortcut)
 const mockedAddShortcut = jest.mocked(store.addShortcut)
@@ -229,7 +231,7 @@ describe('onGameUninstalled', () => {
 })
 
 describe('onGameImported', () => {
-  test('logs that game was imported', async () => {
+  test('delegates to onGameInstalled', async () => {
     mockGetGameInfo.mockReturnValue({
       title: 'ImportedGame',
       app_name: 'imported_app',
@@ -237,17 +239,27 @@ describe('onGameImported', () => {
       install: { install_path: '/games/imported' }
     })
 
+    mockedFindShortcut.mockReturnValue(undefined)
+    mockedAddGameToSteam.mockResolvedValueOnce({
+      success: true,
+      steamAppId: 789
+    })
+
     await onGameImported(mockGame as never)
 
-    expect(require('backend/logger').logInfo).toHaveBeenCalledWith(
-      'Game imported: "ImportedGame" (imported_app)',
-      'Relic'
+    expect(mockedCreateRunnerFile).toHaveBeenCalled()
+    expect(mockedAddGameToSteam).toHaveBeenCalledWith({
+      gameName: 'ImportedGame',
+      runnerPath: '/path/to/TestGame.bat'
+    })
+    expect(mockedAddShortcut).toHaveBeenCalledWith(
+      'ImportedGame', 'imported_app', 'legendary', 789, '/games/imported', '/path/to/TestGame.bat'
     )
   })
 })
 
 describe('onGameMoved', () => {
-  test('logs that game was moved', async () => {
+  test('moves symlink and updates shortcut', async () => {
     mockGetGameInfo.mockReturnValue({
       title: 'MovedGame',
       app_name: 'moved_app',
@@ -255,11 +267,27 @@ describe('onGameMoved', () => {
       install: { install_path: '/games/old' }
     })
 
+    mockedFindShortcut.mockReturnValue({
+      gameName: 'MovedGame',
+      appId: 'moved_app',
+      store: 'gog',
+      steamAppId: 123,
+      execPath: '/games/old/MovedGame.bat',
+      installPath: '/games/old'
+    })
+
     await onGameMoved(mockGame as never, '/games/new')
 
-    expect(require('backend/logger').logInfo).toHaveBeenCalledWith(
-      'Game moved: "MovedGame" (moved_app) to /games/new',
-      'Relic'
+    expect(mockedUnlinkSync).toHaveBeenCalledWith(
+      expect.stringContaining('relic/games/old')
+    )
+    expect(mockedMkdirSync).toHaveBeenCalled()
+    expect(mockedSymlinkSync).toHaveBeenCalledWith(
+      '/games/new',
+      expect.stringContaining('relic/games/new')
+    )
+    expect(mockedAddShortcut).toHaveBeenCalledWith(
+      'MovedGame', 'moved_app', 'gog', 123, '/games/new', '/games/old/MovedGame.bat'
     )
   })
 })

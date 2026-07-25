@@ -1,4 +1,4 @@
-import { existsSync, unlinkSync } from 'graceful-fs'
+import { existsSync, unlinkSync, mkdirSync, symlinkSync } from 'graceful-fs'
 import { shell } from 'electron'
 import { Game } from 'common/types/game_manager'
 import { GameInfo } from 'common/types'
@@ -107,9 +107,42 @@ export async function onGameMoved(
   newInstallPath: string
 ): Promise<void> {
   const gameInfo = game.getGameInfo()
-  logInfo(
-    `Game moved: "${gameInfo.title}" (${gameInfo.app_name}) to ${newInstallPath}`,
-    LOG_PREFIX
+  const appName = gameInfo.app_name
+
+  const known = findShortcut(appName)
+  if (!known) {
+    logInfo(
+      `"${gameInfo.title}" (${appName}) is not tracked in Steam. Skipping move.`,
+      LOG_PREFIX
+    )
+    return
+  }
+
+  const oldLink = join(relicGamesPath, basename(known.installPath))
+  const newLink = join(relicGamesPath, basename(newInstallPath))
+
+  try {
+    unlinkSync(oldLink)
+    logInfo(`Removed old symlink: ${oldLink}`, LOG_PREFIX)
+  } catch (e) {
+    logError(`Failed to remove old symlink ${oldLink}: ${e}`, LOG_PREFIX)
+  }
+
+  try {
+    mkdirSync(relicGamesPath, { recursive: true })
+    symlinkSync(newInstallPath, newLink)
+    logInfo(`Created symlink: ${newLink} -> ${newInstallPath}`, LOG_PREFIX)
+  } catch (e) {
+    logError(`Failed to create symlink ${newLink}: ${e}`, LOG_PREFIX)
+  }
+
+  addShortcut(
+    known.gameName,
+    known.appId,
+    known.store,
+    known.steamAppId,
+    newInstallPath,
+    known.execPath
   )
 }
 
