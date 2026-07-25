@@ -90,7 +90,7 @@ export default React.memo(function NewLogin() {
             <RelicLogo className="runnerHeaderIcon" />
             <div className="runnerHeaderText">
               <h1 className="title">Relic</h1>
-              <h2 className="subtitle">Games Launcher</h2>
+              <h2 className="subtitle">Game Manager</h2>
             </div>
 
             {!loading && (

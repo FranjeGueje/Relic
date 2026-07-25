@@ -383,7 +383,15 @@ export default function ConsoleMode() {
         ref={topBarRef}
         onKeyDown={onTopBarKeyDown}
       >
-        <RelicIcon className="consoleLogo" />
+        <div className="consoleLogoRow">
+          <RelicIcon className="consoleLogo" />
+          <button
+            className="consoleQuitButton"
+            onClick={quit}
+          >
+            {t('console.quit', 'Opciones')}
+          </button>
+        </div>
         <div className="consoleFilters">
           <button
             key={'installedGames'}
@@ -418,16 +426,10 @@ export default function ConsoleMode() {
               {ascending ? 'A → Z' : 'Z → A'}
             </button>
             <button
-              className="consoleQuitButton"
-              onClick={quit}
-            >
-              {t('console.quit', 'Quit Console')}
-            </button>
-            <button
               className="consoleQuitButton danger"
               onClick={() => window.api.quit()}
             >
-              {t('console.quitApp', 'Quit App')}
+              {t('console.quitApp', 'Salir')}
             </button>
         </div>
       </div>

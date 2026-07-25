@@ -483,7 +483,7 @@
       "hintSuffix": "por 3s para cancelar",
       "hintPrefix": "Presionar"
     },
-    "quit": "Salir de la consola",
+    "quit": "Opciones",
     "hints": {
       "launch": "Ejecutar",
       "sort": "Ordenar",

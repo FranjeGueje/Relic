@@ -67,6 +67,12 @@
   flex-shrink: 0;
 }
 
+.consoleLogoRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .consoleFilters {
   display: flex;
   gap: 8px;

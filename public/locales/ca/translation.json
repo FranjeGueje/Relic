@@ -476,7 +476,7 @@
       "hintSuffix": "durant 3 s per a cancel·lar",
       "hintPrefix": "Manté premut"
     },
-    "quit": "Surt del mode consola",
+    "quit": "Opciones",
     "hints": {
       "launch": "Executa",
       "sort": "Ordre",
