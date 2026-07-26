@@ -14,23 +14,19 @@ import ContextProvider from 'frontend/state/ContextProvider'
 import QuitButton from '../QuitButton'
 import SidebarItem from '../SidebarItem'
 
-type PathSplit = [a: undefined, b: undefined, type: string]
+import LogsIcon from 'frontend/assets/logs.svg?react'
 
 export default function SidebarLinks() {
   const { t } = useTranslation()
-  const location = useLocation() as { pathname: string }
-  const [, , type] = location.pathname.split('/') as PathSplit
+  const location = useLocation()
 
   const {
     amazon,
     epic,
     gog,
     zoom,
-    platform,
     refreshLibrary
   } = useContext(ContextProvider)
-
-  const isSettings = location.pathname.includes('settings')
 
   const loggedIn =
     epic.username || gog.username || amazon.user_id || zoom.username
@@ -68,6 +64,13 @@ export default function SidebarLinks() {
         dataTour="sidebar-library"
       />
 
+      <SidebarItem
+        url="/download-manager"
+        icon={faBarsProgress}
+        label={t('download-manager.link', 'Downloads')}
+        dataTour="sidebar-downloads"
+      />
+
       {loggedIn && (
         <SidebarItem
           url="/login"
@@ -78,37 +81,17 @@ export default function SidebarLinks() {
       )}
 
       <div className="divider" />
-      <div className="SidebarItemWithSubmenu">
-        <SidebarItem
-          isActiveFallback={location.pathname.includes('settings')}
-          icon={faSlidersH}
-          label={t('Settings', 'Settings')}
-          url="/settings/general"
-          dataTour="sidebar-settings"
-        />
-        {isSettings && (
-          <div className="SidebarSubmenu settings">
-            <SidebarItem
-              url="/settings/general"
-              isActiveFallback={type === 'general'}
-              className="SidebarLinks__subItem"
-              label={t('settings.navbar.general')}
-            />
-
-            <SidebarItem
-              url="/settings/log"
-              isActiveFallback={type === 'log'}
-              className="SidebarLinks__subItem"
-              label={t('settings.navbar.log', 'Log')}
-            />
-          </div>
-        )}
-      </div>
       <SidebarItem
-        url="/download-manager"
-        icon={faBarsProgress}
-        label={t('download-manager.link', 'Downloads')}
-        dataTour="sidebar-downloads"
+        icon={faSlidersH}
+        label={t('Settings', 'Settings')}
+        url="/settings/general"
+        dataTour="sidebar-settings"
+      />
+      <SidebarItem
+        customIcon={<LogsIcon />}
+        label={t('settings.navbar.log', 'Log')}
+        url="/settings/log"
+        dataTour="sidebar-log"
       />
 
       <div className="divider" />
