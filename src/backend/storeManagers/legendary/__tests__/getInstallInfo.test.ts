@@ -31,6 +31,7 @@ jest.mock('../../../launcher')
 jest.mock('../../index', () => ({}))
 
 import { installStore } from '../electronStores'
+const mockedInstallStore = jest.mocked(installStore)
 
 describe('LegendaryLibraryManager.getInstallInfo', () => {
   let manager: LegendaryLibraryManager
@@ -39,7 +40,7 @@ describe('LegendaryLibraryManager.getInstallInfo', () => {
     jest.clearAllMocks()
     manager = new LegendaryLibraryManager()
 
-    installStore.get.mockReturnValue(undefined)
+    mockedInstallStore.get.mockReturnValue(undefined as any)
 
     manager.runRunnerCommand = jest.fn().mockResolvedValue({
       stdout: '',

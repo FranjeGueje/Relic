@@ -28,6 +28,7 @@ jest.mock('../..', () => ({
 }))
 
 import { libraryManagerMap } from '../..'
+const mockedRunRunnerCommand = jest.mocked(libraryManagerMap.nile.runRunnerCommand)
 
 describe('NileUser.getLoginData', () => {
   beforeEach(() => {
@@ -36,7 +37,7 @@ describe('NileUser.getLoginData', () => {
 
   it('should throw when stdout is empty', async () => {
 
-    libraryManagerMap.nile.runRunnerCommand.mockResolvedValue({
+    mockedRunRunnerCommand.mockResolvedValue({
       stdout: '',
       stderr: 'ERROR: auth failed',
       error: undefined,
@@ -56,7 +57,7 @@ describe('NileUser.getLoginData', () => {
       client_id: 'client'
     }
 
-    libraryManagerMap.nile.runRunnerCommand.mockResolvedValue({
+    mockedRunRunnerCommand.mockResolvedValue({
       stdout: JSON.stringify(loginData),
       stderr: '',
       error: undefined,

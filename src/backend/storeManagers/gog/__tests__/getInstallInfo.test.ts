@@ -61,6 +61,8 @@ jest.mock('../games')
 jest.mock('../../index', () => ({ libraryManagerMap: {} }))
 
 import { libraryStore, installInfoStore } from '../electronStores'
+const mockedLibraryStore = jest.mocked(libraryStore)
+const mockedInstallInfoStore = jest.mocked(installInfoStore)
 
 describe('GOGLibraryManager.getInstallInfo', () => {
   let manager: GOGLibraryManager
@@ -72,11 +74,11 @@ describe('GOGLibraryManager.getInstallInfo', () => {
     const mockGameInfo = { title: 'Test Game', app_name: 'test-game' }
     manager.getGameInfo = jest.fn().mockReturnValue(mockGameInfo)
 
-    libraryStore.get.mockImplementation((key: string, def?: any) => {
+    mockedLibraryStore.get.mockImplementation((key: string, def?: any) => {
       if (key === 'games') return [mockGameInfo]
       return def
     })
-    installInfoStore.has.mockReturnValue(false)
+    mockedInstallInfoStore.has.mockReturnValue(false)
 
     manager.runRunnerCommand = jest.fn().mockResolvedValue({
       stdout: '',
