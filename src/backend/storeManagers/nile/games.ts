@@ -4,8 +4,7 @@ import {
   GameInfo,
   GameSettings,
   InstallArgs,
-  InstallProgress,
-  LaunchOption
+  InstallProgress
 } from 'common/types'
 import { Game, InstallResult } from 'common/types/game_manager'
 import { libraryManagerMap } from '..'
@@ -19,9 +18,6 @@ import {
 import { GameConfig } from 'backend/game_config'
 
 import { existsSync } from 'graceful-fs'
-import { showDialogBoxModalAuto } from 'backend/dialog/dialog'
-import { t } from 'i18next'
-import shlex from 'shlex'
 import {
   killPattern,
   moveOnUnix,
@@ -31,10 +27,9 @@ import {
 import { GlobalConfig } from 'backend/config'
 import { onGameInstalled, onGameImported, onGameMoved, onGameUninstalled } from 'backend/relic/game_events'
 import { sendFrontendMessage } from '../../ipc'
-import setup from './setup'
 import { isLinux } from 'backend/constants/environment'
 
-import type LogWriter from 'backend/logger/log_writer'
+
 
 export default class NileGameManager implements Game {
   private readonly id: string
@@ -243,8 +238,6 @@ export default class NileGameManager implements Game {
     }
     onGameInstalled(this)
     libraryManagerMap['nile'].installState(this.id, true)
-    const metadata = libraryManagerMap['nile'].getInstallMetadata(this.id)
-
     return { status: 'done' }
   }
 

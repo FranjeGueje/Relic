@@ -1,4 +1,4 @@
-import { existsSync, mkdirSync, readFileSync, writeFileSync, rmSync } from 'graceful-fs'
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'graceful-fs'
 import { basename, join } from 'path'
 import { DirResult, dirSync } from 'tmp'
 import { addGameToSteam, createRelicBat } from '../add_game'

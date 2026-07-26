@@ -16,7 +16,7 @@ const LOG_PREFIX = 'Relic'
 function refreshInstallPath(gameInfo: GameInfo): string {
   try {
     const manager = libraryManagerMap[
-      gameInfo.runner as keyof typeof libraryManagerMap
+      gameInfo.runner
     ] as unknown as {
       getGameInfo?: (appName: string, forceReload: boolean) => GameInfo | undefined
       refreshInstalled?: () => void
@@ -228,7 +228,9 @@ export async function onGameUninstalled(game: Game) {
       try {
         unlinkSync(linkPath)
         logInfo(`Deleted symlink ${linkPath}`, LOG_PREFIX)
-      } catch {}
+      } catch {
+        // Symlink already removed or never existed
+      }
     }
   }
 

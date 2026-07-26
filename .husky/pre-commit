@@ -1,2 +1,2 @@
 #!/bin/bash
-#pnpm lint-fix
+pnpm lint-fix

@@ -122,7 +122,7 @@ export default function DownloadDialog({
   )[0]
 
   const [dlcsToInstall, setDlcsToInstall] = useState<string[]>([])
-  const [sdls, setSdls] = useState<SelectiveDownload[]>([])
+  const [sdls] = useState<SelectiveDownload[]>([])
   const [selectedSdls, setSelectedSdls] = useState<{ [key: string]: boolean }>(
     {}
   )

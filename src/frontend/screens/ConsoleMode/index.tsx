@@ -262,7 +262,7 @@ export default function ConsoleMode() {
     setUpdateNoticeGame(null)
     void updateGame({
       appName: game.app_name,
-      runner: game.runner as Runner,
+      runner: game.runner,
       gameInfo: game
     })
   }, [updateNoticeGame])

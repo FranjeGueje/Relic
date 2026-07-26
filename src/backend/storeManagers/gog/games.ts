@@ -3,14 +3,12 @@ import { join } from 'path'
 import { GameConfig } from '../../game_config'
 import { GlobalConfig } from '../../config'
 import {
-  errorHandler,
   getFileSize,
   spawnAsync,
   moveOnUnix,
   sendProgressUpdate,
   sendGameStatusUpdate,
   getPathDiskSize,
-  getCometBin,
   axiosClient
 } from '../../utils'
 import {
@@ -21,13 +19,11 @@ import {
   InstallArgs,
   InstalledInfo,
   InstallProgress,
-  LaunchOption,
   GOGAchievement
 } from 'common/types'
 import { existsSync, rmSync } from 'graceful-fs'
 import {
   achievementStore,
-  configStore,
   installedGamesStore,
   playtimeSyncQueue,
   privateBranchesStore,
@@ -38,33 +34,22 @@ import {
   logInfo,
   LogPrefix,
   logWarning,
-  createGameLogWriter,
-  getRunnerLogWriter
+  createGameLogWriter
 } from 'backend/logger'
 import { GOGUser } from './user'
 
-import setup from './setup'
 import { onGameInstalled, onGameImported, onGameMoved, onGameUninstalled } from 'backend/relic/game_events'
-import shlex from 'shlex'
 import {
   GOGCloudSavesLocation,
-  GogInstallPlatform,
-  UserData
+  GogInstallPlatform
 } from 'common/types/gog'
-import { t } from 'i18next'
-import { showDialogBoxModalAuto } from '../../dialog/dialog'
 import { sendFrontendMessage } from '../../ipc'
 import { Game, RemoveArgs } from 'common/types/game_manager'
 import axios, { AxiosError, AxiosResponse } from 'axios'
 import { isOnline, runOnceWhenOnline } from 'backend/online_monitor'
-import { readdir, readFile } from 'fs/promises'
-import ini from 'ini'
 import { getRequiredRedistList, updateRedist } from './redist'
-import { spawn } from 'child_process'
 import { gogdlConfigPath, gogSupportPath } from './constants'
 import { isLinux } from 'backend/constants/environment'
-
-import type LogWriter from 'backend/logger/log_writer'
 
 export default class GOGGame implements Game {
   private readonly id: string
@@ -459,7 +444,7 @@ export default class GOGGame implements Game {
     newInstallPath: string
   ): Promise<{ status: 'done' } | { status: 'error'; error: string }> {
     const gameInfo = this.getGameInfo()
-    const gameConfig = await this.getSettings()
+    await this.getSettings()
     logInfo(`Moving ${gameInfo.title} to ${newInstallPath}`, LogPrefix.Gog)
 
     const moveImpl = moveOnUnix
@@ -592,7 +577,8 @@ export default class GOGGame implements Game {
     return fullOutput
   }
 
-  async uninstall({ shouldRemovePrefix }: RemoveArgs): Promise<ExecResult> {
+  async uninstall(_removeArgs: RemoveArgs): Promise<ExecResult> {
+    void _removeArgs
     const array = installedGamesStore.get('installed', [])
     const index = array.findIndex((game) => game.appName === this.id)
     if (index === -1) {
@@ -656,14 +642,13 @@ export default class GOGGame implements Game {
       return { status: 'error' }
     }
 
-    const gameConfig = await this.getSettings()
+    await this.getSettings()
     const installedDlcs = gameData.install.installedDLCs || []
 
     if (updateOverwrites?.dlcs) {
-      const removedDlcs = installedDlcs.filter(
+      installedDlcs.filter(
         (dlc) => !updateOverwrites.dlcs?.includes(dlc)
       )
-
     }
 
     const privateBranchPassword = privateBranchesStore.get(this.id, '')
@@ -779,11 +764,7 @@ export default class GOGGame implements Game {
     gameObject.install_size = getFileSize(sizeOnDisk)
     installedGamesStore.set('installed', installedArray)
     libraryManagerMap['gog'].refreshInstalled()
-    if (
-      false
-    ) {
-      await setup(this.id, gameObject, false)
-    } else if (gameObject.platform === 'linux') {
+    if (gameObject.platform === 'linux') {
       const installer = join(gameObject.install_path, 'support/postinst.sh')
       if (existsSync(installer)) {
         logInfo(`Running ${installer}`, LogPrefix.Gog)

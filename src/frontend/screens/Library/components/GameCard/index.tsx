@@ -4,15 +4,13 @@ import { useContext, CSSProperties, useMemo, useState, useEffect } from 'react'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faRepeat, faBan } from '@fortawesome/free-solid-svg-icons'
-import { faLinux } from '@fortawesome/free-brands-svg-icons'
 
 import DownIcon from 'frontend/assets/down-icon.svg?react'
-import { FavouriteGame, GameInfo, HiddenGame, Runner } from 'common/types'
+import { FavouriteGame, GameInfo, HiddenGame } from 'common/types'
 import { Link, useNavigate } from 'react-router-dom'
 import StopIcon from 'frontend/assets/stop-icon.svg?react'
 import StopIconAlt from 'frontend/assets/stop-icon-alt.svg?react'
 import {
-  createNewWindow,
   getGameInfo,
   getProgress,
   getStoreName,
@@ -39,13 +37,11 @@ import {
   Cancel,
   CheckCircle,
   DeleteForever,
-  DesktopAccessDisabled,
   Download,
   DriveFileMove,
   Favorite,
   FavoriteBorder,
   Folder,
-  List,
   OpenInNew,
   PlaylistRemove,
   Repartition,
@@ -63,8 +59,6 @@ interface Card {
   forceCard?: boolean
   dataTour?: string
 }
-
-const storage: Storage = window.localStorage
 
 const GameCard = ({
   hasUpdate,
@@ -106,9 +100,7 @@ const GameCard = ({
     hiddenGames,
     favouriteGames,
     showDialogModal,
-    activeController,
-    connectivity,
-    platform
+    activeController
   } = useContext(ContextProvider)
   const { layout } = useContext(LibraryContext)
 
@@ -128,15 +120,14 @@ const GameCard = ({
   const isInstallable =
     gameInfo.installable === undefined || gameInfo.installable // If it's undefined we assume it's installable
 
-  const [progress, previousProgress] = hasProgress(appName, runner)
+  const [progress] = hasProgress(appName, runner)
   const { install_size: size = '0' } = {
     ...gameInstallInfo
   }
 
-  const { status, folder, label } = hasStatus(gameInfo, size)
+  const { status, label } = hasStatus(gameInfo, size)
 
   const isThirdPartyManaged = !!gameInfo.thirdPartyManagedApp
-  const isLinux = platform === 'linux'
 
   useEffect(() => {
     const updateGameInfo = async () => {

@@ -48,10 +48,7 @@ export function getGameOverrides(appName: string): GameMetadataOverride | null {
  */
 export function getAllGameOverrides(): Record<string, GameMetadataOverride> {
   try {
-    return gameOverridesStore.get('overrides', {}) as Record<
-      string,
-      GameMetadataOverride
-    >
+    return gameOverridesStore.get('overrides', {})
   } catch {
     logError('Failed to get all overrides', logPrefix)
     return {}

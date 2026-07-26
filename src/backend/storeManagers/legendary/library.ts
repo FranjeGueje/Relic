@@ -1,8 +1,7 @@
-import { existsSync, mkdirSync, readFileSync, readdirSync } from 'graceful-fs'
+import { existsSync, readFileSync, readdirSync } from 'graceful-fs'
 
 import {
   GameInfo,
-  InstalledInfo,
   CallRunnerOptions,
   ExecResult,
   InstallPlatform,
@@ -12,8 +11,7 @@ import {
   InstalledJsonMetadata,
   GameMetadata,
   LegendaryInstallInfo,
-  LegendaryInstallPlatform,
-  SelectiveDownload
+  LegendaryInstallPlatform
 } from 'common/types/legendary'
 import { LegendaryUser } from './user'
 import {
@@ -474,7 +472,7 @@ export default class LegendaryLibraryManager implements LibraryManager {
       // @ts-expect-error TODO: Make sure game info is loaded & appName is valid here
       library.get(appName).is_installed = false
       // @ts-expect-error Same as above
-      library.get(appName).install = {} as InstalledInfo
+      library.get(appName).install = {}
       installedGames.delete(appName)
     }
   }

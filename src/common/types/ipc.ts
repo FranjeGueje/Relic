@@ -10,7 +10,6 @@ import type {
   DiskSpaceData,
   DMQueueElement,
   DownloadManagerState,
-  ExecResult,
   ExtraInfo,
   GameAchievement,
   GameInfo,
@@ -24,13 +23,11 @@ import type {
   KnowFixesInfo,
   MoveGameArgs,
   RecentGame,
-  Release,
   Runner,
   RunnerCommandStub,
   StatusPromise,
 
   UpdateParams,
-  UploadedLogData,
   UserInfo
 } from '../types'
 import type { GOGCloudSavesLocation, UserData } from './gog'

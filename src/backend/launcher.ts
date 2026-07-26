@@ -103,7 +103,7 @@ export async function callRunner(
   commandParts = commandParts.filter(Boolean)
 
   let bin = runner.bin
-  let fullRunnerPath = runner.dir ? join(runner.dir, bin) : bin
+  const fullRunnerPath = runner.dir ? join(runner.dir, bin) : bin
 
   if (!isAbsolute(bin) && runner.dir) bin = './' + bin
 

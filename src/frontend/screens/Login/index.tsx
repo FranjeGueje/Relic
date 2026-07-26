@@ -14,7 +14,6 @@ import { LanguageSelector, UpdateComponent } from '../../components/UI'
 import { FlagPosition } from '../../components/UI/LanguageSelector'
 import SIDLogin from './components/SIDLogin'
 import ContextProvider from '../../state/ContextProvider'
-import { useAwaited } from '../../hooks/useAwaited'
 import { hasHelp } from 'frontend/hooks/hasHelp'
 
 export const epicLoginPath = '/loginweb/legendary'
@@ -43,10 +42,8 @@ export default React.memo(function NewLogin() {
   )
   const [isZoomLoggedIn, setIsZoomLoggedIn] = useState(Boolean(zoom.username))
 
-  const systemInfo = useAwaited(window.api.systemInfo.get)
-
-  let oldMac = false
-  let oldMacMessage = ''
+  const oldMac = false
+  const oldMacMessage = ''
 
   const loginMessage = t(
     'login.message',

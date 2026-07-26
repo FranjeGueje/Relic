@@ -27,7 +27,7 @@ export function createRunnerFile(
     const runnerPath = createRelicBat(
       installPath,
       gameInfo.title,
-      gameInfo.runner as GameRunner,
+      gameInfo.runner,
       gameInfo.app_name
     )
     return { path: runnerPath }

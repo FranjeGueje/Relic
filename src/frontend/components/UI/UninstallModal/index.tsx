@@ -8,7 +8,6 @@ import {
 } from 'frontend/components/UI/Dialog'
 import { useTranslation } from 'react-i18next'
 import { Runner } from 'common/types'
-import { useNavigate, useLocation } from 'react-router-dom'
 import ContextProvider from 'frontend/state/ContextProvider'
 
 interface UninstallModalProps {
@@ -26,8 +25,6 @@ const UninstallModal: React.FC<UninstallModalProps> = function ({
 }) {
   const { t } = useTranslation('gamepage')
   const [showUninstallModal, setShowUninstallModal] = useState(false)
-  const navigate = useNavigate()
-  const location = useLocation()
   const { installingEpicGame, libraryStatus } = useContext(ContextProvider)
   const [gameTitle, setGameTitle] = useState('')
 

@@ -5,17 +5,20 @@
 ### Añadido
 - Sidebar: Downloads entre Library y Manage Accounts
 - Sidebar: General y Log como items independientes (ya no submenú de Settings)
-- Sidebar: icono SVG personalizado para Log
+- Sidebar: icono SVG personalizado para Log y Registro
 - Traducciones: `proton-path` → `GE-Proton path` en 47 locales
+- ESLint: 134 errores eliminados (`no-unused-vars`, `no-require-imports`, `no-empty`, `no-constant-condition`)
 
 ### Eliminado
 - Filtro "Browser" de la biblioteca (no hacía nada)
 - ConsoleCard: fallback a `relic_card.jpg`
 - Submenú de Settings (General + Log promovidos al nivel superior)
 - Variable muerta `isBrowserGame` en GameCard y GamePage
+- ~45 archivos: imports y variables muertas del código heredado de Heroic
 
 ### Cambiado
 - Logo de Registro: de `settings-sharp.svg` a `logs.svg`
+- Pre-commit hook: `pnpm lint-fix` pasa sin errores
 
 ---
 

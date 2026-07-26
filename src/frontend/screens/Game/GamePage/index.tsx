@@ -5,7 +5,6 @@ import React, { useContext, useEffect, useRef, useState } from 'react'
 import {
   ArrowBackIosNew,
   Info,
-  Star,
   Monitor,
   EmojiEvents
 } from '@mui/icons-material'
@@ -175,11 +174,10 @@ export default React.memo(function GamePage(): JSX.Element | null {
   useEffect(() => {
     const updateConfig = async () => {
       if (gameInfo && status) {
-        const {
-          install,
-          thirdPartyManagedApp,
-          is_mac_native = undefined
-        } = { ...gameInfo }
+          const {
+            install,
+            thirdPartyManagedApp
+          } = { ...gameInfo }
 
         const installPlatform =
           install.platform || 'Windows'

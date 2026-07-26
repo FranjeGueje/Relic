@@ -1,10 +1,8 @@
 import { GameConfig } from '../../game_config'
 import {
-  errorHandler,
   getFileSize,
   parseSize,
   spawnAsync,
-  sendGameStatusUpdate,
   sendProgressUpdate
 } from '../../utils'
 import { join, relative, dirname, basename } from 'node:path'
@@ -19,7 +17,6 @@ import {
   ExecResult,
   InstallArgs,
   InstalledInfo,
-  LaunchOption,
   InstallProgress
 } from 'common/types'
 import { existsSync, rmSync } from 'graceful-fs'
@@ -29,14 +26,12 @@ import {
   logInfo,
   LogPrefix,
   logWarning,
-  createGameLogWriter,
   logDebug
 } from 'backend/logger'
 
 import { onGameInstalled, onGameUninstalled } from 'backend/relic/game_events'
 import { zoomPlatformScriptPath } from 'backend/constants/paths'
 import { GlobalConfig } from 'backend/config'
-import shlex from 'shlex'
 import { ZoomInstallPlatform, ZoomDownloadFile } from 'common/types/zoom'
 import { t } from 'i18next'
 import { showDialogBoxModalAuto } from '../../dialog/dialog'
@@ -45,8 +40,7 @@ import { Game } from 'common/types/game_manager'
 import { isLinux } from 'backend/constants/environment'
 import { libraryManagerMap } from '..'
 
-import type LogWriter from 'backend/logger/log_writer'
-import { rm, writeFile } from 'node:fs/promises'
+import { rm } from 'node:fs/promises'
 
 export default class ZoomGame implements Game {
   private readonly id: string
@@ -297,7 +291,7 @@ export default class ZoomGame implements Game {
 
     // Execute the installer
     let installResult: ExecResult
-    let confFilesBefore: string[] = []
+    const confFilesBefore: string[] = []
     let executable: string = ''
 
     if (installPlatform === 'linux') {

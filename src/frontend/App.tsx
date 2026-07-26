@@ -20,7 +20,6 @@ import { InstallGameWrapper } from './screens/Library/components/InstallModal'
 
 function Root() {
   const {
-    disableDialogBackdropClose,
     isRTL,
     isFullscreen,
     isFrameless,

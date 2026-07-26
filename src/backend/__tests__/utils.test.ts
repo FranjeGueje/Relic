@@ -1,6 +1,3 @@
-import { axiosClient } from 'backend/utils'
-import { app } from 'electron'
-import { logError } from '../logger'
 import * as utils from '../utils'
 
 jest.mock('electron')

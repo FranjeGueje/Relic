@@ -1,5 +1,4 @@
 import { GameConfig } from 'backend/game_config'
-import { GlobalConfig } from 'backend/config'
 import { formatSystemInfo, getSystemInfo } from 'backend/utils/systeminfo'
 import { backendEvents } from 'backend/backend_events'
 
@@ -30,7 +29,6 @@ function getRunnerLogWriter(runner: RunnerOrComet) {
   const writer = runnerLogWriters.get(runner)
   if (writer) return writer
 
-  const globalConfig = GlobalConfig.get().getSettings()
   const newWriter = new LogWriter(
     getLogFilePath({ runner }),
     false,
@@ -72,7 +70,6 @@ function init() {
     })
   }
 
-  const globalSettings = GlobalConfig.get().getSettings()
   relicLogWriter = new LogWriter(
     getLogFilePath({}),
     true,

@@ -4,13 +4,13 @@ import {
   isEpicServiceOffline,
   sendGameStatusUpdate
 } from '../utils'
-import { DMStatus, InstallParams, Runner } from 'common/types'
+import { DMStatus, InstallParams } from 'common/types'
 import i18next from 'i18next'
 import { notify, showDialogBoxModalAuto } from '../dialog/dialog'
 import { isOnline } from '../online_monitor'
 import pathModule from 'path'
 import { existsSync, rmSync } from 'graceful-fs'
-import { storeMap } from 'common/utils'
+
 import { gogdlConfigPath } from 'backend/storeManagers/gog/constants'
 
 async function installQueueElement(params: InstallParams): Promise<{

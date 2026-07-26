@@ -58,7 +58,6 @@ export function hasStatus(gameInfo: GameInfo, gameSize?: string) {
         const label = getStatusLabel({
           status,
           t,
-          runner,
           size: gameSize,
           statusContext,
           percent: progress.percent
@@ -69,8 +68,7 @@ export function hasStatus(gameInfo: GameInfo, gameSize?: string) {
       if (thirdPartyManagedApp && !isEAManaged && !isUbisoftManaged) {
         const label = getStatusLabel({
           status: 'notSupportedGame',
-          t,
-          runner
+          t
         })
         return setGameStatus({
           status: 'notSupportedGame',
@@ -84,15 +82,13 @@ export function hasStatus(gameInfo: GameInfo, gameSize?: string) {
         if (!gameAvailable) {
           const label = getStatusLabel({
             status: 'notAvailable',
-            t,
-            runner
+            t
           })
           return setGameStatus({ status: 'notAvailable', label, statusContext })
         }
         const label = getStatusLabel({
           status: 'installed',
           t,
-          runner,
           size: gameSize
         })
         return setGameStatus({ status: 'installed', label, statusContext })
@@ -100,8 +96,7 @@ export function hasStatus(gameInfo: GameInfo, gameSize?: string) {
 
       const label = getStatusLabel({
         status: 'notInstalled',
-        t,
-        runner
+        t
       })
       return setGameStatus({ status: 'notInstalled', label, statusContext })
     }

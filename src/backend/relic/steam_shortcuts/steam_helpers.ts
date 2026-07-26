@@ -1,7 +1,8 @@
 import { existsSync, readdirSync } from 'graceful-fs'
 import { readFileSync } from 'fs-extra'
 import { join } from 'path'
-import { parseBuffer, ShortcutEntry, ShortcutObject } from 'steam-shortcut-editor'
+import { homedir } from 'os'
+import { parseBuffer, ShortcutObject } from 'steam-shortcut-editor'
 import { GlobalConfig } from 'backend/config'
 import { logError } from 'backend/logger'
 import type { UserdataInfo, FindResult } from './types'
@@ -128,7 +129,7 @@ export function findExistingGame(
 
 export function checkSteamProtocolHandler(): void {
   const mimeFile = join(
-    require('os').homedir(),
+    homedir(),
     '.config',
     'mimeapps.list'
   )

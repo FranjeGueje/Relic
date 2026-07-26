@@ -11,7 +11,6 @@ import GlobalState from './state/GlobalState'
 import { initShortcuts } from './helpers/shortcuts'
 import { configStore } from './helpers/electronStores'
 import { initOnlineMonitor } from './helpers/onlineMonitor'
-import { defaultThemes } from './components/UI/ThemeSelector'
 import Loading from './screens/Loading'
 
 initOnlineMonitor()

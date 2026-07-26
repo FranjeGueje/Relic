@@ -6,7 +6,7 @@ import { PathSelectionBox } from 'frontend/components/UI'
 
 const AlternativeExe = () => {
   const { t } = useTranslation()
-  const { isDefault, runner, gameInfo } = useContext(SettingsContext)
+  const { isDefault, gameInfo } = useContext(SettingsContext)
 
   const [targetExe, setTargetExe] = useSetting('targetExe', '')
 

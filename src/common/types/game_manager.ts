@@ -9,7 +9,6 @@ import {
   GOGAchievement
 } from 'common/types'
 import { GOGCloudSavesLocation } from './gog'
-import type LogWriter from 'backend/logger/log_writer'
 
 export interface InstallResult {
   status: 'done' | 'error' | 'abort'

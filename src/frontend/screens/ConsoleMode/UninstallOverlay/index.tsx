@@ -7,7 +7,7 @@ import './index.scss'
 import { BTN_ACTION, BTN_BACK } from '../controller'
 import { useGamepadButtonPress } from '../hooks'
 
-import type { GameInfo, Runner } from 'common/types'
+import type { GameInfo } from 'common/types'
 
 type FocusKey = 'cancel' | 'uninstall'
 
@@ -42,7 +42,7 @@ export default function UninstallOverlay({
   const uninstallGame = async () => {
     await window.api.uninstall(
       game.app_name,
-      game.runner as Runner,
+      game.runner,
       false,
       false
     )

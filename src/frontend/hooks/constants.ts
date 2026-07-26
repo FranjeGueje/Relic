@@ -4,7 +4,6 @@ import { TFunction } from 'i18next'
 type StatusArgs = {
   status: Status
   t: TFunction<'gamepage', undefined>
-  runner: Runner
   statusContext?: string
   percent?: number
   size?: string
@@ -14,7 +13,6 @@ export function getStatusLabel({
   status,
   statusContext,
   t,
-  runner,
   size,
   percent
 }: StatusArgs): string {

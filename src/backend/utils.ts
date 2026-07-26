@@ -1,14 +1,13 @@
 import { callAllAbortControllers } from './utils/aborthandler/aborthandler'
 import {
   Runner,
-  Release,
   GameInfo,
   GameSettings,
   GameStatus
 } from 'common/types'
 import axios from 'axios'
 import https from 'node:https'
-import { app, dialog, shell, Notification, BrowserWindow } from 'electron'
+import { app, dialog, shell, Notification } from 'electron'
 import { exec, spawn, SpawnOptions, spawnSync } from 'child_process'
 import { existsSync, mkdirSync, readFileSync, rmSync } from 'graceful-fs'
 import { promisify } from 'util'
@@ -39,7 +38,7 @@ import {
   libraryStore as nileLibraryStore
 } from './storeManagers/nile/electronStores'
 import * as fileSize from 'filesize'
-import { notify, showDialogBoxModalAuto } from './dialog/dialog'
+import { showDialogBoxModalAuto } from './dialog/dialog'
 import { getMainWindow } from './main_window'
 import { sendFrontendMessage } from './ipc'
 import { GlobalConfig } from './config'
@@ -55,9 +54,7 @@ import {
   vendorNameCache
 } from './utils/systeminfo/gpu/pci_ids'
 import type { AppSettings } from 'common/types'
-import { getSystemInfo } from './utils/systeminfo'
 import { configStore } from './constants/key_value_stores'
-import { isLinux } from './constants/environment'
 import {
   configPath,
   fixAsarPath,
@@ -448,10 +445,6 @@ export function createNecessaryFolders() {
       mkdirSync(folder)
     }
   })
-}
-
-function getFormattedOsName(): string {
-  return 'Linux'
 }
 
 export async function getSteamLibraries(): Promise<string[]> {

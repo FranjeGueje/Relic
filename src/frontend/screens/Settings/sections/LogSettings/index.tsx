@@ -3,8 +3,6 @@ import { useTranslation } from 'react-i18next'
 import { UpdateComponent } from 'frontend/components/UI'
 import './index.css'
 
-import classNames from 'classnames'
-
 import type { GetLogFileArgs } from 'backend/logger/paths'
 
 interface LogBoxProps {

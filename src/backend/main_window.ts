@@ -24,7 +24,7 @@ export const createMainWindow = () => {
     x: 0,
     y: 0,
     maximized: false
-  } as WindowProps
+  }
 
   if (configStore.has('window-props')) {
     windowProps = configStore.get('window-props', windowProps)

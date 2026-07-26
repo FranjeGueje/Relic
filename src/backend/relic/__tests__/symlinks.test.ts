@@ -1,6 +1,7 @@
-import { existsSync, unlinkSync } from 'graceful-fs'
-import { symlinkSync } from 'graceful-fs'
+import { existsSync, unlinkSync, symlinkSync  } from 'graceful-fs'
 import { createRelicSymlinks } from '../windowify'
+
+import { logError } from 'backend/logger'
 
 jest.mock('../steam_shortcuts/add_game', () => ({
   createGameSymlink: jest.fn()
@@ -111,7 +112,6 @@ describe('createRelicSymlinks', () => {
 
     expect(() => createRelicSymlinks(LINKS_PATH)).toThrow('permission denied')
 
-    const { logError } = require('backend/logger')
     expect(logError).toHaveBeenCalledWith(
       expect.stringContaining('Failed to create symlinks'),
       'Relic'

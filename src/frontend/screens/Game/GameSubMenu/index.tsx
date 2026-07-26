@@ -4,11 +4,10 @@ import { useCallback, useContext, useState } from 'react'
 
 import { GameInfo, Runner } from 'common/types'
 
-import { createNewWindow, repair } from 'frontend/helpers'
+import { repair } from 'frontend/helpers'
 import { useTranslation } from 'react-i18next'
 import ContextProvider from 'frontend/state/ContextProvider'
 
-import { CircularProgress, SvgIcon } from '@mui/material'
 import UninstallModal from 'frontend/components/UI/UninstallModal'
 import GameContext from '../GameContext'
 import {
@@ -21,14 +20,9 @@ import {
   Info as InfoIcon,
   Repartition as RepartitionIcon
 } from '@mui/icons-material'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLinux } from '@fortawesome/free-brands-svg-icons'
-
 interface Props {
   appName: string
   isInstalled: boolean
-  title: string
-  storeUrl: string
   changelog?: string
   runner: Runner
   handleUpdate: () => void
@@ -42,8 +36,6 @@ interface Props {
 export default function GamesSubmenu({
   appName,
   isInstalled,
-  title,
-  storeUrl,
   changelog,
   runner,
   handleUpdate,
@@ -53,10 +45,9 @@ export default function GamesSubmenu({
   onShowModifyInstall,
   gameInfo
 }: Props) {
-  const { refresh, platform, libraryStatus, showDialogModal } =
+  const { showDialogModal } =
     useContext(ContextProvider)
-  const { is, gameSettings } = useContext(GameContext)
-  const isLinux = platform === 'linux'
+  const { is } = useContext(GameContext)
 
   const [showUninstallModal, setShowUninstallModal] = useState(false)
   const { t } = useTranslation('gamepage')
@@ -101,10 +92,6 @@ export default function GamesSubmenu({
         { text: t('box.no') }
       ]
     })
-  }
-
-  const refreshCircle = () => {
-    return <CircularProgress className="link button is-text is-link" />
   }
 
   const showModifyItem =

@@ -1,4 +1,4 @@
-import { app, BrowserWindow, Menu, nativeImage, Tray } from 'electron'
+import { BrowserWindow, Menu, nativeImage, Tray } from 'electron'
 import i18next from 'i18next'
 import { RecentGame } from 'common/types'
 import { getRecentGames, maxRecentGames } from '../recent_games/recent_games'

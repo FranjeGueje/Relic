@@ -7,7 +7,6 @@ import {
   app,
   dialog,
   powerSaveBlocker,
-  protocol,
   screen,
   clipboard,
   session
@@ -19,7 +18,7 @@ import {
   sendFrontendMessage
 } from 'backend/ipc'
 import { cpus } from 'os'
-import { existsSync, watch, readdirSync, readFileSync } from 'graceful-fs'
+import { existsSync, watch } from 'graceful-fs'
 import 'source-map-support/register'
 
 import Backend from 'i18next-fs-backend'
@@ -100,7 +99,6 @@ import {
 } from './constants/urls'
 import { legendaryInstalled } from './storeManagers/legendary/constants'
 import {
-  isCLIConsoleMode,
   isCLIFullscreen,
   isCLINoGui,
   isLinux,
@@ -142,8 +140,6 @@ async function initializeWindow(): Promise<BrowserWindow> {
 
   setTimeout(async () => {
   }, 2500)
-
-  const globalConf = GlobalConfig.get().getSettings()
 
   mainWindow.setIcon(windowIcon)
   app.commandLine.appendSwitch('enable-spatial-navigation')
@@ -245,7 +241,7 @@ if (!gotTheLock) {
   console.log('Relic is already running, quitting this instance')
   app.quit()
 } else {
-  app.on('second-instance', (event, argv) => {
+  app.on('second-instance', () => {
     // Someone tried to run a second instance, we should focus our window.
     const mainWindow = getMainWindow()
     mainWindow?.show()

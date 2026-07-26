@@ -1,4 +1,4 @@
-import { copyFileSync, existsSync } from 'graceful-fs'
+import { existsSync } from 'graceful-fs'
 import axios from 'axios'
 
 import {
@@ -7,8 +7,7 @@ import {
   GameInfo,
   InstallArgs,
   InstallPlatform,
-  InstallProgress,
-  LaunchOption
+  InstallProgress
 } from 'common/types'
 import { GameConfig } from '../../game_config'
 import { GlobalConfig } from '../../config'
@@ -18,8 +17,7 @@ import {
   killPattern,
   moveOnUnix,
   sendGameStatusUpdate,
-  sendProgressUpdate,
-  spawnAsync
+  sendProgressUpdate
 } from '../../utils'
 import {
   logDebug,
@@ -32,10 +30,7 @@ import {
 import { join } from 'path'
 import { gameInfoStore } from './electronStores'
 import { onGameInstalled, onGameImported, onGameMoved, onGameUninstalled } from 'backend/relic/game_events'
-import shlex from 'shlex'
-import { t } from 'i18next'
 import { isOnline } from '../../online_monitor'
-import { showDialogBoxModalAuto } from '../../dialog/dialog'
 import { Catalog, Product } from 'common/types/epic-graphql'
 import { sendFrontendMessage } from '../../ipc'
 import { Game } from 'common/types/game_manager'
@@ -51,10 +46,7 @@ import { Path } from 'backend/schemas'
 import { mkdirSync } from 'fs'
 import { configStore } from 'backend/constants/key_value_stores'
 import { epicRedistPath, legendaryInstalled } from './constants'
-import { isCLINoGui } from 'backend/constants/environment'
-import { fakeEpicExePath } from 'backend/constants/paths'
 
-import type LogWriter from 'backend/logger/log_writer'
 
 export default class LegendaryGame implements Game {
   private readonly appName: LegendaryAppName

@@ -12,7 +12,7 @@ interface Props {
 
 const DownloadSizeInfo = ({ gameInfo }: Props) => {
   const { t } = useTranslation('gamepage')
-  const { gameInstallInfo, runner } = useContext(GameContext)
+  const { gameInstallInfo } = useContext(GameContext)
   const { connectivity } = useContext(ContextProvider)
 
   if (connectivity.status !== 'online') {

@@ -1,7 +1,6 @@
 import { createMainWindow } from '../main_window'
 import { sendFrontendMessage } from '../ipc'
 import { BrowserWindow, Display, screen } from 'electron'
-import { overrideProcessPlatform } from './constants.test'
 import { configStore } from 'backend/constants/key_value_stores'
 
 jest.mock('../logger')

@@ -1,6 +1,4 @@
-import { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
-import GameContext from '../../GameContext'
 import { DownloadDone } from '@mui/icons-material'
 import PopoverComponent from 'frontend/components/UI/PopoverComponent'
 import { GameInfo } from 'common/types'
@@ -11,7 +9,6 @@ interface Props {
 
 const InstalledInfo = ({ gameInfo }: Props) => {
   const { t } = useTranslation('gamepage')
-  const { runner } = useContext(GameContext)
 
   if (!gameInfo.is_installed) {
     return null

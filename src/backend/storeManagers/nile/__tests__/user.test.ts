@@ -27,13 +27,15 @@ jest.mock('../..', () => ({
   }
 }))
 
+import { libraryManagerMap } from '../..'
+
 describe('NileUser.getLoginData', () => {
   beforeEach(() => {
     jest.clearAllMocks()
   })
 
   it('should throw when stdout is empty', async () => {
-    const { libraryManagerMap } = require('../..')
+
     libraryManagerMap.nile.runRunnerCommand.mockResolvedValue({
       stdout: '',
       stderr: 'ERROR: auth failed',
@@ -53,7 +55,7 @@ describe('NileUser.getLoginData', () => {
       serial: 'serial123',
       client_id: 'client'
     }
-    const { libraryManagerMap } = require('../..')
+
     libraryManagerMap.nile.runRunnerCommand.mockResolvedValue({
       stdout: JSON.stringify(loginData),
       stderr: '',

@@ -8,15 +8,10 @@ import ContextProvider from 'frontend/state/ContextProvider'
 import './index.css'
 import LoginWarning from '../Login/components/LoginWarning'
 import { NileLoginData } from 'common/types/nile'
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader
-} from 'frontend/components/UI/Dialog'
 
 export default function WebView() {
-  const { i18n } = useTranslation()
-  const { pathname, search } = useLocation()
+  useTranslation()
+  const { pathname } = useLocation()
   const { t } = useTranslation()
   const { epic, gog, amazon, zoom, connectivity } = useContext(ContextProvider)
   const [loading, setLoading] = useState<{
@@ -34,11 +29,6 @@ export default function WebView() {
 
   // `runner` is set to a runner if we're supposed to show its login prompt
   const { runner } = useParams()
-
-  let lang = i18n.language
-  if (i18n.language === 'pt') {
-    lang = 'pt-BR'
-  }
 
   const epicLoginUrl = 'https://www.epicgames.com/id/login?responseType=code'
 
@@ -61,7 +51,7 @@ export default function WebView() {
     '/loginweb/nile': amazonLoginData ? amazonLoginData.url : '',
     '/loginweb/zoom': zoomLoginUrl
   }
-  let startUrl = urls[pathname]
+  const startUrl = urls[pathname]
 
   useEffect(() => {
     if (pathname !== '/loginweb/nile') return
@@ -169,7 +159,8 @@ export default function WebView() {
         }
       }
 
-      const onerror = ({ validatedURL }: Electron.DidFailLoadEvent) => {
+      const onerror = (_event: Electron.DidFailLoadEvent) => {
+        void _event
         // ignore errors for now
       }
 

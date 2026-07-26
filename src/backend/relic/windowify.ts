@@ -74,7 +74,7 @@ export function windowify(gameInfo: GameInfo, installPath: string): void {
   createGameSymlink(installPath)
   syncGogdlConfig()
 
-  const config = STORE_CONFIGS[gameInfo.runner as GameRunner]
+  const config = STORE_CONFIGS[gameInfo.runner]
   if (!config || !config.installedFile) {
     logWarning(`windowify not implemented for runner: ${gameInfo.runner}`, LOG_PREFIX)
     return

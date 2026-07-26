@@ -10,7 +10,6 @@ import {
   DMQueueElement,
   GOGLoginData,
   AppSettings,
-  GameInfo,
   WindowProps,
   UploadedLogData
 } from 'common/types'

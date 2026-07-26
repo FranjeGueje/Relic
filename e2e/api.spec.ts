@@ -10,7 +10,7 @@ electronTest('renders the first page', async (app, page) => {
 
 electronTest('gets relic, legendary, and gog versions', async (app, page) => {
   await test.step('get relic version', async () => {
-    const relicVersion = await page.evaluate(async () =>
+    await page.evaluate(async () =>
       window.api.getHeroicVersion()
     )
     // check that relic version is newer or equal to 2.6.3

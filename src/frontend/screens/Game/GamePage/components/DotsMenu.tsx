@@ -27,7 +27,7 @@ const DotsMenu = ({ gameInfo, handleUpdate }: Props) => {
   const [showChangelog, setShowChangelog] = useState(false)
   const [showModifyInstallModal, setShowModifyInstallModal] = useState(false)
 
-  const { is_installed, title } = gameInfo
+  const { is_installed } = gameInfo
 
   const hasRequirements = (gameExtraInfo?.reqs || []).length > 0
 
@@ -41,13 +41,6 @@ const DotsMenu = ({ gameInfo, handleUpdate }: Props) => {
         <GameSubMenu
           appName={appName}
           isInstalled={is_installed}
-          title={title}
-          storeUrl={
-            gameExtraInfo?.storeUrl ||
-            ('store_url' in gameInfo && gameInfo.store_url !== undefined
-              ? gameInfo.store_url
-              : '')
-          }
           changelog={gameExtraInfo?.changelog}
           runner={gameInfo.runner}
           handleUpdate={handleUpdate}

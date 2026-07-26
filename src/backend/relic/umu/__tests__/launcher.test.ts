@@ -1,6 +1,5 @@
 import { launchUmu } from '../launcher'
 import { getUmuPath } from 'backend/utils/compatibility_layers'
-import { logInfo, logError } from 'backend/logger'
 import { spawn, ChildProcess } from 'child_process'
 import { EventEmitter } from 'stream'
 
@@ -19,7 +18,7 @@ jest.mock('child_process', () => ({
 
 const mockedGetUmuPath = jest.mocked(getUmuPath)
 const mockedSpawn = jest.mocked(spawn)
-const mockedLogError = jest.mocked(logError)
+
 
 function createMockChild(): ChildProcess & EventEmitter {
   const child = new EventEmitter() as ChildProcess & EventEmitter

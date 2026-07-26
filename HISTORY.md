@@ -389,3 +389,14 @@ Para ver el detalle completo de cada categoría, consultar:
 - `windowify.ts` ahora importa `createGameSymlink` desde `add_game.ts` en vez de tener su propia copia privada.
 - `onGameInstalled()` bifurca según `gameInfo.is_linux_native`: si es Linux nativo, omite `createRunnerFile` (`.bat`), `windowify` y `prepareUmuPrefix`. En su lugar: crea symlink en `relicGamesPath`, busca `start.sh` en la raíz del juego, y lo usa directamente como target para `addGameToSteam`.
 - El symlink en `~/.local/share/relic/games/<nombre>` se crea también para Linux nativos, garantizando que `onGameMoved` funcione correctamente (busca/existe el symlink por `basename`).
+
+---
+
+### v0.4.0 — Lint cleanup (Jul 2026)
+
+#### ESLint: 134 errores eliminados
+- `no-unused-vars`: eliminados imports y variables muertas en ~45 archivos de backend, frontend y tipos comunes.
+- `no-require-imports`: convertidos 4 `require()` a ES imports en tests.
+- `no-constant-condition`: eliminado bloque `if (false)` muerto.
+- `no-empty`: añadido comentario a catch block vacío.
+- Resultado: 783 problemas → 0 errores, 636 warnings (todos en `warn`, preexistentes).
