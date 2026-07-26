@@ -8,17 +8,8 @@ import {
 import { existsSync } from 'graceful-fs'
 import { join, isAbsolute } from 'path'
 
-import {
-  quoteIfNecessary,
-  errorHandler,
-  memoryLog
-} from './utils'
-import {
-  logError,
-  logInfo,
-  LogPrefix,
-  logWarning
-} from './logger'
+import { quoteIfNecessary, errorHandler, memoryLog } from './utils'
+import { logError, logInfo, LogPrefix, logWarning } from './logger'
 import { spawn } from 'child_process'
 import { readFileSync } from 'fs'
 import { LegendaryCommand } from './storeManagers/legendary/commands'
@@ -133,7 +124,8 @@ export async function callRunner(
   }
 
   const abortId = options?.abortId || appName || Math.random().toString()
-  const { createAbortController, deleteAbortController } = await import('./utils/aborthandler/aborthandler')
+  const { createAbortController, deleteAbortController } =
+    await import('./utils/aborthandler/aborthandler')
   const abortController = createAbortController(abortId)
 
   let promise = new Promise<ExecResult>((res, rej) => {
@@ -277,5 +269,3 @@ function getRunnerCallWithoutCredentials(
     ...modifiedCommand.map(quoteIfNecessary)
   ].join(' ')
 }
-
-

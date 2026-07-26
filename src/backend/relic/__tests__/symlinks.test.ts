@@ -1,4 +1,4 @@
-import { existsSync, unlinkSync, symlinkSync  } from 'graceful-fs'
+import { existsSync, unlinkSync, symlinkSync } from 'graceful-fs'
 import { createRelicSymlinks } from '../windowify'
 
 import { logError } from 'backend/logger'
@@ -89,8 +89,14 @@ describe('createRelicSymlinks', () => {
 
     expect(mockedUnlinkSync).not.toHaveBeenCalled()
     expect(mockedSymlinkSync).toHaveBeenCalledTimes(2)
-    expect(mockedSymlinkSync).toHaveBeenCalledWith('/mock/mount', `${LINKS_PATH}/relic`)
-    expect(mockedSymlinkSync).toHaveBeenCalledWith('/mock/games', `${LINKS_PATH}/games`)
+    expect(mockedSymlinkSync).toHaveBeenCalledWith(
+      '/mock/mount',
+      `${LINKS_PATH}/relic`
+    )
+    expect(mockedSymlinkSync).toHaveBeenCalledWith(
+      '/mock/games',
+      `${LINKS_PATH}/games`
+    )
   })
 
   test('cleans up existing symlinks before creating new ones', () => {

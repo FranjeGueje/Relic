@@ -1,4 +1,9 @@
-import { onGameInstalled, onGameUninstalled, onGameImported, onGameMoved } from '../../game_events'
+import {
+  onGameInstalled,
+  onGameUninstalled,
+  onGameImported,
+  onGameMoved
+} from '../../game_events'
 import { existsSync, unlinkSync, mkdirSync, symlinkSync } from 'graceful-fs'
 import { addGameToSteam, createRunnerFile } from '../add_game'
 import { deleteGrids } from '../../steamgrid'
@@ -76,7 +81,14 @@ describe('onGameInstalled', () => {
       install: { install_path: '/games/test' }
     })
 
-    mockedFindShortcut.mockReturnValue({ gameName: 'TestGame', appId: 'test_app', store: 'gog', steamAppId: 123, execPath: '/games/test/TestGame.bat', installPath: '/games/test' })
+    mockedFindShortcut.mockReturnValue({
+      gameName: 'TestGame',
+      appId: 'test_app',
+      store: 'gog',
+      steamAppId: 123,
+      execPath: '/games/test/TestGame.bat',
+      installPath: '/games/test'
+    })
 
     const result = await onGameInstalled(mockGame as never, '/custom/path')
 
@@ -103,14 +115,25 @@ describe('onGameInstalled', () => {
     const result = await onGameInstalled(mockGame as never, '/custom/path')
 
     expect(mockedCreateRunnerFile).toHaveBeenCalledWith(
-      expect.objectContaining({ title: 'TestGame', app_name: 'test_app', runner: 'gog' }),
+      expect.objectContaining({
+        title: 'TestGame',
+        app_name: 'test_app',
+        runner: 'gog'
+      }),
       '/custom/path'
     )
     expect(mockedAddGameToSteam).toHaveBeenCalledWith({
       gameName: 'TestGame',
       runnerPath: '/path/to/TestGame.bat'
     })
-    expect(mockedAddShortcut).toHaveBeenCalledWith('TestGame', 'test_app', 'gog', 123, '/custom/path', '/path/to/TestGame.bat')
+    expect(mockedAddShortcut).toHaveBeenCalledWith(
+      'TestGame',
+      'test_app',
+      'gog',
+      123,
+      '/custom/path',
+      '/path/to/TestGame.bat'
+    )
     expect(result.success).toBe(true)
   })
 
@@ -161,7 +184,11 @@ describe('onGameInstalled', () => {
 
     expect(getGameInfoMock).toHaveBeenCalledWith('test_app', true)
     expect(mockedCreateRunnerFile).toHaveBeenCalledWith(
-      expect.objectContaining({ title: 'TestGame', app_name: 'test_app', runner: 'legendary' }),
+      expect.objectContaining({
+        title: 'TestGame',
+        app_name: 'test_app',
+        runner: 'legendary'
+      }),
       '/games/test'
     )
     expect(mockedAddGameToSteam).toHaveBeenCalledWith({
@@ -193,7 +220,11 @@ describe('onGameInstalled', () => {
 
     expect(getGameInfoMock).toHaveBeenCalledWith('test_app', true)
     expect(mockedCreateRunnerFile).toHaveBeenCalledWith(
-      expect.objectContaining({ title: 'TestGame', app_name: 'test_app', runner: 'legendary' }),
+      expect.objectContaining({
+        title: 'TestGame',
+        app_name: 'test_app',
+        runner: 'legendary'
+      }),
       '/stale/path'
     )
     expect(mockedAddGameToSteam).toHaveBeenCalledWith({
@@ -254,7 +285,12 @@ describe('onGameImported', () => {
       runnerPath: '/path/to/TestGame.bat'
     })
     expect(mockedAddShortcut).toHaveBeenCalledWith(
-      'ImportedGame', 'imported_app', 'legendary', 789, '/games/imported', '/path/to/TestGame.bat'
+      'ImportedGame',
+      'imported_app',
+      'legendary',
+      789,
+      '/games/imported',
+      '/path/to/TestGame.bat'
     )
   })
 })
@@ -288,7 +324,12 @@ describe('onGameMoved', () => {
       expect.stringContaining('relic/games/new')
     )
     expect(mockedAddShortcut).toHaveBeenCalledWith(
-      'MovedGame', 'moved_app', 'gog', 123, '/games/new', '/games/old/MovedGame.bat'
+      'MovedGame',
+      'moved_app',
+      'gog',
+      123,
+      '/games/new',
+      '/games/old/MovedGame.bat'
     )
   })
 })

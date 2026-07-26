@@ -61,7 +61,13 @@ async function fetchGridImages(apiKey: string, gameId: number) {
 function buildImageMap(
   gridFolder: string,
   steamAppId: number,
-  images: { header: SGDBGrid[]; portrait: SGDBGrid[]; heroes: SGDBGrid[]; logos: SGDBGrid[]; icons: SGDBGrid[] }
+  images: {
+    header: SGDBGrid[]
+    portrait: SGDBGrid[]
+    heroes: SGDBGrid[]
+    logos: SGDBGrid[]
+    icons: SGDBGrid[]
+  }
 ): [string, SGDBGrid | undefined][] {
   return [
     [join(gridFolder, `${steamAppId}.png`), images.header[0]],

@@ -28,10 +28,34 @@ export const gamesConfigPath = join(appFolder, 'GamesConfig')
 export const relicIconFolder = join(appFolder, 'icons')
 export const relicInstallPath = join(userHome, 'Games', 'Relic')
 export const fixesPath = join(appFolder, 'fixes')
-export const relicRunnerPath = join(userHome, '.local', 'share', 'relic', 'runner')
-export const relicMountPath = join(userHome, '.local', 'share', 'relic', 'mount')
-export const relicGamesPath = join(userHome, '.local', 'share', 'relic', 'games')
-export const steamCompatDir = join(userHome, '.local', 'share', 'Steam', 'compatibilitytools.d')
+export const relicRunnerPath = join(
+  userHome,
+  '.local',
+  'share',
+  'relic',
+  'runner'
+)
+export const relicMountPath = join(
+  userHome,
+  '.local',
+  'share',
+  'relic',
+  'mount'
+)
+export const relicGamesPath = join(
+  userHome,
+  '.local',
+  'share',
+  'relic',
+  'games'
+)
+export const steamCompatDir = join(
+  userHome,
+  '.local',
+  'share',
+  'Steam',
+  'compatibilitytools.d'
+)
 
 export const publicDir = resolve(
   __dirname,

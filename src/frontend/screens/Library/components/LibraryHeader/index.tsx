@@ -18,9 +18,7 @@ export default React.memo(function LibraryHeader({ list }: Props) {
       return 0
     }
     // is_dlc is only applicable when the game is from legendary, but checking anyway doesn't cause errors and enable accurate counting in the 'ALL' game tab
-    const dlcCount = list.filter(
-      (lib) => lib.install.is_dlc
-    ).length
+    const dlcCount = list.filter((lib) => lib.install.is_dlc).length
 
     const total = list.length - dlcCount
     return total > 0 ? `${total}` : 0

@@ -1,7 +1,4 @@
-import {
-  GamepadActionStatus,
-  ValidGamepadAction
-} from 'common/types'
+import { GamepadActionStatus, ValidGamepadAction } from 'common/types'
 import {
   checkGameCube,
   checkPS3Clone1,

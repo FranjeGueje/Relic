@@ -45,8 +45,7 @@ export default function GamesSubmenu({
   onShowModifyInstall,
   gameInfo
 }: Props) {
-  const { showDialogModal } =
-    useContext(ContextProvider)
+  const { showDialogModal } = useContext(ContextProvider)
   const { is } = useContext(GameContext)
 
   const [showUninstallModal, setShowUninstallModal] = useState(false)

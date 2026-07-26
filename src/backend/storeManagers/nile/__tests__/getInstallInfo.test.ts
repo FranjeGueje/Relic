@@ -49,9 +49,9 @@ describe('NileLibraryManager.getInstallInfo', () => {
   })
 
   it('should throw when stdout is empty', async () => {
-    await expect(
-      manager.getInstallInfo('test-game')
-    ).rejects.toThrow('Empty response from nile for test-game')
+    await expect(manager.getInstallInfo('test-game')).rejects.toThrow(
+      'Empty response from nile for test-game'
+    )
 
     expect(manager.runRunnerCommand).toHaveBeenCalledTimes(1)
   })

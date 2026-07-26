@@ -15,12 +15,7 @@ function getBaseLogPath(): string {
 
 // Which game log to return. By default, the launch log is returned.
 type GameLogType =
-  | 'launch'
-  | 'install'
-  | 'import'
-  | 'repair'
-  | 'update'
-  | 'setup'
+  'launch' | 'install' | 'import' | 'repair' | 'update' | 'setup'
 type GetLogFileArgs =
   // Relic log
   | { appName?: undefined; runner?: undefined }

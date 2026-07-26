@@ -49,10 +49,7 @@ import {
   getGame
 } from './utils'
 
-import {
-  getDiskInfo,
-  isWritable
-} from './utils/filesystem'
+import { getDiskInfo, isWritable } from './utils/filesystem'
 
 import { Path } from './schemas'
 
@@ -66,9 +63,7 @@ import {
   logWarning
 } from './logger'
 import { gameInfoStore } from 'backend/storeManagers/legendary/electronStores'
-import {
-  readKnownFixes
-} from './launcher'
+import { readKnownFixes } from './launcher'
 import { initQueue } from './downloadmanager/downloadqueue'
 import {
   initOnlineMonitor,
@@ -93,16 +88,12 @@ import {
 } from './game_overrides'
 import { backendEvents } from './backend_events'
 import { configStore } from './constants/key_value_stores'
-import {
-  epicLoginUrl,
-  weblateUrl
-} from './constants/urls'
+import { epicLoginUrl, weblateUrl } from './constants/urls'
 import { legendaryInstalled } from './storeManagers/legendary/constants'
 import {
   isCLIFullscreen,
   isCLINoGui,
   isLinux,
-
   isSnap,
   isSteamDeckGameMode
 } from './constants/environment'
@@ -138,8 +129,7 @@ async function initializeWindow(): Promise<BrowserWindow> {
     mainWindow.setFullScreen(true)
   }
 
-  setTimeout(async () => {
-  }, 2500)
+  setTimeout(async () => {}, 2500)
 
   mainWindow.setIcon(windowIcon)
   app.commandLine.appendSwitch('enable-spatial-navigation')
@@ -166,8 +156,7 @@ async function initializeWindow(): Promise<BrowserWindow> {
     handleExit()
   })
 
-  const startHash =
-    '/console'
+  const startHash = '/console'
 
   if (process.env.ELECTRON_RENDERER_URL) {
     const devUrl = startHash
@@ -481,7 +470,6 @@ app.on('window-all-closed', () => {
   app.quit()
 })
 
-
 addListener('openExternalUrl', async (event, url) => openUrlOrFile(url))
 addListener('openFolder', async (event, folder) => openUrlOrFile(folder))
 addListener('openWeblate', async () => openUrlOrFile(weblateUrl))
@@ -629,9 +617,11 @@ addHandler(
     } catch (error) {
       logError(
         error,
-        runner === 'legendary' ? LogPrefix.Legendary
-          : runner === 'nile' ? LogPrefix.Nile
-          : LogPrefix.Gog
+        runner === 'legendary'
+          ? LogPrefix.Legendary
+          : runner === 'nile'
+            ? LogPrefix.Nile
+            : LogPrefix.Gog
       )
       return null
     }
@@ -825,15 +815,7 @@ addHandler(
 
 addHandler(
   'importGame',
-  async (
-    event,
-    {
-      appName,
-      path,
-      runner,
-      platform
-    }
-  ): StatusPromise => {
+  async (event, { appName, path, runner, platform }): StatusPromise => {
     if (runner === 'legendary') {
       const epicOffline = await isEpicServiceOffline()
       if (epicOffline) {
@@ -909,7 +891,6 @@ addHandler('changeInstallPath', async (event, { appName, path, runner }) => {
     LogPrefix.Backend
   )
 })
-
 
 // Simulate keyboard and mouse actions as if the real input device is used
 addHandler('gamepadAction', async (event, args) => {

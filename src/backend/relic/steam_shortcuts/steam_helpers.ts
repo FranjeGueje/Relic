@@ -77,9 +77,7 @@ export function getShortcutId(entry: Record<string, unknown>): number {
 
 // ── Game search ──
 
-export function findGameInAllUsers(
-  names: string | string[]
-): FindResult {
+export function findGameInAllUsers(names: string | string[]): FindResult {
   const nameList = Array.isArray(names) ? names : [names]
   const { userdataDir, folders } = getUserdataInfo()
 
@@ -111,9 +109,10 @@ export function findGameInAllUsers(
   return { entry: null, found: false }
 }
 
-export function findExistingGame(
-  basenameWithExt: string
-): { found: boolean; steamAppId?: number } {
+export function findExistingGame(basenameWithExt: string): {
+  found: boolean
+  steamAppId?: number
+} {
   const idx = basenameWithExt.lastIndexOf('.')
   const hasExt = idx > 0
   const name = hasExt ? basenameWithExt.slice(0, idx) : basenameWithExt
@@ -128,11 +127,7 @@ export function findExistingGame(
 // ── Protocol ──
 
 export function checkSteamProtocolHandler(): void {
-  const mimeFile = join(
-    homedir(),
-    '.config',
-    'mimeapps.list'
-  )
+  const mimeFile = join(homedir(), '.config', 'mimeapps.list')
 
   if (!existsSync(mimeFile)) {
     logError(

@@ -35,7 +35,6 @@ const installedGames: Map<string, InstalledInfo> = new Map()
 
 export default class ZoomLibraryManager implements LibraryManager {
   async init() {
-
     await this.refresh()
   }
 
@@ -167,7 +166,6 @@ export default class ZoomLibraryManager implements LibraryManager {
   }
 
   getGameInfo(slug: string): GameInfo | undefined {
-
     return library.get(slug) || this.getInstallAndGameInfo(slug)
   }
 
@@ -191,7 +189,6 @@ export default class ZoomLibraryManager implements LibraryManager {
     appName: string,
     installPlatform = 'windows'
   ): Promise<ZoomInstallInfo | undefined> {
-
     logInfo(
       `Getting install info for ${appName} on ${installPlatform}`,
       LogPrefix.Zoom
@@ -300,7 +297,6 @@ export default class ZoomLibraryManager implements LibraryManager {
     platform: string,
     appName: string
   ): Promise<ZoomDownloadFile[]> {
-
     logDebug(
       `Fetching installers for ${appName} on platform ${platform}`,
       LogPrefix.Zoom
@@ -351,7 +347,6 @@ export default class ZoomLibraryManager implements LibraryManager {
     appName: string,
     newInstallPath: string
   ): Promise<void> {
-
     const cachedGameData = library.get(appName)
     if (!cachedGameData || !cachedGameData.install) {
       logError(

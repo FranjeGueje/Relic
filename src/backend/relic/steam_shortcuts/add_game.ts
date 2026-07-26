@@ -1,4 +1,10 @@
-import { existsSync, mkdirSync, symlinkSync, unlinkSync, writeFileSync } from 'graceful-fs'
+import {
+  existsSync,
+  mkdirSync,
+  symlinkSync,
+  unlinkSync,
+  writeFileSync
+} from 'graceful-fs'
 import { basename, join } from 'path'
 import { logError, logInfo } from 'backend/logger'
 import { spawnAsync } from 'backend/utils'
@@ -9,7 +15,11 @@ import {
   getShortcutId,
   checkSteamProtocolHandler
 } from './steam_helpers'
-import type { AddGameToSteamOptions, AddGameToSteamResult, GameRunner } from './types'
+import type {
+  AddGameToSteamOptions,
+  AddGameToSteamResult,
+  GameRunner
+} from './types'
 import { GameInfo } from 'common/types'
 
 const LOG_PREFIX = 'Relic'
@@ -82,7 +92,9 @@ export function createRelicBat(
   return runnerPath
 }
 
-export function createGameSymlink(installPath: string): { linkPath: string } | { error: string } {
+export function createGameSymlink(
+  installPath: string
+): { linkPath: string } | { error: string } {
   if (!installPath) {
     return { error: 'No install path provided' }
   }
@@ -115,7 +127,10 @@ export async function addGameToSteam(
 
   const existing = findExistingGame(steamName)
   if (existing.found) {
-    logInfo(`"${gameName}" already exists in Steam (ID ${existing.steamAppId}). Skipping.`, LOG_PREFIX)
+    logInfo(
+      `"${gameName}" already exists in Steam (ID ${existing.steamAppId}). Skipping.`,
+      LOG_PREFIX
+    )
     return { success: true, steamAppId: existing.steamAppId }
   }
 
@@ -139,10 +154,7 @@ export async function addGameToSteam(
 
   logInfo(`Waiting for "${steamName}" to be added to Steam...`, LOG_PREFIX)
 
-  const { found, steamAppId } = await waitForGameInSteam(
-    steamName,
-    Date.now()
-  )
+  const { found, steamAppId } = await waitForGameInSteam(steamName, Date.now())
 
   if (!found) {
     return {

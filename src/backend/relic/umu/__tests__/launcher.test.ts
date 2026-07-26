@@ -19,7 +19,6 @@ jest.mock('child_process', () => ({
 const mockedGetUmuPath = jest.mocked(getUmuPath)
 const mockedSpawn = jest.mocked(spawn)
 
-
 function createMockChild(): ChildProcess & EventEmitter {
   const child = new EventEmitter() as ChildProcess & EventEmitter
   child.stderr = new EventEmitter() as ChildProcess['stderr']
@@ -41,7 +40,8 @@ describe('launchUmu', () => {
     const promise = launchUmu({
       winePrefix: '/home/user/.steam/steam/steamapps/compatdata/123/pfx',
       gameId: '456',
-      protonPath: '/home/user/.local/share/Steam/compatibilitytools.d/GE-Proton9-25',
+      protonPath:
+        '/home/user/.local/share/Steam/compatibilitytools.d/GE-Proton9-25',
       store: 'egs',
       executable: 'exit'
     })
@@ -55,7 +55,8 @@ describe('launchUmu', () => {
     expect(options.env).toMatchObject({
       WINEPREFIX: '/home/user/.steam/steam/steamapps/compatdata/123/pfx',
       GAMEID: '456',
-      PROTONPATH: '/home/user/.local/share/Steam/compatibilitytools.d/GE-Proton9-25',
+      PROTONPATH:
+        '/home/user/.local/share/Steam/compatibilitytools.d/GE-Proton9-25',
       STORE: 'egs'
     })
 

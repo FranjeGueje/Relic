@@ -74,7 +74,9 @@ export default function ConsoleMode() {
   const [filteringByInstalled, setFilteringByInstalled] = useState(false)
   const [focusedIndex, setFocusedIndex] = useState(0)
   const [installingGame, setInstallingGame] = useState<GameInfo | null>(null)
-  const [uninstallingGame, setUninstallingGame] = useState<GameInfo | null>(null)
+  const [uninstallingGame, setUninstallingGame] = useState<GameInfo | null>(
+    null
+  )
   const [updateNoticeGame, setUpdateNoticeGame] = useState<GameInfo | null>(
     null
   )
@@ -120,12 +122,7 @@ export default function ConsoleMode() {
       ...zoom.library
     ]
     return all.filter((g) => !g.install?.is_dlc && !g.thirdPartyManagedApp)
-  }, [
-    epic.library,
-    gog.library,
-    amazon.library,
-    zoom.library
-  ])
+  }, [epic.library, gog.library, amazon.library, zoom.library])
 
   const visibleGames = useMemo(() => {
     // reset card refs to rebuild them
@@ -385,10 +382,7 @@ export default function ConsoleMode() {
       >
         <div className="consoleLogoRow">
           <RelicIcon className="consoleLogo" />
-          <button
-            className="consoleQuitButton"
-            onClick={quit}
-          >
+          <button className="consoleQuitButton" onClick={quit}>
             {t('console.more', 'More')}
           </button>
           <button
@@ -418,19 +412,19 @@ export default function ConsoleMode() {
                 className={classNames('consoleChip', {
                   active: activeStore === f.key
                 })}
-                  onClick={() => setActiveStore(f.key)}
-                >
-                  {f.label}
-                </button>
-              ))}
-          </div>
-          <div className="consoleTopRight">
-            <button
-              className="consoleQuitButton danger"
-              onClick={() => window.api.quit()}
-            >
-              {t('console.quitApp', 'Salir')}
-            </button>
+                onClick={() => setActiveStore(f.key)}
+              >
+                {f.label}
+              </button>
+            ))}
+        </div>
+        <div className="consoleTopRight">
+          <button
+            className="consoleQuitButton danger"
+            onClick={() => window.api.quit()}
+          >
+            {t('console.quitApp', 'Salir')}
+          </button>
         </div>
       </div>
 
@@ -487,9 +481,7 @@ export default function ConsoleMode() {
       </div>
 
       <div className="consoleFooter">
-        {gamepadConnected && (
-          <ControllerHints layout={controllerLayout} />
-        )}
+        {gamepadConnected && <ControllerHints layout={controllerLayout} />}
       </div>
 
       {installingGame && (

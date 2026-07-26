@@ -5,10 +5,7 @@ import { GlobalConfig } from './config'
 import { logError, logInfo, LogPrefix } from 'backend/logger'
 import { join } from 'path'
 import { currentGameConfigVersion } from 'backend/constants/others'
-import {
-  configPath,
-  gamesConfigPath
-} from './constants/paths'
+import { configPath, gamesConfigPath } from './constants/paths'
 
 /**
  * This class does config handling for games.
@@ -198,13 +195,8 @@ class GameConfigV0 extends GameConfig {
   }
 
   public async getSettings(): Promise<GameSettings> {
-    const {
-      maxSharpness,
-      offlineMode,
-      savesPath,
-      targetExe,
-      verboseLogs
-    } = GlobalConfig.get().getSettings()
+    const { maxSharpness, offlineMode, savesPath, targetExe, verboseLogs } =
+      GlobalConfig.get().getSettings()
 
     const defaultSettings = {
       maxSharpness,

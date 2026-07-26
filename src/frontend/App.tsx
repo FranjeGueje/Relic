@@ -19,13 +19,8 @@ import { ThemeProvider, createTheme } from '@mui/material/styles'
 import { InstallGameWrapper } from './screens/Library/components/InstallModal'
 
 function Root() {
-  const {
-    isRTL,
-    isFullscreen,
-    isFrameless,
-    experimentalFeatures,
-    help,
-  } = useContext(ContextProvider)
+  const { isRTL, isFullscreen, isFrameless, experimentalFeatures, help } =
+    useContext(ContextProvider)
 
   const hasNativeOverlayControls = navigator['windowControlsOverlay']?.visible
   const showOverlayControls = isFrameless && !hasNativeOverlayControls

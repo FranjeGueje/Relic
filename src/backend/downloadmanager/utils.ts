@@ -1,9 +1,6 @@
 import { libraryManagerMap } from 'backend/storeManagers'
 import { logError, LogPrefix, logWarning } from 'backend/logger'
-import {
-  isEpicServiceOffline,
-  sendGameStatusUpdate
-} from '../utils'
+import { isEpicServiceOffline, sendGameStatusUpdate } from '../utils'
 import { DMStatus, InstallParams } from 'common/types'
 import i18next from 'i18next'
 import { notify, showDialogBoxModalAuto } from '../dialog/dialog'

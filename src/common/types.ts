@@ -31,9 +31,7 @@ export interface ButtonOptions {
 }
 
 export type LaunchOption =
-  | BaseLaunchOption
-  | AltExeLaunchOption
-  | DLCLaunchOption
+  BaseLaunchOption | AltExeLaunchOption | DLCLaunchOption
 
 interface BaseLaunchOption {
   type?: 'basic'
@@ -345,7 +343,6 @@ export interface WrapperEnv {
   appRunner: Runner
 }
 
-
 export type RecentGame = {
   appName: string
   title: string
@@ -373,8 +370,7 @@ export type GamepadActionStatus = Record<
 export type ValidGamepadAction = GamepadActionArgs['action']
 
 export type GamepadActionArgs =
-  | GamepadActionArgsWithMetadata
-  | GamepadActionArgsWithoutMetadata
+  GamepadActionArgsWithMetadata | GamepadActionArgsWithoutMetadata
 
 interface GamepadActionArgsWithMetadata {
   action: 'leftClick' | 'rightClick'
@@ -454,7 +450,6 @@ export interface DiskSpaceData {
   diskSize: number
   message: string
   validPath: boolean
-
 }
 
 export type StatusPromise = Promise<{ status: 'done' | 'error' | 'abort' }>

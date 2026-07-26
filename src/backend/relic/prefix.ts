@@ -1,4 +1,10 @@
-import { existsSync, mkdirSync, rmSync, symlinkSync, unlinkSync } from 'graceful-fs'
+import {
+  existsSync,
+  mkdirSync,
+  rmSync,
+  symlinkSync,
+  unlinkSync
+} from 'graceful-fs'
 import { dirname, join } from 'path'
 import { logInfo, logError } from 'backend/logger'
 import { relicMountPath, relicGamesPath } from 'backend/constants/paths'
@@ -26,7 +32,12 @@ export async function preparePrefix(
 export function symlinkPrefix(steamAppId: number, installPath: string): void {
   try {
     const steamPath = getSteamPath()
-    const compatPath = join(steamPath, 'steamapps', 'compatdata', String(steamAppId))
+    const compatPath = join(
+      steamPath,
+      'steamapps',
+      'compatdata',
+      String(steamAppId)
+    )
 
     mkdirSync(dirname(compatPath), { recursive: true })
 
@@ -37,21 +48,32 @@ export function symlinkPrefix(steamAppId: number, installPath: string): void {
     symlinkSync(installPath, compatPath)
     logInfo(`Prefix symlinked: ${compatPath} → ${installPath}`, LOG_PREFIX)
   } catch (error) {
-    logError(`Failed to symlink prefix for Steam ID ${steamAppId}: ${error}`, LOG_PREFIX)
+    logError(
+      `Failed to symlink prefix for Steam ID ${steamAppId}: ${error}`,
+      LOG_PREFIX
+    )
   }
 }
 
 export function removePrefixSymlink(steamAppId: number): void {
   try {
     const steamPath = getSteamPath()
-    const compatPath = join(steamPath, 'steamapps', 'compatdata', String(steamAppId))
+    const compatPath = join(
+      steamPath,
+      'steamapps',
+      'compatdata',
+      String(steamAppId)
+    )
 
     if (existsSync(compatPath)) {
       unlinkSync(compatPath)
       logInfo(`Removed prefix symlink ${compatPath}`, LOG_PREFIX)
     }
   } catch (error) {
-    logError(`Failed to remove prefix symlink for Steam ID ${steamAppId}: ${error}`, LOG_PREFIX)
+    logError(
+      `Failed to remove prefix symlink for Steam ID ${steamAppId}: ${error}`,
+      LOG_PREFIX
+    )
   }
 }
 
@@ -64,8 +86,11 @@ export async function prepareUmuPrefix(
 
   try {
     const driveC = join(
-      steamPath, 'steamapps', 'compatdata',
-      String(steamAppId), 'drive_c'
+      steamPath,
+      'steamapps',
+      'compatdata',
+      String(steamAppId),
+      'drive_c'
     )
 
     mkdirSync(driveC, { recursive: true })
@@ -88,7 +113,10 @@ export async function prepareUmuPrefix(
 
     logInfo(`Prefix created for Steam ID ${steamAppId}`, LOG_PREFIX)
   } catch (error) {
-    logError(`Failed to prepare prefix for Steam ID ${steamAppId}: ${error}`, LOG_PREFIX)
+    logError(
+      `Failed to prepare prefix for Steam ID ${steamAppId}: ${error}`,
+      LOG_PREFIX
+    )
     return
   }
 
@@ -100,7 +128,10 @@ export async function prepareUmuPrefix(
 
   const storeLabel = getUmuStoreLabel(gameInfo.runner)
   if (!storeLabel) {
-    logInfo(`Runner "${gameInfo.runner}" has no UMU store mapping, skipping`, LOG_PREFIX)
+    logInfo(
+      `Runner "${gameInfo.runner}" has no UMU store mapping, skipping`,
+      LOG_PREFIX
+    )
     return
   }
 
@@ -108,7 +139,9 @@ export async function prepareUmuPrefix(
   const gameId = umuId ?? '0'
 
   const winePrefix = join(
-    steamPath, 'steamapps', 'compatdata',
+    steamPath,
+    'steamapps',
+    'compatdata',
     String(steamAppId)
   )
 
@@ -121,8 +154,14 @@ export async function prepareUmuPrefix(
   })
 
   if (result.success) {
-    logInfo(`UMU prefix prepared for "${gameInfo.title}" (GAMEID=${gameId})`, LOG_PREFIX)
+    logInfo(
+      `UMU prefix prepared for "${gameInfo.title}" (GAMEID=${gameId})`,
+      LOG_PREFIX
+    )
   } else {
-    logInfo(`UMU prefix failed for "${gameInfo.title}": ${result.error}`, LOG_PREFIX)
+    logInfo(
+      `UMU prefix failed for "${gameInfo.title}": ${result.error}`,
+      LOG_PREFIX
+    )
   }
 }

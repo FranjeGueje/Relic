@@ -11,11 +11,7 @@ import {
 
 import { Tab, Tabs } from '@mui/material'
 
-import {
-  getGameInfo,
-  getInstallInfo,
-  updateGame
-} from 'frontend/helpers'
+import { getGameInfo, getInstallInfo, updateGame } from 'frontend/helpers'
 import { Link, NavLink, useLocation, useParams } from 'react-router-dom'
 import { Trans, useTranslation } from 'react-i18next'
 import ContextProvider from 'frontend/state/ContextProvider'
@@ -174,13 +170,9 @@ export default React.memo(function GamePage(): JSX.Element | null {
   useEffect(() => {
     const updateConfig = async () => {
       if (gameInfo && status) {
-          const {
-            install,
-            thirdPartyManagedApp
-          } = { ...gameInfo }
+        const { install, thirdPartyManagedApp } = { ...gameInfo }
 
-        const installPlatform =
-          install.platform || 'Windows'
+        const installPlatform = install.platform || 'Windows'
 
         if (
           !notSupportedGame &&
@@ -220,13 +212,7 @@ export default React.memo(function GamePage(): JSX.Element | null {
       }
     }
     updateConfig()
-  }, [
-    status,
-    epic.library,
-    gog.library,
-    gameInfo,
-    isOffline
-  ])
+  }, [status, epic.library, gog.library, gameInfo, isOffline])
 
   function handleUpdate() {
     updateGame({ appName, runner, gameInfo })
@@ -381,16 +367,9 @@ export default React.memo(function GamePage(): JSX.Element | null {
                       </div>
 
                       <h1 style={{ opacity: art_logo ? 0 : 1 }}>{title}</h1>
-                      <Genres
-                        genres={
-                          gameInfo.extra?.genres ||
-                          []
-                        }
-                      />
+                      <Genres genres={gameInfo.extra?.genres || []} />
                       <Developer gameInfo={gameInfo} />
-                      <ReleaseDate
-                        runnerDate={extraInfo?.releaseDate}
-                      />
+                      <ReleaseDate runnerDate={extraInfo?.releaseDate} />
 
                       <Description />
                       <GameStatus
@@ -471,7 +450,6 @@ export default React.memo(function GamePage(): JSX.Element | null {
                           <InstalledInfo gameInfo={gameInfo} />
                         </TabPanel>
 
-                         
                         <TabPanel
                           className="tabPanelRequirements"
                           value={currentTab}

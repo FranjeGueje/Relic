@@ -1,10 +1,7 @@
 import EventEmitter from 'events'
 
 import type TypedEventEmitter from 'typed-emitter'
-import type {
-  GameStatus,
-  RecentGame
-} from 'common/types'
+import type { GameStatus, RecentGame } from 'common/types'
 
 type BackendEvents = {
   gameStatusUpdate: (payload: GameStatus) => void

@@ -10,9 +10,7 @@ import ContextMenu from '../Library/components/ContextMenu'
 import SettingsContext from './SettingsContext'
 import LogSettings from './sections/LogSettings'
 import FooterInfo from './sections/FooterInfo'
-import {
-  GeneralSettings
-} from './sections'
+import { GeneralSettings } from './sections'
 import { AppSettings } from 'common/types'
 import { UpdateComponent } from 'frontend/components/UI'
 import { SettingsContextType } from 'frontend/types'

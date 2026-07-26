@@ -40,12 +40,7 @@ export default function UninstallOverlay({
   }, [focused])
 
   const uninstallGame = async () => {
-    await window.api.uninstall(
-      game.app_name,
-      game.runner,
-      false,
-      false
-    )
+    await window.api.uninstall(game.app_name, game.runner, false, false)
     onDismiss()
   }
 
@@ -119,7 +114,11 @@ export default function UninstallOverlay({
         <div className="consoleInstallFields">
           <div className="consoleInstallRow">
             <span className="consoleInstallLabel">
-              {t('console.uninstall.message', 'Do you want to uninstall "{{title}}"?', { title: game.title })}
+              {t(
+                'console.uninstall.message',
+                'Do you want to uninstall "{{title}}"?',
+                { title: game.title }
+              )}
             </span>
           </div>
         </div>

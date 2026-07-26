@@ -96,8 +96,7 @@ export default function DownloadDialog({
   const previousProgress = JSON.parse(
     storage.getItem(appName) || '{}'
   ) as InstallProgress
-  const { libraryStatus, showDialogModal } =
-    useContext(ContextProvider)
+  const { libraryStatus, showDialogModal } = useContext(ContextProvider)
 
   const [gameInstallInfo, setGameInstallInfo] = useState<InstallInfo | null>(
     null
@@ -437,12 +436,7 @@ export default function DownloadDialog({
     return ''
   }, [gameInstallInfo, installLanguage, platformToInstall, dlcsToInstall])
 
-  const {
-    validPath,
-    notEnoughDiskSpace,
-    message,
-    spaceLeftAfter
-  } = spaceLeft
+  const { validPath, notEnoughDiskSpace, message, spaceLeftAfter } = spaceLeft
   const title = gameInfo?.title
 
   function getInstallLabel() {
@@ -458,8 +452,7 @@ export default function DownloadDialog({
     return t('button.no-path-selected', 'No path selected')
   }
 
-  const readyToInstall =
-    installPath && !!diskSize && !gettingInstallInfo
+  const readyToInstall = installPath && !!diskSize && !gettingInstallInfo
 
   const showDlcSelector =
     ['legendary', 'gog'].includes(runner) && DLCList && DLCList?.length > 0

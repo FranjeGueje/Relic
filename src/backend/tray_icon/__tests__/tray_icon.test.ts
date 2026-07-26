@@ -52,9 +52,7 @@ describe('TrayIcon', () => {
         it('updates the content', async () => {
           setRecentGames([{ title: 'game 1', appName: '12345' }])
 
-          const appIcon = (await initTrayIcon(
-            mainWindow
-          ))
+          const appIcon = await initTrayIcon(mainWindow)
 
           expect(appIcon.menu[0]).toEqual({
             click: expect.any(Function),
@@ -91,9 +89,7 @@ describe('TrayIcon', () => {
         it('limits the number games displayed based on config', async () => {
           setRecentGames([])
 
-          const appIcon = (await initTrayIcon(
-            mainWindow
-          ))
+          const appIcon = await initTrayIcon(mainWindow)
 
           expect(appIcon.menu[0]).toEqual({
             type: 'separator'
@@ -144,9 +140,7 @@ describe('TrayIcon', () => {
 
           // check it renders english
           i18next.language = 'en'
-          const appIcon = (await initTrayIcon(
-            mainWindow
-          ))
+          const appIcon = await initTrayIcon(mainWindow)
           let items = appIcon.menu
           expect(items[items.length - 1].label).toEqual('Quit')
 
@@ -181,9 +175,7 @@ describe('TrayIcon', () => {
 
       setRecentGames(recentGames)
 
-      const appIcon = (await initTrayIcon(
-        mainWindow
-      ))
+      const appIcon = await initTrayIcon(mainWindow)
 
       const items = appIcon.menu
 

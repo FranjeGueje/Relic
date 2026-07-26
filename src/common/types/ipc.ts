@@ -26,7 +26,6 @@ import type {
   Runner,
   RunnerCommandStub,
   StatusPromise,
-
   UpdateParams,
   UserInfo
 } from '../types'

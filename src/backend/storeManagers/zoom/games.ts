@@ -339,11 +339,13 @@ export default class ZoomGame implements Game {
           `Running zoom-platform.sh: PROTONPATH=${protonPath} ${zoomPlatformScriptPath} -i ${downloadPath} -d ${installPath}`,
           LogPrefix.Zoom
         )
-        const scriptResult = await spawnAsync('bash', [
-          zoomPlatformScriptPath, '-i', downloadPath, '-d', installPath
-        ], {
-          env: { ...process.env, PROTONPATH: protonPath }
-        })
+        const scriptResult = await spawnAsync(
+          'bash',
+          [zoomPlatformScriptPath, '-i', downloadPath, '-d', installPath],
+          {
+            env: { ...process.env, PROTONPATH: protonPath }
+          }
+        )
         installResult = {
           stdout: scriptResult.stdout,
           stderr: scriptResult.stderr
@@ -352,7 +354,10 @@ export default class ZoomGame implements Game {
           logInfo('Windows installer completed successfully', LogPrefix.Zoom)
           finalInstallPlatform = 'windows'
         } else {
-          logError(['Windows installer failed:', scriptResult.stderr], LogPrefix.Zoom)
+          logError(
+            ['Windows installer failed:', scriptResult.stderr],
+            LogPrefix.Zoom
+          )
         }
       }
     }
@@ -404,9 +409,7 @@ export default class ZoomGame implements Game {
               recursive: true
             })
           }
-          dosboxConf = newConfFiles.map((file) =>
-            join(destDir, basename(file))
-          )
+          dosboxConf = newConfFiles.map((file) => join(destDir, basename(file)))
         }
       }
 

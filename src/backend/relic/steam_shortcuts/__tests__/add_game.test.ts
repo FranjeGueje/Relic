@@ -23,7 +23,9 @@ jest.mock('../steam_helpers', () => ({
 
 let mockRelicRunnerPath = '/tmp/default-relic-runner'
 jest.mock('backend/constants/paths', () => ({
-  get relicRunnerPath() { return mockRelicRunnerPath },
+  get relicRunnerPath() {
+    return mockRelicRunnerPath
+  },
   relicMountPath: '/tmp/mount',
   relicInstallPath: '/tmp/games'
 }))
@@ -55,9 +57,7 @@ describe('addGameToSteam', () => {
   })
 
   test('returns error when steam:// URL fails to open', async () => {
-    jest.mocked(spawnAsync).mockRejectedValue(
-      new Error('xdg-open not found')
-    )
+    jest.mocked(spawnAsync).mockRejectedValue(new Error('xdg-open not found'))
 
     const result = await addGameToSteam({
       gameName: 'MyGame',
@@ -99,7 +99,12 @@ describe('createRelicBat', () => {
   })
 
   test('creates legendary bat with correct runner command', () => {
-    const runnerPath = createRelicBat(tmpDir.name, 'TestGame', 'legendary', 'abc123')
+    const runnerPath = createRelicBat(
+      tmpDir.name,
+      'TestGame',
+      'legendary',
+      'abc123'
+    )
 
     expect(runnerPath).toBe(join(tmpDir.name, 'TestGame.bat'))
     expect(existsSync(runnerPath)).toBe(true)
@@ -123,12 +128,17 @@ describe('createRelicBat', () => {
     }
     expect(content).toContain(
       `@gogdl --auth-config-path c:\\relic\\gog_store\\auth.json ` +
-      `launch --platform windows "c:\\games\\${basename(tmpDir.name)}" gog123 -- %*`
+        `launch --platform windows "c:\\games\\${basename(tmpDir.name)}" gog123 -- %*`
     )
   })
 
   test('creates nile bat with correct runner command', () => {
-    const runnerPath = createRelicBat(tmpDir.name, 'AmazonGame', 'nile', 'nile789')
+    const runnerPath = createRelicBat(
+      tmpDir.name,
+      'AmazonGame',
+      'nile',
+      'nile789'
+    )
 
     expect(runnerPath).toBe(join(tmpDir.name, 'AmazonGame.bat'))
     expect(existsSync(runnerPath)).toBe(true)
@@ -141,7 +151,12 @@ describe('createRelicBat', () => {
   })
 
   test('creates default bat for unknown runner', () => {
-    const runnerPath = createRelicBat('/some/path/ZoomGame', 'ZoomGame', 'zoom', '')
+    const runnerPath = createRelicBat(
+      '/some/path/ZoomGame',
+      'ZoomGame',
+      'zoom',
+      ''
+    )
 
     expect(runnerPath).toBe(join(mockRelicRunnerPath, 'ZoomGame.bat'))
     expect(existsSync(runnerPath)).toBe(true)
@@ -158,7 +173,12 @@ describe('createRelicBat', () => {
     const runnerPath = join(tmpDir.name, 'ExistingGame.bat')
     writeFileSync(runnerPath, 'old content', 'utf-8')
 
-    const result = createRelicBat(tmpDir.name, 'ExistingGame', 'legendary', 'abc')
+    const result = createRelicBat(
+      tmpDir.name,
+      'ExistingGame',
+      'legendary',
+      'abc'
+    )
 
     expect(result).toBe(runnerPath)
     const content = readFileSync(runnerPath, 'utf-8')

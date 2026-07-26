@@ -20,13 +20,8 @@ export default function SidebarLinks() {
   const { t } = useTranslation()
   const location = useLocation()
 
-  const {
-    amazon,
-    epic,
-    gog,
-    zoom,
-    refreshLibrary
-  } = useContext(ContextProvider)
+  const { amazon, epic, gog, zoom, refreshLibrary } =
+    useContext(ContextProvider)
 
   const loggedIn =
     epic.username || gog.username || amazon.user_id || zoom.username
@@ -103,8 +98,7 @@ export default function SidebarLinks() {
         dataTour="sidebar-console"
       />
 
-      <div data-tour="sidebar-community">
-      </div>
+      <div data-tour="sidebar-community"></div>
 
       <QuitButton dataTour="sidebar-quit" />
     </div>

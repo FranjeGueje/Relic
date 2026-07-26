@@ -22,7 +22,7 @@ export async function searchUmuGameId(
     const response = await fetch(url)
     if (!response.ok) return null
 
-    const data = await response.json() as { umu_id?: number | string }[]
+    const data = (await response.json()) as { umu_id?: number | string }[]
     if (!Array.isArray(data) || data.length === 0) return null
 
     const umuId = data[0]?.umu_id

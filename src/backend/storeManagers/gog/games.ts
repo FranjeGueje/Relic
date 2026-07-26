@@ -38,11 +38,13 @@ import {
 } from 'backend/logger'
 import { GOGUser } from './user'
 
-import { onGameInstalled, onGameImported, onGameMoved, onGameUninstalled } from 'backend/relic/game_events'
 import {
-  GOGCloudSavesLocation,
-  GogInstallPlatform
-} from 'common/types/gog'
+  onGameInstalled,
+  onGameImported,
+  onGameMoved,
+  onGameUninstalled
+} from 'backend/relic/game_events'
+import { GOGCloudSavesLocation, GogInstallPlatform } from 'common/types/gog'
 import { sendFrontendMessage } from '../../ipc'
 import { Game, RemoveArgs } from 'common/types/game_manager'
 import axios, { AxiosError, AxiosResponse } from 'axios'
@@ -386,11 +388,16 @@ export default class GOGGame implements Game {
       installInfo.folder_name === undefined ||
       installInfo.folder_name.length === 0
     ) {
-      logError('install info folder_name is undefined in GOG install', LogPrefix.Gog)
+      logError(
+        'install info folder_name is undefined in GOG install',
+        LogPrefix.Gog
+      )
       return { status: 'error' }
     }
 
-    const sizeOnDisk = await getPathDiskSize(join(path, installInfo.folder_name))
+    const sizeOnDisk = await getPathDiskSize(
+      join(path, installInfo.folder_name)
+    )
     const install_path = join(path, installInfo.folder_name)
 
     const installedData: InstalledInfo = {
@@ -646,9 +653,7 @@ export default class GOGGame implements Game {
     const installedDlcs = gameData.install.installedDLCs || []
 
     if (updateOverwrites?.dlcs) {
-      installedDlcs.filter(
-        (dlc) => !updateOverwrites.dlcs?.includes(dlc)
-      )
+      installedDlcs.filter((dlc) => !updateOverwrites.dlcs?.includes(dlc))
     }
 
     const privateBranchPassword = privateBranchesStore.get(this.id, '')
@@ -833,8 +838,7 @@ export default class GOGGame implements Game {
     sendFrontendMessage('pushGameToLibrary', this.getGameInfo())
   }
 
-  async stop(): Promise<void> {
-  }
+  async stop(): Promise<void> {}
 
   async isGameAvailable(): Promise<boolean> {
     return new Promise((resolve) => {

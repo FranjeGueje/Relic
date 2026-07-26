@@ -96,12 +96,8 @@ const GameCard = ({
 
   const navigate = useNavigate()
 
-  const {
-    hiddenGames,
-    favouriteGames,
-    showDialogModal,
-    activeController
-  } = useContext(ContextProvider)
+  const { hiddenGames, favouriteGames, showDialogModal, activeController } =
+    useContext(ContextProvider)
   const { layout } = useContext(LibraryContext)
 
   const {
@@ -376,8 +372,7 @@ const GameCard = ({
     {
       label: t('button.browse_files', 'Browse Files'),
       onclick: () => {
-        const folder =
-          gameInfo.install.install_path || gameInfo.folder_name
+        const folder = gameInfo.install.install_path || gameInfo.folder_name
         if (folder) window.api.openFolder(folder)
       },
       show: isInstalled,
@@ -452,7 +447,13 @@ const GameCard = ({
   const showUpdateBadge =
     hasUpdate && !isUpdating && !isQueued && activeController
 
-  const hasIcons = showUpdateButton || !isInstalled || isPlaying || isUninstalling || notSupportedGame || !isInstallable
+  const hasIcons =
+    showUpdateButton ||
+    !isInstalled ||
+    isPlaying ||
+    isUninstalling ||
+    notSupportedGame ||
+    !isInstallable
 
   return (
     <div>

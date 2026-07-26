@@ -23,14 +23,8 @@ function setCurrentGame(game: string) {
 
 async function setPresence() {
   try {
-    const { disableGOGPresence } =
-      GlobalConfig.get().getSettings()
-    if (
-      disableGOGPresence ||
-      !GOGUser.isLoggedIn() ||
-      !isOnline()
-    )
-      return
+    const { disableGOGPresence } = GlobalConfig.get().getSettings()
+    if (disableGOGPresence || !GOGUser.isLoggedIn() || !isOnline()) return
     const credentials = await GOGUser.getCredentials()
     if (!credentials) return
 
@@ -65,13 +59,8 @@ async function setPresence() {
 
 async function deletePresence(force = false) {
   try {
-    const { disableGOGPresence } =
-      GlobalConfig.get().getSettings()
-    if (
-      (!force && disableGOGPresence) ||
-      !GOGUser.isLoggedIn() ||
-      !isOnline()
-    )
+    const { disableGOGPresence } = GlobalConfig.get().getSettings()
+    if ((!force && disableGOGPresence) || !GOGUser.isLoggedIn() || !isOnline())
       return
     const credentials = await GOGUser.getCredentials()
     if (!credentials) {

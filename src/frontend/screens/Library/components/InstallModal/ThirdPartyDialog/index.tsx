@@ -1,9 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-  GameInfo,
-  InstallPlatform,
-  Runner
-} from 'common/types'
+import { GameInfo, InstallPlatform, Runner } from 'common/types'
 import {
   DialogFooter,
   DialogHeader,

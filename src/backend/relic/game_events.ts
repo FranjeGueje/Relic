@@ -6,7 +6,14 @@ import { basename, join } from 'path'
 import { libraryManagerMap } from 'backend/storeManagers'
 import { relicGamesPath } from 'backend/constants/paths'
 import { logError, logInfo, logWarning } from 'backend/logger'
-import { addGameToSteam, createRunnerFile, createGameSymlink, findShortcut, addShortcut, removeShortcut } from './steam_shortcuts'
+import {
+  addGameToSteam,
+  createRunnerFile,
+  createGameSymlink,
+  findShortcut,
+  addShortcut,
+  removeShortcut
+} from './steam_shortcuts'
 import { preparePrefix, removePrefixSymlink } from './prefix'
 import type { AddGameToSteamResult } from './steam_shortcuts/types'
 import { downloadGrids, deleteGrids } from './steamgrid'
@@ -15,10 +22,11 @@ const LOG_PREFIX = 'Relic'
 
 function refreshInstallPath(gameInfo: GameInfo): string {
   try {
-    const manager = libraryManagerMap[
-      gameInfo.runner
-    ] as unknown as {
-      getGameInfo?: (appName: string, forceReload: boolean) => GameInfo | undefined
+    const manager = libraryManagerMap[gameInfo.runner] as unknown as {
+      getGameInfo?: (
+        appName: string,
+        forceReload: boolean
+      ) => GameInfo | undefined
       refreshInstalled?: () => void
     }
     manager.refreshInstalled?.()
@@ -104,11 +112,11 @@ export async function onGameInstalled(
 
   const resolvedPath = installPath || refreshInstallPath(gameInfo)
   if (!resolvedPath) {
-    logError(
-      `No install path for "${gameInfo.title}" (${appName})`,
-      LOG_PREFIX
-    )
-    return { success: false, error: `No install path for "${gameInfo.title}" (${appName})` }
+    logError(`No install path for "${gameInfo.title}" (${appName})`, LOG_PREFIX)
+    return {
+      success: false,
+      error: `No install path for "${gameInfo.title}" (${appName})`
+    }
   }
 
   if (gameInfo.is_linux_native) {

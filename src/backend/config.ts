@@ -1,9 +1,12 @@
-import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'graceful-fs'
-
 import {
-  AppSettings,
-  GlobalConfigVersion
-} from 'common/types'
+  existsSync,
+  mkdirSync,
+  readFileSync,
+  readdirSync,
+  writeFileSync
+} from 'graceful-fs'
+
+import { AppSettings, GlobalConfigVersion } from 'common/types'
 import { currentGlobalConfigVersion } from 'backend/constants/others'
 
 import { logError, logInfo, LogPrefix } from './logger'

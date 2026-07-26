@@ -4,10 +4,12 @@ Relic es un fork de Heroic Game Launcher. Este archivo documenta todos los cambi
 aplicados sobre Heroic para adaptarlo a la filosofía y objetivos de Relic.
 
 Los cambios se dividen en dos categorías:
+
 - **Eliminaciones**: código de Heroic que no pertenece a Relic.
 - **Adiciones/modificaciones**: código nuevo o adaptado para Relic.
 
 Para ver el detalle completo de cada categoría, consultar:
+
 - `HISTORY_REMOVE.md` — eliminaciones exhaustivas.
 - `HISTORY_ADD.md` — adiciones y modificaciones exhaustivas.
 
@@ -18,11 +20,13 @@ Para ver el detalle completo de cada categoría, consultar:
 ### Fase 5 — Refactorización profunda
 
 #### Flujo de lanzamiento de juegos
+
 - Eliminado todo el flujo de lanzamiento: `prepareLaunch`, `launch()`, `getLaunchOptions()` de todos los store managers.
 - Eliminados IPC handlers y preload de lanzamiento.
 - Eliminados scripts pre/post lanzamiento, UMU disable.
 
 #### Wine/Proton (eliminación completa)
+
 - `src/backend/wine/` completo (manager, runtimes, manager/UI).
 - Componentes frontend de Wine/Proton: WineVersionSelector, WinePrefix, CustomWineProton, etc.
 - DXVK, VKD3D, DXMT, Winetricks, EAC/BattlEye runtime.
@@ -30,19 +34,23 @@ Para ver el detalle completo de cada categoría, consultar:
 - Settings de Wine/Proton (Esync, Fsync, FSR, WoW64, Wayland, etc.).
 
 #### Settings sin UI ni utilidad
+
 - MinimizeOnLaunch, DisableController, DisableAnimations, DisableLogs, DownloadNoHTTPS.
 - DarkTrayIcon (siempre light), FramelessWindow (siempre con marco), StartInTray.
 - DisablePlaytimeSync (vivo backend sin UI), disableSmoothScrolling.
 
 #### Plataformas no Linux
+
 - macOS: Rosetta, isMac, isIntelMac, AppleGamingWiki, CrossoverBottle, AdvertiseAvxForRosetta.
 - Windows: build config, scripts, PowerShell, VCRedist, moveOnWindows, todo el código `isWindows`.
 
 #### Comunidad y analytics
+
 - Discord RPC, Ko-fi, Plausible Analytics, GitHub releases/updater.
 - Start Tour, Accessibility screen.
 
 #### Características UI eliminadas
+
 - Stores (Epic/GOG/Amazon/Zoom como webview), Deals/Discounts.
 - Add Game (SideloadDialog), System Information, Sync Saves.
 - Log upload, Changelog modal, Settings modal, Log modal.
@@ -53,6 +61,7 @@ Para ver el detalle completo de cada categoría, consultar:
 - EOS Overlay completo.
 
 #### Otras eliminaciones
+
 - Flatpak/Flathub, E2E tests, GitHub workflows.
 - Ko-fi, Discord references, Plausible analytics.
 - Windows/macOS systeminfo modules.
@@ -66,11 +75,13 @@ Para ver el detalle completo de cada categoría, consultar:
 ### v0.2.0
 
 #### Convenciones y estructura
+
 - `AGENTS.md`: sección "Estructura del código" — código nuevo en subdirectorios `relic/`.
 - Código específico de Relic en `src/backend/relic/`, `src/frontend/relic/`, `src/common/relic/`.
 - Modificaciones a archivos Heroic se documentan en `HISTORY_ADD.md`.
 
 #### Integración con Steam
+
 - Nuevo módulo `src/backend/relic/steam_shortcuts/`: `addGameToSteam()` mediante `steam://addnonsteamgame`.
 - `steam_shortcuts.json` guarda gameName, appId, store, steamAppId, installPath, execPath.
 - Eliminado toggle "Add games to Steam automatically" — siempre se añade tras instalar.
@@ -80,6 +91,7 @@ Para ver el detalle completo de cada categoría, consultar:
 - Rename `batPath` → `runnerPath` en todo el módulo.
 
 #### Eventos de instalación
+
 - `src/backend/relic/game_events.ts`: orquestador que crea .bat, añade a Steam y guarda en store.
 - Todos los runners (legendary, gog, nile, zoom, sideload) llaman `onGameInstalled()`/`onGameUninstalled()`.
 - Añadidos `onGameImported()` y `onGameMoved()` como stubs (solo log).
@@ -91,11 +103,13 @@ Para ver el detalle completo de cada categoría, consultar:
 - `onGameInstalled` abre `steam://gameproperties/{id}` al final. `onGameUninstalled` abre `steam://gameproperties/{id}` al principio.
 
 #### Robustez
+
 - Protegidos todos los `JSON.parse()` contra stdout vacío en legendary, nile y gog library/user.
 - Corregido log prefix en IPC handler `getInstallInfo` (Nile se logueaba como GOG).
 - Tests unitarios para stdout vacío en los 3 store managers (8 tests).
 
 #### Windowify
+
 - Nuevo módulo `src/backend/relic/windowify.ts`: transforma paths de instalación de Linux a Windows (`c:\games\<title>`).
 - `symlinkStoreFiles()` symlinkea todos los ficheros del directorio de config de cada tienda al mount (reemplaza antigua copia solo de installed.json).
 - `syncGogdlConfig()` symlinkea `gogdlConfigPath` → `mount/gogdl/` y `mount/heroic_gogdl/`.
@@ -108,15 +122,18 @@ Para ver el detalle completo de cada categoría, consultar:
 - Fix TS2304 en `store.ts`: añadido `GameRunner` al import.
 
 #### Mount bin sync
+
 - `syncMountBin()` en `windowify.ts`: al arrancar compara md5 de `public/bin/x64/win32/` contra `mount/bin/` y copia si falta o difiere.
 - Llamada desde `main.ts` una sola vez al arrancar (`app.whenReady()`).
 - `electron-builder.yml`: `linux.files` usa glob `build/bin/x64/win32/*` para incluir los 6 exe en el AppImage (antes solo incluía 2).
 
 #### Runner GOG
+
 - Fix ruta en .bat: `installPath` se transforma a `c:\games\<basename>` en vez de usar ruta Linux directamente.
 - Eliminado guard `if (existsSync(runnerPath)) return` — el .bat se regenera siempre con el contenido correcto.
 
 #### Prefijos
+
 - Nuevo módulo `src/backend/relic/prefix.ts` con `preparePrefix(steamAppId)` y `prepareUmuPrefix()`.
 - `preparePrefix()` crea `compatdata/{id}/pfx/drive_c` en Steam y copia `mount/` y `games/` al prefijo.
 - `prepareUmuPrefix` movida desde `game_events.ts` (stub).
@@ -124,6 +141,7 @@ Para ver el detalle completo de cada categoría, consultar:
 - `onGameUninstalled` borra symlink usando `installPath` del JSON store. Usa `unlinkSync` directo (no `existsSync` que sigue symlinks y falla con enlaces rotos).
 
 #### SteamGridDB
+
 - Nuevo módulo `src/backend/relic/steamgrid/` — API client propio de SteamGridDB (no modifica código Heroic).
 - `api.ts`: searchGame, getGrids, getHeroes, getLogos, getIcons.
 - `download.ts`: `downloadGrids(gameInfo, steamAppId)` descarga 5 imágenes (header, portrait, hero, logo, icon) a `~/.steam/steam/userdata/*/config/grid/`.
@@ -132,6 +150,7 @@ Para ver el detalle completo de cada categoría, consultar:
 - `deleteGrids(steamAppId)` elimina los 5 ficheros grid de todos los usuarios Steam. Se llama en `onGameUninstalled`.
 
 #### Tests
+
 - 35 tests en módulos relic (steam_helpers, add_game, game_events, symlinks, windowify).
 - 8 tests en store managers (empty stdout handling).
 - Total: 90 tests (85 pasan, 5 preexistentes fallan por plataforma Linux).
@@ -141,11 +160,13 @@ Para ver el detalle completo de cada categoría, consultar:
 ### v0.2.0 — UMU (Jul 2026)
 
 #### Módulo relic/umu
+
 - Nuevo módulo `src/backend/relic/umu/` con 3 archivos: `store.ts` (mapeo store → label UMU + lookup API), `launcher.ts` (ejecuta `umu-run` con 4 env vars), `index.ts` (barrel).
 - `prepareUmuPrefix()` en `prefix.ts` ahora async: busca GAMEID en API de UMU, luego ejecuta `umu-run exit` para crear prefijo.
 - `game_events.ts`: llamada actualizada con `await` y `installPath`.
 
 #### Detección y configuración de GE-Proton
+
 - `config.ts`: nueva función `detectGeProton()` y `protonPath` en defaults (auto-detecta desde `~/.local/share/Steam/compatibilitytools.d/` en primer arranque).
 - `AppSettings`: añadido `protonPath: string`.
 - `constants/paths.ts`: añadido `steamCompatDir`.
@@ -153,9 +174,11 @@ Para ver el detalle completo de cada categoría, consultar:
 - `electron-builder.yml`: añadido `build/bin/umu/*` a `linux.files`.
 
 #### Frontend
+
 - `ProtonPath.tsx`: PathSelectionBox para seleccionar GE-Proton en Settings > General.
 
 #### Cleanup
+
 - Eliminados imports de `isUmuSupported` en 4 store managers (dead code).
 - Eliminados `defaultUmuPath` y `runtimePath` de `paths.ts`.
 - Eliminado `umuSupport` de `ExperimentalFeatures`.
@@ -163,6 +186,7 @@ Para ver el detalle completo de cada categoría, consultar:
 - `prefix.ts` usa `logInfo` en vez de `logError` para fallos de UMU.
 
 #### Tests
+
 - 95 tests (95 pasan, 0 preexistentes fallan).
 - Eliminados tests `getShell for windows/mac` (función simplificada a Linux-only), test `shows no icon if noTrayIcon setting` (no existe `setConfigValue`), simplificado test `limits number games` (usa 3 juegos en vez de `maxRecentGames`).
 - `launcher.test.ts`: quitada aserción de `logError` en close handler (assertions 3→2).
@@ -173,13 +197,16 @@ Para ver el detalle completo de cada categoría, consultar:
 ### v0.2.0 — UPGRADE-MINIMAL (Jul 2026)
 
 #### Build fix
+
 - Añadidas `@emotion/react` y `@emotion/styled` como dependencias explícitas (peer deps de MUI que causaban el error de build en Vite).
 
 #### Paquetes deprecated eliminados
+
 - `ts-prune` (deprecated), `unimported` (deprecated), `@types/react-router-dom` (obsoleto, v6 trae tipos propios).
 - Eliminados configs `.ts-prunerc`, `.unimportedrc.json`, script `find-deadcode`.
 
 #### CVEs
+
 - `i18next-fs-backend` 2.6.0 → 2.6.6 (critical, prototype pollution).
 - `undici` 7.24.0 → 7.28.0 (high, multiple vulns).
 - `shell-quote` y `cross-spawn` transitivos protegidos vía overrides de pnpm.
@@ -187,6 +214,7 @@ Para ver el detalle completo de cada categoría, consultar:
 - 3 criticals → 1 residual (`node-tar` del ecosistema `node-gyp`, build-time, aceptado).
 
 #### Toolchain modernizada
+
 - `engines.node`: `>=22` → `>=24`.
 - `shell.nix`: `nodejs_22` → `nodejs_24`.
 - Esbuild: `--target=node21` → `--target=node24`.
@@ -200,19 +228,23 @@ Para ver el detalle completo de cada categoría, consultar:
 ### v0.2.0 — FIX_VULNERA (Jul 2026)
 
 #### Resumen
+
 - Reducción de 130 vulnerabilidades a 0.
 - Se eliminaron: 2 críticas, 63 high, 58 moderate, 7 low → 0 total.
 
 #### Electron 43
+
 - Bump de electron 41.9.0 → 43.1.1 (elimina 32 CVEs high del runtime de Electron).
 
 #### CVEs críticas eliminadas
+
 - `node-tar` (CRITICAL) via `tar@6.2.1`/`tar@7.5.9` → override pnpm a `>=7.5.19`.
 - `simple-git` (CRITICAL) vía `unimported` → eliminado en UPGRADE-MINIMAL.
 - `shell-quote` (CRITICAL, UPGRADE-MINIMAL): override a `>=1.8.4`.
 - `i18next-fs-backend` (CRITICAL): 2.6.0 → 2.6.6 (UPGRADE-MINIMAL).
 
 #### CVEs altas eliminadas
+
 - `axios`: update a última 1.x.
 - `fast-xml-parser`: update a última 5.x.
 - `vite`: añadido como devDep a 6.4.3 (elimina 2 highs).
@@ -220,11 +252,13 @@ Para ver el detalle completo de cada categoría, consultar:
 - `cross-spawn` (UPGRADE-MINIMAL): override a `>=6.0.6`.
 
 #### Dependencias deprecated
+
 - `@fortawesome/react-fontawesome` 0.2.x → ^3.
 - `react-devtools` eliminado (dev-only, arrastraba electron 23 → 4 CVEs high).
 - `i18next-http-backend` 2.x → ^3.0.5 (elimina moderate path traversal).
 
 #### Resultado audit
+
 - Antes: 130 vulnerabilidades (7 low, 58 moderate, 63 high, 2 critical).
 - Después: **0 vulnerabilidades.**
 - `pnpm audit` reporta "No known vulnerabilities found".
@@ -234,6 +268,7 @@ Para ver el detalle completo de cada categoría, consultar:
 ### v0.2.0 — SLIM-MODULES (Jul 2026)
 
 #### Módulos eliminados
+
 - `src/backend/shortcuts/nonesteamgame/` (~500 LOC): editor directo de `shortcuts.vdf`.
   Relic integra Steam vía `steam://addnonsteamgame` + store propio en
   `relic/steam_shortcuts/`. Sin callers productivos.
@@ -245,23 +280,28 @@ Para ver el detalle completo de cada categoría, consultar:
   `shortcutsExists` y preload correspondiente.
 
 #### Settings muertos
+
 - `addDesktopShortcuts` y `addSteamShortcuts` eliminados de `AppSettings` y
   defaults de `config.ts`. No tenían código lector ni UI.
 
 #### Deps npm eliminadas
+
 - `electron-updater`, `plist`, `@shockpkg/icon-encoder`.
 
 #### Archivos de test movidos
+
 - `shortcuts/nonesteamgame/__tests__/test_data/` → `relic/steam_shortcuts/__tests__/test_data/`
   (7 archivos VDF de prueba, necesarios para `steam_helpers.test.ts`).
 
 #### Test arreglado
+
 - `game_events.test.ts`: eliminado mock y expectativa de `removeNonSteamGame`.
   El test `deletes bat file and removes from store` ahora pasa (antes era uno
   de los 4 fallos preexistentes). Fallos preexistentes bajan de 4 a 2
   (`constants.test.ts` y `tray_icon.test.ts`).
 
 #### LOC
+
 - ~1000 LOC eliminadas, ~150 movidas. 0 funcionalidad Relic afectada.
 
 ---
@@ -269,10 +309,12 @@ Para ver el detalle completo de cada categoría, consultar:
 ### v0.2.0 — ZOOM-INTEGRATION (Jul 2026)
 
 #### Zoom Platform siempre activo
+
 - `experimentalFeatures.zoomPlatform` eliminado. Zoom está disponible sin toggle experimental.
 - Zoom login, biblioteca y descargas funcionan sin configuración adicional.
 
 #### Instalación Windows mediante zoom-platform.sh
+
 - La instalación Windows-on-Linux se delega a `public/bin/zoom/zoom-platform.sh` (v1.0.1, script autónomo).
 - El script embebe su propio innoextract como base64, escribe `zoom_installer.inf` y `zoom_regkeys.bat`, lanza el instalador mediante umu, monitorea el log, y crea desktop entries.
 - Relic llama al script con: `PROTONPATH={path} zoom-platform.sh -i installer.exe -d installPath`.
@@ -283,6 +325,7 @@ Para ver el detalle completo de cada categoría, consultar:
 - Añadido `build/bin/zoom/*` a `electron-builder.yml` para incluir el script en el AppImage.
 
 #### pnpm estable
+
 - `nodeLinker: hoisted` → `isolated` (elimina conflictos de versiones duplicadas).
 - `pnpm@11.15.1` gestionado vía `corepack` (no `npm add -g`).
 - `onlyBuiltDependencies` y `allowBuilds` configurados para builds nativos.
@@ -290,6 +333,7 @@ Para ver el detalle completo de cada categoría, consultar:
 - Store limpiado y reinstalación completa desde cero.
 
 #### Tests
+
 - TypeScript 0 errores, 95 tests pasan (ningún fallo preexistente nuevo).
 
 ---
@@ -297,6 +341,7 @@ Para ver el detalle completo de cada categoría, consultar:
 ### v0.2.1 — SLIM-SIDELOAD (Jul 2026)
 
 #### Sideload eliminado completamente
+
 - Directorios eliminados: `src/backend/storeManagers/sideload/`, `src/frontend/components/UI/EditGameDialog/`, `src/frontend/screens/Library/components/EmptyLibrary/` (CSS).
 - Runner `'sideload'` eliminado del type union en types compartidos (6 archivos).
 - Backend: store manager, handler IPC `addNewApp`, `LogPrefix.Sideload`, y entradas en `libraryManagerMap`, `STORE_CONFIGS`, `umuStoreMap` eliminados.
@@ -312,9 +357,11 @@ Para ver el detalle completo de cada categoría, consultar:
 - ~40 archivos modificados, 3 directorios eliminados.
 
 #### Electron fix
+
 - Script `start`: añadido `node node_modules/electron/install.js` antes de `electron-vite dev` para solucionar `Error: Electron uninstall` cuando el binario no se descarga en `pnpm install`.
 
 #### Tests
+
 - TypeScript 0 errores, 92 tests pasan.
 
 ---
@@ -322,6 +369,7 @@ Para ver el detalle completo de cada categoría, consultar:
 ### v0.2.2 — REFACTOR-ORGANIZE (Jul 2026)
 
 #### Reorganización de código
+
 - `createRunnerFile()` movido de `game_events.ts` a `add_game.ts`.
 - `preparePrefix()` (orquestador) movido de `game_events.ts` a `prefix.ts`.
 - `preparePrefix` fundido dentro de `prepareUmuPrefix` (ahora incluye creación de drive_c).
@@ -329,6 +377,7 @@ Para ver el detalle completo de cada categoría, consultar:
 - Funciones reordenadas por responsabilidad en `prefix.ts`, `add_game.ts`, `steam_helpers.ts`, `download.ts`, `windowify.ts`.
 
 #### Tests
+
 - 45 tests, TypeScript 0 errores.
 
 ---
@@ -336,14 +385,17 @@ Para ver el detalle completo de cada categoría, consultar:
 ### v0.2.3 — FIXES-JUL23 (Jul 2026)
 
 #### Desktop name
+
 - Añadido `desktopName: "Relic"` a `package.json` y `syncDesktopName: true` a `electron-builder.yml`.
 - Electron usa `desktopName` como `WM_CLASS` — sin esto las ventanas no se asocian correctamente con el `.desktop` en entornos de escritorio.
 
 #### Symlink Legendary/Nile
+
 - `createGameSymlink()` y `windowify()` ahora reciben `installPath` como parámetro en vez de leer `gameInfo.install.install_path` (vacío para Legendary y Nile porque `installed.json` se escribe en disco, el objeto `gameInfo.install` no se refresca hasta `getGameInfo()`).
 - `preparePrefix()` pasa `installPath` a `windowify()`.
 
 #### Notificación de éxito post-instalación
+
 - Reemplazada system notification (`notify()`) por mensaje contextual en la propia app.
 - Nuevo hook `useInstallSuccess()` que escucha IPC `installCompleted` con auto-dismiss 4s.
 - Nuevo componente `InstallSuccessOverlay` para modo consola (gamepad, clases existentes `consoleLaunchOverlay`/`consoleModal`).
@@ -351,17 +403,20 @@ Para ver el detalle completo de cada categoría, consultar:
 - 3 archivos nuevos en `src/frontend/relic/dialogs/`, 3 archivos Heroic modificados.
 
 #### GOG: Path del manifiesto corregido
+
 - `gogdlConfigPath` en `constants.ts` apuntaba a `relic_gogdl` pero el binario gogdl tiene `heroic_gogdl` hardcodeado.
 - La limpieza de manifiestos pre-instalación (`downloadmanager/utils.ts:59`) borraba en `relic_gogdl/manifests/` (vacío) en vez de `heroic_gogdl/manifests/` (manifiestos reales).
 - gogdl encontraba el manifiesto stale → "Nothing to do" → instalación fallaba con ENOENT.
 - Fix: revertir el segmento a `heroic_gogdl` (commit `482589a2` lo había cambiado durante el rebrand).
 
 #### GOG: `folder_name` undefined post-instalación
+
 - `getInstallInfo()` tiene un cache hit que retorna temprano sin actualizar el library Map.
 - Tras descarga exitosa, el código usaba `gameInfo.folder_name` para construir `install_path` pero el Map no se había actualizado → `folder_name` vacío → error.
 - Fix: añadido `folder_name` al tipo `GogInstallInfo`, incluido en el objeto cacheado, y usado `installInfo.folder_name` (directo del cache) en vez de `gameInfo.folder_name` (del library Map).
 
 #### Tests
+
 - TypeScript 0 errores, 92 tests pasan.
 
 ---
@@ -369,22 +424,27 @@ Para ver el detalle completo de cada categoría, consultar:
 ### v0.2.3 — EVENTS-IMPL (Jul 2026)
 
 #### Eventos de instalación implementados
+
 - `onGameImported()` ahora delega en `onGameInstalled()` en vez de ser un stub. Un import hace el mismo flujo que una instalación: runner file, addGameToSteam, shortcut, prefix, grids, Steam properties.
 - `onGameMoved()` ahora mueve el symlink en `~/.local/share/relic/games/` de la ubicación antigua a la nueva y actualiza `installPath` en `steam_shortcuts.json`.
 - Tests actualizados para ambos eventos.
 
 #### IPC `installCompleted` eliminado
+
 - Eliminado el sistema completo de notificación de instalación exitosa (IPC, hook, overlay, dialog en App.tsx).
 - `game_events.ts` ya no envía `sendFrontendMessage('installCompleted')` al finalizar.
 
 #### Symlink fix on game move
+
 - `onGameMoved()` eliminado `existsSync` antes de `unlinkSync`. `existsSync` sigue symlinks y falla cuando el juego ya no está en la ruta original (porque se movió). Ahora `unlinkSync` se ejecuta siempre dentro de try/catch.
 
 #### Console mode UI
+
 - Botón "Opciones" renombrado a "Más" / "More" con nueva clave `console.more` en los 47 locales.
 - Botón A-Z movido de `.consoleTopRight` a `.consoleLogoRow`, junto al icono Relic y el botón "Más".
 
 #### Soporte para juegos Linux nativos
+
 - `createGameSymlink()` extraído de `windowify.ts` a `add_game.ts` como función pública y reutilizable. Borra el symlink si existe antes de crearlo.
 - `windowify.ts` ahora importa `createGameSymlink` desde `add_game.ts` en vez de tener su propia copia privada.
 - `onGameInstalled()` bifurca según `gameInfo.is_linux_native`: si es Linux nativo, omite `createRunnerFile` (`.bat`), `windowify` y `prepareUmuPrefix`. En su lugar: crea symlink en `relicGamesPath`, busca `start.sh` en la raíz del juego, y lo usa directamente como target para `addGameToSteam`.
@@ -395,6 +455,7 @@ Para ver el detalle completo de cada categoría, consultar:
 ### v0.4.0 — Lint cleanup (Jul 2026)
 
 #### ESLint: 134 errores eliminados
+
 - `no-unused-vars`: eliminados imports y variables muertas en ~45 archivos de backend, frontend y tipos comunes.
 - `no-require-imports`: convertidos 4 `require()` a ES imports en tests.
 - `no-constant-condition`: eliminado bloque `if (false)` muerto.

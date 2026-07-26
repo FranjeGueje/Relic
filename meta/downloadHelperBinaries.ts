@@ -8,11 +8,7 @@ import { setGlobalDispatcher, ProxyAgent } from 'undici'
 
 type SupportedPlatform = 'win32' | 'darwin' | 'linux'
 type DownloadedBinary =
-  | 'legendary'
-  | 'gogdl'
-  | 'nile'
-  | 'comet'
-  | 'epic-integration'
+  'legendary' | 'gogdl' | 'nile' | 'comet' | 'epic-integration'
 
 const RELEASE_TAGS = {
   legendary: '0.20.43',
@@ -84,16 +80,18 @@ async function downloadGithubAssets(
   const downloadPromises = Object.entries(assetNames).map(
     async ([arch, platformFilenameMap]) =>
       Promise.all(
-        Object.entries(platformFilenameMap).filter(([, filename]) => filename).map(([platform, filename]) => {
-          return downloadAsset(
-            binaryName,
-            repo,
-            tagName,
-            arch,
-            platform as keyof typeof platformFilenameMap,
-            filename
-          )
-        })
+        Object.entries(platformFilenameMap)
+          .filter(([, filename]) => filename)
+          .map(([platform, filename]) => {
+            return downloadAsset(
+              binaryName,
+              repo,
+              tagName,
+              arch,
+              platform as keyof typeof platformFilenameMap,
+              filename
+            )
+          })
       )
   )
 

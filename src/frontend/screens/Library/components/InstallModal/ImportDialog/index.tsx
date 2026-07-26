@@ -1,11 +1,7 @@
 import { faSpinner } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import {
-  GameInfo,
-  InstallPlatform,
-  Runner
-} from 'common/types'
+import { GameInfo, InstallPlatform, Runner } from 'common/types'
 import { PathSelectionBox } from 'frontend/components/UI'
 import {
   DialogHeader,

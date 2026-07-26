@@ -57,15 +57,9 @@ const UninstallModal: React.FC<UninstallModalProps> = function ({
   const uninstallGame = async () => {
     onClose()
 
-    await window.api.uninstall(
-      appName,
-      runner,
-      false,
-      false
-    )
+    await window.api.uninstall(appName, runner, false, false)
     storage.removeItem(appName)
   }
-
 
   // disallow uninstalling epic games if an epic game is being installed
   if (installingEpicGame && runner === 'legendary') {

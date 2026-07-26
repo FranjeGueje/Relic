@@ -51,10 +51,11 @@ jest.mock('../constants', () => ({
 }))
 jest.mock('../user', () => ({
   GOGUser: {
-    getCredentials: () => Promise.resolve({
-      access_token: 'test-token',
-      refresh_token: 'test-refresh'
-    })
+    getCredentials: () =>
+      Promise.resolve({
+        access_token: 'test-token',
+        refresh_token: 'test-refresh'
+      })
   }
 }))
 jest.mock('../games')
@@ -109,7 +110,12 @@ describe('GOGLibraryManager.getInstallInfo', () => {
       versionEtag: '',
       folder_name: '',
       available_branches: [],
-      builds: { items: [], total_count: 0, count: 0, has_private_branches: false }
+      builds: {
+        items: [],
+        total_count: 0,
+        count: 0,
+        has_private_branches: false
+      }
     }
     manager.runRunnerCommand = jest.fn().mockResolvedValue({
       stdout: JSON.stringify(validInfo),

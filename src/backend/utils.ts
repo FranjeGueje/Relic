@@ -1,10 +1,5 @@
 import { callAllAbortControllers } from './utils/aborthandler/aborthandler'
-import {
-  Runner,
-  GameInfo,
-  GameSettings,
-  GameStatus
-} from 'common/types'
+import { Runner, GameInfo, GameSettings, GameStatus } from 'common/types'
 import axios from 'axios'
 import https from 'node:https'
 import { app, dialog, shell, Notification } from 'electron'

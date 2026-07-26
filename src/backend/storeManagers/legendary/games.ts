@@ -29,7 +29,12 @@ import {
 
 import { join } from 'path'
 import { gameInfoStore } from './electronStores'
-import { onGameInstalled, onGameImported, onGameMoved, onGameUninstalled } from 'backend/relic/game_events'
+import {
+  onGameInstalled,
+  onGameImported,
+  onGameMoved,
+  onGameUninstalled
+} from 'backend/relic/game_events'
 import { isOnline } from '../../online_monitor'
 import { Catalog, Product } from 'common/types/epic-graphql'
 import { sendFrontendMessage } from '../../ipc'
@@ -46,7 +51,6 @@ import { Path } from 'backend/schemas'
 import { mkdirSync } from 'fs'
 import { configStore } from 'backend/constants/key_value_stores'
 import { epicRedistPath, legendaryInstalled } from './constants'
-
 
 export default class LegendaryGame implements Game {
   private readonly appName: LegendaryAppName

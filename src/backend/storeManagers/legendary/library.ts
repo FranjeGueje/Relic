@@ -27,10 +27,7 @@ import {
   LogPrefix,
   logWarning
 } from 'backend/logger'
-import {
-  installStore,
-  libraryStore
-} from './electronStores'
+import { installStore, libraryStore } from './electronStores'
 import { callRunner } from '../../launcher'
 import { dirname, join } from 'path'
 import { isOnline } from 'backend/online_monitor'
@@ -246,7 +243,9 @@ export default class LegendaryLibraryManager implements LibraryManager {
           `Empty response from legendary for ${appName}. Retrying (${nextRetry} left).`,
           LogPrefix.Legendary
         )
-        return this.getInstallInfo(appName, installPlatform, { retries: nextRetry })
+        return this.getInstallInfo(appName, installPlatform, {
+          retries: nextRetry
+        })
       }
       throw Error(
         `Empty response from legendary for ${appName} after 3 retries.`

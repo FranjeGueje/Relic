@@ -74,8 +74,8 @@ const InstalledInfo = ({ gameInfo }: Props) => {
           <div className="truncatedPath">{appLocation}</div>
         </div>
       )}
-      </>
-    )
+    </>
+  )
 
   return info
 

@@ -18,7 +18,8 @@ export async function launchUmu(
 ): Promise<{ success: boolean; error?: string }> {
   const umuPath = await getUmuPath()
   if (!umuPath) {
-    const error = 'umu-run not found on PATH or bundled with Relic. Install UMU system-wide.'
+    const error =
+      'umu-run not found on PATH or bundled with Relic. Install UMU system-wide.'
     logError(error, LOG_PREFIX)
     return { success: false, error }
   }
@@ -33,15 +34,21 @@ export async function launchUmu(
 
   logInfo(
     `Launching: WINEPREFIX=${options.winePrefix} GAMEID=${options.gameId} ` +
-    `PROTONPATH=${options.protonPath} STORE=${options.store} ${umuPath} ${options.executable}`,
+      `PROTONPATH=${options.protonPath} STORE=${options.store} ${umuPath} ${options.executable}`,
     LOG_PREFIX
   )
 
   return new Promise((resolve) => {
-    const child = spawn(umuPath, [options.executable, ...(options.args || [])], { env, stdio: 'pipe' })
+    const child = spawn(
+      umuPath,
+      [options.executable, ...(options.args || [])],
+      { env, stdio: 'pipe' }
+    )
 
     let stderr = ''
-    child.stderr?.on('data', (chunk: Buffer) => { stderr += chunk.toString() })
+    child.stderr?.on('data', (chunk: Buffer) => {
+      stderr += chunk.toString()
+    })
 
     child.on('close', (code) => {
       if (code === 0) {

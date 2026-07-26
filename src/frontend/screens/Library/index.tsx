@@ -349,14 +349,7 @@ export default React.memo(function Library(): JSX.Element {
       const gameB = b.title.toUpperCase().replace('THE ', '')
       return gameA.localeCompare(gameB)
     })
-  }, [
-    showFavouritesLibrary,
-    favouriteGamesList,
-    epic,
-    gog,
-    amazon,
-    zoom
-  ])
+  }, [showFavouritesLibrary, favouriteGamesList, epic, gog, amazon, zoom])
 
   const favouritesIds = useMemo(() => {
     return favourites.map((game) => `${game.app_name}_${game.runner}`)
@@ -391,12 +384,7 @@ export default React.memo(function Library(): JSX.Element {
     const amazonLibrary = showAmazon ? amazon.library : []
     const zoomLibrary = showZoom ? zoom.library : []
 
-    return [
-      ...epicLibrary,
-      ...gogLibrary,
-      ...amazonLibrary,
-      ...zoomLibrary
-    ]
+    return [...epicLibrary, ...gogLibrary, ...amazonLibrary, ...zoomLibrary]
   }
 
   const gamesForAlphabetFilter = useMemo(() => {

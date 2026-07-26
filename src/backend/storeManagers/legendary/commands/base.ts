@@ -24,5 +24,3 @@ export type URL = z.infer<typeof URL>
 // FIXME: This doesn't feel right
 export const URI = z.union([Path, URL])
 export type URI = z.infer<typeof URI>
-
-

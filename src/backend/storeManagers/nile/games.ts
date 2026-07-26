@@ -25,11 +25,14 @@ import {
   sendProgressUpdate
 } from 'backend/utils'
 import { GlobalConfig } from 'backend/config'
-import { onGameInstalled, onGameImported, onGameMoved, onGameUninstalled } from 'backend/relic/game_events'
+import {
+  onGameInstalled,
+  onGameImported,
+  onGameMoved,
+  onGameUninstalled
+} from 'backend/relic/game_events'
 import { sendFrontendMessage } from '../../ipc'
 import { isLinux } from 'backend/constants/environment'
-
-
 
 export default class NileGameManager implements Game {
   private readonly id: string

@@ -13,7 +13,7 @@ interface GlobalStateV2 {
 
 const useGlobalStateRaw = create<GlobalStateV2>()((set) => ({
   gameOverrides: gameOverridesStore.get('overrides', {}),
-  setGameOverrides: (gameOverrides) => set({ gameOverrides }),
+  setGameOverrides: (gameOverrides) => set({ gameOverrides })
 }))
 
 /**

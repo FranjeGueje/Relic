@@ -112,9 +112,7 @@ export default function SIDLogin({ backdropClick }: Props) {
                 </Stack>
               </Paper>
             </li>
-            <li>
-              {`${t('message.part6')} ${t('message.part8')}`}
-            </li>
+            <li>{`${t('message.part6')} ${t('message.part8')}`}</li>
           </ol>
         </div>
         <input

@@ -4,11 +4,7 @@ import { IconDefinition } from '@fortawesome/free-solid-svg-icons'
 import { useContext, useState } from 'react'
 
 import ContextProvider from 'frontend/state/ContextProvider'
-import {
-  GameInfo,
-  InstallPlatform,
-  Runner
-} from 'common/types'
+import { GameInfo, InstallPlatform, Runner } from 'common/types'
 import { Dialog } from 'frontend/components/UI/Dialog'
 
 import './index.scss'

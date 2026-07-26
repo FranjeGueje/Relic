@@ -235,7 +235,7 @@ class GlobalState extends PureComponent<Props> {
     disableDialogBackdropClose: configStore.get(
       'disableDialogBackdropClose',
       false
-    ),
+    )
   }
 
   setCurrentCustomCategories = (newCustomCategories: string[]) => {
@@ -605,7 +605,7 @@ class GlobalState extends PureComponent<Props> {
       amazon: {
         ...this.state.amazon,
         library: this.loadAmazonLibrary(overrides)
-      },
+      }
     })
   }
 
@@ -1085,7 +1085,7 @@ class GlobalState extends PureComponent<Props> {
             addHelpItem: this.addHelpItem,
             removeHelpItem: this.removeHelpItem
           },
-          setDisableDialogBackdropClose: this.setDisableDialogBackdropClose,
+          setDisableDialogBackdropClose: this.setDisableDialogBackdropClose
         }}
       >
         {this.props.children}

@@ -1,10 +1,32 @@
-import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, statSync, symlinkSync, unlinkSync, writeFileSync, copyFileSync } from 'graceful-fs'
+import {
+  existsSync,
+  mkdirSync,
+  readFileSync,
+  readdirSync,
+  rmSync,
+  statSync,
+  symlinkSync,
+  unlinkSync,
+  writeFileSync,
+  copyFileSync
+} from 'graceful-fs'
 import { basename, join } from 'path'
 import { createHash } from 'node:crypto'
 import { logError, logInfo, logWarning } from 'backend/logger'
-import { relicMountPath, relicInstallPath, userDataPath, publicDir } from 'backend/constants/paths'
-import { legendaryConfigPath, legendaryInstalled } from 'backend/storeManagers/legendary/constants'
-import { nileConfigPath, nileInstalled } from 'backend/storeManagers/nile/constants'
+import {
+  relicMountPath,
+  relicInstallPath,
+  userDataPath,
+  publicDir
+} from 'backend/constants/paths'
+import {
+  legendaryConfigPath,
+  legendaryInstalled
+} from 'backend/storeManagers/legendary/constants'
+import {
+  nileConfigPath,
+  nileInstalled
+} from 'backend/storeManagers/nile/constants'
 import { gogdlConfigPath } from 'backend/storeManagers/gog/constants'
 import { GameInfo } from 'common/types'
 import type { GameRunner } from './steam_shortcuts/types'
@@ -31,7 +53,10 @@ const STORE_CONFIGS: Record<GameRunner, StoreConfig> = {
       return Object.fromEntries(
         Object.entries(obj).map(([key, entry]) => [
           key,
-          { ...entry, install_path: `c:\\games\\${basename(entry.install_path as string)}` }
+          {
+            ...entry,
+            install_path: `c:\\games\\${basename(entry.install_path as string)}`
+          }
         ])
       )
     }
@@ -76,7 +101,10 @@ export function windowify(gameInfo: GameInfo, installPath: string): void {
 
   const config = STORE_CONFIGS[gameInfo.runner]
   if (!config || !config.installedFile) {
-    logWarning(`windowify not implemented for runner: ${gameInfo.runner}`, LOG_PREFIX)
+    logWarning(
+      `windowify not implemented for runner: ${gameInfo.runner}`,
+      LOG_PREFIX
+    )
     return
   }
 
@@ -88,7 +116,10 @@ export function windowify(gameInfo: GameInfo, installPath: string): void {
     }
 
     if (!existsSync(config.installedFile)) {
-      logWarning(`No installed.json found at ${config.installedFile}`, LOG_PREFIX)
+      logWarning(
+        `No installed.json found at ${config.installedFile}`,
+        LOG_PREFIX
+      )
       return
     }
 
@@ -157,7 +188,10 @@ export function syncMountBin(): void {
     copied++
   }
 
-  logInfo(`syncMountBin: ${files.length} ficheros, ${copied} copiados`, LOG_PREFIX)
+  logInfo(
+    `syncMountBin: ${files.length} ficheros, ${copied} copiados`,
+    LOG_PREFIX
+  )
 }
 
 // ── Private helpers ──
@@ -198,7 +232,10 @@ function symlinkStoreFiles(sourceDir: string, mountDir: string): void {
 
     symlinkSync(sourcePath, mountPath)
   }
-  logInfo(`Symlinked ${entries.length} entries from ${sourceDir} → ${mountDir}`, LOG_PREFIX)
+  logInfo(
+    `Symlinked ${entries.length} entries from ${sourceDir} → ${mountDir}`,
+    LOG_PREFIX
+  )
 }
 
 function copyAndTransformInstalled(

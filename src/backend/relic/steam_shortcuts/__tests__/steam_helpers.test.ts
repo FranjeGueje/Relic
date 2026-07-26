@@ -16,10 +16,7 @@ jest.mock('backend/logger', () => ({
 }))
 jest.mock('backend/config')
 
-const TEST_VDF_DIR = join(
-  __dirname,
-  'test_data'
-)
+const TEST_VDF_DIR = join(__dirname, 'test_data')
 
 let tmpDir: DirResult
 let tmpUserdataDir: string

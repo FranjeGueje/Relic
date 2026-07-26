@@ -1,7 +1,9 @@
 # HISTORY_REMOVE.md
 
 ## Fase 5 — Refactorización profunda
+
 ### Eliminación del flujo de lanzamiento de juegos
+
 - `src/backend/launcher.ts`: eliminado `launchEventCallback`, `prepareLaunch`, `filterGameSettingsForLog`, `setupEnvVars`, `setupWrapperEnvVars`, `setupWrappers`, `runBeforeLaunchScript`, `runAfterLaunchScript`, `runScriptForGame`. Mantenidos: `callRunner`, `readKnownFixes`, `getRunnerCallWithoutCredentials`, `appNameFromCommandParts`.
 - Eliminados `LaunchParams`, `LaunchPreperationResult`, `lastUsedLaunchOption`, `beforeLaunchScriptPath`, `afterLaunchScriptPath`, `disableUMU` de `common/types.ts`
 - Eliminado `launch()`, `getLaunchOptions()` de la interfaz `Game` y `LibraryManager` en `game_manager.ts`
@@ -9,6 +11,7 @@
 - Eliminado `openWinePrefixFAQ` de `SyncIPCFunctions`
 
 ### Eliminación de `launch()` en store managers
+
 - `storeManagerCommon/games.ts`: archivo completo eliminado (`launchGame`, `openNewBrowserGameWindow`)
 - `legendary/games.ts`: método `launch()` (~90 líneas) e imports eliminados
 - `gog/games.ts`: método `launch()` (~140 líneas) e imports eliminados
@@ -17,23 +20,27 @@
 - `sideload/games.ts`: método `launch()` e imports eliminados
 
 ### Eliminación de IPC y preload de lanzamiento
+
 - `main.ts`: handler `launch`, `getLaunchOptions`, `getPlaytimeFromRunner` eliminados. Import de `playtimeSyncQueue` y su lógica de startup eliminados.
 - `preload/api/library.ts`: `export const launch` eliminado
 - `preload/api/helpers.ts`: `openWinePrefixFAQ`, `getLaunchOptions` eliminados
 
 ### Eliminación de settings de scripts y disableUMU
+
 - `config.ts`, `game_config.ts`: campos `beforeLaunchScriptPath`, `afterLaunchScriptPath`, `disableUMU` eliminados
 - `compatibility_layers.ts`: parámetro `disableUMU` eliminado de `isUmuSupported`
 - Componentes `BeforeLaunchScriptPath.tsx`, `AfterLaunchScriptPath.tsx` eliminados
 - Exports del barrel `Settings/components/index.ts` eliminados
 
 ### Eliminación de frontend launch code y ProtonDB
+
 - `helpers/library.ts`: funciones `launch`, `checkLaunchOptionsAndLaunch` eliminadas (eran internas, no exportadas)
 - Referencias a `'launching'` status eliminadas de: `GameCard/constants.ts`, `GamePage/index.tsx`, `GlobalState.tsx`, `hooks/constants.ts`, `ConsoleCard/index.tsx`, `GameContext.tsx`, `types.ts`
 - ProtonDB eliminado de `GameSubMenu/index.tsx` y `GameCard/index.tsx`
 - `faLinux` import eliminado de `GameSubMenu`
 
 ### Eliminación de código muerto Wine/Proton
+
 - `wineprefixFAQ` eliminado de `urls.ts`
 - `defaultWinePrefixDir`, `sharedWinePrefix`, `defaultWinePrefix` eliminados de `paths.ts`
 - `ValidWinePrefix` eliminado de `legendary/commands/base.ts`
@@ -44,10 +51,12 @@
 - Directorio `src/backend/wine/` completo eliminado (6 archivos)
 
 ### Limpieza de traducciones
+
 - 47 `translation.json`: `eosOverlay` block, `setting.before-launch-script-path`, `setting.after-launch-script-path`, `setting.disableUMU` eliminados
 - 47 `gamepage.json`: `protondb`, `disableEosOverlay`, `enableEosOverlay` eliminados (si existían)
 
 ## Rebranding Heroic → Relic
+
 - Renombrado: package.json, electron-builder.yml, index.html, manifest.json
 - Identificadores, textos, URLs, scheme de protocolo (`heroic://` → `relic://`)
 - Config paths (`~/.config/heroic` → `~/.config/relic`)
@@ -55,9 +64,11 @@
 - Reemplazados: `HeroicVersion` → `RelicVersion`, `ResetHeroic` → `ResetRelic`
 
 ## GitHub
+
 - `.github/workflows/` eliminado (23 archivos, 978 líneas)
 
 ## MangoHud
+
 - Componente `Mangohud.tsx` eliminado
 - `showMangohud` eliminado de `GameSettings` y `game_config.ts`
 - `mangoHudCommand` eliminado de `LaunchPreperationResult`, `launcher.ts`, y todos los storeManagers
@@ -65,6 +76,7 @@
 - Claves de traducción eliminadas (47 archivos)
 
 ## Gamescope
+
 - Componente `Gamescope.tsx` eliminado
 - Interfaz `GameScopeSettings` y campo `gamescope` eliminados de `common/types.ts`
 - Campo `gamescope` eliminado de `game_config.ts`
@@ -76,6 +88,7 @@
 - Claves de traducción eliminadas (47 archivos)
 
 ## Windows
+
 - Build config: secciones `win`, `portable`, `nsis` eliminadas de `electron-builder.yml`
 - Scripts `release:win`, `sign:win`, `dist:win` eliminados de `package.json`
 - `isWindows` fijado a `false` en `environment.ts`
@@ -87,6 +100,7 @@
 - `if (isWindows)` en `main.ts` eliminado
 
 ## Kofi
+
 - URL `kofiPage` eliminada de `urls.ts`
 - `openKofiPage` eliminado de IPC, preload, backend, y sidebar
 - Botón Ko-fi eliminado de la sidebar (`faCoffee` import removido)
@@ -94,6 +108,7 @@
 - Enlaces Ko-fi eliminados de `Support.md`, flatpak template, y `snap/snapcraft.yaml`
 
 ## Discord
+
 - Dependencia `@xhayper/discord-rpc` eliminada de `package.json`
 - Función `constructAndUpdateRPC` eliminada de `backend/utils.ts`
 - Componente `DiscordRPC.tsx` eliminado
@@ -106,6 +121,7 @@
 - Menciones a Discord eliminadas de traducciones (40 archivos), SidebarTour, Nile setup, LogFileUploadDialog, LogSettings, electron_store.ts
 
 ## Flatpak / Flathub
+
 - Directorios `flatpak/` y `flathub/` eliminados
 - Scripts `dist:flatpak`, `flatpak:build`, `flatpak:prepare`, `flatpak:prepare-release`, `release:updateFlathub:ci` eliminados de package.json
 - `isFlatpak` y `flatpakRuntimeVersion` eliminados de `environment.ts` y preload
@@ -124,6 +140,7 @@
 - Entradas Flatpak eliminadas de CHANGELOG.md, .prettierignore, .gitignore, tsconfig.eslint.json, ROADMAP_REMOVE.md
 
 ## Start Tour
+
 - Componentes `Tour.tsx`, `TourButton.tsx`, `Tour.scss`, `TourButton.scss` eliminados
 - `TourContext.tsx` (estado + localStorage) eliminado
 - `LibraryTour.tsx` y `SidebarTour.tsx` eliminados
@@ -133,6 +150,7 @@
 - Claves `tour.*` eliminadas de 47 archivos de traducción
 
 ## Accesibilidad
+
 - Directorio `screens/Accessibility/` eliminado (index.tsx + index.css)
 - Ruta `/accessibility` y sidebar link eliminados
 - Estado `zoomPercent`, `setZoomPercent`, `primaryFontFamily`, `secondaryFontFamily`, `setPrimaryFontFamily`, `setSecondaryFontFamily` eliminados de `GlobalState.tsx`, `ContextProvider.tsx`, `types.ts`
@@ -140,6 +158,7 @@
 - Claves `accessibility.*` y `help.analytics` eliminadas de 47 traducciones
 
 ## Deals (Discounts) y Stores
+
 - Directorios `screens/Discounts/` y `backend/discounts/` eliminados
 - Archivo `common/types/discounts.ts` eliminado
 - IPC `getGogDiscounts`, `getGmgDiscounts`, `CatalogLocaleSettings`, `CatalogProduct` eliminados
@@ -152,6 +171,7 @@
 - Claves `discounts.*`, `stores`, `store`, `gog-store`, `amazon-luna`, `zoom-store`, `adtraction-locked` eliminadas de 47 traducciones
 
 ## Analytics (Plausible)
+
 - `AnalyticsDialog.tsx` (modal de inicio) eliminado
 - `AnalyticsOptIn.tsx` (toggle en settings) eliminado
 - `backend/utils/plausible.ts` (servicio Plausible) eliminado
@@ -161,6 +181,7 @@
 - Claves `analyticsModal.*`, `help.analytics` eliminadas de 47 traducciones
 
 ## Settings > General (varios toggles)
+
 - `WinePrefixesBasePath.tsx` eliminado (setting `defaultWinePrefixDir` conservada)
 - `EgsSettings.tsx` + `egsSync` IPC + `toggleGamesSync` + `egsLinkedPath` eliminados por completo
 - `CheckUpdatesOnStartup.tsx` eliminado (setting `checkForUpdatesOnStartup` conservada)
@@ -172,6 +193,7 @@
 - Claves de traducción asociadas eliminadas de 47 archivos
 
 ## Custom Themes Path y Custom CSS
+
 - `CustomCSS.tsx` (textarea CSS) eliminado
 - `ThemeSelector`: path picker, wiki link, warning, `hasHelp`, `getCustomThemes`, estado `themesPath` eliminados
 - `index.tsx`: `window.setCustomCSS`, `getCustomCSS`, carga de CSS de temas personalizados en `setTheme` eliminados
@@ -183,18 +205,21 @@
 - Claves de traducción eliminadas de 47 archivos
 
 ## Hide Changelogs on Startup
+
 - `HideChangelogOnStartup.tsx` eliminado
 - Estado `hideChangelogsOnStartup`, `setHideChangelogsOnStartup` eliminados de types/state/context/config
 - `RelicVersion` simplificado (siempre muestra changelog si cambió versión)
 - Clave `setting.hideChangelogsOnStartup` eliminada de 47 traducciones
 
 ## Start in Console Mode (siempre activo)
+
 - `StartInConsoleMode.tsx` eliminado
 - Campo `startInConsoleMode` eliminado de types/config
 - `backend/main.ts`: redirección siempre a `/console`
 - Clave `setting.start_in_console_mode` eliminada de 47 traducciones
 
 ## Tray Icon (noTrayIcon y exitToTray)
+
 - `TraySettings.tsx` eliminado (contenía toggles noTrayIcon, exitToTray, startInTray)
 - `tray_icon/tray_icon.ts`: check `noTrayIcon`, lógica `exitToTray`, listener `changeTrayColor` eliminados
 - `backend/main.ts`: bloque `exitToTray && !noTrayIcon` eliminado; `startInTray` simplificado
@@ -203,12 +228,14 @@
 - Claves `setting.no-tray-icon`, `setting.exit-to-tray` eliminadas de 47 traducciones
 
 ## Disable Controller (siempre activo)
+
 - `DisableController.tsx` eliminado
 - `gamepad.ts`: variable `controllerIsDisabled`, check, y `toggleControllerIsDisabled` eliminados
 - Campo `disableController` eliminado de types
 - Clave `setting.disable_controller` eliminada de 47 traducciones
 
 ## Library Top Section y Max Recent Games
+
 - `LibraryTopSection.tsx` y `MaxRecentGames.tsx` eliminados
 - Campos `libraryTopSection`, `maxRecentGames`, tipo `LibraryTopSectionOptions` eliminados de `common/types.ts`
 - `libraryTopSection`, `handleLibraryTopSection` eliminados de `frontend/types.ts`, `GlobalState.tsx`, `ContextProvider.tsx`
@@ -219,14 +246,17 @@
 - Claves `setting.libraryTopSection`, `setting.maxRecentGames` eliminadas de 47 traducciones
 
 ## Movimientos en Settings
+
 - `VerboseLogs` movido de GamesSettings a GeneralSettings
 - `SteamGridDbApiKey`, `ClearCache`, `ResetRelic` movidos de AdvancedSettings a GeneralSettings
 
 ## Reordenamiento Sidebar
+
 - "Gestionar cuentas" movido debajo de "Biblioteca"
 - "Descargas" movido debajo de "Ajustes"
 
 ## URLs rotas de github.com/anomalyco/relic
+
 - `urls.ts`: eliminados `sidInfoUrl`, `relicGithubURL`, `GITHUB_API`, `supportURL`, `wikiLink`
 - `updater.ts` (auto-updater de electron) eliminado
 - `utils/releases.ts` (fetch de releases info) eliminado
@@ -253,6 +283,7 @@
 - Test data de tests de `getLatestReleases` eliminados
 
 ## Wine Manager (gestión de Wine/Proton)
+
 - Directorio `backend/wine/manager/` eliminado (wine downloader, utils, ipc_handler)
 - Directorio `frontend/screens/WineManager/` eliminado
 - Directorio `frontend/components/UI/Winetricks/` eliminado
@@ -266,6 +297,7 @@
 - `backend/tools/ipc_handler.ts`: handlers `winetricksInstall`, `winetricksAvailable`, `winetricksInstalled` eliminados
 
 ## GE-Proton y Proton-CachyOS (referencias eliminadas)
+
 - `common/types.ts`: `'GE-Proton'` y `'Proton-CachyOS'` eliminados del type `Type`; `Repositorys` enum, `WineManagerStatus`, `WineManagerUISettings` eliminados; `'ge-proton'` y `'proton-cachyos'` eliminados de `ReleasesInfo`
 - `DownloadProtonToSteam.tsx` y `ShowValveProton.tsx` eliminados
 - `AutoDXVK.tsx`, `AutoDXVKNVAPI.tsx`, `AutoVKD3D.tsx` eliminados
@@ -280,38 +312,46 @@
 - `common/types.ts`: `downloadProtonToSteam` eliminado
 
 ## Dependencias no usadas eliminadas
+
 - `react-markdown`, `rehype-raw`, `intro.js`, `intro.js-react` eliminados de `package.json` (ningún import en `src/`)
 
 ## Componentes frontend macOS-only
+
 - `AdvertiseAvxForRosetta.tsx`, `CrossoverBottle.tsx`, `EnableMsync.tsx` eliminados
 - `AppleWikiInfo.tsx` y `MacOSCompatibility/index.scss` eliminados
 - Referencia `wineCrossoverBottle` eliminada de `InstalledInfo.tsx`
 - Limpiados imports/exports en `components/index.ts`, `GamesSettings/index.tsx`, `GamePage/index.tsx`
 
 ## AppleGamingWiki (backend)
+
 - Directorio `backend/wiki_game_info/applegamingwiki/` eliminado (utils, constants, tests)
 - Interfaz `AppleGamingWikiInfo` y campo `applegamingwiki` eliminados de `common/types.ts`
 - Referencias a `applegamingwiki` eliminadas de `GamePage/index.tsx` y `ClearCache.tsx`
 
 ## Referencias a "Heroic" en URLs
+
 - `common/types/legendary.ts`: comentario URL actualizado
 - `backend/tools/index.ts`: URLs de Heroic-Games-Launcher/vkd3d-proton cambiadas a HansKristian-Work/vkd3d-proton
 
 ## Settings Windows-only sin UI
+
 - `addStartMenuShortcuts` eliminado de `common/types.ts`, `backend/config.ts`, `shortcuts/shortcuts.ts`
 
 ## Game Defaults (GamesSettings)
+
 - Directorio `sections/GamesSettings/` eliminado
 - Sidebar link a `/settings/games_settings` eliminado
 - Import y renderizado eliminados de `Settings/index.tsx`, `SettingsModal/index.tsx`, `sections/index.tsx`
 
 ## Advanced Settings
+
 - Directorio `sections/AdvancedSettings/` eliminado
 - Sidebar link a `/settings/advanced` eliminado
 - Botones "Settings → Advanced" en `EditGameDialog` y `SideloadDialog` eliminados (cambiados a "Settings → General")
 - Imports y renders eliminados de `Settings/index.tsx`, `sections/index.tsx`
 
 ## Add Game (botón + diálogo)
+
 - `AddGameButton.tsx` y `SideloadDialog/` eliminados
 - `EmptyLibraryMessage.tsx` eliminado
 - `handleAddGameButtonClick` eliminado de `LibraryContext`, `types.ts`, `Library/index.tsx`
@@ -319,10 +359,12 @@
 - `InstallModal`: lógica `isSideload`, `sideloadTitle`, Browser platform, y renderizado de SideloadDialog eliminados
 
 ## System Information (Settings)
+
 - Directorio `sections/SystemInfo/` eliminado
 - Sidebar link, imports, y renderizados eliminados de `Settings/index.tsx`, `sections/index.tsx`, `SidebarLinks`
 
 ## Sync Saves
+
 - Directorio `sections/SyncSaves/` eliminado (gog.tsx, legendary.tsx, index.tsx)
 - `CloudSavesSync.tsx` eliminado (GamePage)
 - `backend/save_sync.ts` eliminado
@@ -333,6 +375,7 @@
 - `isSyncSettings` y sidebar link eliminados
 
 ## Log Settings (botones de log)
+
 - Botones "Show log file in folder", "Upload log file", "Show uploaded log files" eliminados de `LogSettings/index.tsx`
 - `LogFileUploadDialog/` y `UploadedLogFilesList/` directorios eliminados
 - `backend/logger/uploader.ts` eliminado
@@ -343,20 +386,24 @@
 - Imports y renders eliminados de `App.tsx`
 
 ## Log Settings (logs por juego)
+
 - Eliminada la lista de logs por juego (installedGames y su useEffect)
 - `LogSettings` simplificado: solo muestra logs de Relic, Epic/Legendary, GOG, Amazon/Nile
 - Eliminados imports de `SettingsContext`, `ContextProvider`, `GameInfo`
 
 ## GameCard
+
 - Botón de Settings (icono a la izquierda del menú de tres puntos) eliminado
 - Botón verde de PLAY eliminado para juegos instalados
 - "Edit Game", "Categories", "Launch Game" eliminados del menú contextual
 - Imports no usados limpiados (`SettingsIcon`, `EditGameDialog`, `openInstallGameModal`, `isSideloaded`, `PlayIcon`, `PlayArrow`)
 
 ## GamePage
+
 - Botón de Settings (`SettingsButton.tsx`) eliminado de la página de detalle
 
 ## GameSubMenu (menú de tres puntos en GamePage)
+
 - Eliminadas opciones: "Edit Game", "Add Shortcut", "Change Install Location", "Add to Steam", "Categories", "Browse Wine Prefix"
 - Funciones removidas: `handleEdit`, `handleShortcuts`, `handleChangeInstall`/`onChangeInstallYesClick`, `handleAddToSteam`, `onBrowsePrefix`
 - Estados removidos: `steamRefresh`/`setSteamRefresh`, `addedToSteam`/`setAddedToSteam`, `hasShortcuts`/`setHasShortcuts`
@@ -365,36 +412,44 @@
 ## Wine/Proton del frontend
 
 ### Archivos eliminados
+
 - `Settings/components/`: `WinePrefix.tsx`, `WineVersionSelector.tsx`, `CustomWineProton.tsx`, `DefaultSteamPath.tsx`, `EnableEsync.tsx`, `EnableFsync.tsx`, `EnableWineWayland.tsx`, `EnableWoW64.tsx`, `PreferSystemLibs.tsx`, `SteamRuntime.tsx`, `DisableUMU.tsx`, `EnableDXVKFpsLimit.tsx`, `EnableFSR.tsx`, `EacRuntime.tsx`, `GameMode.tsx`, `Tools/` (winecfg)
 - `Game/GamePage/components/`: `CompatibilityInfo.tsx` (ProtonDB)
 
 ### Settings
+
 - Eliminados todos los exports de los componentes borrados en `components/index.ts`
 - Eliminado `defaultWineVersion` y su import `WineInstallation` de `Settings/index.tsx`
 - Eliminado `<DefaultSteamPath />` de `GeneralSettings`
 
 ### GamePage
+
 - Eliminado `isInstallingWinetricksPackages` de `GamePage/index.tsx`
 - Eliminado `installingWinetricksPackages` del contexto en `GamePage/index.tsx`
 - Eliminado `is.installingWinetricksPackages` de `MainButton.tsx` (disabled + label)
 - Eliminado `CompatibilityInfo` import, barrel export y JSX de GamePage
 
 ### GameContext & types
+
 - Eliminado `installingWinetricksPackages: boolean` de `types.ts`
 - Eliminado `installingWinetricksPackages: false` de `GameContext.tsx`
 
 ### GameCard
+
 - Eliminado `isInstallingWinetricksPackages` de `constants.ts`
 
 ### UninstallModal
+
 - Eliminado checkbox "Remove prefix" y toda la lógica asociada (`winePrefix`, `deletePrefixChecked`, `disableDeleteWine`)
 
 ### ConsoleMode
+
 - Eliminado `'winetricks'` de `ACTIVE_STATUSES` en `ConsoleCard`
 - Eliminado `case 'winetricks'` de `LaunchOverlay`
 - Eliminado comentario "via Wine/Proton" de `InstallOverlay`
 
 ### Estado global & hooks
+
 - Eliminado `wineVersions` state e import de `WineVersionInfo` de `GlobalState.tsx`
 - Eliminado `wineDownloaderInfoStore` de imports en `GlobalState.tsx`
 - Eliminado `'winetricks'` de arrays `allowed` y `allowedPendingOps` en `GlobalState.tsx`
@@ -402,12 +457,14 @@
 - Renombrado `winetricksOutputBottomRef` → `logRef` en `ProgressDialog`
 
 ## Tiempo de juego (Playtime)
+
 - Eliminado directorio `Game/TimeContainer/` (componente + CSS)
 - Eliminado import y `<TimeContainer />` de `GamePage/index.tsx`
 - Eliminado `timestampStore` de `frontend/helpers/electronStores.ts` (declaración + export)
 - Eliminado `fetchPlaytimeFromServer` de `preload/api/misc.ts`
 
 ## Lanzamiento de juegos (PLAY / JUGAR AHORA)
+
 - Eliminados archivos: `MainButton.tsx`, `LaunchOverlay/`, `useLaunchOptions.ts`, `LaunchOptionSelector.tsx`
 - Eliminados exports de `MainButton` y `LaunchOptionSelector` de barrel files
 - `GamePage/index.tsx`: eliminado `handlePlay`, `playClicked`, `MainButton`, `LaunchOptionSelector`, imports de `launch`/`sendKill`
@@ -418,6 +475,7 @@
 - `helpers/library.ts`: eliminado `launch` de export (función interna ahora inaccesible)
 
 ## Protocolo relic://
+
 - Eliminado `src/backend/protocol.ts` (handleProtocol completo)
 - Eliminado `src/backend/__tests__/protocol.test.ts`
 - `src/backend/main.ts`: eliminado registro de protocolo, import y llamadas a `handleProtocol`, handler `open-url` de macOS, variable `openUrlArgument`
@@ -427,6 +485,7 @@
 - `src/frontend/`: eliminado `HideWindowOnProtocolLaunch.tsx` y su export
 
 ## ExtraGameInfo (PCGamingWiki, HLTB, ProtonDB, SteamDeck, GamesDB, UMU)
+
 - Eliminado `src/backend/wiki_game_info/` (directorio completo con orquestador, IPC handler, stores, mocks + 6 scrapers + tests)
 - Eliminado `src/frontend/components/UI/WikiGameInfo/` (HLTB + GameScore con SCSS)
 - Eliminado `src/frontend/screens/Game/GamePage/components/Scores.tsx` y `HLTB.tsx`
@@ -443,6 +502,7 @@
 - `backend/shortcuts/__tests__/`: eliminado `jest.mock` de `wiki_game_info`
 
 ## AntiCheat (AreWeAntiCheatYet)
+
 - Eliminado `src/backend/anticheat/` (utils + ipc_handler)
 - Eliminado `src/frontend/components/UI/Anticheat/` (componente + SCSS)
 - Eliminado `src/frontend/hooks/hasAnticheatInfo.ts`
@@ -458,6 +518,7 @@
 - `common/types/ipc.ts`: eliminado `AntiCheatInfo` import y `getAnticheatInfo`
 
 ## Game Override API (relic.legendary.gl)
+
 - `backend/storeManagers/legendary/library.ts`: eliminadas funciones `getGameOverride()` y `getGameSdl()` (fetch a `relic.legendary.gl`)
 - `backend/storeManagers/legendary/electronStores.ts`: eliminado `gamesOverrideStore`
 - `backend/main.ts`: eliminados handlers `getGameOverride` y `getGameSdl`
@@ -469,6 +530,7 @@
 ## Fase 3: Limpieza gestión Wine/Proton
 
 ### tools/ (DXVK, VKD3D, DXMT, Winetricks)
+
 - Directorio `backend/tools/` eliminado (index.ts, ipc_handler.ts, dxmt.ts)
 - `runWineCommandOnGame` movido a `launcher.ts`
 - `main.ts`: import `tools/ipc_handler` eliminado
@@ -478,6 +540,7 @@
 - `preload/misc.ts`: `callTool` eliminado
 
 ### CrossOver
+
 - `launcher.ts`: `getCrossoverBottleFolder` completa, CrossOver bottle verify, `case 'crossover'` en setupWineEnvVars, `wineCrossoverBottle` de filterGameSettingsForLog, `prefixOrBottleFolder` simplificado eliminados
 - `compatibility_layers.ts`: `getCrossover()` completa y `case 'crossover'` eliminados
 - `config.ts`: import y llamada `getCrossover()` eliminados
@@ -487,11 +550,13 @@
 - `types.ts`: `wineCrossoverBottle` de GameSettings e ImportGameArgs eliminados
 
 ### Lutris
+
 - `types.ts`: `'Wine-Lutris'` del type `Type` eliminado
 - `compatibility_layers.ts`: detección de Wine de Lutris (`.local/share/lutris`) eliminada
 - `wine/runtimes/runtimes.ts`: fetch a `lutris.net/api/runtimes` eliminado; `_get()` eliminado; `download()`/`isInstalled()` simplificados a local check
 
 ### wine/runtimes/
+
 - `runtimes.ts`: simplificado (sin lutris API, solo check local)
 - `ipc_handler.ts` eliminado
 - `ipc.ts`: `downloadRuntime`, `isRuntimeInstalled` eliminados de AsyncIPCFunctions
@@ -499,6 +564,7 @@
 - `types.ts`: `RuntimeName` simplificado a solo `'umu'`
 
 ## Fase 2: Settings Wine prohibidas
+
 - Archivos `.tsx` eliminados: `EnvVariablesTable.tsx`, `WrappersTable.tsx`, `LauncherArgs.tsx`, `NvidiaPrime.tsx`, `ShowFPS.tsx`, `BattlEyeRuntime.tsx`
 - `components/index.ts`: exports limpiados
 - `common/types.ts`: eliminados de `GameSettings`: `autoInstallDxvk`, `autoInstallVkd3d`, `autoInstallDxvkNvapi`, `battlEyeRuntime`, `DXVKFpsCap`, `eacRuntime`, `enableDXVKFpsLimit`, `enableEsync`, `enableFSR`, `enableMsync`, `enableFsync`, `enableWineWayland`, `enableHDR`, `enableWoW64`, `enviromentOptions`, `launcherArgs`, `nvidiaPrime`, `preferSystemLibs`, `showFps`, `useGameMode`, `useSteamRuntime`, `wrapperOptions`, `advertiseAvxForRosetta`. Eliminado `customWinePaths` de `AppSettings`. Eliminados `LaunchPreperationResult.gameModeBin` y `steamRuntime`. Eliminados tipos `EnviromentVariable` y `WrapperVariable`.
@@ -510,6 +576,7 @@
 - `common/types.ts`: `showValveProton` eliminado de comentarios de JSDoc en shortcuts
 
 ## EOS Overlay
+
 - Directorio `backend/storeManagers/legendary/eos_overlay/` eliminado (eos_overlay.ts + ipc_handler.ts)
 - `backend/storeManagers/legendary/commands/eos_overlay.ts` eliminado
 - `commands/index.ts`: import y type union de `EosOverlayCommand` eliminados
@@ -524,6 +591,7 @@
 - `CurrentDownload/index.tsx`: hack de título EOS Overlay eliminado
 
 ## Wine Full Removal (types + dependencias)
+
 - `common/types.ts`: eliminados todos los tipos Wine (`WineInstallation`, `SteamRuntime`, `Runtime`, `RuntimeName`, `WineCommandArgs`, `ProtonVerb`, union `Type`, `VersionInfo`, `WineVersionInfo`, `ReleasesInfo`); eliminados `winePrefix`/`wineVersion` de `GameSettings` e `ImportGameArgs`; eliminados `sharedWinePrefix`/`defaultWinePrefix`/`defaultWinePrefixDir` de `AppSettings`
 - `backend/config.ts`: import `WineInstallation` eliminado; funciones `getMacOsWineSet`, `getAlternativeWine` eliminadas; defaults Wine eliminados
 - `backend/launcher.ts`: `setupWineEnvVars`, `verifyWinePrefix`, `validWine`, `getWinePath`, `runWineCommand`, `runWineCommandOnGame`, `prepareWineLaunch` eliminados; `setupWrappers` reducido a stub que retorna `[]`; referencias a `gameSettings.winePrefix` eliminadas
@@ -545,9 +613,11 @@
 - `backend/downloadmanager/downloadqueue.ts`: `stop(false)` → `stop()` (parámetro Wine eliminado)
 
 ## Legendary 404 (ExtraGameInfo API)
+
 - `backend/storeManagers/legendary/extraGameInfo.ts`: `logError` → `logDebug` para errores 404 (no son error real)
 
 ## Settings/Logs modals eliminados
+
 - `SettingsModal/` directorio completo eliminado (index.tsx + CategorySettings/)
 - `GameCard/index.tsx`: items "Settings" y "Logs" del menú contextual eliminados + imports
 - `GlobalStateV2.ts`: estados `showSettingsModal`, `settingsModalGameInfo`, `showLogModal` y setters eliminados
@@ -556,20 +626,24 @@
 - `useSettingsContext.ts`: residual references limpiadas
 
 ## Context menu ampliado (Library)
+
 - `GameCard/index.tsx`: añadidos items: Force Update, Move Game, Verify & Repair, Check Compatibility, Modify Installation, Browse Files
 - Modales asociados: `MoveGameModal`, `RepairModal`, `ModifyInstallModal`
 
 ## ConsoleMode: overlay de desinstalación
+
 - `ConsoleMode/UninstallOverlay/`: nuevo componente (overlay de confirmación al seleccionar juego instalado)
 - `ConsoleMode/index.tsx`: `activateGame` ya no navega a GamePage; abre overlay de desinstalación
 - Estados: `uninstallingGame`/`setUninstallingGame`
 
 ## Claves de traducción `console.uninstall`
+
 - `console.uninstall.title` y `console.uninstall.message` añadidas a 47 archivos `translation.json`
 
 ## Fase 4: Ramas isMac/isWindows/isIntelMac muertas (~104 ocurrencias, ~28 archivos)
 
 ### isMac backend (14 archivos)
+
 - `environment.ts`: eliminado `export const isMac = false`
 - `main.ts`: `if (!isMac) { app.quit() }` → `app.quit()`
 - `launcher.ts`: eliminado bloque `if (isMac) { delete gameSettings.disableUMU }`
@@ -587,6 +661,7 @@
 - `utils.ts`: eliminada función `isMacSonomaOrHigher()` completa
 
 ### isWindows backend (11 archivos)
+
 - `config.ts`: eliminado bloque `if (isWindows)` en `getSteamCompatFolder()`
 - `logger/paths.ts`: eliminado bloque `if (isWindows)` + import
 - `shortcuts/nonesteamgame/nonesteamgame.ts`: simplificadas 3 condiciones isWindows
@@ -600,12 +675,14 @@
 - Import `moveOnWindows` eliminado de gog, legendary, nile store managers (ya no usado)
 
 ### isIntelMac backend (3 archivos)
+
 - `utils.ts`: eliminada función `checkRosettaInstall()` completa
 - `utils/ipc_handler.ts`: eliminado handler IPC `isIntelMac`
 - `common/types/ipc.ts`: eliminado tipo `isIntelMac`
 - `preload/api/misc.ts`: eliminado export `isIntelMac`
 
 ### process.platform (6 archivos)
+
 - `tray_icon/tray_icon.ts`: eliminados entries darwin/win32 de `iconSizesByPlatform`; ternarios `platform === 'darwin'` simplificados; parámetro `platform` eliminado de `contextMenu`
 - `shortcuts/shortcuts/shortcuts.ts`: eliminados cases `darwin`/`win32` de `shortcutFiles()`; eliminadas funciones `generateMacOsApp()` + `convertPngToICNS()` + imports no usados
 - `constants/others.ts`: `getShell()` simplificado a `return '/bin/bash'`
@@ -614,6 +691,7 @@
 - `utils/os/path/index.ts`: `process.platform === 'win32' ? 'where' : 'which'` → `'which'`
 
 ### Frontend platform checks (8 archivos)
+
 - `Library/index.tsx`: eliminado filtro mac (3 ramas)
 - `LibraryFilters/index.tsx`: eliminado `{platform === 'darwin' && platformToggle('mac')}`; simplificado `platform === 'linux'` → siempre visible
 - `InstallModal/index.tsx`: eliminado isMac, isWin, macOS platform option, getDefaultplatform simplificado
@@ -624,25 +702,31 @@
 - `SidebarLinks/index.tsx`: eliminado isWin no usado
 
 ### Frontend isIntelMac propagation (3 archivos)
+
 - `types.ts`: eliminado `isIntelMac: boolean` de GameContextType
 - `GlobalState.tsx`: eliminado estado, default y fetch de isIntelMac
 - `ContextProvider.tsx`: eliminado `isIntelMac: false`
 
 ### Constants final
+
 - `environment.ts`: export eliminados `isWindows`, `isMac`, `isIntelMac` (solo queda `isLinux = true`)
 - Claves de traducción muertas: `box.shortcuts.message-mac`, `box.shortcuts.message-remove-mac`, `box.warning.rosetta.*`, `box.vcruntime.*`, `login.old-mac` (aún existen en translation.json pero no se referencian desde código)
 
 ## Fase 6 — Eliminación de settings muertos/sin UI
+
 ### Completamente muertos (0 uso en backend/frontend)
+
 - `minimizeOnLaunch`: eliminado de `types.ts`, `config.ts`
 - `disableController`: eliminado de `types.ts` (única ubicación)
 - `disableAnimations`: eliminado de `types.ts`, `electron_store.ts`, `frontend/types.ts`, `GlobalState.tsx` (estado, setter, context), `ContextProvider.tsx` (default), `App.tsx` (destructure + className), `App.css` (regla `body:has(.disableAnimations)`)
 
 ### Parcialmente muertos (backend vivo, UI huérfana)
+
 - `disableLogs`: eliminado de `types.ts`, `logger/index.ts` (forzado a `false` en los 3 constructores `LogWriter`), borrado `DisableLogs.tsx`, borrada export del barrel `index.ts`
 - `downloadNoHttps`: eliminado de `types.ts`, `legendary/games.ts` (3 remos: update/install/repair), borrado `DownloadNoHTTPS.tsx`, borrada export del barrel `index.ts`
 
 ### Vivos solo backend (sin UI)
+
 - `disablePlaytimeSync`: eliminado de `types.ts`, `gog/presence.ts` (guard en `setPresence` y `deletePresence`). Conservado `disableGOGPresence` (activo, con UI).
 - `darkTrayIcon`: eliminado de `types.ts`, `tray_icon/tray_icon.ts` (`getIcon` simplificado a siempre `iconLight`), `__mocks__/config.ts`
 - `disableSmoothScrolling`: eliminado de `types.ts`, `main.ts` (bloque `app.commandLine.appendSwitch`)
@@ -650,21 +734,26 @@
 - `startInTray`: eliminado de `types.ts`, `main.ts` (simplificado `headless = isCLINoGui`)
 
 ## Vulkan Helper (dead code)
+
 - `public/bin/x64/linux/vulkan-helper` (715 KB) y `public/bin/arm64/linux/vulkan-helper` (707 KB): binarios ELF eliminados
 - `src/backend/utils/graphics/vulkan/index.ts` (84 líneas): módulo completo eliminado (funciones `get_vulkan_instance_version`, `any_gpu_supports_version`, `get_nvngx_path` — ningún import en el codebase)
 
 ## Limpieza raíz y directorios no-src (TODOs-root)
+
 ### FASE A: Ficheros muertos eliminados
+
 - `appveyor.yml` (CI Windows), `.idea/` (IDE JetBrains), `downloadCount.js` (stats Heroic), `doc/cla.md` (CLA Heroic Labs)
 - `.eslintcache`, `public/entitlements.mac.plist`, `public/dmg.png`, `public/mac-icon.icns`, `public/win_icon.ico`
 - **Conservados** (uso externo): `public/bin/` (todos los binarios, incluidos `.exe` Windows)
 
 ### FASE B: Assets públicos muertos
+
 - Eliminados: `icon-dark.png`, `icon-dark@2x.png`, `icon-dark@3x.png`, `icon-light@2x.png`, `icon-light@3x.png`, `icon.icns`
 - `electron-builder.yml`: icono corregido (`icon.icns` → `icon.png`), `icon-dark.png` eliminado de `asarUnpack`
 - `tray_icon.test.ts`: test `'can show dark or light icon'` eliminado
 
 ### FASE C: Config Heroic→Relic
+
 - `electron-builder.yml`: Comment actualizado
 - `shell.nix`: `heroic-fhs-dev` → `relic-fhs-dev`
 - `.vscode/launch.json`: `"Launch Heroic"` → `"Launch Relic"`
@@ -672,19 +761,23 @@
 - `CODE_OF_CONDUCT.md`: email Heroic → relic@franje.dev
 
 ### FASE D: Documentación
+
 - `README.md`: reescritura completa (sin Windows/macOS, sin Wine/Proton, sin badges Heroic)
 - `CONTRIBUTING.md` y `Support.md`: eliminados
 
 ### FASE F: E2E tests
+
 - `e2e/api.spec.ts`: asserts actualizados (Heroic Games Launcher → Relic)
 - `e2e/helpers.ts`: comentario actualizado
 - `e2e/languages_selector.spec.ts`: comentario actualizado
 
 ### FASE G: downloadHelperBinaries.ts
+
 - `User-Agent`: `HeroicBinaryUpdater/1.0` → `RelicBinaryUpdater/1.0`
 - Repos GitHub mantenidos (dependencia de binarios Heroic)
 
 ### FASE E: Traducciones (94 archivos)
+
 - 49 locales × 2 archivos (`translation.json` + `gamepage.json`): claves muertas eliminadas (Wine, Winetricks, EOS Overlay, log upload, reset-heroic, frameless-window, etc.)
 - Reemplazo `"Heroic"` → `"Relic"` en valores vivos (Snap warning, Weblate, Clear Cache, login warnings, etc.)
 - Script `meta/cleanLocales.mjs` (eliminado tras ejecución)
@@ -694,6 +787,7 @@
 ## SLIM-MODULES — Jul 2026
 
 ### Módulo shortcuts/nonesteamgame (editor directo de shortcuts.vdf)
+
 - `src/backend/shortcuts/nonesteamgame/nonesteamgame.ts` (508 LOC): `addNonSteamGame`, `removeNonSteamGame`, `shortcutExists`
 - `src/backend/shortcuts/nonesteamgame/constants.ts`
 - `src/backend/shortcuts/nonesteamgame/steamhelper.ts`
@@ -703,19 +797,23 @@
 - Dependencia `@node-steam/vdf` se MANTIENE: la usa `backend/utils.ts:getSteamLibraries()`
 
 ### Módulo shortcuts/shortcuts (atajos .desktop)
+
 - `src/backend/shortcuts/shortcuts/shortcuts.ts` (124 LOC): `addShortcuts`, `removeShortcuts`, `shortcutFiles`
 - `src/backend/shortcuts/types.ts`
 - `src/backend/shortcuts/utils.ts` (getIcon)
 
 ### IPC shortcuts
+
 - `src/backend/shortcuts/ipc_handler.ts`: handlers `addShortcut`, `removeShortcut`, `shortcutsExists`
 - Import `'./shortcuts/ipc_handler'` en `main.ts`
 
 ### Interfaz GameManager
+
 - `addShortcuts: (fromMenu?: boolean) => Promise<void>`
 - `removeShortcuts: () => Promise<void>`
 
 ### Métodos en store managers
+
 - `legendary/games.ts`: métodos `addShortcuts`/`removeShortcuts` y llamadas `this.addShortcuts()` (×2), `removeShortcutsUtil(this)` en uninstall
 - `gog/games.ts`: métodos `addShortcuts`/`removeShortcuts`, llamadas `this.addShortcuts()` (×2), `removeShortcutsUtil(this)` en uninstall
 - `nile/games.ts`: métodos `addShortcuts`/`removeShortcuts`, llamadas `this.addShortcuts()` (×2), `removeShortcutsUtil(this)` en uninstall
@@ -724,17 +822,21 @@
 - `sideload/library.ts`: import + llamada `addShortcuts(new SideloadGame(app_name))` en addNewApp
 
 ### Settings muertos
+
 - `addDesktopShortcuts: boolean` y `addSteamShortcuts: boolean` de `AppSettings`
 - Defaults correspondientes en `config.ts`
 
 ### Preload
+
 - `removeShortcut`, `addShortcut`, `shortcutsExists` de `preload/api/menu.ts`
 
 ### IPC types
+
 - `addShortcut`, `removeShortcut` de `SyncIPCFunctions`
 - `shortcutsExists` de `AsyncIPCFunctions`
 
 ### Deps npm
+
 - `electron-updater`
 - `plist`
 - `@shockpkg/icon-encoder`
@@ -744,6 +846,7 @@
 ## UMU integration — Jul 2026
 
 ### Dead code eliminado
+
 - `src/backend/constants/paths.ts`: eliminados `defaultUmuPath` y `runtimePath` (ya no existen en el módulo)
 - `src/common/types.ts`: `ExperimentalFeatures.umuSupport` eliminado
 - `src/backend/storeManagers/legendary/games.ts`: import muerto `isUmuSupported` eliminado
@@ -754,9 +857,11 @@
 - `src/backend/relic/prefix.ts`: `logError` → `logInfo` para fallos de UMU (no es error del usuario)
 
 ### isUmuSupported simplificado
+
 - `src/backend/utils/compatibility_layers.ts`: `isUmuSupported()` reducido a solo `getUmuPath() !== null` (eliminados checks de `defaultUmuPath`, `experimentalFeatures.umuSupport`, Windows)
 
 ### Tests eliminados/limpiados
+
 - `src/backend/constants/__tests__/constants.test.ts`: tests `getShell for windows` y `getShell for mac` eliminados (función simplificada a Linux-only)
 - `src/backend/tray_icon/__tests__/tray_icon.test.ts`: test `shows no icon if noTrayIcon setting` eliminado (no existe `setConfigValue`); test `limits number games` simplificado (usa 3 juegos hardcodeados en vez de `maxRecentGames`)
 - `src/backend/relic/__tests__/symlinks.test.ts`: `defaultUmuPath` eliminado del mock de `paths.ts`
@@ -766,11 +871,13 @@
 ## Fase 7 — Sideload eliminado (Jul 2026)
 
 ### Directorios eliminados (6 archivos)
+
 - `src/backend/storeManagers/sideload/` (3 archivos: `electronStores.ts`, `library.ts`, `games.ts`): store manager completo. `addNewApp` (única función real) no tenía caller desde el frontend.
 - `src/frontend/components/UI/EditGameDialog/` (2 archivos: `index.tsx`, `index.css`): componente huérfano — nunca se importaba desde ningún componente (eliminado de GameCard y GameSubMenu en fases anteriores).
 - `src/frontend/screens/Library/components/EmptyLibrary/` (`index.css`): CSS huérfano — componente `EmptyLibraryMessage.tsx` eliminado en Fase 3 (Add Game).
 
 ### Tipos fundamentales
+
 - `src/common/types.ts`: `'sideload'` eliminado del type union `Runner` (line 22) y del literal `GameInfo.runner` (line 128).
 - `src/common/types/electron_store.ts`: key `sideloadedStore` eliminada del schema.
 - `src/common/types/ipc.ts`: `addNewApp` eliminado de `FrontendMessages`.
@@ -779,6 +886,7 @@
 - `src/backend/relic/steam_shortcuts/types.ts`: `'sideload'` eliminado de `GameRunner`.
 
 ### Backend
+
 - `src/backend/storeManagers/index.ts`: import de `SideloadLibraryManager` y entrada `sideload` de `libraryManagerMap` eliminados.
 - `src/backend/main.ts`: handler IPC `addNewApp` eliminado.
 - `src/backend/logger/constants.ts`: `LogPrefix.Sideload` y entrada en `RunnerToLogPrefixMap` eliminados.
@@ -787,12 +895,14 @@
 - `src/preload/api/library.ts`: export `addNewApp` eliminado.
 
 ### Frontend — state & store
+
 - `src/frontend/helpers/electronStores.ts`: instancia `sideloadLibrary` y su export eliminados.
 - `src/frontend/helpers/library.ts`: `sideloadedCategories` eliminado.
 - `src/frontend/state/ContextProvider.tsx`: `sideloadedLibrary: []` del default context eliminado.
 - `src/frontend/state/GlobalState.tsx`: import de `sideloadLibrary`, campo `sideloadedLibrary` del state, todas las lecturas `sideloadLibrary.get(...)` en init/refresh, y guard `runner === 'sideload'` en `handleInstallGame` eliminados.
 
 ### Frontend — Library (6 archivos)
+
 - `Library/index.tsx`: `sideloadedCategories` import, `sideloadedLibrary` destructure, filtro `sideload` en `initialStoresfilters`, merge `sideloadedLibrary` en favourites/list, dependencia `sideloadedLibrary` en useMemo eliminados.
 - `Library/LibraryContext.tsx`: `sideload: true` de `initialContext` eliminado.
 - `LibraryHeader/index.tsx`: check `runner !== 'sideload'` en filtro DLC eliminado.
@@ -801,6 +911,7 @@
 - `RecentlyPlayed/index.tsx`: `sideloadedLibrary` del context, merge en recientes, y dependencia useMemo eliminados.
 
 ### Frontend — Game (7 archivos)
+
 - `GameContext.tsx`: `sideloaded: false` del default status eliminado.
 - `GamePage/index.tsx`: variable `isSideloaded` eliminada; guard `runner !== 'sideload'` en `notSupportedGame`, `getInstallInfo` early return, `handleUpdate`, y handler de instalación eliminados; `sideloaded: isSideloaded` del statusContext eliminado.
 - `InstalledInfo.tsx`: `isSideloaded` variable y 3 condicionales (`!isSideloaded` gateando install_path/size/version, `!isSideloaded && !isThirdParty` en size y version) eliminados.
@@ -810,32 +921,39 @@
 - `GameSubMenu/index.tsx`: variable `isSideloaded` y 4 condicionales (`!isSideloaded && !isThirdPartyManaged` en Force Update/Move/Verify, `!isSideloaded && !!changelog` en Show Changelog) eliminados.
 
 ### Frontend — ConsoleMode, DownloadManager, Settings
+
 - `ConsoleMode/index.tsx`: `sideloadedLibrary` del context, merge en allGames, dependencia useMemo, filtro sideload en storeFilters, guard `runner !== 'sideload'` en handleUpdateFromNotice eliminados.
 - `InstallOverlay/index.tsx`: variable `isSideload` y condición `isSideload || game.is_linux_native` simplificada a solo `game.is_linux_native`.
 - `DownloadManagerItem/index.tsx`: guard `newInfo.runner !== 'sideload'` eliminado.
 - `AlternativeExe.tsx`: `runner === 'sideload'` del early return simplificado a solo `isDefault`.
 
 ### Frontend — UI components
+
 - `LibraryFilters/index.tsx`: `sideload: 'Other'` de `RunnerToStore`, `sideload: false` de reset `setStoreOnly`, `sideload: true` de `resetFilters`, y `{storeToggle('sideload')}` del render eliminados.
 - `LibrarySearchBar/index.tsx`: `sideloadedLibrary` del context, merge en lista de búsqueda, y dependencia useMemo eliminados.
 - `UninstallModal/index.tsx`: guard `runner === 'sideload' && location.pathname.match(/gamepage/)` que navegaba a `/#library` eliminado.
 
 ### Hooks
+
 - `hasStatus.ts`: default de `runner` cambiado de `'sideload'` a `'legendary'`; fallback `runner || 'sideload'` cambiado a `runner || 'legendary'`.
 - `constants.ts`: ternario `runner === 'sideload' ? '' : size` en label `installed` simplificado a solo `size`.
 
 ### CSS huérfano
+
 - `LibraryHeader/index.css`: clase `.sideloadGameButton` y hover/focus styles eliminados.
 - `InstallModal/index.scss`: clases `.sideloadForm` y `.sideloadImportHint` eliminadas.
 
 ### i18n (51 archivos)
-- 51 `gamepage.json`: bloque `sideload` completo (field.title, images.summary, import-hint, info.*, placeholder.*), `box.sideload`, `button.sideload` eliminados.
+
+- 51 `gamepage.json`: bloque `sideload` completo (field.title, images.summary, import-hint, info._, placeholder._), `box.sideload`, `button.sideload` eliminados.
 - 3 `translation.json`: `console.filter.sideload` eliminado (locales ga, gl, lt, tr que tenían la clave).
 
 ### Tests (3 test cases, 1 mock)
+
 - `game_events.test.ts`: mock `sideload: {}` en `libraryManagerMap` eliminado; test `'handles runner without getGameInfo gracefully'` eliminado (verificaba creación de .bat para sideload).
 - `add_game.test.ts`: test `'creates default bat for sideload with placeholder'` eliminado.
 - `store.test.ts`: test `'returns undefined for sideload'` eliminado.
 
 ### Store persistente
+
 - `~/.config/relic/sideload_apps/`: directorio vacío eliminado.

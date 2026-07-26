@@ -29,11 +29,7 @@ function getRunnerLogWriter(runner: RunnerOrComet) {
   const writer = runnerLogWriters.get(runner)
   if (writer) return writer
 
-  const newWriter = new LogWriter(
-    getLogFilePath({ runner }),
-    false,
-    false
-  )
+  const newWriter = new LogWriter(getLogFilePath({ runner }), false, false)
   runnerLogWriters.set(runner, newWriter)
   return newWriter
 }
@@ -70,11 +66,7 @@ function init() {
     })
   }
 
-  relicLogWriter = new LogWriter(
-    getLogFilePath({}),
-    true,
-    false
-  )
+  relicLogWriter = new LogWriter(getLogFilePath({}), true, false)
 
   relicLogWriter.logInfo(
     ['System Information:', getSystemInfo().then(formatSystemInfo)],

@@ -28,6 +28,7 @@ everything so Steam can run it, and your game appears in your Steam library — 
 any other Steam game. You launch it from Steam, not from Relic.
 
 This means:
+
 - No Wine/Proton configuration screens. Relic has none.
 - No prefix management. Relic lets Steam and umu-launcher handle it.
 - No per-game launch options. Steam has its own.
@@ -65,6 +66,7 @@ todo para que Steam pueda ejecutarlo, y tu juego aparece en tu biblioteca de Ste
 — igual que cualquier otro juego de Steam. Lo lanzas desde Steam, no desde Relic.
 
 Esto significa:
+
 - Sin pantallas de configuracion de Wine/Proton. Relic no tiene ninguna.
 - Sin gestion de prefijos. Relic deja que Steam y umu-launcher lo manejen.
 - Sin opciones de lanzamiento por juego. Steam tiene las suyas.
@@ -236,6 +238,7 @@ A SteamGridDB API key is required in settings.
 ### Uninstall cleanup
 
 When a game is uninstalled, Relic:
+
 1. Deletes the `.bat` runner file (Windows games only)
 2. Removes the symlink from `~/.local/share/relic/games/`
 3. Removes the Zoom prefix symlink (Zoom games only)
@@ -248,19 +251,19 @@ The Steam shortcut itself in `shortcuts.vdf` is **not** removed by Relic.
 
 ## How Relic Differs from Heroic
 
-| Aspect | Heroic | Relic |
-|--------|--------|-------|
-| Game launching | Launches games directly, full process management | Never launches games. Steam does it |
-| Add to Steam | Manual button per game or "Add all" | Automatic at install time |
-| Runner files | Runs store CLIs natively | Creates .bat files for Steam/Proton |
-| Wine/Proton config | Full UI: managers, per-game settings, Esync/Fsync/DXVK | None. Just `protonPath` in settings |
-| Prefix management | Per-game creation, location, deletion | Minimal: umu-run creates prefix |
-| shortcuts.vdf | Writes directly | Uses steam://addnonsteamgame only |
-| SteamGridDB | Manual per game | Automatic after install |
-| Lutris/Bottles/Crossover | Supported | Removed |
-| Wine Manager / Proton Manager | Full download and install UI | Removed |
-| MangoHud / Gamescope | Integrated options | Removed |
-| macOS / Windows support | Cross-platform | Linux only |
+| Aspect                        | Heroic                                                 | Relic                               |
+| ----------------------------- | ------------------------------------------------------ | ----------------------------------- |
+| Game launching                | Launches games directly, full process management       | Never launches games. Steam does it |
+| Add to Steam                  | Manual button per game or "Add all"                    | Automatic at install time           |
+| Runner files                  | Runs store CLIs natively                               | Creates .bat files for Steam/Proton |
+| Wine/Proton config            | Full UI: managers, per-game settings, Esync/Fsync/DXVK | None. Just `protonPath` in settings |
+| Prefix management             | Per-game creation, location, deletion                  | Minimal: umu-run creates prefix     |
+| shortcuts.vdf                 | Writes directly                                        | Uses steam://addnonsteamgame only   |
+| SteamGridDB                   | Manual per game                                        | Automatic after install             |
+| Lutris/Bottles/Crossover      | Supported                                              | Removed                             |
+| Wine Manager / Proton Manager | Full download and install UI                           | Removed                             |
+| MangoHud / Gamescope          | Integrated options                                     | Removed                             |
+| macOS / Windows support       | Cross-platform                                         | Linux only                          |
 
 ### Other launchers
 
