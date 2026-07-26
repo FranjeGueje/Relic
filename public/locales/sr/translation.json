@@ -43,7 +43,7 @@
     "yes": "ДА",
     "update": "Ажурирај",
     "default-install-path": "Default install path",
-    "proton-path": "Proton path"
+    "proton-path": "GE-Proton path"
   },
   "anticheat": {
     "status": "Статус",
@@ -261,7 +261,7 @@
     "advertiseAvxForRosetta": "",
     "disable_gog_presence": "",
     "default-install-path": "Default install path",
-    "proton-path": "Proton path",
+    "proton-path": "GE-Proton path",
     "proton-path-info": "Used to generate UMU prefixes and prepare Steam integrations.",
     "autoUpdateGames": "Automatically update games"
   },

@@ -61,7 +61,7 @@
     "shaderPreCachingDisabledMessage": "Папярэдняе кэшаванне шэйдараў Steam адключана. Каб гульня працавала належным чынам з UMU, уключыце яго ў наладах Steam у рэжыме працоўнага стала.",
     "shaderPreCachingDisabledTitle": "Папярэдняе кэшаванне шэйдараў адключана",
     "default-install-path": "Default install path",
-    "proton-path": "Proton path"
+    "proton-path": "GE-Proton path"
   },
   "button": {
     "cancel": "Скасаваць",
@@ -329,7 +329,7 @@
     },
     "disable_gog_presence": "",
     "default-install-path": "Default install path",
-    "proton-path": "Proton path",
+    "proton-path": "GE-Proton path",
     "proton-path-info": "Used to generate UMU prefixes and prepare Steam integrations.",
     "autoUpdateGames": "Automatically update games"
   },

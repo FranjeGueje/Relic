@@ -61,7 +61,7 @@
     "shaderPreCachingDisabledMessage": "Steams forhåndsinnhenting av shaders er skrudd av. Vennligst skru det på i Steams innstillinger så spillet funker riktig med UMU.",
     "shaderPreCachingDisabledTitle": "Forhåndslasting av shaders skrudd av",
     "default-install-path": "Default install path",
-    "proton-path": "Proton path"
+    "proton-path": "GE-Proton path"
   },
   "button": {
     "cancel": "Avbryt",
@@ -325,7 +325,7 @@
     },
     "disable_gog_presence": "Deaktiver GOG Presence-oppdateringer",
     "default-install-path": "Default install path",
-    "proton-path": "Proton path",
+    "proton-path": "GE-Proton path",
     "proton-path-info": "Used to generate UMU prefixes and prepare Steam integrations.",
     "autoUpdateGames": "Automatically update games"
   },

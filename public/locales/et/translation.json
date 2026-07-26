@@ -61,7 +61,7 @@
     "shaderPreCachingDisabledMessage": "Steami Shader Pre-cache (shaderite ettelaadimine) on keelatud. Palun lülitage see töölauarežiimis Steami seadetest sisse, et mäng toimiks UMU-ga korralikult.",
     "shaderPreCachingDisabledTitle": "Shaderite ettelaadimine keelatud",
     "default-install-path": "Default install path",
-    "proton-path": "Proton path"
+    "proton-path": "GE-Proton path"
   },
   "button": {
     "cancel": "Tühista",
@@ -333,7 +333,7 @@
     },
     "disable_gog_presence": "Keela GOG Presence'i uuendused",
     "default-install-path": "Default install path",
-    "proton-path": "Proton path",
+    "proton-path": "GE-Proton path",
     "proton-path-info": "Used to generate UMU prefixes and prepare Steam integrations.",
     "autoUpdateGames": "Automatically update games"
   },

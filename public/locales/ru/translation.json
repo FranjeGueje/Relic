@@ -58,7 +58,7 @@
     "yes": "ДА",
     "update": "Обновление",
     "default-install-path": "Default install path",
-    "proton-path": "Proton path"
+    "proton-path": "GE-Proton path"
   },
   "button": {
     "cancel": "Отмена",
@@ -326,7 +326,7 @@
     },
     "disable_gog_presence": "Отключить обновление статуса в GOG",
     "default-install-path": "Default install path",
-    "proton-path": "Proton path",
+    "proton-path": "GE-Proton path",
     "proton-path-info": "Used to generate UMU prefixes and prepare Steam integrations.",
     "autoUpdateGames": "Automatically update games"
   },

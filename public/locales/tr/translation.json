@@ -58,7 +58,7 @@
     "yes": "EVET",
     "update": "Güncelle",
     "default-install-path": "Default install path",
-    "proton-path": "Proton path"
+    "proton-path": "GE-Proton path"
   },
   "button": {
     "cancel": "İptal",
@@ -331,7 +331,7 @@
     },
     "disable_gog_presence": "GOG Durum güncellemelerini devre dışı bırak",
     "default-install-path": "Default install path",
-    "proton-path": "Proton path",
+    "proton-path": "GE-Proton path",
     "proton-path-info": "Used to generate UMU prefixes and prepare Steam integrations.",
     "autoUpdateGames": "Automatically update games"
   },

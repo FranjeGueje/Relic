@@ -61,7 +61,7 @@
     "shaderPreCachingDisabledMessage": "A Steam shader előtöltése ki van kapcsolva. Kérjük, engedélyezze a Steam beállításaiban asztali módban, hogy a játék megfelelően működjön az UMU-val.",
     "shaderPreCachingDisabledTitle": "Shader előtöltés kikapcsolva",
     "default-install-path": "Default install path",
-    "proton-path": "Proton path"
+    "proton-path": "GE-Proton path"
   },
   "button": {
     "cancel": "Mégse",
@@ -333,7 +333,7 @@
     },
     "disable_gog_presence": "GOG jelenlétfrissítések letiltása",
     "default-install-path": "Default install path",
-    "proton-path": "Proton path",
+    "proton-path": "GE-Proton path",
     "proton-path-info": "Used to generate UMU prefixes and prepare Steam integrations.",
     "autoUpdateGames": "Automatically update games"
   },

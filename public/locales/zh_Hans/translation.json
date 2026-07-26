@@ -62,7 +62,7 @@
     "shaderPreCachingDisabledMessage": "Steam 的 Shader 预缓存被禁用。请在桌面模式下于 Steam 设置中启用它确保游戏在 UMU 启动器下正常运行。",
     "shaderPreCachingDisabledTitle": "禁用了 Shader 预缓存",
     "default-install-path": "Default install path",
-    "proton-path": "Proton path"
+    "proton-path": "GE-Proton path"
   },
   "button": {
     "cancel": "取消",
@@ -336,7 +336,7 @@
     },
     "disable_gog_presence": "禁用 GOG Presence 更新",
     "default-install-path": "Default install path",
-    "proton-path": "Proton path",
+    "proton-path": "GE-Proton path",
     "proton-path-info": "Used to generate UMU prefixes and prepare Steam integrations.",
     "autoUpdateGames": "Automatically update games"
   },

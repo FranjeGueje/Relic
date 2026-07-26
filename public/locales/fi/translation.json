@@ -53,7 +53,7 @@
     "yes": "KYLLÄ",
     "update": "Päivitä",
     "default-install-path": "Default install path",
-    "proton-path": "Proton path"
+    "proton-path": "GE-Proton path"
   },
   "button": {
     "cancel": "Keskeytä",
@@ -318,7 +318,7 @@
     "advertiseAvxForRosetta": "Mainosta AVX:ää Rosettalle",
     "disable_gog_presence": "Poista GOG:n läsnäolopäivitykset käytöstä",
     "default-install-path": "Default install path",
-    "proton-path": "Proton path",
+    "proton-path": "GE-Proton path",
     "proton-path-info": "Used to generate UMU prefixes and prepare Steam integrations.",
     "autoUpdateGames": "Automatically update games"
   },

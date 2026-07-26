@@ -61,7 +61,7 @@
     "shaderPreCachingDisabledMessage": "Предварителното кеширане на шейдъри на Steam е изключено. Включете го в настройките на Steam в режим за работен плот, за да може играта да работи правилно с UMU.",
     "shaderPreCachingDisabledTitle": "Предварителното кеширане на шейдъри е изключено",
     "default-install-path": "Default install path",
-    "proton-path": "Proton path"
+    "proton-path": "GE-Proton path"
   },
   "button": {
     "cancel": "Отказ",
@@ -334,7 +334,7 @@
     },
     "disable_gog_presence": "Изключване на актуализациите за присъствие в GOG",
     "default-install-path": "Default install path",
-    "proton-path": "Proton path",
+    "proton-path": "GE-Proton path",
     "proton-path-info": "Used to generate UMU prefixes and prepare Steam integrations.",
     "autoUpdateGames": "Automatically update games"
   },

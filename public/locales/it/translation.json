@@ -61,7 +61,7 @@
     "shaderPreCachingDisabledMessage": "La Pre-cache dello Share di Steam è disabilitata. Per favore abilitala nelle Impostazioni Steam nella Modalità Desktop per assicurarti che il gioco funzioni correttamente con UMU.",
     "shaderPreCachingDisabledTitle": "Pre-Caching Shader Disabilitato",
     "default-install-path": "Default install path",
-    "proton-path": "Proton path"
+    "proton-path": "GE-Proton path"
   },
   "button": {
     "cancel": "Annulla",
@@ -331,7 +331,7 @@
     },
     "disable_gog_presence": "Disattiva gli aggiornamenti di GOG Presence",
     "default-install-path": "Default install path",
-    "proton-path": "Proton path",
+    "proton-path": "GE-Proton path",
     "proton-path-info": "Used to generate UMU prefixes and prepare Steam integrations.",
     "autoUpdateGames": "Automatically update games"
   },

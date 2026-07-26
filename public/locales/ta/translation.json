@@ -61,7 +61,7 @@
     "shaderPreCachingDisabledMessage": "நீராவி சேடர் முன் கேச் முடக்கப்பட்டுள்ளது. UMU உடன் விளையாட்டு சரியாக செயல்படுவதை உறுதிசெய்ய டெச்க்டாப் பயன்முறையில் உள்ள நீராவி அமைப்புகளில் அதை இயக்கவும்.",
     "shaderPreCachingDisabledTitle": "சேடர் முன்-கேச்சிங் முடக்கப்பட்டது",
     "default-install-path": "Default install path",
-    "proton-path": "Proton path"
+    "proton-path": "GE-Proton path"
   },
   "button": {
     "cancel": "ரத்து செய்",
@@ -326,7 +326,7 @@
     },
     "disable_gog_presence": "GOG இருப்பு புதுப்பிப்புகளை முடக்கு",
     "default-install-path": "Default install path",
-    "proton-path": "Proton path",
+    "proton-path": "GE-Proton path",
     "proton-path-info": "Used to generate UMU prefixes and prepare Steam integrations.",
     "autoUpdateGames": "Automatically update games"
   },

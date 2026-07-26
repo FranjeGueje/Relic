@@ -61,7 +61,7 @@
     "shaderPreCachingDisabledMessage": "O caché de shaders de Steam está desactivado. Por favor actívao nas opcións de Steam no Modo de Escritorio para garantir que o xogo funcione correctamente con UMU.",
     "shaderPreCachingDisabledTitle": "Caché de Shaders Desactivado",
     "default-install-path": "Default install path",
-    "proton-path": "Proton path"
+    "proton-path": "GE-Proton path"
   },
   "button": {
     "cancel": "Cancelar",
@@ -331,7 +331,7 @@
     },
     "disable_gog_presence": "",
     "default-install-path": "Default install path",
-    "proton-path": "Proton path",
+    "proton-path": "GE-Proton path",
     "proton-path-info": "Used to generate UMU prefixes and prepare Steam integrations.",
     "autoUpdateGames": "Automatically update games"
   },

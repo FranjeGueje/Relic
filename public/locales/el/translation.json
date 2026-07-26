@@ -53,7 +53,7 @@
     "yes": "ΝΑΙ",
     "update": "Ενημέρωση",
     "default-install-path": "Default install path",
-    "proton-path": "Proton path"
+    "proton-path": "GE-Proton path"
   },
   "button": {
     "cancel": "Ακύρωση",
@@ -317,7 +317,7 @@
     },
     "disable_gog_presence": "Απενεργοποίηση ενημερώσεων GOG Presence",
     "default-install-path": "Default install path",
-    "proton-path": "Proton path",
+    "proton-path": "GE-Proton path",
     "proton-path-info": "Used to generate UMU prefixes and prepare Steam integrations.",
     "autoUpdateGames": "Automatically update games"
   },

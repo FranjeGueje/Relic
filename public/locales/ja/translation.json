@@ -57,7 +57,7 @@
     "yes": "はい",
     "update": "Update",
     "default-install-path": "Default install path",
-    "proton-path": "Proton path"
+    "proton-path": "GE-Proton path"
   },
   "button": {
     "cancel": "キャンセル",
@@ -324,7 +324,7 @@
     "advertiseAvxForRosetta": "",
     "disable_gog_presence": "GOG Presenceの更新を無効にする",
     "default-install-path": "Default install path",
-    "proton-path": "Proton path",
+    "proton-path": "GE-Proton path",
     "proton-path-info": "Used to generate UMU prefixes and prepare Steam integrations.",
     "autoUpdateGames": "Automatically update games"
   },

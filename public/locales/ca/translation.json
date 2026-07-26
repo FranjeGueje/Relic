@@ -61,7 +61,7 @@
     "shaderPreCachingDisabledMessage": "La precaché del shader de l'Steam està desactivada. Activa-la des de la configuració de l'Steam en mode escriptori per a assegurar que el joc funciona adequadament amb UMU.",
     "shaderPreCachingDisabledTitle": "Pre-caché del shader desactivada",
     "default-install-path": "Default install path",
-    "proton-path": "Proton path"
+    "proton-path": "GE-Proton path"
   },
   "button": {
     "cancel": "Cancel·la",
@@ -328,7 +328,7 @@
     },
     "disable_gog_presence": "Desactiva les actualitzacions del GOG Presence",
     "default-install-path": "Default install path",
-    "proton-path": "Proton path",
+    "proton-path": "GE-Proton path",
     "proton-path-info": "Used to generate UMU prefixes and prepare Steam integrations.",
     "autoUpdateGames": "Automatically update games"
   },

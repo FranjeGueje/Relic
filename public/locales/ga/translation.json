@@ -44,7 +44,7 @@
     },
     "yes": "TÁ",
     "default-install-path": "Default install path",
-    "proton-path": "Proton path"
+    "proton-path": "GE-Proton path"
   },
   "help": {
     "title": {
@@ -92,7 +92,7 @@
     },
     "disable_gog_presence": "Díchumasaigh nuashonruithe GOG Presence",
     "default-install-path": "Default install path",
-    "proton-path": "Proton path",
+    "proton-path": "GE-Proton path",
     "proton-path-info": "Used to generate UMU prefixes and prepare Steam integrations.",
     "autoUpdateGames": "Automatically update games"
   },

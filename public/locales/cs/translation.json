@@ -61,7 +61,7 @@
     "shaderPreCachingDisabledMessage": "Předběžné ukládání shaderů ve Steamu je deaktivováno. Aktivujte jej v nastavení Steamu v režimu pro stolní počítače, aby hra s UMU fungovala správně.",
     "shaderPreCachingDisabledTitle": "Předběžné ukládání do mezipaměti shaderů je zakázáno",
     "default-install-path": "Default install path",
-    "proton-path": "Proton path"
+    "proton-path": "GE-Proton path"
   },
   "button": {
     "cancel": "Zrušit",
@@ -335,7 +335,7 @@
     },
     "disable_gog_presence": "Zakázat aktualizace GOG Presence",
     "default-install-path": "Default install path",
-    "proton-path": "Proton path",
+    "proton-path": "GE-Proton path",
     "proton-path-info": "Used to generate UMU prefixes and prepare Steam integrations.",
     "autoUpdateGames": "Automatically update games"
   },

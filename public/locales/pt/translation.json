@@ -62,7 +62,7 @@
     "shaderPreCachingDisabledMessage": "A Pré-cache de Shader do Steam está desativada. Ativa-a nas Definições do Steam no Modo de Ambiente de Trabalho para garantir que o jogo funciona corretamente com o UMU.",
     "shaderPreCachingDisabledTitle": "Shader Pre-Caching Desativado",
     "default-install-path": "Default install path",
-    "proton-path": "Proton path"
+    "proton-path": "GE-Proton path"
   },
   "button": {
     "cancel": "Cancelar",
@@ -331,7 +331,7 @@
     "advertiseAvxForRosetta": "Anunciar AVX para Rosetta",
     "disable_gog_presence": "Desativar atualizações presentes do GOG",
     "default-install-path": "Default install path",
-    "proton-path": "Proton path",
+    "proton-path": "GE-Proton path",
     "proton-path-info": "Used to generate UMU prefixes and prepare Steam integrations.",
     "autoUpdateGames": "Automatically update games"
   },

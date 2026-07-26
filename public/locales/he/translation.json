@@ -38,7 +38,7 @@
     },
     "update": "עדכן",
     "default-install-path": "Default install path",
-    "proton-path": "Proton path"
+    "proton-path": "GE-Proton path"
   },
   "button": {
     "login": "היכנס",
@@ -178,7 +178,7 @@
     "advertiseAvxForRosetta": "",
     "disable_gog_presence": "",
     "default-install-path": "Default install path",
-    "proton-path": "Proton path",
+    "proton-path": "GE-Proton path",
     "proton-path-info": "Used to generate UMU prefixes and prepare Steam integrations.",
     "autoUpdateGames": "Automatically update games"
   },

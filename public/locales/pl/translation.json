@@ -61,7 +61,7 @@
     "shaderPreCachingDisabledMessage": "Pamięć wstępna cieniowania Steam jest wyłączona. Aby program działał poprawnie z UMU, włącz ją w ustawieniach Steam w trybie pulpitu.",
     "shaderPreCachingDisabledTitle": "Wstępna pamięć podręczna cieniowania wyłączona",
     "default-install-path": "Default install path",
-    "proton-path": "Proton path"
+    "proton-path": "GE-Proton path"
   },
   "button": {
     "cancel": "Anuluj",
@@ -333,7 +333,7 @@
     },
     "disable_gog_presence": "Wyłącz aktualizacje GOG Presence",
     "default-install-path": "Default install path",
-    "proton-path": "Proton path",
+    "proton-path": "GE-Proton path",
     "proton-path-info": "Used to generate UMU prefixes and prepare Steam integrations.",
     "autoUpdateGames": "Automatically update games"
   },

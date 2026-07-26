@@ -61,7 +61,7 @@
     "shaderPreCachingDisabledMessage": "El Shader Pre-cache de Steam está desactivado. Por favor, activalo en la configuración de Steam en Modo Escritorio para asegurar que el juego funcione correctamente con umu.",
     "shaderPreCachingDisabledTitle": "Shader Pre-Caching Desactivado",
     "default-install-path": "Ruta de instalación predeterminada",
-    "proton-path": "Ruta de Proton"
+    "proton-path": "Ruta de GE-Proton"
   },
   "button": {
     "cancel": "Cancelar",
@@ -335,7 +335,7 @@
     },
     "disable_gog_presence": "Desactivar actualizaciones de GOG Presence",
     "default-install-path": "Ruta de instalación predeterminada",
-    "proton-path": "Ruta de Proton",
+    "proton-path": "Ruta de GE-Proton",
     "proton-path-info": "Usado para generar los prefijos con UMU y preparar los arreglos para Steam.",
     "autoUpdateGames": "Actualizar juegos automáticamente"
   },

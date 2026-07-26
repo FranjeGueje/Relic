@@ -53,7 +53,7 @@
     "yes": "예",
     "update": "업데이트",
     "default-install-path": "Default install path",
-    "proton-path": "Proton path"
+    "proton-path": "GE-Proton path"
   },
   "button": {
     "cancel": "취소",
@@ -320,7 +320,7 @@
     "advertiseAvxForRosetta": "",
     "disable_gog_presence": "",
     "default-install-path": "Default install path",
-    "proton-path": "Proton path",
+    "proton-path": "GE-Proton path",
     "proton-path-info": "Used to generate UMU prefixes and prepare Steam integrations.",
     "autoUpdateGames": "Automatically update games"
   },
