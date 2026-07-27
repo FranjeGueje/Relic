@@ -1,5 +1,5 @@
 import { app } from 'electron'
-import { z } from 'zod'
+import { z } from 'zod/v3'
 
 import { hasExecutable } from '../../os/path'
 

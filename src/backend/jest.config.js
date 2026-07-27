@@ -20,5 +20,9 @@ module.exports = {
     '^.+\\.tsx?$': 'ts-jest'
   },
 
-  modulePaths: ['<rootDir>/src']
+  modulePaths: ['<rootDir>/src'],
+
+  moduleNameMapper: {
+    '^shlex$': '<rootDir>/src/backend/__mocks__/shlex.ts'
+  }
 }

@@ -34,7 +34,7 @@ import { isOnline } from 'backend/online_monitor'
 import { LegendaryCommand } from './commands'
 import { LegendaryAppName, LegendaryPlatform } from './commands/base'
 import { Path } from 'backend/schemas'
-import shlex from 'shlex'
+import { split } from 'shlex'
 import thirdParty from './thirdParty'
 import { Entries } from 'type-fest'
 import { runLegendaryCommandStub } from './e2eMock'
@@ -746,7 +746,7 @@ export default class LegendaryLibraryManager implements LibraryManager {
       case 'launch':
         commandParts.push(command.appName)
         if (command.extraArguments)
-          commandParts.push(...shlex.split(command.extraArguments))
+          commandParts.push(...split(command.extraArguments))
         break
       case 'update':
       case 'info':
