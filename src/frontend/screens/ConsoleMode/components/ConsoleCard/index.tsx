@@ -1,5 +1,5 @@
 import { forwardRef } from 'react'
-import classNames from 'classnames'
+import { cx as classNames } from 'frontend/helpers/cx'
 import { useTranslation } from 'react-i18next'
 
 import { CachedImage } from 'frontend/components/UI'

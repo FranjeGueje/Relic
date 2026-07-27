@@ -1,4 +1,4 @@
-import classNames from 'classnames'
+import { cx as classNames } from 'frontend/helpers/cx'
 import { ChangeEventHandler, useContext } from 'react'
 import ContextProvider from 'frontend/state/ContextProvider'
 import './index.css'

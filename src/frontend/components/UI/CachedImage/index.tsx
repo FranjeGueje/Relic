@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import classNames from 'classnames'
+import { cx as classNames } from 'frontend/helpers/cx'
 
 interface CachedImageProps {
   src: string

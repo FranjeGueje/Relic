@@ -5,7 +5,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import classNames from 'classnames'
+import { cx as classNames } from 'frontend/helpers/cx'
 import {
   GameInfo,
   GameStatus,

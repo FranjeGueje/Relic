@@ -14,7 +14,7 @@ import { ControllerHints, Help, OfflineMessage } from './components/UI'
 import DialogHandler from './components/UI/DialogHandler'
 import ExternalLinkDialog from './components/UI/ExternalLinkDialog'
 import WindowControls from './components/UI/WindowControls'
-import classNames from 'classnames'
+import { cx as classNames } from 'frontend/helpers/cx'
 import { ThemeProvider, createTheme } from '@mui/material/styles'
 import { InstallGameWrapper } from './screens/Library/components/InstallModal'
 

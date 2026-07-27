@@ -7,7 +7,7 @@ import {
   DialogHeader
 } from 'frontend/components/UI/Dialog'
 import { LinearProgress } from '@mui/material'
-import classNames from 'classnames'
+import { cx as classNames } from 'frontend/helpers/cx'
 import { useTranslation } from 'react-i18next'
 
 export function ProgressDialog(props: {

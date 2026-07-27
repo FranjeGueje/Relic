@@ -1,5 +1,5 @@
 import { ReactNode, useContext } from 'react'
-import classnames from 'classnames'
+import { cx as classnames } from 'frontend/helpers/cx'
 import ContextProvider from 'frontend/state/ContextProvider'
 import { Select, MenuItem, SelectChangeEvent } from '@mui/material'
 import './index.css'

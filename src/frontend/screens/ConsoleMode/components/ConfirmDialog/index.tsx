@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
-import classNames from 'classnames'
+import { cx as classNames } from 'frontend/helpers/cx'
 
 import { BTN_ACTION, BTN_BACK } from '../../controller'
 import { useGamepadButtonPress } from '../../hooks'

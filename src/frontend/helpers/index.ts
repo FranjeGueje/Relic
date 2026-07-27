@@ -8,7 +8,7 @@ import {
 } from 'common/types'
 
 import { install, repair, updateGame } from './library'
-import * as fileSize from 'filesize'
+import { formatBytes } from 'common/formatBytes'
 const readFile = window.api.readConfig
 
 const writeConfig = window.api.writeConfig
@@ -20,7 +20,7 @@ const loginPage = window.api.openLoginPage
 
 const handleQuit = window.api.quit
 
-export const size = fileSize.partial({ base: 2 }) as (arg: unknown) => string
+const size = formatBytes
 
 const sendKill = window.api.kill
 
@@ -135,6 +135,7 @@ function getPreferredInstallLanguage(
 
 export {
   createNewWindow,
+  size,
   getGameInfo,
   getGameSettings,
   getInstallInfo,

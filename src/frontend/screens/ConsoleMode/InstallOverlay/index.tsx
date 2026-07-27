@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next'
-import classNames from 'classnames'
+import { cx as classNames } from 'frontend/helpers/cx'
 import { useContext, useEffect, useMemo, useRef, useState } from 'react'
 
 import './index.scss'

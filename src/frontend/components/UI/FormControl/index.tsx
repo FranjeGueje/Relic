@@ -1,6 +1,6 @@
 import { faCaretDown, faXmark } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import cx from 'classnames'
+import { cx } from 'frontend/helpers/cx'
 import React, { ReactNode } from 'react'
 import './index.css'
 

@@ -16,7 +16,7 @@ import { useTranslation } from 'react-i18next'
 import ContextProvider from 'frontend/state/ContextProvider'
 import FormControl from '../FormControl'
 import './index.css'
-import classNames from 'classnames'
+import { cx as classNames } from 'frontend/helpers/cx'
 import LibraryContext from 'frontend/screens/Library/LibraryContext'
 
 interface ActionIconsProps {

@@ -1,4 +1,4 @@
-import classNames from 'classnames'
+import { cx as classNames } from 'frontend/helpers/cx'
 import { useGamepadInfo } from '../../hooks'
 import { getBackButtonLabel } from '../../controller'
 

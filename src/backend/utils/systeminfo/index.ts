@@ -4,7 +4,7 @@
 
 import os from 'os'
 import process from 'process'
-import { filesize } from 'filesize'
+import { formatBytes } from 'common/formatBytes'
 
 import { getGpuInfo } from './gpu'
 import { getMemoryInfo } from './memory'
@@ -96,8 +96,8 @@ async function getSystemInfo(cache = true): Promise<SystemInformation> {
     memory: {
       total: memory.total,
       used: memory.used,
-      totalFormatted: filesize(memory.total, { base: 2 }),
-      usedFormatted: filesize(memory.used, { base: 2 })
+      totalFormatted: formatBytes(memory.total),
+      usedFormatted: formatBytes(memory.used)
     },
     GPUs: gpus,
     OS: {
@@ -122,7 +122,7 @@ async function getSystemInfo(cache = true): Promise<SystemInformation> {
 async function formatSystemInfo(info: SystemInformation): Promise<string> {
   const isLinux: boolean = process.platform === 'linux'
   return `CPU: ${info.CPU.cores}x ${info.CPU.model}
-Memory: ${filesize(info.memory.total)} (used: ${filesize(info.memory.used)})
+Memory: ${formatBytes(info.memory.total)} (used: ${formatBytes(info.memory.used)})
 GPUs:
 ${info.GPUs.map(
   (gpu, index) => `  GPU ${index}:

@@ -6,7 +6,7 @@ import {
   DialogFooter,
   DialogHeader
 } from 'frontend/components/UI/Dialog'
-import classNames from 'classnames'
+import { cx as classNames } from 'frontend/helpers/cx'
 import { useTranslation } from 'react-i18next'
 import { DialogType, ButtonOptions } from 'common/types'
 interface MessageBoxModalProps {

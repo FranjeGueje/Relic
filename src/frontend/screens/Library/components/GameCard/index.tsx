@@ -25,7 +25,7 @@ import ContextMenu, { Item } from '../ContextMenu'
 import { hasProgress } from 'frontend/hooks/hasProgress'
 import RemoveCircleIcon from '@mui/icons-material/RemoveCircle'
 
-import classNames from 'classnames'
+import { cx as classNames } from 'frontend/helpers/cx'
 import StoreLogos from 'frontend/components/UI/StoreLogos'
 import UninstallModal from 'frontend/components/UI/UninstallModal'
 import ModifyInstallModal from 'frontend/screens/Game/ModifyInstallModal'

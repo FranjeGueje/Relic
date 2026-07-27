@@ -1,7 +1,6 @@
 import './index.css'
 import { hasProgress } from 'frontend/hooks/hasProgress'
-import { useEffect, useState } from 'react'
-import { AreaChart, Area, ResponsiveContainer } from 'recharts'
+import { useEffect, useMemo, useState } from 'react'
 import { Box, LinearProgress, Typography } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 import { DownloadManagerState, Runner } from 'common/types'
@@ -14,6 +13,39 @@ interface Point {
 const roundToNearestHundredth = function (val: number | undefined) {
   if (!val) return 0
   return Math.round(val * 100) / 100
+}
+
+const CHART_W = 100
+const CHART_H = 80
+
+function SpeedChart({ data }: { data: Point[] }) {
+  const maxVal = Math.max(1, ...data.map((p) => Math.max(p.download, p.disk)))
+  const toX = (i: number) => (i / (data.length - 1)) * CHART_W
+  const toY = (v: number) => CHART_H - (v / maxVal) * CHART_H
+
+  const paths = useMemo(() => {
+    const dl = data.map((p, i) => `${toX(i)},${toY(p.download)}`).join(' L')
+    const disk = data.map((p, i) => `${toX(i)},${toY(p.disk)}`).join(' L')
+    return {
+      fill: `M0,${CHART_H} L${dl} L${CHART_W},${CHART_H} Z`,
+      line: `M${disk}`
+    }
+  }, [data])
+
+  return (
+    <svg
+      viewBox={`0 0 ${CHART_W} ${CHART_H}`}
+      style={{ width: '100%', height: '80px', display: 'block' }}
+    >
+      <path d={paths.fill} fill="var(--accent)" fillOpacity={0.5} />
+      <path
+        d={paths.line}
+        fill="none"
+        stroke="var(--primary)"
+        strokeWidth={2}
+      />
+    </svg>
+  )
 }
 
 export default function ProgressHeader(props: {
@@ -65,26 +97,7 @@ export default function ProgressHeader(props: {
                 left: 0
               }}
             >
-              <ResponsiveContainer height={80}>
-                <AreaChart data={avgSpeed} margin={{ top: 0, right: 0 }}>
-                  <Area
-                    isAnimationActive={false}
-                    type="monotone"
-                    dataKey="download"
-                    strokeWidth="0px"
-                    fill="var(--accent)"
-                    fillOpacity={0.5}
-                  />
-                  <Area
-                    isAnimationActive={false}
-                    type="monotone"
-                    dataKey="disk"
-                    stroke="var(--primary)"
-                    strokeWidth="2px"
-                    fillOpacity={0}
-                  />
-                </AreaChart>
-              </ResponsiveContainer>
+              <SpeedChart data={avgSpeed} />
             </div>
           </div>
           <div className="realtimeDownloadStatContainer">

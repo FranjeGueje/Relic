@@ -1,5 +1,5 @@
 import type { MouseEventHandler, ReactNode } from 'react'
-import classNames from 'classnames'
+import { cx as classNames } from 'frontend/helpers/cx'
 import { NavLink } from 'react-router-dom'
 import {
   FontAwesomeIcon,

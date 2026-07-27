@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { openInstallGameModal } from 'frontend/state/InstallGameModal'
 import GameContext from '../../GameContext'
 import { Cancel, Download, Error, Pause, Warning } from '@mui/icons-material'
-import classNames from 'classnames'
+import { cx as classNames } from 'frontend/helpers/cx'
 import { GameInfo } from 'common/types'
 
 interface Props {

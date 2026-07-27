@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useRef } from 'react'
 import { GameInfo, Runner } from 'common/types'
-import cx from 'classnames'
+import { cx } from 'frontend/helpers/cx'
 import GameCard from '../GameCard'
 import ContextProvider from 'frontend/state/ContextProvider'
 import { useTranslation } from 'react-i18next'

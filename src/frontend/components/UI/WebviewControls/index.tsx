@@ -4,7 +4,7 @@ import {
   OpenInBrowser,
   Replay
 } from '@mui/icons-material'
-import cx from 'classnames'
+import { cx } from 'frontend/helpers/cx'
 import React, { SyntheticEvent, useCallback, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import SvgButton from '../SvgButton'

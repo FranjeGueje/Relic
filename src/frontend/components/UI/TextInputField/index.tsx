@@ -1,5 +1,5 @@
 import React, { ReactNode, useContext, useEffect, useRef } from 'react'
-import classnames from 'classnames'
+import { cx as classnames } from 'frontend/helpers/cx'
 import ContextProvider from 'frontend/state/ContextProvider'
 import './index.css'
 
