@@ -1,4 +1,4 @@
-import { existsSync, unlinkSync } from 'graceful-fs'
+import { existsSync, unlinkSync } from 'fs'
 import { join } from 'path'
 import { logInfo, logError } from 'backend/logger'
 import { getUserdataInfo } from '../steam_shortcuts/steam_helpers'

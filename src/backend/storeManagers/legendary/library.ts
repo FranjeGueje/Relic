@@ -1,4 +1,4 @@
-import { existsSync, readFileSync, readdirSync } from 'graceful-fs'
+import { existsSync, readFileSync, readdirSync } from 'fs'
 
 import {
   GameInfo,

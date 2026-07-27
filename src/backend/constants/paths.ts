@@ -1,5 +1,5 @@
 import { app } from 'electron'
-import { mkdirSync } from 'graceful-fs'
+import { mkdirSync } from 'fs'
 import { homedir } from 'os'
 import { join, resolve } from 'path'
 import { env } from 'process'

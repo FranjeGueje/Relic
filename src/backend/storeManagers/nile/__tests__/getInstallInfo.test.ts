@@ -8,7 +8,6 @@ jest.mock('backend/logger', () => ({
   LogPrefix: { Nile: 'Nile' }
 }))
 
-jest.mock('graceful-fs')
 jest.mock('backend/online_monitor')
 
 jest.mock('../electronStores', () => ({

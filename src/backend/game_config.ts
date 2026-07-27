@@ -1,4 +1,4 @@
-import { existsSync, readFileSync, writeFileSync } from 'graceful-fs'
+import { existsSync, readFileSync, writeFileSync } from 'fs'
 
 import { GameConfigVersion, GameSettings } from 'common/types'
 import { GlobalConfig } from './config'

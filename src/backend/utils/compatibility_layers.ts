@@ -1,4 +1,4 @@
-import { existsSync } from 'graceful-fs'
+import { existsSync } from 'fs'
 import { searchForExecutableOnPath } from './os/path'
 import { publicDir, fixAsarPath } from 'backend/constants/paths'
 import { isLinux } from 'backend/constants/environment'

@@ -1,4 +1,4 @@
-import { existsSync, createWriteStream, mkdirSync } from 'graceful-fs'
+import { existsSync, createWriteStream, mkdirSync } from 'fs'
 import { createHash } from 'crypto'
 import { join } from 'path'
 import axios from 'axios'

@@ -13,8 +13,6 @@ jest.mock('backend/online_monitor', () => ({
   runOnceWhenOnline: jest.fn()
 }))
 
-jest.mock('graceful-fs')
-
 jest.mock('../electronStores', () => ({
   libraryStore: { get: jest.fn(), set: jest.fn() },
   installedGamesStore: { get: jest.fn(), set: jest.fn() },

@@ -19,7 +19,7 @@ import {
   InstalledInfo,
   InstallProgress
 } from 'common/types'
-import { existsSync, rmSync } from 'graceful-fs'
+import { existsSync, rmSync } from 'fs'
 import { installedGamesStore, libraryStore } from './electronStores'
 import {
   logError,

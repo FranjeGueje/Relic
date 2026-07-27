@@ -1,10 +1,4 @@
-import {
-  existsSync,
-  mkdirSync,
-  rmSync,
-  symlinkSync,
-  unlinkSync
-} from 'graceful-fs'
+import { existsSync, mkdirSync, rmSync, symlinkSync, unlinkSync } from 'fs'
 import { dirname, join } from 'path'
 import { logInfo, logError } from 'backend/logger'
 import { relicMountPath, relicGamesPath } from 'backend/constants/paths'

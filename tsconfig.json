@@ -5,7 +5,12 @@
     "lib": ["esnext", "dom", "dom.iterable"],
     "sourceMap": true,
     "jsx": "react-jsx",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
+    "paths": {
+      "frontend/*": ["./src/frontend/*"],
+      "backend/*": ["./src/backend/*"],
+      "common/*": ["./src/common/*"]
+    },
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
@@ -19,9 +24,8 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "noFallthroughCasesInSwitch": true,
-    "baseUrl": "./src/"
+    "noFallthroughCasesInSwitch": true
   },
   "include": ["src"],
-  "exclude": ["vite.config.ts", "**/__mocks__/**", "sign"]
+  "exclude": ["electron.vite.config.ts", "**/__mocks__/**", "sign"]
 }

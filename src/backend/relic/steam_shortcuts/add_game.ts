@@ -4,7 +4,7 @@ import {
   symlinkSync,
   unlinkSync,
   writeFileSync
-} from 'graceful-fs'
+} from 'fs'
 import { basename, join } from 'path'
 import { logError, logInfo } from 'backend/logger'
 import { spawnAsync } from 'backend/utils'

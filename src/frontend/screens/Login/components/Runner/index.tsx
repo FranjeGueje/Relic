@@ -16,7 +16,6 @@ interface RunnerProps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   alternativeLoginAction?: () => any
   buttonText: string
-  disabled: boolean
 }
 
 export default function Runner(props: RunnerProps) {
@@ -34,15 +33,11 @@ export default function Runner(props: RunnerProps) {
   }
 
   function handleLogin() {
-    if (props.disabled) {
-      return
-    }
-
     navigate(props.loginUrl)
   }
 
   function handleAltLogin() {
-    if (props.disabled || !props.alternativeLoginAction) {
+    if (!props.alternativeLoginAction) {
       return
     }
 
@@ -51,11 +46,7 @@ export default function Runner(props: RunnerProps) {
 
   return (
     <>
-      <div
-        className={`runnerWrapper ${props.class} ${
-          props.disabled ? 'disabled' : ''
-        }`}
-      >
+      <div className={`runnerWrapper ${props.class}`}>
         <div className={`runnerIcon ${props.class}`}>{props.icon()}</div>
         {props.isLoggedIn && (
           <div className="userData">
@@ -87,7 +78,7 @@ export default function Runner(props: RunnerProps) {
         </div>
       </div>
       {props.alternativeLoginAction && !props.isLoggedIn && (
-        <div className={`runnerWrapper ${props.disabled ? 'disabled' : ''}`}>
+        <div className="runnerWrapper">
           <div className="runnerIcon alternative">{props.icon()}</div>
           <div className="runnerButtons">
             <div

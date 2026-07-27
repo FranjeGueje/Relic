@@ -2,7 +2,7 @@ import { GameInfo } from 'common/types'
 import { gameOverridesStore, GameMetadataOverride } from './electronStores'
 import { logInfo, logError, LogPrefix } from 'backend/logger'
 import { userDataPath } from 'backend/constants/paths'
-import { existsSync, readdirSync, unlinkSync } from 'graceful-fs'
+import { existsSync, readdirSync, unlinkSync } from 'fs'
 import { join } from 'node:path'
 
 const logPrefix: LogPrefix = 'GameOverrides'

@@ -17,7 +17,7 @@ import {
 } from 'backend/logger'
 import { GameConfig } from 'backend/game_config'
 
-import { existsSync } from 'graceful-fs'
+import { existsSync } from 'fs'
 import {
   killPattern,
   moveOnUnix,

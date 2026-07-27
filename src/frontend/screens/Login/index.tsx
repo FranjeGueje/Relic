@@ -42,9 +42,6 @@ export default React.memo(function NewLogin() {
   )
   const [isZoomLoggedIn, setIsZoomLoggedIn] = useState(Boolean(zoom.username))
 
-  const oldMac = false
-  const oldMacMessage = ''
-
   const loginMessage = t(
     'login.message',
     'Login with your platform. You can login to more than one platform at the same time.'
@@ -99,7 +96,6 @@ export default React.memo(function NewLogin() {
           </div>
 
           <p className="runnerMessage">{loginMessage}</p>
-          {oldMac && <p className="disabledMessage">{oldMacMessage}</p>}
 
           <div className="runnerGroup">
             <Runner
@@ -113,7 +109,6 @@ export default React.memo(function NewLogin() {
               alternativeLoginAction={() => {
                 setShowSidLogin(true)
               }}
-              disabled={oldMac}
             />
             <Runner
               class="gog"
@@ -123,7 +118,6 @@ export default React.memo(function NewLogin() {
               isLoggedIn={isGogLoggedIn}
               user={gog.username}
               logoutAction={gog.logout}
-              disabled={oldMac}
             />
             <Runner
               class="nile"
@@ -133,7 +127,6 @@ export default React.memo(function NewLogin() {
               isLoggedIn={isAmazonLoggedIn}
               user={amazon.username || 'Unknown'}
               logoutAction={amazon.logout}
-              disabled={oldMac}
             />
             <Runner
               class="zoom"
@@ -143,7 +136,6 @@ export default React.memo(function NewLogin() {
               isLoggedIn={isZoomLoggedIn}
               user={zoom.username}
               logoutAction={zoom.logout}
-              disabled={oldMac}
             />
           </div>
         </div>

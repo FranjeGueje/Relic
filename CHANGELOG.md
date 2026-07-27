@@ -9,6 +9,9 @@
 - Sidebar: icono SVG personalizado para Log y Registro
 - Traducciones: `proton-path` → `GE-Proton path` en 47 locales
 - ESLint: 134 errores eliminados (`no-unused-vars`, `no-require-imports`, `no-empty`, `no-constant-condition`)
+- `DEPENDENCIES.md`: auditoría de dependencias con plan de adelgazamiento
+- `src/common/formatBytes.ts`: helper `formatBytes()` reemplaza a `filesize`
+- `src/frontend/helpers/cx.ts`: helper `cx()` reemplaza a `classnames`
 
 ### Eliminado
 
@@ -17,11 +20,22 @@
 - Submenú de Settings (General + Log promovidos al nivel superior)
 - Variable muerta `isBrowserGame` en GameCard y GamePage
 - ~45 archivos: imports y variables muertas del código heredado de Heroic
+- 10 dependencias muertas: `ini`, `sanitize-filename`, `semver`, `short-uuid`, `yocto-queue`, `@types/ini`, `@types/plist`, `@types/semver`, `fast-xml-parser`, `undici`
+- `tslib` + `importHelpers: true` (innecesario con `noEmit`, build usa esbuild/SWC)
+- `node-gyp` (ningún módulo nativo lo requiere)
+- 4 dependencias sidegradeadas: `filesize`, `classnames`, `sanitize-html`, `recharts` (reemplazadas por helpers inline o SVG)
+- `@types/sanitize-html` (innecesario sin `sanitize-html`)
+- Login: dead code `oldMac`/`oldMacMessage`/`disabled` (siempre false)
+- Settings: 9 componentes legacy nunca renderizados (`AlternativeExe`, `AltGOGdlBin`, `AltLegendaryBin`, `AltNileBin`, `DisableGOGPresence`, `ExperimentalFeatures`, `IgnoreGameUpdates`, `OfflineMode`, `PreferedLanguage`)
+- `backend/utils.ts`: `moveOnWindows()` (Robocopy, Windows-only, 0 calls)
+- `Library/index.tsx`: migration fallback de `category`/`filterPlatform` (TODOs)
+- `GlobalState.tsx`: `storage.setItem('category')` dead write
 
 ### Cambiado
 
 - Logo de Registro: de `settings-sharp.svg` a `logs.svg`
 - Pre-commit hook: `pnpm lint-fix` pasa sin errores
+- `tsconfig.json`: `importHelpers: true` → `false` (build usa esbuild/SWC)
 
 ---
 

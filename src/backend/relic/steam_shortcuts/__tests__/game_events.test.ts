@@ -4,7 +4,7 @@ import {
   onGameImported,
   onGameMoved
 } from '../../game_events'
-import { existsSync, unlinkSync, mkdirSync, symlinkSync } from 'graceful-fs'
+import { existsSync, unlinkSync, mkdirSync, symlinkSync } from 'fs'
 import { addGameToSteam, createRunnerFile } from '../add_game'
 import { deleteGrids } from '../../steamgrid'
 import { libraryManagerMap } from 'backend/storeManagers'
@@ -13,13 +13,13 @@ import * as store from '../store'
 const mockGetGameInfo = jest.fn()
 const mockGame = { getGameInfo: mockGetGameInfo }
 
-jest.mock('graceful-fs', () => ({
+jest.mock('fs', () => ({
+  ...jest.requireActual('fs'),
   existsSync: jest.fn(),
   unlinkSync: jest.fn(),
-  readFileSync: jest.fn(),
-  writeFileSync: jest.fn(),
   mkdirSync: jest.fn(),
-  symlinkSync: jest.fn()
+  symlinkSync: jest.fn(),
+  writeFileSync: jest.fn()
 }))
 jest.mock('fs-extra', () => ({
   readFileSync: jest.fn()

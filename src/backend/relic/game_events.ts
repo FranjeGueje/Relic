@@ -1,4 +1,4 @@
-import { existsSync, unlinkSync, mkdirSync, symlinkSync } from 'graceful-fs'
+import { existsSync, unlinkSync, mkdirSync, symlinkSync } from 'fs'
 import { shell } from 'electron'
 import { Game } from 'common/types/game_manager'
 import { GameInfo } from 'common/types'

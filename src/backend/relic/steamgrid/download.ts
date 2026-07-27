@@ -1,4 +1,4 @@
-import { existsSync, mkdirSync } from 'graceful-fs'
+import { existsSync, mkdirSync } from 'fs'
 import { GameInfo, SGDBGrid } from 'common/types'
 import { join } from 'path'
 import { logError, logInfo } from 'backend/logger'

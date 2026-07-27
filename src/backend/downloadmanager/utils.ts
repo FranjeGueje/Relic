@@ -6,7 +6,7 @@ import i18next from 'i18next'
 import { notify, showDialogBoxModalAuto } from '../dialog/dialog'
 import { isOnline } from '../online_monitor'
 import pathModule from 'path'
-import { existsSync, rmSync } from 'graceful-fs'
+import { existsSync, rmSync } from 'fs'
 
 import { gogdlConfigPath } from 'backend/storeManagers/gog/constants'
 

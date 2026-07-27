@@ -1,5 +1,5 @@
 import { addHandler, addListener } from 'backend/ipc'
-import { existsSync, readFileSync } from 'graceful-fs'
+import { existsSync, readFileSync } from 'fs'
 
 import { logInfo, logError, LogPrefix } from '.'
 import { getLogFilePath } from './paths'

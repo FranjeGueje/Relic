@@ -8,7 +8,6 @@ jest.mock('backend/logger', () => ({
   LogPrefix: { Legendary: 'Legendary' }
 }))
 
-jest.mock('graceful-fs')
 jest.mock('backend/online_monitor')
 jest.mock('backend/schemas')
 jest.mock('shlex')

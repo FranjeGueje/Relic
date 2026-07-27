@@ -1,10 +1,5 @@
 import axios, { AxiosError } from 'axios'
-import {
-  existsSync,
-  unlinkSync,
-  writeFileSync,
-  readFileSync
-} from 'graceful-fs'
+import { existsSync, unlinkSync, writeFileSync, readFileSync } from 'fs'
 import { logError, logInfo, LogPrefix, logWarning } from 'backend/logger'
 import { configStore } from './electronStores'
 import { isOnline } from '../../online_monitor'

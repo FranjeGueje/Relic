@@ -1,4 +1,4 @@
-import { copyFileSync, mkdirSync } from 'graceful-fs'
+import { copyFileSync, mkdirSync } from 'fs'
 import { join } from 'path'
 import { DirResult, dirSync } from 'tmp'
 import { GlobalConfig } from 'backend/config'

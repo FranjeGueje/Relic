@@ -5,7 +5,7 @@ import {
   NileUserData
 } from 'common/types/nile'
 import { libraryManagerMap } from '..'
-import { existsSync, readFileSync } from 'graceful-fs'
+import { existsSync, readFileSync } from 'fs'
 import { configStore } from './electronStores'
 import { clearCache } from 'backend/utils'
 import { nileUserData } from './constants'

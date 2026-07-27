@@ -4,7 +4,7 @@ import {
   readFileSync,
   readdirSync,
   writeFileSync
-} from 'graceful-fs'
+} from 'fs'
 
 import { AppSettings, GlobalConfigVersion } from 'common/types'
 import { currentGlobalConfigVersion } from 'backend/constants/others'

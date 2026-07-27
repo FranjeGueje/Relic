@@ -1,4 +1,4 @@
-import { existsSync, unlinkSync, symlinkSync } from 'graceful-fs'
+import { existsSync, unlinkSync, symlinkSync } from 'fs'
 import { createRelicSymlinks } from '../windowify'
 
 import { logError } from 'backend/logger'
@@ -7,7 +7,8 @@ jest.mock('../steam_shortcuts/add_game', () => ({
   createGameSymlink: jest.fn()
 }))
 
-jest.mock('graceful-fs', () => ({
+jest.mock('fs', () => ({
+  ...jest.requireActual('fs'),
   existsSync: jest.fn(),
   unlinkSync: jest.fn(),
   symlinkSync: jest.fn()

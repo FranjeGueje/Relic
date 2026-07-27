@@ -21,7 +21,7 @@ import {
   InstallProgress,
   GOGAchievement
 } from 'common/types'
-import { existsSync, rmSync } from 'graceful-fs'
+import { existsSync, rmSync } from 'fs'
 import {
   achievementStore,
   installedGamesStore,

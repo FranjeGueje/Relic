@@ -1,4 +1,4 @@
-import { existsSync, readFileSync, writeFileSync } from 'graceful-fs'
+import { existsSync, readFileSync, writeFileSync } from 'fs'
 import { join } from 'path'
 import { appFolder } from 'backend/constants/paths'
 import { logError, logInfo } from 'backend/logger'

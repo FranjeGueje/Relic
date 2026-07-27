@@ -6,9 +6,6 @@
             "title": "Cache Cleared"
         },
         "choose": "Choose",
-        "choose-gogdl-binary": "Select GOGDL Binary (needs restart)",
-        "choose-legendary-binary": "Select Legendary Binary (needs restart)",
-        "choose-nile-binary": "Select Nile Binary (needs restart)",
         "default-install-path": "Default install path",
         "error": {
             "credentials": {
@@ -45,9 +42,6 @@
                 "message": "Are you sure you want to reset Relic? This will remove all Settings and Caching but won't remove your Installed games or your Epic credentials. Portable versions (AppImage, WinPortable, ...) of Relic needs to be restarted manually afterwards.",
                 "title": "Reset Relic"
             }
-        },
-        "select": {
-            "exe": "Select EXE..."
         },
         "warning": {
             "epic": {
@@ -228,11 +222,6 @@
             "settingsDefault": "Shows all settings of Relic and defaults for games.",
             "settingsGame": "Show all settings for a game."
         },
-        "game_language": {
-            "fallback": "Leave blank to use Relic's language.",
-            "in_game_config": "Not all games support this configuration, some have in-game language setting.",
-            "valid_codes": "Valid language codes are game-dependant."
-        },
         "title": {
             "downloadManager": "Download Manager",
             "library": "Library",
@@ -317,18 +306,9 @@
         "retrying": "Retrying"
     },
     "other": {
-        "gogdl-version": "GOGDL Version: ",
-        "legendary-version": "Legendary Version: ",
-        "nile-version": "Nile Version: ",
         "weblate": "Help translate Relic."
     },
     "Other": "Other",
-    "placeholder": {
-        "alt-gogdl-bin": "Using built-in GOGDL binary...",
-        "alt-legendary-bin": "Using built-in Legendary binary...",
-        "alt-nile-bin": "Using built-in Nile binary...",
-        "prefered_language": "2-char or 4-char code (i.e.: \"fr\" or \"pt-BR\")"
-    },
     "platforms": {
         "browser": "Browser",
         "linux": "Linux",
@@ -348,19 +328,8 @@
     "Recent": "Played Recently",
     "search": "Search for Games",
     "setting": {
-        "alt-gogdl-bin": "Choose an Alternative GOGDL Binary to use (needs restart)",
-        "alt-legendary-bin": "Choose an Alternative Legendary Binary  (needs restart)to use",
-        "alt-nile-bin": "Choose an Alternative Nile Binary  (needs restart)to use",
         "autoUpdateGames": "Automatically update games",
-        "change-target-exe": "Select an alternative EXE to run",
         "default-install-path": "Default install path",
-        "disable_gog_presence": "Disable GOG Presence updates",
-        "experimental_features": {
-            "cometSupport": "Comet support",
-            "enableHelp": "Help component",
-            "enableNewDesign": "New design"
-        },
-        "ignoreGameUpdates": "Ignore game updates",
         "language": "Choose App Language",
         "log": {
             "instructions": "Share these logs and any relevant information about your problem.",
@@ -368,8 +337,6 @@
             "no-file": "No log file found."
         },
         "maxworkers": "Maximum Number of Workers when downloading",
-        "offlinemode": "",
-        "prefered_language": "Prefered Language (Language Code)",
         "proton-path": "GE-Proton path",
         "proton-path-info": "Used to generate UMU prefixes and prepare Steam integrations.",
         "select_theme": "Select Theme",
@@ -402,18 +369,12 @@
         },
         "clear-cache": "Clear Relic Cache",
         "copyToClipboard": "Copy All Settings to Clipboard",
-        "experimental_features": {
-            "title": "Experimental Features"
-        },
         "log": {
             "long-log-hint": "Log truncated, last 1000 lines are shown!"
         },
         "navbar": {
             "general": "General",
             "log": "Log"
-        },
-        "offline": {
-            "warning": "This game does not explicitly allow offline mode, turn this on at your own risk. The game may not work."
         },
         "open-config-file": "Open Config File",
         "reset-relic": "Reset Relic",

@@ -9,7 +9,6 @@ jest.mock('backend/logger', () => ({
 }))
 
 jest.mock('backend/utils')
-jest.mock('graceful-fs')
 
 jest.mock('../electronStores', () => ({
   configStore: { get_nodefault: jest.fn(), delete: jest.fn(), set: jest.fn() }

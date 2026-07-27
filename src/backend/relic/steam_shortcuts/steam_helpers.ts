@@ -1,4 +1,4 @@
-import { existsSync, readdirSync } from 'graceful-fs'
+import { existsSync, readdirSync } from 'fs'
 import { readFileSync } from 'fs-extra'
 import { join } from 'path'
 import { homedir } from 'os'

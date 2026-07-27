@@ -4,7 +4,7 @@ import axios from 'axios'
 import https from 'node:https'
 import { app, dialog, shell, Notification } from 'electron'
 import { exec, spawn, SpawnOptions, spawnSync } from 'child_process'
-import { existsSync, mkdirSync, readFileSync, rmSync } from 'graceful-fs'
+import { existsSync, mkdirSync, readFileSync, rmSync } from 'fs'
 import { promisify } from 'util'
 import i18next, { t } from 'i18next'
 
@@ -555,61 +555,6 @@ export const spawnAsync = async (
       })
     })
   })
-}
-
-export async function moveOnWindows(
-  newInstallPath: string,
-  gameInfo: GameInfo
-): Promise<
-  { status: 'done'; installPath: string } | { status: 'error'; error: string }
-> {
-  const {
-    install: { install_path },
-    title
-  } = gameInfo
-
-  if (!install_path) {
-    return { status: 'error', error: 'No install path found' }
-  }
-
-  newInstallPath = join(newInstallPath, basename(install_path))
-
-  let currentFile = ''
-
-  // move using robocopy and show progress of the current file being copied
-  const { code, stderr } = await spawnAsync(
-    'robocopy',
-    [install_path, newInstallPath, '/MOVE', '/MIR', '/NJH', '/NJS', '/NDL'],
-    { stdio: 'pipe' },
-    (data) => {
-      let percent = 0
-      const percentMatch = data.match(/(\d+)(?:\.\d+)?%/)?.[1]
-      if (percentMatch) percent = Number(percentMatch)
-
-      const filenameMatch = data.match(/([\w.:\\]+)$/)?.[1]
-      if (filenameMatch) currentFile = filenameMatch
-
-      sendFrontendMessage('progressUpdate', {
-        appName: gameInfo.app_name,
-        runner: gameInfo.runner,
-        status: 'moving',
-        progress: {
-          percent,
-          file: currentFile,
-          // FIXME: Robocopy does not report bytes moved / an ETA, so we have to
-          //        leave these blank for now
-          bytes: '',
-          eta: ''
-        }
-      })
-    }
-  )
-  if (code !== 0) {
-    logInfo(`Finished Moving ${title}`, LogPrefix.Backend)
-  } else {
-    logError(`Error: ${stderr}`, LogPrefix.Backend)
-  }
-  return { status: 'done', installPath: newInstallPath }
 }
 
 export async function moveOnUnix(

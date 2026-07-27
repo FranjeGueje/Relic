@@ -1,4 +1,4 @@
-import { existsSync, readFileSync } from 'graceful-fs'
+import { existsSync, readFileSync } from 'fs'
 
 import { UserInfo } from 'common/types'
 import { clearCache } from '../../utils'

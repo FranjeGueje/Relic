@@ -450,7 +450,6 @@ class GlobalState extends PureComponent<Props> {
   }
 
   handleSuccessfulLogin = (runner: Runner) => {
-    storage.setItem('category', 'all')
     this.refreshLibrary({
       runInBackground: false,
       library: runner

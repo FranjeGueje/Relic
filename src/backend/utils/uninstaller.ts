@@ -7,7 +7,7 @@ import { sendGameStatusUpdate } from 'backend/utils'
 import { Runner } from 'common/types'
 import { storeMap } from 'common/utils'
 import { Event } from 'electron'
-import { existsSync, rmSync } from 'graceful-fs'
+import { existsSync, rmSync } from 'fs'
 import i18next from 'i18next'
 import { join } from 'path'
 

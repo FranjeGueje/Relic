@@ -16,11 +16,6 @@
   cursor: pointer;
 }
 
-.runnerWrapper.disabled,
-.runnerWrapper.disabled * {
-  cursor: not-allowed;
-}
-
 .runnerWrapper > h1 {
   color: var(--text-default);
 }
@@ -39,7 +34,7 @@
   fill: var(--background-lighter) !important;
 }
 
-.runnerWrapper:not(.disabled) .runnerLogin:hover {
+.runnerWrapper .runnerLogin:hover {
   color: var(--accent);
 }
 

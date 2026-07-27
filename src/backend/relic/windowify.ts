@@ -9,7 +9,7 @@ import {
   unlinkSync,
   writeFileSync,
   copyFileSync
-} from 'graceful-fs'
+} from 'fs'
 import { basename, join } from 'path'
 import { createHash } from 'node:crypto'
 import { logError, logInfo, logWarning } from 'backend/logger'

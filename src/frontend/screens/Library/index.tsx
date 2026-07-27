@@ -20,15 +20,9 @@ import GamesList from './components/GamesList'
 import { FavouriteGame, GameInfo, HiddenGame, Runner } from 'common/types'
 import ErrorComponent from 'frontend/components/UI/ErrorComponent'
 import LibraryHeader from './components/LibraryHeader'
-import {
-  amazonCategories,
-  epicCategories,
-  gogCategories,
-  zoomCategories,
-  normalizeTitle
-} from 'frontend/helpers/library'
+import { normalizeTitle } from 'frontend/helpers/library'
 import LibraryContext from './LibraryContext'
-import { Category, PlatformsFilters, StoresFilters } from 'frontend/types'
+import { PlatformsFilters, StoresFilters } from 'frontend/types'
 import { hasHelp } from 'frontend/hooks/hasHelp'
 import CategoriesManager from './components/CategoriesManager'
 import AlphabetFilter from './components/AlphabetFilter'
@@ -76,17 +70,13 @@ export default React.memo(function Library(): JSX.Element {
   let initialStoresfilters
   const storesFiltersString = storage.getItem('storesFilters')
   if (storesFiltersString) {
-    // If we have something stored, use that
     initialStoresfilters = JSON.parse(storesFiltersString) as StoresFilters
   } else {
-    // Else, use the old `category` filter
-    // TODO: we can remove this eventually after a few releases and just use the code of the if
-    const storedCategory = (storage.getItem('category') as Category) || 'all'
     initialStoresfilters = {
-      legendary: epicCategories.includes(storedCategory),
-      gog: gogCategories.includes(storedCategory),
-      nile: amazonCategories.includes(storedCategory),
-      zoom: zoomCategories.includes(storedCategory)
+      legendary: true,
+      gog: true,
+      nile: true,
+      zoom: true
     }
   }
 
@@ -101,18 +91,14 @@ export default React.memo(function Library(): JSX.Element {
   let initialPlatformsfilters
   const plaformsFiltersString = storage.getItem('platformsFilters')
   if (plaformsFiltersString) {
-    // If we have something stored, use that
     initialPlatformsfilters = JSON.parse(
       plaformsFiltersString
     ) as PlatformsFilters
   } else {
-    // Else, use the old `category` filter
-    // TODO: we can remove this eventually after a few releases and just use the code of the if
-    const storedCategory = storage.getItem('filterPlatform') || 'all'
     initialPlatformsfilters = {
-      win: ['all', 'win'].includes(storedCategory),
-      linux: ['all', 'linux'].includes(storedCategory),
-      mac: ['all', 'mac'].includes(storedCategory)
+      win: true,
+      linux: true,
+      mac: true
     }
   }
 

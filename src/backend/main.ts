@@ -18,9 +18,7 @@ import {
   sendFrontendMessage
 } from 'backend/ipc'
 import { cpus } from 'os'
-import { existsSync, watch } from 'graceful-fs'
-import 'source-map-support/register'
-
+import { existsSync, watch } from 'fs'
 import Backend from 'i18next-fs-backend'
 import i18next from 'i18next'
 import { join } from 'path'
