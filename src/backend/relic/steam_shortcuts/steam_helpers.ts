@@ -1,5 +1,4 @@
-import { existsSync, readdirSync } from 'fs'
-import { readFileSync } from 'fs-extra'
+import { existsSync, readdirSync, readFileSync } from 'fs'
 import { join } from 'path'
 import { homedir } from 'os'
 import { parseBuffer, ShortcutObject } from 'steam-shortcut-editor'

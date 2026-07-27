@@ -42,7 +42,7 @@ describe('main_window', () => {
       it('sends a message to its webContents', () => {
         sendFrontendMessage('message', 'param1', 'param2')
 
-        expect(window.webContents.send).toBeCalledWith(
+        expect(window.webContents.send).toHaveBeenCalledWith(
           'message',
           'param1',
           'param2'

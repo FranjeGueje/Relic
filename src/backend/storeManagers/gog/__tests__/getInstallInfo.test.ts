@@ -33,6 +33,7 @@ jest.mock('fs-extra')
 jest.mock('node:zlib')
 jest.mock('node:fs/promises')
 jest.mock('node:fs', () => ({
+  ...jest.requireActual('fs'),
   readdirSync: jest.fn().mockReturnValue([]),
   rmSync: jest.fn(),
   writeFileSync: jest.fn()

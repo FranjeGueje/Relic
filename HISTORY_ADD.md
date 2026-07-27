@@ -208,3 +208,99 @@ El objetivo es mantener trazabilidad de los cambios respecto al padre.
 | 2026-07-25 | `public/locales/*/translation.json`                                    | Añadida clave `console.more` con traducción en 47 idiomas.                                                                                                                                                                                                                                             |
 | 2026-07-25 | `src/backend/relic/game_events.ts`                                     | `onGameMoved()` eliminado `existsSync` antes de `unlinkSync` (fallaba con symlinks rotos tras mover juego).                                                                                                                                                                                            |
 | 2026-07-25 | `AGENTS.md`                                                            | Eliminada línea "Añadir juegos manualmente (Sideload)" de la sección Alcance (Sideload eliminado en v0.2.1).                                                                                                                                                                                           |
+
+---
+
+## v0.4.0 — Dependency Modernization & Tooling (Jul 2026)
+
+### Fase 1 — Limpieza de dependencias
+
+| Fecha      | Archivo                                     | Cambio                                                                                     |
+| ---------- | ------------------------------------------- | ------------------------------------------------------------------------------------------ |
+| 2026-07-26 | `src/backend/main.ts`                       | Eliminado `import 'source-map-support/register'` — Electron 43 soporta source maps nativo  |
+| 2026-07-26 | `package.json`                              | Eliminados `source-map-support`, `@types/source-map-support`, `cross-env`, `resolutions.ts-morph` |
+| 2026-07-26 | ~35 archivos `src/backend/**/*.ts`          | `from 'graceful-fs'` → `from 'fs'`. Node 24+ tiene retry EMFILE nativo.                   |
+| 2026-07-26 | `src/backend/relic/__tests__/symlinks.test.ts` | `jest.mock('graceful-fs')` → `jest.mock('fs', () => ({...jest.requireActual('fs'), ...}))` |
+| 2026-07-26 | `src/backend/relic/steam_shortcuts/__tests__/game_events.test.ts` | `jest.mock('graceful-fs')` → `jest.mock('fs', () => ({...jest.requireActual('fs'), ...}))` |
+| 2026-07-26 | 4 store manager test files                  | Eliminado `jest.mock('graceful-fs')` (12 líneas dead code)                                 |
+| 2026-07-26 | `src/backend/jest.config.js`                | Añadido `modulePaths: ['<rootDir>/src']` para path aliases en tests                        |
+| 2026-07-26 | `package.json`                              | Script `test:e2e`: `cross-env CI=e2e` → `CI=e2e` (Relic es Linux-only)                    |
+
+### Fase 2 — i18next-parser → i18next-cli
+
+| Fecha      | Archivo                   | Cambio                                                                                     |
+| ---------- | ------------------------- | ------------------------------------------------------------------------------------------ |
+| 2026-07-26 | `package.json`            | `i18next-parser` → `i18next-cli`. Script `"i18n"` → `"i18next-cli extract --quiet"`       |
+| 2026-07-26 | `i18next.config.ts`       | **Nuevo** — Config migrada desde `i18next-parser.config.js` (eliminado)                    |
+| 2026-07-26 | `.husky/pre-push`         | `--fail-on-update` → `--ci` (nueva flag de i18next-cli)                                    |
+| 2026-07-26 | `tsconfig.eslint.json`    | Añadido `i18next.config.ts` al include para type-checking                                  |
+
+### Fase 3 — Actualizaciones menores (pnpm update)
+
+| Fecha      | Paquete                  | De       | A        |
+| ---------- | ------------------------ | -------- | -------- |
+| 2026-07-26 | `fs-extra`               | 11.3.6   | 11.4.0   |
+| 2026-07-26 | `simple-keyboard`        | 3.8.165  | 3.8.170  |
+| 2026-07-26 | `@playwright/test`       | 1.61.1   | 1.62.0   |
+| 2026-07-26 | `sass`                   | 1.101.3  | 1.102.0  |
+| 2026-07-26 | `ts-jest`                | 29.4.11  | 29.4.12  |
+| 2026-07-26 | `electron-builder`       | 26.15.3  | 26.15.7  |
+
+### Fase 4 — Fuentes @fontsource 4→5
+
+| Fecha      | Paquete                  | De       | A        |
+| ---------- | ------------------------ | -------- | -------- |
+| 2026-07-26 | `@fontsource/cabin`     | 4.5.10   | 5.3.0    |
+| 2026-07-26 | `@fontsource/rubik`     | 4.5.14   | 5.3.0    |
+
+### Fase 5 — FontAwesome 6→7
+
+| Fecha      | Paquete                               | De    | A     |
+| ---------- | ------------------------------------- | ----- | ----- |
+| 2026-07-26 | `@fortawesome/free-solid-svg-icons`   | 6.7.2 | 7.3.1 |
+| 2026-07-26 | `@fortawesome/free-regular-svg-icons` | 6.7.2 | 7.3.1 |
+| 2026-07-26 | `@fortawesome/free-brands-svg-icons`  | 6.7.2 | 7.3.1 |
+
+### Fase 6 — Librerías individuales
+
+| Fecha      | Archivo                                                       | Cambio                                                                                     |
+| ---------- | ------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
+| 2026-07-26 | `package.json`                                                | `zustand` 4.5.7 → 5.0.14 (sin cambios de API en código)                                   |
+| 2026-07-26 | `src/backend/schemas.ts`                                      | `import { z } from 'zod'` → `import { z } from 'zod/v3'` (zod 3→4, compat layer)          |
+| 2026-07-26 | `src/backend/storeManagers/legendary/commands/base.ts`        | `import { z } from 'zod'` → `import { z } from 'zod/v3'`                                  |
+| 2026-07-26 | `src/backend/utils/systeminfo/gpu/linux.ts`                   | `import { z } from 'zod'` → `import { z } from 'zod/v3'`                                  |
+| 2026-07-26 | `package.json`                                                | `fuse.js` 6.6.2 → 7.5.0 (API idéntica)                                                    |
+| 2026-07-26 | `src/backend/storeManagers/legendary/library.ts`              | `import shlex from 'shlex'` → `import { split } from 'shlex'`. `shlex.split()` → `split()` |
+| 2026-07-26 | `src/backend/__mocks__/shlex.ts`                              | **Nuevo** — Mock CJS de shlex v3 (ESM) para Jest. Exporta `split`, `quote`, `join`.       |
+| 2026-07-26 | `src/backend/jest.config.js`                                  | Añadido `moduleNameMapper: { '^shlex$': '<rootDir>/src/backend/__mocks__/shlex.ts' }`     |
+
+### Fase 9 — Tooling modernization
+
+| Fecha      | Archivo                                     | Cambio                                                                                     |
+| ---------- | ------------------------------------------- | ------------------------------------------------------------------------------------------ |
+| 2026-07-27 | `package.json`                              | `electron-vite` 3.1.0 → 5.0.0, `@vitejs/plugin-react-swc` 3.11.0 → 4.3.2                 |
+| 2026-07-27 | `electron.vite.config.ts`                   | `externalizeDepsPlugin({ exclude })` → `build.externalizeDeps: { exclude }` en main+preload |
+| 2026-07-27 | `package.json`                              | `typescript` 5.9.3 → 6.0.3                                                                |
+| 2026-07-27 | `tsconfig.json`                             | Añadido `"types": ["node", "jest"]`. TS 6 default vacía `types`.                          |
+| 2026-07-27 | `package.json`                              | `jest` 29.7.0 → 30.4.2                                                                    |
+| 2026-07-27 | `src/backend/__tests__/progress_bar.test.ts` | `toBeCalled()` → `toHaveBeenCalled()`, `toBeCalledWith()` → `toHaveBeenCalledWith()`       |
+| 2026-07-27 | `src/backend/__tests__/main_window.test.ts`  | `toBeCalledWith()` → `toHaveBeenCalledWith()`                                              |
+| 2026-07-27 | `jest.config.js`                             | Import type `ts-jest/dist/types` → `ts-jest`                                               |
+| 2026-07-27 | `src/backend/storeManagers/gog/__tests__/getInstallInfo.test.ts` | Mock `node:fs` con `...jest.requireActual('fs')` (Jest 30 comparte mocks)                  |
+| 2026-07-27 | `package.json`                              | `eslint-plugin-react-hooks` 5.2.0 → 7.1.1                                                  |
+| 2026-07-27 | `eslint.config.mjs`                          | `configs['recommended-latest']` → `configs.flat['recommended-latest']` + reglas explícitas  |
+
+### Auditoría de limpieza — Dependencias redundantes
+
+| Fecha      | Archivo                                                          | Cambio                                                                                     |
+| ---------- | ---------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
+| 2026-07-27 | `package.json`                                                   | Eliminados: `fs-extra`, `@types/fs-extra`, `@testing-library/user-event`, `@testing-library/dom` |
+| 2026-07-27 | `src/backend/relic/steam_shortcuts/steam_helpers.ts`             | `readFileSync` merged con import existente de `fs`                                         |
+| 2026-07-27 | `src/backend/storeManagers/nile/library.ts`                      | `copySync` → `cpSync` (nativo de `fs`), import merged con `fs` existente                  |
+
+### tsconfig modernization (Jul 2026)
+
+| Fecha      | Archivo            | Cambio                                                                                     |
+| ---------- | ------------------ | ------------------------------------------------------------------------------------------ |
+| 2026-07-26 | `tsconfig.json`    | `moduleResolution: "node"` → `"bundler"`, eliminado `baseUrl: "./src/"`, añadido `paths`  |
+| 2026-07-26 | `tsconfig.json`    | `importHelpers: true` → `false` (build usa esbuild/SWC, no tsc)                           |

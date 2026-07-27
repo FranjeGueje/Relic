@@ -461,3 +461,42 @@ Para ver el detalle completo de cada categoría, consultar:
 - `no-constant-condition`: eliminado bloque `if (false)` muerto.
 - `no-empty`: añadido comentario a catch block vacío.
 - Resultado: 783 problemas → 0 errores, 636 warnings (todos en `warn`, preexistentes).
+
+---
+
+### v0.4.0 — Dependency Modernization (Jul 2026)
+
+#### Limpieza de dependencias
+
+- `source-map-support` + `@types/source-map-support` eliminados (Electron 43 tiene source maps nativo).
+- `graceful-fs` → `fs` nativo en ~35 archivos (Node 24+ tiene retry EMFILE nativo).
+- `cross-env` eliminado (Relic es Linux-only).
+- `resolutions.ts-morph` eliminado (no necesario).
+
+#### Dependencias actualizadas
+
+- `i18next-parser` → `i18next-cli` (deprecado). Config migrada a `i18next.config.ts`.
+- 6 actualizaciones menores (fs-extra, simple-keyboard, sass, ts-jest, playwright, electron-builder).
+- Fuentes: `@fontsource/cabin` 4→5, `@fontsource/rubik` 4→5.
+- Iconos: `@fortawesome/*` 6→7 (37 iconos, API idéntica).
+- `zustand` 4→5 (sin cambios de API), `zod` 3→4 (imports `zod/v3`), `fuse.js` 6→7, `shlex` 2→3.
+- `eslint-plugin-react-hooks` 5→7 (reglas explícitas para mantener compatibilidad v5).
+
+#### Dependencias bloqueadas
+
+- `electron-store` mantiene 8.2.0 (v9+ ESM-only rompe Jest).
+- `eslint` mantiene 9.x (v10 rompe con `eslint-plugin-react@7.37.5`).
+- `typescript` mantiene 6.0 (v7 bloqueado por `typescript-eslint@8.65.0` `<6.1.0`).
+
+#### Tooling modernizado
+
+- `electron-vite` 3→5 + `@vitejs/plugin-react-swc` 3→4: `externalizeDepsPlugin()` → `build.externalizeDeps.exclude`.
+- `typescript` 5.9→6.0: añadido `"types": ["node", "jest"]` (default vacío en TS 6).
+- `jest` 29→30: 7 alias matchers migrados, `ts-jest/dist/types` → `ts-jest`.
+- `tsconfig.json`: `moduleResolution: "bundler"`, `paths` sin `baseUrl`, `importHelpers: false`.
+
+#### Dependencias redundantes eliminadas
+
+- `fs-extra` + `@types/fs-extra`: reemplazado por `fs.cpSync` y `fs.readFileSync`.
+- `@testing-library/user-event`: 0 imports.
+- `@testing-library/dom`: ya instalado transitivamente por `@testing-library/react`.

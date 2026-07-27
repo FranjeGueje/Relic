@@ -9,7 +9,6 @@
 - Sidebar: icono SVG personalizado para Log y Registro
 - Traducciones: `proton-path` → `GE-Proton path` en 47 locales
 - ESLint: 134 errores eliminados (`no-unused-vars`, `no-require-imports`, `no-empty`, `no-constant-condition`)
-- `DEPENDENCIES.md`: auditoría de dependencias con plan de adelgazamiento
 - `src/common/formatBytes.ts`: helper `formatBytes()` reemplaza a `filesize`
 - `src/frontend/helpers/cx.ts`: helper `cx()` reemplaza a `classnames`
 
@@ -36,6 +35,17 @@
 - Logo de Registro: de `settings-sharp.svg` a `logs.svg`
 - Pre-commit hook: `pnpm lint-fix` pasa sin errores
 - `tsconfig.json`: `importHelpers: true` → `false` (build usa esbuild/SWC)
+
+### Dependencias
+
+- 15 paquetes eliminados: `source-map-support`, `@types/source-map-support`, `graceful-fs`, `@types/graceful-fs`, `cross-env`, `i18next-parser`, `filesize`, `classnames`, `sanitize-html`, `recharts`, `fs-extra`, `@types/fs-extra`, `@testing-library/user-event`, `@testing-library/dom`, `resolutions.ts-morph`
+- 2 helpers inline: `formatBytes()` y `cx()` reemplazando `filesize` y `classnames`
+- `i18next-parser` → `i18next-cli` (deprecado). Config en `i18next.config.ts`
+- `@fontsource/*` 4→5, `@fortawesome/*` 6→7, `zustand` 4→5, `zod` 3→4, `fuse.js` 6→7, `shlex` 2→3, `eslint-plugin-react-hooks` 5→7
+- Tooling modernizado: `electron-vite` 3→5, `@vitejs/plugin-react-swc` 3→4, `jest` 29→30, `typescript` 5→6
+- `tsconfig.json`: `moduleResolution: "bundler"`, `paths` sin `baseUrl`, `importHelpers: false`
+- 2 dependencias bloqueadas: `electron-store` (ESM-only), `eslint` v10 (eslint-plugin-react incompatible)
+- Verificación: codecheck 0 errores, test 92/92, lint 0 errores, build exitoso
 
 ---
 

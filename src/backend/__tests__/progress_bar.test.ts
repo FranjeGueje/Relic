@@ -35,7 +35,7 @@ describe('progress_bar', () => {
         status: 'queued'
       })
 
-      expect(window.setProgressBar).not.toBeCalled()
+      expect(window.setProgressBar).not.toHaveBeenCalled()
     })
   })
 
@@ -46,7 +46,7 @@ describe('progress_bar', () => {
         status: 'installing'
       })
 
-      expect(window.setProgressBar).toBeCalledWith(2)
+      expect(window.setProgressBar).toHaveBeenCalledWith(2)
     })
 
     it('starts listening for progress updates', () => {
@@ -57,7 +57,7 @@ describe('progress_bar', () => {
         status: 'installing'
       })
 
-      expect(backendEvents.on).toBeCalledWith(
+      expect(backendEvents.on).toHaveBeenCalledWith(
         'progressUpdate-Test',
         expect.any(Function)
       )
@@ -72,7 +72,7 @@ describe('progress_bar', () => {
         progress: { percent: 42, bytes: '', eta: '' }
       })
 
-      expect(window.setProgressBar).toBeCalledWith(0.42)
+      expect(window.setProgressBar).toHaveBeenCalledWith(0.42)
     })
   })
 
@@ -83,7 +83,7 @@ describe('progress_bar', () => {
         status: 'done'
       })
 
-      expect(window.setProgressBar).toBeCalledWith(-1)
+      expect(window.setProgressBar).toHaveBeenCalledWith(-1)
     })
 
     it('stops listening for progress updates', () => {
@@ -94,7 +94,7 @@ describe('progress_bar', () => {
         status: 'done'
       })
 
-      expect(backendEvents.off).toBeCalledWith(
+      expect(backendEvents.off).toHaveBeenCalledWith(
         'progressUpdate-Test',
         expect.any(Function)
       )
