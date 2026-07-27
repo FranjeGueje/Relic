@@ -1,454 +1,458 @@
 {
-    "Amazon Games": "Amazon Games",
-    "box": {
-        "cache-cleared": {
-            "message": "Relic Cache Was Cleared!",
-            "title": "Cache Cleared"
-        },
-        "choose": "Choose",
-        "default-install-path": "Default install path",
-        "error": {
-            "credentials": {
-                "message": "Your Crendentials have expired, Logout and Login Again!"
-            },
-            "executableNotFound": "Executable not found",
-            "executableNotFoundMessage": "Relic could not find the executable for this game. Please set it manually in the game settings.",
-            "folder-not-found": {
-                "title": "Game folder appears to be deleted, do you want to remove the game from the installed list?"
-            },
-            "generic": {
-                "message": "",
-                "title": ""
-            },
-            "legendary": {
-                "generic": "An error has occurred! Try to Logout and Login on your Epic account. {{newline}}  {{error}}"
-            },
-            "moving": "Error Moving Game {{error}}",
-            "title": "Error",
-            "uncaught-exception": {
-                "message": "A uncaught exception occured:{{newLine}}{{error}}{{newLine}}{{newLine}} Report the exception on our Github repository.",
-                "title": "Uncaught Exception occured!"
-            }
-        },
-        "no": "NO",
-        "ok": "OK",
-        "proton-path": "GE-Proton path",
-        "quit": {
-            "message": "There are pending operations, are you sure?",
-            "title": "Exit"
-        },
-        "reset-relic": {
-            "question": {
-                "message": "Are you sure you want to reset Relic? This will remove all Settings and Caching but won't remove your Installed games or your Epic credentials. Portable versions (AppImage, WinPortable, ...) of Relic needs to be restarted manually afterwards.",
-                "title": "Reset Relic"
-            }
-        },
-        "warning": {
-            "epic": {
-                "import": "Epic Servers are having major outage right now, the game cannot be imported!",
-                "install": "Epic Servers are having major outage right now, the game cannot be installed!",
-                "update": "Epic Servers are having major outage right now, the game cannot be updated!"
-            },
-            "snap": {
-                "checkbox": "Do not show this message again",
-                "message": "Some features are not available in the Snap version of the app for now and we are trying to fix it.{{newLine}}Current limitations are: {{newLine}}Relic will not be able to find Proton from Steam or Wine from Lutris.{{newLine}}{{newLine}}GameMode will also not work since Relic cannot have access to it.{{newLine}}{{newLine}}To have access to this feature please install Relic as a DEB or from the AppImage.",
-                "title": "Relic is running as a Snap"
-            },
-            "title": "Warning"
-        },
-        "yes": "YES"
+  "Amazon Games": "Amazon Games",
+  "box": {
+    "apply": "Apply",
+    "cache-cleared": {
+      "message": "Relic Cache Was Cleared!",
+      "title": "Cache Cleared"
     },
-    "button": {
-        "cancel": "Cancel",
-        "continue": "Continue",
-        "go_to_library": "Go to Library",
-        "login": "Log in",
-        "uninstall": "Uninstall"
+    "choose": "Choose",
+    "default-install-path": "Default install path",
+    "error": {
+      "credentials": {
+        "message": "Your Crendentials have expired, Logout and Login Again!"
+      },
+      "executableNotFound": "Executable not found",
+      "executableNotFoundMessage": "Relic could not find the executable for this game. Please set it manually in the game settings.",
+      "folder-not-found": {
+        "title": "Game folder appears to be deleted, do you want to remove the game from the installed list?"
+      },
+      "generic": {
+        "message": "",
+        "title": ""
+      },
+      "legendary": {
+        "generic": "An error has occurred! Try to Logout and Login on your Epic account. {{newline}}  {{error}}"
+      },
+      "moving": "Error Moving Game {{error}}",
+      "title": "Error",
+      "uncaught-exception": {
+        "message": "A uncaught exception occured:{{newLine}}{{error}}{{newLine}}{{newLine}} Report the exception on our Github repository.",
+        "title": "Uncaught Exception occured!"
+      }
     },
-    "categories-manager": {
-        "add": "Add",
-        "add-placeholder": "Add new category",
-        "cancel-remove": "Cancel removal of \"{{name}}\"",
-        "cancel-rename": "Cancel rename of \"{{name}}\"",
-        "confirm-remove": "Confirm removal of \"{{name}}\"",
-        "confirm-rename": "Confirm rename of \"{{oldName}}\" as \"{{newName}}\"",
-        "no-categories": "No categories yet.",
-        "remove": "Remove \"{{name}}\"",
-        "rename": "Rename \"{{name}}\"",
-        "title": "Manage Categories"
+    "no": "NO",
+    "ok": "OK",
+    "proton-path": "GE-Proton path",
+    "quit": {
+      "message": "There are pending operations, are you sure?",
+      "title": "Exit"
     },
-    "console": {
-        "cancelInstall": {
-            "message": "This game is currently installing. Cancel the installation?",
-            "title": "Cancel installation?"
-        },
-        "cancelUpdate": {
-            "message": "This game is currently downloading. Cancel the ongoing update?",
-            "title": "Cancel update?"
-        },
-        "card": {
-            "needsUpdate": "Needs update"
-        },
-        "empty": "No installed games to show. Install something first.",
-        "filter": {
-            "all": "All"
-        },
-        "games": "Installed games",
-        "hints": {
-            "change_store": "Change store",
-            "launch": "Launch",
-            "navigate": "Navigate",
-            "quit": "Quit",
-            "sort": "Sort"
-        },
-        "install": {
-            "path": "Install to",
-            "platform": "Platform",
-            "title": "Install game"
-        },
-        "loading": "Loading your library…",
-        "more": "More",
-        "quitApp": "Quit App",
-        "removeFromQueue": {
-            "message": "This game is queued for download. Remove it from the queue?"
-        },
-        "sort": "Sort",
-        "uninstall": {
-            "message": "Do you want to uninstall \"{{title}}\"?",
-            "title": "Uninstall game"
-        }
+    "reset-relic": {
+      "question": {
+        "message": "Are you sure you want to reset Relic? This will remove all Settings and Caching but won't remove your Installed games or your Epic credentials. Portable versions (AppImage, WinPortable, ...) of Relic needs to be restarted manually afterwards.",
+        "title": "Reset Relic"
+      }
     },
-    "controller": {
-        "hints": {
-            "back": "Back",
-            "backspace": "Backspace",
-            "close_dialog": "Close dialog",
-            "close_keyboard": "Close keyboard",
-            "close_options": "Close Options",
-            "game_details": "Game details",
-            "game_settings": "Game settings",
-            "install_game": "Install game",
-            "move_cursor": "Move cursor",
-            "open_virtual_keyboard": "Open virtual keyboard",
-            "options": "Options",
-            "play_game": "Play game",
-            "scroll": "Scroll",
-            "select": "Select",
-            "space": "Space",
-            "update_game": "Update game"
-        }
+    "warning": {
+      "epic": {
+        "import": "Epic Servers are having major outage right now, the game cannot be imported!",
+        "install": "Epic Servers are having major outage right now, the game cannot be installed!",
+        "update": "Epic Servers are having major outage right now, the game cannot be updated!"
+      },
+      "snap": {
+        "checkbox": "Do not show this message again",
+        "message": "Some features are not available in the Snap version of the app for now and we are trying to fix it.{{newLine}}Current limitations are: {{newLine}}Relic will not be able to find Proton from Steam or Wine from Lutris.{{newLine}}{{newLine}}GameMode will also not work since Relic cannot have access to it.{{newLine}}{{newLine}}To have access to this feature please install Relic as a DEB or from the AppImage.",
+        "title": "Relic is running as a Snap"
+      },
+      "title": "Warning"
     },
-    "dlc": {
-        "actions": "Actions",
-        "installDlcs": "Install all DLCs",
-        "noDlcFound": "No DLCs found",
-        "size": "Size",
-        "title": "Title"
+    "yes": "YES"
+  },
+  "button": {
+    "cancel": "Cancel",
+    "continue": "Continue",
+    "go_to_library": "Go to Library",
+    "login": "Log in",
+    "uninstall": "Uninstall"
+  },
+  "categories-manager": {
+    "add": "Add",
+    "add-placeholder": "Add new category",
+    "cancel-remove": "Cancel removal of \"{{name}}\"",
+    "cancel-rename": "Cancel rename of \"{{name}}\"",
+    "confirm-remove": "Confirm removal of \"{{name}}\"",
+    "confirm-rename": "Confirm rename of \"{{oldName}}\" as \"{{newName}}\"",
+    "no-categories": "No categories yet.",
+    "remove": "Remove \"{{name}}\"",
+    "rename": "Rename \"{{name}}\"",
+    "title": "Manage Categories"
+  },
+  "console": {
+    "cancelInstall": {
+      "message": "This game is currently installing. Cancel the installation?",
+      "title": "Cancel installation?"
     },
-    "download-manager": {
-        "ETA": "Estimated Time",
-        "install-type": {
-            "install": "Install",
-            "update": "Update"
-        },
-        "label": {
-            "disk": "Disk",
-            "speed": "Download"
-        },
-        "link": "Downloads",
-        "queue": {
-            "end-time": "Finished at",
-            "queue-time": "Added at",
-            "start-time": "Started at",
-            "type": "Type"
-        },
-        "title": "Downloads"
+    "cancelUpdate": {
+      "message": "This game is currently downloading. Cancel the ongoing update?",
+      "title": "Cancel update?"
     },
-    "epic": {
-        "offline-notification-body": "Relic will maybe not work probably!",
-        "offline-notification-title": "offline"
+    "card": {
+      "needsUpdate": "Needs update"
     },
-    "Epic Games": "Epic Games",
-    "error": "Error",
-    "externalLink": {
-        "dontAskAgain": "Don't ask again",
-        "warning": "You are about to open an external link."
+    "empty": "No installed games to show. Install something first.",
+    "filter": {
+      "all": "All"
     },
-    "favourites": "Favourites",
-    "game": {
-        "modify": "Modify Installation",
-        "status": "Status",
-        "store": "Store",
-        "title": "Game Title"
+    "games": "Installed games",
+    "hints": {
+      "change_store": "Change store",
+      "launch": "Launch",
+      "navigate": "Navigate",
+      "quit": "Quit",
+      "sort": "Sort"
     },
-    "generic": {
-        "error": {
-            "component": "No games found - Try to logout and login again or one of the options below"
-        },
-        "install": "Install",
-        "library": {
-            "refresh": "Refresh Library"
-        }
+    "install": {
+      "path": "Install to",
+      "platform": "Platform",
+      "title": "Install game"
     },
-    "globalSettings": "Global Settings",
-    "GOG": "GOG",
-    "header": {
-        "categories": "Categories",
-        "filters": "Filters",
-        "no_categories": "No custom categories. Add categories using each game menu.",
-        "only": "only",
-        "reset": "Reset",
-        "select_all": "Select All",
-        "show_available_games": "Show non-Available games",
-        "show_favourites_only": "Show Favourites only",
-        "show_hidden": "Show Hidden",
-        "show_installed_only": "Show Installed only",
-        "show_support_offline_only": "Show offline-supported only",
-        "show_third_party_managed_only": "Show third-party managed only",
-        "show_updates_only": "Show games with updates only",
-        "uncategorized": "Uncategorized"
+    "loading": "Loading your library…",
+    "more": "More",
+    "quitApp": "Quit App",
+    "removeFromQueue": {
+      "message": "This game is queued for download. Remove it from the queue?"
     },
-    "help": {
-        "button": {
-            "close": "Close Help",
-            "open": "Open Help"
-        },
-        "content": {
-            "defaultInstallPath": "This is the default path preselected when installing games.",
-            "downloadManager": "Shows current and past downloads.",
-            "library": "Shows all owned games.",
-            "login": "Log in into the different stores.",
-            "protonPath": "Path to a Proton installation (e.g. GE-Proton) used when running games with UMU.",
-            "settingsDefault": "Shows all settings of Relic and defaults for games.",
-            "settingsGame": "Show all settings for a game."
-        },
-        "title": {
-            "downloadManager": "Download Manager",
-            "library": "Library",
-            "login": "Login",
-            "settings": "Settings"
-        }
-    },
-    "info": {
-        "relic": {
-            "version": "Relic Version"
-        },
-        "settings": "Settings are saved automatically"
-    },
-    "infobox": {
-        "help": "Help",
-        "requirements": "System Requirements",
-        "warning": "Warning"
+    "sort": "Sort",
+    "uninstall": {
+      "message": "Do you want to uninstall \"{{title}}\"?",
+      "title": "Uninstall game"
+    }
+  },
+  "controller": {
+    "hints": {
+      "back": "Back",
+      "backspace": "Backspace",
+      "close_dialog": "Close dialog",
+      "close_keyboard": "Close keyboard",
+      "close_options": "Close Options",
+      "game_details": "Game details",
+      "game_settings": "Game settings",
+      "install_game": "Install game",
+      "move_cursor": "Move cursor",
+      "open_virtual_keyboard": "Open virtual keyboard",
+      "options": "Options",
+      "play_game": "Play game",
+      "scroll": "Scroll",
+      "select": "Select",
+      "space": "Space",
+      "update_game": "Update game"
+    }
+  },
+  "dlc": {
+    "actions": "Actions",
+    "installDlcs": "Install all DLCs",
+    "noDlcFound": "No DLCs found",
+    "size": "Size",
+    "title": "Title"
+  },
+  "download-manager": {
+    "ETA": "Estimated Time",
+    "install-type": {
+      "install": "Install",
+      "update": "Update"
     },
     "label": {
-        "loading": "Loading",
-        "releaseDate": "Release Date"
+      "disk": "Disk",
+      "speed": "Download"
     },
-    "library": {
-        "hideAlphabetFilter": "Hide Alphabet Filter",
-        "showAlphabetFilter": "Show Alphabet Filter",
-        "sortAscending": "Sort Ascending",
-        "sortByStatus": "Sort by Status",
-        "sortDescending": "Sort Descending",
-        "toggleLayout": {
-            "grid": "Toggle to a grid layout",
-            "list": "Toggle to a list layout"
-        }
-    },
-    "Library": "Library",
-    "loading": {
-        "default": "Loading",
-        "website": "Loading Website"
-    },
-    "login": {
-        "alternative_method": "Alternative Login Method",
-        "amazon": "Amazon Login",
-        "epic": "Epic Games Login",
-        "gog": "GOG Login",
-        "message": "Login with your platform. You can login to more than one platform at the same time.",
-        "zoom": "Zoom Login"
-    },
-    "notify": {
-        "error": {
-            "move": "Error Moving the Game",
-            "reparing": "Error Repairing"
-        },
-        "finished": {
-            "reparing": "Finished Repairing"
-        },
-        "import": {
-            "failed": "Importing Failed"
-        },
-        "install": {
-            "canceled": "Installation Canceled",
-            "failed": "Installation Failed",
-            "finished": "Installation Finished",
-            "imported": "Game Imported",
-            "paused": "Installation Paused",
-            "startInstall": "Installation Started"
-        },
-        "moved": "Finished Moving",
-        "moving": "Moving Game",
-        "uninstalled": "Uninstalled",
-        "update": {
-            "canceled": "Update Canceled",
-            "failed": "Update Failed",
-            "finished": "Update Finished",
-            "paused": "Update Paused",
-            "started": "Update Started"
-        }
-    },
-    "offline-message": {
-        "hint": "We are checking the connectivity against:{{newline}}github.com,{{newline}}gog.com,{{newline}}store.epicgames.com and{{newline}}cloudflare-dns.com",
-        "ignore": "Ignore",
-        "offline": "Offline",
-        "offline-retry-in": "Offline. Retrying in {{seconds}} seconds.",
-        "retrying": "Retrying"
-    },
-    "other": {
-        "weblate": "Help translate Relic."
-    },
-    "Other": "Other",
-    "platforms": {
-        "browser": "Browser",
-        "linux": "Linux",
-        "mac": "Mac",
-        "win": "Windows"
-    },
-    "progress": "Progress",
+    "link": "Downloads",
     "queue": {
-        "label": {
-            "clear": "Clear List",
-            "downloading": "Downloading",
-            "empty": "Nothing to download",
-            "finished": "Completed",
-            "queued": "Queued"
-        }
+      "end-time": "Finished at",
+      "queue-time": "Added at",
+      "start-time": "Started at",
+      "type": "Type"
     },
-    "Recent": "Played Recently",
-    "search": "Search for Games",
-    "setting": {
-        "autoUpdateGames": "Automatically update games",
-        "default-install-path": "Default install path",
-        "language": "Choose App Language",
-        "log": {
-            "instructions": "Share these logs and any relevant information about your problem.",
-            "instructions_title": "How to report a problem?",
-            "no-file": "No log file found."
-        },
-        "maxworkers": "Maximum Number of Workers when downloading",
-        "proton-path": "GE-Proton path",
-        "proton-path-info": "Used to generate UMU prefixes and prepare Steam integrations.",
-        "select_theme": "Select Theme",
-        "verboseLogs": {
-            "description": "Enable verbose logs"
-        }
+    "title": "Downloads"
+  },
+  "epic": {
+    "offline-notification-body": "Relic will maybe not work probably!",
+    "offline-notification-title": "offline"
+  },
+  "Epic Games": "Epic Games",
+  "error": "Error",
+  "externalLink": {
+    "dontAskAgain": "Don't ask again",
+    "warning": "You are about to open an external link."
+  },
+  "favourites": "Favourites",
+  "game": {
+    "modify": "Modify Installation",
+    "status": "Status",
+    "store": "Store",
+    "title": "Game Title"
+  },
+  "generic": {
+    "error": {
+      "component": "No games found - Try to logout and login again or one of the options below"
     },
-    "settings": {
-        "advanced": {
-            "clearCache": {
-                "help1": "This action will clear the following caches:",
-                "help10": "Relic configuration",
-                "help2": "Third-party game info (scores, steam compatibility, howlongtobeat, pcgamingwiki, applegamingwiki)",
-                "help3": "Legendary library info (list of games, install dialog info, game info)",
-                "help4": "GOG library info (list of games, install dialog info, api info -i.e: requirements-)",
-                "help5": "Amazon library info (list of games, install dialog info)",
-                "help6": "This will NOT delete:",
-                "help7": "Store login",
-                "help8": "Installed games",
-                "help9": "Games settings"
-            },
-            "details": "Details",
-            "resetRelic": {
-                "help": "This will remove all Settings and Caching but won't remove your Installed games or your Epic credentials. Portable versions (AppImage, WinPortable, ...) of Relic needs to be restarted manually afterwards."
-            },
-            "title": {
-                "clearCache": "Clear Cache",
-                "resetRelic": "Reset Relic"
-            }
-        },
-        "clear-cache": "Clear Relic Cache",
-        "copyToClipboard": "Copy All Settings to Clipboard",
-        "log": {
-            "long-log-hint": "Log truncated, last 1000 lines are shown!"
-        },
-        "navbar": {
-            "general": "General",
-            "log": "Log"
-        },
-        "open-config-file": "Open Config File",
-        "reset-relic": "Reset Relic",
-        "steamgriddb": {
-            "apikey": {
-                "placeholder": "Enter your SteamGridDB API Key here",
-                "placeholder_saved": "Key saved — type to replace, clear to remove",
-                "title": "SteamGridDB API Key"
-            },
-            "help": {
-                "description": "Provide your own SteamGridDB API key to enable game cover search. The key is stored encrypted when your system supports it. You can get one at {{url}}"
-            }
-        }
+    "install": "Install",
+    "library": {
+      "refresh": "Refresh Library"
+    }
+  },
+  "globalSettings": "Global Settings",
+  "GOG": "GOG",
+  "header": {
+    "categories": "Categories",
+    "filters": "Filters",
+    "no_categories": "No custom categories. Add categories using each game menu.",
+    "only": "only",
+    "reset": "Reset",
+    "select_all": "Select All",
+    "show_available_games": "Show non-Available games",
+    "show_favourites_only": "Show Favourites only",
+    "show_hidden": "Show Hidden",
+    "show_installed_only": "Show Installed only",
+    "show_support_offline_only": "Show offline-supported only",
+    "show_third_party_managed_only": "Show third-party managed only",
+    "show_updates_only": "Show games with updates only",
+    "uncategorized": "Uncategorized"
+  },
+  "help": {
+    "button": {
+      "close": "Close Help",
+      "open": "Open Help"
     },
-    "Settings": "Settings",
-    "sidebar": {
-        "console": "Console Mode"
-    },
-    "status": {
-        "installed": "Installed",
-        "installing": "Installing",
-        "logging": "Logging In...",
-        "preparing_login": "Preparing Login... ",
-        "processing": "Processing files, please wait"
-    },
-    "steamgriddb": {
-        "error": {
-            "grids": "Failed to fetch grids",
-            "no-games": "No games found.",
-            "no-grids": "No covers found for this game.",
-            "search": "Failed to search for games, please check your SteamGridDB API key and try again"
-        },
-        "picker": {
-            "search": "Search Game",
-            "select-game": "Select a Game:",
-            "title": "SteamGridDB Covers"
-        }
+    "content": {
+      "defaultInstallPath": "This is the default path preselected when installing games.",
+      "downloadManager": "Shows current and past downloads.",
+      "library": "Shows all owned games.",
+      "login": "Log in into the different stores.",
+      "protonPath": "Path to a Proton installation (e.g. GE-Proton) used when running games with UMU.",
+      "settingsDefault": "Shows all settings of Relic and defaults for games.",
+      "settingsGame": "Show all settings for a game."
     },
     "title": {
-        "allGames": "All Games"
-    },
-    "tray": {
-        "about": "About",
-        "quit": "Quit",
-        "reload": "Reload",
-        "show": "Show"
-    },
-    "two_col_table": {
-        "save_hint": "Changes in this table are not saved automatically. Click the + button"
-    },
-    "userselector": {
-        "cancel": "Cancel",
-        "logging_out": "Logging out",
-        "logout": "Log out",
-        "logout_confirmation": "Are you sure you want to log out?",
-        "manageaccounts": "Manage Accounts",
-        "quit": "Quit",
-        "quitMessage": "Are you sure you want to quit?"
-    },
-    "webview": {
-        "controls": {
-            "back": "Go back",
-            "forward": "Go forward",
-            "openInBrowser": "Open in browser",
-            "reload": "Reload page"
-        }
-    },
-    "window": {
-        "close": "Close",
-        "maximize": "Maximize window",
-        "minimize": "Minimize window",
-        "restore": "Restore window"
-    },
-    "wine": {
-        "actions": "Action"
+      "downloadManager": "Download Manager",
+      "library": "Library",
+      "login": "Login",
+      "settings": "Settings"
     }
+  },
+  "Important information about this game, read this: <1>Open page</1>": "Important information about this game, read this: <1>Open page</1>",
+  "info": {
+    "relic": {
+      "version": "Relic Version"
+    },
+    "settings": "Settings are saved automatically"
+  },
+  "infobox": {
+    "help": "Help",
+    "requirements": "System Requirements",
+    "warning": "Warning"
+  },
+  "label": {
+    "loading": "Loading",
+    "releaseDate": "Release Date"
+  },
+  "library": {
+    "hideAlphabetFilter": "Hide Alphabet Filter",
+    "showAlphabetFilter": "Show Alphabet Filter",
+    "sortAscending": "Sort Ascending",
+    "sortByStatus": "Sort by Status",
+    "sortDescending": "Sort Descending",
+    "toggleLayout": {
+      "grid": "Toggle to a grid layout",
+      "list": "Toggle to a list layout"
+    }
+  },
+  "Library": "Library",
+  "loading": {
+    "default": "Loading",
+    "website": "Loading Website"
+  },
+  "login": {
+    "alternative_method": "Alternative Login Method",
+    "amazon": "Amazon Login",
+    "epic": "Epic Games Login",
+    "gog": "GOG Login",
+    "message": "Login with your platform. You can login to more than one platform at the same time.",
+    "zoom": "Zoom Login"
+  },
+  "notify": {
+    "error": {
+      "move": "Error Moving the Game",
+      "reparing": "Error Repairing"
+    },
+    "finished": {
+      "reparing": "Finished Repairing"
+    },
+    "import": {
+      "failed": "Importing Failed"
+    },
+    "install": {
+      "canceled": "Installation Canceled",
+      "failed": "Installation Failed",
+      "finished": "Installation Finished",
+      "imported": "Game Imported",
+      "paused": "Installation Paused",
+      "startInstall": "Installation Started"
+    },
+    "moved": "Finished Moving",
+    "moving": "Moving Game",
+    "uninstalled": {
+      "error": "Error uninstalling"
+    },
+    "update": {
+      "canceled": "Update Canceled",
+      "failed": "Update Failed",
+      "finished": "Update Finished",
+      "paused": "Update Paused",
+      "started": "Update Started"
+    }
+  },
+  "offline-message": {
+    "hint": "We are checking the connectivity against:{{newline}}github.com,{{newline}}gog.com,{{newline}}store.epicgames.com and{{newline}}cloudflare-dns.com",
+    "ignore": "Ignore",
+    "offline": "Offline",
+    "offline-retry-in": "Offline. Retrying in {{seconds}} seconds.",
+    "retrying": "Retrying"
+  },
+  "other": {
+    "weblate": "Help translate Relic."
+  },
+  "Other": "Other",
+  "platforms": {
+    "browser": "Browser",
+    "linux": "Linux",
+    "mac": "Mac",
+    "win": "Windows"
+  },
+  "progress": "Progress",
+  "queue": {
+    "label": {
+      "clear": "Clear List",
+      "downloading": "Downloading",
+      "empty": "Nothing to download",
+      "finished": "Completed",
+      "queued": "Queued"
+    }
+  },
+  "Recent": "Played Recently",
+  "search": "Search for Games",
+  "setting": {
+    "autoUpdateGames": "Automatically update games",
+    "default-install-path": "Default install path",
+    "language": "Choose App Language",
+    "log": {
+      "instructions": "Share these logs and any relevant information about your problem.",
+      "instructions_title": "How to report a problem?",
+      "no-file": "No log file found."
+    },
+    "maxworkers": "Maximum Number of Workers when downloading",
+    "proton-path": "GE-Proton path",
+    "proton-path-info": "Used to generate UMU prefixes and prepare Steam integrations.",
+    "select_theme": "Select Theme",
+    "verboseLogs": {
+      "description": "Enable verbose logs"
+    }
+  },
+  "settings": {
+    "advanced": {
+      "clearCache": {
+        "help1": "This action will clear the following caches:",
+        "help10": "Relic configuration",
+        "help2": "Third-party game info (scores, steam compatibility, howlongtobeat, pcgamingwiki, applegamingwiki)",
+        "help3": "Legendary library info (list of games, install dialog info, game info)",
+        "help4": "GOG library info (list of games, install dialog info, api info -i.e: requirements-)",
+        "help5": "Amazon library info (list of games, install dialog info)",
+        "help6": "This will NOT delete:",
+        "help7": "Store login",
+        "help8": "Installed games",
+        "help9": "Games settings"
+      },
+      "details": "Details",
+      "resetRelic": {
+        "help": "This will remove all Settings and Caching but won't remove your Installed games or your Epic credentials. Portable versions (AppImage, WinPortable, ...) of Relic needs to be restarted manually afterwards."
+      },
+      "title": {
+        "clearCache": "Clear Cache",
+        "resetRelic": "Reset Relic"
+      }
+    },
+    "clear-cache": "Clear Relic Cache",
+    "copyToClipboard": "Copy All Settings to Clipboard",
+    "log": {
+      "long-log-hint": "Log truncated, last 1000 lines are shown!"
+    },
+    "navbar": {
+      "general": "General",
+      "log": "Log"
+    },
+    "open-config-file": "Open Config File",
+    "reset-relic": "Reset Relic",
+    "steamgriddb": {
+      "apikey": {
+        "placeholder": "Enter your SteamGridDB API Key here",
+        "placeholder_saved": "Key saved — type to replace, clear to remove",
+        "title": "SteamGridDB API Key"
+      },
+      "help": {
+        "description": "Provide your own SteamGridDB API key to enable game cover search. The key is stored encrypted when your system supports it. You can get one at {{url}}"
+      }
+    }
+  },
+  "Settings": "Settings",
+  "sidebar": {
+    "console": "Console Mode"
+  },
+  "status": {
+    "installed": "Installed",
+    "installing": "Installing",
+    "logging": "Logging In...",
+    "preparing_login": "Preparing Login... ",
+    "processing": "Processing files, please wait"
+  },
+  "steamgriddb": {
+    "error": {
+      "grids": "Failed to fetch grids",
+      "no-games": "No games found.",
+      "no-grids": "No covers found for this game.",
+      "search": "Failed to search for games, please check your SteamGridDB API key and try again"
+    },
+    "picker": {
+      "search": "Search Game",
+      "select-game": "Select a Game:",
+      "title": "SteamGridDB Covers"
+    }
+  },
+  "title": {
+    "allGames": "All Games"
+  },
+  "tray": {
+    "about": "About",
+    "quit": "Quit",
+    "reload": "Reload",
+    "show": "Show"
+  },
+  "two_col_table": {
+    "save_hint": "Changes in this table are not saved automatically. Click the + button"
+  },
+  "userselector": {
+    "cancel": "Cancel",
+    "logging_out": "Logging out",
+    "logout": "Log out",
+    "manageaccounts": "Manage Accounts",
+    "quit": "Quit",
+    "quitMessage": "Are you sure you want to quit?"
+  },
+  "webview": {
+    "controls": {
+      "back": "Go back",
+      "forward": "Go forward",
+      "openInBrowser": "Open in browser",
+      "reload": "Reload page"
+    }
+  },
+  "window": {
+    "close": "Close",
+    "maximize": "Maximize window",
+    "minimize": "Minimize window",
+    "restore": "Restore window"
+  },
+  "wine": {
+    "actions": "Action"
+  },
+  "ZOOM Platform": "ZOOM Platform"
 }

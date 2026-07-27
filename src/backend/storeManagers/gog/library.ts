@@ -27,7 +27,7 @@ import {
   GOGSessionSyncQueueItem
 } from 'common/types/gog'
 import { dirname, join } from 'node:path'
-import { existsSync, readFileSync, statSync  } from 'fs'
+import { existsSync, readFileSync, statSync } from 'fs'
 
 import {
   getRunnerLogWriter,

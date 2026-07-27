@@ -5,7 +5,7 @@ import {
   KnowFixesInfo
 } from 'common/types'
 
-import { existsSync, readFileSync  } from 'fs'
+import { existsSync, readFileSync } from 'fs'
 import { join, isAbsolute } from 'path'
 
 import { quoteIfNecessary, errorHandler, memoryLog } from './utils'
