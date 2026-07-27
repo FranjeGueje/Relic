@@ -500,3 +500,12 @@ Para ver el detalle completo de cada categoría, consultar:
 - `fs-extra` + `@types/fs-extra`: reemplazado por `fs.cpSync` y `fs.readFileSync`.
 - `@testing-library/user-event`: 0 imports.
 - `@testing-library/dom`: ya instalado transitivamente por `@testing-library/react`.
+
+#### Tests de alta prioridad
+
+- `src/backend/relic/steam_shortcuts/__tests__/store.test.ts` (nuevo, 10 tests): `listShortcuts`, `findShortcut`, `addShortcut` (crear + upsert), `removeShortcut`, JSON corrupto. Usa `tmp` + `jest.resetModules()`.
+- `src/backend/relic/steam_shortcuts/__tests__/game_events.test.ts` (+9 tests, 17 total): Linux native (`createGameSymlink` + `start.sh`), `symlink` error, `no install path`, `createRunnerFile` error, `preparePrefix`, zoom `removePrefixSymlink`, untracked game, symlink deletion on uninstall.
+- `src/backend/relic/__tests__/prefix.test.ts` (nuevo, 8 tests): `symlinkPrefix` (create/cleanup/error), `removePrefixSymlink`, `preparePrefix` (zoom vs non-zoom dispatch). Usa patrón `jest.isolateModules()` para evitar interferencia de mocks globales.
+- `src/backend/relic/__tests__/windowify.test.ts` (nuevo, 8 tests): `windowify` (legendary/gog transforms, zoom warning, missing installed.json), `syncMountBin` (source missing, file copy, hash skip).
+- `eslint.config.mjs`: añadido `'@typescript-eslint/no-require-imports': 'off'` para `__tests__` (necesario para `jest.isolateModules()`).
+- Resultado: 91 tests → 126 tests (+35), 19 suites → 21 suites, 0 errores lint/codecheck.

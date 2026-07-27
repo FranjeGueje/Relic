@@ -5,8 +5,13 @@ import {
   onGameMoved
 } from '../../game_events'
 import { existsSync, unlinkSync, mkdirSync, symlinkSync } from 'fs'
-import { addGameToSteam, createRunnerFile } from '../add_game'
+import {
+  addGameToSteam,
+  createRunnerFile,
+  createGameSymlink
+} from '../add_game'
 import { deleteGrids } from '../../steamgrid'
+import { preparePrefix, removePrefixSymlink } from '../../prefix'
 import { libraryManagerMap } from 'backend/storeManagers'
 import * as store from '../store'
 
@@ -39,6 +44,10 @@ jest.mock('backend/storeManagers', () => ({
   }
 }))
 
+jest.mock('backend/constants/paths', () => ({
+  relicGamesPath: '/home/user/.local/share/relic/games'
+}))
+
 jest.mock('../add_game', () => ({
   addGameToSteam: jest.fn(),
   createRunnerFile: jest.fn(),
@@ -56,13 +65,25 @@ jest.mock('../../steamgrid', () => ({
   deleteGrids: jest.fn()
 }))
 
+jest.mock('../../prefix', () => ({
+  preparePrefix: jest.fn(),
+  removePrefixSymlink: jest.fn()
+}))
+
+jest.mock('electron', () => ({
+  shell: { openExternal: jest.fn() }
+}))
+
 const mockedAddGameToSteam = jest.mocked(addGameToSteam)
 const mockedCreateRunnerFile = jest.mocked(createRunnerFile)
+const mockedCreateGameSymlink = jest.mocked(createGameSymlink)
 const mockedExistsSync = jest.mocked(existsSync)
 const mockedUnlinkSync = jest.mocked(unlinkSync)
 const mockedMkdirSync = jest.mocked(mkdirSync)
 const mockedSymlinkSync = jest.mocked(symlinkSync)
 const mockedDeleteGrids = jest.mocked(deleteGrids)
+const mockedPreparePrefix = jest.mocked(preparePrefix)
+const mockedRemovePrefixSymlink = jest.mocked(removePrefixSymlink)
 const mockedFindShortcut = jest.mocked(store.findShortcut)
 const mockedAddShortcut = jest.mocked(store.addShortcut)
 const mockedRemoveShortcut = jest.mocked(store.removeShortcut)
@@ -233,6 +254,118 @@ describe('onGameInstalled', () => {
     })
     expect(result.success).toBe(true)
   })
+
+  test('installs linux native game with symlink and start.sh', async () => {
+    mockGetGameInfo.mockReturnValue({
+      title: 'NativeGame',
+      app_name: 'native_app',
+      runner: 'legendary',
+      is_linux_native: true,
+      install: { install_path: '/games/native' }
+    })
+
+    mockedFindShortcut.mockReturnValue(undefined)
+    mockedCreateGameSymlink.mockReturnValue({ linkPath: '/link/native' })
+    mockedExistsSync.mockReturnValue(true)
+    mockedAddGameToSteam.mockResolvedValueOnce({
+      success: true,
+      steamAppId: 111
+    })
+
+    const result = await onGameInstalled(mockGame as never, '/games/native')
+
+    expect(mockedCreateGameSymlink).toHaveBeenCalledWith('/games/native')
+    expect(mockedAddGameToSteam).toHaveBeenCalledWith({
+      gameName: 'NativeGame',
+      runnerPath: '/link/native/start.sh'
+    })
+    expect(mockedAddShortcut).toHaveBeenCalledWith(
+      'NativeGame',
+      'native_app',
+      'legendary',
+      111,
+      '/games/native',
+      '/link/native/start.sh'
+    )
+    expect(result.success).toBe(true)
+  })
+
+  test('linux native fails when createGameSymlink returns error', async () => {
+    mockGetGameInfo.mockReturnValue({
+      title: 'NativeGame',
+      app_name: 'native_app',
+      runner: 'legendary',
+      is_linux_native: true,
+      install: { install_path: '/games/native' }
+    })
+
+    mockedFindShortcut.mockReturnValue(undefined)
+    mockedCreateGameSymlink.mockReturnValue({ error: 'symlink failed' })
+
+    const result = await onGameInstalled(mockGame as never, '/games/native')
+
+    expect(result.success).toBe(false)
+    expect(result.error).toBe('symlink failed')
+    expect(mockedAddGameToSteam).not.toHaveBeenCalled()
+  })
+
+  test('returns error when no install path available', async () => {
+    mockGetGameInfo.mockReturnValue({
+      title: 'NoPathGame',
+      app_name: 'nopath',
+      runner: 'legendary',
+      install: { install_path: '' }
+    })
+
+    mockedFindShortcut.mockReturnValue(undefined)
+
+    const result = await onGameInstalled(mockGame as never)
+
+    expect(result.success).toBe(false)
+    expect(result.error).toContain('No install path')
+    expect(mockedAddGameToSteam).not.toHaveBeenCalled()
+  })
+
+  test('returns error when createRunnerFile fails', async () => {
+    mockGetGameInfo.mockReturnValue({
+      title: 'BadRunnerGame',
+      app_name: 'bad_runner',
+      runner: 'zoom',
+      install: { install_path: '/games/zoom' }
+    })
+
+    mockedFindShortcut.mockReturnValue(undefined)
+    mockedCreateRunnerFile.mockReturnValue({ error: 'unsupported runner' })
+
+    const result = await onGameInstalled(mockGame as never, '/games/zoom')
+
+    expect(result.success).toBe(false)
+    expect(result.error).toBe('unsupported runner')
+    expect(mockedAddGameToSteam).not.toHaveBeenCalled()
+  })
+
+  test('calls preparePrefix for non-linux-native games', async () => {
+    mockGetGameInfo.mockReturnValue({
+      title: 'WindowsGame',
+      app_name: 'windows_app',
+      runner: 'legendary',
+      install: { install_path: '/games/windows' }
+    })
+
+    mockedFindShortcut.mockReturnValue(undefined)
+    mockedAddGameToSteam.mockResolvedValueOnce({
+      success: true,
+      steamAppId: 555
+    })
+
+    await onGameInstalled(mockGame as never, '/games/windows')
+
+    expect(mockedPreparePrefix).toHaveBeenCalledWith(
+      expect.objectContaining({ app_name: 'windows_app' }),
+      555,
+      '/games/windows'
+    )
+  })
 })
 
 describe('onGameUninstalled', () => {
@@ -259,6 +392,69 @@ describe('onGameUninstalled', () => {
     expect(mockedUnlinkSync).toHaveBeenCalledWith('/path/to/TestGame.bat')
     expect(mockedDeleteGrids).toHaveBeenCalledWith(12345)
     expect(mockedRemoveShortcut).toHaveBeenCalledWith('test_app')
+  })
+
+  test('does nothing when game is not tracked', async () => {
+    mockGetGameInfo.mockReturnValue({
+      title: 'UntrackedGame',
+      app_name: 'untracked',
+      runner: 'legendary'
+    })
+
+    mockedFindShortcut.mockReturnValue(undefined)
+
+    await onGameUninstalled(mockGame as never)
+
+    expect(mockedDeleteGrids).not.toHaveBeenCalled()
+    expect(mockedRemoveShortcut).toHaveBeenCalledWith('untracked')
+  })
+
+  test('zoom games remove prefix symlink instead of bat file', async () => {
+    mockGetGameInfo.mockReturnValue({
+      title: 'ZoomGame',
+      app_name: 'zoom_app',
+      runner: 'zoom'
+    })
+
+    mockedFindShortcut.mockReturnValue({
+      gameName: 'ZoomGame',
+      appId: 'zoom_app',
+      store: 'zoom',
+      steamAppId: 999,
+      execPath: '/games/zoom/start.sh',
+      installPath: '/games/zoom'
+    })
+
+    await onGameUninstalled(mockGame as never)
+
+    expect(mockedRemovePrefixSymlink).toHaveBeenCalledWith(999)
+    expect(mockedDeleteGrids).toHaveBeenCalledWith(999)
+    expect(mockedRemoveShortcut).toHaveBeenCalledWith('zoom_app')
+  })
+
+  test('deletes game symlink from games dir on uninstall', async () => {
+    mockGetGameInfo.mockReturnValue({
+      title: 'LegendaryGame',
+      app_name: 'leg_app',
+      runner: 'legendary'
+    })
+
+    mockedFindShortcut.mockReturnValue({
+      gameName: 'LegendaryGame',
+      appId: 'leg_app',
+      store: 'legendary',
+      steamAppId: 777,
+      execPath: '/path/to/LegendaryGame.bat',
+      installPath: '/games/legendary'
+    })
+    mockedExistsSync.mockReturnValue(true)
+
+    await onGameUninstalled(mockGame as never)
+
+    expect(mockedUnlinkSync).toHaveBeenCalledWith('/path/to/LegendaryGame.bat')
+    expect(mockedUnlinkSync).toHaveBeenCalledWith(
+      '/home/user/.local/share/relic/games/legendary'
+    )
   })
 })
 
@@ -331,5 +527,22 @@ describe('onGameMoved', () => {
       '/games/new',
       '/games/old/MovedGame.bat'
     )
+  })
+
+  test('skips when game is not tracked', async () => {
+    mockGetGameInfo.mockReturnValue({
+      title: 'UntrackedGame',
+      app_name: 'untracked',
+      runner: 'gog',
+      install: { install_path: '/games/old' }
+    })
+
+    mockedFindShortcut.mockReturnValue(undefined)
+
+    await onGameMoved(mockGame as never, '/games/new')
+
+    expect(mockedUnlinkSync).not.toHaveBeenCalled()
+    expect(mockedSymlinkSync).not.toHaveBeenCalled()
+    expect(mockedAddShortcut).not.toHaveBeenCalled()
   })
 })

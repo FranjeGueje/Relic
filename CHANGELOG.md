@@ -11,6 +11,14 @@
 - ESLint: 134 errores eliminados (`no-unused-vars`, `no-require-imports`, `no-empty`, `no-constant-condition`)
 - `src/common/formatBytes.ts`: helper `formatBytes()` reemplaza a `filesize`
 - `src/frontend/helpers/cx.ts`: helper `cx()` reemplaza a `classnames`
+- Tests: 35 nuevos tests unitarios para módulos `relic/` (store, game_events, prefix, windowify)
+
+### Tests
+
+- `steam_shortcuts/__tests__/store.test.ts` (10 tests): persistencia de shortcuts — list, find, add, remove, upsert
+- `steam_shortcuts/__tests__/game_events.test.ts` (+9 tests): Linux native, zoom uninstall, edge cases, runnerFile errors
+- `relic/__tests__/prefix.test.ts` (8 tests): symlinkPrefix, removePrefixSymlink, preparePrefix, error handling
+- `relic/__tests__/windowify.test.ts` (8 tests): transformaciones legendary/gog, syncMountBin, file copy/hash
 
 ### Eliminado
 
@@ -45,7 +53,7 @@
 - Tooling modernizado: `electron-vite` 3→5, `@vitejs/plugin-react-swc` 3→4, `jest` 29→30, `typescript` 5→6
 - `tsconfig.json`: `moduleResolution: "bundler"`, `paths` sin `baseUrl`, `importHelpers: false`
 - 2 dependencias bloqueadas: `electron-store` (ESM-only), `eslint` v10 (eslint-plugin-react incompatible)
-- Verificación: codecheck 0 errores, test 92/92, lint 0 errores, build exitoso
+- Verificación: codecheck 0 errores, test 126/126, lint 0 errores, build exitoso
 
 ---
 

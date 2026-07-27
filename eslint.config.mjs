@@ -77,7 +77,8 @@ export default tseslint.config(
     files: ['**/__tests__/**/*.ts', '**/__mocks__/**/*.ts'],
     rules: {
       '@typescript-eslint/no-explicit-any': 'off',
-      '@typescript-eslint/unbound-method': 'warn'
+      '@typescript-eslint/unbound-method': 'warn',
+      '@typescript-eslint/no-require-imports': 'off'
     }
   },
   {
