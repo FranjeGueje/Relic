@@ -42,15 +42,15 @@ Auditoría completa de dependencias de Relic v0.4.0. Cada fase es independiente 
 
 ## Fase 3 — Actualizaciones menores (patch/minor) ✅ COMPLETADO
 
-| Paquete                        | De      | A           |
-| ------------------------------ | ------- | ----------- |
-| `simple-keyboard`              | 3.8.165 | 3.8.170     |
-| `fs-extra`                     | 11.3.6  | 11.4.0      |
-| `ts-jest` (dev)                | 29.4.11 | 29.4.12     |
-| `sass` (dev)                   | 1.101.3 | 1.102.0     |
-| `@playwright/test` (dev)       | 1.61.1  | 1.62.0      |
-| `prettier` (dev)               | 3.9.5   | 3.9.6       |
-| `electron-builder`             | 26.15.3 | 26.15.7     |
+| Paquete                  | De      | A       |
+| ------------------------ | ------- | ------- |
+| `simple-keyboard`        | 3.8.165 | 3.8.170 |
+| `fs-extra`               | 11.3.6  | 11.4.0  |
+| `ts-jest` (dev)          | 29.4.11 | 29.4.12 |
+| `sass` (dev)             | 1.101.3 | 1.102.0 |
+| `@playwright/test` (dev) | 1.61.1  | 1.62.0  |
+| `prettier` (dev)         | 3.9.5   | 3.9.6   |
+| `electron-builder`       | 26.15.3 | 26.15.7 |
 
 ---
 
@@ -58,10 +58,10 @@ Auditoría completa de dependencias de Relic v0.4.0. Cada fase es independiente 
 
 ### 4.1 `@fontsource/*` 4.x → 5.x ✅
 
-| Paquete             | De      | A      |
-| ------------------- | ------- | ------ |
-| `@fontsource/cabin` | 4.5.10  | 5.3.0  |
-| `@fontsource/rubik` | 4.5.14  | 5.3.0  |
+| Paquete             | De     | A     |
+| ------------------- | ------ | ----- |
+| `@fontsource/cabin` | 4.5.10 | 5.3.0 |
+| `@fontsource/rubik` | 4.5.14 | 5.3.0 |
 
 **Resultado**: Sin cambios de código. Paths idénticos.
 
@@ -69,11 +69,11 @@ Auditoría completa de dependencias de Relic v0.4.0. Cada fase es independiente 
 
 ## Fase 5 — `@fortawesome/*` 6.x → 7.x ✅ COMPLETADO
 
-| Paquete                                | De    | A     |
-| -------------------------------------- | ----- | ----- |
-| `@fortawesome/free-solid-svg-icons`     | 6.7.2 | 7.3.1 |
-| `@fortawesome/free-regular-svg-icons`   | 6.7.2 | 7.3.1 |
-| `@fortawesome/free-brands-svg-icons`    | 6.7.2 | 7.3.1 |
+| Paquete                               | De    | A     |
+| ------------------------------------- | ----- | ----- |
+| `@fortawesome/free-solid-svg-icons`   | 6.7.2 | 7.3.1 |
+| `@fortawesome/free-regular-svg-icons` | 6.7.2 | 7.3.1 |
+| `@fortawesome/free-brands-svg-icons`  | 6.7.2 | 7.3.1 |
 
 **Resultado**: Sin cambios de código. Los 37 iconos usados existen en v7.
 
@@ -117,22 +117,24 @@ v9+ es ESM-only. Rompe `jest.mock()` en CJS. Mantenido en 8.2.0.
 
 ### 9.1 `electron-vite` 3.x → 5.x + `@vitejs/plugin-react-swc` 3.x → 4.x ✅
 
-| Paquete                      | De      | A      |
-| ---------------------------- | ------- | ------ |
-| `electron-vite`              | 3.1.0   | 5.0.0  |
-| `@vitejs/plugin-react-swc`   | 3.11.0  | 4.3.2  |
+| Paquete                    | De     | A     |
+| -------------------------- | ------ | ----- |
+| `electron-vite`            | 3.1.0  | 5.0.0 |
+| `@vitejs/plugin-react-swc` | 3.11.0 | 4.3.2 |
 
 **Cambios en código**:
+
 - `electron.vite.config.ts`: `externalizeDepsPlugin()` → `build.externalizeDeps.exclude` en main y preload
 - Vite 7 empaquetado con electron-vite 5 (no se instala por separado)
 
 ### 9.2 `jest` 29 → 30 ✅
 
-| Paquete    | De      | A      |
-| ---------- | ------- | ------ |
-| `jest`     | 29.7.0  | 30.4.2 |
+| Paquete | De     | A      |
+| ------- | ------ | ------ |
+| `jest`  | 29.7.0 | 30.4.2 |
 
 **Cambios en código**:
+
 - 7 alias de matchers migrados: `toBeCalled` → `toHaveBeenCalled`, `toBeCalledWith` → `toHaveBeenCalledWith`
 - `jest.config.js`: import type `ts-jest/dist/types` → `ts-jest`
 - Mock `node:fs` en gog/getInstallInfo: añadido `...jest.requireActual('fs')` (Jest 30 comparte mock entre `node:fs` y `fs`)
@@ -140,11 +142,12 @@ v9+ es ESM-only. Rompe `jest.mock()` en CJS. Mantenido en 8.2.0.
 
 ### 9.3 `typescript` 5.9 → 6.0 ✅ (7.x bloqueado por typescript-eslint)
 
-| Paquete     | De      | A      |
-| ----------- | ------- | ------ |
-| `typescript` | 5.9.3  | 6.0.3  |
+| Paquete      | De    | A     |
+| ------------ | ----- | ----- |
+| `typescript` | 5.9.3 | 6.0.3 |
 
 **Cambios en código**:
+
 - `tsconfig.json`: añadido `"types": ["node", "jest"]` (TS 6 default es `[]`)
 
 **Bloqueo TS 7**: `typescript-eslint@8.65.0` soporta TS `<6.1.0`. No existe `typescript-eslint@9` aún.
@@ -156,6 +159,7 @@ v9+ es ESM-only. Rompe `jest.mock()` en CJS. Mantenido en 8.2.0.
 | `eslint-plugin-react-hooks` | 5.2.0 | 7.1.1 |
 
 **Cambios en código**:
+
 - `eslint.config.mjs`: `configs['recommended-latest']` → `configs.flat['recommended-latest']` + reglas explícitas (`rules-of-hooks: warn`, `exhaustive-deps: warn`)
 - Reglas v7 nuevas (16 adicionales) no aplicadas; solo las 2 originales de v5
 
@@ -167,12 +171,12 @@ v9+ es ESM-only. Rompe `jest.mock()` en CJS. Mantenido en 8.2.0.
 
 Paquetes eliminados por falta de uso:
 
-| Paquete                        | Razón |
-| ------------------------------ | ----- |
-| `fs-extra`                     | Reemplazado por `fs` nativo (`readFileSync`, `cpSync`) en 2 archivos |
-| `@types/fs-extra`              | Se elimina con `fs-extra` |
-| `@testing-library/user-event`  | 0 imports en el codebase |
-| `@testing-library/dom`         | Transitivo de `@testing-library/react`, duplicado |
+| Paquete                       | Razón                                                                |
+| ----------------------------- | -------------------------------------------------------------------- |
+| `fs-extra`                    | Reemplazado por `fs` nativo (`readFileSync`, `cpSync`) en 2 archivos |
+| `@types/fs-extra`             | Se elimina con `fs-extra`                                            |
+| `@testing-library/user-event` | 0 imports en el codebase                                             |
+| `@testing-library/dom`        | Transitivo de `@testing-library/react`, duplicado                    |
 
 ---
 
@@ -189,16 +193,15 @@ npx electron-vite build  # build exitoso
 
 ## Estado global
 
-| Fase | Descripción                     | Estado          |
-| ---- | ------------------------------- | --------------- |
-| 1    | Limpieza                        | ✅ Completado    |
-| 2    | Paquete deprecado               | ✅ Completado    |
-| 3    | Actualizaciones menores         | ✅ Completado    |
-| 4    | Fuentes                         | ✅ Completado    |
-| 5    | FontAwesome                     | ✅ Completado    |
-| 6    | Librerías individuales          | ✅ Completado    |
-| 7    | React 18 → 19                   | 🔴 Pendiente     |
-| 8    | MUI 5 → 9                       | 🔴 Pendiente     |
-| 9    | Tooling                         | ✅ Completado    |
-| 10   | Auditoría de limpieza           | ✅ Completado    |
-
+| Fase | Descripción             | Estado        |
+| ---- | ----------------------- | ------------- |
+| 1    | Limpieza                | ✅ Completado |
+| 2    | Paquete deprecado       | ✅ Completado |
+| 3    | Actualizaciones menores | ✅ Completado |
+| 4    | Fuentes                 | ✅ Completado |
+| 5    | FontAwesome             | ✅ Completado |
+| 6    | Librerías individuales  | ✅ Completado |
+| 7    | React 18 → 19           | 🔴 Pendiente  |
+| 8    | MUI 5 → 9               | 🔴 Pendiente  |
+| 9    | Tooling                 | ✅ Completado |
+| 10   | Auditoría de limpieza   | ✅ Completado |
