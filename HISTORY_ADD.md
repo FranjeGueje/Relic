@@ -311,18 +311,18 @@ El objetivo es mantener trazabilidad de los cambios respecto al padre.
 
 ### Nuevos archivos de test
 
-| Fecha      | Archivo                                                        | Cambio                                                                                                               |
-| ---------- | -------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| 2026-07-27 | `src/backend/relic/steam_shortcuts/__tests__/store.test.ts`    | **Nuevo** — 10 tests: `listShortcuts`, `findShortcut`, `addShortcut` (crear + upsert), `removeShortcut`, JSON corrupto |
-| 2026-07-27 | `src/backend/relic/__tests__/prefix.test.ts`                   | **Nuevo** — 8 tests: `symlinkPrefix`, `removePrefixSymlink`, `preparePrefix`, error handling                         |
-| 2026-07-27 | `src/backend/relic/__tests__/windowify.test.ts`                | **Nuevo** — 8 tests: `windowify` (legendary/gog transforms), `syncMountBin`, file copy/hash                          |
+| Fecha      | Archivo                                                     | Cambio                                                                                                                 |
+| ---------- | ----------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| 2026-07-27 | `src/backend/relic/steam_shortcuts/__tests__/store.test.ts` | **Nuevo** — 10 tests: `listShortcuts`, `findShortcut`, `addShortcut` (crear + upsert), `removeShortcut`, JSON corrupto |
+| 2026-07-27 | `src/backend/relic/__tests__/prefix.test.ts`                | **Nuevo** — 8 tests: `symlinkPrefix`, `removePrefixSymlink`, `preparePrefix`, error handling                           |
+| 2026-07-27 | `src/backend/relic/__tests__/windowify.test.ts`             | **Nuevo** — 8 tests: `windowify` (legendary/gog transforms), `syncMountBin`, file copy/hash                            |
 
 ### Archivos expandidos
 
-| Fecha      | Archivo                                                        | Cambio                                                                                                               |
-| ---------- | -------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| Fecha      | Archivo                                                           | Cambio                                                                                                                |
+| ---------- | ----------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
 | 2026-07-27 | `src/backend/relic/steam_shortcuts/__tests__/game_events.test.ts` | +9 tests (8→17 total): Linux native, `createGameSymlink` error, `no install path`, `runnerFile` error, zoom uninstall |
-| 2026-07-27 | `eslint.config.mjs`                                            | Añadido `'@typescript-eslint/no-require-imports': 'off'` para `__tests__/` (patrón `jest.isolateModules()`)          |
+| 2026-07-27 | `eslint.config.mjs`                                               | Añadido `'@typescript-eslint/no-require-imports': 'off'` para `__tests__/` (patrón `jest.isolateModules()`)           |
 
 ### Patrón de tests
 

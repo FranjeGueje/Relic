@@ -133,9 +133,11 @@ describe('windowify', () => {
   test('transforms legendary installed.json with windows paths', () => {
     mockedExistsSync.mockReturnValue(true)
     mockedReaddirSync.mockReturnValue([])
-    jest.mocked(readFileSync).mockReturnValue(
-      JSON.stringify({ test: { install_path: '/games/test/game_dir' } })
-    )
+    jest
+      .mocked(readFileSync)
+      .mockReturnValue(
+        JSON.stringify({ test: { install_path: '/games/test/game_dir' } })
+      )
 
     const { windowify } = freshWindowify()
 
