@@ -1,4 +1,4 @@
-import { existsSync } from 'fs'
+import { existsSync, mkdirSync  } from 'fs'
 import axios from 'axios'
 
 import {
@@ -48,7 +48,6 @@ import {
 import { LegendaryCommand } from './commands'
 import thirdParty from './thirdParty'
 import { Path } from 'backend/schemas'
-import { mkdirSync } from 'fs'
 import { configStore } from 'backend/constants/key_value_stores'
 import { epicRedistPath, legendaryInstalled } from './constants'
 

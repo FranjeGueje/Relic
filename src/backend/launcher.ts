@@ -5,13 +5,12 @@ import {
   KnowFixesInfo
 } from 'common/types'
 
-import { existsSync } from 'fs'
+import { existsSync, readFileSync  } from 'fs'
 import { join, isAbsolute } from 'path'
 
 import { quoteIfNecessary, errorHandler, memoryLog } from './utils'
 import { logError, logInfo, LogPrefix, logWarning } from './logger'
 import { spawn } from 'child_process'
-import { readFileSync } from 'fs'
 import { LegendaryCommand } from './storeManagers/legendary/commands'
 import { storeMap } from 'common/utils'
 import { libraryManagerMap } from 'backend/storeManagers'

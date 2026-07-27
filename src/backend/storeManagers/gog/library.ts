@@ -27,7 +27,7 @@ import {
   GOGSessionSyncQueueItem
 } from 'common/types/gog'
 import { dirname, join } from 'node:path'
-import { existsSync, readFileSync } from 'fs'
+import { existsSync, readFileSync, statSync  } from 'fs'
 
 import {
   getRunnerLogWriter,
@@ -60,7 +60,6 @@ import GOGGame from './games'
 import type { LibraryManager } from 'common/types/game_manager'
 import { libraryManagerMap } from '../index'
 import { readdir } from 'fs/promises'
-import { statSync } from 'fs'
 
 const library: Map<string, GameInfo> = new Map()
 const installedGames: Map<string, InstalledInfo> = new Map()
