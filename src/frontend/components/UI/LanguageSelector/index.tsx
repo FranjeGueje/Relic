@@ -15,7 +15,6 @@ export enum FlagPosition {
 
 interface Props {
   flagPossition?: FlagPosition
-  showWeblateLink?: boolean
 }
 
 const languageLabels: { [key: string]: string } = {
@@ -111,8 +110,7 @@ const languageFlags: { [key: string]: string } = {
 }
 
 export default function LanguageSelector({
-  flagPossition = FlagPosition.NONE,
-  showWeblateLink = false
+  flagPossition = FlagPosition.NONE
 }: Props) {
   const { t, i18n } = useTranslation()
   const { language, setLanguage } = useContext(ContextProvider)
@@ -124,10 +122,6 @@ export default function LanguageSelector({
     configStore.set('language', newLanguage)
     i18n.changeLanguage(newLanguage)
     setLanguage(newLanguage)
-  }
-
-  function handleWeblate() {
-    return window.api.openWeblate()
   }
 
   const renderOption = (lang: string) => {
@@ -143,19 +137,6 @@ export default function LanguageSelector({
     )
   }
 
-  let afterSelect = null
-  if (showWeblateLink) {
-    afterSelect = (
-      <a
-        data-testid="buttonWeblate"
-        onClick={handleWeblate}
-        className="smallLink"
-      >
-        {t('other.weblate', 'Help Improve this translation.')}
-      </a>
-    )
-  }
-
   return (
     <>
       <SelectField
@@ -164,7 +145,6 @@ export default function LanguageSelector({
         value={currentLanguage}
         label={t('setting.language', 'Choose App Language')}
         extraClass="languageSelector"
-        afterSelect={afterSelect}
       >
         {Object.keys(languageLabels).map((lang) => renderOption(lang))}
       </SelectField>

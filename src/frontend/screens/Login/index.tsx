@@ -90,7 +90,6 @@ export default React.memo(function NewLogin() {
             {!loading && (
               <LanguageSelector
                 flagPossition={FlagPosition.PREPEND}
-                showWeblateLink={true}
               />
             )}
           </div>

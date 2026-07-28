@@ -3,7 +3,6 @@ import { makeListenerCaller, makeHandlerInvoker, frontendListenerSlot } from '..
 export const clearCache = makeListenerCaller('clearCache')
 export const clearAchievementCache = makeListenerCaller('clearAchievementCache')
 export const resetRelic = makeListenerCaller('resetRelic')
-export const openWeblate = makeListenerCaller('openWeblate')
 export const changeLanguage = makeListenerCaller('changeLanguage')
 export const openExternalUrl = makeListenerCaller('openExternalUrl')
 export const getRelicVersion = makeHandlerInvoker('getRelicVersion')

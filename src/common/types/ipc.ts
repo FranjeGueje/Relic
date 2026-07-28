@@ -44,7 +44,6 @@ interface SyncIPCFunctions {
   quit: () => void
   openExternalUrl: (url: string) => void
   openFolder: (folder: string) => void
-  openWeblate: () => void
   showAboutWindow: () => void
   openLoginPage: () => void
   openWebviewPage: (url: string) => void

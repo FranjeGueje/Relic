@@ -86,7 +86,7 @@ import {
 } from './game_overrides'
 import { backendEvents } from './backend_events'
 import { configStore } from './constants/key_value_stores'
-import { epicLoginUrl, weblateUrl } from './constants/urls'
+import { epicLoginUrl } from './constants/urls'
 import { legendaryInstalled } from './storeManagers/legendary/constants'
 import {
   isCLIFullscreen,
@@ -470,7 +470,6 @@ app.on('window-all-closed', () => {
 
 addListener('openExternalUrl', async (event, url) => openUrlOrFile(url))
 addListener('openFolder', async (event, folder) => openUrlOrFile(folder))
-addListener('openWeblate', async () => openUrlOrFile(weblateUrl))
 addListener('showAboutWindow', () => showAboutWindow())
 addListener('openLoginPage', async () => openUrlOrFile(epicLoginUrl))
 addListener('openWebviewPage', async (event, url) => openUrlOrFile(url))

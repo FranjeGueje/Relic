@@ -309,9 +309,6 @@
     "offline-retry-in": "Offline. Retrying in {{seconds}} seconds.",
     "retrying": "Retrying"
   },
-  "other": {
-    "weblate": "Help translate Relic."
-  },
   "Other": "Other",
   "platforms": {
     "browser": "Browser",
