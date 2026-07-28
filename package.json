@@ -1,8 +1,8 @@
 {
   "name": "relic",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "versionNames": {
-    "stable": "Pulido",
+    "stable": "Trazo firme",
     "beta": "Fragmento"
   },
   "private": true,

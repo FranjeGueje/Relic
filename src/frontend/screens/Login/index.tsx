@@ -88,9 +88,7 @@ export default React.memo(function NewLogin() {
             </div>
 
             {!loading && (
-              <LanguageSelector
-                flagPossition={FlagPosition.PREPEND}
-              />
+              <LanguageSelector flagPossition={FlagPosition.PREPEND} />
             )}
           </div>
 
