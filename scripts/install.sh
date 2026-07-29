@@ -117,7 +117,7 @@ fi
 
 echo ""
 echo "Relic instalado correctamente. // Relic installed correctly"
-read -r -p "¿Cerrar Steam para aplicar los grids? [S/n] // Close Steam to apply grids? [Y/n] " REPLY
+read -r -p "¿Cerrar Steam para aplicar los grids? [S/n] // Close Steam to apply grids? [Y/n] " REPLY </dev/tty
 case "$REPLY" in
     [nN]) echo "Abre Steam y busca 'Relic'. // Open Steam and search 'Relic'" ;;
     *)
