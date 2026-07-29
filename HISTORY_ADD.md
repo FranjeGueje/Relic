@@ -329,3 +329,23 @@ El objetivo es mantener trazabilidad de los cambios respecto al padre.
 - `relic/steam_shortcuts/store.test.ts`: usa `tmp` + `jest.resetModules()` para aislamiento de caché del módulo
 - `relic/__tests__/prefix.test.ts` y `windowify.test.ts`: usan `jest.isolateModules()` para evitar interferencia de mocks globales de `relic/` registrados en otros archivos de test
 - Resultado: 91 tests → 126 tests (+35), 19 suites → 21 suites, 0 errores
+
+### Eliminaciones de v0.4.0
+
+| Fecha      | Archivo                                                 | Cambio                                                                              |
+| ---------- | ------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| 2026-07-29 | `CODE_OF_CONDUCT.md`                                    | **Eliminado** — boilerplate heredado de Heroic                                      |
+| 2026-07-29 | `DEPENDENCIES_DELETED.md`                               | **Eliminado** — archivo de auditoría puntual, obsoleto                              |
+| 2026-07-29 | `src/frontend/screens/Login/index.tsx`                  | Eliminado `showWeblateLink={true}` del `<LanguageSelector />`                       |
+| 2026-07-29 | `src/frontend/components/UI/LanguageSelector/index.tsx` | Eliminados: prop `showWeblateLink`, función `handleWeblate`, enlace `buttonWeblate` |
+| 2026-07-29 | `src/preload/api/misc.ts`                               | Eliminado `export const openWeblate`                                                |
+| 2026-07-29 | `src/common/types/ipc.ts`                               | Eliminado `openWeblate: () => void` de `SyncIPCFunctions`                           |
+| 2026-07-29 | `src/backend/main.ts`                                   | Eliminado `addListener('openWeblate', ...)` e `import { weblateUrl }`               |
+| 2026-07-29 | `src/backend/constants/urls.ts`                         | Eliminado `export const weblateUrl`                                                 |
+| 2026-07-29 | `public/locales/*/translation.json` (47 archivos)       | Eliminada clave `other.weblate` vía `pnpm i18n`                                     |
+
+### v0.4.0 — Installer Script (Jul 2026)
+
+| Fecha      | Archivo              | Cambio                                                                                                                                |
+| ---------- | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| 2026-07-29 | `scripts/install.sh` | **Nuevo** — Instalador de una línea: descarga AppImage, crea wrapper steam, añade a Steam y descarga grids (4 secciones + check deps) |

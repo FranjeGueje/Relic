@@ -12,6 +12,9 @@
 - `src/common/formatBytes.ts`: helper `formatBytes()` reemplaza a `filesize`
 - `src/frontend/helpers/cx.ts`: helper `cx()` reemplaza a `classnames`
 - Tests: 35 nuevos tests unitarios para módulos `relic/` (store, game_events, prefix, windowify)
+- `scripts/install.sh`: instalador de una línea vía `curl \| bash` (AppImage + Steam + grids)
+- Enlace "Help translate Relic" eliminado (LanguageSelector, Login, IPC, tipos, URLs)
+- Clave i18n `other.weblate` eliminada de 47 locales
 
 ### Tests
 
@@ -37,6 +40,7 @@
 - `backend/utils.ts`: `moveOnWindows()` (Robocopy, Windows-only, 0 calls)
 - `Library/index.tsx`: migration fallback de `category`/`filterPlatform` (TODOs)
 - `GlobalState.tsx`: `storage.setItem('category')` dead write
+- `CODE_OF_CONDUCT.md`, `DEPENDENCIES_DELETED.md` (boilerplate heredado de Heroic)
 
 ### Cambiado
 
