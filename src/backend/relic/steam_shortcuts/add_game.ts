@@ -1,6 +1,7 @@
 import {
   existsSync,
   mkdirSync,
+  readFileSync,
   symlinkSync,
   unlinkSync,
   writeFileSync
@@ -8,7 +9,11 @@ import {
 import { basename, join } from 'path'
 import { logError, logInfo } from 'backend/logger'
 import { spawnAsync } from 'backend/utils'
-import { relicRunnerPath, relicGamesPath } from 'backend/constants/paths'
+import {
+  relicRunnerPath,
+  relicGamesPath,
+  userDataPath
+} from 'backend/constants/paths'
 import {
   findGameInAllUsers,
   findExistingGame,
@@ -47,6 +52,17 @@ export function createRunnerFile(
   }
 }
 
+function getGogUsername(): string {
+  try {
+    const configPath = join(userDataPath, 'gog_store', 'config.json')
+    const raw = readFileSync(configPath, 'utf-8')
+    const config = JSON.parse(raw)
+    return config.userData?.username ?? ''
+  } catch {
+    return ''
+  }
+}
+
 export function createRelicBat(
   installPath: string,
   gameName: string,
@@ -73,10 +89,21 @@ export function createRelicBat(
       break
     case 'gog': {
       const winPath = `c:\\games\\${basename(installPath)}`
-      runnerCmd =
+      const username = getGogUsername()
+      const gogPreLines = [
+        'mkdir "%APPDATA%\\heroic\\gog_store"',
+        'copy "c:\\relic\\gog_store\\*" "%APPDATA%\\heroic\\gog_store\\"',
+        `start /b "" comet.exe --from-heroic --username ${username}`
+      ]
+      const gogRunnerCmd =
         `@gogdl --auth-config-path c:\\relic\\gog_store\\auth.json ` +
         `launch --platform windows "${winPath}" ${appName} -- %*`
-      break
+      const gogContent = [...header, '', ...gogPreLines, '', gogRunnerCmd].join(
+        '\n'
+      )
+      writeFileSync(runnerPath, gogContent, 'utf-8')
+      logInfo(`Created ${runnerPath}`, LOG_PREFIX)
+      return runnerPath
     }
     case 'nile':
       runnerCmd = `@nile launch ${appName} -- %*`
