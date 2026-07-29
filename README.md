@@ -12,6 +12,13 @@ The entire gaming experience takes place inside Steam.
 
 ---
 
+![Library](doc/Relic%20-%20library.jpg)
+![Settings](doc/Relic%20-%20settings.jpg)
+![Accounts](doc/Relic%20-%20accounts.jpg)
+![Console Mode](doc/Relic%20-%20console%20mode.jpg)
+
+---
+
 ## English
 
 ### What is Relic?
@@ -275,7 +282,16 @@ The entire pipeline is designed to produce a game that appears and works in Stea
 
 ## Installation
 
-### Linux (AppImage)
+### One line (recommended)
+
+```bash
+curl -sL https://raw.githubusercontent.com/FranjeGueje/Relic/main/scripts/install.sh | bash
+```
+
+Downloads the AppImage, creates a Steam wrapper, adds it as a non-Steam game
+and downloads grid artwork automatically.
+
+### Manual
 
 ```bash
 chmod +x Relic-*.AppImage
@@ -283,6 +299,41 @@ chmod +x Relic-*.AppImage
 ```
 
 Download from the [releases page](https://github.com/FranjeGueje/Relic/releases).
+
+### Requirements
+
+- Linux
+- Steam
+- `curl`, `xxd`, `xdg-open` (for the one-line installer)
+
+---
+
+## File locations
+
+```
+~/.config/relic/
+├── config.json              — App settings
+├── store/                   — Window state, timestamps, downloads
+├── legendaryConfig/         — Epic login + installed.json
+├── gogdlConfig/             — GOG login + installed.json
+├── nile_config/             — Amazon login + installed.json
+├── zoom_store/              — Zoom Platform login
+├── GamesConfig/             — Per-game settings
+├── images-cache/            — Cached SteamGridDB images
+├── icons/                   — Custom game icons
+└── store_cache/             — Library caches per store
+
+~/.local/share/relic/
+├── games/                   — Symlinks to installed game dirs
+├── runner/                  — .bat files for Steam (Windows games)
+└── mount/                   — Mount structure for Proton prefixes
+    ├── legendary/           — Epic config with c:\ paths
+    ├── gog_store/           — GOG config with c:\ paths
+    ├── nile/                — Amazon config with c:\ paths
+    └── bin/                 — Synced win32 binaries
+
+~/Games/Relic/               — Default game install path
+```
 
 ---
 
