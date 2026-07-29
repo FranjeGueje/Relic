@@ -261,7 +261,7 @@ describe('onGameInstalled', () => {
       app_name: 'native_app',
       runner: 'legendary',
       is_linux_native: true,
-      install: { install_path: '/games/native' }
+      install: { install_path: '/games/native', platform: 'linux' }
     })
 
     mockedFindShortcut.mockReturnValue(undefined)
@@ -296,7 +296,7 @@ describe('onGameInstalled', () => {
       app_name: 'native_app',
       runner: 'legendary',
       is_linux_native: true,
-      install: { install_path: '/games/native' }
+      install: { install_path: '/games/native', platform: 'linux' }
     })
 
     mockedFindShortcut.mockReturnValue(undefined)
@@ -324,6 +324,47 @@ describe('onGameInstalled', () => {
     expect(result.success).toBe(false)
     expect(result.error).toContain('No install path')
     expect(mockedAddGameToSteam).not.toHaveBeenCalled()
+  })
+
+  test('uses windows path when game is linux native but user chose windows', async () => {
+    mockGetGameInfo.mockReturnValue({
+      title: 'DualGame',
+      app_name: 'dual_app',
+      runner: 'gog',
+      is_linux_native: true,
+      install: {
+        install_path: '/games/dual',
+        platform: 'windows'
+      }
+    })
+
+    mockedFindShortcut.mockReturnValue(undefined)
+    mockedAddGameToSteam.mockResolvedValueOnce({
+      success: true,
+      steamAppId: 777
+    })
+
+    const result = await onGameInstalled(mockGame as never, '/games/dual')
+
+    expect(mockedCreateGameSymlink).not.toHaveBeenCalled()
+    expect(mockedCreateRunnerFile).toHaveBeenCalledWith(
+      expect.objectContaining({
+        title: 'DualGame',
+        app_name: 'dual_app',
+        runner: 'gog'
+      }),
+      '/games/dual'
+    )
+    expect(mockedAddGameToSteam).toHaveBeenCalledWith({
+      gameName: 'DualGame',
+      runnerPath: expect.any(String)
+    })
+    expect(mockedPreparePrefix).toHaveBeenCalledWith(
+      expect.objectContaining({ app_name: 'dual_app' }),
+      777,
+      '/games/dual'
+    )
+    expect(result.success).toBe(true)
   })
 
   test('returns error when createRunnerFile fails', async () => {

@@ -349,3 +349,13 @@ El objetivo es mantener trazabilidad de los cambios respecto al padre.
 | Fecha      | Archivo              | Cambio                                                                                                                                |
 | ---------- | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
 | 2026-07-29 | `scripts/install.sh` | **Nuevo** — Instalador de una línea: descarga AppImage, crea wrapper steam, añade a Steam y descarga grids (4 secciones + check deps) |
+
+### v0.4.0 — Bugfixes & Improvements (Jul 2026)
+
+| Fecha      | Archivo                                                           | Cambio                                                                                                                                                                   |
+| ---------- | ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 2026-07-29 | `src/backend/relic/game_events.ts`                                | Fix: `gameInfo.is_linux_native` → `gameInfo.install?.platform === 'linux'`. Evita que juegos GOG con build Linux nativa instalados como Windows tomen la ruta incorrecta |
+| 2026-07-29 | `src/backend/relic/steam_shortcuts/add_game.ts`                   | GOG .bat: mkdir/copy silenciados (`@` + `>nul 2>&1`), añadido `@timeout /t 2 /nobreak >nul` tras comet.exe para dar margen de inicialización                             |
+| 2026-07-29 | `src/backend/relic/steam_shortcuts/__tests__/add_game.test.ts`    | Test actualizado con nuevas líneas silenciadas y timeout                                                                                                                 |
+| 2026-07-29 | `src/backend/relic/steam_shortcuts/__tests__/game_events.test.ts` | Test actualizado: `platform: 'linux'` en install objects. Nuevo test: juego `is_linux_native: true` + `platform: 'windows'` toma la ruta windows correctamente           |
+| 2026-07-29 | `README.md`                                                       | Añadida nota sobre logros de GOG en modo experimental vía comet                                                                                                          |

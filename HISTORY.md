@@ -509,3 +509,9 @@ Para ver el detalle completo de cada categoría, consultar:
 - `src/backend/relic/__tests__/windowify.test.ts` (nuevo, 8 tests): `windowify` (legendary/gog transforms, zoom warning, missing installed.json), `syncMountBin` (source missing, file copy, hash skip).
 - `eslint.config.mjs`: añadido `'@typescript-eslint/no-require-imports': 'off'` para `__tests__` (necesario para `jest.isolateModules()`).
 - Resultado: 91 tests → 126 tests (+35), 19 suites → 21 suites, 0 errores lint/codecheck.
+
+### v0.4.0 — Bugfixes
+
+- **GOG install platform**: `onGameInstalled` usaba `gameInfo.is_linux_native` (propiedad de la API de GOG) en lugar de `gameInfo.install?.platform` (plataforma realmente instalada). Un juego con build Linux instalado como Windows tomaba la ruta Linux nativa incorrecta. Corregido + nuevo test para el caso dual.
+- **GOG .bat runner**: comandos `mkdir`/`copy` ahora silenciados con `@` y `>nul 2>&1`. Añadido `timeout /t 2` tras `comet.exe` para dar margen a su inicialización antes de ejecutar gogdl.
+- **Tests**: 127 total (21 suites).

@@ -91,9 +91,10 @@ export function createRelicBat(
       const winPath = `c:\\games\\${basename(installPath)}`
       const username = getGogUsername()
       const gogPreLines = [
-        'mkdir "%APPDATA%\\heroic\\gog_store"',
-        'copy "c:\\relic\\gog_store\\*" "%APPDATA%\\heroic\\gog_store\\"',
-        `start /b "" comet.exe --from-heroic --username ${username}`
+        '@mkdir "%APPDATA%\\heroic\\gog_store"  >nul 2>&1',
+        '@copy "c:\\relic\\gog_store\\*" "%APPDATA%\\heroic\\gog_store\\"  >nul 2>&1',
+        `start /b "" comet.exe --from-heroic --username ${username}`,
+        '@timeout /t 2 /nobreak >nul'
       ]
       const gogRunnerCmd =
         `@gogdl --auth-config-path c:\\relic\\gog_store\\auth.json ` +

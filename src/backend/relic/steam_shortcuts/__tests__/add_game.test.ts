@@ -126,11 +126,14 @@ describe('createRelicBat', () => {
     for (const line of HEADER_LINES) {
       expect(content).toContain(line)
     }
-    expect(content).toContain('mkdir "%APPDATA%\\heroic\\gog_store"')
     expect(content).toContain(
-      'copy "c:\\relic\\gog_store\\*" "%APPDATA%\\heroic\\gog_store\\"'
+      '@mkdir "%APPDATA%\\heroic\\gog_store"  >nul 2>&1'
+    )
+    expect(content).toContain(
+      '@copy "c:\\relic\\gog_store\\*" "%APPDATA%\\heroic\\gog_store\\"  >nul 2>&1'
     )
     expect(content).toContain('start /b "" comet.exe --from-heroic --username ')
+    expect(content).toContain('@timeout /t 2 /nobreak >nul')
     expect(content).toContain(
       `@gogdl --auth-config-path c:\\relic\\gog_store\\auth.json ` +
         `launch --platform windows "c:\\games\\${basename(tmpDir.name)}" gog123 -- %*`

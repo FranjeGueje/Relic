@@ -119,7 +119,7 @@ export async function onGameInstalled(
     }
   }
 
-  if (gameInfo.is_linux_native) {
+  if (gameInfo.install?.platform === 'linux') {
     return installLinuxNative(gameInfo, appName, resolvedPath)
   }
 

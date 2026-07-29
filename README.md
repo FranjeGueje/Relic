@@ -102,6 +102,7 @@ para el juego.
 - Library viewer
 - Download, install, update, repair and uninstall games
 - Automatic Steam integration (shortcuts, grids, prefixes)
+- GOG achievements (experimental, via [Comet](https://github.com/imLinguin/comet))
 - Console mode (controller navigation)
 - Linux native game support (GOG)
 
