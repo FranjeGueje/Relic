@@ -286,7 +286,7 @@ The entire pipeline is designed to produce a game that appears and works in Stea
 ### One line (recommended)
 
 ```bash
-curl -sL https://raw.githubusercontent.com/FranjeGueje/Relic/main/scripts/install.sh | bash
+curl -sL https://raw.githubusercontent.com/FranjeGueje/Relic/master/scripts/install.sh | bash
 ```
 
 Downloads the AppImage, creates a Steam wrapper, adds it as a non-Steam game
