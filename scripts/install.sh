@@ -5,7 +5,7 @@ set -euo pipefail
 
 # ── Dependencias ──
 MISSING=()
-for cmd in curl python3 xxd xdg-open; do
+for cmd in curl xxd xdg-open; do
     if ! command -v "$cmd" &>/dev/null; then
         MISSING+=("$cmd")
     fi
@@ -49,8 +49,23 @@ chmod +x "$BIN_DIR/Relic"
 echo "Wrapper creado en $BIN_DIR/Relic"
 
 # ── 3. Añadir a Steam ──
+urlencode() {
+    local string="$1"
+    local length=${#string}
+    local encoded=""
+    local c
+    for (( i = 0; i < length; i++ )); do
+        c="${string:i:1}"
+        case "$c" in
+            [a-zA-Z0-9.~_-]) encoded+="$c" ;;
+            *) encoded+=$(printf '%%%02X' "'$c") ;;
+        esac
+    done
+    echo "$encoded"
+}
+
 EXECUTABLE="$HOME/.local/bin/Relic"
-ENCODED_URL="steam://addnonsteamgame/$(python3 -c "import urllib.parse;print(urllib.parse.quote('$EXECUTABLE', safe=''))")"
+ENCODED_URL="steam://addnonsteamgame/$(urlencode "$EXECUTABLE")"
 
 rm -f "/tmp/addnonsteamgamefile"
 touch /tmp/addnonsteamgamefile
@@ -101,7 +116,11 @@ if [ -d "$STEAM_USERDATA" ]; then
 fi
 
 echo ""
-echo "Relic instalado correctamente. // Relic is installed property"
-echo "Cerrando Steam... // Closing Steam ..."
-pkill steam
-echo "Abre Steam y busca 'Relic'. // Open Steam and search 'Relic'"
+echo "Relic instalado correctamente. // Relic installed correctly"
+read -r -p "¿Cerrar Steam para aplicar los grids? [S/n] // Close Steam to apply grids? [Y/n] " REPLY
+if [[ ! "$REPLY" =~ ^[Nn]$ ]]; then
+    pkill steam
+    echo "Steam cerrado. Ábrelo y busca 'Relic'. // Steam closed. Open it and search 'Relic'"
+else
+    echo "Abre Steam y busca 'Relic'. // Open Steam and search 'Relic'"
+fi
