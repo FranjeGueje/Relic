@@ -118,9 +118,10 @@ fi
 echo ""
 echo "Relic instalado correctamente. // Relic installed correctly"
 read -r -p "¿Cerrar Steam para aplicar los grids? [S/n] // Close Steam to apply grids? [Y/n] " REPLY
-if [[ ! "$REPLY" =~ ^[Nn]$ ]]; then
-    pkill steam
-    echo "Steam cerrado. Ábrelo y busca 'Relic'. // Steam closed. Open it and search 'Relic'"
-else
-    echo "Abre Steam y busca 'Relic'. // Open Steam and search 'Relic'"
-fi
+case "$REPLY" in
+    [nN]) echo "Abre Steam y busca 'Relic'. // Open Steam and search 'Relic'" ;;
+    *)
+        pkill steam
+        echo "Steam cerrado. Ábrelo y busca 'Relic'. // Steam closed. Open it and search 'Relic'"
+        ;;
+esac
