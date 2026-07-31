@@ -515,3 +515,10 @@ Para ver el detalle completo de cada categoría, consultar:
 - **GOG install platform**: `onGameInstalled` usaba `gameInfo.is_linux_native` (propiedad de la API de GOG) en lugar de `gameInfo.install?.platform` (plataforma realmente instalada). Un juego con build Linux instalado como Windows tomaba la ruta Linux nativa incorrecta. Corregido + nuevo test para el caso dual.
 - **GOG .bat runner**: comandos `mkdir`/`copy` ahora silenciados con `@` y `>nul 2>&1`. Añadido `timeout /t 2` tras `comet.exe` para dar margen a su inicialización antes de ejecutar gogdl.
 - **Tests**: 127 total (21 suites).
+
+### v0.5.2 — macOS Cleanup & Runner Improvements (Jul 2026)
+
+- **Darwin/macOS assets eliminados**: todos los binarios macOS de legendary, gogdl, nile y comet eliminados de `downloadHelperBinaries.ts`. Tipo `SupportedPlatform` reducido a `'win32' | 'linux'`. Directorios `darwin/` residuales limpiados del disco.
+- **zoom-platform.sh externalizado**: el script de 781 KB se descarga desde `https://zoom-platform.sh/zoom-platform.sh` vía `download-helper-binaries` en lugar de trackearse en git. `git rm --cached` + `.gitignore`.
+- **GOG .bat cd fix**: añadido `cd /d "%RELIC%\bin\"` antes del arranque de Comet. Corrige `install-dummy-service.bat` que usa `%~dp0` para rutas relativas.
+- **Runner version checks**: añadido `--version` antes de cada ejecución (`legendary --version`, `gogdl --version`, `comet.exe --version`, `nile --version`) en los .bat. La versión se imprime en la consola antes del lanzamiento.

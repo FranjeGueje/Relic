@@ -1,6 +1,6 @@
 {
   "name": "relic",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "versionNames": {
     "stable": "Trazo firme",
     "beta": "Fragmento"
@@ -84,6 +84,7 @@
     "electron": "^43.2.0",
     "electron-builder": "^26.15.7",
     "electron-vite": "^5.0.0",
+    "esbuild": "^0.28.1",
     "eslint": "^9.39.5",
     "eslint-config-prettier": "^10.1.8",
     "eslint-import-resolver-typescript": "^4.4.5",

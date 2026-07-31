@@ -8,4 +8,7 @@
 **/comet.exe
 **/GalaxyCommunication.exe
 **/EpicGamesLauncher.exe
+**/update-permissions.exe
+**/install-dummy-service.bat
+**/zoom-platform.sh
 .release_tags

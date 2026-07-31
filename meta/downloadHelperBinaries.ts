@@ -1,21 +1,28 @@
-import { createWriteStream } from 'fs'
+import { createWriteStream, rmSync } from 'fs'
 import { chmod, stat, mkdir, readFile, writeFile } from 'fs/promises'
 import { dirname, join } from 'path'
 import { Readable } from 'stream'
 import { finished } from 'stream/promises'
+import { execSync } from 'child_process'
 
 import { setGlobalDispatcher, ProxyAgent } from 'undici'
 
-type SupportedPlatform = 'win32' | 'darwin' | 'linux'
+type SupportedPlatform = 'win32' | 'linux'
 type DownloadedBinary =
-  'legendary' | 'gogdl' | 'nile' | 'comet' | 'epic-integration'
+  | 'legendary'
+  | 'gogdl'
+  | 'nile'
+  | 'comet'
+  | 'epic-integration'
+  | 'zoom-platform'
 
 const RELEASE_TAGS = {
   legendary: '0.20.43',
-  gogdl: 'v1.2.1',
+  gogdl: 'v1.2.2',
   nile: 'v1.2.0',
-  comet: 'v0.2.0',
-  'epic-integration': 'v0.4'
+  comet: 'v0.3.2',
+  'epic-integration': 'v0.4',
+  'zoom-platform': 'v1.0.1'
 } as const satisfies Record<DownloadedBinary, string>
 
 const pathExists = async (path: string): Promise<boolean> =>
@@ -106,12 +113,10 @@ async function downloadLegendary() {
     {
       x64: {
         linux: 'legendary_linux_x86_64',
-        darwin: 'legendary_macOS_x86_64',
         win32: 'legendary_windows_x86_64.exe'
       },
       arm64: {
         linux: 'legendary_linux_arm64',
-        darwin: 'legendary_macOS_arm64',
         win32: 'legendary_windows_arm64.exe'
       }
     }
@@ -126,12 +131,10 @@ async function downloadGogdl() {
     {
       x64: {
         linux: 'gogdl_linux_x86_64',
-        darwin: 'gogdl_macOS_x86_64',
         win32: 'gogdl_windows_x86_64.exe'
       },
       arm64: {
         linux: 'gogdl_linux_arm64',
-        darwin: 'gogdl_macOS_arm64',
         win32: 'gogdl_windows_arm64.exe'
       }
     }
@@ -142,12 +145,10 @@ async function downloadNile() {
   return downloadGithubAssets('nile', 'imLinguin/nile', RELEASE_TAGS['nile'], {
     x64: {
       linux: 'nile_linux_x86_64',
-      darwin: 'nile_macOS_x86_64',
       win32: 'nile_windows_x86_64.exe'
     },
     arm64: {
-      linux: 'nile_linux_arm64',
-      darwin: 'nile_macOS_arm64'
+      linux: 'nile_linux_arm64'
     }
   })
 }
@@ -168,16 +169,33 @@ async function downloadComet() {
     downloadGithubAssets('comet', 'imLinguin/comet', RELEASE_TAGS['comet'], {
       x64: {
         linux: 'comet-x86_64-unknown-linux-gnu',
-        darwin: 'comet-x86_64-apple-darwin',
         win32: 'comet-x86_64-pc-windows-msvc.exe'
       },
       arm64: {
-        darwin: 'comet-aarch64-apple-darwin',
         linux: 'comet-aarch64-unknown-linux-gnu',
         win32: 'comet-aarch64-pc-windows-msvc.exe'
       }
-    })
+    }),
+    downloadDummyService()
   ])
+}
+
+async function downloadDummyService() {
+  const tag = RELEASE_TAGS['comet']
+  const url = `https://github.com/imLinguin/comet/releases/download/${tag}/dummy-service.zip`
+  const zipPath = join('public', 'bin', 'dummy-service.zip')
+  const destDir = join('public', 'bin', 'x64', 'win32')
+
+  console.log('Downloading dummy-service.zip from', url)
+
+  await downloadFile(url, zipPath)
+
+  mkdir(destDir, { recursive: true })
+  console.log('Extracting', zipPath, 'to', destDir)
+  execSync(`unzip -o "${zipPath}" -d "${destDir}"`, { stdio: 'inherit' })
+
+  rmSync(zipPath)
+  console.log('Done downloading dummy-service')
 }
 
 async function downloadEpicIntegration() {
@@ -192,6 +210,16 @@ async function downloadEpicIntegration() {
       arm64: {}
     }
   )
+}
+
+async function downloadZoomPlatform() {
+  const url = 'https://zoom-platform.sh/zoom-platform.sh'
+  const dest = join('public', 'bin', 'zoom', 'zoom-platform.sh')
+
+  console.log('Downloading zoom-platform.sh from', url)
+  await downloadFile(url, dest)
+  await chmod(dest, '755')
+  console.log('Done downloading zoom-platform.sh')
 }
 
 /**
@@ -252,6 +280,8 @@ async function main() {
     promisesToAwait.push(downloadComet())
   if (binariesToDownload.includes('epic-integration'))
     promisesToAwait.push(downloadEpicIntegration())
+  if (binariesToDownload.includes('zoom-platform'))
+    promisesToAwait.push(downloadZoomPlatform())
 
   await Promise.all(promisesToAwait)
 

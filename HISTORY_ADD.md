@@ -359,3 +359,17 @@ El objetivo es mantener trazabilidad de los cambios respecto al padre.
 | 2026-07-29 | `src/backend/relic/steam_shortcuts/__tests__/add_game.test.ts`    | Test actualizado con nuevas líneas silenciadas y timeout                                                                                                                 |
 | 2026-07-29 | `src/backend/relic/steam_shortcuts/__tests__/game_events.test.ts` | Test actualizado: `platform: 'linux'` en install objects. Nuevo test: juego `is_linux_native: true` + `platform: 'windows'` toma la ruta windows correctamente           |
 | 2026-07-29 | `README.md`                                                       | Añadida nota sobre logros de GOG en modo experimental vía comet                                                                                                          |
+
+### v0.5.2 — macOS Cleanup & Runner Improvements (Jul 2026)
+
+| Fecha      | Archivo                                                        | Cambio                                                                                                                                                       |
+| ---------- | -------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 2026-07-31 | `meta/downloadHelperBinaries.ts`                               | Eliminados todos los assets darwin/macOS de legendary, gogdl, nile y comet. Tipo `SupportedPlatform` reducido a `'win32' \| 'linux'`                         |
+| 2026-07-31 | `meta/downloadHelperBinaries.ts`                               | Añadido `zoom-platform` a `DownloadedBinary` y `RELEASE_TAGS` (v1.0.1). Nueva función `downloadZoomPlatform()`: descarga desde zoom-platform.sh, `chmod 755` |
+| 2026-07-31 | `meta/downloadHelperBinaries.ts`                               | Integrada `downloadZoomPlatform()` en `main()`                                                                                                               |
+| 2026-07-31 | `public/bin/.gitignore`                                        | Añadido `**/zoom-platform.sh` (se descarga, no se trackea)                                                                                                   |
+| 2026-07-31 | `public/bin/zoom/zoom-platform.sh`                             | `git rm --cached` (781 KB liberados del repo). Se descarga vía `download-helper-binaries`                                                                    |
+| 2026-07-31 | `public/bin/x64/darwin/`, `public/bin/arm64/darwin/`           | Directorios eliminados (binarios macOS residuales)                                                                                                           |
+| 2026-07-31 | `src/backend/relic/steam_shortcuts/add_game.ts`                | GOG .bat: añadido `cd /d "%RELIC%\bin\"` antes de Comet. Fix para `install-dummy-service.bat` que usa `%~dp0`                                                |
+| 2026-07-31 | `src/backend/relic/steam_shortcuts/add_game.ts`                | Runners v3: añadido `--version` antes de cada ejecución (legendary, gogdl, comet, nile) para mostrar la versión en consola                                   |
+| 2026-07-31 | `src/backend/relic/steam_shortcuts/__tests__/add_game.test.ts` | Tests actualizados: `cd /d`, `comet.exe --version`, `gogdl --version`, `legendary --version`, `nile --version`                                               |

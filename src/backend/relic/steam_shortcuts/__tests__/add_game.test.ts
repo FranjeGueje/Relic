@@ -36,11 +36,14 @@ const mockedGetShortcutId = jest.mocked(steamHelpers.getShortcutId)
 
 const HEADER_LINES = [
   '@echo off',
-  'echo Relic runner version 2',
-  '@SET LEGENDARY_CONFIG_PATH=c:\\relic\\Legendary',
-  '@SET NILE_CONFIG_PATH=c:\\relic\\',
-  '@SET GOGDL_CONFIG_PATH=c:\\relic\\',
-  '@SET PATH=%PATH%;c:\\relic\\bin'
+  'title Relic Runner',
+  'echo Relic Runner version 3',
+  'echo.',
+  'set "RELIC=C:\\relic"',
+  'set "LEGENDARY_CONFIG_PATH=%RELIC%\\Legendary"',
+  'set "NILE_CONFIG_PATH=%RELIC%"',
+  'set "GOGDL_CONFIG_PATH=%RELIC%"',
+  'set "PATH=%PATH%;%RELIC%\\bin"'
 ]
 
 describe('addGameToSteam', () => {
@@ -113,7 +116,12 @@ describe('createRelicBat', () => {
     for (const line of HEADER_LINES) {
       expect(content).toContain(line)
     }
-    expect(content).toContain('@legendary launch abc123 %*')
+    expect(content).toContain('if not exist "%RELIC%\\bin\\legendary.exe" (')
+    expect(content).toContain('legendary --version')
+    expect(content).toContain('legendary launch abc123 %*')
+    expect(content).toContain(
+      "echo If you've closed the game, you can close this window now."
+    )
   })
 
   test('creates gog bat with correct runner command', () => {
@@ -126,17 +134,30 @@ describe('createRelicBat', () => {
     for (const line of HEADER_LINES) {
       expect(content).toContain(line)
     }
+    expect(content).toContain('if not exist "%RELIC%\\bin\\gogdl.exe" (')
+    expect(content).toContain('if not exist "%RELIC%\\bin\\comet.exe" (')
+    expect(content).toContain('if not exist "%RELIC%\\gog_store\\auth.json" (')
+    expect(content).toContain('mkdir "%APPDATA%\\heroic\\gog_store" >nul 2>&1')
     expect(content).toContain(
-      '@mkdir "%APPDATA%\\heroic\\gog_store"  >nul 2>&1'
+      'copy "%RELIC%\\gog_store\\*" "%APPDATA%\\heroic\\gog_store\\" >nul 2>&1'
+    )
+    expect(content).toContain('cd /d "%RELIC%\\bin\\"')
+    expect(content).toContain('comet.exe --version')
+    expect(content).toContain(
+      'start "" /b "install-dummy-service.bat" >nul 2>&1'
     )
     expect(content).toContain(
-      '@copy "c:\\relic\\gog_store\\*" "%APPDATA%\\heroic\\gog_store\\"  >nul 2>&1'
+      'start "" /b "comet.exe" --from-heroic --username '
     )
-    expect(content).toContain('start /b "" comet.exe --from-heroic --username ')
-    expect(content).toContain('@timeout /t 2 /nobreak >nul')
+    expect(content).toContain('timeout /t 2 /nobreak >nul')
+    expect(content).toContain('gogdl --version')
     expect(content).toContain(
       `@gogdl --auth-config-path c:\\relic\\gog_store\\auth.json ` +
         `launch --platform windows "c:\\games\\${basename(tmpDir.name)}" gog123 -- %*`
+    )
+    expect(content).toContain('echo COMET IS RUNNING.')
+    expect(content).toContain(
+      "echo If you've closed the game, you can close this window now."
     )
   })
 
@@ -155,7 +176,12 @@ describe('createRelicBat', () => {
     for (const line of HEADER_LINES) {
       expect(content).toContain(line)
     }
-    expect(content).toContain('@nile launch nile789 -- %*')
+    expect(content).toContain('if not exist "%RELIC%\\bin\\nile.exe" (')
+    expect(content).toContain('nile --version')
+    expect(content).toContain('nile launch nile789 -- %*')
+    expect(content).toContain(
+      "echo If you've closed the game, you can close this window now."
+    )
   })
 
   test('creates default bat for unknown runner', () => {
@@ -174,6 +200,9 @@ describe('createRelicBat', () => {
       expect(content).toContain(line)
     }
     expect(content).toContain('@echo En desarrollo...')
+    expect(content).toContain(
+      "echo If you've closed the game, you can close this window now."
+    )
   })
 
   test('overwrites existing file with new content', () => {
@@ -190,7 +219,7 @@ describe('createRelicBat', () => {
 
     expect(result).toBe(runnerPath)
     const content = readFileSync(runnerPath, 'utf-8')
-    expect(content).toContain('@legendary launch abc %*')
+    expect(content).toContain('legendary launch abc %*')
     expect(content).not.toBe('old content')
   })
 })

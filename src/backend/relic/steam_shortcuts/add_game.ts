@@ -75,45 +75,146 @@ export function createRelicBat(
 
   const header = [
     '@echo off',
-    'echo Relic runner version 2',
-    '@SET LEGENDARY_CONFIG_PATH=c:\\relic\\Legendary',
-    '@SET NILE_CONFIG_PATH=c:\\relic\\',
-    '@SET GOGDL_CONFIG_PATH=c:\\relic\\',
-    '@SET PATH=%PATH%;c:\\relic\\bin'
+    'title Relic Runner',
+    '',
+    'echo Relic Runner version 3',
+    'echo.',
+    '',
+    'rem ============================================================',
+    'rem Configuration',
+    'rem ============================================================',
+    '',
+    'set "RELIC=C:\\relic"',
+    '',
+    'set "LEGENDARY_CONFIG_PATH=%RELIC%\\Legendary"',
+    'set "NILE_CONFIG_PATH=%RELIC%"',
+    'set "GOGDL_CONFIG_PATH=%RELIC%"',
+    'set "PATH=%PATH%;%RELIC%\\bin"'
   ]
 
-  let runnerCmd: string
+  const finish = [
+    '',
+    'echo.',
+    'echo ---------------------------------------------------------',
+    "echo If you've closed the game, you can close this window now.",
+    'echo ---------------------------------------------------------'
+  ]
+
+  let sectionLines: string[]
+  let endLines = finish
+
   switch (runner) {
     case 'legendary':
-      runnerCmd = `@legendary launch ${appName} %*`
+      sectionLines = [
+        '',
+        'rem ============================================================',
+        'rem PRECHECKS',
+        'rem ============================================================',
+        '',
+        'if not exist "%RELIC%\\bin\\legendary.exe" (',
+        '    echo [ERROR]: legendary.exe not found.',
+        '    timeout /t 2 /nobreak >nul',
+        '    exit /b 1',
+        ')',
+        '',
+        'rem ============================================================',
+        'rem START THE GAME',
+        'rem ============================================================',
+        '',
+        'legendary --version',
+        '',
+        `legendary launch ${appName} %*`
+      ]
       break
+
     case 'gog': {
       const winPath = `c:\\games\\${basename(installPath)}`
       const username = getGogUsername()
-      const gogPreLines = [
-        '@mkdir "%APPDATA%\\heroic\\gog_store"  >nul 2>&1',
-        '@copy "c:\\relic\\gog_store\\*" "%APPDATA%\\heroic\\gog_store\\"  >nul 2>&1',
-        `start /b "" comet.exe --from-heroic --username ${username}`,
-        '@timeout /t 2 /nobreak >nul'
+      sectionLines = [
+        '',
+        'rem ============================================================',
+        'rem PRECHECKS',
+        'rem ============================================================',
+        '',
+        'if not exist "%RELIC%\\bin\\gogdl.exe" (',
+        '    echo [ERROR]: gogdl.exe not found.',
+        '    timeout /t 2 /nobreak >nul',
+        '    exit /b 1',
+        ')',
+        '',
+        'if not exist "%RELIC%\\bin\\comet.exe" (',
+        '    echo [ERROR]: comet.exe not found.',
+        '    timeout /t 2 /nobreak >nul',
+        '    exit /b 1',
+        ')',
+        '',
+        'if not exist "%RELIC%\\gog_store\\auth.json" (',
+        '    echo [ERROR]: NOT AUTHENTICATED ON GOG. Please, login on Relic.',
+        '    timeout /t 2 /nobreak >nul',
+        '    exit /b 1',
+        ')',
+        '',
+        'rem ============================================================',
+        'rem Start Comet',
+        'rem ============================================================',
+        '',
+        'mkdir "%APPDATA%\\heroic\\gog_store" >nul 2>&1',
+        'copy "%RELIC%\\gog_store\\*" "%APPDATA%\\heroic\\gog_store\\" >nul 2>&1',
+        'cd /d "%RELIC%\\bin\\"',
+        'comet.exe --version',
+        '',
+        `start "" /b "install-dummy-service.bat" >nul 2>&1`,
+        `start "" /b "comet.exe" --from-heroic --username "${username}" >nul 2>&1`,
+        '',
+        'timeout /t 2 /nobreak >nul',
+        '',
+        'rem ============================================================',
+        'rem START THE GAME',
+        'rem ============================================================',
+        '',
+        'gogdl --version',
+        '',
+        `@gogdl --auth-config-path c:\\relic\\gog_store\\auth.json launch --platform windows "${winPath}" ${appName} -- %*`
       ]
-      const gogRunnerCmd =
-        `@gogdl --auth-config-path c:\\relic\\gog_store\\auth.json ` +
-        `launch --platform windows "${winPath}" ${appName} -- %*`
-      const gogContent = [...header, '', ...gogPreLines, '', gogRunnerCmd].join(
-        '\n'
-      )
-      writeFileSync(runnerPath, gogContent, 'utf-8')
-      logInfo(`Created ${runnerPath}`, LOG_PREFIX)
-      return runnerPath
-    }
-    case 'nile':
-      runnerCmd = `@nile launch ${appName} -- %*`
+      endLines = [
+        '',
+        'echo.',
+        'echo ---------------------------------------------------------',
+        'echo COMET IS RUNNING.',
+        "echo If you've closed the game, you can close this window now.",
+        'echo ---------------------------------------------------------'
+      ]
       break
+    }
+
+    case 'nile':
+      sectionLines = [
+        '',
+        'rem ============================================================',
+        'rem PRECHECKS',
+        'rem ============================================================',
+        '',
+        'if not exist "%RELIC%\\bin\\nile.exe" (',
+        '    echo [ERROR]: nile.exe not found.',
+        '    timeout /t 2 /nobreak >nul',
+        '    exit /b 1',
+        ')',
+        '',
+        'rem ============================================================',
+        'rem START THE GAME',
+        'rem ============================================================',
+        '',
+        'nile --version',
+        '',
+        `nile launch ${appName} -- %*`
+      ]
+      break
+
     default:
-      runnerCmd = '@echo En desarrollo...'
+      sectionLines = ['', '@echo En desarrollo...']
   }
 
-  const content = [...header, '', runnerCmd].join('\n')
+  const content = [...header, ...sectionLines, ...endLines].join('\n')
   writeFileSync(runnerPath, content, 'utf-8')
 
   logInfo(`Created ${runnerPath}`, LOG_PREFIX)
