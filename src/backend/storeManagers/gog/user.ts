@@ -116,8 +116,12 @@ export class GOGUser {
         logSanitizer: authLogSanitizer
       }
     )
+    const trimmed = stdout?.trim()
+    if (!trimmed) {
+      return undefined
+    }
     try {
-      return JSON.parse(stdout) as GOGCredentials | undefined
+      return JSON.parse(trimmed) as GOGCredentials | undefined
     } catch (error) {
       logError(['Error getting GOG credentials:', error])
       return undefined

@@ -1,4 +1,4 @@
-import { existsSync, readFileSync, readdirSync } from 'fs'
+import { existsSync, readFileSync, readdirSync, writeFileSync } from 'fs'
 
 import {
   GameInfo,
@@ -451,6 +451,20 @@ export default class LegendaryLibraryManager implements LibraryManager {
     if (error) {
       logError(
         ['Failed to set install path for', `${appName}:`, error],
+        LogPrefix.Legendary
+      )
+    }
+
+    const installedJSON = join(legendaryConfigPath, 'installed.json')
+    try {
+      const data = JSON.parse(readFileSync(installedJSON, 'utf-8'))
+      if (data[appName]?.install_path !== newPath) {
+        data[appName].install_path = newPath
+        writeFileSync(installedJSON, JSON.stringify(data, null, 2), 'utf-8')
+      }
+    } catch {
+      logWarning(
+        `Could not update installed.json for ${appName} after move`,
         LogPrefix.Legendary
       )
     }

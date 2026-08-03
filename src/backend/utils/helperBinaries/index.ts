@@ -18,14 +18,10 @@ async function getLegendaryVersion(): Promise<string> {
 
   if (error ?? abort) return 'invalid'
 
-  // Sample output:
-  // legendary version "0.20.33", codename "Undue Alarm"
-  // 1st capturing group matches the version, 2nd the codename
-  const matches = stdout.match(/"([\d.]*)".*"(.*)"$/m)
+  const matches = stdout.match(/([\d.]+)/)
   const version = matches?.[1]
-  const codename = matches?.[2]
-  if (!version || !codename) return 'invalid'
-  return `${version} ${codename}`
+  if (!version) return 'invalid'
+  return `v${version}`
 }
 
 async function getGogdlVersion(): Promise<string> {
@@ -38,7 +34,9 @@ async function getGogdlVersion(): Promise<string> {
 
   if (error) return 'invalid'
 
-  return stdout
+  const trimmed = stdout.trim()
+  if (!trimmed) return 'invalid'
+  return trimmed
 }
 
 async function getCometVersion(): Promise<string> {
@@ -60,7 +58,9 @@ async function getNileVersion(): Promise<string> {
 
   if (error) return 'invalid'
 
-  return stdout
+  const trimmed = stdout.trim()
+  if (!trimmed) return 'invalid'
+  return trimmed
 }
 
 export { getLegendaryVersion, getGogdlVersion, getNileVersion, getCometVersion }

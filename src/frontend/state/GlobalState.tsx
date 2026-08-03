@@ -698,7 +698,7 @@ class GlobalState extends PureComponent<Props> {
       refreshing: true,
       refreshingInTheBackground: runInBackground
     })
-    window.api.logInfo(`Refreshing ${library} Library`)
+    window.api.logInfo(`Refreshing ${library ?? 'all'} Library`)
     try {
       await window.api.refreshLibrary(library)
       return await this.refresh(library, checkForUpdates)

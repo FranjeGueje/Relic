@@ -846,31 +846,29 @@ export default class GOGLibraryManager implements LibraryManager {
   async changeGameInstallPath(appName: string, newInstallPath: string) {
     const cachedGameData = library.get(appName)
 
-    if (
-      !cachedGameData ||
-      !cachedGameData.install ||
-      !cachedGameData.folder_name
-    ) {
-      logError(
-        "Changing game install path failed: Game data couldn't be found",
-        LogPrefix.Gog
-      )
-      return
-    }
-
     const installedArray = installedGamesStore.get('installed', [])
-
     const gameIndex = installedArray.findIndex(
       (value) => value.appName === appName
     )
 
-    if (cachedGameData.install.platform === 'osx') {
+    if (gameIndex === -1) {
+      logWarning(`Game ${appName} not found in installed games`, LogPrefix.Gog)
+      return
+    }
+
+    if (
+      cachedGameData?.install?.platform === 'osx' &&
+      cachedGameData.folder_name
+    ) {
       newInstallPath = join(newInstallPath, cachedGameData.folder_name)
     }
 
     installedArray[gameIndex].install_path = newInstallPath
-    cachedGameData.install.install_path = newInstallPath
     installedGamesStore.set('installed', installedArray)
+
+    if (cachedGameData?.install) {
+      cachedGameData.install.install_path = newInstallPath
+    }
   }
 
   async importGame(data: GOGImportData, executablePath: string) {

@@ -373,3 +373,13 @@ El objetivo es mantener trazabilidad de los cambios respecto al padre.
 | 2026-07-31 | `src/backend/relic/steam_shortcuts/add_game.ts`                | GOG .bat: añadido `cd /d "%RELIC%\bin\"` antes de Comet. Fix para `install-dummy-service.bat` que usa `%~dp0`                                                |
 | 2026-07-31 | `src/backend/relic/steam_shortcuts/add_game.ts`                | Runners v3: añadido `--version` antes de cada ejecución (legendary, gogdl, comet, nile) para mostrar la versión en consola                                   |
 | 2026-07-31 | `src/backend/relic/steam_shortcuts/__tests__/add_game.test.ts` | Tests actualizados: `cd /d`, `comet.exe --version`, `gogdl --version`, `legendary --version`, `nile --version`                                               |
+
+### v0.5.3 — Bugfixes & Path Persistence (Aug 2026)
+
+| Fecha      | Archivo                                          | Cambio                                                                                                                                                                           |
+| ---------- | ------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 2026-08-03 | `src/backend/storeManagers/gog/user.ts`          | Fix: `getCredentials()` comprueba `stdout.trim()` antes de `JSON.parse`. Evita `SyntaxError: Unexpected end of JSON input` cuando gogdl devuelve salida vacía o parcial          |
+| 2026-08-03 | `src/backend/utils/helperBinaries/index.ts`      | Fix: `getLegendaryVersion()` simplifica regex a `([\d.]+)`. Muestra `v0.20.43` en vez de `invalid`. `getGogdlVersion()` y `getNileVersion()` añaden `.trim()` + check de vacío   |
+| 2026-08-03 | `src/frontend/state/GlobalState.tsx`             | Fix: log `Refreshing ${library ?? 'all'} Library` en vez de `Refreshing undefined Library`                                                                                       |
+| 2026-08-03 | `src/backend/storeManagers/gog/library.ts`       | Fix: `changeGameInstallPath()` usa `installedGamesStore` como fuente primaria en vez de abortar si `library.get()` falla. Persiste `install_path` correcto al mover juegos (GOG) |
+| 2026-08-03 | `src/backend/storeManagers/legendary/library.ts` | Fix: `changeGameInstallPath()` escribe `install_path` en `installed.json` como fallback tras `legendary move --skip-move`. Garantiza persistencia del nuevo path al reiniciar    |

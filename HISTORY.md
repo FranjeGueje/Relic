@@ -522,3 +522,11 @@ Para ver el detalle completo de cada categoría, consultar:
 - **zoom-platform.sh externalizado**: el script de 781 KB se descarga desde `https://zoom-platform.sh/zoom-platform.sh` vía `download-helper-binaries` en lugar de trackearse en git. `git rm --cached` + `.gitignore`.
 - **GOG .bat cd fix**: añadido `cd /d "%RELIC%\bin\"` antes del arranque de Comet. Corrige `install-dummy-service.bat` que usa `%~dp0` para rutas relativas.
 - **Runner version checks**: añadido `--version` antes de cada ejecución (`legendary --version`, `gogdl --version`, `comet.exe --version`, `nile --version`) en los .bat. La versión se imprime en la consola antes del lanzamiento.
+
+### v0.5.3 — Bugfixes & Path Persistence (Aug 2026)
+
+- **GOG credentials**: `getCredentials()` ya no lanza `SyntaxError` cuando gogdl devuelve salida vacía. Comprueba `stdout.trim()` antes de `JSON.parse`.
+- **Version parsing**: `getLegendaryVersion()` usa regex simplificado `([\d.]+)` → muestra `v0.20.43` en vez de `invalid`. `getGogdlVersion()` y `getNileVersion()` añaden `.trim()` + check de vacío → muestran `1.2.2` en vez de campo vacío.
+- **Log frontend**: `Refreshing all Library` en vez de `Refreshing undefined Library` cuando no se especifica runner.
+- **GOG path persistence**: `changeGameInstallPath()` usa `installedGamesStore` como fuente primaria en lugar de abortar si el juego no está en el Map de biblioteca. Corrige que `install_path` quedara desactualizado tras mover juegos (Worms Revolution, Blade of Darkness).
+- **Legendary path persistence**: tras `legendary move --skip-move`, escribe `install_path` directamente en `installed.json` como fallback. Garantiza que el nuevo path persista al reiniciar.
