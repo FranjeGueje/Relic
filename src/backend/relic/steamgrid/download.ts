@@ -74,7 +74,7 @@ function buildImageMap(
     [join(gridFolder, `${steamAppId}p.png`), images.portrait[0]],
     [join(gridFolder, `${steamAppId}_hero.png`), images.heroes[0]],
     [join(gridFolder, `${steamAppId}_logo.png`), images.logos[0]],
-    [join(gridFolder, `${steamAppId}_icon.ico`), images.icons[0]]
+    [join(gridFolder, `${steamAppId}_icon.png`), images.icons[0]]
   ]
 }
 

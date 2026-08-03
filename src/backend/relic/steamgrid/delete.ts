@@ -10,7 +10,7 @@ const GRID_FILES = [
   (id: number) => `${id}p.png`,
   (id: number) => `${id}_hero.png`,
   (id: number) => `${id}_logo.png`,
-  (id: number) => `${id}_icon.ico`
+  (id: number) => `${id}_icon.png`
 ]
 
 export function deleteGrids(steamAppId: number): void {
