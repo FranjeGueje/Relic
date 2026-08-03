@@ -2,13 +2,15 @@ import {
   onGameInstalled,
   onGameUninstalled,
   onGameImported,
-  onGameMoved
+  onGameMoved,
+  onGameRepaired
 } from '../../game_events'
 import { existsSync, unlinkSync, mkdirSync, symlinkSync } from 'fs'
 import {
   addGameToSteam,
   createRunnerFile,
-  createGameSymlink
+  createGameSymlink,
+  createRelicBat
 } from '../add_game'
 import { deleteGrids } from '../../steamgrid'
 import { preparePrefix, removePrefixSymlink } from '../../prefix'
@@ -51,7 +53,8 @@ jest.mock('backend/constants/paths', () => ({
 jest.mock('../add_game', () => ({
   addGameToSteam: jest.fn(),
   createRunnerFile: jest.fn(),
-  createGameSymlink: jest.fn()
+  createGameSymlink: jest.fn(),
+  createRelicBat: jest.fn()
 }))
 
 jest.mock('../store', () => ({
@@ -77,6 +80,7 @@ jest.mock('electron', () => ({
 const mockedAddGameToSteam = jest.mocked(addGameToSteam)
 const mockedCreateRunnerFile = jest.mocked(createRunnerFile)
 const mockedCreateGameSymlink = jest.mocked(createGameSymlink)
+const mockedCreateRelicBat = jest.mocked(createRelicBat)
 const mockedExistsSync = jest.mocked(existsSync)
 const mockedUnlinkSync = jest.mocked(unlinkSync)
 const mockedMkdirSync = jest.mocked(mkdirSync)
@@ -585,5 +589,72 @@ describe('onGameMoved', () => {
     expect(mockedUnlinkSync).not.toHaveBeenCalled()
     expect(mockedSymlinkSync).not.toHaveBeenCalled()
     expect(mockedAddShortcut).not.toHaveBeenCalled()
+  })
+})
+
+describe('onGameRepaired', () => {
+  test('regenerates the runner .bat for a tracked game', async () => {
+    mockGetGameInfo.mockReturnValue({
+      title: 'RepairedGame',
+      app_name: 'repaired_app',
+      runner: 'gog',
+      install: { install_path: '/games/repaired' }
+    })
+
+    mockedFindShortcut.mockReturnValue({
+      gameName: 'RepairedGame',
+      appId: 'repaired_app',
+      store: 'gog',
+      steamAppId: 123,
+      execPath: '/runner/RepairedGame.bat',
+      installPath: '/games/repaired'
+    })
+    mockedCreateRelicBat.mockReturnValue('/runner/RepairedGame.bat')
+
+    await onGameRepaired(mockGame as never)
+
+    expect(mockedCreateRelicBat).toHaveBeenCalledWith(
+      '/games/repaired',
+      'RepairedGame',
+      'gog',
+      'repaired_app'
+    )
+  })
+
+  test('skips when game is not tracked', async () => {
+    mockGetGameInfo.mockReturnValue({
+      title: 'UntrackedGame',
+      app_name: 'untracked',
+      runner: 'gog',
+      install: { install_path: '/games/old' }
+    })
+
+    mockedFindShortcut.mockReturnValue(undefined)
+
+    await onGameRepaired(mockGame as never)
+
+    expect(mockedCreateRelicBat).not.toHaveBeenCalled()
+  })
+
+  test('skips zoom games', async () => {
+    mockGetGameInfo.mockReturnValue({
+      title: 'ZoomGame',
+      app_name: 'zoom_app',
+      runner: 'zoom',
+      install: { install_path: '/games/zoom' }
+    })
+
+    mockedFindShortcut.mockReturnValue({
+      gameName: 'ZoomGame',
+      appId: 'zoom_app',
+      store: 'zoom',
+      steamAppId: 123,
+      execPath: '/games/zoom/zoom-game',
+      installPath: '/games/zoom'
+    })
+
+    await onGameRepaired(mockGame as never)
+
+    expect(mockedCreateRelicBat).not.toHaveBeenCalled()
   })
 })

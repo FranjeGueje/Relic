@@ -8,6 +8,7 @@ import { relicGamesPath } from 'backend/constants/paths'
 import { logError, logInfo, logWarning } from 'backend/logger'
 import {
   addGameToSteam,
+  createRelicBat,
   createRunnerFile,
   createGameSymlink,
   findShortcut,
@@ -163,6 +164,43 @@ export async function onGameInstalled(
 
 export async function onGameImported(game: Game): Promise<void> {
   await onGameInstalled(game)
+}
+
+export async function onGameRepaired(game: Game): Promise<void> {
+  const gameInfo = game.getGameInfo()
+  const appName = gameInfo.app_name
+
+  const known = findShortcut(appName)
+  if (!known) {
+    logInfo(
+      `"${gameInfo.title}" (${appName}) is not tracked in Steam. Skipping runner update.`,
+      LOG_PREFIX
+    )
+    return
+  }
+
+  if (known.store === 'zoom') {
+    logInfo(
+      `"${known.gameName}" is a Zoom game. Skipping runner update.`,
+      LOG_PREFIX
+    )
+    return
+  }
+
+  try {
+    const runnerPath = createRelicBat(
+      known.installPath,
+      known.gameName,
+      known.store,
+      appName
+    )
+    logInfo(`Updated ${runnerPath}`, LOG_PREFIX)
+  } catch (e) {
+    logError(
+      `Failed to update runner file for "${known.gameName}": ${e}`,
+      LOG_PREFIX
+    )
+  }
 }
 
 export async function onGameMoved(

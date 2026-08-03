@@ -104,6 +104,7 @@ import {
   windowIcon
 } from './constants/paths'
 import { syncMountBin } from './relic/windowify'
+import { onGameRepaired } from './relic/game_events'
 import { supportedLanguages } from 'common/languages'
 import MigrationSystem from './migration'
 
@@ -741,10 +742,14 @@ addHandler('repair', async (event, appName, runner) => {
     status: 'repairing'
   })
 
-  const { title } = libraryManagerMap[runner].getGame(appName).getGameInfo()
+  const game = libraryManagerMap[runner].getGame(appName)
+  const { title } = game.getGameInfo()
 
   try {
-    await libraryManagerMap[runner].getGame(appName).repair()
+    const res = await game.repair()
+    if (!res.error) {
+      await onGameRepaired(game)
+    }
   } catch (error) {
     notify({
       title,
