@@ -155,16 +155,18 @@ async function updateQueueElement(params: InstallParams): Promise<{
   }
 
   try {
-    const { status } = await libraryManagerMap[runner].getGame(appName).update({
-      build: params.build,
-      branch: params.branch,
-      language: params.installLanguage,
-      dlcs: params.installDlcs,
-      dependencies: params.dependencies
-    })
+    const { status, error } = await libraryManagerMap[runner]
+      .getGame(appName)
+      .update({
+        build: params.build,
+        branch: params.branch,
+        language: params.installLanguage,
+        dlcs: params.installDlcs,
+        dependencies: params.dependencies
+      })
 
     if (status === 'error') {
-      errorMessage('')
+      errorMessage(error ?? '')
     }
 
     return { status }

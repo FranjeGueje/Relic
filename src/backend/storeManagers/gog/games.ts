@@ -623,7 +623,7 @@ export default class GOGGame implements Game {
     language?: string
     dlcs?: string[]
     dependencies?: string[]
-  }): Promise<{ status: 'done' | 'error' }> {
+  }): Promise<{ status: 'done' | 'error'; error?: string }> {
     // TODO: Implement GOG redist as a subclass of GOGGame & move this logic to it
     if (this.id === 'gog-redist') {
       const redist = await getRequiredRedistList()
@@ -646,7 +646,11 @@ export default class GOGGame implements Game {
       branch
     } = await this.getCommandParameters()
     if (!installPlatform || !credentials) {
-      return { status: 'error' }
+      logError(
+        ['Failed to update', `${this.id}:`, 'No credentials'],
+        LogPrefix.Gog
+      )
+      return { status: 'error', error: 'No credentials' }
     }
 
     await this.getSettings()
@@ -723,7 +727,7 @@ export default class GOGGame implements Game {
         runner: 'gog',
         status: 'done'
       })
-      return { status: 'error' }
+      return { status: 'error', error: res.error }
     }
 
     const installedArray = installedGamesStore.get('installed', [])

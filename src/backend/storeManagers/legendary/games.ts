@@ -465,7 +465,7 @@ export default class LegendaryGame implements Game {
    * Update game.
    * Does NOT check for online connectivity.
    */
-  async update(): Promise<{ status: 'done' | 'error' }> {
+  async update(): Promise<{ status: 'done' | 'error'; error?: string }> {
     sendGameStatusUpdate({
       appName: this.appName,
       runner: 'legendary',
@@ -517,7 +517,7 @@ export default class LegendaryGame implements Game {
         ['Failed to update', `${this.appName}:`, res.error],
         LogPrefix.Legendary
       )
-      return { status: 'error' }
+      return { status: 'error', error: res.error }
     }
     return { status: 'done' }
   }

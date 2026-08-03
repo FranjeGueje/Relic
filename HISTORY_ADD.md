@@ -383,3 +383,13 @@ El objetivo es mantener trazabilidad de los cambios respecto al padre.
 | 2026-08-03 | `src/frontend/state/GlobalState.tsx`             | Fix: log `Refreshing ${library ?? 'all'} Library` en vez de `Refreshing undefined Library`                                                                                       |
 | 2026-08-03 | `src/backend/storeManagers/gog/library.ts`       | Fix: `changeGameInstallPath()` usa `installedGamesStore` como fuente primaria en vez de abortar si `library.get()` falla. Persiste `install_path` correcto al mover juegos (GOG) |
 | 2026-08-03 | `src/backend/storeManagers/legendary/library.ts` | Fix: `changeGameInstallPath()` escribe `install_path` en `installed.json` como fallback tras `legendary move --skip-move`. Garantiza persistencia del nuevo path al reiniciar    |
+
+### v0.5.4 — Update Error Diagnostics (Aug 2026)
+
+| Fecha      | Archivo                                        | Cambio                                                                                                                                                                                                  |
+| ---------- | ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 2026-08-03 | `package.json`                                 | Version bump 0.5.3 → 0.5.4                                                                                                                                                                              |
+| 2026-08-03 | `src/backend/storeManagers/gog/user.ts`        | Log de warning cuando `gogdl auth` devuelve salida vacía: `gogdl auth returned empty output - re-login may be required`                                                                                 |
+| 2026-08-03 | `src/backend/storeManagers/gog/games.ts`       | `update()` loguea `No credentials` y devuelve `{ status: 'error', error: 'No credentials' }` si faltan credenciales. En fallo tras descarga devuelve `error: res.error` en vez de `{ status: 'error' }` |
+| 2026-08-03 | `src/backend/storeManagers/legendary/games.ts` | `update()` amplía el tipo de retorno a `{ status; error?: string }` y devuelve `res.error` en vez de `{ status: 'error' }`                                                                              |
+| 2026-08-03 | `src/backend/downloadmanager/utils.ts`         | `updateQueueElement()` propaga el `error` real de `update()` en el evento de error en vez de un string vacío (`errorMessage(error ?? '')`)                                                              |

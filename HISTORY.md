@@ -530,3 +530,9 @@ Para ver el detalle completo de cada categoría, consultar:
 - **Log frontend**: `Refreshing all Library` en vez de `Refreshing undefined Library` cuando no se especifica runner.
 - **GOG path persistence**: `changeGameInstallPath()` usa `installedGamesStore` como fuente primaria en lugar de abortar si el juego no está en el Map de biblioteca. Corrige que `install_path` quedara desactualizado tras mover juegos (Worms Revolution, Blade of Darkness).
 - **Legendary path persistence**: tras `legendary move --skip-move`, escribe `install_path` directamente en `installed.json` como fallback. Garantiza que el nuevo path persista al reiniciar.
+
+### v0.5.4 — Update Error Diagnostics (Aug 2026)
+
+- **Credenciales GOG**: se loguea `gogdl auth returned empty output - re-login may be required` cuando `gogdl auth` devuelve salida vacía. La causa raíz de fallos de actualización con mensaje vacío queda visible.
+- **Error message en actualizaciones**: `update()` de GOG y Legendary devuelve el `error` real (`error: 'No credentials'` en GOG, `res.error` en ambos) en lugar de `{ status: 'error' }` sin mensaje.
+- **Propagación del error**: `updateQueueElement()` deja de enviar un string vacío y propaga el error real de `update()` en el evento de fallo. Ahora el frontend muestra la causa concreta del fallo.

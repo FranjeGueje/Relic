@@ -118,6 +118,10 @@ export class GOGUser {
     )
     const trimmed = stdout?.trim()
     if (!trimmed) {
+      logWarning(
+        'gogdl auth returned empty output - re-login may be required',
+        LogPrefix.Gog
+      )
       return undefined
     }
     try {

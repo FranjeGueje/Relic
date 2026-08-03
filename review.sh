@@ -6,7 +6,10 @@ echo
 
 # 1. Clean caches and build artifacts
 echo "[1/7] Cleaning caches and build artifacts..."
-rm -rf ./build ./dist ./node_modules ./.eslintcache
+rm -rf ./build ./node_modules ./.eslintcache
+if [ -d ./dist ]; then
+  find ./dist -mindepth 1 ! -name '*.md' -exec rm -rf {} +
+fi
 echo "       Done."
 echo
 
