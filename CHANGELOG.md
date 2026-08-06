@@ -1,5 +1,51 @@
 # Changelog
 
+## 0.5.4 — Update Error Diagnostics
+
+### Corregido
+
+- Credenciales GOG: se loguea `gogdl auth returned empty output - re-login may be required` cuando `gogdl auth` devuelve salida vacía. La causa raíz de los fallos de actualización con mensaje vacío queda visible en los logs.
+- Error message en actualizaciones: `update()` de GOG y Legendary ahora devuelve el error real en lugar de `{ status: 'error' }` sin mensaje. GOG: `error: 'No credentials'` si faltan credenciales, `error: res.error` si la descarga falla. Legendary: `error: res.error`.
+- Propagación del error: `updateQueueElement()` deja de enviar un string vacío y propaga el error real de `update()` en el evento de fallo. Ahora el frontend muestra la causa concreta del fallo de actualización.
+
+### Añadido
+
+- Evento `onGameRepaired`: nuevo evento del módulo relic. Tras una reparación exitosa, regenera el runner `.bat` del juego en `~/.local/share/relic/runner/` vía `createRelicBat()`, tomando los datos de `steam_shortcuts.json`. No añade a Steam ni toca prefijos. Se invoca desde el handler `repair` de `main.ts` únicamente cuando no hay error.
+- Grid icon `.ico` → `.png`: el icono de grid de SteamGridDB se guarda como `<appid>_icon.png` en lugar de `<appid>_icon.ico` (extensión hardcodeada en `download.ts` y `delete.ts`).
+
+### Verificación
+
+```
+codecheck: 0 errores
+lint:      0 errores (694 warnings)
+tests:     130/130 (21 suites)
+```
+
+---
+
+## 0.5.3 — Bugfixes & Path Persistence
+
+### Corregido
+
+- GOG credentials: `getCredentials()` ya no lanza `SyntaxError: Unexpected end of JSON input` cuando gogdl devuelve salida vacía o parcial. Ahora comprueba `stdout.trim()` antes de `JSON.parse`.
+- Version parsing: `getLegendaryVersion()` usa un regex simplificado `([\d.]+)` → muestra `v0.20.43` en vez de `invalid`. `getGogdlVersion()` y `getNileVersion()` añaden `.trim()` + check de vacío → muestran `1.2.2` en vez de un campo vacío.
+- Log frontend: `Refreshing all Library` en vez de `Refreshing undefined Library` cuando no se especifica un runner concreto.
+
+### Persistencia de rutas al mover juegos
+
+- GOG: `changeGameInstallPath()` usa `installedGamesStore` como fuente primaria en lugar de abortar si el juego no está en el Map de biblioteca. Corrige que `install_path` quedara desactualizado en `gog_store/installed.json` tras mover juegos (Worms Revolution, Blade of Darkness).
+- Legendary: tras `legendary move --skip-move`, se escribe `install_path` directamente en `installed.json` como fallback. Garantiza que el nuevo path persista al reiniciar.
+
+### Verificación
+
+```
+codecheck: 0 errores
+lint:      0 errores (692 warnings)
+tests:     127/127 (21 suites)
+```
+
+---
+
 ## 0.4.0 — Pulido
 
 ### Añadido
