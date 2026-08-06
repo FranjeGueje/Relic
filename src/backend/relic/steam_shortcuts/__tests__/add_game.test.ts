@@ -1,7 +1,8 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'fs'
 import { basename, join } from 'path'
 import { DirResult, dirSync } from 'tmp'
-import { addGameToSteam, createRelicBat } from '../add_game'
+import { addGameToSteam, createRelicBat, createRunnerFile } from '../add_game'
+import { GameInfo } from 'common/types'
 import * as steamHelpers from '../steam_helpers'
 import { spawnAsync } from 'backend/utils'
 
@@ -22,9 +23,13 @@ jest.mock('../steam_helpers', () => ({
 }))
 
 let mockRelicRunnerPath = '/tmp/default-relic-runner'
+let mockRelicGamesPath = '/tmp/default-relic-games'
 jest.mock('backend/constants/paths', () => ({
   get relicRunnerPath() {
     return mockRelicRunnerPath
+  },
+  get relicGamesPath() {
+    return mockRelicGamesPath
   },
   relicMountPath: '/tmp/mount',
   relicInstallPath: '/tmp/games'
@@ -221,5 +226,67 @@ describe('createRelicBat', () => {
     const content = readFileSync(runnerPath, 'utf-8')
     expect(content).toContain('legendary launch abc %*')
     expect(content).not.toBe('old content')
+  })
+})
+
+describe('createRunnerFile', () => {
+  let installDir: DirResult
+  let gamesDir: DirResult
+  let runnerDir: DirResult
+
+  beforeEach(() => {
+    installDir = dirSync({ unsafeCleanup: true })
+    gamesDir = dirSync({ unsafeCleanup: true })
+    runnerDir = dirSync({ unsafeCleanup: true })
+    mockRelicGamesPath = gamesDir.name
+    mockRelicRunnerPath = runnerDir.name
+  })
+
+  afterEach(() => {
+    installDir.removeCallback()
+    gamesDir.removeCallback()
+    runnerDir.removeCallback()
+  })
+
+  test('zoom: symlinks the install path into relicGamesPath and points at the executable through it', () => {
+    const gameInfo = {
+      runner: 'zoom',
+      install: { executable: 'drive_c/Game/game.exe' }
+    } as unknown as GameInfo
+
+    const result = createRunnerFile(gameInfo, installDir.name)
+
+    expect('path' in result).toBe(true)
+    const linkPath = join(gamesDir.name, basename(installDir.name))
+    expect(existsSync(linkPath)).toBe(true)
+    expect((result as { path: string }).path).toBe(
+      join(linkPath, 'drive_c/Game/game.exe')
+    )
+  })
+
+  test('zoom: returns an error when there is no executable', () => {
+    const gameInfo = {
+      runner: 'zoom',
+      install: { executable: '' }
+    } as unknown as GameInfo
+
+    const result = createRunnerFile(gameInfo, installDir.name)
+
+    expect(result).toEqual({ error: 'No executable found for Zoom game' })
+  })
+
+  test('non-zoom: creates a .bat runner file', () => {
+    const gameInfo = {
+      runner: 'legendary',
+      title: 'LegGame',
+      app_name: 'leg_app',
+      install: {}
+    } as unknown as GameInfo
+
+    const result = createRunnerFile(gameInfo, installDir.name)
+
+    expect((result as { path: string }).path).toBe(
+      join(mockRelicRunnerPath, 'LegGame.bat')
+    )
   })
 })

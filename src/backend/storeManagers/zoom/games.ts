@@ -3,7 +3,8 @@ import {
   getFileSize,
   parseSize,
   spawnAsync,
-  sendProgressUpdate
+  sendProgressUpdate,
+  moveOnUnix
 } from '../../utils'
 import { join, relative, dirname, basename } from 'node:path'
 import * as fs from 'fs'
@@ -29,7 +30,11 @@ import {
   logDebug
 } from 'backend/logger'
 
-import { onGameInstalled, onGameUninstalled } from 'backend/relic/game_events'
+import {
+  onGameInstalled,
+  onGameMoved,
+  onGameUninstalled
+} from 'backend/relic/game_events'
 import { zoomPlatformScriptPath } from 'backend/constants/paths'
 import { GlobalConfig } from 'backend/config'
 import { ZoomInstallPlatform, ZoomDownloadFile } from 'common/types/zoom'
@@ -528,14 +533,41 @@ export default class ZoomGame implements Game {
     return false
   }
 
-  async moveInstall(): Promise<
-    { status: 'done' } | { status: 'error'; error: string }
-  > {
-    logWarning(
-      `Move install not implemented for Zoom: ${this.id}`,
-      LogPrefix.Zoom
-    )
-    return { status: 'error', error: 'Move install not implemented' }
+  async moveInstall(
+    newInstallPath: string
+  ): Promise<{ status: 'done' } | { status: 'error'; error: string }> {
+    const gameInfo = this.getGameInfo()
+    logInfo(`Moving ${gameInfo.title} to ${newInstallPath}`, LogPrefix.Zoom)
+
+    const moveResult = await moveOnUnix(newInstallPath, gameInfo)
+
+    if (moveResult.status === 'error') {
+      logError(
+        [
+          'Error moving',
+          gameInfo.title,
+          'to',
+          newInstallPath,
+          moveResult.error
+        ],
+        LogPrefix.Zoom
+      )
+      return { status: 'error', error: moveResult.error }
+    }
+
+    const array = installedGamesStore.get('installed', [])
+    const index = array.findIndex((game) => game.appName === this.id)
+    if (index === -1) {
+      return { status: 'error', error: "Game isn't installed" }
+    }
+
+    array[index].install_path = moveResult.installPath
+    installedGamesStore.set('installed', array)
+    libraryManagerMap['zoom'].refresh()
+
+    await onGameMoved(this, moveResult.installPath)
+
+    return { status: 'done' }
   }
 
   async repair(): Promise<ExecResult> {

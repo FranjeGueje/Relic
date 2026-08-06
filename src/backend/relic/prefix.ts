@@ -3,6 +3,7 @@ import { dirname, join } from 'path'
 import { logInfo, logError } from 'backend/logger'
 import { relicMountPath, relicGamesPath } from 'backend/constants/paths'
 import { getSteamPath } from './steam_shortcuts/steam_helpers'
+import { createGameSymlink } from './steam_shortcuts/add_game'
 import { GlobalConfig } from 'backend/config'
 import { getUmuStoreLabel, searchUmuGameId, launchUmu } from './umu'
 import { windowify } from './windowify'
@@ -16,14 +17,22 @@ export async function preparePrefix(
   installPath: string
 ): Promise<void> {
   if (gameInfo.runner === 'zoom') {
-    symlinkPrefix(steamAppId, installPath)
+    const symlink = createGameSymlink(installPath)
+    if ('error' in symlink) {
+      logError(`Failed to prepare Zoom prefix: ${symlink.error}`, LOG_PREFIX)
+      return
+    }
+    symlinkPrefix(steamAppId, symlink.linkPath)
   } else {
     windowify(gameInfo, installPath)
     await prepareUmuPrefix(gameInfo, installPath, steamAppId)
   }
 }
 
-export function symlinkPrefix(steamAppId: number, installPath: string): void {
+export function symlinkPrefix(
+  steamAppId: number,
+  installPath: string
+): boolean {
   try {
     const steamPath = getSteamPath()
     const compatPath = join(
@@ -41,11 +50,13 @@ export function symlinkPrefix(steamAppId: number, installPath: string): void {
 
     symlinkSync(installPath, compatPath)
     logInfo(`Prefix symlinked: ${compatPath} → ${installPath}`, LOG_PREFIX)
+    return true
   } catch (error) {
     logError(
       `Failed to symlink prefix for Steam ID ${steamAppId}: ${error}`,
       LOG_PREFIX
     )
+    return false
   }
 }
 

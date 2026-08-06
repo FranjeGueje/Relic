@@ -1,24 +1,51 @@
 # Changelog
 
-## 0.5.4 — Update Error Diagnostics
+## 0.5.4 — Update Error Diagnostics & Move Fixes
 
-### Corregido
+### Español
 
-- Credenciales GOG: se loguea `gogdl auth returned empty output - re-login may be required` cuando `gogdl auth` devuelve salida vacía. La causa raíz de los fallos de actualización con mensaje vacío queda visible en los logs.
-- Error message en actualizaciones: `update()` de GOG y Legendary ahora devuelve el error real en lugar de `{ status: 'error' }` sin mensaje. GOG: `error: 'No credentials'` si faltan credenciales, `error: res.error` si la descarga falla. Legendary: `error: res.error`.
-- Propagación del error: `updateQueueElement()` deja de enviar un string vacío y propaga el error real de `update()` en el evento de fallo. Ahora el frontend muestra la causa concreta del fallo de actualización.
+#### Corregido
 
-### Añadido
+- **Credenciales GOG**: se loguea `gogdl auth returned empty output - re-login may be required` cuando `gogdl auth` devuelve salida vacía. La causa raíz de los fallos de actualización con mensaje vacío queda visible en los logs.
+- **Error message en actualizaciones**: `update()` de GOG y Legendary ahora devuelve el error real en lugar de `{ status: 'error' }` sin mensaje.
+  - GOG: `error: 'No credentials'` si faltan credenciales, `error: res.error` si la descarga falla.
+  - Legendary: `error: res.error`.
+- **Propagación del error**: `updateQueueElement()` deja de enviar un string vacío y propaga el error real de `update()` en el evento de fallo. Ahora el frontend muestra la causa concreta del fallo de actualización.
+- **Diseño de Zoom sin indirección estable (causa raíz)**: Zoom era el único runner que apuntaba Steam y `compatdata` **directamente** a la ruta real de instalación, en vez de a través del symlink estable `relicGamesPath/<nombre>` que ya usan GOG/Legendary/Nile. Esto rompía el juego al moverlo: el `execPath` guardado en el shortcut y el symlink de `compatdata/<steamAppId>` quedaban apuntando a una ruta que ya no existía. Ahora `createRunnerFile()` crea ese symlink para Zoom también, y tanto el ejecutable usado por Steam como `compatdata` se construyen a través de él. Mover el juego pasa a ser solo actualizar el destino de un symlink — Steam y `compatdata` no necesitan tocarse nunca.
+- **Persistencia inconsistente al mover juegos**: si la creación del nuevo symlink (`relic/games/<nombre>`) fallaba, `onGameMoved()` seguía guardando la nueva ruta en `steam_shortcuts.json` como si hubiese funcionado. Ahora aborta sin persistir si el symlink no se pudo crear, evitando que el estado guardado quede desincronizado del filesystem real.
+- **`moveInstall()` de Zoom no implementado**: era un stub que devolvía siempre `'Move install not implemented'` sin mover nada, por lo que nunca llegaba a ejecutarse `onGameMoved()`. Ahora mueve los ficheros vía `moveOnUnix()`, actualiza `install_path` en el store de Zoom y llama a `onGameMoved()`, igual que GOG, Legendary y Nile.
+- **Limpieza al desinstalar juegos Zoom**: `onGameUninstalled()` no borraba el symlink de `relicGamesPath` para Zoom (solo el de prefijo). Ahora se borra para todos los runners, sin tocar nunca el ejecutable real del juego.
 
-- Evento `onGameRepaired`: nuevo evento del módulo relic. Tras una reparación exitosa, regenera el runner `.bat` del juego en `~/.local/share/relic/runner/` vía `createRelicBat()`, tomando los datos de `steam_shortcuts.json`. No añade a Steam ni toca prefijos. Se invoca desde el handler `repair` de `main.ts` únicamente cuando no hay error.
-- Grid icon `.ico` → `.png`: el icono de grid de SteamGridDB se guarda como `<appid>_icon.png` en lugar de `<appid>_icon.ico` (extensión hardcodeada en `download.ts` y `delete.ts`).
+#### Añadido
 
-### Verificación
+- **Evento `onGameRepaired`**: nuevo evento del módulo relic. Tras una reparación exitosa, regenera el runner `.bat` del juego en `~/.local/share/relic/runner/` vía `createRelicBat()`, tomando los datos de `steam_shortcuts.json`. No añade a Steam ni toca prefijos. Se invoca desde el handler `repair` de `main.ts` únicamente cuando no hay error.
+- **Grid icon `.ico` → `.png`**: el icono de grid de SteamGridDB se guarda como `<appid>_icon.png` en lugar de `<appid>_icon.ico` (extensión hardcodeada en `download.ts` y `delete.ts`).
+
+### English
+
+#### Fixed
+
+- **GOG credentials**: logs `gogdl auth returned empty output - re-login may be required` when `gogdl auth` returns empty output. The root cause of update failures with empty error messages is now visible in the logs.
+- **Update error messages**: `update()` in GOG and Legendary now returns the real error instead of `{ status: 'error' }` with no message.
+  - GOG: `error: 'No credentials'` if credentials are missing, `error: res.error` if the download fails.
+  - Legendary: `error: res.error`.
+- **Error propagation**: `updateQueueElement()` no longer sends an empty string and propagates the real error from `update()` in the failure event. The frontend now shows the concrete cause of an update failure.
+- **Zoom's design lacked a stable indirection layer (root cause)**: Zoom was the only runner pointing Steam and `compatdata` **directly** at the real install path, instead of through the stable `relicGamesPath/<name>` symlink already used by GOG/Legendary/Nile. This broke the game after moving it: the `execPath` stored in the shortcut and the `compatdata/<steamAppId>` symlink kept pointing at a path that no longer existed. `createRunnerFile()` now creates that symlink for Zoom too, and both the executable Steam launches and `compatdata` are built through it. Moving the game is now just repointing one symlink — Steam and `compatdata` never need to change.
+- **Inconsistent persistence when moving games**: if creating the new symlink (`relic/games/<name>`) failed, `onGameMoved()` still saved the new path to `steam_shortcuts.json` as if it had succeeded. It now aborts without persisting if the symlink couldn't be created, preventing the saved state from drifting out of sync with the actual filesystem.
+- **Zoom's `moveInstall()` was unimplemented**: it was a stub that always returned `'Move install not implemented'` without moving anything, so `onGameMoved()` never actually ran. It now moves the files via `moveOnUnix()`, updates `install_path` in the Zoom store, and calls `onGameMoved()`, just like GOG, Legendary and Nile.
+- **Cleanup on uninstalling Zoom games**: `onGameUninstalled()` didn't remove the `relicGamesPath` symlink for Zoom (only the prefix symlink). It's now removed for every runner, without ever touching the game's real executable.
+
+#### Added
+
+- **`onGameRepaired` event**: new relic module event. After a successful repair, it regenerates the game's runner `.bat` in `~/.local/share/relic/runner/` via `createRelicBat()`, using data from `steam_shortcuts.json`. It does not add to Steam or touch prefixes. It is invoked from the `repair` handler in `main.ts` only when there is no error.
+- **Grid icon `.ico` → `.png`**: the SteamGridDB grid icon is saved as `<appid>_icon.png` instead of `<appid>_icon.ico` (extension hardcoded in `download.ts` and `delete.ts`).
+
+### Verificación / Verification
 
 ```
-codecheck: 0 errores
-lint:      0 errores (694 warnings)
-tests:     130/130 (21 suites)
+codecheck: 0 errors
+lint:      0 errors (704 warnings)
+tests:     139/139 (22 suites)
 ```
 
 ---

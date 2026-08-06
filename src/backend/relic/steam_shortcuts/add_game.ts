@@ -35,7 +35,16 @@ export function createRunnerFile(
 ): { path: string } | { error: string } {
   if (gameInfo.runner === 'zoom') {
     const executable = gameInfo.install.executable
-    return { path: executable ? join(installPath, executable) : '' }
+    if (!executable) {
+      return { error: 'No executable found for Zoom game' }
+    }
+
+    const symlink = createGameSymlink(installPath)
+    if ('error' in symlink) {
+      return { error: symlink.error }
+    }
+
+    return { path: join(symlink.linkPath, executable) }
   }
 
   try {

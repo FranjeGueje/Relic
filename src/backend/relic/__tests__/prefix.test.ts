@@ -32,6 +32,10 @@ jest.mock('../windowify', () => ({
   windowify: jest.fn()
 }))
 
+jest.mock('../steam_shortcuts/add_game', () => ({
+  createGameSymlink: jest.fn()
+}))
+
 jest.mock('backend/config', () => ({
   GlobalConfig: {
     get: jest.fn(() => ({
@@ -51,6 +55,7 @@ const mockedUnlinkSync = jest.mocked(unlinkSync)
 let getSteamPathMock: jest.Mock
 let logError: jest.Mock
 let windowify: jest.Mock
+let createGameSymlink: jest.Mock
 
 beforeEach(() => {
   jest.clearAllMocks()
@@ -62,6 +67,10 @@ beforeEach(() => {
 
   logError = jest.mocked(require('backend/logger').logError)
   windowify = jest.mocked(require('../windowify').windowify)
+  createGameSymlink = jest.mocked(
+    require('../steam_shortcuts/add_game').createGameSymlink
+  )
+  createGameSymlink.mockReturnValue({ linkPath: '/games/zoom-link' })
 
   mockedExistsSync.mockReturnValue(false)
 })
@@ -78,8 +87,9 @@ describe('symlinkPrefix', () => {
   test('creates compatdata symlink when directory does not exist', () => {
     const { symlinkPrefix } = freshPrefix()
 
-    symlinkPrefix(123, '/games/test')
+    const result = symlinkPrefix(123, '/games/test')
 
+    expect(result).toBe(true)
     expect(mockedMkdirSync).toHaveBeenCalled()
     expect(mockedRmSync).not.toHaveBeenCalled()
     expect(mockedSymlinkSync).toHaveBeenCalledWith(
@@ -111,7 +121,11 @@ describe('symlinkPrefix', () => {
       throw new Error('permission denied')
     })
 
-    expect(() => symlinkPrefix(123, '/games/broken')).not.toThrow()
+    let result: boolean | undefined
+    expect(() => {
+      result = symlinkPrefix(123, '/games/broken')
+    }).not.toThrow()
+    expect(result).toBe(false)
     expect(logError).toHaveBeenCalledWith(
       expect.stringContaining('Failed to symlink prefix'),
       'Relic'
@@ -156,19 +170,44 @@ describe('removePrefixSymlink', () => {
 })
 
 describe('preparePrefix', () => {
-  test('calls symlinkPrefix for zoom games', async () => {
+  test('zoom: symlinks the prefix to the relic game symlink, not the raw install path', async () => {
     const { preparePrefix } = freshPrefix()
+    createGameSymlink = jest.mocked(
+      require('../steam_shortcuts/add_game').createGameSymlink
+    )
+    createGameSymlink.mockReturnValue({ linkPath: '/games/zoom' })
 
     await preparePrefix(
       { title: 'ZoomGame', app_name: 'zoom_app', runner: 'zoom' } as never,
       123,
-      '/games/zoom'
+      '/mnt/disk2/ZoomGame'
     )
 
+    expect(createGameSymlink).toHaveBeenCalledWith('/mnt/disk2/ZoomGame')
     expect(mockedMkdirSync).toHaveBeenCalled()
     expect(mockedSymlinkSync).toHaveBeenCalledWith(
       '/games/zoom',
       '/steam/steamapps/compatdata/123'
+    )
+  })
+
+  test('zoom: does not symlink the prefix when the game symlink fails', async () => {
+    const { preparePrefix } = freshPrefix()
+    createGameSymlink = jest.mocked(
+      require('../steam_shortcuts/add_game').createGameSymlink
+    )
+    createGameSymlink.mockReturnValue({ error: 'permission denied' })
+
+    await preparePrefix(
+      { title: 'ZoomGame', app_name: 'zoom_app', runner: 'zoom' } as never,
+      123,
+      '/mnt/disk2/ZoomGame'
+    )
+
+    expect(mockedSymlinkSync).not.toHaveBeenCalled()
+    expect(logError).toHaveBeenCalledWith(
+      expect.stringContaining('Failed to prepare Zoom prefix'),
+      'Relic'
     )
   })
 

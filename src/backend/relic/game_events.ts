@@ -235,6 +235,7 @@ export async function onGameMoved(
     logInfo(`Created symlink: ${newLink} -> ${newInstallPath}`, LOG_PREFIX)
   } catch (e) {
     logError(`Failed to create symlink ${newLink}: ${e}`, LOG_PREFIX)
+    return
   }
 
   addShortcut(
@@ -257,26 +258,24 @@ export async function onGameUninstalled(game: Game) {
     if (known?.steamAppId) {
       removePrefixSymlink(known.steamAppId)
     }
-  } else {
-    if (known?.execPath) {
-      try {
-        if (existsSync(known.execPath)) {
-          unlinkSync(known.execPath)
-          logInfo(`Deleted ${known.execPath}`, LOG_PREFIX)
-        }
-      } catch (e) {
-        logError(`Failed to delete ${known.execPath}: ${e}`, LOG_PREFIX)
+  } else if (known?.execPath) {
+    try {
+      if (existsSync(known.execPath)) {
+        unlinkSync(known.execPath)
+        logInfo(`Deleted ${known.execPath}`, LOG_PREFIX)
       }
+    } catch (e) {
+      logError(`Failed to delete ${known.execPath}: ${e}`, LOG_PREFIX)
     }
+  }
 
-    if (known?.installPath) {
-      const linkPath = join(relicGamesPath, basename(known.installPath))
-      try {
-        unlinkSync(linkPath)
-        logInfo(`Deleted symlink ${linkPath}`, LOG_PREFIX)
-      } catch {
-        // Symlink already removed or never existed
-      }
+  if (known?.installPath) {
+    const linkPath = join(relicGamesPath, basename(known.installPath))
+    try {
+      unlinkSync(linkPath)
+      logInfo(`Deleted symlink ${linkPath}`, LOG_PREFIX)
+    } catch {
+      // Symlink already removed or never existed
     }
   }
 

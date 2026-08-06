@@ -454,7 +454,7 @@ describe('onGameUninstalled', () => {
     expect(mockedRemoveShortcut).toHaveBeenCalledWith('untracked')
   })
 
-  test('zoom games remove prefix symlink instead of bat file', async () => {
+  test('zoom games remove prefix symlink and the relic game symlink, but not the executable', async () => {
     mockGetGameInfo.mockReturnValue({
       title: 'ZoomGame',
       app_name: 'zoom_app',
@@ -466,13 +466,19 @@ describe('onGameUninstalled', () => {
       appId: 'zoom_app',
       store: 'zoom',
       steamAppId: 999,
-      execPath: '/games/zoom/start.sh',
+      execPath: '/home/user/.local/share/relic/games/zoom/drive_c/game.exe',
       installPath: '/games/zoom'
     })
 
     await onGameUninstalled(mockGame as never)
 
     expect(mockedRemovePrefixSymlink).toHaveBeenCalledWith(999)
+    expect(mockedUnlinkSync).toHaveBeenCalledWith(
+      expect.stringContaining('relic/games/zoom')
+    )
+    expect(mockedUnlinkSync).not.toHaveBeenCalledWith(
+      '/home/user/.local/share/relic/games/zoom/drive_c/game.exe'
+    )
     expect(mockedDeleteGrids).toHaveBeenCalledWith(999)
     expect(mockedRemoveShortcut).toHaveBeenCalledWith('zoom_app')
   })
@@ -589,6 +595,72 @@ describe('onGameMoved', () => {
     expect(mockedUnlinkSync).not.toHaveBeenCalled()
     expect(mockedSymlinkSync).not.toHaveBeenCalled()
     expect(mockedAddShortcut).not.toHaveBeenCalled()
+  })
+
+  test('does not persist the new path when the symlink swap fails', async () => {
+    mockGetGameInfo.mockReturnValue({
+      title: 'MovedGame',
+      app_name: 'moved_app',
+      runner: 'gog',
+      install: { install_path: '/games/old' }
+    })
+
+    mockedFindShortcut.mockReturnValue({
+      gameName: 'MovedGame',
+      appId: 'moved_app',
+      store: 'gog',
+      steamAppId: 123,
+      execPath: '/games/old/MovedGame.bat',
+      installPath: '/games/old'
+    })
+
+    mockedSymlinkSync.mockImplementation(() => {
+      throw new Error('permission denied')
+    })
+
+    await onGameMoved(mockGame as never, '/games/new')
+
+    expect(mockedAddShortcut).not.toHaveBeenCalled()
+  })
+
+  test('zoom: swaps the relic game symlink like any other runner, execPath stays unchanged', async () => {
+    // execPath/compatdata now route through the stable relicGamesPath/<name>
+    // symlink (see prefix.ts/add_game.ts), so a move only needs to repoint
+    // that one symlink — nothing Zoom-specific left to do here.
+    mockGetGameInfo.mockReturnValue({
+      title: 'ZoomGame',
+      app_name: 'zoom_app',
+      runner: 'zoom',
+      install: { install_path: '/games/old-zoom' }
+    })
+
+    mockedFindShortcut.mockReturnValue({
+      gameName: 'ZoomGame',
+      appId: 'zoom_app',
+      store: 'zoom',
+      steamAppId: 456,
+      execPath:
+        '/home/user/.local/share/relic/games/old-zoom/drive_c/Game/game.exe',
+      installPath: '/games/old-zoom'
+    })
+
+    await onGameMoved(mockGame as never, '/games/new-zoom')
+
+    expect(mockedUnlinkSync).toHaveBeenCalledWith(
+      expect.stringContaining('relic/games/old-zoom')
+    )
+    expect(mockedSymlinkSync).toHaveBeenCalledWith(
+      '/games/new-zoom',
+      expect.stringContaining('relic/games/new-zoom')
+    )
+    expect(mockedAddShortcut).toHaveBeenCalledWith(
+      'ZoomGame',
+      'zoom_app',
+      'zoom',
+      456,
+      '/games/new-zoom',
+      '/home/user/.local/share/relic/games/old-zoom/drive_c/Game/game.exe'
+    )
   })
 })
 
