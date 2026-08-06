@@ -35,3 +35,6 @@ vite-plugin-electron.log
 .env
 
 playwright-report
+
+# herramientas personales, no forman parte del repo
+/release.sh
