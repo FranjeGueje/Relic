@@ -59,6 +59,11 @@ Relic NO debe lanzar juegos.
 
 # Flujo de instalación
 
+Resumen de alto nivel para contribuidores. El diagrama técnico detallado
+(symlinks, windowify, prefix, grids, repair) vive en `README.md` →
+"How Steam Integration Works" y es la fuente canónica: al cambiar el flujo,
+actualizar ese diagrama primero y enlazarlo desde aquí si hace falta más detalle.
+
 Instalar juego
 
 ↓
@@ -342,6 +347,10 @@ Más estabilidad.
 
 - `HISTORY_REMOVE.md` — documenta todo el código eliminado durante el proceso de limpieza del fork.
 - `HISTORY_ADD.md` — registra cada funcionalidad nueva o modificada respecto a Heroic que se añada en el futuro.
+
+Ambos son tablas planas que crecen indefinidamente. Si superan un tamaño incómodo
+de mantener (referencia: >1000 líneas), considerar archivarlas por versión en vez
+de seguir añadiendo filas a una tabla única.
 
 # Objetivo final
 

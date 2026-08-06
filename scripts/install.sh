@@ -5,7 +5,7 @@ set -euo pipefail
 
 # ── Dependencias ──
 MISSING=()
-for cmd in curl xxd xdg-open; do
+for cmd in curl xxd xdg-open sha512sum base64; do
     if ! command -v "$cmd" &>/dev/null; then
         MISSING+=("$cmd")
     fi
@@ -36,7 +36,30 @@ APPIMAGE_URL="https://github.com/FranjeGueje/Relic/releases/download/${TAG}/Reli
 
 echo "Descargando $APPIMAGE_URL..."
 mkdir -p "$BIN_DIR"
-curl -fL -# -o "$BIN_DIR/relic.AppImage" "$APPIMAGE_URL"
+DOWNLOAD_TMP="$(mktemp)"
+curl -fL -# -o "$DOWNLOAD_TMP" "$APPIMAGE_URL"
+
+# ── Verificación de integridad (sha512, publicado por electron-builder) ──
+CHECKSUM_URL="https://github.com/FranjeGueje/Relic/releases/download/${TAG}/latest-linux.yml"
+CHECKSUM_TMP="$(mktemp)"
+if curl -fsL -o "$CHECKSUM_TMP" "$CHECKSUM_URL" 2>/dev/null; then
+    EXPECTED_SHA=$(grep -m1 '^sha512:' "$CHECKSUM_TMP" | awk '{print $2}')
+    ACTUAL_HEX=$(sha512sum "$DOWNLOAD_TMP" | cut -d' ' -f1)
+    ACTUAL_SHA=$(echo -n "$ACTUAL_HEX" | xxd -r -p | base64 -w0)
+
+    if [ -z "$EXPECTED_SHA" ] || [ "$ACTUAL_SHA" != "$EXPECTED_SHA" ]; then
+        rm -f "$DOWNLOAD_TMP" "$CHECKSUM_TMP"
+        echo "Error: la suma sha512 del AppImage no coincide con la publicada en la release." >&2
+        echo "La descarga puede estar corrupta o manipulada. Instalación abortada." >&2
+        exit 1
+    fi
+    echo "Verificación sha512 OK."
+else
+    echo "Aviso: no se encontró 'latest-linux.yml' en la release; no se pudo verificar la integridad del AppImage." >&2
+fi
+rm -f "$CHECKSUM_TMP"
+
+mv "$DOWNLOAD_TMP" "$BIN_DIR/relic.AppImage"
 chmod +x "$BIN_DIR/relic.AppImage"
 echo "AppImage instalado en $BIN_DIR/relic.AppImage"
 

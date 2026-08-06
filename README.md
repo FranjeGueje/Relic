@@ -59,39 +59,39 @@ You save as much RAM as possible for the game itself.
 
 ## Español
 
-### Qué es Relic?
+### ¿Qué es Relic?
 
-Conoces Heroic Games Launcher: lo instalas, inicias sesion en Epic, GOG o Amazon,
+Conoces Heroic Games Launcher: lo instalas, inicias sesión en Epic, GOG o Amazon,
 descargas un juego y le das a Jugar. Heroic se encarga de todo: Wine, Proton, prefijos,
 opciones de lanzamiento, todo.
 
 Relic es diferente.
 
-Relic hace la **misma parte de descargar e instalar**, pero ahi se detiene. Nunca
+Relic hace la **misma parte de descargar e instalar**, pero ahí se detiene. Nunca
 ejecuta tu juego. En su lugar, se lo entrega a Steam. Crea un acceso directo, prepara
 todo para que Steam pueda ejecutarlo, y tu juego aparece en tu biblioteca de Steam
 — igual que cualquier otro juego de Steam. Lo lanzas desde Steam, no desde Relic.
 
 Esto significa:
 
-- Sin pantallas de configuracion de Wine/Proton. Relic no tiene ninguna.
-- Sin gestion de prefijos. Relic deja que Steam y umu-launcher lo manejen.
+- Sin pantallas de configuración de Wine/Proton. Relic no tiene ninguna.
+- Sin gestión de prefijos. Relic deja que Steam y umu-launcher lo manejen.
 - Sin opciones de lanzamiento por juego. Steam tiene las suyas.
-- Sin boton "Anadir a Steam". Ocurre automaticamente.
+- Sin botón "Añadir a Steam". Ocurre automáticamente.
 
-Relic es un instalador que alimenta juegos a Steam. Nada mas.
+Relic es un instalador que alimenta juegos a Steam. Nada más.
 
-### Por que usaria esto?
+### ¿Por qué usaría esto?
 
 Si ya vives en Steam — si usas Steam Input, Steam Overlay, Steam Cloud, Game Recording,
 Remote Play, o simplemente te gusta tener todo en un mismo sitio — Relic te da todo eso
-para tus juegos que no son de Steam tambien. Sin lanzadores adicionales, sin cambiar de
-aplicacion. Solo instalas y juegas desde Steam.
+para tus juegos que no son de Steam también. Sin lanzadores adicionales, sin cambiar de
+aplicación. Solo instalas y juegas desde Steam.
 
-Y cuando lanzas un juego desde Steam, Relic no esta involucrado en absoluto. Steam
+Y cuando lanzas un juego desde Steam, Relic no está involucrado en absoluto. Steam
 ejecuta el lanzador de la tienda correspondiente (legendary.exe, gogdl.exe, nile.exe)
-directamente dentro del prefijo de Proton — sin una aplicacion Electron ocupando
-memoria, sin procesos en segundo plano. Ahorras la maxima cantidad de RAM posible
+directamente dentro del prefijo de Proton — sin una aplicación Electron ocupando
+memoria, sin procesos en segundo plano. Ahorras la máxima cantidad de RAM posible
 para el juego.
 
 ---
@@ -242,6 +242,13 @@ After adding the game, Relic downloads artwork from SteamGridDB for all Steam us
 - Icon
 
 A SteamGridDB API key is required in settings.
+
+### Repair flow
+
+Repairing a game never touches Steam or the prefix. If the repair completes without
+error, Relic only regenerates the `.bat` runner file in `~/.local/share/relic/runner/`
+(via `createRelicBat()`), using the data already stored in `steam_shortcuts.json`.
+Zoom Platform games and games that aren't tracked in Steam are skipped.
 
 ### Uninstall cleanup
 

@@ -2,6 +2,10 @@
 
 Auditoría completa de dependencias de Relic v0.4.0. Cada fase es independiente y se verifica con `pnpm codecheck`, `pnpm lint`, `pnpm test` e `pnpm prettier`.
 
+> **Última revisión**: 2026-08-06, contra Relic v0.5.4. El bloqueo de Fase 7/8 (React 19,
+> MUI 9) y las versiones de `typescript-eslint`/`eslint-plugin-react` de Fase 9 no se han
+> reverificado desde entonces — comprobar `package.json` antes de asumir que siguen vigentes.
+
 ---
 
 ## Fase 1 — Limpieza (bajo riesgo, alta ganancia) ✅ COMPLETADO
