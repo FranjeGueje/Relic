@@ -71,6 +71,18 @@ SCRIPT
 chmod +x "$BIN_DIR/Relic"
 echo "Wrapper creado en $BIN_DIR/Relic"
 
+echo ""
+read -r -p "¿Añadir Relic a Steam ahora? [S/n] // Add Relic to Steam now? [Y/n] " ADD_TO_STEAM_REPLY </dev/tty
+case "$ADD_TO_STEAM_REPLY" in
+    [nN])
+        echo ""
+        echo "Relic instalado correctamente. // Relic installed correctly"
+        echo "Puedes añadirlo a Steam más tarde añadiendo: $BIN_DIR/Relic"
+        echo "You can add it to Steam later by adding: $BIN_DIR/Relic"
+        exit 0
+        ;;
+esac
+
 # ── 3. Añadir a Steam ──
 urlencode() {
     local string="$1"
