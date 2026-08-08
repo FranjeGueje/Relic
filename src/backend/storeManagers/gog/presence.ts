@@ -1,5 +1,5 @@
-import { app } from 'electron'
 import { logError, logInfo, LogPrefix } from 'backend/logger'
+import { relicVersion } from 'backend/constants/others'
 import { axiosClient } from 'backend/utils'
 import { GOGUser } from './user'
 import { isOnline } from 'backend/online_monitor'
@@ -36,7 +36,7 @@ async function setPresence() {
       application_type: 'Relic',
       force_update: false,
       presence: 'online',
-      version: app.getVersion(),
+      version: relicVersion,
       game_id: undefined
     }
 

@@ -95,6 +95,7 @@ import {
   isPackaged,
   isSteamDeckGameMode
 } from './constants/environment'
+import { relicVersion } from './constants/others'
 import {
   configPath,
   gamesConfigPath,
@@ -478,7 +479,7 @@ addHandler('getEpicGamesStatus', async () => isEpicServiceOffline())
 
 addHandler('getMaxCpus', () => cpus().length)
 
-addHandler('getRelicVersion', () => app.getVersion())
+addHandler('getRelicVersion', () => relicVersion)
 addHandler('isFullscreen', () => isSteamDeckGameMode || isCLIFullscreen)
 
 addHandler('showUpdateSetting', () => true)

@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { SGDBGame, SGDBGrid } from 'common/types'
-import { app } from 'electron'
+import { relicUserAgent } from 'backend/constants/others'
 
 const SGDB_API_URL = 'https://www.steamgriddb.com/api/v2'
 
@@ -10,7 +10,7 @@ interface SGDBResponse<T> {
   errors?: string[]
 }
 
-const userAgent = `Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Relic/${app.getVersion()}`
+const userAgent = relicUserAgent
 
 /**
  * Search for a game using autocomplete.

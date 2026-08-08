@@ -1,11 +1,11 @@
 import axios from 'axios'
 import { searchGame, getGrids } from '../utils'
-import { app } from 'electron'
+import { relicUserAgent } from 'backend/constants/others'
 
 jest.mock('axios')
 const mockedAxios = axios as jest.Mocked<typeof axios>
 
-const userAgent = `Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Relic/${app.getVersion()}`
+const userAgent = relicUserAgent
 
 describe('SteamGridDB Utils', () => {
   const apiKey = 'test-api-key'

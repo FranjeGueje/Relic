@@ -20,10 +20,17 @@ un cliente que habla con él por API.
   `app.asar`). Con esto **`constants/paths.ts` deja de importar `electron` por
   completo**. `main.ts` usa el mismo `isPackaged` compartido, para que no haya dos
   definiciones de "empaquetado" que puedan divergir.
-- **4 ficheros dejan de importar `electron` por completo**:
-  `constants/paths.ts`, `storeManagers/zoom/constants.ts`,
-  `storeManagers/nile/library.ts` y `migration/migrations/legendary.ts`.
-  Acoplamiento a Electron en el backend: 24 → 20 ficheros.
+- **Shim de `app.getVersion()`**: nuevos `relicVersion` y `relicUserAgent` en
+  `constants/others.ts`, derivados de `package.json`. El bundler resuelve el import
+  en build time (queda inlineado como constante), así que no hay acceso a filesystem
+  en runtime ni dependencia de Electron. De paso unifica el User-Agent, que estaba
+  duplicado literalmente en `steamgrid/utils.ts` y `relic/steamgrid/api.ts`.
+- **10 ficheros dejan de importar `electron` por completo**: `constants/paths.ts`,
+  `storeManagers/zoom/constants.ts`, `storeManagers/nile/library.ts`,
+  `migration/migrations/legendary.ts`, `utils/systeminfo/relicVersion.ts`,
+  `storeManagers/gog/presence.ts`, `storeManagers/gog/user.ts`,
+  `utils/inet/downloader/index.ts`, `steamgrid/utils.ts` y `relic/steamgrid/api.ts`.
+  Acoplamiento a Electron en el backend: **24 → 14 ficheros**.
 - **Código muerto eliminado**: el ternario `isLinux ? ... : ...` de la migración de
   legendary tenía una rama inalcanzable (`isLinux` es `true` fijo en un proyecto
   Linux-only). Colapsado, junto con los imports de `isLinux` y `userHome` que
@@ -89,9 +96,18 @@ it over an API.
   `app.asar`). With it, **`constants/paths.ts` no longer imports `electron` at
   all**. `main.ts` uses the same shared `isPackaged`, so there aren't two
   definitions of "packaged" that can drift apart.
-- **4 files no longer import `electron` at all**: `constants/paths.ts`,
-  `storeManagers/zoom/constants.ts`, `storeManagers/nile/library.ts` and
-  `migration/migrations/legendary.ts`. Backend Electron coupling: 24 → 20 files.
+- **`app.getVersion()` shim**: new `relicVersion` and `relicUserAgent` in
+  `constants/others.ts`, derived from `package.json`. The bundler resolves the
+  import at build time (it ends up inlined as a constant), so there's no runtime
+  filesystem access and no Electron dependency. It also unifies the User-Agent,
+  which was duplicated verbatim in `steamgrid/utils.ts` and
+  `relic/steamgrid/api.ts`.
+- **10 files no longer import `electron` at all**: `constants/paths.ts`,
+  `storeManagers/zoom/constants.ts`, `storeManagers/nile/library.ts`,
+  `migration/migrations/legendary.ts`, `utils/systeminfo/relicVersion.ts`,
+  `storeManagers/gog/presence.ts`, `storeManagers/gog/user.ts`,
+  `utils/inet/downloader/index.ts`, `steamgrid/utils.ts` and
+  `relic/steamgrid/api.ts`. Backend Electron coupling: **24 → 14 files**.
 - **Dead code removed**: the `isLinux ? ... : ...` ternary in the legendary
   migration had an unreachable branch (`isLinux` is hardcoded `true` in a
   Linux-only project). Collapsed, along with the now-unused `isLinux` and

@@ -1,8 +1,8 @@
-import { app } from 'electron'
 import pkg_json from 'backend/../../package.json'
+import { relicVersion } from 'backend/constants/others'
 
 function getRelicVersion(): string {
-  const VERSION_NUMBER = app.getVersion()
+  const VERSION_NUMBER = relicVersion
   const BETA_VERSION_NAME = pkg_json.versionNames.beta
   const STABLE_VERSION_NAME = pkg_json.versionNames.stable
   const isBetaOrAlpha =

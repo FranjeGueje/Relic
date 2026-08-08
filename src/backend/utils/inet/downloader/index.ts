@@ -1,6 +1,6 @@
 import axios, { AxiosError, AxiosRequestConfig } from 'axios'
 import { writeFile, stat, readFile } from 'fs/promises'
-import { app } from 'electron'
+import { relicVersion } from 'backend/constants/others'
 
 type JSONValue = string | number | unknown[] | { [key: string]: JSONValue }
 
@@ -68,7 +68,7 @@ async function downloadFile(
     .get(url, {
       ...options.axiosConfig,
       headers: {
-        'User-Agent': `Relic/${app.getVersion()}`,
+        'User-Agent': `Relic/${relicVersion}`,
         ...options.axiosConfig?.headers
       }
     })
