@@ -60,9 +60,15 @@ import GOGGame from './games'
 import type { LibraryManager } from 'common/types/game_manager'
 import { libraryManagerMap } from '../index'
 import { readdir } from 'fs/promises'
+import { shareInFlight } from 'backend/utils/inflight'
 
 const library: Map<string, GameInfo> = new Map()
 const installedGames: Map<string, InstalledInfo> = new Map()
+
+const installInfoInFlight = new Map<
+  string,
+  Promise<GogInstallInfo | undefined>
+>()
 
 export default class GOGLibraryManager implements LibraryManager {
   private readonly gameCache: Map<string, GOGGame> = new Map()
@@ -635,6 +641,30 @@ export default class GOGLibraryManager implements LibraryManager {
       }
     }
 
+    // installInfoStore is only written once the fetch finishes, so without this
+    // two concurrent callers would both miss the cache and both spawn gogdl.
+    // Keyed by the same composite key as the cache, so different
+    // platform/branch/build combinations stay independent.
+    return shareInFlight(installInfoInFlight, installInfoStoreKey, () =>
+      this.fetchInstallInfo(
+        appName,
+        installPlatform,
+        branch,
+        build,
+        privateBranchPassword,
+        installInfoStoreKey
+      )
+    )
+  }
+
+  private async fetchInstallInfo(
+    appName: string,
+    installPlatform: string,
+    branch: string,
+    build: string | undefined,
+    privateBranchPassword: string,
+    installInfoStoreKey: string
+  ): Promise<GogInstallInfo | undefined> {
     if (!isOnline) {
       logWarning('App offline, unable to get install info')
       return

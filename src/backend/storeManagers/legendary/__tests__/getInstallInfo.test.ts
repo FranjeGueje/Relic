@@ -75,4 +75,52 @@ describe('LegendaryLibraryManager.getInstallInfo', () => {
     expect(result).toBeDefined()
     expect(result.manifest).toBeDefined()
   })
+
+  it('should run legendary once for concurrent callers on the same game', async () => {
+    // installStore is only written after the fetch finishes, so concurrent
+    // callers used to both miss the cache and both spawn legendary
+    const validResponse = {
+      stdout: JSON.stringify({
+        manifest: { download_size: 1000, disk_size: 2000 },
+        game: { app_name: 'test-game', title: 'Test' }
+      }),
+      stderr: '',
+      error: undefined,
+      abort: false
+    }
+    manager.runRunnerCommand = jest.fn().mockResolvedValue(validResponse)
+
+    const results = await Promise.all([
+      manager.getInstallInfo('test-game', 'Windows'),
+      manager.getInstallInfo('test-game', 'Windows'),
+      manager.getInstallInfo('test-game', 'Windows')
+    ])
+
+    expect(manager.runRunnerCommand).toHaveBeenCalledTimes(1)
+    results.forEach((result) => expect(result.manifest).toBeDefined())
+  })
+
+  it('should keep different games independent', async () => {
+    const response = (appName: string) => ({
+      stdout: JSON.stringify({
+        manifest: { download_size: 1, disk_size: 2 },
+        game: { app_name: appName, title: appName }
+      }),
+      stderr: '',
+      error: undefined,
+      abort: false
+    })
+    manager.runRunnerCommand = jest
+      .fn()
+      .mockImplementation((command: { appName: string }) =>
+        Promise.resolve(response(command.appName))
+      )
+
+    await Promise.all([
+      manager.getInstallInfo('game-a', 'Windows'),
+      manager.getInstallInfo('game-b', 'Windows')
+    ])
+
+    expect(manager.runRunnerCommand).toHaveBeenCalledTimes(2)
+  })
 })

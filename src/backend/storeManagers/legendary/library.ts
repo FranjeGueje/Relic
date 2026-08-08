@@ -41,12 +41,15 @@ import { runLegendaryCommandStub } from './e2eMock'
 import { legendaryConfigPath, legendaryMetadata } from './constants'
 import { LibraryManager } from 'common/types/game_manager'
 import LegendaryGame from './games'
+import { shareInFlight } from 'backend/utils/inflight'
 
 const fallBackImage = 'fallback'
 
 const allGames: Set<string> = new Set()
 let installedGames: Map<string, InstalledJsonMetadata> = new Map()
 const library: Map<string, GameInfo> = new Map()
+
+const installInfoInFlight = new Map<string, Promise<LegendaryInstallInfo>>()
 
 export default class LegendaryLibraryManager implements LibraryManager {
   private readonly gameCache: Map<LegendaryAppName, LegendaryGame> = new Map()
@@ -213,13 +216,27 @@ export default class LegendaryLibraryManager implements LibraryManager {
     installPlatform: InstallPlatform,
     options?: { retries?: number }
   ): Promise<LegendaryInstallInfo> {
-    const retries = options?.retries
-
     const cache = installStore.get(appName)
     if (cache && cache.manifest) {
       logDebug('Using cached install info', LogPrefix.Legendary)
       return cache
     }
+
+    // installStore is only written once the fetch finishes, so without this two
+    // concurrent callers would both miss the cache and both spawn legendary.
+    // The retries below deliberately re-enter fetchInstallInfo and not this
+    // method, which would otherwise wait on its own in-flight promise forever.
+    return shareInFlight(installInfoInFlight, appName, () =>
+      this.fetchInstallInfo(appName, installPlatform, options)
+    )
+  }
+
+  private async fetchInstallInfo(
+    appName: string,
+    installPlatform: InstallPlatform,
+    options?: { retries?: number }
+  ): Promise<LegendaryInstallInfo> {
+    const retries = options?.retries
 
     logInfo(`Getting more details with 'legendary info'`, LogPrefix.Legendary)
     const command: LegendaryCommand = {
@@ -243,7 +260,7 @@ export default class LegendaryLibraryManager implements LibraryManager {
           `Empty response from legendary for ${appName}. Retrying (${nextRetry} left).`,
           LogPrefix.Legendary
         )
-        return this.getInstallInfo(appName, installPlatform, {
+        return this.fetchInstallInfo(appName, installPlatform, {
           retries: nextRetry
         })
       }
@@ -262,7 +279,7 @@ export default class LegendaryLibraryManager implements LibraryManager {
           logWarning(
             `Install info for ${appName} does not include manifest data. Retrying.`
           )
-          const retriedInfo = await this.getInstallInfo(
+          const retriedInfo = await this.fetchInstallInfo(
             appName,
             installPlatform,
             {

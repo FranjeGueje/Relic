@@ -25,6 +25,9 @@ import { runNileCommandStub } from './e2eMock'
 import { nileConfigPath, nileInstalled, nileLibrary } from './constants'
 import NileGame from './games'
 import type { LibraryManager } from 'common/types/game_manager'
+import { shareInFlight } from 'backend/utils/inflight'
+
+const installInfoInFlight = new Map<string, Promise<NileInstallInfo>>()
 
 export default class NileLibraryManager implements LibraryManager {
   private installedGames: Map<string, NileInstallMetadataInfo> = new Map()
@@ -325,6 +328,14 @@ export default class NileLibraryManager implements LibraryManager {
       return cache
     }
 
+    // installStore is only written once the fetch finishes, so without this two
+    // concurrent callers would both miss the cache and both spawn nile
+    return shareInFlight(installInfoInFlight, appName, () =>
+      this.fetchInstallInfo(appName)
+    )
+  }
+
+  private async fetchInstallInfo(appName: string): Promise<NileInstallInfo> {
     logInfo('Getting more details', LogPrefix.Nile)
     this.refreshInstalled()
 
