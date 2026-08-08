@@ -1,11 +1,11 @@
 import { existsSync, unlinkSync, mkdirSync, symlinkSync } from 'fs'
-import { shell } from 'electron'
 import { Game } from 'common/types/game_manager'
 import { GameInfo } from 'common/types'
 import { basename, join } from 'path'
 import { libraryManagerMap } from 'backend/storeManagers'
 import { relicGamesPath } from 'backend/constants/paths'
 import { logError, logInfo, logWarning } from 'backend/logger'
+import { openExternal } from 'backend/utils/open_external'
 import {
   addGameToSteam,
   createRelicBat,
@@ -89,7 +89,7 @@ async function installLinuxNative(
 
     await downloadGrids(gameInfo, result.steamAppId)
 
-    shell.openExternal(`steam://gameproperties/${result.steamAppId}`)
+    void openExternal(`steam://gameproperties/${result.steamAppId}`)
   }
 
   return result
@@ -156,7 +156,7 @@ export async function onGameInstalled(
 
     await downloadGrids(gameInfo, result.steamAppId)
 
-    shell.openExternal(`steam://gameproperties/${result.steamAppId}`)
+    void openExternal(`steam://gameproperties/${result.steamAppId}`)
   }
 
   return result

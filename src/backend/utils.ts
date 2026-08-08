@@ -34,6 +34,7 @@ import {
 } from './storeManagers/nile/electronStores'
 import { formatBytes } from 'common/formatBytes'
 import { showDialogBoxModalAuto, askQuestion, notify } from './dialog/dialog'
+import { openExternal } from './utils/open_external'
 import { getMainWindow } from './main_window'
 import { sendFrontendMessage } from './ipc'
 import { GlobalConfig } from './config'
@@ -152,7 +153,13 @@ async function isEpicServiceOffline(
       }
     }
 
-    notify(offlineNotification)
+    // Epic's status page did not list the component at all, so there is nothing
+    // to report. This used to notify the user that the store was offline while
+    // returning "not offline" at the same time.
+    logWarning(
+      `Epic status API did not list "${type}", assuming it is online`,
+      LogPrefix.Backend
+    )
     return false
   } catch (error) {
     logError(
@@ -293,11 +300,10 @@ function removeSpecialcharacters(text: string): string {
   return text.replaceAll(regexp, '')
 }
 
-async function openUrlOrFile(url: string): Promise<string | void> {
-  if (url.startsWith('http')) {
-    return shell.openExternal(url)
-  }
-  return shell.openPath(url)
+async function openUrlOrFile(url: string): Promise<void> {
+  // xdg-open handles URLs and local paths alike, so the `http` check that used
+  // to pick between shell.openExternal and shell.openPath is gone.
+  return openExternal(url)
 }
 
 function clearCache(
