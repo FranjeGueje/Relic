@@ -84,7 +84,6 @@
     "link": "Downloads",
     "title": "Downloads"
   },
-  "epic": {},
   "Epic Games": "Epic Games",
   "error": "Error",
   "favourites": "Favourites",
@@ -192,54 +191,6 @@
     "zoom": ""
   },
   "message": {},
-  "notify": {
-    "error": {
-      "move": "Error Moving the Game",
-      "reparing": "Error Repairing"
-    },
-    "finished": {
-      "add": {
-        "steam": {
-          "corrupt": "{{game}} could not be added to all found Steam users. See logs for more info. A restart of Steam is required for changes to take effect.",
-          "success": "{{game}} was successfully added to Steam. A restart of Steam is required for changes to take effect.",
-          "title": "Added to Steam"
-        }
-      },
-      "remove": {
-        "steam": {
-          "corrupt": "{{game}} could not be removed from all found Steam users. See logs for more info. A restart of Steam is required for changes to take effect.",
-          "success": "{{game}} was successfully removed from Steam. A restart of Steam is required for changes to take effect.",
-          "title": "Removed from Steam"
-        }
-      },
-      "reparing": "Klaar met de reparatie"
-    },
-    "install": {
-      "canceled": "Installatie geannuleerd",
-      "error": "Installatie mislukt",
-      "finished": "Installatie is voltooid",
-      "imported": "Game Imported",
-      "startInstall": "Installation Started",
-      "failed": "Installatie mislukt",
-      "paused": "Installatie onderbroken"
-    },
-    "moved": "Klaar met verplaatsing",
-    "moving": "Moving Game",
-    "refresh": {
-      "error": "Couldn't fetch releases from upstream, maybe because of Github API restrictions! Try again later."
-    },
-    "uninstalled": "Verwijderd",
-    "update": {
-      "canceled": "Update geannuleerd",
-      "finished": "Update is voltooid",
-      "started": "Update Started",
-      "paused": "Bijwerken onderbroken",
-      "failed": "Update mislukt"
-    },
-    "import": {
-      "failed": "Importeren Gefaald"
-    }
-  },
   "offline-message": {
     "hint": "We controleren de connectiviteit met:{{newline}}github.com,{{newline}}gog.com,{{newline}}store.epicgames.com en{{newline}}cloudflare-dns.com.",
     "ignore": "Ignore",
@@ -371,7 +322,6 @@
     "allGames": "Alle Spellen"
   },
   "tray": {
-    "about": "Over",
     "quit": "Stoppen",
     "reload": "Herladen",
     "show": "Tonen"

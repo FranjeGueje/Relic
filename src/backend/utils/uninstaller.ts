@@ -1,6 +1,5 @@
 import { GlobalConfig } from 'backend/config'
 import { fixesPath, gamesConfigPath } from 'backend/constants/paths'
-import { notify } from 'backend/dialog/dialog'
 import { logError, logInfo, LogPrefix } from 'backend/logger'
 import { libraryManagerMap } from 'backend/storeManagers'
 import { sendGameStatusUpdate } from 'backend/utils'
@@ -8,7 +7,6 @@ import { Runner } from 'common/types'
 import { storeMap } from 'common/utils'
 import { Event } from 'electron'
 import { existsSync, rmSync } from 'fs'
-import i18next from 'i18next'
 import { join } from 'path'
 
 export const removePrefix = async (appName: string, runner: Runner) => {
@@ -75,7 +73,6 @@ export const uninstallGameCallback = async (
   })
 
   const game = libraryManagerMap[runner].getGame(appName)
-  const { title } = game.getGameInfo()
 
   let uninstalled = false
 
@@ -83,10 +80,6 @@ export const uninstallGameCallback = async (
     await game.uninstall({ shouldRemovePrefix })
     uninstalled = true
   } catch (error) {
-    notify({
-      title,
-      body: i18next.t('notify.uninstalled.error', 'Error uninstalling')
-    })
     logError(error, LogPrefix.Backend)
   }
 
@@ -99,7 +92,6 @@ export const uninstallGameCallback = async (
     }
     removeFixFile(appName, runner)
 
-    notify({ title, body: i18next.t('notify.uninstalled') })
     logInfo('Finished uninstalling', LogPrefix.Backend)
   }
 

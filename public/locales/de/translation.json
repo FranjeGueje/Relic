@@ -91,7 +91,6 @@
     "link": "Downloads",
     "title": "Downloads"
   },
-  "epic": {},
   "Epic Games": "Epic Games",
   "error": "Fehler",
   "favourites": "Favoriten",
@@ -200,54 +199,6 @@
     "zoom": "Login mit Zoom"
   },
   "message": {},
-  "notify": {
-    "error": {
-      "move": "Fehler beim Verschieben des Spiels",
-      "reparing": "Fehler beim Reparieren"
-    },
-    "finished": {
-      "add": {
-        "steam": {
-          "corrupt": "{{game}} konnte nicht zu allen gefundenen Steam-Benutzern hinzugefügt werden. Siehe Logs für weitere Informationen. Ein Neustart von Steam ist erforderlich, damit die Änderungen wirksam werden.",
-          "success": "{{game}} wurde erfolgreich zu Steam hinzugefügt. Ein Neustart von Steam ist erforderlich, damit die Änderungen wirksam werden.",
-          "title": "Zu Steam hinzugefügt"
-        }
-      },
-      "remove": {
-        "steam": {
-          "corrupt": "{{game}} konnte nicht von allen gefundenen Steam-Benutzern entfernt werden. Siehe Logs für weitere Informationen. Ein Neustart von Steam ist erforderlich, damit die Änderungen wirksam werden.",
-          "success": "{{game}} wurde erfolgreich aus Steam entfernt. Ein Neustart von Steam ist erforderlich, damit die Änderungen wirksam werden.",
-          "title": "Aus Steam entfernt"
-        }
-      },
-      "reparing": "Reparatur abgeschlossen"
-    },
-    "install": {
-      "canceled": "Installation abgebrochen",
-      "error": "Installation fehlgeschlagen",
-      "finished": "Installation abgeschlossen",
-      "imported": "Spiel importiert",
-      "startInstall": "Installation gestartet",
-      "failed": "Installation fehlgeschlagen",
-      "paused": "Installation pausiert"
-    },
-    "moved": "Verschieben abgeschlossen",
-    "moving": "Spiel wird verschoben",
-    "refresh": {
-      "error": "Es konnten keine Veröffentlichungen von der Quelle abgerufen werden – möglicherweise aufgrund von Github-API-Einschränkungen! Versuche es später noch einmal."
-    },
-    "uninstalled": "Deinstalliert",
-    "update": {
-      "canceled": "Aktualisierung abgebrochen",
-      "finished": "Aktualisierung abgeschlossen",
-      "started": "Update gestartet",
-      "failed": "Aktualisierung fehlgeschlagen",
-      "paused": "Aktualisierung pausiert"
-    },
-    "import": {
-      "failed": "Import fehlgeschlagen"
-    }
-  },
   "offline-message": {
     "hint": "Wir testen die Verbindung mit:{{newline}}github.com,{{newline}}gog.com, {{newline}}store.epicgames.com und{{newline}}cloudflare-dns.com",
     "ignore": "Ignore",
@@ -381,7 +332,6 @@
     "allGames": "Alle Spiele"
   },
   "tray": {
-    "about": "Über Relic",
     "quit": "Beenden",
     "reload": "Neu laden",
     "show": "Anzeigen"

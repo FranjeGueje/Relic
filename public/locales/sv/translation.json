@@ -84,7 +84,6 @@
     "link": "Nedladdningar",
     "title": "Nedladdningar"
   },
-  "epic": {},
   "Epic Games": "Epic Games",
   "error": "Error",
   "favourites": "Favoriter",
@@ -193,54 +192,6 @@
     "zoom": "Zoom inloggning"
   },
   "message": {},
-  "notify": {
-    "error": {
-      "move": "Problem vid flytt av spel",
-      "reparing": "Problem vid reparation"
-    },
-    "finished": {
-      "add": {
-        "steam": {
-          "corrupt": "{{game}} kunde inte läggas till för alla hittade Steam-användare. Se loggar för mer information. En omstart av Steam krävs för att ändringarna ska träda i kraft.",
-          "success": "{{game}} lades till i Steam. En omstart av Steam krävs för att ändringar ska träda i kraft.",
-          "title": "Lades till i Steam"
-        }
-      },
-      "remove": {
-        "steam": {
-          "corrupt": "{{game}} kunde inte tas bort från alla hittade Steam-användare. Se loggar för mer information. En omstart av Steam krävs för att ändringarna ska träda i kraft.",
-          "success": "{{game}} togs bort från Steam. En omstart av Steam krävs för att ändringar ska träda i kraft.",
-          "title": "Borttaget från Steam"
-        }
-      },
-      "reparing": "Reparation slutförd"
-    },
-    "install": {
-      "canceled": "Installation avbruten",
-      "error": "Installation misslyckades",
-      "finished": "Installation slutförd",
-      "imported": "Spelimport slutförd",
-      "startInstall": "Installation påbörjad",
-      "failed": "Installationen misslyckades",
-      "paused": "Installation pausad"
-    },
-    "moved": "Spelflytt slutförd",
-    "moving": "Flyttar spel",
-    "refresh": {
-      "error": "Det gick inte att ladda ner en ny version, kanske beror det på begränsningar i Github API, Försök igen senare."
-    },
-    "uninstalled": "Avinstallerat",
-    "update": {
-      "canceled": "Uppdatering avbruten",
-      "finished": "Uppdatering slutförd",
-      "started": "Uppdatering påbörjad",
-      "failed": "Uppdateringen misslyckades",
-      "paused": "Uppdatering pausad"
-    },
-    "import": {
-      "failed": "Import misslyckades"
-    }
-  },
   "offline-message": {
     "hint": "Kontrollerar anslutning mot:{{newline}}github.com,{{newline}}gog.com,{{newline}}store.epicgames.com och {{newline}}cloudflare-dns.com",
     "ignore": "Ignorera",
@@ -374,7 +325,6 @@
     "allGames": "Alla spel"
   },
   "tray": {
-    "about": "Om",
     "quit": "Avsluta",
     "reload": "Ladda om",
     "show": "Visa"

@@ -84,7 +84,6 @@
     "link": "Downloads",
     "title": "Downloads"
   },
-  "epic": {},
   "Epic Games": "Epic Games",
   "error": "Error",
   "favourites": "Favourites",
@@ -192,54 +191,6 @@
     "zoom": ""
   },
   "message": {},
-  "notify": {
-    "error": {
-      "move": "Error Moving the Game",
-      "reparing": "Error Repairing"
-    },
-    "finished": {
-      "add": {
-        "steam": {
-          "corrupt": "{{game}} could not be added to all found Steam users. See logs for more info. A restart of Steam is required for changes to take effect.",
-          "success": "{{game}} was successfully added to Steam. A restart of Steam is required for changes to take effect.",
-          "title": "Added to Steam"
-        }
-      },
-      "remove": {
-        "steam": {
-          "corrupt": "{{game}} could not be removed from all found Steam users. See logs for more info. A restart of Steam is required for changes to take effect.",
-          "success": "{{game}} was successfully removed from Steam. A restart of Steam is required for changes to take effect.",
-          "title": "Removed from Steam"
-        }
-      },
-      "reparing": "Dokončená oprava"
-    },
-    "install": {
-      "canceled": "Inštalácia bola zrušená",
-      "error": "Inštalácia zlyhala",
-      "finished": "Inštalácia je dokončená",
-      "imported": "Game Imported",
-      "startInstall": "Installation Started",
-      "failed": "Inštalácia zlyhala",
-      "paused": "Inštalácia pozastavená"
-    },
-    "moved": "Dokončené sťahovanie",
-    "moving": "Moving Game",
-    "refresh": {
-      "error": "Couldn't fetch releases from upstream, maybe because of Github API restrictions! Try again later."
-    },
-    "uninstalled": "Odinštalované",
-    "update": {
-      "canceled": "Aktualizácia Zrušená",
-      "finished": "Update Finished",
-      "started": "Update Started",
-      "failed": "Aktualizacia neuspešná",
-      "paused": "Aktualizácia pozastavená"
-    },
-    "import": {
-      "failed": ""
-    }
-  },
   "offline-message": {
     "hint": "Kontrolujeme pripojenie k:{{newline}}github.com,{{newline}}gog.com,{{newline}}store.epicgames.com a{{newline}}cloudflare-dns.com",
     "ignore": "Ignore",
@@ -373,7 +324,6 @@
     "allGames": "All Games"
   },
   "tray": {
-    "about": "About",
     "quit": "Quit",
     "reload": "Reload",
     "show": "Šou"

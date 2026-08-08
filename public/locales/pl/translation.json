@@ -92,7 +92,6 @@
     "link": "Pobieranie",
     "title": "Pobrane"
   },
-  "epic": {},
   "Epic Games": "Epic Games",
   "error": "Błąd",
   "favourites": "Ulubione",
@@ -200,54 +199,6 @@
     "zoom": "Zaloguj do Zoom"
   },
   "message": {},
-  "notify": {
-    "error": {
-      "move": "Błąd przenoszenia gry",
-      "reparing": "Błąd naprawy"
-    },
-    "finished": {
-      "add": {
-        "steam": {
-          "corrupt": "Gra {{game}} nie mogła zostać dodana dla wszystkich znalezionych użytkowników Steam. Znajdź więcej informacji w logach. Restart aplikacji Steam jest wymagany, by zatwierdzić zmiany.",
-          "success": "Gra {{game}} została dodana do Steam. Restart aplikacji Steam jest wymagany, by zatwierdzić zmiany.",
-          "title": "Dodano do Steam"
-        }
-      },
-      "remove": {
-        "steam": {
-          "corrupt": "Gra {{game}} nie mogła zostać usunięta dla wszystkich użytkowników Steam. Znajdź więcej informacji w logach. Restart aplikacji Steam jest wymagany, by zatwierdzić zmiany.",
-          "success": "Gra {{game}} została usunięta ze Steam. Restart aplikacji Steam jest wymagany, by zatwierdzić zmiany.",
-          "title": "Usunięto ze Steam"
-        }
-      },
-      "reparing": "Naprawa zakończona"
-    },
-    "install": {
-      "canceled": "Instalacja anulowana",
-      "error": "Instalacja nie powiodła się",
-      "finished": "Instalacja zakończona",
-      "imported": "Gra zaimportowana",
-      "startInstall": "Instalacja rozpoczęta",
-      "failed": "Instalacja nie powiodła się",
-      "paused": "Instalacja wstrzymana"
-    },
-    "moved": "Przenoszenie zakończone",
-    "moving": "Przenoszenie gry",
-    "refresh": {
-      "error": "Nie udało się pobrać nowej wersji, prawdopodobnie z powodu limitacji API Githuba! Spróbuj ponownie później."
-    },
-    "uninstalled": "Odinstalowano",
-    "update": {
-      "canceled": "Aktualizacja anulowana",
-      "finished": "Aktualizacja zakończona",
-      "started": "Aktualizacja rozpoczęta",
-      "failed": "Aktualizacja nie powiodła się",
-      "paused": "Aktualizacja wstrzymana"
-    },
-    "import": {
-      "failed": "Błąd importowania"
-    }
-  },
   "offline-message": {
     "hint": "Sprawdzamy łączność z:{{newline}}github.com,{{newline}}gog.com,{{newline}}store.epicgames.com oraz{{newline}}cloudflare-dns.com",
     "ignore": "Ignoruj",
@@ -387,7 +338,6 @@
     "allGames": "Wszystkie gry"
   },
   "tray": {
-    "about": "O programie",
     "quit": "Wyjdź",
     "reload": "Odśwież",
     "show": "Pokaż"

@@ -35,7 +35,6 @@ import {
   handleExit,
   openUrlOrFile,
   resetRelic,
-  showAboutWindow,
   getFileSize,
   getShellPath,
   removeFolder,
@@ -67,7 +66,7 @@ import {
   isOnline,
   runOnceWhenOnline
 } from './online_monitor'
-import { notify, showDialogBoxModalAuto } from './dialog/dialog'
+import { showDialogBoxModalAuto } from './dialog/dialog'
 import { callAbortController } from './utils/aborthandler/aborthandler'
 import { initTrayIcon } from './tray_icon/tray_icon'
 import { createMainWindow, getMainWindow, isFrameless } from './main_window'
@@ -334,8 +333,6 @@ if (!gotTheLock) {
   })
 }
 
-addListener('notify', (event, args) => notify(args))
-
 addOneTimeListener('frontendReady', () => {
   logInfo('Frontend Ready', LogPrefix.Backend)
 
@@ -442,7 +439,6 @@ app.on('window-all-closed', () => {
 
 addListener('openExternalUrl', async (event, url) => openUrlOrFile(url))
 addListener('openFolder', async (event, folder) => openUrlOrFile(folder))
-addListener('showAboutWindow', () => showAboutWindow())
 addListener('openLoginPage', async () => openUrlOrFile(epicLoginUrl))
 addListener('openWebviewPage', async (event, url) => openUrlOrFile(url))
 addListener('showConfigFileInFolder', async (event, appName) => {
@@ -712,7 +708,6 @@ addHandler('repair', async (event, appName, runner) => {
   })
 
   const game = libraryManagerMap[runner].getGame(appName)
-  const { title } = game.getGameInfo()
 
   try {
     const res = await game.repair()
@@ -720,13 +715,8 @@ addHandler('repair', async (event, appName, runner) => {
       await onGameRepaired(game)
     }
   } catch (error) {
-    notify({
-      title,
-      body: i18next.t('notify.error.reparing', 'Error Repairing')
-    })
     logError(error, LogPrefix.Backend)
   }
-  notify({ title, body: i18next.t('notify.finished.reparing') })
   logInfo('Finished repairing', LogPrefix.Backend)
 
   sendGameStatusUpdate({
@@ -745,17 +735,10 @@ addHandler(
       status: 'moving'
     })
 
-    const { title } = libraryManagerMap[runner].getGame(appName).getGameInfo()
-    notify({ title, body: i18next.t('notify.moving', 'Moving Game') })
-
     const moveRes = await libraryManagerMap[runner]
       .getGame(appName)
       .moveInstall(path)
     if (moveRes.status === 'error') {
-      notify({
-        title,
-        body: i18next.t('notify.error.move', 'Error Moving Game')
-      })
       logError(
         `Error while moving ${appName} to ${path}: ${moveRes.error} `,
         LogPrefix.Backend
@@ -772,7 +755,6 @@ addHandler(
     }
 
     if (moveRes.status === 'done') {
-      notify({ title, body: i18next.t('notify.moved') })
       logInfo(`Finished moving ${appName} to ${path}.`, LogPrefix.Backend)
     }
 
@@ -811,10 +793,6 @@ addHandler(
     })
 
     const abortMessage = () => {
-      notify({
-        title,
-        body: i18next.t('notify.import.failed', 'Importing Failed')
-      })
       sendGameStatusUpdate({
         appName,
         runner,
@@ -836,10 +814,6 @@ addHandler(
       return { status: 'error' }
     }
 
-    notify({
-      title,
-      body: i18next.t('notify.install.imported', 'Game Imported')
-    })
     sendGameStatusUpdate({
       appName,
       runner,

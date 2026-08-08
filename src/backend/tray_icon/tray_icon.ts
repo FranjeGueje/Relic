@@ -2,7 +2,7 @@ import { BrowserWindow, Menu, nativeImage, Tray } from 'electron'
 import i18next from 'i18next'
 import { RecentGame } from 'common/types'
 import { getRecentGames, maxRecentGames } from '../recent_games/recent_games'
-import { handleExit, showAboutWindow } from '../utils'
+import { handleExit } from '../utils'
 import { backendEvents } from '../backend_events'
 import { join } from 'node:path'
 import { fixAsarPath, publicDir } from 'backend/constants/paths'
@@ -76,12 +76,6 @@ const contextMenu = (mainWindow: BrowserWindow, recentGames: RecentGame[]) => {
         mainWindow.show()
       },
       label: i18next.t('tray.show')
-    },
-    {
-      click: function () {
-        showAboutWindow()
-      },
-      label: i18next.t('tray.about', 'About')
     },
     {
       accelerator: 'Ctrl+R',

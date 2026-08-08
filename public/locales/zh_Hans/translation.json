@@ -92,7 +92,6 @@
     "link": "下载",
     "title": "下载"
   },
-  "epic": {},
   "Epic Games": "Epic 游戏",
   "error": "错误",
   "favourites": "最爱",
@@ -201,54 +200,6 @@
     "zoom": "Zoom 登录"
   },
   "message": {},
-  "notify": {
-    "error": {
-      "move": "移动游戏时出错",
-      "reparing": "修复时出错"
-    },
-    "finished": {
-      "add": {
-        "steam": {
-          "corrupt": "{{game}} 不能被添加到所有找到的 Steam 用户。查看日志了解更多信息。 需要重启 Steam 更改才能生效。",
-          "success": "成功添加 {{game}} 到 Steam。需要重启 Steam 更改才能生效。",
-          "title": "已添加到 Steam"
-        }
-      },
-      "remove": {
-        "steam": {
-          "corrupt": "无法从所有找到的 Steam 用户删除 {{game}}。查看日志了解更多信息。需要重启 Steam 更改才能生效。",
-          "success": "成功从 Steam 删除了 {{game}}。需要重启 Steam 更改才能生效。",
-          "title": "已从 Steam 删除"
-        }
-      },
-      "reparing": "已完成修复"
-    },
-    "install": {
-      "canceled": "已取消安装",
-      "error": "安装失败",
-      "finished": "安装完成",
-      "imported": "游戏已导入",
-      "startInstall": "安装已开始",
-      "paused": "安装暂停",
-      "failed": "安装失败"
-    },
-    "moved": "移动完成",
-    "moving": "移动游戏中",
-    "refresh": {
-      "error": "不能从上游获取发布，可能是因为 Github API 的限制！请稍后再试。"
-    },
-    "uninstalled": "已卸载",
-    "update": {
-      "canceled": "已取消更新",
-      "finished": "更新已完成",
-      "started": "更新已开始",
-      "failed": "更新失败",
-      "paused": "更新暂停"
-    },
-    "import": {
-      "failed": "导入失败"
-    }
-  },
   "offline-message": {
     "hint": "我们正检查到下列域名的连接：{{newline}}github.com、{{newline}}gog.com、{{newline}}store.epicgames.com 和 {{newline}}cloudflare-dns.com",
     "ignore": "Ignore",
@@ -389,7 +340,6 @@
     "allGames": "所有游戏"
   },
   "tray": {
-    "about": "关于",
     "quit": "退出",
     "reload": "重新加载",
     "show": "显示"

@@ -6,8 +6,6 @@ import { DMQueueElement, DMStatus, DownloadManagerState } from 'common/types'
 import { installQueueElement, updateQueueElement } from './utils'
 import { sendFrontendMessage } from '../ipc'
 import { callAbortController } from 'backend/utils/aborthandler/aborthandler'
-import { notify } from '../dialog/dialog'
-import i18next from 'i18next'
 import { createRedistDMQueueElement } from 'backend/storeManagers/gog/redist'
 import { existsSync } from 'fs'
 import { gogRedistPath } from 'backend/storeManagers/gog/constants'
@@ -99,7 +97,7 @@ async function initQueue() {
         : await updateQueueElement(element.params)
     element.endTime = Date.now()
 
-    processNotification(element, status)
+    logQueueOutcome(element, status)
 
     if (!isPaused()) {
       addToFinished(element, status)
@@ -278,8 +276,8 @@ function stopCurrentDownload() {
   libraryManagerMap[runner].getGame(appName).stop()
 }
 
-// notify the user based on the status of the element and the status of the queue
-function processNotification(element: DMQueueElement, status: DMStatus) {
+// log the outcome of a queue element, based on its status and the queue's
+function logQueueOutcome(element: DMQueueElement, status: DMStatus) {
   const action = element.type === 'install' ? 'Installation' : 'Update'
   if (
     element.params.runner === 'gog' &&
@@ -287,9 +285,6 @@ function processNotification(element: DMQueueElement, status: DMStatus) {
   ) {
     return
   }
-  const { title } = libraryManagerMap[element.params.runner]
-    .getGame(element.params.appName)
-    .getGameInfo()
 
   if (status === 'abort') {
     if (isPaused()) {
@@ -297,34 +292,18 @@ function processNotification(element: DMQueueElement, status: DMStatus) {
         [action, 'of', element.params.appName, 'paused!'],
         LogPrefix.DownloadManager
       )
-      // i18next.t('notify.update.paused', 'Update Paused')
-      // i18next.t('notify.install.paused', 'Installation Paused')
-      notify({ title, body: i18next.t(`notify.${element.type}.paused`) })
     } else {
       logWarning(
         [action, 'of', element.params.appName, 'aborted!'],
         LogPrefix.DownloadManager
       )
-      // i18next.t('notify.update.canceled', 'Update Canceled')
-      // i18next.t('notify.install.canceled', 'Installation Canceled')
-      notify({ title, body: i18next.t(`notify.${element.type}.canceled`) })
     }
   } else if (status === 'error') {
     logWarning(
       [action, 'of', element.params.appName, 'failed!'],
       LogPrefix.DownloadManager
     )
-    // i18next.t('notify.update.failed', 'Update Failed')
-    // i18next.t('notify.install.failed', 'Installation Failed')
-    notify({ title, body: i18next.t(`notify.${element.type}.failed`) })
   } else if (status === 'done') {
-    // i18next.t('notify.update.finished', 'Update Finished')
-    // i18next.t('notify.install.finished', 'Installation Finished')
-    notify({
-      title,
-      body: i18next.t(`notify.${element.type}.finished`)
-    })
-
     logInfo(
       ['Finished', action, 'of', element.params.appName],
       LogPrefix.DownloadManager

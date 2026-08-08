@@ -153,7 +153,6 @@
     "noGames": "Tá do leabharlann folamh.<br /><br />Cliceáil <4>anseo</4> chun logáil isteach le do chuntais Epic, GOG.com, nó Amazon. Ansin, taispeánfar do chluichí anseo sa Leabharlann.<br /><br />Chun cluichí nó aipeanna ó fhoinsí eile a úsáid, cliceáil <br /> chun iad a chur leis de láimh.",
     "noResults": "Níor tháirg na scagairí reatha aon torthaí."
   },
-  "epic": {},
   "Epic Games": "Epic Games",
   "error": "Earráid",
   "externalLink": {
@@ -246,54 +245,6 @@
       "success": "Tá Steam do Windows suiteáilte go rathúil!"
     }
   },
-  "notify": {
-    "error": {
-      "move": "Earráid ag Bogadh an Chluiche",
-      "reparing": "Earráid á Deisiú"
-    },
-    "finished": {
-      "add": {
-        "steam": {
-          "corrupt": "Níorbh fhéidir {{game}} a chur le gach úsáideoir Steam a aimsíodh. Féach na logaí le haghaidh tuilleadh eolais. Tá atosú Steam ag teastáil chun go dtiocfaidh athruithe i bhfeidhm.",
-          "success": "Cuireadh {{game}} le Steam go rathúil. Tá atosú Steam ag teastáil chun na hathruithe a chur i bhfeidhm.",
-          "title": "Curtha le Steam"
-        }
-      },
-      "remove": {
-        "steam": {
-          "corrupt": "Níorbh fhéidir {{game}} a bhaint de na húsáideoirí Steam go léir a aimsíodh. Féach na logaí le haghaidh tuilleadh eolais. Tá atosú Steam ag teastáil chun go dtiocfaidh athruithe i bhfeidhm.",
-          "success": "Baineadh {{game}} de Steam go rathúil. Tá atosú Steam ag teastáil chun na hathruithe a chur i bhfeidhm.",
-          "title": "Bainte as Steam"
-        }
-      },
-      "reparing": "Deisiú críochnaithe"
-    },
-    "import": {
-      "failed": "Theip ar an iompórtáil"
-    },
-    "install": {
-      "canceled": "Suiteáil Cealaithe",
-      "error": "Theip ar an Suiteáil",
-      "failed": "Theip ar an Suiteáil",
-      "finished": "Suiteáil Críochnaithe",
-      "imported": "Cluiche Iompórtáilte",
-      "paused": "Suiteáil curtha ar sos",
-      "startInstall": "Suiteáil Tosaithe"
-    },
-    "moved": "Críochnaithe ag Bogadh",
-    "moving": "Cluiche Bogtha",
-    "refresh": {
-      "error": "Níorbh fhéidir eisiúintí a fháil ón sruth suas, b'fhéidir mar gheall ar shrianta API Github! Déan iarracht arís ar ball."
-    },
-    "uninstalled": "Díshuiteáilte",
-    "update": {
-      "canceled": "Nuashonrú Cealaithe",
-      "failed": "Theip ar an Nuashonrú",
-      "finished": "Nuashonrú Críochnaithe",
-      "paused": "Nuashonrú curtha ar sos",
-      "started": "Nuashonrú Tosaithe"
-    }
-  },
   "offline-message": {
     "hint": "Táimid ag seiceáil an nascachta i gcoinne: {{newline}}github.com, {{newline}}gog.com, {{newline}}store.epicgames.com agus {{newline}}cloudflare-dns.com",
     "ignore": "Déan neamhaird de",
@@ -370,7 +321,6 @@
     "allGames": "Gach Cluiche"
   },
   "tray": {
-    "about": "Maidir",
     "quit": "Scoir",
     "reload": "Athlódáil",
     "show": "Taispeáin"

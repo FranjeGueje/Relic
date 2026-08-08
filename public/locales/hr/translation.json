@@ -84,7 +84,6 @@
     "link": "Downloads",
     "title": "Downloads"
   },
-  "epic": {},
   "Epic Games": "Epic Games",
   "error": "Error",
   "favourites": "Favourites",
@@ -192,54 +191,6 @@
     "zoom": ""
   },
   "message": {},
-  "notify": {
-    "error": {
-      "move": "Error Moving the Game",
-      "reparing": "Error Repairing"
-    },
-    "finished": {
-      "add": {
-        "steam": {
-          "corrupt": "{{game}} could not be added to all found Steam users. See logs for more info. A restart of Steam is required for changes to take effect.",
-          "success": "{{game}} was successfully added to Steam. A restart of Steam is required for changes to take effect.",
-          "title": "Added to Steam"
-        }
-      },
-      "remove": {
-        "steam": {
-          "corrupt": "{{game}} could not be removed from all found Steam users. See logs for more info. A restart of Steam is required for changes to take effect.",
-          "success": "{{game}} was successfully removed from Steam. A restart of Steam is required for changes to take effect.",
-          "title": "Removed from Steam"
-        }
-      },
-      "reparing": "Zavšen popravak"
-    },
-    "install": {
-      "canceled": "Instaliranje je prekinuto",
-      "error": "Instalacija Neuspjela",
-      "finished": "Instaliranje je završeno",
-      "imported": "Game Imported",
-      "startInstall": "Installation Started",
-      "failed": "Instalacija Neuspjela",
-      "paused": "Instalacija pauzirana"
-    },
-    "moved": "Premještanje gotovo",
-    "moving": "Moving Game",
-    "refresh": {
-      "error": "Couldn't fetch releases from upstream, maybe because of Github API restrictions! Try again later."
-    },
-    "uninstalled": "Deinstalirano",
-    "update": {
-      "canceled": "Ažuriranje je prekinuto",
-      "finished": "Ažuriranje gotovo",
-      "started": "Update Started",
-      "failed": "Ažuriranje nije uspjelo",
-      "paused": "Ažuriranje pauzirano"
-    },
-    "import": {
-      "failed": ""
-    }
-  },
   "offline-message": {
     "hint": "Provjeravamo vezu između:{{newline}}github.com,{{newline}}gog.com,{{newline}}store.epicgames.com i{{newline}}cloudflare-dns.com",
     "ignore": "Ignore",
@@ -366,7 +317,6 @@
     "allGames": "All Games"
   },
   "tray": {
-    "about": "About",
     "quit": "Odustani",
     "reload": "Ponovno učitaj",
     "show": "Pokaži"

@@ -92,7 +92,6 @@
     "link": "Téléchargements",
     "title": "Téléchargements"
   },
-  "epic": {},
   "Epic Games": "Epic Games",
   "error": "Erreur",
   "favourites": "Favoris",
@@ -201,54 +200,6 @@
     "zoom": "Connexion à Zoom"
   },
   "message": {},
-  "notify": {
-    "error": {
-      "move": "Erreur lors du déplacement des fichiers du jeu",
-      "reparing": "Erreur lors de la tentative de réparation"
-    },
-    "finished": {
-      "add": {
-        "steam": {
-          "corrupt": "{{game}} n'a pas pu être ajouté à tous les utilisateurs de Steam détectés. Vérifiez les rapports d'événements pour plus d'informations. Steam doit être redémarré pour prendre en compte ces changements.",
-          "success": "{{game}} a bien été ajouté à Steam. Un redémarrage de Steam est nécessaire pour que ces changements soient effectués.",
-          "title": "Ajouté à Steam"
-        }
-      },
-      "remove": {
-        "steam": {
-          "corrupt": "{{game}} n'a pas pu être retiré de tous les utilisateurs de Steam trouvés. Consultez les rapports d'événements pour plus d'informations. Steam doit être redémarré pour que les changements soient pris en compte.",
-          "success": "{{game}} a bien été retiré de Steam. Un redémarrage de Steam est nécessaire pour prendre en compte ces changements.",
-          "title": "Retiré de Steam"
-        }
-      },
-      "reparing": "Réparation achevée"
-    },
-    "install": {
-      "canceled": "Installation annulée",
-      "error": "Échec de l'installation",
-      "finished": "Installation achevée",
-      "imported": "Jeu importé",
-      "startInstall": "Installation commencée",
-      "failed": "Échec de l'installation",
-      "paused": "Installation suspendue"
-    },
-    "moved": "Déplacement effectué",
-    "moving": "Jeu en cours de déplacement",
-    "refresh": {
-      "error": "Relic n'a pas pu récupérer les dernières versions, peut-être à cause de limitations dues à l'API de Github ! Veuillez réessayer plus tard."
-    },
-    "uninstalled": "Désinstallé",
-    "update": {
-      "canceled": "Mise à jour annulée",
-      "finished": "Mise à jour effectuée",
-      "started": "Mise à jour commencée",
-      "paused": "Mise à jour suspendue",
-      "failed": "Échec de la mise à jour"
-    },
-    "import": {
-      "failed": "L'importation a échoué"
-    }
-  },
   "offline-message": {
     "hint": "Nous vérifions la connexion avec :{{newline}}github.com,{{newline}}gog.com, {{newline}}store.epicgames.com et {{newline}}cloudflare-dns.com",
     "ignore": "Ignorer",
@@ -395,7 +346,6 @@
     "allGames": "Tous les jeux"
   },
   "tray": {
-    "about": "À propos",
     "quit": "Quitter",
     "reload": "Recharger",
     "show": "Montrer"

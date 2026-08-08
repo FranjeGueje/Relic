@@ -1064,3 +1064,49 @@ tampoco encaja en el alcance de Relic — "abrir la carpeta del juego" ya lo cub
   de `shell` de electron en el fichero (ahora solo importa `app`).
 - `main.ts`: import y `addListener('showItemInFolder', ...)`.
 - `common/types/ipc.ts`: firma `showItemInFolder`.
+
+---
+
+## Notificaciones de escritorio y ventana "About" (v0.6.0, Ago 2026)
+
+Ninguna de las dos ayuda a descargar, instalar o añadir juegos a Steam. Además las
+notificaciones estaban guardadas por `!isSteamDeckGameMode`, así que en el modo
+consola de la Steam Deck —el caso de uso principal de Relic— no se mostraba ninguna.
+
+### Sistema de notificaciones
+
+- `dialog/dialog.ts`: `notify()`, el tipo `NotifyType` y el import de `Notification`
+  de electron. El módulo queda con `showDialogBoxModalAuto` y `askQuestion`.
+- Los ~18 call sites: `main.ts` (repair, move, import), `downloadmanager/utils.ts`
+  (install/update started), `utils/uninstaller.ts` (uninstalled y su error),
+  `downloadmanager/downloadqueue.ts` y `utils.ts` (Epic offline).
+- `downloadqueue.ts`: `processNotification()` → `logQueueOutcome()`. Solo notificaba
+  y logueaba; el logging se conserva íntegro, la notificación desaparece. También se
+  van los comentarios `// i18next.t('notify.…')` que existían para que el extractor
+  recogiera las claves dinámicas.
+- `utils.ts`: `isEpicServiceOffline()` deja de ser un predicado con efecto
+  secundario. Se llamaba desde 8 sitios (refresh de biblioteca, install, update…),
+  así que una caída real de Epic disparaba una notificación por cada llamada.
+- IPC: listener `notify` en `main.ts`, firma en `common/types/ipc.ts`, binding en
+  `preload/api/helpers.ts` y el helper `notify` de `frontend/helpers/index.ts`
+  (que no tenía ningún llamante).
+- Mock `__mocks__/electron.ts`: clase `Notification`. Mock `dialog/__mocks__`:
+  `notify` → `askQuestion`.
+
+### Ventana "About"
+
+- `utils.ts`: `showAboutWindow()` (con `app.setAboutPanelOptions` /
+  `app.showAboutPanel`) y su export. Al irse, quedan sin uso los imports de
+  `getRelicVersion`, `windowIcon` y `t` de i18next.
+- `main.ts`: import y `addListener('showAboutWindow', ...)`.
+- `tray_icon.ts`: el item "About" del menú del tray, su único punto de entrada real.
+- `common/types/ipc.ts` y `preload/api/helpers.ts`: firma y binding.
+
+### i18n (47 locales)
+
+- Bloque `notify` completo, `epic.offline-notification-title`/`-body` y `tray.about`.
+- Esto resuelve de paso el desajuste `notify.uninstalled` que `lint-translations`
+  reportaba en los 46 locales no-`en`: la clave se usaba a la vez como hoja y como
+  namespace (`notify.uninstalled` y `notify.uninstalled.error`), lo que rompía la
+  notificación de desinstalado en inglés. Al desaparecer las notificaciones, el
+  conflicto desaparece con ellas.

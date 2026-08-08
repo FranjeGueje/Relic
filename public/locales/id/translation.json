@@ -84,7 +84,6 @@
     "link": "Unduhan",
     "title": "Unduhan"
   },
-  "epic": {},
   "Epic Games": "Epic Games",
   "error": "Kesalahan",
   "favourites": "Favorit",
@@ -193,54 +192,6 @@
     "zoom": "Login Zoom"
   },
   "message": {},
-  "notify": {
-    "error": {
-      "move": "Galat dalam Memindahkan Gim",
-      "reparing": "Perbaikan Kesalahan"
-    },
-    "finished": {
-      "add": {
-        "steam": {
-          "corrupt": "{{game}} tidak dapat ditambahkan dari pengguna Steam yang ditemukan. Lihat log untuk lebih banyak info. Steam perlu dijalankan ulang untuk melihat perubahan ini.",
-          "success": "{{game}} berhasil ditambahkan ke Steam. Perlu memuat ulang Steam untuk menerapkan perubahan.",
-          "title": "Ditambahkan ke Steam"
-        }
-      },
-      "remove": {
-        "steam": {
-          "corrupt": "{{game}} tidak dapat dihapus dari pengguna Steam yang ditemukan. Lihat log untuk lebih banyak info. Steam perlu dijalankan ulang untuk melihat perubahan ini.",
-          "success": "{{game}} berhasil dihapus dari Steam. Perlu memuat ulang Steam untuk menerapkan perubahan.",
-          "title": "Dihapus dari Steam"
-        }
-      },
-      "reparing": "Perbaikan Selesai"
-    },
-    "install": {
-      "canceled": "Pemasangan Dibatalkan",
-      "error": "Pemasangan Gagal",
-      "finished": "Pemasangan Selesai",
-      "imported": "Gim Diimpor",
-      "startInstall": "Pemasangan Dimulai",
-      "failed": "Pemasangan Gagal",
-      "paused": "Pemasangan Dijeda"
-    },
-    "moved": "Selesai Memindahkan",
-    "moving": "Memindahkan Gim",
-    "refresh": {
-      "error": "Tidak dapat mengambil rilis dari sumber, ini mungkin karena pembatasan API Github! Coba lagi nanti."
-    },
-    "uninstalled": "Dihapus",
-    "update": {
-      "canceled": "Pembaruan Dibatalkan",
-      "finished": "Pembaruan Selesai",
-      "started": "Pembaruan Dimulai",
-      "failed": "Pembaruan gagal",
-      "paused": "Pembaruan Dijeda"
-    },
-    "import": {
-      "failed": "Impor Gagal"
-    }
-  },
   "offline-message": {
     "hint": "Kami sedang memeriksa konektivitas ke:{{newline}}github.com,{{newline}}gog.com,{{newline}}store.epicgames.com dan{{newline}}cloudflare-dns.com",
     "ignore": "Ignore",
@@ -367,7 +318,6 @@
     "allGames": "Semua Gim"
   },
   "tray": {
-    "about": "Tentang",
     "quit": "Keluar",
     "reload": "Muat Ulang",
     "show": "Tampilkan"

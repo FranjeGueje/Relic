@@ -84,7 +84,6 @@
     "link": "Downloads",
     "title": "Downloads"
   },
-  "epic": {},
   "Epic Games": "Epic Games",
   "error": "Error",
   "favourites": "Favoriti",
@@ -192,54 +191,6 @@
     "zoom": ""
   },
   "message": {},
-  "notify": {
-    "error": {
-      "move": "Greška pri premještanju video igre",
-      "reparing": "Greška prilikom popravke"
-    },
-    "finished": {
-      "add": {
-        "steam": {
-          "corrupt": "{{game}} nije bilo moguće dodati svim pronađenim korisnicima Steam-a. Pogledajte dnevnike za više informacija. Potrebno je ponovno pokretanje Steam-a, promjene će stupiti na snagu.",
-          "success": "{{game}} je uspješno dodan u Steam. Potrebno je ponovno pokretanje Steam-a, promjene će stupiti na snagu.",
-          "title": "Dodato u Steam"
-        }
-      },
-      "remove": {
-        "steam": {
-          "corrupt": "{{game}} nije bilo moguće ukloniti sa svih pronađenih Steam korisnika. Pogledajte dnevnike za više informacija. Potrebno je ponovno pokretanje Steam-a, promjene će stupiti na snagu.",
-          "success": "{{game}} je uspješno uklonjen na Steam. Potrebno je ponovno pokretanje Steam-a, promjene će stupiti na snagu.",
-          "title": "Uklonjeno sa Steam-a"
-        }
-      },
-      "reparing": "Popravka završena"
-    },
-    "install": {
-      "canceled": "Instalacija Otkazana",
-      "error": "Instalacija neuspješna",
-      "finished": "Instalacija Završena",
-      "imported": "Video igra uvezena",
-      "startInstall": "Instalacija započeta",
-      "failed": "Instalacija neuspješna",
-      "paused": "Instalacija je pauzirana"
-    },
-    "moved": "Premještanje završeno",
-    "moving": "Igra se premješta",
-    "refresh": {
-      "error": "Nije moguće dohvatiti izdanja iz uzvodnog izvora, možda zbog ograničenja Github API-ja! Pokušajte ponovo kasnije."
-    },
-    "uninstalled": "Deinstalirano",
-    "update": {
-      "canceled": "Ažuriranje Otkazano",
-      "finished": "Ažuriranje završeno",
-      "started": "Ažuriranje započeto",
-      "failed": "Ažuriranje nije uspjelo",
-      "paused": "Ažuriranje je pauzirano"
-    },
-    "import": {
-      "failed": ""
-    }
-  },
   "offline-message": {
     "hint": "Provjeravamo povezanost sa: {{newline}}github.com, {{newline}}gog.com, {{newline}}store.epicgames.com i {{newline}}cloudflare-dns.com",
     "ignore": "Ignore",
@@ -366,7 +317,6 @@
     "allGames": "Sve igre"
   },
   "tray": {
-    "about": "U vezi sa",
     "quit": "Odustani",
     "reload": "Ponovo učitaj",
     "show": "Pokaži"

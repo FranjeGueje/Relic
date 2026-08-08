@@ -92,7 +92,6 @@
     "link": "Allalaadimised",
     "title": "Allalaadimised"
   },
-  "epic": {},
   "Epic Games": "Epic Games",
   "error": "Viga",
   "favourites": "Lemmikud",
@@ -200,54 +199,6 @@
     "zoom": "Zoomi sisselogimine"
   },
   "message": {},
-  "notify": {
-    "error": {
-      "move": "Viga mängu liigutamisel",
-      "reparing": "Viga parandamisel"
-    },
-    "finished": {
-      "add": {
-        "steam": {
-          "corrupt": "Mängu {{game}} ei saanud lisada kõigile leitud Steami kasutajatele. Lisainfo saamiseks vaadake logisid. Muutuste jõustumiseks on vajalik Steami taaskäivitamine.",
-          "success": "Mäng {{game}} lisati edukalt Steami. Muutuste jõustumiseks on vajalik Steami taaskäivitamine.",
-          "title": "Lisatud Steami"
-        }
-      },
-      "remove": {
-        "steam": {
-          "corrupt": "Mängu {{game}} ei saanud eemaldada kõigilt leitud Steami kasutajatelt. Lisainfo saamiseks vaadake logisid. Muutuste jõustumiseks on vajalik Steami taaskäivitamine.",
-          "success": "Mäng {{game}} eemaldati edukalt Steamist. Muutuste jõustumiseks on vajalik Steami taaskäivitamine.",
-          "title": "Steamist eemaldatud"
-        }
-      },
-      "reparing": "Parandamine lõpetatud"
-    },
-    "install": {
-      "canceled": "Paigaldamine tühistatud",
-      "error": "Paigaldamine ebaõnnestus",
-      "finished": "Paigaldamine lõpetatud",
-      "imported": "Mäng imporditud",
-      "startInstall": "Paigaldamine alustatud",
-      "failed": "Paigaldamine ebaõnnestus",
-      "paused": "Paigaldamine pausil"
-    },
-    "moved": "Teisaldamine on lõpule viidud",
-    "moving": "Mängu liigutamine",
-    "refresh": {
-      "error": "Ei saanud hankida väljalaskeid upstream'ist, võib-olla Githubi API piirangute tõttu! Proovige hiljem uuesti."
-    },
-    "uninstalled": "Eemaldatud",
-    "update": {
-      "canceled": "Uuendus tühistatud",
-      "finished": "Uuendus lõpetatud",
-      "started": "Uuendamine algas",
-      "failed": "Uuendus ebaõnnestus",
-      "paused": "Värskendus peatatud"
-    },
-    "import": {
-      "failed": "Importimine nurjus"
-    }
-  },
   "offline-message": {
     "hint": "Kontrollime ühenduvust domeenidega:{{newline}}github.com,{{newline}}gog.com,{{newline}}store.epicgames.com ja{{newline}}cloudflare-dns.com",
     "ignore": "Ignoreeri",
@@ -387,7 +338,6 @@
     "allGames": "Kõik mängud"
   },
   "tray": {
-    "about": "Info",
     "quit": "Sulge",
     "reload": "Laadi uuesti",
     "show": "Näita"

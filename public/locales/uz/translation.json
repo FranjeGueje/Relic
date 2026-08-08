@@ -67,7 +67,6 @@
   },
   "tray": {
     "show": "Ko'rsatish",
-    "about": "Haqida",
     "quit": "Chiqish",
     "reload": "Qayta yuklash"
   },
@@ -115,7 +114,6 @@
     "link": "Yuklashlar",
     "title": "Yuklashlar"
   },
-  "epic": {},
   "Epic Games": "Epik o'yinlar",
   "error": "Xato",
   "favourites": "Sevimlilar",
@@ -223,54 +221,6 @@
     "zoom": ""
   },
   "message": {},
-  "notify": {
-    "error": {
-      "move": "O'yinni ko'chirishda xato",
-      "reparing": "Xatoni tuzatish"
-    },
-    "finished": {
-      "add": {
-        "steam": {
-          "corrupt": "{{game}} barcha topilgan Steam foydalanuvchilariga qoʻshib boʻlmadi. Qo'shimcha ma'lumot olish uchun jurnallarga qarang. O'zgarishlar kuchga kirishi uchun Steamni qayta ishga tushirish kerak.",
-          "success": "{{game}} Steam-ga muvaffaqiyatli qo'shildi. O'zgarishlar kuchga kirishi uchun Steamni qayta ishga tushirish kerak.",
-          "title": "Steam-ga qo'shildi"
-        }
-      },
-      "remove": {
-        "steam": {
-          "corrupt": "{{game}} barcha topilgan Steam foydalanuvchilaridan olib tashlanmadi. Qo'shimcha ma'lumot olish uchun jurnallarga qarang. O'zgarishlar kuchga kirishi uchun Steamni qayta ishga tushirish kerak.",
-          "success": "{{game}} Steam'dan muvaffaqiyatli olib tashlandi. O'zgarishlar kuchga kirishi uchun Steamni qayta ishga tushirish kerak.",
-          "title": "Steam'dan o'chirildi"
-        }
-      },
-      "reparing": "Ta'mirlash tugallandi"
-    },
-    "install": {
-      "canceled": "Oʻrnatish bekor qilindi",
-      "error": "O‘rnatish amalga oshmadi",
-      "finished": "O'rnatish tugallandi",
-      "imported": "O'yin import qilingan",
-      "startInstall": "O'rnatish boshlandi",
-      "failed": "O‘rnatish amalga oshmadi",
-      "paused": "Oʻrnatish toʻxtatildi"
-    },
-    "moved": "Ko‘chirish tugallandi",
-    "moving": "Harakatlanuvchi o'yin",
-    "refresh": {
-      "error": "Relizlarni yuqori oqimdan olib bo'lmadi, ehtimol Github API cheklovlari tufayli! Keyinroq qayta urinib ko‘ring."
-    },
-    "uninstalled": "Oʻchirildi",
-    "update": {
-      "canceled": "Yangilangan Bekor qilingan",
-      "finished": "Yangilash tugallandi",
-      "started": "Yangilash boshlandi",
-      "failed": "Yangilash amalga oshmadi",
-      "paused": "Yangilash toʻxtatildi"
-    },
-    "import": {
-      "failed": ""
-    }
-  },
   "offline-message": {
     "hint": "Biz ulanishni tekshirmoqdamiz: {{newline}}github.com, {{newline}}gog.com, {{newline}}store.epicgames.com va {{newline}}cloudflare-dns.com",
     "ignore": "E'tibor bermaslik",

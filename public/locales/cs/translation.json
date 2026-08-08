@@ -92,7 +92,6 @@
     "link": "Stahování",
     "title": "Stahování"
   },
-  "epic": {},
   "Epic Games": "Epic Games",
   "error": "Error",
   "favourites": "Oblíbené",
@@ -201,54 +200,6 @@
     "zoom": "Přihlášení přes Zoom"
   },
   "message": {},
-  "notify": {
-    "error": {
-      "move": "Chyba při přesouvání hry",
-      "reparing": "Oprava chyb"
-    },
-    "finished": {
-      "add": {
-        "steam": {
-          "corrupt": "Hru {{game}} se nepodařilo přidat všem nalezeným uživatelům Steam. Další informace naleznete v protokolech. Aby se změny projevily, je nutné službu Steam restartovat.",
-          "success": "Hra {{game}} byla úspěšně přidána do služby Steam. Aby se změny projevily, je nutné službu Steam restartovat.",
-          "title": "Přidáno do Steamu"
-        }
-      },
-      "remove": {
-        "steam": {
-          "corrupt": "Hru {{game}} se nepodařilo odstranit u všech nalezených uživatelů Steam. Další informace naleznete v protokolech. Aby se změny projevily, je nutné službu Steam restartovat.",
-          "success": "Hra {{game}} byla úspěšně odstraněna ze služby Steam. Aby se změny projevily, je nutné službu Steam restartovat.",
-          "title": "Odebráno ze Steamu"
-        }
-      },
-      "reparing": "Oprava dokončena"
-    },
-    "install": {
-      "canceled": "Instalace zrušena",
-      "error": "Instalace selhala",
-      "finished": "Instalace dokončena",
-      "imported": "Hra importována",
-      "startInstall": "Instalace zahájena",
-      "failed": "Instalace selhala",
-      "paused": "Instalace pozastavena"
-    },
-    "moved": "Přesun dokončen",
-    "moving": "Přesouvám hru",
-    "refresh": {
-      "error": "Nepodařilo se načíst vydání z upstreamu, možná kvůli omezením Github API! Zkuste to později."
-    },
-    "uninstalled": "Odinstalováno",
-    "update": {
-      "canceled": "Aktualizace zrušena",
-      "finished": "Aktualizace dokončena",
-      "started": "Aktualizace zahájena",
-      "failed": "Aktualizace selhala",
-      "paused": "Aktualizace pozastavena"
-    },
-    "import": {
-      "failed": "Import se nezdařil"
-    }
-  },
   "offline-message": {
     "hint": "Kontrolujeme připojení s:{{newline}}github.com,{{newline}}gog.com,{{newline}}store.epicgames.com a{{newline}}cloudflare-dns.com",
     "ignore": "Ignore",
@@ -389,7 +340,6 @@
     "allGames": "Všechny hry"
   },
   "tray": {
-    "about": "O aplikaci",
     "quit": "Ukončit",
     "reload": "Obnovit",
     "show": "Zobrazit"

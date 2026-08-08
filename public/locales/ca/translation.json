@@ -92,7 +92,6 @@
     "link": "Baixades",
     "title": "Baixades"
   },
-  "epic": {},
   "Epic Games": "Epic Games",
   "error": "Error",
   "favourites": "Preferits",
@@ -201,54 +200,6 @@
     "zoom": "Inici de sessió al Zoom"
   },
   "message": {},
-  "notify": {
-    "error": {
-      "move": "Error en moure el joc",
-      "reparing": "Error en reparar"
-    },
-    "finished": {
-      "add": {
-        "steam": {
-          "corrupt": "{{game}} no s'ha pogut afegir a tots els usuaris del Steam. Consulta els registres per a més informació. Cal reiniciar el Steam perquè els canvis tinguin efecte.",
-          "success": "{{game}} s'ha afegit correctament al Steam. Cal reiniciar el Steam perquè els canvis tinguin efecte.",
-          "title": "S'ha afegit al Steam"
-        }
-      },
-      "remove": {
-        "steam": {
-          "corrupt": "{{game}} no s'ha pogut suprimir de tots els usuaris del Steam. Consulta els registres per a més informació. Cal reiniciar el Steam perquè els canvis tinguin efecte.",
-          "success": "{{game}} s'ha suprimit correctament del Steam. Cal reiniciar el Steam perquè els canvis tinguin efecte.",
-          "title": "S'ha suprimit del Steam"
-        }
-      },
-      "reparing": "Ha finalitzat la reparació del joc"
-    },
-    "install": {
-      "canceled": "S'ha cancel·lat la instal·lació",
-      "error": "La instal·lació ha fallat",
-      "finished": "La instal·lació ha finalitzat",
-      "imported": "S'ha importat el joc",
-      "startInstall": "S'ha iniciat la instal·lació",
-      "failed": "La instal·lació ha fallat",
-      "paused": "Instal·lació en pausa"
-    },
-    "moved": "Ha finalitzat el desplaçament",
-    "moving": "S'està movent el joc...",
-    "refresh": {
-      "error": "No s'ha pogut aconseguir el llistat de versions, potser per les restriccions de l'API del GitHub. Prova-ho més tard."
-    },
-    "uninstalled": "Desinstal·lat",
-    "update": {
-      "canceled": "S'ha cancel·lat l'actualització",
-      "finished": "L'actualització s'ha completat",
-      "started": "S'ha iniciat l'actualització",
-      "failed": "No s'ha pogut actualitzar",
-      "paused": "Actualització en pausa"
-    },
-    "import": {
-      "failed": "La importació ha fallat"
-    }
-  },
   "offline-message": {
     "hint": "Estem comprovant la connectivitat a:{{newline}}github.com,{{newline}}gog.com,{{newline}}store.epicgames.com i{{newline}}cloudflare-dns.com",
     "ignore": "Ignora",
@@ -382,7 +333,6 @@
     "allGames": "Tots els jocs"
   },
   "tray": {
-    "about": "Quant a",
     "quit": "Surt",
     "reload": "Carrega de nou",
     "show": "Mostra"

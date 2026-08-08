@@ -89,7 +89,6 @@
     "link": "İndirilenler",
     "title": "İndirilenler"
   },
-  "epic": {},
   "Epic Games": "Epic Games",
   "error": "Hata",
   "favourites": "Favoriler",
@@ -198,54 +197,6 @@
     "zoom": "Zoom Girişi"
   },
   "message": {},
-  "notify": {
-    "error": {
-      "move": "Oyunu Taşıma Hatası",
-      "reparing": "Onarım Hatası"
-    },
-    "finished": {
-      "add": {
-        "steam": {
-          "corrupt": "{{game}} bulunan tüm Steam kullanıcılarına eklenemedi. Daha fazla bilgi için günlüklere bakın. Değişikliklerin etkili olması için Steam'in yeniden başlatılması gerekmektedir.",
-          "success": "{{game}} Steam'e başarıyla eklendi. Değişikliklerin etkili olması için Steam'in yeniden başlatılması gerekmektedir.",
-          "title": "Steam'e eklendi"
-        }
-      },
-      "remove": {
-        "steam": {
-          "corrupt": "{{game}} bulunan tüm Steam kullanıcılarından kaldırılamadı. Daha fazla bilgi için günlüklere bakın. Değişikliklerin etkili olması için Steam'in yeniden başlatılması gerekmektedir.",
-          "success": "{{game}} Steam'den başarıyla kaldırıldı. Değişikliklerin etkili olması için Steam'in yeniden başlatılması gerekmektedir.",
-          "title": "Steam'den kaldırıldı"
-        }
-      },
-      "reparing": "Onarım Tamamlandı"
-    },
-    "install": {
-      "canceled": "Kurulum İptal Edildi",
-      "error": "Kurulum Başarısız",
-      "finished": "Kurulum Tamamlandı",
-      "imported": "Oyun İçe Aktarıldı",
-      "startInstall": "Kurulum Başladı",
-      "failed": "Kurulum Başarısız",
-      "paused": "Kurulum Duraklatıldı"
-    },
-    "moved": "Taşıma Tamamlandı",
-    "moving": "Oyun Taşınıyor",
-    "refresh": {
-      "error": "Belki de Github API kısıtlamaları nedeniyle yukarı akıştan sürümler getirilemedi! Daha sonra tekrar deneyin."
-    },
-    "uninstalled": "Kaldırıldı",
-    "update": {
-      "canceled": "Güncelleme İptal Edildi",
-      "finished": "Güncelleme Tamamlandı",
-      "started": "Güncelleme Başladı",
-      "failed": "Güncelleme başarısız oldu",
-      "paused": "Güncelleme Duraklatıldı"
-    },
-    "import": {
-      "failed": "İçe Aktarma Başarısız"
-    }
-  },
   "offline-message": {
     "hint": "Bağlantıyı kontrol ediyoruz:{{newline}}github.com,{{newline}}gog.com,{{newline}}store.epicgames.com ve{{newline}}cloudflare-dns.com",
     "ignore": "Görmezden Gel",
@@ -385,7 +336,6 @@
     "allGames": "Tüm Oyunlar"
   },
   "tray": {
-    "about": "Hakkında",
     "quit": "Çık",
     "reload": "Yenile",
     "show": "Göster"

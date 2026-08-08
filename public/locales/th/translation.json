@@ -119,54 +119,6 @@
     "default": "กำลังโหลด…",
     "website": ""
   },
-  "notify": {
-    "finished": {
-      "add": {
-        "steam": {
-          "title": "เพิ่มไปยัง Steam",
-          "corrupt": "",
-          "success": ""
-        }
-      },
-      "remove": {
-        "steam": {
-          "title": "ลบออกจาก Steam",
-          "corrupt": "",
-          "success": ""
-        }
-      },
-      "reparing": ""
-    },
-    "uninstalled": "ถอนการติดตั้ง",
-    "update": {
-      "started": "",
-      "paused": "",
-      "failed": "",
-      "canceled": "",
-      "finished": ""
-    },
-    "import": {
-      "failed": ""
-    },
-    "error": {
-      "reparing": "",
-      "move": ""
-    },
-    "install": {
-      "canceled": "",
-      "startInstall": "",
-      "finished": "",
-      "failed": "",
-      "paused": "",
-      "error": "",
-      "imported": ""
-    },
-    "moved": "",
-    "refresh": {
-      "error": ""
-    },
-    "moving": ""
-  },
   "queue": {
     "label": {
       "downloading": "กำลังดาวน์โหลด",
@@ -244,7 +196,6 @@
     "installed": "ติดตั้งแล้ว"
   },
   "tray": {
-    "about": "เกี่ยวกับ",
     "show": "",
     "reload": "",
     "quit": ""
@@ -385,7 +336,6 @@
     "noGames": "",
     "noResults": ""
   },
-  "epic": {},
   "search": "",
   "error": "",
   "Amazon Games": "",

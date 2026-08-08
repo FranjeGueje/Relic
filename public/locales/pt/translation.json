@@ -92,7 +92,6 @@
     "link": "Transferências",
     "title": "Transferências"
   },
-  "epic": {},
   "Epic Games": "Epic Games",
   "error": "Erro",
   "favourites": "Favoritos",
@@ -200,54 +199,6 @@
     "zoom": "Iniciar sessão no Zoom"
   },
   "message": {},
-  "notify": {
-    "error": {
-      "move": "Erro ao Mover o Jogo",
-      "reparing": "Erro ao Reparar"
-    },
-    "finished": {
-      "add": {
-        "steam": {
-          "corrupt": "Não foi possível adicionar o jogo {{game}} a todos os utilizadores do Steam encontrados. Consulte os registos de eventos para obter mais informações. É necessário reiniciar o Steam para que as alterações sejam aplicadas.",
-          "success": "O jogo {{game}} foi adicionado com sucesso ao Steam. É necessário reiniciar o Steam para que as alterações sejam aplicadas.",
-          "title": "Adicionado ao Steam"
-        }
-      },
-      "remove": {
-        "steam": {
-          "corrupt": "Não foi possível remover o jogo {{game}} de todos os utilizadores do Steam encontrados. Consulte os registos de eventos para obter mais informações. É necessário reiniciar o Steam para que as alterações sejam aplicadas.",
-          "success": "O jogo {{game}} foi removido com sucesso do Steam. É necessário reiniciar o Steam para que as alterações sejam aplicadas.",
-          "title": "Removido do Steam"
-        }
-      },
-      "reparing": "A Reparação Terminou"
-    },
-    "install": {
-      "canceled": "A Instalação foi Cancelada",
-      "error": "A Instalação Falhou",
-      "finished": "A Instalação está Terminada",
-      "imported": "O Jogo foi Importado",
-      "startInstall": "A Instalação Iniciou",
-      "failed": "A Instalação Falhou",
-      "paused": "A Instalação está em Pausa"
-    },
-    "moved": "Movido com sucesso",
-    "moving": "A Mover o Jogo",
-    "refresh": {
-      "error": "Não foi possível procurar novas versões, talvez por restrições da API do Github! Tente novamente mais tarde."
-    },
-    "uninstalled": "Desinstalado",
-    "update": {
-      "canceled": "A Atualização foi Cancelada",
-      "finished": "A Atualização Terminou",
-      "started": "A Atualização Iniciou",
-      "failed": "A Atualização Falhou",
-      "paused": "A Atualização está em Pausa"
-    },
-    "import": {
-      "failed": "A Importação Falhou"
-    }
-  },
   "offline-message": {
     "hint": "Estamos a verificar a conectividade com:{{newline}}github.com,{{newline}}gog.com,{{newline}}store.epicgames.com e{{newline}}cloudflare-dns.com",
     "ignore": "Ignorar",
@@ -384,7 +335,6 @@
     "allGames": "Todos os Jogos"
   },
   "tray": {
-    "about": "Acerca de",
     "quit": "Sair",
     "reload": "Recarregar",
     "show": "Mostrar"

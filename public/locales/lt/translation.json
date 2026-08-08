@@ -31,54 +31,6 @@
     "default-install-path": "Default install path",
     "proton-path": "GE-Proton path"
   },
-  "notify": {
-    "uninstalled": "Išdiegti",
-    "finished": {
-      "add": {
-        "steam": {
-          "title": "Pridėti prie „Steam“",
-          "success": "„{{game}}“ buvo sėkmingai pridėtas prie „Steam“. „Steam“ paleidimas iš naujo yra reikalingas, norint, kad pokyčiai būtų įtvirtinti.",
-          "corrupt": "„{{game}}“ negalėjo būt pridėtas prie visų rastų „Steam“ vartotojų/naudotojų. Peržiūrėkite žurnalą, norint sužinoti daugiau. „Steam“ paleidimas iš naujo yra reikalingas, norint, kad pokyčiai būtų įtvirtinti."
-        }
-      },
-      "remove": {
-        "steam": {
-          "title": "Pašalinti iš „Steam“",
-          "corrupt": "„{{game}}“ negalėjo būt pašalintas iš visų rastų „Steam“ vartotojų/naudotojų. Peržiūrėkite žurnalą, norint sužinoti daugiau. „Steam“ paleidimas iš naujo yra reikalingas, norint, kad pokyčiai būtų įtvirtinti.",
-          "success": "„{{game}}“ buvo sėkmingai pašalintas iš „Steam“. „Steam“ paleidimas iš naujo yra reikalingas, norint, kad pokyčiai būtų įtvirtinti."
-        }
-      },
-      "reparing": "Baigta taisyti"
-    },
-    "install": {
-      "canceled": "Įdiegimas atšauktas",
-      "error": "Įdiegimas nepavyko",
-      "failed": "Įdiegimas nepavyko",
-      "finished": "Įdiegimas baigtas",
-      "imported": "Žaidimas importuotas",
-      "startInstall": "Įdiegimas pradėtas",
-      "paused": "Įdiegimas sustabdytas"
-    },
-    "moved": "Perkėlimas baigtas",
-    "update": {
-      "failed": "Atnaujinimas nepavyko",
-      "canceled": "Atnaujinimas atšauktas",
-      "started": "Atnaujinimas pradėtas",
-      "finished": "Atnaujinimas baigtas",
-      "paused": "Atnaujinimas sustabdytas"
-    },
-    "moving": "Perkeliamas žaidimas",
-    "error": {
-      "move": "Klaida perkeliant žaidimą",
-      "reparing": "Klaida taisant"
-    },
-    "refresh": {
-      "error": "Nepavyko gauti leidinių iš išsiunčiamo srauto, galbūt dėl „Github API“ ribojimų! Pabandykite dar kartą vėlesniu laiku."
-    },
-    "import": {
-      "failed": "Importavimas nepavyko"
-    }
-  },
   "button": {
     "login": "Prisijungti",
     "continue": "Tęsti",
@@ -299,7 +251,6 @@
     "delete-question": "Tęsiant, visam laikui pašalins šią kategoriją ir atsies ją iš visų žaidimų. Tęsti?",
     "add-new-category": "Pridėti naują kategoriją"
   },
-  "epic": {},
   "Epic Games": "„Epic Games“",
   "Library": "Biblioteka",
   "login": {
@@ -336,7 +287,6 @@
     "allGames": "Visi žaidimai"
   },
   "tray": {
-    "about": "Apie",
     "show": "Rodyti",
     "quit": "Išeiti",
     "reload": "Perleisti"

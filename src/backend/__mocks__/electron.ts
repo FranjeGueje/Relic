@@ -24,16 +24,6 @@ const app = {
   }
 }
 
-class Notification {
-  public show() {
-    return
-  }
-
-  public isSupported() {
-    return false
-  }
-}
-
 class BrowserWindow {
   static windows: BrowserWindow[] = []
   options: BrowserWindowConstructorOptions = {}
@@ -108,7 +98,6 @@ const ipcMain = new EventEmitter()
 export {
   dialog,
   app,
-  Notification,
   BrowserWindow,
   Menu,
   nativeImage,

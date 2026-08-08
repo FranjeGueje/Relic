@@ -84,7 +84,6 @@
     "link": "다운로드",
     "title": "다운로드"
   },
-  "epic": {},
   "Epic Games": "에픽 게임즈",
   "error": "오류",
   "favourites": "즐겨찾기",
@@ -192,54 +191,6 @@
     "zoom": ""
   },
   "message": {},
-  "notify": {
-    "error": {
-      "move": "게임 이동 중 오류 발생",
-      "reparing": "복구 중 오류 발생"
-    },
-    "finished": {
-      "add": {
-        "steam": {
-          "corrupt": "{{game}}을(를) 찾은 모든 스팀 사용자에게 추가할 수 없습니다. 자세한 내용은 로그를 참조하세요. 변경 사항을 적용하려면 스팀을 다시 시작해야 합니다.",
-          "success": "{{game}}이(가) 스팀에 성공적으로 추가되었습니다. 변경 사항을 적용하려면 스팀을 다시 시작해야 합니다.",
-          "title": "스팀에 추가됨"
-        }
-      },
-      "remove": {
-        "steam": {
-          "corrupt": "{{game}}을(를) 모든 스팀 사용자에서 제거할 수 없습니다. 자세한 내용은 로그를 참조하세요. 변경 사항을 적용하려면 스팀을 다시 시작해야 합니다.",
-          "success": "{{game}}이(가) 스팀에서 성공적으로 제거되었습니다. 변경 사항을 적용하려면 스팀을 다시 시작해야 합니다.",
-          "title": "스팀에서 제거됨"
-        }
-      },
-      "reparing": "복구 완료"
-    },
-    "install": {
-      "canceled": "설치 취소됨",
-      "error": "설치 실패함",
-      "finished": "설치 완료됨",
-      "imported": "게임 가져옴",
-      "startInstall": "설치 시작됨",
-      "failed": "설치 실패함",
-      "paused": "설치 일시 정지됨"
-    },
-    "moved": "이동 완료됨",
-    "moving": "게임 이동 중",
-    "refresh": {
-      "error": "업스트림에서 릴리스를 가져올 수 없습니다. 아마도 깃허브 API 제한 때문일 수 있습니다! 나중에 다시 시도하세요."
-    },
-    "uninstalled": "설치 제거됨",
-    "update": {
-      "canceled": "업데이트 취소됨",
-      "finished": "업데이트 완료함",
-      "started": "업데이트 시작됨",
-      "failed": "업데이트가 실패함",
-      "paused": "업데이트 일시 정지됨"
-    },
-    "import": {
-      "failed": ""
-    }
-  },
   "offline-message": {
     "hint": "다음 사이트에 대한 연결을 확인하고 있습니다:{{newline}}github.com,{{newline}}gog.com,{{newline}}store.epicgames.com,{{newline}}cloudflare-dns.com",
     "ignore": "무시",
@@ -374,7 +325,6 @@
     "allGames": "모든 게임"
   },
   "tray": {
-    "about": "정보",
     "quit": "나가기",
     "reload": "다시 로드",
     "show": "표시"

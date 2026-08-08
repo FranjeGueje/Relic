@@ -107,54 +107,6 @@
     },
     "dxfpslimit": "Indstiller en begrænsning for billedfrekvensen for DirectX-spil (9-12)"
   },
-  "notify": {
-    "uninstalled": "Afinstalleret",
-    "error": {
-      "move": "Fejl under flytning af spillet",
-      "reparing": "Fejl ved reparation"
-    },
-    "finished": {
-      "add": {
-        "steam": {
-          "corrupt": "{{game}} kunne ikke tilføjes til alle fundne Steam-brugere. Se logs for mere info. En genstart af Steam er påkrævet, ændringer skal træde i kraft.",
-          "title": "Tilføjet til Steam",
-          "success": "{{game}} blev føjet til Steam. En genstart af Steam er påkrævet, ændringer skal træde i kraft."
-        }
-      },
-      "remove": {
-        "steam": {
-          "success": "{{game}} blev fjernet til Steam. En genstart af Steam er påkrævet, ændringer skal træde i kraft.",
-          "title": "Fjernet fra Steam",
-          "corrupt": "{{game}} kunne ikke fjernes fra alle fundne Steam-brugere. Se logs for mere info. En genstart af Steam er påkrævet, ændringer skal træde i kraft."
-        }
-      },
-      "reparing": "Færdig reparation"
-    },
-    "install": {
-      "canceled": "Installation annulleret",
-      "finished": "Installation afsluttet",
-      "imported": "Spil importeret",
-      "startInstall": "Installation påbegyndt",
-      "error": "Installation mislykkedes",
-      "failed": "Installation mislykkedes",
-      "paused": "Installation sat på pause"
-    },
-    "moved": "Færdig med flytning",
-    "moving": "Flytende spil",
-    "refresh": {
-      "error": "Kunne ikke hente udgivelser fra upstream, måske på grund af Github API-begrænsninger! Prøv igen senere."
-    },
-    "update": {
-      "canceled": "Opdatering annulleret",
-      "finished": "Opdatering Færdig",
-      "started": "Opdatering startet",
-      "failed": "Opdatering fejlede",
-      "paused": "Opdatering sat på pause"
-    },
-    "import": {
-      "failed": "Import fejlede"
-    }
-  },
   "Plugins": "Plugins",
   "Projects": "Projekter",
   "Recent": "Spillede for nylig",
@@ -341,7 +293,6 @@
     "title": "Dette spil inkluderer et antisnyd-program",
     "multiplayer_may_not_work": "Multiplayer-funktioner fungerer måske ikke, på grund af nægtet eller ødelagt antisnyd-understøttelse."
   },
-  "epic": {},
   "generic": {
     "error": {
       "component": "Ingen spil fundet - Prøv at logge ud og logge på igen eller en af mulighederne nedenfor"
@@ -374,7 +325,6 @@
   "search": "Søg efter spil",
   "tray": {
     "show": "At vise",
-    "about": "Om",
     "quit": "Afslut",
     "reload": "Genindlæs"
   },

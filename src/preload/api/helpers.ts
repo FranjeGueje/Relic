@@ -1,9 +1,7 @@
 import { frontendListenerSlot, makeHandlerInvoker, makeListenerCaller } from '../ipc'
 
-export const notify = makeListenerCaller('notify')
 export const openLoginPage = makeListenerCaller('openLoginPage')
 export const quit = makeListenerCaller('quit')
-export const showAboutWindow = makeListenerCaller('showAboutWindow')
 export const createNewWindow = makeListenerCaller('createNewWindow')
 export const readConfig = makeHandlerInvoker('readConfig')
 export const isLoggedIn = makeHandlerInvoker('isLoggedIn')

@@ -92,7 +92,6 @@
     "link": "Downloads",
     "title": "Downloads"
   },
-  "epic": {},
   "Epic Games": "Epic Games",
   "error": "Erro",
   "favourites": "Favoritos",
@@ -201,54 +200,6 @@
     "zoom": "Login no Zoom"
   },
   "message": {},
-  "notify": {
-    "error": {
-      "move": "Erro ao mover o jogo",
-      "reparing": "Erro ao reparar"
-    },
-    "finished": {
-      "add": {
-        "steam": {
-          "corrupt": "{{game}} não pôde ser adicionado a todos os usuários do Steam encontrados. Consulte os registros para obter mais informações. É necessário reiniciar o Steam para as alterações terem efeito.",
-          "success": "{{game}} foi adicionado com sucesso ao Steam. É necessário reiniciar o Steam para as alterações terem efeito.",
-          "title": "Adicionado ao Steam"
-        }
-      },
-      "remove": {
-        "steam": {
-          "corrupt": "{{game}} não pôde ser removido de todos os usuários do Steam encontrados. Consulte os registros para obter mais informações. É necessário reiniciar o Steam para as alterações terem efeito.",
-          "success": "{{game}} foi removido com sucesso do Steam. É necessário reiniciar o Steam para as alterações terem efeito.",
-          "title": "Removido do Steam"
-        }
-      },
-      "reparing": "Reparo concluído"
-    },
-    "install": {
-      "canceled": "Instalação cancelada",
-      "error": "Erro na instalação",
-      "finished": "Instalação concluída",
-      "imported": "Jogo importado",
-      "startInstall": "Instalação iniciada",
-      "failed": "Instalação falhou",
-      "paused": "Instalação pausada"
-    },
-    "moved": "Movido com sucesso",
-    "moving": "Movendo jogo",
-    "refresh": {
-      "error": "Não foi possível buscar lançamentos do upstream, talvez devido às restrições da API do Github! Tente mais tarde."
-    },
-    "uninstalled": "Desinstalado",
-    "update": {
-      "canceled": "Atualização cancelada",
-      "finished": "Atualização concluída",
-      "started": "Atualização iniciada",
-      "failed": "Atualização falhou",
-      "paused": "Atualização pausada"
-    },
-    "import": {
-      "failed": "Falha na importação"
-    }
-  },
   "offline-message": {
     "hint": "Estamos checando a conectividade em:{{newline}}github.com,{{newline}}gog.com,{{newline}}store.epicgames.com e {{newline}}cloudflare-dns.com",
     "ignore": "Ignore",
@@ -389,7 +340,6 @@
     "allGames": "Todos os Jogos"
   },
   "tray": {
-    "about": "Sobre o Relic",
     "quit": "Sair do Relic",
     "reload": "Recarregar o Relic",
     "show": "Mostrar o Relic"

@@ -84,7 +84,6 @@
     "link": "Downloads",
     "title": "Downloads"
   },
-  "epic": {},
   "Epic Games": "Epik oyunlar",
   "error": "Error",
   "favourites": "Sevimlilər",
@@ -192,54 +191,6 @@
     "zoom": ""
   },
   "message": {},
-  "notify": {
-    "error": {
-      "move": "Oyunu köçürərkən xəta",
-      "reparing": "Xəta Təmiri"
-    },
-    "finished": {
-      "add": {
-        "steam": {
-          "corrupt": "{{game}} bütün tapılmış Steam istifadəçilərinə əlavə edilə bilmədi. Əlavə məlumat üçün qeydlərə baxın. Steam-in yenidən işə salınması tələb olunur, dəyişikliklərin qüvvəyə minməsi üçün.",
-          "success": "{{game}} Steam-ə uğurla əlavə edildi. Steam-in yenidən işə salınması tələb olunur, dəyişikliklərin qüvvəyə minməsi üçün.",
-          "title": "Steam-ə əlavə edildi"
-        }
-      },
-      "remove": {
-        "steam": {
-          "corrupt": "{{game}} bütün tapılmış Steam istifadəçilərindən silinə bilmədi. Əlavə məlumat üçün qeydlərə baxın. Steam-in yenidən işə salınması tələb olunur, dəyişikliklərin qüvvəyə minməsi üçün.",
-          "success": "{{game}} Steam-dən uğurla silindi. Steam-in yenidən işə salınması tələb olunur, dəyişikliklərin qüvvəyə minməsi üçün.",
-          "title": "Steam-dən silindi"
-        }
-      },
-      "reparing": "Təmiri Bitirdi"
-    },
-    "install": {
-      "canceled": "Quraşdırma Ləğv edildi",
-      "error": "Quraşdırma uğursuz oldu",
-      "finished": "Quraşdırma tamamlandı",
-      "imported": "Oyun İdxal",
-      "startInstall": "Quraşdırma Başladı",
-      "paused": "Quraşdırma dayandırıldı",
-      "failed": "Quraşdırma uğursuz oldu"
-    },
-    "moved": "Hərəkət tamamlandı",
-    "moving": "Hərəkətli Oyun",
-    "refresh": {
-      "error": "Github API məhdudiyyətlərinə görə ola bilsin ki, yuxarıdan buraxılışları əldə etmək mümkün olmadı! Biraz sonra yenidən cəhd edin."
-    },
-    "uninstalled": "Silindi",
-    "update": {
-      "canceled": "Yeniləndi Ləğv edildi",
-      "finished": "Yeniləmə Tamamlandı",
-      "started": "Yeniləmə Başladı",
-      "failed": "Yeniləmə alınmadı",
-      "paused": "Yeniləmə dayandırıldı"
-    },
-    "import": {
-      "failed": ""
-    }
-  },
   "offline-message": {
     "hint": "We are checking the connectivity against:{{newline}}github.com,{{newline}}gog.com and{{newline}}store.epicgames.com",
     "ignore": "Ignore",
@@ -365,7 +316,6 @@
     "allGames": "Bütün Oyunlar"
   },
   "tray": {
-    "about": "Haqqında",
     "quit": "Çıxın",
     "reload": "Yenidən yükləyin",
     "show": "Göstər"

@@ -131,54 +131,6 @@
     },
     "steam_path": {}
   },
-  "notify": {
-    "uninstalled": "წაშლა",
-    "finished": {
-      "remove": {
-        "steam": {
-          "title": "",
-          "corrupt": "",
-          "success": ""
-        }
-      },
-      "reparing": "",
-      "add": {
-        "steam": {
-          "corrupt": "",
-          "title": "",
-          "success": ""
-        }
-      }
-    },
-    "update": {
-      "started": "",
-      "paused": "",
-      "failed": "",
-      "canceled": "",
-      "finished": ""
-    },
-    "import": {
-      "failed": ""
-    },
-    "error": {
-      "reparing": "",
-      "move": ""
-    },
-    "install": {
-      "canceled": "",
-      "startInstall": "",
-      "finished": "",
-      "failed": "",
-      "paused": "",
-      "error": "",
-      "imported": ""
-    },
-    "moved": "",
-    "refresh": {
-      "error": ""
-    },
-    "moving": ""
-  },
   "queue": {
     "label": {
       "downloading": "გადმოწერა",
@@ -263,7 +215,6 @@
     "new-category": "",
     "add-new-category": ""
   },
-  "epic": {},
   "error": "შეცდომა",
   "favourites": "რჩეულები",
   "game": {
@@ -303,7 +254,6 @@
   },
   "progress": "მიმდინარეობა",
   "tray": {
-    "about": "შესახებ",
     "quit": "გასვლა",
     "reload": "თავიდან ჩატვირთვა",
     "show": "ჩვენება"

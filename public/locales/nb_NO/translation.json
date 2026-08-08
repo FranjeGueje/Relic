@@ -92,7 +92,6 @@
     "link": "Nedlastninger",
     "title": "Nedlastninger"
   },
-  "epic": {},
   "Epic Games": "Epic Games",
   "error": "Error",
   "favourites": "Favoritter",
@@ -200,54 +199,6 @@
     "zoom": "Logg inn på Zoom"
   },
   "message": {},
-  "notify": {
-    "error": {
-      "move": "Feil ved flytting av spillet",
-      "reparing": "Feil ved reparasjon"
-    },
-    "finished": {
-      "add": {
-        "steam": {
-          "corrupt": "{{game}} kunne ikke legges til alle Steam-brukere som ble funnet. Se logger for mer info. En omstart av Steam er nødvendig, endringer trer i kraft.",
-          "success": "{{game}} ble lagt til Steam. En omstart av Steam er nødvendig, endringer trer i kraft.",
-          "title": "Lagt til Steam"
-        }
-      },
-      "remove": {
-        "steam": {
-          "corrupt": "{{game}} kunne ikke fjernes fra alle Steam-brukere som ble funnet. Se logger for mer info. En omstart av Steam er nødvendig, endringer trer i kraft.",
-          "success": "{{game}} ble fjernet til Steam. En omstart av Steam er nødvendig, endringer trer i kraft.",
-          "title": "Fjernet fra Steam"
-        }
-      },
-      "reparing": "Ferdig med reparasjon"
-    },
-    "install": {
-      "canceled": "Installasjon avbrutt",
-      "error": "Installasjon feilet",
-      "finished": "Installasjon fullført",
-      "imported": "Spill importert",
-      "startInstall": "Installasjon startet",
-      "failed": "Installasjon feilet",
-      "paused": "Installasjon satt på pause"
-    },
-    "moved": "Flytting fullført",
-    "moving": "Flytter spill",
-    "refresh": {
-      "error": "Kunne ikke hente utgivelser fra oppstrøms, kanskje på grunn av Github API-begrensninger! Prøv igjen senere."
-    },
-    "uninstalled": "Avinstallert",
-    "update": {
-      "canceled": "Oppgradering avbrutt",
-      "finished": "Oppgradering fullført",
-      "started": "Oppgradering startet",
-      "failed": "Oppdatering mislyktes",
-      "paused": "Oppdatering satt på pause"
-    },
-    "import": {
-      "failed": "Importering mislyktes"
-    }
-  },
   "offline-message": {
     "hint": "Vi sjekker om vi kan koble til:{{newline}}github.com,{{newline}}gog.com,{{newline}}store.epicgames.com, og{{newline}}cloudflare-dns.com",
     "ignore": "Ignore",
@@ -379,7 +330,6 @@
     "allGames": "Alle spill"
   },
   "tray": {
-    "about": "Om",
     "quit": "Avslutt",
     "reload": "Last inn igjen",
     "show": "Vis"

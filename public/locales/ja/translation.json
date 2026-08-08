@@ -87,7 +87,6 @@
     "link": "ダウンロード",
     "title": "ダウンロード"
   },
-  "epic": {},
   "Epic Games": "Epic Games",
   "error": "エラー",
   "favourites": "お気に入り",
@@ -196,54 +195,6 @@
     "zoom": "Zoomへのログイン"
   },
   "message": {},
-  "notify": {
-    "error": {
-      "move": "ゲームの移動中にエラーが発生しました",
-      "reparing": "修復中にエラーが発生しました"
-    },
-    "finished": {
-      "add": {
-        "steam": {
-          "corrupt": "{{game}}を検出されたすべてのSteamユーザに追加できませんでした。詳細については、ログを参照してください。変更を有効にするには、Steamを再起動する必要があります。",
-          "success": "{{game}}がSteamに正常に追加されました。変更を有効にするには、Steamを再起動する必要があります。",
-          "title": "Steamに追加されました"
-        }
-      },
-      "remove": {
-        "steam": {
-          "corrupt": "{{game}}を検出されたすべてのSteamユーザから追加できませんでした。詳細については、ログを参照してください。変更を有効にするには、Steamを再起動する必要があります。",
-          "success": "{{game}}がSteamから正常に削除されました。変更を有効にするには、Steamを再起動する必要があります。",
-          "title": "Steamから削除されました"
-        }
-      },
-      "reparing": "修復が完了しました"
-    },
-    "install": {
-      "canceled": "インストールがキャンセルされました",
-      "error": "インストールに失敗しました",
-      "finished": "インストールが完了しました",
-      "imported": "ゲームがインポートされました",
-      "startInstall": "インストールが開始されました",
-      "failed": "インストールに失敗しました",
-      "paused": "インストールが一時停止されました"
-    },
-    "moved": "移動が完了しました",
-    "moving": "ゲームを移動中",
-    "refresh": {
-      "error": "おそらくGitHub APIの制限のため、アップストリームからリリースを取得できませんでした! しばらく待ってからもう一度お試しください。"
-    },
-    "uninstalled": "アンインストールされました",
-    "update": {
-      "canceled": "アップデートがキャンセルされました",
-      "finished": "アップデートが完了しました",
-      "started": "アップデートが開始されました",
-      "failed": "アップデートに失敗しました",
-      "paused": "アップデートが一時停止されました"
-    },
-    "import": {
-      "failed": "インポート失敗"
-    }
-  },
   "offline-message": {
     "hint": "github.com、{{newline}}gog.com、{{newline}}store.epicgames.com、{{newline}}cloudflare-dns.com{{newline}}に接続できるかを確認しています",
     "ignore": "無視",
@@ -377,7 +328,6 @@
     "allGames": "すべてのゲーム"
   },
   "tray": {
-    "about": "Relicについて",
     "quit": "終了",
     "reload": "再読み込み",
     "show": "表示"

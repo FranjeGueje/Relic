@@ -1,9 +1,8 @@
 import { LogPrefix, logWarning } from 'backend/logger'
-import { dialog, Notification } from 'electron'
+import { dialog } from 'electron'
 import { ButtonOptions, DialogType } from 'common/types'
 import { getMainWindow } from '../main_window'
 import { sendFrontendMessage } from '../ipc'
-import { isSteamDeckGameMode } from 'backend/constants/environment'
 
 function showDialogBoxModalAuto(props: {
   event?: Electron.IpcMainInvokeEvent
@@ -81,22 +80,4 @@ async function askQuestion(props: {
   return response
 }
 
-type NotifyType = {
-  title: string
-  body: string
-}
-
-function notify({ body, title }: NotifyType) {
-  if (Notification.isSupported() && !isSteamDeckGameMode) {
-    const mainWindow = getMainWindow()
-    const notify = new Notification({
-      body,
-      title
-    })
-
-    notify.on('click', () => mainWindow?.show())
-    notify.show()
-  }
-}
-
-export { showDialogBoxModalAuto, askQuestion, notify }
+export { showDialogBoxModalAuto, askQuestion }

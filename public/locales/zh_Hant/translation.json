@@ -84,7 +84,6 @@
     "link": "下載",
     "title": "下載"
   },
-  "epic": {},
   "Epic Games": "Epic Games",
   "error": "錯誤",
   "favourites": "最愛",
@@ -192,54 +191,6 @@
     "zoom": ""
   },
   "message": {},
-  "notify": {
-    "error": {
-      "move": "移動遊戲時出現錯誤",
-      "reparing": "修復時出現錯誤"
-    },
-    "finished": {
-      "add": {
-        "steam": {
-          "corrupt": "{{game}} could not be added to all found Steam users. See logs for more info. A restart of Steam is required for changes to take effect.",
-          "success": "{{game}} was successfully added to Steam. A restart of Steam is required for changes to take effect.",
-          "title": "已新增至 Steam"
-        }
-      },
-      "remove": {
-        "steam": {
-          "corrupt": "{{game}} could not be removed from all found Steam users. See logs for more info. A restart of Steam is required for changes to take effect.",
-          "success": "{{game}} was successfully removed from Steam. A restart of Steam is required for changes to take effect.",
-          "title": "已從 Steam 移除"
-        }
-      },
-      "reparing": "已完成修復"
-    },
-    "install": {
-      "canceled": "安裝已取消",
-      "error": "安裝失敗",
-      "finished": "已完成安裝",
-      "imported": "遊戲已導入",
-      "startInstall": "安裝開始",
-      "failed": "安裝失敗",
-      "paused": "安裝暫停"
-    },
-    "moved": "移動完成",
-    "moving": "移動遊戲中",
-    "refresh": {
-      "error": "不能從上遊獲取releases，可能是因為 Github API 的限制！請稍後再試。"
-    },
-    "uninstalled": "已解除安裝",
-    "update": {
-      "canceled": "更新已取消",
-      "finished": "更新完成",
-      "started": "更新開始",
-      "failed": "更新失敗",
-      "paused": "更新暫停"
-    },
-    "import": {
-      "failed": ""
-    }
-  },
   "offline-message": {
     "hint": "我們正在檢查下列域名的連結狀態：{{newline}}github.com，{{newline}}gog.com，{{newline}}store.epicgames.com 及 {{newline}}cloudflare-dns.com",
     "ignore": "Ignore",
@@ -365,7 +316,6 @@
     "allGames": "所有遊戲"
   },
   "tray": {
-    "about": "關於",
     "quit": "退出",
     "reload": "重新載入",
     "show": "顯示"

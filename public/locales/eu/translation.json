@@ -84,7 +84,6 @@
     "link": "Downloads",
     "title": "Downloads"
   },
-  "epic": {},
   "Epic Games": "Epic Games",
   "error": "Error",
   "favourites": "Gogokoenak",
@@ -192,54 +191,6 @@
     "zoom": ""
   },
   "message": {},
-  "notify": {
-    "error": {
-      "move": "Errorea jokoa mugitzean",
-      "reparing": "Errorea konpontzean"
-    },
-    "finished": {
-      "add": {
-        "steam": {
-          "corrupt": "Ezin izan da {{game}} gehitu aurkitutako Steam-eko erabiltzaile guztiei. Ikusi erregistroak informazio gehiago lortzeko. Steam berrabiarazi behar da, aldaketak eragina izateko.",
-          "success": "{{game}} behar bezala gehitu da Steam-en. Steam berrabiarazi behar da aldaketak indarrean jartzeko.",
-          "title": "Steam-en gehitu da"
-        }
-      },
-      "remove": {
-        "steam": {
-          "corrupt": "Ezin izan da {{game}} kendu aurkitutako Steam-eko erabiltzaile guztietatik. Ikusi erregistroak informazio gehiago lortzeko. Steam berrabiarazi behar da aldaketak indarrean jartzeko.",
-          "success": "{{game}} behar bezala kendu da Steam-etik. Steam berrabiarazi behar da aldaketak eragina izateko.",
-          "title": "Lurrunetik kendu da"
-        }
-      },
-      "reparing": "Konponketa amaituta"
-    },
-    "install": {
-      "canceled": "Instalatu bertan behera",
-      "error": "Instalazioak huts egin du",
-      "finished": "Amaitu da instalatzea",
-      "imported": "Jokoa inportatua",
-      "startInstall": "Instalazioa hasi da",
-      "failed": "Instalazioak huts egin du",
-      "paused": "Instalazioa pausatu da"
-    },
-    "moved": "Mugitzen amaitu",
-    "moving": "Mugimendu Jokoa",
-    "refresh": {
-      "error": "Ezin izan dira igoko bertsioak eskuratu, agian Github APIaren murrizketak direla eta! Saiatu berriro geroago."
-    },
-    "uninstalled": "Desinstalatua",
-    "update": {
-      "canceled": "Eguneratua Ezeztatuta",
-      "finished": "Eguneraketa bukatu da",
-      "started": "Eguneratzea hasi da",
-      "failed": "Eguneratzea huts egin du",
-      "paused": "Eguneratzea pausatu da"
-    },
-    "import": {
-      "failed": ""
-    }
-  },
   "offline-message": {
     "hint": "Konektibitatea begiratzen ari gara zerbitzu hauentzat:{{newline}}github.com,{{newline}}gog.com {{newline}}store.epicgames.com eta{{newline}}cloudflare-dns.com",
     "ignore": "Ignore",
@@ -365,7 +316,6 @@
     "allGames": "Joko guztiak"
   },
   "tray": {
-    "about": "Buruz",
     "quit": "Irten",
     "reload": "Berriz kargatu",
     "show": "Erakutsi"

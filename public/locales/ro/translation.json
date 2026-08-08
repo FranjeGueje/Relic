@@ -84,7 +84,6 @@
     "link": "Downloads",
     "title": "Downloads"
   },
-  "epic": {},
   "Epic Games": "Epic Games",
   "error": "Error",
   "favourites": "Favorite",
@@ -192,54 +191,6 @@
     "zoom": ""
   },
   "message": {},
-  "notify": {
-    "error": {
-      "move": "Eroare la mutarea jocului",
-      "reparing": "Eroare la reparare"
-    },
-    "finished": {
-      "add": {
-        "steam": {
-          "corrupt": "{{game}} nu a putut fi adăugat la toți utilizatorii Steam găsiți. Consultați jurnalele pentru mai multe informații. Este necesară repornirea Steam, modificările vor intra în vigoare.",
-          "success": "{{game}} a fost adăugat cu succes la Steam. Este necesară repornirea Steam, modificările vor intra în vigoare.",
-          "title": "Adăugat la Steam"
-        }
-      },
-      "remove": {
-        "steam": {
-          "corrupt": "{{game}} nu a putut fi eliminat de la toți utilizatorii Steam găsiți. Consultați jurnalele pentru mai multe informații. Este necesară repornirea Steam, modificările vor intra în vigoare.",
-          "success": "{{game}} a fost eliminat cu succes pe Steam. Este necesară repornirea Steam, modificările vor intra în vigoare.",
-          "title": "Eliminat din Steam"
-        }
-      },
-      "reparing": "Reparație Terminată"
-    },
-    "install": {
-      "canceled": "Instalare Anulată",
-      "error": "Instalarea a eșuat",
-      "finished": "Instalare Finalizată",
-      "imported": "Joc importat",
-      "startInstall": "Instalarea a început",
-      "failed": "Instalarea a eșuat",
-      "paused": "Instalare întreruptă"
-    },
-    "moved": "Mutare Finalizată",
-    "moving": "Joc de Mișcare",
-    "refresh": {
-      "error": "Nu s-au putut prelua versiunile din amonte, poate din cauza restricțiilor API-ului Github! Încercați mai târziu."
-    },
-    "uninstalled": "Dezinstalat",
-    "update": {
-      "canceled": "Actualizare Anulată",
-      "finished": "Actualizare Finalizată",
-      "started": "Actualizarea a început",
-      "failed": "Actualizare esuata",
-      "paused": "Actualizare întreruptă"
-    },
-    "import": {
-      "failed": ""
-    }
-  },
   "offline-message": {
     "hint": "We are checking the connectivity against:{{newline}}github.com,{{newline}}gog.com and{{newline}}store.epicgames.com",
     "ignore": "Ignore",
@@ -366,7 +317,6 @@
     "allGames": "Toate jocurile"
   },
   "tray": {
-    "about": "Despre",
     "quit": "Părăsește",
     "reload": "Reîncărcați",
     "show": "Arată"

@@ -37,14 +37,12 @@ import type { GetLogFileArgs } from 'backend/logger/paths'
 interface SyncIPCFunctions {
   setZoomFactor: (zoomFactor: string) => void
   changeLanguage: (language: string) => void
-  notify: (args: { title: string; body: string }) => void
   frontendReady: () => void
   lock: (playing: boolean) => void
   unlock: () => void
   quit: () => void
   openExternalUrl: (url: string) => void
   openFolder: (folder: string) => void
-  showAboutWindow: () => void
   openLoginPage: () => void
   openWebviewPage: (url: string) => void
   showConfigFileInFolder: (appName: string) => void

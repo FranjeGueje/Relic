@@ -92,7 +92,6 @@
     "link": "Letöltések",
     "title": "Letöltések"
   },
-  "epic": {},
   "Epic Games": "Epic Games",
   "error": "Hiba",
   "favourites": "Kedvencek",
@@ -200,54 +199,6 @@
     "zoom": "Zoom bejelentkezés"
   },
   "message": {},
-  "notify": {
-    "error": {
-      "move": "Hiba a játék áthelyezésekor",
-      "reparing": "Hiba a javításkor"
-    },
-    "finished": {
-      "add": {
-        "steam": {
-          "corrupt": "A(z) {{game}} nem adható hozzá az összes megtalált Steam felhasználóhoz. További információkért lásd a naplókat. A változások érvénybe lépéséhez újra kell indítani a Steamet.",
-          "success": "A(z) {{game}} sikeresen hozzá lett adva Steamhez. A változások érvénybe lépéséhez újra kell indítani a Steamet.",
-          "title": "Hozzáadva a Steamhez"
-        }
-      },
-      "remove": {
-        "steam": {
-          "corrupt": "A(z) {{game}} nem távolítható el az összes Steam felhasználótól. További információkért lásd a naplókat. A változások érvénybe lépéséhez újra kell indítani a Steamet.",
-          "success": "A(z) {{game}} sikeresen el lett távolítva a Steamből. A változások érvénybe lépéséhez újra kell indítani a Steamet.",
-          "title": "Eltávolítva a Steamről"
-        }
-      },
-      "reparing": "A javítás befejezve"
-    },
-    "install": {
-      "canceled": "A telepítés megszakítva",
-      "error": "A telepítés sikertelen",
-      "finished": "Telepítés befejezve",
-      "imported": "Játék importálva",
-      "startInstall": "A telepítés elindult",
-      "failed": "A telepítés sikertelen",
-      "paused": "A telepítés szünetel"
-    },
-    "moved": "Áthelyezés befejezve",
-    "moving": "Játék áthelyezése…",
-    "refresh": {
-      "error": "Nem sikerült lekérni a kiadásokat a forrástól, lehet, hogy a GitHub API-korlátozásai miatt. Próbáld újra később."
-    },
-    "uninstalled": "Eltávolítva",
-    "update": {
-      "canceled": "A frissítés megszakítva",
-      "finished": "A frissítés befejezve",
-      "started": "A frissítés elindult",
-      "failed": "A frissítés sikertelen",
-      "paused": "A frissítés szünetel"
-    },
-    "import": {
-      "failed": "Az importálás nem sikerült"
-    }
-  },
   "offline-message": {
     "hint": "Ellenőrizzük a kapcsolatot a következő szolgáltatókkal:{{newline}}github.com,{{newline}}gog.com, {{newline}}store.epicgames.com és{{newline}}cloudflare-dns.com",
     "ignore": "Figyelmen kívül hagyás",
@@ -387,7 +338,6 @@
     "allGames": "Összes játék"
   },
   "tray": {
-    "about": "Névjegy",
     "quit": "Kilépés",
     "reload": "Újratöltés",
     "show": "Megjelenítés"

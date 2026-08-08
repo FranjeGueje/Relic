@@ -84,7 +84,6 @@
     "link": "Lataukset",
     "title": "Lataukset"
   },
-  "epic": {},
   "Epic Games": "Epic Games",
   "error": "Virhe",
   "favourites": "Suosikit",
@@ -192,54 +191,6 @@
     "zoom": "Zoom:iin kirjautuminen"
   },
   "message": {},
-  "notify": {
-    "error": {
-      "move": "Virhe pelin siirtämisessä",
-      "reparing": "Virhe korjauksessa"
-    },
-    "finished": {
-      "add": {
-        "steam": {
-          "corrupt": "{{game}} ei lisäytynyt kaikille Steam-käyttäjille. Lue lokikirjaukset lisätietoja varten. Steam pitää uudelleenkäynnistä jotta muutokset astuvat voimaan.",
-          "success": "{{game}} lisättiin Steam:iin onnistuneesti. Steam pitää uudelleenkäynnistää jotta muutokset astuvat voimaan.",
-          "title": "Lisätty Steam:iin"
-        }
-      },
-      "remove": {
-        "steam": {
-          "corrupt": "{{game}} ei poistunut kaikilta löytyneiltä Steam-käyttäjiltä. Lue lokikirjaukset lisätietoja varten. Steam pitää uudelleenkäynnistä jotta muutokset astuvat voimaan.",
-          "success": "{{game}} poistettiin Steam:ista onnistuneesti. Steam pitää uudelleenkäynnistää jotta muutokset astuvat voimaan.",
-          "title": "Poistettu Steam:ista"
-        }
-      },
-      "reparing": "Korjaus valmis"
-    },
-    "install": {
-      "canceled": "Asennus keskeytetty",
-      "error": "Asennus epäonnistui",
-      "finished": "Asennus valmistui",
-      "imported": "Peli tuotu",
-      "startInstall": "Asennus aloitettu",
-      "failed": "Asennus epäonnistui",
-      "paused": "Asennus tauotettu"
-    },
-    "moved": "Siirto valmis",
-    "moving": "Peliä siirretään",
-    "refresh": {
-      "error": "Päätahon julkaisutietoja ei saatu noudettua, mahdollisesti Github:in API-rajoitusten takia! Kokeile myöhemmin uudelleen."
-    },
-    "uninstalled": "Poistettu",
-    "update": {
-      "canceled": "Päivitys keskeytettiin",
-      "finished": "Päivitys valmis",
-      "started": "Päivitys aloitettu",
-      "failed": "Päivitys epäonnistui",
-      "paused": "Päivitys keskeytetty"
-    },
-    "import": {
-      "failed": "Tuonti epäonnistui"
-    }
-  },
   "offline-message": {
     "hint": "Tarkistamme yhteyden tilaa seuraavien osoitteiden kautta:{{newline}}github.com,{{newline}}gog.com ja{{newline}}store.epicgames.com",
     "ignore": "Ohita",
@@ -372,7 +323,6 @@
     "allGames": "Kaikki pelit"
   },
   "tray": {
-    "about": "Tietoja",
     "quit": "Poistu",
     "reload": "Lataa uudelleen",
     "show": "Näytä"

@@ -92,7 +92,6 @@
     "link": "Download",
     "title": "Download"
   },
-  "epic": {},
   "Epic Games": "Epic Games",
   "error": "Errore",
   "favourites": "Preferiti",
@@ -200,54 +199,6 @@
     "zoom": "Accesso con Zoom"
   },
   "message": {},
-  "notify": {
-    "error": {
-      "move": "Errore nello spostamento del gioco",
-      "reparing": "Errore nella riparazione"
-    },
-    "finished": {
-      "add": {
-        "steam": {
-          "corrupt": "{{game}} non può essere aggiunto a tutti gli utenti di Steam trovati. Vedi gli accessi per maggiori informazioni. È necessario riavviare Steam per applicare le modifiche.",
-          "success": "{{game}} è stato correttamente aggiunto a Steam. È necessario riavviare Steam per applicare le modifiche.",
-          "title": "Aggiunto a Steam"
-        }
-      },
-      "remove": {
-        "steam": {
-          "corrupt": "{{game}} non può essere rimosso da tutti gli utenti di Steam trovati. Vedi gli accessi per maggiori informazioni. È necessario riavviare Steam per applicare le modifiche.",
-          "success": "{{game}} è stato correttamente rimosso da Steam. È necessario riavviare Steam per rendere effettive le modifiche.",
-          "title": "Rimosso da Steam"
-        }
-      },
-      "reparing": "Riparazione completata"
-    },
-    "install": {
-      "canceled": "Installazione annullata",
-      "error": "Installazione non riuscita",
-      "finished": "Installazione completata",
-      "imported": "Gioco importato",
-      "startInstall": "Installazione avviata",
-      "failed": "Installazione non riuscita",
-      "paused": "Installazione sospesa"
-    },
-    "moved": "Spostamento completato",
-    "moving": "Spostando il gioco",
-    "refresh": {
-      "error": "Non è stato possibile riportare le pubblicazioni dalla fonte, forse a causa di restrizioni di Github API! Riprova più tardi."
-    },
-    "uninstalled": "Disinstallazione completata",
-    "update": {
-      "canceled": "Aggiornamento annullato",
-      "finished": "Aggiornamento completato",
-      "started": "Aggiornamento avviato",
-      "failed": "Aggiornamento non riuscito",
-      "paused": "Aggiornamento sospeso"
-    },
-    "import": {
-      "failed": "Importazione fallita"
-    }
-  },
   "offline-message": {
     "hint": "Stiamo controllando la connessione per:{{newline}}github.com,{{newline}}gog.com,{{newline}}store.epicgames.com e{{newline}}cloudflare-dns.com",
     "ignore": "Ignora",
@@ -385,7 +336,6 @@
     "allGames": "Tutti i giochi"
   },
   "tray": {
-    "about": "Informazioni su",
     "quit": "Esci",
     "reload": "Ricarica",
     "show": "Mostra"

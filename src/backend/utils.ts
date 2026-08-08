@@ -6,7 +6,7 @@ import { app } from 'electron'
 import { exec, spawn, SpawnOptions, spawnSync } from 'child_process'
 import { existsSync, mkdirSync, readFileSync, rmSync } from 'fs'
 import { promisify } from 'util'
-import i18next, { t } from 'i18next'
+import i18next from 'i18next'
 
 import {
   logError,
@@ -33,7 +33,7 @@ import {
   libraryStore as nileLibraryStore
 } from './storeManagers/nile/electronStores'
 import { formatBytes } from 'common/formatBytes'
-import { showDialogBoxModalAuto, askQuestion, notify } from './dialog/dialog'
+import { showDialogBoxModalAuto, askQuestion } from './dialog/dialog'
 import { openExternal } from './utils/open_external'
 import { getMainWindow } from './main_window'
 import { sendFrontendMessage } from './ipc'
@@ -41,7 +41,6 @@ import { GlobalConfig } from './config'
 import { GameConfig } from './game_config'
 import { libraryManagerMap } from 'backend/storeManagers'
 import { readdir, lstat } from 'fs/promises'
-import { getRelicVersion } from './utils/systeminfo/relicVersion'
 import { backendEvents } from './backend_events'
 import EasyDl from 'easydl'
 
@@ -57,8 +56,7 @@ import {
   gamesConfigPath,
   relicIconFolder,
   publicDir,
-  toolsPath,
-  windowIcon
+  toolsPath
 } from './constants/paths'
 import { parse } from '@node-steam/vdf'
 
@@ -127,16 +125,6 @@ async function isEpicServiceOffline(
   if (!isOnline()) return true
 
   const epicStatusApi = 'https://status.epicgames.com/api/v2/components.json'
-  // urgency/timeoutType/silent were spelled out here but held Electron's own
-  // defaults, so they are dropped rather than threaded through notify().
-  const offlineNotification = {
-    title: `${type} ${t('epic.offline-notification-title', 'offline')}`,
-    body: t(
-      'epic.offline-notification-body',
-      'Relic will maybe not work probably!'
-    )
-  }
-
   try {
     const { data } = await axiosClient.get(epicStatusApi)
 
@@ -145,11 +133,7 @@ async function isEpicServiceOffline(
 
       // found component and checking status
       if (name === type) {
-        const isOffline = indicator === 'major'
-        if (isOffline) {
-          notify(offlineNotification)
-        }
-        return isOffline
+        return indicator === 'major'
       }
     }
 
@@ -168,16 +152,6 @@ async function isEpicServiceOffline(
     )
     return false
   }
-}
-
-const showAboutWindow = () => {
-  app.setAboutPanelOptions({
-    applicationName: 'Relic',
-    applicationVersion: getRelicVersion(),
-    copyright: 'GPL V3',
-    iconPath: windowIcon
-  })
-  return app.showAboutPanel()
 }
 
 async function handleExit() {
@@ -1030,7 +1004,6 @@ export {
   handleExit,
   isEpicServiceOffline,
   openUrlOrFile,
-  showAboutWindow,
   removeSpecialcharacters,
   clearCache,
   clearAchievementCache,

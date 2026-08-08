@@ -3,7 +3,7 @@ import { logError, LogPrefix, logWarning } from 'backend/logger'
 import { isEpicServiceOffline, sendGameStatusUpdate } from '../utils'
 import { DMStatus, InstallParams } from 'common/types'
 import i18next from 'i18next'
-import { notify, showDialogBoxModalAuto } from '../dialog/dialog'
+import { showDialogBoxModalAuto } from '../dialog/dialog'
 import { isOnline } from '../online_monitor'
 import pathModule from 'path'
 import { existsSync, rmSync } from 'fs'
@@ -62,11 +62,6 @@ async function installQueueElement(params: InstallParams): Promise<{
     runner,
     status: 'installing',
     folder: path
-  })
-
-  notify({
-    title,
-    body: i18next.t('notify.install.startInstall', 'Installation Started')
   })
 
   const errorMessage = (error: string) => {
@@ -140,11 +135,6 @@ async function updateQueueElement(params: InstallParams): Promise<{
     appName,
     runner,
     status: 'updating'
-  })
-
-  notify({
-    title,
-    body: i18next.t('notify.update.started', 'Update Started')
   })
 
   const errorMessage = (error: string) => {

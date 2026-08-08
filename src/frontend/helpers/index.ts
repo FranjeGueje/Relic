@@ -13,9 +13,6 @@ const readFile = window.api.readConfig
 
 const writeConfig = window.api.writeConfig
 
-const notify = (args: { title: string; body: string }) =>
-  window.api.notify(args)
-
 const loginPage = window.api.openLoginPage
 
 const handleQuit = window.api.quit
@@ -144,7 +141,6 @@ export {
   handleQuit,
   install,
   loginPage,
-  notify,
   repair,
   sendKill,
   updateGame,

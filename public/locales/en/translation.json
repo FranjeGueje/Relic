@@ -160,10 +160,6 @@
     },
     "title": "Downloads"
   },
-  "epic": {
-    "offline-notification-body": "Relic will maybe not work probably!",
-    "offline-notification-title": "offline"
-  },
   "Epic Games": "Epic Games",
   "error": "Error",
   "externalLink": {
@@ -264,38 +260,6 @@
     "gog": "GOG Login",
     "message": "Login with your platform. You can login to more than one platform at the same time.",
     "zoom": "Zoom Login"
-  },
-  "notify": {
-    "error": {
-      "move": "Error Moving the Game",
-      "reparing": "Error Repairing"
-    },
-    "finished": {
-      "reparing": "Finished Repairing"
-    },
-    "import": {
-      "failed": "Importing Failed"
-    },
-    "install": {
-      "canceled": "Installation Canceled",
-      "failed": "Installation Failed",
-      "finished": "Installation Finished",
-      "imported": "Game Imported",
-      "paused": "Installation Paused",
-      "startInstall": "Installation Started"
-    },
-    "moved": "Finished Moving",
-    "moving": "Moving Game",
-    "uninstalled": {
-      "error": "Error uninstalling"
-    },
-    "update": {
-      "canceled": "Update Canceled",
-      "failed": "Update Failed",
-      "finished": "Update Finished",
-      "paused": "Update Paused",
-      "started": "Update Started"
-    }
   },
   "offline-message": {
     "hint": "We are checking the connectivity against:{{newline}}github.com,{{newline}}gog.com,{{newline}}store.epicgames.com and{{newline}}cloudflare-dns.com",
@@ -400,7 +364,6 @@
     "allGames": "All Games"
   },
   "tray": {
-    "about": "About",
     "quit": "Quit",
     "reload": "Reload",
     "show": "Show"

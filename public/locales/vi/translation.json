@@ -84,7 +84,6 @@
     "link": "Tải Xuống",
     "title": "Tải Xuống"
   },
-  "epic": {},
   "Epic Games": "Epic Games",
   "error": "Lỗi",
   "favourites": "Ưa Thích",
@@ -192,54 +191,6 @@
     "zoom": "Đăng nhập Zoom"
   },
   "message": {},
-  "notify": {
-    "error": {
-      "move": "Lỗi Di Chuyển Trò Chơi",
-      "reparing": "Đang Sửa"
-    },
-    "finished": {
-      "add": {
-        "steam": {
-          "corrupt": "Không thể thêm {{game}} vào tất cả người dùng Steam được tìm thấy. Xem nhật ký để biết thêm thông tin. Cần phải khởi động lại Steam để các thay đổi có hiệu lực.",
-          "success": "{{game}} đã được thêm thành công vào Steam. Cần phải khởi động lại Steam để các thay đổi có hiệu lực.",
-          "title": "Đã thêm vào Steam"
-        }
-      },
-      "remove": {
-        "steam": {
-          "corrupt": "Không thể xóa {{game}} khỏi tất cả người dùng Steam được tìm thấy. Xem nhật ký để biết thêm thông tin. Cần phải khởi động lại Steam để các thay đổi có hiệu lực.",
-          "success": "{{game}} đã được xóa thành công khỏi Steam. Cần phải khởi động lại Steam để các thay đổi có hiệu lực.",
-          "title": "Đã xóa khỏi Steam"
-        }
-      },
-      "reparing": "Sửa Xong"
-    },
-    "install": {
-      "canceled": "Đã Hủy Cài Đặt",
-      "error": "Cài Đặt Không Thành Công",
-      "finished": "Cài Đặt Hoàn Tất",
-      "imported": "Trò Chơi Đã Được Nhập",
-      "startInstall": "Đã Bắt Đầu Cài Đặt",
-      "failed": "Cài Đặt Thất Bại",
-      "paused": "Cài Đặt Bị Tạm Dừng"
-    },
-    "moved": "Đã Di Chuyển Xong",
-    "moving": "Đang Di Chuyển Trò Chơi",
-    "refresh": {
-      "error": "Không thể tìm nạp các bản phát hành từ thượng nguồn, có thể do các hạn chế của API Github! Hãy thử lại sau."
-    },
-    "uninstalled": "Gỡ cài đặt",
-    "update": {
-      "canceled": "Đã Hủy Cập Nhật",
-      "finished": "Cập Nhật Đã Hoàn Tất",
-      "started": "Đã Bắt Đầu Cập Nhật",
-      "failed": "Cập Nhật Không Thành Công",
-      "paused": "Cập Nhật Bị Tạm Dừng"
-    },
-    "import": {
-      "failed": "Nhập Không Thành Công"
-    }
-  },
   "offline-message": {
     "hint": "Chúng tôi đang kiểm tra khả năng kết nối với:{{newline}}github.com,{{newline}}gog.com,{{newline}}store.epicgames.com và{{newline}}cloudflare-dns.com",
     "ignore": "Bỏ Qua",
@@ -366,7 +317,6 @@
     "allGames": "Tất Cả game"
   },
   "tray": {
-    "about": "Giới Thiệu",
     "quit": "Thoát",
     "reload": "Tải Lại",
     "show": "Hiển Thị"
