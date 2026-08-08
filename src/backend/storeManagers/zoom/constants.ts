@@ -1,7 +1,7 @@
 import { join } from 'path'
-import { app } from 'electron'
+import { userDataPath } from 'backend/constants/paths'
 
-const zoomSupportPath = join(app.getPath('userData'), 'zoom_store')
+const zoomSupportPath = join(userDataPath, 'zoom_store')
 export const embedUrl = 'https://www.zoom-platform.com'
 export const apiUrl = 'https://www.zoom-platform.com'
 export const tokenPath = join(zoomSupportPath, '.zoom.token')

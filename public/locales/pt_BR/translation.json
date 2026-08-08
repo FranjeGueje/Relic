@@ -49,11 +49,7 @@
       "title": "Atalhos"
     },
     "warning": {
-      "title": "Aviso",
-      "snap": {
-        "checkbox": "Não mostre esta mensagem novamente",
-        "title": "O Relic está sendo executado como um Snap"
-      }
+      "title": "Aviso"
     },
     "yes": "SIM",
     "update": "Atualização",

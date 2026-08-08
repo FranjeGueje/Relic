@@ -44,11 +44,7 @@
       "title": "Pintasan"
     },
     "warning": {
-      "title": "Peringatan",
-      "snap": {
-        "checkbox": "Jangan munculkan pesan ini lagi",
-        "title": "Relic berjalan sebagai Snap"
-      }
+      "title": "Peringatan"
     },
     "yes": "YA",
     "update": "Perbarui",

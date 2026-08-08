@@ -44,12 +44,7 @@
       "title": "Prečaci"
     },
     "warning": {
-      "title": "Warning",
-      "snap": {
-        "checkbox": "Ne prikazuj ovu poruku ponovno",
-        "title": "",
-        "message": ""
-      }
+      "title": "Warning"
     },
     "yes": "DA",
     "update": "Update",

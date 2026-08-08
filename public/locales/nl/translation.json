@@ -44,11 +44,7 @@
       "title": "Shortcuts"
     },
     "warning": {
-      "title": "Warning",
-      "snap": {
-        "checkbox": "Toon dit bericht niet opnieuw",
-        "title": "Relic voert uit als een Snap"
-      }
+      "title": "Warning"
     },
     "yes": "JA",
     "update": "Update",

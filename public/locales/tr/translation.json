@@ -49,11 +49,7 @@
       "title": "Kısayollar"
     },
     "warning": {
-      "title": "Uyarı",
-      "snap": {
-        "checkbox": "Bu mesajı bir daha gösterme",
-        "title": "Relic Snap sürümünde çalışıyor"
-      }
+      "title": "Uyarı"
     },
     "yes": "EVET",
     "update": "Güncelle",

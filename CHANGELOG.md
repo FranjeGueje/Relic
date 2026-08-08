@@ -1,5 +1,146 @@
 # Changelog
 
+## 0.6.0 — Electron Decoupling (fase 1)
+
+### Español
+
+Primer paso de una refactorización mayor: **sacar el backend de Electron** para que
+pueda ejecutarse como servicio independiente bajo Node, y que la interfaz sea solo
+un cliente que habla con él por API.
+
+#### Cambiado
+
+- **Shim de `app.getPath()`**: `appDataPath` y `userDataPath` se calculan ahora en
+  `constants/paths.ts` a partir del entorno (`XDG_CONFIG_HOME`, o `~/.config` como
+  fallback según la spec XDG) en lugar de pedírselas a Electron. Replican la
+  semántica de Electron en Linux exactamente: `appData` → `~/.config`,
+  `userData` → `~/.config/relic`.
+- **3 ficheros dejan de importar `electron` por completo**:
+  `storeManagers/zoom/constants.ts`, `storeManagers/nile/library.ts` y
+  `migration/migrations/legendary.ts`. Acoplamiento a Electron en el backend:
+  24 → 21 ficheros.
+- **Código muerto eliminado**: el ternario `isLinux ? ... : ...` de la migración de
+  legendary tenía una rama inalcanzable (`isLinux` es `true` fijo en un proyecto
+  Linux-only). Colapsado, junto con los imports de `isLinux` y `userHome` que
+  quedaban sin uso.
+
+#### Eliminado
+
+- **`electron-store`, sustituido por `JsonStore` propio** (`backend/json_store.ts`).
+  Estaba fijado en 8.x porque v9+ es ESM-only y rompía `jest.mock()` en CJS: el
+  bloqueo queda resuelto eliminando la dependencia, no actualizándola.
+  - Replica lo que Relic usaba: claves con notación por puntos, `cwd`/`name`/
+    `clearInvalidConfig`, iterabilidad y `store` como getter y setter.
+  - Relee el fichero en cada acceso, igual que `conf` (el motor de electron-store):
+    backend y preload abren instancias distintas del mismo fichero y una escritura
+    en uno tiene que verse en el otro.
+  - Escritura atómica (write-then-rename) y formato byte-compatible (tabs, sin
+    newline final), así que los ficheros existentes se leen y reescriben igual.
+  - 21 tests nuevos, incluida la protección contra prototype pollution.
+- **Soporte Snap, por completo.** Relic se distribuye exclusivamente como AppImage,
+  así que todo el código condicional para Snap era muerto en la práctica:
+  - `isSnap` y el uso de `SNAP_REAL_HOME` (`userHome` pasa a ser `homedir()`, sin
+    aserción non-null).
+  - `legendaryConfigPath` ya no tiene rama especial que ignorase `appFolder`.
+  - El guard `if (!process.env.SNAP)` alrededor de `LEGENDARY_CONFIG_PATH`.
+  - El aviso "Relic is running as a Snap" completo (dialog con checkbox y el ajuste
+    `showSnapWarning` del configStore).
+  - La ruta `/var/lib/snapd/hostfs/etc/os-release` en la detección de SO.
+  - El bloque i18n `box.warning.snap` en los **47 locales**.
+
+#### Ventajas
+
+- **Habilita el backend como servicio**: sin dependencia de Electron para resolver
+  rutas, el backend se acerca a poder correr bajo Node plano. Eso abre la puerta a
+  clientes alternativos por API — por ejemplo un plugin de Decky Loader — sin
+  reescribir la lógica de tiendas, descargas ni integración con Steam.
+- **Desbloquea dependencias**: `electron-store` está fijado en 8.x por ser ESM-only
+  desde v9 (ver `TODO_UPGRADE.md`). Quitar Electron de la capa de rutas es el
+  requisito previo para sustituirlo.
+- **Testeable sin Electron**: las rutas ya no necesitan que se mockee `electron`
+  para resolverse.
+
+#### Compatibilidad
+
+Sin migración de datos. Las rutas resueltas son **idénticas** a las anteriores
+(verificado contra el `~/.config/relic/` real), así que ninguna configuración,
+login ni juego instalado cambia de sitio. El override de `CI=e2e` mantiene el
+comportamiento previo: afecta solo a `appFolder`, no a `userDataPath`.
+
+### English
+
+First step of a larger refactor: **taking the backend out of Electron** so it can
+run as a standalone Node service, with the UI becoming just a client that talks to
+it over an API.
+
+#### Changed
+
+- **`app.getPath()` shim**: `appDataPath` and `userDataPath` are now computed in
+  `constants/paths.ts` from the environment (`XDG_CONFIG_HOME`, falling back to
+  `~/.config` per the XDG spec) instead of asking Electron. They mirror Electron's
+  Linux semantics exactly: `appData` → `~/.config`, `userData` → `~/.config/relic`.
+- **3 files no longer import `electron` at all**:
+  `storeManagers/zoom/constants.ts`, `storeManagers/nile/library.ts` and
+  `migration/migrations/legendary.ts`. Backend Electron coupling: 24 → 21 files.
+- **Dead code removed**: the `isLinux ? ... : ...` ternary in the legendary
+  migration had an unreachable branch (`isLinux` is hardcoded `true` in a
+  Linux-only project). Collapsed, along with the now-unused `isLinux` and
+  `userHome` imports.
+
+#### Removed
+
+- **`electron-store`, replaced by an in-house `JsonStore`** (`backend/json_store.ts`).
+  It was pinned at 8.x because v9+ is ESM-only and broke `jest.mock()` under CJS;
+  the blocker is resolved by dropping the dependency, not upgrading it.
+  - Mirrors what Relic actually used: dot-notation keys, `cwd`/`name`/
+    `clearInvalidConfig`, iterability, and `store` as both getter and setter.
+  - Re-reads the file on every access, like `conf` (electron-store's engine) does:
+    the backend and the preload open separate instances of the same file, and a
+    write through one must be visible to the other.
+  - Atomic writes (write-then-rename) and byte-compatible formatting (tabs, no
+    trailing newline), so existing files are read and rewritten identically.
+  - 21 new tests, including prototype-pollution guarding.
+- **Snap support, entirely.** Relic ships exclusively as an AppImage, so every
+  Snap-conditional code path was dead in practice:
+  - `isSnap` and the `SNAP_REAL_HOME` usage (`userHome` is now just `homedir()`,
+    dropping a non-null assertion).
+  - `legendaryConfigPath` no longer has a special branch bypassing `appFolder`.
+  - The `if (!process.env.SNAP)` guard around `LEGENDARY_CONFIG_PATH`.
+  - The whole "Relic is running as a Snap" warning (dialog with checkbox plus the
+    `showSnapWarning` configStore setting).
+  - The `/var/lib/snapd/hostfs/etc/os-release` path in OS detection.
+  - The `box.warning.snap` i18n block across all **47 locales**.
+
+#### Why it matters
+
+- **Unlocks the backend-as-a-service path**: with no Electron dependency for path
+  resolution, the backend moves closer to running under plain Node. That opens the
+  door to alternative API clients — a Decky Loader plugin, for instance — without
+  rewriting the store, download or Steam-integration logic.
+- **Unblocks dependencies**: `electron-store` is pinned at 8.x because v9+ is
+  ESM-only (see `TODO_UPGRADE.md`). Removing Electron from the path layer is the
+  prerequisite for replacing it.
+- **Testable without Electron**: path resolution no longer needs `electron` mocked.
+
+#### Compatibility
+
+No data migration. Resolved paths are **identical** to before (verified against the
+real `~/.config/relic/`), so no config, login or installed game moves. The `CI=e2e`
+override keeps its previous behaviour: it affects `appFolder` only, not
+`userDataPath`.
+
+### Verificación / Verification
+
+```
+codecheck: 0 errors
+lint:      0 errors (697 warnings)
+tests:     160/160 (23 suites)
+i18n --ci: sin cambios / no changes
+build:     OK (electron-vite)
+```
+
+---
+
 ## 0.5.4 — Update Error Diagnostics & Move Fixes
 
 ### Español

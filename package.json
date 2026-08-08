@@ -1,6 +1,6 @@
 {
   "name": "relic",
-  "version": "0.5.4",
+  "version": "0.6.0",
   "versionNames": {
     "stable": "Trazo firme",
     "beta": "Fragmento"
@@ -55,7 +55,6 @@
     "@node-steam/vdf": "^2.2.0",
     "axios": "^1.18.1",
     "easydl": "^1.2.0",
-    "electron-store": "^8.2.0",
     "fuse.js": "^7.5.0",
     "i18next": "^22.5.1",
     "i18next-fs-backend": "^2.6.6",

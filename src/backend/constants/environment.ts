@@ -11,6 +11,5 @@ export const isSteamDeck = isSteamDeckGameMode || isSteamDeckDesktopMode
 export const isCLIFullscreen = process.argv.includes('--fullscreen')
 export const isCLINoGui = process.argv.includes('--no-gui')
 export const isCLIConsoleMode = process.argv.includes('--console')
-export const isSnap = Boolean(env.SNAP)
 export const isAppImage = Boolean(env.APPIMAGE)
 export const autoUpdateSupported = isAppImage

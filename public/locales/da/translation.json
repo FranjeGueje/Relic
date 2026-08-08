@@ -47,11 +47,7 @@
       "message-remove": "Genveje blev fjernet fra Skrivebord og Start Menu"
     },
     "warning": {
-      "title": "Advarsel",
-      "snap": {
-        "title": "Relic kører som Snap",
-        "checkbox": "Vis ikke denne meddelelse igen"
-      }
+      "title": "Advarsel"
     },
     "update": "Opdatering",
     "default-install-path": "Default install path",

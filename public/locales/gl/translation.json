@@ -49,11 +49,7 @@
       "title": "Atallos"
     },
     "warning": {
-      "title": "Advertencia",
-      "snap": {
-        "checkbox": "Non volver a amosar esta mensaxe",
-        "title": "Relic está a funcionar coma un Snap"
-      }
+      "title": "Advertencia"
     },
     "yes": "Sí",
     "update": "Actualizar",

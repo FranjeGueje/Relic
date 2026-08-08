@@ -15,12 +15,7 @@
     },
     "choose": "Tanlang",
     "warning": {
-      "title": "Ogohlantirish",
-      "snap": {
-        "checkbox": "",
-        "title": "",
-        "message": ""
-      }
+      "title": "Ogohlantirish"
     },
     "info": {},
     "no": "YO'Q",

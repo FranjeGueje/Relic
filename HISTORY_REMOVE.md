@@ -957,3 +957,51 @@
 ### Store persistente
 
 - `~/.config/relic/sideload_apps/`: directorio vacío eliminado.
+
+---
+
+## Soporte Snap (v0.6.0, Ago 2026)
+
+Relic se distribuye exclusivamente como AppImage. Todo el código condicional para
+entornos Snap era muerto en la práctica y se ha eliminado.
+
+### Backend
+
+- `constants/environment.ts`: `isSnap = Boolean(env.SNAP)` eliminado.
+- `constants/paths.ts`: `userHome = isSnap ? env.SNAP_REAL_HOME! : homedir()` →
+  `homedir()`. Elimina también la aserción non-null.
+- `storeManagers/legendary/constants.ts`: `legendaryConfigPath` dejaba de usar
+  `appFolder` bajo Snap (`join(env.XDG_CONFIG_HOME!, 'legendary')`). Ternario
+  colapsado a la rama normal; imports de `isSnap` y `env` eliminados.
+- `storeManagers/legendary/library.ts`: guarda `if (!process.env.SNAP)` alrededor de
+  `options.env.LEGENDARY_CONFIG_PATH` eliminada; la asignación es incondicional.
+- `main.ts`: bloque completo del aviso "Relic is running as a Snap" en el listener
+  `frontendReady` (dialog con checkbox, lectura/escritura de `showSnapWarning`).
+  Import de `isSnap` eliminado.
+- `utils/systeminfo/osInfo/linux.ts`: ruta `/var/lib/snapd/hostfs/etc/os-release`
+  eliminada de los candidatos de `os-release`.
+
+### Tipos
+
+- `common/types/electron_store.ts`: campo `showSnapWarning: boolean` eliminado del
+  `configStore`.
+
+### i18n (47 locales)
+
+- Bloque `box.warning.snap` completo (`title`, `message`, `checkbox`) eliminado de
+  los 47 `translation.json`. Verificado con `pnpm i18n --ci` (sin cambios pendientes).
+
+### Tests
+
+- `relic/__tests__/symlinks.test.ts`: `isSnap: false` eliminado del mock de
+  `backend/constants/environment`.
+
+---
+
+## `electron-store` (v0.6.0, Ago 2026)
+
+- Dependencia `electron-store@8.2.0` eliminada, sustituida por `backend/json_store.ts`.
+  Estaba fijada en 8.x porque v9+ es ESM-only y rompía `jest.mock()` en CJS
+  (ver `TODO_UPGRADE.md`, fase 6.1 — bloqueo resuelto por eliminación).
+- `src/backend/__mocks__/electron-store.ts` eliminado: el mock existía solo para
+  redirigir `cwd` a un tmp dir en tests; ahora los tests mockean `userDataPath`.

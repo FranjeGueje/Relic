@@ -1,10 +1,10 @@
-import Store from 'electron-store'
+import { JsonStore } from './json_store'
 
 export default class CacheStore<ValueType, KeyType extends string = string> {
-  private readonly store: Store
+  private readonly store: JsonStore
   private in_memory_store: Map<string, ValueType>
   private using_in_memory: boolean
-  private current_store: Store | Map<string, ValueType>
+  private current_store: JsonStore | Map<string, ValueType>
   private readonly lifespan: number | null
   private invalidateCheck: (data: ValueType) => boolean
 
@@ -19,7 +19,7 @@ export default class CacheStore<ValueType, KeyType extends string = string> {
     max_value_lifespan: number | null = 60 * 6,
     options?: { invalidateCheck?: (data: ValueType) => boolean }
   ) {
-    this.store = new Store({
+    this.store = new JsonStore({
       cwd: 'store_cache',
       name: filename,
       clearInvalidConfig: true

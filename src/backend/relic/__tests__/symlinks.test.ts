@@ -44,7 +44,6 @@ jest.mock('backend/logger', () => ({
 }))
 
 jest.mock('backend/constants/environment', () => ({
-  isSnap: false,
   isLinux: true,
   isWindows: false,
   isMac: false,

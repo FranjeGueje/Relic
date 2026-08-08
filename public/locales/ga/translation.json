@@ -36,10 +36,6 @@
     },
     "update": "Nuashonrú",
     "warning": {
-      "snap": {
-        "checkbox": "Ná taispeáin an teachtaireacht seo arís",
-        "title": "Tá Relic ag rith mar Snap"
-      },
       "title": "Rabhadh"
     },
     "yes": "TÁ",

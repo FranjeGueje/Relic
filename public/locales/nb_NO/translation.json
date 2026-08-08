@@ -49,11 +49,7 @@
       "title": "Snarveier"
     },
     "warning": {
-      "title": "Advarsel",
-      "snap": {
-        "checkbox": "Ikke vis denne meldingen igjen",
-        "title": "Relic kjører som en Snap"
-      }
+      "title": "Advarsel"
     },
     "yes": "Ja",
     "update": "Update",

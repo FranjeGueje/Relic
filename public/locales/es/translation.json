@@ -49,11 +49,7 @@
       "title": "Accesos directos"
     },
     "warning": {
-      "title": "Advertencia",
-      "snap": {
-        "checkbox": "No mostrar este mensaje de nuevo",
-        "title": "Relic se ejecuta como un Snap"
-      }
+      "title": "Advertencia"
     },
     "yes": "SÍ",
     "update": "Actualizar",

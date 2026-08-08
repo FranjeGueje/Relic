@@ -49,11 +49,7 @@
       "title": "Parancsikonok"
     },
     "warning": {
-      "title": "Figyelmeztetés",
-      "snap": {
-        "checkbox": "Ne mutassa újra ezt az üzenetet",
-        "title": "A Relic Snapként fut"
-      }
+      "title": "Figyelmeztetés"
     },
     "yes": "IGEN",
     "update": "Frissítés",

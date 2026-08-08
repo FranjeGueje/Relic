@@ -10,12 +10,7 @@
     "update": "อัปเดต",
     "yes": "ใช่",
     "warning": {
-      "title": "",
-      "snap": {
-        "checkbox": "",
-        "title": "",
-        "message": ""
-      }
+      "title": ""
     },
     "info": {},
     "quit": {

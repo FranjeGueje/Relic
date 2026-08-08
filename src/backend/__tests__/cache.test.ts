@@ -1,11 +1,19 @@
-import Store from 'electron-store'
-import CacheStore from '../cache'
+import { dirSync } from 'tmp'
 
-jest.mock('electron-store')
+// Keep the stores inside a temp dir instead of the real ~/.config/relic
+const tmpUserData = dirSync({ unsafeCleanup: true })
+jest.mock('backend/constants/paths', () => ({
+  get userDataPath() {
+    return tmpUserData.name
+  }
+}))
+
+import { JsonStore } from '../json_store'
+import CacheStore from '../cache'
 
 describe('backend/cache.ts', () => {
   const testStore = new CacheStore<string>('test_store')
-  const internalStore = new Store({
+  const internalStore = new JsonStore({
     cwd: 'store_cache',
     name: 'test_store'
   })

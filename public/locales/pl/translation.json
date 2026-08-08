@@ -49,11 +49,7 @@
       "title": "Skróty"
     },
     "warning": {
-      "title": "Uwaga",
-      "snap": {
-        "checkbox": "Nie pokazuj tego więcej",
-        "title": "Relic jest uruchomiony jako Snap"
-      }
+      "title": "Uwaga"
     },
     "yes": "TAK",
     "update": "Aktualizuj",

@@ -44,12 +44,7 @@
       "title": "میانبرها"
     },
     "warning": {
-      "title": "هشدار",
-      "snap": {
-        "checkbox": "",
-        "title": "",
-        "message": ""
-      }
+      "title": "هشدار"
     },
     "yes": "بله",
     "update": "Update",

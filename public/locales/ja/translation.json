@@ -47,12 +47,7 @@
       "title": "ショートカット"
     },
     "warning": {
-      "title": "警告",
-      "snap": {
-        "checkbox": "このメッセージを二度と表示しない",
-        "title": "Relicはスナップとして実行されます",
-        "message": "一部の機能は現在Snapバージョンのアプリで利用できません。 {{newLine}}現在の制限事項：{{newLine}}RelicはSteamのProtonやLutrisのWineを見つけることができません。{{newLine}}{{newLine}}Gamescope、GameMode、MangoHudもアクセス権限がないため正常に動作しません。 {{newLine}}{{newLine}}この機能にアクセスするには、RelicをFlakpak、DEBフォーマットパッケージ、またはAppImageからインストールしてください。"
-      }
+      "title": "警告"
     },
     "yes": "はい",
     "update": "Update",

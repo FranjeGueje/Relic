@@ -1,6 +1,7 @@
-import Store from 'electron-store'
+import { JsonStore } from './json_store'
 
 import {
+  StoreOptions,
   StoreStructure,
   TypeCheckedStore,
   UnknownGuard,
@@ -11,11 +12,10 @@ import { Get } from 'type-fest'
 export class TypeCheckedStoreBackend<
   Name extends ValidStoreName
 > implements TypeCheckedStore<Name> {
-  private store: Store
+  private store: JsonStore
 
-  constructor(name: Name, options: Store.Options<StoreStructure[Name]>) {
-    // @ts-expect-error This looks like a bug in electron-store's type definitions
-    this.store = new Store(options)
+  constructor(name: Name, options: StoreOptions) {
+    this.store = new JsonStore(options)
   }
 
   public has(key: string) {

@@ -19,7 +19,7 @@ import { installStore, libraryStore } from './electronStores'
 import { getFileSize, getNileBin, removeSpecialcharacters } from 'backend/utils'
 import { callRunner } from 'backend/launcher'
 import { dirname, join } from 'path'
-import { app } from 'electron'
+import { appDataPath } from 'backend/constants/paths'
 import { NileUser } from './user'
 import { runNileCommandStub } from './e2eMock'
 import { nileConfigPath, nileInstalled, nileLibrary } from './constants'
@@ -33,7 +33,7 @@ export default class NileLibraryManager implements LibraryManager {
 
   async init() {
     // Migrate user data from global Nile config if necessary
-    const globalNileConfig = join(app.getPath('appData'), 'nile')
+    const globalNileConfig = join(appDataPath, 'nile')
     if (!existsSync(nileConfigPath) && existsSync(globalNileConfig)) {
       cpSync(globalNileConfig, nileConfigPath)
       await NileUser.getUserData()

@@ -1,12 +1,22 @@
 import { app } from 'electron'
 import { mkdirSync } from 'fs'
 import { homedir } from 'os'
-import { join, resolve } from 'path'
+import { isAbsolute, join, resolve } from 'path'
 import { env } from 'process'
 import { dirSync } from 'tmp'
-import { isSnap } from './environment'
 
-let configFolder = app.getPath('appData')
+const appName = 'relic'
+
+// Mirrors Electron's `app.getPath('appData')` on Linux: XDG_CONFIG_HOME when it
+// holds an absolute path (relative values are ignored per the XDG spec),
+// otherwise ~/.config.
+const xdgConfigHome = env.XDG_CONFIG_HOME
+export const appDataPath =
+  xdgConfigHome && isAbsolute(xdgConfigHome)
+    ? xdgConfigHome
+    : join(homedir(), '.config')
+
+let configFolder = appDataPath
 // If we're running tests, we want a config folder independent of the normal
 // user configuration
 if (process.env.CI === 'e2e') {
@@ -18,10 +28,13 @@ if (process.env.CI === 'e2e') {
   mkdirSync(join(configFolder, 'relic'))
 }
 
-export const userHome = isSnap ? env.SNAP_REAL_HOME! : homedir()
+export const userHome = homedir()
 
-export const appFolder = join(configFolder, 'relic')
-export const userDataPath = app.getPath('userData')
+export const appFolder = join(configFolder, appName)
+// Mirrors Electron's `app.getPath('userData')`: appData + app.getName().
+// Deliberately derived from appDataPath and not from configFolder, so the
+// `CI=e2e` override above keeps affecting appFolder only, as it did before.
+export const userDataPath = join(appDataPath, appName)
 export const toolsPath = join(appFolder, 'tools')
 export const configPath = join(appFolder, 'config.json')
 export const gamesConfigPath = join(appFolder, 'GamesConfig')

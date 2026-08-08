@@ -538,3 +538,11 @@ Para ver el detalle completo de cada categoría, consultar:
 - **Propagación del error**: `updateQueueElement()` deja de enviar un string vacío y propaga el error real de `update()` en el evento de fallo. Ahora el frontend muestra la causa concreta del fallo.
 - **Evento `onGameRepaired`**: nuevo evento del módulo relic. Tras una reparación exitosa, regenera el runner `.bat` del juego en `~/.local/share/relic/runner/` vía `createRelicBat()`, tomando los datos de `steam_shortcuts.json`. No añade a Steam ni toca prefijos. Se invoca desde el handler `repair` de `main.ts` únicamente cuando no hay error.
 - **Grid icon `.ico` → `.png`**: el icono de grid de SteamGridDB se guarda como `<appid>_icon.png` en vez de `<appid>_icon.ico` (extensión hardcodeada en `download.ts` y `delete.ts`).
+
+### v0.6.0 — Desacople de Electron, fase 1 (Ago 2026)
+
+- **Shim de `app.getPath()`**: `appDataPath` y `userDataPath` se calculan en `constants/paths.ts` desde el entorno (`XDG_CONFIG_HOME`, o `~/.config` si no es absoluta per spec XDG) en lugar de pedírselas a Electron. Replican la semántica de Electron en Linux exactamente; rutas resueltas idénticas, sin migración de datos.
+- **3 ficheros dejan de importar `electron`**: `storeManagers/zoom/constants.ts`, `storeManagers/nile/library.ts` y `migration/migrations/legendary.ts`. Acoplamiento a Electron en el backend: 24 → 21 ficheros.
+- **Código muerto**: ternario `isLinux ? ... : ...` de la migración de legendary colapsado (rama inalcanzable, `isLinux` es `true` fijo en un proyecto Linux-only).
+- **Soporte Snap eliminado por completo**: `isSnap`, `SNAP_REAL_HOME`, el aviso "running as a Snap" (dialog + `showSnapWarning`), la ruta de `snapd` en `osInfo`, y el bloque `box.warning.snap` de 47 locales. Relic se distribuye solo como AppImage. Detalle en `HISTORY_REMOVE.md`.
+- **`electron-store` eliminado**: sustituido por `backend/json_store.ts` (`JsonStore`). Estaba fijado en 8.x por ser v9+ ESM-only; el bloqueo se resuelve eliminando la dependencia. Replica notación por puntos, `cwd`/`name`/`clearInvalidConfig`, iterabilidad y `store` como getter/setter; relee el fichero en cada acceso (paridad con `conf`) porque backend y preload comparten ficheros; escritura atómica y formato byte-compatible. 21 tests nuevos.

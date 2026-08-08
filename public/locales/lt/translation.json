@@ -25,12 +25,7 @@
       "message-remove": "Nuorodos buvo pašalintos iš darbalaukio ir pradžios meniu"
     },
     "warning": {
-      "title": "Įspėjimas",
-      "snap": {
-        "checkbox": "Daugiau neberodyti šios žinutes",
-        "title": "„Relic“ veikia kaip – „Snap“",
-        "message": "Kai kurios funkcijos nėra pasiekiamos „Snap“ versijoje (kol kas) ir stengiamės ta sutvarkyti.{{newLine}}Dabartiniai ribojimai yra:{{newLine}}„Relic“ negalės surasti „Proton“ iš „Steam“ ar „Wine“ iš „Lutris“.{{newLine}}{{newLine}}„Gamescope“, žaidimų veiksena ir „MangoHud“ tai pat neveiks, nes „Relic“ neturi prieigos prie jų.{{newLine}}{{newLine}}Norint gauti prieigą prie šių funkcijų, prašome įdiegti „Relic“ kaip „Flatpack“, „DEB“ ar „AppImage“."
-      }
+      "title": "Įspėjimas"
     },
     "info": {},
     "default-install-path": "Default install path",

@@ -21,12 +21,7 @@
       "message": ""
     },
     "warning": {
-      "title": "გაფრთხილება",
-      "snap": {
-        "checkbox": "",
-        "title": "",
-        "message": ""
-      }
+      "title": "გაფრთხილება"
     },
     "info": {},
     "default-install-path": "Default install path",

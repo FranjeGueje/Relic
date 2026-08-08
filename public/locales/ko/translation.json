@@ -44,11 +44,7 @@
       "title": "바로가기"
     },
     "warning": {
-      "title": "경고",
-      "snap": {
-        "checkbox": "이 메세지를 다시 표시 안 함",
-        "title": "Relic은 스냅으로 실행됨"
-      }
+      "title": "경고"
     },
     "yes": "예",
     "update": "업데이트",

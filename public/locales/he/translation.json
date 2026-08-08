@@ -18,12 +18,7 @@
     },
     "yes": "כן",
     "warning": {
-      "title": "אזהרה",
-      "snap": {
-        "checkbox": "",
-        "title": "",
-        "message": ""
-      }
+      "title": "אזהרה"
     },
     "info": {},
     "ok": "בסדר",

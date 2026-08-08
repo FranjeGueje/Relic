@@ -49,11 +49,7 @@
       "title": "Verknüpfungen"
     },
     "warning": {
-      "title": "Warnung",
-      "snap": {
-        "checkbox": "Diese Meldung nicht mehr anzeigen",
-        "title": "Relic läuft als Snap"
-      }
+      "title": "Warnung"
     },
     "yes": "JA",
     "update": "Update",

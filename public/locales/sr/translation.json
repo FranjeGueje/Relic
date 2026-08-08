@@ -33,12 +33,7 @@
       "title": "Пречице"
     },
     "warning": {
-      "title": "Упозорење",
-      "snap": {
-        "checkbox": "",
-        "title": "",
-        "message": ""
-      }
+      "title": "Упозорење"
     },
     "yes": "ДА",
     "update": "Ажурирај",

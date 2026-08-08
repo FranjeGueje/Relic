@@ -44,11 +44,7 @@
       "title": "Shortcuts Removed"
     },
     "warning": {
-      "title": "Warning",
-      "snap": {
-        "checkbox": "Už nikdy nezobrazovať túto správu",
-        "title": "Relic beží ako Snap"
-      }
+      "title": "Warning"
     },
     "yes": "ÁNO",
     "update": "Aktualizovať",

@@ -44,11 +44,7 @@
       "title": "Genvägar"
     },
     "warning": {
-      "title": "Varning",
-      "snap": {
-        "checkbox": "Visa inte detta meddelande igen",
-        "title": "Relic körs som Snap"
-      }
+      "title": "Varning"
     },
     "yes": "Ja",
     "update": "Uppdatering",

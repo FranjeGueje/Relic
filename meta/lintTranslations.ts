@@ -10,12 +10,13 @@
  *   like `<1></1>` in `en` file but with content in the translation
  * - translations missing content-less tags that are present in `en`
  *   file, like a translation missing a `<2></2>` tag
+ * - keys that are a string in one file and an object in the other
  *
  * It shows a list with the different results of the checks, language
  * and keys compared.
  */
 
-import { readdirSync, readFileSync } from 'graceful-fs'
+import { readdirSync, readFileSync } from 'fs'
 import { join } from 'path'
 
 // there are many extra keys in translation files without a matching
@@ -96,14 +97,28 @@ function checkValueAgainstEnglish(
         `Extra translation not present in english for ${processingLanguage}.${processingFile}.${parent}`
       )
     }
-  } else {
-    if (typeof trValue === 'string') {
-      checkStringValueAgainstEnglish(trValue, enValue as string, parent)
-    } else {
-      for (const key in trValue) {
-        checkValueAgainstEnglish(trValue[key], enValue[key], `${parent}.${key}`)
-      }
-    }
+    return
+  }
+
+  if (typeof trValue === 'string' && typeof enValue === 'string') {
+    checkStringValueAgainstEnglish(trValue, enValue, parent)
+    return
+  }
+
+  // A key cannot be a string in one file and an object in the other: i18next
+  // would resolve it as a leaf in one language and as a namespace in another.
+  // Reporting it beats crashing while trying to compare the two.
+  if (typeof trValue !== typeof enValue) {
+    const describe = (value: unknown) =>
+      typeof value === 'string' ? 'a string' : 'an object'
+    console.log(
+      `Type mismatch for ${processingLanguage}.${processingFile}.${parent}: english has ${describe(enValue)}, translation has ${describe(trValue)}`
+    )
+    return
+  }
+
+  for (const key in trValue) {
+    checkValueAgainstEnglish(trValue[key], enValue[key], `${parent}.${key}`)
   }
 }
 

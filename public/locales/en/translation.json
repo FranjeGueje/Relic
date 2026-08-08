@@ -50,11 +50,6 @@
         "install": "Epic Servers are having major outage right now, the game cannot be installed!",
         "update": "Epic Servers are having major outage right now, the game cannot be updated!"
       },
-      "snap": {
-        "checkbox": "Do not show this message again",
-        "message": "Some features are not available in the Snap version of the app for now and we are trying to fix it.{{newLine}}Current limitations are: {{newLine}}Relic will not be able to find Proton from Steam or Wine from Lutris.{{newLine}}{{newLine}}GameMode will also not work since Relic cannot have access to it.{{newLine}}{{newLine}}To have access to this feature please install Relic as a DEB or from the AppImage.",
-        "title": "Relic is running as a Snap"
-      },
       "title": "Warning"
     },
     "yes": "YES"

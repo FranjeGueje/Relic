@@ -44,12 +44,7 @@
       "title": "Qısa yollar"
     },
     "warning": {
-      "title": "Xəbərdarlıq",
-      "snap": {
-        "checkbox": "",
-        "title": "",
-        "message": ""
-      }
+      "title": "Xəbərdarlıq"
     },
     "yes": "HƏ",
     "update": "Update",

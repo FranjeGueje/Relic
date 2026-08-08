@@ -92,7 +92,6 @@ import {
   isCLIFullscreen,
   isCLINoGui,
   isLinux,
-  isSnap,
   isSteamDeckGameMode
 } from './constants/environment'
 import {
@@ -338,35 +337,6 @@ addListener('notify', (event, args) => notify(args))
 
 addOneTimeListener('frontendReady', () => {
   logInfo('Frontend Ready', LogPrefix.Backend)
-
-  if (isSnap) {
-    const snapWarning: Electron.MessageBoxOptions = {
-      title: i18next.t('box.warning.snap.title', 'Relic is running as a Snap'),
-      message: i18next.t('box.warning.snap.message', {
-        defaultValue:
-          'Some features are not available in the Snap version of the app for now and we are trying to fix it.{{newLine}}Current limitations are: {{newLine}}Relic will not be able to find Proton from Steam or Wine from Lutris.{{newLine}}{{newLine}}GameMode will also not work since Relic cannot have access to it.{{newLine}}{{newLine}}To have access to this feature please install Relic as a DEB or from the AppImage.',
-        newLine: '\n'
-      }),
-      checkboxLabel: i18next.t('box.warning.snap.checkbox', {
-        defaultValue: 'Do not show this message again'
-      }),
-      checkboxChecked: false
-    }
-
-    const showSnapWarning = configStore.get('showSnapWarning', true)
-
-    if (showSnapWarning) {
-      dialog
-        .showMessageBox({
-          ...snapWarning
-        })
-        .then((result) => {
-          if (result.checkboxChecked) {
-            configStore.set('showSnapWarning', false)
-          }
-        })
-    }
-  }
 
   // skip the download queue if we are running in CLI mode
   if (isCLINoGui) {

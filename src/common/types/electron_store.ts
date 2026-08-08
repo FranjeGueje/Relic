@@ -1,4 +1,3 @@
-import Store from 'electron-store'
 import { Get } from 'type-fest'
 
 import {
@@ -45,7 +44,6 @@ export interface StoreStructure {
     'window-props': WindowProps
     settings: AppSettings
     skipVcRuntime: boolean
-    showSnapWarning: boolean
   }
   gogInstalledGamesStore: {
     installed: InstalledInfo[]
@@ -109,7 +107,17 @@ export interface StoreStructure {
   }
 }
 
-export type StoreOptions<T extends Record<string, unknown>> = Store.Options<T>
+export interface StoreOptions {
+  /**
+   * Directory holding the file. Relative values resolve against `userDataPath`,
+   * which is what electron-store did via `app.getPath('userData')`.
+   */
+  cwd?: string
+  /** File name without extension. Defaults to `config`. */
+  name?: string
+  /** Reset to an empty store instead of throwing when the file is invalid JSON. */
+  clearInvalidConfig?: boolean
+}
 export type ValidStoreName = keyof StoreStructure
 
 // This is `T`, *except* for when `T` is `unknown`; it then is `never`

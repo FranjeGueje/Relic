@@ -1,9 +1,7 @@
-import { app } from 'electron'
 import { access, cp, mkdir } from 'fs/promises'
 import { join } from 'path'
 
-import { isLinux } from 'backend/constants/environment'
-import { userHome } from 'backend/constants/paths'
+import { appDataPath } from 'backend/constants/paths'
 import { legendaryConfigPath } from 'backend/storeManagers/legendary/constants'
 
 import type { PathLike } from 'fs'
@@ -22,9 +20,7 @@ export class LegendaryGlobalConfigFolderMigration implements Migration {
     // Don't overwrite existing configuration
     if (hasRelicSpecificConfig) return true
 
-    const globalLegendaryConfig = isLinux
-      ? join(app.getPath('appData'), 'legendary')
-      : join(userHome, '.config', 'legendary')
+    const globalLegendaryConfig = join(appDataPath, 'legendary')
 
     const hasGlobalConfig = await exists(globalLegendaryConfig)
     // Nothing to migrate

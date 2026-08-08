@@ -44,11 +44,7 @@
       "title": "Scurtături"
     },
     "warning": {
-      "title": "Avertizare",
-      "snap": {
-        "checkbox": "Nu mai arăta acest mesaj",
-        "title": "Relic rulează ca și Snap"
-      }
+      "title": "Avertizare"
     },
     "yes": "DA",
     "update": "Update",

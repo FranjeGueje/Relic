@@ -44,11 +44,7 @@
       "title": "Oikopolut"
     },
     "warning": {
-      "title": "Varoitus",
-      "snap": {
-        "title": "Ajossa on Relic:in Snap-paketointi",
-        "checkbox": "Älä näytä tätä viestiä enää"
-      }
+      "title": "Varoitus"
     },
     "yes": "KYLLÄ",
     "update": "Päivitä",

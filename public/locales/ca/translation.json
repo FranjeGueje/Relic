@@ -49,11 +49,7 @@
       "title": "Dreceres"
     },
     "warning": {
-      "title": "Avís",
-      "snap": {
-        "checkbox": "No mostris més aquest missatge",
-        "title": "L'Relic s'executa com a Snap"
-      }
+      "title": "Avís"
     },
     "yes": "SÍ",
     "update": "Actualitza",

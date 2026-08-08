@@ -49,12 +49,7 @@
       "title": "Atalhos"
     },
     "warning": {
-      "title": "Aviso",
-      "snap": {
-        "checkbox": "Não mostrar novamente esta mensagem",
-        "title": "O Relic está a ser executado como uma Snap",
-        "message": "De momento não estão disponíveis algumas funcionalidades na versão Snap da aplicação, estamos a tentar corrigir.{{newLine}}As limitações atuais são: {{newLine}}O Relic não vai conseguir encontrar o Proton e o Wine a partir do Steam e Lutris, respetivamente.{{newLine}}{{newLine}}O Gamescope, GameMode e MangoHud não vão funcionar porque o Relic não tem acesso às mesmas.{{newLine}}{{newLine}}Para ter acesso a estas funcionalidades instale, por favor, o Relic como Flatpack, DEB ou a partir da AppImage."
-      }
+      "title": "Aviso"
     },
     "yes": "SIM",
     "update": "Atualizar",

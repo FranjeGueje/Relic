@@ -49,11 +49,7 @@
       "title": "Collegamenti"
     },
     "warning": {
-      "title": "Attenzione",
-      "snap": {
-        "checkbox": "Non mostrare più questo messaggio",
-        "title": "Relic sta girando come Snap"
-      }
+      "title": "Attenzione"
     },
     "yes": "SI",
     "update": "Aggiorna",

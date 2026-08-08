@@ -51,7 +51,8 @@ export const processShortcut = makeListenerCaller('processShortcut')
 export const handleGoToScreen = frontendListenerSlot('openScreen')
 export const handleShowDialog = frontendListenerSlot('showDialog')
 
-import Store from 'electron-store'
+import { JsonStore } from 'backend/json_store'
+import type { StoreOptions } from 'common/types/electron_store'
 // FUTURE WORK
 // here is how the store methods can be refactored
 // in order to set nodeIntegration: false
@@ -72,12 +73,12 @@ import Store from 'electron-store'
 //   ipcRenderer.invoke('storeGet', name, key)
 
 interface StoreMap {
-  [key: string]: Store
+  [key: string]: JsonStore
 }
 const stores: StoreMap = {}
 
-export const storeNew = function (storeName: string, options: Store.Options<Record<string, unknown>>) {
-  stores[storeName] = new Store(options)
+export const storeNew = function (storeName: string, options: StoreOptions) {
+  stores[storeName] = new JsonStore(options)
 }
 
 export const storeSet = (storeName: string, key: string, value?: unknown) => stores[storeName].set(key, value)

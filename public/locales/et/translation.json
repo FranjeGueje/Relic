@@ -49,11 +49,7 @@
       "title": "Otseteed"
     },
     "warning": {
-      "title": "Hoiatus",
-      "snap": {
-        "checkbox": "Ära enam seda teavitust näita",
-        "title": "Relic töötab kui Snap"
-      }
+      "title": "Hoiatus"
     },
     "yes": "JAH",
     "update": "Uuenda",

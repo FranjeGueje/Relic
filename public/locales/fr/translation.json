@@ -49,11 +49,7 @@
       "title": "Raccourcis"
     },
     "warning": {
-      "title": "Avertissement",
-      "snap": {
-        "checkbox": "Ne plus afficher ce message",
-        "title": "Relic est exécuté en tant que Snap"
-      }
+      "title": "Avertissement"
     },
     "yes": "OUI",
     "update": "Mettre à jour",

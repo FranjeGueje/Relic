@@ -49,11 +49,7 @@
       "title": "Zástupci"
     },
     "warning": {
-      "title": "Varování",
-      "snap": {
-        "checkbox": "Tuto zprávu již nezobrazovat",
-        "title": "Relic spuštěn jako Snap"
-      }
+      "title": "Varování"
     },
     "yes": "ANO",
     "update": "Aktualizovat",

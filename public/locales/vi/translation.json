@@ -44,11 +44,7 @@
       "title": "Lối Tắt"
     },
     "warning": {
-      "title": "Cảnh báo",
-      "snap": {
-        "checkbox": "Không hiển thị lại thông báo này",
-        "title": "Relic đang chạy như Snap"
-      }
+      "title": "Cảnh báo"
     },
     "yes": "CÓ",
     "update": "Cập Nhật",

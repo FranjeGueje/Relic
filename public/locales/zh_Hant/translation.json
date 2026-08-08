@@ -44,12 +44,7 @@
       "title": "捷徑"
     },
     "warning": {
-      "title": "警告",
-      "snap": {
-        "checkbox": "不要再顯示此訊息",
-        "title": "",
-        "message": ""
-      }
+      "title": "警告"
     },
     "yes": "是",
     "update": "更新",
