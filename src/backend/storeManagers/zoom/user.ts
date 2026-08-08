@@ -7,6 +7,24 @@ import { ZoomCredentials } from 'common/types/zoom'
 import { clearCache } from 'backend/utils'
 import { tokenPath, embedUrl, apiUrl } from './constants'
 
+// isLoggedIn() is not a local check: it asks Zoom's API every time. Startup used
+// to hit `/li/loggedin` three times in about a second — twice from a single
+// getUserDetails() call, plus once from the library refresh.
+const LOGIN_CHECK_TTL_MS = 60_000
+
+let verifiedUntil = 0
+let loginCheckInFlight: Promise<boolean> | undefined
+
+/**
+ * Only a rejection from Zoom means the session is really gone. A dropped
+ * connection or a server error must not be treated as "logged out", because
+ * that path deletes the user's token.
+ */
+function isAuthRejection(error: unknown): boolean {
+  const status = (error as AxiosError)?.response?.status
+  return status === 401 || status === 403
+}
+
 export class ZoomUser {
   static async login(url: string): Promise<{
     status: 'done' | 'error'
@@ -23,6 +41,7 @@ export class ZoomUser {
     try {
       writeFileSync(tokenPath, token, { encoding: 'utf-8' })
       logInfo('Zoom token saved successfully', LogPrefix.Zoom)
+      verifiedUntil = 0
       configStore.set('isLoggedIn', true)
       return { status: 'done' }
     } catch (err) {
@@ -37,22 +56,48 @@ export class ZoomUser {
       return
     }
     logInfo('Checking if login is valid', LogPrefix.Zoom)
-    if (!(await this.isLoggedIn())) {
+    if (!existsSync(tokenPath)) {
       logWarning('User is not logged in', LogPrefix.Zoom)
       return
     }
     try {
+      // This hits the very endpoint isLoggedIn() checks and also carries the
+      // username, so it doubles as the verification instead of asking twice.
       const response = await this.makeRequest<{ name: string }>(
         `${apiUrl}/li/loggedin`
       )
+      ZoomUser.rememberVerifiedLogin()
       logInfo('User is authenticated with Zoom', LogPrefix.Zoom)
       const username = response.name
       configStore.set('username', username)
       return { username }
     } catch (error) {
-      logError(['Error verifying Zoom login:', error], LogPrefix.Zoom)
+      ZoomUser.handleVerificationFailure(error)
       return
     }
+  }
+
+  /** Record a successful verification, so isLoggedIn() can skip its own call. */
+  private static rememberVerifiedLogin() {
+    if (!configStore.get('isLoggedIn', false)) {
+      configStore.set('isLoggedIn', true)
+    }
+    verifiedUntil = Date.now() + LOGIN_CHECK_TTL_MS
+  }
+
+  private static handleVerificationFailure(error: unknown) {
+    if (!isAuthRejection(error)) {
+      logWarning(
+        [
+          'Could not reach Zoom to verify the login, keeping the session:',
+          error
+        ],
+        LogPrefix.Zoom
+      )
+      return
+    }
+    logError(['Zoom API login verification failed:', error], LogPrefix.Zoom)
+    this.logout()
   }
 
   public static async getCredentials(): Promise<ZoomCredentials | undefined> {
@@ -80,6 +125,7 @@ export class ZoomUser {
   }
 
   public static logout() {
+    verifiedUntil = 0
     clearCache('zoom')
     configStore.clear()
     if (existsSync(tokenPath)) {
@@ -104,18 +150,30 @@ export class ZoomUser {
       return isLoggedInStore
     }
 
+    // Reuse a recent verification, whether it came from here or from
+    // getUserDetails(), rather than asking Zoom again
+    if (Date.now() < verifiedUntil) {
+      return true
+    }
+
+    loginCheckInFlight ??= ZoomUser.verifyLogin().finally(() => {
+      loginCheckInFlight = undefined
+    })
+    return loginCheckInFlight
+  }
+
+  private static async verifyLogin(): Promise<boolean> {
     try {
       await this.makeRequest(`${apiUrl}/li/loggedin`)
       logInfo('User is authenticated with Zoom (API verified)', LogPrefix.Zoom)
-      if (!isLoggedInStore) {
-        configStore.set('isLoggedIn', true)
-      }
+      ZoomUser.rememberVerifiedLogin()
       return true
     } catch (error) {
-      logError(['Zoom API login verification failed:', error], LogPrefix.Zoom)
-      configStore.set('isLoggedIn', false)
-      this.logout()
-      return false
+      ZoomUser.handleVerificationFailure(error)
+      // A failure we could not attribute to Zoom leaves the stored state alone
+      return isAuthRejection(error)
+        ? false
+        : configStore.get('isLoggedIn', false)
     }
   }
 
