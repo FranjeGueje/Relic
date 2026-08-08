@@ -42,7 +42,11 @@ export default class NileLibraryManager implements LibraryManager {
       await NileUser.getUserData()
     }
 
-    this.refresh()
+    // Only load what is already on disk. Syncing with Amazon is the frontend's
+    // "Refreshing all Library" job — calling refresh() here as well made Nile
+    // sync twice on every startup. Mirrors Legendary's init().
+    this.refreshInstalled()
+    this.loadGamesInAccount()
   }
 
   getGame(id: string): NileGame {
@@ -274,7 +278,11 @@ export default class NileLibraryManager implements LibraryManager {
     }
     logInfo('Refreshing library...', LogPrefix.Nile)
 
-    this.refreshNile()
+    // Awaited on purpose: refreshInstalled/loadGamesInAccount read the very
+    // files `nile library sync` writes, so firing it off unawaited meant the
+    // library was rebuilt from the previous sync's data. Legendary awaits its
+    // own refresh for the same reason.
+    await this.refreshNile()
     this.refreshInstalled()
     this.loadGamesInAccount()
 
