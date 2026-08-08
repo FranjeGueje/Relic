@@ -396,19 +396,6 @@
     "preparing_login": "Preparing Login... ",
     "processing": "Processing files, please wait"
   },
-  "steamgriddb": {
-    "error": {
-      "grids": "Failed to fetch grids",
-      "no-games": "No games found.",
-      "no-grids": "No covers found for this game.",
-      "search": "Failed to search for games, please check your SteamGridDB API key and try again"
-    },
-    "picker": {
-      "search": "Search Game",
-      "select-game": "Select a Game:",
-      "title": "SteamGridDB Covers"
-    }
-  },
   "title": {
     "allGames": "All Games"
   },

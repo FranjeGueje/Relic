@@ -1005,3 +1005,47 @@ entornos Snap era muerto en la práctica y se ha eliminado.
   (ver `TODO_UPGRADE.md`, fase 6.1 — bloqueo resuelto por eliminación).
 - `src/backend/__mocks__/electron-store.ts` eliminado: el mock existía solo para
   redirigir `cwd` a un tmp dir en tests; ahora los tests mockean `userDataPath`.
+
+---
+
+## Selector manual de portadas de SteamGridDB (v0.6.0, Ago 2026)
+
+Cadena heredada de Heroic, muerta de punta a punta: `SteamGridDBPicker` solo estaba
+re-exportado en el barrel de `components/UI` y ningún componente lo renderizaba, así
+que los handlers IPC nunca se invocaban y `steamgrid/utils.ts` nunca se ejecutaba.
+En Relic las portadas se descargan automáticamente tras instalar, vía
+`relic/steamgrid/`.
+
+### Frontend
+
+- `src/frontend/components/UI/SteamGridDBPicker/` completo (`index.tsx`, `index.scss`).
+- `components/UI/index.tsx`: línea de re-export.
+
+### Backend
+
+- `src/backend/steamgrid/utils.ts` completo (cliente SGDB de Heroic: `searchGame`,
+  `getGrids`, `getHeroes` con soporte de `styles`).
+- `src/backend/steamgrid/__tests__/utils.test.ts` (6 tests del módulo eliminado).
+- `steamgrid/ipc_handler.ts`: handlers `steamgriddb.searchGame`,
+  `steamgriddb.getGrids` y `steamgriddb.getHeroes`.
+
+### IPC y preload
+
+- `common/types/ipc.ts`: las 3 firmas correspondientes.
+- `preload/api/misc.ts`: `searchGame`, `getGrids`, `getHeroes` de `steamgriddb`.
+
+### i18n (47 locales)
+
+- Bloques `steamgriddb.picker` y `steamgriddb.error`. Verificado con `pnpm i18n --ci`.
+
+### Se conserva
+
+- `steamgrid/secureKey.ts`: lo usa `relic/steamgrid/download.ts` para descifrar la
+  API key.
+- Handlers `steamgriddb.hasApiKey` y `steamgriddb.setApiKey`: los usa
+  `Settings/components/SteamGridDbApiKey.tsx`.
+- Claves i18n `settings.steamgriddb.*`.
+- La migración de API key en texto plano a cifrada, que vivía dentro del
+  `getDecryptedApiKey()` eliminado: extraída a `migrateLegacyPlaintextKey()` y
+  llamada desde `hasApiKey`, el único read path que queda (Settings lo invoca al
+  montar). `hasApiKey` sigue devolviendo lo mismo que antes.

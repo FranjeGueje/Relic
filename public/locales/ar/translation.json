@@ -447,7 +447,6 @@
     "rename": "أعيد تسمية \"{{name}}\""
   },
   "launch": {},
-  "steamgriddb": {},
   "console": {
     "update": {
       "hintPrefix": "",

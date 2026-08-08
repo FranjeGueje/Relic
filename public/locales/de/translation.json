@@ -458,7 +458,6 @@
     }
   },
   "launch": {},
-  "steamgriddb": {},
   "console": {
     "update": {
       "hintPrefix": "Drücke",

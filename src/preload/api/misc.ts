@@ -92,8 +92,5 @@ export const storeDelete = (storeName: string, key: string) => stores[storeName]
 
 export const steamgriddb = {
   hasApiKey: makeHandlerInvoker('steamgriddb.hasApiKey'),
-  setApiKey: makeHandlerInvoker('steamgriddb.setApiKey'),
-  searchGame: makeHandlerInvoker('steamgriddb.searchGame'),
-  getGrids: makeHandlerInvoker('steamgriddb.getGrids'),
-  getHeroes: makeHandlerInvoker('steamgriddb.getHeroes')
+  setApiKey: makeHandlerInvoker('steamgriddb.setApiKey')
 }

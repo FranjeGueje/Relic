@@ -240,19 +240,6 @@ interface AsyncIPCFunctions {
 
   'steamgriddb.hasApiKey': () => Promise<boolean>
   'steamgriddb.setApiKey': (key: string) => Promise<void>
-  'steamgriddb.searchGame': (
-    query: string
-  ) => Promise<Array<{ id: number; name: string }>>
-  'steamgriddb.getGrids': (args: {
-    gameId: number
-    styles?: string[]
-    dimensions?: string[]
-  }) => Promise<Array<{ id: number; url: string; thumb: string }>>
-  'steamgriddb.getHeroes': (args: {
-    gameId: number
-    styles?: string[]
-    dimensions?: string[]
-  }) => Promise<Array<{ id: number; url: string; thumb: string }>>
 }
 
 interface FrontendMessages {

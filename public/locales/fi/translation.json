@@ -443,7 +443,6 @@
     "noGames": "Kirjastosi on tyhjä.<br /><br />Napsauta <4>tässä</4> kirjautuaksesi sisään Epic, GOG.com, tai Amazon -tilillesi. Tämän jälkeen pelisi ilmestyvät tähän kirjastonäkymään.<br /><br />Käyttääksesi pelejä- tai sovelluksia muista lähteistä, napsauta <br /> lisätäksesi ne manuaalisesti."
   },
   "launch": {},
-  "steamgriddb": {},
   "console": {
     "update": {
       "hintPrefix": "Paina",

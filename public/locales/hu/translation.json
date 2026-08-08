@@ -464,7 +464,6 @@
     }
   },
   "launch": {},
-  "steamgriddb": {},
   "console": {
     "update": {
       "hintPrefix": "Nyomd meg a(z)",
