@@ -53,6 +53,34 @@ function showDialogBoxModalAuto(props: {
   }
 }
 
+/**
+ * Ask the user a question and resolve to the index of the button they picked.
+ *
+ * Unlike `showDialogBoxModalAuto`, this cannot be a fire-and-forget frontend
+ * event: the caller blocks on the answer. Inverting it to the frontend needs a
+ * request/response channel, so for now it stays a native dialog — but it lives
+ * here so that Electron's `dialog` is confined to this module.
+ */
+async function askQuestion(props: {
+  title: string
+  message: string
+  buttons: string[]
+}): Promise<number> {
+  const window = getMainWindow()
+  const options: Electron.MessageBoxOptions = {
+    type: 'question',
+    title: props.title,
+    message: props.message,
+    buttons: props.buttons
+  }
+
+  const { response } = window
+    ? await dialog.showMessageBox(window, options)
+    : await dialog.showMessageBox(options)
+
+  return response
+}
+
 type NotifyType = {
   title: string
   body: string
@@ -71,4 +99,4 @@ function notify({ body, title }: NotifyType) {
   }
 }
 
-export { showDialogBoxModalAuto, notify }
+export { showDialogBoxModalAuto, askQuestion, notify }

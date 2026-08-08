@@ -2,7 +2,7 @@ import { callAllAbortControllers } from './utils/aborthandler/aborthandler'
 import { Runner, GameInfo, GameSettings, GameStatus } from 'common/types'
 import axios from 'axios'
 import https from 'node:https'
-import { app, dialog, shell, Notification } from 'electron'
+import { app, shell } from 'electron'
 import { exec, spawn, SpawnOptions, spawnSync } from 'child_process'
 import { existsSync, mkdirSync, readFileSync, rmSync } from 'fs'
 import { promisify } from 'util'
@@ -33,7 +33,7 @@ import {
   libraryStore as nileLibraryStore
 } from './storeManagers/nile/electronStores'
 import { formatBytes } from 'common/formatBytes'
-import { showDialogBoxModalAuto } from './dialog/dialog'
+import { showDialogBoxModalAuto, askQuestion, notify } from './dialog/dialog'
 import { getMainWindow } from './main_window'
 import { sendFrontendMessage } from './ipc'
 import { GlobalConfig } from './config'
@@ -126,16 +126,15 @@ async function isEpicServiceOffline(
   if (!isOnline()) return true
 
   const epicStatusApi = 'https://status.epicgames.com/api/v2/components.json'
-  const notification = new Notification({
+  // urgency/timeoutType/silent were spelled out here but held Electron's own
+  // defaults, so they are dropped rather than threaded through notify().
+  const offlineNotification = {
     title: `${type} ${t('epic.offline-notification-title', 'offline')}`,
     body: t(
       'epic.offline-notification-body',
       'Relic will maybe not work probably!'
-    ),
-    urgency: 'normal',
-    timeoutType: 'default',
-    silent: false
-  })
+    )
+  }
 
   try {
     const { data } = await axiosClient.get(epicStatusApi)
@@ -147,13 +146,13 @@ async function isEpicServiceOffline(
       if (name === type) {
         const isOffline = indicator === 'major'
         if (isOffline) {
-          notification.show()
+          notify(offlineNotification)
         }
         return isOffline
       }
     }
 
-    notification.show()
+    notify(offlineNotification)
     return false
   } catch (error) {
     logError(
@@ -179,13 +178,13 @@ async function handleExit() {
   const mainWindow = getMainWindow()
 
   if ((isLocked || isRunning()) && mainWindow) {
-    const { response } = await dialog.showMessageBox(mainWindow, {
-      buttons: [i18next.t('box.no'), i18next.t('box.yes')],
+    const response = await askQuestion({
+      title: i18next.t('box.quit.title', 'Exit'),
       message: i18next.t(
         'box.quit.message',
         'There are pending operations, are you sure?'
       ),
-      title: i18next.t('box.quit.title', 'Exit')
+      buttons: [i18next.t('box.no'), i18next.t('box.yes')]
     })
 
     if (response === 0) {
@@ -217,8 +216,7 @@ async function handleExit() {
 
 export async function askForceUninstall(game: Game) {
   const { title } = game.getGameInfo()
-  const { response } = await dialog.showMessageBox({
-    type: 'question',
+  const response = await askQuestion({
     title,
     message: i18next.t(
       'box.error.folder-not-found.title',
