@@ -1,9 +1,9 @@
-import { app } from 'electron'
 import { mkdirSync } from 'fs'
 import { homedir } from 'os'
 import { isAbsolute, join, resolve } from 'path'
 import { env } from 'process'
 import { dirSync } from 'tmp'
+import { isPackaged } from './environment'
 
 const appName = 'relic'
 
@@ -73,7 +73,7 @@ export const steamCompatDir = join(
 export const publicDir = resolve(
   __dirname,
   '..',
-  app.isPackaged || process.env.CI === 'e2e' ? '' : '../public'
+  isPackaged || process.env.CI === 'e2e' ? '' : '../public'
 )
 
 export const fakeEpicExePath = fixAsarPath(

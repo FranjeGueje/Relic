@@ -12,4 +12,9 @@ export const isCLIFullscreen = process.argv.includes('--fullscreen')
 export const isCLINoGui = process.argv.includes('--no-gui')
 export const isCLIConsoleMode = process.argv.includes('--console')
 export const isAppImage = Boolean(env.APPIMAGE)
+// Equivalent to Electron's `app.isPackaged`, without importing electron: a
+// packaged Relic runs from inside an asar archive (electron-builder keeps asar
+// enabled — see `asarUnpack` in electron-builder.yml), while a dev run executes
+// build/main straight from the source tree.
+export const isPackaged = __dirname.includes('app.asar')
 export const autoUpdateSupported = isAppImage

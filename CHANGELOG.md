@@ -15,10 +15,15 @@ un cliente que habla con él por API.
   fallback según la spec XDG) en lugar de pedírselas a Electron. Replican la
   semántica de Electron en Linux exactamente: `appData` → `~/.config`,
   `userData` → `~/.config/relic`.
-- **3 ficheros dejan de importar `electron` por completo**:
-  `storeManagers/zoom/constants.ts`, `storeManagers/nile/library.ts` y
-  `migration/migrations/legendary.ts`. Acoplamiento a Electron en el backend:
-  24 → 21 ficheros.
+- **Shim de `app.isPackaged`**: nuevo `isPackaged` en `constants/environment.ts`,
+  derivado de si la ejecución ocurre dentro del asar (`__dirname` contiene
+  `app.asar`). Con esto **`constants/paths.ts` deja de importar `electron` por
+  completo**. `main.ts` usa el mismo `isPackaged` compartido, para que no haya dos
+  definiciones de "empaquetado" que puedan divergir.
+- **4 ficheros dejan de importar `electron` por completo**:
+  `constants/paths.ts`, `storeManagers/zoom/constants.ts`,
+  `storeManagers/nile/library.ts` y `migration/migrations/legendary.ts`.
+  Acoplamiento a Electron en el backend: 24 → 20 ficheros.
 - **Código muerto eliminado**: el ternario `isLinux ? ... : ...` de la migración de
   legendary tenía una rama inalcanzable (`isLinux` es `true` fijo en un proyecto
   Linux-only). Colapsado, junto con los imports de `isLinux` y `userHome` que
@@ -79,9 +84,14 @@ it over an API.
   `constants/paths.ts` from the environment (`XDG_CONFIG_HOME`, falling back to
   `~/.config` per the XDG spec) instead of asking Electron. They mirror Electron's
   Linux semantics exactly: `appData` → `~/.config`, `userData` → `~/.config/relic`.
-- **3 files no longer import `electron` at all**:
+- **`app.isPackaged` shim**: new `isPackaged` in `constants/environment.ts`,
+  derived from whether execution happens inside the asar (`__dirname` contains
+  `app.asar`). With it, **`constants/paths.ts` no longer imports `electron` at
+  all**. `main.ts` uses the same shared `isPackaged`, so there aren't two
+  definitions of "packaged" that can drift apart.
+- **4 files no longer import `electron` at all**: `constants/paths.ts`,
   `storeManagers/zoom/constants.ts`, `storeManagers/nile/library.ts` and
-  `migration/migrations/legendary.ts`. Backend Electron coupling: 24 → 21 files.
+  `migration/migrations/legendary.ts`. Backend Electron coupling: 24 → 20 files.
 - **Dead code removed**: the `isLinux ? ... : ...` ternary in the legendary
   migration had an unreachable branch (`isLinux` is hardcoded `true` in a
   Linux-only project). Collapsed, along with the now-unused `isLinux` and

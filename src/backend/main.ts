@@ -92,6 +92,7 @@ import {
   isCLIFullscreen,
   isCLINoGui,
   isLinux,
+  isPackaged,
   isSteamDeckGameMode
 } from './constants/environment'
 import {
@@ -173,7 +174,7 @@ async function initializeWindow(): Promise<BrowserWindow> {
 
   // Changelog links workaround
   mainWindow.webContents.on('will-navigate', (event, url) => {
-    const pattern = app.isPackaged ? publicDir : 'localhost:5173'
+    const pattern = isPackaged ? publicDir : 'localhost:5173'
     if (!url.match(pattern)) {
       event.preventDefault()
       openUrlOrFile(url)
@@ -181,7 +182,7 @@ async function initializeWindow(): Promise<BrowserWindow> {
   })
 
   mainWindow.webContents.setWindowOpenHandler((details) => {
-    const pattern = app.isPackaged ? publicDir : 'localhost:5173'
+    const pattern = isPackaged ? publicDir : 'localhost:5173'
     return { action: !details.url.match(pattern) ? 'allow' : 'deny' }
   })
 
