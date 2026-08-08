@@ -27,7 +27,6 @@ import {
   installInfoStore as GOGinstallInfoStore,
   libraryStore as GOGlibraryStore
 } from './storeManagers/gog/electronStores'
-import gogPresence from './storeManagers/gog/presence'
 import {
   installStore as nileInstallStore,
   libraryStore as nileLibraryStore
@@ -190,8 +189,6 @@ async function handleExit() {
   }
 
   mainWindow?.hide()
-  await gogPresence.deletePresence()
-
   app.exit()
 }
 

@@ -23,6 +23,17 @@ function authLogSanitizer(line: string) {
   }
 }
 
+// `gogdl auth` spawns a process and may hit the network to refresh the token,
+// and getCredentials() is called from ~18 places (library refresh, install,
+// update, metadata lookups...). A single startup used to spawn it ~17 times in
+// 75 seconds, several of them within the same second. Two guards fix that:
+// concurrent callers share one in-flight call, and the result is reused for a
+// short window afterwards.
+const CREDENTIALS_TTL_MS = 60_000
+
+let cachedCredentials: { value: GOGCredentials; expiresAt: number } | undefined
+let credentialsInFlight: Promise<GOGCredentials | undefined> | undefined
+
 export class GOGUser {
   static async login(
     code: string
@@ -55,6 +66,7 @@ export class GOGUser {
       return { status: 'error' }
     }
     logInfo('Login Successful', LogPrefix.Gog)
+    GOGUser.invalidateCredentialsCache()
     configStore.set('isLoggedIn', true)
     const userDetails = await this.getUserDetails()
     return { status: 'done', data: userDetails }
@@ -109,6 +121,20 @@ export class GOGUser {
       })
       return
     }
+
+    if (cachedCredentials && Date.now() < cachedCredentials.expiresAt) {
+      return cachedCredentials.value
+    }
+
+    // Share one gogdl run between callers that ask at the same time
+    credentialsInFlight ??= GOGUser.fetchCredentials().finally(() => {
+      credentialsInFlight = undefined
+    })
+
+    return credentialsInFlight
+  }
+
+  private static async fetchCredentials(): Promise<GOGCredentials | undefined> {
     const { stdout } = await libraryManagerMap['gog'].runRunnerCommand(
       ['auth'],
       {
@@ -125,14 +151,32 @@ export class GOGUser {
       return undefined
     }
     try {
-      return JSON.parse(trimmed) as GOGCredentials | undefined
+      const credentials = JSON.parse(trimmed) as GOGCredentials | undefined
+      if (credentials) {
+        // Never hold credentials past the token's own lifetime. gogdl reports
+        // `expires_in` as the token's total validity and we cannot tell when it
+        // was issued, so the short TTL is what actually bounds this in practice
+        // — the cap only matters if gogdl ever reports a very short-lived token.
+        const ttl = Math.min(
+          CREDENTIALS_TTL_MS,
+          (credentials.expires_in ?? 0) * 1000
+        )
+        cachedCredentials = { value: credentials, expiresAt: Date.now() + ttl }
+      }
+      return credentials
     } catch (error) {
       logError(['Error getting GOG credentials:', error])
       return undefined
     }
   }
 
+  /** Drop the cached credentials, so the next read runs `gogdl auth` again. */
+  public static invalidateCredentialsCache() {
+    cachedCredentials = undefined
+  }
+
   public static logout() {
+    GOGUser.invalidateCredentialsCache()
     clearCache('gog')
     configStore.clear()
     if (existsSync(gogdlAuthConfig)) {

@@ -243,8 +243,7 @@ class GlobalConfigV0 extends GlobalConfig {
       maxWorkers: 0,
       protonPath: this.detectGeProton(),
       verboseLogs: true,
-      steamGridDbApiKey: '',
-      disableGOGPresence: false
+      steamGridDbApiKey: ''
     }
     return settings as AppSettings
   }

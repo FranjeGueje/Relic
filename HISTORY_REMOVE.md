@@ -1110,3 +1110,20 @@ consola de la Steam Deck —el caso de uso principal de Relic— no se mostraba 
   namespace (`notify.uninstalled` y `notify.uninstalled.error`), lo que rompía la
   notificación de desinstalado en inglés. Al desaparecer las notificaciones, el
   conflicto desaparece con ellas.
+
+---
+
+## GOG Rich Presence (v0.6.0, Ago 2026)
+
+Relic no ejecuta juegos, así que anunciaba a GOG que el usuario estaba "online"
+jugando a nada, con un `setInterval` de 5 minutos. Su interruptor
+(`DisableGOGPresence`) ya se había eliminado de la UI en 0.4.0, de modo que el
+usuario no podía desactivarlo.
+
+- `src/backend/storeManagers/gog/presence.ts` completo (97 líneas): `setPresence`,
+  `deletePresence`, `setCurrentGame` (sin llamantes: `CURRENT_GAME` era siempre `''`
+  porque nada lanza juegos), el `setInterval` y el listener de `backendEvents` que
+  reaccionaba al setting.
+- `main.ts`: import y `runOnceWhenOnline(gogPresence.setPresence)`.
+- `utils.ts`: import y `await gogPresence.deletePresence()` en `handleExit()`.
+- `config.ts` y `common/types.ts`: setting `disableGOGPresence`.

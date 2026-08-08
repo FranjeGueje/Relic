@@ -26,7 +26,6 @@ import { GameConfig } from './game_config'
 import { GlobalConfig } from './config'
 import { LegendaryUser } from 'backend/storeManagers/legendary/user'
 import { GOGUser } from './storeManagers/gog/user'
-import gogPresence from './storeManagers/gog/presence'
 import { NileUser } from './storeManagers/nile/user'
 import { ZoomUser } from './storeManagers/zoom/user'
 import {
@@ -273,7 +272,6 @@ if (!gotTheLock) {
 
     const settings = GlobalConfig.get().getSettings()
 
-    runOnceWhenOnline(gogPresence.setPresence)
     await i18next.use(Backend).init({
       backend: {
         addPath: path.join(publicDir, 'locales', '{{lng}}', '{{ns}}'),

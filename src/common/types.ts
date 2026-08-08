@@ -79,7 +79,6 @@ export interface AppSettings extends GameSettings {
   autoUpdateGames: boolean
   defaultInstallPath: string
   defaultSteamPath: string
-  disableGOGPresence: boolean
   experimentalFeatures?: ExperimentalFeatures
   maxWorkers: number
   protonPath: string
