@@ -1049,3 +1049,18 @@ En Relic las portadas se descargan automáticamente tras instalar, vía
   `getDecryptedApiKey()` eliminado: extraída a `migrateLegacyPlaintextKey()` y
   llamada desde `hasApiKey`, el único read path que queda (Settings lo invoca al
   montar). `hasApiKey` sigue devolviendo lo mismo que antes.
+
+---
+
+## `showItemInFolder` (v0.6.0, Ago 2026)
+
+Cadena muerta heredada de Heroic: existía la función en el backend, el listener IPC
+y el tipo, pero **ningún binding en `preload/`**, así que el frontend no podía
+invocarla. Su función (revelar y seleccionar un fichero en el gestor de archivos)
+tampoco encaja en el alcance de Relic — "abrir la carpeta del juego" ya lo cubre
+`openUrlOrFile`.
+
+- `utils.ts`: función `showItemInFolder()` y su export. Con ella se va el último uso
+  de `shell` de electron en el fichero (ahora solo importa `app`).
+- `main.ts`: import y `addListener('showItemInFolder', ...)`.
+- `common/types/ipc.ts`: firma `showItemInFolder`.

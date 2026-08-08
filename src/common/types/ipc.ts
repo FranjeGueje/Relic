@@ -56,7 +56,6 @@ interface SyncIPCFunctions {
   logoutGOG: () => void
   logError: (message: unknown) => void
   logInfo: (message: unknown) => void
-  showItemInFolder: (item: string) => void
   clipboardWriteText: (text: string) => void
   processShortcut: (combination: string) => void
   removeFromDMQueue: (appName: string) => void

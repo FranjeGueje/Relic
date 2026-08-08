@@ -36,7 +36,6 @@ import {
   openUrlOrFile,
   resetRelic,
   showAboutWindow,
-  showItemInFolder,
   getFileSize,
   getShellPath,
   removeFolder,
@@ -694,8 +693,6 @@ addHandler('openDialog', async (e, args) => {
   }
   return false
 })
-
-addListener('showItemInFolder', async (e, item) => showItemInFolder(item))
 
 addHandler('uninstall', uninstallGameCallback)
 

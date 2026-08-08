@@ -2,7 +2,7 @@ import { callAllAbortControllers } from './utils/aborthandler/aborthandler'
 import { Runner, GameInfo, GameSettings, GameStatus } from 'common/types'
 import axios from 'axios'
 import https from 'node:https'
-import { app, shell } from 'electron'
+import { app } from 'electron'
 import { exec, spawn, SpawnOptions, spawnSync } from 'child_process'
 import { existsSync, mkdirSync, readFileSync, rmSync } from 'fs'
 import { promisify } from 'util'
@@ -350,19 +350,6 @@ function resetRelic() {
     app.relaunch()
     app.quit()
   }, 1000)
-}
-
-function showItemInFolder(item: string) {
-  if (existsSync(item)) {
-    try {
-      shell.showItemInFolder(item)
-    } catch (error) {
-      logError(
-        ['Failed to show item in folder with:', error],
-        LogPrefix.Backend
-      )
-    }
-  }
 }
 
 function splitPathAndName(fullPath: string): { dir: string; bin: string } {
@@ -1044,7 +1031,6 @@ export {
   isEpicServiceOffline,
   openUrlOrFile,
   showAboutWindow,
-  showItemInFolder,
   removeSpecialcharacters,
   clearCache,
   clearAchievementCache,
