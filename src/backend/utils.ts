@@ -4,17 +4,11 @@ import axios from 'axios'
 import https from 'node:https'
 import { app } from 'electron'
 import { exec, spawn, SpawnOptions, spawnSync } from 'child_process'
-import { existsSync, mkdirSync, readFileSync, rmSync } from 'fs'
+import { existsSync, mkdirSync, rmSync } from 'fs'
 import { promisify } from 'util'
 import i18next from 'i18next'
 
-import {
-  logError,
-  logInfo,
-  LogPrefix,
-  logWarning,
-  logDebug
-} from 'backend/logger'
+import { logError, logInfo, LogPrefix, logWarning } from 'backend/logger'
 import { basename, dirname, join, normalize } from 'path'
 import {
   gameInfoStore,
@@ -57,7 +51,6 @@ import {
   publicDir,
   toolsPath
 } from './constants/paths'
-import { parse } from '@node-steam/vdf'
 
 import { isRunning } from './downloadmanager/downloadqueue'
 import { isOnline } from './online_monitor'
@@ -402,29 +395,6 @@ export function createNecessaryFolders() {
       mkdirSync(folder)
     }
   })
-}
-
-export async function getSteamLibraries(): Promise<string[]> {
-  const { defaultSteamPath } = GlobalConfig.get().getSettings()
-  const path = defaultSteamPath.replaceAll("'", '')
-  const vdfFile = join(path, 'steamapps', 'libraryfolders.vdf')
-  const libraries = ['/usr/share/steam']
-
-  if (existsSync(vdfFile)) {
-    const json = parse(readFileSync(vdfFile, 'utf-8'))
-    if (!json.libraryfolders) {
-      return libraries
-    }
-    const folders: { path: string }[] = Object.values(json.libraryfolders)
-    return [...libraries, ...folders.map((folder) => folder.path)].filter(
-      (path) => existsSync(path)
-    )
-  }
-  logDebug(
-    'Unable to load Steam Libraries, libraryfolders.vdf not found',
-    LogPrefix.Backend
-  )
-  return libraries
 }
 
 const specialCharactersRegex =

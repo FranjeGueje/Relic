@@ -1127,3 +1127,14 @@ usuario no podía desactivarlo.
 - `main.ts`: import y `runOnceWhenOnline(gogPresence.setPresence)`.
 - `utils.ts`: import y `await gogPresence.deletePresence()` en `handleExit()`.
 - `config.ts` y `common/types.ts`: setting `disableGOGPresence`.
+
+---
+
+## Auditoría de dependencias (v0.6.0, Ago 2026)
+
+- `@node-steam/vdf`: su único consumidor era `getSteamLibraries()` en `backend/utils.ts`,
+  código muerto con cero llamantes en todo el repo (ni directo, ni por IPC). Función y
+  dependencia eliminadas.
+- `jest-environment-jsdom`, `@testing-library/jest-dom`, `@testing-library/react`: sin uso.
+  El `jest.config.js` raíz solo declara `projects: ['<rootDir>/src/backend']` — nunca hubo
+  un proyecto de Jest para frontend, ni tests de componentes que las necesitaran.
