@@ -22,7 +22,7 @@ import ContextProvider from 'frontend/state/ContextProvider'
 import { updateGame } from 'frontend/helpers/library'
 import { CachedImage, SvgButton } from 'frontend/components/UI'
 import ContextMenu, { Item } from '../ContextMenu'
-import { hasProgress } from 'frontend/hooks/hasProgress'
+import { useHasProgress } from 'frontend/hooks/useHasProgress'
 import RemoveCircleIcon from '@mui/icons-material/RemoveCircle'
 
 import { cx as classNames } from 'frontend/helpers/cx'
@@ -30,7 +30,7 @@ import StoreLogos from 'frontend/components/UI/StoreLogos'
 import UninstallModal from 'frontend/components/UI/UninstallModal'
 import ModifyInstallModal from 'frontend/screens/Game/ModifyInstallModal'
 import { getCardStatus, getImageFormatting } from './constants'
-import { hasStatus } from 'frontend/hooks/hasStatus'
+import { useHasStatus } from 'frontend/hooks/useHasStatus'
 import fallBackImage from 'frontend/assets/relic_card.jpg'
 import LibraryContext from '../../LibraryContext'
 import {
@@ -116,12 +116,12 @@ const GameCard = ({
   const isInstallable =
     gameInfo.installable === undefined || gameInfo.installable // If it's undefined we assume it's installable
 
-  const [progress] = hasProgress(appName, runner)
+  const [progress] = useHasProgress(appName, runner)
   const { install_size: size = '0' } = {
     ...gameInstallInfo
   }
 
-  const { status, label } = hasStatus(gameInfo, size)
+  const { status, label } = useHasStatus(gameInfo, size)
 
   const isThirdPartyManaged = !!gameInfo.thirdPartyManagedApp
 

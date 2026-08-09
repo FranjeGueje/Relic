@@ -30,11 +30,11 @@ import {
 import GamePicture from '../GamePicture'
 
 import { install } from 'frontend/helpers/library'
-import { hasProgress } from 'frontend/hooks/hasProgress'
+import { useHasProgress } from 'frontend/hooks/useHasProgress'
 import ErrorComponent from 'frontend/components/UI/ErrorComponent'
 
 import StoreLogos from 'frontend/components/UI/StoreLogos'
-import { hasStatus } from 'frontend/hooks/hasStatus'
+import { useHasStatus } from 'frontend/hooks/useHasStatus'
 import GameContext from '../GameContext'
 import { GameContextType } from 'frontend/types'
 import {
@@ -47,10 +47,10 @@ import {
   InstalledInfo,
   Requirements
 } from './components'
-import { hasHelp } from 'frontend/hooks/hasHelp'
+import { useHasHelp } from 'frontend/hooks/useHasHelp'
 import Genres from './components/Genres'
 import ReleaseDate from './components/ReleaseDate'
-import { hasKnownFixes } from 'frontend/hooks/hasKnownFixes'
+import { useHasKnownFixes } from 'frontend/hooks/useHasKnownFixes'
 import { openInstallGameModal } from 'frontend/state/InstallGameModal'
 import useSettingsContext from 'frontend/hooks/useSettingsContext'
 import SettingsContext from 'frontend/screens/Settings/SettingsContext'
@@ -71,7 +71,7 @@ export default React.memo(function GamePage(): JSX.Element | null {
   const { epic, gog, gameUpdates, platform, showDialogModal, connectivity } =
     useContext(ContextProvider)
 
-  hasHelp(
+  useHasHelp(
     'gamePage',
     t('help.title.gamePage', 'Game Page'),
     <p>
@@ -85,10 +85,10 @@ export default React.memo(function GamePage(): JSX.Element | null {
   const [gameInfo, setGameInfo] = useState(locationGameInfo)
   const [gameSettings, setGameSettings] = useState<GameSettings | null>(null)
 
-  const { status, folder, statusContext } = hasStatus(gameInfo)
+  const { status, folder, statusContext } = useHasStatus(gameInfo)
   const gameAvailable = gameInfo.is_installed && status !== 'notAvailable'
 
-  const [progress, previousProgress] = hasProgress(appName, runner)
+  const [progress, previousProgress] = useHasProgress(appName, runner)
 
   const [extraInfo, setExtraInfo] = useState<ExtraInfo | null>(
     gameInfo.extra || null
@@ -113,7 +113,7 @@ export default React.memo(function GamePage(): JSX.Element | null {
     message: unknown
   }>({ error: false, message: '' })
 
-  const knownFixes = hasKnownFixes(appName, runner)
+  const knownFixes = useHasKnownFixes(appName, runner)
 
   const isLinux = platform === 'linux'
   const isInstalling = status === 'installing'

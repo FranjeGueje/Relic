@@ -15,7 +15,7 @@ import { AppSettings } from 'common/types'
 import { UpdateComponent } from 'frontend/components/UI'
 import { SettingsContextType } from 'frontend/types'
 import useSettingsContext from 'frontend/hooks/useSettingsContext'
-import { hasHelp } from 'frontend/hooks/hasHelp'
+import { useHasHelp } from 'frontend/hooks/useHasHelp'
 import { ContentCopy, FileOpen } from '@mui/icons-material'
 
 function Settings() {
@@ -39,7 +39,7 @@ function Settings() {
     'Shows all settings of Relic and defaults for games.'
   )
 
-  hasHelp(
+  useHasHelp(
     'settings',
     t('help.title.settings', 'Settings'),
     <p>{helpContent}</p>

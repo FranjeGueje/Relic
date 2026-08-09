@@ -46,6 +46,11 @@ export default tseslint.config(
         { checksVoidReturn: false }
       ],
       '@typescript-eslint/unbound-method': 'error',
+      // False positive: i18next/React/JSON5 are used here as default-export
+      // singletons that also happen to expose named exports (`i18next.t`,
+      // `React.createContext`, `JSON5.parse`). That's the intended usage,
+      // not an ESM/CJS interop mistake.
+      'import-x/no-named-as-default-member': 'off',
       'no-restricted-imports': [
         'error',
         {

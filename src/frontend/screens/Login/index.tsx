@@ -14,7 +14,7 @@ import { LanguageSelector, UpdateComponent } from '../../components/UI'
 import { FlagPosition } from '../../components/UI/LanguageSelector'
 import SIDLogin from './components/SIDLogin'
 import ContextProvider from '../../state/ContextProvider'
-import { hasHelp } from 'frontend/hooks/hasHelp'
+import { useHasHelp } from 'frontend/hooks/useHasHelp'
 
 export const epicLoginPath = '/loginweb/legendary'
 export const gogLoginPath = '/loginweb/gog'
@@ -26,7 +26,7 @@ export default React.memo(function NewLogin() {
     useContext(ContextProvider)
   const { t } = useTranslation()
 
-  hasHelp(
+  useHasHelp(
     'login',
     t('help.title.login', 'Login'),
     <p>{t('help.content.login', 'Log in into the different stores.')}</p>

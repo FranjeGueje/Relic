@@ -3,8 +3,8 @@ import { cx as classNames } from 'frontend/helpers/cx'
 import { useTranslation } from 'react-i18next'
 
 import { CachedImage } from 'frontend/components/UI'
-import { hasStatus } from 'frontend/hooks/hasStatus'
-import { hasProgress } from 'frontend/hooks/hasProgress'
+import { useHasStatus } from 'frontend/hooks/useHasStatus'
+import { useHasProgress } from 'frontend/hooks/useHasProgress'
 import { getProgress } from 'frontend/helpers'
 import { getImageFormatting } from 'frontend/screens/Library/components/GameCard/constants'
 import fallBackImage from 'frontend/assets/relic_card.jpg'
@@ -41,8 +41,8 @@ const ConsoleCard = forwardRef<HTMLButtonElement, Props>(function ConsoleCard(
   ref
 ) {
   const { t } = useTranslation()
-  const { status, label } = hasStatus(game)
-  const [progress] = hasProgress(game.app_name, game.runner)
+  const { status, label } = useHasStatus(game)
+  const [progress] = useHasProgress(game.app_name, game.runner)
 
   const isProgressing = status === 'installing' || status === 'updating'
   const percent = isProgressing

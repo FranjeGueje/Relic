@@ -1,12 +1,12 @@
 import { useTranslation } from 'react-i18next'
 import useSetting from 'frontend/hooks/useSetting'
 import { InfoBox, PathSelectionBox } from 'frontend/components/UI'
-import { hasHelp } from 'frontend/hooks/hasHelp'
+import { useHasHelp } from 'frontend/hooks/useHasHelp'
 
 const ProtonPath = () => {
   const { t } = useTranslation()
 
-  hasHelp(
+  useHasHelp(
     'protonPath',
     t('setting.proton-path'),
     <p>

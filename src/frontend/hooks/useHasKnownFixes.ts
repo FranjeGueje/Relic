@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { KnowFixesInfo, Runner } from 'common/types'
 
-export const hasKnownFixes = (appName: string, runner: Runner) => {
+export const useHasKnownFixes = (appName: string, runner: Runner) => {
   const [knownFixes, setKnownFixes] = useState<KnowFixesInfo | null>(null)
 
   useEffect(() => {

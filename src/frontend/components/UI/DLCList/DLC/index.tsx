@@ -8,7 +8,7 @@ import UninstallModal from 'frontend/components/UI/UninstallModal'
 import { faSpinner } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import ContextProvider from 'frontend/state/ContextProvider'
-import { hasProgress } from 'frontend/hooks/hasProgress'
+import { useHasProgress } from 'frontend/hooks/useHasProgress'
 import DownIcon from 'frontend/assets/down-icon.svg?react'
 import StopIcon from 'frontend/assets/stop-icon.svg?react'
 import StopIconAlt from 'frontend/assets/stop-icon-alt.svg?react'
@@ -29,7 +29,7 @@ const DLC = ({ dlc, runner, mainAppInfo, onClose }: Props) => {
   const [dlcInfo, setDlcInfo] = useState<GameInfo | null>(null)
   const [dlcSize, setDlcSize] = useState<number>(0)
   const [refreshing, setRefreshing] = useState(true)
-  const [progress] = hasProgress(dlc.app_name, runner)
+  const [progress] = useHasProgress(dlc.app_name, runner)
 
   const isInstalled = dlcInfo?.is_installed
 

@@ -1,14 +1,14 @@
 import React from 'react'
 import ContextProvider from 'frontend/state/ContextProvider'
 import { GameInfo, GameStatus, Status } from 'common/types'
-import { hasProgress } from './hasProgress'
+import { useHasProgress } from './useHasProgress'
 import { useTranslation } from 'react-i18next'
 import { getStatusLabel, handleNonAvailableGames } from './constants'
 
-export function hasStatus(gameInfo: GameInfo, gameSize?: string) {
+export function useHasStatus(gameInfo: GameInfo, gameSize?: string) {
   const appName = gameInfo.app_name
   const { libraryStatus, epic, gog } = React.useContext(ContextProvider)
-  const [progress] = hasProgress(gameInfo.app_name, gameInfo.runner)
+  const [progress] = useHasProgress(gameInfo.app_name, gameInfo.runner)
   const [newGameInfo, setNewGameInfo] = React.useState<GameInfo | undefined>(
     gameInfo
   )

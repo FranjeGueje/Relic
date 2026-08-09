@@ -1,5 +1,5 @@
 import './index.css'
-import { hasProgress } from 'frontend/hooks/hasProgress'
+import { useHasProgress } from 'frontend/hooks/useHasProgress'
 import { useEffect, useMemo, useState } from 'react'
 import { Box, LinearProgress, Typography } from '@mui/material'
 import { useTranslation } from 'react-i18next'
@@ -55,7 +55,7 @@ export default function ProgressHeader(props: {
 }) {
   const sampleSize = 100
   const { t } = useTranslation()
-  const [progress] = hasProgress(props.appName, props.runner)
+  const [progress] = useHasProgress(props.appName, props.runner)
   const [avgSpeed, setAvgDownloadSpeed] = useState<Point[]>(
     Array<Point>(sampleSize).fill({ download: 0, disk: 0 })
   )

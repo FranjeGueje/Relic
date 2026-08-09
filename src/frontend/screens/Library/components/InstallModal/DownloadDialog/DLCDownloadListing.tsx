@@ -17,13 +17,13 @@ const DLCDownloadListing: React.FC<Props> = ({
   const { t } = useTranslation()
   const [installAllDlcs, setInstallAllDlcs] = useState(false)
 
-  if (!DLCList) {
-    return null
-  }
-
   useEffect(() => {
     setInstallAllDlcs(dlcsToInstall.length === DLCList.length)
   }, [dlcsToInstall])
+
+  if (!DLCList) {
+    return null
+  }
 
   const handleAllDlcs = () => {
     setInstallAllDlcs(!installAllDlcs)

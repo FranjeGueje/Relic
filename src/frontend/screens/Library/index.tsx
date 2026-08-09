@@ -23,7 +23,7 @@ import LibraryHeader from './components/LibraryHeader'
 import { normalizeTitle } from 'frontend/helpers/library'
 import LibraryContext from './LibraryContext'
 import { PlatformsFilters, StoresFilters } from 'frontend/types'
-import { hasHelp } from 'frontend/hooks/hasHelp'
+import { useHasHelp } from 'frontend/hooks/useHasHelp'
 import CategoriesManager from './components/CategoriesManager'
 import AlphabetFilter from './components/AlphabetFilter'
 import { openInstallGameModal } from 'frontend/state/InstallGameModal'
@@ -55,7 +55,7 @@ export default React.memo(function Library(): JSX.Element {
     gameUpdates
   } = useContext(ContextProvider)
 
-  hasHelp(
+  useHasHelp(
     'library',
     t('help.title.library', 'Library'),
     <p>{t('help.content.library', 'Shows all owned games.')}</p>

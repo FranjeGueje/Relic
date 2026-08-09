@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faDownload } from '@fortawesome/free-solid-svg-icons'
 import Box from '@mui/material/Box'
 import { getGameInfo } from 'frontend/helpers'
-import { hasProgress } from 'frontend/hooks/hasProgress'
+import { useHasProgress } from 'frontend/hooks/useHasProgress'
 import { Runner } from 'common/types'
 import './index.css'
 import { useTranslation } from 'react-i18next'
@@ -19,7 +19,7 @@ type Props = {
 }
 
 export default React.memo(function CurrentDownload({ appName, runner }: Props) {
-  const [progress] = hasProgress(appName, runner)
+  const [progress] = useHasProgress(appName, runner)
   const [gameTitle, setGameTitle] = useState('')
   const { libraryStatus } = useContext(ContextProvider)
   const { t } = useTranslation()

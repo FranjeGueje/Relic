@@ -5,7 +5,7 @@ import { useContext, useEffect, useMemo, useRef, useState } from 'react'
 import './index.scss'
 
 import { install } from 'frontend/helpers'
-import { hasProgress } from 'frontend/hooks/hasProgress'
+import { useHasProgress } from 'frontend/hooks/useHasProgress'
 import ContextProvider from 'frontend/state/ContextProvider'
 
 import type { GameInfo, InstallPlatform } from 'common/types'
@@ -29,7 +29,7 @@ export default function InstallOverlay({
 }) {
   const { t } = useTranslation()
   const { platform } = useContext(ContextProvider)
-  const [progress] = hasProgress(game.app_name, game.runner)
+  const [progress] = useHasProgress(game.app_name, game.runner)
 
   const isLinux = platform === 'linux'
 

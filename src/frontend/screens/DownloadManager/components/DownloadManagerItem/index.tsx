@@ -8,7 +8,7 @@ import { CachedImage, SvgButton } from 'frontend/components/UI'
 import { handleStopInstallation } from 'frontend/helpers/library'
 import { getGameInfo, getStoreName } from 'frontend/helpers'
 import { useTranslation } from 'react-i18next'
-import { hasProgress } from 'frontend/hooks/hasProgress'
+import { useHasProgress } from 'frontend/hooks/useHasProgress'
 import ContextProvider from 'frontend/state/ContextProvider'
 import { useNavigate } from 'react-router-dom'
 import PlayIcon from 'frontend/assets/play-icon.svg?react'
@@ -49,6 +49,29 @@ const DownloadManagerItem = ({
 
   const navigate = useNavigate()
 
+  const library = [...epic.library, ...gog.library, ...amazon.library]
+
+  const maybeAppName = element?.params.appName
+  const maybeRunner = element?.params.runner
+
+  const [gameInfo, setGameInfo] = useState(element?.params.gameInfo)
+
+  useEffect(() => {
+    if (!maybeAppName || !maybeRunner) return
+    const getNewInfo = async () => {
+      const newInfo = await getGameInfo(maybeAppName, maybeRunner)
+      if (newInfo) {
+        setGameInfo(newInfo)
+      }
+    }
+    getNewInfo()
+  }, [element])
+
+  const [progress] = useHasProgress(
+    maybeAppName ?? '',
+    maybeRunner ?? 'legendary'
+  )
+
   if (!element) {
     return (
       <h5 style={{ paddingTop: 'var(--space-xs' }}>
@@ -57,38 +80,11 @@ const DownloadManagerItem = ({
     )
   }
 
-  const library = [...epic.library, ...gog.library, ...amazon.library]
+  const { params, addToQueueTime, endTime, type, startTime, status } = element
+  const { appName, runner, path, size, platformToInstall } = params
 
-  const { params, addToQueueTime, endTime, type, startTime } = element
-  const {
-    appName,
-    runner,
-    path,
-    gameInfo: DmGameInfo,
-    size,
-    platformToInstall
-  } = params
+  const { art_cover, art_square, install: { is_dlc } = {} } = gameInfo || {}
 
-  const [gameInfo, setGameInfo] = useState(DmGameInfo)
-
-  useEffect(() => {
-    const getNewInfo = async () => {
-      const newInfo = await getGameInfo(appName, runner)
-      if (newInfo) {
-        setGameInfo(newInfo)
-      }
-    }
-    getNewInfo()
-  }, [element])
-
-  const {
-    art_cover,
-    art_square,
-    install: { is_dlc }
-  } = gameInfo || {}
-
-  const [progress] = hasProgress(appName, runner)
-  const { status } = element
   const finished = status === 'done'
   const canceled = status === 'error' || (status === 'abort' && !current)
 
