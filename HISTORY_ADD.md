@@ -1,9 +1,14 @@
 # HISTORY_ADD.md
 
-Este archivo registra cada funcionalidad nueva o modificación respecto a Heroic
-que se añada a Relic.
+> **Congelado desde v0.6.0 (2026-08-09).** No recibe filas nuevas — el
+> solapamiento con `CHANGELOG.md` era casi total y el fichero había crecido
+> más allá de lo manejable. Para cambios a partir de aquí, ver `CHANGELOG.md`;
+> para el detalle exacto de qué fichero cambió en qué commit, `git log`/`git blame`.
 
-El objetivo es mantener trazabilidad de los cambios respecto al padre.
+Este archivo registra cada funcionalidad nueva o modificación respecto a Heroic
+que se añadió a Relic hasta esa fecha.
+
+El objetivo era mantener trazabilidad de los cambios respecto al padre.
 
 ---
 

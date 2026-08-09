@@ -169,13 +169,36 @@ Nada de esto ayuda a descargar, instalar o añadir juegos a Steam:
   `simple-keyboard`, `typescript-eslint`, `electron` 43.2.0→43.3.0, `axios`
   1.18.1→1.19.0.
 
+#### Seguridad
+
+- **La API key de SteamGridDB se guarda ahora en texto plano, a propósito.**
+  Se intentaba cifrar con `safeStorage` de Electron, pero en la práctica
+  resultó poco fiable: `isEncryptionAvailable()` daba `false` incluso forzando
+  `--password-store` (`basic`, `gnome-libsecret`, `kwallet6`, `detect`)
+  cuando el keyring del sistema (KWallet) no arrancaba — algo frecuente en
+  Linux fuera de un GNOME/KDE completamente estándar. Cada arranque dejaba un
+  aviso de "guardando en texto plano" que en la práctica era el 100% de las
+  veces. En vez de mantener una ruta de cifrado que casi nunca se usaba, se
+  simplificó: la key se guarda igual que el resto de settings de Relic, y el
+  texto de ayuda en Settings lo dice explícitamente. Un valor cifrado de esa
+  ventana (`sgdb:v1:...`) no es recuperable y se limpia solo, en vez de
+  enviarse por error como API key.
+
 #### Cobertura de tests
 
-133 → 232 tests. Incluye el módulo `relic/steamgrid/`, que no tenía ninguno pese
+133 → 237 tests. Incluye el módulo `relic/steamgrid/`, que no tenía ninguno pese
 a ser el que corre en cada instalación real, y guards de regresión por mutación
 (verificados rompiendo el código a propósito y confirmando que el test
 correspondiente falla) en los puntos más frágiles: extensión del icono de grid,
-dedup de credenciales/install-info, y el logout de Zoom.
+dedup de credenciales/install-info, el logout de Zoom, y el guard de la key
+heredada cifrada.
+
+#### Documentación
+
+`HISTORY.md`, `HISTORY_ADD.md` y `HISTORY_REMOVE.md` quedan congelados a partir
+de esta versión — el solapamiento con este mismo `CHANGELOG.md` era casi total.
+Se conservan como referencia de la limpieza inicial del fork; el historial de
+aquí en adelante vive solo aquí.
 
 #### Compatibilidad
 
@@ -350,13 +373,36 @@ None of this helps download, install or add games to Steam:
   `simple-keyboard`, `typescript-eslint`, `electron` 43.2.0→43.3.0, `axios`
   1.18.1→1.19.0.
 
+#### Security
+
+- **The SteamGridDB API key is now stored as plain text, on purpose.** It used
+  to be encrypted with Electron's `safeStorage`, but that turned out
+  unreliable in practice: `isEncryptionAvailable()` returned `false` even
+  when forcing `--password-store` (`basic`, `gnome-libsecret`, `kwallet6`,
+  `detect`) whenever the system keyring (KWallet) failed to start — common on
+  Linux outside a fully standard GNOME/KDE setup. Every startup logged a
+  "storing in plaintext" warning that was, in practice, the outcome 100% of
+  the time. Rather than keep an encryption path that almost never actually
+  encrypted anything, it was simplified: the key is now stored like every
+  other Relic setting, and the Settings help text says so explicitly. A
+  leftover encrypted value from that window (`sgdb:v1:...`) can't be
+  recovered and is cleared automatically instead of being sent as an API key
+  by mistake.
+
 #### Test coverage
 
-133 → 232 tests. Includes the `relic/steamgrid/` module, which had none despite
+133 → 237 tests. Includes the `relic/steamgrid/` module, which had none despite
 being the one that runs on every real install, and mutation-checked regression
 guards (verified by breaking the code on purpose and confirming the matching
 test fails) at the most fragile points: the grid icon extension, credentials/
-install-info dedup, and Zoom's logout path.
+install-info dedup, Zoom's logout path, and the leftover-encrypted-key guard.
+
+#### Documentation
+
+`HISTORY.md`, `HISTORY_ADD.md` and `HISTORY_REMOVE.md` are frozen as of this
+version — the overlap with this very `CHANGELOG.md` had become nearly total.
+They're kept as a record of the fork's initial cleanup; history from here on
+lives here only.
 
 #### Compatibility
 
@@ -370,7 +416,7 @@ override keeps its previous behaviour: it affects `appFolder` only, not
 ```
 codecheck: 0 errors
 lint:      0 errors (683 warnings)
-tests:     232/232 (30 suites)
+tests:     237/237 (31 suites)
 i18n --ci: sin cambios / no changes
 build:     OK (pnpm dist:linux, AppImage 203 MB, arranque real verificado)
 ```

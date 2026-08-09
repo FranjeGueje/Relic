@@ -283,12 +283,13 @@ específico de Relic debe ubicarse en subdirectorios `relic/` dentro de cada ár
 - `src/frontend/relic/` — componentes y pantallas nuevos
 - `src/common/relic/` — tipos compartidos nuevos
 
-Las modificaciones a archivos existentes de Heroic se realizan in-place y se
-documentan en `HISTORY_ADD.md`.
+Las modificaciones a archivos existentes de Heroic se realizan in-place.
 
-Todo cambio debe registrarse también en `HISTORY.md` (resumen ejecutivo de
-eliminaciones y adiciones) para mantener una visión general de la evolución
-del fork. Tanto `HISTORY_REMOVE.md` como `HISTORY_ADD.md` contienen el detalle.
+Todo cambio relevante se registra en `CHANGELOG.md` (bilingüe ES/EN, por
+versión) al preparar cada release. `HISTORY.md`, `HISTORY_ADD.md` y
+`HISTORY_REMOVE.md` documentan la limpieza inicial del fork y están
+congelados desde v0.6.0 — se conservan como referencia histórica, pero no
+se actualizan con cambios nuevos.
 
 ---
 
@@ -345,12 +346,17 @@ Más estabilidad.
 
 # Historial
 
-- `HISTORY_REMOVE.md` — documenta todo el código eliminado durante el proceso de limpieza del fork.
-- `HISTORY_ADD.md` — registra cada funcionalidad nueva o modificada respecto a Heroic que se añada en el futuro.
+`CHANGELOG.md` es la única fuente activa de historial del proyecto (bilingüe
+ES/EN, una entrada por versión). Se actualiza al preparar cada release, no
+commit a commit.
 
-Ambos son tablas planas que crecen indefinidamente. Si superan un tamaño incómodo
-de mantener (referencia: >1000 líneas), considerar archivarlas por versión en vez
-de seguir añadiendo filas a una tabla única.
+`HISTORY.md`, `HISTORY_ADD.md` y `HISTORY_REMOVE.md` documentaron la limpieza
+inicial del fork línea a línea (fichero exacto, fecha, detalle). Llegado
+v0.6.0 el solapamiento con `CHANGELOG.md` era casi total y su tamaño ya no
+era manejable (>2.500 líneas entre los tres). Están **congelados**: se
+conservan como referencia del arranque del fork, pero no se les añaden filas
+nuevas. Para el detalle exacto de qué fichero cambió en qué commit, usar
+`git log`/`git blame`.
 
 # Objetivo final
 

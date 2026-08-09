@@ -1,5 +1,9 @@
 # HISTORY.md
 
+> **Congelado desde v0.6.0 (2026-08-09).** Documenta la limpieza inicial del fork;
+> no recibe filas nuevas. Para el historial de versiones a partir de aquí, ver
+> `CHANGELOG.md`.
+
 Relic es un fork de Heroic Game Launcher. Este archivo documenta todos los cambios
 aplicados sobre Heroic para adaptarlo a la filosofía y objetivos de Relic.
 

@@ -1,5 +1,9 @@
 # HISTORY_REMOVE.md
 
+> **Congelado desde v0.6.0 (2026-08-09).** No recibe filas nuevas. Para
+> eliminaciones a partir de aquí, ver `CHANGELOG.md`; para el detalle exacto
+> de qué fichero cambió en qué commit, `git log`/`git blame`.
+
 ## Fase 5 — Refactorización profunda
 
 ### Eliminación del flujo de lanzamiento de juegos
