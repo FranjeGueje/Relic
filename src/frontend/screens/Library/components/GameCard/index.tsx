@@ -85,7 +85,7 @@ const GameCard = ({
     return () => {
       window.removeEventListener('visible-cards', callback)
     }
-  }, [])
+  }, [gameInfoFromProps.app_name])
 
   const [gameInfo, setGameInfo] = useState<GameInfo>(gameInfoFromProps)
   const [showUninstallModal, setShowUninstallModal] = useState(false)
@@ -133,7 +133,7 @@ const GameCard = ({
       }
     }
     void updateGameInfo()
-  }, [status])
+  }, [status, appName, runner])
 
   async function handleUpdate() {
     await updateGame({ appName, runner, gameInfo })

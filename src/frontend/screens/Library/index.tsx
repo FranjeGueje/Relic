@@ -1,6 +1,7 @@
 import './index.css'
 
 import React, {
+  useCallback,
   useContext,
   useEffect,
   useMemo,
@@ -260,42 +261,45 @@ export default React.memo(function Library(): JSX.Element {
     [libraryStatus]
   )
 
-  const filterByPlatform = (library: GameInfo[]) => {
-    if (!library) {
-      return []
-    }
-
-    // check which platforms are turned on if valid for current platform
-    let displayedPlatforms: string[] = []
-    if (platformsFilters['win']) {
-      displayedPlatforms.push('win')
-    }
-    if (platformsFilters['linux'] && platform === 'linux') {
-      displayedPlatforms.push('linux')
-    }
-    // if all are turned off, display all instead
-    if (!displayedPlatforms.length) {
-      displayedPlatforms = Object.keys(platformsFilters)
-    }
-
-    // add platform variants to check with game info
-    if (displayedPlatforms.includes('win')) {
-      displayedPlatforms.push('windows')
-    }
-    return library.filter((game) => {
-      let gamePlatforms: string[] = []
-
-      if (game?.is_installed) {
-        gamePlatforms = [game?.install?.platform?.toLowerCase() || 'windows']
-      } else {
-        if (game.is_linux_native && platform === 'linux') {
-          gamePlatforms.push('linux')
-        }
-        gamePlatforms.push('windows')
+  const filterByPlatform = useCallback(
+    (library: GameInfo[]) => {
+      if (!library) {
+        return []
       }
-      return gamePlatforms.some((plat) => displayedPlatforms.includes(plat))
-    })
-  }
+
+      // check which platforms are turned on if valid for current platform
+      let displayedPlatforms: string[] = []
+      if (platformsFilters['win']) {
+        displayedPlatforms.push('win')
+      }
+      if (platformsFilters['linux'] && platform === 'linux') {
+        displayedPlatforms.push('linux')
+      }
+      // if all are turned off, display all instead
+      if (!displayedPlatforms.length) {
+        displayedPlatforms = Object.keys(platformsFilters)
+      }
+
+      // add platform variants to check with game info
+      if (displayedPlatforms.includes('win')) {
+        displayedPlatforms.push('windows')
+      }
+      return library.filter((game) => {
+        let gamePlatforms: string[] = []
+
+        if (game?.is_installed) {
+          gamePlatforms = [game?.install?.platform?.toLowerCase() || 'windows']
+        } else {
+          if (game.is_linux_native && platform === 'linux') {
+            gamePlatforms.push('linux')
+          }
+          gamePlatforms.push('windows')
+        }
+        return gamePlatforms.some((plat) => displayedPlatforms.includes(plat))
+      })
+    },
+    [platformsFilters, platform]
+  )
 
   const favouriteGamesList = useMemo(() => {
     if (showHidden) {
@@ -341,7 +345,7 @@ export default React.memo(function Library(): JSX.Element {
     return favourites.map((game) => `${game.app_name}_${game.runner}`)
   }, [favourites])
 
-  const makeLibrary = () => {
+  const makeLibrary = useCallback(() => {
     let displayedStores: string[] = []
     if (storesFilters['gog'] && gog.username) {
       displayedStores.push('gog')
@@ -371,7 +375,18 @@ export default React.memo(function Library(): JSX.Element {
     const zoomLibrary = showZoom ? zoom.library : []
 
     return [...epicLibrary, ...gogLibrary, ...amazonLibrary, ...zoomLibrary]
-  }
+  }, [
+    storesFilters,
+    gog.username,
+    gog.library,
+    epic.username,
+    epic.library,
+    amazon.username,
+    amazon.user_id,
+    amazon.library,
+    zoom.username,
+    zoom.library
+  ])
 
   const gamesForAlphabetFilter = useMemo(() => {
     let library: Array<GameInfo> = makeLibrary()
@@ -517,7 +532,9 @@ export default React.memo(function Library(): JSX.Element {
     showSupportOfflineOnly,
     showThirdPartyManagedOnly,
     showUpdatesOnly,
-    gameUpdates
+    gameUpdates,
+    filterByPlatform,
+    makeLibrary
   ])
 
   // select library

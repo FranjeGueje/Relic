@@ -1,7 +1,7 @@
 import { faLinux, faWindows } from '@fortawesome/free-brands-svg-icons'
 import { IconDefinition } from '@fortawesome/free-solid-svg-icons'
 
-import { useContext, useState } from 'react'
+import { useCallback, useContext, useState } from 'react'
 
 import ContextProvider from 'frontend/state/ContextProvider'
 import { GameInfo, InstallPlatform, Runner } from 'common/types'
@@ -103,7 +103,7 @@ function InstallModal({ appName, runner, gameInfo = null }: Props) {
   const isThirdPartyManagedApp = gameInfo && !!gameInfo.thirdPartyManagedApp
   const isImportMode = action === 'import'
 
-  const closeModal = () => closeInstallGameModal()
+  const closeModal = useCallback(() => closeInstallGameModal(), [])
 
   return (
     <div className="InstallModal">

@@ -19,7 +19,7 @@ const DLCDownloadListing: React.FC<Props> = ({
 
   useEffect(() => {
     setInstallAllDlcs(dlcsToInstall.length === DLCList.length)
-  }, [dlcsToInstall])
+  }, [dlcsToInstall, DLCList.length])
 
   if (!DLCList) {
     return null

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { UpdateComponent } from 'frontend/components/UI'
 import './index.css'
@@ -71,7 +71,7 @@ export default function LogSettings() {
     { title: 'Zoom', args: { runner: 'zoom' } }
   ]
 
-  const getLogContent = () => {
+  const getLogContent = useCallback(() => {
     void window.api.getLogContent(showLogOf).then((content: string) => {
       if (!content) {
         setLogFileContent(t('setting.log.no-file', 'No log file found.'))
@@ -80,7 +80,7 @@ export default function LogSettings() {
       setLogFileContent(content)
       setRefreshing(false)
     })
-  }
+  }, [showLogOf, t])
 
   useEffect(() => {
     getLogContent()
@@ -88,7 +88,7 @@ export default function LogSettings() {
       getLogContent()
     }, 1000)
     return () => clearInterval(interval)
-  }, [showLogOf])
+  }, [getLogContent])
 
   return (
     <>

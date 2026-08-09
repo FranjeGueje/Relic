@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useCallback, useContext, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import ContextProvider from 'frontend/state/ContextProvider'
 import { GameInfo, Runner } from 'common/types'
@@ -44,7 +44,7 @@ export default React.memo(function RecentlyPlayed({
 
   const hiddenGames = useContext(ContextProvider).hiddenGames
 
-  const loadRecentGames = () => {
+  const loadRecentGames = useCallback(() => {
     const hiddenAppNames = hiddenGames.list.map((game) => game.appName)
     let newRecentGames = getRecentGames(
       [...epic.library, ...gog.library, ...amazon.library, ...zoom.library],
@@ -57,7 +57,15 @@ export default React.memo(function RecentlyPlayed({
       )
     }
     setRecentGames(newRecentGames)
-  }
+  }, [
+    epic.library,
+    gog.library,
+    amazon.library,
+    zoom.library,
+    hiddenGames,
+    onlyInstalled,
+    showHidden
+  ])
 
   useEffect(() => {
     loadRecentGames()
@@ -72,14 +80,7 @@ export default React.memo(function RecentlyPlayed({
     return () => {
       recentGamesChangedRemoveListener()
     }
-  }, [
-    epic.library,
-    gog.library,
-    amazon.library,
-    zoom.library,
-    hiddenGames,
-    showHidden
-  ])
+  }, [loadRecentGames])
 
   if (!recentGames.length) {
     return null

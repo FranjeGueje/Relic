@@ -48,7 +48,7 @@ export default function ThirdPartyDialog({
       platformToInstall,
       showDialogModal: () => backdropClick()
     })
-  }, [appName, t, platformToInstall])
+  }, [appName, t, platformToInstall, backdropClick, gameInfo, progress])
 
   return (
     <>

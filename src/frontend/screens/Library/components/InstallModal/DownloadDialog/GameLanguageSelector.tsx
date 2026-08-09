@@ -1,4 +1,3 @@
-import { InstallPlatform } from 'common/types'
 import { SelectField } from 'frontend/components/UI'
 import { useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -7,15 +6,13 @@ import { MenuItem } from '@mui/material'
 interface GameLanguageSelectorProps {
   installLanguages: string[]
   installLanguage: string
-  installPlatform: InstallPlatform
   setInstallLanguage: (value: string) => void
 }
 
 export default function GameLanguageSelector({
   installLanguages,
   installLanguage,
-  setInstallLanguage,
-  installPlatform
+  setInstallLanguage
 }: GameLanguageSelectorProps) {
   const { t, i18n } = useTranslation('gamepage')
   const getLanguageName = useMemo(() => {
@@ -34,7 +31,7 @@ export default function GameLanguageSelector({
         return language
       }
     }
-  }, [i18n.languages, installPlatform])
+  }, [i18n.languages])
 
   return (
     <SelectField

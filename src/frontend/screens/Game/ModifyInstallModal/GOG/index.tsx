@@ -278,7 +278,6 @@ export default function GOGModifyInstallModal({
           <GameLanguageSelector
             installLanguages={installLanguages}
             setInstallLanguage={setInstallLanguage}
-            installPlatform={gameInfo.install.platform ?? 'windows'}
             installLanguage={installLanguage}
           />
         </div>

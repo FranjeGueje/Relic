@@ -93,9 +93,10 @@ export default function DownloadDialog({
   children,
   gameInfo
 }: Props) {
-  const previousProgress = JSON.parse(
-    storage.getItem(appName) || '{}'
-  ) as InstallProgress
+  const previousProgress = useMemo(
+    () => JSON.parse(storage.getItem(appName) || '{}') as InstallProgress,
+    [appName]
+  )
   const { libraryStatus, showDialogModal } = useContext(ContextProvider)
 
   const [gameInstallInfo, setGameInstallInfo] = useState<InstallInfo | null>(
@@ -153,7 +154,7 @@ export default function DownloadDialog({
       }
     }
     return list
-  }, [selectedSdls, sdls])
+  }, [selectedSdls, sdls, haveSDL])
 
   useEffect(() => {
     async function get() {
@@ -163,7 +164,7 @@ export default function DownloadDialog({
       setSavedBranchPassword(branchPassword)
     }
     void get()
-  }, [])
+  }, [gameInfo.app_name])
 
   const handleSdl = useCallback(
     (sdl: SelectiveDownload, value: boolean) => {
@@ -293,15 +294,16 @@ export default function DownloadDialog({
             gameInstallInfo.manifest &&
             'languages' in gameInstallInfo.manifest
           ) {
-            setInstallLanguages(gameInstallInfo.manifest.languages.sort())
-            if (!gameInstallInfo.manifest.languages.includes(installLanguage)) {
-              setInstallLanguage(
-                getPreferredInstallLanguage(
-                  gameInstallInfo.manifest.languages,
-                  i18n.languages
-                )
-              )
-            }
+            const availableLanguages = gameInstallInfo.manifest.languages
+            setInstallLanguages(availableLanguages.sort())
+            setInstallLanguage((prev) =>
+              availableLanguages.includes(prev)
+                ? prev
+                : getPreferredInstallLanguage(
+                    availableLanguages,
+                    i18n.languages
+                  )
+            )
           }
 
           if (
@@ -330,7 +332,12 @@ export default function DownloadDialog({
     platformToInstall,
     selectedBuild,
     branch,
-    savedBranchPassword
+    savedBranchPassword,
+    runner,
+    showDialogModal,
+    t,
+    tr,
+    backdropClick
   ])
 
   useEffect(() => {
@@ -356,17 +363,20 @@ export default function DownloadDialog({
       }
     }
     void getSpace()
-  }, [installPath, diskSize])
+  }, [installPath, diskSize, previousProgress])
 
   const haveDLCs =
     gameInstallInfo &&
     'game' in gameInstallInfo &&
     gameInstallInfo?.game?.owned_dlc?.length > 0
-  const DLCList: Array<GOGDLCInfo | LegendaryDLCInfo> =
-    (gameInstallInfo &&
-      'game' in gameInstallInfo &&
-      gameInstallInfo?.game?.owned_dlc) ||
-    []
+  const DLCList: Array<GOGDLCInfo | LegendaryDLCInfo> = useMemo(
+    () =>
+      (gameInstallInfo &&
+        'game' in gameInstallInfo &&
+        gameInstallInfo?.game?.owned_dlc) ||
+      [],
+    [gameInstallInfo]
+  )
 
   const downloadSize = useMemo(() => {
     if (
@@ -404,7 +414,14 @@ export default function DownloadDialog({
       return size(Number(gameInstallInfo?.manifest?.download_size))
     }
     return ''
-  }, [installPath, gameInstallInfo, installLanguage, dlcsToInstall])
+  }, [
+    installPath,
+    gameInstallInfo,
+    installLanguage,
+    dlcsToInstall,
+    DLCList,
+    previousProgress
+  ])
 
   const installSize = useMemo(() => {
     if (
@@ -434,7 +451,7 @@ export default function DownloadDialog({
     }
 
     return ''
-  }, [gameInstallInfo, installLanguage, platformToInstall, dlcsToInstall])
+  }, [gameInstallInfo, installLanguage, dlcsToInstall, DLCList])
 
   const { validPath, notEnoughDiskSpace, message, spaceLeftAfter } = spaceLeft
   const title = gameInfo?.title
@@ -524,7 +541,6 @@ export default function DownloadDialog({
         </div>
         {installLanguages && installLanguages?.length > 1 && (
           <GameLanguageSelector
-            installPlatform={platformToInstall}
             installLanguage={installLanguage}
             setInstallLanguage={setInstallLanguage}
             installLanguages={installLanguages}
