@@ -1,10 +1,59 @@
 appId: io.github.relic
 productName: Relic
+compression: maximum
 files:
   - build/**/*
   - node_modules/**/*
   - '!build/bin/*'
   - build/bin/legendary.LICENSE
+  # Renderer-only packages. The renderer is a self-contained Vite bundle
+  # (build/assets/*.js) and never touches node_modules at runtime; only
+  # main/preload do, via electron-vite's externalizeDeps. This list is the
+  # production dependency closure (`pnpm list --prod --depth=Infinity`) minus
+  # the packages actually `require()`-d by the built main/preload bundles —
+  # verified, not guessed. Re-run that diff before editing this list; some
+  # transitive deps that look frontend-only (@babel/runtime, lodash) are
+  # actually pulled in by backend packages and must stay.
+  - '!node_modules/@emotion/**/*'
+  - '!node_modules/@fontsource/**/*'
+  - '!node_modules/@fortawesome/**/*'
+  - '!node_modules/@hello-pangea/**/*'
+  - '!node_modules/@mui/**/*'
+  - '!node_modules/@remix-run/**/*'
+  - '!node_modules/@types/react/**/*'
+  - '!node_modules/@types/use-sync-external-store/**/*'
+  - '!node_modules/cross-fetch/**/*'
+  - '!node_modules/css-box-model/**/*'
+  - '!node_modules/encoding/**/*'
+  - '!node_modules/fuse.js/**/*'
+  - '!node_modules/hoist-non-react-statics/**/*'
+  - '!node_modules/html-parse-stringify/**/*'
+  - '!node_modules/i18next-http-backend/**/*'
+  - '!node_modules/iconv-lite/**/*'
+  - '!node_modules/node-fetch/**/*'
+  - '!node_modules/raf-schd/**/*'
+  - '!node_modules/react/**/*'
+  - '!node_modules/react-dom/**/*'
+  - '!node_modules/react-i18next/**/*'
+  - '!node_modules/react-is/**/*'
+  - '!node_modules/react-redux/**/*'
+  - '!node_modules/react-router/**/*'
+  - '!node_modules/react-router-dom/**/*'
+  - '!node_modules/redux/**/*'
+  - '!node_modules/safer-buffer/**/*'
+  - '!node_modules/simple-keyboard/**/*'
+  - '!node_modules/stylis/**/*'
+  - '!node_modules/tiny-invariant/**/*'
+  - '!node_modules/tr46/**/*'
+  - '!node_modules/use-sync-external-store/**/*'
+  - '!node_modules/void-elements/**/*'
+  - '!node_modules/webidl-conversions/**/*'
+  - '!node_modules/whatwg-url/**/*'
+  - '!node_modules/zustand/**/*'
+  # Junk that ships inside otherwise-needed packages: source maps and test
+  # fixtures are never read at runtime.
+  - '!node_modules/**/*.map'
+  - '!node_modules/**/tests/**/*'
 
 asarUnpack:
   - build/icon.png

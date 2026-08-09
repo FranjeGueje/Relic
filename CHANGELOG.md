@@ -72,6 +72,103 @@ un cliente que habla con él por API.
 - **Testeable sin Electron**: las rutas ya no necesitan que se mockee `electron`
   para resolverse.
 
+#### Rendimiento
+
+Todo lo siguiente se diagnosticó con logs de arranque reales, no solo con tests, y
+se re-verificó arranque a arranque hasta confirmar el efecto:
+
+- **`gogdl auth`: ~17 llamadas por arranque → 1.** `GOGUser.getCredentials()` se
+  llama desde ~18 sitios (refresh de biblioteca, install, update, metadata…) y cada
+  una lanzaba el proceso. Ahora las llamadas concurrentes comparten una sola
+  ejecución y el resultado se reutiliza 60 s, acotado por el `expires_in` que
+  reporta gogdl. Ataca la causa raíz de los bugs de salida vacía parcheados en
+  0.5.3/0.5.4: cada spawn era otra oportunidad de fallo.
+- **`getInstallInfo` deduplicado en los tres runners** (nile/legendary/gog): la
+  caché de cada uno solo se escribía al terminar el fetch, así que dos llamantes
+  concurrentes (varios componentes del frontend piden lo mismo por su cuenta)
+  fallaban el cache los dos y ambos lanzaban proceso. Nuevo helper
+  `shareInFlight()` compartido. En legendary, los reintentos recursivos re-entran
+  en una función privada y no en el wrapper público — si no, se auto-bloquearían
+  esperando su propia promesa para siempre.
+- **Zoom: 3 verificaciones de login por arranque → 1.** `isLoggedIn()` no es una
+  comprobación local, pega a `/li/loggedin` en cada llamada; `getUserDetails()`
+  llamaba a `isLoggedIn()` y acto seguido pedía el mismo endpoint otra vez. Ahora
+  una sola petición sirve de verificación para ambos caminos.
+- **Nile sincronizaba la biblioteca dos veces al arrancar**: `init()` llamaba a
+  `refresh()` (red) y el frontend disparaba otro refresh encima. Ahora `init()`
+  solo carga de disco, igual que Legendary.
+
+#### Corregido
+
+- **Zoom borraba el token del usuario ante cualquier fallo de red.** Un corte de
+  wifi, un timeout o un 500 de Zoom ejecutaban `logout()` y forzaban un
+  re-login. Ahora solo un rechazo real de Zoom (401/403) cierra la sesión.
+- **Nile reconstruía la biblioteca con datos del sync anterior**: `refreshNile()`
+  no se esperaba antes de leer los ficheros que ese mismo sync estaba escribiendo.
+  Ahora se espera (`await`), igual que ya hacía Legendary.
+- **Notificación de "Epic offline" que saltaba con Epic funcionando bien**: si el
+  componente buscado no aparecía en la respuesta de estado de Epic, se notificaba
+  "offline" y a la vez se devolvía `false` ("no offline"). Heredado de Heroic.
+- **Icono de grid `.ico` → `.png`** corregido, con test de regresión (el nombre
+  está duplicado entre `download.ts` y `delete.ts`; si divergen, queda un fichero
+  huérfano al desinstalar).
+
+#### Empaquetado
+
+- **AppImage: 209 MB → 163 MB.** `node_modules/**/*` empaquetaba también las
+  dependencias exclusivas del renderer (React, MUI, FontAwesome, react-router…)
+  pese a que el renderer ya es un bundle autocontenido de Vite que nunca las toca
+  en runtime — solo main/preload necesitan `node_modules` real. Se excluyeron 34
+  paquetes (53 con transitivos) calculados con el cierre real de
+  `pnpm list --prod --depth=Infinity` cruzado contra los `require()` literales del
+  bundle compilado, no por nombre a ojo: `@babel/runtime` y `lodash` parecían
+  candidatos pero los necesita el backend de verdad (transitivos de
+  `easydl`/`steam-shortcut-editor`) y se quedaron. Más `compression: maximum`.
+  Verificado con un `pnpm dist:linux` completo y arrancando el binario empaquetado
+  hasta "Frontend Ready" sin errores de módulo.
+
+#### Simplificación (~2.500 líneas fuera)
+
+Nada de esto ayuda a descargar, instalar o añadir juegos a Steam:
+
+- Sistema de notificaciones de escritorio completo (~18 sitios) y la ventana
+  "About". Las notificaciones estaban guardadas por `!isSteamDeckGameMode`, así
+  que en el modo consola de la Deck no se mostraban nunca.
+- GOG Rich Presence: anunciaba un juego en marcha (Relic no lanza juegos), cada
+  5 minutos, con un interruptor que ya no existía en la UI desde 0.4.0.
+- Selector manual de portadas de SteamGridDB (`SteamGridDBPicker`): cadena
+  muerta de punta a punta, sin renderizarse en ningún sitio.
+- `showItemInFolder`: función + listener + tipo sin ningún binding en preload,
+  el frontend no podía llamarla.
+- `getSteamLibraries()`: cero llamantes en todo el repo; con ella se fue la
+  dependencia `@node-steam/vdf`.
+- `shell.openExternal`/`shell.openPath` de Electron sustituidos por un helper
+  propio sobre `xdg-open`, que ya se usaba en otro punto del código.
+- 3 dependencias de testing de frontend sin uso (`jest-environment-jsdom`,
+  `@testing-library/jest-dom`, `@testing-library/react`): nunca hubo un
+  proyecto de Jest para frontend.
+- `pnpm lint-translations` arreglado (llevaba tiempo petando en el primer
+  locale) y soporte Snap eliminado por completo (ver más abajo).
+
+#### Otros ajustes de dependencias
+
+- `zod` y `tmp` movidas de `devDependencies` a `dependencies`: se usan en código
+  de producción del backend, no solo en tests.
+- `@types/node` `^22.20.1` → `^24.13.3`, para que coincida con
+  `engines.node: ">=24"` (Node real: 24.16.0).
+- Actualizaciones patch/minor sin cambios de código: `@playwright/test`,
+  `@vitejs/plugin-react-swc`, `esbuild`, `i18next-cli`, `i18next-fs-backend`,
+  `simple-keyboard`, `typescript-eslint`, `electron` 43.2.0→43.3.0, `axios`
+  1.18.1→1.19.0.
+
+#### Cobertura de tests
+
+133 → 232 tests. Incluye el módulo `relic/steamgrid/`, que no tenía ninguno pese
+a ser el que corre en cada instalación real, y guards de regresión por mutación
+(verificados rompiendo el código a propósito y confirmando que el test
+correspondiente falla) en los puntos más frágiles: extensión del icono de grid,
+dedup de credenciales/install-info, y el logout de Zoom.
+
 #### Compatibilidad
 
 Sin migración de datos. Las rutas resueltas son **idénticas** a las anteriores
@@ -148,6 +245,104 @@ it over an API.
   prerequisite for replacing it.
 - **Testable without Electron**: path resolution no longer needs `electron` mocked.
 
+#### Performance
+
+Every item below was diagnosed from real startup logs, not just tests, and
+re-verified boot after boot until the effect was confirmed:
+
+- **`gogdl auth`: ~17 calls per startup → 1.** `GOGUser.getCredentials()` is
+  called from ~18 places (library refresh, install, update, metadata…) and each
+  one spawned the process. Concurrent callers now share one in-flight run, and
+  the result is reused for 60s, capped by the `expires_in` gogdl reports.
+  Addresses the root cause behind the empty-output bugs patched in 0.5.3/0.5.4:
+  each spawn was another chance to hit that failure.
+- **`getInstallInfo` deduped across all three runners** (nile/legendary/gog):
+  each cache was only written once its fetch finished, so two concurrent callers
+  (several frontend components ask independently) both missed the cache and both
+  spawned a process. New shared `shareInFlight()` helper. In legendary, the
+  recursive retries re-enter a private function rather than the public wrapper —
+  otherwise they'd deadlock waiting on their own in-flight promise.
+- **Zoom: 3 login verifications per startup → 1.** `isLoggedIn()` is not a local
+  check, it hits `/li/loggedin` on every call; `getUserDetails()` called
+  `isLoggedIn()` and then requested the very same endpoint again. One request now
+  serves both paths.
+- **Nile synced the library twice on startup**: `init()` called `refresh()`
+  (network) and the frontend fired another refresh on top. `init()` now only
+  loads from disk, matching Legendary.
+
+#### Fixed
+
+- **Zoom deleted the user's token on any network failure.** A dropped
+  connection, a timeout or a 500 from Zoom ran `logout()` and forced a
+  re-login. Only an actual rejection from Zoom (401/403) signs the user out now.
+- **Nile rebuilt the library from the previous sync's data**: `refreshNile()`
+  wasn't awaited before reading the very files that sync was writing. It's
+  awaited now, matching what Legendary already did.
+- **"Epic offline" notification firing while Epic was fine**: if the queried
+  component was missing from Epic's status response, it notified "offline"
+  while simultaneously returning `false` ("not offline"). Inherited from Heroic.
+- **Grid icon `.ico` → `.png`** fixed, with a regression test (the filename is
+  duplicated between `download.ts` and `delete.ts`; if they drift, a file is
+  left orphaned on uninstall).
+
+#### Packaging
+
+- **AppImage: 209 MB → 163 MB.** `node_modules/**/*` also packaged
+  renderer-only dependencies (React, MUI, FontAwesome, react-router…) even
+  though the renderer is already a self-contained Vite bundle that never
+  touches them at runtime — only main/preload need real `node_modules`. 34
+  packages excluded (53 with transitives), computed from the real closure of
+  `pnpm list --prod --depth=Infinity` cross-checked against the literal
+  `require()` calls in the built bundle, not guessed by name:
+  `@babel/runtime` and `lodash` looked like candidates but are genuine backend
+  transitives (pulled in by `easydl`/`steam-shortcut-editor`) and stayed. Plus
+  `compression: maximum`. Verified with a full `pnpm dist:linux` and by
+  launching the packaged binary through to "Frontend Ready" with no module
+  errors.
+
+#### Simplification (~2,500 lines removed)
+
+None of this helps download, install or add games to Steam:
+
+- The entire desktop notification system (~18 call sites) and the About
+  window. Notifications were guarded by `!isSteamDeckGameMode`, so they never
+  showed in the Deck's console mode anyway.
+- GOG Rich Presence: announced a game in progress (Relic never launches games)
+  every 5 minutes, behind a toggle that had already been dropped from the UI
+  in 0.4.0.
+- The manual SteamGridDB cover picker (`SteamGridDBPicker`): dead end to end,
+  never rendered anywhere.
+- `showItemInFolder`: function + listener + type with no preload binding at
+  all — the frontend could never call it.
+- `getSteamLibraries()`: zero callers anywhere in the repo; the
+  `@node-steam/vdf` dependency went with it.
+- Electron's `shell.openExternal`/`shell.openPath` replaced by an in-house
+  helper over `xdg-open`, already used elsewhere in the code.
+- 3 unused frontend testing dependencies (`jest-environment-jsdom`,
+  `@testing-library/jest-dom`, `@testing-library/react`): there was never a
+  frontend Jest project.
+- `pnpm lint-translations` fixed (had been crashing on the first locale), and
+  Snap support removed entirely (see below).
+
+#### Other dependency work
+
+- `zod` and `tmp` moved from `devDependencies` to `dependencies`: used in
+  production backend code, not just tests.
+- `@types/node` `^22.20.1` → `^24.13.3`, to match `engines.node: ">=24"` (the
+  actual Node here is 24.16.0).
+- Low-effort patch/minor bumps, no code changes needed: `@playwright/test`,
+  `@vitejs/plugin-react-swc`, `esbuild`, `i18next-cli`, `i18next-fs-backend`,
+  `simple-keyboard`, `typescript-eslint`, `electron` 43.2.0→43.3.0, `axios`
+  1.18.1→1.19.0.
+
+#### Test coverage
+
+133 → 232 tests. Includes the `relic/steamgrid/` module, which had none despite
+being the one that runs on every real install, and mutation-checked regression
+guards (verified by breaking the code on purpose and confirming the matching
+test fails) at the most fragile points: the grid icon extension, credentials/
+install-info dedup, and Zoom's logout path.
+
 #### Compatibility
 
 No data migration. Resolved paths are **identical** to before (verified against the
@@ -159,10 +354,10 @@ override keeps its previous behaviour: it affects `appFolder` only, not
 
 ```
 codecheck: 0 errors
-lint:      0 errors (697 warnings)
-tests:     160/160 (23 suites)
+lint:      0 errors (683 warnings)
+tests:     232/232 (30 suites)
 i18n --ci: sin cambios / no changes
-build:     OK (electron-vite)
+build:     OK (pnpm dist:linux, AppImage 163 MB, arranque real verificado)
 ```
 
 ---
