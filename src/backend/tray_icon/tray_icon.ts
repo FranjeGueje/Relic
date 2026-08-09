@@ -33,7 +33,7 @@ export const initTrayIcon = async (mainWindow: BrowserWindow) => {
   })
 
   backendEvents.on('recentGamesChanged', async (recentGames: RecentGame[]) => {
-    const limit = await maxRecentGames()
+    const limit = maxRecentGames()
     if (recentGames.length > limit) {
       recentGames = recentGames.slice(0, limit)
     }

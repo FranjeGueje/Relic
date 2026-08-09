@@ -108,7 +108,7 @@ import MigrationSystem from './migration'
 
 if (isLinux) app.commandLine?.appendSwitch('--gtk-version', '3')
 
-async function initializeWindow(): Promise<BrowserWindow> {
+function initializeWindow(): BrowserWindow {
   createNecessaryFolders()
   configStore.set('userHome', userHome)
   const mainWindow = createMainWindow()
@@ -126,8 +126,6 @@ async function initializeWindow(): Promise<BrowserWindow> {
     mainWindow.setFullScreen(true)
   }
 
-  setTimeout(async () => {}, 2500)
-
   mainWindow.setIcon(windowIcon)
   app.commandLine.appendSwitch('enable-spatial-navigation')
 
@@ -139,7 +137,7 @@ async function initializeWindow(): Promise<BrowserWindow> {
   mainWindow.on('leave-full-screen', () =>
     sendFrontendMessage('fullscreen', false)
   )
-  mainWindow.on('close', async (e) => {
+  mainWindow.on('close', (e) => {
     e.preventDefault()
 
     if (!isCLIFullscreen && !isSteamDeckGameMode) {
@@ -184,7 +182,7 @@ async function initializeWindow(): Promise<BrowserWindow> {
     return { action: !details.url.match(pattern) ? 'allow' : 'deny' }
   })
 
-  addListener('setZoomFactor', async (event, zoomFactor) => {
+  addListener('setZoomFactor', (event, zoomFactor) => {
     const factor = processZoomForScreen(parseFloat(zoomFactor))
     mainWindow.webContents.setZoomLevel(factor)
     mainWindow.webContents.setVisualZoomLevelLimits(1, 1)
@@ -253,7 +251,7 @@ if (!gotTheLock) {
       )
     }
 
-    runOnceWhenOnline(async () => {
+    runOnceWhenOnline(() => {
       const isLoggedIn = LegendaryUser.isLoggedIn()
 
       if (!isLoggedIn) {
@@ -286,7 +284,7 @@ if (!gotTheLock) {
       supportedLngs: supportedLanguages
     })
 
-    const mainWindow = await initializeWindow()
+    const mainWindow = initializeWindow()
 
     const headless = isCLINoGui
     if (!headless) {
@@ -346,7 +344,7 @@ addOneTimeListener('frontendReady', () => {
 })
 
 // Maybe this can help with white screens
-process.on('uncaughtException', async (err) => {
+process.on('uncaughtException', (err) => {
   logError(err, LogPrefix.Backend)
 
   // We might get "object has been destroyed" exceptions in CI, since we start
@@ -446,7 +444,7 @@ addListener('showConfigFileInFolder', async (event, appName) => {
   return openUrlOrFile(path.join(gamesConfigPath, `${appName}.json`))
 })
 
-addListener('removeFolder', async (e, [path, folderName]) => {
+addListener('removeFolder', (e, [path, folderName]) => {
   removeFolder(path, folderName)
 })
 
@@ -514,7 +512,7 @@ addHandler('isGameAvailable', async (e, args) => {
   return libraryManagerMap[runner].getGame(appName).isGameAvailable()
 })
 
-addHandler('getGameInfo', async (event, appName, runner) => {
+addHandler('getGameInfo', (event, appName, runner) => {
   // Fastpath since we sometimes have to request info for a GOG game as Legendary because we don't know it's a GOG game yet
   if (
     runner === 'legendary' &&
@@ -591,7 +589,7 @@ addHandler(
   }
 )
 
-addHandler('getUserInfo', async () => {
+addHandler('getUserInfo', () => {
   return LegendaryUser.getUserInfo()
 })
 
@@ -610,7 +608,7 @@ addHandler('authAmazon', async (event, data) => NileUser.login(data))
 addHandler('logoutAmazon', () => NileUser.logout())
 
 addHandler('authZoom', async (event, url) => {
-  const login = await ZoomUser.login(url)
+  const login = ZoomUser.login(url)
   if (login.status === 'done') {
     await ZoomUser.getUserDetails()
   }
@@ -836,7 +834,7 @@ addHandler('changeInstallPath', async (event, { appName, path, runner }) => {
 })
 
 // Simulate keyboard and mouse actions as if the real input device is used
-addHandler('gamepadAction', async (event, args) => {
+addHandler('gamepadAction', (event, args) => {
   // we can only receive gamepad events if the main window exists
   const mainWindow = getMainWindow()!
 
@@ -986,11 +984,11 @@ addListener('setGameMetadataOverride', (e, args) => {
   sendFrontendMessage('metadataChanged', getAllGameOverrides())
 })
 
-addHandler('getGameMetadataOverride', async (_e, appName) => {
+addHandler('getGameMetadataOverride', (_e, appName) => {
   return getGameOverrides(appName)
 })
 
-addHandler('getAllGameOverrides', async () => {
+addHandler('getAllGameOverrides', () => {
   return getAllGameOverrides()
 })
 
@@ -998,11 +996,11 @@ addHandler('isNative', (e, { appName, runner }) => {
   return libraryManagerMap[runner].getGame(appName).isNative()
 })
 
-addHandler('pathExists', async (e, path: string) => {
+addHandler('pathExists', (e, path: string) => {
   return existsSync(path)
 })
 
-addListener('processShortcut', async (e, combination: string) => {
+addListener('processShortcut', (e, combination: string) => {
   const mainWindow = getMainWindow()
 
   switch (combination) {
@@ -1039,10 +1037,10 @@ addHandler('setPrivateBranchPassword', (e, appName, password) =>
   libraryManagerMap['gog'].getGame(appName).setBranchPassword(password)
 )
 
-addHandler('getAvailableCyberpunkMods', async () =>
+addHandler('getAvailableCyberpunkMods', () =>
   libraryManagerMap['gog'].getCyberpunkMods()
 )
-addHandler('setCyberpunkModConfig', async (e, props) =>
+addHandler('setCyberpunkModConfig', (e, props) =>
   libraryManagerMap['gog'].setCyberpunkModConfig(props)
 )
 

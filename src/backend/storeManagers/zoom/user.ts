@@ -26,9 +26,9 @@ function isAuthRejection(error: unknown): boolean {
 }
 
 export class ZoomUser {
-  static async login(url: string): Promise<{
+  static login(url: string): {
     status: 'done' | 'error'
-  }> {
+  } {
     logInfo('Logging in using Zoom credentials', LogPrefix.Zoom)
 
     const { searchParams } = new URL(url)
@@ -100,7 +100,7 @@ export class ZoomUser {
     this.logout()
   }
 
-  public static async getCredentials(): Promise<ZoomCredentials | undefined> {
+  public static getCredentials(): ZoomCredentials | undefined {
     if (!isOnline()) {
       logWarning('Unable to get credentials - app is offline', {
         prefix: LogPrefix.Zoom
@@ -178,7 +178,7 @@ export class ZoomUser {
   }
 
   public static async makeRequest<T>(url: string) {
-    const credentials = await this.getCredentials()
+    const credentials = this.getCredentials()
     if (!credentials) {
       throw new Error('Not authenticated with Zoom')
     }

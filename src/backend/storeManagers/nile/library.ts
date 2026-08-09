@@ -39,7 +39,7 @@ export default class NileLibraryManager implements LibraryManager {
     const globalNileConfig = join(appDataPath, 'nile')
     if (!existsSync(nileConfigPath) && existsSync(globalNileConfig)) {
       cpSync(globalNileConfig, nileConfigPath)
-      await NileUser.getUserData()
+      NileUser.getUserData()
     }
 
     // Only load what is already on disk. Syncing with Amazon is the frontend's

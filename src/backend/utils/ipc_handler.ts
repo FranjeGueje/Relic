@@ -20,7 +20,7 @@ addHandler('getNileVersion', getNileVersion)
 addHandler('getSystemInfo', async (e, cache) => getSystemInfo(cache))
 addListener('copySystemInfoToClipboard', async () => {
   const info = await getSystemInfo()
-  const formatted = await formatSystemInfo(info)
+  const formatted = formatSystemInfo(info)
   clipboard.writeText(formatted)
 })
 addHandler('hasExecutable', async (event, executable) => {

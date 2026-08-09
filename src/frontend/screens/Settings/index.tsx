@@ -74,7 +74,7 @@ function Settings() {
             'settings.copyToClipboard',
             'Copy All Settings to Clipboard'
           ),
-          onclick: async () =>
+          onclick: () =>
             window.api.clipboardWriteText(
               JSON.stringify({ appName, title, ...currentConfig })
             ),

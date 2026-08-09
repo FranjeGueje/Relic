@@ -88,7 +88,7 @@ const DownloadManagerItem = ({
   const finished = status === 'done'
   const canceled = status === 'error' || (status === 'abort' && !current)
 
-  const stopInstallation = async () => {
+  const stopInstallation = () => {
     if (!gameInfo) {
       return
     }

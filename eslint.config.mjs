@@ -79,10 +79,27 @@ export default tseslint.config(
     }
   },
   {
+    files: [
+      'src/backend/storeManagers/*/games.ts',
+      'src/backend/storeManagers/*/library.ts'
+    ],
+    rules: {
+      // These classes implement the `Game`/`LibraryManager` interfaces, which
+      // declare async methods (`Promise<T>` returns) for every runner
+      // uniformly. Some runners implement a given method as a synchronous
+      // stub (e.g. Zoom, for features it doesn't support) -- `async` is
+      // still required to satisfy the interface, not a mistake.
+      '@typescript-eslint/require-await': 'off'
+    }
+  },
+  {
     files: ['**/__tests__/**/*.ts', '**/__mocks__/**/*.ts'],
     rules: {
       '@typescript-eslint/no-explicit-any': 'off',
-      '@typescript-eslint/unbound-method': 'warn',
+      // False positive: `expect(obj.method).toHaveBeenCalledWith(...)` passes
+      // an unbound method reference, but Jest never calls it as `obj.method()`
+      // -- it only inspects the mock, so there's no `this` to lose.
+      '@typescript-eslint/unbound-method': 'off',
       '@typescript-eslint/no-require-imports': 'off'
     }
   },

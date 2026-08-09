@@ -507,6 +507,7 @@ class GlobalState extends PureComponent<Props> {
     return response.status
   }
 
+  // eslint-disable-next-line @typescript-eslint/require-await -- ContextType.logout is Promise<void>
   gogLogout = async () => {
     window.api.logoutGOG()
     this.setState({
@@ -573,6 +574,7 @@ class GlobalState extends PureComponent<Props> {
     return response.status
   }
 
+  // eslint-disable-next-line @typescript-eslint/require-await -- ContextType.logout is Promise<void>
   zoomLogout = async () => {
     window.api.logoutZoom()
     this.setState({
@@ -707,7 +709,7 @@ class GlobalState extends PureComponent<Props> {
     }
   }
 
-  handleGameStatus = async ({
+  handleGameStatus = ({
     appName,
     status,
     folder,

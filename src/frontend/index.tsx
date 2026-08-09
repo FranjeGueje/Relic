@@ -119,7 +119,7 @@ root.render(
 )
 
 // helper function to set the theme class
-window.setTheme = async (themeClass: string) => {
+window.setTheme = (themeClass: string) => {
   document.body.className = themeClass
 
   if (navigator.windowControlsOverlay.visible) {

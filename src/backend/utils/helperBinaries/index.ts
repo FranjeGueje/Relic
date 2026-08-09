@@ -39,7 +39,7 @@ async function getGogdlVersion(): Promise<string> {
   return trimmed
 }
 
-async function getCometVersion(): Promise<string> {
+function getCometVersion(): string {
   const path = getCometBin()
   const { stdout, error } = spawnSync(join(path.dir, path.bin), ['--version'])
 

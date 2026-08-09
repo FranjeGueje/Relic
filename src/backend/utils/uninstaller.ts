@@ -9,7 +9,7 @@ import { Event } from 'electron'
 import { existsSync, rmSync } from 'fs'
 import { join } from 'path'
 
-export const removePrefix = async (appName: string, runner: Runner) => {
+export const removePrefix = (appName: string, runner: Runner) => {
   const game = libraryManagerMap[runner].getGame(appName)
   const { install } = game.getGameInfo()
 

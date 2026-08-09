@@ -136,7 +136,7 @@ const GameCard = ({
   }, [status])
 
   async function handleUpdate() {
-    updateGame({ appName, runner, gameInfo })
+    await updateGame({ appName, runner, gameInfo })
   }
 
   async function onMoveInstallYesClick() {

@@ -5,14 +5,14 @@ import { configStore } from 'backend/constants/key_value_stores'
 
 const DEFAULT_MAX_RECENT_GAMES = 5
 
-const maxRecentGames = async () => {
+const maxRecentGames = () => {
   return DEFAULT_MAX_RECENT_GAMES
 }
 
 const getRecentGames = async (options?: { limited: boolean }) => {
   const games = configStore.get('games.recent', [])
   if (options?.limited) {
-    return games.slice(0, await maxRecentGames())
+    return games.slice(0, maxRecentGames())
   } else {
     return games
   }

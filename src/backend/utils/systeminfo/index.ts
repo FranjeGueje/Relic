@@ -78,13 +78,12 @@ async function getSystemInfo(cache = true): Promise<SystemInformation> {
   const gpus = await getGpuInfo()
   const detailedOsInfo = await getOsInfo()
   const deckInfo = getSteamDeckInfo(cpus, gpus)
-  const [legendaryVersion, gogdlVersion, cometVersion, nileVersion] =
-    await Promise.all([
-      getLegendaryVersion(),
-      getGogdlVersion(),
-      getCometVersion(),
-      getNileVersion()
-    ])
+  const [legendaryVersion, gogdlVersion, nileVersion] = await Promise.all([
+    getLegendaryVersion(),
+    getGogdlVersion(),
+    getNileVersion()
+  ])
+  const cometVersion = getCometVersion()
 
   const sysinfo: SystemInformation = {
     CPU: {
@@ -119,7 +118,7 @@ async function getSystemInfo(cache = true): Promise<SystemInformation> {
   return sysinfo
 }
 
-async function formatSystemInfo(info: SystemInformation): Promise<string> {
+function formatSystemInfo(info: SystemInformation): string {
   const isLinux: boolean = process.platform === 'linux'
   return `CPU: ${info.CPU.cores}x ${info.CPU.model}
 Memory: ${formatBytes(info.memory.total)} (used: ${formatBytes(info.memory.used)})

@@ -74,7 +74,7 @@ const InstallButton = ({ gameInfo, is_installed, handleInstall }: Props) => {
       {(!is_installed || is.queued) && (
         <span className="installButtons">
           <button
-            onClick={async () => {
+            onClick={() => {
               if (!is_installed && !is.queued) {
                 openInstallGameModal({
                   appName: gameInfo.app_name,

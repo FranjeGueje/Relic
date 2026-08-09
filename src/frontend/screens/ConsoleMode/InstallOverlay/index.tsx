@@ -106,7 +106,7 @@ export default function InstallOverlay({
 
   const cyclePlatform = cycle(availablePlatforms.length, setPlatformIndex)
 
-  const installGame = async () => {
+  const installGame = () => {
     try {
       void install({
         gameInfo: game,

@@ -74,7 +74,7 @@ export class NileUser {
     }
 
     logInfo('Authentication successful', LogPrefix.Nile)
-    const user = await this.getUserData()
+    const user = this.getUserData()
     if (!user) {
       return {
         status: 'failed',
@@ -104,7 +104,7 @@ export class NileUser {
     clearCache('nile')
   }
 
-  static async getUserData(): Promise<NileUserData | undefined> {
+  static getUserData(): NileUserData | undefined {
     if (!existsSync(nileUserData)) {
       logError('user.json does not exist', LogPrefix.Nile)
       configStore.delete('userData')

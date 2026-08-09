@@ -109,7 +109,7 @@ export default function WebView() {
   useLayoutEffect(() => {
     const webview = webviewRef.current
     if (webview) {
-      const loadstop = async () => {
+      const loadstop = () => {
         setLoading({ ...loading, refresh: false })
         const userAgent =
           startUrl === epicLoginUrl

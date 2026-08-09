@@ -45,7 +45,7 @@ describe('searchUmuGameId', () => {
   it('returns umu_id on successful API response', async () => {
     global.fetch = jest.fn().mockResolvedValue({
       ok: true,
-      json: async () => [{ umu_id: 12345 }]
+      json: () => [{ umu_id: 12345 }]
     })
 
     const result = await searchUmuGameId('egs', 'some-game')
@@ -59,7 +59,7 @@ describe('searchUmuGameId', () => {
   it('returns null when API returns empty array', async () => {
     global.fetch = jest.fn().mockResolvedValue({
       ok: true,
-      json: async () => []
+      json: () => []
     })
 
     const result = await searchUmuGameId('egs', 'unknown-game')

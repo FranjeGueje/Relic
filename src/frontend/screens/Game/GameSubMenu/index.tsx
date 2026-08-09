@@ -122,7 +122,7 @@ export default function GamesSubmenu({
           {isInstalled && (
             <>
               <button
-                onClick={async () => setShowUninstallModal(true)}
+                onClick={() => setShowUninstallModal(true)}
                 className="link button is-text is-link buttonWithIcon"
                 disabled={is.playing}
               >
@@ -131,7 +131,7 @@ export default function GamesSubmenu({
               </button>{' '}
               {!isThirdPartyManaged && (
                 <button
-                  onClick={async () => handleUpdate()}
+                  onClick={() => handleUpdate()}
                   className="link button is-text is-link buttonWithIcon"
                   disabled={disableUpdate}
                 >
@@ -141,7 +141,7 @@ export default function GamesSubmenu({
               )}{' '}
               {!isThirdPartyManaged && (
                 <button
-                  onClick={async () => handleMoveInstall()}
+                  onClick={() => handleMoveInstall()}
                   className="link button is-text is-link buttonWithIcon"
                 >
                   <DriveFileMoveIcon />
@@ -150,7 +150,7 @@ export default function GamesSubmenu({
               )}{' '}
               {!isThirdPartyManaged && (
                 <button
-                  onClick={async () => handleRepair(appName)}
+                  onClick={() => handleRepair(appName)}
                   className="link button is-text is-link buttonWithIcon"
                 >
                   <CheckCircleIcon />
@@ -170,7 +170,7 @@ export default function GamesSubmenu({
           )}{' '}
           {onShowRequirements && (
             <button
-              onClick={async () => onShowRequirements()}
+              onClick={() => onShowRequirements()}
               className="link button is-text is-link buttonWithIcon"
             >
               <DesktopAccessDisabledIcon />
@@ -179,7 +179,7 @@ export default function GamesSubmenu({
           )}
           {showModifyItem && (
             <button
-              onClick={async () => onShowModifyInstall()}
+              onClick={() => onShowModifyInstall()}
               className="link button is-text is-link buttonWithIcon"
             >
               <RepartitionIcon />
@@ -188,7 +188,7 @@ export default function GamesSubmenu({
           )}
           {isInstalled && (
             <button
-              onClick={async () => onBrowseFiles()}
+              onClick={() => onBrowseFiles()}
               className="link button is-text is-link buttonWithIcon"
             >
               <FolderIcon />

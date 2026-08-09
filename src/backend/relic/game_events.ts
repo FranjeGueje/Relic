@@ -166,6 +166,7 @@ export async function onGameImported(game: Game): Promise<void> {
   await onGameInstalled(game)
 }
 
+// eslint-disable-next-line @typescript-eslint/require-await -- one of the 4 relic entry points (AGENTS.md), all uniformly async
 export async function onGameRepaired(game: Game): Promise<void> {
   const gameInfo = game.getGameInfo()
   const appName = gameInfo.app_name
@@ -203,6 +204,7 @@ export async function onGameRepaired(game: Game): Promise<void> {
   }
 }
 
+// eslint-disable-next-line @typescript-eslint/require-await -- one of the 4 relic entry points (AGENTS.md), all uniformly async
 export async function onGameMoved(
   game: Game,
   newInstallPath: string
@@ -248,6 +250,7 @@ export async function onGameMoved(
   )
 }
 
+// eslint-disable-next-line @typescript-eslint/require-await -- one of the 4 relic entry points (AGENTS.md), all uniformly async
 export async function onGameUninstalled(game: Game) {
   const gameInfo = game.getGameInfo()
   const appName = gameInfo.app_name

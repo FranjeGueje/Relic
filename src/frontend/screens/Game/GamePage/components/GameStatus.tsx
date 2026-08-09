@@ -103,7 +103,7 @@ const GameStatus = ({ gameInfo, progress, handleUpdate, hasUpdate }: Props) => {
 
     if (hasUpdate) {
       return (
-        <span onClick={async () => handleUpdate()} className="updateText">
+        <span onClick={() => handleUpdate()} className="updateText">
           {`${t('status.installed')} - ${t(
             'status.hasUpdates',
             'New Version Available!'

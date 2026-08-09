@@ -194,6 +194,7 @@ class GameConfigV0 extends GameConfig {
     return false
   }
 
+  // eslint-disable-next-line @typescript-eslint/require-await -- GameConfig.getSettings is abstract as Promise<GameSettings>
   public async getSettings(): Promise<GameSettings> {
     const { maxSharpness, offlineMode, savesPath, targetExe, verboseLogs } =
       GlobalConfig.get().getSettings()

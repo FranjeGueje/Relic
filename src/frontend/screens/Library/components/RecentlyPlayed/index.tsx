@@ -44,7 +44,7 @@ export default React.memo(function RecentlyPlayed({
 
   const hiddenGames = useContext(ContextProvider).hiddenGames
 
-  const loadRecentGames = async () => {
+  const loadRecentGames = () => {
     const hiddenAppNames = hiddenGames.list.map((game) => game.appName)
     let newRecentGames = getRecentGames(
       [...epic.library, ...gog.library, ...amazon.library, ...zoom.library],
