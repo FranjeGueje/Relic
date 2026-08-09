@@ -150,7 +150,7 @@ export default React.memo(function GamePage(): JSX.Element | null {
       setAchievements(await window.api.getAchievements(appName, runner))
     }
 
-    updateAchievements()
+    void updateAchievements()
     previousIsPlaying.current = isPlaying
   }, [isPlaying, appName])
 
@@ -164,7 +164,7 @@ export default React.memo(function GamePage(): JSX.Element | null {
         setExtraInfo(await window.api.getExtraInfo(appName, runner))
       }
     }
-    updateGameInfo()
+    void updateGameInfo()
   }, [status, gog.library, epic.library, isMoving])
 
   useEffect(() => {
@@ -211,11 +211,11 @@ export default React.memo(function GamePage(): JSX.Element | null {
         }
       }
     }
-    updateConfig()
+    void updateConfig()
   }, [status, epic.library, gog.library, gameInfo, isOffline])
 
-  function handleUpdate() {
-    updateGame({ appName, runner, gameInfo })
+  async function handleUpdate() {
+    await updateGame({ appName, runner, gameInfo })
   }
 
   function handleModal() {

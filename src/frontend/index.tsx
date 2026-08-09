@@ -37,7 +37,7 @@ const languageCode: string =
 configStore.set('language', languageCode)
 document.querySelector('html')?.setAttribute('lang', languageCode)
 
-i18next
+void i18next
   // load translation using http -> see /public/locales
   // learn more: https://github.com/i18next/i18next-http-backend
   .use(Backend)

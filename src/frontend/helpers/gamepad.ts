@@ -221,11 +221,11 @@ export const initGamepad = () => {
         // we have to tell Electron to simulate key presses
         // so the spatial navigation works
         if (action !== 'leftClick' && action !== 'rightClick') {
-          window.api.gamepadAction({ action })
+          void window.api.gamepadAction({ action })
         } else {
           const data = metadata()
           if (data) {
-            window.api.gamepadAction({ action, metadata: data })
+            void window.api.gamepadAction({ action, metadata: data })
           } else {
             console.error(
               'Got controller action that requires metadata, but we have no metadata'

@@ -5,7 +5,7 @@ export const useHasKnownFixes = (appName: string, runner: Runner) => {
   const [knownFixes, setKnownFixes] = useState<KnowFixesInfo | null>(null)
 
   useEffect(() => {
-    window.api
+    void window.api
       .getKnownFixes(appName, runner)
       .then((info: KnowFixesInfo | null) => {
         console.log({ info })

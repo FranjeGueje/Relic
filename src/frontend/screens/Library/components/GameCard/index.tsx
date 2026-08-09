@@ -132,7 +132,7 @@ const GameCard = ({
         setGameInfo(newInfo)
       }
     }
-    updateGameInfo()
+    void updateGameInfo()
   }, [status])
 
   async function handleUpdate() {

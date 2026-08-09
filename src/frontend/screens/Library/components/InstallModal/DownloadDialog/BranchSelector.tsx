@@ -67,6 +67,7 @@ export default function BranchSelector({
                   setShowBranchPasswordInput(false)
                   window.api
                     .setPrivateBranchPassword(appName, branchPassword)
+                    .catch((error: unknown) => window.api.logError(`${error}`))
                     .finally(() => {
                       onPasswordChange(branchPassword)
                     })

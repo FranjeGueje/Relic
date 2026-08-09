@@ -69,7 +69,7 @@ export default function Runner(props: RunnerProps) {
             <div
               className="runnerLogin logged"
               onClick={() => {
-                handleLogout()
+                void handleLogout()
               }}
             >
               {t('userselector.logout', 'Logout')}

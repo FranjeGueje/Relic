@@ -15,7 +15,7 @@ export default function WindowControls() {
 
   useEffect(() => {
     // get initial window state since app might start maximized
-    window.api.isMaximized().then((val) => setMaximized(val))
+    void window.api.isMaximized().then((val) => setMaximized(val))
   }, [])
   // need to subscribe to maximized/unmaximized events to update our state
   // since double clicking on draggable areas will also maximize/unmaximize the window

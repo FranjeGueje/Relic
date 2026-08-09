@@ -94,7 +94,7 @@ export default function GOGModifyInstallModal({
           sortedMods.push(mod)
         }
       }
-      window.api.setCyberpunModConfig({
+      void window.api.setCyberpunModConfig({
         enabled: modsEnabled,
         modsToLoad: sortedMods
       })
@@ -107,7 +107,7 @@ export default function GOGModifyInstallModal({
 
     if (gameModified) {
       // Create update
-      window.api.updateGame({
+      void window.api.updateGame({
         gameInfo,
         appName: gameInfo.app_name,
         runner: gameInfo.runner,
@@ -135,7 +135,7 @@ export default function GOGModifyInstallModal({
       )
       setSavedBranchPassword(branchPassword)
     }
-    get()
+    void get()
   }, [])
 
   useEffect(() => {
@@ -153,7 +153,7 @@ export default function GOGModifyInstallModal({
       }
       setGameInstallInfo(installInfo)
     }
-    get()
+    void get()
   }, [branch, savedBranchPassword])
 
   useEffect(() => {
@@ -224,7 +224,7 @@ export default function GOGModifyInstallModal({
         }
       }
     }
-    get()
+    void get()
   }, [redModInstalled])
 
   const DLCList = gameInstallInfo?.game.owned_dlc || []

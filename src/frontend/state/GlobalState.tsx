@@ -450,7 +450,7 @@ class GlobalState extends PureComponent<Props> {
   }
 
   handleSuccessfulLogin = (runner: Runner) => {
-    this.refreshLibrary({
+    void this.refreshLibrary({
       runInBackground: false,
       library: runner
     })
@@ -770,7 +770,7 @@ class GlobalState extends PureComponent<Props> {
           (game) => game !== appName
         )
         // This avoids calling legendary again before the previous process is killed when canceling
-        this.refreshLibrary({
+        void this.refreshLibrary({
           checkForUpdates: true,
           runInBackground: true,
           library: runner
@@ -783,7 +783,7 @@ class GlobalState extends PureComponent<Props> {
         })
       }
 
-      this.refreshLibrary({ runInBackground: true, library: runner })
+      void this.refreshLibrary({ runInBackground: true, library: runner })
 
       this.setState({ libraryStatus: newLibraryStatus })
     }
@@ -824,7 +824,7 @@ class GlobalState extends PureComponent<Props> {
     })
 
     window.api.handleRefreshLibrary((e, runner) => {
-      this.refreshLibrary({
+      void this.refreshLibrary({
         checkForUpdates: false,
         runInBackground: true,
         library: runner
@@ -907,7 +907,7 @@ class GlobalState extends PureComponent<Props> {
     }
 
     if (legendaryUser || gogUser || amazonUser || zoomUser) {
-      this.refreshLibrary({
+      void this.refreshLibrary({
         checkForUpdates: true,
         runInBackground:
           epic.library.length !== 0 ||
@@ -934,7 +934,7 @@ class GlobalState extends PureComponent<Props> {
     })
 
     // get the current status
-    window.api
+    void window.api
       .getConnectivityStatus()
       .then((connectivity) => this.setState({ connectivity }))
 

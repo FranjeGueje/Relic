@@ -11,7 +11,7 @@ export function useAwaited<T>(
   useEffect(() => {
     // This is `setValue` as long as the component requesting the value is mounted
     let setValueIfMounted = setValue
-    getter().then(setValueIfMounted)
+    void getter().then(setValueIfMounted)
     return () => {
       // TODO: Send signal to BE to abort the promise
       setValueIfMounted = () => {

@@ -47,9 +47,9 @@ export const Dialog: React.FC<DialogProps> = ({
     // HACK: Focussing the dialog using JS does not seem to work
     //       Instead, simulate one or two tab presses
     // One tab to focus the dialog
-    window.api.gamepadAction({ action: 'tab' })
+    void window.api.gamepadAction({ action: 'tab' })
     // Second tab to skip the close button if it's shown
-    if (showCloseButton) window.api.gamepadAction({ action: 'tab' })
+    if (showCloseButton) void window.api.gamepadAction({ action: 'tab' })
   }, [])
 
   const close = useCallback(() => {

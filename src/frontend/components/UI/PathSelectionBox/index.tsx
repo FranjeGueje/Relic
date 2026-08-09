@@ -61,7 +61,7 @@ const PathSelectionBox = ({
     }
 
     // "Folder" icon was pressed
-    window.api
+    void window.api
       .openDialog({
         buttonLabel: t('box.choose'),
         properties: type === 'directory' ? ['openDirectory'] : ['openFile'],

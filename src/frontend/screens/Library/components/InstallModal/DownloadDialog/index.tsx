@@ -162,7 +162,7 @@ export default function DownloadDialog({
       )
       setSavedBranchPassword(branchPassword)
     }
-    get()
+    void get()
   }, [])
 
   const handleSdl = useCallback(
@@ -355,7 +355,7 @@ export default function DownloadDialog({
         })
       }
     }
-    getSpace()
+    void getSpace()
   }, [installPath, diskSize])
 
   const haveDLCs =

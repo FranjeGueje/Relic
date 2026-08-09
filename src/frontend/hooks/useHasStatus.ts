@@ -42,7 +42,7 @@ export function useHasStatus(gameInfo: GameInfo, gameSize?: string) {
         setNewGameInfo(updatedInfo)
       }
     }
-    getGameInfo()
+    void getGameInfo()
   }, [appName, gameInfo])
 
   React.useEffect(() => {
@@ -100,7 +100,7 @@ export function useHasStatus(gameInfo: GameInfo, gameSize?: string) {
       })
       return setGameStatus({ status: 'notInstalled', label, statusContext })
     }
-    checkGameStatus()
+    void checkGameStatus()
   }, [
     libraryStatus,
     appName,

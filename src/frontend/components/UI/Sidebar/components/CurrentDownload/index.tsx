@@ -29,7 +29,7 @@ export default React.memo(function CurrentDownload({ appName, runner }: Props) {
       const title = (await getGameInfo(appName, runner))!.title
       setGameTitle(title)
     }
-    getGameTitle()
+    void getGameTitle()
   }, [appName])
 
   function getStatus() {

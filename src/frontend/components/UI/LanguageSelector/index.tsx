@@ -120,7 +120,7 @@ export default function LanguageSelector({
     window.api.changeLanguage(newLanguage)
     storage.setItem('language', newLanguage)
     configStore.set('language', newLanguage)
-    i18n.changeLanguage(newLanguage)
+    void i18n.changeLanguage(newLanguage)
     setLanguage(newLanguage)
   }
 

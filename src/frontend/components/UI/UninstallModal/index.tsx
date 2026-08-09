@@ -50,7 +50,7 @@ const UninstallModal: React.FC<UninstallModalProps> = function ({
   }
 
   useEffect(() => {
-    checkIfIsNative()
+    void checkIfIsNative()
   }, [])
 
   const storage: Storage = window.localStorage

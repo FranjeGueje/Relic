@@ -41,7 +41,7 @@ const DLC = ({ dlc, runner, mainAppInfo, onClose }: Props) => {
       }
       setDlcInfo(info)
     }
-    checkInstalled()
+    void checkInstalled()
   }, [dlc, runner])
 
   useEffect(() => {
@@ -61,7 +61,7 @@ const DLC = ({ dlc, runner, mainAppInfo, onClose }: Props) => {
       setDlcSize(info?.manifest?.download_size || 0)
       setRefreshing(false)
     }
-    getDlcSize()
+    void getDlcSize()
   }, [dlc, runner])
 
   const currentApp = libraryStatus.find((app) => app.appName === app_name)
@@ -80,7 +80,7 @@ const DLC = ({ dlc, runner, mainAppInfo, onClose }: Props) => {
         return
       }
       onClose()
-      install({
+      void install({
         isInstalling,
         previousProgress: null,
         progress,

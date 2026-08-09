@@ -51,7 +51,7 @@ function Settings() {
       const config = await window.api.requestAppSettings()
       setCurrentConfig(config)
     }
-    getSettings()
+    void getSettings()
   }, [])
 
   // create setting context functions

@@ -61,7 +61,7 @@ export default function WebView() {
       refresh: true,
       message: t('status.preparing_login', 'Preparing Login...')
     })
-    amazon.getLoginData().then((data) => {
+    void amazon.getLoginData().then((data) => {
       setAmazonLoginData(data)
       setLoading({
         ...loading,
@@ -80,7 +80,7 @@ export default function WebView() {
       refresh: true,
       message: t('status.logging', 'Logging In...')
     })
-    amazon
+    void amazon
       .login({
         client_id: amazonLoginData.client_id,
         code: code,
@@ -131,7 +131,7 @@ export default function WebView() {
                 refresh: true,
                 message: t('status.logging', 'Logging In...')
               })
-              gog.login(code).then(() => handleSuccessfulLogin())
+              void gog.login(code).then(() => handleSuccessfulLogin())
             }
           }
         } else if (runner === 'nile') {
@@ -153,7 +153,7 @@ export default function WebView() {
                 refresh: true,
                 message: t('status.logging', 'Logging In...')
               })
-              epic.login(code).then(() => handleSuccessfulLogin())
+              void epic.login(code).then(() => handleSuccessfulLogin())
             }
           }
         }
@@ -197,7 +197,7 @@ export default function WebView() {
               refresh: true,
               message: t('status.logging', 'Logging In...')
             })
-            zoom.login(pageURL).then(() => handleSuccessfulLogin())
+            void zoom.login(pageURL).then(() => handleSuccessfulLogin())
           }
         }
       }

@@ -64,7 +64,7 @@ const DownloadManagerItem = ({
         setGameInfo(newInfo)
       }
     }
-    getNewInfo()
+    void getNewInfo()
   }, [element])
 
   const [progress] = useHasProgress(

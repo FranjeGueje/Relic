@@ -33,7 +33,7 @@ export default function Dropdown({
         onClick={() => {
           // focus first component when expanding
           if (!isExpanded) {
-            window.api.gamepadAction({ action: 'tab' })
+            void window.api.gamepadAction({ action: 'tab' })
           }
 
           setIsExpanded(true)

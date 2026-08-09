@@ -14,7 +14,7 @@ const MaxWorkers = () => {
       const cores = await window.api.getMaxCpus()
       setMaxCpus(cores)
     }
-    getMoreInfo()
+    void getMoreInfo()
   }, [maxWorkers])
 
   return (
