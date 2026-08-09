@@ -186,7 +186,7 @@ export default class GOGGame implements Game {
         JSON.parse(res.stdout),
         folderPath
       )
-      onGameImported(this)
+      void onGameImported(this).catch((err) => logError(err, LogPrefix.Gog))
     } catch (error) {
       logError([`Failed to import ${this.id}:`, error], LogPrefix.Gog)
     }
@@ -434,7 +434,9 @@ export default class GOGGame implements Game {
         )
       }
     }
-    onGameInstalled(this, install_path)
+    void onGameInstalled(this, install_path).catch((err) =>
+      logError(err, LogPrefix.Gog)
+    )
     return { status: 'done' }
   }
 
@@ -471,7 +473,9 @@ export default class GOGGame implements Game {
       this.id,
       moveResult.installPath
     )
-    onGameMoved(this, moveResult.installPath)
+    void onGameMoved(this, moveResult.installPath).catch((err) =>
+      logError(err, LogPrefix.Gog)
+    )
 
     return { status: 'done' }
   }

@@ -348,7 +348,9 @@ export default class LegendaryGame implements Game {
       this.appName,
       moveResult.installPath
     )
-    onGameMoved(this, moveResult.installPath)
+    void onGameMoved(this, moveResult.installPath).catch((err) =>
+      logError(err, LogPrefix.Legendary)
+    )
     return { status: 'done' }
   }
 
@@ -613,7 +615,9 @@ export default class LegendaryGame implements Game {
       }
       return { status: 'error', error: res.error }
     }
-    onGameInstalled(this)
+    void onGameInstalled(this).catch((err) =>
+      logError(err, LogPrefix.Legendary)
+    )
 
     return { status: 'done' }
   }
@@ -755,7 +759,7 @@ export default class LegendaryGame implements Game {
       abortId: this.appName,
       logWriters: [logWriter]
     })
-    onGameImported(this)
+    void onGameImported(this).catch((err) => logError(err, LogPrefix.Legendary))
     const errorMatch = res.stderr.match(/^.*ERROR:.*$/gm)?.join('') ?? ''
     res.error = (res.error ?? '') + errorMatch
     if (res.error) {

@@ -505,7 +505,7 @@ export default class ZoomGame implements Game {
     const array = installedGamesStore.get('installed', [])
     array.push(installedData)
     installedGamesStore.set('installed', array)
-    libraryManagerMap['zoom'].refresh()
+    void libraryManagerMap['zoom'].refresh()
     const libraryGame = this.getGameInfo()
     if (libraryGame) {
       libraryGame.is_installed = true
@@ -563,7 +563,7 @@ export default class ZoomGame implements Game {
 
     array[index].install_path = moveResult.installPath
     installedGamesStore.set('installed', array)
-    libraryManagerMap['zoom'].refresh()
+    void libraryManagerMap['zoom'].refresh()
 
     await onGameMoved(this, moveResult.installPath)
 
@@ -597,7 +597,7 @@ export default class ZoomGame implements Game {
       rmSync(object.install_path, { recursive: true })
     }
     installedGamesStore.set('installed', array)
-    libraryManagerMap['zoom'].refresh()
+    void libraryManagerMap['zoom'].refresh()
     const gameInfo = this.getGameInfo()
     gameInfo.is_installed = false
     gameInfo.install = { is_dlc: false }
@@ -615,7 +615,7 @@ export default class ZoomGame implements Game {
     const installed = installedGamesStore.get('installed', [])
     const newInstalled = installed.filter((g) => g.appName !== this.id)
     installedGamesStore.set('installed', newInstalled)
-    libraryManagerMap['zoom'].refresh()
+    void libraryManagerMap['zoom'].refresh()
     const gameInfo = this.getGameInfo()
     gameInfo.is_installed = false
     gameInfo.install = { is_dlc: false }

@@ -13,16 +13,16 @@ let relicLogWriter: LogWriter
 const runnerLogWriters = new Map<RunnerOrComet, LogWriter>()
 
 const logDebug = (...params: Parameters<LogWriter['logDebug']>) => {
-  relicLogWriter.logDebug(...params)
+  void relicLogWriter.logDebug(...params)
 }
 const logInfo = (...params: Parameters<LogWriter['logInfo']>) => {
-  relicLogWriter.logInfo(...params)
+  void relicLogWriter.logInfo(...params)
 }
 const logWarning = (...params: Parameters<LogWriter['logWarning']>) => {
-  relicLogWriter.logWarning(...params)
+  void relicLogWriter.logWarning(...params)
 }
 const logError = (...params: Parameters<LogWriter['logError']>) => {
-  relicLogWriter.logError(...params)
+  void relicLogWriter.logError(...params)
 }
 
 function getRunnerLogWriter(runner: RunnerOrComet) {
@@ -58,7 +58,9 @@ function init() {
   // "just" failing to write to the streams)
   for (const channel of ['stdout', 'stderr'] as const) {
     process[channel].once('error', (error: Error) => {
-      relicLogWriter.writeString(`Error writing to ${channel}: ${error.stack}`)
+      void relicLogWriter.writeString(
+        `Error writing to ${channel}: ${error.stack}`
+      )
 
       process[channel].on('error', () => {
         // Silence further write errors
@@ -68,7 +70,7 @@ function init() {
 
   relicLogWriter = new LogWriter(getLogFilePath({}), true, false)
 
-  relicLogWriter.logInfo(
+  void relicLogWriter.logInfo(
     ['System Information:', getSystemInfo().then(formatSystemInfo)],
     LogPrefix.Backend
   )

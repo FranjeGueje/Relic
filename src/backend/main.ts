@@ -148,7 +148,7 @@ function initializeWindow(): BrowserWindow {
       })
     }
 
-    handleExit()
+    void handleExit()
   })
 
   const startHash = '/console'
@@ -157,12 +157,12 @@ function initializeWindow(): BrowserWindow {
     const devUrl = startHash
       ? `${process.env.ELECTRON_RENDERER_URL}#${startHash}`
       : process.env.ELECTRON_RENDERER_URL
-    mainWindow.loadURL(devUrl)
+    void mainWindow.loadURL(devUrl)
     // Open the DevTools.
     mainWindow.webContents.openDevTools()
   } else {
     Menu.setApplicationMenu(null)
-    mainWindow.loadFile(
+    void mainWindow.loadFile(
       join(publicDir, 'index.html'),
       startHash ? { hash: startHash } : undefined
     )
@@ -173,7 +173,7 @@ function initializeWindow(): BrowserWindow {
     const pattern = isPackaged ? publicDir : 'localhost:5173'
     if (!url.match(pattern)) {
       event.preventDefault()
-      openUrlOrFile(url)
+      void openUrlOrFile(url)
     }
   })
 
@@ -185,7 +185,7 @@ function initializeWindow(): BrowserWindow {
   addListener('setZoomFactor', (event, zoomFactor) => {
     const factor = processZoomForScreen(parseFloat(zoomFactor))
     mainWindow.webContents.setZoomLevel(factor)
-    mainWindow.webContents.setVisualZoomLevelLimits(1, 1)
+    void mainWindow.webContents.setVisualZoomLevelLimits(1, 1)
   })
 
   function applyZoom() {
@@ -193,7 +193,7 @@ function initializeWindow(): BrowserWindow {
       configStore.get('zoomPercent', 100) / 100
     )
     mainWindow.webContents.setZoomLevel(zoomFactor)
-    mainWindow.webContents.setVisualZoomLevelLimits(1, 1)
+    void mainWindow.webContents.setVisualZoomLevelLimits(1, 1)
   }
 
   mainWindow.on('maximize', applyZoom)
@@ -230,103 +230,106 @@ if (!gotTheLock) {
     const mainWindow = getMainWindow()
     mainWindow?.show()
   })
-  app.whenReady().then(async () => {
-    initLogger()
+  app
+    .whenReady()
+    .then(async () => {
+      initLogger()
 
-    syncMountBin()
+      syncMountBin()
 
-    await MigrationSystem.get().applyMigrations()
+      await MigrationSystem.get().applyMigrations()
 
-    initOnlineMonitor()
-    initStoreManagers()
-    initImagesCache()
+      initOnlineMonitor()
+      void initStoreManagers()
+      initImagesCache()
 
-    // Add User-Agent Client hints to behave like Windows
-    if (process.argv.includes('--spoof-windows')) {
-      session.defaultSession.webRequest.onBeforeSendHeaders(
-        (details, callback) => {
-          details.requestHeaders['sec-ch-ua-platform'] = 'Windows'
-          callback({ cancel: false, requestHeaders: details.requestHeaders })
+      // Add User-Agent Client hints to behave like Windows
+      if (process.argv.includes('--spoof-windows')) {
+        session.defaultSession.webRequest.onBeforeSendHeaders(
+          (details, callback) => {
+            details.requestHeaders['sec-ch-ua-platform'] = 'Windows'
+            callback({ cancel: false, requestHeaders: details.requestHeaders })
+          }
+        )
+      }
+
+      runOnceWhenOnline(() => {
+        const isLoggedIn = LegendaryUser.isLoggedIn()
+
+        if (!isLoggedIn) {
+          logInfo('User Not Found, removing it from Store', {
+            prefix: LogPrefix.Backend,
+            forceLog: true
+          })
+          configStore.delete('userInfo')
         }
-      )
-    }
 
-    runOnceWhenOnline(() => {
-      const isLoggedIn = LegendaryUser.isLoggedIn()
+        // Update user details
+        if (GOGUser.isLoggedIn()) {
+          void GOGUser.getUserDetails()
+        }
+      })
 
-      if (!isLoggedIn) {
-        logInfo('User Not Found, removing it from Store', {
-          prefix: LogPrefix.Backend,
-          forceLog: true
-        })
-        configStore.delete('userInfo')
-      }
+      const settings = GlobalConfig.get().getSettings()
 
-      // Update user details
-      if (GOGUser.isLoggedIn()) {
-        GOGUser.getUserDetails()
-      }
-    })
+      await i18next.use(Backend).init({
+        backend: {
+          addPath: path.join(publicDir, 'locales', '{{lng}}', '{{ns}}'),
+          allowMultiLoading: false,
+          loadPath: path.join(publicDir, 'locales', '{{lng}}', '{{ns}}.json')
+        },
+        debug: false,
+        returnEmptyString: false,
+        returnNull: false,
+        fallbackLng: 'en',
+        lng: settings.language,
+        supportedLngs: supportedLanguages
+      })
 
-    const settings = GlobalConfig.get().getSettings()
+      const mainWindow = initializeWindow()
 
-    await i18next.use(Backend).init({
-      backend: {
-        addPath: path.join(publicDir, 'locales', '{{lng}}', '{{ns}}'),
-        allowMultiLoading: false,
-        loadPath: path.join(publicDir, 'locales', '{{lng}}', '{{ns}}.json')
-      },
-      debug: false,
-      returnEmptyString: false,
-      returnNull: false,
-      fallbackLng: 'en',
-      lng: settings.language,
-      supportedLngs: supportedLanguages
-    })
-
-    const mainWindow = initializeWindow()
-
-    const headless = isCLINoGui
-    if (!headless) {
-      const isWayland = Boolean(process.env.WAYLAND_DISPLAY)
-      const showWindow = () => {
-        const props = configStore.get_nodefault('window-props')
-        mainWindow.show()
-        // Apply maximize only if we show the window
-        if (props?.maximized) {
-          mainWindow.maximize()
+      const headless = isCLINoGui
+      if (!headless) {
+        const isWayland = Boolean(process.env.WAYLAND_DISPLAY)
+        const showWindow = () => {
+          const props = configStore.get_nodefault('window-props')
+          mainWindow.show()
+          // Apply maximize only if we show the window
+          if (props?.maximized) {
+            mainWindow.maximize()
+          }
+        }
+        if (isWayland) {
+          // Electron + Wayland don't send ready-to-show
+          mainWindow.webContents.once('did-finish-load', showWindow)
+        } else {
+          mainWindow.once('ready-to-show', showWindow)
         }
       }
-      if (isWayland) {
-        // Electron + Wayland don't send ready-to-show
-        mainWindow.webContents.once('did-finish-load', showWindow)
-      } else {
-        mainWindow.once('ready-to-show', showWindow)
-      }
-    }
 
-    // set initial zoom level after a moment, if set in sync the value stays as 1
-    setTimeout(() => {
-      const zoomFactor = processZoomForScreen(
-        configStore.get('zoomPercent', 100) / 100
-      )
+      // set initial zoom level after a moment, if set in sync the value stays as 1
+      setTimeout(() => {
+        const zoomFactor = processZoomForScreen(
+          configStore.get('zoomPercent', 100) / 100
+        )
 
-      mainWindow.webContents.setZoomLevel(zoomFactor)
-      mainWindow.webContents.setVisualZoomLevelLimits(1, 1)
-    }, 200)
+        mainWindow.webContents.setZoomLevel(zoomFactor)
+        void mainWindow.webContents.setVisualZoomLevelLimits(1, 1)
+      }, 200)
 
-    addListener('changeLanguage', async (event, language) => {
-      logInfo(['Changing Language to:', language], LogPrefix.Backend)
-      await i18next.changeLanguage(language)
-      gameInfoStore.clear()
-      GlobalConfig.get().setSetting('language', language)
-      backendEvents.emit('languageChanged')
+      addListener('changeLanguage', async (event, language) => {
+        logInfo(['Changing Language to:', language], LogPrefix.Backend)
+        await i18next.changeLanguage(language)
+        gameInfoStore.clear()
+        GlobalConfig.get().setSetting('language', language)
+        backendEvents.emit('languageChanged')
+      })
+
+      void initTrayIcon(mainWindow)
+
+      return
     })
-
-    initTrayIcon(mainWindow)
-
-    return
-  })
+    .catch((err: unknown) => logError(err, LogPrefix.Backend))
 }
 
 addOneTimeListener('frontendReady', () => {
@@ -339,7 +342,7 @@ addOneTimeListener('frontendReady', () => {
 
   setTimeout(() => {
     logInfo('Starting the Download Queue', LogPrefix.Backend)
-    initQueue()
+    void initQueue()
   }, 5000)
 })
 
@@ -504,7 +507,7 @@ addListener('clearAchievementCache', (event, appName: string) => {
 addListener('resetRelic', () => resetRelic())
 
 addListener('createNewWindow', (e, url) => {
-  new BrowserWindow({ height: 700, width: 1200 }).loadURL(url)
+  void new BrowserWindow({ height: 700, width: 1200 }).loadURL(url)
 })
 
 addHandler('isGameAvailable', async (e, args) => {
@@ -1010,7 +1013,7 @@ addListener('processShortcut', (e, combination: string) => {
       break
     // hotkey to quit the app
     case 'ctrl+q':
-      handleExit()
+      void handleExit()
       break
     // hotkey to open the settings on frontend
     case 'ctrl+k':

@@ -118,7 +118,7 @@ export default class NileGameManager implements Game {
     }
 
     try {
-      onGameImported(this)
+      void onGameImported(this).catch((err) => logError(err, LogPrefix.Nile))
       libraryManagerMap['nile'].installState(this.id, true)
     } catch (error) {
       logError(['Failed to import', `${this.id}:`, error], LogPrefix.Nile)
@@ -239,7 +239,7 @@ export default class NileGameManager implements Game {
       }
       return { status: 'error', error: res.error }
     }
-    onGameInstalled(this)
+    void onGameInstalled(this).catch((err) => logError(err, LogPrefix.Nile))
     libraryManagerMap['nile'].installState(this.id, true)
     return { status: 'done' }
   }
@@ -275,7 +275,9 @@ export default class NileGameManager implements Game {
       this.id,
       moveResult.installPath
     )
-    onGameMoved(this, moveResult.installPath)
+    void onGameMoved(this, moveResult.installPath).catch((err) =>
+      logError(err, LogPrefix.Nile)
+    )
     return { status: 'done' }
   }
 
