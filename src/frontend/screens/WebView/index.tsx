@@ -1,4 +1,11 @@
-import { useContext, useEffect, useLayoutEffect, useRef, useState } from 'react'
+import {
+  useCallback,
+  useContext,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState
+} from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate, useLocation, useParams } from 'react-router-dom'
 
@@ -8,6 +15,8 @@ import ContextProvider from 'frontend/state/ContextProvider'
 import './index.css'
 import LoginWarning from '../Login/components/LoginWarning'
 import { NileLoginData } from 'common/types/nile'
+
+const gogEmbedRegExp = new RegExp('https://embed.gog.com/on_login_success?')
 
 export default function WebView() {
   useTranslation()
@@ -34,7 +43,6 @@ export default function WebView() {
 
   const wikiURL =
     'https://github.com/Relic-Games-Launcher/RelicGamesLauncher/wiki'
-  const gogEmbedRegExp = new RegExp('https://embed.gog.com/on_login_success?')
   const gogLoginUrl =
     'https://auth.gog.com/auth?client_id=46899977096215655&redirect_uri=https%3A%2F%2Fembed.gog.com%2Fon_login_success%3Forigin%3Dclient&response_type=code&layout=galaxy'
   const zoomLoginUrl =
@@ -63,38 +71,48 @@ export default function WebView() {
     })
     void amazon.getLoginData().then((data) => {
       setAmazonLoginData(data)
-      setLoading({
-        ...loading,
+      setLoading((prev) => ({
+        ...prev,
         refresh: false
-      })
+      }))
     })
-  }, [pathname])
+    // amazon.getLoginData is a stable bound method; the eslint rule can't
+    // verify that and also wants the whole `amazon` object, which is a new
+    // reference every GlobalState render and would refetch login data on
+    // every unrelated re-render while sitting on this route
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pathname, amazon.getLoginData, t])
 
-  const handleAmazonLogin = (code: string) => {
-    if (!amazonLoginData) {
-      console.error('Could not login to Amazon because login data is missing')
-      return
-    }
-
-    setLoading({
-      refresh: true,
-      message: t('status.logging', 'Logging In...')
-    })
-    void amazon
-      .login({
-        client_id: amazonLoginData.client_id,
-        code: code,
-        code_verifier: amazonLoginData.code_verifier,
-        serial: amazonLoginData.serial
-      })
-      .then(() => {
-        handleSuccessfulLogin()
-      })
-  }
-
-  const handleSuccessfulLogin = () => {
+  const handleSuccessfulLogin = useCallback(() => {
     navigate('/login')
-  }
+  }, [navigate])
+
+  const handleAmazonLogin = useCallback(
+    (code: string) => {
+      if (!amazonLoginData) {
+        console.error('Could not login to Amazon because login data is missing')
+        return
+      }
+
+      setLoading({
+        refresh: true,
+        message: t('status.logging', 'Logging In...')
+      })
+      void amazon
+        .login({
+          client_id: amazonLoginData.client_id,
+          code: code,
+          code_verifier: amazonLoginData.code_verifier,
+          serial: amazonLoginData.serial
+        })
+        .then(() => {
+          handleSuccessfulLogin()
+        })
+    },
+    // amazon.login is a stable bound method; same reasoning as above
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [amazonLoginData, t, amazon.login, handleSuccessfulLogin]
+  )
 
   const [webviewPreloadPath, setWebviewPreloadPath] = useState('')
   useEffect(() => {
@@ -110,7 +128,7 @@ export default function WebView() {
     const webview = webviewRef.current
     if (webview) {
       const loadstop = () => {
-        setLoading({ ...loading, refresh: false })
+        setLoading((prev) => ({ ...prev, refresh: false }))
         const userAgent =
           startUrl === epicLoginUrl
             ? 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) EpicGamesLauncher'
@@ -182,7 +200,22 @@ export default function WebView() {
       }
     }
     return
-  }, [webviewRef.current, amazonLoginData, runner, webviewPreloadPath])
+    // epic.login/gog.login are stable bound methods; the eslint rule can't
+    // verify that and also wants the whole `epic`/`gog` objects, which are
+    // new references every GlobalState render
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [
+    amazonLoginData,
+    runner,
+    webviewPreloadPath,
+    connectivity.status,
+    epic.login,
+    gog.login,
+    handleAmazonLogin,
+    handleSuccessfulLogin,
+    startUrl,
+    t
+  ])
 
   useEffect(() => {
     const webview = webviewRef.current
@@ -210,7 +243,9 @@ export default function WebView() {
     }
 
     return
-  }, [webviewRef.current, runner])
+    // zoom.login is a stable bound method; same reasoning as above
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [runner, handleSuccessfulLogin, t, zoom.login])
 
   const [showLoginWarningFor, setShowLoginWarningFor] = useState<
     null | 'epic' | 'gog' | 'amazon' | 'zoom'
@@ -236,7 +271,7 @@ export default function WebView() {
     } else {
       setShowLoginWarningFor(null)
     }
-  }, [startUrl])
+  }, [startUrl, epic.username, gog.username, amazon.user_id, zoom.username])
 
   const onLoginWarningClosed = () => {
     setShowLoginWarningFor(null)
@@ -271,7 +306,7 @@ export default function WebView() {
     return () => {
       document.removeEventListener('mouseup', handleMouseBackForward)
     }
-  }, [webviewRef.current])
+  }, [])
 
   if (!webviewPreloadPath) {
     return <></>

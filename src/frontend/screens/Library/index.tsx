@@ -513,13 +513,6 @@ export default React.memo(function Library(): JSX.Element {
 
     return library
   }, [
-    storesFilters,
-    platformsFilters,
-    epic.library,
-    gog.library,
-    amazon.library,
-    zoom.library,
-    platform,
     filterText,
     showHidden,
     hiddenGames,

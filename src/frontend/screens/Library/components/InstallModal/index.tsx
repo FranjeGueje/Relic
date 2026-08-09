@@ -114,7 +114,6 @@ function InstallModal({ appName, runner, gameInfo = null }: Props) {
       >
         {isThirdPartyManagedApp ? (
           <ThirdPartyDialog
-            appName={appName}
             runner={runner}
             availablePlatforms={availablePlatforms}
             backdropClick={closeModal}

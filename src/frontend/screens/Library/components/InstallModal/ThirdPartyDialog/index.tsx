@@ -15,7 +15,6 @@ import './index.css'
 
 interface Props {
   backdropClick: () => void
-  appName: string
   runner: Runner
   platformToInstall: InstallPlatform
   availablePlatforms: AvailablePlatforms
@@ -24,7 +23,6 @@ interface Props {
 }
 
 export default function ThirdPartyDialog({
-  appName,
   runner,
   backdropClick,
   gameInfo,
@@ -33,11 +31,11 @@ export default function ThirdPartyDialog({
   platformToInstall
 }: Props) {
   const { t } = useTranslation('gamepage')
-  const progress = {} as InstallProgress
 
   const handleInstall = useCallback(async () => {
     backdropClick()
 
+    const progress = {} as InstallProgress
     return install({
       gameInfo,
       previousProgress: progress,
@@ -48,7 +46,7 @@ export default function ThirdPartyDialog({
       platformToInstall,
       showDialogModal: () => backdropClick()
     })
-  }, [appName, t, platformToInstall, backdropClick, gameInfo, progress])
+  }, [t, platformToInstall, backdropClick, gameInfo])
 
   return (
     <>
