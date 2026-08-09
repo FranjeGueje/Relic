@@ -627,7 +627,7 @@ export default class GOGLibraryManager implements LibraryManager {
     if (installInfoStore.has(installInfoStoreKey)) {
       const cache = installInfoStore.get(installInfoStoreKey)
       if (cache) {
-        logInfo(
+        logDebug(
           [
             'Got install info from cache for',
             appName,
