@@ -1,5 +1,145 @@
 # Changelog
 
+## 0.6.1 — SteamGridDB Plaintext Storage & History Freeze
+
+### Español
+
+#### Seguridad
+
+- **La API key de SteamGridDB se guarda ahora en texto plano, a propósito.**
+  Se intentaba cifrar con `safeStorage` de Electron, pero en la práctica
+  resultó poco fiable: `isEncryptionAvailable()` daba `false` incluso forzando
+  `--password-store` (`basic`, `gnome-libsecret`, `kwallet6`, `detect`)
+  cuando el keyring del sistema (KWallet) no arrancaba — algo frecuente en
+  Linux fuera de un GNOME/KDE completamente estándar. Cada arranque dejaba un
+  aviso de "guardando en texto plano" que en la práctica era el 100% de las
+  veces. En vez de mantener una ruta de cifrado que casi nunca se usaba, se
+  simplificó: la key se guarda igual que el resto de settings de Relic, y el
+  texto de ayuda en Settings lo dice explícitamente. Un valor cifrado de esa
+  ventana (`sgdb:v1:...`) no es recuperable y se limpia solo, en vez de
+  enviarse por error como API key.
+
+#### Documentación
+
+`HISTORY.md`, `HISTORY_ADD.md` y `HISTORY_REMOVE.md` quedan congelados a partir
+de esta versión — el solapamiento con este mismo `CHANGELOG.md` era casi total.
+Se conservan como referencia de la limpieza inicial del fork; el historial de
+aquí en adelante vive solo aquí.
+
+#### Calidad de código
+
+683 → 330 avisos de ESLint (0 errores durante todo el proceso). No fue una
+pasada automática: cada categoría de aviso (`no-floating-promises`,
+`require-await`, `unbound-method`, `react-hooks/rules-of-hooks`,
+`react-hooks/exhaustive-deps`, un falso positivo de `import-x`) se revisó caso
+por caso, distinguiendo entre "hace falta `void`/`await`" y "esto es un bug
+real". Salieron varios bugs reales de paso:
+
+- **Errores de actualización silenciados**: `handleUpdate()` en `GameCard` y
+  `GamePage` llamaba a `updateGame()` sin `await` ni `.catch()`, así que un
+  fallo de actualización no llegaba a ningún sitio, ni consola ni UI. Ahora se
+  espera la promesa.
+- **Dos hooks de React llamados condicionalmente**: `DownloadManagerItem` y
+  `DLCDownloadListing` llamaban hooks después de un `return` anticipado, lo
+  que puede desincronizar el orden de hooks entre renders. Corregido
+  reordenando el guard tras las llamadas a hooks.
+- **Arranque sin red de seguridad**: la cadena `app.whenReady().then(async () =>
+{...})` en `main.ts` no tenía `.catch()` — un fallo durante migraciones, init
+  de i18n o creación de ventana desaparecía sin dejar rastro en el log, sin
+  ningún `unhandledRejection` que lo recogiera tampoco.
+- **Descarga de imágenes de caché sin registrar fallos**: `images_cache.ts`
+  encadenaba `.then().finally()` sin `.catch()`; un fallo de red al descargar
+  una portada de SteamGridDB quedaba como rejection no gestionada, invisible.
+- Las funciones `onGameInstalled`/`onGameImported`/`onGameMoved` del módulo
+  `relic` — el código que de verdad añade el juego a Steam — se llamaban sin
+  `await` ni `.catch()` desde GOG/Legendary/Nile. Los fallos esperados ya se
+  logueaban dentro, pero una excepción inesperada ahí se perdía sin más.
+
+Código muerto eliminado de paso: 3 ficheros `storeManagers/*/setup.ts` sin
+ningún importador en todo el repo, y un prop `appName` de `ThirdPartyDialog`
+que solo aparecía en un array de dependencias mal puesto, nunca usado de
+verdad.
+
+#### Cobertura de tests
+
+232 → 237 tests. Añade el guard de regresión por mutación de la key heredada
+cifrada (verificado rompiendo el código a propósito y confirmando que el test
+correspondiente falla).
+
+### English
+
+#### Security
+
+- **The SteamGridDB API key is now stored as plain text, on purpose.** It used
+  to be encrypted with Electron's `safeStorage`, but that turned out
+  unreliable in practice: `isEncryptionAvailable()` returned `false` even
+  when forcing `--password-store` (`basic`, `gnome-libsecret`, `kwallet6`,
+  `detect`) whenever the system keyring (KWallet) failed to start — common on
+  Linux outside a fully standard GNOME/KDE setup. Every startup logged a
+  "storing in plaintext" warning that was, in practice, the outcome 100% of
+  the time. Rather than keep an encryption path that almost never actually
+  encrypted anything, it was simplified: the key is now stored like every
+  other Relic setting, and the Settings help text says so explicitly. A
+  leftover encrypted value from that window (`sgdb:v1:...`) can't be
+  recovered and is cleared automatically instead of being sent as an API key
+  by mistake.
+
+#### Documentation
+
+`HISTORY.md`, `HISTORY_ADD.md` and `HISTORY_REMOVE.md` are frozen as of this
+version — the overlap with this very `CHANGELOG.md` had become nearly total.
+They're kept as a record of the fork's initial cleanup; history from here on
+lives here only.
+
+#### Code quality
+
+683 → 330 ESLint warnings (0 errors throughout). Not an automated pass: every
+warning category (`no-floating-promises`, `require-await`, `unbound-method`,
+`react-hooks/rules-of-hooks`, `react-hooks/exhaustive-deps`, an `import-x`
+false positive) was reviewed case by case, distinguishing "just needs
+`void`/`await`" from "this is an actual bug." A few real bugs turned up along
+the way:
+
+- **Silently swallowed update errors**: `handleUpdate()` in `GameCard` and
+  `GamePage` called `updateGame()` without `await` or `.catch()`, so an update
+  failure went nowhere -- not the console, not the UI. It's awaited now.
+- **Two React hooks called conditionally**: `DownloadManagerItem` and
+  `DLCDownloadListing` called hooks after an early `return`, which can
+  desync hook order across renders. Fixed by moving the guard after the hook
+  calls.
+- **Startup with no safety net**: the `app.whenReady().then(async () => {...})`
+  chain in `main.ts` had no `.catch()` -- a failure during migrations, i18n
+  init, or window creation vanished with nothing in the logs, and there was no
+  `unhandledRejection` handler to catch it either.
+- **Cached image downloads failing silently**: `images_cache.ts` chained
+  `.then().finally()` with no `.catch()`; a network failure fetching a
+  SteamGridDB cover became an unhandled rejection, invisible.
+- The relic module's `onGameInstalled`/`onGameImported`/`onGameMoved` -- the
+  code that actually adds the game to Steam -- were called without `await` or
+  `.catch()` from GOG/Legendary/Nile. Expected failures were already logged
+  inside them, but an unexpected exception there just disappeared.
+
+Dead code removed along the way: 3 `storeManagers/*/setup.ts` files with no
+importer anywhere in the repo, and a `ThirdPartyDialog` `appName` prop that
+only ever showed up in a misplaced dependency array, never actually used.
+
+#### Test coverage
+
+232 → 237 tests. Adds the leftover-encrypted-key mutation-checked regression
+guard (verified by breaking the code on purpose and confirming the matching
+test fails).
+
+### Verificación / Verification
+
+```
+codecheck: 0 errors
+lint:      0 errors (330 warnings)
+tests:     237/237 (31 suites)
+i18n --ci: sin cambios / no changes
+```
+
+---
+
 ## 0.6.0 — Electron Decoupling (fase 1)
 
 ### Español
@@ -373,80 +513,6 @@ lint:      0 errors (683 warnings)
 tests:     232/232 (30 suites)
 i18n --ci: sin cambios / no changes
 build:     OK (pnpm dist:linux, AppImage 203 MB, arranque real verificado)
-```
-
----
-
-## 0.6.1 — SteamGridDB Plaintext Storage & History Freeze
-
-### Español
-
-#### Seguridad
-
-- **La API key de SteamGridDB se guarda ahora en texto plano, a propósito.**
-  Se intentaba cifrar con `safeStorage` de Electron, pero en la práctica
-  resultó poco fiable: `isEncryptionAvailable()` daba `false` incluso forzando
-  `--password-store` (`basic`, `gnome-libsecret`, `kwallet6`, `detect`)
-  cuando el keyring del sistema (KWallet) no arrancaba — algo frecuente en
-  Linux fuera de un GNOME/KDE completamente estándar. Cada arranque dejaba un
-  aviso de "guardando en texto plano" que en la práctica era el 100% de las
-  veces. En vez de mantener una ruta de cifrado que casi nunca se usaba, se
-  simplificó: la key se guarda igual que el resto de settings de Relic, y el
-  texto de ayuda en Settings lo dice explícitamente. Un valor cifrado de esa
-  ventana (`sgdb:v1:...`) no es recuperable y se limpia solo, en vez de
-  enviarse por error como API key.
-
-#### Documentación
-
-`HISTORY.md`, `HISTORY_ADD.md` y `HISTORY_REMOVE.md` quedan congelados a partir
-de esta versión — el solapamiento con este mismo `CHANGELOG.md` era casi total.
-Se conservan como referencia de la limpieza inicial del fork; el historial de
-aquí en adelante vive solo aquí.
-
-#### Cobertura de tests
-
-232 → 237 tests. Añade el guard de regresión por mutación de la key heredada
-cifrada (verificado rompiendo el código a propósito y confirmando que el test
-correspondiente falla).
-
-### English
-
-#### Security
-
-- **The SteamGridDB API key is now stored as plain text, on purpose.** It used
-  to be encrypted with Electron's `safeStorage`, but that turned out
-  unreliable in practice: `isEncryptionAvailable()` returned `false` even
-  when forcing `--password-store` (`basic`, `gnome-libsecret`, `kwallet6`,
-  `detect`) whenever the system keyring (KWallet) failed to start — common on
-  Linux outside a fully standard GNOME/KDE setup. Every startup logged a
-  "storing in plaintext" warning that was, in practice, the outcome 100% of
-  the time. Rather than keep an encryption path that almost never actually
-  encrypted anything, it was simplified: the key is now stored like every
-  other Relic setting, and the Settings help text says so explicitly. A
-  leftover encrypted value from that window (`sgdb:v1:...`) can't be
-  recovered and is cleared automatically instead of being sent as an API key
-  by mistake.
-
-#### Documentation
-
-`HISTORY.md`, `HISTORY_ADD.md` and `HISTORY_REMOVE.md` are frozen as of this
-version — the overlap with this very `CHANGELOG.md` had become nearly total.
-They're kept as a record of the fork's initial cleanup; history from here on
-lives here only.
-
-#### Test coverage
-
-232 → 237 tests. Adds the leftover-encrypted-key mutation-checked regression
-guard (verified by breaking the code on purpose and confirming the matching
-test fails).
-
-### Verificación / Verification
-
-```
-codecheck: 0 errors
-lint:      0 errors (683 warnings)
-tests:     237/237 (31 suites)
-i18n --ci: sin cambios / no changes
 ```
 
 ---
