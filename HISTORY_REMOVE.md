@@ -1138,3 +1138,28 @@ usuario no podía desactivarlo.
 - `jest-environment-jsdom`, `@testing-library/jest-dom`, `@testing-library/react`: sin uso.
   El `jest.config.js` raíz solo declara `projects: ['<rootDir>/src/backend']` — nunca hubo
   un proyecto de Jest para frontend, ni tests de componentes que las necesitaran.
+
+---
+
+## `safeStorage` de la API key de SteamGridDB (v0.6.1, Ago 2026)
+
+Probado en máquina real: `safeStorage.isEncryptionAvailable()` daba `false` con y sin
+`--password-store` forzado (`basic`, `gnome-libsecret`, `kwallet6`, `detect`), pese a que
+D-Bus funcionaba correctamente — el problema es que `kwalletd6` fallaba al activarse a
+nivel de systemd en ese sistema, y no hay ningún modo de Electron verificado que evite
+depender de un keyring del sistema funcionando. Cada arranque dejaba el warning
+`safeStorage unavailable, storing SteamGridDB API key in plaintext`.
+
+- `src/backend/steamgrid/secureKey.ts` completo: `encryptApiKey`, `decryptApiKey`,
+  `isEncryptedValue`, y la dependencia de `electron.safeStorage`.
+- `steamgrid/ipc_handler.ts`: `migrateLegacyPlaintextKey()` (migraba de texto plano a
+  cifrado; ya no tiene sentido con el cifrado eliminado).
+
+### Se mantiene
+
+- Un guard mínimo para valores `sgdb:v1:...` que quedaron de la ventana en la que el
+  cifrado sí se intentaba: se detectan y se limpian (no se pueden recuperar sin
+  safeStorage), tanto en `ipc_handler.ts` (borra el valor guardado) como en
+  `relic/steamgrid/download.ts` (nunca los envía como API key a SteamGridDB).
+- El texto de ayuda en Settings ahora dice explícitamente que la key se guarda en texto
+  plano, igual que el resto de settings de Relic.

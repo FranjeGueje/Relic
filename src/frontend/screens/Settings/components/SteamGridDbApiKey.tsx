@@ -41,7 +41,7 @@ export default function SteamGridDbApiKey() {
           <span style={{ userSelect: 'text' }}>
             {t(
               'settings.steamgriddb.help.description',
-              'Provide your own SteamGridDB API key to enable game cover search. The key is stored encrypted when your system supports it. You can get one at {{url}}',
+              'Provide your own SteamGridDB API key to enable game cover search. The key is stored as plain text in your Relic config file, the same as your other settings. You can get one at {{url}}',
               { url }
             )}
           </span>

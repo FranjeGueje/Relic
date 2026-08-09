@@ -2,7 +2,6 @@ import { existsSync, mkdirSync } from 'fs'
 import { GameInfo } from 'common/types'
 import { GlobalConfig } from 'backend/config'
 import { downloadFile } from 'backend/utils'
-import { decryptApiKey } from '../../../steamgrid/secureKey'
 import { getUserdataInfo } from '../../steam_shortcuts/steam_helpers'
 import { searchGame, getGrids, getHeroes, getLogos, getIcons } from '../api'
 import { downloadGrids } from '../download'
@@ -22,9 +21,6 @@ jest.mock('backend/config', () => ({
 jest.mock('backend/utils', () => ({
   downloadFile: jest.fn()
 }))
-jest.mock('../../../steamgrid/secureKey', () => ({
-  decryptApiKey: jest.fn()
-}))
 jest.mock('../../steam_shortcuts/steam_helpers', () => ({
   getUserdataInfo: jest.fn()
 }))
@@ -40,7 +36,6 @@ const mockedExistsSync = jest.mocked(existsSync)
 const mockedMkdirSync = jest.mocked(mkdirSync)
 const mockedGlobalConfig = jest.mocked(GlobalConfig)
 const mockedDownloadFile = jest.mocked(downloadFile)
-const mockedDecryptApiKey = jest.mocked(decryptApiKey)
 const mockedGetUserdataInfo = jest.mocked(getUserdataInfo)
 const mockedSearchGame = jest.mocked(searchGame)
 const mockedGetGrids = jest.mocked(getGrids)
@@ -63,8 +58,7 @@ function setStoredApiKey(stored: string) {
 beforeEach(() => {
   jest.clearAllMocks()
 
-  setStoredApiKey('encrypted-key')
-  mockedDecryptApiKey.mockReturnValue('plain-key')
+  setStoredApiKey('plain-key')
   mockedGetUserdataInfo.mockReturnValue({
     userdataDir: '/steam/userdata',
     folders: ['123456']
@@ -89,17 +83,19 @@ describe('downloadGrids - api key', () => {
     expect(mockedSearchGame).not.toHaveBeenCalled()
   })
 
-  test('does nothing when the stored key fails to decrypt', async () => {
-    mockedDecryptApiKey.mockReturnValue('')
+  test('does nothing when the stored value is a leftover encrypted key', async () => {
+    // Regression guard: v0.6.0 briefly encrypted this with safeStorage,
+    // prefixing the value with "sgdb:v1:". That value is unusable as an API
+    // key and must never be sent to SteamGridDB as one.
+    setStoredApiKey('sgdb:v1:garbage-ciphertext')
 
     await expect(downloadGrids(gameInfo, 42)).resolves.toBe(false)
     expect(mockedSearchGame).not.toHaveBeenCalled()
   })
 
-  test('searches with the decrypted key, never the stored one', async () => {
+  test('searches with the stored key as-is', async () => {
     await downloadGrids(gameInfo, 42)
 
-    expect(mockedDecryptApiKey).toHaveBeenCalledWith('encrypted-key')
     expect(mockedSearchGame).toHaveBeenCalledWith('plain-key', 'Beat Cop')
   })
 })

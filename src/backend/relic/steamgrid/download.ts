@@ -4,7 +4,6 @@ import { join } from 'path'
 import { logError, logInfo } from 'backend/logger'
 import { GlobalConfig } from 'backend/config'
 import { downloadFile } from 'backend/utils'
-import { decryptApiKey } from '../../steamgrid/secureKey'
 import { getUserdataInfo } from '../steam_shortcuts/steam_helpers'
 import { searchGame, getGrids, getHeroes, getLogos, getIcons } from './api'
 
@@ -41,9 +40,10 @@ export async function downloadGrids(
 
 function getApiKey(): string | null {
   const stored = GlobalConfig.get().getSettings().steamGridDbApiKey
-  if (!stored) return null
-  const apiKey = decryptApiKey(stored)
-  return apiKey || null
+  // A stray "sgdb:v1:..." value is a leftover from the brief window where
+  // this was encrypted (see steamgrid/ipc_handler.ts); it isn't a usable key.
+  if (!stored || stored.startsWith('sgdb:v1:')) return null
+  return stored
 }
 
 async function fetchGridImages(apiKey: string, gameId: number) {

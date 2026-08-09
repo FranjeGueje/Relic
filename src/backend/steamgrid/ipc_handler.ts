@@ -1,33 +1,30 @@
 import { GlobalConfig } from 'backend/config'
 import { addHandler } from 'backend/ipc'
-import { encryptApiKey, isEncryptedValue } from './secureKey'
+
+// v0.6.0 briefly tried to encrypt this key with Electron's safeStorage,
+// prefixing the stored value with "sgdb:v1:". That backend turned out to be
+// unreliable in practice — many Linux desktops have no working keyring daemon
+// (safeStorage.isEncryptionAvailable() was false even with every
+// --password-store override tried) — so the key is now always plain text in
+// config.json, like every other setting Relic persists. A value still
+// carrying that prefix can't be recovered here; it's cleared once so the user
+// re-pastes their key.
+const LEGACY_ENCRYPTED_PREFIX = 'sgdb:v1:'
 
 function readStoredApiKey(): string {
   const stored: string = GlobalConfig.get().getSettings().steamGridDbApiKey
-  return stored ?? ''
-}
+  if (!stored) return ''
 
-// Encrypt a key stored before encryption was introduced. `decryptApiKey` reads
-// plaintext fine, so this is only an upgrade, never a requirement.
-function migrateLegacyPlaintextKey(): void {
-  const stored = readStoredApiKey()
-  if (!stored || isEncryptedValue(stored)) return
-
-  const reEncrypted = encryptApiKey(stored)
-  if (isEncryptedValue(reEncrypted)) {
-    GlobalConfig.get().setSetting('steamGridDbApiKey', reEncrypted)
+  if (stored.startsWith(LEGACY_ENCRYPTED_PREFIX)) {
+    GlobalConfig.get().setSetting('steamGridDbApiKey', '')
+    return ''
   }
+
+  return stored
 }
 
-addHandler('steamgriddb.hasApiKey', () => {
-  // Settings calls this on mount, so it is the read path where the migration
-  // can still happen now that the manual cover picker is gone.
-  migrateLegacyPlaintextKey()
-  return !!readStoredApiKey()
-})
+addHandler('steamgriddb.hasApiKey', () => !!readStoredApiKey())
 
 addHandler('steamgriddb.setApiKey', (event, key) => {
-  const trimmed = key.trim()
-  const stored = trimmed ? encryptApiKey(trimmed) : ''
-  GlobalConfig.get().setSetting('steamGridDbApiKey', stored)
+  GlobalConfig.get().setSetting('steamGridDbApiKey', key.trim())
 })
