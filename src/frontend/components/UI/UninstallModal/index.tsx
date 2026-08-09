@@ -51,6 +51,8 @@ const UninstallModal: React.FC<UninstallModalProps> = function ({
 
   useEffect(() => {
     void checkIfIsNative()
+    // checkIfIsNative is recreated every render; this should only run once on mount
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const storage: Storage = window.localStorage

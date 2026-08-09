@@ -47,6 +47,9 @@ const TextInputField = ({
       }
     }
     return
+    // `value` is intentionally excluded: re-running this on every keystroke would
+    // reset the DOM input's value/cursor position while the user is still typing
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [onChange])
 
   return (

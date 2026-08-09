@@ -19,11 +19,10 @@ const CHART_W = 100
 const CHART_H = 80
 
 function SpeedChart({ data }: { data: Point[] }) {
-  const maxVal = Math.max(1, ...data.map((p) => Math.max(p.download, p.disk)))
-  const toX = (i: number) => (i / (data.length - 1)) * CHART_W
-  const toY = (v: number) => CHART_H - (v / maxVal) * CHART_H
-
   const paths = useMemo(() => {
+    const maxVal = Math.max(1, ...data.map((p) => Math.max(p.download, p.disk)))
+    const toX = (i: number) => (i / (data.length - 1)) * CHART_W
+    const toY = (v: number) => CHART_H - (v / maxVal) * CHART_H
     const dl = data.map((p, i) => `${toX(i)},${toY(p.download)}`).join(' L')
     const disk = data.map((p, i) => `${toX(i)},${toY(p.disk)}`).join(' L')
     return {
@@ -68,19 +67,20 @@ export default function ProgressHeader(props: {
       return
     }
 
-    if (avgSpeed.length > sampleSize - 1) {
-      avgSpeed.shift()
-    }
-
-    avgSpeed.push({
-      download:
-        progress.downSpeed && progress.downSpeed > 0
-          ? progress.downSpeed
-          : (avgSpeed.at(-1)?.download ?? 0),
-      disk: progress.diskSpeed ?? 0
+    setAvgDownloadSpeed((prev) => {
+      const next = [...prev]
+      if (next.length > sampleSize - 1) {
+        next.shift()
+      }
+      next.push({
+        download:
+          progress.downSpeed && progress.downSpeed > 0
+            ? progress.downSpeed
+            : (next.at(-1)?.download ?? 0),
+        disk: progress.diskSpeed ?? 0
+      })
+      return next
     })
-
-    setAvgDownloadSpeed([...avgSpeed])
   }, [progress, props.state])
 
   return (

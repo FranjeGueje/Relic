@@ -108,6 +108,8 @@ export default function ControllerHints() {
     return () => {
       window.removeEventListener('focus', onFocusChanged)
     }
+    // setHints is recreated every render; this listener should only be (re)installed once
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   useEffect(() => {
@@ -120,6 +122,8 @@ export default function ControllerHints() {
 
     // check focused element after a page change
     setHints(document.querySelector<HTMLElement>(':focus'))
+    // setHints/t are recreated every render; only re-run this on navigation
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location])
 
   useEffect(() => {

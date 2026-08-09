@@ -59,7 +59,7 @@ export default React.memo(function Sidebar() {
       // handle navigate to screen
       navigate(screen, { state: { fromGameCard: false } })
     })
-  }, [])
+  }, [navigate])
 
   const handleDragStart = (e: React.MouseEvent<HTMLDivElement>) => {
     const isRTL = document.getElementById('app')?.classList.contains('isRTL')

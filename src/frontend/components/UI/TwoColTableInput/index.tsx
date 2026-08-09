@@ -83,7 +83,14 @@ export function TableInput({
         setValueError(valueError)
       }
     }
-  }, [newVarName, newVarValue])
+  }, [
+    newVarName,
+    newVarValue,
+    connector,
+    validation,
+    originalInputs.key,
+    originalInputs.value
+  ])
 
   function addRow(row: ColumnProps) {
     if (keyError) {

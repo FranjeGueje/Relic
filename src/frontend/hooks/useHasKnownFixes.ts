@@ -11,7 +11,7 @@ export const useHasKnownFixes = (appName: string, runner: Runner) => {
         console.log({ info })
         setKnownFixes(info)
       })
-  }, [appName])
+  }, [appName, runner])
 
   return knownFixes
 }

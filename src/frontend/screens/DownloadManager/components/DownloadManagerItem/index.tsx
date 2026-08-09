@@ -65,7 +65,7 @@ const DownloadManagerItem = ({
       }
     }
     void getNewInfo()
-  }, [element])
+  }, [element, maybeAppName, maybeRunner])
 
   const [progress] = useHasProgress(
     maybeAppName ?? '',

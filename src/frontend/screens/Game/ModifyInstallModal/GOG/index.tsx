@@ -136,7 +136,7 @@ export default function GOGModifyInstallModal({
       setSavedBranchPassword(branchPassword)
     }
     void get()
-  }, [])
+  }, [gameInfo.app_name])
 
   useEffect(() => {
     async function get() {
@@ -154,7 +154,13 @@ export default function GOGModifyInstallModal({
       setGameInstallInfo(installInfo)
     }
     void get()
-  }, [branch, savedBranchPassword])
+  }, [
+    branch,
+    savedBranchPassword,
+    gameInfo.app_name,
+    gameInfo.install.branch,
+    gameInfo.install.platform
+  ])
 
   useEffect(() => {
     if (gameInstallInfo && 'builds' in gameInstallInfo.manifest) {
@@ -176,7 +182,7 @@ export default function GOGModifyInstallModal({
         const newBuild = currentBuildInList
           ? gameInfo.install.buildId
           : newBuilds[0].build_id
-        setSelectedBuild(selectedBuild ? newBuild : undefined)
+        setSelectedBuild((prev) => (prev ? newBuild : undefined))
       }
       setBuilds(newBuilds)
     }
@@ -185,15 +191,13 @@ export default function GOGModifyInstallModal({
   useEffect(() => {
     if (gameInstallInfo) {
       if ('languages' in gameInstallInfo.manifest) {
-        setInstallLanguages(gameInstallInfo.manifest.languages.sort())
-        if (!gameInstallInfo.manifest.languages.includes(installLanguage)) {
-          setInstallLanguage(
-            getPreferredInstallLanguage(
-              gameInstallInfo.manifest.languages,
-              i18n.languages
-            )
-          )
-        }
+        const availableLanguages = gameInstallInfo.manifest.languages
+        setInstallLanguages(availableLanguages.sort())
+        setInstallLanguage((prev) =>
+          availableLanguages.includes(prev)
+            ? prev
+            : getPreferredInstallLanguage(availableLanguages, i18n.languages)
+        )
       }
 
       if ('branches' in gameInstallInfo.game) {
@@ -202,7 +206,7 @@ export default function GOGModifyInstallModal({
 
       setInstalledDlcs(gameInfo.install.installedDLCs || [])
     }
-  }, [gameInstallInfo, gameInfo.install])
+  }, [gameInstallInfo, gameInfo.install, i18n.languages])
 
   // Mods
   useEffect(() => {
@@ -225,6 +229,11 @@ export default function GOGModifyInstallModal({
       }
     }
     void get()
+    // intentionally excludes enabledModsList: this fetches and sorts the
+    // available mods once when redModInstalled becomes true, using whatever
+    // enabledModsList held at that moment -- it must not re-fetch every time
+    // the user toggles a mod (which updates enabledModsList)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [redModInstalled])
 
   const DLCList = gameInstallInfo?.game.owned_dlc || []

@@ -46,7 +46,7 @@ export function ProgressDialog(props: {
     if (logRef.current) {
       logRef.current.addEventListener('scroll', onLogScroll)
     }
-  }, [logRef.current])
+  }, [])
 
   return (
     <>

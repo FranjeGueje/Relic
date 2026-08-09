@@ -43,7 +43,7 @@ export function useHasStatus(gameInfo: GameInfo, gameSize?: string) {
       }
     }
     void getGameInfo()
-  }, [appName, gameInfo])
+  }, [appName, gameInfo, newGameInfo, runner])
 
   React.useEffect(() => {
     const checkGameStatus = async () => {
@@ -107,7 +107,13 @@ export function useHasStatus(gameInfo: GameInfo, gameSize?: string) {
     epic.library,
     gog.library,
     is_installed,
-    progress.percent
+    progress.percent,
+    gameSize,
+    isEAManaged,
+    isUbisoftManaged,
+    runner,
+    t,
+    thirdPartyManagedApp
   ])
 
   return gameStatus

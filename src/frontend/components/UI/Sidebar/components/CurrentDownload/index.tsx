@@ -30,7 +30,7 @@ export default React.memo(function CurrentDownload({ appName, runner }: Props) {
       setGameTitle(title)
     }
     void getGameTitle()
-  }, [appName])
+  }, [appName, runner])
 
   function getStatus() {
     return progress.percent && progress.percent > 98

@@ -17,5 +17,8 @@ export const useHasHelp = (
     return () => {
       help.removeHelpItem(helpItemId)
     }
+    // intentionally mount/unmount-only: `content` is a JSX element, a new
+    // reference every render, which would otherwise churn the help item
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 }

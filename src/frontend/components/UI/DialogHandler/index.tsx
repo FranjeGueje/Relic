@@ -23,7 +23,7 @@ export default function DialogHandler() {
     return () => {
       removeHandleShowDialogListener()
     }
-  }, [])
+  }, [showDialogModal])
 
   return (
     <>

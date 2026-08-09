@@ -19,6 +19,9 @@ export function useAwaited<T>(
         // requesting it no longer exists
       }
     }
+    // intentionally mount-only: callers may pass a new `getter` closure every
+    // render, and this hook is meant to fetch once, not on every render
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return value

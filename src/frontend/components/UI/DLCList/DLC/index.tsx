@@ -42,7 +42,7 @@ const DLC = ({ dlc, runner, mainAppInfo, onClose }: Props) => {
       setDlcInfo(info)
     }
     void checkInstalled()
-  }, [dlc, runner])
+  }, [dlc, runner, app_name])
 
   useEffect(() => {
     setRefreshing(true)
@@ -62,7 +62,7 @@ const DLC = ({ dlc, runner, mainAppInfo, onClose }: Props) => {
       setRefreshing(false)
     }
     void getDlcSize()
-  }, [dlc, runner])
+  }, [dlc, runner, app_name, mainAppInfo.install.platform])
 
   const currentApp = libraryStatus.find((app) => app.appName === app_name)
   const isInstalling = currentApp?.status === 'installing'

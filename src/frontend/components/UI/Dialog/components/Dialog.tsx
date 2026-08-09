@@ -50,6 +50,8 @@ export const Dialog: React.FC<DialogProps> = ({
     void window.api.gamepadAction({ action: 'tab' })
     // Second tab to skip the close button if it's shown
     if (showCloseButton) void window.api.gamepadAction({ action: 'tab' })
+    // intentionally mount-only: focus the dialog once when it opens
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const close = useCallback(() => {
