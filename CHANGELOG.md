@@ -115,17 +115,25 @@ se re-verificó arranque a arranque hasta confirmar el efecto:
 
 #### Empaquetado
 
-- **AppImage: 209 MB → 163 MB.** `node_modules/**/*` empaquetaba también las
-  dependencias exclusivas del renderer (React, MUI, FontAwesome, react-router…)
-  pese a que el renderer ya es un bundle autocontenido de Vite que nunca las toca
-  en runtime — solo main/preload necesitan `node_modules` real. Se excluyeron 34
-  paquetes (53 con transitivos) calculados con el cierre real de
-  `pnpm list --prod --depth=Infinity` cruzado contra los `require()` literales del
-  bundle compilado, no por nombre a ojo: `@babel/runtime` y `lodash` parecían
+- **AppImage: 209 MB → 203 MB, sin pagar el coste de arranque.**
+  `node_modules/**/*` empaquetaba también las dependencias exclusivas del
+  renderer (React, MUI, FontAwesome, react-router…) pese a que el renderer ya
+  es un bundle autocontenido de Vite que nunca las toca en runtime — solo
+  main/preload necesitan `node_modules` real. Se excluyeron 34 paquetes (53 con
+  transitivos) calculados con el cierre real de `pnpm list --prod
+--depth=Infinity` cruzado contra los `require()` literales del bundle
+  compilado, no por nombre a ojo: `@babel/runtime` y `lodash` parecían
   candidatos pero los necesita el backend de verdad (transitivos de
-  `easydl`/`steam-shortcut-editor`) y se quedaron. Más `compression: maximum`.
-  Verificado con un `pnpm dist:linux` completo y arrancando el binario empaquetado
-  hasta "Frontend Ready" sin errores de módulo.
+  `easydl`/`steam-shortcut-editor`) y se quedaron. Verificado con un
+  `pnpm dist:linux` completo y arrancando el binario empaquetado hasta
+  "Frontend Ready" sin errores de módulo.
+- **`compression: maximum` probado y revertido.** Bajaba el AppImage a 170 MB,
+  pero un usuario reportó arranques muy lentos. Medido: extraer el squashfs
+  tarda 11.7 s con `maximum` frente a 1.3 s con el valor por defecto — casi 9×
+  más lento. Un AppImage se monta vía FUSE y descomprime bajo demanda **en
+  cada arranque**, no se instala a disco una sola vez como un `.deb`, así que
+  el coste de una compresión agresiva se paga siempre, no una vez. Mala
+  relación esfuerzo/beneficio frente al ahorro de descarga.
 
 #### Simplificación (~2.500 líneas fuera)
 
@@ -287,18 +295,25 @@ re-verified boot after boot until the effect was confirmed:
 
 #### Packaging
 
-- **AppImage: 209 MB → 163 MB.** `node_modules/**/*` also packaged
-  renderer-only dependencies (React, MUI, FontAwesome, react-router…) even
-  though the renderer is already a self-contained Vite bundle that never
-  touches them at runtime — only main/preload need real `node_modules`. 34
-  packages excluded (53 with transitives), computed from the real closure of
-  `pnpm list --prod --depth=Infinity` cross-checked against the literal
-  `require()` calls in the built bundle, not guessed by name:
-  `@babel/runtime` and `lodash` looked like candidates but are genuine backend
-  transitives (pulled in by `easydl`/`steam-shortcut-editor`) and stayed. Plus
-  `compression: maximum`. Verified with a full `pnpm dist:linux` and by
-  launching the packaged binary through to "Frontend Ready" with no module
-  errors.
+- **AppImage: 209 MB → 203 MB, without paying for it at startup.**
+  `node_modules/**/*` also packaged renderer-only dependencies (React, MUI,
+  FontAwesome, react-router…) even though the renderer is already a
+  self-contained Vite bundle that never touches them at runtime — only
+  main/preload need real `node_modules`. 34 packages excluded (53 with
+  transitives), computed from the real closure of `pnpm list --prod
+--depth=Infinity` cross-checked against the literal `require()` calls in
+  the built bundle, not guessed by name: `@babel/runtime` and `lodash` looked
+  like candidates but are genuine backend transitives (pulled in by
+  `easydl`/`steam-shortcut-editor`) and stayed. Verified with a full
+  `pnpm dist:linux` and by launching the packaged binary through to
+  "Frontend Ready" with no module errors.
+- **`compression: maximum` tried and reverted.** It brought the AppImage down
+  to 170 MB, but a user reported very slow startups. Measured: extracting the
+  squashfs takes 11.7s with `maximum` versus 1.3s with the default — nearly
+  9x slower. An AppImage mounts via FUSE and decompresses on demand **on
+  every launch**, unlike a `.deb` that installs to disk once, so an
+  aggressive compression level is paid every time, not once. A bad trade for
+  the download-size saving.
 
 #### Simplification (~2,500 lines removed)
 
@@ -357,7 +372,7 @@ codecheck: 0 errors
 lint:      0 errors (683 warnings)
 tests:     232/232 (30 suites)
 i18n --ci: sin cambios / no changes
-build:     OK (pnpm dist:linux, AppImage 163 MB, arranque real verificado)
+build:     OK (pnpm dist:linux, AppImage 203 MB, arranque real verificado)
 ```
 
 ---

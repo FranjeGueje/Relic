@@ -1,6 +1,5 @@
 appId: io.github.relic
 productName: Relic
-compression: maximum
 files:
   - build/**/*
   - node_modules/**/*
