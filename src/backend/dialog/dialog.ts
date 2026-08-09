@@ -41,7 +41,7 @@ function showDialogBoxModalAuto(props: {
           if (!window) {
             break
           }
-          dialog.showMessageBox(window, {
+          void dialog.showMessageBox(window, {
             title: props.title,
             message: props.message,
             buttons: props.buttons?.map((button) => button.text) || []

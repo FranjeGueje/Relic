@@ -93,7 +93,7 @@ const contextMenu = (mainWindow: BrowserWindow, recentGames: RecentGame[]) => {
     },
     {
       click: function () {
-        handleExit()
+        void handleExit()
       },
       label: i18next.t('tray.quit', 'Quit'),
       accelerator: 'Ctrl+Q'

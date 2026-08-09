@@ -176,7 +176,7 @@ class GameConfigV0 extends GameConfig {
 
   constructor(appName: string) {
     super(appName)
-    this.load()
+    void this.load()
   }
 
   public upgrade() {

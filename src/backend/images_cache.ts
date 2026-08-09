@@ -4,6 +4,7 @@ import { join } from 'path'
 import axios from 'axios'
 import { protocol } from 'electron'
 import { appFolder } from './constants/paths'
+import { logError, LogPrefix } from './logger'
 
 const imagesCachePath = join(appFolder, 'images-cache')
 
@@ -42,6 +43,12 @@ const getImageFromCache = (url: string) => {
           responseType: 'stream'
         })
           .then((response) => response.data.pipe(createWriteStream(cachePath)))
+          .catch((error: unknown) =>
+            logError(
+              `Failed to cache image ${realUrl}: ${error}`,
+              LogPrefix.Backend
+            )
+          )
           .finally(() => {
             pending.delete(digest)
             res()

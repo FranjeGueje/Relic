@@ -93,7 +93,7 @@ export async function checkForRedistUpdates() {
   if (!shouldUpdate) {
     return
   }
-  pushRedistUpdateToQueue()
+  void pushRedistUpdateToQueue()
 }
 
 async function pushRedistUpdateToQueue() {
