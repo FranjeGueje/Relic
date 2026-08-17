@@ -1,12 +1,12 @@
 import { existsSync, mkdirSync, rmSync, symlinkSync, unlinkSync } from 'fs'
 import { dirname, join } from 'path'
-import { logInfo, logError } from 'backend/logger'
+import { logInfo, logError, logWarning } from 'backend/logger'
 import { relicMountPath, relicGamesPath } from 'backend/constants/paths'
 import { getSteamPath } from './steam_shortcuts/steam_helpers'
 import { createGameSymlink } from './steam_shortcuts/add_game'
 import { GlobalConfig } from 'backend/config'
 import { getUmuStoreLabel, searchUmuGameId, launchUmu } from './umu'
-import { windowify } from './windowify'
+import { windowify, EOS_OVERLAY_BAT } from './windowify'
 import { GameInfo } from 'common/types'
 
 const LOG_PREFIX = 'Relic'
@@ -150,6 +150,11 @@ export async function prepareUmuPrefix(
     String(steamAppId)
   )
 
+  // `exit` is not a real executable: it is a deliberate trick to make proton
+  // initialise the prefix and quit right away, used for every store. umu warns
+  // ("Executable not found: exit") and returns 1 even when the prefix was
+  // created just fine, so this exit code says nothing about whether it worked —
+  // never gate anything on it.
   const result = await launchUmu({
     winePrefix,
     gameId,
@@ -158,14 +163,51 @@ export async function prepareUmuPrefix(
     executable: 'exit'
   })
 
-  if (result.success) {
-    logInfo(
-      `UMU prefix prepared for "${gameInfo.title}" (GAMEID=${gameId})`,
+  logInfo(
+    `UMU prefix prepared for "${gameInfo.title}" (GAMEID=${gameId})` +
+      (result.success ? '' : `; umu output: ${result.error}`),
+    LOG_PREFIX
+  )
+
+  await installEosOverlay(gameInfo, {
+    winePrefix,
+    gameId,
+    protonPath,
+    store: storeLabel
+  })
+}
+
+/**
+ * Installs the EOS Overlay into a freshly created prefix. Epic-only, and never
+ * fatal: a failing overlay must not keep the game from reaching Steam.
+ */
+async function installEosOverlay(
+  gameInfo: GameInfo,
+  umuOptions: {
+    winePrefix: string
+    gameId: string
+    protonPath: string
+    store: string
+  }
+): Promise<void> {
+  if (gameInfo.runner !== 'legendary') return
+
+  const batPath = join(relicMountPath, EOS_OVERLAY_BAT)
+  if (!existsSync(batPath)) {
+    logWarning(
+      `EOS Overlay script not found at ${batPath}, skipping overlay setup`,
       LOG_PREFIX
     )
+    return
+  }
+
+  const result = await launchUmu({ ...umuOptions, executable: batPath })
+
+  if (result.success) {
+    logInfo(`EOS Overlay set up for "${gameInfo.title}"`, LOG_PREFIX)
   } else {
-    logInfo(
-      `UMU prefix failed for "${gameInfo.title}": ${result.error}`,
+    logWarning(
+      `EOS Overlay setup failed for "${gameInfo.title}": ${result.error}`,
       LOG_PREFIX
     )
   }

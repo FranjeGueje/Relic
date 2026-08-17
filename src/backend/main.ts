@@ -101,7 +101,7 @@ import {
   webviewPreloadPath,
   windowIcon
 } from './constants/paths'
-import { syncMountBin } from './relic/windowify'
+import { syncMountBin, createEosOverlayBat } from './relic/windowify'
 import { onGameRepaired } from './relic/game_events'
 import { supportedLanguages } from 'common/languages'
 import MigrationSystem from './migration'
@@ -236,6 +236,7 @@ if (!gotTheLock) {
       initLogger()
 
       syncMountBin()
+      createEosOverlayBat()
 
       await MigrationSystem.get().applyMigrations()
 

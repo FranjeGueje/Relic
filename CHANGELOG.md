@@ -1,5 +1,209 @@
 # Changelog
 
+## 0.6.2 — Helper Binaries Refresh
+
+### Español
+
+#### Añadido
+
+- **EOS Overlay en los prefijos de los juegos de Epic.** Tras crear el prefijo
+  con `umu-run`, Relic lanza por el mismo camino `c:\relic\eos-overlay.bat`, que
+  instala y activa el overlay de Epic Online Services dentro de ese prefijo. El
+  bat se genera al arrancar Relic (junto a `syncMountBin()`) en
+  `~/.local/share/relic/mount/eos-overlay.bat`, así que existe siempre, y el
+  overlay se descarga una sola vez a `c:\relic\eos`, compartido por todos los
+  prefijos.
+- El bat ejecuta **tres** acciones, no dos: `install`, `update` y `enable`.
+  Leyendo `manage_eos_overlay()` en el `cli.py` de legendary, `install` y
+  `update` cortan con "up to date, nothing to do" en cuanto el overlay consta
+  instalado — y ese estado vive en `LEGENDARY_CONFIG_PATH`, que Relic comparte
+  entre todos los prefijos vía el mount. Es decir: funcionan en el primer juego
+  de Epic y, del segundo en adelante, salen antes de escribir el registro del
+  prefijo nuevo y dejan el overlay inactivo. `enable` es la acción que lo
+  escribe explícitamente, y es idempotente. Hay un test de regresión sobre esa
+  línea concreta (verificado borrándola y confirmando que el test falla).
+- Un fallo del overlay **no** aborta la instalación: se registra como aviso y el
+  juego llega a Steam igual.
+- Ojo al tocar `prepareUmuPrefix()`: el prefijo se crea lanzando `umu-run exit`,
+  y `exit` **no es un ejecutable** — es un truco para que proton inicialice el
+  prefijo y termine, y se usa para todas las tiendas. umu avisa
+  ("Executable not found: exit") y devuelve código 1 **siempre**, aunque el
+  prefijo se haya creado bien. Ese código no dice nada sobre si funcionó, así que
+  no se puede condicionar nada a él. El log de ese paso ya no lo llama "failed";
+  adjunta la salida de umu solo como información de diagnóstico. Hay un test de
+  regresión que comprueba que el overlay se ejecuta pese al código de salida.
+
+#### Cambiado
+
+- **legendary sube de `0.20.43` a `0.21.0`, y pasa a descargarse del repo
+  upstream `legendary-gl/legendary` en vez del fork
+  `Heroic-Games-Launcher/legendary`.** El fork de Heroic sigue congelado en
+  `0.20.43`, mientras que upstream (que se movió de `derrod/legendary` a
+  `legendary-gl/legendary`) ya publica la 0.21.0. Los nombres de los assets
+  cambian en x64 — `legendary_linux_x86_64` → `legendary_linux_x64` y
+  `legendary_windows_x86_64.exe` → `legendary_windows_x64.exe` —; los de arm64
+  se mantienen.
+- **Eliminado `--accept-path` del tipo `SyncSavesCommand`.** Comparando todos los
+  flags que declara Relic contra el `--help` real de legendary 0.21.0, era el
+  único exclusivo del fork de Heroic; además era código muerto (declarado en el
+  tipo, nunca pasado). El resto de flags y todos los subcomandos que usa Relic
+  (`auth`, `cleanup`, `egl-sync`, `import`, `info`, `install`, `launch`, `list`,
+  `move`, `status`, `sync-saves`, `uninstall`) existen en 0.21.0.
+- **gogdl sube de `v1.2.2` a `v1.3.0`.** La release trae fallbacks de CDN,
+  arreglo de conexiones IPv6 y timeouts, y estabilidad general de descarga —
+  justo el área donde Relic arrastraba fallos (los errores de descarga y
+  credenciales GOG parcheados en 0.5.3 y 0.5.4). Mismo repo
+  (`Heroic-Games-Launcher/heroic-gogdl`) y mismos nombres de assets, así que es
+  solo el cambio de tag. Sus flags también se diffearon contra el binario nuevo,
+  sin diferencias.
+- **`umu-run` pasa a descargarlo `meta/downloadHelperBinaries.ts`, como el resto
+  de binarios auxiliares.** Era la única excepción: un blob de 419 KB commiteado
+  a mano en `public/bin/umu/`, sin versión declarada en ningún sitio y sin forma
+  de saber si estaba desfasado — algo que salió a la luz justo al revisar el
+  resto de versiones. Ahora tiene su entrada en `RELEASE_TAGS` (`umu: '1.4.4'`,
+  de `Open-Wine-Components/umu-launcher`; ojo, sus tags **no** llevan prefijo
+  `v`) y se actualiza igual que los demás. El fichero se descarga del zipapp
+  oficial `umu-launcher-<ver>-zipapp.tar`, que ya trae dentro el prefijo `umu/`
+  con el binario y el symlink `umu_run.py`, así que se extrae sobre
+  `public/bin/` y reproduce la estructura existente tal cual. El binario
+  resultante es **idéntico** al que había, mismo sha256 (`d0005a58…`): el que
+  estaba commiteado ya era exactamente la 1.4.4. Es un cambio de **gestión**, no
+  de comportamiento — `getUmuPath()` sigue mirando la misma ruta y
+  `electron-builder.yml` sigue empaquetando `build/bin/umu/*` sin tocar nada.
+- **`umu-run` y `umu_run.py` salen del control de versiones** (añadidos a
+  `public/bin/.gitignore` y desvinculados con `git rm --cached`), igual que
+  legendary, gogdl, nile y comet. Deja de meterse un blob de 419 KB en el
+  historial en cada actualización de umu.
+- **El runner `.bat` de Epic ejecuta `legendary status` en vez de
+  `legendary --version`** antes de lanzar el juego. Deja en la consola el estado
+  de la cuenta y de la instalación, no solo el número de versión.
+- **Revisado el resto de binarios auxiliares; ninguno tenía versión nueva.**
+  `nile` (v1.2.0), `comet` (v0.3.2) y `epic-integration` (v0.4) ya estaban en su
+  última release. `zoom-platform` no está versionado — se descarga siempre desde
+  `zoom-platform.sh`, y su "tag" solo sirve de cache-buster local.
+
+Todos los bumps se propagan solos: `meta/downloadHelperBinaries.ts` compara
+`RELEASE_TAGS` contra `public/bin/.release_tags` y re-descarga lo que haga falta
+en el siguiente build.
+
+#### Corregido
+
+- **El fallback de caché corrupta en `compareDownloadedTags()` se olvidaba de
+  binarios.** Si `public/bin/.release_tags` no era JSON válido, devolvía una
+  lista escrita a mano que omitía `zoom-platform` — y habría omitido también
+  `umu`. Ahora deriva la lista de `RELEASE_TAGS`, así que no puede volver a
+  desincronizarse al añadir un binario.
+
+### English
+
+#### Added
+
+- **EOS Overlay in Epic game prefixes.** Once the prefix is created with
+  `umu-run`, Relic runs `c:\relic\eos-overlay.bat` through the same path, which
+  installs and enables the Epic Online Services overlay inside that prefix. The
+  script is generated at startup (next to `syncMountBin()`) at
+  `~/.local/share/relic/mount/eos-overlay.bat`, so it always exists, and the
+  overlay itself is downloaded once into `c:\relic\eos`, shared by every prefix.
+- The script runs **three** actions, not two: `install`, `update` and `enable`.
+  Reading `manage_eos_overlay()` in legendary's `cli.py`, `install` and `update`
+  bail out with "up to date, nothing to do" as soon as the overlay is recorded as
+  installed — and that state lives in `LEGENDARY_CONFIG_PATH`, which Relic shares
+  across every prefix through the mount. So they work for the first Epic game
+  and, from the second onwards, return before writing the new prefix's registry,
+  leaving the overlay inactive. `enable` is the action that writes it explicitly,
+  and it's idempotent. There's a regression test on that specific line (verified
+  by deleting it and confirming the test fails).
+- An overlay failure does **not** abort the install: it's logged as a warning and
+  the game still reaches Steam.
+- Careful when touching `prepareUmuPrefix()`: the prefix is created by running
+  `umu-run exit`, and `exit` is **not an executable** — it's a trick to make
+  proton initialise the prefix and quit, used for every store. umu warns
+  ("Executable not found: exit") and returns code 1 **always**, even when the
+  prefix was created just fine. That code says nothing about whether it worked,
+  so nothing may be gated on it. The log for that step no longer calls it
+  "failed"; it attaches umu's output purely as diagnostics. A regression test
+  asserts the overlay still runs regardless of that exit code.
+
+#### Changed
+
+- **legendary bumped from `0.20.43` to `0.21.0`, now downloaded from the
+  upstream `legendary-gl/legendary` repo instead of the
+  `Heroic-Games-Launcher/legendary` fork.** Heroic's fork is stuck at `0.20.43`,
+  while upstream (moved from `derrod/legendary` to `legendary-gl/legendary`)
+  ships 0.21.0. The x64 asset names changed —
+  `legendary_linux_x86_64` → `legendary_linux_x64` and
+  `legendary_windows_x86_64.exe` → `legendary_windows_x64.exe`; arm64 names are
+  unchanged.
+- **Dropped `--accept-path` from the `SyncSavesCommand` type.** Diffing every
+  flag Relic declares against legendary 0.21.0's actual `--help`, it was the only
+  Heroic-fork-exclusive one, and it was dead code anyway (declared in the type,
+  never passed). Every other flag and every subcommand Relic uses (`auth`,
+  `cleanup`, `egl-sync`, `import`, `info`, `install`, `launch`, `list`, `move`,
+  `status`, `sync-saves`, `uninstall`) exists in 0.21.0.
+- **gogdl bumped from `v1.2.2` to `v1.3.0`.** The release brings CDN fallbacks,
+  an IPv6-connection and timeout fix, and general download stability — exactly
+  the area Relic had been hitting bugs in (the GOG download and credential
+  failures patched in 0.5.3 and 0.5.4). Same repo
+  (`Heroic-Games-Launcher/heroic-gogdl`) and same asset names, so it's just the
+  tag change. Its flags were diffed against the new binary too, with no
+  differences.
+- **`umu-run` is now downloaded by `meta/downloadHelperBinaries.ts`, like every
+  other helper binary.** It was the one exception: a hand-committed 419 KB blob
+  under `public/bin/umu/`, with its version recorded nowhere and no way to tell
+  whether it had fallen behind — which surfaced while checking all the other
+  versions. It now has a `RELEASE_TAGS` entry (`umu: '1.4.4'`, from
+  `Open-Wine-Components/umu-launcher`; note its tags carry **no** `v` prefix) and
+  updates like the rest. It's fetched from the official
+  `umu-launcher-<ver>-zipapp.tar`, which already contains the `umu/` prefix with
+  the binary and the `umu_run.py` symlink, so extracting it over `public/bin/`
+  reproduces the existing layout exactly. The resulting binary is **identical**
+  to the previous one, same sha256 (`d0005a58…`): the committed copy was already
+  exactly 1.4.4. This is a **management** change, not a behavioural one —
+  `getUmuPath()` still looks at the same path and `electron-builder.yml` still
+  packages `build/bin/umu/*` untouched.
+- **`umu-run` and `umu_run.py` are out of version control** (added to
+  `public/bin/.gitignore` and untracked via `git rm --cached`), matching
+  legendary, gogdl, nile and comet. No more 419 KB blob entering history on every
+  umu update.
+- **The Epic `.bat` runner now runs `legendary status` instead of
+  `legendary --version`** before launching the game, leaving account and install
+  state in the console rather than just a version number.
+- **Checked every other helper binary; none had a newer version.** `nile`
+  (v1.2.0), `comet` (v0.3.2) and `epic-integration` (v0.4) were already on their
+  latest release. `zoom-platform` isn't versioned at all — it's always fetched
+  from `zoom-platform.sh`, and its "tag" is only a local cache-buster.
+
+Every bump propagates on its own: `meta/downloadHelperBinaries.ts` compares
+`RELEASE_TAGS` against `public/bin/.release_tags` and re-downloads whatever
+changed on the next build.
+
+#### Fixed
+
+- **The corrupted-cache fallback in `compareDownloadedTags()` was missing
+  binaries.** If `public/bin/.release_tags` wasn't valid JSON, it returned a
+  hand-written list that left out `zoom-platform` — and would have left out `umu`
+  too. It now derives the list from `RELEASE_TAGS`, so it can't drift again when
+  a binary is added.
+
+### Verificación / Verification
+
+```
+codecheck: 0 errors
+lint:      0 errors (371 warnings)
+tests:     247/247 (31 suites)
+flags:     --help de legendary 0.21.0 y gogdl 1.3.0 diffeado contra los flags
+           que declara Relic / legendary 0.21.0 and gogdl 1.3.0 --help diffed
+           against every flag Relic declares
+descarga:  public/bin/umu y .release_tags borrados y re-descargados desde cero;
+           sha256 de umu-run idéntico al binario que estaba commiteado, symlink
+           y permisos 755 intactos / public/bin/umu and .release_tags wiped and
+           re-downloaded from scratch; umu-run sha256 identical to the
+           previously committed binary, symlink and 755 mode intact
+versiones: legendary 0.21.0, gogdl 1.3.0, umu-run 1.4.4
+```
+
+---
+
 ## 0.6.1 — SteamGridDB Plaintext Storage & History Freeze
 
 ### Español

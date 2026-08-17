@@ -29,7 +29,8 @@ jest.mock('../umu', () => ({
 }))
 
 jest.mock('../windowify', () => ({
-  windowify: jest.fn()
+  windowify: jest.fn(),
+  EOS_OVERLAY_BAT: 'eos-overlay.bat'
 }))
 
 jest.mock('../steam_shortcuts/add_game', () => ({
@@ -221,5 +222,113 @@ describe('preparePrefix', () => {
     )
 
     expect(windowify).toHaveBeenCalled()
+  })
+})
+
+const PREFIX_EXIT_RESULT = {
+  success: false,
+  error: 'umu-run exited with code 1: WARNING: Executable not found: exit'
+}
+
+describe('EOS Overlay setup', () => {
+  let launchUmu: jest.Mock
+  let logWarning: jest.Mock
+
+  beforeEach(() => {
+    const umu = require('../umu')
+    jest.mocked(umu.getUmuStoreLabel).mockReturnValue('egs')
+    jest.mocked(umu.searchUmuGameId).mockResolvedValue('12345')
+    launchUmu = jest.mocked(umu.launchUmu)
+    // What umu really returns: the prefix call runs `exit`, which is not an
+    // executable, so it always comes back non-zero. The overlay call that
+    // follows runs a real script and can succeed.
+    launchUmu.mockResolvedValue({ success: true })
+    launchUmu.mockResolvedValueOnce(PREFIX_EXIT_RESULT)
+
+    logWarning = jest.mocked(require('backend/logger').logWarning)
+
+    // the overlay script is in place
+    mockedExistsSync.mockReturnValue(true)
+  })
+
+  async function prepare(runner: string) {
+    const { preparePrefix } = freshPrefix()
+    await preparePrefix(
+      { title: 'Game', app_name: 'app', runner } as never,
+      777,
+      '/games/game'
+    )
+  }
+
+  test('legendary: runs the overlay script through umu after creating the prefix', async () => {
+    await prepare('legendary')
+
+    expect(launchUmu).toHaveBeenCalledTimes(2)
+    // first call creates the prefix, second one sets up the overlay
+    expect(launchUmu).toHaveBeenNthCalledWith(
+      1,
+      expect.objectContaining({ executable: 'exit' })
+    )
+    expect(launchUmu).toHaveBeenNthCalledWith(
+      2,
+      expect.objectContaining({
+        executable: '/mount/eos-overlay.bat',
+        winePrefix: '/steam/steamapps/compatdata/777',
+        gameId: '12345',
+        store: 'egs'
+      })
+    )
+  })
+
+  test.each(['gog', 'nile'])(
+    '%s: does not run the overlay script, it is Epic-only',
+    async (runner) => {
+      await prepare(runner)
+
+      expect(launchUmu).toHaveBeenCalledTimes(1)
+      expect(launchUmu).toHaveBeenCalledWith(
+        expect.objectContaining({ executable: 'exit' })
+      )
+    }
+  )
+
+  test('skips the overlay when the script is missing', async () => {
+    mockedExistsSync.mockReturnValue(false)
+
+    await prepare('legendary')
+
+    expect(launchUmu).toHaveBeenCalledTimes(1)
+    expect(logWarning).toHaveBeenCalledWith(
+      expect.stringContaining('EOS Overlay script not found'),
+      'Relic'
+    )
+  })
+
+  // Regression guard: `exit` is not a real executable, so the prefix call
+  // ALWAYS comes back with a non-zero code even on success. Gating the overlay
+  // on that code kills it on every single install.
+  test('runs the overlay even though the prefix call reports failure, which it always does', async () => {
+    await prepare('legendary')
+
+    expect(launchUmu).toHaveBeenCalledTimes(2)
+    expect(launchUmu).toHaveBeenNthCalledWith(
+      2,
+      expect.objectContaining({ executable: '/mount/eos-overlay.bat' })
+    )
+  })
+
+  test('a failing overlay is logged but does not throw, the game still reaches Steam', async () => {
+    // queued after the prefix call, so this is the overlay run
+    launchUmu.mockResolvedValueOnce({
+      success: false,
+      error: 'legendary.exe missing'
+    })
+
+    await expect(prepare('legendary')).resolves.toBeUndefined()
+
+    expect(logWarning).toHaveBeenCalledWith(
+      expect.stringContaining('EOS Overlay setup failed'),
+      'Relic'
+    )
   })
 })

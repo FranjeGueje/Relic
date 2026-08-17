@@ -34,6 +34,8 @@ import { createGameSymlink } from './steam_shortcuts/add_game'
 
 const LOG_PREFIX = 'Relic'
 
+export const EOS_OVERLAY_BAT = 'eos-overlay.bat'
+
 // ── Types and config ──
 
 type StoreConfig = {
@@ -192,6 +194,68 @@ export function syncMountBin(): void {
     `syncMountBin: ${files.length} ficheros, ${copied} copiados`,
     LOG_PREFIX
   )
+}
+
+/**
+ * Writes the EOS Overlay setup script into the mount root, so that inside any
+ * prefix it is reachable as `c:\relic\eos-overlay.bat`. Run once per prefix
+ * through umu-run, right after the prefix itself is created.
+ */
+export function createEosOverlayBat(): string {
+  mkdirSync(join(relicMountPath, 'eos'), { recursive: true })
+
+  const batPath = join(relicMountPath, EOS_OVERLAY_BAT)
+
+  const content = [
+    '@echo off',
+    'title Relic EOS Overlay',
+    '',
+    'echo Relic EOS Overlay setup',
+    'echo.',
+    '',
+    'rem ============================================================',
+    'rem Configuration',
+    'rem ============================================================',
+    '',
+    'set "RELIC=C:\\relic"',
+    '',
+    'set "LEGENDARY_CONFIG_PATH=%RELIC%\\Legendary"',
+    'set "PATH=%PATH%;%RELIC%\\bin"',
+    '',
+    'rem ============================================================',
+    'rem PRECHECKS',
+    'rem ============================================================',
+    '',
+    'if not exist "%RELIC%\\bin\\legendary.exe" (',
+    '    echo [ERROR]: legendary.exe not found.',
+    '    timeout /t 2 /nobreak >nul',
+    '    exit /b 1',
+    ')',
+    '',
+    'rem ============================================================',
+    'rem EOS OVERLAY',
+    'rem ============================================================',
+    '',
+    'rem install: downloads the overlay and, from inside the prefix, also',
+    'rem writes its registry entries',
+    'legendary -y eos-overlay install --path %RELIC%\\eos',
+    '',
+    'rem update: keeps the overlay current once it is already installed',
+    'legendary -y eos-overlay update --path %RELIC%\\eos',
+    '',
+    'rem enable: required on every new prefix. install/update bail out early',
+    'rem with "up to date, nothing to do" because that state lives in the',
+    'rem shared LEGENDARY_CONFIG_PATH, so they never reach the registry setup',
+    'rem for THIS prefix. enable writes it explicitly and is idempotent.',
+    'legendary eos-overlay enable --path %RELIC%\\eos',
+    '',
+    'exit /b 0'
+  ].join('\n')
+
+  writeFileSync(batPath, content, 'utf-8')
+  logInfo(`Created ${batPath}`, LOG_PREFIX)
+
+  return batPath
 }
 
 // ── Private helpers ──

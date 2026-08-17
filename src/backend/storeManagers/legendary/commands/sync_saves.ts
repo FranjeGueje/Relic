@@ -10,7 +10,6 @@ interface SyncSavesCommand {
   '--force-download'?: true
   '--save-path'?: Path
   '--disable-filters'?: true
-  '--accept-path'?: true
 }
 
 export default SyncSavesCommand

@@ -11,4 +11,6 @@
 **/update-permissions.exe
 **/install-dummy-service.bat
 **/zoom-platform.sh
+**/umu-run
+**/umu_run.py
 .release_tags

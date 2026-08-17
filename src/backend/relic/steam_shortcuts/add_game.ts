@@ -130,7 +130,7 @@ export function createRelicBat(
         'rem START THE GAME',
         'rem ============================================================',
         '',
-        'legendary --version',
+        'legendary status',
         '',
         `legendary launch ${appName} %*`
       ]

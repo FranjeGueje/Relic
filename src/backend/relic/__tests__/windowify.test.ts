@@ -227,3 +227,52 @@ describe('syncMountBin', () => {
     expect(mockedCopyFileSync).not.toHaveBeenCalled()
   })
 })
+
+describe('createEosOverlayBat', () => {
+  function writtenBat() {
+    const { createEosOverlayBat } = freshWindowify()
+    const path = createEosOverlayBat()
+    const call = mockedWriteFileSync.mock.calls.find(
+      ([target]) => String(target) === path
+    )
+    return { path, content: String(call?.[1]) }
+  }
+
+  test('writes the script into the mount root, reachable as c:\\relic inside the prefix', () => {
+    const { path } = writtenBat()
+
+    expect(path).toBe('/mock/mount/eos-overlay.bat')
+    expect(mockedMkdirSync).toHaveBeenCalledWith('/mock/mount/eos', {
+      recursive: true
+    })
+  })
+
+  test('installs and updates the overlay into c:\\relic\\eos', () => {
+    const { content } = writtenBat()
+
+    expect(content).toContain(
+      'legendary -y eos-overlay install --path %RELIC%\\eos'
+    )
+    expect(content).toContain(
+      'legendary -y eos-overlay update --path %RELIC%\\eos'
+    )
+  })
+
+  // Regression guard: install/update bail out with "up to date, nothing to do"
+  // once the overlay is recorded in the shared LEGENDARY_CONFIG_PATH, so from
+  // the second Epic game onwards only `enable` writes the new prefix registry.
+  test('enables the overlay, without which every prefix after the first is left inactive', () => {
+    const { content } = writtenBat()
+
+    expect(content).toContain(
+      'legendary eos-overlay enable --path %RELIC%\\eos'
+    )
+  })
+
+  test('points legendary at the shared relic config and bails out if it is missing', () => {
+    const { content } = writtenBat()
+
+    expect(content).toContain('set "LEGENDARY_CONFIG_PATH=%RELIC%\\Legendary"')
+    expect(content).toContain('if not exist "%RELIC%\\bin\\legendary.exe" (')
+  })
+})

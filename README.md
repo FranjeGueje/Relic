@@ -152,6 +152,13 @@ Game install completed
   │                                                Steam compatdata/<id>/drive_c/
   │                                                Runs umu-run to init prefix
   │                                                  │
+  │                                                  ▼
+  │                                              • Epic games only:
+  │                                                run c:\relic\eos-overlay.bat
+  │                                                through umu-run to install
+  │                                                and enable the EOS Overlay
+  │                                                in that prefix
+  │                                                  │
   │                                                ▼ (both flows converge)
   │
   └──────────────────────┬──────────────────────┘

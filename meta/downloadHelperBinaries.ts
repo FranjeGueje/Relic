@@ -15,14 +15,17 @@ type DownloadedBinary =
   | 'comet'
   | 'epic-integration'
   | 'zoom-platform'
+  | 'umu'
 
 const RELEASE_TAGS = {
-  legendary: '0.20.43',
-  gogdl: 'v1.2.2',
+  legendary: '0.21.0',
+  gogdl: 'v1.3.0',
   nile: 'v1.2.0',
   comet: 'v0.3.2',
   'epic-integration': 'v0.4',
-  'zoom-platform': 'v1.0.1'
+  'zoom-platform': 'v1.0.1',
+  // NOTE: umu-launcher tags have no `v` prefix
+  umu: '1.4.4'
 } as const satisfies Record<DownloadedBinary, string>
 
 const pathExists = async (path: string): Promise<boolean> =>
@@ -108,12 +111,12 @@ async function downloadGithubAssets(
 async function downloadLegendary() {
   return downloadGithubAssets(
     'legendary',
-    'Heroic-Games-Launcher/legendary',
+    'legendary-gl/legendary',
     RELEASE_TAGS['legendary'],
     {
       x64: {
-        linux: 'legendary_linux_x86_64',
-        win32: 'legendary_windows_x86_64.exe'
+        linux: 'legendary_linux_x64',
+        win32: 'legendary_windows_x64.exe'
       },
       arm64: {
         linux: 'legendary_linux_arm64',
@@ -222,6 +225,25 @@ async function downloadZoomPlatform() {
   console.log('Done downloading zoom-platform.sh')
 }
 
+async function downloadUmu() {
+  const tag = RELEASE_TAGS['umu']
+  const url = `https://github.com/Open-Wine-Components/umu-launcher/releases/download/${tag}/umu-launcher-${tag}-zipapp.tar`
+  const tarPath = join('public', 'bin', 'umu-launcher-zipapp.tar')
+  // The tarball already contains an `umu/` prefix, so it extracts into
+  // public/bin/umu/{umu-run,umu_run.py}
+  const destDir = join('public', 'bin')
+
+  console.log('Downloading umu-launcher zipapp from', url)
+  await downloadFile(url, tarPath)
+
+  console.log('Extracting', tarPath, 'to', destDir)
+  execSync(`tar -xf "${tarPath}" -C "${destDir}"`, { stdio: 'inherit' })
+
+  rmSync(tarPath)
+  await chmod(join(destDir, 'umu', 'umu-run'), '755')
+  console.log('Done downloading umu-launcher')
+}
+
 /**
  * Finds out which binaries need to be downloaded by comparing
  * `public/bin/.release_tags` to RELEASE_TAGS
@@ -235,7 +257,8 @@ async function compareDownloadedTags(): Promise<DownloadedBinary[]> {
   try {
     storedTagsParsed = JSON.parse(storedTagsText)
   } catch {
-    return ['legendary', 'gogdl', 'nile', 'comet', 'epic-integration']
+    // Corrupted cache file, re-download everything
+    return Object.keys(RELEASE_TAGS) as DownloadedBinary[]
   }
   const binariesToDownload: DownloadedBinary[] = []
   for (const [runner, currentTag] of Object.entries(RELEASE_TAGS)) {
@@ -282,6 +305,7 @@ async function main() {
     promisesToAwait.push(downloadEpicIntegration())
   if (binariesToDownload.includes('zoom-platform'))
     promisesToAwait.push(downloadZoomPlatform())
+  if (binariesToDownload.includes('umu')) promisesToAwait.push(downloadUmu())
 
   await Promise.all(promisesToAwait)
 

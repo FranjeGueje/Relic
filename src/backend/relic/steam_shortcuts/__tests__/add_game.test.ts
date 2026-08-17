@@ -122,7 +122,7 @@ describe('createRelicBat', () => {
       expect(content).toContain(line)
     }
     expect(content).toContain('if not exist "%RELIC%\\bin\\legendary.exe" (')
-    expect(content).toContain('legendary --version')
+    expect(content).toContain('legendary status')
     expect(content).toContain('legendary launch abc123 %*')
     expect(content).toContain(
       "echo If you've closed the game, you can close this window now."
