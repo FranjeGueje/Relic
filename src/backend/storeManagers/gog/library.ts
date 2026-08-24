@@ -51,7 +51,7 @@ import { isOnline, runOnceWhenOnline } from '../../online_monitor'
 import i18next from 'i18next'
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import { unzipSync } from 'node:zlib'
-import { readdirSync, rmSync, writeFileSync } from 'node:fs'
+import { mkdirSync, readdirSync, rmSync, writeFileSync } from 'node:fs'
 import { checkForRedistUpdates } from './redist'
 import { runGogdlCommandStub } from './e2eMock'
 import { gogdlConfigPath } from './constants'
@@ -160,6 +160,8 @@ export default class GOGLibraryManager implements LibraryManager {
       manifestData.HGLInstallLanguage = importData.installedLanguage
       manifestData.HGLdlcs = importData.dlcs.map((dlc) => ({ id: dlc }))
 
+      // gogdl does not create this folder either, same as its auth folder
+      mkdirSync(manifestDir, { recursive: true })
       writeFileSync(manifestPath, JSON.stringify(manifestData), {
         encoding: 'utf8'
       })

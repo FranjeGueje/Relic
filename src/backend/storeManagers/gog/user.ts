@@ -10,6 +10,18 @@ import { libraryManagerMap } from '../index'
 import { clearCache } from 'backend/utils'
 import { gogdlAuthConfig } from './constants'
 
+/**
+ * Redacts secrets from gogdl's raw (non-JSON) output, such as a Python
+ * traceback, which can echo the token URL including the client secret and the
+ * authorization code.
+ */
+function redactAuthSecrets(text: string): string {
+  return text.replace(
+    /((?:client_secret|code|refresh_token|access_token)=)[^&\s"']+/gi,
+    '$1<redacted>'
+  )
+}
+
 function authLogSanitizer(line: string) {
   try {
     const output = JSON.parse(line)
@@ -45,7 +57,7 @@ export class GOGUser {
     logInfo('Logging using GOG credentials', LogPrefix.Gog)
 
     // Gets token from GOG basaed on authorization code
-    const { stdout } = await libraryManagerMap['gog'].runRunnerCommand(
+    const { stdout, stderr } = await libraryManagerMap['gog'].runRunnerCommand(
       ['auth', '--code', code],
       {
         abortId: 'gogdl-auth',
@@ -59,8 +71,12 @@ export class GOGUser {
         return { status: 'error' }
       }
     } catch (err) {
+      // stderr matters more than stdout here: when gogdl dies (for example
+      // because it cannot write auth.json) stdout is empty and the reason only
+      // shows up in the traceback.
       logError(
-        `GOG login failed to parse std output from gogdl. stdout: ${stdout.trim()}, error ${err}`,
+        `GOG login failed to parse std output from gogdl. stdout: ${stdout.trim()}, ` +
+          `stderr: ${redactAuthSecrets(stderr.trim())}, error ${err}`,
         LogPrefix.Gog
       )
       return { status: 'error' }

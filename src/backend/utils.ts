@@ -52,6 +52,8 @@ import {
   toolsPath
 } from './constants/paths'
 
+import { gogdlAuthConfig } from './storeManagers/gog/constants'
+import { tokenPath as zoomTokenPath } from './storeManagers/zoom/constants'
 import { isRunning } from './downloadmanager/downloadqueue'
 import { isOnline } from './online_monitor'
 import type { Game } from 'common/types/game_manager'
@@ -388,11 +390,21 @@ function getNileBin(): { dir: string; bin: string } {
 }
 
 export function createNecessaryFolders() {
-  const defaultFolders = [gamesConfigPath, relicIconFolder]
+  // The GOG and Zoom auth folders have to exist before either store can log
+  // in: gogdl writes its auth.json with a plain open(path, 'w') and ZoomUser
+  // does a bare writeFileSync, neither of which creates the directory. Their
+  // stores would create it, but only on a write that happens after login.
+  // legendary and nile don't need this, their binaries makedirs on their own.
+  const defaultFolders = [
+    gamesConfigPath,
+    relicIconFolder,
+    dirname(gogdlAuthConfig),
+    dirname(zoomTokenPath)
+  ]
 
   ;[...defaultFolders, toolsPath].forEach((folder: string) => {
     if (!existsSync(folder)) {
-      mkdirSync(folder)
+      mkdirSync(folder, { recursive: true })
     }
   })
 }

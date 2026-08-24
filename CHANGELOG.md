@@ -1,5 +1,100 @@
 # Changelog
 
+## 0.6.3 — Store Logins on a Fresh Config
+
+### Español
+
+#### Corregido
+
+- **El login de GOG fallaba en cualquier instalación nueva**, con un
+  `SyntaxError: Unexpected end of JSON input` y un `stdout` vacío de gogdl.
+  gogdl escribe su `auth.json` con un `open(path, "w")` pelado y **no crea el
+  directorio**, al contrario que legendary y nile, que hacen `os.makedirs`. Como
+  `createNecessaryFolders()` no incluía `~/.config/relic/gog_store/`, y ese
+  directorio solo aparece cuando algún `JsonStore` con `cwd: 'gog_store'` escribe
+  por primera vez — cosa que ocurre _después_ del login —, gogdl moría con
+  `FileNotFoundError` justo tras canjear el token, dejando el traceback en stderr
+  y stdout vacío. Ahora `createNecessaryFolders()` crea ese directorio (y usa
+  `recursive: true`, necesario porque cuelga de `userDataPath` y no de
+  `appFolder` como los demás).
+  No era una regresión de gogdl 1.3.0: `__write_config()` es idéntico en 1.2.2.
+  Las instalaciones existentes no lo notaban porque su `gog_store/` venía de
+  antes.
+- **El login de Zoom fallaba por lo mismo.** `ZoomUser.login()` guarda el token
+  con un `writeFileSync(tokenPath, ...)` pelado sobre
+  `~/.config/relic/zoom_store/`, directorio que tampoco creaba nadie. Su
+  `configStore` (`cwd: 'zoom_store'`) lo crearía al escribir, pero todas sus
+  escrituras ocurren _después_ de esa línea, así que el login moría con `ENOENT`
+  en cualquier configuración nueva. Al menos aquí el `try/catch` dejaba un
+  `Failed to save Zoom token` en el log, a diferencia de GOG.
+- **Revisadas las otras dos tiendas: no están afectadas.** legendary crea su
+  directorio de configuración él solo (`lgndry.py` hace `makedirs` de `''`,
+  `manifests`, `metadata` y `tmp` al construir `LGDLFS`) y nile igual
+  (`config.py` → `write()` llama a `check_if_config_dir_exists()` y
+  `os.makedirs(..., exist_ok=True)`). gogdl es el único de los tres binarios que
+  no lo hace.
+- **Endurecido `createMissingGogdlManifest()`** en `gog/library.ts`, que escribía
+  en `gogdlConfig/heroic_gogdl/manifests/` sin crear el directorio. Mismo tipo de
+  fallo, menos grave porque corre tras la instalación y está bajo `try/catch`.
+- **El fallo era invisible**: `GOGUser.login()` solo desestructuraba `stdout` de
+  `runRunnerCommand()`. `callRunner()` sí captura stderr, pero el mensaje de
+  error no lo imprimía, así que el traceback que explicaba todo nunca llegaba al
+  log. Ahora se incluye, pasado por un redactor que tapa `client_secret`, `code`,
+  `refresh_token` y `access_token`, porque la salida cruda de gogdl puede llevar
+  la URL del token entera.
+
+### English
+
+#### Fixed
+
+- **GOG login failed on every fresh install**, with a
+  `SyntaxError: Unexpected end of JSON input` and empty stdout from gogdl. gogdl
+  writes its `auth.json` with a bare `open(path, "w")` and **never creates the
+  directory**, unlike legendary and nile which call `os.makedirs`. Since
+  `createNecessaryFolders()` didn't include `~/.config/relic/gog_store/`, and
+  that directory only appears once some `JsonStore` with `cwd: 'gog_store'`
+  writes for the first time — which happens _after_ login — gogdl died with
+  `FileNotFoundError` right after exchanging the token, leaving the traceback on
+  stderr and nothing on stdout. `createNecessaryFolders()` now creates it (with
+  `recursive: true`, needed because it hangs off `userDataPath` rather than
+  `appFolder` like the others).
+  Not a gogdl 1.3.0 regression: `__write_config()` is identical in 1.2.2.
+  Existing installs never hit it because their `gog_store/` predates the bug.
+- **Zoom login failed for the same reason.** `ZoomUser.login()` saves the token
+  with a bare `writeFileSync(tokenPath, ...)` into `~/.config/relic/zoom_store/`,
+  a directory nobody created either. Its `configStore` (`cwd: 'zoom_store'`)
+  would create it on a write, but every one of those happens _after_ that line,
+  so login died with `ENOENT` on any fresh config. At least here the `try/catch`
+  left a `Failed to save Zoom token` in the log, unlike GOG.
+- **Checked the other two stores: not affected.** legendary creates its own
+  config directory (`lgndry.py` makedirs `''`, `manifests`, `metadata` and `tmp`
+  when building `LGDLFS`) and so does nile (`config.py` → `write()` calls
+  `check_if_config_dir_exists()` and `os.makedirs(..., exist_ok=True)`). gogdl is
+  the only one of the three binaries that doesn't.
+- **Hardened `createMissingGogdlManifest()`** in `gog/library.ts`, which wrote
+  into `gogdlConfig/heroic_gogdl/manifests/` without creating the directory. Same
+  class of bug, less severe since it runs post-install and under a `try/catch`.
+- **The failure was invisible**: `GOGUser.login()` only destructured `stdout`
+  from `runRunnerCommand()`. `callRunner()` does capture stderr, but the error
+  message never printed it, so the traceback explaining everything never reached
+  the log. It's included now, through a redactor that masks `client_secret`,
+  `code`, `refresh_token` and `access_token`, since gogdl's raw output can echo
+  the full token URL.
+
+### Verificación / Verification
+
+```
+codecheck: 0 errors
+lint:      0 errors (373 warnings)
+tests:     251/251 (32 suites)
+repro:     confirmado que un code invalido imprime {"error": true} y uno valido
+           revienta en __write_config sin el directorio / verified an invalid
+           code prints {"error": true} while a valid one dies in __write_config
+           when the directory is missing
+```
+
+---
+
 ## 0.6.2 — Helper Binaries Refresh
 
 ### Español
