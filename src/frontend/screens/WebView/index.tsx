@@ -243,9 +243,12 @@ export default function WebView() {
     }
 
     return
+    // webviewPreloadPath is not used in here, but the <webview> is only
+    // rendered once it resolves. Without it this effect runs a single time,
+    // while webviewRef.current is still null, and never attaches the listener.
     // zoom.login is a stable bound method; same reasoning as above
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [runner, handleSuccessfulLogin, t, zoom.login])
+  }, [runner, webviewPreloadPath, handleSuccessfulLogin, t, zoom.login])
 
   const [showLoginWarningFor, setShowLoginWarningFor] = useState<
     null | 'epic' | 'gog' | 'amazon' | 'zoom'

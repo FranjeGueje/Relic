@@ -36,6 +36,18 @@
 - **Endurecido `createMissingGogdlManifest()`** en `gog/library.ts`, que escribía
   en `gogdlConfig/heroic_gogdl/manifests/` sin crear el directorio. Mismo tipo de
   fallo, menos grave porque corre tras la instalación y está bajo `try/catch`.
+- **El login de Zoom no llegaba a intentarse siquiera.** Regresión propia,
+  introducida en `5aa82f00` ("fix(lint): resolve exhaustive-deps warnings, batch
+  3"). El `useEffect` de `WebView` que engancha el `did-navigate` para leer el
+  `li_token` tenía antes `[webviewRef.current, runner]` como dependencias: no es
+  React correcto, pero funcionaba de rebote, porque al montarse el `<webview>` el
+  ref pasaba de `null` al elemento y React re-ejecutaba el effect. Aquel commit
+  quitó el ref de las dependencias — correcto — y al effect hermano le añadió
+  `webviewPreloadPath`, pero al de Zoom no. Como el componente devuelve `<></>`
+  hasta que ese path resuelve, el effect corría una única vez con
+  `webviewRef.current` a `null` y no volvía a ejecutarse nunca: el listener no se
+  enganchaba y Zoom no dejaba ni una línea en el log. Añadido
+  `webviewPreloadPath` a sus dependencias, como en el effect de al lado.
 - **El fallo era invisible**: `GOGUser.login()` solo desestructuraba `stdout` de
   `runRunnerCommand()`. `callRunner()` sí captura stderr, pero el mensaje de
   error no lo imprimía, así que el traceback que explicaba todo nunca llegaba al
@@ -74,6 +86,17 @@
 - **Hardened `createMissingGogdlManifest()`** in `gog/library.ts`, which wrote
   into `gogdlConfig/heroic_gogdl/manifests/` without creating the directory. Same
   class of bug, less severe since it runs post-install and under a `try/catch`.
+- **Zoom login was never even attempted.** A regression of our own, introduced
+  in `5aa82f00` ("fix(lint): resolve exhaustive-deps warnings, batch 3"). The
+  `WebView` `useEffect` that attaches the `did-navigate` listener reading
+  `li_token` used to depend on `[webviewRef.current, runner]`: not correct React,
+  but it worked by accident, since mounting the `<webview>` flipped the ref from
+  `null` to the element and React re-ran the effect. That commit dropped the ref
+  from the deps — correctly — and added `webviewPreloadPath` to the sibling
+  effect, but not to Zoom's. Since the component returns `<></>` until that path
+  resolves, the effect ran exactly once with `webviewRef.current` still `null`
+  and never ran again: the listener was never attached and Zoom logged nothing at
+  all. `webviewPreloadPath` added to its deps, matching the sibling effect.
 - **The failure was invisible**: `GOGUser.login()` only destructured `stdout`
   from `runRunnerCommand()`. `callRunner()` does capture stderr, but the error
   message never printed it, so the traceback explaining everything never reached
