@@ -205,10 +205,13 @@ export async function askForceUninstall(game: Game) {
 }
 
 async function errorHandler(
-  error: string,
+  rawError: unknown,
   appName: string,
   runner: Runner
 ): Promise<void> {
+  // Callers may pass an Error object (e.g. a failed spawn), not only output text
+  const error =
+    rawError instanceof Error ? rawError.message : String(rawError ?? '')
   const plat = runner === 'legendary' ? 'Legendary (Epic Games)' : runner
   const deletedFolderMsg = 'appears to be deleted'
   const expiredCredentials = 'No saved credentials'
