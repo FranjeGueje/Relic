@@ -334,8 +334,10 @@ Download from the [releases page](https://github.com/FranjeGueje/Relic/releases)
 ├── nile_config/             — Amazon login + installed.json
 ├── zoom_store/              — Zoom Platform login
 ├── GamesConfig/             — Per-game settings
+└── icons/                   — Custom game icons
+
+~/.cache/relic/              — Regenerable caches ($XDG_CACHE_HOME)
 ├── images-cache/            — Cached SteamGridDB images
-├── icons/                   — Custom game icons
 └── store_cache/             — Library caches per store
 
 ~/.local/share/relic/

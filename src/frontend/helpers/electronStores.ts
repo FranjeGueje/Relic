@@ -1,4 +1,5 @@
 import { Get } from 'type-fest'
+import { CACHE_STORE_CWD } from 'common/types/electron_store'
 
 import {
   ValidStoreName,
@@ -69,7 +70,7 @@ class CacheStore<ValueType, KeyType extends string = string> {
   constructor(filename: string, max_value_lifespan: number | null = 60 * 6) {
     this.storeName = filename
     window.api.storeNew(filename, {
-      cwd: 'store_cache',
+      cwd: CACHE_STORE_CWD,
       name: filename,
       clearInvalidConfig: true
     })

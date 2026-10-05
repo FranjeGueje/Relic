@@ -107,10 +107,18 @@ export interface StoreStructure {
   }
 }
 
+/**
+ * Symbolic `cwd` used by renderer-side cache stores. `JsonStore` never sees
+ * this value: the preload translates it to the absolute `storeCachePath`.
+ */
+export const CACHE_STORE_CWD = 'store_cache'
+
 export interface StoreOptions {
   /**
    * Directory holding the file. Relative values resolve against `userDataPath`,
    * which is what electron-store did via `app.getPath('userData')`.
+   * Cache stores use the absolute `storeCachePath`; the renderer still sends
+   * `CACHE_STORE_CWD`, translated by the preload.
    */
   cwd?: string
   /** File name without extension. Defaults to `config`. */

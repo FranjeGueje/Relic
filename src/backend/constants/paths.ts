@@ -28,6 +28,19 @@ if (process.env.CI === 'e2e') {
   mkdirSync(join(configFolder, 'relic'))
 }
 
+// XDG Base Directory: cache = regenerable, non-essential data.
+// XDG_CACHE_HOME when it holds an absolute path (relative values are ignored
+// per the XDG spec), otherwise ~/.cache.
+const xdgCacheHome = env.XDG_CACHE_HOME
+export const cachePath = join(
+  xdgCacheHome && isAbsolute(xdgCacheHome)
+    ? xdgCacheHome
+    : join(homedir(), '.cache'),
+  appName
+)
+export const storeCachePath = join(cachePath, 'store_cache')
+export const imagesCachePath = join(cachePath, 'images-cache')
+
 export const userHome = homedir()
 
 export const appFolder = join(configFolder, appName)

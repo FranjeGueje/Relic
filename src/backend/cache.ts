@@ -1,4 +1,5 @@
 import { JsonStore } from './json_store'
+import { storeCachePath } from './constants/paths'
 
 export default class CacheStore<ValueType, KeyType extends string = string> {
   private readonly store: JsonStore
@@ -20,7 +21,7 @@ export default class CacheStore<ValueType, KeyType extends string = string> {
     options?: { invalidateCheck?: (data: ValueType) => boolean }
   ) {
     this.store = new JsonStore({
-      cwd: 'store_cache',
+      cwd: storeCachePath,
       name: filename,
       clearInvalidConfig: true
     })

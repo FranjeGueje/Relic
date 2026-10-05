@@ -52,6 +52,8 @@ export const handleGoToScreen = frontendListenerSlot('openScreen')
 export const handleShowDialog = frontendListenerSlot('showDialog')
 
 import { JsonStore } from 'backend/json_store'
+import { storeCachePath } from 'backend/constants/paths'
+import { CACHE_STORE_CWD } from 'common/types/electron_store'
 import type { StoreOptions } from 'common/types/electron_store'
 // FUTURE WORK
 // here is how the store methods can be refactored
@@ -78,7 +80,10 @@ interface StoreMap {
 const stores: StoreMap = {}
 
 export const storeNew = function (storeName: string, options: StoreOptions) {
-  stores[storeName] = new JsonStore(options)
+  // Cache stores live under $XDG_CACHE_HOME; the renderer sends the symbolic
+  // CACHE_STORE_CWD because it cannot compute absolute paths.
+  const resolved = options.cwd === CACHE_STORE_CWD ? { ...options, cwd: storeCachePath } : options
+  stores[storeName] = new JsonStore(resolved)
 }
 
 export const storeSet = (storeName: string, key: string, value?: unknown) => stores[storeName].set(key, value)
