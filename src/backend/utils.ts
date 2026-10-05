@@ -280,7 +280,6 @@ function clearCache(
   fromVersionChange = false
 ) {
   if (library === 'gog' || !library) {
-    GOGapiInfoCache.clear()
     GOGlibraryStore.clear()
     GOGinstallInfoStore.clear()
     GOGAchievementStore.clear()
@@ -300,6 +299,9 @@ function clearCache(
   }
 
   if (!fromVersionChange) {
+    // Per-game metadata rarely changes and is slow to rebuild (one request per
+    // game), so a new version keeps it
+    if (library === 'gog' || !library) GOGapiInfoCache.clear()
     deviceNameCache.clear()
     vendorNameCache.clear()
   }
