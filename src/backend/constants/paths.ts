@@ -32,7 +32,7 @@ if (process.env.CI === 'e2e') {
 // XDG_CACHE_HOME when it holds an absolute path (relative values are ignored
 // per the XDG spec), otherwise ~/.cache.
 const xdgCacheHome = env.XDG_CACHE_HOME
-export const cachePath = join(
+const cachePath = join(
   xdgCacheHome && isAbsolute(xdgCacheHome)
     ? xdgCacheHome
     : join(homedir(), '.cache'),
