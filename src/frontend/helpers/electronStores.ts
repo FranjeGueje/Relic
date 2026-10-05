@@ -1,7 +1,6 @@
 import { Get } from 'type-fest'
-import { CACHE_STORE_CWD } from 'common/types/electron_store'
-
 import {
+  CACHE_STORE_CWD,
   ValidStoreName,
   StoreOptions,
   StoreStructure,
