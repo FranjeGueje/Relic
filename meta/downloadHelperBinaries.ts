@@ -18,7 +18,7 @@ type DownloadedBinary =
   | 'umu'
 
 const RELEASE_TAGS = {
-  legendary: '0.21.0',
+  legendary: '0.21.1',
   gogdl: 'v1.3.0',
   nile: 'v1.2.0',
   comet: 'v0.3.2',
@@ -27,6 +27,16 @@ const RELEASE_TAGS = {
   // NOTE: umu-launcher tags have no `v` prefix
   umu: '1.4.4'
 } as const satisfies Record<DownloadedBinary, string>
+
+// GitHub repos the binaries come from. zoom-platform is not on GitHub.
+const REPOS = {
+  legendary: 'legendary-gl/legendary',
+  gogdl: 'Heroic-Games-Launcher/heroic-gogdl',
+  nile: 'imLinguin/nile',
+  comet: 'imLinguin/comet',
+  'epic-integration': 'BananaWorks07/heroic-epic-integration',
+  umu: 'Open-Wine-Components/umu-launcher'
+} as const satisfies Partial<Record<DownloadedBinary, string>>
 
 const pathExists = async (path: string): Promise<boolean> =>
   stat(path).then(
@@ -111,7 +121,7 @@ async function downloadGithubAssets(
 async function downloadLegendary() {
   return downloadGithubAssets(
     'legendary',
-    'legendary-gl/legendary',
+    REPOS['legendary'],
     RELEASE_TAGS['legendary'],
     {
       x64: {
@@ -127,25 +137,20 @@ async function downloadLegendary() {
 }
 
 async function downloadGogdl() {
-  return downloadGithubAssets(
-    'gogdl',
-    'Heroic-Games-Launcher/heroic-gogdl',
-    RELEASE_TAGS['gogdl'],
-    {
-      x64: {
-        linux: 'gogdl_linux_x86_64',
-        win32: 'gogdl_windows_x86_64.exe'
-      },
-      arm64: {
-        linux: 'gogdl_linux_arm64',
-        win32: 'gogdl_windows_arm64.exe'
-      }
+  return downloadGithubAssets('gogdl', REPOS['gogdl'], RELEASE_TAGS['gogdl'], {
+    x64: {
+      linux: 'gogdl_linux_x86_64',
+      win32: 'gogdl_windows_x86_64.exe'
+    },
+    arm64: {
+      linux: 'gogdl_linux_arm64',
+      win32: 'gogdl_windows_arm64.exe'
     }
-  )
+  })
 }
 
 async function downloadNile() {
-  return downloadGithubAssets('nile', 'imLinguin/nile', RELEASE_TAGS['nile'], {
+  return downloadGithubAssets('nile', REPOS['nile'], RELEASE_TAGS['nile'], {
     x64: {
       linux: 'nile_linux_x86_64',
       win32: 'nile_windows_x86_64.exe'
@@ -160,7 +165,7 @@ async function downloadComet() {
   return Promise.all([
     downloadGithubAssets(
       'GalaxyCommunication',
-      'imLinguin/comet',
+      REPOS['comet'],
       RELEASE_TAGS['comet'],
       {
         x64: {
@@ -169,7 +174,7 @@ async function downloadComet() {
         arm64: {}
       }
     ),
-    downloadGithubAssets('comet', 'imLinguin/comet', RELEASE_TAGS['comet'], {
+    downloadGithubAssets('comet', REPOS['comet'], RELEASE_TAGS['comet'], {
       x64: {
         linux: 'comet-x86_64-unknown-linux-gnu',
         win32: 'comet-x86_64-pc-windows-msvc.exe'
@@ -185,7 +190,7 @@ async function downloadComet() {
 
 async function downloadDummyService() {
   const tag = RELEASE_TAGS['comet']
-  const url = `https://github.com/imLinguin/comet/releases/download/${tag}/dummy-service.zip`
+  const url = `https://github.com/${REPOS['comet']}/releases/download/${tag}/dummy-service.zip`
   const zipPath = join('public', 'bin', 'dummy-service.zip')
   const destDir = join('public', 'bin', 'x64', 'win32')
 
@@ -204,7 +209,7 @@ async function downloadDummyService() {
 async function downloadEpicIntegration() {
   return downloadGithubAssets(
     'EpicGamesLauncher',
-    'Etaash-mathamsetty/heroic-epic-integration',
+    REPOS['epic-integration'],
     RELEASE_TAGS['epic-integration'],
     {
       x64: {
@@ -227,7 +232,7 @@ async function downloadZoomPlatform() {
 
 async function downloadUmu() {
   const tag = RELEASE_TAGS['umu']
-  const url = `https://github.com/Open-Wine-Components/umu-launcher/releases/download/${tag}/umu-launcher-${tag}-zipapp.tar`
+  const url = `https://github.com/${REPOS['umu']}/releases/download/${tag}/umu-launcher-${tag}-zipapp.tar`
   const tarPath = join('public', 'bin', 'umu-launcher-zipapp.tar')
   // The tarball already contains an `umu/` prefix, so it extracts into
   // public/bin/umu/{umu-run,umu_run.py}
@@ -268,6 +273,51 @@ async function compareDownloadedTags(): Promise<DownloadedBinary[]> {
   return binariesToDownload
 }
 
+async function fetchLatestTag(repo: string): Promise<string> {
+  const res = await fetch(
+    `https://api.github.com/repos/${repo}/releases/latest`,
+    {
+      headers: {
+        'User-Agent': 'RelicBinaryUpdater/1.0',
+        Accept: 'application/vnd.github+json'
+      }
+    }
+  )
+  if (!res.ok) throw new Error(`HTTP ${res.status}`)
+  const body = (await res.json()) as { tag_name?: string }
+  if (!body.tag_name) throw new Error('response without tag_name')
+  return body.tag_name
+}
+
+/** zoom-platform is not on GitHub: its version lives inside the script itself */
+async function readZoomInstallerVersion(): Promise<string> {
+  const script = await readFile(
+    join('public', 'bin', 'zoom', 'zoom-platform.sh'),
+    'utf-8'
+  ).catch(() => '')
+  return /INSTALLER_VERSION="([^"]+)"/.exec(script)?.[1] ?? 'no file'
+}
+
+async function getUpstreamTag(binary: DownloadedBinary): Promise<string> {
+  if (binary === 'zoom-platform') return readZoomInstallerVersion()
+  return fetchLatestTag(REPOS[binary])
+}
+
+/** Read-only: compares each pinned tag with the latest upstream one */
+async function runVersionCheck() {
+  const rows = await Promise.all(
+    (Object.keys(RELEASE_TAGS) as DownloadedBinary[]).map(async (binary) => {
+      const pin = RELEASE_TAGS[binary]
+      const upstream = await getUpstreamTag(binary).catch(
+        (error: unknown) => `ERROR (${String(error)})`
+      )
+      const status = upstream === pin ? 'OK' : 'DESACTUALIZADO'
+      return { binary, pin, upstream, status }
+    })
+  )
+  console.table(rows)
+}
+
 async function storeDownloadedTags() {
   await writeFile('public/bin/.release_tags', JSON.stringify(RELEASE_TAGS))
 }
@@ -278,6 +328,11 @@ async function main() {
     console.log(`Using proxy: ${proxyUri}`)
     const proxyAgent = new ProxyAgent(proxyUri)
     setGlobalDispatcher(proxyAgent)
+  }
+
+  if (process.env['RELIC_CHECK'] === '1') {
+    await runVersionCheck()
+    return
   }
 
   if (!(await pathExists('public/bin'))) {

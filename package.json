@@ -38,6 +38,7 @@
     "prettier": "prettier --check .",
     "prettier-fix": "prettier --write .",
     "download-helper-binaries": "esbuild --bundle --platform=node --target=node24 meta/downloadHelperBinaries.ts | node",
+    "check-helper-binaries": "esbuild --bundle --platform=node --target=node24 meta/downloadHelperBinaries.ts | RELIC_CHECK=1 node",
     "lint-translations": "esbuild --bundle --platform=node --target=node24 meta/lintTranslations.ts | node"
   },
   "dependencies": {
