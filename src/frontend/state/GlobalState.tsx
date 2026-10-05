@@ -128,6 +128,8 @@ const applyGameOverrides = (
   overrides: Record<string, GameOverride> = currentOverrides()
 ) => attachGameOverrides(lib, overrides)
 
+const ALL_RUNNERS: Runner[] = ['legendary', 'gog', 'nile', 'zoom']
+
 class GlobalState extends PureComponent<Props> {
   loadLegendaryLibrary = (
     overrides: Record<string, GameOverride> = currentOverrides()
@@ -588,26 +590,53 @@ class GlobalState extends PureComponent<Props> {
     window.location.reload()
   }
 
+  updateStoreLibrary = (
+    runner: Runner,
+    overrides: Record<string, GameOverride> = currentOverrides()
+  ) => {
+    switch (runner) {
+      case 'legendary':
+        return this.setState({
+          epic: {
+            ...this.state.epic,
+            library: this.loadLegendaryLibrary(overrides)
+          }
+        })
+      case 'gog':
+        return this.setState({
+          gog: { ...this.state.gog, library: this.loadGOGLibrary(overrides) }
+        })
+      case 'zoom':
+        return this.setState({
+          zoom: { ...this.state.zoom, library: this.loadZoomLibrary(overrides) }
+        })
+      case 'nile':
+        return this.setState({
+          amazon: {
+            ...this.state.amazon,
+            library: this.loadAmazonLibrary(overrides)
+          }
+        })
+    }
+  }
+
   updateGameOverrides = (overrides: Record<string, GameOverride>) => {
     useGlobalState.getState().setGameOverrides(overrides)
-    this.setState({
-      epic: {
-        ...this.state.epic,
-        library: this.loadLegendaryLibrary(overrides)
-      },
-      gog: {
-        ...this.state.gog,
-        library: this.loadGOGLibrary(overrides)
-      },
-      zoom: {
-        ...this.state.zoom,
-        library: this.loadZoomLibrary(overrides)
-      },
-      amazon: {
-        ...this.state.amazon,
-        library: this.loadAmazonLibrary(overrides)
-      }
-    })
+    ALL_RUNNERS.forEach((runner) => this.updateStoreLibrary(runner, overrides))
+  }
+
+  // Refreshing everything shows each store as soon as it finishes instead of
+  // waiting for the slowest one
+  refreshStores = async (library?: Runner | 'all') => {
+    if (library && library !== 'all') {
+      return window.api.refreshLibrary(library)
+    }
+    await Promise.allSettled(
+      ALL_RUNNERS.map(async (runner) => {
+        await window.api.refreshLibrary(runner)
+        this.updateStoreLibrary(runner)
+      })
+    )
   }
 
   refresh = async (
@@ -702,7 +731,7 @@ class GlobalState extends PureComponent<Props> {
     })
     window.api.logInfo(`Refreshing ${library ?? 'all'} Library`)
     try {
-      await window.api.refreshLibrary(library)
+      await this.refreshStores(library)
       return await this.refresh(library, checkForUpdates)
     } catch (error) {
       window.api.logError(`Library refresh failed: ${String(error)}`)
