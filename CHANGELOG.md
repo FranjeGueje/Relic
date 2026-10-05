@@ -1,5 +1,102 @@
 # Changelog
 
+## 0.6.4 — Cache to XDG & Redist Removal
+
+### Español
+
+#### Añadido
+
+- **`pnpm check-helper-binaries`**: consulta GitHub (solo lectura, sin descargar
+  ni escribir `.release_tags`) y muestra una tabla con el pin de cada binario
+  auxiliar frente a la última versión upstream. Los repos de origen viven ahora
+  en una sola constante `REPOS` de `meta/downloadHelperBinaries.ts`, compartida
+  por las descargas y el check.
+
+#### Cambiado
+
+- **Las cachés regenerables viven en `~/.cache/relic`** (`$XDG_CACHE_HOME`):
+  `store_cache` (bibliotecas por tienda) e `images-cache` salen de
+  `~/.config/relic`. La migración `move-cache-to-xdg-cache` las mueve en el
+  primer arranque (con copia + borrado si `~/.cache` está en otro disco), así que
+  no se pierde la biblioteca ni se vuelven a descargar portadas. Las cachés de
+  Chromium siguen en `~/.config/relic`.
+- **Runner `.bat` v4**: imprime `gogdl version: …` y `nile version: …` en vez de
+  la versión a secas. Solo se regenera al reparar el juego.
+- **legendary 0.21.1** (el binario de 0.21.0 quedaba sin permiso de ejecución al
+  mezclarse con el 0.21.1 y Epic no funcionaba desde código fuente).
+  `epic-integration` apunta al repo actual (`BananaWorks07/heroic-epic-integration`).
+- **Arranque con caché fría más rápido**: cada tienda se pinta en cuanto termina
+  su refresco, sin esperar a la más lenta (GOG podía tardar ~40 s y ocultaba
+  Amazon). `gog_api_info` ya no se borra al cambiar de versión y caduca a las
+  24 h (antes 6 h).
+
+#### Eliminado
+
+- **«Galaxy Common Redistributables»** de GOG: el juego ficticio `gog-redist`, su
+  inyección en la cola de descargas, `gog/redist.ts` y el estado `'redist'` del
+  frontend. Relic solo descargaba esos instaladores, nunca los ejecutaba. La
+  migración `remove-gog-redist` borra `tools/redist/gog`.
+- `public/bin/zoom/zoom-platform.sh` deja de estar en git (ya figuraba en
+  `.gitignore`; se descarga con `pnpm download-helper-binaries`).
+
+#### Corregido
+
+- **`errorHandler` aceptaba solo texto** y lanzaba `n.includes is not a function`
+  (promesa rechazada sin capturar) cuando recibía un `Error`, p. ej. un
+  `spawn … EACCES`, ocultando el error real.
+
+### English
+
+#### Added
+
+- **`pnpm check-helper-binaries`**: queries GitHub (read-only, no download, no
+  `.release_tags` write) and prints a table of each helper binary's pin versus
+  the latest upstream release. Source repos now live in a single `REPOS` constant
+  in `meta/downloadHelperBinaries.ts`, shared by the downloads and the check.
+
+#### Changed
+
+- **Regenerable caches live in `~/.cache/relic`** (`$XDG_CACHE_HOME`):
+  `store_cache` (per-store libraries) and `images-cache` leave `~/.config/relic`.
+  The `move-cache-to-xdg-cache` migration moves them on first start (copy +
+  delete if `~/.cache` is on another disk), so nothing is lost and covers are not
+  re-downloaded. Chromium caches stay in `~/.config/relic`.
+- **`.bat` runner v4**: prints `gogdl version: …` and `nile version: …` instead
+  of the bare version. Only regenerated when the game is repaired.
+- **legendary 0.21.1** (the 0.21.0 pin got mixed with a hand-placed 0.21.1
+  binary without the execute bit, so Epic did not work from source).
+  `epic-integration` points to the current repo
+  (`BananaWorks07/heroic-epic-integration`).
+- **Faster start-up with a cold cache**: each store is shown as soon as its
+  refresh finishes instead of waiting for the slowest one (GOG could take ~40 s
+  and hide Amazon). `gog_api_info` is no longer wiped on a version change and now
+  expires after 24 h (was 6 h).
+
+#### Removed
+
+- **GOG «Galaxy Common Redistributables»**: the fake `gog-redist` game, its
+  injection into the download queue, `gog/redist.ts` and the frontend `'redist'`
+  status. Relic only downloaded those installers and never ran them. The
+  `remove-gog-redist` migration deletes `tools/redist/gog`.
+- `public/bin/zoom/zoom-platform.sh` is no longer tracked by git (it was already
+  in `.gitignore`; fetched by `pnpm download-helper-binaries`).
+
+#### Fixed
+
+- **`errorHandler` only accepted text** and threw `n.includes is not a function`
+  (unhandled rejection) when handed an `Error`, e.g. a `spawn … EACCES`, hiding
+  the real error.
+
+### Verificación / Verification
+
+```
+codecheck: 0 errors
+lint:      0 errors (374 warnings)
+tests:     257/257 (34 suites)
+```
+
+---
+
 ## 0.6.3 — Store Logins on a Fresh Config
 
 ### Español
