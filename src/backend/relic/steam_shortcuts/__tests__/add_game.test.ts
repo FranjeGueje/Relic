@@ -42,7 +42,7 @@ const mockedGetShortcutId = jest.mocked(steamHelpers.getShortcutId)
 const HEADER_LINES = [
   '@echo off',
   'title Relic Runner',
-  'echo Relic Runner version 3',
+  'echo Relic Runner version 4',
   'echo.',
   'set "RELIC=C:\\relic"',
   'set "LEGENDARY_CONFIG_PATH=%RELIC%\\Legendary"',
@@ -155,7 +155,9 @@ describe('createRelicBat', () => {
       'start "" /b "comet.exe" --from-heroic --username '
     )
     expect(content).toContain('timeout /t 2 /nobreak >nul')
-    expect(content).toContain('gogdl --version')
+    expect(content).toContain(
+      `for /f "delims=" %%v in ('gogdl --version') do echo gogdl version: %%v`
+    )
     expect(content).toContain(
       `@gogdl --auth-config-path c:\\relic\\gog_store\\auth.json ` +
         `launch --platform windows "c:\\games\\${basename(tmpDir.name)}" gog123 -- %*`
@@ -182,7 +184,9 @@ describe('createRelicBat', () => {
       expect(content).toContain(line)
     }
     expect(content).toContain('if not exist "%RELIC%\\bin\\nile.exe" (')
-    expect(content).toContain('nile --version')
+    expect(content).toContain(
+      `for /f "delims=" %%v in ('nile --version') do echo nile version: %%v`
+    )
     expect(content).toContain('nile launch nile789 -- %*')
     expect(content).toContain(
       "echo If you've closed the game, you can close this window now."

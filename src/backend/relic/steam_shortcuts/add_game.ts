@@ -86,7 +86,7 @@ export function createRelicBat(
     '@echo off',
     'title Relic Runner',
     '',
-    'echo Relic Runner version 3',
+    'echo Relic Runner version 4',
     'echo.',
     '',
     'rem ============================================================',
@@ -181,7 +181,7 @@ export function createRelicBat(
         'rem START THE GAME',
         'rem ============================================================',
         '',
-        'gogdl --version',
+        `for /f "delims=" %%v in ('gogdl --version') do echo gogdl version: %%v`,
         '',
         `@gogdl --auth-config-path c:\\relic\\gog_store\\auth.json launch --platform windows "${winPath}" ${appName} -- %*`
       ]
@@ -213,7 +213,7 @@ export function createRelicBat(
         'rem START THE GAME',
         'rem ============================================================',
         '',
-        'nile --version',
+        `for /f "delims=" %%v in ('nile --version') do echo nile version: %%v`,
         '',
         `nile launch ${appName} -- %*`
       ]
