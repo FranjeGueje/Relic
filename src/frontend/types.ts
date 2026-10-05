@@ -239,7 +239,6 @@ export interface GameContextType {
   is: {
     installing: boolean
     importing: boolean
-    installingRedist: boolean
     linux: boolean
     linuxNative: boolean
     mac: boolean

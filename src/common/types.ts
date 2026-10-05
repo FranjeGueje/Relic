@@ -194,7 +194,6 @@ export type Status =
   | 'notSupportedGame'
   | 'notInstalled'
   | 'installed'
-  | 'redist'
   | 'extracting'
   | 'winetricks'
 
@@ -277,7 +276,6 @@ export interface InstallArgs {
   installLanguage?: string
   branch?: string
   build?: string
-  dependencies?: string[]
 }
 
 export interface InstallParams extends InstallArgs {

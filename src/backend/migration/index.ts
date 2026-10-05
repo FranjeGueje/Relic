@@ -3,6 +3,7 @@ import { logError, logInfo } from '../logger'
 
 import { LegendaryGlobalConfigFolderMigration } from './migrations/legendary'
 import { MoveCacheToXdgMigration } from './migrations/cache'
+import { RemoveGogRedistMigration } from './migrations/gog_redist'
 
 import type { TypeCheckedStore } from 'common/types/electron_store'
 
@@ -73,7 +74,8 @@ export default class MigrationSystem {
   private getAllMigrations(): Migration[] {
     return [
       new LegendaryGlobalConfigFolderMigration(),
-      new MoveCacheToXdgMigration()
+      new MoveCacheToXdgMigration(),
+      new RemoveGogRedistMigration()
     ]
   }
 

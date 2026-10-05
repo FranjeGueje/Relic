@@ -33,7 +33,6 @@ jest.mock('backend/storeManagers/nile/constants', () => ({
 jest.mock('backend/storeManagers/gog/constants', () => ({
   gogdlConfigPath: '/mock/gogdl',
   gogSupportPath: '/mock/gogdl/gog-support',
-  gogRedistPath: '/mock/redist/gog',
   gogdlAuthConfig: '/mock/gog/auth.json'
 }))
 

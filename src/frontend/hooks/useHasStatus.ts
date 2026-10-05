@@ -59,7 +59,6 @@ export function useHasStatus(gameInfo: GameInfo, gameSize?: string) {
           status,
           t,
           size: gameSize,
-          statusContext,
           percent: progress.percent
         })
         return setGameStatus({ status, folder, label, statusContext })

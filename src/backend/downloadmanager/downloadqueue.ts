@@ -6,9 +6,6 @@ import { DMQueueElement, DMStatus, DownloadManagerState } from 'common/types'
 import { installQueueElement, updateQueueElement } from './utils'
 import { sendFrontendMessage } from '../ipc'
 import { callAbortController } from 'backend/utils/aborthandler/aborthandler'
-import { createRedistDMQueueElement } from 'backend/storeManagers/gog/redist'
-import { existsSync } from 'fs'
-import { gogRedistPath } from 'backend/storeManagers/gog/constants'
 import { onConnectivityChange } from 'backend/online_monitor'
 
 const downloadManager = new TypeCheckedStoreBackend('downloadManager', {
@@ -158,22 +155,6 @@ async function addToQueue(element: DMQueueElement) {
       element.params.size = installInfo?.manifest?.download_size
         ? getFileSize(installInfo?.manifest?.download_size)
         : '?? MB'
-
-      if (
-        element.params.runner === 'gog' &&
-        element.params.platformToInstall.toLowerCase() === 'windows' &&
-        installInfo &&
-        installInfo.manifest &&
-        'dependencies' in installInfo.manifest
-      ) {
-        const newDependencies = installInfo.manifest.dependencies || []
-        if (newDependencies?.length || !existsSync(gogRedistPath)) {
-          // create redist element
-          const redistElement = createRedistDMQueueElement()
-          redistElement.params.dependencies = newDependencies
-          elements.push(redistElement)
-        }
-      }
     } else {
       element.params.size = '?? MB'
     }
@@ -279,13 +260,6 @@ function stopCurrentDownload() {
 // log the outcome of a queue element, based on its status and the queue's
 function logQueueOutcome(element: DMQueueElement, status: DMStatus) {
   const action = element.type === 'install' ? 'Installation' : 'Update'
-  if (
-    element.params.runner === 'gog' &&
-    element.params.appName === 'gog-redist'
-  ) {
-    return
-  }
-
   if (status === 'abort') {
     if (isPaused()) {
       logWarning(

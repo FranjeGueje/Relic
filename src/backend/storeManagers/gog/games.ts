@@ -49,7 +49,6 @@ import { sendFrontendMessage } from '../../ipc'
 import { Game, RemoveArgs } from 'common/types/game_manager'
 import axios, { AxiosError, AxiosResponse } from 'axios'
 import { isOnline, runOnceWhenOnline } from 'backend/online_monitor'
-import { getRequiredRedistList, updateRedist } from './redist'
 import { gogdlConfigPath, gogSupportPath } from './constants'
 import { isLinux } from 'backend/constants/environment'
 
@@ -626,20 +625,7 @@ export default class GOGGame implements Game {
     branch?: string
     language?: string
     dlcs?: string[]
-    dependencies?: string[]
   }): Promise<{ status: 'done' | 'error'; error?: string }> {
-    // TODO: Implement GOG redist as a subclass of GOGGame & move this logic to it
-    if (this.id === 'gog-redist') {
-      const redist = await getRequiredRedistList()
-      if (updateOverwrites?.dependencies?.length) {
-        for (const dep of updateOverwrites.dependencies) {
-          if (!redist.includes(dep)) {
-            redist.push(dep)
-          }
-        }
-      }
-      return updateRedist(redist)
-    }
     const {
       installPlatform,
       gameData,

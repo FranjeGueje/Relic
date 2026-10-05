@@ -23,8 +23,7 @@ const ACTIVE_STATUSES = new Set<Status>([
   'moving',
   'repairing',
   'syncing-saves',
-  'extracting',
-  'redist'
+  'extracting'
 ])
 
 type Props = {

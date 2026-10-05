@@ -492,21 +492,6 @@ export interface GOGv2Manifest {
   scriptInterpreter?: boolean
 }
 
-export interface GOGRedistManifest {
-  depots: Array<{
-    compressedSize: number
-    dependencyId: string
-    executable: { arguments: string; path: string }
-    internal: boolean
-    readableName: string
-    manifest: string
-    signature: string
-    size: number
-  }>
-  build_id?: string
-  HGLInstalled?: string[]
-}
-
 export interface GOGCredentials {
   access_token: string
   expires_in: number

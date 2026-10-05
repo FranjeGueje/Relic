@@ -44,7 +44,6 @@ jest.mock('i18next', () => ({
   languages: ['en'],
   t: (key: string) => key
 }))
-jest.mock('../redist', () => ({ checkForRedistUpdates: jest.fn() }))
 jest.mock('../constants', () => ({
   gogdlConfigPath: '/tmp/gogdl_config'
 }))

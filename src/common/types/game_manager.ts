@@ -45,7 +45,6 @@ export interface Game {
     branch?: string
     language?: string
     dlcs?: string[]
-    dependencies?: string[]
   }) => Promise<InstallResult>
   forceUninstall: () => Promise<void>
   stop: (stopWine?: boolean) => Promise<void>

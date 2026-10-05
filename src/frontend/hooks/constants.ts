@@ -4,14 +4,12 @@ import { TFunction } from 'i18next'
 type StatusArgs = {
   status: Status
   t: TFunction<'gamepage', undefined>
-  statusContext?: string
   percent?: number
   size?: string
 }
 
 export function getStatusLabel({
   status,
-  statusContext,
   t,
   size,
   percent
@@ -31,12 +29,7 @@ export function getStatusLabel({
     moving: t('gamepage:gamecard.moving', 'Moving'),
     repairing: t('gamepage:gamecard.repairing', 'Repairing'),
     installed: `${t('gamepage:status.installed')} ${size}`,
-    notInstalled: t('gamepage:status.notinstalled'),
-    redist: t(
-      'gamepage:status.redist',
-      'Installing Redistributables ({{redist}})',
-      { redist: statusContext || '' }
-    )
+    notInstalled: t('gamepage:status.notinstalled')
   }
 
   return statusMap[status] || t('gamepage:status.notinstalled')

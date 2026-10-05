@@ -125,7 +125,6 @@ export default React.memo(function GamePage(): JSX.Element | null {
   const isMoving = status === 'moving'
   const isUninstalling = status === 'uninstalling'
   const isSyncing = status === 'syncing-saves'
-  const isInstallingRedist = status === 'redist'
   const notAvailable = !gameAvailable && gameInfo.is_installed
   const notSupportedGame =
     !!gameInfo.thirdPartyManagedApp &&
@@ -287,7 +286,6 @@ export default React.memo(function GamePage(): JSX.Element | null {
       is: {
         installing: isInstalling,
         importing: isImporting,
-        installingRedist: isInstallingRedist,
         linux: isLinux,
         linuxNative: isLinuxNative,
         mac: false,

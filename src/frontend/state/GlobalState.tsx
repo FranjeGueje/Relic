@@ -742,14 +742,9 @@ class GlobalState extends PureComponent<Props> {
 
     // in these cases we just add the new status
     if (
-      [
-        'installing',
-        'updating',
-        'playing',
-        'extracting',
-        'redist',
-        'queued'
-      ].includes(status)
+      ['installing', 'updating', 'playing', 'extracting', 'queued'].includes(
+        status
+      )
     ) {
       newLibraryStatus.push({
         appName,
@@ -961,7 +956,6 @@ class GlobalState extends PureComponent<Props> {
       'installing',
       'updating',
       'playing',
-      'redist',
       'extracting',
       'repairing',
       'moving',

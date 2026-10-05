@@ -52,7 +52,6 @@ import i18next from 'i18next'
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import { unzipSync } from 'node:zlib'
 import { mkdirSync, readdirSync, rmSync, writeFileSync } from 'node:fs'
-import { checkForRedistUpdates } from './redist'
 import { runGogdlCommandStub } from './e2eMock'
 import { gogdlConfigPath } from './constants'
 import { userDataPath } from 'backend/constants/paths'
@@ -91,7 +90,6 @@ export default class GOGLibraryManager implements LibraryManager {
         await this.createMissingGogdlManifest(appName, credentials)
       }
     })
-    runOnceWhenOnline(checkForRedistUpdates)
   }
 
   getGame(id: string): GOGGame {
@@ -369,6 +367,7 @@ export default class GOGLibraryManager implements LibraryManager {
 
   private async loadLocalLibrary() {
     for (const game of libraryStore.get('games', [])) {
+      if (game.app_name === 'gog-redist') continue // leftover from removed redist support
       const copyObject = { ...game }
       if (installedGames.has(game.app_name)) {
         if (isOnline()) {
@@ -459,21 +458,6 @@ export default class GOGLibraryManager implements LibraryManager {
     }
     this.refreshInstalled()
     await this.loadLocalLibrary()
-    const redistGameInfo: GameInfo = {
-      app_name: 'gog-redist',
-      runner: 'gog',
-      title: 'Galaxy Common Redistributables',
-      canRunOffline: true,
-      install: { is_dlc: true },
-      is_installed: true,
-      art_cover:
-        'https://images.gog-statics.com/516af877f6a03199526d1ce5a76358b8f85f6b828764cf46c820f77ae8832fc5.jpg',
-      art_square:
-        'https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/5fa80a0fb5ff0b2aaca6730ba213219b.png'
-    }
-
-    library.set('gog-redist', redistGameInfo)
-
     if (!isOnline()) {
       return this.defaultExecResult
     }
@@ -495,7 +479,7 @@ export default class GOGLibraryManager implements LibraryManager {
       (entry) => entry.platform_id === 'gog'
     )
 
-    const gamesObjects: GameInfo[] = [redistGameInfo]
+    const gamesObjects: GameInfo[] = []
     apiInfoCache.use_in_memory() // Prevent blocking operations
     for (const game of filteredApiArray) {
       let retries = 5
@@ -559,8 +543,6 @@ export default class GOGLibraryManager implements LibraryManager {
     void new Promise(() => {
       const logLines: string[] = []
       gamesObjects.forEach((gameData) => {
-        if (gameData.title == 'Galaxy Common Redistributables') return
-
         let line = `* ${gameData.title} (App name: ${gameData.app_name})`
         if (gameData.install.is_dlc) line += ' - DLC'
         logLines.push(line)
@@ -931,7 +913,6 @@ export default class GOGLibraryManager implements LibraryManager {
     installedGamesStore.set('installed', Array.from(installedGames.values()))
     this.refreshInstalled()
     await this.createMissingGogdlManifest(data.appName)
-    await checkForRedistUpdates()
     sendFrontendMessage('pushGameToLibrary', gameData)
   }
 

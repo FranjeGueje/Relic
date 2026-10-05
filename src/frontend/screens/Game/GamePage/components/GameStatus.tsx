@@ -15,12 +15,11 @@ interface Props {
 
 const GameStatus = ({ gameInfo, progress, handleUpdate, hasUpdate }: Props) => {
   const { t } = useTranslation('gamepage')
-  const { runner, is, statusContext } = useContext(GameContext)
+  const { runner, is } = useContext(GameContext)
 
   function getInstallLabel(
     is_installed: boolean,
-    notAvailable?: boolean,
-    statusContext?: string
+    notAvailable?: boolean
   ): React.ReactNode {
     const { eta, bytes, percent, file } = progress
 
@@ -40,12 +39,6 @@ const GameStatus = ({ gameInfo, progress, handleUpdate, hasUpdate }: Props) => {
 
     if (notAvailable) {
       return t('status.gameNotAvailable', 'Game not available')
-    }
-
-    if (is.installingRedist) {
-      return t('status.redist', 'Installing Redistributables ({{redist}})', {
-        redist: statusContext || ''
-      })
     }
 
     if (is.uninstalling) {
@@ -142,11 +135,7 @@ const GameStatus = ({ gameInfo, progress, handleUpdate, hasUpdate }: Props) => {
           </Link>
         )}
         {!is.installing &&
-          getInstallLabel(
-            gameInfo.is_installed,
-            is.notAvailable,
-            statusContext
-          )}
+          getInstallLabel(gameInfo.is_installed, is.notAvailable)}
       </p>
     </div>
   )
