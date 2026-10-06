@@ -29,6 +29,19 @@
 
 - `findExistingGame()` de `steam_helpers.ts`: sin usos tras el cambio anterior.
 
+#### Corregido
+
+- **`zoom-platform.sh` no llegaba al AppImage**, así que los juegos de Zoom se
+  descargaban pero no se instalaban (`No existe el fichero o el directorio`).
+  `download-helper-binaries` decidía qué bajar solo por `.release_tags`; ahora
+  también vuelve a bajar cualquier binario cuyo fichero no exista en
+  `public/bin`.
+- **Cada instalación se procesaba dos veces** si se encolaba en los 5 s
+  posteriores a abrir Relic: el arranque de la cola (`initQueue`) y el de
+  `addToQueue` corrían a la vez sobre el mismo elemento (doble descarga, doble
+  shortcut y errores `ENOENT … .png.$$N$PART` al bajar los grids). `initQueue` ya
+  no hace nada si la cola está en marcha.
+
 ### English
 
 #### Changed
@@ -55,6 +68,19 @@
 #### Removed
 
 - `findExistingGame()` from `steam_helpers.ts`: unused after the change above.
+
+#### Fixed
+
+- **`zoom-platform.sh` was missing from the AppImage**, so Zoom games were
+  downloaded but never installed (`No such file or directory`).
+  `download-helper-binaries` only looked at `.release_tags` to decide what to
+  fetch; it now also re-downloads any binary whose file is missing from
+  `public/bin`.
+- **Every install ran twice** when queued within 5 s of opening Relic: the queue
+  start-up call (`initQueue`) and the one from `addToQueue` ran at the same time
+  on the same element (double download, double shortcut and `ENOENT …
+.png.$$N$PART` errors when fetching grids). `initQueue` now does nothing when
+  the queue is already running.
 
 ## 0.6.4 — Cache to XDG & Redist Removal
 

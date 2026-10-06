@@ -38,6 +38,19 @@ const REPOS = {
   umu: 'Open-Wine-Components/umu-launcher'
 } as const satisfies Partial<Record<DownloadedBinary, string>>
 
+// One file each binary must leave in public/bin. A matching tag in
+// .release_tags is not enough: public/bin is gitignored, so the file can be
+// missing (fresh checkout, file no longer versioned) while the tag says it's there.
+const EXPECTED_FILES = {
+  legendary: join('x64', 'linux', 'legendary'),
+  gogdl: join('x64', 'linux', 'gogdl'),
+  nile: join('x64', 'linux', 'nile'),
+  comet: join('x64', 'linux', 'comet'),
+  'epic-integration': join('x64', 'win32', 'EpicGamesLauncher.exe'),
+  'zoom-platform': join('zoom', 'zoom-platform.sh'),
+  umu: join('umu', 'umu-run')
+} as const satisfies Record<DownloadedBinary, string>
+
 const pathExists = async (path: string): Promise<boolean> =>
   stat(path).then(
     () => true,
@@ -267,8 +280,12 @@ async function compareDownloadedTags(): Promise<DownloadedBinary[]> {
   }
   const binariesToDownload: DownloadedBinary[] = []
   for (const [runner, currentTag] of Object.entries(RELEASE_TAGS)) {
-    if (storedTagsParsed[runner] !== currentTag)
-      binariesToDownload.push(runner as keyof typeof RELEASE_TAGS)
+    const binary = runner as DownloadedBinary
+    const fileExists = await pathExists(
+      join('public', 'bin', EXPECTED_FILES[binary])
+    )
+    if (storedTagsParsed[binary] !== currentTag || !fileExists)
+      binariesToDownload.push(binary)
   }
   return binariesToDownload
 }

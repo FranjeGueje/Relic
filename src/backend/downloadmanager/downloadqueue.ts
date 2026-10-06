@@ -75,6 +75,10 @@ function addToFinished(element: DMQueueElement, status: DMStatus) {
 */
 
 async function initQueue() {
+  // The queue also starts 5 s after the frontend is ready, so a game queued
+  // within that window must not get a second loop processing the same element
+  if (isRunning()) return
+
   let element = getFirstQueueElement()
 
   while (element) {
