@@ -1,5 +1,42 @@
 # Changelog
 
+## 0.6.6 — Reinstall & Repair Fixes
+
+### Español
+
+#### Corregido
+
+- **Reinstalar un juego cuyo prefijo se conservó** fallaba con `EEXIST` al crear
+  los enlaces del prefijo (`drive_c/relic`, `drive_c/games`) y se saltaba el
+  resto de la preparación (umu y el overlay de Epic). Desinstalar conserva el
+  prefijo por defecto, así que le pasaba a cualquier reinstalación. Ahora
+  reemplaza los enlaces existentes.
+- **Reparar un juego nativo de Linux (GOG)** creaba un runner `.bat` que no le
+  corresponde: su shortcut apunta a `start.sh`. Ahora se omite, igual que ya
+  hacía la instalación.
+- **Zoom: una descarga cortada dejaba un instalador truncado** que el siguiente
+  intento daba por bueno (`File already exists, skipping`) e instalaba desde un
+  fichero incompleto. Ahora el instalador se descarga a un `.part` y solo se
+  renombra si llega entero; ante un fallo se borra el `.part`.
+
+### English
+
+#### Fixed
+
+- **Reinstalling a game whose prefix was kept** failed with `EEXIST` when
+  creating the prefix links (`drive_c/relic`, `drive_c/games`) and skipped the
+  rest of the preparation (umu and the Epic overlay). Uninstalling keeps the
+  prefix by default, so every reinstall hit it. It now replaces the existing
+  links.
+- **Repairing a Linux native game (GOG)** created a `.bat` runner it does not
+  need: its shortcut points to `start.sh`. It is now skipped, as the install
+  already did.
+- **Zoom: an aborted download left a truncated installer** that the next
+  attempt took for the finished one (`File already exists, skipping`) and
+  installed from an incomplete file. The installer is now downloaded to a
+  `.part` file and renamed only when complete; on failure the `.part` is
+  removed.
+
 ## 0.6.5 — Steam Shortcut Title
 
 ### Español

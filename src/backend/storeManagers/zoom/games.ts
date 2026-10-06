@@ -9,8 +9,7 @@ import {
 import { join, relative, dirname, basename } from 'node:path'
 import * as fs from 'fs'
 import axios, { AxiosProgressEvent } from 'axios'
-import { createWriteStream } from 'node:fs'
-import { pipeline } from 'node:stream/promises'
+import { saveStreamToFile } from './download'
 import {
   ExtraInfo,
   GameInfo,
@@ -278,7 +277,7 @@ export default class ZoomGame implements Game {
             }
           })
 
-          await pipeline(response.data, createWriteStream(downloadPath)) // Use pipeline for robust stream handling
+          await saveStreamToFile(response.data, downloadPath)
           logInfo(`Installer downloaded to ${downloadPath}`, LogPrefix.Zoom)
 
           downloaded = downloaded + parseSize(file.size)
