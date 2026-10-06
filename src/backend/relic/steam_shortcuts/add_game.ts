@@ -1,12 +1,15 @@
 import {
   existsSync,
   mkdirSync,
+  mkdtempSync,
   readFileSync,
+  rmSync,
   symlinkSync,
   unlinkSync,
   writeFileSync
 } from 'fs'
-import { basename, join } from 'path'
+import { tmpdir } from 'os'
+import { basename, dirname, join } from 'path'
 import { logError, logInfo } from 'backend/logger'
 import { spawnAsync } from 'backend/utils'
 import {
@@ -16,7 +19,6 @@ import {
 } from 'backend/constants/paths'
 import {
   findGameInAllUsers,
-  findExistingGame,
   getShortcutId,
   checkSteamProtocolHandler
 } from './steam_helpers'
@@ -255,25 +257,52 @@ const POLL_INTERVAL_MS = 1500
 const POLL_TIMEOUT_MS = 15000
 const ADD_GAME_MARKER = '/tmp/addnonsteamgamefile'
 
+function escapeDesktopName(value: string): string {
+  return value
+    .replace(/\\/g, '\\\\')
+    .replace(/\n/g, '\\n')
+    .replace(/\r/g, '\\r')
+    .replace(/\t/g, '\\t')
+}
+
+function quoteDesktopExec(value: string): string {
+  return `"${value.replace(/[\\"$`]/g, '\\$&')}"`
+}
+
+// Steam takes the shortcut title from `Name` and the executable from `Exec`
+// of a .desktop file, so the title no longer depends on the runner's filename.
+function writeSteamLauncher(gameName: string, runnerPath: string): string {
+  const dir = mkdtempSync(join(tmpdir(), 'relic-steam-'))
+  const desktopPath = join(dir, 'launcher.desktop')
+  const content = [
+    '[Desktop Entry]',
+    'Type=Application',
+    `Name=${escapeDesktopName(gameName)}`,
+    `Exec=${quoteDesktopExec(runnerPath)}`,
+    `Path=${dirname(runnerPath)}`,
+    'Terminal=false',
+    ''
+  ].join('\n')
+  writeFileSync(desktopPath, content, 'utf-8')
+  return desktopPath
+}
+
 export async function addGameToSteam(
   options: AddGameToSteamOptions
 ): Promise<AddGameToSteamResult> {
   const { gameName, runnerPath } = options
-  const steamName = basename(runnerPath)
 
   checkSteamProtocolHandler()
 
-  const existing = findExistingGame(steamName)
-  if (existing.found) {
+  const existing = findGameInAllUsers(gameName)
+  if (existing.found && existing.entry) {
+    const steamAppId = getShortcutId(existing.entry)
     logInfo(
-      `"${gameName}" already exists in Steam (ID ${existing.steamAppId}). Skipping.`,
+      `"${gameName}" already exists in Steam (ID ${steamAppId}). Skipping.`,
       LOG_PREFIX
     )
-    return { success: true, steamAppId: existing.steamAppId }
+    return { success: true, steamAppId }
   }
-
-  const encodedPath = encodeURIComponent(runnerPath)
-  const steamUrl = `steam://addnonsteamgame/${encodedPath}`
 
   try {
     unlinkSync(ADD_GAME_MARKER)
@@ -281,6 +310,20 @@ export async function addGameToSteam(
     // File doesn't exist, that's fine
   }
   writeFileSync(ADD_GAME_MARKER, '', 'utf-8')
+
+  const desktopPath = writeSteamLauncher(gameName, runnerPath)
+  try {
+    return await sendToSteam(gameName, desktopPath)
+  } finally {
+    rmSync(dirname(desktopPath), { recursive: true, force: true })
+  }
+}
+
+async function sendToSteam(
+  gameName: string,
+  desktopPath: string
+): Promise<AddGameToSteamResult> {
+  const steamUrl = `steam://addnonsteamgame/${encodeURIComponent(desktopPath)}`
 
   try {
     await spawnAsync('xdg-open', [steamUrl])
@@ -290,28 +333,22 @@ export async function addGameToSteam(
     return { success: false, error: `Failed to open steam:// URL: ${error}` }
   }
 
-  logInfo(`Waiting for "${steamName}" to be added to Steam...`, LOG_PREFIX)
+  logInfo(`Waiting for "${gameName}" to be added to Steam...`, LOG_PREFIX)
 
-  const { found, steamAppId } = await waitForGameInSteam(steamName, Date.now())
+  const { found, steamAppId } = await waitForGameInSteam(gameName, Date.now())
 
   if (!found) {
     return {
       success: false,
       error:
-        `"${steamName}" was not added to Steam in time. ` +
+        `"${gameName}" was not added to Steam in time. ` +
         `Make sure Steam is running and you confirmed the dialog.`
     }
   }
 
-  logInfo(
-    `"${steamName}" added to Steam with app ID ${steamAppId}.`,
-    LOG_PREFIX
-  )
+  logInfo(`"${gameName}" added to Steam with app ID ${steamAppId}.`, LOG_PREFIX)
 
-  return {
-    success: true,
-    steamAppId
-  }
+  return { success: true, steamAppId }
 }
 
 async function waitForGameInSteam(

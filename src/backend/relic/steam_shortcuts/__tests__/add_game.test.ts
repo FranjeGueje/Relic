@@ -1,5 +1,6 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'fs'
-import { basename, join } from 'path'
+import { tmpdir } from 'os'
+import { basename, dirname, join } from 'path'
 import { DirResult, dirSync } from 'tmp'
 import { addGameToSteam, createRelicBat, createRunnerFile } from '../add_game'
 import { GameInfo } from 'common/types'
@@ -17,7 +18,6 @@ jest.mock('backend/utils', () => ({
 }))
 jest.mock('../steam_helpers', () => ({
   findGameInAllUsers: jest.fn(),
-  findExistingGame: jest.fn(),
   getShortcutId: jest.fn(),
   checkSteamProtocolHandler: jest.fn()
 }))
@@ -36,7 +36,6 @@ jest.mock('backend/constants/paths', () => ({
 }))
 
 const mockedFindGameInAllUsers = jest.mocked(steamHelpers.findGameInAllUsers)
-const mockedFindExistingGame = jest.mocked(steamHelpers.findExistingGame)
 const mockedGetShortcutId = jest.mocked(steamHelpers.getShortcutId)
 
 const HEADER_LINES = [
@@ -57,7 +56,7 @@ describe('addGameToSteam', () => {
   beforeEach(() => {
     tmpDir = dirSync({ unsafeCleanup: true })
     jest.clearAllMocks()
-    mockedFindExistingGame.mockReturnValue({ found: false })
+    mockedFindGameInAllUsers.mockReturnValue({ entry: null, found: false })
   })
 
   afterEach(() => {
@@ -90,6 +89,103 @@ describe('addGameToSteam', () => {
 
     expect(result.success).toBe(true)
     expect(result.steamAppId).toBe(456)
+  })
+
+  describe('temporary .desktop launcher', () => {
+    const desktopPathFromUrl = (url: string) =>
+      decodeURIComponent(url.replace('steam://addnonsteamgame/', ''))
+
+    // Steam is mocked to "add" the game as soon as xdg-open is called; the
+    // .desktop is captured then because it is deleted when the call returns.
+    function captureDesktop(): { path: string; content: string }[] {
+      const captured: { path: string; content: string }[] = []
+      jest.mocked(spawnAsync).mockImplementation(async (_cmd, args) => {
+        const path = desktopPathFromUrl(args[0])
+        captured.push({ path, content: readFileSync(path, 'utf-8') })
+        return { code: 0, stdout: '', stderr: '' }
+      })
+      mockedFindGameInAllUsers
+        .mockReturnValueOnce({ entry: null, found: false })
+        .mockReturnValue({ entry: { appid: 1 }, found: true })
+      mockedGetShortcutId.mockReturnValue(1)
+      return captured
+    }
+
+    test('passes Steam a .desktop with the game name and runner', async () => {
+      const captured = captureDesktop()
+
+      await addGameToSteam({
+        gameName: 'My Game',
+        runnerPath: '/home/deck/runner/My Game.bat'
+      })
+
+      expect(captured).toHaveLength(1)
+      expect(captured[0].path.startsWith(tmpdir())).toBe(true)
+      expect(captured[0].content).toBe(
+        [
+          '[Desktop Entry]',
+          'Type=Application',
+          'Name=My Game',
+          'Exec="/home/deck/runner/My Game.bat"',
+          'Path=/home/deck/runner',
+          'Terminal=false',
+          ''
+        ].join('\n')
+      )
+    })
+
+    test('escapes special characters in Name and Exec', async () => {
+      const captured = captureDesktop()
+
+      await addGameToSteam({
+        gameName: 'Line1\nLine2',
+        runnerPath: '/tmp/a"b$c.bat'
+      })
+
+      expect(captured[0].content).toContain('Name=Line1\\nLine2\n')
+      expect(captured[0].content).toContain('Exec="/tmp/a\\"b\\$c.bat"\n')
+    })
+
+    test('removes the temporary .desktop when Steam adds the game', async () => {
+      const captured = captureDesktop()
+
+      await addGameToSteam({ gameName: 'MyGame', runnerPath: '/tmp/a.bat' })
+
+      expect(existsSync(captured[0].path)).toBe(false)
+      expect(existsSync(dirname(captured[0].path))).toBe(false)
+    })
+
+    test('removes the temporary .desktop when xdg-open fails', async () => {
+      let desktopPath = ''
+      jest.mocked(spawnAsync).mockImplementation(async (_cmd, args) => {
+        desktopPath = desktopPathFromUrl(args[0])
+        throw new Error('xdg-open not found')
+      })
+
+      const result = await addGameToSteam({
+        gameName: 'MyGame',
+        runnerPath: '/tmp/a.bat'
+      })
+
+      expect(result.success).toBe(false)
+      expect(existsSync(dirname(desktopPath))).toBe(false)
+    })
+
+    test('skips Steam when the game title already exists', async () => {
+      mockedFindGameInAllUsers.mockReturnValue({
+        entry: { appid: 7 },
+        found: true
+      })
+      mockedGetShortcutId.mockReturnValue(7)
+
+      const result = await addGameToSteam({
+        gameName: 'MyGame',
+        runnerPath: '/tmp/a.bat'
+      })
+
+      expect(result).toEqual({ success: true, steamAppId: 7 })
+      expect(spawnAsync).not.toHaveBeenCalled()
+    })
   })
 })
 

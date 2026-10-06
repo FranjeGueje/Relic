@@ -1,5 +1,49 @@
 # Changelog
 
+## 0.6.5 — Steam Shortcut Title
+
+### Español
+
+#### Cambiado
+
+- **El shortcut de Steam usa el nombre del juego como título**. Antes Steam
+  tomaba el nombre del fichero que se le pasaba (`Titulo.bat`, `start.sh`,
+  `juego.exe`). Ahora `addGameToSteam` escribe un `.desktop` temporal en `/tmp`
+  (`Name` = título del juego, `Exec` = ruta del runner, `Path` = su carpeta) y
+  abre `steam://addnonsteamgame/` con él; Steam copia `Name` a `AppName` y
+  `Exec` a `Exe`. El `.desktop` se borra siempre al terminar (éxito, timeout o
+  error de `xdg-open`). El `.bat`/`.sh` se crea igual que antes y la
+  desinstalación no cambia.
+- Comprobar si el juego ya está en Steam y esperar a que aparezca en
+  `shortcuts.vdf` se hace ahora por el título (`AppName`), no por el nombre del
+  fichero. Un shortcut antiguo llamado `Titulo.bat` ya no se detecta así; la
+  store de Relic sigue evitando duplicados.
+
+#### Eliminado
+
+- `findExistingGame()` de `steam_helpers.ts`: sin usos tras el cambio anterior.
+
+### English
+
+#### Changed
+
+- **The Steam shortcut now uses the game's name as its title**. Steam used to
+  take the name of the file it was given (`Title.bat`, `start.sh`, `game.exe`).
+  `addGameToSteam` now writes a temporary `.desktop` in `/tmp` (`Name` = game
+  title, `Exec` = runner path, `Path` = its folder) and opens
+  `steam://addnonsteamgame/` with it; Steam copies `Name` to `AppName` and
+  `Exec` to `Exe`. The `.desktop` is always deleted afterwards (success, timeout
+  or `xdg-open` failure). The `.bat`/`.sh` is created as before and uninstalling
+  is unchanged.
+- Checking whether the game is already in Steam and waiting for it to show up in
+  `shortcuts.vdf` is now done by title (`AppName`) instead of file name. An old
+  shortcut named `Title.bat` is no longer detected that way; Relic's store still
+  prevents duplicates.
+
+#### Removed
+
+- `findExistingGame()` from `steam_helpers.ts`: unused after the change above.
+
 ## 0.6.4 — Cache to XDG & Redist Removal
 
 ### Español

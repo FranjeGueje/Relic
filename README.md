@@ -133,8 +133,8 @@ Game install completed
   │    → actual install path                        ~/.local/share/relic/runner/<Game>.bat
   │                                                  │
   │  • Use existing start.sh                        ▼
-  │    as the Steam shortcut target               • Add to Steam via
-  │                                                  steam://addnonsteamgame
+  │    as the Steam shortcut target               • Add to Steam via temp .desktop
+  │                                                  + steam://addnonsteamgame
   │  • Skip: .bat, windowify, prefix                │
   │                                                  ▼
   │                                              • Windowify path transform
@@ -232,11 +232,14 @@ If GE-Proton is configured, Relic runs `umu-run exit` to initialize the prefix.
 Relic uses the `steam://addnonsteamgame/` protocol to add games to Steam. It never
 writes directly to `shortcuts.vdf`. The process:
 
-1. Opens `steam://addnonsteamgame/<runner-path>` via xdg-open
+1. Writes a temporary `.desktop` in `/tmp` (`Name` = game title, `Exec` = runner
+   path) so the shortcut gets the game's name instead of the runner's filename,
+   then opens `steam://addnonsteamgame/<desktop-path>` via xdg-open
 2. Steam opens an "Add Non-Steam Game" dialog
 3. Relic polls `shortcuts.vdf` every 1.5s for up to 15s
 4. Once the game appears, it reads the assigned `steamAppId`
-5. If Steam is not running or the dialog is not confirmed, the operation times out
+5. The temporary `.desktop` is deleted afterwards (Steam only keeps `Name` and `Exec`)
+6. If Steam is not running or the dialog is not confirmed, the operation times out
 
 ### Grid artwork
 

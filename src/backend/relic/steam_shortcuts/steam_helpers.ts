@@ -108,21 +108,6 @@ export function findGameInAllUsers(names: string | string[]): FindResult {
   return { entry: null, found: false }
 }
 
-export function findExistingGame(basenameWithExt: string): {
-  found: boolean
-  steamAppId?: number
-} {
-  const idx = basenameWithExt.lastIndexOf('.')
-  const hasExt = idx > 0
-  const name = hasExt ? basenameWithExt.slice(0, idx) : basenameWithExt
-  const names = hasExt ? [basenameWithExt, name] : [name]
-  const result = findGameInAllUsers(names)
-  if (result.found && result.entry) {
-    return { found: true, steamAppId: getShortcutId(result.entry) }
-  }
-  return { found: false }
-}
-
 // ── Protocol ──
 
 export function checkSteamProtocolHandler(): void {
