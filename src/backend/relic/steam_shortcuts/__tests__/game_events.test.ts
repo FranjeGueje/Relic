@@ -580,6 +580,27 @@ describe('onGameMoved', () => {
     )
   })
 
+  test('does not create a runner .bat for a Linux native game', async () => {
+    mockGetGameInfo.mockReturnValue({
+      title: 'NativeGame',
+      app_name: 'native_app',
+      runner: 'gog',
+      install: { install_path: '/games/native', platform: 'linux' }
+    })
+    mockedFindShortcut.mockReturnValue({
+      gameName: 'NativeGame',
+      appId: 'native_app',
+      store: 'gog',
+      steamAppId: 456,
+      execPath: '/games/native/start.sh',
+      installPath: '/games/native'
+    })
+
+    await onGameRepaired(mockGame as never)
+
+    expect(mockedCreateRelicBat).not.toHaveBeenCalled()
+  })
+
   test('skips when game is not tracked', async () => {
     mockGetGameInfo.mockReturnValue({
       title: 'UntrackedGame',

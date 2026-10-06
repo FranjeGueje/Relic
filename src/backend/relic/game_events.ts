@@ -188,6 +188,14 @@ export async function onGameRepaired(game: Game): Promise<void> {
     return
   }
 
+  if (gameInfo.install?.platform === 'linux') {
+    logInfo(
+      `"${known.gameName}" is a Linux native game, it has no runner. Skipping runner update.`,
+      LOG_PREFIX
+    )
+    return
+  }
+
   try {
     const runnerPath = createRelicBat(
       known.installPath,
