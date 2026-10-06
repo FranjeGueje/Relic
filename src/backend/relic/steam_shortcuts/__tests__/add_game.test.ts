@@ -1,4 +1,10 @@
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'fs'
+import {
+  existsSync,
+  mkdirSync,
+  readFileSync,
+  statSync,
+  writeFileSync
+} from 'fs'
 import { tmpdir } from 'os'
 import { basename, dirname, join } from 'path'
 import { DirResult, dirSync } from 'tmp'
@@ -132,6 +138,16 @@ describe('addGameToSteam', () => {
           ''
         ].join('\n')
       )
+    })
+
+    test('makes the runner executable so Steam parses the .desktop', async () => {
+      captureDesktop()
+      const runner = join(tmpDir.name, 'Game.bat')
+      writeFileSync(runner, '@echo off', { mode: 0o644 })
+
+      await addGameToSteam({ gameName: 'Game', runnerPath: runner })
+
+      expect(statSync(runner).mode & 0o111).toBe(0o111)
     })
 
     test('escapes special characters in Name and Exec', async () => {

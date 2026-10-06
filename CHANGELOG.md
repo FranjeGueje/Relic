@@ -14,6 +14,12 @@
   `Exec` a `Exe`. El `.desktop` se borra siempre al terminar (éxito, timeout o
   error de `xdg-open`). El `.bat`/`.sh` se crea igual que antes y la
   desinstalación no cambia.
+- **El runner se marca ejecutable (`chmod 755`) antes de añadirlo a Steam**:
+  Steam solo lee `Name`/`Exec` del `.desktop` si el destino de `Exec` es
+  ejecutable; si no, registra el propio `.desktop` como programa (título
+  `launcher.desktop`, ejecutable y «iniciar en» apuntando a `/tmp`). Los `.bat`
+  se crean sin permiso de ejecución, así que hace falta este paso, que también
+  cubre los `.bat` ya existentes, el `.sh` y el ejecutable de Zoom.
 - Comprobar si el juego ya está en Steam y esperar a que aparezca en
   `shortcuts.vdf` se hace ahora por el título (`AppName`), no por el nombre del
   fichero. Un shortcut antiguo llamado `Titulo.bat` ya no se detecta así; la
@@ -35,6 +41,12 @@
   `Exec` to `Exe`. The `.desktop` is always deleted afterwards (success, timeout
   or `xdg-open` failure). The `.bat`/`.sh` is created as before and uninstalling
   is unchanged.
+- **The runner is made executable (`chmod 755`) before it is added to Steam**:
+  Steam only reads `Name`/`Exec` from the `.desktop` when the `Exec` target is
+  executable; otherwise it registers the `.desktop` itself as the program (title
+  `launcher.desktop`, executable and "start in" pointing to `/tmp`). `.bat`
+  files are created without the execute bit, so this step is required; it also
+  covers existing `.bat` files, the `.sh` and the Zoom executable.
 - Checking whether the game is already in Steam and waiting for it to show up in
   `shortcuts.vdf` is now done by title (`AppName`) instead of file name. An old
   shortcut named `Title.bat` is no longer detected that way; Relic's store still

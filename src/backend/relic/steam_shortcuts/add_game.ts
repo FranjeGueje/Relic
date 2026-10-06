@@ -1,4 +1,5 @@
 import {
+  chmodSync,
   existsSync,
   mkdirSync,
   mkdtempSync,
@@ -269,6 +270,16 @@ function quoteDesktopExec(value: string): string {
   return `"${value.replace(/[\\"$`]/g, '\\$&')}"`
 }
 
+// Steam only reads Name/Exec from the .desktop when the Exec target is
+// executable; otherwise it registers the .desktop itself as the shortcut.
+function makeExecutable(runnerPath: string): void {
+  try {
+    chmodSync(runnerPath, 0o755)
+  } catch (error) {
+    logError(`Failed to chmod ${runnerPath}: ${error}`, LOG_PREFIX)
+  }
+}
+
 // Steam takes the shortcut title from `Name` and the executable from `Exec`
 // of a .desktop file, so the title no longer depends on the runner's filename.
 function writeSteamLauncher(gameName: string, runnerPath: string): string {
@@ -311,6 +322,7 @@ export async function addGameToSteam(
   }
   writeFileSync(ADD_GAME_MARKER, '', 'utf-8')
 
+  makeExecutable(runnerPath)
   const desktopPath = writeSteamLauncher(gameName, runnerPath)
   try {
     return await sendToSteam(gameName, desktopPath)
