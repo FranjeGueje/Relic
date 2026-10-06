@@ -82,6 +82,19 @@ export function removePrefixSymlink(steamAppId: number): void {
   }
 }
 
+/**
+ * Creates a symlink, replacing one that is already there: uninstalling a game
+ * keeps its prefix by default, so installing it again finds the links in place.
+ */
+function replaceSymlink(target: string, linkPath: string): void {
+  try {
+    unlinkSync(linkPath)
+  } catch {
+    // Nothing to replace (or not a link: symlinkSync reports it below)
+  }
+  symlinkSync(target, linkPath)
+}
+
 export async function prepareUmuPrefix(
   gameInfo: GameInfo,
   installPath: string,
@@ -100,8 +113,8 @@ export async function prepareUmuPrefix(
 
     mkdirSync(driveC, { recursive: true })
 
-    symlinkSync(relicMountPath, join(driveC, 'relic'))
-    symlinkSync(relicGamesPath, join(driveC, 'games'))
+    replaceSymlink(relicMountPath, join(driveC, 'relic'))
+    replaceSymlink(relicGamesPath, join(driveC, 'games'))
 
     const epicDataDir = join(
       driveC,
@@ -111,7 +124,7 @@ export async function prepareUmuPrefix(
       'Data'
     )
     mkdirSync(epicDataDir, { recursive: true })
-    symlinkSync(
+    replaceSymlink(
       join('..', '..', '..', '..', 'relic', 'legendary', 'manifests'),
       join(epicDataDir, 'manifests')
     )

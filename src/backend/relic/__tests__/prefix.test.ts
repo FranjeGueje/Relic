@@ -192,6 +192,43 @@ describe('preparePrefix', () => {
     )
   })
 
+  test('reinstalling replaces the links a kept prefix already has', async () => {
+    const { preparePrefix } = freshPrefix()
+    mockedUnlinkSync.mockImplementation(() => undefined)
+
+    await preparePrefix(
+      { title: 'Game', app_name: 'app', runner: 'nile' } as never,
+      777,
+      '/games/game'
+    )
+
+    const driveC = '/steam/steamapps/compatdata/777/drive_c'
+    expect(mockedUnlinkSync).toHaveBeenCalledWith(`${driveC}/relic`)
+    expect(mockedUnlinkSync).toHaveBeenCalledWith(`${driveC}/games`)
+    expect(mockedSymlinkSync).toHaveBeenCalledWith('/mount', `${driveC}/relic`)
+    expect(mockedSymlinkSync).toHaveBeenCalledWith('/games', `${driveC}/games`)
+    expect(logError).not.toHaveBeenCalled()
+  })
+
+  test('a first install, with no links to replace, still works', async () => {
+    const { preparePrefix } = freshPrefix()
+    mockedUnlinkSync.mockImplementation(() => {
+      throw Object.assign(new Error('ENOENT'), { code: 'ENOENT' })
+    })
+
+    await preparePrefix(
+      { title: 'Game', app_name: 'app', runner: 'nile' } as never,
+      778,
+      '/games/game'
+    )
+
+    expect(mockedSymlinkSync).toHaveBeenCalledWith(
+      '/mount',
+      '/steam/steamapps/compatdata/778/drive_c/relic'
+    )
+    expect(logError).not.toHaveBeenCalled()
+  })
+
   test('zoom: does not symlink the prefix when the game symlink fails', async () => {
     const { preparePrefix } = freshPrefix()
     createGameSymlink = jest.mocked(
