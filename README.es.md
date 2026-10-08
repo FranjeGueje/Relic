@@ -18,7 +18,17 @@
 
 Todavía no hay: categorías, favoritos ni búsqueda.
 
-## Ejecutarlo
+## Instalación automática
+
+Un solo comando lo instala y lo añade a Steam, con sus imágenes:
+
+```bash
+curl -sL https://raw.githubusercontent.com/FranjeGueje/Relic/master/scripts/install.sh | bash
+```
+
+Descarga la última release en `~/.local/bin/Relic` (borrando el antiguo `relic.AppImage`, si existe), comprueba su sha256 y te ofrece añadirlo a Steam con sus grids. Hay que cerrar o reiniciar Steam para ver las imágenes; el script te ofrece cerrarlo.
+
+## Instalación
 
 Descarga el `.AppImage` de las [releases](https://github.com/FranjeGueje/Relic/releases), hazlo ejecutable y lánzalo:
 

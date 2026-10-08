@@ -2,6 +2,12 @@
 
 The history of the previous Relic (the desktop launcher, versions up to 0.6.x) is in the `legacy` branch.
 
+## Unreleased
+
+### Added
+
+- `scripts/install.sh`: `curl … | bash` installer. Downloads the latest AppImage to `~/.local/bin/Relic` (removing the old `relic.AppImage`), checks its sha256, and adds it to Steam with the grids in `grids/`.
+
 ## 1.0.0 — Console-mode client for rakun
 
 Relic is now a console-mode client for [rakun](https://github.com/FranjeGueje/rakun/), made for a gamepad. It replaces the old desktop app.

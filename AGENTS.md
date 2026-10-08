@@ -94,6 +94,9 @@ propio** (ficheros, localStorage, IndexedDB) sin discutirlo. Comprobarlo: `HOME=
   auxiliares), no usa `exec` y borra ese directorio
   al terminar si no hay otra instancia (existe `userData/SingletonLock`). No se puede probar que la ventana abra sin
   pantalla: solo se comprueba el contenido y que el binario corre.
+- `scripts/install.sh` (`curl -sL …/master/scripts/install.sh | bash`): instala el AppImage de la última release en
+  `~/.local/bin/Relic` (borra el antiguo `relic.AppImage`), verifica su `.sha256` y lo añade a Steam con los
+  `grids/` (se bajan de `master`). Cambiar el nombre del asset en `package.sh` obliga a cambiarlo aquí.
 - `pnpm codecheck`, `pnpm lint`, `pnpm prettier`, `pnpm test`.
 - Los tests de la interfaz (jest + jsdom, con un rakun falso) están en el repo de rakun (`web/src/__tests__`, incluido
   el lado escritorio: `desktop.test.tsx`). Aquí solo hay los del anfitrión (`src/renderer/__tests__/host.test.tsx`)
