@@ -101,6 +101,13 @@ propio** (ficheros, localStorage, IndexedDB) sin discutirlo. Comprobarlo: `HOME=
 - Para probar contra un rakun real sin tocar el `$HOME` real: `HOME=$(mktemp -d) RAKUN_PORT=17986` y
   `RAKUN_API_FILE=<ese HOME>/.config/rakun/api.json`.
 
+## Releases
+
+CI (`.github/workflows/ci.yml`) corre en cada push de cualquier rama y en cada PR. Una release es una etiqueta `vX.Y.Z`
+**sobre `master`** (`release.yml` rechaza cualquier otra cosa): antes, versión en `package.json`, entrada
+`## X.Y.Z — Título` en `CHANGELOG.md` (`scripts/release-notes.sh vX.Y.Z` lo comprueba) y `vendor/rakun` en una etiqueta
+publicada de rakun. La etiqueta se crea **al publicar**, no antes: no dejar etiquetas locales sueltas.
+
 ## Commits
 
 Solo cuando se piden. Mensajes en español.

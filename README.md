@@ -125,6 +125,19 @@ environment, so rakun keeps using its usual folders.
 
 `pnpm codecheck`, `pnpm lint`, `pnpm prettier` and `pnpm test` check the project.
 
+## Releases
+
+GitHub Actions (`.github/workflows`) check every push to any branch and every pull request (`codecheck`, `lint`,
+`prettier`, the tests and the build). A release is made by a tag, and only a `vX.Y.Z` one (`v1.0.0-rc1` does nothing):
+
+1. Bump `version` in `package.json` and add `## X.Y.Z — Title` to `CHANGELOG.md` (`scripts/release-notes.sh vX.Y.Z` checks
+   both and prints the notes). The `vendor/rakun` submodule has to be on a published rakun tag.
+2. Merge the pull request into `master` and wait for the checks.
+3. `git tag -a vX.Y.Z` on `master` and `git push origin vX.Y.Z`.
+
+The release workflow refuses a tag whose commit is not in `master`, runs the checks, takes the published rakun tarball
+of the submodule's version, builds the x64 AppImage and creates the GitHub release with it, its `.sha256` and the notes.
+
 ## How it works
 
 The screens are **rakun's web**, the same interface its page serves, included here as the `vendor/rakun` git submodule.

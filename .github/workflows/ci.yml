@@ -1,0 +1,34 @@
+name: CI
+
+# Every push to any branch (not tags) and every pull request
+on:
+  push:
+    branches: ['**']
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      # The interface is rakun's web, the vendor/rakun submodule
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm codecheck
+      - run: pnpm lint
+      - run: pnpm prettier
+      - run: pnpm test
+      - run: pnpm build

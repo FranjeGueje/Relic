@@ -2,7 +2,7 @@
 
 The history of the previous Relic (the desktop launcher, versions up to 0.6.x) is in the `legacy` branch.
 
-## 1.0.0
+## 1.0.0 — Console-mode client for rakun
 
 Relic is now a console-mode client for [rakun](https://github.com/FranjeGueje/rakun/), made for a gamepad. It replaces the old desktop app.
 
