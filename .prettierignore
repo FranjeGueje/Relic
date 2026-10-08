@@ -1,10 +1,4 @@
-node_modules
-dist
-build
-coverage
-public/locales/
-sign/
-.github/workflows/build-base.yml
-signatures/version1/cla.json
-playwright-report
+out/
+dist/
+node_modules/
 pnpm-lock.yaml

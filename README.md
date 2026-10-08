@@ -1,385 +1,145 @@
 # Relic
 
-Relic is a fork of [Heroic Games Launcher](https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher)
-oriented exclusively to Linux.
+A console-mode client for [rakun](../rakun): a full-screen library of your Epic, GOG, Amazon and Zoom
+games that you drive with a gamepad (or the keyboard), made to run as a shortcut in Steam's Game Mode or
+as a plain window on the desktop.
 
-Its purpose is to log in to game stores (Epic Games, GOG, Amazon Games, Zoom Platform),
-download and install games, and automatically add them to Steam.
+Settings live in rakun (`rakunctl config`) and the client has no file of its own. Its **menu** (Select) shows and
+changes some of them in rakun: the accounts, the download folder, the Proton folder, the SteamGridDB key and the
+language rakun downloads in. It also shows the helper binaries rakun needs and can ask it to download them. The interface itself is always in English.
 
-Relic is **not** a launcher. Steam is the launcher.
+## Relic 1.0 is a new app
 
-The entire gaming experience takes place inside Steam.
+If you know Relic before 1.0 (the desktop launcher based on Heroic), this is **not an update of that**: from 1.0.0
+Relic is a console-mode client, made for a gamepad. The old code lives on in the
+[`legacy`](https://github.com/FranjeGueje/Relic/tree/legacy) branch (versions up to 0.6.x), which does not get new
+features.
 
----
+What did the store work now is **[rakun](../rakun)**, a backend-only service that comes from the same lineage
+(Heroic → Relic → rakun): it logs in to Epic, GOG, Amazon and Zoom and installs the games, with a local HTTP API.
+Relic is a client of it. Your sessions from the old Relic can be imported by rakun (`importSessionsFromRelic`).
 
-![Library](doc/Relic%20-%20library.jpg)
-![Settings](doc/Relic%20-%20settings.jpg)
-![Accounts](doc/Relic%20-%20accounts.jpg)
-![Console Mode](doc/Relic%20-%20console%20mode.jpg)
+## What it does
 
----
+- **Library:** covers of all your games, filtered by store, installed or not, sorted A→Z / Z→A. `●` marks
+  what is installed and `↑` what has an update.
+- **Game sheet:** install (when a game has a Windows and a Linux build you choose which), import a game that is
+  already on the disk from a folder (not on Zoom), update, repair or uninstall (asking first), cancel a download
+  (asking first: what was downloaded so far is deleted) or take a game out of the queue.
+- **Downloads:** the queue with progress, speed and time left; pause, resume, cancel the current one, clear
+  the finished ones (a failed one says why).
+- **Fast start:** the screen, the store tabs and each store's games show as they are read (a store that
+  is slower does not hold the others); the update marks come last, in the background. Note that asking
+  rakun for updates (`checkGameUpdates`) also **queues them when rakun's `autoUpdateGames` is on**, so
+  opening the client (and refreshing) can start downloads of updates. To see how long each step of the
+  start takes: `RELIC_PERF=1 pnpm dev` and look at the console (`[perf] …`).
+- **rakun not running:** the screen says so, has a **Start rakun** button (A / Enter) and retries by itself;
+  when it is back everything is read again. The button runs `rakunctl start` (found in
+  `~/.local/opt/rakun/rakunctl`, where `install.sh` leaves it, or in the `PATH`).
+- **Leaving:** a rakun that was already running when the client opened **stays running**. One the client
+  started is closed on exit with `rakunctl stop`, which refuses while rakun is downloading or refreshing: then
+  it stays running. The «Quit?» dialog says which will happen.
 
-## English
+- **Accounts:** Select opens the menu → Accounts lists each store and whether it is signed in. A on a store
+  without session opens its login page in a window (type your user and password there: nothing is copied or
+  pasted; the client takes the code from the page the store ends on and gives it to rakun). Esc closes the
+  window. A on a signed-in store asks, then signs out.
 
-### What is Relic?
+- **Settings:** folders are chosen by walking through the disk with the gamepad (A enters, B cancels; rakun
+  checks the folder and its reason is shown). The SteamGridDB key is typed in a text field (Steam's on-screen
+  keyboard works). The language (left/right) is the one rakun asks the stores for, not the interface's.
 
-You know Heroic Games Launcher: you install it, you log into Epic, GOG, or Amazon, you
-download a game, and you click Play. Heroic handles everything: Wine, Proton, prefixes,
-launch options, all of it.
+- **Helper binaries:** when rakun lacks one of the programs it runs for the stores (legendary, gogdl, nile…) a
+  notice at the bottom says which and has a **Download** button. Select → Helper binaries lists them with their
+  state and can also download the newest versions (unchecked).
+- **With the mouse:** every panel has a **✕ Close** button, the text fields and the language picker have **OK**,
+  and the header has a **Settings** button. On a narrow window the bar shows the stores and a **☰** for the rest.
 
-Relic is different.
+Not in this version: categories, favourites, search.
 
-Relic does the **same download and install** part, but then it stops. It never launches
-your game. Instead, it hands the game over to Steam. It creates a shortcut, prepares
-everything so Steam can run it, and your game appears in your Steam library — just like
-any other Steam game. You launch it from Steam, not from Relic.
+## Controls
 
-This means:
+| Action                | Gamepad       | Keyboard                |
+| --------------------- | ------------- | ----------------------- |
+| Move                  | D-pad / stick | arrows                  |
+| Select / confirm      | A (✕)         | Enter                   |
+| Back / close          | B (◯)         | Esc                     |
+| Previous / next store | L1 / R1       | `[` / `]`               |
+| Installed only        | X (□)         | `i`                     |
+| Downloads             | Y (△)         | `d`                     |
+| Sort                  | R2            | `s`                     |
+| Refresh library       | Start         | `r`                     |
+| Menu                  | Select        | `m`                     |
+| Quit (asks first)     | B on the grid | `q`, or Esc on the grid |
 
-- No Wine/Proton configuration screens. Relic has none.
-- No prefix management. Relic lets Steam and umu-launcher handle it.
-- No per-game launch options. Steam has its own.
-- No "Add to Steam" button. It happens automatically.
+The hints at the bottom show the buttons of the pad that is connected.
 
-Relic is an installer that feeds games into Steam. Nothing more.
+## Requirements
 
-### Why would I use this?
+- [rakun](../rakun) installed, logged in to at least one store (`rakunctl login <store>`), and running
+  (`rakunctl start`). The client reads its port and token from `~/.config/rakun/api.json`
+  (`RAKUN_API_FILE` points it at another one).
+- Node 24 and pnpm to build it.
 
-If you already live in Steam — if you use Steam Input, Steam Overlay, Steam Cloud saves,
-Game Recording, Remote Play, or just like having everything in one place — Relic gives
-you all of that for your non-Steam games too. No extra launcher to open, no switching
-between apps. Just install and play from Steam.
+## Running it
 
-And when you launch a game from Steam, Relic is not involved at all. Steam runs the
-corresponding Windows store backend (legendary.exe, gogdl.exe, nile.exe) directly
-inside the Proton prefix — no Electron app sitting in memory, no background process.
-You save as much RAM as possible for the game itself.
+```bash
+pnpm install
+pnpm dev                 # development, with hot reload
+pnpm build && pnpm start # the built app
+```
 
----
+For Game Mode, use the AppImage below; it also goes full screen by itself when `XDG_CURRENT_DESKTOP=gamescope`.
+`pnpm dev` and `pnpm start` still leave a few GPU driver cache files in `~/.cache`: only the AppImage moves them.
+
+### Packaging
+
+```bash
+pnpm package        # dist/relic-<version>-<arch>.AppImage (+ .sha256), about 100 MB
+```
+
+It builds the app and puts it inside the Electron this checkout has, for the architecture of this machine, as a
+single **AppImage**: it needs neither Node nor `node_modules`, and it is mounted, not extracted, so it leaves
+nothing on disk. `chmod +x` it and run it from anywhere (add `--fullscreen` for Game Mode). For Steam, add a
+non-Steam game whose target is the `.AppImage`. Without FUSE, run it with `--appimage-extract-and-run`. It has no
+setuid sandbox helper: Chromium uses user namespaces, and if your system has them off add `--no-sandbox`.
+The build downloads `appimagetool` and the AppImage runtime once, pinned and checked against their checksum,
+into `dist/.tools/`.
+
+### Leaves nothing behind
+
+Relic writes nothing in `~/.config` or `~/.cache`. What Electron and the GPU driver store while it runs (user
+data, caches, logs, shader cache, certificate database) goes to `$XDG_RUNTIME_DIR/relic` (a tmpfs; `/tmp/relic`
+if there is none) and is removed when it exits. After a crash it stays there until you log out. The only thing
+that lasts is rakun's own configuration, which Relic only reads. `rakunctl` is run with your original
+environment, so rakun keeps using its usual folders.
+
+`pnpm codecheck`, `pnpm lint`, `pnpm prettier` and `pnpm test` check the project.
+
+## How it works
+
+```
+interface (React) ──IPC──> preload ──IPC──> main process ──HTTP 127.0.0.1──> rakun
+```
+
+rakun refuses requests that carry an `Origin` header, which is what a web page sends, so the **main process**
+is the one that talks to rakun (the same way `rakunctl` does) and the interface asks it through a bridge.
+The bridge only lets through a fixed list of rakun channels (`src/shared/channels.ts`); the interface cannot
+ask for anything else, such as changing settings. The login is done by the main process (`rakun:login`):
+the interface only says which store, and never sees the login code.
+
+The interface never reads keys or buttons: the keyboard and the gamepad both become a small set of actions
+(`src/renderer/input`), and only the layer on top (the grid, a sheet, a dialog) receives them.
 
 ## Español
 
-### ¿Qué es Relic?
-
-Conoces Heroic Games Launcher: lo instalas, inicias sesión en Epic, GOG o Amazon,
-descargas un juego y le das a Jugar. Heroic se encarga de todo: Wine, Proton, prefijos,
-opciones de lanzamiento, todo.
-
-Relic es diferente.
-
-Relic hace la **misma parte de descargar e instalar**, pero ahí se detiene. Nunca
-ejecuta tu juego. En su lugar, se lo entrega a Steam. Crea un acceso directo, prepara
-todo para que Steam pueda ejecutarlo, y tu juego aparece en tu biblioteca de Steam
-— igual que cualquier otro juego de Steam. Lo lanzas desde Steam, no desde Relic.
-
-Esto significa:
-
-- Sin pantallas de configuración de Wine/Proton. Relic no tiene ninguna.
-- Sin gestión de prefijos. Relic deja que Steam y umu-launcher lo manejen.
-- Sin opciones de lanzamiento por juego. Steam tiene las suyas.
-- Sin botón "Añadir a Steam". Ocurre automáticamente.
-
-Relic es un instalador que alimenta juegos a Steam. Nada más.
-
-### ¿Por qué usaría esto?
-
-Si ya vives en Steam — si usas Steam Input, Steam Overlay, Steam Cloud, Game Recording,
-Remote Play, o simplemente te gusta tener todo en un mismo sitio — Relic te da todo eso
-para tus juegos que no son de Steam también. Sin lanzadores adicionales, sin cambiar de
-aplicación. Solo instalas y juegas desde Steam.
-
-Y cuando lanzas un juego desde Steam, Relic no está involucrado en absoluto. Steam
-ejecuta el lanzador de la tienda correspondiente (legendary.exe, gogdl.exe, nile.exe)
-directamente dentro del prefijo de Proton — sin una aplicación Electron ocupando
-memoria, sin procesos en segundo plano. Ahorras la máxima cantidad de RAM posible
-para el juego.
-
----
-
-## Features
-
-- Login: Epic Games, GOG, Amazon Games, Zoom Platform
-- Library viewer
-- Download, install, update, repair and uninstall games
-- Automatic Steam integration (shortcuts, grids, prefixes)
-- GOG achievements (experimental, via [Comet](https://github.com/imLinguin/comet))
-- Console mode (controller navigation)
-- Linux native game support (GOG)
-
----
-
-## How Steam Integration Works
-
-Relic never launches games. Every game is added to Steam as a non-Steam shortcut,
-and the user launches everything from Steam.
-
-### Installation flow
-
-```
-Game install completed
-       │
-       ▼
-  ┌─ is the game already tracked in Steam? ──Yes──► Skip (already done)
-  │
-  No
-  │
-  ▼
-  ┌─ is it a Linux native game? (GOG)
-  │
-  ├── Yes (Linux native) ──────────────────────── No (Windows/Proton)
-  │                                                  │
-  │  • Create symlink                                ▼
-  │    ~/.local/share/relic/games/<name>          • Create .bat runner file
-  │    → actual install path                        ~/.local/share/relic/runner/<Game>.bat
-  │                                                  │
-  │  • Use existing start.sh                        ▼
-  │    as the Steam shortcut target               • Add to Steam via temp .desktop
-  │                                                  + steam://addnonsteamgame
-  │  • Skip: .bat, windowify, prefix                │
-  │                                                  ▼
-  │                                              • Windowify path transform
-  │                                                Linux paths → c:\games\<name>
-  │                                                Creates mount structure at:
-  │                                                  ~/.local/share/relic/mount/
-  │                                                  │
-  │                                                  ▼
-  │                                              • Create symlink
-  │                                                ~/.local/share/relic/games/<name>
-  │                                                → actual install path
-  │                                                  │
-  │                                                  ▼
-  │                                              • Create Proton prefix
-  │                                                Steam compatdata/<id>/drive_c/
-  │                                                Runs umu-run to init prefix
-  │                                                  │
-  │                                                  ▼
-  │                                              • Epic games only:
-  │                                                run c:\relic\eos-overlay.bat
-  │                                                through umu-run to install
-  │                                                and enable the EOS Overlay
-  │                                                in that prefix
-  │                                                  │
-  │                                                ▼ (both flows converge)
-  │
-  └──────────────────────┬──────────────────────┘
-                         │
-                         ▼
-                  Save shortcut to
-                  ~/.config/relic/steam_shortcuts.json
-                         │
-                         ▼
-                  Download Steam grids
-                  (header, portrait, hero, logo, icon)
-                  from SteamGridDB
-                         │
-                         ▼
-                  Open Steam properties dialog
-                  steam://gameproperties/<id>
-                         │
-                         ▼
-                  Done — the game appears in Steam
-```
-
-### Runner files
-
-For Windows games, Relic creates a `.bat` file. This is the file that Steam launches.
-It sets environment variables and launches the game through the store's CLI:
-
-```
-@echo off
-@SET LEGENDARY_CONFIG_PATH=c:\relic\Legendary
-@SET GOGDL_CONFIG_PATH=c:\relic\
-@SET PATH=%PATH%;c:\relic\bin
-@legendary launch <appName> %*
-```
-
-For Linux native GOG games, there is no `.bat`. Relic uses the `start.sh` script
-that GOG ships with the game. Steam runs the shell script natively.
-
-### Symlink structure
-
-Relic maintains a directory of symbolic links at `~/.local/share/relic/games/`
-that map game folder names to their actual install locations:
-
-```
-~/.local/share/relic/games/
-├── Cyberpunk2077 → /home/user/Games/Relic/Cyberpunk2077
-├── Beat Cop     → /home/user/Games/Relic/gog/Beat Cop
-└── Fortnite     → /media/games/Fortnite
-```
-
-### Windowify (path transformation)
-
-Windows store backends need to see paths as `c:\games\<name>` when running inside
-a Proton prefix. Relic creates a mount structure at `~/.local/share/relic/mount/`
-that mirrors a Windows filesystem. Each store's config is symlinked into the mount,
-and `installed.json` is rewritten with `c:\` paths.
-
-### Prefix preparation
-
-For Windows games, Relic creates a Wine prefix inside `compatdata/<steamAppId>/drive_c/`.
-Two symlinks inside `drive_c` connect the mount and game structures:
-
-```
-drive_c/relic/  → ~/.local/share/relic/mount/
-drive_c/games/  → ~/.local/share/relic/games/
-```
-
-If GE-Proton is configured, Relic runs `umu-run exit` to initialize the prefix.
-
-### Steam shortcut registration
-
-Relic uses the `steam://addnonsteamgame/` protocol to add games to Steam. It never
-writes directly to `shortcuts.vdf`. The process:
-
-1. Writes a temporary `.desktop` in `/tmp` (`Name` = game title, `Exec` = runner
-   path) so the shortcut gets the game's name instead of the runner's filename,
-   then opens `steam://addnonsteamgame/<desktop-path>` via xdg-open
-2. Steam opens an "Add Non-Steam Game" dialog
-3. Relic polls `shortcuts.vdf` every 1.5s for up to 15s
-4. Once the game appears, it reads the assigned `steamAppId`
-5. The temporary `.desktop` is deleted afterwards (Steam only keeps `Name` and `Exec`)
-6. If Steam is not running or the dialog is not confirmed, the operation times out
-
-### Grid artwork
-
-After adding the game, Relic downloads artwork from SteamGridDB for all Steam users:
-
-- Header/banner (460x215)
-- Portrait (600x900)
-- Hero banner
-- Logo/wordmark
-- Icon
-
-A SteamGridDB API key is required in settings.
-
-### Repair flow
-
-Repairing a game never touches Steam or the prefix. If the repair completes without
-error, Relic only regenerates the `.bat` runner file in `~/.local/share/relic/runner/`
-(via `createRelicBat()`), using the data already stored in `steam_shortcuts.json`.
-Zoom Platform games and games that aren't tracked in Steam are skipped.
-
-### Uninstall cleanup
-
-When a game is uninstalled, Relic:
-
-1. Deletes the `.bat` runner file (Windows games only)
-2. Removes the symlink from `~/.local/share/relic/games/`
-3. Removes the Zoom prefix symlink (Zoom games only)
-4. Deletes all 5 grid artwork files
-5. Removes the shortcut from `steam_shortcuts.json`
-
-The Steam shortcut itself in `shortcuts.vdf` is **not** removed by Relic.
-
----
-
-## How Relic Differs from Heroic
-
-| Aspect                        | Heroic                                                 | Relic                               |
-| ----------------------------- | ------------------------------------------------------ | ----------------------------------- |
-| Game launching                | Launches games directly, full process management       | Never launches games. Steam does it |
-| Add to Steam                  | Manual button per game or "Add all"                    | Automatic at install time           |
-| Runner files                  | Runs store CLIs natively                               | Creates .bat files for Steam/Proton |
-| Wine/Proton config            | Full UI: managers, per-game settings, Esync/Fsync/DXVK | None. Just `protonPath` in settings |
-| Prefix management             | Per-game creation, location, deletion                  | Minimal: umu-run creates prefix     |
-| shortcuts.vdf                 | Writes directly                                        | Uses steam://addnonsteamgame only   |
-| SteamGridDB                   | Manual per game                                        | Automatic after install             |
-| Lutris/Bottles/Crossover      | Supported                                              | Removed                             |
-| Wine Manager / Proton Manager | Full download and install UI                           | Removed                             |
-| MangoHud / Gamescope          | Integrated options                                     | Removed                             |
-| macOS / Windows support       | Cross-platform                                         | Linux only                          |
-
-### Other launchers
-
-Most game launchers for Linux either launch games directly or treat Steam integration
-as an afterthought. Relic is unique in that **Steam is the only intended way to play**.
-The entire pipeline is designed to produce a game that appears and works in Steam.
-
----
-
-## Installation
-
-### One line (recommended)
-
-```bash
-curl -sL https://raw.githubusercontent.com/FranjeGueje/Relic/master/scripts/install.sh | bash
-```
-
-Downloads the AppImage, creates a Steam wrapper, adds it as a non-Steam game
-and downloads grid artwork automatically.
-
-### Manual
-
-```bash
-chmod +x Relic-*.AppImage
-./Relic-*.AppImage
-```
-
-Download from the [releases page](https://github.com/FranjeGueje/Relic/releases).
-
-### Requirements
-
-- Linux
-- Steam
-- `curl`, `xxd`, `xdg-open` (for the one-line installer)
-
----
-
-## File locations
-
-```
-~/.config/relic/
-├── config.json              — App settings
-├── store/                   — Window state, timestamps, downloads
-├── legendaryConfig/         — Epic login + installed.json
-├── gogdlConfig/             — GOG login + installed.json
-├── nile_config/             — Amazon login + installed.json
-├── zoom_store/              — Zoom Platform login
-├── GamesConfig/             — Per-game settings
-└── icons/                   — Custom game icons
-
-~/.cache/relic/              — Regenerable caches ($XDG_CACHE_HOME)
-├── images-cache/            — Cached SteamGridDB images
-└── store_cache/             — Library caches per store
-
-~/.local/share/relic/
-├── games/                   — Symlinks to installed game dirs
-├── runner/                  — .bat files for Steam (Windows games)
-└── mount/                   — Mount structure for Proton prefixes
-    ├── legendary/           — Epic config with c:\ paths
-    ├── gog_store/           — GOG config with c:\ paths
-    ├── nile/                — Amazon config with c:\ paths
-    └── bin/                 — Synced win32 binaries
-
-~/Games/Relic/               — Default game install path
-```
-
----
-
-## Building from source
-
-```bash
-git clone https://github.com/FranjeGueje/Relic.git
-cd Relic
-pnpm install
-pnpm download-helper-binaries
-pnpm dist:linux
-```
-
----
-
-## Credits
-
-- [Heroic Games Launcher](https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher)
-- [Legendary](https://github.com/derrod/legendary)
-- [GOGdl](https://github.com/Heroic-Games-Launcher/heroic-gogdl)
-- [Nile](https://github.com/imLinguin/nile)
-- [Comet](https://github.com/imLinguin/comet)
-- [umu-launcher](https://github.com/Open-Wine-Components/umu-launcher)
-
----
+Cliente de modo consola para rakun: la biblioteca de Epic, GOG, Amazon y Zoom a pantalla completa, para
+manejar con mando (o teclado), pensado como acceso directo de Steam en modo juego o como ventana en el
+escritorio. Los ajustes viven en rakun (`rakunctl config`); la interfaz va siempre en inglés. Select abre
+el menú: Cuentas (inicia sesión en cada tienda en una ventana, sin copiar ni pegar, o la cierra), carpeta de
+descarga, carpeta de Proton, key de SteamGridDB e idioma de descarga de rakun. Hace falta tener rakun arrancado.
 
 ## License
 
-GPL-3.0-only
+GPL-3.0-only. Relic descends from [Heroic Games Launcher](https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher)
+and from the previous Relic (branch `legacy`).
