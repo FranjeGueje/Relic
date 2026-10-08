@@ -18,7 +18,17 @@
 
 Not here yet: categories, favourites, search.
 
-## Run it
+## Automatic installation
+
+One command installs it and adds it to Steam, with its artwork:
+
+```bash
+curl -sL https://raw.githubusercontent.com/FranjeGueje/Relic/master/scripts/install.sh | bash
+```
+
+It downloads the latest release to `~/.local/bin/Relic` (removing the old `relic.AppImage`, if any), checks its sha256 and offers to add it to Steam with its grids. Steam must be closed or restarted to show the artwork; the script offers to close it.
+
+## Installation
 
 Download the `.AppImage` from the [releases](https://github.com/FranjeGueje/Relic/releases), make it executable and run it:
 
