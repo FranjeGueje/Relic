@@ -21,7 +21,8 @@
     "test": "vitest run",
     "lint": "eslint .",
     "prettier": "prettier --check .",
-    "package": "bash scripts/package.sh"
+    "package": "bash scripts/package.sh",
+    "postinstall": "node node_modules/electron/install.js"
   },
   "dependencies": {
     "react": "^18.3.1",

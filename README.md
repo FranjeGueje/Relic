@@ -58,7 +58,7 @@ pnpm dev               # development; needs a rakun running (rakunctl start)
 pnpm package           # dist/relic-<version>-x64.AppImage (about 100 MB)
 ```
 
-`pnpm package` takes rakun from a tarball (`RAKUN_TARBALL`, or the newest in `../rakun/dist`). If Electron's binary is missing after `pnpm install`, run `node node_modules/electron/install.js`. `pnpm codecheck`, `pnpm lint`, `pnpm prettier` and `pnpm test` check the project.
+`pnpm package` takes rakun from a tarball (`RAKUN_TARBALL`, or the newest in `../rakun/dist`). `pnpm codecheck`, `pnpm lint`, `pnpm prettier` and `pnpm test` check the project.
 
 ## How it fits together
 
