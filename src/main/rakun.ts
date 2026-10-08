@@ -5,7 +5,7 @@ import { isAbsolute, join } from 'node:path'
 import { errorOf, parseSseBlock, splitBlocks } from '../shared/sse'
 import {
   type ConnectionState,
-  type LinkCallMap,
+  type CallMap,
   type RakunEvent
 } from '../shared/channels'
 
@@ -100,15 +100,15 @@ export class RakunLink {
     this.stream = undefined
   }
 
-  async call<C extends keyof LinkCallMap>(
+  async call<C extends keyof CallMap>(
     channel: C,
-    ...args: LinkCallMap[C]['args']
-  ): Promise<LinkCallMap[C]['result']> {
+    ...args: CallMap[C]['args']
+  ): Promise<CallMap[C]['result']> {
     const res = await this.open('POST', `/api/${channel}`, { args }).response
     const body = await readBody(res)
     if (res.statusCode !== 200)
       throw new Error(errorOf(res.statusCode ?? 0, body))
-    return (JSON.parse(body) as { result: LinkCallMap[C]['result'] }).result
+    return (JSON.parse(body) as { result: CallMap[C]['result'] }).result
   }
 
   /** The answer when it arrives, and a way to cut the request */

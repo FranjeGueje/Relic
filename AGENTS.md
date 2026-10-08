@@ -44,24 +44,20 @@ renderer (React) ──IPC──> preload ──IPC──> main (Node) ──HTT
   preload ni sesión guardada, `loginPageResult` decide si la página es el final (URL con el código, mirada también en
   `will-redirect`; Epic usa el login del launcher de Relic con su agente de usuario y acaba en `localhost?code=`,
   no la página `legendary.gl` de rakun) y lo entrega a `submitLogin`. `getLoginInfo` y `submitLogin` están en
-  `LinkCallMap` pero **no** en la lista del interfaz.
-- `src/renderer/console/Menu.tsx` y `Accounts.tsx`: el menú (Select) y la lista de tiendas con su sesión.
-  `Helpers.tsx`/`HelpersBanner.tsx`: los binarios auxiliares de rakun (`getHelpers`, `updateHelpers`, evento
-  `helpersProgress`). La interfaz es una evolución de la web de rakun (`../rakun/web`): lo que se arregla allí en
-  `console/`, `state/` o `styles.css` suele valer aquí cambiando solo los imports (`../api/*` → `../../shared/*`);
-  lo propio de una web (login por pegado, modo red, sin «Quit») no se trae.
-- `src/renderer/input`: el teclado y el mando se convierten en **acciones** (`actions.ts`); el interfaz no lee
-  teclas ni botones. Solo la capa de arriba (rejilla, ficha, diálogo) recibe las acciones (`bus.ts`).
-- `src/renderer/state`: `reducer.ts` (estado y eventos), `selectors.ts` (filtros y acciones posibles),
-  `useRakun.ts` (lectura inicial al conectar, eventos y llamadas).
-- Carga por etapas (`useRakun.ts`): primero tiendas, ajustes y cola; luego `getLibrary` **por tienda** y en
-  paralelo (cada una se pinta al llegar); `checkGameUpdates` va el último y en segundo plano (consulta la red
-  y, con `autoUpdateGames`, encola actualizaciones): nunca debe retrasar la pantalla. `RELIC_PERF=1`
-  imprime los tiempos (`src/renderer/perf.ts`).
-- `Card` está memoizada y sus manejadores no cambian entre renders (reciben el índice): un evento de progreso
-  repinta una tarjeta, no mil. No usar `content-visibility` en las celdas: con `loading="lazy"` dejaba imágenes sin
-  pintar hasta que el foco llegaba a su tarjeta (se vio al cambiar de tienda con L1/R1).
-- `src/renderer/i18n`: `strings.ts` solo en **inglés**; la interfaz no sigue el ajuste `language` de rakun.
+  `CallMap` (tipos de rakun) pero **no** en la lista cerrada del interfaz.
+- **La interfaz no es de este repo**: es la web de rakun (`vendor/rakun/web/src`, submodule de git fijado a un commit de
+  rakun; alias `@rakun-ui`). Aquí solo está su anfitrión: `src/renderer/main.tsx` (monta `App`), `index.html` y el
+  puente de `src/preload` (`window.rakun`). La web enseña lo que el anfitrión tiene: `appName`, `quit`/`owns`
+  (botón y tecla Quit con su diálogo), `start` (botón «Start rakun») y `login` (ventana propia, sin pegar). **Un cambio
+  de pantalla se hace en el repo de rakun** (`web/src`, con sus tests de jest) y aquí solo se sube el puntero del
+  submodule (`git -C vendor/rakun fetch && git -C vendor/rakun checkout <tag>`, y commit). Nada se parchea en `vendor/`.
+  Para obtenerla: `scripts/init-ui.sh` (shallow + sparse: el repo de rakun pesa cientos de MB).
+  Dentro: `console/` (rejilla, ficha, descargas, menú, `Helpers*`), `input/` (teclado y mando → **acciones**; el
+  interfaz no lee teclas), `state/` (`reducer`, `selectors`, `useRakun`), `i18n/strings.ts` (solo **inglés**; no sigue el
+  ajuste `language` de rakun), `perf.ts` (`RELIC_PERF=1` imprime los tiempos de arranque: el main añade `?perf`).
+- Carga por etapas (`useRakun.ts`): primero tiendas, ajustes y cola; luego `getLibrary` **por tienda** y en paralelo;
+  `checkGameUpdates` va el último y en segundo plano (consulta la red y, con `autoUpdateGames`, encola
+  actualizaciones): nunca debe retrasar la pantalla. `Card` está memoizada y no se usa `content-visibility` en las celdas.
 - El explorador de carpetas (`FolderPicker.tsx`) usa el canal `listFolders` de rakun (una sola implementación, la
   suya). Los campos de texto
   (`TextField.tsx`) no pasan las teclas a las acciones (`isTyping` en `useInput.ts`).
@@ -79,9 +75,8 @@ propio** (ficheros, localStorage, IndexedDB) sin discutirlo. Comprobarlo: `HOME=
 ## Reglas de código
 
 - TypeScript estricto; sin `any`.
-- La lógica va en funciones puras con tests (reducer, selectores, `readPad`, foco en la rejilla); los
-  componentes solo la pintan.
-- Un texto visible nuevo va a `strings.ts` (en inglés).
+- La lógica va en funciones puras con tests; los componentes solo la pintan. La del interfaz (reducer, selectores,
+  `readPad`, rejilla) y sus textos (`strings.ts`, en inglés) están en el repo de rakun.
 - Dependencias: solo `react` y `react-dom` en producción; no añadir más sin una razón clara.
 - `contextIsolation` y `sandbox` siempre activos; el preload no expone nada fuera de `RakunBridge`.
 
@@ -99,8 +94,9 @@ propio** (ficheros, localStorage, IndexedDB) sin discutirlo. Comprobarlo: `HOME=
   al terminar si no hay otra instancia (existe `userData/SingletonLock`). No se puede probar que la ventana abra sin
   pantalla: solo se comprueba el contenido y que el binario corre.
 - `pnpm codecheck`, `pnpm lint`, `pnpm prettier`, `pnpm test`.
-- Los tests del interfaz usan jsdom y un rakun falso (`src/renderer/__tests__/fakeRakun.ts`). La ventana de
-  Electron no se puede probar sin pantalla (el modo `headless` de Electron falla): probarla a mano con
+- Los tests de la interfaz (jest + jsdom, con un rakun falso) están en el repo de rakun (`web/src/__tests__`, incluido
+  el lado escritorio: `desktop.test.tsx`). Aquí solo hay los del anfitrión (`src/renderer/__tests__/host.test.tsx`)
+  y los de `src/main`. La ventana de Electron no se puede probar sin pantalla (el modo `headless` de Electron falla): probarla a mano con
   `pnpm dev`.
 - Para probar contra un rakun real sin tocar el `$HOME` real: `HOME=$(mktemp -d) RAKUN_PORT=17986` y
   `RAKUN_API_FILE=<ese HOME>/.config/rakun/api.json`.

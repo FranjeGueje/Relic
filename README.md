@@ -88,6 +88,8 @@ The hints at the bottom show the buttons of the pad that is connected.
 ## Running it
 
 ```bash
+git clone https://github.com/FranjeGueje/Relic.git && cd Relic
+scripts/init-ui.sh       # the interface is rakun's web, a git submodule (vendor/rakun)
 pnpm install
 node node_modules/electron/install.js   # only if Electron's binary is missing (pnpm skips it when node_modules already existed)
 pnpm dev                 # development, with hot reload
@@ -124,6 +126,10 @@ environment, so rakun keeps using its usual folders.
 `pnpm codecheck`, `pnpm lint`, `pnpm prettier` and `pnpm test` check the project.
 
 ## How it works
+
+The screens are **rakun's web**, the same interface its page serves, included here as the `vendor/rakun` git submodule.
+Relic is its desktop host: it gives it the Electron window, quitting, starting rakun and the login in a window. A
+change to a screen is made in the rakun repository, and Relic only moves the pointer of the submodule.
 
 ```
 interface (React) ──IPC──> preload ──IPC──> main process ──HTTP 127.0.0.1──> rakun

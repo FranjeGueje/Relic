@@ -1,10 +1,10 @@
-import type {
-  CallChannel,
-  CallMap,
-  ConnectionState,
-  RakunEvent
-} from './channels'
-import type { Runner, SettingKey } from './types'
+export type {
+  LoginReply,
+  Ownership,
+  RakunBridge,
+  SettingReply,
+  StartReply
+} from '@rakun-ui/api/bridge'
 
 /** The names of the IPC messages between the renderer and the main process */
 export const IPC = {
@@ -20,40 +20,5 @@ export const IPC = {
 } as const
 
 /** What the main process answers to a call: errors travel as text, not as exceptions */
-export type StartReply = { ok: true } | { ok: false; error: string }
-
-/** How a login ended: `cancelled` when the person closed the window */
-export type LoginReply =
-  { ok: true } | { ok: false; error: string; cancelled?: true }
-
-/** How saving a setting ended: the reason comes from rakun, which validates it */
-export type SettingReply = { ok: true } | { ok: false; error: string }
-
 export type CallReply =
   { ok: true; result: unknown } | { ok: false; error: string }
-
-/**
- * Whether the app started rakun, and so closes it on exit: `cli` is the one `rakunctl`
- * started (it stays if it is busy); `embedded` is the one inside the app, which stops with it.
- */
-export type Ownership = 'none' | 'cli' | 'embedded'
-
-/** What the preload gives the interface as `window.rakun` */
-export type RakunBridge = {
-  call: <C extends CallChannel>(
-    channel: C,
-    ...args: CallMap[C]['args']
-  ) => Promise<CallMap[C]['result']>
-  connection: () => Promise<ConnectionState>
-  onEvent: (listener: (event: RakunEvent) => void) => () => void
-  onConnection: (listener: (state: ConnectionState) => void) => () => void
-  quit: () => void
-  /** Starts rakun (through rakunctl); the interface cannot say how or where */
-  start: () => Promise<StartReply>
-  /** Whether this client started rakun, and will close it on exit */
-  owns: () => Promise<Ownership>
-  /** Opens the store's login page in a window and hands the result to rakun */
-  login: (runner: Runner) => Promise<LoginReply>
-  /** Saves one of the few settings the interface may change */
-  setSetting: (key: SettingKey, value: string) => Promise<SettingReply>
-}

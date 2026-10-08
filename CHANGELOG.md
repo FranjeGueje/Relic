@@ -8,6 +8,7 @@ Relic is now a console-mode client for [rakun](https://github.com/FranjeGueje/ra
 
 ### Added
 
+- The interface is rakun's web, shared through the `vendor/rakun` submodule (`scripts/init-ui.sh` fetches it).
 - Library of Epic, GOG, Amazon and Zoom, navigable with a gamepad or the keyboard; install, update, repair, uninstall, import a game from a folder, choose between the Windows and the Linux build, downloads panel.
 - Login to the stores in a window of the app.
 - Menu: accounts, download and Proton folders, SteamGridDB key, download language, and the helper binaries rakun needs.

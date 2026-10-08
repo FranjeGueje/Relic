@@ -42,7 +42,7 @@ APPDIR="$OUT_DIR/relic.AppDir"
 APP="$APPDIR/usr/lib/relic"
 IMAGE="$OUT_DIR/relic-${VERSION}-${ARCH}.AppImage"
 ELECTRON="${ELECTRON_DIST:-node_modules/electron/dist}"
-RAKUN_TARBALL="${RAKUN_TARBALL:-$(ls -1t ../rakun/dist/rakun-*-linux-"${ARCH}".tar.gz 2>/dev/null | head -n 1)}"
+RAKUN_TARBALL="${RAKUN_TARBALL:-$(ls -1t ../rakun/dist/rakun-*-linux-"${ARCH}".tar.gz 2>/dev/null | head -n 1 || true)}"
 TOOL="$OUT_DIR/.tools/appimagetool-${APPIMAGETOOL_VERSION}-${TOOL_ARCH}.AppImage"
 RUNTIME="$OUT_DIR/.tools/runtime-${RUNTIME_VERSION}-${TOOL_ARCH}"
 
@@ -59,6 +59,19 @@ RUNTIME="$OUT_DIR/.tools/runtime-${RUNTIME_VERSION}-${TOOL_ARCH}"
     echo "Error: $RAKUN_TARBALL does not match its .sha256" >&2
     exit 1
 }
+
+# The interface (the vendor/rakun submodule) and the rakun that travels have to be the same version
+UI_VERSION=$(node -p "require('./vendor/rakun/package.json').version" 2>/dev/null) || {
+    echo "Error: the interface is missing (vendor/rakun): run scripts/init-ui.sh" >&2
+    exit 1
+}
+case "$(basename "$RAKUN_TARBALL")" in
+    "rakun-${UI_VERSION}-linux-"*) ;;
+    *)
+        echo "Error: the interface is rakun $UI_VERSION but the tarball is $(basename "$RAKUN_TARBALL")" >&2
+        exit 1
+        ;;
+esac
 
 echo "[1/5] Getting appimagetool ${APPIMAGETOOL_VERSION} and its runtime ${RUNTIME_VERSION}..."
 # Both are pinned and checked, and kept in dist/.tools: nothing is fetched at build time without a checksum

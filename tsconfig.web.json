@@ -11,7 +11,17 @@
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
     "isolatedModules": true,
-    "noEmit": true
+    "noEmit": true,
+    "paths": { "@rakun-ui/*": ["./vendor/rakun/web/src/*"] }
   },
-  "include": ["src/renderer/**/*", "src/shared/**/*"]
+  "include": [
+    "src/renderer/**/*",
+    "src/shared/**/*",
+    "vendor/rakun/web/src/**/*",
+    "vendor/rakun/src/common/languages.ts"
+  ],
+  "exclude": [
+    "vendor/rakun/web/src/**/__tests__/**",
+    "vendor/rakun/web/src/main.tsx"
+  ]
 }

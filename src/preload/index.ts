@@ -19,6 +19,7 @@ function subscribe<T>(message: string, listener: (payload: T) => void) {
 }
 
 const bridge: RakunBridge = {
+  appName: 'Relic',
   call: async (channel, ...args) => {
     const reply = (await ipcRenderer.invoke(
       IPC.call,

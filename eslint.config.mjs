@@ -35,6 +35,7 @@ export default tseslint.config(
       'dist/',
       'node_modules/',
       'coverage/',
+      'vendor/',
       'eslint.config.mjs'
     ]
   }
