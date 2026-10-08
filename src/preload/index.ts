@@ -4,6 +4,7 @@ import {
   type CallReply,
   type SettingReply,
   type LoginReply,
+  type Ownership,
   type RakunBridge,
   type StartReply
 } from '../shared/bridge'
@@ -33,7 +34,7 @@ const bridge: RakunBridge = {
     subscribe<ConnectionState>(IPC.connection, listener),
   quit: () => ipcRenderer.send(IPC.quit),
   start: () => ipcRenderer.invoke(IPC.start) as Promise<StartReply>,
-  owns: () => ipcRenderer.invoke(IPC.owns) as Promise<boolean>,
+  owns: () => ipcRenderer.invoke(IPC.owns) as Promise<Ownership>,
   setSetting: (key, value) =>
     ipcRenderer.invoke(IPC.setting, key, value) as Promise<SettingReply>,
   login: (runner) =>

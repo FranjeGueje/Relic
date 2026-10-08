@@ -1,6 +1,6 @@
 # Relic
 
-A console-mode client for [rakun](../rakun): a full-screen library of your Epic, GOG, Amazon and Zoom
+A console-mode client for [rakun](https://github.com/FranjeGueje/rakun/): a full-screen library of your Epic, GOG, Amazon and Zoom
 games that you drive with a gamepad (or the keyboard), made to run as a shortcut in Steam's Game Mode or
 as a plain window on the desktop.
 
@@ -15,7 +15,7 @@ Relic is a console-mode client, made for a gamepad. The old code lives on in the
 [`legacy`](https://github.com/FranjeGueje/Relic/tree/legacy) branch (versions up to 0.6.x), which does not get new
 features.
 
-What did the store work now is **[rakun](../rakun)**, a backend-only service that comes from the same lineage
+What did the store work now is **[rakun](https://github.com/FranjeGueje/rakun/)**, a backend-only service that comes from the same lineage
 (Heroic → Relic → rakun): it logs in to Epic, GOG, Amazon and Zoom and installs the games, with a local HTTP API.
 Relic is a client of it. Your sessions from the old Relic can be imported by rakun (`importSessionsFromRelic`).
 
@@ -33,12 +33,15 @@ Relic is a client of it. Your sessions from the old Relic can be imported by rak
   rakun for updates (`checkGameUpdates`) also **queues them when rakun's `autoUpdateGames` is on**, so
   opening the client (and refreshing) can start downloads of updates. To see how long each step of the
   start takes: `RELIC_PERF=1 pnpm dev` and look at the console (`[perf] …`).
-- **rakun not running:** the screen says so, has a **Start rakun** button (A / Enter) and retries by itself;
-  when it is back everything is read again. The button runs `rakunctl start` (found in
-  `~/.local/opt/rakun/rakunctl`, where `install.sh` leaves it, or in the `PATH`).
-- **Leaving:** a rakun that was already running when the client opened **stays running**. One the client
-  started is closed on exit with `rakunctl stop`, which refuses while rakun is downloading or refreshing: then
-  it stays running. The «Quit?» dialog says which will happen.
+- **rakun inside:** the AppImage carries rakun (only its script, which runs on Electron's own Node: no
+  separate Node, no `rakunctl`). When none answers, Relic starts its own by itself and stops it when you leave,
+  waiting for it, so nothing is left running. The «Quit?» dialog says that the downloads in progress stop with it.
+  If a rakun is already running (the one you installed, a service) Relic uses that one and leaves it alone.
+- **rakun not running** (no embedded one, as with `pnpm dev`): the screen says so, has a **Start rakun** button
+  (A / Enter) and retries by itself; when it is back everything is read again. The button runs `rakunctl start`
+  (found in `~/.local/opt/rakun/rakunctl`, where `install.sh` leaves it, or in the `PATH`). A rakun that was already
+  running when the client opened **stays running**; one the client started is closed on exit with `rakunctl stop`,
+  which refuses while rakun is downloading or refreshing: then it stays running.
 
 - **Accounts:** Select opens the menu → Accounts lists each store and whether it is signed in. A on a store
   without session opens its login page in a window (type your user and password there: nothing is copied or
@@ -76,15 +79,17 @@ The hints at the bottom show the buttons of the pad that is connected.
 
 ## Requirements
 
-- [rakun](../rakun) installed, logged in to at least one store (`rakunctl login <store>`), and running
+- The AppImage needs nothing else: it carries rakun. Log in to the stores from the menu (Select → Accounts); the
+  helper programs rakun runs for each store are downloaded the first time (a notice offers it).
+- To build it, or to run without the embedded rakun (`pnpm dev`): [rakun](https://github.com/FranjeGueje/rakun/) installed and running
   (`rakunctl start`). The client reads its port and token from `~/.config/rakun/api.json`
-  (`RAKUN_API_FILE` points it at another one).
-- Node 24 and pnpm to build it.
+  (`RAKUN_API_FILE` points it at another one). Node 24 and pnpm to build.
 
 ## Running it
 
 ```bash
 pnpm install
+node node_modules/electron/install.js   # only if Electron's binary is missing (pnpm skips it when node_modules already existed)
 pnpm dev                 # development, with hot reload
 pnpm build && pnpm start # the built app
 ```
@@ -98,7 +103,8 @@ For Game Mode, use the AppImage below; it also goes full screen by itself when `
 pnpm package        # dist/relic-<version>-<arch>.AppImage (+ .sha256), about 100 MB
 ```
 
-It builds the app and puts it inside the Electron this checkout has, for the architecture of this machine, as a
+It builds the app and puts it inside the Electron this checkout has, with rakun's script taken from a rakun tarball
+(`RAKUN_TARBALL`, else the newest in `../rakun/dist`; build it there with `pnpm package`), for the architecture of this machine, as a
 single **AppImage**: it needs neither Node nor `node_modules`, and it is mounted, not extracted, so it leaves
 nothing on disk. `chmod +x` it and run it from anywhere (add `--fullscreen` for Game Mode). For Steam, add a
 non-Steam game whose target is the `.AppImage`. Without FUSE, run it with `--appimage-extract-and-run`. It has no
@@ -111,7 +117,8 @@ into `dist/.tools/`.
 Relic writes nothing in `~/.config` or `~/.cache`. What Electron and the GPU driver store while it runs (user
 data, caches, logs, shader cache, certificate database) goes to `$XDG_RUNTIME_DIR/relic` (a tmpfs; `/tmp/relic`
 if there is none) and is removed when it exits. After a crash it stays there until you log out. The only thing
-that lasts is rakun's own configuration, which Relic only reads. `rakunctl` is run with your original
+that lasts is rakun's own data (`~/.config/rakun`, `~/.local/share/rakun`, `~/.cache/rakun`: your sessions, library
+and games), which belongs to you and stays where a standalone rakun keeps it. `rakunctl` is run with your original
 environment, so rakun keeps using its usual folders.
 
 `pnpm codecheck`, `pnpm lint`, `pnpm prettier` and `pnpm test` check the project.

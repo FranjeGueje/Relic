@@ -32,6 +32,12 @@ export type SettingReply = { ok: true } | { ok: false; error: string }
 export type CallReply =
   { ok: true; result: unknown } | { ok: false; error: string }
 
+/**
+ * Whether the app started rakun, and so closes it on exit: `cli` is the one `rakunctl`
+ * started (it stays if it is busy); `embedded` is the one inside the app, which stops with it.
+ */
+export type Ownership = 'none' | 'cli' | 'embedded'
+
 /** What the preload gives the interface as `window.rakun` */
 export type RakunBridge = {
   call: <C extends CallChannel>(
@@ -45,7 +51,7 @@ export type RakunBridge = {
   /** Starts rakun (through rakunctl); the interface cannot say how or where */
   start: () => Promise<StartReply>
   /** Whether this client started rakun, and will close it on exit */
-  owns: () => Promise<boolean>
+  owns: () => Promise<Ownership>
   /** Opens the store's login page in a window and hands the result to rakun */
   login: (runner: Runner) => Promise<LoginReply>
   /** Saves one of the few settings the interface may change */

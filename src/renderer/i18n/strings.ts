@@ -46,6 +46,8 @@ export const en = {
   'confirm.quit.title': 'Quit Relic?',
   'confirm.quit.keep': 'rakun will keep running.',
   'confirm.quit.closeToo': 'rakun will close too: this client started it.',
+  'confirm.quit.stopsDownloads':
+    'Downloads in progress will stop: rakun runs inside Relic.',
   'confirm.quit.busy': 'rakun will keep running because it is downloading.',
   'downloads.title': 'Downloads',
   'downloads.empty': 'No downloads in progress.',
@@ -74,7 +76,6 @@ export const en = {
   'offline.connecting': 'Connecting to rakun…',
   'error.title': 'It did not work',
   'hint.select': 'Select',
-  'hint.back': 'Back',
   'hint.stores': 'Store',
   'hint.installed': 'Installed',
   'hint.downloads': 'Downloads',

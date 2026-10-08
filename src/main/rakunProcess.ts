@@ -2,6 +2,7 @@ import { execFile } from 'node:child_process'
 import { existsSync } from 'node:fs'
 import { homedir } from 'node:os'
 import { join } from 'node:path'
+import type { Ownership } from '../shared/bridge'
 import { userEnv } from './paths'
 
 export type ExecResult = { code: number; output: string; missing: boolean }
@@ -66,8 +67,8 @@ export class RakunProcess {
   ) {}
 
   /** rakun was stopped when the client started it, so the client closes it on exit */
-  get owns(): boolean {
-    return this.started
+  get ownership(): Ownership {
+    return this.started ? 'cli' : 'none'
   }
 
   /** `wasStopped`: rakun did not answer when it was asked for. If it did, it is not ours. */

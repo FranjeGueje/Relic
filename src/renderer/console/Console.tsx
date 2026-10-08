@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import type { Ownership } from '../../shared/bridge'
 import type { GameInfo, Runner } from '../../shared/types'
 import type { Translate } from '../i18n'
 import type { ControllerLayout } from '../input/controller'
@@ -50,7 +51,7 @@ export function Console({ state, actions, t, layout }: Props) {
   const [menuOpen, setMenuOpen] = useState(false)
   // On a narrow window the bar shows the stores only; the rest hides behind the ☰
   const [barOpen, setBarOpen] = useState(false)
-  const [ownsRakun, setOwnsRakun] = useState(false)
+  const [ownsRakun, setOwnsRakun] = useState<Ownership>('none')
   const gridRef = useRef<HTMLDivElement>(null)
   const [stage, setStage] = useState<HTMLElement | null>(null)
 

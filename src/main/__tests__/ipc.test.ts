@@ -70,7 +70,10 @@ describe('rakun:start', () => {
       onConnection: vi.fn(),
       retryNow: vi.fn()
     }
-    const rakun = { start: vi.fn().mockResolvedValue(reply), owns: false }
+    const rakun = {
+      start: vi.fn().mockResolvedValue(reply),
+      ownership: 'none' as const
+    }
     registerIpc(link as never, rakun as never)
     // eslint-disable-next-line @typescript-eslint/unbound-method -- a mock: it has no `this`
     const registered = vi.mocked(ipcMain.handle).mock.calls

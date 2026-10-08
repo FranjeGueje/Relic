@@ -32,13 +32,13 @@ describe('start', () => {
       ['start'],
       expect.any(Number)
     )
-    expect(rakun.owns).toBe(true)
+    expect(rakun.ownership).toBe('cli')
   })
 
   test('if rakun was already answering it is not ours, even if start says ok', async () => {
     const rakun = process_(exec())
     await rakun.start(false)
-    expect(rakun.owns).toBe(false)
+    expect(rakun.ownership).toBe('none')
   })
 
   test('no rakunctl: says how to get it, owns nothing', async () => {
@@ -46,7 +46,7 @@ describe('start', () => {
     const reply = await rakun.start(true)
     expect(reply.ok).toBe(false)
     expect(reply.ok === false && reply.error).toContain('install.sh')
-    expect(rakun.owns).toBe(false)
+    expect(rakun.ownership).toBe('none')
   })
 
   test('rakunctl failing gives its own message', async () => {
@@ -55,7 +55,7 @@ describe('start', () => {
       ok: false,
       error: 'rakun no ha arrancado'
     })
-    expect(rakun.owns).toBe(false)
+    expect(rakun.ownership).toBe('none')
   })
 })
 
@@ -79,7 +79,7 @@ describe('stopIfOurs', () => {
       ['stop'],
       expect.any(Number)
     )
-    expect(rakun.owns).toBe(false)
+    expect(rakun.ownership).toBe('none')
     expect(await rakun.stopIfOurs()).toBe('left')
   })
 
@@ -94,6 +94,6 @@ describe('stopIfOurs', () => {
     })
 
     expect(await rakun.stopIfOurs()).toBe('left')
-    expect(rakun.owns).toBe(true)
+    expect(rakun.ownership).toBe('cli')
   })
 })

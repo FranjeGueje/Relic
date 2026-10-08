@@ -5,7 +5,7 @@ import {
   type LoginReply,
   type SettingReply
 } from '../shared/bridge'
-import type { RakunProcess } from './rakunProcess'
+import type { RakunController } from './embeddedRakun'
 import { isCallChannel, type CallChannel } from '../shared/channels'
 import type { RakunLink } from './rakun'
 import { openLoginWindow } from './loginWindow'
@@ -93,7 +93,7 @@ function broadcast(message: string, payload: unknown): void {
   )
 }
 
-export function registerIpc(link: RakunLink, rakun: RakunProcess): void {
+export function registerIpc(link: RakunLink, rakun: RakunController): void {
   ipcMain.handle(IPC.call, (_e, channel: unknown, args: unknown) =>
     answerCall(link, channel, args)
   )
@@ -105,7 +105,7 @@ export function registerIpc(link: RakunLink, rakun: RakunProcess): void {
     if (reply.ok) link.retryNow()
     return reply
   })
-  ipcMain.handle(IPC.owns, () => rakun.owns)
+  ipcMain.handle(IPC.owns, () => rakun.ownership)
   ipcMain.handle(IPC.setting, (_e, key: unknown, value: unknown) =>
     runSetSetting(link, key, value)
   )

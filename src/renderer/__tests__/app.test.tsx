@@ -771,7 +771,10 @@ describe('what quitting does to rakun', () => {
     finished: []
   }
 
-  const askToQuit = async (owns: boolean, withQueue: QueueInfo) => {
+  const askToQuit = async (
+    owns: boolean | 'embedded',
+    withQueue: QueueInfo
+  ) => {
     const rakun = fakeRakun(
       {
         getStores: stores,
@@ -802,6 +805,13 @@ describe('what quitting does to rakun', () => {
     await askToQuit(true, queue)
     await screen.findByText(
       'rakun will keep running because it is downloading.'
+    )
+  })
+
+  test('the rakun inside the app stops with it, and says the downloads stop too', async () => {
+    await askToQuit('embedded', queue)
+    await screen.findByText(
+      'Downloads in progress will stop: rakun runs inside Relic.'
     )
   })
 })

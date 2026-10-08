@@ -6,6 +6,7 @@ import type {
 } from '../../shared/channels'
 import type {
   LoginReply,
+  Ownership,
   RakunBridge,
   SettingReply,
   StartReply
@@ -44,7 +45,7 @@ type Calls = {
 export function fakeRakun(
   answers: Calls = {},
   options: {
-    owns?: boolean
+    owns?: boolean | Ownership
     start?: StartReply
     login?: LoginReply
     setting?: SettingReply
@@ -78,7 +79,11 @@ export function fakeRakun(
     if (reply.ok) options.onSetting?.(key, value)
     return Promise.resolve<SettingReply>(reply)
   })
-  const owns = vi.fn(() => Promise.resolve(options.owns ?? false))
+  const owns = vi.fn(() =>
+    Promise.resolve<Ownership>(
+      options.owns === true ? 'cli' : options.owns || 'none'
+    )
+  )
 
   const bridge = {
     call,

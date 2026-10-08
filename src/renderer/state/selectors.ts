@@ -7,6 +7,7 @@ import type {
   Runner,
   StoreInfo
 } from '../../shared/types'
+import type { Ownership } from '../../shared/bridge'
 
 /**
  * The pictures of a game for a card, best first. `art_square` is the tall box art
@@ -19,14 +20,22 @@ export function coverSources(game: GameInfo): string[] {
 
 /**
  * What leaving the client does to rakun, for the «quit?» dialog. rakunctl would
- * refuse to stop it while it works, so then it stays running.
+ * refuse to stop it while it works, so then it stays running; the rakun inside
+ * the app stops with it, and the downloads in progress with it.
  */
 export function quitMessageKey(
-  owns: boolean,
+  owns: Ownership,
   busy: boolean
-): 'confirm.quit.keep' | 'confirm.quit.closeToo' | 'confirm.quit.busy' {
-  if (!owns) return 'confirm.quit.keep'
-  return busy ? 'confirm.quit.busy' : 'confirm.quit.closeToo'
+):
+  | 'confirm.quit.keep'
+  | 'confirm.quit.closeToo'
+  | 'confirm.quit.busy'
+  | 'confirm.quit.stopsDownloads' {
+  if (owns === 'none') return 'confirm.quit.keep'
+  if (!busy) return 'confirm.quit.closeToo'
+  return owns === 'embedded'
+    ? 'confirm.quit.stopsDownloads'
+    : 'confirm.quit.busy'
 }
 
 export type Filters = {
@@ -45,15 +54,6 @@ export function visibleGames(games: GameInfo[], filters: Filters): GameInfo[] {
       const order = a.title.localeCompare(b.title)
       return filters.ascending ? order : -order
     })
-}
-
-/** The stores that have games, in the order rakun lists them */
-export function storesWithGames(
-  games: GameInfo[],
-  stores: StoreInfo[]
-): StoreInfo[] {
-  const present = new Set(games.map((game) => game.runner))
-  return stores.filter((store) => present.has(store.id))
 }
 
 export type StoreTab = { store: StoreInfo; loading: boolean }

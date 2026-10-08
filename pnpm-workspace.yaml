@@ -1,10 +1,6 @@
 packages:
   - '.'
 
-nodeLinker: isolated
-
-minimumReleaseAge: 0
-
 allowBuilds:
   electron: true
   esbuild: true

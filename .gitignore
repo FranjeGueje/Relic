@@ -1,6 +1,27 @@
+# Dependencies (pnpm install)
 node_modules/
+
+# Build output: `pnpm build` writes out/; `pnpm package` writes dist/ (the AppImage, its
+# .sha256, the staging relic.AppDir and the pinned appimagetool/runtime in dist/.tools/)
 out/
 dist/
-*.kate-swp
+
+# Tool caches and reports
 .eslintcache
+*.tsbuildinfo
 coverage/
+
+# Logs
+*.log
+.pnpm-debug.log*
+
+# Local secrets and settings, never shared
+.env
+.env.*
+
+# Editor and system leftovers
+*.kate-swp
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

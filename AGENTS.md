@@ -34,6 +34,12 @@ renderer (React) ──IPC──> preload ──IPC──> main (Node) ──HTT
   `PATH`; nunca una ruta que mande el interfaz). El cliente solo cierra al salir el rakun que **él** arrancó
   estando parado; si `rakunctl stop` se niega (descargas en curso), se deja en marcha. Lo cierra el manejador de
   `before-quit` de `main/index.ts`.
+- `src/main/embeddedRakun.ts`: el rakun **dentro del paquete** (`resources/rakun/rakun.cjs`, o `RELIC_RAKUN_CJS`):
+  se ejecuta con el propio binario de Electron como Node (`ELECTRON_RUN_AS_NODE=1`, `--web=off`), como hijo no
+  desacoplado y con el entorno original (`userEnv`). Arranca solo si el enlace queda `offline` (`shouldAutostart`) y
+  `stopIfOurs` (SIGTERM, y SIGKILL a los 10 s) **se espera antes de salir**: un hijo vivo dejaría el AppImage
+  montado (`AppRun` además lo mata si el main muere). Sin script embebido se usa `rakunProcess.ts`. Ambos cumplen
+  `RakunController`; `ownership` (`none`/`cli`/`embedded`) llega al interfaz por `owns`.
 - `src/main/loginWindow.ts` + `runLogin` (`ipc.ts`): el login de cada tienda lo hace el **main**: ventana hija sin
   preload ni sesión guardada, `loginPageResult` decide si la página es el final (URL con el código, mirada también en
   `will-redirect`; Epic usa el login del launcher de Relic con su agente de usuario y acaba en `localhost?code=`,
@@ -87,7 +93,9 @@ propio** (ficheros, localStorage, IndexedDB) sin discutirlo. Comprobarlo: `HOME=
   se descargan una vez a `dist/.tools/` con versión y sha256 fijados. Compresión zstd (el runtime no lee xz). Se
   quitan `chrome-sandbox` (no puede ser setuid), `libqt6_shim.so` y los `locales` salvo `en-US`. `AppRun` limpia
   `LD_PRELOAD`/`LD_LIBRARY_PATH`, mueve `XDG_CACHE_HOME` y `MESA_SHADER_CACHE_DIR` al directorio efímero antes de
-  arrancar (el driver de la GPU escribe antes de que corra nuestro código), no usa `exec` y borra ese directorio
+  arrancar (el driver de la GPU escribe antes de que corra nuestro código), mete `resources/rakun/` (solo `rakun.cjs`,
+  `COPYING`, `AUTHORS`, `THIRD_PARTY` del tarball de rakun, `RAKUN_TARBALL`; sin Node, `rakunctl`, web ni binarios
+  auxiliares), no usa `exec` y borra ese directorio
   al terminar si no hay otra instancia (existe `userData/SingletonLock`). No se puede probar que la ventana abra sin
   pantalla: solo se comprueba el contenido y que el binario corre.
 - `pnpm codecheck`, `pnpm lint`, `pnpm prettier`, `pnpm test`.

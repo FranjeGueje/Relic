@@ -6,6 +6,11 @@
 # The app needs no node_modules: React is inside the built bundle. Electron is the one this
 # checkout already has (or ELECTRON_DIST), so the package is for the architecture of this machine.
 #
+# rakun travels inside: only its bundled script (rakun.cjs), which runs on Electron's own Node.
+# It comes from a rakun tarball (RAKUN_TARBALL, else the newest in ../rakun/dist for this
+# architecture), checked against its .sha256. The Node, rakunctl, the web and the helper binaries
+# (rakun downloads those to ~/.local/share/rakun) stay out.
+#
 # Usage: scripts/package.sh
 set -euo pipefail
 
@@ -37,11 +42,21 @@ APPDIR="$OUT_DIR/relic.AppDir"
 APP="$APPDIR/usr/lib/relic"
 IMAGE="$OUT_DIR/relic-${VERSION}-${ARCH}.AppImage"
 ELECTRON="${ELECTRON_DIST:-node_modules/electron/dist}"
+RAKUN_TARBALL="${RAKUN_TARBALL:-$(ls -1t ../rakun/dist/rakun-*-linux-"${ARCH}".tar.gz 2>/dev/null | head -n 1)}"
 TOOL="$OUT_DIR/.tools/appimagetool-${APPIMAGETOOL_VERSION}-${TOOL_ARCH}.AppImage"
 RUNTIME="$OUT_DIR/.tools/runtime-${RUNTIME_VERSION}-${TOOL_ARCH}"
 
 [ -x "$ELECTRON/electron" ] || {
     echo "Error: Electron is not installed ($ELECTRON/electron). Run: pnpm install" >&2
+    exit 1
+}
+
+[ -f "$RAKUN_TARBALL" ] || {
+    echo "Error: no rakun tarball (set RAKUN_TARBALL, or build rakun: pnpm package in ../rakun)" >&2
+    exit 1
+}
+(cd "$(dirname "$RAKUN_TARBALL")" && sha256sum -c "$(basename "$RAKUN_TARBALL").sha256" >/dev/null) || {
+    echo "Error: $RAKUN_TARBALL does not match its .sha256" >&2
     exit 1
 }
 
@@ -87,7 +102,12 @@ require('fs').writeFileSync(process.argv[1], JSON.stringify(pkg, null, 2) + '\n'
 " "$APP/resources/app/package.json"
 cp LICENSE "$APP/LICENSE-relic"
 
-cp assets/relic.png "$APPDIR/relic.png"
+mkdir -p "$APP/resources/rakun"
+tar -xzf "$RAKUN_TARBALL" -C "$APP/resources/rakun" --strip-components=1 \
+    rakun/rakun.cjs rakun/COPYING rakun/AUTHORS rakun/THIRD_PARTY
+basename "$RAKUN_TARBALL" >"$APP/resources/rakun/VERSION"
+
+cp src/renderer/public/icon.png "$APPDIR/relic.png"
 cp "$APPDIR/relic.png" "$APPDIR/.DirIcon"
 cat >"$APPDIR/relic.desktop" <<'DESKTOP'
 [Desktop Entry]
@@ -123,6 +143,8 @@ while kill -0 "$PID" 2>/dev/null; do
     wait "$PID"
     STATUS=$?
 done
+# If the app died without waiting for its rakun, that one would keep this image mounted
+command -v pkill >/dev/null && pkill -TERM -f "$HERE/usr/lib/relic/resources/rakun/rakun.cjs"
 [ -L "$SCRATCH/userData/SingletonLock" ] || rm -rf "$SCRATCH"
 exit "$STATUS"
 APPRUN

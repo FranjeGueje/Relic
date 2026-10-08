@@ -4,6 +4,12 @@ import { join } from 'node:path'
 import { registerIpc } from './ipc'
 import { ephemeralDir, ephemeralPaths, removeEphemeral } from './paths'
 import { RakunLink } from './rakun'
+import {
+  EmbeddedRakun,
+  embeddedScriptPath,
+  shouldAutostart,
+  type RakunController
+} from './embeddedRakun'
 import { RakunProcess } from './rakunProcess'
 
 /** Game Mode (gamescope) and `--fullscreen` get the whole screen; the desktop a window */
@@ -32,7 +38,11 @@ app.commandLine.appendSwitch('disk-cache-size', '1')
 app.commandLine.appendSwitch('disable-gpu-shader-disk-cache')
 
 const link = new RakunLink()
-const rakun = new RakunProcess()
+// The rakun inside the package if there is one (it runs on Electron's Node); else rakunctl's
+const script = embeddedScriptPath(process.resourcesPath)
+const rakun: RakunController = script
+  ? new EmbeddedRakun(script)
+  : new RakunProcess()
 let window: BrowserWindow | undefined
 
 function createWindow(): BrowserWindow {
@@ -75,6 +85,12 @@ if (!app.requestSingleInstanceLock()) {
   void app.whenReady().then(() => {
     registerIpc(link, rakun)
     window = createWindow()
+    let tried = false
+    link.onConnection((state) => {
+      if (!shouldAutostart(state, !!script, tried)) return
+      tried = true
+      void rakun.start(true).then((reply) => reply.ok && link.retryNow())
+    })
     link.start()
   })
   app.on('window-all-closed', () => app.quit())
@@ -84,7 +100,7 @@ if (!app.requestSingleInstanceLock()) {
   // On the way out, close the rakun this client started (rakunctl refuses while it downloads)
   let leaving = false
   app.on('before-quit', (event) => {
-    if (leaving || !rakun.owns) return
+    if (leaving || rakun.ownership === 'none') return
     leaving = true
     event.preventDefault()
     void rakun.stopIfOurs().finally(() => app.exit())
