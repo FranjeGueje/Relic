@@ -45,7 +45,6 @@ jobs:
             echo "::error::vendor/rakun ($PINNED) is not the commit of the rakun v${RAKUN} release: move the submodule to the tag."
             exit 1
           }
-          echo "RAKUN_VERSION=$RAKUN" >> "$GITHUB_ENV"
 
       - run: pnpm install --frozen-lockfile
       - run: pnpm codecheck
@@ -53,18 +52,7 @@ jobs:
       - run: pnpm prettier
       - run: pnpm test
 
-      # The AppImage carries the rakun that was published, not one built here
-      - name: Get the rakun that travels
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          DIR="$RUNNER_TEMP/rakun"
-          mkdir -p "$DIR"
-          gh release download "v${RAKUN_VERSION}" --repo FranjeGueje/rakun \
-            --pattern 'rakun-*-linux-x64.tar.gz*' --dir "$DIR"
-          (cd "$DIR" && sha256sum -c ./*.sha256)
-          echo "RAKUN_TARBALL=$(ls "$DIR"/rakun-*-linux-x64.tar.gz)" >> "$GITHUB_ENV"
-
+      # Downloads the rakun release of the interface's version (and checks its .sha256)
       - name: Build the x64 AppImage
         run: pnpm package
 

@@ -7,9 +7,12 @@
 # checkout already has (or ELECTRON_DIST), so the package is for the architecture of this machine.
 #
 # rakun travels inside: only its bundled script (rakun.cjs), which runs on Electron's own Node.
-# It comes from a rakun tarball (RAKUN_TARBALL, else the newest in ../rakun/dist for this
-# architecture), checked against its .sha256. The Node, rakunctl, the web and the helper binaries
-# (rakun downloads those to ~/.local/share/rakun) stay out.
+# It is the release of rakun that matches the interface (the vendor/rakun submodule), downloaded
+# from https://github.com/FranjeGueje/rakun/releases and checked against its .sha256 (kept in
+# dist/.tools/rakun). To use another tarball, e.g. one built in a rakun checkout:
+#   RAKUN_TARBALL=../rakun/dist/rakun-<version>-linux-x64.tar.gz scripts/package.sh
+# The Node, rakunctl, the web and the helper binaries (rakun downloads those to
+# ~/.local/share/rakun) stay out.
 #
 # Usage: scripts/package.sh
 set -euo pipefail
@@ -42,7 +45,7 @@ APPDIR="$OUT_DIR/relic.AppDir"
 APP="$APPDIR/usr/lib/relic"
 IMAGE="$OUT_DIR/relic-${VERSION}-${ARCH}.AppImage"
 ELECTRON="${ELECTRON_DIST:-node_modules/electron/dist}"
-RAKUN_TARBALL="${RAKUN_TARBALL:-$(ls -1t ../rakun/dist/rakun-*-linux-"${ARCH}".tar.gz 2>/dev/null | head -n 1 || true)}"
+RAKUN_REPO="FranjeGueje/rakun"
 TOOL="$OUT_DIR/.tools/appimagetool-${APPIMAGETOOL_VERSION}-${TOOL_ARCH}.AppImage"
 RUNTIME="$OUT_DIR/.tools/runtime-${RUNTIME_VERSION}-${TOOL_ARCH}"
 
@@ -51,8 +54,29 @@ RUNTIME="$OUT_DIR/.tools/runtime-${RUNTIME_VERSION}-${TOOL_ARCH}"
     exit 1
 }
 
+# The interface (the vendor/rakun submodule) and the rakun that travels have to be the same version
+UI_VERSION=$(node -p "require('./vendor/rakun/package.json').version" 2>/dev/null) || {
+    echo "Error: the interface is missing (vendor/rakun): run scripts/init-ui.sh" >&2
+    exit 1
+}
+# The rakun that travels: the release of the interface's version, unless another tarball is given
+if [ -z "${RAKUN_TARBALL:-}" ]; then
+    NAME="rakun-${UI_VERSION}-linux-${ARCH}.tar.gz"
+    RAKUN_TARBALL="$OUT_DIR/.tools/rakun/$NAME"
+    if [ ! -f "$RAKUN_TARBALL" ] || ! (cd "$OUT_DIR/.tools/rakun" && sha256sum -c "$NAME.sha256" >/dev/null 2>&1); then
+        echo "Downloading rakun v${UI_VERSION} (${ARCH})..."
+        mkdir -p "$OUT_DIR/.tools/rakun"
+        BASE="https://github.com/${RAKUN_REPO}/releases/download/v${UI_VERSION}"
+        curl -fsSL -o "$RAKUN_TARBALL" "$BASE/$NAME" &&
+            curl -fsSL -o "$RAKUN_TARBALL.sha256" "$BASE/$NAME.sha256" || {
+            rm -f "$RAKUN_TARBALL" "$RAKUN_TARBALL.sha256"
+            echo "Error: could not download $BASE/$NAME (rakun publishes x64 only: on another architecture set RAKUN_TARBALL)" >&2
+            exit 1
+        }
+    fi
+fi
 [ -f "$RAKUN_TARBALL" ] || {
-    echo "Error: no rakun tarball (set RAKUN_TARBALL, or build rakun: pnpm package in ../rakun)" >&2
+    echo "Error: $RAKUN_TARBALL does not exist" >&2
     exit 1
 }
 (cd "$(dirname "$RAKUN_TARBALL")" && sha256sum -c "$(basename "$RAKUN_TARBALL").sha256" >/dev/null) || {
@@ -60,11 +84,6 @@ RUNTIME="$OUT_DIR/.tools/runtime-${RUNTIME_VERSION}-${TOOL_ARCH}"
     exit 1
 }
 
-# The interface (the vendor/rakun submodule) and the rakun that travels have to be the same version
-UI_VERSION=$(node -p "require('./vendor/rakun/package.json').version" 2>/dev/null) || {
-    echo "Error: the interface is missing (vendor/rakun): run scripts/init-ui.sh" >&2
-    exit 1
-}
 case "$(basename "$RAKUN_TARBALL")" in
     "rakun-${UI_VERSION}-linux-"*) ;;
     *)

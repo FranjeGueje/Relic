@@ -58,7 +58,7 @@ pnpm dev               # development; needs a rakun running (rakunctl start)
 pnpm package           # dist/relic-<version>-x64.AppImage (about 100 MB)
 ```
 
-`pnpm package` takes rakun from a tarball (`RAKUN_TARBALL`, or the newest in `../rakun/dist`). `pnpm codecheck`, `pnpm lint`, `pnpm prettier` and `pnpm test` check the project.
+`pnpm package` downloads the rakun release that matches the screens (checked against its `.sha256`); to use your own build, set `RAKUN_TARBALL=path/to/rakun-<version>-linux-x64.tar.gz`. `pnpm codecheck`, `pnpm lint`, `pnpm prettier` and `pnpm test` check the project.
 
 ## How it fits together
 

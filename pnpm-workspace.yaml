@@ -1,5 +1,8 @@
 packages:
   - '.'
 
+# pnpm refuses to install while a dependency with build steps is not approved.
+# Electron's binary is downloaded by the `postinstall` of package.json instead.
 allowBuilds:
+  electron: true
   esbuild: true
