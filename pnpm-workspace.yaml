@@ -1,34 +1,8 @@
 packages:
   - '.'
 
-nodeLinker: isolated
-
-patchedDependencies:
-  '@types/node@22.20.1': patches/@types__node@22.20.1.patch
-
-overrides:
-  shell-quote: '>=1.8.4'
-  cross-spawn: '>=6.0.6'
-  tar: '>=7.5.19'
-  uuid: '^11.0.0'
-
-onlyBuiltDependencies:
-  - '@fortawesome/fontawesome-common-types'
-  - '@fortawesome/fontawesome-svg-core'
-  - '@fortawesome/free-brands-svg-icons'
-  - '@fortawesome/free-regular-svg-icons'
-  - '@fortawesome/free-solid-svg-icons'
-  - '@swc/core'
-  - electron
-  - esbuild
-  - register-scheme
-  - unrs-resolver
-
-minimumReleaseAge: 0
-
+# pnpm refuses to install while a dependency with build steps is not approved.
+# Electron's binary is downloaded by the `postinstall` of package.json instead.
 allowBuilds:
-  '@parcel/watcher': true
-  '@swc/core': true
-  electron-winstaller: true
+  electron: true
   esbuild: true
-  unrs-resolver: true

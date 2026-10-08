@@ -1,8 +1,0 @@
-export { default as DownloadSizeInfo } from './DownloadSizeInfo'
-export { default as InstalledInfo } from './InstalledInfo'
-export { default as Requirements } from './Requirements'
-export { default as DotsMenu } from './DotsMenu'
-export { default as Developer } from './Developer'
-export { default as Description } from './Description'
-export { default as GameStatus } from './GameStatus'
-export { default as InstallButton } from './InstallButton'

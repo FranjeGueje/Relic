@@ -2,108 +2,41 @@
 
 import eslint from '@eslint/js'
 import tseslint from 'typescript-eslint'
-import react from 'eslint-plugin-react'
-import reactHooks from 'eslint-plugin-react-hooks'
 import prettier from 'eslint-config-prettier'
-import { importX } from 'eslint-plugin-import-x'
+import reactHooks from 'eslint-plugin-react-hooks'
 
 export default tseslint.config(
   eslint.configs.recommended,
   tseslint.configs.recommendedTypeChecked,
-  importX.flatConfigs.recommended,
-  importX.flatConfigs.typescript,
-  react.configs.flat.recommended,
-  react.configs.flat['jsx-runtime'],
-  {
-    plugins: { 'react-hooks': reactHooks },
-    rules: {
-      'react-hooks/rules-of-hooks': 'warn',
-      'react-hooks/exhaustive-deps': 'warn'
-    }
-  },
   prettier,
   {
     files: ['**/*.ts', '**/*.tsx'],
-    rules: {
-      // FIXME: All of these rules should be errors instead
-      '@typescript-eslint/no-base-to-string': 'warn',
-      '@typescript-eslint/no-floating-promises': 'warn',
-      '@typescript-eslint/no-for-in-array': 'warn',
-      '@typescript-eslint/no-unsafe-argument': 'warn',
-      '@typescript-eslint/no-unsafe-assignment': 'warn',
-      '@typescript-eslint/no-unsafe-call': 'warn',
-      '@typescript-eslint/no-unsafe-member-access': 'warn',
-      '@typescript-eslint/no-unsafe-return': 'warn',
-      '@typescript-eslint/require-await': 'warn',
-      '@typescript-eslint/restrict-template-expressions': 'warn',
-
-      'react/no-unknown-property': [
-        'error',
-        { ignore: ['partition', 'allowpopups', 'useragent', 'preload'] }
-      ],
-      '@typescript-eslint/no-misused-promises': [
-        'error',
-        { checksVoidReturn: false }
-      ],
-      '@typescript-eslint/unbound-method': 'error',
-      // False positive: i18next/React/JSON5 are used here as default-export
-      // singletons that also happen to expose named exports (`i18next.t`,
-      // `React.createContext`, `JSON5.parse`). That's the intended usage,
-      // not an ESM/CJS interop mistake.
-      'import-x/no-named-as-default-member': 'off',
-      'no-restricted-imports': [
-        'error',
-        {
-          paths: [
-            {
-              name: 'electron',
-              importNames: ['ipcMain', 'ipcRenderer'],
-              message:
-                'Use the helper functions declared in [backend|preload]/ipc instead.'
-            }
-          ]
-        }
-      ]
-    },
-
     languageOptions: {
       parserOptions: {
-        project: './tsconfig.eslint.json',
+        project: ['./tsconfig.node.json', './tsconfig.web.json'],
         tsconfigRootDir: import.meta.dirname
       }
     },
-    settings: {
-      react: {
-        version: 'detect'
-      }
-    }
-  },
-  {
-    files: [
-      'src/backend/storeManagers/*/games.ts',
-      'src/backend/storeManagers/*/library.ts'
-    ],
     rules: {
-      // These classes implement the `Game`/`LibraryManager` interfaces, which
-      // declare async methods (`Promise<T>` returns) for every runner
-      // uniformly. Some runners implement a given method as a synchronous
-      // stub (e.g. Zoom, for features it doesn't support) -- `async` is
-      // still required to satisfy the interface, not a mistake.
-      '@typescript-eslint/require-await': 'off'
+      '@typescript-eslint/no-misused-promises': [
+        'error',
+        { checksVoidReturn: false }
+      ]
     }
   },
   {
-    files: ['**/__tests__/**/*.ts', '**/__mocks__/**/*.ts'],
-    rules: {
-      '@typescript-eslint/no-explicit-any': 'off',
-      // False positive: `expect(obj.method).toHaveBeenCalledWith(...)` passes
-      // an unbound method reference, but Jest never calls it as `obj.method()`
-      // -- it only inspects the mock, so there's no `this` to lose.
-      '@typescript-eslint/unbound-method': 'off',
-      '@typescript-eslint/no-require-imports': 'off'
-    }
+    files: ['src/renderer/**/*.tsx', 'src/renderer/**/*.ts'],
+    plugins: { 'react-hooks': reactHooks },
+    rules: reactHooks.configs.recommended.rules
   },
   {
-    ignores: ['build/', '**/*.js', 'eslint.config.mjs', '.github/scripts/']
+    ignores: [
+      'out/',
+      'dist/',
+      'node_modules/',
+      'coverage/',
+      'vendor/',
+      'eslint.config.mjs'
+    ]
   }
 )

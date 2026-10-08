@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "ES2023",
+    "lib": ["ES2023", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "jsx": "react-jsx",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "paths": { "@rakun-ui/*": ["./vendor/rakun/web/src/*"] }
+  },
+  "include": [
+    "src/renderer/**/*",
+    "src/shared/**/*",
+    "vendor/rakun/web/src/**/*",
+    "vendor/rakun/src/common/languages.ts"
+  ],
+  "exclude": [
+    "vendor/rakun/web/src/**/__tests__/**",
+    "vendor/rakun/web/src/main.tsx"
+  ]
+}

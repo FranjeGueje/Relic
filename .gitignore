@@ -1,40 +1,27 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# Dependencies (pnpm install)
+node_modules/
 
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
+# Build output: `pnpm build` writes out/; `pnpm package` writes dist/ (the AppImage, its
+# .sha256, the staging relic.AppDir and the pinned appimagetool/runtime in dist/.tools/)
+out/
+dist/
 
-# testing
-/coverage
-
-# production
-/build
-/dist
-
-# misc
-.DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+# Tool caches and reports
 .eslintcache
-package-lock.json
+*.tsbuildinfo
+coverage/
 
-public/**/*.js
-!public/webviewPreload.js
-downloads*.json
+# Logs
+*.log
+.pnpm-debug.log*
 
-vite-plugin-electron.log
-.tool-versions
-
+# Local secrets and settings, never shared
 .env
+.env.*
 
-playwright-report
-
-# herramientas personales, no forman parte del repo
-/release.sh
+# Editor and system leftovers
+*.kate-swp
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

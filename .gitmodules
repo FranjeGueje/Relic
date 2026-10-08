@@ -1,0 +1,4 @@
+[submodule "vendor/rakun"]
+	path = vendor/rakun
+	url = https://github.com/FranjeGueje/rakun.git
+	shallow = true

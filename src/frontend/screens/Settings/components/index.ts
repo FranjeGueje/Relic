@@ -1,8 +1,0 @@
-export { default as AutoUpdateGames } from './AutoUpdateGames'
-export { default as ClearCache } from './ClearCache'
-export { default as DefaultInstallPath } from './DefaultInstallPath'
-export { default as MaxWorkers } from './MaxWorkers'
-export { default as ProtonPath } from './ProtonPath'
-export { default as ResetRelic } from './ResetRelic'
-export { default as SteamGridDbApiKey } from './SteamGridDbApiKey'
-export { default as VerboseLogs } from './VerboseLogs'

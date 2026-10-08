@@ -1,32 +1,7 @@
 {
-  "compilerOptions": {
-    "module": "esnext",
-    "target": "es2017",
-    "lib": ["esnext", "dom", "dom.iterable"],
-    "types": ["node", "jest"],
-    "sourceMap": true,
-    "jsx": "react-jsx",
-    "moduleResolution": "bundler",
-    "paths": {
-      "frontend/*": ["./src/frontend/*"],
-      "backend/*": ["./src/backend/*"],
-      "common/*": ["./src/common/*"]
-    },
-    "forceConsistentCasingInFileNames": true,
-    "noImplicitReturns": true,
-    "noImplicitThis": true,
-    "noImplicitAny": true,
-    "importHelpers": false,
-    "strictNullChecks": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "noFallthroughCasesInSwitch": true
-  },
-  "include": ["src"],
-  "exclude": ["electron.vite.config.ts", "**/__mocks__/**", "sign"]
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.node.json" },
+    { "path": "./tsconfig.web.json" }
+  ]
 }

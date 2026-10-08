@@ -2,374 +2,113 @@
 
 # Relic
 
+> Relic 1.0 sustituye al Relic anterior (app de escritorio basada en Heroic, rama `legacy`). El motor es **rakun**.
+> El Relic viejo guardaba su config en `~/.config/relic`: este cliente no usa carpetas propias, así que no hay colisión.
+
 ## Objetivo
 
-Relic es un fork de Heroic Game Launcher orientado exclusivamente a Linux.
+Cliente de **modo consola** para rakun: la biblioteca de Epic, GOG, Amazon y Zoom a pantalla completa, para
+manejar con mando, como acceso directo de Steam en modo juego o ventana en el escritorio. Electron + React.
+Solo habla con la API HTTP de rakun (`../rakun/API.md` es el contrato). No es un launcher: rakun instala
+y añade a Steam; aquí solo se elige y se ve el progreso.
+
+## Regla principal
+
+**La configuración vive en rakun** (`rakunctl config`), no en el cliente: este solo la **lee** o, desde el menú de Select,
+la **cambia en rakun**: cuentas, carpeta de descarga, carpeta de Proton, key de SteamGridDB e idioma (el de rakun
+para las tiendas, no el de la interfaz). `setSetting` solo lo llama el main (`runSetSetting`, cuatro claves
+fijas), no está en la lista del interfaz; rakun valida el valor. Un fichero de configuración propio o una opción por juego se rechazan. Lo no pedido no se añade: menos código, menos dependencias.
+
+## Arquitectura
+
+```
+renderer (React) ──IPC──> preload ──IPC──> main (Node) ──HTTP 127.0.0.1──> rakun
+```
+
+- `src/main/rakun.ts`: cliente de rakun (llamadas, SSE con reconexión). Habla el proceso principal y no el
+  interfaz porque rakun rechaza (403) las peticiones con `Origin`, que es lo que enviaría una página web.
+- `src/shared/channels.ts`: **la lista cerrada** de canales y eventos que el interfaz puede usar. El preload y
+  el main rechazan cualquier otro. Añadir un canal = añadirlo ahí y en `CallMap`.
+- `src/shared/types.ts`: subconjunto copiado de los tipos de rakun (no se importa nada de su repositorio).
+- `src/main/rakunProcess.ts`: arranca y para rakun **a través de `rakunctl`** (ruta fija de `install.sh`, luego el
+  `PATH`; nunca una ruta que mande el interfaz). El cliente solo cierra al salir el rakun que **él** arrancó
+  estando parado; si `rakunctl stop` se niega (descargas en curso), se deja en marcha. Lo cierra el manejador de
+  `before-quit` de `main/index.ts`.
+- `src/main/embeddedRakun.ts`: el rakun **dentro del paquete** (`resources/rakun/rakun.cjs`, o `RELIC_RAKUN_CJS`):
+  se ejecuta con el propio binario de Electron como Node (`ELECTRON_RUN_AS_NODE=1`, `--web=off`), como hijo no
+  desacoplado y con el entorno original (`userEnv`). Arranca solo si el enlace queda `offline` (`shouldAutostart`) y
+  `stopIfOurs` (SIGTERM, y SIGKILL a los 10 s) **se espera antes de salir**: un hijo vivo dejaría el AppImage
+  montado (`AppRun` además lo mata si el main muere). Sin script embebido se usa `rakunProcess.ts`. Ambos cumplen
+  `RakunController`; `ownership` (`none`/`cli`/`embedded`) llega al interfaz por `owns`.
+- `src/main/loginWindow.ts` + `runLogin` (`ipc.ts`): el login de cada tienda lo hace el **main**: ventana hija sin
+  preload ni sesión guardada, `loginPageResult` decide si la página es el final (URL con el código, mirada también en
+  `will-redirect`; Epic usa el login del launcher de Relic con su agente de usuario y acaba en `localhost?code=`,
+  no la página `legendary.gl` de rakun) y lo entrega a `submitLogin`. `getLoginInfo` y `submitLogin` están en
+  `CallMap` (tipos de rakun) pero **no** en la lista cerrada del interfaz.
+- **La interfaz no es de este repo**: es la web de rakun (`vendor/rakun/web/src`, submodule de git fijado a un commit de
+  rakun; alias `@rakun-ui`). Aquí solo está su anfitrión: `src/renderer/main.tsx` (monta `App`), `index.html` y el
+  puente de `src/preload` (`window.rakun`). La web enseña lo que el anfitrión tiene: `appName`, `quit`/`owns`
+  (botón y tecla Quit con su diálogo), `start` (botón «Start rakun») y `login` (ventana propia, sin pegar). **Un cambio
+  de pantalla se hace en el repo de rakun** (`web/src`, con sus tests de jest) y aquí solo se sube el puntero del
+  submodule (`git -C vendor/rakun fetch && git -C vendor/rakun checkout <tag>`, y commit). Nada se parchea en `vendor/`.
+  Para obtenerla: `scripts/init-ui.sh` (shallow + sparse: el repo de rakun pesa cientos de MB).
+  Dentro: `console/` (rejilla, ficha, descargas, menú, `Helpers*`), `input/` (teclado y mando → **acciones**; el
+  interfaz no lee teclas), `state/` (`reducer`, `selectors`, `useRakun`), `i18n/strings.ts` (solo **inglés**; no sigue el
+  ajuste `language` de rakun), `perf.ts` (`RELIC_PERF=1` imprime los tiempos de arranque: el main añade `?perf`).
+- Carga por etapas (`useRakun.ts`): primero tiendas, ajustes y cola; luego `getLibrary` **por tienda** y en paralelo;
+  `checkGameUpdates` va el último y en segundo plano (consulta la red y, con `autoUpdateGames`, encola
+  actualizaciones): nunca debe retrasar la pantalla. `Card` está memoizada y no se usa `content-visibility` en las celdas.
+- El explorador de carpetas (`FolderPicker.tsx`) usa el canal `listFolders` de rakun (una sola implementación, la
+  suya). Los campos de texto
+  (`TextField.tsx`) no pasan las teclas a las acciones (`isTyping` en `useInput.ts`).
+
+## Cero restos
+
+Relic no deja nada en disco fuera de su paquete. `src/main/paths.ts` + `main/index.ts` mandan `userData`,
+`sessionData`, `cache`, `logs`, `crashDumps`, la caché de Mesa y `XDG_DATA_HOME` (la base NSS de Chromium) a
+`$XDG_RUNTIME_DIR/relic` (`ephemeralDir`), que se borra al salir (`process.on('exit')`; `SIGTERM/SIGINT/SIGHUP`
+hacen `app.quit()`). Solo la instancia principal lo borra: una segunda no debe tocar el de la primera. `rakunctl`
+se lanza con `userEnv` (el entorno original), para que rakun siga usando sus carpetas. **No añadir almacenamiento
+propio** (ficheros, localStorage, IndexedDB) sin discutirlo. Comprobarlo: `HOME=$(mktemp -d)`, abrir, cerrar y
+`find $HOME -mindepth 1` debe salir vacío (salvo lo que cree rakun si se arranca desde la app).
+
+## Reglas de código
+
+- TypeScript estricto; sin `any`.
+- La lógica va en funciones puras con tests; los componentes solo la pintan. La del interfaz (reducer, selectores,
+  `readPad`, rejilla) y sus textos (`strings.ts`, en inglés) están en el repo de rakun.
+- Dependencias: solo `react` y `react-dom` en producción; no añadir más sin una razón clara.
+- `contextIsolation` y `sandbox` siempre activos; el preload no expone nada fuera de `RakunBridge`.
+
+## Construcción y pruebas
+
+- `pnpm dev`, `pnpm build`, `pnpm start`.
+- `pnpm package` (`scripts/package.sh`): **AppImage** (`dist/relic-<version>-<arch>.AppImage`) con el Electron de
+  este checkout (o `ELECTRON_DIST`) + `out/`, sin `node_modules` ni dependencias nuevas. `appimagetool` y el runtime
+  se descargan una vez a `dist/.tools/` con versión y sha256 fijados. Compresión zstd (el runtime no lee xz). Se
+  quitan `chrome-sandbox` (no puede ser setuid), `libqt6_shim.so` y los `locales` salvo `en-US`. `AppRun` limpia
+  `LD_PRELOAD`/`LD_LIBRARY_PATH`, mueve `XDG_CACHE_HOME` y `MESA_SHADER_CACHE_DIR` al directorio efímero antes de
+  arrancar (el driver de la GPU escribe antes de que corra nuestro código), mete `resources/rakun/` (solo `rakun.cjs`,
+  `COPYING`, `AUTHORS`, `THIRD_PARTY` del tarball de la release de rakun que corresponde al submodule, que `package.sh`
+  descarga a `dist/.tools/rakun` y comprueba con su `.sha256` (`RAKUN_TARBALL` para usar otro); sin Node, `rakunctl`, web ni binarios
+  auxiliares), no usa `exec` y borra ese directorio
+  al terminar si no hay otra instancia (existe `userData/SingletonLock`). No se puede probar que la ventana abra sin
+  pantalla: solo se comprueba el contenido y que el binario corre.
+- `pnpm codecheck`, `pnpm lint`, `pnpm prettier`, `pnpm test`.
+- Los tests de la interfaz (jest + jsdom, con un rakun falso) están en el repo de rakun (`web/src/__tests__`, incluido
+  el lado escritorio: `desktop.test.tsx`). Aquí solo hay los del anfitrión (`src/renderer/__tests__/host.test.tsx`)
+  y los de `src/main`. La ventana de Electron no se puede probar sin pantalla (el modo `headless` de Electron falla): probarla a mano con
+  `pnpm dev`.
+- Para probar contra un rakun real sin tocar el `$HOME` real: `HOME=$(mktemp -d) RAKUN_PORT=17986` y
+  `RAKUN_API_FILE=<ese HOME>/.config/rakun/api.json`.
+
+## Releases
+
+CI (`.github/workflows/ci.yml`) corre en cada push de cualquier rama y en cada PR. Una release es una etiqueta `vX.Y.Z`
+**sobre `master`** (`release.yml` rechaza cualquier otra cosa): antes, versión en `package.json`, entrada
+`## X.Y.Z — Título` en `CHANGELOG.md` (`scripts/release-notes.sh vX.Y.Z` lo comprueba) y `vendor/rakun` en una etiqueta
+publicada de rakun. La etiqueta se crea **al publicar**, no antes: no dejar etiquetas locales sueltas.
 
-Relic funciona exclusivamente en Linux. No existe soporte para macOS ni Windows. Todo el código específico de esas plataformas ha sido eliminado.
+## Commits
 
-Su propósito es permitir iniciar sesión en Epic Games, GOG y Amazon Games, descargar e instalar juegos y añadirlos automáticamente a Steam.
-
-Relic NO es un launcher.
-
-Steam es el launcher.
-
-Toda la experiencia de juego ocurre dentro de Steam.
-
----
-
-# Filosofía
-
-Relic debe ser significativamente más simple que Heroic.
-
-Todo el código debe orientarse a cuatro tareas:
-
-- Autenticación en tiendas.
-- Descarga de juegos.
-- Instalación y actualización.
-- Integración con Steam mediante los módulos `relic/`.
-
-Cualquier funcionalidad que no contribuya directamente a estas tareas debe eliminarse o rechazarse.
-
-Siempre preferir eliminar código antes que añadir complejidad.
-
----
-
-# Alcance
-
-Relic debe permitir:
-
-- Login en Epic Games.
-- Login en GOG.
-- Login en Amazon Games.
-- Login en Zoom Platform.
-- Mostrar biblioteca.
-- Descargar juegos.
-- Actualizar juegos.
-- Reparar instalaciones.
-- Desinstalar juegos.
-- Detectar ejecutables.
-- Ejecutar los módulos `relic/` tras la instalación.
-- Abrir la carpeta del juego.
-- Abrir Steam.
-
-Relic NO debe lanzar juegos.
-
----
-
-# Flujo de instalación
-
-Resumen de alto nivel para contribuidores. El diagrama técnico detallado
-(symlinks, windowify, prefix, grids, repair) vive en `README.md` →
-"How Steam Integration Works" y es la fuente canónica: al cambiar el flujo,
-actualizar ese diagrama primero y enlazarlo desde aquí si hace falta más detalle.
-
-Instalar juego
-
-↓
-
-Descargar
-
-↓
-
-Instalar
-
-↓
-
-Detectar ejecutable principal
-
-↓
-
-Ejecutar módulos `relic/`
-
-↓
-
-Los módulos añaden el juego a Steam
-
-↓
-
-Mostrar éxito
-
-Fin.
-
-Relic nunca ejecuta el juego.
-
----
-
-# Integración con Steam
-
-Toda la integración con Steam debe realizarse mediante los módulos
-`src/backend/relic/`, `src/frontend/relic/` y `src/common/relic/`.
-
-Relic (Heroic) únicamente proporciona a estos módulos la información necesaria.
-
-Por ejemplo:
-
-- ruta del juego
-- ejecutable
-- nombre del juego
-- identificador
-- plataforma
-
-Relic nunca modifica directamente la configuración interna de Steam.
-
----
-
-# Gestión de Proton y prefijos
-
-Relic NO administra:
-
-- Proton
-- Wine
-- Wine-GE
-- Proton-GE
-- Prefixes
-- Compatibilidad
-- Variables de entorno
-
-Sin embargo, el módulo `relic/` puede:
-
-- añadir el juego a Steam
-- ejecutar umu-launcher
-- crear el esqueleto inicial del prefijo
-- copiar archivos a drive_c
-- realizar configuraciones necesarias
-- devolver un código de éxito o error
-
-Toda esa lógica pertenece exclusivamente a los módulos `relic/`.
-
-Nunca implementar esa lógica dentro de Heroic.
-
----
-
-# Funcionalidades que NO deben existir
-
-No implementar ni mantener soporte para:
-
-- Wine Manager
-- Proton Manager
-- Proton GE Manager
-- Lutris
-- Bottles
-- CrossOver
-- Winetricks
-- DXVK
-- VKD3D
-- Gamescope
-- MangoHud
-- Esync
-- Fsync
-- Variables de entorno
-- Configuración avanzada por juego
-- Opciones de lanzamiento
-- Gestión de prefijos
-- Ejecución directa de juegos
-- Instalación automática de componentes de Wine
-
-Si alguna parte heredada de Heroic depende de estas funciones, debe simplificarse o eliminarse.
-
----
-
-# Interfaz
-
-La interfaz debe ser minimalista.
-
-Solo mostrar las funciones necesarias.
-
-Ejemplo:
-
-Biblioteca
-
-Instalar
-
-Actualizar
-
-Desinstalar
-
-La integración con Steam ocurre automáticamente al finalizar la instalación
-mediante los módulos `relic/`. No hay un botón "Añadir a Steam".
-
-Abrir carpeta
-
-Abrir Steam
-
-Eliminar cualquier opción relacionada con Wine o Proton.
-
-Reducir al mínimo el número de pantallas.
-
-Relic dispone de un modo consola (ConsoleMode) para navegación con mando,
-accesible desde la interfaz gráfica o por línea de comandos.
-
----
-
-# Arquitectura
-
-Relic debe actuar únicamente como orquestador.
-
-Responsabilidades:
-
-Relic
-
-- autenticación
-- biblioteca
-- descargas
-- instalaciones
-- actualizaciones
-- detección del ejecutable
-- llamada al script
-
-Script (módulos `relic/`)
-
-- integración con Steam
-- creación del prefijo mediante umu-launcher
-- copia de archivos
-- configuración específica
-- códigos de error
-
-Steam
-
-- ejecución
-- Proton
-- Steam Input
-- Overlay
-- Compatibilidad
-- Shader Cache
-
----
-
-# Código
-
-Prioridades:
-
-1. Simplicidad
-2. Legibilidad
-3. Modularidad
-4. Poco mantenimiento
-
-Eliminar código muerto.
-
-Eliminar dependencias innecesarias.
-
-Evitar nuevas dependencias.
-
-Mantener módulos pequeños.
-
-No duplicar lógica.
-
-No implementar funciones "por si acaso".
-
----
-
-# Fork
-
-Relic nace como un fork de Heroic.
-
-El objetivo a medio plazo es desacoplar el código y reducir progresivamente la dependencia del proyecto original.
-
-Siempre que sea posible:
-
-- eliminar módulos completos
-- simplificar arquitectura
-- reducir acoplamiento
-
----
-
-# Estructura del código
-
-Para minimizar conflictos al fusionar cambios con Heroic, todo el código nuevo
-específico de Relic debe ubicarse en subdirectorios `relic/` dentro de cada área:
-
-- `src/backend/relic/` — módulos nuevos del backend
-- `src/frontend/relic/` — componentes y pantallas nuevos
-- `src/common/relic/` — tipos compartidos nuevos
-
-Las modificaciones a archivos existentes de Heroic se realizan in-place.
-
-Todo cambio relevante se registra en `CHANGELOG.md` (bilingüe ES/EN, por
-versión) al preparar cada release. `HISTORY.md`, `HISTORY_ADD.md` y
-`HISTORY_REMOVE.md` documentan la limpieza inicial del fork y están
-congelados desde v0.6.0 — se conservan como referencia histórica, pero no
-se actualizan con cambios nuevos.
-
----
-
-# Módulo `relic` (`src/backend/relic/`)
-
-El módulo relic debe ser rápido, conciso, fácil de leer y libre de errores
-de tipo (TypeScript strict).
-
-## Entry points
-
-Las 4 funciones públicas son la API de Relic hacia Heroic:
-
-- `onGameInstalled(game, installPath?)`
-- `onGameUninstalled(game)`
-- `onGameImported(game)`
-- `onGameMoved(game, newInstallPath)`
-
-Cada función debe ser un orquestador delgado y legible.
-
-No deben contener lógica inline extensa.
-
-Toda la lógica compleja debe delegarse a helpers y funciones privadas
-ubicadas en subdirectorios específicos (ej. `steam_shortcuts/`, `runner/`,
-`store/`).
-
-## Reglas
-
-- Una función pública = un flujo de alto nivel, pocas líneas, legible.
-- Cualquier bloque que requiera más de 5 líneas o un comentario para
-  entenderse debe extraerse a una función helper privada con nombre
-  autoexplicativo.
-- Sin `any`: tipado estricto en todo el módulo relic. Errores TS = bug.
-- Las funciones privadas de apoyo se testean individualmente. Las funciones
-  públicas se testean como integración de los helpers que llaman.
-
----
-
-# Principios de desarrollo
-
-Cada nueva funcionalidad debe responder afirmativamente a esta pregunta:
-
-"¿Ayuda a descargar, instalar o añadir juegos a Steam?"
-
-Si la respuesta es NO, probablemente no pertenece a Relic.
-
-Mantener siempre la filosofía:
-
-Menos código.
-Menos opciones.
-Menos mantenimiento.
-Más estabilidad.
-
----
-
-# Historial
-
-`CHANGELOG.md` es la única fuente activa de historial del proyecto (bilingüe
-ES/EN, una entrada por versión). Se actualiza al preparar cada release, no
-commit a commit.
-
-`HISTORY.md`, `HISTORY_ADD.md` y `HISTORY_REMOVE.md` documentaron la limpieza
-inicial del fork línea a línea (fichero exacto, fecha, detalle). Llegado
-v0.6.0 el solapamiento con `CHANGELOG.md` era casi total y su tamaño ya no
-era manejable (>2.500 líneas entre los tres). Están **congelados**: se
-conservan como referencia del arranque del fork, pero no se les añaden filas
-nuevas. Para el detalle exacto de qué fichero cambió en qué commit, usar
-`git log`/`git blame`.
-
-# Objetivo final
-
-Relic debe sentirse como un instalador de juegos para Steam.
-
-El usuario instala un juego desde Epic, GOG o Amazon.
-
-Relic lo descarga.
-
-Relic ejecuta los módulos `relic/`.
-
-El juego aparece en Steam.
-
-A partir de ese momento toda la experiencia pertenece a Steam.
-
-Ese es el flujo completo del proyecto.
+Solo cuando se piden. Mensajes en español.

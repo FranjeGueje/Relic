@@ -1,0 +1,65 @@
+name: Release
+
+# Only a vX.Y.Z tag: v1.0.0-rc1 does not match. The first step checks it again
+on:
+  push:
+    tags: ['v[0-9]+.[0-9]+.[0-9]+']
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          submodules: true
+
+      - name: Check the tagged commit is in master
+        run: |
+          git merge-base --is-ancestor "$GITHUB_SHA" origin/master || {
+            echo "::error::$GITHUB_REF_NAME is not on master: merge the pull request first."
+            exit 1
+          }
+
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - name: Check the tag and read the notes
+        run: |
+          scripts/release-notes.sh "$GITHUB_REF_NAME" > "$RUNNER_TEMP/notes.md"
+          head -n 1 "$RUNNER_TEMP/notes.md" > "$RUNNER_TEMP/title.txt"
+          tail -n +2 "$RUNNER_TEMP/notes.md" > "$RUNNER_TEMP/body.md"
+
+      - name: Check the interface is a published version of rakun
+        run: |
+          RAKUN=$(node -p "require('./vendor/rakun/package.json').version")
+          PINNED=$(git rev-parse HEAD:vendor/rakun)
+          PUBLISHED=$(git ls-remote https://github.com/FranjeGueje/rakun.git "refs/tags/v${RAKUN}^{}" | cut -f1)
+          [ -n "$PUBLISHED" ] && [ "$PINNED" = "$PUBLISHED" ] || {
+            echo "::error::vendor/rakun ($PINNED) is not the commit of the rakun v${RAKUN} release: move the submodule to the tag."
+            exit 1
+          }
+
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm codecheck
+      - run: pnpm lint
+      - run: pnpm prettier
+      - run: pnpm test
+
+      # Downloads the rakun release of the interface's version (and checks its .sha256)
+      - name: Build the x64 AppImage
+        run: pnpm package
+
+      - name: Publish the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" dist/*.AppImage dist/*.sha256 \
+            --title "$(cat "$RUNNER_TEMP/title.txt")" \
+            --notes-file "$RUNNER_TEMP/body.md"
