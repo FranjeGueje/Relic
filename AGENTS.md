@@ -89,7 +89,10 @@ propio** (ficheros, localStorage, IndexedDB) sin discutirlo.
 `https`, para verlas sin red y no bajarlas en cada arranque. Se engancha en `index.ts` con
 `session.defaultSession.protocol.handle('https')` (las ventanas de login usan particiones propias y no pasan por ahí).
 Caché primero; una copia de más de 30 días se vuelve a pedir y, si la red falla, se sirve la vieja; solo `image/*` de
-hasta 8 MB; tope de 300 MB (se borran las menos usadas). Un fallo del disco nunca rompe la carga. **Es lo único que
+hasta 8 MB; tope de 300 MB (se borran las menos usadas). Al guardar una carátula, **en segundo plano** (una a una, con
+pausa; la página ya tiene el original) `imageShrink.ts` la sustituye por una copia de como mucho 600 px de ancho
+(`nativeImage`; JPG a calidad 80, PNG sigue PNG, mismo nombre y extensión; solo si pesa menos; no se barre lo que ya
+había). Un fallo del disco o de la recompresión nunca rompe la carga. **Es lo único que
 Relic guarda por su cuenta y solo imágenes públicas**: nunca sesiones, credenciales ni ajustes (eso es de rakun).
 Comprobarlo: `HOME=$(mktemp -d)`, abrir, cerrar y `find $HOME -mindepth 1` debe salir vacío salvo `.cache/relic/images`
 (y lo que cree rakun si se arranca desde la app).

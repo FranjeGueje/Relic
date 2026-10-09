@@ -33,6 +33,10 @@ type Options = {
   maxBytes?: number
   ttlMs?: number
   now?: () => number
+  /** A smaller copy of a picture, or undefined when it cannot be made smaller */
+  shrink?: (bytes: Buffer, type: string) => Buffer | undefined
+  /** Wait between one shrink and the next, so they do not hog the app */
+  shrinkGapMs?: number
 }
 
 /**
@@ -47,6 +51,10 @@ export class ImageCache {
   private readonly maxBytes: number
   private readonly ttlMs: number
   private readonly now: () => number
+  private readonly shrinkImage: Options['shrink']
+  private readonly shrinkGapMs: number
+  private readonly shrinkQueue: Array<() => void> = []
+  private shrinking: Promise<void> | undefined
   private readonly inFlight = new Map<string, Promise<Response>>()
   private writes = 0
 
@@ -56,6 +64,8 @@ export class ImageCache {
     this.maxBytes = options.maxBytes ?? 300 * 1024 * 1024
     this.ttlMs = options.ttlMs ?? 30 * 24 * 60 * 60 * 1000
     this.now = options.now ?? Date.now
+    this.shrinkImage = options.shrink
+    this.shrinkGapMs = options.shrinkGapMs ?? 50
   }
 
   async respond(url: string): Promise<Response> {
@@ -94,7 +104,7 @@ export class ImageCache {
     const extension = TYPES[type]
     if (!response.ok || !extension) return response
     const bytes = Buffer.from(await response.arrayBuffer())
-    if (bytes.length <= MAX_IMAGE_BYTES) this.write(key, extension, bytes)
+    if (bytes.length <= MAX_IMAGE_BYTES) this.write(key, extension, bytes, type)
     return new Response(bytes, { headers: { 'content-type': type } })
   }
 
@@ -126,7 +136,7 @@ export class ImageCache {
     }
   }
 
-  private write(key: string, extension: string, bytes: Buffer) {
+  private write(key: string, extension: string, bytes: Buffer, type: string) {
     try {
       mkdirSync(this.dir, { recursive: true })
       const path = join(this.dir, `${key}.${extension}`)
@@ -139,10 +149,47 @@ export class ImageCache {
           rmSync(join(this.dir, other), { force: true })
       const now = new Date(this.now())
       utimesSync(path, now, now)
+      if (this.shrinkImage) this.queueShrink(path, type)
       if (++this.writes % TRIM_EVERY === 0) this.trim()
     } catch {
       // the picture still reaches the page
     }
+  }
+
+  /**
+   * The page already has the original: a smaller copy replaces the saved one later, one picture
+   * at a time with a pause between, so the cache holds many more covers in the same space.
+   */
+  private queueShrink(path: string, type: string) {
+    this.shrinkQueue.push(() => {
+      try {
+        // Read now, not kept in memory while it waits its turn
+        const bytes = readFileSync(path)
+        const smaller = this.shrinkImage?.(bytes, type)
+        if (!smaller || smaller.length >= bytes.length) return
+        const temporary = `${path}.${process.pid}.tmp`
+        writeFileSync(temporary, smaller)
+        renameSync(temporary, path)
+      } catch {
+        // the original stays
+      }
+    })
+    this.shrinking ??= this.drainShrinks()
+  }
+
+  private async drainShrinks(): Promise<void> {
+    let task = this.shrinkQueue.shift()
+    while (task) {
+      await new Promise((resolve) => setTimeout(resolve, this.shrinkGapMs))
+      task()
+      task = this.shrinkQueue.shift()
+    }
+    this.shrinking = undefined
+  }
+
+  /** Resolves when no shrink is waiting (for the tests) */
+  async idle(): Promise<void> {
+    while (this.shrinking) await this.shrinking
   }
 
   /** Deletes the least recently used pictures until the folder fits in `maxBytes` */

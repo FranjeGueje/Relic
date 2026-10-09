@@ -1,9 +1,10 @@
-import { app, BrowserWindow, net, session } from 'electron'
+import { app, BrowserWindow, nativeImage, net, session } from 'electron'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { registerIpc } from './ipc'
 import { migrateFromOldRelic, migrationDirs, removeLegacyData } from './migrate'
 import { ImageCache } from './imageCache'
+import { makeShrinker } from './imageShrink'
 import {
   ephemeralDir,
   ephemeralPaths,
@@ -102,7 +103,9 @@ if (!app.requestSingleInstanceLock()) {
       net.fetch(request, { bypassCustomProtocolHandlers: true })
     const images = new ImageCache({
       dir: imageCacheDir(userEnv),
-      fetch: direct
+      fetch: direct,
+      // A cover is saved at most 600 px wide (the screen shows them at about a third of that)
+      shrink: makeShrinker(nativeImage, { maxWidth: 600, quality: 80 })
     })
     images.trim()
     session.defaultSession.protocol.handle('https', (request) =>
