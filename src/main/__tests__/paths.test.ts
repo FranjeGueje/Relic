@@ -4,6 +4,7 @@ import { join } from 'node:path'
 import { describe, expect, test } from 'vitest'
 import {
   ephemeralDir,
+  imageCacheDir,
   ephemeralPaths,
   removeEphemeral,
   restoreUserEnv
@@ -66,5 +67,17 @@ describe('restoreUserEnv', () => {
     expect(restoreUserEnv({ XDG_CACHE_HOME: '/x' })).toEqual({
       XDG_CACHE_HOME: '/x'
     })
+  })
+})
+
+describe('imageCacheDir', () => {
+  test("follows the person's XDG_CACHE_HOME when it is absolute, else ~/.cache", () => {
+    expect(imageCacheDir({}, '/h')).toBe('/h/.cache/relic/images')
+    expect(imageCacheDir({ XDG_CACHE_HOME: '/c' }, '/h')).toBe(
+      '/c/relic/images'
+    )
+    expect(imageCacheDir({ XDG_CACHE_HOME: 'relative' }, '/h')).toBe(
+      '/h/.cache/relic/images'
+    )
   })
 })

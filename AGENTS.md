@@ -82,8 +82,17 @@ Relic no deja nada en disco fuera de su paquete. `src/main/paths.ts` + `main/ind
 `$XDG_RUNTIME_DIR/relic` (`ephemeralDir`), que se borra al salir (`process.on('exit')`; `SIGTERM/SIGINT/SIGHUP`
 hacen `app.quit()`). Solo la instancia principal lo borra: una segunda no debe tocar el de la primera. `rakunctl`
 se lanza con `userEnv` (el entorno original), para que rakun siga usando sus carpetas. **No añadir almacenamiento
-propio** (ficheros, localStorage, IndexedDB) sin discutirlo. Comprobarlo: `HOME=$(mktemp -d)`, abrir, cerrar y
-`find $HOME -mindepth 1` debe salir vacío (salvo lo que cree rakun si se arranca desde la app).
+propio** (ficheros, localStorage, IndexedDB) sin discutirlo.
+
+**Excepción discutida: las carátulas.** `src/main/imageCache.ts` guarda en `~/.cache/relic/images` (`imageCacheDir`, con el
+`XDG_CACHE_HOME` de `userEnv`: `AppRun` mueve el del proceso) las imágenes de las tiendas que la interfaz carga por
+`https`, para verlas sin red y no bajarlas en cada arranque. Se engancha en `index.ts` con
+`session.defaultSession.protocol.handle('https')` (las ventanas de login usan particiones propias y no pasan por ahí).
+Caché primero; una copia de más de 30 días se vuelve a pedir y, si la red falla, se sirve la vieja; solo `image/*` de
+hasta 8 MB; tope de 300 MB (se borran las menos usadas). Un fallo del disco nunca rompe la carga. **Es lo único que
+Relic guarda por su cuenta y solo imágenes públicas**: nunca sesiones, credenciales ni ajustes (eso es de rakun).
+Comprobarlo: `HOME=$(mktemp -d)`, abrir, cerrar y `find $HOME -mindepth 1` debe salir vacío salvo `.cache/relic/images`
+(y lo que cree rakun si se arranca desde la app).
 
 ## Reglas de código
 

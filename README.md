@@ -14,7 +14,7 @@
 - **Login inside the app**: no browser, no copying codes
 - **One file**: the AppImage carries rakun, so there is nothing else to install, and it stops when you quit
 - **Coming from the old Relic**: on the first start it moves your settings, store sessions and installed games to rakun, and deletes `~/.config/relic` when done
-- **No mess**: it leaves nothing in `~/.config` or `~/.cache`. The only files that stay are rakun's (your sessions, library and games)
+- **No mess**: it leaves nothing in `~/.config`. The only files that stay are rakun's (your sessions, library and games) and the covers Relic has seen, in `~/.cache/relic/images` (at most 300 MB), so the library shows them offline
 - **Mouse too**: every panel has a Close button, and the bar folds into a ☰ on narrow windows
 
 Not here yet: categories, favourites, search.

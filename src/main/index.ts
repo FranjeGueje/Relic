@@ -1,9 +1,16 @@
-import { app, BrowserWindow } from 'electron'
+import { app, BrowserWindow, net, session } from 'electron'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { registerIpc } from './ipc'
 import { migrateFromOldRelic, migrationDirs, removeLegacyData } from './migrate'
-import { ephemeralDir, ephemeralPaths, removeEphemeral, userEnv } from './paths'
+import { ImageCache } from './imageCache'
+import {
+  ephemeralDir,
+  ephemeralPaths,
+  imageCacheDir,
+  removeEphemeral,
+  userEnv
+} from './paths'
 import { RakunLink } from './rakun'
 import {
   EmbeddedRakun,
@@ -89,6 +96,20 @@ if (!app.requestSingleInstanceLock()) {
     migrateFromOldRelic(dirs)
     // Then, on every start: the old name goes once no Steam shortcut needs it
     removeLegacyData(dirs)
+    // The pictures of the stores (the only thing the interface loads from the internet) are kept
+    // on disk, so the library shows them without a connection
+    const direct = (request: Request | string) =>
+      net.fetch(request, { bypassCustomProtocolHandlers: true })
+    const images = new ImageCache({
+      dir: imageCacheDir(userEnv),
+      fetch: direct
+    })
+    images.trim()
+    session.defaultSession.protocol.handle('https', (request) =>
+      request.method === 'GET'
+        ? images.respond(request.url).catch(() => Response.error())
+        : direct(request)
+    )
     registerIpc(link, rakun)
     window = createWindow()
     let tried = false
