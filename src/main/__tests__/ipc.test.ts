@@ -33,6 +33,15 @@ describe('answerCall', () => {
     expect(call).not.toHaveBeenCalled()
   })
 
+  test('the version of rakun, which the menu shows, is allowed', async () => {
+    const call = vi.fn().mockResolvedValue('0.2.0')
+
+    const reply = await answerCall(link(call), 'getRakunVersion', [])
+
+    expect(reply).toEqual({ ok: true, result: '0.2.0' })
+    expect(call).toHaveBeenCalledWith('getRakunVersion')
+  })
+
   test('arguments have to be a list', async () => {
     const reply = await answerCall(link(vi.fn()), 'getLibrary', 'all')
     expect(reply).toEqual({ ok: false, error: 'args must be a list' })
