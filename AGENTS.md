@@ -40,6 +40,16 @@ renderer (React) ──IPC──> preload ──IPC──> main (Node) ──HTT
   `stopIfOurs` (SIGTERM, y SIGKILL a los 10 s) **se espera antes de salir**: un hijo vivo dejaría el AppImage
   montado (`AppRun` además lo mata si el main muere). Sin script embebido se usa `rakunProcess.ts`. Ambos cumplen
   `RakunController`; `ownership` (`none`/`cli`/`embedded`) llega al interfaz por `owns`.
+- `src/main/migrate.ts`: el Relic antiguo se migra **por ficheros, antes de que rakun exista** (`index.ts`, en `whenReady`,
+  antes de `registerIpc`; sin API ni `rakunctl`). Solo si hay `~/.config/relic` sin `.migrated`, **no** hay `~/.config/rakun`
+  y el Relic antiguo no está abierto (`SingletonLock`). Pasos, repetibles: `~/.local/share/relic` → `~/.local/share/rakun`
+  con un symlink `relic` → `rakun` (los accesos de Steam y `drive_c/relic` de los prefijos siguen funcionando; no se tocan
+  `shortcuts.vdf` ni los prefijos); los symlinks de `mount/` hacia `~/.config/relic/…` pasan a `~/.config/rakun/…`; se
+  construye `~/.config/rakun.tmp-<pid>` con `gogdlConfig nile_config nile_store gog_store legendaryConfig zoom_store
+steam_shortcuts.json` (tal cual) y `config.json` filtrado a los ajustes que rakun tiene (`store/`, que es del front
+  antiguo, no se copia) y se renombra a `~/.config/rakun` (lo último: apaga la condición); por fin se borra
+  `~/.config/relic` si la copia está completa (si no puede, deja `.migrated`). Es lo único que Relic escribe fuera de su
+  paquete, además de los symlinks de `mount/`.
 - `src/main/loginWindow.ts` + `runLogin` (`ipc.ts`): el login de cada tienda lo hace el **main**: ventana hija sin
   preload ni sesión guardada, `loginPageResult` decide si la página es el final (URL con el código, mirada también en
   `will-redirect`; Epic usa el login del launcher de Relic con su agente de usuario y acaba en `localhost?code=`,

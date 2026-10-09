@@ -13,6 +13,7 @@
 - **Una cola de descargas** que puedes pausar, reanudar y cancelar
 - **Inicio de sesión dentro de la app**: sin navegador y sin copiar códigos
 - **Un solo archivo**: el AppImage lleva rakun dentro, así que no hay nada más que instalar, y se detiene al salir
+- **Si vienes del Relic antiguo**: en el primer arranque mueve tus ajustes, sesiones y juegos instalados a rakun, y borra `~/.config/relic` al terminar
 - **Sin ensuciar**: no deja nada en `~/.config` ni en `~/.cache`. Solo se quedan los ficheros de rakun (tus sesiones, tu biblioteca y tus juegos)
 - **También con ratón**: cada panel tiene su botón de cerrar, y la barra se pliega en un ☰ en ventanas estrechas
 

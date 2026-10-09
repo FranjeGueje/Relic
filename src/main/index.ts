@@ -2,7 +2,8 @@ import { app, BrowserWindow } from 'electron'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { registerIpc } from './ipc'
-import { ephemeralDir, ephemeralPaths, removeEphemeral } from './paths'
+import { migrateFromOldRelic, migrationDirs } from './migrate'
+import { ephemeralDir, ephemeralPaths, removeEphemeral, userEnv } from './paths'
 import { RakunLink } from './rakun'
 import {
   EmbeddedRakun,
@@ -83,6 +84,8 @@ if (!app.requestSingleInstanceLock()) {
     window?.focus()
   })
   void app.whenReady().then(() => {
+    // Before rakun exists: the old Relic's files go where rakun looks (does nothing once done)
+    migrateFromOldRelic(migrationDirs(userEnv))
     registerIpc(link, rakun)
     window = createWindow()
     let tried = false

@@ -8,6 +8,12 @@ The history of the previous Relic (the desktop launcher, versions up to 0.6.x) i
 
 - `scripts/install.sh`: `curl … | bash` installer. Downloads the latest AppImage to `~/.local/bin/Relic` (removing the old `relic.AppImage`), checks its sha256, and adds it to Steam with the grids in `grids/`.
 
+## Unreleased
+
+### Added
+
+- On start, before rakun exists, Relic moves the previous Relic's files to rakun's places when `~/.config/relic` is there and `~/.config/rakun` is not: `~/.local/share/relic` becomes `~/.local/share/rakun` (a link keeps the old name working for the Steam shortcuts), and the stores' sessions, installed games and settings are copied to `~/.config/rakun`. The old `~/.config/relic` is deleted once the copy is checked.
+
 ## 1.0.0 — Console-mode client for rakun
 
 Relic is now a console-mode client for [rakun](https://github.com/FranjeGueje/rakun/), made for a gamepad. It replaces the old desktop app.
