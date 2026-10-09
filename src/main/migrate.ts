@@ -238,3 +238,44 @@ export function migrateFromOldRelic(
     return 'failed'
   }
 }
+
+/** A Steam shortcut of rakun's list that still runs a script under `~/.local/share/relic` */
+function hasLegacyShortcut(shortcuts: unknown, oldData: string): boolean {
+  return (
+    Array.isArray(shortcuts) &&
+    shortcuts.some((shortcut: { execPath?: unknown } | null) => {
+      const path = shortcut?.execPath
+      return (
+        typeof path === 'string' &&
+        (path.startsWith(`${oldData}/`) ||
+          path.includes('/.local/share/relic/'))
+      )
+    })
+  )
+}
+
+/**
+ * On every start, after the migration: `~/.local/share/relic` (the link the old Steam shortcuts
+ * needed, or the folder itself) goes away once no shortcut of rakun's `steam_shortcuts.json` runs
+ * a `.bat` under it. Not while rakun has no folder yet, nor when that list cannot be read.
+ */
+export function removeLegacyData(
+  dirs: MigrationDirs,
+  log: (...args: unknown[]) => void = console.warn
+): boolean {
+  const oldData = join(dirs.data, 'relic')
+  if (!lstatOf(oldData) || !lstatOf(join(dirs.config, 'rakun'))) return false
+  const list = join(dirs.config, 'rakun', 'steam_shortcuts.json')
+  try {
+    const shortcuts: unknown = lstatOf(list)
+      ? JSON.parse(readFileSync(list, 'utf-8'))
+      : []
+    if (hasLegacyShortcut(shortcuts, oldData)) return false
+    // A link is removed itself, never what it points to
+    rmSync(oldData, { recursive: true, force: true })
+    return true
+  } catch (error) {
+    log('could not remove', oldData, error)
+    return false
+  }
+}

@@ -19,6 +19,7 @@ import {
   filterSettings,
   migrateFromOldRelic,
   migrationDirs,
+  removeLegacyData,
   retargetLinks,
   shouldMigrate,
   type MigrationDirs
@@ -67,6 +68,14 @@ function oldHome() {
 }
 
 const quiet = () => undefined
+
+const lstatOf = (path: string) => {
+  try {
+    return lstatSync(path)
+  } catch {
+    return undefined
+  }
+}
 
 describe('migrationDirs', () => {
   test('follows XDG when absolute, else the home folder', () => {
@@ -242,5 +251,68 @@ describe('migrateFromOldRelic', () => {
 
     expect(migrateFromOldRelic(dirs, quiet)).toBe('done')
     expect(existsSync(join(dirs.data, 'rakun'))).toBe(false)
+  })
+})
+
+describe('removeLegacyData', () => {
+  const rakunWith = (dirs: MigrationDirs, shortcuts?: string) => {
+    mkdirSync(join(dirs.config, 'rakun'), { recursive: true })
+    if (shortcuts !== undefined)
+      writeFileSync(
+        join(dirs.config, 'rakun', 'steam_shortcuts.json'),
+        shortcuts
+      )
+  }
+
+  test('removes the link, not what it points to, when no shortcut uses it', () => {
+    const { dirs, oldData } = oldHome()
+    migrateFromOldRelic(dirs, quiet)
+    const execPath = join(dirs.data, 'rakun', 'runner', 'A.bat')
+    writeFileSync(
+      join(dirs.config, 'rakun', 'steam_shortcuts.json'),
+      JSON.stringify([{ execPath }])
+    )
+
+    expect(removeLegacyData(dirs, quiet)).toBe(true)
+    expect(lstatOf(oldData)).toBeUndefined()
+    expect(existsSync(join(dirs.data, 'rakun', 'runner', 'Game.bat'))).toBe(
+      true
+    )
+  })
+
+  test('keeps it while a shortcut still runs a script under it', () => {
+    const { dirs, oldData } = oldHome()
+    rakunWith(
+      dirs,
+      JSON.stringify([
+        { execPath: '/home/deck/.local/share/relic/runner/A.bat' }
+      ])
+    )
+
+    expect(removeLegacyData(dirs, quiet)).toBe(false)
+    expect(existsSync(oldData)).toBe(true)
+  })
+
+  test('removes it when rakun has no list, but not when the list is unreadable', () => {
+    const first = oldHome()
+    rakunWith(first.dirs)
+    expect(removeLegacyData(first.dirs, quiet)).toBe(true)
+
+    const second = oldHome()
+    rakunWith(second.dirs, '{ broken')
+    const log = vi.fn()
+    expect(removeLegacyData(second.dirs, log)).toBe(false)
+    expect(existsSync(second.oldData)).toBe(true)
+    expect(log).toHaveBeenCalled()
+  })
+
+  test('does nothing before rakun has a folder, or without the old one', () => {
+    const { dirs, oldData } = oldHome()
+    expect(removeLegacyData(dirs, quiet)).toBe(false)
+    expect(existsSync(oldData)).toBe(true)
+
+    rakunWith(dirs, '[]')
+    rmSync(oldData, { recursive: true })
+    expect(removeLegacyData(dirs, quiet)).toBe(false)
   })
 })

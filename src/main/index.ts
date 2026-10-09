@@ -2,7 +2,7 @@ import { app, BrowserWindow } from 'electron'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { registerIpc } from './ipc'
-import { migrateFromOldRelic, migrationDirs } from './migrate'
+import { migrateFromOldRelic, migrationDirs, removeLegacyData } from './migrate'
 import { ephemeralDir, ephemeralPaths, removeEphemeral, userEnv } from './paths'
 import { RakunLink } from './rakun'
 import {
@@ -85,7 +85,10 @@ if (!app.requestSingleInstanceLock()) {
   })
   void app.whenReady().then(() => {
     // Before rakun exists: the old Relic's files go where rakun looks (does nothing once done)
-    migrateFromOldRelic(migrationDirs(userEnv))
+    const dirs = migrationDirs(userEnv)
+    migrateFromOldRelic(dirs)
+    // Then, on every start: the old name goes once no Steam shortcut needs it
+    removeLegacyData(dirs)
     registerIpc(link, rakun)
     window = createWindow()
     let tried = false

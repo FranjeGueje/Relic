@@ -12,7 +12,7 @@ The history of the previous Relic (the desktop launcher, versions up to 0.6.x) i
 
 ### Added
 
-- On start, before rakun exists, Relic moves the previous Relic's files to rakun's places when `~/.config/relic` is there and `~/.config/rakun` is not: `~/.local/share/relic` becomes `~/.local/share/rakun` (a link keeps the old name working for the Steam shortcuts), and the stores' sessions, installed games and settings are copied to `~/.config/rakun`. The old `~/.config/relic` is deleted once the copy is checked.
+- On start, before rakun exists, Relic moves the previous Relic's files to rakun's places when `~/.config/relic` is there and `~/.config/rakun` is not: `~/.local/share/relic` becomes `~/.local/share/rakun` (a link keeps the old name working for the Steam shortcuts), and the stores' sessions, installed games and settings are copied to `~/.config/rakun`. The old `~/.config/relic` is deleted once the copy is checked, and `~/.local/share/relic` once no Steam shortcut of rakun's list runs a script under it.
 
 ## 1.0.0 — Console-mode client for rakun
 
