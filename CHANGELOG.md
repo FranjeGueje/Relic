@@ -2,6 +2,12 @@
 
 The history of the previous Relic (the desktop launcher, versions up to 0.6.x) is in the `legacy` branch.
 
+## 1.1.1 — Rakun 0.3.1
+
+### Changed
+
+- rakun 0.3.1 - Bump the version of rakun.
+
 ## 1.1.0 — Covers offline, migration and rakun 0.3.0
 
 ### Added
