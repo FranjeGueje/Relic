@@ -2,7 +2,7 @@
 
 The history of the previous Relic (the desktop launcher, versions up to 0.6.x) is in the `legacy` branch.
 
-## Unreleased
+## 1.1.0 — Covers offline, migration and rakun 0.3.0
 
 ### Added
 
@@ -14,7 +14,7 @@ The history of the previous Relic (the desktop launcher, versions up to 0.6.x) i
 ### Changed
 
 - README: «Automatic installation» (the `curl` command) and «Installation» (the AppImage from the releases) are now two sections, with the cover cache and the migration in the feature list.
-- rakun 0.2.0 (the interface and the rakun inside the AppImage): less inherited code, a download queue in `~/.config/rakun/download-manager.json`.
+- rakun 0.3.0 (the interface and the rakun inside the AppImage): `rakunctl self-update`, runner options in `Launcher_games.ini`, and Steam shortcuts recognised by `steamAppId` or runner instead of by title. Before that, 0.2.0 brought less inherited code and a download queue in `~/.config/rakun/download-manager.json`.
 
 ## 1.0.0 — Console-mode client for rakun
 
