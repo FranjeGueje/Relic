@@ -2,11 +2,19 @@
 
 The history of the previous Relic (the desktop launcher, versions up to 0.6.x) is in the `legacy` branch.
 
-## Unreleased
+## 1.1.0 — Covers offline, migration and rakun 0.3.0
 
 ### Added
 
+- The menu shows the version of rakun at its end (rakun's web; Relic lets the `getRakunVersion` call through).
+- Covers are kept in `~/.cache/relic/images` (up to 300 MB, least recently used go first), so the library shows them without a connection and does not download them again on every start. Each cover is saved at most 600 px wide (JPEG quality 80, same format and name), recompressed in the background, so many more fit.
 - `scripts/install.sh`: `curl … | bash` installer. Downloads the latest AppImage to `~/.local/bin/Relic` (removing the old `relic.AppImage`), checks its sha256, and adds it to Steam with the grids in `grids/`.
+- On start, before rakun exists, Relic moves the previous Relic's files to rakun's places when `~/.config/relic` is there and `~/.config/rakun` is not: `~/.local/share/relic` becomes `~/.local/share/rakun` (a link keeps the old name working for the Steam shortcuts), and the stores' sessions, installed games and settings are copied to `~/.config/rakun`. The old `~/.config/relic` is deleted once the copy is checked, and `~/.local/share/relic` once no Steam shortcut of rakun's list runs a script under it.
+
+### Changed
+
+- README: «Automatic installation» (the `curl` command) and «Installation» (the AppImage from the releases) are now two sections, with the cover cache and the migration in the feature list.
+- rakun 0.3.0 (the interface and the rakun inside the AppImage): `rakunctl self-update`, runner options in `Launcher_games.ini`, and Steam shortcuts recognised by `steamAppId` or runner instead of by title. Before that, 0.2.0 brought less inherited code and a download queue in `~/.config/rakun/download-manager.json`.
 
 ## 1.0.0 — Console-mode client for rakun
 

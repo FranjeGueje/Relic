@@ -40,6 +40,19 @@ renderer (React) ──IPC──> preload ──IPC──> main (Node) ──HTT
   `stopIfOurs` (SIGTERM, y SIGKILL a los 10 s) **se espera antes de salir**: un hijo vivo dejaría el AppImage
   montado (`AppRun` además lo mata si el main muere). Sin script embebido se usa `rakunProcess.ts`. Ambos cumplen
   `RakunController`; `ownership` (`none`/`cli`/`embedded`) llega al interfaz por `owns`.
+- `src/main/migrate.ts`: el Relic antiguo se migra **por ficheros, antes de que rakun exista** (`index.ts`, en `whenReady`,
+  antes de `registerIpc`; sin API ni `rakunctl`). Solo si hay `~/.config/relic` sin `.migrated`, **no** hay `~/.config/rakun`
+  y el Relic antiguo no está abierto (`SingletonLock`). Pasos, repetibles: `~/.local/share/relic` → `~/.local/share/rakun`
+  con un symlink `relic` → `rakun` (los accesos de Steam y `drive_c/relic` de los prefijos siguen funcionando; no se tocan
+  `shortcuts.vdf` ni los prefijos); los symlinks de `mount/` hacia `~/.config/relic/…` pasan a `~/.config/rakun/…`; se
+  construye `~/.config/rakun.tmp-<pid>` con `gogdlConfig nile_config nile_store gog_store legendaryConfig zoom_store
+steam_shortcuts.json` (tal cual) y `config.json` filtrado a los ajustes que rakun tiene (`store/`, que es del front
+  antiguo, no se copia) y se renombra a `~/.config/rakun` (lo último: apaga la condición); por fin se borra
+  `~/.config/relic` si la copia está completa (si no puede, deja `.migrated`). Es lo único que Relic escribe fuera de su
+  paquete, además de los symlinks de `mount/`.
+  Después, **en cada arranque** (`removeLegacyData`, fuera de la migración): si ningún `execPath` de
+  `~/.config/rakun/steam_shortcuts.json` cuelga de `…/.local/share/relic/`, se borra `~/.local/share/relic` (el symlink, no
+  su destino); no si rakun aún no tiene carpeta ni si la lista no se puede leer.
 - `src/main/loginWindow.ts` + `runLogin` (`ipc.ts`): el login de cada tienda lo hace el **main**: ventana hija sin
   preload ni sesión guardada, `loginPageResult` decide si la página es el final (URL con el código, mirada también en
   `will-redirect`; Epic usa el login del launcher de Relic con su agente de usuario y acaba en `localhost?code=`,
@@ -69,8 +82,20 @@ Relic no deja nada en disco fuera de su paquete. `src/main/paths.ts` + `main/ind
 `$XDG_RUNTIME_DIR/relic` (`ephemeralDir`), que se borra al salir (`process.on('exit')`; `SIGTERM/SIGINT/SIGHUP`
 hacen `app.quit()`). Solo la instancia principal lo borra: una segunda no debe tocar el de la primera. `rakunctl`
 se lanza con `userEnv` (el entorno original), para que rakun siga usando sus carpetas. **No añadir almacenamiento
-propio** (ficheros, localStorage, IndexedDB) sin discutirlo. Comprobarlo: `HOME=$(mktemp -d)`, abrir, cerrar y
-`find $HOME -mindepth 1` debe salir vacío (salvo lo que cree rakun si se arranca desde la app).
+propio** (ficheros, localStorage, IndexedDB) sin discutirlo.
+
+**Excepción discutida: las carátulas.** `src/main/imageCache.ts` guarda en `~/.cache/relic/images` (`imageCacheDir`, con el
+`XDG_CACHE_HOME` de `userEnv`: `AppRun` mueve el del proceso) las imágenes de las tiendas que la interfaz carga por
+`https`, para verlas sin red y no bajarlas en cada arranque. Se engancha en `index.ts` con
+`session.defaultSession.protocol.handle('https')` (las ventanas de login usan particiones propias y no pasan por ahí).
+Caché primero; una copia de más de 30 días se vuelve a pedir y, si la red falla, se sirve la vieja; solo `image/*` de
+hasta 8 MB; tope de 300 MB (se borran las menos usadas). Al guardar una carátula, **en segundo plano** (una a una, con
+pausa; la página ya tiene el original) `imageShrink.ts` la sustituye por una copia de como mucho 600 px de ancho
+(`nativeImage`; JPG a calidad 80, PNG sigue PNG, mismo nombre y extensión; solo si pesa menos; no se barre lo que ya
+había). Un fallo del disco o de la recompresión nunca rompe la carga. **Es lo único que
+Relic guarda por su cuenta y solo imágenes públicas**: nunca sesiones, credenciales ni ajustes (eso es de rakun).
+Comprobarlo: `HOME=$(mktemp -d)`, abrir, cerrar y `find $HOME -mindepth 1` debe salir vacío salvo `.cache/relic/images`
+(y lo que cree rakun si se arranca desde la app).
 
 ## Reglas de código
 

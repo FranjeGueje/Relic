@@ -17,6 +17,7 @@ const CALL_CHANNELS: readonly string[] = [
   'refreshLibrary',
   'checkGameUpdates',
   'requestAppSettings',
+  'getRakunVersion',
   'install',
   'updateGame',
   'importGame',

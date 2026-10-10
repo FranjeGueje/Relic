@@ -1,5 +1,6 @@
 import { rmSync } from 'node:fs'
-import { join } from 'node:path'
+import { homedir } from 'node:os'
+import { isAbsolute, join } from 'node:path'
 
 /**
  * The environment the person started the app with. The AppImage's `AppRun` has to move
@@ -54,4 +55,21 @@ export function ephemeralPaths(dir: string) {
 
 export function removeEphemeral(dir: string): void {
   rmSync(dir, { recursive: true, force: true })
+}
+
+/**
+ * The one folder Relic keeps outside its package: the store pictures it has seen, so the library
+ * shows them without a connection. It follows the person's `XDG_CACHE_HOME` (`userEnv`), not the
+ * one `AppRun` moved to the ephemeral folder.
+ */
+export function imageCacheDir(
+  env: Record<string, string | undefined>,
+  home = homedir()
+): string {
+  const xdg = env.XDG_CACHE_HOME
+  return join(
+    xdg && isAbsolute(xdg) ? xdg : join(home, '.cache'),
+    'relic',
+    'images'
+  )
 }

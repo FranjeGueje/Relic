@@ -1,10 +1,16 @@
-# Relic
+<p align="center">
+  <img src="grids/relic_icon.png" alt="Relic" width="128" />
+</p>
 
-[English](README.md)
+<p align="center"><a href="README.md">English</a></p>
 
 **Tu biblioteca de juegos, hecha para el mando.** Relic es un cliente a pantalla completa para tus juegos de Epic, GOG, Amazon y Zoom: eliges uno, pulsas instalar y aparece en Steam. Está pensado para el modo juego de la Steam Deck, y también funciona como una ventana normal en cualquier escritorio Linux.
 
 > **Un nuevo comienzo.** Relic 1.0 no es una actualización del Relic que quizá conoces (hasta la 0.6.x, el launcher de escritorio basado en Heroic). Conserva el nombre pero empieza de cero: un cliente de estilo consola que habla con [rakun](https://github.com/FranjeGueje/rakun/), el motor que hace el trabajo con las tiendas. El Relic antiguo sigue aquí, intacto, en la rama [`legacy`](https://github.com/FranjeGueje/Relic/tree/legacy), pero no recibirá novedades.
+
+<p align="center">
+  <img src="images/main.jpg" alt="La biblioteca de Relic: carátulas de tus juegos de Epic, GOG, Amazon y Zoom, filtradas por tienda" width="720" />
+</p>
 
 ## Qué ofrece
 
@@ -13,10 +19,15 @@
 - **Una cola de descargas** que puedes pausar, reanudar y cancelar
 - **Inicio de sesión dentro de la app**: sin navegador y sin copiar códigos
 - **Un solo archivo**: el AppImage lleva rakun dentro, así que no hay nada más que instalar, y se detiene al salir
-- **Sin ensuciar**: no deja nada en `~/.config` ni en `~/.cache`. Solo se quedan los ficheros de rakun (tus sesiones, tu biblioteca y tus juegos)
+- **Si vienes del Relic antiguo**: en el primer arranque mueve tus ajustes, sesiones y juegos instalados a rakun, y borra `~/.config/relic` al terminar
+- **Sin ensuciar**: no deja nada en `~/.config`. Solo se quedan los ficheros de rakun (tus sesiones, tu biblioteca y tus juegos) y las carátulas que Relic ha visto, en `~/.cache/relic/images` (300 MB como mucho), para que la biblioteca las muestre sin red
 - **También con ratón**: cada panel tiene su botón de cerrar, y la barra se pliega en un ☰ en ventanas estrechas
 
 Todavía no hay: categorías, favoritos ni búsqueda.
+
+<p align="center">
+  <img src="images/install.jpg" alt="Instalar un juego: elige la versión de Windows o de Linux, o impórtalo desde una carpeta" width="720" />
+</p>
 
 ## Instalación automática
 

@@ -1,10 +1,16 @@
-# Relic
+<p align="center">
+  <img src="grids/relic_icon.png" alt="Relic" width="128" />
+</p>
 
-[Español](README.es.md)
+<p align="center"><a href="README.es.md">Español</a></p>
 
 **Your game library, made for a gamepad.** Relic is a full-screen client for your Epic, GOG, Amazon and Zoom games: pick one, press install, and it lands in Steam. It is made for the Steam Deck's Game Mode, and it works as a normal window on any Linux desktop.
 
 > **A new beginning.** Relic 1.0 is not an update of the Relic you may know (versions up to 0.6.x, the desktop launcher based on Heroic). It keeps the name but starts from zero: a console-style client that talks to [rakun](https://github.com/FranjeGueje/rakun/), the engine that does the store work. The old Relic is still here, untouched, in the [`legacy`](https://github.com/FranjeGueje/Relic/tree/legacy) branch, but it will not get new features.
+
+<p align="center">
+  <img src="images/main.jpg" alt="The Relic library: covers of your Epic, GOG, Amazon and Zoom games, filtered by store" width="720" />
+</p>
 
 ## What you get
 
@@ -13,10 +19,15 @@
 - **A download queue** you can pause, resume and cancel
 - **Login inside the app**: no browser, no copying codes
 - **One file**: the AppImage carries rakun, so there is nothing else to install, and it stops when you quit
-- **No mess**: it leaves nothing in `~/.config` or `~/.cache`. The only files that stay are rakun's (your sessions, library and games)
+- **Coming from the old Relic**: on the first start it moves your settings, store sessions and installed games to rakun, and deletes `~/.config/relic` when done
+- **No mess**: it leaves nothing in `~/.config`. The only files that stay are rakun's (your sessions, library and games) and the covers Relic has seen, in `~/.cache/relic/images` (at most 300 MB), so the library shows them offline
 - **Mouse too**: every panel has a Close button, and the bar folds into a ☰ on narrow windows
 
 Not here yet: categories, favourites, search.
+
+<p align="center">
+  <img src="images/install.jpg" alt="Installing a game: choose the Windows or the Linux version, or import it from a folder" width="720" />
+</p>
 
 ## Automatic installation
 
