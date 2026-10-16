@@ -4,9 +4,18 @@ import type { Runner } from '../shared/types'
 const CHROME = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/200.0'
 const EPIC = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) EpicGamesLauncher'
 
-/** Epic only serves its login to its own launcher */
-export function userAgentFor(runner: Runner): string {
-  return runner === 'legendary' ? EPIC : CHROME
+/** Chromium's own user agent without the parts that give Electron away (itch.io sits behind Cloudflare) */
+function plainChromium(own: string): string {
+  return own.replace(/ (Electron|relic)\/\S+/gi, '')
+}
+
+/**
+ * Epic only serves its login to its own launcher. itch.io's Cloudflare keeps asking for
+ * its challenge to the made-up Chrome of the others, so it gets the real one.
+ */
+export function userAgentFor(runner: Runner, own = CHROME): string {
+  if (runner === 'legendary') return EPIC
+  return runner === 'itch' ? plainChromium(own) : CHROME
 }
 
 function hasParam(url: string, param: string): boolean {
@@ -81,7 +90,9 @@ function createLoginWindow(
       nodeIntegration: false
     }
   })
-  win.webContents.setUserAgent(userAgentFor(runner))
+  win.webContents.setUserAgent(
+    userAgentFor(runner, win.webContents.getUserAgent())
+  )
   win.webContents.setWindowOpenHandler(({ url }) => {
     void win.loadURL(url)
     return { action: 'deny' }

@@ -9,6 +9,8 @@ import type { RakunController } from './embeddedRakun'
 import { isCallChannel, type CallChannel } from '../shared/channels'
 import type { RakunLink } from './rakun'
 import { openLoginWindow } from './loginWindow'
+import { runItchLogin } from './itchLogin'
+import { itchWindows } from './itchWindows'
 import { SETTING_KEYS, type Runner, type SettingKey } from '../shared/types'
 
 /** Runs a call asked by the interface, if the channel is one it may ask for */
@@ -112,6 +114,7 @@ export function registerIpc(link: RakunLink, rakun: RakunController): void {
   ipcMain.handle(IPC.login, (event, runner: unknown) => {
     const parent = BrowserWindow.fromWebContents(event.sender)
     if (!parent) return { ok: false, error: 'no window' } satisfies LoginReply
+    if (runner === 'itch') return runItchLogin(link, itchWindows(parent))
     return runLogin(link, runner, (store, url) =>
       openLoginWindow(parent, store, url)
     )
