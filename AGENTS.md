@@ -7,7 +7,7 @@
 
 ## Objetivo
 
-Cliente de **modo consola** para rakun: la biblioteca de Epic, GOG, Amazon y Zoom a pantalla completa, para
+Cliente de **modo consola** para rakun: la biblioteca de Epic, GOG, Amazon, Zoom e itch.io a pantalla completa, para
 manejar con mando, como acceso directo de Steam en modo juego o ventana en el escritorio. Electron + React.
 Solo habla con la API HTTP de rakun (`../rakun/API.md` es el contrato). No es un launcher: rakun instala
 y añade a Steam; aquí solo se elige y se ve el progreso.
@@ -56,7 +56,13 @@ steam_shortcuts.json` (tal cual) y `config.json` filtrado a los ajustes que raku
 - `src/main/loginWindow.ts` + `runLogin` (`ipc.ts`): el login de cada tienda lo hace el **main**: ventana hija sin
   preload ni sesión guardada, `loginPageResult` decide si la página es el final (URL con el código, mirada también en
   `will-redirect`; Epic usa el login del launcher de Relic con su agente de usuario y acaba en `localhost?code=`,
-  no la página `legendary.gl` de rakun) y lo entrega a `submitLogin`. `getLoginInfo` y `submitLogin` están en
+  no la página `legendary.gl` de rakun) y lo entrega a `submitLogin`. **itch.io es distinto** (`itchLogin.ts`, `itchWindows.ts`): tiene dos formas de entrar y Relic pregunta cuál (diálogo A/B).
+  A) OAuth en el **navegador del usuario** (`shell.openExternal`; Cloudflare no acepta el navegador embebido: el desafío
+  se repite sin fin, y el log muestra a Chromium fallando al resolver los STUN de WebRTC). Su OAuth vuelve a
+  `GET /itch/callback` de la API de rakun, que acaba el login solo: no se llama a `submitLogin`, se espera hasta 5 min a
+  que `getAccounts` diga `loggedIn` (`waitForSession`). B) clave de API: una ventana propia (sin preload, página `data:`)
+  con un formulario que acaba en `https://relic.invalid/key?key=…`, que se lee en `will-navigate` (`keyFromUrl`) y se
+  envía a `submitLogin`. El enlace para crear la clave se abre en el navegador. `getLoginInfo` y `submitLogin` están en
   `CallMap` (tipos de rakun) pero **no** en la lista cerrada del interfaz.
 - **La interfaz no es de este repo**: es la web de rakun (`vendor/rakun/web/src`, submodule de git fijado a un commit de
   rakun; alias `@rakun-ui`). Aquí solo está su anfitrión: `src/renderer/main.tsx` (monta `App`), `index.html` y el
@@ -136,6 +142,11 @@ CI (`.github/workflows/ci.yml`) corre en cada push de cualquier rama y en cada P
 **sobre `master`** (`release.yml` rechaza cualquier otra cosa): antes, versión en `package.json`, entrada
 `## X.Y.Z — Título` en `CHANGELOG.md` (`scripts/release-notes.sh vX.Y.Z` lo comprueba) y `vendor/rakun` en una etiqueta
 publicada de rakun. La etiqueta se crea **al publicar**, no antes: no dejar etiquetas locales sueltas.
+
+Una **pre-release** (`vX.Y.Z-rcN`) no la crea `release.yml` (solo reacciona a `vX.Y.Z`): se hace a mano con
+`gh release create … --prerelease`, con `package.json` ya en `X.Y.Z`. El submódulo puede estar en una etiqueta rc de
+rakun (`package.sh` baja la release de **esa** etiqueta, `git describe --exact-match`, aunque los ficheros se llamen con
+la versión sin `-rc`). `install.sh` usa `releases/latest`, que ignora las pre-releases.
 
 ## Commits
 

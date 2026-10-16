@@ -4,7 +4,7 @@
 
 <p align="center"><a href="README.es.md">Español</a></p>
 
-**Your game library, made for a gamepad.** Relic is a full-screen client for your Epic, GOG, Amazon and Zoom games: pick one, press install, and it lands in Steam. It is made for the Steam Deck's Game Mode, and it works as a normal window on any Linux desktop.
+**Your game library, made for a gamepad.** Relic is a full-screen client for your Epic, GOG, Amazon, Zoom and itch.io games: pick one, press install, and it lands in Steam. It is made for the Steam Deck's Game Mode, and it works as a normal window on any Linux desktop.
 
 > **A new beginning.** Relic 1.0 is not an update of the Relic you may know (versions up to 0.6.x, the desktop launcher based on Heroic). It keeps the name but starts from zero: a console-style client that talks to [rakun](https://github.com/FranjeGueje/rakun/), the engine that does the store work. The old Relic is still here, untouched, in the [`legacy`](https://github.com/FranjeGueje/Relic/tree/legacy) branch, but it will not get new features.
 

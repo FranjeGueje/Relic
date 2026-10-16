@@ -2,6 +2,17 @@
 
 The history of the previous Relic (the desktop launcher, versions up to 0.6.x) is in the `legacy` branch.
 
+## 1.2.0 — itch.io and rakun 0.4.0
+
+### Added
+
+- itch.io: its games show up in the library and install like the others. Relic asks how to log in: A) authorize rakun in your own browser (itch.io's protection does not accept Relic's window), or B) paste an API key in a small window of Relic.
+
+### Changed
+
+- rakun 0.4.0 (the interface and the rakun inside the AppImage): a game whose download fails is no longer shown as installed (for example GOG without disk space), sessions are not lost without a network, and rakun warns if a store's tool changes what it prints.
+- Relic's own package script downloads rakun from the tag the submodule points at, so it can ship a rakun pre-release.
+
 ## 1.1.1 — Rakun 0.3.1
 
 ### Changed
