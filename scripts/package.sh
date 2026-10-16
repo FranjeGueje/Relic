@@ -59,14 +59,17 @@ UI_VERSION=$(node -p "require('./vendor/rakun/package.json').version" 2>/dev/nul
     echo "Error: the interface is missing (vendor/rakun): run scripts/init-ui.sh" >&2
     exit 1
 }
-# The rakun that travels: the release of the interface's version, unless another tarball is given
+# The release of rakun the submodule points at: its tag (v0.4.0-rc1 for a pre-release, whose files
+# are still named after 0.4.0), or vX.Y.Z when the submodule has no tag
+UI_TAG=$(git -C vendor/rakun describe --tags --exact-match 2>/dev/null || echo "v${UI_VERSION}")
+# The rakun that travels: that release, unless another tarball is given
 if [ -z "${RAKUN_TARBALL:-}" ]; then
     NAME="rakun-${UI_VERSION}-linux-${ARCH}.tar.gz"
     RAKUN_TARBALL="$OUT_DIR/.tools/rakun/$NAME"
     if [ ! -f "$RAKUN_TARBALL" ] || ! (cd "$OUT_DIR/.tools/rakun" && sha256sum -c "$NAME.sha256" >/dev/null 2>&1); then
-        echo "Downloading rakun v${UI_VERSION} (${ARCH})..."
+        echo "Downloading rakun ${UI_TAG} (${ARCH})..."
         mkdir -p "$OUT_DIR/.tools/rakun"
-        BASE="https://github.com/${RAKUN_REPO}/releases/download/v${UI_VERSION}"
+        BASE="https://github.com/${RAKUN_REPO}/releases/download/${UI_TAG}"
         curl -fsSL -o "$RAKUN_TARBALL" "$BASE/$NAME" &&
             curl -fsSL -o "$RAKUN_TARBALL.sha256" "$BASE/$NAME.sha256" || {
             rm -f "$RAKUN_TARBALL" "$RAKUN_TARBALL.sha256"
