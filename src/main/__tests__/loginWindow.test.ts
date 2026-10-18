@@ -2,7 +2,12 @@ import { describe, expect, test, vi } from 'vitest'
 
 vi.mock('electron', () => ({ BrowserWindow: vi.fn() }))
 
-import { loginPageResult, loginStartUrl, userAgentFor } from '../loginWindow'
+import {
+  isLoginPopupUrl,
+  loginPageResult,
+  loginStartUrl,
+  userAgentFor
+} from '../loginWindow'
 
 describe('loginPageResult', () => {
   test('GOG: the success address with its code is what gets sent', () => {
@@ -80,5 +85,19 @@ describe('loginStartUrl', () => {
     expect(loginStartUrl('gog', 'https://auth.gog.com/x')).toBe(
       'https://auth.gog.com/x'
     )
+  })
+})
+
+describe('isLoginPopupUrl', () => {
+  test('a popup of a login page opens only on https', () => {
+    expect(isLoginPopupUrl('https://www.gog.com/login')).toBe(true)
+    for (const url of [
+      'file:///home/deck/.config/rakun/config.json',
+      'http://example.com/',
+      'javascript:alert(1)',
+      'data:text/html,hi',
+      'not a url'
+    ])
+      expect(isLoginPopupUrl(url)).toBe(false)
   })
 })

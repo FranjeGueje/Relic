@@ -71,6 +71,15 @@ export function loginPageResult(
   return hasParam(url, param) ? url : undefined
 }
 
+/** A page the login window may open for a popup: the web only, never `file:` or other schemes */
+export function isLoginPopupUrl(url: string): boolean {
+  try {
+    return new URL(url).protocol === 'https:'
+  } catch {
+    return false
+  }
+}
+
 /** A fresh window, with nothing from the interface and no stored session */
 function createLoginWindow(
   parent: BrowserWindow,
@@ -93,8 +102,9 @@ function createLoginWindow(
   win.webContents.setUserAgent(
     userAgentFor(runner, win.webContents.getUserAgent())
   )
+  // The main process loads it, past Chromium's own limits: so only https
   win.webContents.setWindowOpenHandler(({ url }) => {
-    void win.loadURL(url)
+    if (isLoginPopupUrl(url)) void win.loadURL(url)
     return { action: 'deny' }
   })
   win.webContents.on('before-input-event', (event, input) => {
