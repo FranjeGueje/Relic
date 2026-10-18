@@ -125,6 +125,37 @@ describe('call', () => {
     await expect(linkTo(port).call('requestAppSettings')).rejects.toThrow('403')
   })
 
+  test('a call rakun never answers fails after the timeout', async () => {
+    const port = await listen((_req, res) => open.push(res))
+    const slow = new RakunLink({
+      credentials: () => ({ port, token: TOKEN }),
+      callTimeoutMs: 50
+    })
+
+    await expect(slow.call('getLibrary', 'all')).rejects.toThrow(
+      'rakun did not answer /api/getLibrary'
+    )
+  })
+
+  test('updateHelpers, which waits for its downloads, is never cut', async () => {
+    const port = await listen((_req, res) => {
+      setTimeout(
+        () =>
+          res.end(JSON.stringify({ result: { helpers: [], failures: [] } })),
+        120
+      )
+    })
+    const slow = new RakunLink({
+      credentials: () => ({ port, token: TOKEN }),
+      callTimeoutMs: 50
+    })
+
+    await expect(slow.call('updateHelpers', {})).resolves.toEqual({
+      helpers: [],
+      failures: []
+    })
+  })
+
   test('nobody listening is RakunOffline', async () => {
     const port = await listen(() => undefined)
     await new Promise((resolve) => server?.close(resolve))
@@ -187,6 +218,57 @@ describe('events', () => {
 
     expect(states).toEqual(['online', 'offline', 'online'])
     expect(link.connection).toBe('online')
+  })
+
+  test('a dropped stream reconnects once, so each event arrives once', async () => {
+    let connections = 0
+    const port = await listen((_req, res) => {
+      connections++
+      open.push(res)
+      res.writeHead(200)
+      res.write(': connected\n\n')
+    })
+    link = linkTo(port)
+    const events: RakunEvent[] = []
+    link.onEvent((event) => events.push(event))
+    link.start()
+    await until(() => connections === 1)
+
+    // cut from the server side, the way a crashed rakun does
+    open.splice(0).forEach((res) => res.socket?.resetAndDestroy())
+    await until(() => connections >= 2)
+    await new Promise((resolve) => setTimeout(resolve, 80))
+    open.forEach((res) => res.write('event: refreshLibrary\ndata: ["gog"]\n\n'))
+    await new Promise((resolve) => setTimeout(resolve, 40))
+
+    expect(connections).toBe(2)
+    expect(events).toEqual([{ event: 'refreshLibrary', args: ['gog'] }])
+  })
+
+  test('retryNow during a pending attempt does not leave a second stream', async () => {
+    let connections = 0
+    let hold: (() => void) | undefined
+    const port = await listen((_req, res) => {
+      connections++
+      // the first attempt hangs before answering, as a rakun that is starting
+      if (connections === 1) {
+        hold = () => res.destroy()
+        return
+      }
+      open.push(res)
+      res.writeHead(200)
+      res.write(': connected\n\n')
+    })
+    link = linkTo(port)
+    link.start()
+    await until(() => connections === 1)
+
+    link.retryNow()
+    await until(() => link?.connection === 'online')
+    hold?.()
+    await new Promise((resolve) => setTimeout(resolve, 80))
+
+    expect(connections).toBe(2)
   })
 
   test('a refused token keeps it offline and retrying', async () => {

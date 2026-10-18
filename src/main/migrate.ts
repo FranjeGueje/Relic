@@ -11,7 +11,8 @@ import {
   writeFileSync
 } from 'node:fs'
 import { homedir, hostname } from 'node:os'
-import { isAbsolute, join } from 'node:path'
+import { join } from 'node:path'
+import { xdgDir } from './paths'
 
 /** The roots the old Relic (the Heroic-based desktop app) and rakun keep their files in */
 export type MigrationDirs = {
@@ -50,11 +51,9 @@ export function migrationDirs(
   env: NodeJS.ProcessEnv,
   home = homedir()
 ): MigrationDirs {
-  const absolute = (value: string | undefined, fallback: string) =>
-    value && isAbsolute(value) ? value : join(home, fallback)
   return {
-    config: absolute(env.XDG_CONFIG_HOME, '.config'),
-    data: absolute(env.XDG_DATA_HOME, '.local/share')
+    config: xdgDir(env.XDG_CONFIG_HOME, home, '.config'),
+    data: xdgDir(env.XDG_DATA_HOME, home, '.local/share')
   }
 }
 
@@ -254,25 +253,38 @@ function hasLegacyShortcut(shortcuts: unknown, oldData: string): boolean {
   )
 }
 
+/** `~/.local/share/relic` is the link the migration left to `~/.local/share/rakun`, not a real folder */
+function isOurLink(oldData: string, newData: string): boolean {
+  try {
+    return (
+      !!lstatOf(oldData)?.isSymbolicLink() && readlinkSync(oldData) === newData
+    )
+  } catch {
+    return false
+  }
+}
+
 /**
- * On every start, after the migration: `~/.local/share/relic` (the link the old Steam shortcuts
- * needed, or the folder itself) goes away once no shortcut of rakun's `steam_shortcuts.json` runs
- * a `.bat` under it. Not while rakun has no folder yet, nor when that list cannot be read.
+ * On every start, after the migration: the link `~/.local/share/relic` that the old Steam shortcuts
+ * needed goes away once no shortcut of rakun's `steam_shortcuts.json` runs a `.bat` under it. Only
+ * that link: a real folder there is the old Relic's (it was not migrated) and is never touched. Not
+ * while rakun has no folder yet, nor when that list cannot be read.
  */
 export function removeLegacyData(
   dirs: MigrationDirs,
   log: (...args: unknown[]) => void = console.warn
 ): boolean {
   const oldData = join(dirs.data, 'relic')
-  if (!lstatOf(oldData) || !lstatOf(join(dirs.config, 'rakun'))) return false
+  if (!lstatOf(join(dirs.config, 'rakun'))) return false
+  if (!isOurLink(oldData, join(dirs.data, 'rakun'))) return false
   const list = join(dirs.config, 'rakun', 'steam_shortcuts.json')
   try {
     const shortcuts: unknown = lstatOf(list)
       ? JSON.parse(readFileSync(list, 'utf-8'))
       : []
     if (hasLegacyShortcut(shortcuts, oldData)) return false
-    // A link is removed itself, never what it points to
-    rmSync(oldData, { recursive: true, force: true })
+    // The link itself, never what it points to
+    rmSync(oldData, { force: true })
     return true
   } catch (error) {
     log('could not remove', oldData, error)

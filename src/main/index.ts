@@ -9,6 +9,7 @@ import {
   ephemeralDir,
   ephemeralPaths,
   imageCacheDir,
+  preparePrivateDir,
   removeEphemeral,
   userEnv
 } from './paths'
@@ -20,6 +21,7 @@ import {
   type RakunController
 } from './embeddedRakun'
 import { RakunProcess } from './rakunProcess'
+import { guardPermissions } from './permissions'
 
 /** Game Mode (gamescope) and `--fullscreen` get the whole screen; the desktop a window */
 const fullscreen =
@@ -30,6 +32,12 @@ const fullscreen =
 // cache and the certificate database (child processes inherit the environment) go to a
 // folder that is removed on exit. This runs before the single-instance lock, which lives in the user data folder.
 const scratch = ephemeralDir(process.env, tmpdir())
+try {
+  preparePrivateDir(scratch)
+} catch (error) {
+  console.error('Relic cannot use its temporary folder:', error)
+  process.exit(1)
+}
 const scratchPaths = ephemeralPaths(scratch)
 for (const name of [
   'userData',
@@ -91,7 +99,11 @@ if (!app.requestSingleInstanceLock()) {
     if (window?.isMinimized()) window.restore()
     window?.focus()
   })
+  // Every session, the login windows' too, only gives what the interface needs
+  const devServer = process.env.ELECTRON_RENDERER_URL
+  app.on('session-created', (created) => guardPermissions(created, devServer))
   void app.whenReady().then(() => {
+    guardPermissions(session.defaultSession, devServer)
     // Before rakun exists: the old Relic's files go where rakun looks (does nothing once done)
     const dirs = migrationDirs(userEnv)
     migrateFromOldRelic(dirs)

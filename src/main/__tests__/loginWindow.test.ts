@@ -2,7 +2,12 @@ import { describe, expect, test, vi } from 'vitest'
 
 vi.mock('electron', () => ({ BrowserWindow: vi.fn() }))
 
-import { loginPageResult, loginStartUrl, userAgentFor } from '../loginWindow'
+import {
+  isLoginPopupUrl,
+  loginPageResult,
+  loginStartUrl,
+  userAgentFor
+} from '../loginWindow'
 
 describe('loginPageResult', () => {
   test('GOG: the success address with its code is what gets sent', () => {
@@ -37,6 +42,25 @@ describe('loginPageResult', () => {
     expect(
       loginPageResult('zoom', 'https://www.zoom-platform.com/login')
     ).toBeUndefined()
+  })
+
+  test('Amazon and Zoom: the code only counts on their own site, over https', () => {
+    // where a real login ended
+    const amazon = 'https://www.amazon.com/?openid.oa2.authorization_code=AN'
+    const zoom = 'https://www.zoom-platform.com/account?li_token=tok'
+    expect(loginPageResult('nile', amazon)).toBe(amazon)
+    expect(loginPageResult('zoom', zoom)).toBe(zoom)
+    for (const [runner, url] of [
+      ['nile', 'https://evil.example/?openid.oa2.authorization_code=AN'],
+      [
+        'nile',
+        'https://amazon.com.evil.example/?openid.oa2.authorization_code=AN'
+      ],
+      ['nile', 'http://www.amazon.com/?openid.oa2.authorization_code=AN'],
+      ['zoom', 'https://evil.example/?li_token=tok'],
+      ['zoom', 'http://www.zoom-platform.com/?li_token=tok']
+    ] as const)
+      expect(loginPageResult(runner, url)).toBeUndefined()
   })
 
   test('Epic: the localhost address with the code, not the pages before it', () => {
@@ -80,5 +104,19 @@ describe('loginStartUrl', () => {
     expect(loginStartUrl('gog', 'https://auth.gog.com/x')).toBe(
       'https://auth.gog.com/x'
     )
+  })
+})
+
+describe('isLoginPopupUrl', () => {
+  test('a popup of a login page opens only on https', () => {
+    expect(isLoginPopupUrl('https://www.gog.com/login')).toBe(true)
+    for (const url of [
+      'file:///home/deck/.config/rakun/config.json',
+      'http://example.com/',
+      'javascript:alert(1)',
+      'data:text/html,hi',
+      'not a url'
+    ])
+      expect(isLoginPopupUrl(url)).toBe(false)
   })
 })

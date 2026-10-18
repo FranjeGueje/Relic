@@ -51,8 +51,9 @@ steam_shortcuts.json` (tal cual) y `config.json` filtrado a los ajustes que raku
   `~/.config/relic` si la copia está completa (si no puede, deja `.migrated`). Es lo único que Relic escribe fuera de su
   paquete, además de los symlinks de `mount/`.
   Después, **en cada arranque** (`removeLegacyData`, fuera de la migración): si ningún `execPath` de
-  `~/.config/rakun/steam_shortcuts.json` cuelga de `…/.local/share/relic/`, se borra `~/.local/share/relic` (el symlink, no
-  su destino); no si rakun aún no tiene carpeta ni si la lista no se puede leer.
+  `~/.config/rakun/steam_shortcuts.json` cuelga de `…/.local/share/relic/`, se borra `~/.local/share/relic` **solo si es el
+  symlink a `~/.local/share/rakun`** que dejó la migración (nunca su destino ni una carpeta real: esa es del Relic antiguo
+  sin migrar); no si rakun aún no tiene carpeta ni si la lista no se puede leer.
 - `src/main/loginWindow.ts` + `runLogin` (`ipc.ts`): el login de cada tienda lo hace el **main**: ventana hija sin
   preload ni sesión guardada, `loginPageResult` decide si la página es el final (URL con el código, mirada también en
   `will-redirect`; Epic usa el login del launcher de Relic con su agente de usuario y acaba en `localhost?code=`,
@@ -85,7 +86,7 @@ steam_shortcuts.json` (tal cual) y `config.json` filtrado a los ajustes que raku
 
 Relic no deja nada en disco fuera de su paquete. `src/main/paths.ts` + `main/index.ts` mandan `userData`,
 `sessionData`, `cache`, `logs`, `crashDumps`, la caché de Mesa y `XDG_DATA_HOME` (la base NSS de Chromium) a
-`$XDG_RUNTIME_DIR/relic` (`ephemeralDir`), que se borra al salir (`process.on('exit')`; `SIGTERM/SIGINT/SIGHUP`
+`$XDG_RUNTIME_DIR/relic` (`ephemeralDir`; sin esa variable, `$TMPDIR/relic-<uid>`, y `preparePrivateDir` y `AppRun` exigen que sea una carpeta propia con modo 0700, o no arranca), que se borra al salir (`process.on('exit')`; `SIGTERM/SIGINT/SIGHUP`
 hacen `app.quit()`). Solo la instancia principal lo borra: una segunda no debe tocar el de la primera. `rakunctl`
 se lanza con `userEnv` (el entorno original), para que rakun siga usando sus carpetas. **No añadir almacenamiento
 propio** (ficheros, localStorage, IndexedDB) sin discutirlo.
@@ -144,7 +145,8 @@ CI (`.github/workflows/ci.yml`) corre en cada push de cualquier rama y en cada P
 publicada de rakun. La etiqueta se crea **al publicar**, no antes: no dejar etiquetas locales sueltas.
 
 Una **pre-release** (`vX.Y.Z-rcN`) no la crea `release.yml` (solo reacciona a `vX.Y.Z`): se hace a mano con
-`gh release create … --prerelease`, con `package.json` ya en `X.Y.Z`. El submódulo puede estar en una etiqueta rc de
+`gh release create … --prerelease`, con `package.json` en `X.Y.Z-rcN` (el AppImage lleva ese nombre; la release
+vuelve a `X.Y.Z`). El submódulo puede estar en una etiqueta rc de
 rakun (`package.sh` baja la release de **esa** etiqueta, `git describe --exact-match`, aunque los ficheros se llamen con
 la versión sin `-rc`). `install.sh` usa `releases/latest`, que ignora las pre-releases.
 

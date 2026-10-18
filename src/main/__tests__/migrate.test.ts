@@ -295,15 +295,40 @@ describe('removeLegacyData', () => {
 
   test('removes it when rakun has no list, but not when the list is unreadable', () => {
     const first = oldHome()
-    rakunWith(first.dirs)
+    migrateFromOldRelic(first.dirs, quiet)
     expect(removeLegacyData(first.dirs, quiet)).toBe(true)
+    expect(lstatOf(first.oldData)).toBeUndefined()
 
     const second = oldHome()
-    rakunWith(second.dirs, '{ broken')
+    migrateFromOldRelic(second.dirs, quiet)
+    writeFileSync(
+      join(second.dirs.config, 'rakun', 'steam_shortcuts.json'),
+      '{ broken'
+    )
     const log = vi.fn()
     expect(removeLegacyData(second.dirs, log)).toBe(false)
     expect(existsSync(second.oldData)).toBe(true)
     expect(log).toHaveBeenCalled()
+  })
+
+  test('never removes a real folder: the old Relic was not migrated (rakun already existed)', () => {
+    const { dirs, oldData } = oldHome()
+    rakunWith(dirs, '[]')
+
+    expect(migrateFromOldRelic(dirs, quiet)).toBe('not-needed')
+    expect(removeLegacyData(dirs, quiet)).toBe(false)
+    expect(existsSync(join(oldData, 'runner', 'Game.bat'))).toBe(true)
+  })
+
+  test('never removes a link that points somewhere else', () => {
+    const { dirs, oldData } = oldHome()
+    const elsewhere = join(dirs.data, 'elsewhere')
+    renameSync(oldData, elsewhere)
+    symlinkSync(elsewhere, oldData)
+    rakunWith(dirs, '[]')
+
+    expect(removeLegacyData(dirs, quiet)).toBe(false)
+    expect(lstatOf(oldData)?.isSymbolicLink()).toBe(true)
   })
 
   test('does nothing before rakun has a folder, or without the old one', () => {

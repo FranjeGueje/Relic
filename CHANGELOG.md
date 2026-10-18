@@ -11,7 +11,15 @@ The history of the previous Relic (the desktop launcher, versions up to 0.6.x) i
 ### Changed
 
 - rakun 0.4.0 (the interface and the rakun inside the AppImage): a game whose download fails is no longer shown as installed (for example GOG without disk space), sessions are not lost without a network, and rakun warns if a store's tool changes what it prints.
+- Zoom's Windows games can be added to Steam (the first Play runs the installer) or installed now.
+- The SteamGridDB key is never read back: rakun only says whether there is one, and the menu shows «configured» or «not configured» (Relic lets the `steamgriddb.hasApiKey` call through).
 - Relic's own package script downloads rakun from the tag the submodule points at, so it can ship a rakun pre-release.
+
+### Fixed
+
+- The previous Relic's `~/.local/share/relic` is only removed when it is the link the migration left: a real folder (the previous Relic was not migrated because rakun already had its folder) was deleted with everything in it.
+- The stores' login pages no longer get camera, microphone, location, notifications or any other permission (Electron granted them all). Only Relic's own screens may read the clipboard.
+- `install.sh` put Relic's artwork on the last shortcut of Steam's list, which was another game when Relic was not the last one; it now finds Relic's own shortcut.
 
 ## 1.1.1 — Rakun 0.3.1
 

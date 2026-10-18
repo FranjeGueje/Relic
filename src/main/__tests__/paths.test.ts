@@ -1,4 +1,12 @@
-import { existsSync, mkdirSync, mkdtempSync, writeFileSync } from 'node:fs'
+import {
+  chmodSync,
+  existsSync,
+  mkdirSync,
+  mkdtempSync,
+  statSync,
+  symlinkSync,
+  writeFileSync
+} from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { describe, expect, test } from 'vitest'
@@ -6,6 +14,7 @@ import {
   ephemeralDir,
   imageCacheDir,
   ephemeralPaths,
+  preparePrivateDir,
   removeEphemeral,
   restoreUserEnv
 } from '../paths'
@@ -17,9 +26,36 @@ describe('ephemeralDir', () => {
     )
   })
 
-  test('falls back to the temp dir, also when the variable is empty', () => {
-    expect(ephemeralDir({}, '/tmp')).toBe('/tmp/relic')
-    expect(ephemeralDir({ XDG_RUNTIME_DIR: '' }, '/tmp')).toBe('/tmp/relic')
+  test('falls back to a folder of this user in the temp dir, also when the variable is empty', () => {
+    expect(ephemeralDir({}, '/tmp', 1000)).toBe('/tmp/relic-1000')
+    expect(ephemeralDir({ XDG_RUNTIME_DIR: '' }, '/tmp', 1000)).toBe(
+      '/tmp/relic-1000'
+    )
+  })
+})
+
+describe('preparePrivateDir', () => {
+  const uid = process.getuid?.() ?? 0
+
+  test('makes a folder only this user can enter, also when it was there', () => {
+    const dir = join(mkdtempSync(join(tmpdir(), 'rc-')), 'relic')
+    preparePrivateDir(dir, uid)
+    expect(statSync(dir).mode & 0o777).toBe(0o700)
+
+    chmodSync(dir, 0o755)
+    preparePrivateDir(dir, uid)
+    expect(statSync(dir).mode & 0o777).toBe(0o700)
+  })
+
+  test('refuses a link, or a folder of someone else', () => {
+    const root = mkdtempSync(join(tmpdir(), 'rc-'))
+    const link = join(root, 'relic')
+    mkdirSync(join(root, 'target'))
+    symlinkSync(join(root, 'target'), link)
+    expect(() => preparePrivateDir(link, uid)).toThrow()
+
+    const dir = join(root, 'other')
+    expect(() => preparePrivateDir(dir, uid + 1)).toThrow()
   })
 })
 

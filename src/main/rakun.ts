@@ -1,7 +1,8 @@
 import { readFileSync } from 'node:fs'
 import { request as httpRequest, type IncomingMessage } from 'node:http'
 import { homedir } from 'node:os'
-import { isAbsolute, join } from 'node:path'
+import { join } from 'node:path'
+import { xdgDir } from './paths'
 import { errorOf, parseSseBlock, splitBlocks } from '../shared/sse'
 import {
   type ConnectionState,
@@ -17,8 +18,7 @@ export class RakunOffline extends Error {}
 /** `RAKUN_API_FILE`, or rakun's own `api.json` (it follows `XDG_CONFIG_HOME`) */
 export function credentialsFile(env: NodeJS.ProcessEnv = process.env): string {
   if (env.RAKUN_API_FILE) return env.RAKUN_API_FILE
-  const xdg = env.XDG_CONFIG_HOME
-  const config = xdg && isAbsolute(xdg) ? xdg : join(homedir(), '.config')
+  const config = xdgDir(env.XDG_CONFIG_HOME, homedir(), '.config')
   return join(config, 'rakun', 'api.json')
 }
 
@@ -45,23 +45,34 @@ type Options = {
   credentials?: () => Credentials
   /** Wait before each reconnection; the last one repeats */
   retryDelays?: number[]
+  /** How long a call may go without an answer before it fails */
+  callTimeoutMs?: number
 }
+
+/** A call that hangs (rakun stuck) fails instead of leaving the screen waiting forever */
+const CALL_TIMEOUT_MS = 120_000
+/** It answers when the downloads end, which can take minutes; its progress comes as events */
+const UNTIMED_CALLS: ReadonlySet<string> = new Set(['updateHelpers'])
 
 /** The link with rakun: calls, the event stream and whether it answers */
 export class RakunLink {
   private readonly credentials: () => Credentials
   private readonly retryDelays: number[]
+  private readonly callTimeoutMs: number
   private readonly eventListeners = new Set<(event: RakunEvent) => void>()
   private readonly stateListeners = new Set<(state: ConnectionState) => void>()
   private state: ConnectionState = 'connecting'
   private running = false
   private attempt = 0
+  /** Which connection is the current one: the end of an older one is not a reason to reconnect */
+  private generation = 0
   private timer: NodeJS.Timeout | undefined
   private stream: { destroy: () => void } | undefined
 
   constructor(options: Options = {}) {
     this.credentials = options.credentials ?? readCredentials
     this.retryDelays = options.retryDelays ?? [1000, 2000, 5000]
+    this.callTimeoutMs = options.callTimeoutMs ?? CALL_TIMEOUT_MS
   }
 
   get connection(): ConnectionState {
@@ -95,6 +106,7 @@ export class RakunLink {
 
   stop(): void {
     this.running = false
+    this.generation++
     clearTimeout(this.timer)
     this.stream?.destroy()
     this.stream = undefined
@@ -104,7 +116,9 @@ export class RakunLink {
     channel: C,
     ...args: CallMap[C]['args']
   ): Promise<CallMap[C]['result']> {
-    const res = await this.open('POST', `/api/${channel}`, { args }).response
+    const timeoutMs = UNTIMED_CALLS.has(channel) ? 0 : this.callTimeoutMs
+    const res = await this.open('POST', `/api/${channel}`, { args }, timeoutMs)
+      .response
     const body = await readBody(res)
     if (res.statusCode !== 200)
       throw new Error(errorOf(res.statusCode ?? 0, body))
@@ -115,7 +129,8 @@ export class RakunLink {
   private open(
     method: string,
     path: string,
-    body?: unknown
+    body?: unknown,
+    timeoutMs = 0
   ): { cancel: () => void; response: Promise<IncomingMessage> } {
     let credentials: Credentials
     try {
@@ -140,9 +155,19 @@ export class RakunLink {
         },
         resolve
       )
+      let timedOut = false
       req.once('error', () =>
-        reject(new RakunOffline(`rakun does not answer on port ${port}`))
+        reject(
+          timedOut
+            ? new Error(`rakun did not answer ${path} in ${timeoutMs / 1000} s`)
+            : new RakunOffline(`rakun does not answer on port ${port}`)
+        )
       )
+      if (timeoutMs > 0)
+        req.setTimeout(timeoutMs, () => {
+          timedOut = true
+          req.destroy()
+        })
       req.end(body === undefined ? undefined : JSON.stringify(body))
       cancel = () => req.destroy()
     })
@@ -166,15 +191,24 @@ export class RakunLink {
 
   private connect(): void {
     if (!this.running) return
+    const id = ++this.generation
     const { cancel, response } = this.open('GET', '/events')
     this.stream = { destroy: cancel }
-    response.then((res) => this.follow(res)).catch(() => this.retryLater())
+    // A stream can end several ways at once (error and close): only the first end of the
+    // current one schedules the next try
+    let ended = false
+    const end = () => {
+      if (ended || id !== this.generation) return
+      ended = true
+      this.retryLater()
+    }
+    response.then((res) => this.follow(res, end)).catch(end)
   }
 
-  private follow(res: IncomingMessage): void {
+  private follow(res: IncomingMessage, end: () => void): void {
     if (res.statusCode !== 200) {
       res.resume()
-      return this.retryLater()
+      return end()
     }
     this.attempt = 0
     this.setState('online')
@@ -185,8 +219,8 @@ export class RakunLink {
       buffer = rest
       blocks.forEach((block) => this.dispatch(block))
     })
-    res.once('close', () => this.retryLater())
-    res.once('error', () => this.retryLater())
+    res.once('close', end)
+    res.once('error', end)
   }
 
   private dispatch(block: string): void {

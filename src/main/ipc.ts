@@ -9,7 +9,8 @@ import type { RakunController } from './embeddedRakun'
 import { isCallChannel, type CallChannel } from '../shared/channels'
 import type { RakunLink } from './rakun'
 import { openLoginWindow } from './loginWindow'
-import { runItchLogin } from './itchLogin'
+import { runItchLogin, submitReply } from './itchLogin'
+import { errorText } from './helpers'
 import { itchWindows } from './itchWindows'
 import { SETTING_KEYS, type Runner, type SettingKey } from '../shared/types'
 
@@ -30,10 +31,7 @@ export async function answerCall(
     ) => Promise<unknown>
     return { ok: true, result: await call(channel, ...(args as unknown[])) }
   } catch (error) {
-    return {
-      ok: false,
-      error: error instanceof Error ? error.message : String(error)
-    }
+    return { ok: false, error: errorText(error) }
   }
 }
 
@@ -53,15 +51,9 @@ export async function runLogin(
     const pasted = await open(store.id, info.url)
     if (pasted === undefined)
       return { ok: false, error: 'cancelled', cancelled: true }
-    const result = await link.call('submitLogin', store.id, pasted)
-    return result.ok
-      ? { ok: true }
-      : { ok: false, error: result.error ?? 'login rejected' }
+    return submitReply(await link.call('submitLogin', store.id, pasted))
   } catch (error) {
-    return {
-      ok: false,
-      error: error instanceof Error ? error.message : String(error)
-    }
+    return { ok: false, error: errorText(error) }
   }
 }
 
@@ -82,10 +74,7 @@ export async function runSetSetting(
     await link.call('setSetting', { key, value })
     return { ok: true }
   } catch (error) {
-    return {
-      ok: false,
-      error: error instanceof Error ? error.message : String(error)
-    }
+    return { ok: false, error: errorText(error) }
   }
 }
 

@@ -1,4 +1,4 @@
-import { rmSync } from 'node:fs'
+import { chmodSync, lstatSync, mkdirSync, rmSync } from 'node:fs'
 import { homedir } from 'node:os'
 import { isAbsolute, join } from 'node:path'
 
@@ -29,12 +29,31 @@ export const userEnv = restoreUserEnv(process.env)
  * Where everything the app writes while it runs goes (Electron's user data, caches,
  * logs, and the GPU driver's shader cache). `XDG_RUNTIME_DIR` is a tmpfs that the
  * system empties on logout, so a crash leaves nothing behind in the home folder.
+ * Without it, the temp folder is shared by every user: the name carries the user's id.
  */
 export function ephemeralDir(
   env: Record<string, string | undefined>,
-  tmp: string
+  tmp: string,
+  uid: number = process.getuid?.() ?? 0
 ): string {
-  return join(env.XDG_RUNTIME_DIR || tmp, 'relic')
+  return env.XDG_RUNTIME_DIR
+    ? join(env.XDG_RUNTIME_DIR, 'relic')
+    : join(tmp, `relic-${uid}`)
+}
+
+/**
+ * Makes `dir` a folder only this user can enter. Throws if it is a link, not a folder, or
+ * someone else's: in a shared temp folder another user could have made it first.
+ */
+export function preparePrivateDir(
+  dir: string,
+  uid: number = process.getuid?.() ?? 0
+): void {
+  mkdirSync(dir, { recursive: true, mode: 0o700 })
+  const stat = lstatSync(dir)
+  if (!stat.isDirectory() || stat.uid !== uid)
+    throw new Error(`${dir} is not a folder of this user`)
+  chmodSync(dir, 0o700)
 }
 
 /** The folders under `ephemeralDir`, one per kind of file */
@@ -57,6 +76,15 @@ export function removeEphemeral(dir: string): void {
   rmSync(dir, { recursive: true, force: true })
 }
 
+/** An XDG folder: the variable when it is an absolute path (the spec ignores relative ones), else `~/<fallback>` */
+export function xdgDir(
+  value: string | undefined,
+  home: string,
+  fallback: string
+): string {
+  return value && isAbsolute(value) ? value : join(home, fallback)
+}
+
 /**
  * The one folder Relic keeps outside its package: the store pictures it has seen, so the library
  * shows them without a connection. It follows the person's `XDG_CACHE_HOME` (`userEnv`), not the
@@ -66,10 +94,5 @@ export function imageCacheDir(
   env: Record<string, string | undefined>,
   home = homedir()
 ): string {
-  const xdg = env.XDG_CACHE_HOME
-  return join(
-    xdg && isAbsolute(xdg) ? xdg : join(home, '.cache'),
-    'relic',
-    'images'
-  )
+  return join(xdgDir(env.XDG_CACHE_HOME, home, '.cache'), 'relic', 'images')
 }

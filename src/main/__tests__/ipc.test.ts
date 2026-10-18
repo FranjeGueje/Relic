@@ -42,6 +42,15 @@ describe('answerCall', () => {
     expect(call).toHaveBeenCalledWith('getRakunVersion')
   })
 
+  test('whether there is a SteamGridDB key, which the menu shows, is allowed', async () => {
+    const call = vi.fn().mockResolvedValue(true)
+
+    const reply = await answerCall(link(call), 'steamgriddb.hasApiKey', [])
+
+    expect(reply).toEqual({ ok: true, result: true })
+    expect(call).toHaveBeenCalledWith('steamgriddb.hasApiKey')
+  })
+
   test('arguments have to be a list', async () => {
     const reply = await answerCall(link(vi.fn()), 'getLibrary', 'all')
     expect(reply).toEqual({ ok: false, error: 'args must be a list' })
