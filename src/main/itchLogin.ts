@@ -1,6 +1,7 @@
 import type { RakunLink } from './rakun'
 import type { LoginReply } from '../shared/bridge'
 import type { LoginInfo } from '../shared/types'
+import { errorText, parseUrl } from './helpers'
 
 const ITCH = 'itch'
 /** The person logs in on their own browser, which takes as long as they take */
@@ -36,6 +37,16 @@ export async function waitForSession(
 
 const cancelled: LoginReply = { ok: false, error: 'cancelled', cancelled: true }
 
+/** What rakun said to `submitLogin`, as the interface gets it */
+export function submitReply(result: {
+  ok: boolean
+  error?: string
+}): LoginReply {
+  return result.ok
+    ? { ok: true }
+    : { ok: false, error: result.error ?? 'login rejected' }
+}
+
 /**
  * The login of itch.io, which has two ways: authorize rakun in the browser (rakun ends it
  * by itself when the browser comes back to it) or paste an API key (sent to rakun as it is)
@@ -57,15 +68,9 @@ export async function runItchLogin(
     }
     const key = (await ui.askKey(info))?.trim()
     if (!key) return cancelled
-    const result = await link.call('submitLogin', ITCH, key)
-    return result.ok
-      ? { ok: true }
-      : { ok: false, error: result.error ?? 'login rejected' }
+    return submitReply(await link.call('submitLogin', ITCH, key))
   } catch (error) {
-    return {
-      ok: false,
-      error: error instanceof Error ? error.message : String(error)
-    }
+    return { ok: false, error: errorText(error) }
   }
 }
 
@@ -89,21 +94,14 @@ export function keyFormHtml(
 
 /** Whether the form of `keyFormHtml` asks to open the page where the key is made */
 export function isOpenRequest(url: string): boolean {
-  try {
-    const { hostname, pathname } = new URL(url)
-    return hostname === KEY_HOST && pathname === '/open'
-  } catch {
-    return false
-  }
+  const parsed = parseUrl(url)
+  return parsed?.hostname === KEY_HOST && parsed.pathname === '/open'
 }
 
 /** The key the form of `keyFormHtml` ended on, or `undefined` for any other address */
 export function keyFromUrl(url: string): string | undefined {
-  try {
-    const { hostname, pathname, searchParams } = new URL(url)
-    if (hostname !== KEY_HOST || pathname !== '/key') return undefined
-    return searchParams.get('key')?.trim() || undefined
-  } catch {
+  const parsed = parseUrl(url)
+  if (parsed?.hostname !== KEY_HOST || parsed.pathname !== '/key')
     return undefined
-  }
+  return parsed.searchParams.get('key')?.trim() || undefined
 }

@@ -1,7 +1,8 @@
 import { readFileSync } from 'node:fs'
 import { request as httpRequest, type IncomingMessage } from 'node:http'
 import { homedir } from 'node:os'
-import { isAbsolute, join } from 'node:path'
+import { join } from 'node:path'
+import { xdgDir } from './paths'
 import { errorOf, parseSseBlock, splitBlocks } from '../shared/sse'
 import {
   type ConnectionState,
@@ -17,8 +18,7 @@ export class RakunOffline extends Error {}
 /** `RAKUN_API_FILE`, or rakun's own `api.json` (it follows `XDG_CONFIG_HOME`) */
 export function credentialsFile(env: NodeJS.ProcessEnv = process.env): string {
   if (env.RAKUN_API_FILE) return env.RAKUN_API_FILE
-  const xdg = env.XDG_CONFIG_HOME
-  const config = xdg && isAbsolute(xdg) ? xdg : join(homedir(), '.config')
+  const config = xdgDir(env.XDG_CONFIG_HOME, homedir(), '.config')
   return join(config, 'rakun', 'api.json')
 }
 

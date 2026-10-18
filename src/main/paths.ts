@@ -76,6 +76,15 @@ export function removeEphemeral(dir: string): void {
   rmSync(dir, { recursive: true, force: true })
 }
 
+/** An XDG folder: the variable when it is an absolute path (the spec ignores relative ones), else `~/<fallback>` */
+export function xdgDir(
+  value: string | undefined,
+  home: string,
+  fallback: string
+): string {
+  return value && isAbsolute(value) ? value : join(home, fallback)
+}
+
 /**
  * The one folder Relic keeps outside its package: the store pictures it has seen, so the library
  * shows them without a connection. It follows the person's `XDG_CACHE_HOME` (`userEnv`), not the
@@ -85,10 +94,5 @@ export function imageCacheDir(
   env: Record<string, string | undefined>,
   home = homedir()
 ): string {
-  const xdg = env.XDG_CACHE_HOME
-  return join(
-    xdg && isAbsolute(xdg) ? xdg : join(home, '.cache'),
-    'relic',
-    'images'
-  )
+  return join(xdgDir(env.XDG_CACHE_HOME, home, '.cache'), 'relic', 'images')
 }

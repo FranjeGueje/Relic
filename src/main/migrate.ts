@@ -11,7 +11,8 @@ import {
   writeFileSync
 } from 'node:fs'
 import { homedir, hostname } from 'node:os'
-import { isAbsolute, join } from 'node:path'
+import { join } from 'node:path'
+import { xdgDir } from './paths'
 
 /** The roots the old Relic (the Heroic-based desktop app) and rakun keep their files in */
 export type MigrationDirs = {
@@ -50,11 +51,9 @@ export function migrationDirs(
   env: NodeJS.ProcessEnv,
   home = homedir()
 ): MigrationDirs {
-  const absolute = (value: string | undefined, fallback: string) =>
-    value && isAbsolute(value) ? value : join(home, fallback)
   return {
-    config: absolute(env.XDG_CONFIG_HOME, '.config'),
-    data: absolute(env.XDG_DATA_HOME, '.local/share')
+    config: xdgDir(env.XDG_CONFIG_HOME, home, '.config'),
+    data: xdgDir(env.XDG_DATA_HOME, home, '.local/share')
   }
 }
 

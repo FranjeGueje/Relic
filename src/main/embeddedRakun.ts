@@ -71,8 +71,8 @@ export class EmbeddedRakun implements RakunController {
   }
 
   async start(wasStopped: boolean): Promise<StartReply> {
-    if (this.child) return { ok: true }
-    if (!wasStopped) return { ok: true }
+    // Already ours, or someone else's that answers: nothing to start
+    if (this.child || !wasStopped) return { ok: true }
     const env: NodeJS.ProcessEnv = {
       ...userEnv,
       ELECTRON_RUN_AS_NODE: '1'

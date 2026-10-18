@@ -1,5 +1,6 @@
 import { BrowserWindow } from 'electron'
 import type { Runner } from '../shared/types'
+import { parseUrl } from './helpers'
 
 const CHROME = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/200.0'
 const EPIC = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) EpicGamesLauncher'
@@ -19,20 +20,15 @@ export function userAgentFor(runner: Runner, own = CHROME): string {
 }
 
 function hasParam(url: string, param: string): boolean {
-  try {
-    return !!new URL(url).searchParams.get(param)
-  } catch {
-    return false
-  }
+  return !!parseUrl(url)?.searchParams.get(param)
 }
 
 function isGogSuccess(url: string): boolean {
-  try {
-    const { hostname, pathname } = new URL(url)
-    return hostname === 'embed.gog.com' && pathname === '/on_login_success'
-  } catch {
-    return false
-  }
+  const parsed = parseUrl(url)
+  return (
+    parsed?.hostname === 'embed.gog.com' &&
+    parsed.pathname === '/on_login_success'
+  )
 }
 
 /** Epic's login for its own launcher: it ends on a localhost address that carries the code */
@@ -40,11 +36,7 @@ const EPIC_LAUNCHER_LOGIN =
   'https://www.epicgames.com/id/login?responseType=code'
 
 function isLocalhostWithCode(url: string): boolean {
-  try {
-    return new URL(url).hostname === 'localhost' && hasParam(url, 'code')
-  } catch {
-    return false
-  }
+  return parseUrl(url)?.hostname === 'localhost' && hasParam(url, 'code')
 }
 
 /**
@@ -73,11 +65,7 @@ export function loginPageResult(
 
 /** A page the login window may open for a popup: the web only, never `file:` or other schemes */
 export function isLoginPopupUrl(url: string): boolean {
-  try {
-    return new URL(url).protocol === 'https:'
-  } catch {
-    return false
-  }
+  return parseUrl(url)?.protocol === 'https:'
 }
 
 /** A fresh window, with nothing from the interface and no stored session */
