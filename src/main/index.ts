@@ -20,6 +20,7 @@ import {
   type RakunController
 } from './embeddedRakun'
 import { RakunProcess } from './rakunProcess'
+import { guardPermissions } from './permissions'
 
 /** Game Mode (gamescope) and `--fullscreen` get the whole screen; the desktop a window */
 const fullscreen =
@@ -91,7 +92,11 @@ if (!app.requestSingleInstanceLock()) {
     if (window?.isMinimized()) window.restore()
     window?.focus()
   })
+  // Every session, the login windows' too, only gives what the interface needs
+  const devServer = process.env.ELECTRON_RENDERER_URL
+  app.on('session-created', (created) => guardPermissions(created, devServer))
   void app.whenReady().then(() => {
+    guardPermissions(session.defaultSession, devServer)
     // Before rakun exists: the old Relic's files go where rakun looks (does nothing once done)
     const dirs = migrationDirs(userEnv)
     migrateFromOldRelic(dirs)
