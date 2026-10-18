@@ -86,7 +86,7 @@ steam_shortcuts.json` (tal cual) y `config.json` filtrado a los ajustes que raku
 
 Relic no deja nada en disco fuera de su paquete. `src/main/paths.ts` + `main/index.ts` mandan `userData`,
 `sessionData`, `cache`, `logs`, `crashDumps`, la caché de Mesa y `XDG_DATA_HOME` (la base NSS de Chromium) a
-`$XDG_RUNTIME_DIR/relic` (`ephemeralDir`), que se borra al salir (`process.on('exit')`; `SIGTERM/SIGINT/SIGHUP`
+`$XDG_RUNTIME_DIR/relic` (`ephemeralDir`; sin esa variable, `$TMPDIR/relic-<uid>`, y `preparePrivateDir` y `AppRun` exigen que sea una carpeta propia con modo 0700, o no arranca), que se borra al salir (`process.on('exit')`; `SIGTERM/SIGINT/SIGHUP`
 hacen `app.quit()`). Solo la instancia principal lo borra: una segunda no debe tocar el de la primera. `rakunctl`
 se lanza con `userEnv` (el entorno original), para que rakun siga usando sus carpetas. **No añadir almacenamiento
 propio** (ficheros, localStorage, IndexedDB) sin discutirlo.

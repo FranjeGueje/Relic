@@ -162,7 +162,18 @@ cat >"$APPDIR/AppRun" <<'APPRUN'
 #!/bin/bash
 HERE="$(dirname "$(readlink -f "$0")")"
 unset LD_PRELOAD LD_LIBRARY_PATH
-SCRATCH="${XDG_RUNTIME_DIR:-${TMPDIR:-/tmp}}/relic"
+# The same folder as ephemeralDir: without XDG_RUNTIME_DIR, the shared temp folder, so per user and private
+if [ -n "${XDG_RUNTIME_DIR:-}" ]; then
+    SCRATCH="$XDG_RUNTIME_DIR/relic"
+else
+    SCRATCH="${TMPDIR:-/tmp}/relic-$(id -u)"
+fi
+mkdir -p -m 700 "$SCRATCH"
+if [ -L "$SCRATCH" ] || [ ! -d "$SCRATCH" ] || [ ! -O "$SCRATCH" ]; then
+    echo "Relic: $SCRATCH is not a folder of this user" >&2
+    exit 1
+fi
+chmod 700 "$SCRATCH"
 export RELIC_USER_XDG_CACHE_HOME="${XDG_CACHE_HOME:-}"
 export XDG_CACHE_HOME="$SCRATCH/xdgCache"
 export MESA_SHADER_CACHE_DIR="$SCRATCH/mesa"

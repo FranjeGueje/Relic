@@ -9,6 +9,7 @@ import {
   ephemeralDir,
   ephemeralPaths,
   imageCacheDir,
+  preparePrivateDir,
   removeEphemeral,
   userEnv
 } from './paths'
@@ -31,6 +32,12 @@ const fullscreen =
 // cache and the certificate database (child processes inherit the environment) go to a
 // folder that is removed on exit. This runs before the single-instance lock, which lives in the user data folder.
 const scratch = ephemeralDir(process.env, tmpdir())
+try {
+  preparePrivateDir(scratch)
+} catch (error) {
+  console.error('Relic cannot use its temporary folder:', error)
+  process.exit(1)
+}
 const scratchPaths = ephemeralPaths(scratch)
 for (const name of [
   'userData',
