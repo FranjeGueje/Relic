@@ -103,6 +103,9 @@ export class ImageCache {
       .toLowerCase()
     const extension = TYPES[type]
     if (!response.ok || !extension) return response
+    // Too big to keep: it goes to the page as it comes, without holding it in memory here
+    if (Number(response.headers.get('content-length')) > MAX_IMAGE_BYTES)
+      return response
     const bytes = Buffer.from(await response.arrayBuffer())
     if (bytes.length <= MAX_IMAGE_BYTES) this.write(key, extension, bytes, type)
     return new Response(bytes, { headers: { 'content-type': type } })
@@ -114,23 +117,29 @@ export class ImageCache {
     })
   }
 
+  /** The saved copy of `key`, whichever type it has: one look per type, not a listing of the folder */
+  private find(key: string) {
+    for (const [extension, type] of Object.entries(EXTENSIONS)) {
+      const path = join(this.dir, `${key}.${extension}`)
+      try {
+        return { path, type, time: statSync(path).mtimeMs }
+      } catch {
+        // not under this type
+      }
+    }
+    return undefined
+  }
+
   private read(key: string) {
     try {
-      const name = readdirSync(this.dir).find(
-        (file) => file.startsWith(`${key}.`) && !file.endsWith('.tmp')
-      )
-      if (!name) return undefined
-      const path = join(this.dir, name)
+      const found = this.find(key)
+      if (!found) return undefined
+      const { path, type, time } = found
       const bytes = readFileSync(path)
-      const time = statSync(path).mtimeMs
       // A hit counts as use for the eviction, not as a fresh copy
       const used = new Date(this.now())
       utimesSync(path, used, new Date(time))
-      return {
-        bytes,
-        time,
-        type: EXTENSIONS[name.slice(key.length + 1)] ?? 'image/png'
-      }
+      return { bytes, time, type }
     } catch {
       return undefined
     }
@@ -144,9 +153,9 @@ export class ImageCache {
       writeFileSync(temporary, bytes)
       renameSync(temporary, path)
       // The same picture under another type (it was replaced): only the new one stays
-      for (const other of readdirSync(this.dir))
-        if (other.startsWith(`${key}.`) && other !== `${key}.${extension}`)
-          rmSync(join(this.dir, other), { force: true })
+      for (const other of Object.keys(EXTENSIONS))
+        if (other !== extension)
+          rmSync(join(this.dir, `${key}.${other}`), { force: true })
       const now = new Date(this.now())
       utimesSync(path, now, now)
       if (this.shrinkImage) this.queueShrink(path, type)

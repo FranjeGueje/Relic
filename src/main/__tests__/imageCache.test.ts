@@ -18,6 +18,17 @@ function setup(options: { maxBytes?: number; now?: () => number } = {}) {
 const text = async (response: Response) => response.text()
 
 describe('ImageCache', () => {
+  test('a picture that says it is too big reaches the page untouched and is not kept', async () => {
+    const { cache, fetch, dir } = setup()
+    const big = new Response('img', {
+      headers: { 'content-type': 'image/png', 'content-length': '99999999' }
+    })
+    fetch.mockResolvedValueOnce(big)
+
+    expect(await cache.respond('https://cdn/big.png')).toBeDefined()
+    expect(() => readdirSync(dir)).toThrow()
+  })
+
   test('downloads a picture once and serves it from the disk after', async () => {
     const { cache, fetch } = setup()
 
