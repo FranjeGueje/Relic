@@ -51,8 +51,9 @@ steam_shortcuts.json` (tal cual) y `config.json` filtrado a los ajustes que raku
   `~/.config/relic` si la copia está completa (si no puede, deja `.migrated`). Es lo único que Relic escribe fuera de su
   paquete, además de los symlinks de `mount/`.
   Después, **en cada arranque** (`removeLegacyData`, fuera de la migración): si ningún `execPath` de
-  `~/.config/rakun/steam_shortcuts.json` cuelga de `…/.local/share/relic/`, se borra `~/.local/share/relic` (el symlink, no
-  su destino); no si rakun aún no tiene carpeta ni si la lista no se puede leer.
+  `~/.config/rakun/steam_shortcuts.json` cuelga de `…/.local/share/relic/`, se borra `~/.local/share/relic` **solo si es el
+  symlink a `~/.local/share/rakun`** que dejó la migración (nunca su destino ni una carpeta real: esa es del Relic antiguo
+  sin migrar); no si rakun aún no tiene carpeta ni si la lista no se puede leer.
 - `src/main/loginWindow.ts` + `runLogin` (`ipc.ts`): el login de cada tienda lo hace el **main**: ventana hija sin
   preload ni sesión guardada, `loginPageResult` decide si la página es el final (URL con el código, mirada también en
   `will-redirect`; Epic usa el login del launcher de Relic con su agente de usuario y acaba en `localhost?code=`,

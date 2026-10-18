@@ -15,6 +15,10 @@ The history of the previous Relic (the desktop launcher, versions up to 0.6.x) i
 - The SteamGridDB key is never read back: rakun only says whether there is one, and the menu shows «configured» or «not configured» (Relic lets the `steamgriddb.hasApiKey` call through).
 - Relic's own package script downloads rakun from the tag the submodule points at, so it can ship a rakun pre-release.
 
+### Fixed
+
+- The previous Relic's `~/.local/share/relic` is only removed when it is the link the migration left: a real folder (the previous Relic was not migrated because rakun already had its folder) was deleted with everything in it.
+
 ## 1.1.1 — Rakun 0.3.1
 
 ### Changed
