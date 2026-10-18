@@ -114,10 +114,15 @@ user_dirs() {
     done
 }
 
-# AppID del último acceso directo de Relic en un shortcuts.vdf (4 bytes little-endian tras «appid»)
+# AppID del acceso directo de Relic en un shortcuts.vdf (4 bytes little-endian tras «appid»). Cada acceso es
+# un bloque que acaba en 08 08: se parte el fichero por bloques (byte a byte) y se lee el appid del bloque
+# que lleva la ruta de Relic, no el último del fichero (sería el de otro juego si Relic no es el último)
 relic_appid() {
-    [ -f "$1" ] && grep -aq '\.local/bin/Relic' "$1" || return 0
-    xxd -p "$1" | tr -d '\n' | grep -oP '02617070696400\K[0-9a-f]{8}' | tail -1 | while read -r hex; do
+    [ -f "$1" ] && grep -aqF "$TARGET" "$1" || return 0
+    local target_hex
+    target_hex=$(printf '%s' "$TARGET" | xxd -p | tr -d '\n')
+    xxd -p -c1 "$1" | awk '{ block = block $0 } prev == "08" && $0 == "08" { print block; block = "" } { prev = $0 }' |
+        grep -F "$target_hex" | grep -oP '02617070696400\K[0-9a-f]{8}' | tail -1 | while read -r hex; do
         echo $((16#${hex:6:2}${hex:4:2}${hex:2:2}${hex:0:2}))
     done
 }

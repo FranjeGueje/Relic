@@ -19,6 +19,7 @@ The history of the previous Relic (the desktop launcher, versions up to 0.6.x) i
 
 - The previous Relic's `~/.local/share/relic` is only removed when it is the link the migration left: a real folder (the previous Relic was not migrated because rakun already had its folder) was deleted with everything in it.
 - The stores' login pages no longer get camera, microphone, location, notifications or any other permission (Electron granted them all). Only Relic's own screens may read the clipboard.
+- `install.sh` put Relic's artwork on the last shortcut of Steam's list, which was another game when Relic was not the last one; it now finds Relic's own shortcut.
 
 ## 1.1.1 — Rakun 0.3.1
 
