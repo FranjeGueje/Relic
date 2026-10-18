@@ -56,6 +56,8 @@ export class RakunLink {
   private state: ConnectionState = 'connecting'
   private running = false
   private attempt = 0
+  /** Which connection is the current one: the end of an older one is not a reason to reconnect */
+  private generation = 0
   private timer: NodeJS.Timeout | undefined
   private stream: { destroy: () => void } | undefined
 
@@ -95,6 +97,7 @@ export class RakunLink {
 
   stop(): void {
     this.running = false
+    this.generation++
     clearTimeout(this.timer)
     this.stream?.destroy()
     this.stream = undefined
@@ -166,15 +169,24 @@ export class RakunLink {
 
   private connect(): void {
     if (!this.running) return
+    const id = ++this.generation
     const { cancel, response } = this.open('GET', '/events')
     this.stream = { destroy: cancel }
-    response.then((res) => this.follow(res)).catch(() => this.retryLater())
+    // A stream can end several ways at once (error and close): only the first end of the
+    // current one schedules the next try
+    let ended = false
+    const end = () => {
+      if (ended || id !== this.generation) return
+      ended = true
+      this.retryLater()
+    }
+    response.then((res) => this.follow(res, end)).catch(end)
   }
 
-  private follow(res: IncomingMessage): void {
+  private follow(res: IncomingMessage, end: () => void): void {
     if (res.statusCode !== 200) {
       res.resume()
-      return this.retryLater()
+      return end()
     }
     this.attempt = 0
     this.setState('online')
@@ -185,8 +197,8 @@ export class RakunLink {
       buffer = rest
       blocks.forEach((block) => this.dispatch(block))
     })
-    res.once('close', () => this.retryLater())
-    res.once('error', () => this.retryLater())
+    res.once('close', end)
+    res.once('error', end)
   }
 
   private dispatch(block: string): void {
