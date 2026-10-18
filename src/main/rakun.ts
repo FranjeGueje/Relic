@@ -45,12 +45,20 @@ type Options = {
   credentials?: () => Credentials
   /** Wait before each reconnection; the last one repeats */
   retryDelays?: number[]
+  /** How long a call may go without an answer before it fails */
+  callTimeoutMs?: number
 }
+
+/** A call that hangs (rakun stuck) fails instead of leaving the screen waiting forever */
+const CALL_TIMEOUT_MS = 120_000
+/** It answers when the downloads end, which can take minutes; its progress comes as events */
+const UNTIMED_CALLS: ReadonlySet<string> = new Set(['updateHelpers'])
 
 /** The link with rakun: calls, the event stream and whether it answers */
 export class RakunLink {
   private readonly credentials: () => Credentials
   private readonly retryDelays: number[]
+  private readonly callTimeoutMs: number
   private readonly eventListeners = new Set<(event: RakunEvent) => void>()
   private readonly stateListeners = new Set<(state: ConnectionState) => void>()
   private state: ConnectionState = 'connecting'
@@ -64,6 +72,7 @@ export class RakunLink {
   constructor(options: Options = {}) {
     this.credentials = options.credentials ?? readCredentials
     this.retryDelays = options.retryDelays ?? [1000, 2000, 5000]
+    this.callTimeoutMs = options.callTimeoutMs ?? CALL_TIMEOUT_MS
   }
 
   get connection(): ConnectionState {
@@ -107,7 +116,9 @@ export class RakunLink {
     channel: C,
     ...args: CallMap[C]['args']
   ): Promise<CallMap[C]['result']> {
-    const res = await this.open('POST', `/api/${channel}`, { args }).response
+    const timeoutMs = UNTIMED_CALLS.has(channel) ? 0 : this.callTimeoutMs
+    const res = await this.open('POST', `/api/${channel}`, { args }, timeoutMs)
+      .response
     const body = await readBody(res)
     if (res.statusCode !== 200)
       throw new Error(errorOf(res.statusCode ?? 0, body))
@@ -118,7 +129,8 @@ export class RakunLink {
   private open(
     method: string,
     path: string,
-    body?: unknown
+    body?: unknown,
+    timeoutMs = 0
   ): { cancel: () => void; response: Promise<IncomingMessage> } {
     let credentials: Credentials
     try {
@@ -143,9 +155,19 @@ export class RakunLink {
         },
         resolve
       )
+      let timedOut = false
       req.once('error', () =>
-        reject(new RakunOffline(`rakun does not answer on port ${port}`))
+        reject(
+          timedOut
+            ? new Error(`rakun did not answer ${path} in ${timeoutMs / 1000} s`)
+            : new RakunOffline(`rakun does not answer on port ${port}`)
+        )
       )
+      if (timeoutMs > 0)
+        req.setTimeout(timeoutMs, () => {
+          timedOut = true
+          req.destroy()
+        })
       req.end(body === undefined ? undefined : JSON.stringify(body))
       cancel = () => req.destroy()
     })

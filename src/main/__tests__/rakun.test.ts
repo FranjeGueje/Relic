@@ -125,6 +125,37 @@ describe('call', () => {
     await expect(linkTo(port).call('requestAppSettings')).rejects.toThrow('403')
   })
 
+  test('a call rakun never answers fails after the timeout', async () => {
+    const port = await listen((_req, res) => open.push(res))
+    const slow = new RakunLink({
+      credentials: () => ({ port, token: TOKEN }),
+      callTimeoutMs: 50
+    })
+
+    await expect(slow.call('getLibrary', 'all')).rejects.toThrow(
+      'rakun did not answer /api/getLibrary'
+    )
+  })
+
+  test('updateHelpers, which waits for its downloads, is never cut', async () => {
+    const port = await listen((_req, res) => {
+      setTimeout(
+        () =>
+          res.end(JSON.stringify({ result: { helpers: [], failures: [] } })),
+        120
+      )
+    })
+    const slow = new RakunLink({
+      credentials: () => ({ port, token: TOKEN }),
+      callTimeoutMs: 50
+    })
+
+    await expect(slow.call('updateHelpers', {})).resolves.toEqual({
+      helpers: [],
+      failures: []
+    })
+  })
+
   test('nobody listening is RakunOffline', async () => {
     const port = await listen(() => undefined)
     await new Promise((resolve) => server?.close(resolve))
