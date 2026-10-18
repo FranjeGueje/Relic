@@ -60,7 +60,21 @@ export function loginPageResult(
   if (runner === 'gog')
     return isGogSuccess(url) && hasParam(url, 'code') ? url : undefined
   const param = runner === 'nile' ? 'openid.oa2.authorization_code' : 'li_token'
-  return hasParam(url, param) ? url : undefined
+  return isEndPage(runner, url) && hasParam(url, param) ? url : undefined
+}
+
+/** Where Amazon's and Zoom's logins come back to (seen in a real login): the code only counts there */
+const END_HOSTS: Partial<Record<Runner, readonly string[]>> = {
+  nile: ['www.amazon.com', 'amazon.com'],
+  zoom: ['www.zoom-platform.com', 'zoom-platform.com']
+}
+
+function isEndPage(runner: Runner, url: string): boolean {
+  const parsed = parseUrl(url)
+  return (
+    parsed?.protocol === 'https:' &&
+    !!END_HOSTS[runner]?.includes(parsed.hostname)
+  )
 }
 
 /** A page the login window may open for a popup: the web only, never `file:` or other schemes */
