@@ -18,9 +18,9 @@ const answers: Record<string, unknown> = {
   requestAppSettings: {
     language: 'en',
     defaultInstallPath: '/g',
-    protonPath: '',
-    steamGridDbApiKey: ''
+    protonPath: ''
   },
+  'steamgriddb.hasApiKey': false,
   getDMQueueInformation: { elements: [], finished: [], state: 'idle' }
 }
 

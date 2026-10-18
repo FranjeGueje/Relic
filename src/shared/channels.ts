@@ -17,6 +17,7 @@ const CALL_CHANNELS: readonly string[] = [
   'refreshLibrary',
   'checkGameUpdates',
   'requestAppSettings',
+  'steamgriddb.hasApiKey',
   'getRakunVersion',
   'install',
   'updateGame',

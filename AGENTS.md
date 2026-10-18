@@ -144,7 +144,8 @@ CI (`.github/workflows/ci.yml`) corre en cada push de cualquier rama y en cada P
 publicada de rakun. La etiqueta se crea **al publicar**, no antes: no dejar etiquetas locales sueltas.
 
 Una **pre-release** (`vX.Y.Z-rcN`) no la crea `release.yml` (solo reacciona a `vX.Y.Z`): se hace a mano con
-`gh release create … --prerelease`, con `package.json` ya en `X.Y.Z`. El submódulo puede estar en una etiqueta rc de
+`gh release create … --prerelease`, con `package.json` en `X.Y.Z-rcN` (el AppImage lleva ese nombre; la release
+vuelve a `X.Y.Z`). El submódulo puede estar en una etiqueta rc de
 rakun (`package.sh` baja la release de **esa** etiqueta, `git describe --exact-match`, aunque los ficheros se llamen con
 la versión sin `-rc`). `install.sh` usa `releases/latest`, que ignora las pre-releases.
 
