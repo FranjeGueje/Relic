@@ -122,7 +122,7 @@ Comprobarlo: `HOME=$(mktemp -d)`, abrir, cerrar y `find $HOME -mindepth 1` debe 
   `LD_PRELOAD`/`LD_LIBRARY_PATH`, mueve `XDG_CACHE_HOME` y `MESA_SHADER_CACHE_DIR` al directorio efímero antes de
   arrancar (el driver de la GPU escribe antes de que corra nuestro código), mete `resources/rakun/` (solo `rakun.cjs`,
   `COPYING`, `AUTHORS`, `THIRD_PARTY` del tarball de la release de rakun que corresponde al submodule, que `package.sh`
-  descarga a `dist/.tools/rakun` y comprueba con su `.sha256` (`RAKUN_TARBALL` para usar otro); sin Node, `rakunctl`, web ni binarios
+  descarga a `dist/.tools/rakun/<etiqueta>` (una carpeta por etiqueta: una rc y su release publican ficheros con el mismo nombre) y comprueba con su `.sha256` (`RAKUN_TARBALL` para usar otro); sin Node, `rakunctl`, web ni binarios
   auxiliares), no usa `exec` y borra ese directorio
   al terminar si no hay otra instancia (existe `userData/SingletonLock`). No se puede probar que la ventana abra sin
   pantalla: solo se comprueba el contenido y que el binario corre.

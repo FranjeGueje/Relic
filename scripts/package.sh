@@ -9,7 +9,7 @@
 # rakun travels inside: only its bundled script (rakun.cjs), which runs on Electron's own Node.
 # It is the release of rakun that matches the interface (the vendor/rakun submodule), downloaded
 # from https://github.com/FranjeGueje/rakun/releases and checked against its .sha256 (kept in
-# dist/.tools/rakun). To use another tarball, e.g. one built in a rakun checkout:
+# dist/.tools/rakun/<tag>). To use another tarball, e.g. one built in a rakun checkout:
 #   RAKUN_TARBALL=../rakun/dist/rakun-<version>-linux-x64.tar.gz scripts/package.sh
 # The Node, rakunctl, the web and the helper binaries (rakun downloads those to
 # ~/.local/share/rakun) stay out.
@@ -65,10 +65,13 @@ UI_TAG=$(git -C vendor/rakun describe --tags --exact-match 2>/dev/null || echo "
 # The rakun that travels: that release, unless another tarball is given
 if [ -z "${RAKUN_TARBALL:-}" ]; then
     NAME="rakun-${UI_VERSION}-linux-${ARCH}.tar.gz"
-    RAKUN_TARBALL="$OUT_DIR/.tools/rakun/$NAME"
-    if [ ! -f "$RAKUN_TARBALL" ] || ! (cd "$OUT_DIR/.tools/rakun" && sha256sum -c "$NAME.sha256" >/dev/null 2>&1); then
+    # One folder per tag: v0.4.0-rc1 and v0.4.0 both publish rakun-0.4.0-…, and a copy kept by
+    # name alone would ship the pre-release's rakun in the release
+    CACHE="$OUT_DIR/.tools/rakun/${UI_TAG}"
+    RAKUN_TARBALL="$CACHE/$NAME"
+    if [ ! -f "$RAKUN_TARBALL" ] || ! (cd "$CACHE" && sha256sum -c "$NAME.sha256" >/dev/null 2>&1); then
         echo "Downloading rakun ${UI_TAG} (${ARCH})..."
-        mkdir -p "$OUT_DIR/.tools/rakun"
+        mkdir -p "$CACHE"
         BASE="https://github.com/${RAKUN_REPO}/releases/download/${UI_TAG}"
         curl -fsSL -o "$RAKUN_TARBALL" "$BASE/$NAME" &&
             curl -fsSL -o "$RAKUN_TARBALL.sha256" "$BASE/$NAME.sha256" || {
