@@ -1,6 +1,6 @@
 {
   "name": "relic",
-  "version": "1.2.0-rc3",
+  "version": "1.2.0",
   "private": true,
   "license": "GPL-3.0-only",
   "description": "Relic - console-mode client for rakun",
