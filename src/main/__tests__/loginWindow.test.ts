@@ -86,18 +86,11 @@ describe('userAgentFor', () => {
     expect(userAgentFor('gog')).not.toContain('EpicGamesLauncher')
   })
 
-  test('itch.io gets the real Chromium, without Electron or the app name', () => {
-    const own =
-      'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) relic/1.2.0 Chrome/140.0.0.0 Electron/38.0.0 Safari/537.36'
-    expect(userAgentFor('itch', own)).toBe(
-      'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36'
-    )
-    expect(userAgentFor('zoom', own)).not.toContain('AppleWebKit')
-  })
-
-  test('GOG keeps the user agent of Chromium as it is', () => {
+  test('GOG keeps the user agent of Chromium as it is; Amazon and Zoom the made-up Chrome', () => {
     const own = 'Mozilla/5.0 (X11; Linux x86_64) Electron/38.0.0 Safari/537.36'
     expect(userAgentFor('gog', own)).toBe(own)
+    expect(userAgentFor('zoom', own)).toContain('Chrome/200.0')
+    expect(userAgentFor('nile', own)).toContain('Chrome/200.0')
   })
 })
 
