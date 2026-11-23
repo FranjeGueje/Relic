@@ -57,9 +57,12 @@ steam_shortcuts.json` (tal cual) y `config.json` filtrado a los ajustes que raku
 - `src/main/loginWindow.ts` + `runLogin` (`ipc.ts`): el login de cada tienda lo hace el **main**: ventana hija sin
   preload ni sesión guardada, `loginPageResult` decide si la página es el final (URL con el código, mirada también en
   `will-redirect`; Epic usa el login del launcher de Relic con su agente de usuario y acaba en `localhost?code=`,
-  no la página `legendary.gl` de rakun) y lo entrega a `submitLogin`. **itch.io es distinto** (`itchLogin.ts`, `itchWindows.ts`): tiene dos formas de entrar y Relic pregunta cuál (diálogo A/B).
-  A) OAuth en el **navegador del usuario** (`shell.openExternal`; Cloudflare no acepta el navegador embebido: el desafío
-  se repite sin fin, y el log muestra a Chromium fallando al resolver los STUN de WebRTC). Su OAuth vuelve a
+  no la página `legendary.gl` de rakun) y lo entrega a `submitLogin`. **GOG usa el agente de usuario de Electron sin tocar**
+  (`userAgentFor`): con el `Chrome/200.0` inventado el desafío de Cloudflare fallaba siempre (error 600010; Heroic lo arregló
+  igual) y los errores de STUN del log no eran la causa; Amazon y Zoom aún llevan el inventado. **itch.io es distinto** (`itchLogin.ts`, `itchWindows.ts`): tiene dos formas de entrar y Relic pregunta cuál (diálogo A/B).
+  A) OAuth en el **navegador del usuario** (`shell.openExternal`; la ventana embebida se descartó con un agente de usuario
+  alterado, y **no consta que se probara con el de Electron sin tocar**, que es el que hoy pasa el de GOG: pendiente de probar a
+  mano). Su OAuth vuelve a
   `GET /itch/callback` de la API de rakun, que acaba el login solo: no se llama a `submitLogin`, se espera hasta 5 min a
   que `getAccounts` diga `loggedIn` (`waitForSession`). B) clave de API: una ventana propia (sin preload, página `data:`)
   con un formulario que acaba en `https://relic.invalid/key?key=…`, que se lee en `will-navigate` (`keyFromUrl`) y se
@@ -122,7 +125,7 @@ Comprobarlo: `HOME=$(mktemp -d)`, abrir, cerrar y `find $HOME -mindepth 1` debe 
   `LD_PRELOAD`/`LD_LIBRARY_PATH`, mueve `XDG_CACHE_HOME` y `MESA_SHADER_CACHE_DIR` al directorio efímero antes de
   arrancar (el driver de la GPU escribe antes de que corra nuestro código), mete `resources/rakun/` (solo `rakun.cjs`,
   `COPYING`, `AUTHORS`, `THIRD_PARTY` del tarball de la release de rakun que corresponde al submodule, que `package.sh`
-  descarga a `dist/.tools/rakun` y comprueba con su `.sha256` (`RAKUN_TARBALL` para usar otro); sin Node, `rakunctl`, web ni binarios
+  descarga a `dist/.tools/rakun/<etiqueta>` (una carpeta por etiqueta: una rc y su release publican ficheros con el mismo nombre) y comprueba con su `.sha256` (`RAKUN_TARBALL` para usar otro); sin Node, `rakunctl`, web ni binarios
   auxiliares), no usa `exec` y borra ese directorio
   al terminar si no hay otra instancia (existe `userData/SingletonLock`). No se puede probar que la ventana abra sin
   pantalla: solo se comprueba el contenido y que el binario corre.

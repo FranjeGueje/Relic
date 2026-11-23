@@ -2,6 +2,16 @@
 
 The history of the previous Relic (the desktop launcher, versions up to 0.6.x) is in the `legacy` branch.
 
+## 1.2.1 — GOG login
+
+### Fixed
+
+- GOG's login no longer gets stuck on Cloudflare's check (error 600010): its window now keeps Chromium's own user agent instead of a made-up Chrome that the check always rejected.
+
+### Changed
+
+- Removed the user agent code that itch.io's login never reached (it does not use the login window).
+
 ## 1.2.0 — itch.io and rakun 0.4.0
 
 ### Added

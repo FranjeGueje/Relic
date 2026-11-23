@@ -5,18 +5,14 @@ import { parseUrl } from './helpers'
 const CHROME = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/200.0'
 const EPIC = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) EpicGamesLauncher'
 
-/** Chromium's own user agent without the parts that give Electron away (itch.io sits behind Cloudflare) */
-function plainChromium(own: string): string {
-  return own.replace(/ (Electron|relic)\/\S+/gi, '')
-}
-
 /**
- * Epic only serves its login to its own launcher. itch.io's Cloudflare keeps asking for
- * its challenge to the made-up Chrome of the others, so it gets the real one.
+ * Epic only serves its login to its own launcher. GOG's Cloudflare check always fails on a
+ * made-up agent, so it gets Chromium's as it is (Heroic fixed it the same way). Amazon and
+ * Zoom keep the made-up Chrome. itch.io never gets here: it logs in through `itchWindows.ts`.
  */
 export function userAgentFor(runner: Runner, own = CHROME): string {
   if (runner === 'legendary') return EPIC
-  return runner === 'itch' ? plainChromium(own) : CHROME
+  return runner === 'gog' ? own : CHROME
 }
 
 function hasParam(url: string, param: string): boolean {
