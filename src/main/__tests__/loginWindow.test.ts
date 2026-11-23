@@ -92,7 +92,12 @@ describe('userAgentFor', () => {
     expect(userAgentFor('itch', own)).toBe(
       'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36'
     )
-    expect(userAgentFor('gog', own)).not.toContain('AppleWebKit')
+    expect(userAgentFor('zoom', own)).not.toContain('AppleWebKit')
+  })
+
+  test('GOG keeps the user agent of Chromium as it is', () => {
+    const own = 'Mozilla/5.0 (X11; Linux x86_64) Electron/38.0.0 Safari/537.36'
+    expect(userAgentFor('gog', own)).toBe(own)
   })
 })
 

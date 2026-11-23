@@ -12,10 +12,13 @@ function plainChromium(own: string): string {
 
 /**
  * Epic only serves its login to its own launcher. itch.io's Cloudflare keeps asking for
- * its challenge to the made-up Chrome of the others, so it gets the real one.
+ * its challenge to the made-up Chrome of the others, so it gets the real one; GOG's, Chromium's as it is.
  */
 export function userAgentFor(runner: Runner, own = CHROME): string {
   if (runner === 'legendary') return EPIC
+  // GOG's Cloudflare check always fails on the made-up Chrome; Heroic fixed it the same way
+  // (its own agent, untouched)
+  if (runner === 'gog') return own
   return runner === 'itch' ? plainChromium(own) : CHROME
 }
 
