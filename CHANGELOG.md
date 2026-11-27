@@ -2,6 +2,12 @@
 
 The history of the previous Relic (the desktop launcher, versions up to 0.6.x) is in the `legacy` branch.
 
+## 1.2.2 — rakun 0.4.3
+
+### Fixed
+
+- rakun 0.4.3 (the rakun inside the AppImage): a GOG install or update no longer hangs forever when gogdl fails to write a file (it is stopped after a minute and the download ends in error), an install, update or repair whose helper failed on a file ends in error instead of done, and canceling a download stops the helper with all its processes.
+
 ## 1.2.1 — GOG login
 
 ### Fixed
